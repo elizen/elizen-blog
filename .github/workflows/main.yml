@@ -20,7 +20,7 @@ run: hugo
       - name: Deploy
 uses: peaceiris/actions-gh-pages@v3
 with:
-personal_token: ${{ secrets.personal_token }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名
+personal_token: ${{ 2f0c8ad89c154e5ef3e59b303bdf87c4fd4d7460 }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名
 PUBLISH_BRANCH: gh-pages
 PUBLISH_DIR: ./public
 commit_message: ${{ github.event.head_commit.message }}
