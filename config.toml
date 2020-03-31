@@ -1,4 +1,4 @@
-baseURL = "https://elizen.github.io/elizen-blog/"
+baseURL = "https://elizen.me/"
 languageCode = "zh-CN"
 title = "Elizen's Blog"
 theme = "hyde"
@@ -11,11 +11,11 @@ enableEmoji = true
 
 [Menus]
   main = [
-      {Name = "Archives", URL = "https://elizen.github.io/elizen-blog/posts/"},
-      {Name = "Elizen‘s Blog", URL = "https://blog.elizen.me"},
-      {Name = "Tags", URL = "https://elizen.github.io/elizen-blog/tags/"},
-      {Name = "Books", URL = "https://elizen.github.io/elizen-blog/books/"},
-      {Name = "Movies", URL = "https://elizen.github.io/elizen-blog/movies/"}
+      {Name = "Archives", URL = "https://elizen.me/posts/"},
+      {Name = "Deep Think", URL = "https://blog.elizen.me"},
+      {Name = "Tags", URL = "https://elizen.me/tags/"},
+      {Name = "Books", URL = "https://elizen.me/books/"},
+      {Name = "Movies", URL = "https://elizen.me/movies/"}
   ]
 
 [params]
