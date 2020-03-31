@@ -1,6 +1,7 @@
 {{ define "main" -}}
 <div class="posts">
-{{ range .Site.RegularPages -}}
+{{  $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
+{{ range $index,$data := $paginator.Pages }}
 <article class="post">
   <h1 class="post-title">
     <a href="{{ .Permalink }}">{{ .Title }}</a>
