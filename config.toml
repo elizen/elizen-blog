@@ -11,9 +11,11 @@ enableEmoji = true
 
 [Menus]
   main = [
-      {Name = "Archives", URL = "https://blog.elizen.me/post/"},
-      {Name = "Weebo", URL = "https://elizen.me"},
-      {Name = "Tags", URL = "https://blog.elizen.me/tags/"}
+      {Name = "Archives", URL = "https://elizen.github.io/elizen-blog/post/"},
+      {Name = "Elizen‘s Blog", URL = "https://blog.elizen.me"},
+      {Name = "Tags", URL = "https://elizen.github.io/elizen-blog/tags/"},
+      {Name = "Books", URL = "https://elizen.github.io/elizen-blog/books/"},
+      {Name = "Movies", URL = "https://elizen.github.io/elizen-blog/movies/"}
   ]
 
 [params]
