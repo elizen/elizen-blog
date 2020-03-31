@@ -1,0 +1,18 @@
+{{ define "main" -}}
+<div class="post">
+  <h1 class="content-title">{{ .Title }}</h1>
+  <div class="post-meta post-date"><time  style="display: inline-block" datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-meta post-date">{{ .Date.Format "2006-01-02" }}</time>
+  	<div class="post-tags" style="display: inline-block; margin-left: 10px"><a style="margin-left: 5px" href="{{ "/tags/" | relLangURL}}{{ .Params.tags }}">#{{ .Params.tags }}</a>
+  	</div>
+  </div>
+  
+  <div class="post-content" style="margin-top: 20px">
+  	{{ .Content }}
+  </div>
+</div>
+
+{{ if .Site.DisqusShortname -}}
+<h2>Comments</h2>
+{{ template "_internal/disqus.html" . }}
+{{- end }}
+{{- end }}

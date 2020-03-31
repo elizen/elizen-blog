@@ -1,0 +1,10 @@
+{{ define "main" -}}
+<h1 class="tags-title">Tags: {{ len .Data.Terms }}</h1>
+{{ $data := .Data }}
+{{ range .Data.Terms.ByCount }}
+{{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+
+<li class="tags-list"><a href="{{ $termLink }}">{{ .Term }}</a> ({{ .Count }})</li>
+
+{{ end }}
+{{- end }}
