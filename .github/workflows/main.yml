@@ -1,28 +1,31 @@
-name: Deploy Hugo # 任君喜欢
+name: Deploy Hugo
 
 on:
   push:
     branches:
-      - master   # master 更新触发
+      - master
 
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v1  # v2 does not have submodules option now
+       # with:
+       #   submodules: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: latest
+          # extended: true
 
-      - name: Build 
+      - name: Build
         run: hugo
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.personal_token }} # personal_token 这里新建一个 https://github.com/settings/tokens
-          PUBLISH_BRANCH: gh-pages  # 推送到当前 gh-pages 分支
-          PUBLISH_DIR: ./public  # hugo 生成到 public 作为跟目录
+          personal_token: ${{ secrets.personal_token }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
           commit_message: ${{ github.event.head_commit.message }}
