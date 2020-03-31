@@ -1,0 +1,4 @@
+---
+type: "index"
+daft: true
+---
