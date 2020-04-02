@@ -1,6 +1,6 @@
 ---
 title: 写作
-data: 2020-04-02
+date: 2020-04-02
 tags: thinking
 ---
 
