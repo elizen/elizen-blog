@@ -246,7 +246,10 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/* Photos */
 
+.page-photos figure{max-width:80%;margin:0 auto 3rem;}
+.page-photos figure img{box-shadow: 0 12px 40px rgba(0,0,0,.15);border-radius: 8px;}
 
 /*
  * Themes
