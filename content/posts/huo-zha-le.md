@@ -11,3 +11,5 @@ tags: music
 点击收听！
 
 [火乍了-何教授]（https://music.163.com/#/song?id=1438432532）
+
+{{< music "https://music.163.com/#/song?id=1438432532" >}}
