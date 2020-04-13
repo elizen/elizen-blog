@@ -10,6 +10,6 @@ tags: music
 
 {{< music auto="https://music.163.com/#/song?id=1438432532" >}}
 
-搞了一下文章内联，测试一下样式：
+又搞了一下文章内联，测试一下样式：
 
 {{< link "2020-04-02-write-write" >}}
