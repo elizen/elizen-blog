@@ -4,7 +4,7 @@
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="referrer" content="never" />
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.69.0" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,27 +89,73 @@
   </div>
 </div>
 
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
+
+  <div class="pagination__title">
+       <span class="pagination__title-h"><span class="valine-comment-count" data-xid="/my-digital-life-1/"></span> 条评论</span>
+       <hr />
+  </div>
+  <div id="comments"></div>
+  <script>
+    loadComments();
+    function loadComments() {
+        if (typeof Valine === 'undefined') {
+            var getScript = (options) => {
+                var script = document.createElement('script');
+                script.defer = true;
+                script.crossOrigin = 'anonymous';
+                Object.keys(options).forEach((key) => {
+                    script[key] = options[key];
+                });
+                document.body.appendChild(script);
+            };
+            getScript({
+                src: 'https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.Pure.min.js',
+                onload: () => {
+                    newValine();
+                }
+            });
+        } else {
+            newValine();
         }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "elizen" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    }
+    function newValine() {
+      new Valine({
+        el: '#comments' ,
+        recordIP : true,
+        appId: 'HCbjmh0KVI9obm5bTPipB0wQ-gzGzoHsz',
+        appKey: 'oq3jypCIFFxab7dpJ6j039jC',
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor:  true 
+      });
+      function diyValine() {
+        document.querySelector("span.vemoji-btn").innerHTML = '😀';
+        jinrishici.load(function(result) {
+            var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+            document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+        });
+      }
+      setTimeout(diyValine, 1000);
+    }
+  </script>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+  <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+        $("#comments").on('click', 'span.vat',function(){
+        	$(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        	$('textarea#veditor').focus();
+        })
+        if(window.location.hash){
+        	var checkExist = setInterval(function() {
+        		if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+                            clearInterval(checkExist);
+                        }
+                }, 100);
+        }
+    });
+  </script>
+
     </main>
 
     
