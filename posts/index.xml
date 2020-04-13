@@ -21,12 +21,12 @@
     </item>
     
     <item>
-      <title>博客增加文章内显示指定文件夹图片</title>
+      <title>蓝色港湾，晒娃上瘾</title>
       <link>https://elizen.me/update-blog-single-photos/</link>
       <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://elizen.me/update-blog-single-photos/</guid>
-      <description>尝试一下。</description>
+      <description>折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在single.html里加上引入 PATH 的代码： {{ .Render &amp;#34;path&amp;#34;}} 搞</description>
     </item>
     
     <item>

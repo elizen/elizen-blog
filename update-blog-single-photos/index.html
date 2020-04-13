@@ -15,7 +15,7 @@
   
   <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>  
 
-  <title>博客增加文章内显示指定文件夹图片 &middot; Elizen&#39;s Blog</title>
+  <title>蓝色港湾，晒娃上瘾 &middot; Elizen&#39;s Blog</title>
   <meta name="description" content="" />
 
   
@@ -61,16 +61,18 @@
 
     <main class="content container">
     <div class="post">
-  <h1 class="content-title">博客增加文章内显示指定文件夹图片</h1>
+  <h1 class="content-title">蓝色港湾，晒娃上瘾</h1>
   <div class="post-meta post-date"><time  style="display: inline-block" datetime=2020-04-13T00:00:00Z class="post-meta post-date">2020-04-13</time>
 
-   <div class="post-tags" style="display: inline-block; margin-left: 10px"><a style="margin-left: 5px" href="/tags/blog">#blog</a>
+   <div class="post-tags" style="display: inline-block; margin-left: 10px"><a style="margin-left: 5px" href="/tags/photos">#photos</a>
    </div>
 
   </div>
   
   <div class="post-content" style="margin-top: 20px">
-    <p>尝试一下。</p>
+    <p>折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在<code>single.html</code>里加上引入 PATH 的代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{{ .<span style="color:#a6e22e">Render</span> <span style="color:#e6db74">&#34;path&#34;</span>}}
+</code></pre></div><p>搞定之后爽歪歪。</p>
 
     
     
