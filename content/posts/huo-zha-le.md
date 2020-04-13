@@ -12,4 +12,4 @@ tags: music
 
 搞了一下文章内联，测试一下样式：
 
-{{< link 2020-04-02-write-write >}}
+{{< link "2020-04-02-write-write" >}}
