@@ -9,3 +9,7 @@ tags: music
 我一直喜欢的东北灭火朋克历时十五年，终于发了[新专辑](https://music.163.com/#/album?id=87731914)了。
 
 {{< music auto="https://music.163.com/#/song?id=1438432532" >}}
+
+搞了一下文章内联，测试一下样式：
+
+{{< link 2020-04-02-write-write >}}
