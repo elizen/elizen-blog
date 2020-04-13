@@ -13,7 +13,6 @@
     {{ .Render "path"}}
   </div>
 </div>
-
 {{ if not (eq .Params.Comments "false") }}
 {{ partial "comments.html" . }}
 
