@@ -13,8 +13,8 @@
   </div>
 </div>
 
-{{ if .Site.DisqusShortname -}}
-<h2>Comments</h2>
-{{ template "_internal/disqus.html" . }}
+{{ if not (eq .Params.Comments "false") }}
+{{ partial "comments.html" . }}
+
 {{- end }}
 {{- end }}

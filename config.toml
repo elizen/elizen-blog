@@ -24,3 +24,10 @@ enableEmoji = true
   contentTypeName = "posts"
   # description abou this website
   description = "There is only one thing in the world worse than being talked about, and that is not being talked about."
+
+[params.valine]
+  enable = true
+    appId = 'HCbjmh0KVI9obm5bTPipB0wQ-gzGzoHsz'
+    appKey = 'oq3jypCIFFxab7dpJ6j039jC'
+    placeholder = '既然来了，那就留个痕迹吧~'
+    visitor = true
