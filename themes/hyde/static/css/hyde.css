@@ -246,6 +246,16 @@ a.sidebar-nav-item:focus {
   }
 }
 
+ul.pagination {
+  list-style: none; }
+  ul.pagination li.page-item {
+    display: inline-block; }
+    ul.pagination li.page-item a {
+      padding: 0.05em 0.4em; }
+    ul.pagination li.page-item.active a {
+      color: #c2255c;
+      border-bottom: 3px solid #c2255c; }
+
 /* Photos */
 
 .page-photos figure{max-width:80%;margin:0 auto 3rem;}
