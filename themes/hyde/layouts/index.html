@@ -17,6 +17,5 @@
 </article>
 {{- end }}
 </div>
+{{ partial "pagination.html" . }}
 {{- end }}
-
-{{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups  }}
