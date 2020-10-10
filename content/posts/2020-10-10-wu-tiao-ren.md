@@ -31,5 +31,7 @@ tags: music
 > 要知道我是风的儿子，死于高贵的忧郁。
 
 参考资料：
+
 叶三. [我们唱](https://book.douban.com/subject/27129928/). 理想国丨台海出版社, 2017. 
+
 [孫小椒：樂隊的夏末——京圈搖滾，與被流俗理解的五條人. ](https://theinitium.com/article/20201005-opinion-big-band-the-summer/)
