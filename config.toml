@@ -8,6 +8,7 @@ enableEmoji = true
 
 [permalinks]
   posts = "/post/:year/:month/:day/:slug/"
+  newsletter = "/newsletter/:year/:month/:day/:slug/"
 
 [Menus]
   main = [
@@ -21,6 +22,11 @@ enableEmoji = true
 [params]
   # description abou this website
   description = "There is only one thing in the world worse than being talked about, and that is not being talked about."
+  footer = "&copy; [Elizen](https://elizen.me) 2015 - 2020"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["r", "yaml", "tex"]
+  highlightjsTheme = "github"
+  highlightjsVersion = "9.12.0"
 
 [params.valine]
   enable = true
