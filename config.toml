@@ -1,4 +1,4 @@
-baseURL = "https://elizen.me/"
+baseURL = "/"
 languageCode = "zh-CN"
 title = "假装斯文"
 theme = "ivy"
@@ -7,7 +7,7 @@ hasCJKLanguage = true
 enableEmoji = true
 
 [permalinks]
-  posts = "/:filename/"
+  post: /post/:year/:month/:day/:slug/
 
 [Menus]
   main = [
@@ -19,8 +19,6 @@ enableEmoji = true
   ]
 
 [params]
-  # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
   # description abou this website
   description = "There is only one thing in the world worse than being talked about, and that is not being talked about."
 
