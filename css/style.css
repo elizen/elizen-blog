@@ -460,6 +460,37 @@ thead, tfoot, tr:nth-child(even) {
 
 }
 
+.post-content a {
+  color: #191919;
+   padding: 2px 0 1px 0;
+   text-decoration: none;
+   background-image: linear-gradient(
+     transparent 0%,
+     transparent calc(50% - 9px),
+     #ffdb00 calc(50% - 9px),
+     #ffdb00 100%
+   );
+   transition: background-position 120ms ease-in-out, padding 120ms ease-in-out;
+   background-size: 100% 200%;
+   background-position: 0 0;
+   word-break: break-word;
+}
+
+.post-content a:hover {
+ background-image: linear-gradient(
+   transparent 0%,
+   transparent calc(50% - 9px),
+   #ffdb00 calc(50% - 9px),
+   #ffdb00 100%
+ );
+ background-position: 0 100%;
+}
+
+/* Photos */
+
+.page-photos figure{max-width:80%;margin:0 auto 3rem;}
+.page-photos figure img{box-shadow: 0 12px 40px rgba(0,0,0,.15);border-radius: 8px;}
+
 /* valine 1.4.5 评论样式 */
 .v *{box-sizing:border-box;}
 .v .cancel-reply{cursor:pointer;fill:#a9a9b3;text-align:right;position:absolute;right:12px;top:12px;margin:0;padding:0;z-index:99;}
