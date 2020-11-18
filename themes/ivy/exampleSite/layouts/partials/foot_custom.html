@@ -1,0 +1,13 @@
+{{ if .Section }}
+<nav class="post-nav">
+  <span class="nav-prev">{{ with .PrevInSection }}&larr; <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</span>
+  <span class="nav-next">{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> &rarr;{{ end }}</span>
+</nav>
+{{ end }}
+
+{{ partial "disqus.html" . }}
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>

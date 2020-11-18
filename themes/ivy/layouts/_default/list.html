@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+{{ if .IsHome }}
+{{ $.Scratch.Set "pages" .Site.RegularPages }}
+{{ else }}
+{{ $.Scratch.Set "pages" .Pages }}
+{{ end }}
+<ul>
+  {{ range (where ($.Scratch.Get "pages") "Section" "!=" "") }}
+  <li>
+    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}
