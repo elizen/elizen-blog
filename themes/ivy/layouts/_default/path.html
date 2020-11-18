@@ -1,0 +1,4 @@
+{{ if .Params.path }}
+    {{$Path := .Params.path}}
+    {{- range (readDir (printf "%s%s" "./static/images/" $Path )) -}}<img loading='lazy' src="{{(printf "https://cdn.jsdelivr.net/gh/elizen/elizen-blog@gh-pages/images/%s/%s" $Path .Name ) | absURL}}" />{{- end -}}
+{{ end }}

@@ -2,6 +2,6 @@
 
 {{ if .Params.show_toc }} {{ .TableOfContents }} {{ end }}
 {{ .Content }}
-
+{{ .Render "path"}}
 
 {{ partial "footer.html" . }}
