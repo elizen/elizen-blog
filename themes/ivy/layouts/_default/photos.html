@@ -1,8 +1,6 @@
-{{ define "main" }}
-<div class="post">
-  <h2 class="post-title">{{.Title}}</h2>
-</div>
+{{ partial "header.html" . }}
 
+{{ if .Params.show_toc }} {{ .TableOfContents }} {{ end }}
 <div class="page-photos">
   {{ range (readDir "./static/photos") }}
   <figure>
@@ -11,4 +9,5 @@
   </figure>
   {{ end }}
 </div>
-{{ end }}
+
+{{ partial "footer.html" . }}
