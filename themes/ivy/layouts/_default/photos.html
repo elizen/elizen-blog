@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="post">
+  <h2 class="post-title">{{.Title}}</h2>
+</div>
+
+<div class="page-photos">
+  {{ range (readDir "./static/photos") }}
+  <figure>
+    <img src="https://cdn.jsdelivr.net/gh/elizen/elizen-blog@gh-pages/photos/{{ .Name }}" alt="{{ .Name }}" />
+    <figcaption>{{ .Name | replaceRE "(.*)[.].*" "$1"}}</figcaption>
+  </figure>
+  {{ end }}
+</div>
+{{ end }}

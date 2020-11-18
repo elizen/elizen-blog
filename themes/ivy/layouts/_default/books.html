@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="post">
+  <h2 class="post-title"><a href="/books/">我的阅读</a></h2>
+  <div class="post-content"></div>
+</div>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}Bmdb.min.css">
+<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
+<script type="text/javascript" src='{{ .Site.BaseURL }}Bmdb.min.js'></script>
+<script type="text/javascript">
+    new Bmdb({
+      type: 'books',
+      selector: '.post-content',
+      secret: '982454ebf4633211d3f8f7558c32792f609795c7100e1d3f1237a85b380d9819',
+      noMoreText: '没有更多数据了',
+      limit: 30
+    })
+</script>
+{{ end }}
