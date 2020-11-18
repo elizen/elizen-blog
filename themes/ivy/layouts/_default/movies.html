@@ -1,4 +1,6 @@
-{{ define "main" }}
+{{ partial "header.html" . }}
+
+{{ if .Params.show_toc }} {{ .TableOfContents }} {{ end }}
 <div class="post">
   <h2 class="post-title"><a href="/movies/">我的观影</a></h2>
   <div class="post-content"></div>
@@ -15,4 +17,5 @@
       limit: 30
     })
 </script>
-{{ end }}
+
+{{ partial "footer.html" . }}
