@@ -7,7 +7,7 @@ hasCJKLanguage = true
 enableEmoji = true
 
 [permalinks]
-  post: /post/:year/:month/:day/:slug/
+  posts = "/post/:year/:month/:day/:slug/"
 
 [Menus]
   main = [
