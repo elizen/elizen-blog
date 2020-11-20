@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     <!-- require MetingJS -->
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>  
+    <script async src="/js/load-typekit.js"></script>
 
     {{ with .Description }}
       {{ $.Scratch.Set "summary" (markdownify .) }}
