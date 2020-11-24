@@ -6,4 +6,4 @@ title: Home
 
 ——罗伯特·海因莱恩
 
-更多文章请访问 [POSTS](/post/)，或者 [NEWSLETTER](/newsletter/)。
+更多文章请访问 [POSTS](/posts/)，或者 [NEWSLETTER](/newsletter/)。
