@@ -10,8 +10,8 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-  posts = "/post/:year/:month/:day/:slug/"
-  newsletter = "/newsletter/:year/:month/:day/:slug/"
+  posts = "/post/:year/:month/:slug/"
+  newsletter = "/newsletter/:year/:month/:slug/"
 
 [Menus]
   main = [
