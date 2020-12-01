@@ -1,9 +1,6 @@
   <footer>
   {{ partial "foot_custom.html" . }}
   <hr>
-  {{ if .IsHome }}
-  {{ end }}
-  {{ else }}
   {{ partial "comments.html" . }}
   {{ partial "footer_highlightjs" . }}
   {{ with .Site.Params.footer }}
