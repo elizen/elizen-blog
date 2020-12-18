@@ -1,7 +1,7 @@
 ---
 title: 我的数字生活进阶-001
 date: 2020-03-31
-tags: tool
+tags: tools
 ---
 
 ### 01. 超强大的 Roam Research
