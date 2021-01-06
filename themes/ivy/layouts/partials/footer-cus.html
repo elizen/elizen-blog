@@ -1,9 +1,5 @@
   <footer>
-  {{ partial "foot_custom.html" . }}
-  <hr>
-  {{ partial "footer_highlightjs" . }}
-  {{ with .Site.Params.footer }}
-  <hr>
+  <hr />
   <div class="copyright">{{ . | markdownify }}</div>
   {{ end }}
   </footer>
