@@ -1,5 +1,5 @@
 --- 
-title: 像猫看齐
+title: 向猫看齐
 author: Elizen
 date: 2021-01-20
 tags: life
