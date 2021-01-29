@@ -29,18 +29,27 @@ slug: Growing-Up-Novel
 如今，让我去选最近五年里，我印象最深的一句歌词，依然还是 Greg Holden 的《Boys in the Street》里那一段：
 
 > My daddy's dying
+> 
 > But he's finally realized I'm not lying
+> 
 > We sit in silence but we're smiling
+> 
 > Because for once, we are not fighting
+> 
 > He'd say, "There was no way of knowing
+> 
 > 'Cause all I was taught
+> 
 > Is men only love women, but now I'm not sure
+> 
 > **My son, keep kissing boys in the street**
 
 而五年之后如果我再问自己同样的问题，极大可能会有海朋森[《春风》][10]中的一句：
 
 > 但愿有朝一日我能像春风一样，
+> 
 > 不带期许地吹拂着你，
+> 
 > 那时，你也不复爱我。
 
 其实，2020 年有两个乐队是新晋到我的名单中的，假假条和寸铁。假假条是在用自己的音乐砸烂自己这个时代的音乐，寸铁则是无畏旁人，只对自己那个未知的朋友说话。
