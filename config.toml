@@ -10,7 +10,7 @@ preserveTaxonomyNames = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
-  posts = "/post/:year/:month/:slug/"
+  posts = "/posts/:year/:month/:slug/"
   newsletter = "/newsletter/:year/:month/:slug/"
 
 [Menus]
@@ -26,7 +26,7 @@ footnotereturnlinkcontents = "↩"
 [params]
   # description abou this website
   description = "There is only one thing in the world worse than being talked about, and that is not being talked about."
-  footer = "&copy; [Elizen](https://elizen.me) | @2015 - 2020"
+  footer = "&copy; [Elizen](https://elizen.me) | @2015 - 2021"
   highlightjsCDN = "//cdn.bootcss.com"
   highlightjsLang = ["r", "yaml", "tex"]
   highlightjsTheme = "github"
