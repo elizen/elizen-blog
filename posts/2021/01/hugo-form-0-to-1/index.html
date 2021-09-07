@@ -131,7 +131,7 @@
 <h3 id="21-安装-git">2.1 安装 Git</h3>
 <p>去 Git [官网]下载，按照默认配置一直下一步，安装。</p>
 <p>安装完毕，打开桌面的快捷方式，我们需要现在本地创建一个 <code>ssh key</code>，这个目的就是在你的电脑上生成一个密钥，获取之后，在 Github 上输入，就把你的电脑和 Github 连接起来，以后我们就可以在快速、方便地保存自己的本地文件到 Github 上，并生成网站内容。</p>
-<pre><code>//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
+<pre tabindex="0"><code>//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
 $ ssh-keygen -t rsa -C &quot;email@xxx.com&quot;
 </code></pre><p><img src="https://static.elizen.me/img/2021-01-19-adfb2beb6460de88d0c00bf4efeb6825.png" alt=""></p>
 <p>在默认目录中找到 .ssh 中的 <code>id_rsa.pub</code> 文件，打开，复制。</p>
@@ -139,10 +139,10 @@ $ ssh-keygen -t rsa -C &quot;email@xxx.com&quot;
 <p>回到浏览器中，进入 Github [设置] 中的 <code>SSH and GPG keys</code>，新建一个 SSH keys，标题自己起，Key 的内容就输入刚才复制的文件中的值，然后添加。</p>
 <p><img src="https://cdn.sspai.com/2021/01/19/65a40ae3f1e02a1d937ca536b0639683.png?imageView2/2/w/1120/q/40/interlace/1/ignore-error/1" alt=""></p>
 <p>回到本地的 Git 窗口，输入如下代码，验证是否链接成功。</p>
-<pre><code>$ ssh -T git@github.com
+<pre tabindex="0"><code>$ ssh -T git@github.com
 </code></pre><p><img src="https://static.elizen.me/img/2021-01-19-ac71763f1851aed5961a68e561805837.png" alt=""></p>
 <p>成功之后，输入下面的代码，绑定自己的 Github 账号，到此，连接本地和 Github 的工作就完成了。</p>
-<pre><code>$ git config --global user.name &quot;XXXX&quot;
+<pre tabindex="0"><code>$ git config --global user.name &quot;XXXX&quot;
 $ git config --global user.email &quot;XXX@gmail.ocm&quot;
 </code></pre><h3 id="22-安装-vs-code">2.2 安装 VS Code</h3>
 <p>点击进入 VS Code [官网]，选择自己的版本下载，我这里是 Mac 版本。如果安装不熟悉，就一路默认配置。安装完成，打开 VS Code 软件。点击<code>Extensions</code>，安装所需插件。在这里也推荐几个必备和好用的插件。</p>
@@ -163,7 +163,7 @@ $ git config --global user.email &quot;XXX@gmail.ocm&quot;
 <p>点击[下载]（提取码: g5xe）我准备好的 <code>Blog</code> 网站文件。将下载好的文件解压后，Copy 到项目文件夹。找不到本地文件夹，可以在文件管理器中右键自己的博客项目，选择打开目录。</p>
 <p><img src="https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%884.34.14.jpg" alt=""></p>
 <p>解压后的文件内容目录如下：</p>
-<pre><code>├── archetypes
+<pre tabindex="0"><code>├── archetypes
 │   └── default.md
 ├── config.toml # Hugo 配置文件
 ├── content
@@ -217,7 +217,7 @@ $ git config --global user.email &quot;XXX@gmail.ocm&quot;
         └── theme.toml
 </code></pre><h3 id="24-配置博客">2.4 配置博客</h3>
 <p>回到 VS Code，打开项目管理，右键自己的项目，选择在当前窗口打开或者新窗口打开。接下来，就可以进行修改了。Hugo 的基本配置都在 <code>config.toml</code> 中，可以参考如下信息：</p>
-<pre><code>baseURL = &quot;&lt;https://ittenblunt.github.io/my-blog/&gt;&quot; # 修改为自己的博客地址
+<pre tabindex="0"><code>baseURL = &quot;&lt;https://ittenblunt.github.io/my-blog/&gt;&quot; # 修改为自己的博客地址
 languageCode = &quot;zh-CN&quot;
 title = &quot;Itten's Blog&quot; # 修改“”中的内容为自己的网站名字
 theme = &quot;hyde&quot; # 如果以后启用其它主题，在这里替换主题名字
@@ -264,7 +264,7 @@ enableEmoji = true
 <ul>
 <li>回到项目，点击 <code>Action - Set up a workflow yourself</code> 添加如下代码：</li>
 </ul>
-<pre><code>	name: Deploy Hugo # 任君喜欢
+<pre tabindex="0"><code>	name: Deploy Hugo # 任君喜欢
 	on:
 	  push:
 	branches:
@@ -294,7 +294,7 @@ enableEmoji = true
 <p>如果你没有改动 <code>config.toml</code> 文件的描述信息，打开它应该是下面这个样子：</p>
 <p><img src="https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-19%20%E4%B8%8A%E5%8D%8811.21.58.jpg" alt=""></p>
 <p>现在你就可以在本地的 <code>posts</code> 目录下开始写作了。新建一个 <code>.md</code> 格式的文件，填写下面的基本信息，开始博客之旅。</p>
-<pre><code>---
+<pre tabindex="0"><code>---
 title: 
 date: 
 tags: 
