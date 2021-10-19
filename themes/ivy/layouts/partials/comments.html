@@ -1,7 +1,19 @@
-  <!-- valine -->
+<!-- twikoo -->
+{{- if .Site.Params.twikoo.enable -}}
+<div class="pagination__title">
+  <span class="pagination__title-h">欢迎评论</span>
+  <hr />
+</div>
+  <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.5/dist/twikoo.all.min.js"></script>
+  <script>twikoo.init({ envId: 'elizenblog-3gm4ikl9ce152317', el: '#tcomment' })</script>
+{{- end }}
+
+<!-- valine -->
   {{- if .Site.Params.valine.enable -}}
   <div class="pagination__title">
        <span class="pagination__title-h"><span class="valine-comment-count" data-xid="{{ .RelPermalink }}"></span> 条评论</span>
+       <hr />
   </div>
   <div id="comments"></div>
   <script>
@@ -33,8 +45,8 @@
         appId: '{{ .Site.Params.valine.appId }}',
         appKey: '{{ .Site.Params.valine.appKey }}',
         placeholder: '{{ .Site.Params.valine.placeholder }}',
-        visitor: {{ .Site.Params.valine.visitor }},
-        serverURLs: {{ .Site.Params.valine.serverURLs }},
+        visitor: '{{ .Site.Params.valine.visitor }}',
+        serverURLs: '{{ .Site.Params.valine.serverURLs }}',
         requiredFields: ['mail'],
         emojiCDN: '//i0.hdslb.com/bfs/emote/',
         emojiMaps: {
@@ -100,17 +112,25 @@
     }
   </script>
   <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+  {{- end }}
+
   <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
   <script type="text/javascript">
     jQuery(document).ready(function($){
-        if(window.location.hash){
-        	var checkExist = setInterval(function() {
-        		if ($(window.location.hash).length) {
-                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-                            clearInterval(checkExist);
-                        }
-                }, 100);
+      var checkComments = setInterval(function() {
+        var counts = $('.tk-comments-title').find('span').first().text();
+        if (counts) {
+          $('#twikoo_count').text(counts)
+          clearInterval(checkComments);
         }
+      }, 1000);
+      if(window.location.hash){
+        var checkExist = setInterval(function() {
+          if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+          }
+        }, 100);
+      }
     });
   </script>
-  {{- end }}
