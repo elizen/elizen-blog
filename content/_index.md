@@ -8,3 +8,5 @@ title: Home
 > ——*罗伯特·海因莱恩*
 
 更多文章请访问 [POSTS](/posts/)、[CHAOS](/tags/chaos/)、[PHOTOS](/photos/)或者 [NEWSLETTER](/newsletter/)。
+
+{{  $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
