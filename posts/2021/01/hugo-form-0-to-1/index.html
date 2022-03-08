@@ -144,7 +144,7 @@
 <p>去 Git [官网]下载，按照默认配置一直下一步，安装。</p>
 <p>安装完毕，打开桌面的快捷方式，我们需要现在本地创建一个 <code>ssh key</code>，这个目的就是在你的电脑上生成一个密钥，获取之后，在 Github 上输入，就把你的电脑和 Github 连接起来，以后我们就可以在快速、方便地保存自己的本地文件到 Github 上，并生成网站内容。</p>
 <pre tabindex="0"><code>//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
-$ ssh-keygen -t rsa -C &quot;email@xxx.com&quot;
+$ ssh-keygen -t rsa -C &#34;email@xxx.com&#34;
 </code></pre><p><img src="https://static.elizen.me/img/2021-01-19-adfb2beb6460de88d0c00bf4efeb6825.png" alt=""></p>
 <p>在默认目录中找到 .ssh 中的 <code>id_rsa.pub</code> 文件，打开，复制。</p>
 <p><img src="https://static.elizen.me/img/2021-01-19-080547.jpg" alt=""></p>
@@ -154,8 +154,8 @@ $ ssh-keygen -t rsa -C &quot;email@xxx.com&quot;
 <pre tabindex="0"><code>$ ssh -T git@github.com
 </code></pre><p><img src="https://static.elizen.me/img/2021-01-19-ac71763f1851aed5961a68e561805837.png" alt=""></p>
 <p>成功之后，输入下面的代码，绑定自己的 Github 账号，到此，连接本地和 Github 的工作就完成了。</p>
-<pre tabindex="0"><code>$ git config --global user.name &quot;XXXX&quot;
-$ git config --global user.email &quot;XXX@gmail.ocm&quot;
+<pre tabindex="0"><code>$ git config --global user.name &#34;XXXX&#34;
+$ git config --global user.email &#34;XXX@gmail.ocm&#34;
 </code></pre><h3 id="22-安装-vs-code">2.2 安装 VS Code</h3>
 <p>点击进入 VS Code [官网]，选择自己的版本下载，我这里是 Mac 版本。如果安装不熟悉，就一路默认配置。安装完成，打开 VS Code 软件。点击<code>Extensions</code>，安装所需插件。在这里也推荐几个必备和好用的插件。</p>
 <ul>
@@ -229,35 +229,35 @@ $ git config --global user.email &quot;XXX@gmail.ocm&quot;
         └── theme.toml
 </code></pre><h3 id="24-配置博客">2.4 配置博客</h3>
 <p>回到 VS Code，打开项目管理，右键自己的项目，选择在当前窗口打开或者新窗口打开。接下来，就可以进行修改了。Hugo 的基本配置都在 <code>config.toml</code> 中，可以参考如下信息：</p>
-<pre tabindex="0"><code>baseURL = &quot;&lt;https://ittenblunt.github.io/my-blog/&gt;&quot; # 修改为自己的博客地址
-languageCode = &quot;zh-CN&quot;
-title = &quot;Itten's Blog&quot; # 修改“”中的内容为自己的网站名字
-theme = &quot;hyde&quot; # 如果以后启用其它主题，在这里替换主题名字
-disqusShortname = &quot;&quot; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
+<pre tabindex="0"><code>baseURL = &#34;&lt;https://ittenblunt.github.io/my-blog/&gt;&#34; # 修改为自己的博客地址
+languageCode = &#34;zh-CN&#34;
+title = &#34;Itten&#39;s Blog&#34; # 修改“”中的内容为自己的网站名字
+theme = &#34;hyde&#34; # 如果以后启用其它主题，在这里替换主题名字
+disqusShortname = &#34;&#34; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
 hasCJKLanguage = true
 enableEmoji = true
 
 [permalinks]
-  posts = &quot;/:filename/&quot;
+  posts = &#34;/:filename/&#34;
 
 [Menus] # 边栏目录
   main = [
-      {Name = &quot;Archives&quot;, URL = &quot;&lt;https://ittenblunt.github.io/my-blog/posts/&gt;&quot;},
-      {Name = &quot;Tags&quot;, URL = &quot;&lt;https://ittenblunt.github.io/my-blog/tags/&gt;&quot;},
-      {Name = &quot;Photos&quot;, URL = &quot;&lt;https://ittenblunt.github.io/my-blog/photos/&gt;&quot;}
+      {Name = &#34;Archives&#34;, URL = &#34;&lt;https://ittenblunt.github.io/my-blog/posts/&gt;&#34;},
+      {Name = &#34;Tags&#34;, URL = &#34;&lt;https://ittenblunt.github.io/my-blog/tags/&gt;&#34;},
+      {Name = &#34;Photos&#34;, URL = &#34;&lt;https://ittenblunt.github.io/my-blog/photos/&gt;&#34;}
   ]
 
 [params] # 指定发布的文件目录和博客描述
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = &quot;posts&quot;
+  contentTypeName = &#34;posts&#34;
   # description abou this website
-  description = &quot;There is only one thing in the world worse than being talked about, and that is not being talked about.&quot;
+  description = &#34;There is only one thing in the world worse than being talked about, and that is not being talked about.&#34;
 
 [params.valine] # 我把它默认甚至为关闭了，想打开可以修改 false 为 true，填写 valine 的 appId 和 appKey 即可开启 valine 的评论系统。（目前 valine 好评在下降，很多人更换了自己的评论系统，我还没有折腾，暂时不提供这部分教程了。想用的可以参考 &lt;https://valine.js.org/&gt; 操作手册）
   enable = false
-    appId = ''
-    appKey = ''
-    placeholder = '既然来了，那就留个痕迹吧~'
+    appId = &#39;&#39;
+    appKey = &#39;&#39;
+    placeholder = &#39;既然来了，那就留个痕迹吧~&#39;
     visitor = true
 </code></pre><p>修改之后，点击左侧边栏<code>源代码管理</code>，在<code>消息</code>框中随便输入，例如「updata my blog」，点击对勾。点击左下角master旁边的上传，之后可能会有弹窗，需要关联自己的 Github，在弹出的网页中同意关联即可。</p>
 <p><img src="https://static.elizen.me/img/2021-01-19-25104482c52d1285399248b0e2009173.png" alt=""></p>

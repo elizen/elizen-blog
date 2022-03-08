@@ -116,8 +116,8 @@
 
 
 <p>折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在<code>single.html</code>里加上引入 PATH 的代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">{{ .<span style="color:#a6e22e">Render</span> <span style="color:#e6db74">&#34;path&#34;</span>}}
-</code></pre></div><p>搞定之后爽歪歪。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ .<span style="color:#a6e22e">Render</span> <span style="color:#e6db74">&#34;path&#34;</span>}}
+</span></span></code></pre></div><p>搞定之后爽歪歪。</p>
 <p>接下来准备研究一下瀑布流和灯箱效果了。</p>
 
 

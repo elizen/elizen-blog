@@ -80,8 +80,8 @@
 &lt;/ul&gt;
 &lt;p&gt;我最喜欢的是第四条和第六条，上面截图中，郝云的新专辑《艳阳高照》就是 Unblock 的，无缝切换到了别的播放源。&lt;/p&gt;
 &lt;p&gt;还有其它一些特性，大家可以自行前往项目主页查看：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;https://github.com/qier222/YesPlayMusic
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;祝好。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://github.com/qier222/YesPlayMusic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;祝好。&lt;/p&gt;
 </description>
     </item>
     
@@ -119,7 +119,7 @@
 &lt;p&gt;去 Git [官网]下载，按照默认配置一直下一步，安装。&lt;/p&gt;
 &lt;p&gt;安装完毕，打开桌面的快捷方式，我们需要现在本地创建一个 &lt;code&gt;ssh key&lt;/code&gt;，这个目的就是在你的电脑上生成一个密钥，获取之后，在 Github 上输入，就把你的电脑和 Github 连接起来，以后我们就可以在快速、方便地保存自己的本地文件到 Github 上，并生成网站内容。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
-$ ssh-keygen -t rsa -C &amp;quot;email@xxx.com&amp;quot;
+$ ssh-keygen -t rsa -C &amp;#34;email@xxx.com&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-adfb2beb6460de88d0c00bf4efeb6825.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在默认目录中找到 .ssh 中的 &lt;code&gt;id_rsa.pub&lt;/code&gt; 文件，打开，复制。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-080547.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
@@ -129,8 +129,8 @@ $ ssh-keygen -t rsa -C &amp;quot;email@xxx.com&amp;quot;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ssh -T git@github.com
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-ac71763f1851aed5961a68e561805837.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;成功之后，输入下面的代码，绑定自己的 Github 账号，到此，连接本地和 Github 的工作就完成了。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git config --global user.name &amp;quot;XXXX&amp;quot;
-$ git config --global user.email &amp;quot;XXX@gmail.ocm&amp;quot;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git config --global user.name &amp;#34;XXXX&amp;#34;
+$ git config --global user.email &amp;#34;XXX@gmail.ocm&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;22-安装-vs-code&#34;&gt;2.2 安装 VS Code&lt;/h3&gt;
 &lt;p&gt;点击进入 VS Code [官网]，选择自己的版本下载，我这里是 Mac 版本。如果安装不熟悉，就一路默认配置。安装完成，打开 VS Code 软件。点击&lt;code&gt;Extensions&lt;/code&gt;，安装所需插件。在这里也推荐几个必备和好用的插件。&lt;/p&gt;
 &lt;ul&gt;
@@ -204,35 +204,35 @@ $ git config --global user.email &amp;quot;XXX@gmail.ocm&amp;quot;
         └── theme.toml
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;24-配置博客&#34;&gt;2.4 配置博客&lt;/h3&gt;
 &lt;p&gt;回到 VS Code，打开项目管理，右键自己的项目，选择在当前窗口打开或者新窗口打开。接下来，就可以进行修改了。Hugo 的基本配置都在 &lt;code&gt;config.toml&lt;/code&gt; 中，可以参考如下信息：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;baseURL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/&amp;gt;&amp;quot; # 修改为自己的博客地址
-languageCode = &amp;quot;zh-CN&amp;quot;
-title = &amp;quot;Itten&#39;s Blog&amp;quot; # 修改“”中的内容为自己的网站名字
-theme = &amp;quot;hyde&amp;quot; # 如果以后启用其它主题，在这里替换主题名字
-disqusShortname = &amp;quot;&amp;quot; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;baseURL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/&amp;gt;&amp;#34; # 修改为自己的博客地址
+languageCode = &amp;#34;zh-CN&amp;#34;
+title = &amp;#34;Itten&amp;#39;s Blog&amp;#34; # 修改“”中的内容为自己的网站名字
+theme = &amp;#34;hyde&amp;#34; # 如果以后启用其它主题，在这里替换主题名字
+disqusShortname = &amp;#34;&amp;#34; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
 hasCJKLanguage = true
 enableEmoji = true
 
 [permalinks]
-  posts = &amp;quot;/:filename/&amp;quot;
+  posts = &amp;#34;/:filename/&amp;#34;
 
 [Menus] # 边栏目录
   main = [
-      {Name = &amp;quot;Archives&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/posts/&amp;gt;&amp;quot;},
-      {Name = &amp;quot;Tags&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/tags/&amp;gt;&amp;quot;},
-      {Name = &amp;quot;Photos&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/photos/&amp;gt;&amp;quot;}
+      {Name = &amp;#34;Archives&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/posts/&amp;gt;&amp;#34;},
+      {Name = &amp;#34;Tags&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/tags/&amp;gt;&amp;#34;},
+      {Name = &amp;#34;Photos&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/photos/&amp;gt;&amp;#34;}
   ]
 
 [params] # 指定发布的文件目录和博客描述
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = &amp;quot;posts&amp;quot;
+  contentTypeName = &amp;#34;posts&amp;#34;
   # description abou this website
-  description = &amp;quot;There is only one thing in the world worse than being talked about, and that is not being talked about.&amp;quot;
+  description = &amp;#34;There is only one thing in the world worse than being talked about, and that is not being talked about.&amp;#34;
 
 [params.valine] # 我把它默认甚至为关闭了，想打开可以修改 false 为 true，填写 valine 的 appId 和 appKey 即可开启 valine 的评论系统。（目前 valine 好评在下降，很多人更换了自己的评论系统，我还没有折腾，暂时不提供这部分教程了。想用的可以参考 &amp;lt;https://valine.js.org/&amp;gt; 操作手册）
   enable = false
-    appId = &#39;&#39;
-    appKey = &#39;&#39;
-    placeholder = &#39;既然来了，那就留个痕迹吧~&#39;
+    appId = &amp;#39;&amp;#39;
+    appKey = &amp;#39;&amp;#39;
+    placeholder = &amp;#39;既然来了，那就留个痕迹吧~&amp;#39;
     visitor = true
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改之后，点击左侧边栏&lt;code&gt;源代码管理&lt;/code&gt;，在&lt;code&gt;消息&lt;/code&gt;框中随便输入，例如「updata my blog」，点击对勾。点击左下角master旁边的上传，之后可能会有弹窗，需要关联自己的 Github，在弹出的网页中同意关联即可。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-25104482c52d1285399248b0e2009173.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
