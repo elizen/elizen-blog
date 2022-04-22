@@ -11,7 +11,7 @@ slug: blog-comment-update
 
 上一次博客更新还是 2021 年 10 月，更换了一下评论系统。
 
-这次主要是修复了[读书](https://elizen.me/books/)和[电影](https://elizen.me/movies/)两个页面，之前一直用牧风大师的豆瓣 API，这次直接换了 Github Action 的轮子，功能丰富了不少，而且还自动拉出一个 CSV，也算是给豆瓣做了一个回复。
+这次主要是修复了[读书](https://elizen.me/books/)和[电影](https://elizen.me/movies/)两个页面，之前一直用牧风大师的豆瓣 API，这次直接换了 Github Action 的轮子，功能丰富了不少，而且还自动拉出一个 CSV，也算是给豆瓣做了一个备份。
 
 另外，评论一直没有邮件回复通知，搞了好久，原来是和域名邮箱有关，好在瞎鼓捣一通之后，算是修复了。
 
