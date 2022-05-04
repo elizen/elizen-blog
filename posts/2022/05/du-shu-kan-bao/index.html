@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Movies - Elizen</title>
-    <meta property="og:title" content="Movies - Elizen">
+    <title>读书看报 - Elizen</title>
+    <meta property="og:title" content="读书看报 - Elizen">
     
     <meta name="twitter:card" content="summary">
     <meta name="referrer" content="never" />
@@ -37,6 +37,11 @@
 
     
       
+      <meta property="description" content="测试一下表格。
+">
+      <meta property="og:description" content="测试一下表格。
+">
+      
     
 
     
@@ -44,8 +49,6 @@
 
     
 
-    
-    <link href="/tags/movies/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
     
     
 
@@ -55,7 +58,7 @@
   </head>
 
   
-  <body class="tags">
+  <body class="posts">
     <header class="masthead">
       <h1><a href="/">Elizen</a></h1>
 
@@ -92,10 +95,10 @@
     <article class="main">
       <header class="title">
       
-<h1>Movies</h1>
+<h1>读书看报</h1>
 
-<h3>
-</h3>
+<h3>Elizen
+  /  2022-05-04</h3>
 <hr>
 
 
@@ -103,35 +106,68 @@
 
 
 
+<p>测试一下表格。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">电影</th>
+<th style="text-align:left">时间</th>
+<th style="text-align:left">评分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">四海</td>
+<td style="text-align:left">2022-05-04</td>
+<td style="text-align:left">★★★</td>
+</tr>
+</tbody>
+</table>
 
 
-
-
-<ul>
-  
-  <li>
-    <span class="date">2022/05/04</span>
-    <a href="/posts/2022/05/du-shu-kan-bao/">读书看报</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/04/20</span>
-    <a href="/posts/2022/04/severance-after/">《人生切割术》观后</a>
-  </li>
-  
-</ul>
 
   <footer>
   
 <nav class="post-nav">
-  <span class="nav-prev"></span>
+  <span class="nav-prev">&larr; <a href="/posts/2022/04/du-du/">嘟嘟小记</a></span>
   <span class="nav-next"></span>
 </nav>
 
   <hr>
+  <div class="pagination__title">
+  <span class="pagination__title-h">欢迎评论</span>
+  <hr />
+</div>
+  <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.5/dist/twikoo.all.min.js"></script>
+  <script>twikoo.init({ envId: 'elizenblog-3gm4ikl9ce152317', el: '#tcomment' })</script>
+
+
+
+  <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      var checkComments = setInterval(function() {
+        var counts = $('.tk-comments-title').find('span').first().text();
+        if (counts) {
+          $('#twikoo_count').text(counts)
+          clearInterval(checkComments);
+        }
+      }, 1000);
+      if(window.location.hash){
+        var checkExist = setInterval(function() {
+          if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+          }
+        }, 100);
+      }
+    });
+  </script>
   
 
   
+  <hr>
   <div class="copyright">© <a href="https://elizen.me">Elizen</a> | @2015 - 2022</div>
   
   </footer>
