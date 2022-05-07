@@ -1,7 +1,6 @@
 ---
 title: Kids
 date: '2022-05-07'
-show_toc: true
 slug: kids
 customCSS: ["circled-numbers.min.css"]
 ---
