@@ -1,4 +1,6 @@
-{{ define "main" }}
+{{ partial "header.html" . }}
+
+{{ if .Params.show_toc }} {{ .TableOfContents }} {{ end }}
 
 <style type="text/css">
   #TableOfContents {background-color: #252627;padding: .5em}
@@ -12,7 +14,6 @@
 <div class="post">
   <h2 class="post-title">{{.Title}}</h2>
   <div class="post-content">
-    {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
     {{ .Content }}
     {{ .Render "path"}}
   </div>
@@ -21,5 +22,4 @@
 <script>
   !function(){const e=document.getElementById("TableOfContents");if(!e)return;e.querySelectorAll('a[href^="#"]').forEach((e=>{let t=e.getAttribute("href").replace(/^#/,"");const n=document.getElementById(t);if(t=t.replace(/https?.*$/,""),n&&(n.id=t),e.href="#"+t,""!==e.innerHTML)return;const r=e.nextElementSibling;r&&"A"===r.tagName&&(e.innerHTML=r.innerHTML,r.remove())}));let t,n=e.querySelector("ul");1===n.childElementCount&&(t=n.firstElementChild,"LI"===t.tagName&&(n.outerHTML=t.innerHTML))}();
   </script>
-{{ end }}
 
