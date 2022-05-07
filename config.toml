@@ -35,3 +35,14 @@ footnotereturnlinkcontents = "↩"
 
 [params.twikoo]
 	enable = true
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      autoHeadingIDType: blackfriday
+  tableOfContents:
+    startLevel: 1
