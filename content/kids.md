@@ -1,8 +1,9 @@
 ---
 title: Kids
 date: '2022-05-07'
-slug: kids
-customCSS: ["circled-numbers.min.css"]
+show_toc: true
+slug: cn/recipe
+customCSS: ["utils/circled-numbers.css"]
 ---
 
 <style type="text/css">
