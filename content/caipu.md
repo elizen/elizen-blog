@@ -2,7 +2,6 @@
 title: 菜谱
 date: '2022-05-07'
 show_toc: true
-slug: caipu
 layout: 'caipu'
 ---
 
