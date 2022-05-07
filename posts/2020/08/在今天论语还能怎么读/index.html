@@ -11,8 +11,6 @@
     <meta name="referrer" content="never" />
 
     <script async src="/js/load-typekit.js"></script>
-    <script async src="/js/fix-toc.min.js"></script>
-    <script async src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/fix-toc.min.js"></script>
     <script src="https://use.typekit.net/kwz5xar.js" async=""></script>
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="/css/circled-numbers.min.css">
@@ -124,6 +122,7 @@
 
 
 
+  <script async src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/fix-toc.min.js"></script>
   <footer>
   
 <nav class="post-nav">
@@ -140,27 +139,6 @@
   <script>twikoo.init({ envId: 'elizenblog-3gm4ikl9ce152317', el: '#tcomment' })</script>
 
 
-
-  <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js'></script>
-  <script type="text/javascript">
-    jQuery(document).ready(function($){
-      var checkComments = setInterval(function() {
-        var counts = $('.tk-comments-title').find('span').first().text();
-        if (counts) {
-          $('#twikoo_count').text(counts)
-          clearInterval(checkComments);
-        }
-      }, 1000);
-      if(window.location.hash){
-        var checkExist = setInterval(function() {
-          if ($(window.location.hash).length) {
-            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-            clearInterval(checkExist);
-          }
-        }, 100);
-      }
-    });
-  </script>
   
 
   
