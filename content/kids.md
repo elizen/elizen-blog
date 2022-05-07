@@ -3,7 +3,7 @@ title: Kids
 date: '2022-05-07'
 show_toc: true
 slug: kids
-customCSS: ["css/circled-numbers.css"]
+customCSS: ["css/circled-numbers.min.css"]
 ---
 
 <style type="text/css">
