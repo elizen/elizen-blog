@@ -15,7 +15,19 @@
 {{ .Render "path"}}
 
 <script>
-  !function(){const e=document.getElementById("TableOfContents");if(!e)return;e.querySelectorAll('a[href^="#"]').forEach((e=>{let t=e.getAttribute("href").replace(/^#/,"");const n=document.getElementById(t);if(t=t.replace(/https?.*$/,""),n&&(n.id=t),e.href="#"+t,""!==e.innerHTML)return;const r=e.nextElementSibling;r&&"A"===r.tagName&&(e.innerHTML=r.innerHTML,r.remove())}));let t,n=e.querySelector("ul");1===n.childElementCount&&(t=n.firstElementChild,"LI"===t.tagName&&(n.outerHTML=t.innerHTML))}();
+  !function(){const e=document.getElementById("TableOfContents");if(!e)return;e.querySelectorAll('a[href^="#"]').forEach((e=>{let t=e.getAttribute("href").replace(/^#/,"");const n=document.getElementById(t);if(t=t.replace(/-https?-.+$/,""),n&&(n.id=t),e.href="#"+t,""!==e.innerHTML)return;const r=e.nextElementSibling;r&&"A"===r.tagName&&(e.innerHTML=r.innerHTML,r.remove())}));let t,n=e.querySelector("ul");1===n.childElementCount&&(t=n.firstElementChild,"LI"===t.tagName&&(n.outerHTML=t.innerHTML))}();
+  </script>
+
+<script>
+  !function(){for(var t=document.getElementsByTagName("a"),e=0;e<t.length;e++)/^(https?:)?\/\//.test(t[e].getAttribute("href"))&&(t[e].target="_blank")}();
+  </script>
+
+<script>
+  !function(){for(var t,e=document.getElementsByTagName("img"),l=0;l<e.length;l++)(t=e[l]).title||(t.title=t.alt)}();
+  </script>
+
+  <script>
+    !function(){for(var a,e=document.querySelectorAll("article h1, article h2, article h3"),r=0;r<e.length;r++)""!==(a=e[r]).id&&(a.innerHTML+=' <span class="anchor"><a href="#'+a.id+'">#</a></span>')}();
   </script>
 
 {{ partial "footer.html" . }}
