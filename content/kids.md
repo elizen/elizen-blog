@@ -1,6 +1,5 @@
 ---
 title: 嘟嘟小记
-author: Elizen
 toc: true
 layout: 'caipu'
 ---
