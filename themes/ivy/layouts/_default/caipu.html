@@ -9,7 +9,7 @@
     .post-content h2::before{vertical-align:bottom;color:#fff;border:none;background:#999}
   </style>
 
-{{ if .Params.show_toc }}{{ .TableOfContents }}{{ end }}
+{{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
 
 {{ .Content }}
 {{ .Render "path"}}

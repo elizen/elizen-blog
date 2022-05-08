@@ -1,6 +1,6 @@
 ---
 title: "菜谱"
-show_toc: true
+toc: true
 layout: 'caipu'
 ---
 
