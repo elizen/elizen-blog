@@ -33,11 +33,18 @@ footnotereturnlinkcontents = "↩"
 [params.twikoo]
 	enable = true
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 1
+[blackfriday]
+extensionsmask = [ "noIntraEmphasis" ]
+fractions = false
+
+[markup.highlight]
+codeFences = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.goldmark.parser]
+autoHeadingIDType = "blackfriday"
+
+[markup.tableOfContents]
+startLevel = 1
