@@ -80,8 +80,9 @@
 &lt;/ul&gt;
 &lt;p&gt;我最喜欢的是第四条和第六条，上面截图中，郝云的新专辑《艳阳高照》就是 Unblock 的，无缝切换到了别的播放源。&lt;/p&gt;
 &lt;p&gt;还有其它一些特性，大家可以自行前往项目主页查看：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://github.com/qier222/YesPlayMusic
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;祝好。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;https://github.com/qier222/YesPlayMusic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;祝好。&lt;/p&gt;
 </description>
     </item>
     
@@ -102,7 +103,7 @@
 &lt;/ul&gt;
 &lt;p&gt;本文也因此分为上、下两个章节，基础篇和进阶篇。今天先讲基础篇，使用 Github 搭建免费的 Hugo 个人网站。&lt;/p&gt;
 &lt;p&gt;第一部分，基础版：使用 Github 搭建 Hugo 网站。&lt;/p&gt;
-&lt;h2 id=&#34;1-注册-github创建-repo-仓库&#34;&gt;1. 注册 Github，创建 repo 仓库&lt;/h2&gt;
+&lt;h2 id=&#34;1-注册-github-创建-repo-仓库&#34;&gt;1. 注册 Github，创建 repo 仓库&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;Github 是全世界程序员的福音书，一个技术人不可能不知道的开源技术社区。我们就从这里开始，让它成为我们自己网站的第一个落脚点。&lt;/p&gt;
 &lt;p&gt;注册 &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;，就像注册任何网站一样。进入 Github 网站，点击&lt;code&gt;Sing Up&lt;/code&gt;，输入自己的用户名、邮箱和密码，完成账户验证，点击&lt;code&gt;Create account&lt;/code&gt;，之后可以选择你的职业，你想用 Github 做什么，或者干脆跳过，直接下一步。&lt;/p&gt;
@@ -112,26 +113,29 @@
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%883.32.46.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;到此，Github 上的工作就已经完成了。你会得到如下图一些完全看不懂的东西。没关系，我们输入一个 &lt;code&gt;Repository name&lt;/code&gt; ，点击 &lt;code&gt;Create repository&lt;/code&gt; ，开始下一步。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%883.34.45.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;2-安装-vs-code-和-git开启折腾之旅&#34;&gt;2. 安装 VS Code 和 Git，开启折腾之旅&lt;/h2&gt;
+&lt;h2 id=&#34;2-安装-vs-code-和-git-开启折腾之旅&#34;&gt;2. 安装 VS Code 和 Git，开启折腾之旅&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;我们在本地的电脑上，还需要安装两个软件，一个是 Git，一个是 VS Code，Git 是一个版本控制系统，是我们连接 Github 的钥匙，而 VS Code 本身是微软出品的一款程序员使用的开发集成工具。我们不需要懂得这么多，只把它看成是我们的博客管理平台就可以了。&lt;/p&gt;
-&lt;h3 id=&#34;21-安装-git&#34;&gt;2.1 安装 Git&lt;/h3&gt;
+&lt;h3 id=&#34;2-1-安装-git&#34;&gt;2.1 安装 Git&lt;/h3&gt;
 &lt;p&gt;去 Git [官网]下载，按照默认配置一直下一步，安装。&lt;/p&gt;
 &lt;p&gt;安装完毕，打开桌面的快捷方式，我们需要现在本地创建一个 &lt;code&gt;ssh key&lt;/code&gt;，这个目的就是在你的电脑上生成一个密钥，获取之后，在 Github 上输入，就把你的电脑和 Github 连接起来，以后我们就可以在快速、方便地保存自己的本地文件到 Github 上，并生成网站内容。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
-$ ssh-keygen -t rsa -C &amp;#34;email@xxx.com&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-adfb2beb6460de88d0c00bf4efeb6825.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//输入下面的代码，获取密钥（双引号内容为你自己注册账号时的邮箱）：
+$ ssh-keygen -t rsa -C &amp;quot;email@xxx.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-adfb2beb6460de88d0c00bf4efeb6825.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在默认目录中找到 .ssh 中的 &lt;code&gt;id_rsa.pub&lt;/code&gt; 文件，打开，复制。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-080547.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;回到浏览器中，进入 Github [设置] 中的 &lt;code&gt;SSH and GPG keys&lt;/code&gt;，新建一个 SSH keys，标题自己起，Key 的内容就输入刚才复制的文件中的值，然后添加。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.sspai.com/2021/01/19/65a40ae3f1e02a1d937ca536b0639683.png?imageView2/2/w/1120/q/40/interlace/1/ignore-error/1&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;回到本地的 Git 窗口，输入如下代码，验证是否链接成功。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ssh -T git@github.com
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-ac71763f1851aed5961a68e561805837.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-ac71763f1851aed5961a68e561805837.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;成功之后，输入下面的代码，绑定自己的 Github 账号，到此，连接本地和 Github 的工作就完成了。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ git config --global user.name &amp;#34;XXXX&amp;#34;
-$ git config --global user.email &amp;#34;XXX@gmail.ocm&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;22-安装-vs-code&#34;&gt;2.2 安装 VS Code&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;XXXX&amp;quot;
+$ git config --global user.email &amp;quot;XXX@gmail.ocm&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-2-安装-vs-code&#34;&gt;2.2 安装 VS Code&lt;/h3&gt;
 &lt;p&gt;点击进入 VS Code [官网]，选择自己的版本下载，我这里是 Mac 版本。如果安装不熟悉，就一路默认配置。安装完成，打开 VS Code 软件。点击&lt;code&gt;Extensions&lt;/code&gt;，安装所需插件。在这里也推荐几个必备和好用的插件。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gpm&lt;/code&gt; 用来管理 Github 上的文件。 &lt;strong&gt;必备&lt;/strong&gt;&lt;/li&gt;
@@ -146,11 +150,11 @@ $ git config --global user.email &amp;#34;XXX@gmail.ocm&amp;#34;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%883.42.27.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;之后就可以在 gpm 中找到相应的 Github 项目。&lt;code&gt;右键&lt;/code&gt;点击你的项目名，选择在文件管理器中打开。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%884.16.18.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;23-安装博客&#34;&gt;2.3 安装博客&lt;/h3&gt;
+&lt;h3 id=&#34;2-3-安装博客&#34;&gt;2.3 安装博客&lt;/h3&gt;
 &lt;p&gt;点击[下载]（提取码: g5xe）我准备好的 &lt;code&gt;Blog&lt;/code&gt; 网站文件。将下载好的文件解压后，Copy 到项目文件夹。找不到本地文件夹，可以在文件管理器中右键自己的博客项目，选择打开目录。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-11%20%E4%B8%8B%E5%8D%884.34.14.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;解压后的文件内容目录如下：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;├── archetypes
+&lt;pre&gt;&lt;code&gt;├── archetypes
 │   └── default.md
 ├── config.toml # Hugo 配置文件
 ├── content
@@ -202,39 +206,41 @@ $ git config --global user.email &amp;#34;XXX@gmail.ocm&amp;#34;
         │   │   └── syntax.css
         │   └── favicon.png
         └── theme.toml
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;24-配置博客&#34;&gt;2.4 配置博客&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-4-配置博客&#34;&gt;2.4 配置博客&lt;/h3&gt;
 &lt;p&gt;回到 VS Code，打开项目管理，右键自己的项目，选择在当前窗口打开或者新窗口打开。接下来，就可以进行修改了。Hugo 的基本配置都在 &lt;code&gt;config.toml&lt;/code&gt; 中，可以参考如下信息：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;baseURL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/&amp;gt;&amp;#34; # 修改为自己的博客地址
-languageCode = &amp;#34;zh-CN&amp;#34;
-title = &amp;#34;Itten&amp;#39;s Blog&amp;#34; # 修改“”中的内容为自己的网站名字
-theme = &amp;#34;hyde&amp;#34; # 如果以后启用其它主题，在这里替换主题名字
-disqusShortname = &amp;#34;&amp;#34; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
+&lt;pre&gt;&lt;code&gt;baseURL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/&amp;gt;&amp;quot; # 修改为自己的博客地址
+languageCode = &amp;quot;zh-CN&amp;quot;
+title = &amp;quot;Itten&#39;s Blog&amp;quot; # 修改“”中的内容为自己的网站名字
+theme = &amp;quot;hyde&amp;quot; # 如果以后启用其它主题，在这里替换主题名字
+disqusShortname = &amp;quot;&amp;quot; # 如果使用 disqus 评论系统，在这里填写自己的 disqus 用户名 
 hasCJKLanguage = true
 enableEmoji = true
 
 [permalinks]
-  posts = &amp;#34;/:filename/&amp;#34;
+  posts = &amp;quot;/:filename/&amp;quot;
 
 [Menus] # 边栏目录
   main = [
-      {Name = &amp;#34;Archives&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/posts/&amp;gt;&amp;#34;},
-      {Name = &amp;#34;Tags&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/tags/&amp;gt;&amp;#34;},
-      {Name = &amp;#34;Photos&amp;#34;, URL = &amp;#34;&amp;lt;https://ittenblunt.github.io/my-blog/photos/&amp;gt;&amp;#34;}
+      {Name = &amp;quot;Archives&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/posts/&amp;gt;&amp;quot;},
+      {Name = &amp;quot;Tags&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/tags/&amp;gt;&amp;quot;},
+      {Name = &amp;quot;Photos&amp;quot;, URL = &amp;quot;&amp;lt;https://ittenblunt.github.io/my-blog/photos/&amp;gt;&amp;quot;}
   ]
 
 [params] # 指定发布的文件目录和博客描述
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = &amp;#34;posts&amp;#34;
+  contentTypeName = &amp;quot;posts&amp;quot;
   # description abou this website
-  description = &amp;#34;There is only one thing in the world worse than being talked about, and that is not being talked about.&amp;#34;
+  description = &amp;quot;There is only one thing in the world worse than being talked about, and that is not being talked about.&amp;quot;
 
 [params.valine] # 我把它默认甚至为关闭了，想打开可以修改 false 为 true，填写 valine 的 appId 和 appKey 即可开启 valine 的评论系统。（目前 valine 好评在下降，很多人更换了自己的评论系统，我还没有折腾，暂时不提供这部分教程了。想用的可以参考 &amp;lt;https://valine.js.org/&amp;gt; 操作手册）
   enable = false
-    appId = &amp;#39;&amp;#39;
-    appKey = &amp;#39;&amp;#39;
-    placeholder = &amp;#39;既然来了，那就留个痕迹吧~&amp;#39;
+    appId = &#39;&#39;
+    appKey = &#39;&#39;
+    placeholder = &#39;既然来了，那就留个痕迹吧~&#39;
     visitor = true
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改之后，点击左侧边栏&lt;code&gt;源代码管理&lt;/code&gt;，在&lt;code&gt;消息&lt;/code&gt;框中随便输入，例如「updata my blog」，点击对勾。点击左下角master旁边的上传，之后可能会有弹窗，需要关联自己的 Github，在弹出的网页中同意关联即可。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改之后，点击左侧边栏&lt;code&gt;源代码管理&lt;/code&gt;，在&lt;code&gt;消息&lt;/code&gt;框中随便输入，例如「updata my blog」，点击对勾。点击左下角master旁边的上传，之后可能会有弹窗，需要关联自己的 Github，在弹出的网页中同意关联即可。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-25104482c52d1285399248b0e2009173.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;现在，网页进入自己的 Github 项目，就会发现，我们本地文件已经全部上传好了，但它还不是最终的博客形态，Hugo 是需要进行编译才能产生静态网站页面的工具，这部分工作，在下一小节我们交给 Github 自动完成。&lt;/p&gt;
 &lt;h2 id=&#34;3-配置-github-action-实现自动化部署&#34;&gt;3 配置 Github Action 实现自动化部署&lt;/h2&gt;
@@ -251,7 +257,7 @@ enableEmoji = true
 &lt;ul&gt;
 &lt;li&gt;回到项目，点击 &lt;code&gt;Action - Set up a workflow yourself&lt;/code&gt; 添加如下代码：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;	name: Deploy Hugo # 任君喜欢
+&lt;pre&gt;&lt;code&gt;	name: Deploy Hugo # 任君喜欢
 	on:
 	  push:
 	branches:
@@ -277,17 +283,19 @@ enableEmoji = true
 	      PUBLISH_BRANCH: gh-pages  # 推送到当前 gh-pages 分支
 	      PUBLISH_DIR: ./public  # hugo 生成到 public 作为跟目录
 	      commit_message: ${{ github.event.head_commit.message }}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Commit 提交，看看 Action 是不是成功了，再看看 gh-pages 静态文件是否更新，到此，你的独立博客就算搭建成功了，为了方便，可以重新在 VS Code 中下载一遍自己的项目，保证它们的同步。现在可以访问你的博客地址，欣赏一下自己的成果了。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Commit 提交，看看 Action 是不是成功了，再看看 gh-pages 静态文件是否更新，到此，你的独立博客就算搭建成功了，为了方便，可以重新在 VS Code 中下载一遍自己的项目，保证它们的同步。现在可以访问你的博客地址，欣赏一下自己的成果了。&lt;/p&gt;
 &lt;p&gt;如果你没有改动 &lt;code&gt;config.toml&lt;/code&gt; 文件的描述信息，打开它应该是下面这个样子：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://static.elizen.me/img/2021-01-19-%E6%88%AA%E5%B1%8F2021-01-19%20%E4%B8%8A%E5%8D%8811.21.58.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;现在你就可以在本地的 &lt;code&gt;posts&lt;/code&gt; 目录下开始写作了。新建一个 &lt;code&gt;.md&lt;/code&gt; 格式的文件，填写下面的基本信息，开始博客之旅。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+&lt;pre&gt;&lt;code&gt;---
 title: 
 date: 
 tags: 
 ---
 balabalabala...
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;到此，大功告成。可以欢呼了。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;到此，大功告成。可以欢呼了。&lt;/p&gt;
 &lt;h2 id=&#34;后话&#34;&gt;后话&lt;/h2&gt;
 &lt;p&gt;基础篇到这里就结束了。后面会更新进阶篇，包括域名注册、DNS 解析、VPS 的购买和配置、通过 webhook 将 Github 内容自动拉取到自己的服务器等。&lt;/p&gt;
 &lt;p&gt;俗话说，工欲善其事，必先利其器，搭建好了的小伙伴，就应该写起来了。&lt;/p&gt;
