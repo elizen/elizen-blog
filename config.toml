@@ -37,6 +37,8 @@ footnotereturnlinkcontents = "↩"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingIDType: blackfriday
   [markup.tableOfContents]
     endLevel = 3
     ordered = false
