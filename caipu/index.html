@@ -886,8 +886,33 @@ Cheese）一小盒（250
 
 
 <script>
-  !function(){const e=document.getElementById("TableOfContents");if(!e)return;e.querySelectorAll('a[href^="#"]').forEach((e=>{let t=e.getAttribute("href").replace(/^#/,"");const n=document.getElementById(t);if(t=t.replace(/https?.*$/,""),n&&(n.id=t),e.href="#"+t,""!==e.innerHTML)return;const r=e.nextElementSibling;r&&"A"===r.tagName&&(e.innerHTML=r.innerHTML,r.remove())}));let t,n=e.querySelector("ul");1===n.childElementCount&&(t=n.firstElementChild,"LI"===t.tagName&&(n.outerHTML=t.innerHTML))}();
-  </script>
+(function() {
+  const toc = document.getElementById('TableOfContents');
+  if (!toc) return;
+  
+  toc.querySelectorAll('a[href^="#"]').forEach((a) => {
+    let id = a.getAttribute('href').replace(/^#/, '');
+    const h = document.getElementById(id);
+    
+    id = id.replace(/-https?-.+$/, '');
+    if (h) h.id = id; a.href = '#' + id;
+    
+    if (a.innerHTML !== '') return;
+    const a2 = a.nextElementSibling;
+    if (!a2 || a2.tagName !== 'A') return;
+    a.innerHTML = a2.innerHTML;
+    a2.remove();
+  });
+  
+  
+  let li, ul = toc.querySelector('ul');
+  if (ul.childElementCount !== 1) return;
+  li = ul.firstElementChild;
+  if (li.tagName !== 'LI') return;
+  
+  ul.outerHTML = li.innerHTML;
+})();
+</script>
 
 <script>
   !function(){for(var t,e=document.getElementsByTagName("img"),l=0;l<e.length;l++)(t=e[l]).title||(t.title=t.alt)}();
