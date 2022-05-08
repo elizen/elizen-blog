@@ -4,7 +4,6 @@ title = "Elizen"
 theme = "ivy"
 disqusShortname = "elizen"
 hasCJKLanguage = true
-toc = true
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 preserveTaxonomyNames = true
@@ -37,6 +36,9 @@ footnotereturnlinkcontents = "↩"
 	enable = true
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.tableOfContents]
     endLevel = 3
     ordered = false
