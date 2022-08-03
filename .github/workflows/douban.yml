@@ -12,14 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: movie
-      uses: lizheming/doumark-action@master
-      with:
-        id: elizen
-        type: movie
-        format: csv
-        dir: ./data/douban
-
     - name: book
       uses: lizheming/doumark-action@master
       with:
