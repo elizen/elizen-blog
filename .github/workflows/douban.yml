@@ -2,9 +2,7 @@
 name: douban
 on: 
   schedule:
-  - cron: "0 0,0,12,23 * * *"
-  watch:
-    types: [started]
+  - cron: "30 * * * *"
 
 jobs:
   douban:
