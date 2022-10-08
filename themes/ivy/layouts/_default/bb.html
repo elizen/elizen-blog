@@ -1,105 +1,87 @@
 {{ partial "header.html" . }}
 
-{{ if .Params.show_toc }} {{ .TableOfContents }} {{ end }}
-<div class="post">
-  <h2 class="post-title">{{.Title}}</h2>
-  <div class="post-content" id="app">
-    <p v-show="count == 0">别急，加载呢……</p>
-    <div v-show="count">
-    <p >总共 b 了 {{htmlUnescape "{{count}}" }} 条</p>
-    <section class="timeline">
-      <ul>
-        <li class="item" v-for="item in contents" v-cloak>
-          <div>
-            <p v-html='item.attributes.content'></p>
-            <time v-bind:datetime="item.attributes.time"><small>{{htmlUnescape "{{item.attributes.time}}"}}</small></time>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <div class="load-ctn">
-      <button class="load-btn" v-on:click="loadMore" v-if="contents" v-cloak>再翻翻</button>
-      <p class="tip" v-else>别急，加载呢</p>
-    </div>
-  </div>
-  </div>
-</div>
-<style>
-  .timeline ul {margin:0;padding-bottom:2rem;}
-  .timeline ul li {background:#eaeaea;list-style-type:none;position:relative;width:2px;margin-left:20px;padding:10px 0 50px;}
-  .timeline ul li::after {content:'';position:absolute;left:50%;top:25px;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:inherit;}
-  .timeline ul li div {background:#eaeaea;border-radius:5px;position:relative;top:0;left:40px;width:670px;padding:8px 16px;}
-  .timeline ul li div p{margin:0;}
-  .timeline ul li div::before{content:'';position:absolute;top:10px;width:0;height:0;border-style:solid;left:-15px;border-width:8px 16px 8px 0;border-color:transparent #eaeaea transparent transparent;}
-  .dark-theme .timeline ul li,.dark-theme .timeline ul li div{background:#3b3d42;}
-  .dark-theme .timeline ul li div::before{border-color:transparent #3b3d42 transparent transparent;}
-  @media (max-width:860px) {
-    .timeline ul li{margin-left:0;}
-    .timeline ul li div{width:calc(100vw - 75px);left:30px;}
-
-  }
-</style>
-<link type="text/css" rel="stylesheet" href="https://at.alicdn.com/t/font_1755564_z4mhxbw13mq.css"></link>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
+<div id="bber"></div>
 <script type="text/javascript">
-    var {
-        Query
-    } = AV;
-    AV.init({
-        appId:"kKneKqFppxPaLCfHbglIw7nv-gzGzoHsz", //你的 leancloud 应用 id （设置-应用keys-AppID）
-        appKey:"oS9d2e5q6kDN42VXS9yLIQk1", //你的 leancloud 应用 AppKey （设置-应用keys-AppKey）
-        serverURLs: 'https://content.elizen.me'
-    });
-
-    var query = new AV.Query('content');
-
-    var app = new Vue({
-        el:'#app',
-        data:{
-            isShow: true,
-            page:0,
-            count:0,
-            contents:[]
-        },
-        methods:{
-            loadMore:function(event) { 
-              getData(++this.page);
-            }
-        }
-    })
-
-    function urlToLink(str) {
-        var re = /(http|ftp|https):\/\/[\w-]+(.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-\@?^=%&/~+#])?/g;;
-
-        str = str.replace(re, function(website) {
-            return "<a href='" + website + "' target='_blank'> <i class='iconfont icon-lianjie-copy'></i>链接 </a>";
-        });
-        return str;
-    }
-
-    function getData(page = 0) {
-        query.descending('createdAt').skip(page * 20).limit(20).find().then(function(results) {
-            if (results.length == 0) {
-                alert('b 尽，待续')
-            } else {
-                let resC = results;
-                reqData = false;
-                resC.forEach((i) => {
-                    let dateTmp = new Date(i.createdAt);
-                    i.attributes.time = `${dateTmp.getFullYear()}-${(dateTmp.getMonth() + 1) < 10 ? ('0' + (dateTmp.getMonth()+1)) :dateTmp.getMonth()+1}-${(dateTmp.getDate() + 1) < 10 ? ('0' + dateTmp.getDate()) :dateTmp.getDate()} ${(dateTmp.getHours() + 1) <= 10 ? ('0' + dateTmp.getHours()) :dateTmp.getHours()}:${(dateTmp.getMinutes() + 1) <= 10 ? ('0' + dateTmp.getMinutes()) :dateTmp.getMinutes()}`;
-                    i.attributes.content = urlToLink(i.attributes.content);
-                    app.contents.push(i);
-                })
-            }
-
-        }, function(error) {});
-    }
-
-    getData(0);
-
-    query.count().then(function(count) {
-        app.count = count;
-    }, function(error) {});
+  var bbMemos = {
+    memos : 'https://bb.elizen.me/',//修改为自己的 apiurl，末尾有 / 斜杠
+    limit : '',//默认每次显示 10条 
+    creatorId:'' ,//默认为 101用户 https://demo.usememos.com/u/101
+    domId: '',//默认为 <div id="bber"></div>
+  }
 </script>
+<script src="https://immmmm.com/bb-lmm.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/Tokinx/ViewImage/view-image.min.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/Tokinx/Lately/lately.min.js"></script>
+
+<style>
+#bber{margin-top:2em;width:580px;}
+#bber pre{color: #fff;}
+.timeline ul {margin:0;}
+.timeline ul li {background:#3b3d42;list-style-type:none;position:relative;width:3px;margin-left:1em;padding:0.8em 0 2em;}
+.timeline ul li::after {transform: rotate(45deg);content:'';background-color: #3b3d42;display: block;position: absolute;top: 10px;left: -5px;width: 0.8em;height: 0.8em;outline:15px solid #fff;}
+.timeline ul li .itemdiv {position:relative;top:-13px;left:1em;width:670px;padding:0px 16px 0px;}
+.timeline ul li .datatime,.load button{color: #fafafa;font-size: 0.75em;font-style: italic;background-color: #3b3d42;display: inline-block;padding:4px 12px;}
+.timeline ul li .datacont{margin:0.65em 0 0.3em;}
+.timeline ul li .datacont img[src*="emotion"]{display:inline-block;width:auto;}
+.timeline ul li .datafrom{color: #aaa;font-size: 0.75em !important;font-style: italic;}
+.timeline ul li p{margin:0;font-size:16px;letter-spacing:1px;color: #3b3d42;}
+.load button{border-radius:0;border:0;padding:10px 22px;}
+.dark-theme .timeline ul li .itemdiv p{color:#fafafa;}
+.dark-theme .timeline ul li .itemdiv p svg{fill:#fafafa;}
+.dark-theme .timeline ul li .datafrom{color: #aaa;}
+.dark-theme .timeline ul li{background:#3b3d42;}
+.dark-theme .timeline ul li::after{outline: 15px solid #2f2f2f;}
+@media (max-width:860px) {
+  .timeline ul li{margin-left:0;}
+  .timeline ul li .itemdiv{width:calc(100vw - 75px);left:20px;}
+}
+.datacont .tag-span{color: #42b983;}
+.datasource a{font-size: 0.8rem;}
+.datacont .img{cursor:pointer;border:1px solid #3b3d42;}
+.datacont .img.square{height:180px;width:180px;object-fit:cover;}
+.resimg.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:auto;
+    gap: 4px;
+    width: calc(100%* 2 / 3);
+    box-sizing: border-box;
+    margin: 4px 0 0;
+}
+.resimg.grid-2{
+  grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+}
+.resimg.grid-4{
+  grid-template-columns: repeat(2, 1fr);
+  width: calc(80% * 2 / 3);
+}
+.resimg.grid figure.gallery-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  cursor: zoom-in;
+}
+.resimg figure{
+  text-align: left;
+  max-height:50%;
+}
+.resimg figure img{
+  max-height:50vh;
+}
+.resimg.grid figure, figcaption {
+  margin: 0 !important;
+}
+.resimg.grid figure.gallery-thumbnail > img.thumbnail-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+</style>
 
