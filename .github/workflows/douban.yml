@@ -2,7 +2,9 @@
 name: douban
 on: 
   schedule:
-  - cron: "30 * * * *"
+  - cron: "0 0,0,12,23 * * *"
+  watch:
+    types: [started]
 
 jobs:
   douban:
@@ -12,19 +14,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: book
-      uses: lizheming/doumark-action@master
-      with:
-        id: elizen
-        type: book
-        format: csv
-        dir: ./data/douban
-        
     - name: movie
       uses: lizheming/doumark-action@master
       with:
         id: elizen
         type: movie
+        format: csv
+        dir: ./data/douban
+
+    - name: book
+      uses: lizheming/doumark-action@master
+      with:
+        id: elizen
+        type: book
         format: csv
         dir: ./data/douban
   
@@ -33,3 +35,4 @@ jobs:
       with:
         message: 'chore: update douban data'
         add: './data/douban'
+
