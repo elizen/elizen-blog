@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>世界杯</title>
+		<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+		<script src="https://unpkg.com/video.js/dist/video.js"></script>
+		<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+		<!-- videojs-contrib-hls 用于在电脑端播放 如果只需移动端播放可以不引入 -->
+	</head>
+	<body>
+		<style>
+			.video-js .vjs-tech {position: relative !important;}
+    	</style>
+		<div>
+			<video id="myVideo" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{}'
+			 style='width: 100%;height: auto'>
+				<source id="source" src="http://39.135.134.67/000000001000/3000000001000028638/index.m3u8" type="application/x-mpegURL">
+				</source>
+			</video>
+		</div>
+	</body>
+
+	<script>
+		var myVideo = videojs('myVideo', {
+			bigPlayButton: true,
+			textTrackDisplay: false,
+			posterImage: false,
+			errorDisplay: false,
+		})
+		myVideo.play()
+		var changeVideo = function(vdoSrc) {
+			if (/\.m3u8$/.test(vdoSrc)) {
+				myVideo.src({
+					src: vdoSrc,
+					type: 'application/x-mpegURL'
+				})
+			} else {
+				myVideo.src(vdoSrc)
+			}
+			myVideo.load();
+			myVideo.play();
+		}
+	</script>
