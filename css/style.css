@@ -7,6 +7,11 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  /* Screen version */
+  font-family: "LXGW WenKai Screen", sans-serif;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
