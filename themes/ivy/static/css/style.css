@@ -300,9 +300,9 @@ thead, tfoot, tr:nth-child(even) {
 }
 
 figure {text-align: center;margin:0;}
-figure figcaption {margin:0.5rem auto 1rem;width: 25%;border-top: 1px solid #bbb;font-size:0.8em;color:#bbb;padding:5px;line-height:1.8em;}
+figure figcaption {margin:0.5rem auto 1rem;width: 35%;border-top: 1px solid #bbb;font-size:0.8em;color:#bbb;padding:5px;line-height:1.8em;}
 figure figcaption:before {content: "◎ ";}
-figure img{max-width:100%;border-radius:0;}
+figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 5px;margin-inline-end: 7px;}
 @media (max-width:683px) {
  figure figcaption {width: 75%;}
 }

@@ -14,7 +14,7 @@ slug: play-with-snow
 
 顺便测试一下 Hugo 主题的图片横排：
 
-{{< figure "https://static.elizen.me//img/202301161515834.JPG" "https://static.elizen.me//img/202301161515833.JPG" "https://static.elizen.me//img/202301161515835.JPG" "Photo by FujiFilm X-T" >}}
+{{< figure "https://static.elizen.me//img/202301161515834.JPG" "https://static.elizen.me//img/202301161515833.JPG" "https://static.elizen.me//img/202301161515835.JPG" "Photo by FujiFilm X-T1" >}}
 
 {{< figure "https://static.elizen.me//img/202301161515832.jpg" "https://static.elizen.me//img/202301161515831.JPG" "https://static.elizen.me//img/202301161516100.JPG" "Photo by FujiFilm X-T1" >}}
 
