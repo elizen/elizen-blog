@@ -6,19 +6,23 @@
     <description>Recent content in blog on Elizen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://elizen.me/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://elizen.me/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>博客小更新</title>
-      <link>https://elizen.me/posts/2022/05/blog-theme-update/</link>
-      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <link>https://elizen.me/posts/2023/01/blog-theme-update/</link>
+      <pubDate>Tue, 17 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://elizen.me/posts/2022/05/blog-theme-update/</guid>
-      <description>&lt;h2 id=&#34;2022-05&#34;&gt;2022.05&lt;/h2&gt;
+      <guid>https://elizen.me/posts/2023/01/blog-theme-update/</guid>
+      <description>&lt;h2 id=&#34;2023-01&#34;&gt;2023.01&lt;/h2&gt;
+&lt;p&gt;这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 &lt;a href=&#34;https://elizen.me/bb&#34;&gt;Memo&lt;/a&gt;。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。&lt;/p&gt;
+&lt;p&gt;二〇二三年一月十七日记。&lt;/p&gt;
+&lt;h2 id=&#34;2022-05&#34;&gt;2022.05&lt;/h2&gt;
 &lt;p&gt;这两天在&lt;a href=&#34;https://immmmm.com/&#34;&gt;木木哥&lt;/a&gt;的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板和一个关于嘟嘟的页面。样式是从别的地方抄来的，做得非常漂亮。实现上比较简单，但是最大坑是我之前调用了 Aplayer 的 JS，导致了页面内的中文锚点不跳转，定位问题用了整整两天。&lt;/p&gt;
 &lt;p&gt;此处再次感谢木木哥。&lt;/p&gt;
 &lt;p&gt;目前的博客，基本上达到了所有我想要的样子。对 Hugo 的结构也再一次有了理解。随之而来的问题就是，如果不会代码，我相信，每几年因为互联网的升级，一定会出现各种各样的问题，一个博客能活过十年，看起来是很那的，我指的都不是内容，单纯是说一个网站的站点。&lt;/p&gt;
 &lt;p&gt;最近正好也在整理所谓的「数字资产」，一旦涉及照片、视频，各种富文本，整理的复杂度都是指数级增长，数字资产的保存，在可见的未来，应该是一个很大的问题，尤其是现在 AI 的会不断生成很多纯数字内容。&lt;/p&gt;
 &lt;p&gt;希望我的博客，能再活 10 年。&lt;/p&gt;
+&lt;p&gt;二〇二二年五月九日记。&lt;/p&gt;
 &lt;h2 id=&#34;2022-04&#34;&gt;2022.04&lt;/h2&gt;
 &lt;p&gt;上一次博客更新还是 2021 年 10 月，更换了一下评论系统。&lt;/p&gt;
 &lt;p&gt;这次主要是修复了&lt;a href=&#34;https://elizen.me/books/&#34;&gt;读书&lt;/a&gt;和&lt;a href=&#34;https://elizen.me/movies/&#34;&gt;电影&lt;/a&gt;两个页面，之前一直用牧风大师的豆瓣 API，这次直接换了 Github Action 的轮子，功能丰富了不少，而且还自动拉出一个 CSV，也算是给豆瓣做了一个回复。&lt;/p&gt;
