@@ -10,18 +10,18 @@ slug: 2023-travel-gu-bei-shui-zhen
 年前请了三天假，去了一趟古北水镇，看民俗节目，吃大集年货，泡私汤温泉，开心迎新年。
 
 <gallery>
-	<img src="https://static.elizen.me/img/202301202356832.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356823.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356813.JPG"/>
-	<img src="https://static.elizen.me/img/202301202356804.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356796.JPG"/>
-	<img src="https://static.elizen.me/img/202301202356787.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356777.JPG"/>
-	<img src="https://static.elizen.me/img/202301202356768.JPG"/>
-	<img src="https://static.elizen.me/img/202301202356760.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356752.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356743.jpg"/>
-	<img src="https://static.elizen.me/img/202301202356666.jpg"/>
+	<img src="https://static.elizen.me/img/202301202356832.jpg">
+	<img src="https://static.elizen.me/img/202301202356823.jpg">
+	<img src="https://static.elizen.me/img/202301202356813.JPG">
+	<img src="https://static.elizen.me/img/202301202356804.jpg">
+	<img src="https://static.elizen.me/img/202301202356796.JPG">
+	<img src="https://static.elizen.me/img/202301202356787.jpg">
+	<img src="https://static.elizen.me/img/202301202356777.JPG">
+	<img src="https://static.elizen.me/img/202301202356768.JPG">
+	<img src="https://static.elizen.me/img/202301202356760.jpg">
+	<img src="https://static.elizen.me/img/202301202356752.jpg">
+	<img src="https://static.elizen.me/img/202301202356743.jpg">
+	<img src="https://static.elizen.me/img/202301202356666.jpg">
 </gallery>
 
 二〇二三年一月二十日记。
