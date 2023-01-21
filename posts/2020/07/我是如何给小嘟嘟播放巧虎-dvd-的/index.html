@@ -19,45 +19,6 @@
     
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
     </script>
-<script src="//fastly.jsdelivr.net/gh/raphamorim/waterfall.js/waterfall.min.js"></script>
-<script src="//fastly.jsdelivr.net/gh/raphamorim/imgStatus/imgStatus.min.js"></script>
-<script>
-  
-  var photosAll = document.getElementsByTagName('gallery') || '';
-  if(photosAll){
-    for(var i=0;i < photosAll.length;i++){
-      photosAll[i].innerHTML = '<div class="gallery-photos">'+photosAll[i].innerHTML+'</div>'
-      var photosIMG = photosAll[i].getElementsByTagName('img')
-      for(var j=0;j < photosIMG.length;j++){
-        wrap(photosIMG[j], document.createElement('div'));
-      }
-    }
-  }
-  function wrap(el, wrapper) {
-    wrapper.className = "gallery-photo";
-    el.parentNode.insertBefore(wrapper, el);
-    wrapper.appendChild(el);
-  }
-  
-  let galleryPhotos = document.querySelectorAll('.gallery-photos') || ''
-  if(galleryPhotos){
-    imgStatus.watch('.gallery-photo img', function(imgs) {
-      if(imgs.isDone()){
-        for(var i=0;i < galleryPhotos.length;i++){
-          waterfall(galleryPhotos[i]);
-          let pagePhoto = galleryPhotos[i].querySelectorAll('.gallery-photo');
-          for(var j=0;j < pagePhoto.length;j++){pagePhoto[j].className += " visible"};
-        }
-      }
-    });
-    window.addEventListener('resize', function () {
-      for(var i=0;i < galleryPhotos.length;i++){
-        waterfall(galleryPhotos[i]);
-      }
-    });
-  }
-</script> 
-
     
     
 
@@ -169,6 +130,44 @@ CocoMelon 是 Youtube 上特别火的一个频道，有将近1 亿订阅，更�
 
 
   <footer>
+    <script src="//fastly.jsdelivr.net/gh/raphamorim/waterfall.js/waterfall.min.js"></script>
+    <script src="//fastly.jsdelivr.net/gh/raphamorim/imgStatus/imgStatus.min.js"></script>
+    <script>
+      
+      var photosAll = document.getElementsByTagName('gallery') || '';
+      if(photosAll){
+        for(var i=0;i < photosAll.length;i++){
+          photosAll[i].innerHTML = '<div class="gallery-photos">'+photosAll[i].innerHTML+'</div>'
+          var photosIMG = photosAll[i].getElementsByTagName('img')
+          for(var j=0;j < photosIMG.length;j++){
+            wrap(photosIMG[j], document.createElement('div'));
+          }
+        }
+      }
+      function wrap(el, wrapper) {
+        wrapper.className = "gallery-photo";
+        el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+      }
+      
+      let galleryPhotos = document.querySelectorAll('.gallery-photos') || ''
+      if(galleryPhotos){
+        imgStatus.watch('.gallery-photo img', function(imgs) {
+          if(imgs.isDone()){
+            for(var i=0;i < galleryPhotos.length;i++){
+              waterfall(galleryPhotos[i]);
+              let pagePhoto = galleryPhotos[i].querySelectorAll('.gallery-photo');
+              for(var j=0;j < pagePhoto.length;j++){pagePhoto[j].className += " visible"};
+            }
+          }
+        });
+        window.addEventListener('resize', function () {
+          for(var i=0;i < galleryPhotos.length;i++){
+            waterfall(galleryPhotos[i]);
+          }
+        });
+      }
+    </script>
   
 <nav class="post-nav">
   <span class="nav-prev">&larr; <a href="/posts/2020/06/%E7%BB%99%E9%9D%92%E5%B9%B4%E4%BD%9C%E5%AE%B6%E7%9A%84%E4%BF%A1%E6%91%98%E6%8A%84/">《给青年作家的信》摘抄</a></span>
