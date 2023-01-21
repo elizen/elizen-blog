@@ -506,6 +506,28 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 .page-photos figure{max-width:80%;margin:0 auto 3rem;}
 .page-photos figure img{box-shadow: 0 12px 40px rgba(0,0,0,.15);border-radius: 8px;}
 
+/* Gallery */
+
+.gallery-photos{width:100%;}
+.gallery-photo{width:24.9%;position: relative;visibility: hidden;overflow: hidden;}
+.gallery-photo.visible{visibility: visible;animation: fadeIn 2s;}
+.gallery-photo img{display: block;width:100%;border-radius:0;padding:4px;animation: fadeIn 1s;cursor: pointer;transition: all .4s ease-in-out;}
+.gallery-photo span.photo-title,.gallery-photo span.photo-time{background: rgba(0, 0, 0, 0.3);padding:0px 8px;font-size:0.9rem;color: #fff;display:none;animation: fadeIn 1s;}
+.gallery-photo span.photo-title{position:absolute;bottom:4px;left:4px;}
+.gallery-photo span.photo-time{position:absolute;top:4px;left:4px;font-size:0.8rem;}
+.gallery-photo:hover span.photo-title{display:block;}
+.gallery-photo:hover img{transform: scale(1.1);}
+@media screen and (max-width: 1800px) {
+	.gallery-photo{width:33.3%;}
+}
+@media screen and (max-width: 860px) {
+	.gallery-photo{width:49.9%;}
+}
+@keyframes fadeIn{
+	0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
 /* twikoo*/
 .twikoo{overflow: visible !important;}
 .tk-extras,.tk-row.actions .tk-action-icon.__markdown,.tk-preview,.tk-content p a.at,.tk-tag.tk-tag-green{display: none !important;}
