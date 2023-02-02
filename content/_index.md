@@ -9,6 +9,10 @@ title: Home
 
 更多文章请访问 [Tags](/tags/) 或者 [Memos](/bb/)。
 
+## 近期吐槽
+
+{{< memos >}}
+
 ## 近期阅读
 
 {{< books >}}
