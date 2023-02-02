@@ -3,7 +3,7 @@
 {{ .Content }}
 
 {{ if .IsHome }}
-{{ $.Scratch.Set "pages" .Site.RegularPages }}
+{{ $.Scratch.Set "pages" first 10 .Site.RegularPages }}
 {{ else }}
 {{ $.Scratch.Set "pages" .Pages }}
 {{ end }}
