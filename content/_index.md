@@ -8,3 +8,11 @@ title: Home
 > ——*罗伯特·海因莱恩*
 
 更多文章请访问 [Posts](/posts/)或者 [Tags](/tags/)。
+
+## 近期阅读
+
+{{< books >}}
+
+## 近期观影
+
+{{< movies >}}
