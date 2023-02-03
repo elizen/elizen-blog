@@ -96,30 +96,6 @@
 ——<em>罗伯特·海因莱恩</em></p>
 </blockquote>
 <p>更多文章请访问 <a href="/tags/">Tags</a> 或者 <a href="/bb/">Memos</a>。</p>
-<h2 id="近期吐槽">近期吐槽</h2>
-<div id="momos-ss"></div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-      var bbUrl = "https://bb.elizen.me/api/memo?creatorId=101&rowStatus=NORMAL&limit=3"
-      fetch(bbUrl).then(res => res.json()).then( resdata =>{
-          var result = '',resultAll="",data = resdata.data
-          for(var i=0;i < data.length;i++){
-              var bbTime = new Date(data[i].createdTs * 1000).toLocaleString()
-              var bbCont = data[i].content
-              var newbbCont = bbCont.replace(/!\[.*?\]\((.*?)\)/g,' <a href="$1" target="_blank">🌅</a> ').replace(/\[(.*?)\]\((.*?)\)/g,' <a href="$2" target="_blank">$1 🔗</a> ')
-              result += `<li class="item"><span class="datetime">${bbTime}</span>： ${newbbCont}</li>`;
-          }
-          var bbDom = document.querySelector('#momos-ss');
-          var bbBefore = `<div class="momos-sswrap"><ul class="momos-sslist">`
-          var bbAfter = `</ul></div>`
-          resultAll = bbBefore + result + bbAfter
-          bbDom.innerHTML = resultAll;
-          
-          window.Lately && Lately.init({ target: '.datetime' });
-      });
-    });
-</script>
 <h2 id="近期阅读">近期阅读</h2>
 
 
