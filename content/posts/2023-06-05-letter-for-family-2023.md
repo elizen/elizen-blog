@@ -7,6 +7,8 @@ slug: letter-for-family-2021
 
 ---
 
+![](https://r2.elizen.me/2023/06/d5015daadcbcd040713d778036bc0506.png)
+
 老爷子，
 
 一切安好。
