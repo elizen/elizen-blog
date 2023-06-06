@@ -3,7 +3,7 @@ title: 家书（2023）
 author: Elizen
 date: 2023-06-05
 tags: ["life"]
-slug: letter-for-family-2021
+slug: letter-for-family-2023
 
 ---
 
