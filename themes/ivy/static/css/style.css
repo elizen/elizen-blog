@@ -514,6 +514,12 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
   margin-bottom: 20px;
 }
 
+.book-item::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .book-image {
   width: 150px;
   margin-right: 20px;
