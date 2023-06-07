@@ -509,22 +509,18 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 /* Books */
 
 .book-item {
-  overflow: auto;
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 20px;
-}
-
-.book-link {
-  float: left;
-  margin-right: 20px;
-}
-
-.book-details {
-  float: left;
-  width: calc(100% - 170px); /* 150px (image width) + 20px (margin-right) */
 }
 
 .book-image {
   width: 150px;
+  margin-right: 20px;
+}
+
+.book-details {
+  flex-grow: 1;
 }
 
 .title, .author {
@@ -542,15 +538,6 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 
 .author {
   color: gray;
-}
-
-.description {
-  margin: 10px 0;
-}
-
-.title a, .review-link a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .description {
