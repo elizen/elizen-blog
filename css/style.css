@@ -506,6 +506,44 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 .page-photos figure{max-width:80%;margin:0 auto 3rem;}
 .page-photos figure img{box-shadow: 0 12px 40px rgba(0,0,0,.15);border-radius: 8px;}
 
+/* Books */
+
+.book-item {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.book-link {
+  float: left;
+  margin-right: 20px;
+}
+
+.book-image {
+  width: 150px;
+}
+
+.title, .author {
+  font-size: larger;
+}
+
+.title {
+  color: #841212;
+}
+
+.title a, .review-link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.author {
+  color: gray;
+  font-size: 1.2em;
+}
+
+.description {
+  margin: 10px 0;
+}
+
 /* Gallery */
 
 .gallery-photos{width:100%;}
