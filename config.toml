@@ -21,17 +21,21 @@ footnotereturnlinkcontents = "↩"
   url="/books/"
   weight="2"
   [[menu.main]]
+  name="参考书目"
+  url="/bibliography/"
+  weight="3"
+  [[menu.main]]
   name="归档"
   url="/posts/"
-  weight="3"
+  weight="4"
   [[menu.main]]
   name="通讯"
   url="/newsletter/"
-  weight="4"
+  weight="5"
   [[menu.main]]
   name="孩童"
   url="/kids/"
-  weight="5"
+  weight="6"
 
 [params]
   # description abou this website
