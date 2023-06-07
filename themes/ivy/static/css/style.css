@@ -508,46 +508,46 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 
 /* Books */
 
-.book-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
+div.book-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 20px !important;
 }
 
-.book-item::after {
-  content: "";
-  display: table;
-  clear: both;
+div.book-item::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
 }
 
-.book-image {
-  width: 150px;
-  margin-right: 20px;
+img.book-image {
+  width: 150px !important;
+  margin-right: 20px !important;
 }
 
-.book-details {
-  flex-grow: 1;
+div.book-details {
+  flex-grow: 1 !important;
 }
 
-.title, .author {
-  font-size: larger;
+h3.title, p.author {
+  font-size: larger !important;
 }
 
-.title {
-  color: #841212;
+h3.title {
+  color: #841212 !important;
 }
 
-.title a, .review-link a {
-  color: inherit;
-  text-decoration: none;
+h3.title a, .review-link a {
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
-.author {
-  color: gray;
+p.author {
+  color: gray !important;
 }
 
-.description {
-  margin: 10px 0;
+p.description {
+  margin: 10px 0 !important;
 }
 
 /* Gallery */
