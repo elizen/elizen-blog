@@ -518,6 +518,11 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
   margin-right: 20px;
 }
 
+.book-details {
+  float: left;
+  width: calc(100% - 170px); /* 150px (image width) + 20px (margin-right) */
+}
+
 .book-image {
   width: 150px;
 }
@@ -537,7 +542,15 @@ figure img{max-width:100%;border-radius:0;display: inline-block;margin-block-sta
 
 .author {
   color: gray;
-  font-size: 1.2em;
+}
+
+.description {
+  margin: 10px 0;
+}
+
+.title a, .review-link a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .description {
