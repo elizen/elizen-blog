@@ -7,6 +7,8 @@
     <div class="sc-dIsUp fIuTG">
         {{range $idx, $movie := first $numb $movies}}
         {{if ne $idx 0 }}
+            {{ $coverSrc := index $item 5 }} 
+            {{ $douURL := replaceRE "https://movie.douban.com/subject/([0-9]+)/" "https://dou.img.lithub.cc/movie/$1.jpg" $coverSrc}}
             <div class="sc-gKAaRy dfdORB">
                 <div class="sc-hKFxyN HPRth">
                     <div class="lazyload-wrapper ">
