@@ -1,0 +1,12 @@
+  <footer>
+  {{ partial "foot_custom.html" . }}
+  <hr>
+  {{ partial "footer_highlightjs" . }}
+  {{ with .Site.Params.footer }}
+  <div class="copyright">{{ . | markdownify }}</div>
+  {{ end }}
+  </footer>
+  </article>
+  {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>
