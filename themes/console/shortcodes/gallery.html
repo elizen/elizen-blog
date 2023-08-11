@@ -1,0 +1,79 @@
+{{ $baseURL := .Site.BaseURL }}
+{{- with (.Get 0) -}}
+{{- $files := readDir (print "/static/" .) }}
+<div class="gallery-photos">
+  {{- range (sort $files "Name" "asc") -}}
+    {{- if ( .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp|webp|avif|jxl)") }}
+    {{- $linkURL := print $baseURL "/" ($.Get 0) "/" .Name | absURL }}
+    <div class="gallery-photo">
+      <img class="photo-img" loading='lazy' decoding="async" src="{{  $linkURL  }}" alt="{{ .Name }}" />
+      <span class="photo-title">{{ .Name | replaceRE "\\..*" ""}}</span>
+    </div>
+    {{- end }}
+  {{- end }}
+</div>
+{{- end }}
+
+<style>
+.gallery-photos{width:100%;}
+.gallery-photo{width:24.9%;position: relative;visibility: hidden;overflow: hidden;}
+.gallery-photo.visible{visibility: visible;animation: fadeIn 2s;}
+.gallery-photo img{display: block;width:100%;border-radius:0;padding:4px;animation: fadeIn 1s;cursor: pointer;transition: all .4s ease-in-out;}
+.gallery-photo span.photo-title,.gallery-photo span.photo-time{background: rgba(0, 0, 0, 0.3);padding:0px 8px;font-size:0.9rem;color: #fff;display:none;animation: fadeIn 1s;}
+.gallery-photo span.photo-title{position:absolute;bottom:4px;left:4px;}
+.gallery-photo span.photo-time{position:absolute;top:4px;left:4px;font-size:0.8rem;}
+.gallery-photo:hover span.photo-title{display:block;}
+.gallery-photo:hover img{transform: scale(1.1);}
+@media screen and (max-width: 1280px) {
+  .gallery-photo{width:33.3%;}
+}
+@media screen and (max-width: 860px) {
+  .gallery-photo{width:49.9%;}
+}
+@media (max-width: 683px){
+  .photo-time{display: none;}
+}
+@keyframes fadeIn{
+  0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+</style>
+
+<script src="//fastly.jsdelivr.net/gh/raphamorim/waterfall.js/waterfall.min.js"></script>
+<script src="//fastly.jsdelivr.net/gh/raphamorim/imgStatus/imgStatus.min.js"></script>
+<script>
+  //外链 gallery 标签相册瀑布流
+  var photosAll = document.getElementsByTagName('gallery') || '';
+  if(photosAll){
+    for(var i=0;i < photosAll.length;i++){
+      photosAll[i].innerHTML = '<div class="gallery-photos">'+photosAll[i].innerHTML+'</div>'
+      var photosIMG = photosAll[i].getElementsByTagName('img')
+      for(var j=0;j < photosIMG.length;j++){
+        wrap(photosIMG[j], document.createElement('div'));
+      }
+    }
+  }
+  function wrap(el, wrapper) {
+    wrapper.className = "gallery-photo";
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+  }
+  //相册瀑布流
+  let galleryPhotos = document.querySelectorAll('.gallery-photos') || ''
+  if(galleryPhotos){
+    imgStatus.watch('.gallery-photo img', function(imgs) {
+      if(imgs.isDone()){
+        for(var i=0;i < galleryPhotos.length;i++){
+          waterfall(galleryPhotos[i]);
+          let pagePhoto = galleryPhotos[i].querySelectorAll('.gallery-photo');
+          for(var j=0;j < pagePhoto.length;j++){pagePhoto[j].className += " visible"};
+        }
+      }
+    });
+    window.addEventListener('resize', function () {
+      for(var i=0;i < galleryPhotos.length;i++){
+        waterfall(galleryPhotos[i]);
+      }
+    });
+  }
+</script>
