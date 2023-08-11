@@ -30,6 +30,8 @@ button, input, select, textarea, label {
 
 img {
   max-width: 100%;
+  border-radius: 1%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Typography */
@@ -168,10 +170,10 @@ body {
 }
 
 .main {
-  width: 700px;
+  width: 780px;
   padding: 32px 10px 20px 50px;
-  margin-left: 260px;
-  border-left: 3px solid black;
+  margin-left: 240px;
+  border-left: 2px solid #000;
   min-height: calc(100vh - 60px);
 }
 
