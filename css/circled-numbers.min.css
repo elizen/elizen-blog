@@ -1,0 +1,15 @@
+/**
+ * Combined by jsDelivr.
+ * Original files:
+ * - /npm/@xiee/utils@1.1.10/css/circled-numbers.min.css
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+/**
+ * Minified by jsDelivr using clean-css v5.2.4.
+ * Original file: /npm/@xiee/utils@1.1.10/css/circled-numbers.css
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+ #TableOfContents,#TableOfContents~p:first-of-type{counter-reset:circled-numbers}#TableOfContents>ul>li>ul>li::before,h2::before{counter-increment:circled-numbers;content:counter(circled-numbers);border-radius:50%;border:1px dashed #999;color:#333;background:#fff;display:inline-block;min-width:1.75em;line-height:1.75em;margin-right:.5em;text-align:center;font-size:.8em}h2::before{vertical-align:bottom;color:#fff;border:none;background:#999}#TableOfContents>ul>li>ul>li{display:inline-block}
+ /*# sourceMappingURL=/sm/ac53f0f3884b9a1ebd78e8c9f988791b1c4498535906cf1a5746c1d49f27abbb.map */
