@@ -28,6 +28,6 @@ slug: living-elsewhere
     <img src="https://r2.elizen.me/2023/08/994117f45bbafc23f769c2346a54d6ae.jpg"/>
     <img src="https://r2.elizen.me/2023/08/86b6fac18dfc42aa689ff9d77cb7ce60.jpg"/>
     <img src="https://r2.elizen.me/2023/08/043fcf869623b359db485b041978dfbc.JPG"/>
-<gallery>
+</gallery>
 
 二〇二三年 八月记。
