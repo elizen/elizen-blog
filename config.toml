@@ -1,7 +1,7 @@
 baseURL = "https://elizen.me/"
 languageCode = "en-us"
 title = "生活在别处"
-theme = "console"
+theme = "hyde"
 disqusShortname = "elizen"
 hasCJKLanguage = true
 enableEmoji = true
@@ -21,7 +21,7 @@ footnotereturnlinkcontents = "↩"
   url="/books/"
   weight="2"
   [[menu.main]]
-  name="参考书目"
+  name="书目"
   url="/bibliography/"
   weight="3"
   [[menu.main]]
