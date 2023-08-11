@@ -15,30 +15,19 @@ slug: living-elsewhere
 
 博客又有了崭新的名字，生活也开始有了新的趣味。比如，City Walk。
 
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/95817aeb82dfc80f970c5448814b4895.JPG)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/1c118887bc47abefe5ec28739f3587a4.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/811ddfacd2db5cf30b906b8127b4763f.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/50c3d21d111c2815b63f5a84b3beeb27.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/27cb2e20267c615fe8beb41ce4f46d94.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/bd93a07e74903cfbf3ad5c08278cb91a.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/07b79f8690ac14a2cb55ee7ee718716a.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/b021d40db29822af74a4f309d3c775d5.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/152e96e632ed815d50c9798efd0b7871.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/27910d2b2c86977d7b1eaf2d28230292.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/994117f45bbafc23f769c2346a54d6ae.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/86b6fac18dfc42aa689ff9d77cb7ce60.jpg)
-
-![DSCF9036.JPG](https://r2.elizen.me/2023/08/043fcf869623b359db485b041978dfbc.JPG)
+<gallery>
+    <img src="https://r2.elizen.me/2023/08/95817aeb82dfc80f970c5448814b4895.JPG"/>
+    <img src="https://r2.elizen.me/2023/08/1c118887bc47abefe5ec28739f3587a4.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/811ddfacd2db5cf30b906b8127b4763f.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/50c3d21d111c2815b63f5a84b3beeb27.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/27cb2e20267c615fe8beb41ce4f46d94.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/bd93a07e74903cfbf3ad5c08278cb91a.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/07b79f8690ac14a2cb55ee7ee718716a.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/152e96e632ed815d50c9798efd0b7871.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/27910d2b2c86977d7b1eaf2d28230292.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/994117f45bbafc23f769c2346a54d6ae.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/86b6fac18dfc42aa689ff9d77cb7ce60.jpg"/>
+    <img src="https://r2.elizen.me/2023/08/043fcf869623b359db485b041978dfbc.JPG"/>
+<gallery>
 
 二〇二三年 八月记。
