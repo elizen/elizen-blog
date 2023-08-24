@@ -10,7 +10,8 @@ slug: try-to-make-a-golden-sentence
 
 这周去上海出差，吃了几顿一人食，上海的面也确实很好吃，包括朝圣了一下赫赫有名的蛤蜊猪肝面以及上海影城，也挤了点时间看了《封神》和《孤注一掷》，很久没去电影院，只要在影城里泡着就觉得开心，也就无所谓挑片子这个事儿了。
 
-{{< figure "https://r2.elizen.me/2023/08/ade41c1e18d0ec4ea9c47f306bdb9f9d.jpg" "https://r2.elizen.me/2023/08/ade41c1e18d0ec4ea9c47f306bdb9f9d.jpg" "https://r2.elizen.me/2023/08/6af2ef223750f551a8a3535ba06a5860.jpg" "几顿好吃的一人食 Photo by Nomo Raw" >}}
+{{< figure "https://r2.elizen.me/2023/08/ade41c1e18d0ec4ea9c47f306bdb9f9d.jpg" "https://r2.elizen.me/2023/08/563d637ae22856aa592ea246258677d9.jpg" "https://r2.elizen.me/2023/08/6af2ef223750f551a8a3535ba06a5860.jpg" "几顿好吃的一人食" >}}
+
 
 因为出差期间错过了重要的七夕，就想着给十一买个小礼物，我自己是有一份小众的礼物清单的，所以就考虑在里面选一选，恰好，Le Labo 在上海是有实体店的，之前第一份给十一的礼物就是他们的经典款 33 号，还是找人帮忙在香港的店里买的，索性就去店里转了转，买了点小礼物。不得不说，上海才是国际化，北京、深圳都不太行。
 
@@ -18,7 +19,7 @@ slug: try-to-make-a-golden-sentence
 
 > 我喜欢的街道应该就是路两边的树可以碰碰头。
 
-{{< figure "https://r2.elizen.me/2023/08/10df60ff6eb4f60a703ee5a09e07a555.jpg" "https://r2.elizen.me/2023/08/98fe467d428280c3cf43e93d5a1f96dc.jpg" "https://r2.elizen.me/2023/08/c307618b937e585761d09d61e0933162.jpg" "喜欢上海生活的调调 Photo by Nomo Raw" >}}
+{{< figure "https://r2.elizen.me/2023/08/10df60ff6eb4f60a703ee5a09e07a555.jpg" "https://r2.elizen.me/2023/08/98fe467d428280c3cf43e93d5a1f96dc.jpg" "https://r2.elizen.me/2023/08/c307618b937e585761d09d61e0933162.jpg" "喜欢上海生活的调调" >}}
 
 ## 金句
 
