@@ -45,7 +45,7 @@ slug: try-to-make-a-golden-sentence
 
 课也上了一段时间，偶尔回家在路上无聊的时候，我就会试着用英语自言自语，据说这是个还不错的方法。有一天，我突然在三元桥底，说出一句我觉得很有趣的话：
 
-> The most interesting things is used some useful tools to do some useless things.
+> The most interesting things are used some useful tools to do some useless things.
 
 没有一个所谓难词，但是从前，我从来没有试着用英语去表达一些观点。
 
