@@ -18,7 +18,7 @@
 	&lt;head&gt;
 		&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
 		&lt;meta charset=&#34;utf-8&#34; /&gt;
-		&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/style.css&#34; /&gt;
+		&lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;{{ .RelPermalink }}/css/style.css&#34; /&gt;
 		&lt;title&gt;2023-09-25 记：&lt;/title&gt;
 	&lt;/head&gt;
 &lt;body&gt;
