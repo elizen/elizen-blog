@@ -1,6 +1,6 @@
 baseURL = "https://elizen.me/"
 languageCode = "en-us"
-title = "生活在别处"
+title = "Elizen"
 theme = "ivy"
 disqusShortname = "elizen"
 hasCJKLanguage = true
@@ -10,6 +10,7 @@ footnotereturnlinkcontents = "↩"
 [permalinks]
   posts = "/posts/:year/:month/:slug/"
   newsletter = "/newsletter/:year/:month/:slug/"
+  journal = "/journal/:slug/"
 
 [menu]
   [[menu.main]]
