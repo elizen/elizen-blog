@@ -3,7 +3,7 @@ title: 石头科技扫地机器人糟糕的售后体验
 author: Elizen
 date: 2023-11-03
 tags:
-  - 一些札记
+  - 札记
 slug: robot-after-sales
 ---
 
