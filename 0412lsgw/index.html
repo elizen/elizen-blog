@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>大理 - Elizen</title>
-    <meta property="og:title" content="大理 - Elizen">
+    <title>蓝色港湾，晒娃上瘾 - Elizen</title>
+    <meta property="og:title" content="蓝色港湾，晒娃上瘾 - Elizen">
     
     <meta name="twitter:card" content="summary">
     <meta name="referrer" content="never" />
@@ -30,11 +30,13 @@
 
     
       
-      <meta property="description" content="第一次坐飞机，往返表现都还不错。
-在大理比较嗨，算是给新年开了个好头。
+      <meta property="description" content="折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在single.html里加上引入 PATH 的代码：
+{{ .Render &amp;quot;path&amp;quot;}} 搞定之后爽歪歪。
+接下来准备研究一下瀑布流和灯箱效果了。
 ">
-      <meta property="og:description" content="第一次坐飞机，往返表现都还不错。
-在大理比较嗨，算是给新年开了个好头。
+      <meta property="og:description" content="折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在single.html里加上引入 PATH 的代码：
+{{ .Render &amp;quot;path&amp;quot;}} 搞定之后爽歪歪。
+接下来准备研究一下瀑布流和灯箱效果了。
 ">
       
     
@@ -47,13 +49,18 @@
     
     
 
+
+<link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
   </head>
 
   
-  <body class="posts">
+  <body class="0412lsgw">
     <header class="masthead">
       <h1><a href="/">Elizen</a></h1>
 
@@ -90,10 +97,10 @@
     <article class="main">
       <header class="title">
       
-<h1>大理</h1>
+<h1>蓝色港湾，晒娃上瘾</h1>
 
-<h3>Elizen
-  /  2021-01-06</h3>
+<h3>
+  2020-04-13</h3>
 <hr>
 
 
@@ -103,8 +110,11 @@
 
 
 
-<p>第一次坐飞机，往返表现都还不错。</p>
-<p>在大理比较嗨，算是给新年开了个好头。</p>
+<p>折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在<code>single.html</code>里加上引入 PATH 的代码：</p>
+<pre><code class="language-go">{{ .Render &quot;path&quot;}}
+</code></pre>
+<p>搞定之后爽歪歪。</p>
+<p>接下来准备研究一下瀑布流和灯箱效果了。</p>
 
 
 
@@ -150,11 +160,6 @@
     });
     </script>
   
-<nav class="post-nav">
-  <span class="nav-prev">&larr; <a href="/posts/2020/12/2020-end/">2020 年概览</a></span>
-  <span class="nav-next"><a href="/posts/2021/01/fixed-my-mac/">老叔新芽，Mac 维修</a> &rarr;</span>
-</nav>
-
   <hr>
   <div class="pagination__title" style="margin-bottom: 30px;">
   <span class="pagination__title-h">欢迎评论</span>
@@ -163,6 +168,19 @@
   <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
   <script>twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' })</script>
   
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/tex.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
   
   <hr>
