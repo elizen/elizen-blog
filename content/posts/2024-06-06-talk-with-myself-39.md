@@ -4,7 +4,7 @@ author: Elizen
 date: 2024-06-06
 tags:
   - 札记
-slug: talk-with-myself-38
+slug: talk-with-myself-39
 ---
 
 ### 1.
