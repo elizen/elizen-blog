@@ -1,7 +1,7 @@
 ---
 title: 深夜发媸（39）
 author: Elizen
-dates: 2024-06-06
+date: 2024-06-06
 tags:
   - 札记
 slug: talk-with-myself-38
