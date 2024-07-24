@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  <div class="post-content">
+    {{ .Content }}
+    <div class="container">
+      <label for="text">文本内容：</label>
+      <textarea id="text" rows="6" placeholder="输入文本内容..." oninput="generateImage()"></textarea>
+      <label for="attribution">署名：</label>
+      <input type="text" id="attribution" placeholder="输入署名..." oninput="generateImage()">
+      <canvas id="canvas"></canvas>
+      <div class="button-container">
+        <button onclick="copyImage()">复制图片</button>
+        <button onclick="downloadImage()">下载图片</button>
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}
+
+{{ define "head" }}
+{{ parent }}
+<link rel="stylesheet" href="{{ "css/generator.css" | relURL }}">
+<script src="{{ "js/generator.js" | relURL }}" defer></script>
+{{ end }}
