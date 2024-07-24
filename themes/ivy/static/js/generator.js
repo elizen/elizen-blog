@@ -1,9 +1,11 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const margin = 40;
-const lineHeight = 70; // 增加行高
-const fontSize = 42;   // 增大字体大小
-const attributionFontSize = 32; // 增大署名字体大小
+const topMargin = 80;  // 增加顶部边距
+const bottomMargin = 60;  // 保持底部边距略小于顶部
+const sideMargin = 40;  // 侧边距
+const lineHeight = 70;
+const fontSize = 42;
+const attributionFontSize = 32;
 const maxWidth = 720; // 最大宽度减去左右边距
 
 // 预加载字体
@@ -45,11 +47,11 @@ function generateImage(forDownload = false) {
     const textHeight = wrappedLines.length * lineHeight;
     
     // 计算总高度（上边距 + 文本高度 + 署名高度 + 下边距）
-    const totalHeight = margin + textHeight + (attribution ? lineHeight + attributionFontSize : 0) + margin;
+    const totalHeight = topMargin + textHeight + (attribution ? lineHeight + attributionFontSize : 0) + bottomMargin;
 
     // 计算内容宽度
     const contentWidth = Math.max(...wrappedLines.map(line => ctx.measureText(line).width));
-    const canvasWidth = Math.min(Math.max(contentWidth + margin * 2, 400), 800); // 最小400px，最大800px
+    const canvasWidth = Math.min(Math.max(contentWidth + sideMargin * 2, 400), 800); // 最小400px，最大800px
 
     // 设置画布尺寸
     canvas.width = forDownload ? canvasWidth : canvas.offsetWidth;
@@ -62,16 +64,16 @@ function generateImage(forDownload = false) {
     // 绘制文本
     ctx.fillStyle = '#2c3e50';
     ctx.font = `${fontSize}px CustomFont, sans-serif`;
-    let y = margin;
+    let y = topMargin;
     wrappedLines.forEach((line) => {
-        ctx.fillText(line, margin, y);
+        ctx.fillText(line, sideMargin, y);
         y += lineHeight;
     });
 
     // 绘制署名
     if (attribution) {
         ctx.font = `${attributionFontSize}px CustomFont, sans-serif`;
-        ctx.fillText('/' + attribution, margin, canvas.height - margin);
+        ctx.fillText('/' + attribution, sideMargin, canvas.height - bottomMargin);
     }
 }
 
@@ -97,3 +99,6 @@ function copyImage() {
     });
     generateImage(); // 重新生成预览图片
 }
+
+// 初始生成一次图片
+window.onload = generateImage;
