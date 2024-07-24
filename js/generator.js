@@ -1,13 +1,20 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const margin = 40;
-const lineHeight = 60;
-const fontSize = 36;
-const attributionFontSize = 28;
+const lineHeight = 70; // 增加行高
+const fontSize = 42;   // 增大字体大小
+const attributionFontSize = 32; // 增大署名字体大小
 const maxWidth = 720; // 最大宽度减去左右边距
 
-document.fonts.ready.then(function () {
-    generateImage();
+// 预加载字体
+const customFont = new FontFace('CustomFont', 'url(/fonts/custom-font.woff2)');
+
+customFont.load().then(function(loadedFont) {
+    document.fonts.add(loadedFont);
+    generateImage(); // 初始生成图片
+}).catch(function(error) {
+    console.error('字体加载失败:', error);
+    generateImage(); // 即使字体加载失败，也生成图片
 });
 
 function generateImage(forDownload = false) {
