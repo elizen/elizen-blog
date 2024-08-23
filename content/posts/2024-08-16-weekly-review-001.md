@@ -1,5 +1,5 @@
 ---
-title: 叁拾一周(001)
+title: [叁拾周刊 #001]
 author: Elizen
 date: 2024-08-16
 tags:
