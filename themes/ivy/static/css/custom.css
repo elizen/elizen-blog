@@ -256,6 +256,10 @@ del:hover {
     width: calc(50% - 20px);
     display: inline-block;
   }
+  .main li {
+    width: calc(50% - 20px);
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 480px) {
