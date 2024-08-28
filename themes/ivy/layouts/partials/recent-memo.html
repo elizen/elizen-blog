@@ -1,71 +1,61 @@
-<div id="recent-memo" class="recent-memo">
-    <h2>最新动态</h2>
-    <div id="memo-content"></div>
-  </div>
-  
-  <script>
-  var bbMemo = {
-      memos: 'https://demo.usememos.com/',
-      limit: '1',
-      creatorId: '101',
-      domId: '#bber',
-  }
-  
-  document.addEventListener('DOMContentLoaded', function() {
-      getRecentMemo();
-  });
-  
-  function getRecentMemo() {
-      var bbUrl = bbMemo.memos + "api/memo?creatorId=" + bbMemo.creatorId + "&rowStatus=NORMAL&limit=" + bbMemo.limit;
-      fetch(bbUrl).then(res => res.json()).then(resdata => {
-          updateHTML(resdata.data);
-      });
-  }
-  
-  function updateHTML(data) {
-      var memoContentDiv = document.querySelector("#memo-content");
-      var tag_reg = /#([^\s#]+?) /g;
-      
-      if (data.length > 0) {
-          var bbContREG = data[0].content
-              .replace(tag_reg, "<span class='tag-span'>#$1</span> ");
-          var contentHtml = marked.parse(bbContREG);
-          
-          var dateStr = new Date(data[0].createdTs * 1000).toLocaleString();
-          var memoString = `<div class="bb-timeline"><ul class="bb-list-ul"><li class="bb-list-li"><div class="bb-div"><div class="datatime">${dateStr}</div><div class="datacont">${contentHtml}</div></div></li></ul></div>`;
-          
-          memoContentDiv.innerHTML = memoString;
-      } else {
-          memoContentDiv.innerHTML = "<p>暂无数据</p>";
-      }
-  }
-  </script>
-  
-  <style>
-  .recent-memo {
-      background-color: #f5f5f5;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 20px;
-  }
-  .recent-memo h3 {
-      margin-top: 0;
-  }
-  .bb-timeline ul {
-      padding-left: 0;
-  }
-  .bb-timeline ul li {
-      list-style-type: none;
-  }
-  .datatime {
-      font-size: 0.85em;
-      color: #777;
-  }
-  .datacont {
-      margin-top: 5px;
-  }
-  .tag-span {
-      color: #42b983;
-  }
-  </style>
+<div id="bber"></div>
+
+<script>
+// 设置 bbMemos 对象来覆盖 bb.js 中的默认设置
+var bbMemos = {
+    memos: 'https://demo.usememos.com/', // 替换为您的 Memos 实例 URL
+    limit: '1', // 只获取1条记录
+    creatorId: '101', // 替换为您的 creatorId
+    domId: '#bber'
+};
+
+// 加载原有的 bb.js 文件
+var bbScript = document.createElement('script');
+bbScript.src = '{{ "js/bb.js" | relURL }}'; // 使用 Hugo 的 relURL 函数
+bbScript.onload = function() {
+    // bb.js 加载完成后，修改 updateHTMl 函数
+    var originalUpdateHTMl = window.updateHTMl;
+    window.updateHTMl = function(data) {
+        if (data.length > 0) {
+            originalUpdateHTMl([data[0]]); // 只传递第一条数据
+        } else {
+            document.querySelector(bbMemo.domId).innerHTML = "<p>暂无数据</p>";
+        }
+    };
+
+    // 触发加载
+    getFirstList();
+};
+document.head.appendChild(bbScript);
+</script>
+
+<style>
+#bber {
+    margin-top: 2em;
+    width: 100%;
+}
+.bb-timeline {
+    margin-bottom: 2em;
+}
+.bb-list-ul {
+    list-style-type: none;
+    padding: 0;
+}
+.bb-list-li {
+    margin-bottom: 1rem;
+}
+.bb-div {
+    padding: 0.6rem 1rem;
+    border: 1px solid #666;
+}
+.datatime {
+    font-size: 0.85em;
+    color: #777;
+}
+.datacont {
+    margin-top: 5px;
+}
+.tag-span {
+    color: #42b983;
+}
+</style>
