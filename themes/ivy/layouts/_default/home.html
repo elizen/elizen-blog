@@ -10,7 +10,6 @@
 {{ else }}
 {{ $.Scratch.Set "pages" .Pages }}
 {{ end }}
-<div class="main archive">
 <ul>
   {{ range (where ($.Scratch.Get "pages") "Section" "posts") }}
   <li>
@@ -19,6 +18,5 @@
   </li>
   {{ end }}
 </ul>
-</div>
 
 {{ partial "footer-cus.html" . }}
