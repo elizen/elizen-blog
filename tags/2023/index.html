@@ -104,6 +104,7 @@ console.log("脚本开始执行");
 var bbMemos = {
     memos: 'https://memos.elizen.me/',
     limit: '1',
+    creatorId: '101',  
     domId: '#bber'
 };
 
@@ -111,21 +112,27 @@ console.log("bbMemos 对象设置完成:", bbMemos);
 
 function getRecentMemo() {
     console.log("开始获取最新 Memo");
-    var bbUrl = `${bbMemos.memos}api/v1/memo?limit=${bbMemos.limit}`;
+    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
     console.log("API URL:", bbUrl);
 
     fetch(bbUrl)
     .then(response => {
         console.log("API 响应状态:", response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         return response.json();
     })
     .then(data => {
         console.log("API 返回数据:", data);
+        if (!data || data.length === 0) {
+            throw new Error("No data returned from API");
+        }
         updateHTMl(data);
     })
     .catch(error => {
-        console.error("获取数据失败:", error);
-        document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
+        console.error("获取或处理数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
     });
 }
 
