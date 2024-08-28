@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/custom.css"></link>
     <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
     <script type="text/javascript" src="/js/view-image.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
     
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
@@ -95,6 +96,77 @@
       </header>
 
 
+<div id="recent-memo" class="recent-memo">
+    <h2>最新动态</h2>
+    <div id="memo-content"></div>
+  </div>
+  
+  <script>
+  var bbMemo = {
+      memos: 'https://demo.usememos.com/',
+      limit: '1',
+      creatorId: '101',
+      domId: '#recent-memo',
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+      getRecentMemo();
+  });
+  
+  function getRecentMemo() {
+      var bbUrl = bbMemo.memos + "api/memo?creatorId=" + bbMemo.creatorId + "&rowStatus=NORMAL&limit=" + bbMemo.limit;
+      fetch(bbUrl).then(res => res.json()).then(resdata => {
+          updateHTML(resdata.data);
+      });
+  }
+  
+  function updateHTML(data) {
+      var memoContentDiv = document.querySelector("#memo-content");
+      var tag_reg = /#([^\s#]+?) /g;
+      
+      if (data.length > 0) {
+          var bbContREG = data[0].content
+              .replace(tag_reg, "<span class='tag-span'>#$1</span> ");
+          var contentHtml = marked.parse(bbContREG);
+          
+          var dateStr = new Date(data[0].createdTs * 1000).toLocaleString();
+          var memoString = `<div class="bb-timeline"><ul class="bb-list-ul"><li class="bb-list-li"><div class="bb-div"><div class="datatime">${dateStr}</div><div class="datacont">${contentHtml}</div></div></li></ul></div>`;
+          
+          memoContentDiv.innerHTML = memoString;
+      } else {
+          memoContentDiv.innerHTML = "<p>暂无数据</p>";
+      }
+  }
+  </script>
+  
+  <style>
+  .recent-memo {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+  }
+  .recent-memo h3 {
+      margin-top: 0;
+  }
+  .bb-timeline ul {
+      padding-left: 0;
+  }
+  .bb-timeline ul li {
+      list-style-type: none;
+  }
+  .datatime {
+      font-size: 0.85em;
+      color: #777;
+  }
+  .datacont {
+      margin-top: 5px;
+  }
+  .tag-span {
+      color: #42b983;
+  }
+  </style>
 
 
 
