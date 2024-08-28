@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
-{{ partial "recent-memo.html" . }}
 {{ .Content }}
+{{ partial "recent-memo.html" . }}
 
 {{ if .IsHome }}
 {{ $.Scratch.Set "pages" first 10 .Site.RegularPages }}

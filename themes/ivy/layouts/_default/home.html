@@ -1,6 +1,9 @@
 {{ partial "header.html" . }}
 
-{{ .Content }}
+{{ $content := .Content }}
+{{ $memoPartial := partial "recent-memo.html" . }}
+{{ $content := replace $content "<!-- INSERT_MEMO_HERE -->" $memoPartial }}
+{{ $content | safeHTML }}
 
 {{ if .IsHome }}
 {{ $.Scratch.Set "pages" .Site.RegularPages }}
