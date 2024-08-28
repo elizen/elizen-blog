@@ -96,41 +96,74 @@
       </header>
 
 
-<div id="bber"></div>
+<div id="bber">正在加载...</div>
 
 <script>
+console.log("脚本开始执行");
 
 var bbMemos = {
-    memos: 'https://demo.usememos.com/', 
-    limit: '1', 
-    creatorId: '101', 
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    openId: 'eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiZWxpemVuLm1lQGdtYWlsLmNvbSIsImlzcyI6Im1lbW9zIiwic3ViIjoiMTAxIiwiYXVkIjpbInVzZXIuYWNjZXNzLXRva2VuIl0sImlhdCI6MTY5NzUwNzk1NX0.Fu_S88S0qAhNYO',
     domId: '#bber'
 };
 
+console.log("bbMemos 对象设置完成:", bbMemos);
 
-var bbScript = document.createElement('script');
-bbScript.src = '\/js\/bb.js'; 
-bbScript.onload = function() {
-    
-    var originalUpdateHTMl = window.updateHTMl;
-    window.updateHTMl = function(data) {
-        if (data.length > 0) {
-            originalUpdateHTMl([data[0]]); 
-        } else {
-            document.querySelector(bbMemo.domId).innerHTML = "<p>暂无数据</p>";
-        }
-    };
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?openId=${bbMemos.openId}&limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
 
+    fetch(bbUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log("API 返回数据:", data);
+            updateHTMl(data);
+        })
+        .catch(error => {
+            console.error("获取数据失败:", error);
+            document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
+        });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
     
-    getFirstList();
-};
-document.head.appendChild(bbScript);
+    if (data && data.length > 0) {
+        var memo = data[0];
+        var content = marked.parse(memo.content);
+        var dateStr = new Date(memo.createdTs).toLocaleString();
+
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+    } else {
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
 </script>
 
 <style>
 #bber {
     margin-top: 2em;
     width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 .bb-timeline {
     margin-bottom: 2em;
