@@ -6,7 +6,6 @@ console.log("脚本开始执行");
 var bbMemos = {
     memos: 'https://memos.elizen.me/',
     limit: '1',
-    openId: 'eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiZWxpemVuLm1lQGdtYWlsLmNvbSIsImlzcyI6Im1lbW9zIiwic3ViIjoiMTAxIiwiYXVkIjpbInVzZXIuYWNjZXNzLXRva2VuIl0sImlhdCI6MTY5NzUwNzk1NX0.Fu_S88S0qAhNYO',
     domId: '#bber'
 };
 
@@ -14,19 +13,22 @@ console.log("bbMemos 对象设置完成:", bbMemos);
 
 function getRecentMemo() {
     console.log("开始获取最新 Memo");
-    var bbUrl = `${bbMemos.memos}api/v1/memo?openId=${bbMemos.openId}&limit=${bbMemos.limit}`;
+    var bbUrl = `${bbMemos.memos}api/v1/memo?limit=${bbMemos.limit}`;
     console.log("API URL:", bbUrl);
 
     fetch(bbUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log("API 返回数据:", data);
-            updateHTMl(data);
-        })
-        .catch(error => {
-            console.error("获取数据失败:", error);
-            document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
-        });
+    .then(response => {
+        console.log("API 响应状态:", response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log("API 返回数据:", data);
+        updateHTMl(data);
+    })
+    .catch(error => {
+        console.error("获取数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
+    });
 }
 
 function updateHTMl(data) {
@@ -34,10 +36,12 @@ function updateHTMl(data) {
     var memoContent = document.querySelector(bbMemos.domId);
     
     if (data && data.length > 0) {
+        console.log("解析 Memo 内容");
         var memo = data[0];
-        var content = marked.parse(memo.content);
-        var dateStr = new Date(memo.createdTs).toLocaleString();
+        var content = memo.content.replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>');
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); // 注意这里乘以1000
 
+        console.log("更新 DOM");
         memoContent.innerHTML = `
             <div class="bb-timeline">
                 <ul class="bb-list-ul">
@@ -49,7 +53,9 @@ function updateHTMl(data) {
                     </li>
                 </ul>
             </div>`;
+        console.log("DOM 更新完成");
     } else {
+        console.log("没有 Memo 数据");
         memoContent.innerHTML = "<p>暂无数据</p>";
     }
 }
