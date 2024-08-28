@@ -94,12 +94,115 @@
       </header>
 
 
+
+
+
 <p><img src="https://r2.elizen.me/2024/04/16e912e006fe8d3963a378eabbb8c242.jpg" alt=""></p>
 <blockquote>
 <p>一个人应该能够给孩子换尿布、计划一次侵略行动、杀猪、驾驶飞船、设计建筑物、写诗、做会计账目、砌墙、接合断骨、照顾临终的人、执行命令、下达命令、与人合作、独立行动、解方程式、分析一个新问题、施肥、编程、做一餐美味的饭、高效地战斗、勇敢地死去。专业化是为昆虫准备的。
 ——<em>罗伯特·海因莱恩</em></p>
 </blockquote>
 <p>更多文章请访问 <a href="/tags/">Tags</a> 或者 <a href="/bb/">Memos</a>。</p>
+<div id="bber">正在加载...</div>
+
+<script>
+console.log("脚本开始执行");
+
+var bbMemos = {
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    domId: '#bber'
+};
+
+console.log("bbMemos 对象设置完成:", bbMemos);
+
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
+
+    fetch(bbUrl)
+    .then(response => {
+        console.log("API 响应状态:", response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log("API 返回数据:", data);
+        updateHTMl(data);
+    })
+    .catch(error => {
+        console.error("获取数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
+    });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
+    
+    if (data && data.length > 0) {
+        console.log("解析 Memo 内容");
+        var memo = data[0];
+        var content = memo.content.replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>');
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+
+        console.log("更新 DOM");
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+        console.log("DOM 更新完成");
+    } else {
+        console.log("没有 Memo 数据");
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
+</script>
+
+<style>
+#bber {
+    margin-top: 2em;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.bb-timeline {
+    margin-bottom: 2em;
+}
+.bb-list-ul {
+    list-style-type: none;
+    padding: 0;
+}
+.bb-list-li {
+    margin-bottom: 1rem;
+}
+.bb-div {
+    padding: 0.6rem 1rem;
+    border: 1px solid #666;
+}
+.datatime {
+    font-size: 0.85em;
+    color: #777;
+}
+.datacont {
+    margin-top: 5px;
+}
+.tag-span {
+    color: #42b983;
+}
+</style>
 <h2 id="now">Now</h2>
 <p>本来单独见了一个 Now 页面，来介绍自己最近在干嘛，给一些偶尔闲逛过来的老友一个说辞，但想想觉得多此一举，索性写在这里，不仅是对自己虚度的时光找来借口，也算是门前挂好的一副对联。</p>
 <p>2024-06-27 更新：</p>
@@ -925,4 +1028,3 @@
 
   </body>
 </html>
-
