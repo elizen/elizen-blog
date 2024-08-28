@@ -1,38 +1,71 @@
-<div id="bber"></div>
+<div id="bber">正在加载...</div>
 
 <script>
-// 设置 bbMemos 对象来覆盖 bb.js 中的默认设置
+console.log("脚本开始执行");
+
 var bbMemos = {
-    memos: 'https://demo.usememos.com/', // 替换为您的 Memos 实例 URL
-    limit: '1', // 只获取1条记录
-    creatorId: '101', // 替换为您的 creatorId
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    openId: 'eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiZWxpemVuLm1lQGdtYWlsLmNvbSIsImlzcyI6Im1lbW9zIiwic3ViIjoiMTAxIiwiYXVkIjpbInVzZXIuYWNjZXNzLXRva2VuIl0sImlhdCI6MTY5NzUwNzk1NX0.Fu_S88S0qAhNYO',
     domId: '#bber'
 };
 
-// 加载原有的 bb.js 文件
-var bbScript = document.createElement('script');
-bbScript.src = '{{ "js/bb.js" | relURL }}'; // 使用 Hugo 的 relURL 函数
-bbScript.onload = function() {
-    // bb.js 加载完成后，修改 updateHTMl 函数
-    var originalUpdateHTMl = window.updateHTMl;
-    window.updateHTMl = function(data) {
-        if (data.length > 0) {
-            originalUpdateHTMl([data[0]]); // 只传递第一条数据
-        } else {
-            document.querySelector(bbMemo.domId).innerHTML = "<p>暂无数据</p>";
-        }
-    };
+console.log("bbMemos 对象设置完成:", bbMemos);
 
-    // 触发加载
-    getFirstList();
-};
-document.head.appendChild(bbScript);
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?openId=${bbMemos.openId}&limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
+
+    fetch(bbUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log("API 返回数据:", data);
+            updateHTMl(data);
+        })
+        .catch(error => {
+            console.error("获取数据失败:", error);
+            document.querySelector(bbMemos.domId).innerHTML = "<p>加载失败，请检查控制台。</p>";
+        });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
+    
+    if (data && data.length > 0) {
+        var memo = data[0];
+        var content = marked.parse(memo.content);
+        var dateStr = new Date(memo.createdTs).toLocaleString();
+
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+    } else {
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
 </script>
 
 <style>
 #bber {
     margin-top: 2em;
     width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 .bb-timeline {
     margin-bottom: 2em;
