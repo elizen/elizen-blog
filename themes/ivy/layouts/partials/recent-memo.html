@@ -46,11 +46,19 @@ function updateHTMl(data) {
         console.log("解析 Memo 内容");
         var memo = data[0];
         var content = memo.content.replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>');
-        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).replace(/\//g, '/').replace(',', '');
 
         console.log("更新 DOM");
         memoContent.innerHTML = `
-            <div class="bb-timeline">
+            <section class="bb-timeline">
                 <ul class="bb-list-ul">
                     <li class="bb-list-li">
                         <div class="bb-div">
@@ -59,7 +67,7 @@ function updateHTMl(data) {
                         </div>
                     </li>
                 </ul>
-            </div>`;
+            </section>`;
         console.log("DOM 更新完成");
     } else {
         console.log("没有 Memo 数据");
@@ -72,36 +80,3 @@ document.addEventListener('DOMContentLoaded', function() {
     getRecentMemo();
 });
 </script>
-
-<style>
-#bber {
-    margin-top: 2em;
-    width: 100%;
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-.bb-timeline {
-    margin-bottom: 2em;
-}
-.bb-list-ul {
-    list-style-type: none;
-    padding: 0;
-}
-.bb-list-li {
-    margin-bottom: 1rem;
-}
-.bb-div {
-    padding: 0.6rem 1rem;
-    border: 1px solid #666;
-}
-.datatime {
-    font-size: 0.85em;
-    color: #777;
-}
-.datacont {
-    margin-top: 5px;
-}
-.tag-span {
-    color: #42b983;
-}
-</style>
