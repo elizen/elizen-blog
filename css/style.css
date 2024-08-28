@@ -103,6 +103,13 @@ ul, ol {
 li {
   margin: 4px 0;
   padding: 0;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.tagline li {
+  margin: 4px 0;
+  padding: 0;
 }
 
 /* Links */
