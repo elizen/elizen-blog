@@ -183,7 +183,6 @@ del:hover {
   }
 
   .main > ul > li {
-    width: calc(33.33% - 20px);
     margin: 10px;
     font-size: 0.9em;
     display: flex;
@@ -203,9 +202,6 @@ del:hover {
     text-overflow: ellipsis;
   }
 
-  .main > ul > li a:hover {
-    text-decoration: underline;
-  }
 }
 
 @media screen and (max-width: 960px) {
@@ -290,5 +286,14 @@ del:hover {
   font-size: 20px;
   font-weight: bold;
   border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.year-group {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
   padding-bottom: 10px;
 }
