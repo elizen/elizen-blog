@@ -151,7 +151,9 @@ function updateHTMl(data) {
     if (data && data.length > 0) {
         console.log("解析 Memo 内容");
         var memo = data[0];
-        var content = memo.content.replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>');
+        var content = memo.content
+            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
         var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
 
         console.log("更新 DOM");
