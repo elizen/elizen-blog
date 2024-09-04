@@ -466,32 +466,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     </script>
-  <script>
-    
-    (function() {
-        function parseMarkdownImages() {
-            const datacontElements = document.querySelectorAll('.datacont');
-            
-            datacontElements.forEach(element => {
-                let content = element.innerHTML;
-                
-                
-                content = content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-                
-                element.innerHTML = content;
-            });
-            
-            console.log('Markdown images parsed');  
-        }
-    
-        
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', parseMarkdownImages);
-        } else {
-            parseMarkdownImages();
-        }
-    })();
-    </script>
   </body>
 </html>
 
