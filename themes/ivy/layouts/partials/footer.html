@@ -2,32 +2,6 @@
     <script src="https://immmmm.com/waterfall.min.js"></script>
     <script src="https://immmmm.com/imgStatus.min.js"></script>
     <script>
-      // 立即执行的函数，避免污染全局作用域
-      (function() {
-          function parseMarkdownImages() {
-              const datacontElements = document.querySelectorAll('.datacont');
-              
-              datacontElements.forEach(element => {
-                  let content = element.innerHTML;
-                  
-                  // 将Markdown图片语法转换为HTML图片标签
-                  content = content.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-                  
-                  element.innerHTML = content;
-              });
-              
-              console.log('Markdown images parsed');  // 添加这行来确认脚本执行
-          }
-      
-          // 当DOM加载完成时执行解析
-          if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', parseMarkdownImages);
-          } else {
-              parseMarkdownImages();
-          }
-      })();
-      </script>
-    <script>
       document.addEventListener('DOMContentLoaded', () => {
       //外链 gallery 标签相册瀑布流
       var photosAll = document.getElementsByTagName('gallery') || '';
