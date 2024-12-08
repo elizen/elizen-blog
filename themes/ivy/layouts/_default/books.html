@@ -87,7 +87,7 @@
     });
   </script>
 <div class="lg:col-start-2 lg:col-span-6">
-  {{$books := resources.Get "data/douban/book.csv" }}
+  {{$books := resources.Get "data/douban/book.csv" | transform.Unmarshal }}
   {{$scratch := newScratch}}
   {{$scratch.Add "genres" slice}}
   {{range $idx, $book := $books}}
