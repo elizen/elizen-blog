@@ -87,7 +87,8 @@
     });
   </script>
 <div class="lg:col-start-2 lg:col-span-6">
-  {{$movies := resources.GetRemote "data/douban/movie.csv" | transform.Unmarshal }}
+  {{ $csv := resources.Get "data/douban/movie.csv" }}
+  {{ $movies := $csv | transform.Unmarshal }} 
   {{$scratch := newScratch}}
   {{$scratch.Add "genres" slice}}
   {{range $idx, $movie := $movies}}
