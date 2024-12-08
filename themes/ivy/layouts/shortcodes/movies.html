@@ -1,5 +1,5 @@
 {{ $csv := resources.Get "data/douban/movie.csv" }}
-{{ $movies := $csv | transform.Unmarshal }}  <!-- 确保 $movies 是一个列表 -->
+{{ $movies := $csv | transform.Unmarshal (dict "separator" ",") }}
 {{$numb := 5}}
 {{ if .Get 0 }}
     {{$numb = add (.Get 0) 1}}
