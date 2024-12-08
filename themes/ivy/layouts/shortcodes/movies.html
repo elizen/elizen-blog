@@ -6,7 +6,7 @@
 {{end}}
 <div class="sc-ksluID gFnzgG">
     <div class="sc-dIsUp fIuTG">
-        {{range $idx, $movie := first $numb $movies}}
+        {{range $idx, $movie := first $movies $numb}}  <!-- 修改了这里 -->
         {{if ne $idx 0 }}
             {{ $coverSrc := index $movie 5 }} 
             {{ $douURL := replaceRE "https://movie.douban.com/subject/([0-9]+)/" "https://dou.img.lithub.cc/movie/$1.jpg" $coverSrc}}
