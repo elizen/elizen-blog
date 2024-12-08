@@ -1,5 +1,5 @@
 {{ $csv := resources.Get "data/douban/movie.csv" }}
-{{ $movies := $csv | transform.Unmarshal }}  <!-- 确保 $movies 已经是一个列表 -->
+{{ $movies := $csv | transform.Unmarshal }}  <!-- 确保 $movies 是一个列表 -->
 {{$numb := 5}}
 {{ if .Get 0 }}
     {{$numb = add (.Get 0) 1}}
@@ -7,7 +7,8 @@
 
 <div class="sc-ksluID gFnzgG">
     <div class="sc-dIsUp fIuTG">
-        {{range $idx, $movie := first $movies $numb}}  <!-- 确保 first 的参数顺序正确 -->
+        {{ $limitedMovies := slice $movies 0 $numb }}  <!-- 使用 slice 代替 first -->
+        {{range $idx, $movie := $limitedMovies}}  <!-- 遍历限定数量的电影 -->
         {{if ne $idx 0 }}
             {{ $coverSrc := index $movie 5 }} 
             {{ $douURL := replaceRE "https://movie.douban.com/subject/([0-9]+)/" "https://dou.img.lithub.cc/movie/$1.jpg" $coverSrc}}
