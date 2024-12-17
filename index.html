@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.139.3">
+	<meta name="generator" content="Hugo 0.119.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -102,130 +102,7 @@
 <p>一个人应该能够给孩子换尿布、计划一次侵略行动、杀猪、驾驶飞船、设计建筑物、写诗、做会计账目、砌墙、接合断骨、照顾临终的人、执行命令、下达命令、与人合作、独立行动、解方程式、分析一个新问题、施肥、编程、做一餐美味的饭、高效地战斗、勇敢地死去。专业化是为昆虫准备的。
 ——<em>罗伯特·海因莱恩</em></p>
 </blockquote>
-<p>更多文章请访问 <a href="/tags/">Tags</a> 或者 <a href="/bb/">Memos</a>。</p>
-<h2 id="最近">最近</h2>
-<div id="bber">正在加载...</div>
-
-<script>
-console.log("脚本开始执行");
-
-var bbMemos = {
-    memos: 'https://memos.elizen.me/',
-    limit: '1',
-    creatorId: '101',  
-    domId: '#bber'
-};
-
-console.log("bbMemos 对象设置完成:", bbMemos);
-
-function getRecentMemo() {
-    console.log("开始获取最新 Memo");
-    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
-    console.log("API URL:", bbUrl);
-
-    fetch(bbUrl)
-    .then(response => {
-        console.log("API 响应状态:", response.status);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("API 返回数据:", data);
-        if (!data || data.length === 0) {
-            throw new Error("No data returned from API");
-        }
-        updateHTMl(data);
-    })
-    .catch(error => {
-        console.error("获取或处理数据失败:", error);
-        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
-    });
-}
-
-function updateHTMl(data) {
-    console.log("开始更新 HTML");
-    var memoContent = document.querySelector(bbMemos.domId);
-    
-    if (data && data.length > 0) {
-        console.log("解析 Memo 内容");
-        var memo = data[0];
-        var content = memo.content
-            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
-            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
-
-        console.log("更新 DOM");
-        memoContent.innerHTML = `
-            <div class="bb-timeline">
-                <ul class="bb-list-ul">
-                    <li class="bb-list-li">
-                        <div class="bb-div">
-                            <div class="datatime">${dateStr}</div>
-                            <div class="datacont">${content}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>`;
-        console.log("DOM 更新完成");
-    } else {
-        console.log("没有 Memo 数据");
-        memoContent.innerHTML = "<p>暂无数据</p>";
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM 加载完成，调用 getRecentMemo");
-    getRecentMemo();
-});
-</script>
-
-<style>
-    #bber {
-        margin-top: 2em;
-        width: 100%;
-        border: 1px solid #ddd;
-        padding: 10px;
-    }
-
-   .bb-timeline {
-        margin-bottom: 2em;
-    }
-
-   .bb-list-ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-   .bb-list-li {
-        margin-bottom: 1rem;
-    }
-
-   .bb-div {
-        padding: 0.6rem 1rem;
-    }
-
-   .datatime {
-        font-size: 0.85em;
-        color: #777;
-    }
-
-   .datacont {
-        margin-top: 5px;
-    }
-
-   .tag-span {
-        color: #42b983;
-    }
-</style>
-<p>2024-08-28 更新：</p>
-<blockquote>
-<p><del>学英语，准备试试雅思考试。估计考试又要被我鸽子，但是最近确实在学英语。确实是鸽子了考试，不过增加了一个我喜欢的方法，读书。</del> 开始阅读《Magic Tree House》系列。</p>
-<p>看王小波，已经读到<del>第四本《黑铁时代》</del>，<del>第六本《黄金时代》</del>，<del>第八本了《爱你就像爱生命》</del>，即将开始第十本《我的精神家园》。</p>
-<p>好奇心转移到了欧洲，想看看文明的起源究竟长个什么样子。<del>刚进入斯巴达，还没有走出古希腊，不知道什么时候会逛到罗马</del>。格拉古兄弟已经登场。</p>
-<p>研究与大模型有关的一切，但不是研究一切大模型。</p>
-</blockquote>
+<p>更多文章请访问 <a href="/tags/">分类</a> 或者 <a href="/bb/">札记</a>。</p>
 <h2 id="文字">文字</h2>
 
 
@@ -855,6 +732,11 @@ document.addEventListener('DOMContentLoaded', function() {
   </li>
   
   <li>
+    <span class="date">2021/01/06</span>
+    <a href="/posts/2021/01/2020-da-li/">大理</a>
+  </li>
+  
+  <li>
     <span class="date">2020/12/31</span>
     <a href="/posts/2020/12/2020-end/">2020 年概览</a>
   </li>
@@ -907,6 +789,11 @@ document.addEventListener('DOMContentLoaded', function() {
   <li>
     <span class="date">2020/10/20</span>
     <a href="/posts/2020/10/%E5%B7%A6%E5%B0%8F%E7%A5%96%E5%92%92%E6%96%B0%E4%B8%93%E8%BE%91%E6%88%91%E7%88%B1%E5%8F%B0%E6%B9%BE/">左小祖咒新专辑《我爱台湾》</a>
+  </li>
+  
+  <li>
+    <span class="date">2020/10/19</span>
+    <a href="/posts/2020/10/%E4%B8%AD%E5%9B%BD%E9%93%81%E9%81%93%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%83%8A%E5%BA%97/">中国铁道博物馆（东郊店）</a>
   </li>
   
   <li>
@@ -1002,6 +889,11 @@ document.addEventListener('DOMContentLoaded', function() {
   <li>
     <span class="date">2020/04/13</span>
     <a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86%E6%96%87%E7%AB%A0%E5%86%85%E9%93%BE%E6%A0%B7%E5%BC%8F/">博客增加了文章内链样式</a>
+  </li>
+  
+  <li>
+    <span class="date">2020/04/13</span>
+    <a href="/posts/2020/04/%E8%93%9D%E8%89%B2%E6%B8%AF%E6%B9%BE%E6%99%92%E5%A8%83%E4%B8%8A%E7%98%BE/">蓝色港湾，晒娃上瘾</a>
   </li>
   
   <li>

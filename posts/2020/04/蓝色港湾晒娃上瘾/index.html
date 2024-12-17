@@ -31,11 +31,11 @@
     
       
       <meta property="description" content="折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在single.html里加上引入 PATH 的代码：
-{{ .Render &quot;path&quot;}} 搞定之后爽歪歪。
+{{ .Render &amp;quot;path&amp;quot;}} 搞定之后爽歪歪。
 接下来准备研究一下瀑布流和灯箱效果了。
 ">
       <meta property="og:description" content="折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在single.html里加上引入 PATH 的代码：
-{{ .Render &quot;path&quot;}} 搞定之后爽歪歪。
+{{ .Render &amp;quot;path&amp;quot;}} 搞定之后爽歪歪。
 接下来准备研究一下瀑布流和灯箱效果了。
 ">
       
@@ -60,7 +60,7 @@
   </head>
 
   
-  <body class="0412lsgw">
+  <body class="posts">
     <header class="masthead">
       <h1><a href="/">Elizen</a></h1>
 
@@ -160,6 +160,11 @@
     });
     </script>
   
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/posts/2020/04/%E6%9D%A5%E4%B8%80%E6%9B%B2%E4%B8%9C%E5%8C%97%E7%81%AD%E7%81%AB%E6%9C%8B%E5%85%8B/">来一曲东北灭火朋克</a></span>
+  <span class="nav-next"><a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86%E6%96%87%E7%AB%A0%E5%86%85%E9%93%BE%E6%A0%B7%E5%BC%8F/">博客增加了文章内链样式</a> &rarr;</span>
+</nav>
+
   <hr>
   <div class="pagination__title" style="margin-bottom: 30px;">
   <span class="pagination__title-h">欢迎评论</span>
