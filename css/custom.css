@@ -170,14 +170,12 @@ del:hover {
   .main > h2 {
     font-size: 1.5em;
     margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
     padding-bottom: 10px;
   }
 
   .main > ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
     flex-wrap: wrap;
     margin: -10px; /* Compensate for child margins */
   }
@@ -185,7 +183,6 @@ del:hover {
   .main > ul > li {
     margin: 10px;
     font-size: 0.9em;
-    display: flex;
     align-items: baseline;
   }
 
