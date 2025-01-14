@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,95 +8,183 @@
     <meta property="og:title" content="流言蜚语 - Elizen">
     
     <meta name="twitter:card" content="summary">
+    <meta name="referrer" content="never" />
+
+    
+    
+    <link rel="stylesheet" href="/css/custom.css"></link>
+    <script type="text/javascript" src="/js/view-image.js"></script>
+    <script>
+    
+    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
+    </script>
+    <script src="/js/custom-markdown-parser.js"></script>
+    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    
+    
+
+    
+      
+    
+
     
       
     
 
     
     
-    
 
     
 
     
+    
 
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
-
   </head>
 
   
+  <body class="liuyan-feiyu">
+    <header class="masthead">
+      <h1><a href="/">Elizen</a></h1>
+
+<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
   
   
-  <body class="single liuyan-feiyu">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/movies/">电影</a></span>
-      <span><a href="/books/">阅读</a></span>
-      <span><a href="/bibliography/">书目</a></span>
-      <span><a href="/posts/">归档</a></span>
-      <span><a href="/newsletter/">通讯</a></span>
-      <span><a href="/kids/">孩童</a></span>
+  <li><a href="/movies/">电影</a></li>
+  
+  <li><a href="/books/">阅读</a></li>
+  
+  <li><a href="/bibliography/">书目</a></li>
+  
+  <li><a href="/posts/">归档</a></li>
+  
+  <li><a href="/newsletter/">通讯</a></li>
+  
+  <li><a href="/kids/">孩童</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
       
-    </div>
-    </nav>
+<h1>流言蜚语</h1>
 
-<div class="article-meta">
-<h1 class="title">流言蜚语</h1>
-
-<h3 class="meta-line">
-  <span>
-
-
-
-
-
-
-
-</span>
-  <span class="term">
-  
-  </span>
+<h3>
 </h3>
-</div>
-
-<div class="main">
+<hr>
 
 
+      </header>
 
 
+<article class="post-single">
+  <div class="post-content">
+    
+    <div class="generator-container">
+      <label for="text">文本内容：</label>
+      <textarea id="text" rows="6" placeholder="输入文本内容..." oninput="generateImage()"></textarea>
+      <label for="attribution">署名：</label>
+      <input type="text" id="attribution" placeholder="输入署名..." oninput="generateImage()">
+      <canvas id="canvas"></canvas>
+      <div class="button-container">
+        <button onclick="copyImage()">复制图片</button>
+        <button onclick="downloadImage()">下载图片</button>
+      </div>
+    </div>
+  </div>
+</article>
 
+<style>
+  .generator-container {
+    margin-top: 20px;
+  }
+  .generator-container label {
+    display: block;
+    margin-top: 10px;
+  }
+  .generator-container textarea,
+  .generator-container input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .generator-container canvas {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .button-container button {
+    flex: 1;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+</style>
 
+<script src="/js/generator.js" defer></script>
 
-
-
-</div>
-  <footer class="small">
+  <footer>
   
+  <hr>
   
-  
-  <hr/>
-  
-  <p class="nav-bottom">
-    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
-    <span class="menu-bottom">
-<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
 
-<a href="#">Back to Top</a>
-
-</span>
-  </p>
+  
+  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
+  </article>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
-

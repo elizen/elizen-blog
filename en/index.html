@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
   <head>
 	<meta name="generator" content="Hugo 0.119.0">
     <meta charset="utf-8">
@@ -10,68 +9,137 @@
     <meta property="og:title" content="Elizen - Elizen">
     
     <meta name="twitter:card" content="summary">
+    <meta name="referrer" content="never" />
+
+    
+    
+    <link rel="stylesheet" href="/css/custom.css"></link>
+    <script type="text/javascript" src="/js/view-image.js"></script>
+    <script>
+    
+    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
+    </script>
+    <script src="/js/custom-markdown-parser.js"></script>
+    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    
+    
+
+    
+      
+    
+
     
       
     
 
     
     
-    
 
     
 
     
-    <link href="/en/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
+    <link href="/en/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+    
     
 
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
-
   </head>
 
   
+  <body class="home">
+    <header class="masthead">
+      <h1><a href="/">Elizen</a></h1>
+
+<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
   
   
-  <body class=" en">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/movies/">电影</a></span>
-      <span><a href="/books/">阅读</a></span>
-      <span><a href="/bibliography/">书目</a></span>
-      <span><a href="/posts/">归档</a></span>
-      <span><a href="/newsletter/">通讯</a></span>
-      <span><a href="/kids/">孩童</a></span>
+  <li><a href="/movies/">电影</a></li>
+  
+  <li><a href="/books/">阅读</a></li>
+  
+  <li><a href="/bibliography/">书目</a></li>
+  
+  <li><a href="/posts/">归档</a></li>
+  
+  <li><a href="/newsletter/">通讯</a></li>
+  
+  <li><a href="/kids/">孩童</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
       
-    </div>
-    </nav>
+
+      </header>
 
 
 
-<div class="home">
-
-</div>
 
 
-  <footer class="small">
+
+
+
+
+
+<ul>
   
+  <li>
+    <span class="date">2025/01/13</span>
+    <a href="/en/posts/2025/01/2025-week1-and-week2.en.md/">2025 Biweekly Journal (0)</a>
+  </li>
   
+</ul>
+
+  <footer>
   
-  <p class="nav-bottom">
-    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
-    <span class="menu-bottom">
-</span>
-  </p>
+  <hr>
+  
+
+  
+  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
+  </article>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
-

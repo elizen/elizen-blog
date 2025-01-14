@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,538 +8,376 @@
     <meta property="og:title" content="daily - Elizen">
     
     <meta name="twitter:card" content="summary">
+    <meta name="referrer" content="never" />
+
+    
+    
+    <link rel="stylesheet" href="/css/custom.css"></link>
+    <script type="text/javascript" src="/js/view-image.js"></script>
+    <script>
+    
+    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
+    </script>
+    <script src="/js/custom-markdown-parser.js"></script>
+    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    
+    
+
+    
+      
+    
+
     
       
     
 
     
     
-    
 
     
 
     
-    <link href="/tags/daily/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
+    <link href="/tags/daily/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+    
     
 
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
-
   </head>
 
   
+  <body class="tags">
+    <header class="masthead">
+      <h1><a href="/">Elizen</a></h1>
+
+<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
   
   
-  <body class=" tags">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/movies/">电影</a></span>
-      <span><a href="/books/">阅读</a></span>
-      <span><a href="/bibliography/">书目</a></span>
-      <span><a href="/posts/">归档</a></span>
-      <span><a href="/newsletter/">通讯</a></span>
-      <span><a href="/kids/">孩童</a></span>
+  <li><a href="/movies/">电影</a></li>
+  
+  <li><a href="/books/">阅读</a></li>
+  
+  <li><a href="/bibliography/">书目</a></li>
+  
+  <li><a href="/posts/">归档</a></li>
+  
+  <li><a href="/newsletter/">通讯</a></li>
+  
+  <li><a href="/kids/">孩童</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
       
-    </div>
-    </nav>
+<h1>daily</h1>
+
+<h3>
+</h3>
+<hr>
+
+
+      </header>
+
+
+
+<div id="bber">正在加载...</div>
+
+<script>
+console.log("脚本开始执行");
+
+var bbMemos = {
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    creatorId: '101',  
+    domId: '#bber'
+};
+
+console.log("bbMemos 对象设置完成:", bbMemos);
+
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
+
+    fetch(bbUrl)
+    .then(response => {
+        console.log("API 响应状态:", response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("API 返回数据:", data);
+        if (!data || data.length === 0) {
+            throw new Error("No data returned from API");
+        }
+        updateHTMl(data);
+    })
+    .catch(error => {
+        console.error("获取或处理数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
+    });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
+    
+    if (data && data.length > 0) {
+        console.log("解析 Memo 内容");
+        var memo = data[0];
+        var content = memo.content
+            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+
+        console.log("更新 DOM");
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+        console.log("DOM 更新完成");
+    } else {
+        console.log("没有 Memo 数据");
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
+</script>
+
+<style>
+    #bber {
+        margin-top: 2em;
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+   .bb-timeline {
+        margin-bottom: 2em;
+    }
+
+   .bb-list-ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
+   .bb-list-li {
+        margin-bottom: 1rem;
+    }
 
+   .bb-div {
+        padding: 0.6rem 1rem;
+    }
 
-<h1 class="title">daily<span class="small subtitle"> | <a href="/tags/">tags</a></span></h1>
+   .datatime {
+        font-size: 0.85em;
+        color: #777;
+    }
 
-<div class="main archive">
+   .datacont {
+        margin-top: 5px;
+    }
 
+   .tag-span {
+        color: #42b983;
+    }
+</style>
 
 
-<h2 class="toc-line"><a href="/posts/2021/11/happy-birthday-to-11/">我爱双十一</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
 
 
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-11-11</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-022/">没有烟花的新年</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-16</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-021/">家庭</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-15</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-020/">文学金线</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-14</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-019/">周末推书《间谍与叛徒》</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-13</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-018/">像产品经理学习</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-12</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-017/">虚惊一场</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-11</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-016/">参差书店</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-10</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-015/">基督教的基本分化</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-09</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-014/">复盘</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-08</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-013/">理科思维</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-07</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-012/">货拉拉拉货</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-06</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-011/">美妙人生</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-05</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-010/">停车太难</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-04</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-009/">停车太难</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-03</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-008/">从不做梦</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-02</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/03/daily-007/">关系</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-03-01</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-006/">读《野草》</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-28</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-005/">跑步</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-27</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-004/">一点可能</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-26</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-003/">位移</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-25</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-002/">梦与幻想</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-24</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-001/">哭不出来</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-23</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2021/02/daily-000/">开始日更</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2021-02-22</span>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-  <footer class="small">
+<ul>
   
+  <li>
+    <span class="date">2021/11/11</span>
+    <a href="/posts/2021/11/happy-birthday-to-11/">我爱双十一</a>
+  </li>
   
+  <li>
+    <span class="date">2021/03/16</span>
+    <a href="/posts/2021/03/daily-022/">没有烟花的新年</a>
+  </li>
   
-  <hr/>
+  <li>
+    <span class="date">2021/03/15</span>
+    <a href="/posts/2021/03/daily-021/">家庭</a>
+  </li>
   
-  <p class="nav-bottom">
-    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
-    <span class="menu-bottom">
-<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
+  <li>
+    <span class="date">2021/03/14</span>
+    <a href="/posts/2021/03/daily-020/">文学金线</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/13</span>
+    <a href="/posts/2021/03/daily-019/">周末推书《间谍与叛徒》</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/12</span>
+    <a href="/posts/2021/03/daily-018/">像产品经理学习</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/11</span>
+    <a href="/posts/2021/03/daily-017/">虚惊一场</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/10</span>
+    <a href="/posts/2021/03/daily-016/">参差书店</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/09</span>
+    <a href="/posts/2021/03/daily-015/">基督教的基本分化</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/08</span>
+    <a href="/posts/2021/03/daily-014/">复盘</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/07</span>
+    <a href="/posts/2021/03/daily-013/">理科思维</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/06</span>
+    <a href="/posts/2021/03/daily-012/">货拉拉拉货</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/05</span>
+    <a href="/posts/2021/03/daily-011/">美妙人生</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/04</span>
+    <a href="/posts/2021/03/daily-010/">停车太难</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/03</span>
+    <a href="/posts/2021/03/daily-009/">停车太难</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/02</span>
+    <a href="/posts/2021/03/daily-008/">从不做梦</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/03/01</span>
+    <a href="/posts/2021/03/daily-007/">关系</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/28</span>
+    <a href="/posts/2021/02/daily-006/">读《野草》</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/27</span>
+    <a href="/posts/2021/02/daily-005/">跑步</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/26</span>
+    <a href="/posts/2021/02/daily-004/">一点可能</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/25</span>
+    <a href="/posts/2021/02/daily-003/">位移</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/24</span>
+    <a href="/posts/2021/02/daily-002/">梦与幻想</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/23</span>
+    <a href="/posts/2021/02/daily-001/">哭不出来</a>
+  </li>
+  
+  <li>
+    <span class="date">2021/02/22</span>
+    <a href="/posts/2021/02/daily-000/">开始日更</a>
+  </li>
+  
+</ul>
 
-<a href="/tags/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"></span>
+</nav>
 
-<a href="#">Back to Top</a>
+  <hr>
+  
 
-</span>
-  </p>
+  
+  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
+  </article>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
 

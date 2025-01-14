@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,101 +8,261 @@
     <meta property="og:title" content="三省吾身 - Elizen">
     
     <meta name="twitter:card" content="summary">
+    <meta name="referrer" content="never" />
+
+    
+    
+    <link rel="stylesheet" href="/css/custom.css"></link>
+    <script type="text/javascript" src="/js/view-image.js"></script>
+    <script>
+    
+    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
+    </script>
+    <script src="/js/custom-markdown-parser.js"></script>
+    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    
+    
+
+    
+      
+    
+
     
       
     
 
     
     
-    
 
     
 
     
-    <link href="/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
+    <link href="/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+    
     
 
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
-
   </head>
 
   
+  <body class="tags">
+    <header class="masthead">
+      <h1><a href="/">Elizen</a></h1>
+
+<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
   
   
-  <body class=" tags">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/movies/">电影</a></span>
-      <span><a href="/books/">阅读</a></span>
-      <span><a href="/bibliography/">书目</a></span>
-      <span><a href="/posts/">归档</a></span>
-      <span><a href="/newsletter/">通讯</a></span>
-      <span><a href="/kids/">孩童</a></span>
+  <li><a href="/movies/">电影</a></li>
+  
+  <li><a href="/books/">阅读</a></li>
+  
+  <li><a href="/bibliography/">书目</a></li>
+  
+  <li><a href="/posts/">归档</a></li>
+  
+  <li><a href="/newsletter/">通讯</a></li>
+  
+  <li><a href="/kids/">孩童</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
       
-    </div>
-    </nav>
+<h1>三省吾身</h1>
+
+<h3>
+</h3>
+<hr>
+
+
+      </header>
 
 
 
-<h1 class="title">三省吾身<span class="small subtitle"> | <a href="/tags/">tags</a></span></h1>
+<div id="bber">正在加载...</div>
 
-<div class="main archive">
+<script>
+console.log("脚本开始执行");
+
+var bbMemos = {
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    creatorId: '101',  
+    domId: '#bber'
+};
+
+console.log("bbMemos 对象设置完成:", bbMemos);
+
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
+
+    fetch(bbUrl)
+    .then(response => {
+        console.log("API 响应状态:", response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("API 返回数据:", data);
+        if (!data || data.length === 0) {
+            throw new Error("No data returned from API");
+        }
+        updateHTMl(data);
+    })
+    .catch(error => {
+        console.error("获取或处理数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
+    });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
+    
+    if (data && data.length > 0) {
+        console.log("解析 Memo 内容");
+        var memo = data[0];
+        var content = memo.content
+            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+
+        console.log("更新 DOM");
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+        console.log("DOM 更新完成");
+    } else {
+        console.log("没有 Memo 数据");
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
+</script>
+
+<style>
+    #bber {
+        margin-top: 2em;
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+   .bb-timeline {
+        margin-bottom: 2em;
+    }
+
+   .bb-list-ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+   .bb-list-li {
+        margin-bottom: 1rem;
+    }
+
+   .bb-div {
+        padding: 0.6rem 1rem;
+    }
+
+   .datatime {
+        font-size: 0.85em;
+        color: #777;
+    }
+
+   .datacont {
+        margin-top: 5px;
+    }
+
+   .tag-span {
+        color: #42b983;
+    }
+</style>
 
 
 
-<h2 class="toc-line"><a href="/posts/2023/02/my-fear/">恐惧</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
 
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-02-16</span>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-  <footer class="small">
+<ul>
   
+  <li>
+    <span class="date">2023/02/16</span>
+    <a href="/posts/2023/02/my-fear/">恐惧</a>
+  </li>
   
+</ul>
+
+  <footer>
   
-  <hr/>
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"></span>
+</nav>
+
+  <hr>
   
-  <p class="nav-bottom">
-    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
-    <span class="menu-bottom">
-<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
 
-<a href="/tags/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
-
-<a href="#">Back to Top</a>
-
-</span>
-  </p>
+  
+  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
+  </article>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
 

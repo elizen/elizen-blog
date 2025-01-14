@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,937 +8,481 @@
     <meta property="og:title" content="札记 - Elizen">
     
     <meta name="twitter:card" content="summary">
+    <meta name="referrer" content="never" />
+
+    
+    
+    <link rel="stylesheet" href="/css/custom.css"></link>
+    <script type="text/javascript" src="/js/view-image.js"></script>
+    <script>
+    
+    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
+    </script>
+    <script src="/js/custom-markdown-parser.js"></script>
+    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
+    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    
+    
+
+    
+      
+    
+
     
       
     
 
     
     
-    
 
     
 
     
-    <link href="/tags/%E6%9C%AD%E8%AE%B0/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
+    <link href="/tags/%E6%9C%AD%E8%AE%B0/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+    
     
 
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
-
   </head>
 
   
+  <body class="tags">
+    <header class="masthead">
+      <h1><a href="/">Elizen</a></h1>
+
+<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
   
   
-  <body class=" tags">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/movies/">电影</a></span>
-      <span><a href="/books/">阅读</a></span>
-      <span><a href="/bibliography/">书目</a></span>
-      <span><a href="/posts/">归档</a></span>
-      <span><a href="/newsletter/">通讯</a></span>
-      <span><a href="/kids/">孩童</a></span>
+  <li><a href="/movies/">电影</a></li>
+  
+  <li><a href="/books/">阅读</a></li>
+  
+  <li><a href="/bibliography/">书目</a></li>
+  
+  <li><a href="/posts/">归档</a></li>
+  
+  <li><a href="/newsletter/">通讯</a></li>
+  
+  <li><a href="/kids/">孩童</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
       
-    </div>
-    </nav>
+<h1>札记</h1>
+
+<h3>
+</h3>
+<hr>
+
+
+      </header>
+
+
+
+<div id="bber">正在加载...</div>
+
+<script>
+console.log("脚本开始执行");
+
+var bbMemos = {
+    memos: 'https://memos.elizen.me/',
+    limit: '1',
+    creatorId: '101',  
+    domId: '#bber'
+};
+
+console.log("bbMemos 对象设置完成:", bbMemos);
+
+function getRecentMemo() {
+    console.log("开始获取最新 Memo");
+    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
+    console.log("API URL:", bbUrl);
+
+    fetch(bbUrl)
+    .then(response => {
+        console.log("API 响应状态:", response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("API 返回数据:", data);
+        if (!data || data.length === 0) {
+            throw new Error("No data returned from API");
+        }
+        updateHTMl(data);
+    })
+    .catch(error => {
+        console.error("获取或处理数据失败:", error);
+        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
+    });
+}
+
+function updateHTMl(data) {
+    console.log("开始更新 HTML");
+    var memoContent = document.querySelector(bbMemos.domId);
+    
+    if (data && data.length > 0) {
+        console.log("解析 Memo 内容");
+        var memo = data[0];
+        var content = memo.content
+            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
+            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
+        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+
+        console.log("更新 DOM");
+        memoContent.innerHTML = `
+            <div class="bb-timeline">
+                <ul class="bb-list-ul">
+                    <li class="bb-list-li">
+                        <div class="bb-div">
+                            <div class="datatime">${dateStr}</div>
+                            <div class="datacont">${content}</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`;
+        console.log("DOM 更新完成");
+    } else {
+        console.log("没有 Memo 数据");
+        memoContent.innerHTML = "<p>暂无数据</p>";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM 加载完成，调用 getRecentMemo");
+    getRecentMemo();
+});
+</script>
+
+<style>
+    #bber {
+        margin-top: 2em;
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+   .bb-timeline {
+        margin-bottom: 2em;
+    }
+
+   .bb-list-ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
+   .bb-list-li {
+        margin-bottom: 1rem;
+    }
 
+   .bb-div {
+        padding: 0.6rem 1rem;
+    }
 
-<h1 class="title">札记<span class="small subtitle"> | <a href="/tags/">tags</a></span></h1>
+   .datatime {
+        font-size: 0.85em;
+        color: #777;
+    }
 
-<div class="main archive">
+   .datacont {
+        margin-top: 5px;
+    }
 
+   .tag-span {
+        color: #42b983;
+    }
+</style>
 
 
-<h2 class="toc-line"><a href="/posts/2024/12/cloudy/">突然就起风了</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
 
 
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-12-08</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/07/how-to-avoid-becoming-a-baby-posting-enthusiast/">如何才能不变成晒娃狂魔</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-07-24</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/07/reading-marginalia-of-other-rivers/">读书边角料之 Other Rivers</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-07-16</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/07/summer/">夏天</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-07-12</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/06/july-reading-plan/">7 月读书</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-06-27</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/06/talk-with-myself-39/">深夜发媸（39）</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-06-06</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/04/stop-reading-the-news/">拒看新闻的生活艺术</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-04-22</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/04/has-to-be-liang-wen-dao/">还得是梁文道</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-04-09</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/03/how-to-write-a-good-essay/">如何写出一篇好文章</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-03-11</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/03/happy-new-year-and-four-cocacola/">新年快乐，四杯可乐</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-03-05</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2024/02/some-kind-of-tea/">喝了几口茶</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2024-02-22</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/12/hello-2024/">2023 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-12-01</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/11/robot-after-sales/">石头科技扫地机器人糟糕的售后体验</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-11-03</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/10/buy-something/">家里新添的小物件（2）</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-10-07</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/09/go-home-on-weekends/">漫长的时光</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-09-14</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/08/try-to-make-a-golden-sentence/">试着造金句</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-08-24</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/08/living-elsewhere/">生活在别处</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-08-07</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/08/hotel-booking-that-i-know-of/">我所知道的订酒店</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-08-03</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/07/test-drive-model-y/">特斯拉 Model Y 试驾</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-07-17</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/07/what-meaning-fo-hard-wrok/">一点个人意见</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-07-05</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/06/talk-with-myself-38/">深夜发媸（38）</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-06-27</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/05/see-you-see-me/">育儿育己</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-05-26</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/05/technology-is-process-knowledge/">技术是过程知识</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-05-19</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/04/promote-and-record/">推动和记录</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-04-25</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/04/bai-wang-shan/">周末爬山 - 百望山</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-04-10</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/04/ride/">骑车</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-04-07</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/04/charm/">魅力</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-04-06</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/03/work-with-chatgpt/">最近在用 AI 帮忙</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-03-31</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/02/my-fear/">恐惧</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-02-16</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/02/chat-with-chatgpt/">最近在和 AI 打交道</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-02-09</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2023/02/allocation-of-public-resources/">公共资源的分配</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2023-02-03</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/12/2022-end/">2022 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-12-24</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/12/bao-zhi-qi/">保质期</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-12-20</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/12/%E4%B8%80%E9%A6%96%E6%AD%8C%E5%86%99%E8%BF%9B%E4%BA%86%E9%AA%A8%E5%A4%B4%E9%87%8C/">一首歌，写进了骨头里</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-12-06</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/12/%E5%88%AB%E7%9B%B8%E4%BF%A1%E8%87%AA%E5%B7%B1/">别相信自己</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-12-05</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/12/hi-nas.-hi-jellyfin/">Hi, NAS. Hi, Jellyfin!</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-12-01</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/11/%E5%85%B3%E6%B3%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%BB%AA/">关注自己的情绪</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-11-04</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/10/what-is-city/">向心城市</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-10-18</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/10/wei-xin-du-shu/">再谈电子阅读</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-10-08</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/09/future-family-life/">未来的家庭生活</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-09-28</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/09/monopoly-and-compatibility/">垄断与兼容</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-09-27</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/09/how-to-live-happily/">一点点人生建议</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-09-22</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/09/how-to-choose-a-book/">我的选书方法</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-09-21</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/07/tech-stone/">基石</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-07-27</span>
-
-
-
-</div>
-
-
-
-<h2 class="toc-line"><a href="/posts/2022/06/go-to-rome-to-see-a-play/">去罗马看戏</a><span class="dots"></span><span class="page-num small"></span></h2>
-<div class="meta-line small">
-
-
-<span class="author">Elizen</span>
-
-
-
-
-
-
-<span class="date">2022-06-15</span>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-  <footer class="small">
+<ul>
   
+  <li>
+    <span class="date">2024/12/08</span>
+    <a href="/posts/2024/12/cloudy/">突然就起风了</a>
+  </li>
   
+  <li>
+    <span class="date">2024/07/24</span>
+    <a href="/posts/2024/07/how-to-avoid-becoming-a-baby-posting-enthusiast/">如何才能不变成晒娃狂魔</a>
+  </li>
   
-  <hr/>
+  <li>
+    <span class="date">2024/07/16</span>
+    <a href="/posts/2024/07/reading-marginalia-of-other-rivers/">读书边角料之 Other Rivers</a>
+  </li>
   
-  <p class="nav-bottom">
-    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
-    <span class="menu-bottom">
-<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
+  <li>
+    <span class="date">2024/07/12</span>
+    <a href="/posts/2024/07/summer/">夏天</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/06/27</span>
+    <a href="/posts/2024/06/july-reading-plan/">7 月读书</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/06/06</span>
+    <a href="/posts/2024/06/talk-with-myself-39/">深夜发媸（39）</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/04/22</span>
+    <a href="/posts/2024/04/stop-reading-the-news/">拒看新闻的生活艺术</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/04/09</span>
+    <a href="/posts/2024/04/has-to-be-liang-wen-dao/">还得是梁文道</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/03/11</span>
+    <a href="/posts/2024/03/how-to-write-a-good-essay/">如何写出一篇好文章</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/03/05</span>
+    <a href="/posts/2024/03/happy-new-year-and-four-cocacola/">新年快乐，四杯可乐</a>
+  </li>
+  
+  <li>
+    <span class="date">2024/02/22</span>
+    <a href="/posts/2024/02/some-kind-of-tea/">喝了几口茶</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/12/01</span>
+    <a href="/posts/2023/12/hello-2024/">2023 年概览</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/11/03</span>
+    <a href="/posts/2023/11/robot-after-sales/">石头科技扫地机器人糟糕的售后体验</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/10/07</span>
+    <a href="/posts/2023/10/buy-something/">家里新添的小物件（2）</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/09/14</span>
+    <a href="/posts/2023/09/go-home-on-weekends/">漫长的时光</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/08/24</span>
+    <a href="/posts/2023/08/try-to-make-a-golden-sentence/">试着造金句</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/08/07</span>
+    <a href="/posts/2023/08/living-elsewhere/">生活在别处</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/08/03</span>
+    <a href="/posts/2023/08/hotel-booking-that-i-know-of/">我所知道的订酒店</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/07/17</span>
+    <a href="/posts/2023/07/test-drive-model-y/">特斯拉 Model Y 试驾</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/07/05</span>
+    <a href="/posts/2023/07/what-meaning-fo-hard-wrok/">一点个人意见</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/06/27</span>
+    <a href="/posts/2023/06/talk-with-myself-38/">深夜发媸（38）</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/05/26</span>
+    <a href="/posts/2023/05/see-you-see-me/">育儿育己</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/05/19</span>
+    <a href="/posts/2023/05/technology-is-process-knowledge/">技术是过程知识</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/04/25</span>
+    <a href="/posts/2023/04/promote-and-record/">推动和记录</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/04/10</span>
+    <a href="/posts/2023/04/bai-wang-shan/">周末爬山 - 百望山</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/04/07</span>
+    <a href="/posts/2023/04/ride/">骑车</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/04/06</span>
+    <a href="/posts/2023/04/charm/">魅力</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/03/31</span>
+    <a href="/posts/2023/03/work-with-chatgpt/">最近在用 AI 帮忙</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/02/16</span>
+    <a href="/posts/2023/02/my-fear/">恐惧</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/02/09</span>
+    <a href="/posts/2023/02/chat-with-chatgpt/">最近在和 AI 打交道</a>
+  </li>
+  
+  <li>
+    <span class="date">2023/02/03</span>
+    <a href="/posts/2023/02/allocation-of-public-resources/">公共资源的分配</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/12/24</span>
+    <a href="/posts/2022/12/2022-end/">2022 年概览</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/12/20</span>
+    <a href="/posts/2022/12/bao-zhi-qi/">保质期</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/12/06</span>
+    <a href="/posts/2022/12/%E4%B8%80%E9%A6%96%E6%AD%8C%E5%86%99%E8%BF%9B%E4%BA%86%E9%AA%A8%E5%A4%B4%E9%87%8C/">一首歌，写进了骨头里</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/12/05</span>
+    <a href="/posts/2022/12/%E5%88%AB%E7%9B%B8%E4%BF%A1%E8%87%AA%E5%B7%B1/">别相信自己</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/12/01</span>
+    <a href="/posts/2022/12/hi-nas.-hi-jellyfin/">Hi, NAS. Hi, Jellyfin!</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/11/04</span>
+    <a href="/posts/2022/11/%E5%85%B3%E6%B3%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%BB%AA/">关注自己的情绪</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/10/18</span>
+    <a href="/posts/2022/10/what-is-city/">向心城市</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/10/08</span>
+    <a href="/posts/2022/10/wei-xin-du-shu/">再谈电子阅读</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/09/28</span>
+    <a href="/posts/2022/09/future-family-life/">未来的家庭生活</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/09/27</span>
+    <a href="/posts/2022/09/monopoly-and-compatibility/">垄断与兼容</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/09/22</span>
+    <a href="/posts/2022/09/how-to-live-happily/">一点点人生建议</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/09/21</span>
+    <a href="/posts/2022/09/how-to-choose-a-book/">我的选书方法</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/07/27</span>
+    <a href="/posts/2022/07/tech-stone/">基石</a>
+  </li>
+  
+  <li>
+    <span class="date">2022/06/15</span>
+    <a href="/posts/2022/06/go-to-rome-to-see-a-play/">去罗马看戏</a>
+  </li>
+  
+</ul>
 
-<a href="/tags/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev"></span>
+  <span class="nav-next"></span>
+</nav>
 
-<a href="#">Back to Top</a>
+  <hr>
+  
 
-</span>
-  </p>
+  
+  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
+  </article>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
 
