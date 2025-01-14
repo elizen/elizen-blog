@@ -1,0 +1,23 @@
+{{- if .Get 4 -}}
+  <figure>
+    <img src="{{ .Get 0 | safeURL }}" width="24%"/><img src="{{ .Get 1 | safeURL }}" width="24%" /><img src="{{ .Get 2 | safeURL }}" width="24%" /><img src="{{ .Get 3 | safeURL }}" width="24%" />
+    <figcaption>{{ .Get 4 | markdownify }}</figcaption>
+  </figure>
+{{- else if .Get 3 -}}
+  <figure>
+    <img src="{{ .Get 0 | safeURL }}" width="30%"/><img src="{{ .Get 1 | safeURL }}" width="30%" /><img src="{{ .Get 2 | safeURL }}" width="30%" />
+    <figcaption>{{ .Get 3 | markdownify }}</figcaption>
+  </figure>
+{{- else if .Get 2 -}}
+  <figure>
+    <img src="{{ .Get 0 | safeURL }}" width="45%"/><img src="{{ .Get 1 | safeURL }}" width="45%" />
+    <figcaption>{{ .Get 2 | markdownify }}</figcaption>
+  </figure>
+{{- else -}}
+  <figure>
+    <img src="{{ .Get 0 | safeURL }}"/>
+    {{- if .Get 1 -}}
+    <figcaption>{{ .Get 1 | markdownify }}</figcaption>
+    {{- end -}}
+  </figure>
+{{ end }}
