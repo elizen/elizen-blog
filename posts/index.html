@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,1071 +9,3119 @@
     <meta property="og:title" content="Posts - Elizen">
     
     <meta name="twitter:card" content="summary">
-    <meta name="referrer" content="never" />
-
-    
-    
-    <link rel="stylesheet" href="/css/custom.css"></link>
-    <script type="text/javascript" src="/js/view-image.js"></script>
-    <script>
-    
-    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
-    </script>
-    <script src="/js/custom-markdown-parser.js"></script>
-    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
-    
-    
-
-    
-      
-    
-
     
       
     
 
     
     
-
     
 
     
-    <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+
     
+    <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
     
 
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
     
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
+
   </head>
 
   
-  <body class="posts">
-    <header class="masthead">
-      <h1><a href="/">Elizen</a></h1>
-
-<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
   
   
-  <li><a href="/movies/">电影</a></li>
-  
-  <li><a href="/books/">阅读</a></li>
-  
-  <li><a href="/bibliography/">书目</a></li>
-  
-  <li class="active"><a href="/posts/">归档</a></li>
-  
-  <li><a href="/newsletter/">通讯</a></li>
-  
-  <li><a href="/kids/">孩童</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
-      
-<h1>Posts</h1>
-
-<h3>
-</h3>
-<hr>
-
-
-      </header>
-
-
-
-<div id="bber">正在加载...</div>
-
-<script>
-console.log("脚本开始执行");
-
-var bbMemos = {
-    memos: 'https://memos.elizen.me/',
-    limit: '1',
-    creatorId: '101',  
-    domId: '#bber'
-};
-
-console.log("bbMemos 对象设置完成:", bbMemos);
-
-function getRecentMemo() {
-    console.log("开始获取最新 Memo");
-    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
-    console.log("API URL:", bbUrl);
-
-    fetch(bbUrl)
-    .then(response => {
-        console.log("API 响应状态:", response.status);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("API 返回数据:", data);
-        if (!data || data.length === 0) {
-            throw new Error("No data returned from API");
-        }
-        updateHTMl(data);
-    })
-    .catch(error => {
-        console.error("获取或处理数据失败:", error);
-        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
-    });
-}
-
-function updateHTMl(data) {
-    console.log("开始更新 HTML");
-    var memoContent = document.querySelector(bbMemos.domId);
+  <body class=" posts">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
     
-    if (data && data.length > 0) {
-        console.log("解析 Memo 内容");
-        var memo = data[0];
-        var content = memo.content
-            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
-            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+    </div>
+    <div class="menu"><span><a href="/movies/">电影</a></span>
+      <span><a href="/books/">阅读</a></span>
+      <span><a href="/bibliography/">书目</a></span>
+      <span class="active"><a href="/posts/">归档</a></span>
+      <span><a href="/newsletter/">通讯</a></span>
+      <span><a href="/kids/">孩童</a></span>
+      
+    </div>
+    </nav>
 
-        console.log("更新 DOM");
-        memoContent.innerHTML = `
-            <div class="bb-timeline">
-                <ul class="bb-list-ul">
-                    <li class="bb-list-li">
-                        <div class="bb-div">
-                            <div class="datatime">${dateStr}</div>
-                            <div class="datacont">${content}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>`;
-        console.log("DOM 更新完成");
-    } else {
-        console.log("没有 Memo 数据");
-        memoContent.innerHTML = "<p>暂无数据</p>";
-    }
-}
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM 加载完成，调用 getRecentMemo");
-    getRecentMemo();
-});
-</script>
 
-<style>
-    #bber {
-        margin-top: 2em;
-        width: 100%;
-        border: 1px solid #ddd;
-        padding: 10px;
-    }
+<h1 class="title">Posts</h1>
 
-   .bb-timeline {
-        margin-bottom: 2em;
-    }
+<div class="main archive">
 
-   .bb-list-ul {
-        list-style-type: none;
-        padding: 0;
-    }
 
-   .bb-list-li {
-        margin-bottom: 1rem;
-    }
 
-   .bb-div {
-        padding: 0.6rem 1rem;
-    }
+<h2 class="toc-line"><a href="/posts/2025/01/2025-week1-and-week2.zh.md/">2025 年双周记（〇）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
 
-   .datatime {
-        font-size: 0.85em;
-        color: #777;
-    }
 
-   .datacont {
-        margin-top: 5px;
-    }
-
-   .tag-span {
-        color: #42b983;
-    }
-</style>
+<span class="author">Elizen</span>
 
 
 
 
-<ul>
-  
-  <li>
-    <span class="date">2025/01/13</span>
-    <a href="/posts/2025/01/2025-week1-and-week2.zh.md/">2025 年双周记（〇）</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/12/26</span>
-    <a href="/posts/2024/12/2024-end/">2024 年概览</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/12/08</span>
-    <a href="/posts/2024/12/cloudy/">突然就起风了</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/08/23</span>
-    <a href="/posts/2024/08/weekly-review-002/">叁拾周刊#002</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/08/19</span>
-    <a href="/posts/2024/08/weekends-travel-tian-jin/">周末养老 - 天津</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/08/16</span>
-    <a href="/posts/2024/08/weekly-review-001/">叁拾周刊#001</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/07/24</span>
-    <a href="/posts/2024/07/how-to-avoid-becoming-a-baby-posting-enthusiast/">如何才能不变成晒娃狂魔</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/07/16</span>
-    <a href="/posts/2024/07/reading-marginalia-of-other-rivers/">读书边角料之 Other Rivers</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/07/12</span>
-    <a href="/posts/2024/07/summer/">夏天</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/06/27</span>
-    <a href="/posts/2024/06/july-reading-plan/">7 月读书</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/06/06</span>
-    <a href="/posts/2024/06/talk-with-myself-39/">深夜发媸（39）</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/05/06</span>
-    <a href="/posts/2024/05/letter-for-family-2024/">家书（2024）</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/04/22</span>
-    <a href="/posts/2024/04/stop-reading-the-news/">拒看新闻的生活艺术</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/04/16</span>
-    <a href="/posts/2024/04/everyone-is-ma-xiao-jun/">每个小家伙都是马小军</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/04/15</span>
-    <a href="/posts/2024/04/super-head/">幼崽们的超级大脑</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/04/09</span>
-    <a href="/posts/2024/04/has-to-be-liang-wen-dao/">还得是梁文道</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/03/11</span>
-    <a href="/posts/2024/03/how-to-write-a-good-essay/">如何写出一篇好文章</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/03/05</span>
-    <a href="/posts/2024/03/happy-new-year-and-four-cocacola/">新年快乐，四杯可乐</a>
-  </li>
-  
-  <li>
-    <span class="date">2024/02/22</span>
-    <a href="/posts/2024/02/some-kind-of-tea/">喝了几口茶</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/12/01</span>
-    <a href="/posts/2023/12/hello-2024/">2023 年概览</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/11/13</span>
-    <a href="/posts/2023/11/11-birthday/">爬了座野山，蹦了个野的</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/11/03</span>
-    <a href="/posts/2023/11/robot-after-sales/">石头科技扫地机器人糟糕的售后体验</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/10/12</span>
-    <a href="/posts/2023/10/travel-202310/">二〇二三年十一出行</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/10/11</span>
-    <a href="/posts/2023/10/notes-of-how-to-write-a-nonfiction-1/">李海鹏非虚构写作课笔记（1） - 阅读出故事的故事线</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/10/07</span>
-    <a href="/posts/2023/10/buy-something/">家里新添的小物件（2）</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/09/14</span>
-    <a href="/posts/2023/09/go-home-on-weekends/">漫长的时光</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/08/24</span>
-    <a href="/posts/2023/08/try-to-make-a-golden-sentence/">试着造金句</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/08/07</span>
-    <a href="/posts/2023/08/living-elsewhere/">生活在别处</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/08/03</span>
-    <a href="/posts/2023/08/hotel-booking-that-i-know-of/">我所知道的订酒店</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/07/27</span>
-    <a href="/posts/2023/07/begin-to-study-english/">最近我在学英语</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/07/17</span>
-    <a href="/posts/2023/07/test-drive-model-y/">特斯拉 Model Y 试驾</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/07/05</span>
-    <a href="/posts/2023/07/what-meaning-fo-hard-wrok/">一点个人意见</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/06/27</span>
-    <a href="/posts/2023/06/talk-with-myself-38/">深夜发媸（38）</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/06/05</span>
-    <a href="/posts/2023/06/letter-for-family-2023/">家书（2023）</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/05/26</span>
-    <a href="/posts/2023/05/see-you-see-me/">育儿育己</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/05/19</span>
-    <a href="/posts/2023/05/technology-is-process-knowledge/">技术是过程知识</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/04/25</span>
-    <a href="/posts/2023/04/promote-and-record/">推动和记录</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/04/10</span>
-    <a href="/posts/2023/04/bai-wang-shan/">周末爬山 - 百望山</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/04/07</span>
-    <a href="/posts/2023/04/ride/">骑车</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/04/06</span>
-    <a href="/posts/2023/04/charm/">魅力</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/03/31</span>
-    <a href="/posts/2023/03/work-with-chatgpt/">最近在用 AI 帮忙</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/03/14</span>
-    <a href="/posts/2023/03/hi-icloud/">Hi，土区 iCloud</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/02/17</span>
-    <a href="/posts/2023/02/the-sweet-indifference-of-the-world/">读《这世界的甜蜜与冷漠》</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/02/16</span>
-    <a href="/posts/2023/02/my-fear/">恐惧</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/02/09</span>
-    <a href="/posts/2023/02/chat-with-chatgpt/">最近在和 AI 打交道</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/02/03</span>
-    <a href="/posts/2023/02/allocation-of-public-resources/">公共资源的分配</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/02/01</span>
-    <a href="/posts/2023/02/read-and-write/">随读随写</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/01/20</span>
-    <a href="/posts/2023/01/2023-travel-gu-bei-shui-zhen/">2023 旅行 - 古北水镇</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/01/17</span>
-    <a href="/posts/2023/01/blog-theme-update/">博客小更新</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/01/16</span>
-    <a href="/posts/2023/01/play-with-snow/">玩雪迎新年</a>
-  </li>
-  
-  <li>
-    <span class="date">2023/01/03</span>
-    <a href="/posts/2023/01/happy-2023/">2023 新年祝福</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/12/24</span>
-    <a href="/posts/2022/12/2022-end/">2022 年概览</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/12/20</span>
-    <a href="/posts/2022/12/bao-zhi-qi/">保质期</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/12/06</span>
-    <a href="/posts/2022/12/%E4%B8%80%E9%A6%96%E6%AD%8C%E5%86%99%E8%BF%9B%E4%BA%86%E9%AA%A8%E5%A4%B4%E9%87%8C/">一首歌，写进了骨头里</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/12/05</span>
-    <a href="/posts/2022/12/%E5%88%AB%E7%9B%B8%E4%BF%A1%E8%87%AA%E5%B7%B1/">别相信自己</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/12/01</span>
-    <a href="/posts/2022/12/hi-nas.-hi-jellyfin/">Hi, NAS. Hi, Jellyfin!</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/11/04</span>
-    <a href="/posts/2022/11/%E5%85%B3%E6%B3%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%BB%AA/">关注自己的情绪</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/10/18</span>
-    <a href="/posts/2022/10/what-is-city/">向心城市</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/10/11</span>
-    <a href="/posts/2022/10/how-to-organize-photos/">如何整理照片录像</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/10/08</span>
-    <a href="/posts/2022/10/wei-xin-du-shu/">再谈电子阅读</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/28</span>
-    <a href="/posts/2022/09/future-family-life/">未来的家庭生活</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/27</span>
-    <a href="/posts/2022/09/monopoly-and-compatibility/">垄断与兼容</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/22</span>
-    <a href="/posts/2022/09/how-to-live-happily/">一点点人生建议</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/21</span>
-    <a href="/posts/2022/09/how-to-choose-a-book/">我的选书方法</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/07/27</span>
-    <a href="/posts/2022/07/tech-stone/">基石</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/07/08</span>
-    <a href="/posts/2022/07/how-to-smart-learning/">笔记：抓住关键人物</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/07/05</span>
-    <a href="/posts/2022/07/2022-sui-pian/">他山之石</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/07/05</span>
-    <a href="/posts/2022/07/writing-in-everywhere/">在哪里都可以写作</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/06/15</span>
-    <a href="/posts/2022/06/go-to-rome-to-see-a-play/">去罗马看戏</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/05/31</span>
-    <a href="/posts/2022/05/letter-for-family-2022/">家书（2022）</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/05/04</span>
-    <a href="/posts/2022/05/du-shu-kan-bao/">读书看报</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/04/20</span>
-    <a href="/posts/2022/04/severance-after/">《人生切割术》观后</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/03/23</span>
-    <a href="/posts/2022/03/how-to-manage-information/">如何把生活中零碎的灵感或流水账，建立联系，让他们有价值？</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/01/29</span>
-    <a href="/posts/2022/01/happy-new-year-2022/">新年小计划</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/12/30</span>
-    <a href="/posts/2021/12/2022-happy-new-year/">2021年概览</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/12/08</span>
-    <a href="/posts/2021/12/doctor-zhang-and-doctor-wang/">读《张医生与王医生》</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/30</span>
-    <a href="/posts/2021/11/just-right-is-good/">刚刚好就很好</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/26</span>
-    <a href="/posts/2021/11/knowledge-is-not-information/">要记录知识，而不是信息</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/18</span>
-    <a href="/posts/2021/11/links-to-page/">Hugo 页面跳转</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/15</span>
-    <a href="/posts/2021/11/apple-music/">还是 Apple Music 香</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/11</span>
-    <a href="/posts/2021/11/happy-birthday-to-11/">我爱双十一</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/11/03</span>
-    <a href="/posts/2021/11/collard/">试种羽衣甘蓝(2021-11-3)</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/10/22</span>
-    <a href="/posts/2021/10/bi-huan/">闭环</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/08/31</span>
-    <a href="/posts/2021/08/zhi-dao-dui-de-ren-lai/">听歌系列之直到对的人来</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/08/18</span>
-    <a href="/posts/2021/08/obsidian/">Hi, Obsidian</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/07/22</span>
-    <a href="/posts/2021/07/lovely-human-beings/">人类真是一个可爱的物种，伟大又如此卑微</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/07/01</span>
-    <a href="/posts/2021/07/2021-07-01/">暴雨</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/06/28</span>
-    <a href="/posts/2021/06/letter-for-family-2021/">家书（2021）</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/06/03</span>
-    <a href="/posts/2021/06/harmonyos/">鸿蒙 OS，道阻且长</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/26</span>
-    <a href="/posts/2021/05/letters-of-photo/">广告</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/24</span>
-    <a href="/posts/2021/05/death/">去世</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/18</span>
-    <a href="/posts/2021/05/wu-ti/">无题</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/17</span>
-    <a href="/posts/2021/05/love-death-robots/">爱死机，爱发电</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/12</span>
-    <a href="/posts/2021/05/problem-is-problem/">问题永远不能解决</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/08</span>
-    <a href="/posts/2021/05/de-dao/">得到电子书试用体验（5月31日更新）</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/04/22</span>
-    <a href="/posts/2021/04/qian-ti/">前提</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/16</span>
-    <a href="/posts/2021/03/daily-022/">没有烟花的新年</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/15</span>
-    <a href="/posts/2021/03/daily-021/">家庭</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/14</span>
-    <a href="/posts/2021/03/daily-020/">文学金线</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/13</span>
-    <a href="/posts/2021/03/daily-019/">周末推书《间谍与叛徒》</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/12</span>
-    <a href="/posts/2021/03/daily-018/">像产品经理学习</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/11</span>
-    <a href="/posts/2021/03/daily-017/">虚惊一场</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/10</span>
-    <a href="/posts/2021/03/daily-016/">参差书店</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/09</span>
-    <a href="/posts/2021/03/daily-015/">基督教的基本分化</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/08</span>
-    <a href="/posts/2021/03/daily-014/">复盘</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/07</span>
-    <a href="/posts/2021/03/daily-013/">理科思维</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/06</span>
-    <a href="/posts/2021/03/daily-012/">货拉拉拉货</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/05</span>
-    <a href="/posts/2021/03/daily-011/">美妙人生</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/04</span>
-    <a href="/posts/2021/03/daily-010/">停车太难</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/03</span>
-    <a href="/posts/2021/03/daily-009/">停车太难</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/02</span>
-    <a href="/posts/2021/03/daily-008/">从不做梦</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/03/01</span>
-    <a href="/posts/2021/03/daily-007/">关系</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/28</span>
-    <a href="/posts/2021/02/daily-006/">读《野草》</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/27</span>
-    <a href="/posts/2021/02/daily-005/">跑步</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/26</span>
-    <a href="/posts/2021/02/daily-004/">一点可能</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/25</span>
-    <a href="/posts/2021/02/daily-003/">位移</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/24</span>
-    <a href="/posts/2021/02/daily-002/">梦与幻想</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/23</span>
-    <a href="/posts/2021/02/daily-001/">哭不出来</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/22</span>
-    <a href="/posts/2021/02/daily-000/">开始日更</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/04</span>
-    <a href="/posts/2021/02/what-is-learning/">《学习究竟是什么》笔记</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/02/02</span>
-    <a href="/posts/2021/02/yesplaymusic/">高颜值网易云播放器</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/29</span>
-    <a href="/posts/2021/01/growing-up-novel/">听歌系列之成长小说</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/25</span>
-    <a href="/posts/2021/01/thanks-to-bb-king/">依然要向奇葩说致敬</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/20</span>
-    <a href="/posts/2021/01/philosophy-and-the-young-chlidren/">向猫看齐</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/19</span>
-    <a href="/posts/2021/01/hugo-form-0-to-1/">使用 Hugo 从 0 到 1 搭建个人博客</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/07</span>
-    <a href="/posts/2021/01/fixed-my-mac/">老叔新芽，Mac 维修</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/06</span>
-    <a href="/posts/2021/01/2020-da-li/">大理</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/12/31</span>
-    <a href="/posts/2020/12/2020-end/">2020 年概览</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/12/18</span>
-    <a href="/posts/2020/12/flomo-app/">软件系列之Flomo</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/12/02</span>
-    <a href="/posts/2020/12/read-dong-tian/">由《冬天》想到的</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/29</span>
-    <a href="/posts/2020/11/murphys-law/">周日断电惊魂</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/25</span>
-    <a href="/posts/2020/11/from-anniversary-to-edward-yang/">由纪念日想到杨德昌</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/24</span>
-    <a href="/posts/2020/11/parkview-green/">听歌系列之芳草地</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/13</span>
-    <a href="/posts/2020/11/%E6%97%A5%E8%AE%B0%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E8%AE%B0/">日记可以怎么记</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/11</span>
-    <a href="/posts/2020/11/%E7%AC%94%E8%AE%B0%E7%A9%B6%E7%AB%9F%E8%A6%81%E8%AE%B0%E4%BB%80%E4%B9%88/">笔记究竟要记什么</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/10</span>
-    <a href="/posts/2020/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/">一个好用的笔记系统</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/30</span>
-    <a href="/posts/2020/10/%E4%B8%80%E4%B8%AA%E9%9D%A0%E5%8D%96%E7%81%B5%E9%AD%82%E4%B8%BA%E7%94%9F%E7%9A%84%E4%BA%BA/">一个靠卖灵魂为生的人</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/20</span>
-    <a href="/posts/2020/10/%E5%B7%A6%E5%B0%8F%E7%A5%96%E5%92%92%E6%96%B0%E4%B8%93%E8%BE%91%E6%88%91%E7%88%B1%E5%8F%B0%E6%B9%BE/">左小祖咒新专辑《我爱台湾》</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/19</span>
-    <a href="/posts/2020/10/%E4%B8%AD%E5%9B%BD%E9%93%81%E9%81%93%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%83%8A%E5%BA%97/">中国铁道博物馆（东郊店）</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/12</span>
-    <a href="/posts/2020/10/%E6%88%91%E4%BB%AC%E5%9C%A8%E6%89%AE%E6%BC%94%E4%B8%8A%E5%B8%9D/">我们在扮演上帝？</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/10</span>
-    <a href="/posts/2020/10/%E6%9D%A5%E8%87%AA%E6%B5%B7%E4%B8%B0%E7%9A%84%E4%BA%94%E6%9D%A1%E4%BA%BA/">来自海丰的五条人</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/09/28</span>
-    <a href="/posts/2020/09/%E6%9C%89%E5%A8%83%E4%B9%8B%E5%90%8E%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF/">有娃之后应该知道的事儿</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/09/22</span>
-    <a href="/posts/2020/09/%E6%B7%B1%E5%A4%9C%E5%8F%91%E5%97%A434/">深夜发嗤（34）</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/09/09</span>
-    <a href="/posts/2020/09/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%8F%E5%AD%A9%E5%AD%90%E7%9C%8B%E8%B5%B7%E6%9D%A5%E4%BB%80%E4%B9%88%E9%83%BD%E4%B8%8D%E6%80%95/">为什么小孩子看起来什么都不怕</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/08/07</span>
-    <a href="/posts/2020/08/%E5%9C%A8%E4%BB%8A%E5%A4%A9%E8%AE%BA%E8%AF%AD%E8%BF%98%E8%83%BD%E6%80%8E%E4%B9%88%E8%AF%BB/">在今天，《论语》还能怎么读？</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/07/29</span>
-    <a href="/posts/2020/07/%E4%B9%A6%E4%B8%8E%E5%B2%81%E6%9C%88/">书与岁月</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/07/20</span>
-    <a href="/posts/2020/07/bob-dylan-%E6%96%B0%E4%B8%93%E8%BE%91rough-and-rowdy-ways/">Bob Dylan 新专辑《Rough and Rowdy Ways》</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/07/20</span>
-    <a href="/posts/2020/07/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%BB%99%E5%B0%8F%E5%98%9F%E5%98%9F%E6%92%AD%E6%94%BE%E5%B7%A7%E8%99%8E-dvd-%E7%9A%84/">我是如何给小嘟嘟播放巧虎 DVD 的</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/06/29</span>
-    <a href="/posts/2020/06/%E7%BB%99%E9%9D%92%E5%B9%B4%E4%BD%9C%E5%AE%B6%E7%9A%84%E4%BF%A1%E6%91%98%E6%8A%84/">《给青年作家的信》摘抄</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/06/01</span>
-    <a href="/posts/2020/06/%E6%88%91%E5%AE%B6%E4%B9%9F%E6%9C%89%E5%84%BF%E7%AB%A5%E8%8A%82%E4%BA%86/">我家也有儿童节了</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/05/28</span>
-    <a href="/posts/2020/05/%E6%B7%B1%E5%A4%9C%E5%8F%91%E5%97%A432/">深夜发嗤（32）</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/05/20</span>
-    <a href="/posts/2020/05/%E8%AF%BB100%E5%B9%B4%E5%B0%8F%E8%AF%B4%E7%9C%8B%E6%87%82%E4%B8%AD%E5%9B%BD%E4%B8%80/">读100年小说，看懂中国（一）</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/05/03</span>
-    <a href="/posts/2020/05/%E5%AE%B6%E4%B9%A62020/">家书（2020）</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/21</span>
-    <a href="/posts/2020/04/%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E8%87%AA%E7%94%B1/">每个人都有自己的自由</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/17</span>
-    <a href="/posts/2020/04/%E4%BB%8E%E8%80%81%E7%BD%97%E5%8F%A3%E8%AF%AF%E8%AF%B4%E5%BC%80%E5%8E%BB/">从老罗口误说开去</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/16</span>
-    <a href="/posts/2020/04/%E5%88%9B%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AA%E7%8B%82%E4%BA%BA%E6%97%A5%E8%AE%B0/">创建了一个「狂人日记」</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/13</span>
-    <a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86-valine-%E8%AF%84%E8%AE%BA/">博客增加了 Valine 评论</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/13</span>
-    <a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86%E6%96%87%E7%AB%A0%E5%86%85%E9%93%BE%E6%A0%B7%E5%BC%8F/">博客增加了文章内链样式</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/13</span>
-    <a href="/posts/2020/04/%E8%93%9D%E8%89%B2%E6%B8%AF%E6%B9%BE%E6%99%92%E5%A8%83%E4%B8%8A%E7%98%BE/">蓝色港湾，晒娃上瘾</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/09</span>
-    <a href="/posts/2020/04/%E6%9D%A5%E4%B8%80%E6%9B%B2%E4%B8%9C%E5%8C%97%E7%81%AD%E7%81%AB%E6%9C%8B%E5%85%8B/">来一曲东北灭火朋克</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/02</span>
-    <a href="/posts/2020/04/%E5%86%99%E4%BD%9C/">写作</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/03/31</span>
-    <a href="/posts/2020/03/%E6%88%91%E7%9A%84%E6%95%B0%E5%AD%97%E7%94%9F%E6%B4%BB%E8%BF%9B%E9%98%B6-001/">我的数字生活进阶-001</a>
-  </li>
-  
-  <li>
-    <span class="date">2018/10/09</span>
-    <a href="/posts/2018/10/%E6%AF%94%E4%BB%BB%E4%BD%95%E6%97%B6%E5%80%99%E9%83%BD%E5%AE%B3%E6%80%95%E8%A1%B0%E8%80%81/">比任何时候都害怕衰老</a>
-  </li>
-  
-</ul>
 
-  <footer>
-  
-<nav class="post-nav">
-  <span class="nav-prev"></span>
-  <span class="nav-next"></span>
-</nav>
 
-  <hr>
-  
+<span class="date">2025-01-13</span>
 
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/12/2024-end/">2024 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-12-26</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/12/cloudy/">突然就起风了</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-12-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/08/weekly-review-002/">叁拾周刊#002</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-08-23</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/08/weekends-travel-tian-jin/">周末养老 - 天津</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-08-19</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/08/weekly-review-001/">叁拾周刊#001</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-08-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/07/how-to-avoid-becoming-a-baby-posting-enthusiast/">如何才能不变成晒娃狂魔</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-07-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/07/reading-marginalia-of-other-rivers/">读书边角料之 Other Rivers</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-07-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/07/summer/">夏天</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-07-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/06/july-reading-plan/">7 月读书</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-06-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/06/talk-with-myself-39/">深夜发媸（39）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-06-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/05/letter-for-family-2024/">家书（2024）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-05-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/04/stop-reading-the-news/">拒看新闻的生活艺术</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-04-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/04/everyone-is-ma-xiao-jun/">每个小家伙都是马小军</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-04-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/04/super-head/">幼崽们的超级大脑</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-04-15</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/04/has-to-be-liang-wen-dao/">还得是梁文道</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-04-09</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/03/how-to-write-a-good-essay/">如何写出一篇好文章</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-03-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/03/happy-new-year-and-four-cocacola/">新年快乐，四杯可乐</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-03-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2024/02/some-kind-of-tea/">喝了几口茶</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2024-02-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/12/hello-2024/">2023 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-12-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/11/11-birthday/">爬了座野山，蹦了个野的</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-11-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/11/robot-after-sales/">石头科技扫地机器人糟糕的售后体验</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-11-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/10/travel-202310/">二〇二三年十一出行</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-10-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/10/notes-of-how-to-write-a-nonfiction-1/">李海鹏非虚构写作课笔记（1） - 阅读出故事的故事线</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-10-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/10/buy-something/">家里新添的小物件（2）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-10-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/09/go-home-on-weekends/">漫长的时光</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-09-14</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/08/try-to-make-a-golden-sentence/">试着造金句</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-08-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/08/living-elsewhere/">生活在别处</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-08-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/08/hotel-booking-that-i-know-of/">我所知道的订酒店</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-08-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/07/begin-to-study-english/">最近我在学英语</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-07-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/07/test-drive-model-y/">特斯拉 Model Y 试驾</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-07-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/07/what-meaning-fo-hard-wrok/">一点个人意见</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-07-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/06/talk-with-myself-38/">深夜发媸（38）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-06-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/06/letter-for-family-2023/">家书（2023）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-06-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/05/see-you-see-me/">育儿育己</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-05-26</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/05/technology-is-process-knowledge/">技术是过程知识</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-05-19</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/04/promote-and-record/">推动和记录</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-04-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/04/bai-wang-shan/">周末爬山 - 百望山</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-04-10</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/04/ride/">骑车</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-04-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/04/charm/">魅力</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-04-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/03/work-with-chatgpt/">最近在用 AI 帮忙</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-03-31</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/03/hi-icloud/">Hi，土区 iCloud</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-03-14</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/02/the-sweet-indifference-of-the-world/">读《这世界的甜蜜与冷漠》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-02-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/02/my-fear/">恐惧</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-02-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/02/chat-with-chatgpt/">最近在和 AI 打交道</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-02-09</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/02/allocation-of-public-resources/">公共资源的分配</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-02-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/02/read-and-write/">随读随写</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-02-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/01/2023-travel-gu-bei-shui-zhen/">2023 旅行 - 古北水镇</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-01-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/01/blog-theme-update/">博客小更新</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-01-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/01/play-with-snow/">玩雪迎新年</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-01-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2023/01/happy-2023/">2023 新年祝福</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2023-01-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/12/2022-end/">2022 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-12-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/12/bao-zhi-qi/">保质期</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-12-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/12/%E4%B8%80%E9%A6%96%E6%AD%8C%E5%86%99%E8%BF%9B%E4%BA%86%E9%AA%A8%E5%A4%B4%E9%87%8C/">一首歌，写进了骨头里</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-12-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/12/%E5%88%AB%E7%9B%B8%E4%BF%A1%E8%87%AA%E5%B7%B1/">别相信自己</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-12-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/12/hi-nas.-hi-jellyfin/">Hi, NAS. Hi, Jellyfin!</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-12-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/11/%E5%85%B3%E6%B3%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E6%83%85%E7%BB%AA/">关注自己的情绪</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-11-04</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/10/what-is-city/">向心城市</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-10-18</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/10/how-to-organize-photos/">如何整理照片录像</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-10-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/10/wei-xin-du-shu/">再谈电子阅读</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-10-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/09/future-family-life/">未来的家庭生活</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-09-28</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/09/monopoly-and-compatibility/">垄断与兼容</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-09-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/09/how-to-live-happily/">一点点人生建议</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-09-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/09/how-to-choose-a-book/">我的选书方法</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-09-21</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/07/tech-stone/">基石</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-07-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/07/how-to-smart-learning/">笔记：抓住关键人物</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-07-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/07/2022-sui-pian/">他山之石</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-07-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/07/writing-in-everywhere/">在哪里都可以写作</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-07-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/06/go-to-rome-to-see-a-play/">去罗马看戏</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-06-15</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/05/letter-for-family-2022/">家书（2022）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-05-31</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/05/du-shu-kan-bao/">读书看报</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-05-04</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/04/severance-after/">《人生切割术》观后</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-04-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/03/how-to-manage-information/">如何把生活中零碎的灵感或流水账，建立联系，让他们有价值？</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-03-23</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2022/01/happy-new-year-2022/">新年小计划</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2022-01-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/12/2022-happy-new-year/">2021年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-12-30</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/12/doctor-zhang-and-doctor-wang/">读《张医生与王医生》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-12-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/just-right-is-good/">刚刚好就很好</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-30</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/knowledge-is-not-information/">要记录知识，而不是信息</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-26</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/links-to-page/">Hugo 页面跳转</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-18</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/apple-music/">还是 Apple Music 香</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-15</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/happy-birthday-to-11/">我爱双十一</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/11/collard/">试种羽衣甘蓝(2021-11-3)</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-11-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/10/bi-huan/">闭环</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-10-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/08/zhi-dao-dui-de-ren-lai/">听歌系列之直到对的人来</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-08-31</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/08/obsidian/">Hi, Obsidian</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-08-18</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/07/lovely-human-beings/">人类真是一个可爱的物种，伟大又如此卑微</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-07-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/07/2021-07-01/">暴雨</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-07-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/06/letter-for-family-2021/">家书（2021）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-06-28</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/06/harmonyos/">鸿蒙 OS，道阻且长</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-06-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/letters-of-photo/">广告</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-26</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/death/">去世</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/wu-ti/">无题</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-18</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/love-death-robots/">爱死机，爱发电</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/problem-is-problem/">问题永远不能解决</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/de-dao/">得到电子书试用体验（5月31日更新）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/04/qian-ti/">前提</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-04-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-022/">没有烟花的新年</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-021/">家庭</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-15</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-020/">文学金线</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-14</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-019/">周末推书《间谍与叛徒》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-018/">像产品经理学习</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-017/">虚惊一场</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-016/">参差书店</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-10</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-015/">基督教的基本分化</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-09</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-014/">复盘</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-08</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-013/">理科思维</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-012/">货拉拉拉货</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-011/">美妙人生</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-05</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-010/">停车太难</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-04</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-009/">停车太难</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-008/">从不做梦</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-02</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/03/daily-007/">关系</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-03-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-006/">读《野草》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-28</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-005/">跑步</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-27</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-004/">一点可能</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-26</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-003/">位移</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-002/">梦与幻想</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-001/">哭不出来</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-23</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/daily-000/">开始日更</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/what-is-learning/">《学习究竟是什么》笔记</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-04</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/02/yesplaymusic/">高颜值网易云播放器</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-02-02</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/growing-up-novel/">听歌系列之成长小说</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/thanks-to-bb-king/">依然要向奇葩说致敬</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/philosophy-and-the-young-chlidren/">向猫看齐</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/hugo-form-0-to-1/">使用 Hugo 从 0 到 1 搭建个人博客</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-19</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/fixed-my-mac/">老叔新芽，Mac 维修</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/2020-da-li/">大理</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-06</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/12/2020-end/">2020 年概览</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-12-31</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/12/flomo-app/">软件系列之Flomo</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-12-18</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/12/read-dong-tian/">由《冬天》想到的</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-12-02</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/murphys-law/">周日断电惊魂</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-11-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/from-anniversary-to-edward-yang/">由纪念日想到杨德昌</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-11-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/parkview-green/">听歌系列之芳草地</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-11-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/%E6%97%A5%E8%AE%B0%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E8%AE%B0/">日记可以怎么记</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-11-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/%E7%AC%94%E8%AE%B0%E7%A9%B6%E7%AB%9F%E8%A6%81%E8%AE%B0%E4%BB%80%E4%B9%88/">笔记究竟要记什么</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-11-11</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84%E7%AC%94%E8%AE%B0%E7%B3%BB%E7%BB%9F/">一个好用的笔记系统</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-11-10</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E4%B8%80%E4%B8%AA%E9%9D%A0%E5%8D%96%E7%81%B5%E9%AD%82%E4%B8%BA%E7%94%9F%E7%9A%84%E4%BA%BA/">一个靠卖灵魂为生的人</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-30</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E5%B7%A6%E5%B0%8F%E7%A5%96%E5%92%92%E6%96%B0%E4%B8%93%E8%BE%91%E6%88%91%E7%88%B1%E5%8F%B0%E6%B9%BE/">左小祖咒新专辑《我爱台湾》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E4%B8%AD%E5%9B%BD%E9%93%81%E9%81%93%E5%8D%9A%E7%89%A9%E9%A6%86%E4%B8%9C%E9%83%8A%E5%BA%97/">中国铁道博物馆（东郊店）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-19</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E6%88%91%E4%BB%AC%E5%9C%A8%E6%89%AE%E6%BC%94%E4%B8%8A%E5%B8%9D/">我们在扮演上帝？</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E6%9D%A5%E8%87%AA%E6%B5%B7%E4%B8%B0%E7%9A%84%E4%BA%94%E6%9D%A1%E4%BA%BA/">来自海丰的五条人</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-10</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/09/%E6%9C%89%E5%A8%83%E4%B9%8B%E5%90%8E%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84%E4%BA%8B%E5%84%BF/">有娃之后应该知道的事儿</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-09-28</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/09/%E6%B7%B1%E5%A4%9C%E5%8F%91%E5%97%A434/">深夜发嗤（34）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-09-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/09/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%8F%E5%AD%A9%E5%AD%90%E7%9C%8B%E8%B5%B7%E6%9D%A5%E4%BB%80%E4%B9%88%E9%83%BD%E4%B8%8D%E6%80%95/">为什么小孩子看起来什么都不怕</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-09-09</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/08/%E5%9C%A8%E4%BB%8A%E5%A4%A9%E8%AE%BA%E8%AF%AD%E8%BF%98%E8%83%BD%E6%80%8E%E4%B9%88%E8%AF%BB/">在今天，《论语》还能怎么读？</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-08-07</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/07/%E4%B9%A6%E4%B8%8E%E5%B2%81%E6%9C%88/">书与岁月</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-07-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/07/bob-dylan-%E6%96%B0%E4%B8%93%E8%BE%91rough-and-rowdy-ways/">Bob Dylan 新专辑《Rough and Rowdy Ways》</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-07-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/07/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%BB%99%E5%B0%8F%E5%98%9F%E5%98%9F%E6%92%AD%E6%94%BE%E5%B7%A7%E8%99%8E-dvd-%E7%9A%84/">我是如何给小嘟嘟播放巧虎 DVD 的</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-07-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/06/%E7%BB%99%E9%9D%92%E5%B9%B4%E4%BD%9C%E5%AE%B6%E7%9A%84%E4%BF%A1%E6%91%98%E6%8A%84/">《给青年作家的信》摘抄</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-06-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/06/%E6%88%91%E5%AE%B6%E4%B9%9F%E6%9C%89%E5%84%BF%E7%AB%A5%E8%8A%82%E4%BA%86/">我家也有儿童节了</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-06-01</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/05/%E6%B7%B1%E5%A4%9C%E5%8F%91%E5%97%A432/">深夜发嗤（32）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-05-28</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/05/%E8%AF%BB100%E5%B9%B4%E5%B0%8F%E8%AF%B4%E7%9C%8B%E6%87%82%E4%B8%AD%E5%9B%BD%E4%B8%80/">读100年小说，看懂中国（一）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-05-20</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/05/%E5%AE%B6%E4%B9%A62020/">家书（2020）</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-05-03</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E8%87%AA%E7%94%B1/">每个人都有自己的自由</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-21</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E4%BB%8E%E8%80%81%E7%BD%97%E5%8F%A3%E8%AF%AF%E8%AF%B4%E5%BC%80%E5%8E%BB/">从老罗口误说开去</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E5%88%9B%E5%BB%BA%E4%BA%86%E4%B8%80%E4%B8%AA%E7%8B%82%E4%BA%BA%E6%97%A5%E8%AE%B0/">创建了一个「狂人日记」</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-16</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86-valine-%E8%AF%84%E8%AE%BA/">博客增加了 Valine 评论</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E4%BA%86%E6%96%87%E7%AB%A0%E5%86%85%E9%93%BE%E6%A0%B7%E5%BC%8F/">博客增加了文章内链样式</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E8%93%9D%E8%89%B2%E6%B8%AF%E6%B9%BE%E6%99%92%E5%A8%83%E4%B8%8A%E7%98%BE/">蓝色港湾，晒娃上瘾</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-13</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E6%9D%A5%E4%B8%80%E6%9B%B2%E4%B8%9C%E5%8C%97%E7%81%AD%E7%81%AB%E6%9C%8B%E5%85%8B/">来一曲东北灭火朋克</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-09</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E5%86%99%E4%BD%9C/">写作</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-02</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/03/%E6%88%91%E7%9A%84%E6%95%B0%E5%AD%97%E7%94%9F%E6%B4%BB%E8%BF%9B%E9%98%B6-001/">我的数字生活进阶-001</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-03-31</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2018/10/%E6%AF%94%E4%BB%BB%E4%BD%95%E6%97%B6%E5%80%99%E9%83%BD%E5%AE%B3%E6%80%95%E8%A1%B0%E8%80%81/">比任何时候都害怕衰老</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2018-10-09</span>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+  <footer class="small">
   
-  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
+    <span class="menu-bottom">
+<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
+
+<a href="/posts/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+
+<a href="#">Back to Top</a>
+
+</span>
+  </p>
   
   </footer>
-  </article>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const ul = document.querySelector('.main > ul');
-      if (!ul) return;
-    
-      const items = Array.from(ul.children);
-      let currentYear = null;
-    
-      items.forEach(item => {
-        const dateSpan = item.querySelector('.date');
-        if (!dateSpan) return;
-    
-        const year = dateSpan.textContent.split('/')[0];
-        if (year !== currentYear) {
-          const yearGroup = document.createElement('li');
-          yearGroup.className = 'year-group';
-          yearGroup.textContent = year;
-          ul.insertBefore(yearGroup, item);
-          currentYear = year;
-        }
-      });
-    });
-    </script>
   </body>
 </html>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,321 +9,317 @@
     <meta property="og:title" content="thinking - Elizen">
     
     <meta name="twitter:card" content="summary">
-    <meta name="referrer" content="never" />
-
-    
-    
-    <link rel="stylesheet" href="/css/custom.css"></link>
-    <script type="text/javascript" src="/js/view-image.js"></script>
-    <script>
-    
-    window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
-    </script>
-    <script src="/js/custom-markdown-parser.js"></script>
-    <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
-    
-    
-
-    
-      
-    
-
     
       
     
 
     
     
-
     
 
     
-    <link href="/tags/thinking/index.xml" rel="alternate" type="application/rss+xml" title="Elizen" />
+
     
+    <link href="/tags/thinking/index.xml" rel="alternate" type="application/rss+xml" title="Elizen">
     
 
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
     
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
+
   </head>
 
   
-  <body class="tags">
-    <header class="masthead">
-      <h1><a href="/">Elizen</a></h1>
-
-<p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
-
-      <nav class="menu">
-  <input id="menu-check" type="checkbox" hidden/>
-  <label id="menu-label" for="menu-check" class="unselectable" hidden>
-    <span class="icon close-icon">✕</span>
-    <span class="icon open-icon">☰</span>
-    <span class="text">Menu</span>
-  </label>
-  <ul>
   
   
-  <li><a href="/movies/">电影</a></li>
-  
-  <li><a href="/books/">阅读</a></li>
-  
-  <li><a href="/bibliography/">书目</a></li>
-  
-  <li><a href="/posts/">归档</a></li>
-  
-  <li><a href="/newsletter/">通讯</a></li>
-  
-  <li><a href="/kids/">孩童</a></li>
-  
-  
-  </ul>
-</nav>
-
-    </header>
-
-    <article class="main">
-      <header class="title">
-      
-<h1>thinking</h1>
-
-<h3>
-</h3>
-<hr>
-
-
-      </header>
-
-
-
-<div id="bber">正在加载...</div>
-
-<script>
-console.log("脚本开始执行");
-
-var bbMemos = {
-    memos: 'https://memos.elizen.me/',
-    limit: '1',
-    creatorId: '101',  
-    domId: '#bber'
-};
-
-console.log("bbMemos 对象设置完成:", bbMemos);
-
-function getRecentMemo() {
-    console.log("开始获取最新 Memo");
-    var bbUrl = `${bbMemos.memos}api/v1/memo?creatorId=${bbMemos.creatorId}&limit=${bbMemos.limit}`;
-    console.log("API URL:", bbUrl);
-
-    fetch(bbUrl)
-    .then(response => {
-        console.log("API 响应状态:", response.status);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("API 返回数据:", data);
-        if (!data || data.length === 0) {
-            throw new Error("No data returned from API");
-        }
-        updateHTMl(data);
-    })
-    .catch(error => {
-        console.error("获取或处理数据失败:", error);
-        document.querySelector(bbMemos.domId).innerHTML = `<p>加载失败：${error.message}</p>`;
-    });
-}
-
-function updateHTMl(data) {
-    console.log("开始更新 HTML");
-    var memoContent = document.querySelector(bbMemos.domId);
+  <body class=" tags">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
     
-    if (data && data.length > 0) {
-        console.log("解析 Memo 内容");
-        var memo = data[0];
-        var content = memo.content
-            .replace(/#([^\s#]+)/g, '<span class="tag-span">#$1</span>')
-            .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">');
-        var dateStr = new Date(memo.createdTs * 1000).toLocaleString(); 
+    </div>
+    <div class="menu"><span><a href="/movies/">电影</a></span>
+      <span><a href="/books/">阅读</a></span>
+      <span><a href="/bibliography/">书目</a></span>
+      <span><a href="/posts/">归档</a></span>
+      <span><a href="/newsletter/">通讯</a></span>
+      <span><a href="/kids/">孩童</a></span>
+      
+    </div>
+    </nav>
 
-        console.log("更新 DOM");
-        memoContent.innerHTML = `
-            <div class="bb-timeline">
-                <ul class="bb-list-ul">
-                    <li class="bb-list-li">
-                        <div class="bb-div">
-                            <div class="datatime">${dateStr}</div>
-                            <div class="datacont">${content}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>`;
-        console.log("DOM 更新完成");
-    } else {
-        console.log("没有 Memo 数据");
-        memoContent.innerHTML = "<p>暂无数据</p>";
-    }
-}
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM 加载完成，调用 getRecentMemo");
-    getRecentMemo();
-});
-</script>
 
-<style>
-    #bber {
-        margin-top: 2em;
-        width: 100%;
-        border: 1px solid #ddd;
-        padding: 10px;
-    }
+<h1 class="title">thinking<span class="small subtitle"> | <a href="/tags/">tags</a></span></h1>
 
-   .bb-timeline {
-        margin-bottom: 2em;
-    }
+<div class="main archive">
 
-   .bb-list-ul {
-        list-style-type: none;
-        padding: 0;
-    }
 
-   .bb-list-li {
-        margin-bottom: 1rem;
-    }
 
-   .bb-div {
-        padding: 0.6rem 1rem;
-    }
+<h2 class="toc-line"><a href="/posts/2021/11/just-right-is-good/">刚刚好就很好</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
 
-   .datatime {
-        font-size: 0.85em;
-        color: #777;
-    }
 
-   .datacont {
-        margin-top: 5px;
-    }
-
-   .tag-span {
-        color: #42b983;
-    }
-</style>
+<span class="author">Elizen</span>
 
 
 
 
-<ul>
-  
-  <li>
-    <span class="date">2021/11/30</span>
-    <a href="/posts/2021/11/just-right-is-good/">刚刚好就很好</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/10/22</span>
-    <a href="/posts/2021/10/bi-huan/">闭环</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/07/22</span>
-    <a href="/posts/2021/07/lovely-human-beings/">人类真是一个可爱的物种，伟大又如此卑微</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/05/24</span>
-    <a href="/posts/2021/05/death/">去世</a>
-  </li>
-  
-  <li>
-    <span class="date">2021/01/25</span>
-    <a href="/posts/2021/01/thanks-to-bb-king/">依然要向奇葩说致敬</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/12/02</span>
-    <a href="/posts/2020/12/read-dong-tian/">由《冬天》想到的</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/11/25</span>
-    <a href="/posts/2020/11/from-anniversary-to-edward-yang/">由纪念日想到杨德昌</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/30</span>
-    <a href="/posts/2020/10/%E4%B8%80%E4%B8%AA%E9%9D%A0%E5%8D%96%E7%81%B5%E9%AD%82%E4%B8%BA%E7%94%9F%E7%9A%84%E4%BA%BA/">一个靠卖灵魂为生的人</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/10/12</span>
-    <a href="/posts/2020/10/%E6%88%91%E4%BB%AC%E5%9C%A8%E6%89%AE%E6%BC%94%E4%B8%8A%E5%B8%9D/">我们在扮演上帝？</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/07/29</span>
-    <a href="/posts/2020/07/%E4%B9%A6%E4%B8%8E%E5%B2%81%E6%9C%88/">书与岁月</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/21</span>
-    <a href="/posts/2020/04/%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E8%87%AA%E7%94%B1/">每个人都有自己的自由</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/17</span>
-    <a href="/posts/2020/04/%E4%BB%8E%E8%80%81%E7%BD%97%E5%8F%A3%E8%AF%AF%E8%AF%B4%E5%BC%80%E5%8E%BB/">从老罗口误说开去</a>
-  </li>
-  
-  <li>
-    <span class="date">2020/04/02</span>
-    <a href="/posts/2020/04/%E5%86%99%E4%BD%9C/">写作</a>
-  </li>
-  
-</ul>
 
-  <footer>
-  
-<nav class="post-nav">
-  <span class="nav-prev"></span>
-  <span class="nav-next"></span>
-</nav>
 
-  <hr>
-  
+<span class="date">2021-11-30</span>
 
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/10/bi-huan/">闭环</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-10-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/07/lovely-human-beings/">人类真是一个可爱的物种，伟大又如此卑微</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-07-22</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/05/death/">去世</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-05-24</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2021/01/thanks-to-bb-king/">依然要向奇葩说致敬</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2021-01-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/12/read-dong-tian/">由《冬天》想到的</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-12-02</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/11/from-anniversary-to-edward-yang/">由纪念日想到杨德昌</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+<span class="author">Elizen</span>
+
+
+
+
+
+
+<span class="date">2020-11-25</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E4%B8%80%E4%B8%AA%E9%9D%A0%E5%8D%96%E7%81%B5%E9%AD%82%E4%B8%BA%E7%94%9F%E7%9A%84%E4%BA%BA/">一个靠卖灵魂为生的人</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-30</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/10/%E6%88%91%E4%BB%AC%E5%9C%A8%E6%89%AE%E6%BC%94%E4%B8%8A%E5%B8%9D/">我们在扮演上帝？</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-10-12</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/07/%E4%B9%A6%E4%B8%8E%E5%B2%81%E6%9C%88/">书与岁月</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-07-29</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E6%AF%8F%E4%B8%AA%E4%BA%BA%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E8%87%AA%E7%94%B1/">每个人都有自己的自由</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-21</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E4%BB%8E%E8%80%81%E7%BD%97%E5%8F%A3%E8%AF%AF%E8%AF%B4%E5%BC%80%E5%8E%BB/">从老罗口误说开去</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-17</span>
+
+
+
+</div>
+
+
+
+<h2 class="toc-line"><a href="/posts/2020/04/%E5%86%99%E4%BD%9C/">写作</a><span class="dots"></span><span class="page-num small"></span></h2>
+<div class="meta-line small">
+
+
+
+
+
+
+
+<span class="date">2020-04-02</span>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+  <footer class="small">
   
-  <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://elizen.me">Elizen</a> | since 2009</span>
+    <span class="menu-bottom">
+<a href="/categories/">Categories</a> <a href="/tags/">Tags</a>
+
+<a href="/tags/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+
+<a href="#">Back to Top</a>
+
+</span>
+  </p>
   
   </footer>
-  </article>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const ul = document.querySelector('.main > ul');
-      if (!ul) return;
-    
-      const items = Array.from(ul.children);
-      let currentYear = null;
-    
-      items.forEach(item => {
-        const dateSpan = item.querySelector('.date');
-        if (!dateSpan) return;
-    
-        const year = dateSpan.textContent.split('/')[0];
-        if (year !== currentYear) {
-          const yearGroup = document.createElement('li');
-          yearGroup.className = 'year-group';
-          yearGroup.textContent = year;
-          ul.insertBefore(yearGroup, item);
-          currentYear = year;
-        }
-      });
-    });
-    </script>
   </body>
 </html>
 
