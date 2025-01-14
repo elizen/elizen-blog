@@ -1,5 +1,5 @@
+# 基本信息
 baseURL = "https://elizen.me/"
-languageCode = "en-us"
 title = "Elizen"
 theme = "ivy"
 disqusShortname = "elizen"
@@ -7,39 +7,59 @@ hasCJKLanguage = true
 enableEmoji = true
 footnotereturnlinkcontents = "↩"
 
+# Hugo 多语言配置
+defaultContentLanguage = "zh"  # 设定默认语言
+[languages]
+
+  # 中文
+  [languages.zh]
+    languageName = "中文"
+    languageCode = "zh-cn"
+    weight = 1
+    # 可以在这里继续添加或覆盖一些专属于中文站点的配置，比如菜单、Param 等。
+
+  # 英文
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 2
+    # 同理，也可以在这里添加或覆盖一些只在英文版本里用到的配置
+
+# URL 结构
 [permalinks]
   posts = "/posts/:year/:month/:slug/"
   newsletter = "/newsletter/:year/:month/:slug/"
   journal = "/journal/:slug/"
 
+# 菜单配置（如果你想对菜单做多语言区分，可分别放在 [languages.zh.menu] 和 [languages.en.menu]）
 [menu]
   [[menu.main]]
-  name="电影"
-  url="/movies/"
-  weight="1"
+    name="电影"
+    url="/movies/"
+    weight="1"
   [[menu.main]]
-  name="阅读"
-  url="/books/"
-  weight="2"
+    name="阅读"
+    url="/books/"
+    weight="2"
   [[menu.main]]
-  name="书目"
-  url="/bibliography/"
-  weight="3"
+    name="书目"
+    url="/bibliography/"
+    weight="3"
   [[menu.main]]
-  name="归档"
-  url="/posts/"
-  weight="4"
+    name="归档"
+    url="/posts/"
+    weight="4"
   [[menu.main]]
-  name="通讯"
-  url="/newsletter/"
-  weight="5"
+    name="通讯"
+    url="/newsletter/"
+    weight="5"
   [[menu.main]]
-  name="孩童"
-  url="/kids/"
-  weight="6"
+    name="孩童"
+    url="/kids/"
+    weight="6"
 
 [params]
-  # description abou this website
+  # description about this website
   description = "There is only one thing in the world worse than being talked about, and that is not being talked about."
   footer = "&copy; [Elizen](https://elizen.me) | since 2009"
   highlightjsCDN = "//cdn.bootcss.com"
@@ -48,7 +68,7 @@ footnotereturnlinkcontents = "↩"
   highlightjsVersion = "9.12.0"
 
 [params.twikoo]
-	enable = true
+  enable = true
 
 [blackfriday]
 extensionsmask = [ "noIntraEmphasis" ]
