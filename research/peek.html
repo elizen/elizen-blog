@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEEK材料产业与A股生态圈深度解析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .flow-box {
+            border: 2px solid #89CFF0;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #004FFF;
+            margin: 0.5rem 0;
+        }
+        .tier-card {
+            border-left: 5px solid;
+            transition: background-color 0.3s ease;
+        }
+        .tier-card:hover {
+            background-color: #eef8ff;
+        }
+        .tier-1 { border-color: #FFD700; }
+        .tier-2 { border-color: #89CFF0; }
+        .tier-3 { border-color: #98FF98; }
+        .tier-4 { border-color: #F08080; }
+
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#004FFF] mb-4">PEEK材料产业深度解析</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">洞察“超级塑料”的全球格局与A股核心玩家的真实力</p>
+        </header>
+
+        <section id="intro" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">什么是PEEK？高性能聚合物的皇冠明珠</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-4xl mx-auto text-center">聚醚醚酮（PEEK）是一种半结晶热塑性聚合物，因其在极端工况下无可替代的性能组合，被誉为“超级塑料”。其价值并非来自单一特性，而是多项顶尖性能的协同效应，解决了传统材料无法应对的复杂工程挑战。</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="kpi-card">
+                        <div class="text-4xl mb-2">🌡️</div>
+                        <h3 class="font-bold text-lg text-[#004FFF]">卓越热稳定性</h3>
+                        <p class="text-2xl font-bold text-gray-900">260°C</p>
+                        <p class="text-sm text-gray-500">长期连续使用温度</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="text-4xl mb-2">💪</div>
+                        <h3 class="font-bold text-lg text-[#004FFF]">强悍机械性能</h3>
+                        <p class="text-2xl font-bold text-gray-900">>90 MPa</p>
+                        <p class="text-sm text-gray-500">拉伸强度</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="text-4xl mb-2">🧪</div>
+                        <h3 class="font-bold text-lg text-[#004FFF]">超强化学惰性</h3>
+                        <p class="text-2xl font-bold text-gray-900">耐腐蚀</p>
+                        <p class="text-sm text-gray-500">仅溶于浓硫酸</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="text-4xl mb-2">❤️</div>
+                        <h3 class="font-bold text-lg text-[#004FFF]">优异生物相容性</h3>
+                        <p class="text-2xl font-bold text-gray-900">X光可穿透</p>
+                        <p class="text-sm text-gray-500">医疗植入理想选择</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="global-market" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">全球竞技场：寡头垄断格局</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-3xl mx-auto text-center">全球PEEK市场由少数几家巨头主导，它们凭借技术、认证和应用开发的深厚壁垒，占据了近九成的市场份额。竞争的核心是基于解决方案的价值创造，而非单纯的价格战。</p>
+                <div class="chart-container h-72 md:h-80">
+                    <canvas id="globalMarketShareChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="china-ecosystem" class="mb-16">
+             <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">A股PEEK生态圈全景图</h2>
+                <p class="text-base text-gray-600 mb-8 max-w-4xl mx-auto text-center">中国PEEK产业链已形成完整闭环，从上游核心原料的全球主导，到中游树脂合成的国产化突破，再到下游改性加工的精细化发展，各环节均有代表性A股上市公司深度布局。</p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-center text-[#004FFF] mb-4 bg-blue-100 p-2 rounded-md">上游：核心原材料 (产业链基石)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flow-box border-[#FFD700]">
+                                <h4 class="font-bold">新瀚新材 (301076)</h4>
+                                <p class="text-sm text-gray-600">DFBP全球龙头，市占率~70%</p>
+                            </div>
+                            <div class="flow-box border-[#FFD700]">
+                                <h4 class="font-bold">中欣氟材 (002915)</h4>
+                                <p class="text-sm text-gray-600">DFBP重要新增产能</p>
+                            </div>
+                             <div class="flow-box border-[#FFD700] md:col-span-2 mx-auto md:w-1/2">
+                                <h4 class="font-bold">兄弟科技 (002562)</h4>
+                                <p class="text-sm text-gray-600">对苯二酚关键供应商</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">⬇️</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-center text-[#004FFF] mb-4 bg-blue-100 p-2 rounded-md">中游：PEEK树脂合成 (产业核心)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flow-box">
+                                <h4 class="font-bold">中研股份 (688716)</h4>
+                                <p class="text-sm text-gray-600">国产PEEK第一股，技术成熟</p>
+                            </div>
+                            <div class="flow-box">
+                                <h4 class="font-bold">沃特股份 (002886)</h4>
+                                <p class="text-sm text-gray-600">全产业链挑战者，新产能投产</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">⬇️</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-center text-[#004FFF] mb-4 bg-blue-100 p-2 rounded-md">下游：改性与精密加工 (价值延伸)</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="flow-box">
+                                <h4 class="font-bold">金田股份</h4>
+                                <p class="text-sm text-gray-600">PEEK绝缘线</p>
+                            </div>
+                             <div class="flow-box">
+                                <h4 class="font-bold">唯科科技</h4>
+                                <p class="text-sm text-gray-600">医疗精密加工</p>
+                            </div>
+                             <div class="flow-box">
+                                <h4 class="font-bold">南京聚隆</h4>
+                                <p class="text-sm text-gray-600">特种改性</p>
+                            </div>
+                            <div class="flow-box">
+                                <h4 class="font-bold">肯特股份</h4>
+                                <p class="text-sm text-gray-600">工业密封件</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="a-share-ranking" class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">中游实力比拼：PEEK树脂产能</h2>
+                    <p class="text-base text-gray-600 mb-6 text-center">PEEK树脂的合成能力是衡量企业“真本事”的核心指标。目前，中研股份和沃特股份已形成国内双龙头格局，均具备千吨级年产能，而其他玩家规模尚小。</p>
+                    <div class="chart-container h-72 md:h-80">
+                        <canvas id="resinCapacityChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2 text-center">上游话语权：核心原料DFBP产能</h2>
+                    <p class="text-base text-gray-600 mb-6 text-center">与许多高新材料不同，中国在全球PEEK产业链的上游掌握着绝对话语权。新瀚新材是全球龙头，中欣氟材则提供了重要的新增产能，共同保障了产业链安全。</p>
+                    <div class="chart-container h-72 md:h-80">
+                        <canvas id="dfbpCapacityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="investment-tiers" class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">A股PEEK产业链实力梯队划分</h2>
+            <div class="space-y-6">
+                <div class="tier-card tier-1 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-yellow-600 mb-2">第一梯队：核心产业领导者</h3>
+                    <p class="text-gray-600 mb-4">拥有成熟的大规模产能、经过市场验证的核心技术，在产业链中占据不可或缺的核心地位。</p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="font-semibold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">中研股份 (688716)</span>
+                        <span class="font-semibold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">新瀚新材 (301076)</span>
+                    </div>
+                </div>
+                <div class="tier-card tier-2 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">第二梯队：重要新兴力量</h3>
+                    <p class="text-gray-600 mb-4">拥有已落地或即将落地的重大项目，战略清晰，具备成为行业主要参与者的强大潜力。</p>
+                     <div class="flex flex-wrap gap-4">
+                        <span class="font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">沃特股份 (002886)</span>
+                        <span class="font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">中欣氟材 (002915)</span>
+                        <span class="font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">兄弟科技 (002562)</span>
+                    </div>
+                </div>
+                <div class="tier-card tier-3 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-green-600 mb-2">第三梯队：利基市场与下游专家</h3>
+                    <p class="text-gray-600 mb-4">在产业链的特定环节（改性或加工）拥有深厚的专业技术和稳固的市场地位。</p>
+                     <div class="flex flex-wrap gap-4">
+                        <span class="font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">金田股份</span>
+                        <span class="font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">唯科科技</span>
+                         <span class="font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">南京聚隆</span>
+                         <span class="font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">肯特股份</span>
+                    </div>
+                </div>
+                <div class="tier-card tier-4 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-red-600 mb-2">第四梯队：概念与早期阶段公司</h3>
+                    <p class="text-gray-600 mb-4">目前在PEEK领域基本没有实际业务运营，或仅处于非常初级的研发阶段，投资风险极高。</p>
+                     <div class="flex flex-wrap gap-4">
+                        <span class="font-semibold bg-red-100 text-red-800 px-3 py-1 rounded-full">富春染织</span>
+                        <span class="font-semibold bg-red-100 text-red-800 px-3 py-1 rounded-full">泰和科技</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-200">
+            <p class="text-sm text-gray-500">本内容基于公开信息分析，不构成任何投资建议。请投资者独立判断和决策。</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxLength = 16) => {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+
+        const chartColors = {
+            blue: '#004FFF',
+            lightBlue: '#89CFF0',
+            yellow: '#FFD700',
+            red: '#F08080',
+            green: '#98FF98',
+            gray: '#d1d5db'
+        };
+
+        const globalTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        const globalMarketShareCtx = document.getElementById('globalMarketShareChart').getContext('2d');
+        new Chart(globalMarketShareCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['威格斯 (Victrex)', '苏威 (Solvay/Syensqo)', '赢创 (Evonik)', '其他'],
+                datasets: [{
+                    label: '全球PEEK市场份额',
+                    data: [45, 25, 15, 15],
+                    backgroundColor: [
+                        chartColors.blue,
+                        chartColors.lightBlue,
+                        chartColors.yellow,
+                        chartColors.gray
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: false
+                    },
+                    tooltip: globalTooltipConfig.plugins.tooltip
+                }
+            }
+        });
+
+        const resinCapacityCtx = document.getElementById('resinCapacityChart').getContext('2d');
+        new Chart(resinCapacityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['中研股份', '沃特股份', '金发科技', '泰和科技'],
+                datasets: [{
+                    label: 'PEEK树脂年产能 (吨)',
+                    data: [1000, 1000, 100, 0], 
+                    backgroundColor: [chartColors.blue, chartColors.lightBlue, chartColors.yellow, chartColors.red],
+                    borderColor: [chartColors.blue, chartColors.lightBlue, chartColors.yellow, chartColors.red],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: globalTooltipConfig.plugins.tooltip
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '产能 (吨/年)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        const dfbpCapacityCtx = document.getElementById('dfbpCapacityChart').getContext('2d');
+        new Chart(dfbpCapacityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['中欣氟材', ['新瀚新材', '(新项目)']],
+                datasets: [{
+                    label: 'DFBP核心原料年产能 (吨)',
+                    data: [5000, 2500],
+                    backgroundColor: [chartColors.blue, chartColors.lightBlue],
+                    borderColor: [chartColors.blue, chartColors.lightBlue],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: globalTooltipConfig.plugins.tooltip
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '产能 (吨/年)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
