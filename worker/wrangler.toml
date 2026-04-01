@@ -1,0 +1,7 @@
+name = "memo-master-proxy"
+main = "index.js"
+compatibility_date = "2024-09-01"
+
+[vars]
+# 允许的前端域名，防止被其他网站盗用
+ALLOWED_ORIGIN = "https://elizen.me"

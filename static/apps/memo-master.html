@@ -22,27 +22,36 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
+        // ====== 配置 ======
+        // 部署 Cloudflare Worker 后，把这里改成你的 Worker URL
+        const API_PROXY_URL = "https://memo-master-proxy.你的账号.workers.dev";
+
         const Icon = ({ name, size = 24, className = "" }) => {
             useEffect(() => { lucide.createIcons(); }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
         };
 
-        // Gemini API 调用
-        const callGemini = async (apiKey, prompt, imageBase64) => {
-            const parts = [];
+        // 通过后端代理调用 AI（密钥在后端，前端只传访问码）
+        const callAI = async (accessCode, prompt, imageBase64) => {
+            const content = [];
             if (imageBase64) {
-                parts.push({ inlineData: { mimeType: "image/jpeg", data: imageBase64 } });
+                content.push({ type: "image_url", image_url: { url: `data:image/jpeg;base64,${imageBase64}` } });
             }
-            parts.push({ text: prompt });
+            content.push({ type: "text", text: prompt });
 
-            const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+            const res = await fetch(API_PROXY_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts }] })
+                body: JSON.stringify({
+                    access_code: accessCode,
+                    messages: [{ role: 'user', content }],
+                    max_tokens: 4096,
+                    temperature: 0.3
+                })
             });
             const data = await res.json();
-            if (data.error) throw new Error(data.error.message);
-            return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+            if (data.error) throw new Error(data.error);
+            return data.content || '';
         };
 
         const ANALYSIS_PROMPT = `你是一个儿童英语教学专家。请分析以下英语短文，将其拆分成适合小朋友逐段背诵的片段。
@@ -74,7 +83,7 @@
 {"difficulty":3,"title":"文章标题","scenes":[{"text":"英文原文片段","emoji":"🏰","cn":"中文翻译","keywords":["word1","word2"]}]}`;
 
         const App = () => {
-            const [appState, setAppState] = useState('loading'); // loading, welcome, input, analyzing, learning, finished, settings
+            const [appState, setAppState] = useState('loading');
             const [scenes, setScenes] = useState([]);
             const [articleTitle, setArticleTitle] = useState('');
             const [difficulty, setDifficulty] = useState(0);
@@ -82,18 +91,18 @@
             const [mode, setMode] = useState('listen');
             const [isPlaying, setIsPlaying] = useState(false);
             const [showMenu, setShowMenu] = useState(false);
-            const [apiKey, setApiKey] = useState('');
-            const [apiKeyInput, setApiKeyInput] = useState('');
+            const [accessCode, setAccessCode] = useState('');
+            const [codeInput, setCodeInput] = useState('');
             const [inputText, setInputText] = useState('');
             const [analyzing, setAnalyzing] = useState(false);
             const [error, setError] = useState('');
             const fileInputRef = useRef(null);
 
-            // 初始化：读取 apiKey 和已有数据
+            // 初始化
             useEffect(() => {
-                const savedKey = localStorage.getItem('memo_master_api_key') || '';
-                setApiKey(savedKey);
-                setApiKeyInput(savedKey);
+                const savedCode = localStorage.getItem('memo_master_access_code') || '';
+                setAccessCode(savedCode);
+                setCodeInput(savedCode);
 
                 const savedData = localStorage.getItem('memo_master_current');
                 if (savedData) {
@@ -108,117 +117,95 @@
                         }
                     } catch (e) {}
                 }
-                setAppState('welcome');
+                // 没有已有数据：有访问码直接去输入页，没有去欢迎页
+                setAppState(savedCode ? 'input' : 'welcome');
             }, []);
 
-            // 保存学习数据
             useEffect(() => {
                 if (scenes.length > 0) {
                     localStorage.setItem('memo_master_current', JSON.stringify({ scenes, title: articleTitle, difficulty }));
                 }
             }, [scenes, articleTitle, difficulty]);
 
-            // 浏览器 TTS 朗读
+            // 浏览器 TTS
             const handlePlay = () => {
-                if (isPlaying) {
-                    window.speechSynthesis.cancel();
-                    setIsPlaying(false);
-                    return;
-                }
+                if (isPlaying) { window.speechSynthesis.cancel(); setIsPlaying(false); return; }
                 const text = scenes[currentIdx]?.text;
                 if (!text) return;
                 window.speechSynthesis.cancel();
                 const u = new SpeechSynthesisUtterance(text);
-                u.lang = 'en-US';
-                u.rate = 0.85;
+                u.lang = 'en-US'; u.rate = 0.85;
                 u.onstart = () => setIsPlaying(true);
                 u.onend = () => setIsPlaying(false);
                 u.onerror = () => setIsPlaying(false);
                 window.speechSynthesis.speak(u);
             };
 
-            // 解析 Gemini 返回的 JSON
-            const parseGeminiResponse = (text) => {
-                // 去掉可能的 markdown 代码块标记
+            const parseAIResponse = (text) => {
                 let cleaned = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
                 return JSON.parse(cleaned);
             };
 
-            // 提交文本分析
+            // 文本分析
             const handleAnalyzeText = async () => {
-                if (!inputText.trim()) return;
-                if (!apiKey) { setError('请先在设置中配置 API Key'); return; }
-                setAnalyzing(true);
-                setError('');
-                setAppState('analyzing');
+                if (!inputText.trim() || !accessCode) return;
+                setAnalyzing(true); setError(''); setAppState('analyzing');
                 try {
-                    const result = await callGemini(apiKey, ANALYSIS_PROMPT + inputText.trim());
-                    const parsed = parseGeminiResponse(result);
+                    const result = await callAI(accessCode, ANALYSIS_PROMPT + inputText.trim());
+                    const parsed = parseAIResponse(result);
                     setScenes(parsed.scenes);
                     setArticleTitle(parsed.title || '未命名');
                     setDifficulty(parsed.difficulty || 3);
-                    setCurrentIdx(0);
-                    setMode('listen');
-                    setInputText('');
+                    setCurrentIdx(0); setMode('listen'); setInputText('');
                     setAppState('learning');
                 } catch (e) {
-                    setError('分析失败：' + e.message);
+                    setError(e.message.includes('访问码') ? '访问码无效，请检查后重试' : '分析失败：' + e.message);
                     setAppState('input');
                 }
                 setAnalyzing(false);
             };
 
-            // 处理图片上传
+            // 图片分析
             const handleImageUpload = (e) => {
                 const file = e.target.files?.[0];
-                if (!file) return;
-                if (!apiKey) { setError('请先在设置中配置 API Key'); return; }
-
+                if (!file || !accessCode) return;
                 const reader = new FileReader();
                 reader.onload = async (ev) => {
                     const base64 = ev.target.result.split(',')[1];
-                    setAnalyzing(true);
-                    setError('');
-                    setAppState('analyzing');
+                    setAnalyzing(true); setError(''); setAppState('analyzing');
                     try {
-                        const result = await callGemini(apiKey, IMAGE_PROMPT, base64);
-                        const parsed = parseGeminiResponse(result);
+                        const result = await callAI(accessCode, IMAGE_PROMPT, base64);
+                        const parsed = parseAIResponse(result);
                         setScenes(parsed.scenes);
                         setArticleTitle(parsed.title || '未命名');
                         setDifficulty(parsed.difficulty || 3);
-                        setCurrentIdx(0);
-                        setMode('listen');
+                        setCurrentIdx(0); setMode('listen');
                         setAppState('learning');
                     } catch (e) {
-                        setError('图片分析失败：' + e.message);
+                        setError(e.message.includes('访问码') ? '访问码无效，请检查后重试' : '图片分析失败：' + e.message);
                         setAppState('input');
                     }
                     setAnalyzing(false);
                 };
                 reader.readAsDataURL(file);
+                // 重置 file input 以允许重复选择同一文件
+                e.target.value = '';
             };
 
-            // 保存 API Key
-            const handleSaveApiKey = () => {
-                const key = apiKeyInput.trim();
-                setApiKey(key);
-                localStorage.setItem('memo_master_api_key', key);
-                if (scenes.length > 0) {
-                    setAppState('learning');
-                } else {
-                    setAppState('welcome');
-                }
-            };
-
-            // 开始新的一篇
-            const handleNewArticle = () => {
-                setScenes([]);
-                setArticleTitle('');
-                setDifficulty(0);
-                setCurrentIdx(0);
-                setMode('listen');
-                setInputText('');
+            // 保存访问码
+            const handleSaveCode = () => {
+                const code = codeInput.trim();
+                if (!code) { setError('请输入访问码'); return; }
+                setAccessCode(code);
+                localStorage.setItem('memo_master_access_code', code);
                 setError('');
+                if (scenes.length > 0) setAppState('learning');
+                else setAppState('input');
+            };
+
+            const handleNewArticle = () => {
+                setScenes([]); setArticleTitle(''); setDifficulty(0);
+                setCurrentIdx(0); setMode('listen'); setInputText(''); setError('');
                 localStorage.removeItem('memo_master_current');
                 setAppState('input');
             };
@@ -255,7 +242,6 @@
                                     {scenes.length > 0 && appState === 'learning' && (
                                         <button onClick={() => setShowMenu(true)} className="p-2 bg-white/20 rounded-xl"><Icon name="list" size={18} /></button>
                                     )}
-                                    <button onClick={() => setAppState('settings')} className="p-2 bg-white/20 rounded-xl"><Icon name="settings" size={18} /></button>
                                 </div>
                             </div>
                             {appState === 'learning' && articleTitle && (
@@ -266,11 +252,11 @@
                             )}
                         </div>
 
-                        {/* Content Area */}
+                        {/* Content */}
                         <div className="flex-1 -mt-6 bg-white rounded-t-[3rem] flex flex-col overflow-hidden relative z-10 shadow-inner">
                             <div className="flex-1 flex flex-col items-center p-6 overflow-y-auto no-scrollbar">
 
-                                {/* ===== 欢迎页 ===== */}
+                                {/* ===== 欢迎页（输入访问码） ===== */}
                                 {appState === 'welcome' && (
                                     <div className="flex-1 flex flex-col items-center justify-center space-y-8 text-center w-full">
                                         <div className="text-8xl">🧠</div>
@@ -278,19 +264,31 @@
                                             <h2 className="text-3xl font-black text-slate-800 mb-2">背诵大师</h2>
                                             <p className="text-slate-400 font-bold text-sm">拍照或粘贴英语短文，AI 帮你拆解背诵</p>
                                         </div>
-                                        <button
-                                            onClick={() => {
-                                                if (!apiKey) { setAppState('settings'); setError('首次使用请先配置 Gemini API Key'); }
-                                                else setAppState('input');
-                                            }}
-                                            className="w-full py-5 rounded-3xl bg-indigo-600 text-white font-black text-lg active:scale-95 transition-all"
-                                        >
-                                            开始使用
-                                        </button>
+
+                                        {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center w-full">{error}</div>}
+
+                                        <div className="w-full space-y-4">
+                                            <input
+                                                type="text"
+                                                value={codeInput}
+                                                onChange={e => setCodeInput(e.target.value)}
+                                                placeholder="请输入访问码"
+                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold text-center text-lg focus:border-indigo-400 focus:outline-none tracking-widest"
+                                                onKeyDown={e => { if (e.key === 'Enter') handleSaveCode(); }}
+                                            />
+                                            <button
+                                                onClick={handleSaveCode}
+                                                disabled={!codeInput.trim()}
+                                                className={`w-full py-5 rounded-3xl font-black text-lg active:scale-95 transition-all ${codeInput.trim() ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-400'}`}
+                                            >
+                                                开始使用
+                                            </button>
+                                        </div>
+                                        <p className="text-slate-300 text-xs">访问码由管理员提供</p>
                                     </div>
                                 )}
 
-                                {/* ===== 输入页：拍照或粘贴文字 ===== */}
+                                {/* ===== 输入页 ===== */}
                                 {appState === 'input' && (
                                     <div className="flex-1 w-full flex flex-col space-y-5 pt-2">
                                         <h2 className="text-xl font-black text-slate-800 text-center">添加学习内容</h2>
@@ -298,26 +296,17 @@
 
                                         {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center">{error}</div>}
 
-                                        {/* 拍照/上传按钮 */}
                                         <input type="file" accept="image/*" capture="environment" ref={fileInputRef} onChange={handleImageUpload} className="hidden" />
                                         <div className="flex gap-3">
                                             <button
-                                                onClick={() => {
-                                                    if (!apiKey) { setError('请先在右上角设置中配置 API Key'); return; }
-                                                    fileInputRef.current.setAttribute('capture', 'environment');
-                                                    fileInputRef.current.click();
-                                                }}
+                                                onClick={() => { fileInputRef.current.setAttribute('capture', 'environment'); fileInputRef.current.click(); }}
                                                 className="flex-1 py-6 rounded-3xl bg-indigo-600 text-white font-black text-base flex flex-col items-center gap-2 active:scale-95 transition-all"
                                             >
                                                 <Icon name="camera" size={28} />
                                                 拍照
                                             </button>
                                             <button
-                                                onClick={() => {
-                                                    if (!apiKey) { setError('请先在右上角设置中配置 API Key'); return; }
-                                                    fileInputRef.current.removeAttribute('capture');
-                                                    fileInputRef.current.click();
-                                                }}
+                                                onClick={() => { fileInputRef.current.removeAttribute('capture'); fileInputRef.current.click(); }}
                                                 className="flex-1 py-6 rounded-3xl bg-violet-500 text-white font-black text-base flex flex-col items-center gap-2 active:scale-95 transition-all"
                                             >
                                                 <Icon name="image" size={28} />
@@ -331,7 +320,6 @@
                                             <div className="flex-1 h-px bg-slate-200"></div>
                                         </div>
 
-                                        {/* 文字输入 */}
                                         <textarea
                                             value={inputText}
                                             onChange={e => setInputText(e.target.value)}
@@ -409,53 +397,9 @@
                                     </div>
                                 )}
 
-                                {/* ===== 设置页 ===== */}
-                                {appState === 'settings' && (
-                                    <div className="flex-1 w-full flex flex-col space-y-6 pt-4">
-                                        <h2 className="text-xl font-black text-slate-800 text-center">设置</h2>
-
-                                        {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center">{error}</div>}
-
-                                        <div>
-                                            <label className="text-sm font-bold text-slate-500 mb-2 block">Gemini API Key</label>
-                                            <p className="text-xs text-slate-400 mb-3">AI 分析和语音功能需要 Google Gemini API Key。<br/>可在 Google AI Studio 免费获取。</p>
-                                            <input
-                                                type="password"
-                                                value={apiKeyInput}
-                                                onChange={e => setApiKeyInput(e.target.value)}
-                                                placeholder="粘贴你的 API Key..."
-                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold focus:border-indigo-400 focus:outline-none text-sm"
-                                            />
-                                        </div>
-
-                                        <button onClick={handleSaveApiKey} className="w-full py-4 rounded-2xl bg-indigo-600 text-white font-black">
-                                            保存
-                                        </button>
-
-                                        <button
-                                            onClick={() => {
-                                                setError('');
-                                                if (scenes.length > 0) setAppState('learning');
-                                                else setAppState('welcome');
-                                            }}
-                                            className="text-slate-400 font-bold text-sm text-center"
-                                        >
-                                            返回
-                                        </button>
-
-                                        {scenes.length > 0 && (
-                                            <div className="pt-4 border-t border-slate-100">
-                                                <button onClick={() => { if (confirm('确定要清除当前学习数据吗？')) handleNewArticle(); }} className="w-full py-4 rounded-2xl border-2 border-red-200 text-red-500 font-black text-sm">
-                                                    清除当前学习数据
-                                                </button>
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-
                             </div>
 
-                            {/* Bottom Fixed Button */}
+                            {/* Bottom Button */}
                             {appState === 'learning' && scenes.length > 0 && (
                                 <div className="p-6 pt-2 safe-bottom">
                                     <button
