@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>AI背诵大师 Pro</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React & ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
@@ -31,55 +27,98 @@
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
         };
 
-        const App = () => {
-            const initialContent = [
-                { text: "We're in Rabat. This is the castle. It's amazing! Look at the walls!", emoji: "🏰", cn: "我们在拉巴特。这是城堡。太神了！看这墙！", keywords: ["Rabat", "castle", "amazing", "walls"] },
-                { text: "This door is beautiful! This is a very old castle!", emoji: "🚪", cn: "这门真美！这是一个非常古老的城堡！", keywords: ["door", "beautiful", "old"] },
-                { text: "These are my favourite gardens. They're beautiful. Look! A fountain. A bench! I'm tired.", emoji: "⛲", cn: "这是我最喜欢的花园。看！喷泉。一个长椅！我累了。", keywords: ["gardens", "fountain", "bench", "tired"] },
-                { text: "Whose MP3 player is this? Ouch! It's my MP3 player. I'm sorry, Ty.", emoji: "🎶", cn: "这是谁的MP3？哎哟！是我的。对不起，Ty。", keywords: ["Whose", "MP3 player", "sorry"] },
-                { text: "Listen. Aah! Whose music is that? It's Ty's music.", emoji: "🎧", cn: "听。啊！那是谁的音乐？是Ty的。", keywords: ["Listen", "Whose", "music", "Ty's"] },
-                { text: "Morocco is amazing. Dina is a great reporter. Time for bed, Trek! OK, Mum.", emoji: "📺", cn: "摩洛哥太棒了。Dina是个好记者。该睡觉了。好的，妈妈。", keywords: ["amazing", "reporter", "bed"] }
-            ];
+        // Gemini API 调用
+        const callGemini = async (apiKey, prompt, imageBase64) => {
+            const parts = [];
+            if (imageBase64) {
+                parts.push({ inlineData: { mimeType: "image/jpeg", data: imageBase64 } });
+            }
+            parts.push({ text: prompt });
 
-            const [appState, setAppState] = useState('loading');
+            const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts }] })
+            });
+            const data = await res.json();
+            if (data.error) throw new Error(data.error.message);
+            return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        };
+
+        const ANALYSIS_PROMPT = `你是一个儿童英语教学专家。请分析以下英语短文，将其拆分成适合小朋友逐段背诵的片段。
+
+要求：
+1. 每段 1-3 句话，适合 6-12 岁小朋友的记忆容量
+2. 为每段选一个最贴切的 emoji 图标
+3. 提供每段的中文翻译
+4. 标记每段中需要重点记忆的关键词（名词、动词、形容词等实义词）
+5. 评估整篇文章的难度等级（1-5星）
+
+请严格按以下 JSON 格式返回，不要包含任何其他文字或 markdown 标记：
+{"difficulty":3,"title":"文章标题","scenes":[{"text":"英文原文片段","emoji":"🏰","cn":"中文翻译","keywords":["word1","word2"]}]}
+
+以下是需要分析的内容：
+`;
+
+        const IMAGE_PROMPT = `请先识别这张图片中的英文文字内容，然后作为儿童英语教学专家分析它。
+
+要求：
+1. 先识别图片中的所有英文文字
+2. 将内容拆分成适合小朋友逐段背诵的片段（每段 1-3 句话）
+3. 为每段选一个最贴切的 emoji 图标
+4. 提供每段的中文翻译
+5. 标记每段中需要重点记忆的关键词
+6. 评估难度等级（1-5星）
+
+请严格按以下 JSON 格式返回，不要包含任何其他文字或 markdown 标记：
+{"difficulty":3,"title":"文章标题","scenes":[{"text":"英文原文片段","emoji":"🏰","cn":"中文翻译","keywords":["word1","word2"]}]}`;
+
+        const App = () => {
+            const [appState, setAppState] = useState('loading'); // loading, welcome, input, analyzing, learning, finished, settings
             const [scenes, setScenes] = useState([]);
+            const [articleTitle, setArticleTitle] = useState('');
+            const [difficulty, setDifficulty] = useState(0);
             const [currentIdx, setCurrentIdx] = useState(0);
             const [mode, setMode] = useState('listen');
             const [isPlaying, setIsPlaying] = useState(false);
             const [showMenu, setShowMenu] = useState(false);
-            const [showAddForm, setShowAddForm] = useState(false);
-            const [newText, setNewText] = useState('');
-            const [newCn, setNewCn] = useState('');
-            const [newEmoji, setNewEmoji] = useState('📝');
-            const utteranceRef = useRef(null);
+            const [apiKey, setApiKey] = useState('');
+            const [apiKeyInput, setApiKeyInput] = useState('');
+            const [inputText, setInputText] = useState('');
+            const [analyzing, setAnalyzing] = useState(false);
+            const [error, setError] = useState('');
+            const fileInputRef = useRef(null);
 
+            // 初始化：读取 apiKey 和已有数据
             useEffect(() => {
-                const saved = localStorage.getItem('ai_memo_v8_data');
-                if (saved) {
+                const savedKey = localStorage.getItem('memo_master_api_key') || '';
+                setApiKey(savedKey);
+                setApiKeyInput(savedKey);
+
+                const savedData = localStorage.getItem('memo_master_current');
+                if (savedData) {
                     try {
-                        const parsed = JSON.parse(saved);
-                        if (Array.isArray(parsed) && parsed.length > 0) {
-                            setScenes(parsed);
-                        } else {
-                            setScenes(initialContent);
+                        const parsed = JSON.parse(savedData);
+                        if (parsed.scenes?.length > 0) {
+                            setScenes(parsed.scenes);
+                            setArticleTitle(parsed.title || '');
+                            setDifficulty(parsed.difficulty || 0);
+                            setAppState('learning');
+                            return;
                         }
-                    } catch (e) {
-                        setScenes(initialContent);
-                    }
-                } else {
-                    setScenes(initialContent);
+                    } catch (e) {}
                 }
-                setAppState('learning');
+                setAppState('welcome');
             }, []);
 
-            // 保存数据到 localStorage
+            // 保存学习数据
             useEffect(() => {
                 if (scenes.length > 0) {
-                    localStorage.setItem('ai_memo_v8_data', JSON.stringify(scenes));
+                    localStorage.setItem('memo_master_current', JSON.stringify({ scenes, title: articleTitle, difficulty }));
                 }
-            }, [scenes]);
+            }, [scenes, articleTitle, difficulty]);
 
-            // 使用浏览器内置 Web Speech API 朗读
+            // 浏览器 TTS 朗读
             const handlePlay = () => {
                 if (isPlaying) {
                     window.speechSynthesis.cancel();
@@ -88,52 +127,100 @@
                 }
                 const text = scenes[currentIdx]?.text;
                 if (!text) return;
-
                 window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US';
-                utterance.rate = 0.85;
-                utterance.onstart = () => setIsPlaying(true);
-                utterance.onend = () => setIsPlaying(false);
-                utterance.onerror = () => setIsPlaying(false);
-                utteranceRef.current = utterance;
-                window.speechSynthesis.speak(utterance);
+                const u = new SpeechSynthesisUtterance(text);
+                u.lang = 'en-US';
+                u.rate = 0.85;
+                u.onstart = () => setIsPlaying(true);
+                u.onend = () => setIsPlaying(false);
+                u.onerror = () => setIsPlaying(false);
+                window.speechSynthesis.speak(u);
             };
 
-            // 从文本中自动提取关键词（取较长的实义词）
-            const extractKeywords = (text) => {
-                const stopWords = new Set(['a','an','the','is','are','am','was','were','be','been','being','this','that','these','those','it','its','i','my','me','we','our','in','on','at','to','for','of','and','but','or','not','no','so','if','do','did','has','have','had','will','would','can','could','shall','should','may','might','must','let','get','got','very']);
-                const words = text.replace(/[^a-zA-Z\s'-]/g, '').split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w.toLowerCase()));
-                const unique = [...new Set(words)];
-                return unique.slice(0, Math.max(3, Math.ceil(unique.length * 0.4)));
+            // 解析 Gemini 返回的 JSON
+            const parseGeminiResponse = (text) => {
+                // 去掉可能的 markdown 代码块标记
+                let cleaned = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+                return JSON.parse(cleaned);
             };
 
-            // 添加新内容
-            const handleAddScene = () => {
-                if (!newText.trim()) return;
-                const newScene = {
-                    text: newText.trim(),
-                    emoji: newEmoji || '📝',
-                    cn: newCn.trim() || '',
-                    keywords: extractKeywords(newText.trim())
+            // 提交文本分析
+            const handleAnalyzeText = async () => {
+                if (!inputText.trim()) return;
+                if (!apiKey) { setError('请先在设置中配置 API Key'); return; }
+                setAnalyzing(true);
+                setError('');
+                setAppState('analyzing');
+                try {
+                    const result = await callGemini(apiKey, ANALYSIS_PROMPT + inputText.trim());
+                    const parsed = parseGeminiResponse(result);
+                    setScenes(parsed.scenes);
+                    setArticleTitle(parsed.title || '未命名');
+                    setDifficulty(parsed.difficulty || 3);
+                    setCurrentIdx(0);
+                    setMode('listen');
+                    setInputText('');
+                    setAppState('learning');
+                } catch (e) {
+                    setError('分析失败：' + e.message);
+                    setAppState('input');
+                }
+                setAnalyzing(false);
+            };
+
+            // 处理图片上传
+            const handleImageUpload = (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                if (!apiKey) { setError('请先在设置中配置 API Key'); return; }
+
+                const reader = new FileReader();
+                reader.onload = async (ev) => {
+                    const base64 = ev.target.result.split(',')[1];
+                    setAnalyzing(true);
+                    setError('');
+                    setAppState('analyzing');
+                    try {
+                        const result = await callGemini(apiKey, IMAGE_PROMPT, base64);
+                        const parsed = parseGeminiResponse(result);
+                        setScenes(parsed.scenes);
+                        setArticleTitle(parsed.title || '未命名');
+                        setDifficulty(parsed.difficulty || 3);
+                        setCurrentIdx(0);
+                        setMode('listen');
+                        setAppState('learning');
+                    } catch (e) {
+                        setError('图片分析失败：' + e.message);
+                        setAppState('input');
+                    }
+                    setAnalyzing(false);
                 };
-                const updated = [...scenes, newScene];
-                setScenes(updated);
-                setCurrentIdx(updated.length - 1);
-                setMode('listen');
-                setNewText('');
-                setNewCn('');
-                setNewEmoji('📝');
-                setShowAddForm(false);
-                setAppState('learning');
+                reader.readAsDataURL(file);
             };
 
-            // 删除某一条内容
-            const handleDeleteScene = (idx) => {
-                if (scenes.length <= 1) return;
-                const updated = scenes.filter((_, i) => i !== idx);
-                setScenes(updated);
-                if (currentIdx >= updated.length) setCurrentIdx(updated.length - 1);
+            // 保存 API Key
+            const handleSaveApiKey = () => {
+                const key = apiKeyInput.trim();
+                setApiKey(key);
+                localStorage.setItem('memo_master_api_key', key);
+                if (scenes.length > 0) {
+                    setAppState('learning');
+                } else {
+                    setAppState('welcome');
+                }
+            };
+
+            // 开始新的一篇
+            const handleNewArticle = () => {
+                setScenes([]);
+                setArticleTitle('');
+                setDifficulty(0);
+                setCurrentIdx(0);
+                setMode('listen');
+                setInputText('');
+                setError('');
+                localStorage.removeItem('memo_master_current');
+                setAppState('input');
             };
 
             const getDisplayText = () => {
@@ -149,7 +236,7 @@
                 return t;
             };
 
-            if (appState === 'loading') return <div className="h-screen flex items-center justify-center bg-white font-bold">加载中...</div>;
+            if (appState === 'loading') return <div className="h-screen flex items-center justify-center bg-white font-bold text-lg">加载中...</div>;
 
             return (
                 <div className="h-screen w-full flex items-center justify-center overflow-hidden">
@@ -162,28 +249,141 @@
                                     <h1 className="font-black text-xl italic tracking-tighter">MEMO MASTER</h1>
                                 </div>
                                 <div className="flex gap-2">
-                                    <button onClick={() => { setShowAddForm(true); setAppState('adding'); }} className="p-2 bg-white/20 rounded-xl"><Icon name="plus" size={18} /></button>
-                                    <button onClick={() => setShowMenu(true)} className="p-2 bg-white/20 rounded-xl"><Icon name="list" size={18} /></button>
+                                    {appState === 'learning' && (
+                                        <button onClick={handleNewArticle} className="p-2 bg-white/20 rounded-xl"><Icon name="plus" size={18} /></button>
+                                    )}
+                                    {scenes.length > 0 && appState === 'learning' && (
+                                        <button onClick={() => setShowMenu(true)} className="p-2 bg-white/20 rounded-xl"><Icon name="list" size={18} /></button>
+                                    )}
+                                    <button onClick={() => setAppState('settings')} className="p-2 bg-white/20 rounded-xl"><Icon name="settings" size={18} /></button>
                                 </div>
                             </div>
+                            {appState === 'learning' && articleTitle && (
+                                <div className="mt-3 flex items-center gap-2">
+                                    <span className="text-white/80 text-sm font-bold truncate">{articleTitle}</span>
+                                    {difficulty > 0 && <span className="text-yellow-300 text-xs">{'★'.repeat(difficulty)}{'☆'.repeat(5 - difficulty)}</span>}
+                                </div>
+                            )}
                         </div>
 
                         {/* Content Area */}
                         <div className="flex-1 -mt-6 bg-white rounded-t-[3rem] flex flex-col overflow-hidden relative z-10 shadow-inner">
                             <div className="flex-1 flex flex-col items-center p-6 overflow-y-auto no-scrollbar">
-                                {appState === 'learning' && (
+
+                                {/* ===== 欢迎页 ===== */}
+                                {appState === 'welcome' && (
+                                    <div className="flex-1 flex flex-col items-center justify-center space-y-8 text-center w-full">
+                                        <div className="text-8xl">🧠</div>
+                                        <div>
+                                            <h2 className="text-3xl font-black text-slate-800 mb-2">背诵大师</h2>
+                                            <p className="text-slate-400 font-bold text-sm">拍照或粘贴英语短文，AI 帮你拆解背诵</p>
+                                        </div>
+                                        <button
+                                            onClick={() => {
+                                                if (!apiKey) { setAppState('settings'); setError('首次使用请先配置 Gemini API Key'); }
+                                                else setAppState('input');
+                                            }}
+                                            className="w-full py-5 rounded-3xl bg-indigo-600 text-white font-black text-lg active:scale-95 transition-all"
+                                        >
+                                            开始使用
+                                        </button>
+                                    </div>
+                                )}
+
+                                {/* ===== 输入页：拍照或粘贴文字 ===== */}
+                                {appState === 'input' && (
+                                    <div className="flex-1 w-full flex flex-col space-y-5 pt-2">
+                                        <h2 className="text-xl font-black text-slate-800 text-center">添加学习内容</h2>
+                                        <p className="text-slate-400 text-sm text-center font-bold">拍照上传课文，或直接粘贴英文内容</p>
+
+                                        {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center">{error}</div>}
+
+                                        {/* 拍照/上传按钮 */}
+                                        <input type="file" accept="image/*" capture="environment" ref={fileInputRef} onChange={handleImageUpload} className="hidden" />
+                                        <div className="flex gap-3">
+                                            <button
+                                                onClick={() => {
+                                                    if (!apiKey) { setError('请先在右上角设置中配置 API Key'); return; }
+                                                    fileInputRef.current.setAttribute('capture', 'environment');
+                                                    fileInputRef.current.click();
+                                                }}
+                                                className="flex-1 py-6 rounded-3xl bg-indigo-600 text-white font-black text-base flex flex-col items-center gap-2 active:scale-95 transition-all"
+                                            >
+                                                <Icon name="camera" size={28} />
+                                                拍照
+                                            </button>
+                                            <button
+                                                onClick={() => {
+                                                    if (!apiKey) { setError('请先在右上角设置中配置 API Key'); return; }
+                                                    fileInputRef.current.removeAttribute('capture');
+                                                    fileInputRef.current.click();
+                                                }}
+                                                className="flex-1 py-6 rounded-3xl bg-violet-500 text-white font-black text-base flex flex-col items-center gap-2 active:scale-95 transition-all"
+                                            >
+                                                <Icon name="image" size={28} />
+                                                相册
+                                            </button>
+                                        </div>
+
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex-1 h-px bg-slate-200"></div>
+                                            <span className="text-slate-300 text-xs font-bold">或者</span>
+                                            <div className="flex-1 h-px bg-slate-200"></div>
+                                        </div>
+
+                                        {/* 文字输入 */}
+                                        <textarea
+                                            value={inputText}
+                                            onChange={e => setInputText(e.target.value)}
+                                            placeholder="在这里粘贴要背诵的英文短文..."
+                                            className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold focus:border-indigo-400 focus:outline-none resize-none text-sm leading-relaxed"
+                                            rows={6}
+                                        />
+
+                                        <button
+                                            onClick={handleAnalyzeText}
+                                            disabled={!inputText.trim()}
+                                            className={`w-full py-5 rounded-3xl font-black text-lg transition-all ${inputText.trim() ? 'bg-emerald-500 text-white active:scale-95' : 'bg-slate-200 text-slate-400'}`}
+                                        >
+                                            AI 分析并开始背诵
+                                        </button>
+
+                                        {scenes.length > 0 && (
+                                            <button onClick={() => setAppState('learning')} className="text-indigo-500 font-bold text-sm text-center">返回当前学习</button>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* ===== 分析中 ===== */}
+                                {appState === 'analyzing' && (
+                                    <div className="flex-1 flex flex-col items-center justify-center space-y-6 text-center">
+                                        <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center">
+                                            <Icon name="loader-2" size={40} className="animate-spin text-indigo-600" />
+                                        </div>
+                                        <div>
+                                            <h2 className="text-xl font-black text-slate-800 mb-2">AI 正在分析...</h2>
+                                            <p className="text-slate-400 text-sm font-bold">识别内容、评估难度、拆分段落</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ===== 学习页 ===== */}
+                                {appState === 'learning' && scenes.length > 0 && (
                                     <div className="w-full flex flex-col items-center h-full">
-                                        <div className="flex gap-2 mb-6">
+                                        <div className="flex gap-2 mb-2">
                                             {['listen', 'hint', 'blind'].map(m => (
                                                 <div key={m} className={`h-1.5 rounded-full transition-all duration-300 ${mode === m ? 'bg-indigo-600 w-12' : 'bg-slate-100 w-4'}`} />
                                             ))}
+                                        </div>
+                                        <div className="text-xs text-slate-300 font-bold mb-4">
+                                            {mode === 'listen' ? '第一步：听一听' : mode === 'hint' ? '第二步：填关键词' : '第三步：完整背出来'} · {currentIdx + 1}/{scenes.length}
                                         </div>
 
                                         <div className="flex-1 w-full flex flex-col items-center justify-center">
                                             <div className="text-[10rem] leading-none mb-4 select-none drop-shadow-sm">{scenes[currentIdx]?.emoji}</div>
                                             <div className="text-center w-full px-4 mb-8">
                                                 <h2 className={`text-2xl font-black leading-tight mb-4 ${mode === 'blind' ? 'text-indigo-100' : 'text-slate-800'}`}>{getDisplayText()}</h2>
-                                                <p className="text-slate-400 font-bold text-sm">{scenes[currentIdx]?.cn}</p>
+                                                {scenes[currentIdx]?.cn && <p className="text-slate-400 font-bold text-sm">{scenes[currentIdx].cn}</p>}
                                             </div>
 
                                             <button
@@ -196,59 +396,67 @@
                                     </div>
                                 )}
 
-                                {appState === 'adding' && (
-                                    <div className="flex-1 w-full flex flex-col space-y-4 pt-4">
-                                        <h2 className="text-xl font-black text-slate-800 text-center">添加新内容</h2>
-
-                                        <div>
-                                            <label className="text-sm font-bold text-slate-500 mb-1 block">选一个图标</label>
-                                            <div className="flex gap-2 flex-wrap">
-                                                {['📝','🏰','🌍','🎵','📖','🌸','⭐','🚀','💡','🎯','🐱','🌈'].map(e => (
-                                                    <button key={e} onClick={() => setNewEmoji(e)} className={`text-3xl p-2 rounded-xl transition ${newEmoji === e ? 'bg-indigo-100 ring-2 ring-indigo-400' : 'hover:bg-slate-50'}`}>{e}</button>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <label className="text-sm font-bold text-slate-500 mb-1 block">英文内容（必填）</label>
-                                            <textarea
-                                                value={newText}
-                                                onChange={e => setNewText(e.target.value)}
-                                                placeholder="输入要背诵的英文..."
-                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold focus:border-indigo-400 focus:outline-none resize-none"
-                                                rows={4}
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label className="text-sm font-bold text-slate-500 mb-1 block">中文翻译（选填）</label>
-                                            <textarea
-                                                value={newCn}
-                                                onChange={e => setNewCn(e.target.value)}
-                                                placeholder="输入中文翻译..."
-                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 focus:border-indigo-400 focus:outline-none resize-none"
-                                                rows={2}
-                                            />
-                                        </div>
-
-                                        <div className="flex gap-3 pt-2">
-                                            <button onClick={() => { setShowAddForm(false); setAppState('learning'); }} className="flex-1 py-4 rounded-2xl border-2 border-slate-200 text-slate-500 font-black">取消</button>
-                                            <button onClick={handleAddScene} disabled={!newText.trim()} className={`flex-1 py-4 rounded-2xl text-white font-black ${newText.trim() ? 'bg-indigo-600' : 'bg-slate-300'}`}>添加</button>
-                                        </div>
-                                    </div>
-                                )}
-
+                                {/* ===== 完成页 ===== */}
                                 {appState === 'finished' && (
                                     <div className="flex-1 flex flex-col items-center justify-center space-y-6 text-center">
                                         <Icon name="trophy" size={120} className="text-yellow-400" />
                                         <h2 className="text-4xl font-black">太棒了！</h2>
-                                        <button onClick={() => {setCurrentIdx(0); setMode('listen'); setAppState('learning');}} className="w-full py-5 rounded-3xl bg-indigo-600 text-white font-black">再背一遍</button>
+                                        <p className="text-slate-400 font-bold">全部背完啦！你真厉害！</p>
+                                        <div className="w-full space-y-3">
+                                            <button onClick={() => {setCurrentIdx(0); setMode('listen'); setAppState('learning');}} className="w-full py-5 rounded-3xl bg-indigo-600 text-white font-black">再背一遍</button>
+                                            <button onClick={handleNewArticle} className="w-full py-5 rounded-3xl border-2 border-indigo-200 text-indigo-600 font-black">背新的一篇</button>
+                                        </div>
                                     </div>
                                 )}
+
+                                {/* ===== 设置页 ===== */}
+                                {appState === 'settings' && (
+                                    <div className="flex-1 w-full flex flex-col space-y-6 pt-4">
+                                        <h2 className="text-xl font-black text-slate-800 text-center">设置</h2>
+
+                                        {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center">{error}</div>}
+
+                                        <div>
+                                            <label className="text-sm font-bold text-slate-500 mb-2 block">Gemini API Key</label>
+                                            <p className="text-xs text-slate-400 mb-3">AI 分析和语音功能需要 Google Gemini API Key。<br/>可在 Google AI Studio 免费获取。</p>
+                                            <input
+                                                type="password"
+                                                value={apiKeyInput}
+                                                onChange={e => setApiKeyInput(e.target.value)}
+                                                placeholder="粘贴你的 API Key..."
+                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold focus:border-indigo-400 focus:outline-none text-sm"
+                                            />
+                                        </div>
+
+                                        <button onClick={handleSaveApiKey} className="w-full py-4 rounded-2xl bg-indigo-600 text-white font-black">
+                                            保存
+                                        </button>
+
+                                        <button
+                                            onClick={() => {
+                                                setError('');
+                                                if (scenes.length > 0) setAppState('learning');
+                                                else setAppState('welcome');
+                                            }}
+                                            className="text-slate-400 font-bold text-sm text-center"
+                                        >
+                                            返回
+                                        </button>
+
+                                        {scenes.length > 0 && (
+                                            <div className="pt-4 border-t border-slate-100">
+                                                <button onClick={() => { if (confirm('确定要清除当前学习数据吗？')) handleNewArticle(); }} className="w-full py-4 rounded-2xl border-2 border-red-200 text-red-500 font-black text-sm">
+                                                    清除当前学习数据
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
                             </div>
 
                             {/* Bottom Fixed Button */}
-                            {appState === 'learning' && (
+                            {appState === 'learning' && scenes.length > 0 && (
                                 <div className="p-6 pt-2 safe-bottom">
                                     <button
                                         onClick={() => {
@@ -276,23 +484,17 @@
                                 </div>
                                 <div className="flex-1 overflow-y-auto space-y-3 no-scrollbar">
                                     {scenes.map((s, i) => (
-                                        <div key={i} className={`w-full p-5 rounded-3xl flex items-center gap-4 transition ${currentIdx === i ? 'bg-white text-indigo-900 shadow-xl' : 'bg-white/5 text-white/50'}`}>
-                                            <button
-                                                onClick={() => {setCurrentIdx(i); setMode('listen'); setShowMenu(false); setAppState('learning');}}
-                                                className="flex-1 flex items-center gap-4 text-left"
-                                            >
-                                                <span className="text-3xl">{s.emoji}</span>
-                                                <div className="flex-1 truncate">
-                                                    <div className="font-black text-sm truncate">{s.text}</div>
-                                                    <div className="text-[10px] opacity-60 font-bold uppercase mt-1">Scene {i+1}</div>
-                                                </div>
-                                            </button>
-                                            {scenes.length > 1 && (
-                                                <button onClick={() => handleDeleteScene(i)} className="p-2 opacity-40 hover:opacity-100 transition">
-                                                    <Icon name="trash-2" size={16} />
-                                                </button>
-                                            )}
-                                        </div>
+                                        <button
+                                            key={i}
+                                            onClick={() => {setCurrentIdx(i); setMode('listen'); setShowMenu(false);}}
+                                            className={`w-full text-left p-5 rounded-3xl flex items-center gap-4 transition ${currentIdx === i ? 'bg-white text-indigo-900 shadow-xl' : 'bg-white/5 text-white/50'}`}
+                                        >
+                                            <span className="text-3xl">{s.emoji}</span>
+                                            <div className="flex-1 truncate">
+                                                <div className="font-black text-sm truncate">{s.text}</div>
+                                                <div className="text-[10px] opacity-60 font-bold uppercase mt-1">Scene {i+1}</div>
+                                            </div>
+                                        </button>
                                     ))}
                                 </div>
                             </div>
