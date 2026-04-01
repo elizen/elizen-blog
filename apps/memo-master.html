@@ -24,9 +24,8 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect, useMemo } = React;
+        const { useState, useEffect, useRef } = React;
 
-        // 简易版的 Lucide 图标组件适配
         const Icon = ({ name, size = 24, className = "" }) => {
             useEffect(() => { lucide.createIcons(); }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
@@ -34,31 +33,36 @@
 
         const App = () => {
             const initialContent = [
-                { text: "We're in Rabat. This is the castle. It's amazing! Look at the walls!", emoji: "🏰", cn: "我们在拉巴特。这是城堡。太神了！看这墙！", keywords: ["Rabat", "castle", "amazing", "walls"], speaker: "Kore" },
-                { text: "This door is beautiful! This is a very old castle!", emoji: "🚪", cn: "这门真美！这是一个非常古老的城堡！", keywords: ["door", "beautiful", "old"], speaker: "Zephyr" },
-                { text: "These are my favourite gardens. They're beautiful. Look! A fountain. A bench! I'm tired.", emoji: "⛲", cn: "这是我最喜欢的花园。看！喷泉。一个长椅！我累了。", keywords: ["gardens", "fountain", "bench", "tired"], speaker: "Puck" },
-                { text: "Whose MP3 player is this? Ouch! It's my MP3 player. I'm sorry, Ty.", emoji: "🎶", cn: "这是谁的MP3？哎哟！是我的。对不起，Ty。", keywords: ["Whose", "MP3 player", "sorry"], speaker: "Kore" },
-                { text: "Listen. Aah! Whose music is that? It's Ty's music.", emoji: "🎧", cn: "听。啊！那是谁的音乐？是Ty的。", keywords: ["Listen", "Whose", "music", "Ty's"], speaker: "Zephyr" },
-                { text: "Morocco is amazing. Dina is a great reporter. Time for bed, Trek! OK, Mum.", emoji: "📺", cn: "摩洛哥太棒了。Dina是个好记者。该睡觉了。好的，妈妈。", keywords: ["amazing", "reporter", "bed"], speaker: "Kore" }
+                { text: "We're in Rabat. This is the castle. It's amazing! Look at the walls!", emoji: "🏰", cn: "我们在拉巴特。这是城堡。太神了！看这墙！", keywords: ["Rabat", "castle", "amazing", "walls"] },
+                { text: "This door is beautiful! This is a very old castle!", emoji: "🚪", cn: "这门真美！这是一个非常古老的城堡！", keywords: ["door", "beautiful", "old"] },
+                { text: "These are my favourite gardens. They're beautiful. Look! A fountain. A bench! I'm tired.", emoji: "⛲", cn: "这是我最喜欢的花园。看！喷泉。一个长椅！我累了。", keywords: ["gardens", "fountain", "bench", "tired"] },
+                { text: "Whose MP3 player is this? Ouch! It's my MP3 player. I'm sorry, Ty.", emoji: "🎶", cn: "这是谁的MP3？哎哟！是我的。对不起，Ty。", keywords: ["Whose", "MP3 player", "sorry"] },
+                { text: "Listen. Aah! Whose music is that? It's Ty's music.", emoji: "🎧", cn: "听。啊！那是谁的音乐？是Ty的。", keywords: ["Listen", "Whose", "music", "Ty's"] },
+                { text: "Morocco is amazing. Dina is a great reporter. Time for bed, Trek! OK, Mum.", emoji: "📺", cn: "摩洛哥太棒了。Dina是个好记者。该睡觉了。好的，妈妈。", keywords: ["amazing", "reporter", "bed"] }
             ];
 
             const [appState, setAppState] = useState('loading');
             const [scenes, setScenes] = useState([]);
             const [currentIdx, setCurrentIdx] = useState(0);
             const [mode, setMode] = useState('listen');
-            const [audioCache, setAudioCache] = useState({});
-            const [loadingMap, setLoadingMap] = useState({});
             const [isPlaying, setIsPlaying] = useState(false);
             const [showMenu, setShowMenu] = useState(false);
-
-            // 注意：在外部运行时，您可能需要在此填入您自己的 Google AI API Key 才能使用 AI 分析和语音功能。
-            const apiKey = "";
+            const [showAddForm, setShowAddForm] = useState(false);
+            const [newText, setNewText] = useState('');
+            const [newCn, setNewCn] = useState('');
+            const [newEmoji, setNewEmoji] = useState('📝');
+            const utteranceRef = useRef(null);
 
             useEffect(() => {
                 const saved = localStorage.getItem('ai_memo_v8_data');
                 if (saved) {
                     try {
-                        setScenes(JSON.parse(saved));
+                        const parsed = JSON.parse(saved);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                            setScenes(parsed);
+                        } else {
+                            setScenes(initialContent);
+                        }
                     } catch (e) {
                         setScenes(initialContent);
                     }
@@ -68,59 +72,68 @@
                 setAppState('learning');
             }, []);
 
-            const createWav = (pcmB64, rate) => {
-                const pcm = Uint8Array.from(atob(pcmB64), c => c.charCodeAt(0));
-                const header = new ArrayBuffer(44);
-                const v = new DataView(header);
-                const s = (o, str) => { for (let i = 0; i < str.length; i++) v.setUint8(o + i, str.charCodeAt(i)); };
-                s(0, 'RIFF'); v.setUint32(4, 36 + pcm.length, true); s(8, 'WAVE'); s(12, 'fmt ');
-                v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
-                v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true);
-                v.setUint16(34, 16, true); s(36, 'data'); v.setUint32(40, pcm.length, true);
-                return URL.createObjectURL(new Blob([header, pcm], { type: 'audio/wav' }));
-            };
-
-            const fetchAudio = async (idx) => {
-                if (!apiKey || audioCache[idx] || loadingMap[idx]) return audioCache[idx];
-                setLoadingMap(prev => ({ ...prev, [idx]: true }));
-                try {
-                    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: scenes[idx].text }] }],
-                            generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: scenes[idx].speaker } } } },
-                            model: "gemini-2.5-flash-preview-tts"
-                        })
-                    });
-                    const data = await res.json();
-                    const part = data.candidates?.[0]?.content?.parts?.[0]?.inlineData;
-                    if (part) {
-                        const url = createWav(part.data, parseInt(part.mimeType.split('rate=')[1]) || 24000);
-                        setAudioCache(prev => ({ ...prev, [idx]: url }));
-                        setLoadingMap(prev => ({ ...prev, [idx]: false }));
-                        return url;
-                    }
-                } catch (e) { console.error(e); }
-                setLoadingMap(prev => ({ ...prev, [idx]: false }));
-            };
-
+            // 保存数据到 localStorage
             useEffect(() => {
-                if (scenes.length > 0) fetchAudio(currentIdx);
-            }, [currentIdx, scenes]);
-
-            const handlePlay = async () => {
-                if (isPlaying) return;
-                let url = audioCache[currentIdx];
-                if (!url && apiKey) url = await fetchAudio(currentIdx);
-                if (url) {
-                    const audio = new Audio(url);
-                    audio.onplay = () => setIsPlaying(true);
-                    audio.onended = () => setIsPlaying(false);
-                    audio.play().catch(() => setIsPlaying(false));
-                } else if (!apiKey) {
-                    alert("提示：在 Canvas 环境外使用语音功能需要配置 API Key。");
+                if (scenes.length > 0) {
+                    localStorage.setItem('ai_memo_v8_data', JSON.stringify(scenes));
                 }
+            }, [scenes]);
+
+            // 使用浏览器内置 Web Speech API 朗读
+            const handlePlay = () => {
+                if (isPlaying) {
+                    window.speechSynthesis.cancel();
+                    setIsPlaying(false);
+                    return;
+                }
+                const text = scenes[currentIdx]?.text;
+                if (!text) return;
+
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
+                utterance.onstart = () => setIsPlaying(true);
+                utterance.onend = () => setIsPlaying(false);
+                utterance.onerror = () => setIsPlaying(false);
+                utteranceRef.current = utterance;
+                window.speechSynthesis.speak(utterance);
+            };
+
+            // 从文本中自动提取关键词（取较长的实义词）
+            const extractKeywords = (text) => {
+                const stopWords = new Set(['a','an','the','is','are','am','was','were','be','been','being','this','that','these','those','it','its','i','my','me','we','our','in','on','at','to','for','of','and','but','or','not','no','so','if','do','did','has','have','had','will','would','can','could','shall','should','may','might','must','let','get','got','very']);
+                const words = text.replace(/[^a-zA-Z\s'-]/g, '').split(/\s+/).filter(w => w.length > 2 && !stopWords.has(w.toLowerCase()));
+                const unique = [...new Set(words)];
+                return unique.slice(0, Math.max(3, Math.ceil(unique.length * 0.4)));
+            };
+
+            // 添加新内容
+            const handleAddScene = () => {
+                if (!newText.trim()) return;
+                const newScene = {
+                    text: newText.trim(),
+                    emoji: newEmoji || '📝',
+                    cn: newCn.trim() || '',
+                    keywords: extractKeywords(newText.trim())
+                };
+                const updated = [...scenes, newScene];
+                setScenes(updated);
+                setCurrentIdx(updated.length - 1);
+                setMode('listen');
+                setNewText('');
+                setNewCn('');
+                setNewEmoji('📝');
+                setShowAddForm(false);
+                setAppState('learning');
+            };
+
+            // 删除某一条内容
+            const handleDeleteScene = (idx) => {
+                if (scenes.length <= 1) return;
+                const updated = scenes.filter((_, i) => i !== idx);
+                setScenes(updated);
+                if (currentIdx >= updated.length) setCurrentIdx(updated.length - 1);
             };
 
             const getDisplayText = () => {
@@ -149,6 +162,7 @@
                                     <h1 className="font-black text-xl italic tracking-tighter">MEMO MASTER</h1>
                                 </div>
                                 <div className="flex gap-2">
+                                    <button onClick={() => { setShowAddForm(true); setAppState('adding'); }} className="p-2 bg-white/20 rounded-xl"><Icon name="plus" size={18} /></button>
                                     <button onClick={() => setShowMenu(true)} className="p-2 bg-white/20 rounded-xl"><Icon name="list" size={18} /></button>
                                 </div>
                             </div>
@@ -176,12 +190,53 @@
                                                 onClick={handlePlay}
                                                 className={`w-28 h-28 rounded-full flex items-center justify-center transition-all shadow-xl ${isPlaying ? 'bg-red-500 ring-8 ring-red-50 scale-105' : 'bg-indigo-600 active:scale-95'}`}
                                             >
-                                                {loadingMap[currentIdx] ? <Icon name="loader-2" className="animate-spin text-white" /> : isPlaying ? <Icon name="volume-2" className="text-white" /> : <Icon name="play" className="text-white fill-current ml-1" />}
+                                                {isPlaying ? <Icon name="volume-2" className="text-white" /> : <Icon name="play" className="text-white fill-current ml-1" />}
                                             </button>
                                         </div>
                                     </div>
                                 )}
 
+                                {appState === 'adding' && (
+                                    <div className="flex-1 w-full flex flex-col space-y-4 pt-4">
+                                        <h2 className="text-xl font-black text-slate-800 text-center">添加新内容</h2>
+
+                                        <div>
+                                            <label className="text-sm font-bold text-slate-500 mb-1 block">选一个图标</label>
+                                            <div className="flex gap-2 flex-wrap">
+                                                {['📝','🏰','🌍','🎵','📖','🌸','⭐','🚀','💡','🎯','🐱','🌈'].map(e => (
+                                                    <button key={e} onClick={() => setNewEmoji(e)} className={`text-3xl p-2 rounded-xl transition ${newEmoji === e ? 'bg-indigo-100 ring-2 ring-indigo-400' : 'hover:bg-slate-50'}`}>{e}</button>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-bold text-slate-500 mb-1 block">英文内容（必填）</label>
+                                            <textarea
+                                                value={newText}
+                                                onChange={e => setNewText(e.target.value)}
+                                                placeholder="输入要背诵的英文..."
+                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold focus:border-indigo-400 focus:outline-none resize-none"
+                                                rows={4}
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="text-sm font-bold text-slate-500 mb-1 block">中文翻译（选填）</label>
+                                            <textarea
+                                                value={newCn}
+                                                onChange={e => setNewCn(e.target.value)}
+                                                placeholder="输入中文翻译..."
+                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 focus:border-indigo-400 focus:outline-none resize-none"
+                                                rows={2}
+                                            />
+                                        </div>
+
+                                        <div className="flex gap-3 pt-2">
+                                            <button onClick={() => { setShowAddForm(false); setAppState('learning'); }} className="flex-1 py-4 rounded-2xl border-2 border-slate-200 text-slate-500 font-black">取消</button>
+                                            <button onClick={handleAddScene} disabled={!newText.trim()} className={`flex-1 py-4 rounded-2xl text-white font-black ${newText.trim() ? 'bg-indigo-600' : 'bg-slate-300'}`}>添加</button>
+                                        </div>
+                                    </div>
+                                )}
 
                                 {appState === 'finished' && (
                                     <div className="flex-1 flex flex-col items-center justify-center space-y-6 text-center">
@@ -221,17 +276,23 @@
                                 </div>
                                 <div className="flex-1 overflow-y-auto space-y-3 no-scrollbar">
                                     {scenes.map((s, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => {setCurrentIdx(i); setMode('listen'); setShowMenu(false);}}
-                                            className={`w-full text-left p-5 rounded-3xl flex items-center gap-4 transition ${currentIdx === i ? 'bg-white text-indigo-900 shadow-xl' : 'bg-white/5 text-white/50'}`}
-                                        >
-                                            <span className="text-3xl">{s.emoji}</span>
-                                            <div className="flex-1 truncate">
-                                                <div className="font-black text-sm truncate">{s.text}</div>
-                                                <div className="text-[10px] opacity-60 font-bold uppercase mt-1">Scene {i+1}</div>
-                                            </div>
-                                        </button>
+                                        <div key={i} className={`w-full p-5 rounded-3xl flex items-center gap-4 transition ${currentIdx === i ? 'bg-white text-indigo-900 shadow-xl' : 'bg-white/5 text-white/50'}`}>
+                                            <button
+                                                onClick={() => {setCurrentIdx(i); setMode('listen'); setShowMenu(false); setAppState('learning');}}
+                                                className="flex-1 flex items-center gap-4 text-left"
+                                            >
+                                                <span className="text-3xl">{s.emoji}</span>
+                                                <div className="flex-1 truncate">
+                                                    <div className="font-black text-sm truncate">{s.text}</div>
+                                                    <div className="text-[10px] opacity-60 font-bold uppercase mt-1">Scene {i+1}</div>
+                                                </div>
+                                            </button>
+                                            {scenes.length > 1 && (
+                                                <button onClick={() => handleDeleteScene(i)} className="p-2 opacity-40 hover:opacity-100 transition">
+                                                    <Icon name="trash-2" size={16} />
+                                                </button>
+                                            )}
+                                        </div>
                                     ))}
                                 </div>
                             </div>
