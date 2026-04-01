@@ -22,28 +22,26 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // ====== 配置 ======
-        // 部署 Cloudflare Worker 后，把这里改成你的 Worker URL
-        const API_PROXY_URL = "https://memo-master-proxy.你的账号.workers.dev";
+        // ====== 后端代理地址（部署 Worker 后更新） ======
+        const API_URL = "https://memo-master-proxy.elizen.workers.dev";
 
         const Icon = ({ name, size = 24, className = "" }) => {
             useEffect(() => { lucide.createIcons(); }, [name]);
             return <i data-lucide={name} style={{ width: size, height: size }} className={className}></i>;
         };
 
-        // 通过后端代理调用 AI（密钥在后端，前端只传访问码）
-        const callAI = async (accessCode, prompt, imageBase64) => {
+        // 通过后端代理调用 AI
+        const callAI = async (prompt, imageBase64) => {
             const content = [];
             if (imageBase64) {
                 content.push({ type: "image_url", image_url: { url: `data:image/jpeg;base64,${imageBase64}` } });
             }
             content.push({ type: "text", text: prompt });
 
-            const res = await fetch(API_PROXY_URL, {
+            const res = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    access_code: accessCode,
                     messages: [{ role: 'user', content }],
                     max_tokens: 4096,
                     temperature: 0.3
@@ -91,19 +89,12 @@
             const [mode, setMode] = useState('listen');
             const [isPlaying, setIsPlaying] = useState(false);
             const [showMenu, setShowMenu] = useState(false);
-            const [accessCode, setAccessCode] = useState('');
-            const [codeInput, setCodeInput] = useState('');
             const [inputText, setInputText] = useState('');
             const [analyzing, setAnalyzing] = useState(false);
             const [error, setError] = useState('');
             const fileInputRef = useRef(null);
 
-            // 初始化
             useEffect(() => {
-                const savedCode = localStorage.getItem('memo_master_access_code') || '';
-                setAccessCode(savedCode);
-                setCodeInput(savedCode);
-
                 const savedData = localStorage.getItem('memo_master_current');
                 if (savedData) {
                     try {
@@ -117,8 +108,7 @@
                         }
                     } catch (e) {}
                 }
-                // 没有已有数据：有访问码直接去输入页，没有去欢迎页
-                setAppState(savedCode ? 'input' : 'welcome');
+                setAppState('welcome');
             }, []);
 
             useEffect(() => {
@@ -127,7 +117,6 @@
                 }
             }, [scenes, articleTitle, difficulty]);
 
-            // 浏览器 TTS
             const handlePlay = () => {
                 if (isPlaying) { window.speechSynthesis.cancel(); setIsPlaying(false); return; }
                 const text = scenes[currentIdx]?.text;
@@ -146,12 +135,11 @@
                 return JSON.parse(cleaned);
             };
 
-            // 文本分析
             const handleAnalyzeText = async () => {
-                if (!inputText.trim() || !accessCode) return;
+                if (!inputText.trim()) return;
                 setAnalyzing(true); setError(''); setAppState('analyzing');
                 try {
-                    const result = await callAI(accessCode, ANALYSIS_PROMPT + inputText.trim());
+                    const result = await callAI(ANALYSIS_PROMPT + inputText.trim());
                     const parsed = parseAIResponse(result);
                     setScenes(parsed.scenes);
                     setArticleTitle(parsed.title || '未命名');
@@ -159,22 +147,21 @@
                     setCurrentIdx(0); setMode('listen'); setInputText('');
                     setAppState('learning');
                 } catch (e) {
-                    setError(e.message.includes('访问码') ? '访问码无效，请检查后重试' : '分析失败：' + e.message);
+                    setError('分析失败：' + e.message);
                     setAppState('input');
                 }
                 setAnalyzing(false);
             };
 
-            // 图片分析
             const handleImageUpload = (e) => {
                 const file = e.target.files?.[0];
-                if (!file || !accessCode) return;
+                if (!file) return;
                 const reader = new FileReader();
                 reader.onload = async (ev) => {
                     const base64 = ev.target.result.split(',')[1];
                     setAnalyzing(true); setError(''); setAppState('analyzing');
                     try {
-                        const result = await callAI(accessCode, IMAGE_PROMPT, base64);
+                        const result = await callAI(IMAGE_PROMPT, base64);
                         const parsed = parseAIResponse(result);
                         setScenes(parsed.scenes);
                         setArticleTitle(parsed.title || '未命名');
@@ -182,25 +169,13 @@
                         setCurrentIdx(0); setMode('listen');
                         setAppState('learning');
                     } catch (e) {
-                        setError(e.message.includes('访问码') ? '访问码无效，请检查后重试' : '图片分析失败：' + e.message);
+                        setError('图片分析失败：' + e.message);
                         setAppState('input');
                     }
                     setAnalyzing(false);
                 };
                 reader.readAsDataURL(file);
-                // 重置 file input 以允许重复选择同一文件
                 e.target.value = '';
-            };
-
-            // 保存访问码
-            const handleSaveCode = () => {
-                const code = codeInput.trim();
-                if (!code) { setError('请输入访问码'); return; }
-                setAccessCode(code);
-                localStorage.setItem('memo_master_access_code', code);
-                setError('');
-                if (scenes.length > 0) setAppState('learning');
-                else setAppState('input');
             };
 
             const handleNewArticle = () => {
@@ -256,7 +231,7 @@
                         <div className="flex-1 -mt-6 bg-white rounded-t-[3rem] flex flex-col overflow-hidden relative z-10 shadow-inner">
                             <div className="flex-1 flex flex-col items-center p-6 overflow-y-auto no-scrollbar">
 
-                                {/* ===== 欢迎页（输入访问码） ===== */}
+                                {/* ===== 欢迎页 ===== */}
                                 {appState === 'welcome' && (
                                     <div className="flex-1 flex flex-col items-center justify-center space-y-8 text-center w-full">
                                         <div className="text-8xl">🧠</div>
@@ -264,27 +239,12 @@
                                             <h2 className="text-3xl font-black text-slate-800 mb-2">背诵大师</h2>
                                             <p className="text-slate-400 font-bold text-sm">拍照或粘贴英语短文，AI 帮你拆解背诵</p>
                                         </div>
-
-                                        {error && <div className="bg-red-50 text-red-600 p-3 rounded-2xl text-sm font-bold text-center w-full">{error}</div>}
-
-                                        <div className="w-full space-y-4">
-                                            <input
-                                                type="text"
-                                                value={codeInput}
-                                                onChange={e => setCodeInput(e.target.value)}
-                                                placeholder="请输入访问码"
-                                                className="w-full p-4 border-2 border-slate-200 rounded-2xl text-slate-800 font-bold text-center text-lg focus:border-indigo-400 focus:outline-none tracking-widest"
-                                                onKeyDown={e => { if (e.key === 'Enter') handleSaveCode(); }}
-                                            />
-                                            <button
-                                                onClick={handleSaveCode}
-                                                disabled={!codeInput.trim()}
-                                                className={`w-full py-5 rounded-3xl font-black text-lg active:scale-95 transition-all ${codeInput.trim() ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-400'}`}
-                                            >
-                                                开始使用
-                                            </button>
-                                        </div>
-                                        <p className="text-slate-300 text-xs">访问码由管理员提供</p>
+                                        <button
+                                            onClick={() => setAppState('input')}
+                                            className="w-full py-5 rounded-3xl bg-indigo-600 text-white font-black text-lg active:scale-95 transition-all"
+                                        >
+                                            开始使用
+                                        </button>
                                     </div>
                                 )}
 
