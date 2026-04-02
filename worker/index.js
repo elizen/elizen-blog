@@ -7,6 +7,40 @@
  *   ALLOWED_ORIGIN   — 允许跨域的前端域名
  */
 
+// Coding Plan key 可能匹配不同的 host
+const API_HOSTS = [
+  "https://api.minimaxi.com",
+  "https://api.minimax.io"
+];
+
+async function callMiniMax(host, apiKey, messages, maxTokens, temperature) {
+  // 将 content 数组简化：纯文本转字符串，保留图片数组格式
+  const processed = messages.map(m => {
+    if (!Array.isArray(m.content)) return m;
+    const hasImage = m.content.some(c => c.type === "image_url");
+    if (!hasImage) {
+      const text = m.content.filter(c => c.type === "text").map(c => c.text).join("\n");
+      return { role: m.role, content: text };
+    }
+    return m;
+  });
+
+  const res = await fetch(`${host}/v1/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model: "MiniMax-M2.7",
+      messages: processed,
+      max_tokens: maxTokens,
+      temperature
+    })
+  });
+  return res.json();
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
@@ -25,89 +59,33 @@ export default {
         return jsonResponse({ error: "缺少 messages 参数" }, 400, env);
       }
 
-      // 检测是否包含图片
-      const hasImage = messages.some(m =>
-        Array.isArray(m.content) && m.content.some(c => c.type === "image_url")
-      );
-
+      // 尝试所有 host，直到一个成功
       let result;
+      let lastError;
 
-      if (hasImage) {
-        // 图片走 MiniMax 原生 chatcompletion_v2 接口（支持 vision）
-        // 将 OpenAI 格式转换为 MiniMax 原生格式
-        const nativeMessages = messages.map(m => {
-          if (!Array.isArray(m.content)) {
-            return { role: m.role, content: m.content };
-          }
-          // 提取文本和图片
-          const textParts = m.content.filter(c => c.type === "text").map(c => c.text).join("\n");
-          const imageParts = m.content.filter(c => c.type === "image_url");
+      for (const host of API_HOSTS) {
+        result = await callMiniMax(host, env.MINIMAX_API_KEY, messages, max_tokens, temperature);
 
-          // MiniMax 原生格式：content 是文本，image_url 作为额外字段
-          const msg = { role: m.role, content: [] };
+        // 如果没有 error 或 error 不是 key 相关的，就用这个结果
+        if (!result.error) break;
 
-          for (const img of imageParts) {
-            msg.content.push({
-              type: "image_url",
-              image_url: { url: img.image_url.url }
-            });
-          }
-          if (textParts) {
-            msg.content.push({ type: "text", text: textParts });
-          }
-          return msg;
-        });
-
-        const res = await fetch("https://api.minimax.io/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${env.MINIMAX_API_KEY}`
-          },
-          body: JSON.stringify({
-            model: "MiniMax-M2.7",
-            messages: nativeMessages,
-            max_tokens,
-            temperature
-          })
-        });
-        result = await res.json();
-      } else {
-        // 纯文本走标准接口
-        // 将 content 数组简化为字符串
-        const simpleMessages = messages.map(m => {
-          if (Array.isArray(m.content)) {
-            const text = m.content.filter(c => c.type === "text").map(c => c.text).join("\n");
-            return { role: m.role, content: text };
-          }
-          return m;
-        });
-
-        const res = await fetch("https://api.minimax.io/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${env.MINIMAX_API_KEY}`
-          },
-          body: JSON.stringify({
-            model: "MiniMax-M2.7",
-            messages: simpleMessages,
-            max_tokens,
-            temperature
-          })
-        });
-        result = await res.json();
-      }
-
-      if (result.error) {
-        console.error("MiniMax error:", JSON.stringify(result.error));
         const errMsg = result.error.message || JSON.stringify(result.error);
+        if (errMsg.includes("invalid api key") || errMsg.includes("2049")) {
+          lastError = `${host}: ${errMsg}`;
+          continue; // 试下一个 host
+        }
+
+        // 其他错误直接返回
         return jsonResponse({ error: "AI 错误: " + errMsg }, 502, env);
       }
 
+      if (result.error) {
+        const errMsg = result.error.message || JSON.stringify(result.error);
+        return jsonResponse({ error: "AI 错误: " + errMsg + (lastError ? " | 已尝试: " + lastError : "") }, 502, env);
+      }
+
       if (!result.choices || !result.choices[0]) {
-        console.error("MiniMax unexpected response:", JSON.stringify(result));
-        return jsonResponse({ error: "AI 返回异常: " + JSON.stringify(result).slice(0, 200) }, 502, env);
+        return jsonResponse({ error: "AI 返回异常: " + JSON.stringify(result).slice(0, 300) }, 502, env);
       }
 
       return jsonResponse({
@@ -115,7 +93,6 @@ export default {
       }, 200, env);
 
     } catch (e) {
-      console.error("Worker error:", e.message, e.stack);
       return jsonResponse({ error: "服务器错误: " + e.message }, 500, env);
     }
   }
