@@ -131,8 +131,16 @@
             };
 
             const parseAIResponse = (text) => {
-                let cleaned = text.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
-                return JSON.parse(cleaned);
+                // 从 AI 返回中提取 JSON：去掉 markdown、HTML、thinking 标签等
+                let cleaned = text
+                    .replace(/```json\s*/g, '').replace(/```\s*/g, '')
+                    .replace(/<[^>]*>/g, '') // 去掉所有 HTML/XML 标签
+                    .trim();
+                // 找到第一个 { 和最后一个 } 之间的内容
+                const start = cleaned.indexOf('{');
+                const end = cleaned.lastIndexOf('}');
+                if (start === -1 || end === -1) throw new Error('AI 未返回有效 JSON，原始内容: ' + text.slice(0, 200));
+                return JSON.parse(cleaned.slice(start, end + 1));
             };
 
             const handleAnalyzeText = async () => {
