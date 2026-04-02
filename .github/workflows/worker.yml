@@ -1,0 +1,36 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches: [master]
+    paths: ['worker/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: worker
+        run: npm install
+
+      - name: Deploy to Cloudflare Workers
+        working-directory: worker
+        env:
+          CLOUDFLARE_EMAIL: ${{ secrets.CF_EMAIL }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CF_API_KEY }}
+        run: npx wrangler deploy
+
+      - name: Set MiniMax API Key secret
+        working-directory: worker
+        env:
+          CLOUDFLARE_EMAIL: ${{ secrets.CF_EMAIL }}
+          CLOUDFLARE_API_KEY: ${{ secrets.CF_API_KEY }}
+        run: echo "${{ secrets.MINIMAX_API_KEY }}" | npx wrangler secret put MINIMAX_API_KEY
