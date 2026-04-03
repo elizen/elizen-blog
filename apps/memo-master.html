@@ -117,17 +117,39 @@
                 }
             }, [scenes, articleTitle, difficulty]);
 
-            const handlePlay = () => {
-                if (isPlaying) { window.speechSynthesis.cancel(); setIsPlaying(false); return; }
+            const audioRef = React.useRef(null);
+            const handlePlay = async () => {
+                if (isPlaying) {
+                    if (audioRef.current) { audioRef.current.pause(); audioRef.current = null; }
+                    window.speechSynthesis.cancel();
+                    setIsPlaying(false);
+                    return;
+                }
                 const text = scenes[currentIdx]?.text;
                 if (!text) return;
-                window.speechSynthesis.cancel();
-                const u = new SpeechSynthesisUtterance(text);
-                u.lang = 'en-US'; u.rate = 0.85;
-                u.onstart = () => setIsPlaying(true);
-                u.onend = () => setIsPlaying(false);
-                u.onerror = () => setIsPlaying(false);
-                window.speechSynthesis.speak(u);
+                setIsPlaying(true);
+                try {
+                    const res = await fetch(API_URL + "/tts", {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ text })
+                    });
+                    if (!res.ok) throw new Error('TTS failed');
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const audio = new Audio(url);
+                    audioRef.current = audio;
+                    audio.onended = () => { setIsPlaying(false); URL.revokeObjectURL(url); audioRef.current = null; };
+                    audio.onerror = () => { setIsPlaying(false); URL.revokeObjectURL(url); audioRef.current = null; };
+                    audio.play();
+                } catch (e) {
+                    // fallback to browser speech
+                    const u = new SpeechSynthesisUtterance(text);
+                    u.lang = 'en-US'; u.rate = 0.85;
+                    u.onend = () => setIsPlaying(false);
+                    u.onerror = () => setIsPlaying(false);
+                    window.speechSynthesis.speak(u);
+                }
             };
 
             const parseAIResponse = (text) => {
