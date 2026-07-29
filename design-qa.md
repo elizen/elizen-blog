@@ -31,6 +31,7 @@
 - The manifesto image is now an independent 320×220 desktop block (350×250 on mobile), while the “现在” note has its own separator and spacing.
 - The closing manifesto is full-width within the homepage frame with an 820px reading measure; the duplicate “更多文章请访问……” paragraph is removed from the homepage presentation.
 - Final polish aligns the hero copy and manifesto image at the same top rhythm, replaces the disconnected vertical “现在” rule with a horizontal separator, and turns the closing manifesto into a two-column editorial block on desktop and a single readable column on mobile.
+- The final composition moves the manifesto image out of the hero aside: the hero keeps only the “现在” note, while the closing section places the 320×220 image on the left and the manifesto text on the right; mobile stacks the same two blocks cleanly.
 
 ## Interaction checks
 

@@ -716,9 +716,9 @@ body {
   min-height: 482px;
   padding: 112px 0 92px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  align-items: start;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  align-items: end;
+  gap: 80px;
 }
 
 .eyebrow {
@@ -764,29 +764,11 @@ body {
   text-transform: uppercase;
 }
 
-.home-hero-photo {
-  width: 100%;
-  margin-bottom: 34px;
-}
-
-.home-hero-photo .eyebrow {
-  margin-bottom: 12px;
-}
-
-.home-hero-photo img {
-  display: block;
-  width: 100%;
-  height: 220px;
-  margin: 0;
-  object-fit: cover;
-  border-radius: 1%;
-  box-shadow: 0 2px 8px rgba(36, 35, 33, .12);
-}
-
 .home-current {
-  margin-top: 30px;
-  padding: 17px 0 0;
-  border-top: 1px solid var(--elizen-rule);
+  margin-top: 0;
+  padding: 0 0 0 24px;
+  border-top: 0;
+  border-left: 1px solid var(--elizen-rule);
 }
 
 .home-hero-aside p {
@@ -903,12 +885,27 @@ body {
   padding: 30px 0 0;
   border-top: 1px solid var(--elizen-accent);
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: 320px minmax(0, 1fr);
   gap: 64px;
   align-items: start;
 }
 
-.home-note > .eyebrow {
+.home-note-photo {
+  width: 100%;
+  margin: 0;
+}
+
+.home-note-photo img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 1%;
+  box-shadow: 0 2px 8px rgba(36, 35, 33, .12);
+}
+
+.home-note-copy > .eyebrow {
   margin-top: 4px;
 }
 
@@ -958,7 +955,7 @@ body {
   .home-hero {
     min-height: 0;
     padding: 88px 0 72px;
-    grid-template-columns: minmax(0, 1fr) 260px;
+    grid-template-columns: minmax(0, 1fr) 210px;
     gap: 48px;
   }
 
@@ -1000,10 +997,6 @@ body {
   .home-hero-aside {
     margin-top: 44px;
     padding: 0;
-  }
-
-  .home-hero-photo img {
-    height: 250px;
   }
 
   .home-current {
@@ -1053,11 +1046,19 @@ body {
     display: block;
   }
 
+  .home-note-photo {
+    margin-bottom: 34px;
+  }
+
+  .home-note-photo img {
+    height: 250px;
+  }
+
   .home-note-content blockquote {
     font-size: 20px;
   }
 
-  .home-note > .eyebrow {
+  .home-note-copy > .eyebrow {
     margin-bottom: 20px;
   }
 }
