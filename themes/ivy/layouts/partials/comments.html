@@ -5,5 +5,5 @@
 </div>
   <div id="tcomment"></div>
   <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
-  <script>twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' })</script>
+  <script>if (window.twikoo) twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' }).catch(() => {});</script>
 {{- end }}
