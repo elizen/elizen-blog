@@ -1,6 +1,7 @@
 {{ partial "header.html" . }}
 
 {{ if .IsHome }}
+{{ $homeImage := index (findRE "<img[^>]+>" .Content 1) 0 }}
 <section class="home-hero">
   <div class="home-hero-copy">
     <p class="eyebrow">ELIZEN / PERSONAL NOTES</p>
@@ -8,8 +9,14 @@
     <p class="home-intro">这里记录阅读、电影、工作，以及一个家庭在时间里的缓慢变化。</p>
   </div>
   <aside class="home-hero-aside">
-    <span class="aside-label">现在</span>
-    <p>正在读一些旧书，<br>也在重新学习如何生活。</p>
+    <div class="home-hero-photo">
+      <p class="eyebrow">A SMALL MANIFESTO</p>
+      {{ $homeImage | safeHTML }}
+    </div>
+    <div class="home-current">
+      <span class="aside-label">现在</span>
+      <p>正在读一些旧书，<br>也在重新学习如何生活。</p>
+    </div>
   </aside>
 </section>
 
@@ -23,7 +30,7 @@
   </div>
   <ul class="home-post-list">
     {{ $.Scratch.Set "pages" .Site.RegularPages }}
-    {{ range (where ($.Scratch.Get "pages") "Section" "posts") }}
+    {{ range first 7 (where ($.Scratch.Get "pages") "Section" "posts") }}
     {{ $summary := .Summary | plainify | htmlUnescape | truncate 96 }}
     <li class="home-post-row">
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
@@ -40,7 +47,8 @@
 <section class="home-note">
   <p class="eyebrow">A SMALL MANIFESTO</p>
   <div class="home-note-content">
-    {{ .Content | safeHTML }}
+    {{ $homeContent := replaceRE "<img[^>]+>" "" .Content }}
+    {{ $homeContent | safeHTML }}
   </div>
 </section>
 {{ else }}

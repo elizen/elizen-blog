@@ -26,6 +26,8 @@
 - Custom stylesheet uses a versioned query string so this correction is visible immediately after deployment without a stale CSS cache.
 - Preferred 4173 visual direction is now combined with production content: expressive homepage masthead, “现在” aside, article summaries, and the existing Hugo routes/content.
 - Mobile homepage at 390px keeps the hero readable, prevents archive rows from becoming two columns, and preserves the working menu toggle.
+- The homepage `A SMALL MANIFESTO` image is rendered above the “现在” note in the hero aside; its quote/link text remains as the closing manifesto section after the archive.
+- The homepage recent-writing list is intentionally limited to 7 posts, with the full `/posts/` archive link retained.
 
 ## Interaction checks
 

@@ -766,6 +766,24 @@ body {
   text-transform: uppercase;
 }
 
+.home-hero-photo {
+  margin-bottom: 28px;
+}
+
+.home-hero-photo .eyebrow {
+  margin-bottom: 12px;
+}
+
+.home-hero-photo img {
+  display: block;
+  width: 100%;
+  max-height: 154px;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 1%;
+  box-shadow: 0 2px 8px rgba(36, 35, 33, .12);
+}
+
 .home-hero-aside p {
   margin: 0;
 }
@@ -890,6 +908,11 @@ body {
   margin: 0 0 18px;
 }
 
+.home-note-content p:empty,
+.home-note-content h2 {
+  display: none;
+}
+
 .home-note-content blockquote {
   margin: 0 0 18px;
   padding: 0;
@@ -959,6 +982,10 @@ body {
     padding: 17px 0 0;
     border-top: 1px solid var(--elizen-rule);
     border-left: 0;
+  }
+
+  .home-hero-photo img {
+    max-height: 220px;
   }
 
   .home-section-heading {
