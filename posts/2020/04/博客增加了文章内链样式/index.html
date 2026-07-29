@@ -12,7 +12,6 @@
 
     
     
-    <link rel="stylesheet" href="/css/custom.css"></link>
     <script type="text/javascript" src="/js/view-image.js"></script>
     <script>
     
@@ -20,7 +19,7 @@
     </script>
     <script src="/js/custom-markdown-parser.js"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     
     
 
@@ -51,13 +50,14 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-8" />
     
   </head>
 
   
   <body class="posts">
     <header class="masthead">
-      <h1><a href="/">Elizen</a></h1>
+      <h1><a href="/">Elizen</a><span class="brand-note">文字、阅读与生活</span></h1>
 
 <p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
 
@@ -197,7 +197,8 @@
 </div>
   <div id="tcomment"></div>
   <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
-  <script>twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' })</script>
+  <script>if (window.twikoo) twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' }).catch(() => {});</script>
+
   
 
   

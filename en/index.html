@@ -13,7 +13,6 @@
 
     
     
-    <link rel="stylesheet" href="/css/custom.css"></link>
     <script type="text/javascript" src="/js/view-image.js"></script>
     <script>
     
@@ -21,7 +20,7 @@
     </script>
     <script src="/js/custom-markdown-parser.js"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
-    <script>window.addEventListener('load', () => {  quicklink.listen();});</script>
+    <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     
     
 
@@ -45,13 +44,14 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-8" />
     
   </head>
 
   
   <body class="home">
     <header class="masthead">
-      <h1><a href="/">Elizen</a></h1>
+      <h1><a href="/">Elizen</a><span class="brand-note">文字、阅读与生活</span></h1>
 
 <p class="tagline">There is only one thing in the world worse than being talked about, and that is not being talked about.</p>
 
@@ -92,20 +92,56 @@
 
 
 
+<section class="home-hero">
+  <div class="home-hero-copy">
+    <p class="eyebrow">ELIZEN / PERSONAL NOTES</p>
+    <h1>文字留下来，<br><em>生活才有回声。</em></h1>
+    <p class="home-intro">这里记录阅读、电影、工作，以及一个家庭在时间里的缓慢变化。</p>
+  </div>
+  <aside class="home-hero-aside">
+    <div class="home-current">
+      <span class="aside-label">现在</span>
+      <p>正在读一些旧书，<br>也在重新学习如何生活。</p>
+    </div>
+  </aside>
+</section>
 
+<section class="home-latest" aria-labelledby="latest-title">
+  <div class="home-section-heading">
+    <div>
+      <p class="eyebrow">LATEST WRITINGS</p>
+      <h2 id="latest-title">最近写下的</h2>
+    </div>
+    <a class="home-inline-link" href="/posts/">查看全部文章 <span aria-hidden="true">→</span></a>
+  </div>
+  <ul class="home-post-list">
+    
+    
+    
+    <li class="home-post-row">
+      <time datetime="2025-01-13">2025/01/13</time>
+      <div class="home-post-copy">
+        <h3><a href="/en/posts/2025/01/2025-week1-and-week2.en.md/">2025 Biweekly Journal (0)</a></h3>
+        <p>I kicked off the new year by reading a book about efficiency. I’ve long been desensitized to …</p>
+      </div>
+      <span class="home-row-arrow" aria-hidden="true">↗</span>
+    </li>
+    
+  </ul>
+</section>
 
+<section class="home-note">
+  <figure class="home-note-photo">
+    
+  </figure>
+  <div class="home-note-copy">
+    <p class="eyebrow">A SMALL MANIFESTO</p>
+    
+    
+    <div class="home-note-content"></div>
+  </div>
+</section>
 
-
-
-
-<ul>
-  
-  <li>
-    <span class="date">2025/01/13</span>
-    <a href="/en/posts/2025/01/2025-week1-and-week2.en.md/">2025 Biweekly Journal (0)</a>
-  </li>
-  
-</ul>
 
   <footer>
   
@@ -143,3 +179,4 @@
     </script>
   </body>
 </html>
+
