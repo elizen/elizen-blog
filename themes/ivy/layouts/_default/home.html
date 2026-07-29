@@ -1,15 +1,54 @@
 {{ partial "header.html" . }}
 
+{{ if .IsHome }}
+<section class="home-hero">
+  <div class="home-hero-copy">
+    <p class="eyebrow">ELIZEN / PERSONAL NOTES</p>
+    <h1>文字留下来，<br><em>生活才有回声。</em></h1>
+    <p class="home-intro">这里记录阅读、电影、工作，以及一个家庭在时间里的缓慢变化。</p>
+  </div>
+  <aside class="home-hero-aside">
+    <span class="aside-label">现在</span>
+    <p>正在读一些旧书，<br>也在重新学习如何生活。</p>
+  </aside>
+</section>
+
+<section class="home-latest" aria-labelledby="latest-title">
+  <div class="home-section-heading">
+    <div>
+      <p class="eyebrow">LATEST WRITINGS</p>
+      <h2 id="latest-title">最近写下的</h2>
+    </div>
+    <a class="home-inline-link" href="{{ "/posts/" | relURL }}">查看全部文章 <span aria-hidden="true">→</span></a>
+  </div>
+  <ul class="home-post-list">
+    {{ $.Scratch.Set "pages" .Site.RegularPages }}
+    {{ range (where ($.Scratch.Get "pages") "Section" "posts") }}
+    {{ $summary := .Summary | plainify | htmlUnescape | truncate 96 }}
+    <li class="home-post-row">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+      <div class="home-post-copy">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with $summary }}<p>{{ . }}</p>{{ end }}
+      </div>
+      <span class="home-row-arrow" aria-hidden="true">↗</span>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="home-note">
+  <p class="eyebrow">A SMALL MANIFESTO</p>
+  <div class="home-note-content">
+    {{ .Content | safeHTML }}
+  </div>
+</section>
+{{ else }}
+{{ $.Scratch.Set "pages" .Pages }}
 {{ $content := .Content }}
 {{ $memoPartial := partial "recent-memo.html" . }}
 {{ $content := replace $content "<!-- INSERT_MEMO_HERE -->" $memoPartial }}
 {{ $content | safeHTML }}
-
-{{ if .IsHome }}
-{{ $.Scratch.Set "pages" .Site.RegularPages }}
-{{ else }}
-{{ $.Scratch.Set "pages" .Pages }}
-{{ end }}
 <ul>
   {{ range (where ($.Scratch.Get "pages") "Section" "posts") }}
   <li>
@@ -18,5 +57,6 @@
   </li>
   {{ end }}
 </ul>
+{{ end }}
 
 {{ partial "footer-cus.html" . }}
