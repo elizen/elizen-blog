@@ -28,6 +28,8 @@
 - Mobile homepage at 390px keeps the hero readable, prevents archive rows from becoming two columns, and preserves the working menu toggle.
 - The homepage `A SMALL MANIFESTO` image is rendered above the “现在” note in the hero aside; its quote/link text remains as the closing manifesto section after the archive.
 - The homepage recent-writing list is intentionally limited to 7 posts, with the full `/posts/` archive link retained.
+- The manifesto image is now an independent 320×220 desktop block (350×250 on mobile), while the “现在” note has its own separator and spacing.
+- The closing manifesto is full-width within the homepage frame with an 820px reading measure; the duplicate “更多文章请访问……” paragraph is removed from the homepage presentation.
 
 ## Interaction checks
 

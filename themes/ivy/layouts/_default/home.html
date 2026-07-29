@@ -48,6 +48,7 @@
   <p class="eyebrow">A SMALL MANIFESTO</p>
   <div class="home-note-content">
     {{ $homeContent := replaceRE "<img[^>]+>" "" .Content }}
+    {{ $homeContent = replaceRE "(?s)<p>更多文章请访问.*?</p>" "" $homeContent }}
     {{ $homeContent | safeHTML }}
   </div>
 </section>
