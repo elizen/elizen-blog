@@ -429,6 +429,11 @@ body {
   padding-top: 84px;
 }
 
+/* The shared title wrapper is intentionally empty on the homepage. */
+.home .main > .title {
+  display: none;
+}
+
 .main .title {
   margin: 0 0 56px;
   padding: 0 0 48px;

@@ -21,6 +21,8 @@
 - Article body computed style: Noto Serif SC fallback stack, 18px, 30.6px line height, 820px content column on desktop.
 - Mobile article computed style: 36px title, 17px body, 31.45px line height, 350px content column, no horizontal overflow.
 - Homepage list retains all real Hugo content and remains readable as a date/title archive.
+- Homepage empty shared title wrapper is hidden so the hero image follows the masthead with intentional 84px breathing room instead of an orphan divider and extra blank band.
+- Custom stylesheet uses a versioned query string so this correction is visible immediately after deployment without a stale CSS cache.
 
 ## Interaction checks
 
