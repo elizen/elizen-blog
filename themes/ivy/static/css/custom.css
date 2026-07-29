@@ -717,7 +717,7 @@ body {
   padding: 112px 0 92px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
-  align-items: end;
+  align-items: start;
   gap: 64px;
 }
 
@@ -784,8 +784,9 @@ body {
 }
 
 .home-current {
-  padding: 17px 0 0 24px;
-  border-left: 1px solid var(--elizen-rule);
+  margin-top: 30px;
+  padding: 17px 0 0;
+  border-top: 1px solid var(--elizen-rule);
 }
 
 .home-hero-aside p {
@@ -901,12 +902,20 @@ body {
   margin: 110px 0 132px;
   padding: 30px 0 0;
   border-top: 1px solid var(--elizen-accent);
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.home-note > .eyebrow {
+  margin-top: 4px;
 }
 
 .home-note-content {
   max-width: 820px;
   color: var(--elizen-muted);
-  font: 400 17px/1.9 var(--elizen-serif);
+  font: 400 18px/1.85 var(--elizen-serif);
 }
 
 .home-note-content p {
@@ -923,8 +932,14 @@ body {
   padding: 0;
   border-left: 0;
   color: var(--elizen-ink);
-  font: 500 25px/1.6 var(--elizen-serif);
-  letter-spacing: -.04em;
+  font: 500 21px/1.8 var(--elizen-serif);
+  letter-spacing: -.02em;
+}
+
+.home-note-content blockquote em {
+  color: var(--elizen-muted);
+  font-size: 14px;
+  font-style: italic;
 }
 
 .home-note-content img {
@@ -1035,9 +1050,14 @@ body {
   .home-note {
     margin: 90px 0;
     padding-top: 22px;
+    display: block;
   }
 
   .home-note-content blockquote {
-    font-size: 21px;
+    font-size: 20px;
+  }
+
+  .home-note > .eyebrow {
+    margin-bottom: 20px;
   }
 }

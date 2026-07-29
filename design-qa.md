@@ -30,6 +30,7 @@
 - The homepage recent-writing list is intentionally limited to 7 posts, with the full `/posts/` archive link retained.
 - The manifesto image is now an independent 320×220 desktop block (350×250 on mobile), while the “现在” note has its own separator and spacing.
 - The closing manifesto is full-width within the homepage frame with an 820px reading measure; the duplicate “更多文章请访问……” paragraph is removed from the homepage presentation.
+- Final polish aligns the hero copy and manifesto image at the same top rhythm, replaces the disconnected vertical “现在” rule with a horizontal separator, and turns the closing manifesto into a two-column editorial block on desktop and a single readable column on mobile.
 
 ## Interaction checks
 
