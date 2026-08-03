@@ -1,0 +1,68 @@
+{{ partial "header.html" . }}
+{{ $booklist := transform.Unmarshal (dict "format" "yaml") (readFile "data/booklist.yaml") }}
+
+<section class="booklist-page" aria-labelledby="booklist-title">
+  <header class="booklist-header">
+    <div>
+      <p class="eyebrow">CURATED BIBLIOGRAPHY / {{ len $booklist.topics }} 位作者</p>
+      <h1 id="booklist-title">{{ .Title }}</h1>
+      <p class="booklist-lede">不是读过的全部，而是按作者慢慢整理出来的阅读路径。作品留作目录，写下的想法从这里继续生长。</p>
+    </div>
+    <nav class="media-page-switcher" aria-label="书影音页面">
+      <a href="{{ "books/" | relURL }}">阅读</a>
+      <a class="is-current" href="{{ "booklist/" | relURL }}">书目</a>
+      <a href="{{ "notes/" | relURL }}">札记</a>
+    </nav>
+  </header>
+
+  <nav class="booklist-index" aria-label="作者索引">
+    {{ range $booklist.topics }}
+      <a href="#{{ .id }}"><span>{{ .number }}</span>{{ .name }}</a>
+    {{ end }}
+  </nav>
+
+  <div class="booklist-topics">
+    {{ range $booklist.topics }}
+      <section class="booklist-topic" id="{{ .id }}" aria-labelledby="{{ .id }}-title">
+        <header class="booklist-author">
+          <p class="booklist-author-number">{{ .number }}</p>
+          <h2 id="{{ .id }}-title">{{ .name }}</h2>
+          <p class="booklist-author-years">{{ .years }}</p>
+          <p class="booklist-author-subtitle">{{ .subtitle }}</p>
+          <p class="booklist-author-intro">{{ .intro }}</p>
+          {{ with .notes }}
+            <div class="booklist-author-notes">
+              <p>相关文字</p>
+              {{ range . }}
+                <a href="{{ .url | relURL }}">{{ .title }} <span aria-hidden="true">↗</span></a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </header>
+
+        <div class="booklist-works">
+          <div class="booklist-work-head" aria-hidden="true">
+            <span>作品</span><span>类型</span><span>读于</span>
+          </div>
+          <ol>
+            {{ range .works }}
+              <li>
+                <a class="booklist-work-title" href="{{ .url }}" target="_blank" rel="noreferrer">{{ .title }} <span aria-hidden="true">↗</span></a>
+                <span class="booklist-work-kind">{{ .kind }}</span>
+                <span class="booklist-work-year">{{ .year }}</span>
+              </li>
+            {{ end }}
+          </ol>
+        </div>
+      </section>
+    {{ end }}
+  </div>
+
+  <footer class="booklist-footer">
+    <p class="eyebrow">A LIVING INDEX</p>
+    <p>这份书目会随着阅读继续补全。完整的阅读记录仍保留在「阅读」里。</p>
+    <a href="{{ "books/" | relURL }}">查看全部阅读 <span aria-hidden="true">→</span></a>
+  </footer>
+</section>
+
+{{ partial "footer-cus.html" . }}

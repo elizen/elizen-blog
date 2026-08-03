@@ -1,0 +1,81 @@
+{{ $page := .page }}
+{{ $items := .items }}
+{{ $kind := .kind }}
+{{ $english := .english }}
+{{ $unit := .unit }}
+{{ $slug := .slug }}
+{{ $assetKind := cond (eq $slug "movies") "movie" "book" }}
+
+<section class="media-page" aria-labelledby="media-page-title">
+  <header class="media-page-header">
+    <div>
+      <p class="eyebrow">{{ $english }} / {{ len $items }} {{ $unit }}</p>
+      <h1 id="media-page-title">{{ $page.Title }}</h1>
+      <p class="media-page-lede">
+        {{ if eq $kind "阅读" }}记录读过的书，也记录还在心里发酵的部分。{{ else }}记录看过的电影，以及那些后来还会想起的片段。{{ end }}
+      </p>
+    </div>
+    <nav class="media-page-switcher" aria-label="书影音页面">
+      <a class="{{ if eq $slug "movies" }}is-current{{ end }}" href="{{ "movies/" | relURL }}">电影</a>
+      <a class="{{ if eq $slug "books" }}is-current{{ end }}" href="{{ "books/" | relURL }}">阅读</a>
+    </nav>
+  </header>
+
+  <div class="media-notes-entry">
+    <div class="media-notes-copy">
+      <p class="eyebrow">书目 / 札记</p>
+      <h2>作品会留在这里，想法会写进札记。</h2>
+      <p>豆瓣是目录，札记是我真正留下的东西。以后有重点的书和电影，会从这里继续读下去。</p>
+    </div>
+    <div class="media-notes-actions">
+      <a class="media-notes-link" href="{{ "booklist/" | relURL }}">进入书目 <span aria-hidden="true">↗</span></a>
+      <a class="media-notes-link" href="{{ "notes/" | relURL }}">进入札记 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <div class="media-catalog-heading">
+    <p class="eyebrow">COMPLETE CATALOG</p>
+    <p>按最近一次标记排列</p>
+  </div>
+
+  <div class="media-grid" data-media-grid data-media-total="{{ len $items }}"></div>
+
+  <template data-media-source>
+    {{ range $items }}
+      {{ $subjectID := index . 0 }}
+      {{ $title := index . 1 }}
+      {{ $link := index . 5 }}
+      {{ $rating := index . 6 }}
+      {{ $markedAt := index . 11 }}
+      {{ $year := replaceRE "^([0-9]{4}).*" "$1" $markedAt }}
+      <article class="media-card">
+        <a class="media-cover-link" href="{{ $link }}" target="_blank" rel="noreferrer">
+          <img class="media-cover" data-src="{{ printf "images/douban/%s/%s.jpg" $assetKind $subjectID | relURL }}" loading="lazy" decoding="async" alt="{{ $title }}" width="150" height="220">
+          <span class="media-cover media-cover-fallback" hidden aria-label="{{ $title }}">
+            <span class="media-cover-fallback-kicker">{{ if eq $kind "阅读" }}READING{{ else }}WATCHING{{ end }}</span>
+            <strong>{{ $title }}</strong>
+            <span class="media-cover-fallback-line"></span>
+          </span>
+        </a>
+        <div class="media-card-meta">
+          {{ if $rating }}
+            {{ $ratingValue := float $rating }}
+            <div class="media-rating" aria-label="豆瓣评分 {{ $rating }}">
+              <span class="media-rating-number">{{ $rating }}</span>
+              <span class="media-rating-bar" aria-hidden="true"><span style="width:{{ mul 10 $ratingValue }}%;"></span></span>
+            </div>
+          {{ else }}
+            <span class="media-no-rating">未评分</span>
+          {{ end }}
+          <a class="media-card-title" href="{{ $link }}" target="_blank" rel="noreferrer">{{ $title }}</a>
+          {{ if and $year (ne $year $markedAt) }}<span class="media-card-year">{{ $year }}</span>{{ end }}
+        </div>
+      </article>
+    {{ end }}
+  </template>
+
+  <div class="media-load-sentinel" data-media-sentinel aria-hidden="true"></div>
+  <p class="media-load-status" data-media-status aria-live="polite"></p>
+</section>
+
+<script defer src="{{ "js/media-catalog.js" | relURL }}?v=2"></script>

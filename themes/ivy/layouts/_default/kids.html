@@ -1,46 +1,32 @@
 {{ partial "header.html" . }}
 
-<style type="text/css">
-    #TableOfContents {padding: .5em}
-    #TableOfContents ~ h1 {margin:1em 0;text-align: center;}
-    #TableOfContents,#TableOfContents~p:first-of-type{counter-reset:circled-numbers}
-    #TableOfContents>ul>li>ul>li{display:inline-block}
-    #TableOfContents>ul>li>ul>li::before,h2::before{counter-increment:circled-numbers;content:counter(circled-numbers);border-radius:50%;border:1px dashed #999;color:#333;background:#fff;display:inline-block;min-width:1.75em;line-height:1.75em;margin-right:.5em;text-align:center;font-size:.8em}
-    h2::before{vertical-align:bottom;color:#fff;border:none;background:#999}
-  </style>
+{{ $entries := len (findRE "<h2" .Content) }}
 
-{{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
+<section class="kids-page" aria-labelledby="kids-page-title">
+  <header class="kids-page-header">
+    <div class="kids-page-heading">
+      <p class="eyebrow">CHILDHOOD NOTES / {{ $entries }} 则</p>
+      <h1 id="kids-page-title">{{ .Title }}</h1>
+      <p class="kids-page-lede">把成长里那些容易被时间带走的小事，慢慢记下来。</p>
+    </div>
+    <aside class="kids-page-aside">
+      <span>独立更新</span>
+      <p>从一岁到五岁，<br>也从父母的视角重新认识童年。</p>
+    </aside>
+  </header>
 
-{{ .Content }}
-{{ .Render "path"}}
+  {{ with .TableOfContents }}
+    <section class="kids-index" aria-labelledby="kids-index-title">
+      <p class="eyebrow" id="kids-index-title">CHAPTERS</p>
+      {{ . }}
+    </section>
+  {{ end }}
 
-<script>
-(function() {
-  const toc = document.getElementById('TableOfContents');
-  if (!toc) return;
-  // fix header ids and a hrefs if a header contains a link
-  toc.querySelectorAll('a[href^="#"]').forEach((a) => {
-    let id = a.getAttribute('href').replace(/^#/, '');
-    const h = document.getElementById(id);
-    // remove the URL from the id
-    id = id.replace(/-https?-.+$/, '');
-    if (h) h.id = id; a.href = '#' + id;
-    // if the TOC item has two <a>'s, remove the second if the first is empty
-    if (a.innerHTML !== '') return;
-    const a2 = a.nextElementSibling;
-    if (!a2 || a2.tagName !== 'A') return;
-    a.innerHTML = a2.innerHTML;
-    a2.remove();
-  });
-  // Blackfriday may generate a TOC that has an empty bullet when all headings
-  // are h2 and there is no h1: https://github.com/gohugoio/hugo/issues/1778#issuecomment-420036687
-  let li, ul = toc.querySelector('ul');
-  if (ul.childElementCount !== 1) return;
-  li = ul.firstElementChild;
-  if (li.tagName !== 'LI') return;
-  // remove <ul><li></li></ul> where <ul> only contains one <li>
-  ul.outerHTML = li.innerHTML;
-})();
-</script>
+  <div class="kids-content">
+    {{ .Content }}
+  </div>
 
-{{ partial "footer.html" . }}
+  {{ .Render "path" }}
+</section>
+
+{{ partial "footer-cus.html" . }}

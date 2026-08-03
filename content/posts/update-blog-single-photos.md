@@ -2,7 +2,7 @@
 title: "蓝色港湾，晒娃上瘾"
 date: 2020-04-13
 tags: photos
-path: 0412lsgw
+slug: 0412lsgw
 ---
 
 折腾了一上午，终于搞定了在博客内插入指定文件夹内的图片，之前不报错，也不显示，原来是没有在`single.html`里加上引入 PATH 的代码：

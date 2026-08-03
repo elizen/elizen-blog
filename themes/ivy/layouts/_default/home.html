@@ -53,10 +53,7 @@
 </section>
 {{ else }}
 {{ $.Scratch.Set "pages" .Pages }}
-{{ $content := .Content }}
-{{ $memoPartial := partial "recent-memo.html" . }}
-{{ $content := replace $content "<!-- INSERT_MEMO_HERE -->" $memoPartial }}
-{{ $content | safeHTML }}
+{{ .Content }}
 <ul>
   {{ range (where ($.Scratch.Get "pages") "Section" "posts") }}
   <li>

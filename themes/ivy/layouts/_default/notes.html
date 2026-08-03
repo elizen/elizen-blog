@@ -1,0 +1,45 @@
+{{ partial "header.html" . }}
+
+{{ $notes := where .Site.RegularPages "Params.tags" "intersect" (slice "札记") }}
+{{ $notes = $notes.ByDate.Reverse }}
+
+<section class="notes-page" aria-labelledby="notes-page-title">
+  <header class="notes-page-header">
+    <div>
+      <p class="eyebrow">NOTES / {{ len $notes }} 篇</p>
+      <h1 id="notes-page-title">Fragments</h1>
+      <p class="notes-page-lede">一些读书、生活和工作留下的片段。它们比日记长一点，比文章随意一点，但都值得在时间里保留下来。</p>
+    </div>
+    <nav class="media-page-switcher" aria-label="阅读与札记页面">
+      <a href="{{ "books/" | relURL }}">阅读</a>
+      <a href="{{ "booklist/" | relURL }}">书目</a>
+      <a class="is-current" href="{{ "notes/" | relURL }}">札记</a>
+    </nav>
+  </header>
+
+  <div class="notes-archive">
+    {{ range $notes.GroupByDate "2006" }}
+      <section class="notes-year" aria-labelledby="notes-year-{{ .Key }}">
+        <header class="notes-year-heading">
+          <h2 id="notes-year-{{ .Key }}">{{ .Key }}</h2>
+          <p>{{ len .Pages }} 篇</p>
+        </header>
+        <ol class="notes-list">
+          {{ range .Pages }}
+            {{ $summary := .Summary | plainify | htmlUnescape | truncate 105 }}
+            <li>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01/02" }}</time>
+              <div class="notes-list-copy">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with $summary }}<p>{{ . }}</p>{{ end }}
+              </div>
+              <span class="notes-list-arrow" aria-hidden="true">↗</span>
+            </li>
+          {{ end }}
+        </ol>
+      </section>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "footer-cus.html" . }}

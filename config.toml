@@ -7,6 +7,10 @@ hasCJKLanguage = true
 enableEmoji = true
 footnotereturnlinkcontents = "↩"
 
+# 允许仓库内现有的 journal/*.html 作为内容页参与构建。
+[security]
+  allowContent = ["text/markdown", "text/html"]
+
 # Hugo 多语言配置
 defaultContentLanguage = "zh"  # 设定默认语言
 [languages]
@@ -43,7 +47,7 @@ defaultContentLanguage = "zh"  # 设定默认语言
     weight="2"
   [[menu.main]]
     name="书目"
-    url="/bibliography/"
+    url="/booklist/"
     weight="3"
   [[menu.main]]
     name="归档"
@@ -69,6 +73,7 @@ defaultContentLanguage = "zh"  # 设定默认语言
 
 [params.twikoo]
   enable = true
+  envId = "https://pl.elizen.me/"
 
 [blackfriday]
 extensionsmask = [ "noIntraEmphasis" ]

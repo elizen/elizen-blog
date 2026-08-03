@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,6 @@
     //图片灯箱
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
     </script>
-    <script src="{{ "js/custom-markdown-parser.js" | relURL }}"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
     <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     <!-- require APlayer <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"> <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script> -->
@@ -62,7 +61,7 @@
     {{ partial "head_highlightjs" . }}
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
-    <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}?v=reading-column-hybrid-8" />
+    <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}?v=reading-column-hybrid-18" />
     {{ partial "head_custom.html" . }}
   </head>
 

@@ -1,4 +1,4 @@
-{{$books := getCSV "," "data/douban/book.csv" }}
+{{$books := transform.Unmarshal (dict "format" "csv" "targetType" "slice") (readFile "data/douban/book.csv") }}
 {{$numb := 5}}
 {{ if .Get 0 }}
     {{$numb = add (.Get 0) 1}}
@@ -7,12 +7,11 @@
     <div class="sc-dIsUp fIuTG">
         {{range $idx, $book := first $numb $books}}
         {{if ne $idx 0 }}
-        {{ $coverSrc := index $book 5 }} 
-        {{ $douURL := replaceRE "https://book.douban.com/subject/([0-9]+)/" "https://dou.img.lithub.cc/book/$1.jpg" $coverSrc}}
+        {{ $douURL := index $book 3 }}
             <div class="sc-gKAaRy dfdORB">
                 <div class="sc-hKFxyN HPRth">
                     <div class="lazyload-wrapper ">
-                        <img class="avatar" src="{{$douURL}}" referrer-policy="no-referrer" loading="lazy" alt="{{index $book 1}}"  title="{{index $book 9}}" width="150" height="220">
+                        <img class="avatar" src="{{$douURL}}" loading="lazy" alt="{{index $book 1}}"  title="{{index $book 9}}" width="150" height="220">
                     </div>
                 </div>
             <div class="sc-fujyAs eysHZq">

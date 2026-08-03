@@ -1,0 +1,6 @@
+{{ partial "header.html" . }}
+
+{{ $items := after 1 (transform.Unmarshal (dict "format" "csv" "targetType" "slice") (readFile "data/douban/movie.csv")) }}
+{{ partial "media-page.html" (dict "page" . "items" $items "kind" "电影" "english" "WATCHING" "unit" "部" "slug" "movies") }}
+
+{{ partial "footer-cus.html" . }}
