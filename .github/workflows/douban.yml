@@ -14,9 +14,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       
-    - name: delete old file
-      run: |
-        rm -rf ./data
+    - name: Delete old Douban files
+      run: rm -rf ./data/douban
     - name: movie
       uses: lizheming/doumark-action@master
       with:
@@ -32,10 +31,12 @@ jobs:
         type: book
         format: csv
         dir: ./data/douban
+
+    - name: Restore official Douban poster URLs
+      run: python3 .github/update-douban-posters.py
   
     - name: Commit
       uses: EndBug/add-and-commit@v9
       with:
         message: 'chore: update douban data'
         add: './data/douban'
-
