@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,6 @@
     
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
     </script>
-    <script src="/js/custom-markdown-parser.js"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
     <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     
@@ -50,7 +49,7 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-8" />
+    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-18" />
     
   </head>
 
@@ -75,7 +74,7 @@
   
   <li><a href="/books/">阅读</a></li>
   
-  <li><a href="/bibliography/">书目</a></li>
+  <li><a href="/booklist/">书目</a></li>
   
   <li><a href="/posts/">归档</a></li>
   
@@ -182,12 +181,69 @@
 </nav>
 
   <hr>
-  <div class="pagination__title" style="margin-bottom: 30px;">
-  <span class="pagination__title-h">欢迎评论</span>
-</div>
-  <div id="tcomment"></div>
-  <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
-  <script>if (window.twikoo) twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' }).catch(() => {});</script>
+  <section class="comment-section" aria-labelledby="comment-section-title">
+  <header class="comment-section-header">
+    <p class="eyebrow">DISCUSSION / 留言</p>
+    <div>
+      <h2 id="comment-section-title">留下几句话</h2>
+      <p>名字可以随意，邮箱只用来识别头像，不会公开。</p>
+    </div>
+  </header>
+
+  <div class="comment-system" data-comment-system>
+    <div id="tcomment"></div>
+    <p class="comment-system-status" data-comment-status hidden>评论服务暂时没有连上，请稍后再试。</p>
+  </div>
+</section>
+
+<script src="https://fastly.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.min.js"></script>
+<script>
+  (function () {
+    var envId = "https://pl.elizen.me/";
+    var system = document.querySelector('[data-comment-system]');
+    var status = document.querySelector('[data-comment-status]');
+
+    function showUnavailable() {
+      if (status) status.hidden = false;
+    }
+
+    if (!window.twikoo) {
+      showUnavailable();
+      return;
+    }
+
+    twikoo.init({
+      envId: envId,
+      el: '#tcomment',
+      path: window.location.pathname,
+      lang: 'zh-CN'
+    }).catch(showUnavailable);
+
+    if (system && window.MutationObserver) {
+      new MutationObserver(function () {
+        var error = system.querySelector('.tk-error-message');
+        if (error && /评论失败/.test(error.textContent || '')) {
+          error.textContent = '评论服务暂时没有连上，请稍后再试。';
+          showUnavailable();
+        }
+      }).observe(system, { childList: true, subtree: true, characterData: true });
+    }
+
+    if (window.fetch && window.AbortController) {
+      var controller = new AbortController();
+      var timer = window.setTimeout(function () { controller.abort(); }, 8000);
+      fetch(envId, { method: 'GET', mode: 'cors', cache: 'no-store', signal: controller.signal })
+        .then(function (response) {
+          window.clearTimeout(timer);
+          if (!response.ok) showUnavailable();
+        })
+        .catch(function () {
+          window.clearTimeout(timer);
+          showUnavailable();
+        });
+    }
+  })();
+</script>
 
   
 

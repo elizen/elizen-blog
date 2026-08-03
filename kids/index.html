@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,6 @@
     
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
     </script>
-    <script src="/js/custom-markdown-parser.js"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
     <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     
@@ -48,7 +47,7 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-8" />
+    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-18" />
     
   </head>
 
@@ -73,7 +72,7 @@
   
   <li><a href="/books/">阅读</a></li>
   
-  <li><a href="/bibliography/">书目</a></li>
+  <li><a href="/booklist/">书目</a></li>
   
   <li><a href="/posts/">归档</a></li>
   
@@ -100,16 +99,25 @@
       </header>
 
 
-<style type="text/css">
-    #TableOfContents {padding: .5em}
-    #TableOfContents ~ h1 {margin:1em 0;text-align: center;}
-    #TableOfContents,#TableOfContents~p:first-of-type{counter-reset:circled-numbers}
-    #TableOfContents>ul>li>ul>li{display:inline-block}
-    #TableOfContents>ul>li>ul>li::before,h2::before{counter-increment:circled-numbers;content:counter(circled-numbers);border-radius:50%;border:1px dashed #999;color:#333;background:#fff;display:inline-block;min-width:1.75em;line-height:1.75em;margin-right:.5em;text-align:center;font-size:.8em}
-    h2::before{vertical-align:bottom;color:#fff;border:none;background:#999}
-  </style>
 
-<nav id="TableOfContents">
+
+<section class="kids-page" aria-labelledby="kids-page-title">
+  <header class="kids-page-header">
+    <div class="kids-page-heading">
+      <p class="eyebrow">CHILDHOOD NOTES / 16 则</p>
+      <h1 id="kids-page-title">嘟嘟小记</h1>
+      <p class="kids-page-lede">把成长里那些容易被时间带走的小事，慢慢记下来。</p>
+    </div>
+    <aside class="kids-page-aside">
+      <span>独立更新</span>
+      <p>从一岁到五岁，<br>也从父母的视角重新认识童年。</p>
+    </aside>
+  </header>
+
+  
+    <section class="kids-index" aria-labelledby="kids-index-title">
+      <p class="eyebrow" id="kids-index-title">CHAPTERS</p>
+      <nav id="TableOfContents">
   <ul>
     <li><a href="#三岁五岁记">三岁五岁记</a>
       <ul>
@@ -137,8 +145,11 @@
     </li>
   </ul>
 </nav>
+    </section>
+  
 
-<p>我在一些笔记软件中记录着一个 <code>#日子</code> 这样的标签，主要是仿照感恩日记，对生活可能被遗忘的美好做一些记录，其中大部分内容回看的时候都能想起一些有趣的瞬间。</p>
+  <div class="kids-content">
+    <p>我在一些笔记软件中记录着一个 <code>#日子</code> 这样的标签，主要是仿照感恩日记，对生活可能被遗忘的美好做一些记录，其中大部分内容回看的时候都能想起一些有趣的瞬间。</p>
 <p>试着在这个页面内做一些摘录。</p>
 <h1 id="三岁五岁记">三岁五岁记</h1>
 <h2 id="鼓励的力量">鼓励的力量</h2>
@@ -212,107 +223,45 @@
 <p>打卡北京海洋馆，基本上一路都是这是什么，这是什么，这是什么…然后从头走到尾，啊，我找到我小丑鱼了，你找到你要找的大海龟了。</p>
 <p>在海洋剧场表演的时候，海豹都快表演完了，嘟嘟还在问我，它什么时候下水啊？它怎么还不下水？</p>
 
+  </div>
 
-
-<script>
-(function() {
-  const toc = document.getElementById('TableOfContents');
-  if (!toc) return;
   
-  toc.querySelectorAll('a[href^="#"]').forEach((a) => {
-    let id = a.getAttribute('href').replace(/^#/, '');
-    const h = document.getElementById(id);
-    
-    id = id.replace(/-https?-.+$/, '');
-    if (h) h.id = id; a.href = '#' + id;
-    
-    if (a.innerHTML !== '') return;
-    const a2 = a.nextElementSibling;
-    if (!a2 || a2.tagName !== 'A') return;
-    a.innerHTML = a2.innerHTML;
-    a2.remove();
-  });
-  
-  
-  let li, ul = toc.querySelector('ul');
-  if (ul.childElementCount !== 1) return;
-  li = ul.firstElementChild;
-  if (li.tagName !== 'LI') return;
-  
-  ul.outerHTML = li.innerHTML;
-})();
-</script>
-
-<script>
-  !function(){const e=document.getElementById("TableOfContents");if(!e)return;e.querySelectorAll('a[href^="#"]').forEach((e=>{let t=e.getAttribute("href").replace(/^#/,"");const n=document.getElementById(t);if(t=t.replace(/https?.*$/,""),n&&(n.id=t),e.href="#"+t,""!==e.innerHTML)return;const r=e.nextElementSibling;r&&"A"===r.tagName&&(e.innerHTML=r.innerHTML,r.remove())}));let t,n=e.querySelector("ul");1===n.childElementCount&&(t=n.firstElementChild,"LI"===t.tagName&&(n.outerHTML=t.innerHTML))}();
-  </script>
-  
-<script>
-  !function(){for(var t,e=document.getElementsByTagName("img"),l=0;l<e.length;l++)(t=e[l]).title||(t.title=t.alt)}();
-  </script>
-
-  <script>
-    !function(){for(var a,e=document.querySelectorAll("article h1, article h2, article h3"),r=0;r<e.length;r++)""!==(a=e[r]).id&&(a.innerHTML+=' <span class="anchor"><a href="#'+a.id+'">#</a></span>')}();
-  </script>
+</section>
 
   <footer>
-    <script src="https://immmmm.com/waterfall.min.js"></script>
-    <script src="https://immmmm.com/imgStatus.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-      
-      var photosAll = document.getElementsByTagName('gallery') || '';
-      if(photosAll){
-        for(var i=0;i < photosAll.length;i++){
-          photosAll[i].innerHTML = '<div class="gallery-photos">'+photosAll[i].innerHTML+'</div>'
-          var photosIMG = photosAll[i].getElementsByTagName('img')
-          for(var j=0;j < photosIMG.length;j++){
-            wrap(photosIMG[j], document.createElement('div'));
-          }
-        }
-      }
-      function wrap(el, wrapper) {
-        wrapper.className = "gallery-photo";
-        el.parentNode.insertBefore(wrapper, el);
-        wrapper.appendChild(el);
-      }
-      
-      let galleryPhotos = document.querySelectorAll('.gallery-photos') || ''
-      if(galleryPhotos){
-        imgStatus.watch('.gallery-photo img', function(imgs) {
-          if(imgs.isDone()){
-            for(var i=0;i < galleryPhotos.length;i++){
-              waterfall(galleryPhotos[i]);
-              let pagePhoto = galleryPhotos[i].querySelectorAll('.gallery-photo');
-              for(var j=0;j < pagePhoto.length;j++){pagePhoto[j].className += " visible"};
-            }
-          }
-        });
-        window.addEventListener('resize', function () {
-          for(var i=0;i < galleryPhotos.length;i++){
-            waterfall(galleryPhotos[i]);
-          }
-        });
-      }
-    });
-    </script>
   
   <hr>
-  <div class="pagination__title" style="margin-bottom: 30px;">
-  <span class="pagination__title-h">欢迎评论</span>
-</div>
-  <div id="tcomment"></div>
-  <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
-  <script>if (window.twikoo) twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' }).catch(() => {});</script>
-
   
 
   
-  <hr>
   <div class="copyright">© <a href="https://elizen.me">Elizen</a> | since 2009</div>
   
   </footer>
   </article>
   
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('.main > ul');
+      if (!ul) return;
+    
+      const items = Array.from(ul.children);
+      let currentYear = null;
+    
+      items.forEach(item => {
+        const dateSpan = item.querySelector('.date');
+        if (!dateSpan) return;
+    
+        const year = dateSpan.textContent.split('/')[0];
+        if (year !== currentYear) {
+          const yearGroup = document.createElement('li');
+          yearGroup.className = 'year-group';
+          yearGroup.textContent = year;
+          ul.insertBefore(yearGroup, item);
+          currentYear = year;
+        }
+      });
+    });
+    </script>
   </body>
 </html>
+

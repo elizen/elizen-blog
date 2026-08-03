@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,6 @@
     
     window.ViewImage && ViewImage.init('.main img:not(.avatar,.tk-avatar-img)')
     </script>
-    <script src="/js/custom-markdown-parser.js"></script>
     <script  src="https://jsd.cdn.zzko.cn/npm/quicklink@2.3.0/dist/quicklink.umd.js"></script>
     <script>window.addEventListener('load', () => { if (window.quicklink) quicklink.listen(); });</script>
     
@@ -29,12 +28,12 @@
 
     
       
-      <meta property="description" content="这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 Memo。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。
+      <meta property="description" content="这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 Fragments。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。
 二〇二三年一月十七日记。
-[&amp;hellip;] 这两天在木木哥的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板和一个关于 &amp;hellip;">
-      <meta property="og:description" content="这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 Memo。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。
+[&amp;hellip;] 这两天在木木哥的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板 &amp;hellip;">
+      <meta property="og:description" content="这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 Fragments。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。
 二〇二三年一月十七日记。
-[&amp;hellip;] 这两天在木木哥的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板和一个关于 &amp;hellip;">
+[&amp;hellip;] 这两天在木木哥的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板 &amp;hellip;">
       
     
 
@@ -48,7 +47,7 @@
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-8" />
+    <link rel="stylesheet" href="/css/custom.css?v=reading-column-hybrid-18" />
     
   </head>
 
@@ -73,7 +72,7 @@
   
   <li><a href="/books/">阅读</a></li>
   
-  <li><a href="/bibliography/">书目</a></li>
+  <li><a href="/booklist/">书目</a></li>
   
   <li><a href="/posts/">归档</a></li>
   
@@ -104,7 +103,7 @@
 
 
   <h2 id="2023-01">2023.01</h2>
-<p>这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 <a href="https://elizen.me/bb">Memo</a>。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。</p>
+<p>这半年多，给博客又鼓捣了两个小玩意儿，一个是文章中实现了图片横排的效果，另一个是挂载了一个服务器上属于自己的 <a href="/notes/">Fragments</a>。两个页面基本实现了晒娃和吐槽的主要功能，极大满足脑子里那个无处安放的闲言碎语。</p>
 <p>二〇二三年一月十七日记。</p>
 <h2 id="2022-05">2022.05</h2>
 <p>这两天在<a href="https://immmmm.com/">木木哥</a>的帮助下，做了大量的博客除草运动。删了很多之前莫名其妙加进来的 JS 文件和无用的内容。增加了从一个 ToC 的 HTML 模板和一个关于嘟嘟的页面。样式是从别的地方抄来的，做得非常漂亮。实现上比较简单，但是最大坑是我之前调用了 Aplayer 的 JS，导致了页面内的中文锚点不跳转，定位问题用了整整两天。</p>
@@ -180,12 +179,69 @@
 </nav>
 
   <hr>
-  <div class="pagination__title" style="margin-bottom: 30px;">
-  <span class="pagination__title-h">欢迎评论</span>
-</div>
-  <div id="tcomment"></div>
-  <script src="https://fastly.jsdelivr.net/npm/twikoo@1.6.5/dist/twikoo.min.js"></script>
-  <script>if (window.twikoo) twikoo.init({ envId: 'https://pl.elizen.me/', el: '#tcomment' }).catch(() => {});</script>
+  <section class="comment-section" aria-labelledby="comment-section-title">
+  <header class="comment-section-header">
+    <p class="eyebrow">DISCUSSION / 留言</p>
+    <div>
+      <h2 id="comment-section-title">留下几句话</h2>
+      <p>名字可以随意，邮箱只用来识别头像，不会公开。</p>
+    </div>
+  </header>
+
+  <div class="comment-system" data-comment-system>
+    <div id="tcomment"></div>
+    <p class="comment-system-status" data-comment-status hidden>评论服务暂时没有连上，请稍后再试。</p>
+  </div>
+</section>
+
+<script src="https://fastly.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.min.js"></script>
+<script>
+  (function () {
+    var envId = "https://pl.elizen.me/";
+    var system = document.querySelector('[data-comment-system]');
+    var status = document.querySelector('[data-comment-status]');
+
+    function showUnavailable() {
+      if (status) status.hidden = false;
+    }
+
+    if (!window.twikoo) {
+      showUnavailable();
+      return;
+    }
+
+    twikoo.init({
+      envId: envId,
+      el: '#tcomment',
+      path: window.location.pathname,
+      lang: 'zh-CN'
+    }).catch(showUnavailable);
+
+    if (system && window.MutationObserver) {
+      new MutationObserver(function () {
+        var error = system.querySelector('.tk-error-message');
+        if (error && /评论失败/.test(error.textContent || '')) {
+          error.textContent = '评论服务暂时没有连上，请稍后再试。';
+          showUnavailable();
+        }
+      }).observe(system, { childList: true, subtree: true, characterData: true });
+    }
+
+    if (window.fetch && window.AbortController) {
+      var controller = new AbortController();
+      var timer = window.setTimeout(function () { controller.abort(); }, 8000);
+      fetch(envId, { method: 'GET', mode: 'cors', cache: 'no-store', signal: controller.signal })
+        .then(function (response) {
+          window.clearTimeout(timer);
+          if (!response.ok) showUnavailable();
+        })
+        .catch(function () {
+          window.clearTimeout(timer);
+          showUnavailable();
+        });
+    }
+  })();
+</script>
 
   
 
