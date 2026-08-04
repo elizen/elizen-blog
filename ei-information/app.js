@@ -32,7 +32,7 @@ function formatDate(value) {
 
 function refreshStatusLabel(status) {
   return ({
-    running: "更新中",
+    running: "静态快照 · 每小时自动发布",
     succeeded: "运行成功",
     partial: "部分来源失败",
     failed: "运行失败",
@@ -121,7 +121,7 @@ function renderStats() {
   $("#last-check").textContent = lastSuccess ? formatDate(lastSuccess) : "尚未更新";
   $("#refresh-status").textContent = refreshStatusLabel(state.refreshStatus?.refresh?.status);
   const statusSources = state.refreshStatus?.sources;
-  if (statusSources) {
+  if (statusSources && state.refreshStatus?.refresh?.status !== "running") {
     $("#source-status").textContent = `来源：${statusSources.success} 成功 / ${statusSources.failed} 失败`;
   } else {
     const sources = state.data?.sources || [];
