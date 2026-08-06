@@ -1,25 +1,25 @@
 {
   "system": "running",
   "refresh": {
-    "status": "succeeded",
-    "run_id": "6b9bc7db-2c21-4ce2-98f7-22b21699cbf9",
-    "started_at": "2026-08-06T07:21:23.733935+00:00",
-    "finished_at": "2026-08-06T07:22:53.332407+00:00",
-    "duration_seconds": 89.598
+    "status": "partial",
+    "run_id": "a0972d4d-8fdd-43b9-a6ac-121bf22a83ab",
+    "started_at": "2026-08-06T08:22:53.849179+00:00",
+    "finished_at": "2026-08-06T08:25:31.661053+00:00",
+    "duration_seconds": 157.812
   },
   "data": {
     "project_count": 542,
-    "last_success_at": "2026-08-06T07:22:53.332407+00:00",
-    "data_version": "6b9bc7db-2c21-4ce2-98f7-22b21699cbf9"
+    "last_success_at": "2026-08-06T08:25:31.661053+00:00",
+    "data_version": "a0972d4d-8fdd-43b9-a6ac-121bf22a83ab"
   },
   "sources": {
-    "success": 7,
-    "failed": 0
+    "success": 6,
+    "failed": 1
   },
   "schedule": {
     "enabled": true,
     "refresh_interval": 3600,
-    "last_run": "2026-08-06T07:22:53.332407+00:00",
-    "next_run": "2026-08-06T08:22:53.332407+00:00"
+    "last_run": "2026-08-06T08:25:31.661053+00:00",
+    "next_run": "2026-08-06T09:25:31.661053+00:00"
   }
 }

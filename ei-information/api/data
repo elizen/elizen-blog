@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-06T07:22:51.334500+00:00",
+  "checked_at": "2026-08-06T08:25:29.457021+00:00",
   "sources": [
     {
       "source": "wap.miit.gov.cn",
@@ -12,10 +12,10 @@
     {
       "source": "国家标准业务平台",
       "source_url": "https://std.samr.gov.cn/gb/",
-      "checked_at": "2026-08-06T07:22:45.240518+00:00",
-      "http_status": 200,
-      "error": null,
-      "article_count": 11
+      "checked_at": "2026-08-06T08:25:13.646536+00:00",
+      "http_status": 502,
+      "error": "HTTP 502",
+      "article_count": 0
     },
     {
       "source": "国家标准人形机器人具身智能基础库",
@@ -28,7 +28,7 @@
     {
       "source": "国家标准基础库",
       "source_url": "https://std.samr.gov.cn/gb/search/gbAdvancedSearch?type=plan",
-      "checked_at": "2026-08-06T07:22:49.843176+00:00",
+      "checked_at": "2026-08-06T08:25:13.646613+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 78
@@ -36,7 +36,7 @@
     {
       "source": "工信部标准信息平台",
       "source_url": "https://std.miit.gov.cn/",
-      "checked_at": "2026-08-06T07:22:51.332072+00:00",
+      "checked_at": "2026-08-06T08:25:29.455390+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 0
@@ -44,7 +44,7 @@
     {
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/",
-      "checked_at": "2026-08-06T07:21:23.906891+00:00",
+      "checked_at": "2026-08-06T08:22:54.135446+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 27
@@ -52,7 +52,7 @@
     {
       "source": "工信部科技司文件发布",
       "source_url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/index.html",
-      "checked_at": "2026-08-06T07:21:30.385119+00:00",
+      "checked_at": "2026-08-06T08:23:04.373171+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 24
@@ -60,7 +60,7 @@
     {
       "source": "工信部科技司标准规范",
       "source_url": "https://wap.miit.gov.cn/jgsj/kjs/jscx/bzgf/index.html",
-      "checked_at": "2026-08-06T07:22:08.260432+00:00",
+      "checked_at": "2026-08-06T08:23:55.700153+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 48
@@ -68,7 +68,7 @@
     {
       "source": "市场监管总局标准公告",
       "source_url": "https://www.samr.gov.cn/bzjss/",
-      "checked_at": "2026-08-06T07:22:35.159731+00:00",
+      "checked_at": "2026-08-06T08:24:38.220941+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 20
@@ -83,7 +83,7 @@
     {
       "name": "北京人形机器人创新中心",
       "display_name": "北京人形机器人创新中心",
-      "count": 60
+      "count": 61
     },
     {
       "name": "人形机器人（上海）有限公司",
@@ -113,17 +113,17 @@
     {
       "name": "上海人工智能研究院",
       "display_name": "上海人工智能研究院",
-      "count": 39
+      "count": 40
     },
     {
       "name": "中兴通讯股份有限公司",
       "display_name": "中兴通讯股份有限公司",
-      "count": 32
+      "count": 33
     },
     {
       "name": "中国移动通信集团有限公司",
       "display_name": "中国移动通信集团有限公司",
-      "count": 30
+      "count": 31
     },
     {
       "name": "宇树科技",
@@ -143,7 +143,7 @@
     {
       "name": "中移（杭州）信息技术有限公司",
       "display_name": "中移（杭州）信息技术有限公司",
-      "count": 23
+      "count": 24
     },
     {
       "name": "北京智源人工智能研究院",
@@ -183,11 +183,16 @@
     {
       "name": "中国电子学会",
       "display_name": "中国电子学会",
-      "count": 15
+      "count": 16
     },
     {
       "name": "乐聚智能（深圳）股份有限公司",
       "display_name": "乐聚智能（深圳）股份有限公司",
+      "count": 15
+    },
+    {
+      "name": "海信集团控股股份有限公司",
+      "display_name": "海信集团控股股份有限公司",
       "count": 15
     },
     {
@@ -196,19 +201,14 @@
       "count": 14
     },
     {
-      "name": "海信集团控股股份有限公司",
-      "display_name": "海信集团控股股份有限公司",
-      "count": 14
-    },
-    {
       "name": "浪潮电子信息产业股份有限公司",
       "display_name": "浪潮电子信息产业股份有限公司",
-      "count": 13
+      "count": 14
     },
     {
       "name": "江淮前沿技术协同创新中心",
       "display_name": "江淮前沿技术协同创新中心",
-      "count": 12
+      "count": 13
     },
     {
       "name": "南京新一代人工智能研究院有限公司",
@@ -226,6 +226,11 @@
       "count": 11
     },
     {
+      "name": "上海蚂蚁灵波科技有限公司",
+      "display_name": "上海蚂蚁灵波科技有限公司",
+      "count": 10
+    },
+    {
       "name": "中国电力科学研究院有限公司",
       "display_name": "中国电力科学研究院有限公司",
       "count": 10
@@ -236,8 +241,23 @@
       "count": 10
     },
     {
+      "name": "北京工业大学",
+      "display_name": "北京工业大学",
+      "count": 10
+    },
+    {
       "name": "北京星动纪元科技有限公司",
       "display_name": "北京星动纪元科技有限公司",
+      "count": 10
+    },
+    {
+      "name": "华为云计算技术有限公司",
+      "display_name": "华为云计算技术有限公司",
+      "count": 10
+    },
+    {
+      "name": "天翼数字生活科技有限公司",
+      "display_name": "天翼数字生活科技有限公司",
       "count": 10
     },
     {
@@ -246,8 +266,8 @@
       "count": 10
     },
     {
-      "name": "上海蚂蚁灵波科技有限公司",
-      "display_name": "上海蚂蚁灵波科技有限公司",
+      "name": "上海交通大学",
+      "display_name": "上海交通大学",
       "count": 9
     },
     {
@@ -266,29 +286,14 @@
       "count": 9
     },
     {
-      "name": "北京工业大学",
-      "display_name": "北京工业大学",
-      "count": 9
-    },
-    {
-      "name": "华为云计算技术有限公司",
-      "display_name": "华为云计算技术有限公司",
-      "count": 9
-    },
-    {
-      "name": "天翼数字生活科技有限公司",
-      "display_name": "天翼数字生活科技有限公司",
+      "name": "浦江国家实验室",
+      "display_name": "浦江国家实验室",
       "count": 9
     },
     {
       "name": "阿里巴巴（中国）有限公司",
       "display_name": "阿里巴巴（中国）有限公司",
       "count": 9
-    },
-    {
-      "name": "上海交通大学",
-      "display_name": "上海交通大学",
-      "count": 8
     },
     {
       "name": "上海人工智能实验室",
@@ -306,13 +311,18 @@
       "count": 8
     },
     {
+      "name": "北京大学",
+      "display_name": "北京大学",
+      "count": 8
+    },
+    {
       "name": "安徽聆动通用机器人科技有限公司",
       "display_name": "安徽聆动通用机器人科技有限公司",
       "count": 8
     },
     {
-      "name": "浦江国家实验室",
-      "display_name": "浦江国家实验室",
+      "name": "海信星海科技（杭州）有限公司",
+      "display_name": "海信星海科技（杭州）有限公司",
       "count": 8
     },
     {
@@ -331,6 +341,11 @@
       "count": 8
     },
     {
+      "name": "上海文鳐信息科技有限公司",
+      "display_name": "上海文鳐信息科技有限公司",
+      "count": 7
+    },
+    {
       "name": "上海智元新创技术有限公司",
       "display_name": "上海智元新创技术有限公司",
       "count": 7
@@ -338,11 +353,6 @@
     {
       "name": "上海燧原科技股份有限公司",
       "display_name": "上海燧原科技股份有限公司",
-      "count": 7
-    },
-    {
-      "name": "北京大学",
-      "display_name": "北京大学",
       "count": 7
     },
     {
@@ -366,11 +376,6 @@
       "count": 7
     },
     {
-      "name": "海信星海科技（杭州）有限公司",
-      "display_name": "海信星海科技（杭州）有限公司",
-      "count": 7
-    },
-    {
       "name": "深圳市标准技术研究院",
       "display_name": "深圳市标准技术研究院",
       "count": 7
@@ -384,11 +389,6 @@
       "name": "鼎桥技术有限公司",
       "display_name": "鼎桥技术有限公司",
       "count": 7
-    },
-    {
-      "name": "上海文鳐信息科技有限公司",
-      "display_name": "上海文鳐信息科技有限公司",
-      "count": 6
     },
     {
       "name": "上海机器人产业技术研究院",
@@ -421,6 +421,16 @@
       "count": 6
     },
     {
+      "name": "北京交通大学",
+      "display_name": "北京交通大学",
+      "count": 6
+    },
+    {
+      "name": "北京他山科技有限公司",
+      "display_name": "北京他山科技有限公司",
+      "count": 6
+    },
+    {
       "name": "北京火山引擎科技有限公司",
       "display_name": "北京火山引擎科技有限公司",
       "count": 6
@@ -441,6 +451,21 @@
       "count": 6
     },
     {
+      "name": "浙江大华技术股份有限公司",
+      "display_name": "浙江大华技术股份有限公司",
+      "count": 6
+    },
+    {
+      "name": "浙江灵巧智能科技有限公司",
+      "display_name": "浙江灵巧智能科技有限公司",
+      "count": 6
+    },
+    {
+      "name": "上海商汤智能科技有限公司",
+      "display_name": "上海商汤智能科技有限公司",
+      "count": 5
+    },
+    {
       "name": "上海壁仞科技股份有限公司",
       "display_name": "上海壁仞科技股份有限公司",
       "count": 5
@@ -448,6 +473,11 @@
     {
       "name": "上海天数智芯半导体股份有限公司",
       "display_name": "上海天数智芯半导体股份有限公司",
+      "count": 5
+    },
+    {
+      "name": "上海库帕思科技有限公司",
+      "display_name": "上海库帕思科技有限公司",
       "count": 5
     },
     {
@@ -486,16 +516,6 @@
       "count": 5
     },
     {
-      "name": "北京交通大学",
-      "display_name": "北京交通大学",
-      "count": 5
-    },
-    {
-      "name": "北京他山科技有限公司",
-      "display_name": "北京他山科技有限公司",
-      "count": 5
-    },
-    {
       "name": "北京小米移动软件有限公司",
       "display_name": "北京小米移动软件有限公司",
       "count": 5
@@ -516,6 +536,11 @@
       "count": 5
     },
     {
+      "name": "广电运通集团股份有限公司",
+      "display_name": "广电运通集团股份有限公司",
+      "count": 5
+    },
+    {
       "name": "新华三技术有限公司",
       "display_name": "新华三技术有限公司",
       "count": 5
@@ -531,13 +556,8 @@
       "count": 5
     },
     {
-      "name": "浙江大华技术股份有限公司",
-      "display_name": "浙江大华技术股份有限公司",
-      "count": 5
-    },
-    {
-      "name": "浙江灵巧智能科技有限公司",
-      "display_name": "浙江灵巧智能科技有限公司",
+      "name": "浙江省质量科学研究院",
+      "display_name": "浙江省质量科学研究院",
       "count": 5
     },
     {
@@ -581,16 +601,6 @@
       "count": 4
     },
     {
-      "name": "上海商汤智能科技有限公司",
-      "display_name": "上海商汤智能科技有限公司",
-      "count": 4
-    },
-    {
-      "name": "上海库帕思科技有限公司",
-      "display_name": "上海库帕思科技有限公司",
-      "count": 4
-    },
-    {
       "name": "上海微电机研究所（中国电子科技集团公司第二十一研究所）",
       "display_name": "上海微电机研究所（中国电子科技集团公司第二十一研究所）",
       "count": 4
@@ -598,6 +608,11 @@
     {
       "name": "上海擎朗智能科技股份有限公司",
       "display_name": "上海擎朗智能科技股份有限公司",
+      "count": 4
+    },
+    {
+      "name": "上海灵境智源科技有限公司",
+      "display_name": "上海灵境智源科技有限公司",
       "count": 4
     },
     {
@@ -636,8 +651,8 @@
       "count": 4
     },
     {
-      "name": "广电运通集团股份有限公司",
-      "display_name": "广电运通集团股份有限公司",
+      "name": "广东省具身智能科技有限公司",
+      "display_name": "广东省具身智能科技有限公司",
       "count": 4
     },
     {
@@ -686,11 +701,6 @@
       "count": 4
     },
     {
-      "name": "浙江省质量科学研究院",
-      "display_name": "浙江省质量科学研究院",
-      "count": 4
-    },
-    {
       "name": "润泽科技发展有限公司",
       "display_name": "润泽科技发展有限公司",
       "count": 4
@@ -728,11 +738,6 @@
     {
       "name": "上海市工商联数字经济商会",
       "display_name": "上海市工商联数字经济商会",
-      "count": 3
-    },
-    {
-      "name": "上海灵境智源科技有限公司",
-      "display_name": "上海灵境智源科技有限公司",
       "count": 3
     },
     {
@@ -813,11 +818,6 @@
     {
       "name": "帕西尼人工智能科技（北京）股份有限公司",
       "display_name": "帕西尼人工智能科技（北京）股份有限公司",
-      "count": 3
-    },
-    {
-      "name": "广东省具身智能科技有限公司",
-      "display_name": "广东省具身智能科技有限公司",
       "count": 3
     },
     {
@@ -976,6 +976,11 @@
       "count": 2
     },
     {
+      "name": "上海计算机软件技术开发中心",
+      "display_name": "上海计算机软件技术开发中心",
+      "count": 2
+    },
+    {
       "name": "上海诺基亚贝尔股份有限公司",
       "display_name": "上海诺基亚贝尔股份有限公司",
       "count": 2
@@ -1073,6 +1078,11 @@
     {
       "name": "中石油（北京）数智研究院有限公司",
       "display_name": "中石油（北京）数智研究院有限公司",
+      "count": 2
+    },
+    {
+      "name": "中科第五纪（杭州）智能技术有限公司",
+      "display_name": "中科第五纪（杭州）智能技术有限公司",
       "count": 2
     },
     {
@@ -1218,6 +1228,11 @@
     {
       "name": "卓益得机器人科技（上海）有限公司",
       "display_name": "卓益得机器人科技（上海）有限公司",
+      "count": 2
+    },
+    {
+      "name": "南京华苏科技有限公司",
+      "display_name": "南京华苏科技有限公司",
       "count": 2
     },
     {
@@ -1571,6 +1586,11 @@
       "count": 2
     },
     {
+      "name": "超越科技股份有限公司",
+      "display_name": "超越科技股份有限公司",
+      "count": 2
+    },
+    {
       "name": "通标标准技术服务（上海）有限公司",
       "display_name": "通标标准技术服务（上海）有限公司",
       "count": 2
@@ -1736,11 +1756,6 @@
       "count": 1
     },
     {
-      "name": "上海计算机软件技术开发中心",
-      "display_name": "上海计算机软件技术开发中心",
-      "count": 1
-    },
-    {
       "name": "上海越凡享递机器人科技有限公司",
       "display_name": "上海越凡享递机器人科技有限公司",
       "count": 1
@@ -1788,6 +1803,11 @@
     {
       "name": "中国中车工业研究院有限公司",
       "display_name": "中国中车工业研究院有限公司",
+      "count": 1
+    },
+    {
+      "name": "中国交通信息科技集团有限公司",
+      "display_name": "中国交通信息科技集团有限公司",
       "count": 1
     },
     {
@@ -2021,13 +2041,13 @@
       "count": 1
     },
     {
-      "name": "中科第五纪（杭州）智能技术有限公司",
-      "display_name": "中科第五纪（杭州）智能技术有限公司",
+      "name": "中科紫东太初（北京）科技有限公司",
+      "display_name": "中科紫东太初（北京）科技有限公司",
       "count": 1
     },
     {
-      "name": "中科紫东太初（北京）科技有限公司",
-      "display_name": "中科紫东太初（北京）科技有限公司",
+      "name": "中移雄安信息通信科技有限公司",
+      "display_name": "中移雄安信息通信科技有限公司",
       "count": 1
     },
     {
@@ -2196,6 +2216,11 @@
       "count": 1
     },
     {
+      "name": "北京大学长沙计算与数字经济研究院",
+      "display_name": "北京大学长沙计算与数字经济研究院",
+      "count": 1
+    },
+    {
       "name": "北京大成（杭州）律师事务所",
       "display_name": "北京大成（杭州）律师事务所",
       "count": 1
@@ -2228,6 +2253,11 @@
     {
       "name": "北京忆海原识科技有限公司",
       "display_name": "北京忆海原识科技有限公司",
+      "count": 1
+    },
+    {
+      "name": "北京思谋智能科技有限公司",
+      "display_name": "北京思谋智能科技有限公司",
       "count": 1
     },
     {
@@ -2343,11 +2373,6 @@
     {
       "name": "华电煤业集团有限公司",
       "display_name": "华电煤业集团有限公司",
-      "count": 1
-    },
-    {
-      "name": "南京华苏科技有限公司",
-      "display_name": "南京华苏科技有限公司",
       "count": 1
     },
     {
@@ -2636,6 +2661,11 @@
       "count": 1
     },
     {
+      "name": "山东大学",
+      "display_name": "山东大学",
+      "count": 1
+    },
+    {
       "name": "山东潍柴动力股份有限公司",
       "display_name": "山东潍柴动力股份有限公司",
       "count": 1
@@ -2758,6 +2788,11 @@
     {
       "name": "广州极目未来文化科技有限公司",
       "display_name": "广州极目未来文化科技有限公司",
+      "count": 1
+    },
+    {
+      "name": "广州爱笔利信息科技有限公司",
+      "display_name": "广州爱笔利信息科技有限公司",
       "count": 1
     },
     {
@@ -3371,6 +3406,11 @@
       "count": 1
     },
     {
+      "name": "美的集团(上海）有限公司",
+      "display_name": "美的集团(上海）有限公司",
+      "count": 1
+    },
+    {
       "name": "腾讯云计算（北京）有限责任公司",
       "display_name": "腾讯云计算（北京）有限责任公司",
       "count": 1
@@ -3383,6 +3423,11 @@
     {
       "name": "苏州市健康养老产业发展集团有限公司",
       "display_name": "苏州市健康养老产业发展集团有限公司",
+      "count": 1
+    },
+    {
+      "name": "苏州智能机器人科技发展有限公司",
+      "display_name": "苏州智能机器人科技发展有限公司",
       "count": 1
     },
     {
@@ -3478,11 +3523,6 @@
     {
       "name": "赛力斯集团股份有限公司",
       "display_name": "赛力斯集团股份有限公司",
-      "count": 1
-    },
-    {
-      "name": "超越科技股份有限公司",
-      "display_name": "超越科技股份有限公司",
       "count": 1
     },
     {
@@ -3670,7 +3710,7 @@
       "standard_level": "行标",
       "status": "征求意见",
       "confidence": "confirmed",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": "2026-08-14",
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
@@ -3699,7 +3739,7 @@
         },
         {
           "type": "征求意见",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "工信部标准公告",
           "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
           "title": "关于公开征求《工业互联网平台 区块链建设管理规范 第1部分：子链建设》等173项行业标准计划项目意见的公示",
@@ -3765,7 +3805,7 @@
       "standard_level": "行标",
       "status": "征求意见",
       "confidence": "confirmed",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": "2026-08-14",
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
@@ -3797,7 +3837,7 @@
         },
         {
           "type": "征求意见",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "工信部标准公告",
           "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
           "title": "关于公开征求《工业互联网平台 区块链建设管理规范 第1部分：子链建设》等173项行业标准计划项目意见的公示",
@@ -3879,7 +3919,7 @@
       "standard_level": "行标",
       "status": "征求意见",
       "confidence": "confirmed",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": "2026-08-14",
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
@@ -3917,7 +3957,7 @@
         },
         {
           "type": "征求意见",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "工信部标准公告",
           "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
           "title": "关于公开征求《工业互联网平台 区块链建设管理规范 第1部分：子链建设》等173项行业标准计划项目意见的公示",
@@ -4023,7 +4063,7 @@
       "standard_level": "行标",
       "status": "征求意见",
       "confidence": "confirmed",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": "2026-08-14",
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
@@ -4050,7 +4090,7 @@
         },
         {
           "type": "征求意见",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "工信部标准公告",
           "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
           "title": "关于公开征求《工业互联网平台 区块链建设管理规范 第1部分：子链建设》等173项行业标准计划项目意见的公示",
@@ -4112,7 +4152,7 @@
       "standard_level": "行标",
       "status": "征求意见",
       "confidence": "confirmed",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": "2026-08-14",
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
@@ -4145,7 +4185,7 @@
         },
         {
           "type": "征求意见",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "工信部标准公告",
           "source_url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_f113f77fca25409c9626539746beaecb.html",
           "title": "关于公开征求《工业互联网平台 区块链建设管理规范 第1部分：子链建设》等173项行业标准计划项目意见的公示",
@@ -4231,7 +4271,7 @@
       "standard_level": "国标",
       "status": "已发布",
       "confidence": "candidate",
-      "updated_at": "2026-08-06T07:22:51.334500+00:00",
+      "updated_at": "2026-08-06T08:25:29.457021+00:00",
       "deadline": null,
       "source": "市场监管总局标准公告",
       "source_url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_ff8536434b844d9b987695e17887d426.html",
@@ -4246,7 +4286,7 @@
       "events": [
         {
           "type": "已发布",
-          "date": "2026-08-06T07:22:51.334500+00:00",
+          "date": "2026-08-06T08:25:29.457021+00:00",
           "source": "市场监管总局标准公告",
           "source_url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_ff8536434b844d9b987695e17887d426.html",
           "title": "关于批准发布《人工智能 工业智能体参考架构》等24项国家标准化指导性技术文件的公告",
@@ -36345,8 +36385,68 @@
       ],
       "participants": [
         {
+          "name": "上海交通大学",
+          "display_name": "上海交通大学"
+        },
+        {
           "name": "上海人工智能创新中心",
           "display_name": "上海人工智能创新中心"
+        },
+        {
+          "name": "上海人工智能研究院",
+          "display_name": "上海人工智能研究院"
+        },
+        {
+          "name": "上海商汤智能科技有限公司",
+          "display_name": "上海商汤智能科技有限公司"
+        },
+        {
+          "name": "上海库帕思科技有限公司",
+          "display_name": "上海库帕思科技有限公司"
+        },
+        {
+          "name": "上海文鳐信息科技有限公司",
+          "display_name": "上海文鳐信息科技有限公司"
+        },
+        {
+          "name": "上海灵境智源科技有限公司",
+          "display_name": "上海灵境智源科技有限公司"
+        },
+        {
+          "name": "上海蚂蚁灵波科技有限公司",
+          "display_name": "上海蚂蚁灵波科技有限公司"
+        },
+        {
+          "name": "上海计算机软件技术开发中心",
+          "display_name": "上海计算机软件技术开发中心"
+        },
+        {
+          "name": "中兴通讯股份有限公司",
+          "display_name": "中兴通讯股份有限公司"
+        },
+        {
+          "name": "中国交通信息科技集团有限公司",
+          "display_name": "中国交通信息科技集团有限公司"
+        },
+        {
+          "name": "中国电子学会",
+          "display_name": "中国电子学会"
+        },
+        {
+          "name": "中国移动通信集团有限公司",
+          "display_name": "中国移动通信集团有限公司"
+        },
+        {
+          "name": "中科第五纪（杭州）智能技术有限公司",
+          "display_name": "中科第五纪（杭州）智能技术有限公司"
+        },
+        {
+          "name": "中移雄安信息通信科技有限公司",
+          "display_name": "中移雄安信息通信科技有限公司"
+        },
+        {
+          "name": "中移（杭州）信息技术有限公司",
+          "display_name": "中移（杭州）信息技术有限公司"
         },
         {
           "name": "人形机器人（上海）有限公司",
@@ -36357,8 +36457,108 @@
           "display_name": "优必选"
         },
         {
+          "name": "北京交通大学",
+          "display_name": "北京交通大学"
+        },
+        {
+          "name": "北京人形机器人创新中心",
+          "display_name": "北京人形机器人创新中心"
+        },
+        {
+          "name": "北京他山科技有限公司",
+          "display_name": "北京他山科技有限公司"
+        },
+        {
+          "name": "北京大学",
+          "display_name": "北京大学"
+        },
+        {
+          "name": "北京大学长沙计算与数字经济研究院",
+          "display_name": "北京大学长沙计算与数字经济研究院"
+        },
+        {
+          "name": "北京工业大学",
+          "display_name": "北京工业大学"
+        },
+        {
+          "name": "北京思谋智能科技有限公司",
+          "display_name": "北京思谋智能科技有限公司"
+        },
+        {
+          "name": "华为云计算技术有限公司",
+          "display_name": "华为云计算技术有限公司"
+        },
+        {
+          "name": "南京华苏科技有限公司",
+          "display_name": "南京华苏科技有限公司"
+        },
+        {
+          "name": "天翼数字生活科技有限公司",
+          "display_name": "天翼数字生活科技有限公司"
+        },
+        {
+          "name": "山东大学",
+          "display_name": "山东大学"
+        },
+        {
+          "name": "广东省具身智能科技有限公司",
+          "display_name": "广东省具身智能科技有限公司"
+        },
+        {
+          "name": "广州爱笔利信息科技有限公司",
+          "display_name": "广州爱笔利信息科技有限公司"
+        },
+        {
+          "name": "广电运通集团股份有限公司",
+          "display_name": "广电运通集团股份有限公司"
+        },
+        {
+          "name": "江淮前沿技术协同创新中心",
+          "display_name": "江淮前沿技术协同创新中心"
+        },
+        {
+          "name": "浙江大华技术股份有限公司",
+          "display_name": "浙江大华技术股份有限公司"
+        },
+        {
+          "name": "浙江灵巧智能科技有限公司",
+          "display_name": "浙江灵巧智能科技有限公司"
+        },
+        {
+          "name": "浙江省质量科学研究院",
+          "display_name": "浙江省质量科学研究院"
+        },
+        {
+          "name": "浦江国家实验室",
+          "display_name": "浦江国家实验室"
+        },
+        {
+          "name": "浪潮电子信息产业股份有限公司",
+          "display_name": "浪潮电子信息产业股份有限公司"
+        },
+        {
+          "name": "海信星海科技（杭州）有限公司",
+          "display_name": "海信星海科技（杭州）有限公司"
+        },
+        {
+          "name": "海信集团控股股份有限公司",
+          "display_name": "海信集团控股股份有限公司"
+        },
+        {
           "name": "电子标准院",
           "display_name": "电子标准院"
+        },
+        {
+          "name": "美的集团(上海）有限公司",
+          "display_name": "美的集团(上海）有限公司"
+        },
+        {
+          "name": "苏州智能机器人科技发展有限公司",
+          "display_name": "苏州智能机器人科技发展有限公司"
+        },
+        {
+          "name": "超越科技股份有限公司",
+          "display_name": "超越科技股份有限公司"
         }
       ],
       "attachments": [],
