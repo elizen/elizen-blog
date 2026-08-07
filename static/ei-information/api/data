@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-07T08:07:58.477332+00:00",
+  "checked_at": "2026-08-07T09:09:45.597676+00:00",
   "sources": [
     {
       "source": "wap.miit.gov.cn",
@@ -12,17 +12,17 @@
     {
       "source": "国家标准业务平台",
       "source_url": "https://std.samr.gov.cn/gb/",
-      "checked_at": "2026-08-07T08:07:52.509267+00:00",
-      "http_status": 200,
-      "error": null,
-      "article_count": 12
+      "checked_at": "2026-08-07T09:09:28.809272+00:00",
+      "http_status": 502,
+      "error": "HTTP 502",
+      "article_count": 0
     },
     {
       "source": "国家标准人形机器人具身智能基础库",
       "source_url": "https://std.samr.gov.cn/gb/search/gbAdvancedSearch?type=plan",
-      "checked_at": "2026-08-04T02:13:50.855720+00:00",
+      "checked_at": "2026-08-07T09:09:45.350712+00:00",
       "http_status": null,
-      "error": "500 Server Error: Internal Server Error for url: https://std.samr.gov.cn/gb/search/gbAdvancedSearchPage?tid=1&std_p8=%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA&pageNumber=1&pageSize=50",
+      "error": "Expecting value: line 1 column 1 (char 0)",
       "article_count": 0
     },
     {
@@ -36,7 +36,7 @@
     {
       "source": "工信部标准信息平台",
       "source_url": "https://std.miit.gov.cn/",
-      "checked_at": "2026-08-07T08:07:58.474977+00:00",
+      "checked_at": "2026-08-07T09:09:45.594524+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 0
@@ -44,7 +44,7 @@
     {
       "source": "工信部标准公告",
       "source_url": "https://www.miit.gov.cn/",
-      "checked_at": "2026-08-07T08:06:26.801343+00:00",
+      "checked_at": "2026-08-07T09:08:01.235297+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 25
@@ -52,7 +52,7 @@
     {
       "source": "工信部科技司文件发布",
       "source_url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/index.html",
-      "checked_at": "2026-08-07T08:06:31.952454+00:00",
+      "checked_at": "2026-08-07T09:08:06.368480+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 24
@@ -60,7 +60,7 @@
     {
       "source": "工信部科技司标准规范",
       "source_url": "https://wap.miit.gov.cn/jgsj/kjs/jscx/bzgf/index.html",
-      "checked_at": "2026-08-07T08:07:09.405224+00:00",
+      "checked_at": "2026-08-07T09:08:42.711877+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 48
@@ -68,7 +68,7 @@
     {
       "source": "市场监管总局标准公告",
       "source_url": "https://www.samr.gov.cn/bzjss/",
-      "checked_at": "2026-08-07T08:07:39.060256+00:00",
+      "checked_at": "2026-08-07T09:09:09.736186+00:00",
       "http_status": 200,
       "error": null,
       "article_count": 20
@@ -3703,6 +3703,40 @@
   ],
   "projects": [
     {
+      "id": "关于征求《网络安全技术人工智能基础模型安全测试方法》等62项拟立项国家标准项目意见的通知",
+      "title": "关于征求《网络安全技术 人工智能基础模型安全测试方法》等62项拟立项国家标准项目意见的通知",
+      "plan_number": null,
+      "standard_number": null,
+      "standard_level": "国标",
+      "status": "征求意见",
+      "confidence": "candidate",
+      "updated_at": "2026-08-07T09:09:45.597676+00:00",
+      "deadline": null,
+      "source": "市场监管总局标准公告",
+      "source_url": "https://www.samr.gov.cn/bzjss/zqyj/art/2026/art_0f628c87b86a4a818e537992a814c817.html",
+      "description": "关于征求《网络安全技术 人工智能基础模型安全测试方法》等62项拟立项国家标准项目意见的通知",
+      "department": null,
+      "committee": null,
+      "implementation_date": null,
+      "topics": [
+        "人工智能"
+      ],
+      "drafting_units": [],
+      "events": [
+        {
+          "type": "征求意见",
+          "date": "2026-08-07T09:09:45.597676+00:00",
+          "source": "市场监管总局标准公告",
+          "source_url": "https://www.samr.gov.cn/bzjss/zqyj/art/2026/art_0f628c87b86a4a818e537992a814c817.html",
+          "title": "关于征求《网络安全技术 人工智能基础模型安全测试方法》等62项拟立项国家标准项目意见的通知",
+          "deadline": null
+        }
+      ],
+      "participants": [],
+      "attachments": [],
+      "attachment_details": []
+    },
+    {
       "id": "关于批准发布《人工智能工业智能体参考架构》等24项国家标准化指导性技术文件的公告",
       "title": "关于批准发布《人工智能 工业智能体参考架构》等24项国家标准化指导性技术文件的公告",
       "plan_number": null,
@@ -3710,7 +3744,7 @@
       "standard_level": "国标",
       "status": "已发布",
       "confidence": "candidate",
-      "updated_at": "2026-08-07T08:07:58.477332+00:00",
+      "updated_at": "2026-08-07T09:09:45.597676+00:00",
       "deadline": null,
       "source": "市场监管总局标准公告",
       "source_url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_ff8536434b844d9b987695e17887d426.html",
@@ -3725,7 +3759,7 @@
       "events": [
         {
           "type": "已发布",
-          "date": "2026-08-07T08:07:58.477332+00:00",
+          "date": "2026-08-07T09:09:45.597676+00:00",
           "source": "市场监管总局标准公告",
           "source_url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_ff8536434b844d9b987695e17887d426.html",
           "title": "关于批准发布《人工智能 工业智能体参考架构》等24项国家标准化指导性技术文件的公告",

@@ -1,25 +1,25 @@
 {
   "system": "running",
   "refresh": {
-    "status": "succeeded",
-    "run_id": "ea9ca177-5a23-4063-9c04-a5c456345eb6",
-    "started_at": "2026-08-07T08:06:26.347022+00:00",
-    "finished_at": "2026-08-07T08:08:00.487093+00:00",
-    "duration_seconds": 94.14
+    "status": "partial",
+    "run_id": "f8eb74da-0f75-45d3-b200-5292fabe74f6",
+    "started_at": "2026-08-07T09:08:01.042796+00:00",
+    "finished_at": "2026-08-07T09:09:47.630264+00:00",
+    "duration_seconds": 106.587
   },
   "data": {
-    "project_count": 542,
-    "last_success_at": "2026-08-07T08:08:00.487093+00:00",
-    "data_version": "ea9ca177-5a23-4063-9c04-a5c456345eb6"
+    "project_count": 543,
+    "last_success_at": "2026-08-07T09:09:47.630264+00:00",
+    "data_version": "f8eb74da-0f75-45d3-b200-5292fabe74f6"
   },
   "sources": {
-    "success": 7,
-    "failed": 0
+    "success": 5,
+    "failed": 2
   },
   "schedule": {
     "enabled": true,
     "refresh_interval": 3600,
-    "last_run": "2026-08-07T08:08:00.487093+00:00",
-    "next_run": "2026-08-07T09:08:00.487093+00:00"
+    "last_run": "2026-08-07T09:09:47.630264+00:00",
+    "next_run": "2026-08-07T10:09:47.630264+00:00"
   }
 }
