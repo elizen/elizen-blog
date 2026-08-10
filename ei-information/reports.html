@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>动态简报 · 标准雷达</title>
+    <meta name="description" content="按日报、周报、月报阅读标准事件与官方信号。" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="reports-shell">
+      <header class="reports-header">
+        <div>
+          <a class="reports-back" href="./">← 标准雷达</a>
+          <p class="eyebrow accent">STANDARD BRIEFING / 01</p>
+          <h1>动态简报</h1>
+          <p class="reports-intro">把零散的标准事件，整理成一眼能读懂的周期信号。</p>
+        </div>
+        <div class="reports-header-note">只读阅读入口<br /><span>日报 · 周报 · 月报</span></div>
+      </header>
+
+      <main>
+        <section class="briefing-switcher" aria-label="报告周期">
+          <div>
+            <p class="eyebrow">BRIEFING DESK</p>
+            <h2>这一段时间，标准发生了什么。</h2>
+          </div>
+          <div class="period-tabs" role="tablist" aria-label="选择报告周期">
+            <button type="button" data-period="daily" role="tab" aria-selected="true">日报</button>
+            <button type="button" data-period="weekly" role="tab" aria-selected="false">周报</button>
+            <button type="button" data-period="monthly" role="tab" aria-selected="false">月报</button>
+          </div>
+        </section>
+
+        <section class="report-heading">
+          <div>
+            <p id="report-period-label" class="eyebrow accent">日报</p>
+            <h2 id="report-title">正在整理信号…</h2>
+            <p id="report-summary" class="report-summary"></p>
+          </div>
+          <div id="report-anchor" class="report-anchor"></div>
+        </section>
+
+        <section id="report-metrics" class="briefing-metrics" aria-label="报告概览"></section>
+
+        <section class="briefing-layout">
+          <div class="briefing-main-column">
+            <section class="report-section">
+              <div class="report-section-heading"><p class="eyebrow">SIGNALS TO KNOW</p><h3>重点信号</h3></div>
+              <div id="report-highlights" class="highlight-list"></div>
+            </section>
+            <section class="report-section">
+              <div class="report-section-heading"><p class="eyebrow">EVENT TIMELINE</p><h3>事件时间线</h3></div>
+              <div id="report-timeline" class="report-timeline"></div>
+            </section>
+          </div>
+          <aside class="briefing-side-column">
+            <section class="report-section report-side-card">
+              <div class="report-section-heading"><p class="eyebrow">TOPICS</p><h3>领域分布</h3></div>
+              <div id="report-topics" class="distribution-list"></div>
+            </section>
+            <section class="report-section report-side-card">
+              <div class="report-section-heading"><p class="eyebrow">EVENT TYPES</p><h3>状态分布</h3></div>
+              <div id="report-statuses" class="distribution-list"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+
+      <footer><span>原文链接均指向官方来源</span><span>动态简报 · 标准雷达</span></footer>
+    </div>
+    <script src="reports.js"></script>
+  </body>
+</html>

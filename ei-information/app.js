@@ -1,7 +1,5 @@
 const state = {
   data: null,
-  refreshStatus: null,
-  health: null,
   filters: {
     status: "全部",
     level: "全部",
@@ -22,56 +20,6 @@ const FOCUS_PARTICIPANTS = [
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
-
-function formatDate(value) {
-  if (!value) return "—";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("zh-CN", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(date);
-}
-
-function refreshStatusLabel(status) {
-  return ({
-    running: "更新中",
-    succeeded: "运行成功",
-    partial: "部分来源失败",
-    failed: "运行失败",
-  })[status] || "尚未刷新";
-}
-
-function renderHealth() {
-  const summary = $("#health-summary");
-  const toggle = $("#health-toggle");
-  const list = $("#health-sources");
-  const sources = state.health?.sources || [];
-  if (!summary || !toggle || !list) return;
-  if (!sources.length) {
-    summary.textContent = "数据健康：暂无来源记录";
-    toggle.hidden = true;
-    list.hidden = true;
-    list.innerHTML = "";
-    return;
-  }
-
-  const failed = sources.filter((source) => source.status === "failed");
-  const healthy = sources.length - failed.length;
-  summary.textContent = `数据健康：${healthy}/${sources.length} 来源正常${failed.length ? ` · ${failed.length} 个异常` : ""}`;
-  list.innerHTML = sources.map((source) => {
-    const status = source.status === "failed" ? "异常" : "正常";
-    const continuity = source.failed_since ? ` · 自 ${formatDate(source.failed_since)} 异常` : "";
-    const error = source.error ? ` · ${source.error}` : "";
-    return `<div class="health-source ${source.status === "failed" ? "failed" : ""}">
-      <strong>${escapeHtml(source.name)}</strong>
-      <span>${status} · ${source.count ?? 0} 条 · ${formatDate(source.last_check)}${continuity}${escapeHtml(error)}</span>
-    </div>`;
-  }).join("");
-  toggle.hidden = false;
-  toggle.textContent = list.hidden ? "查看来源详情" : "收起来源详情";
-  toggle.onclick = () => {
-    list.hidden = !list.hidden;
-    toggle.textContent = list.hidden ? "查看来源详情" : "收起来源详情";
-  };
-}
 
 function daysUntil(value) {
   if (!value) return null;
@@ -117,18 +65,6 @@ function renderStats() {
   $("#stat-new").textContent = projects.filter((project) => project.events?.length).length;
   $("#stat-due").textContent = due;
   $("#stat-candidates").textContent = candidates;
-  const lastSuccess = state.refreshStatus?.data?.last_success_at || state.data?.checked_at;
-  $("#last-check").textContent = lastSuccess ? formatDate(lastSuccess) : "尚未更新";
-  $("#refresh-status").textContent = refreshStatusLabel(state.refreshStatus?.refresh?.status);
-  const statusSources = state.refreshStatus?.sources;
-  if (statusSources) {
-    $("#source-status").textContent = `来源：${statusSources.success} 成功 / ${statusSources.failed} 失败`;
-  } else {
-    const sources = state.data?.sources || [];
-    const ok = sources.filter((source) => source.http_status && source.http_status < 400).length;
-    $("#source-status").textContent = sources.length ? `来源：${ok} 成功 / ${sources.length - ok} 失败` : "来源：—";
-  }
-  renderHealth();
 }
 
 function projectButton(project) {
@@ -241,35 +177,11 @@ async function loadData() {
   const response = await fetch("api/data");
   if (!response.ok) throw new Error("本地数据读取失败");
   state.data = await response.json();
-  try {
-    await loadStatus();
-  } catch {
-    state.refreshStatus = null;
-  }
-  try {
-    await loadHealth();
-  } catch {
-    state.health = null;
-  }
   parseHash();
   const first = state.filters.unitName ? (state.data.projects || []).find((project) => (project.participants || []).some((item) => item.name === state.filters.unitName)) : visibleProjects()[0];
   state.selectedId = first?.id || null;
   render();
 }
-
-async function loadStatus() {
-  const response = await fetch("api/status");
-  if (!response.ok) throw new Error("系统状态读取失败");
-  state.refreshStatus = await response.json();
-}
-
-async function loadHealth() {
-  const response = await fetch("api/health");
-  if (!response.ok) throw new Error("数据健康读取失败");
-  state.health = await response.json();
-}
-
-function showToast(message) { const toast = $("#toast"); toast.textContent = message; toast.classList.add("show"); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove("show"), 3500); }
 
 function escapeHtml(value) { return String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char])); }
 
