@@ -45305,5 +45305,423 @@
         }
       ]
     }
+  ],
+  "topics": [
+    {
+      "id": "embodied-ai",
+      "name": "人形机器人与具身智能",
+      "description": "追踪从政策、标准到技术、企业和真实场景的产业变化。",
+      "keywords": [
+        "人形机器人",
+        "具身智能",
+        "具身智能机器人"
+      ],
+      "blocks": [
+        "standard",
+        "policy",
+        "capital",
+        "industry",
+        "technology",
+        "interpretation"
+      ],
+      "enabled": true
+    }
+  ],
+  "source_registry": [
+    {
+      "source_id": "miit-science-tech-files",
+      "name": "工业和信息化部科技司文件发布",
+      "homepage": "https://www.miit.gov.cn/jgsj/kjs/wjfb/",
+      "tier": "A",
+      "modules": [
+        "policy",
+        "standard",
+        "technology"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "政策通知、专项行动、揭榜挂帅、标准与技术文件",
+      "evidence_policy": "primary",
+      "notes": "优先作为政策事实源。"
+    },
+    {
+      "source_id": "miit-tc1",
+      "name": "工业和信息化部人工智能标准化技术委员会",
+      "homepage": "https://miittc1.caict.ac.cn/",
+      "tier": "A",
+      "modules": [
+        "standard",
+        "technology"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人工智能标准工作组、标准公示与发布",
+      "evidence_policy": "primary",
+      "notes": "包括数据、模型、平台和赋能应用工作组。"
+    },
+    {
+      "source_id": "miit-tc8",
+      "name": "工业和信息化部人形机器人与具身智能标准化技术委员会",
+      "homepage": "https://www.miit.gov.cn/jgsj/kjs/wjfb/",
+      "tier": "A",
+      "modules": [
+        "standard",
+        "technology",
+        "industry"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "weekly",
+      "coverage": "人形机器人与具身智能基础共性、关键技术、部组件、整机、应用和安全",
+      "evidence_policy": "primary",
+      "notes": "当前以工信部科技司公告和文件为准，待稳定委员会站点确认后再自动抓取。"
+    },
+    {
+      "source_id": "sac-tc591",
+      "name": "全国机器人标准化技术委员会（TC591/SC5）",
+      "homepage": "https://std.samr.gov.cn/",
+      "tier": "A",
+      "modules": [
+        "standard"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "机器人国家标准、标准计划和人形机器人分委会",
+      "evidence_policy": "primary",
+      "notes": "复用现有国家标准业务平台采集。"
+    },
+    {
+      "source_id": "sac-tc28",
+      "name": "全国信息技术标准化技术委员会（TC28）",
+      "homepage": "https://nits.org.cn/",
+      "tier": "A/B",
+      "modules": [
+        "standard",
+        "technology"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人工智能和具身智能工作组动态、标准公开与成果",
+      "evidence_policy": "primary",
+      "notes": "TC28/WG41 具身智能工作组作为重点观察对象。"
+    },
+    {
+      "source_id": "samr-standards",
+      "name": "国家市场监督管理总局标准技术管理司",
+      "homepage": "https://www.samr.gov.cn/bzjss/",
+      "tier": "A",
+      "modules": [
+        "policy",
+        "standard"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "国家标准公告、计划、征求意见和标准解读",
+      "evidence_policy": "primary",
+      "notes": "国家标准平台的公告入口。"
+    },
+    {
+      "source_id": "bj-embodied-policy",
+      "name": "北京市及经开区具身智能政策",
+      "homepage": "https://www.beijing.gov.cn/",
+      "tier": "A",
+      "modules": [
+        "policy",
+        "industry"
+      ],
+      "region": "北京",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "产业计划、实景实训、应用场景和园区政策",
+      "evidence_policy": "primary",
+      "notes": "后续按北京市政府和经信/科技部门栏目拆分采集。"
+    },
+    {
+      "source_id": "sh-embodied-policy",
+      "name": "上海市具身智能产业政策",
+      "homepage": "https://www.shanghai.gov.cn/",
+      "tier": "A",
+      "modules": [
+        "policy",
+        "industry"
+      ],
+      "region": "上海",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "产业发展实施方案、训练场、应用和产业集群",
+      "evidence_policy": "primary",
+      "notes": "后续按市政府和市经信部门栏目拆分采集。"
+    },
+    {
+      "source_id": "sz-embodied-policy",
+      "name": "深圳市具身智能机器人政策",
+      "homepage": "https://stic.sz.gov.cn/",
+      "tier": "A",
+      "modules": [
+        "policy",
+        "industry"
+      ],
+      "region": "深圳",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "技术创新与产业发展行动计划、产业扶持和应用",
+      "evidence_policy": "primary",
+      "notes": "后续按市科技创新局和工信部门栏目拆分采集。"
+    },
+    {
+      "source_id": "cie-expert-interpretation",
+      "name": "中国电子学会专家政策解读",
+      "homepage": "https://www.cie.org.cn/list_42/16252.html",
+      "tier": "B",
+      "modules": [
+        "policy",
+        "industry",
+        "interpretation"
+      ],
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人与具身智能实景实训专项行动政策解读",
+      "evidence_policy": "interpretation",
+      "notes": "作为同一政策信号的权威解读证据，暂以人工挂接。"
+    },
+    {
+      "source_id": "leaderobot",
+      "name": "机器人大讲堂",
+      "homepage": "https://wx.leaderobot.com/",
+      "tier": "B/C",
+      "modules": [
+        "industry",
+        "technology",
+        "interpretation"
+      ],
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "机器人产业新闻、企业动态、会议和行业解读",
+      "evidence_policy": "corroboration",
+      "notes": "用于发现与核对，不单独确认政策或融资事实。"
+    },
+    {
+      "source_id": "embodied-scenario-alliance",
+      "name": "人形机器人场景应用联盟",
+      "homepage": "",
+      "tier": "B",
+      "modules": [
+        "industry",
+        "interpretation"
+      ],
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "场景应用、联盟活动和产业协作",
+      "evidence_policy": "corroboration",
+      "notes": "待确认官方内容入口，暂不把第三方转载当作联盟官方源。"
+    },
+    {
+      "source_id": "embodied-intelligence-lab-wechat",
+      "name": "具身智能研究室",
+      "homepage": "",
+      "tier": "C",
+      "modules": [
+        "technology",
+        "interpretation"
+      ],
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "具身智能技术研究和行业解读",
+      "evidence_policy": "interpretation",
+      "notes": "待确认可归属的公众号入口，只做发现与观点。"
+    },
+    {
+      "source_id": "x-drfeifei",
+      "name": "Fei-Fei Li",
+      "homepage": "https://x.com/drfeifei",
+      "tier": "C",
+      "modules": [
+        "technology",
+        "interpretation"
+      ],
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "空间智能、计算机视觉、机器人和 AI 政策观点",
+      "evidence_policy": "interpretation",
+      "notes": "专家观点，不作产业事实唯一依据。"
+    },
+    {
+      "source_id": "x-thehumanoidhub",
+      "name": "The Humanoid Hub",
+      "homepage": "https://x.com/TheHumanoidHub",
+      "tier": "B/C",
+      "modules": [
+        "industry",
+        "technology",
+        "interpretation"
+      ],
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人技术、企业、产品和产业解读",
+      "evidence_policy": "corroboration",
+      "notes": "优先回链企业官网、论文或发布原文。"
+    },
+    {
+      "source_id": "x-physical-int",
+      "name": "Physical Intelligence",
+      "homepage": "https://x.com/physical_int",
+      "tier": "A/B",
+      "modules": [
+        "industry",
+        "technology"
+      ],
+      "region": "美国",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "物理世界 AI、机器人学习和企业发布",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需回链官网或论文。"
+    },
+    {
+      "source_id": "x-1x-tech",
+      "name": "1X Technologies",
+      "homepage": "https://x.com/1x_tech",
+      "tier": "A/B",
+      "modules": [
+        "industry",
+        "technology"
+      ],
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "家用人形机器人、产品和部署动态",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需标注来源性质。"
+    },
+    {
+      "source_id": "x-figure",
+      "name": "Figure",
+      "homepage": "https://x.com/Figure_robot",
+      "tier": "A/B",
+      "modules": [
+        "industry",
+        "technology"
+      ],
+      "region": "美国",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人产品、模型和企业发布",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需标注来源性质。"
+    }
+  ],
+  "signals": [
+    {
+      "id": "embodied-policy-db461b8e6bac8ab6",
+      "topic_id": "embodied-ai",
+      "module": "policy",
+      "signal_type": "揭榜挂帅",
+      "title": "工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域 创新任务揭榜挂帅工作的通知",
+      "summary": "工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域 创新任务揭榜挂帅工作的通知，进入人形机器人与具身智能主题的政策信号。",
+      "event_date": "2026-07-28",
+      "date_basis": "政策发布",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "source_name": "工信部科技司文件发布",
+          "source_id": "miit-science-tech-files",
+          "source_url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/index.html",
+          "url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_e4203ff219444b9783e721afb80f976d.html",
+          "title": "工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域 创新任务揭榜挂帅工作的通知",
+          "published_at": "2026-07-28",
+          "checked_at": "2026-08-10T07:01:49.949669+00:00",
+          "evidence_role": "primary",
+          "excerpt": "工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域 创新任务揭榜挂帅工作的通知 首页 > 工业和信息化部 > 机关司局 > 科技司 > 文件发布 发文机关： 工业和信息化部办公厅 应急管理部办公厅 中国人民银行办公厅 国家金融监督管理总局办公厅 中国证券监督管理委员会办公厅 中国科学院办公厅  国家文物局办公室 标　　题： 工业和信息化部等七部门办公厅（办公室）关于开展2026年工业和信息化领域创新任务揭榜挂帅工作的通知 发文字号： 工信厅联科函〔2026〕363号 成文日期： 2026-07-24 发布日期： 2026-07-28"
+        }
+      ]
+    },
+    {
+      "id": "embodied-policy-32e629f606796caa",
+      "topic_id": "embodied-ai",
+      "module": "policy",
+      "signal_type": "实景实训专项行动",
+      "title": "​工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知",
+      "summary": "​工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知，进入人形机器人与具身智能主题的政策信号。",
+      "event_date": "2026-06-08",
+      "date_basis": "政策发布",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "source_name": "工信部科技司文件发布",
+          "source_id": "miit-science-tech-files",
+          "source_url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/index.html",
+          "url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_cd666691abf8471fb8553d463aa416e3.html",
+          "title": "​工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知",
+          "published_at": "2026-06-08",
+          "checked_at": "2026-08-10T07:01:49.949669+00:00",
+          "evidence_role": "primary",
+          "excerpt": "​工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知 首页 > 工业和信息化部 > 机关司局 > 科技司 > 文件发布 发文机关： 工业和信息化部办公厅 国务院国资委办公厅 标　　题： ​工业和信息化部办公厅 国务院国资委办公厅关于联合开展2026年度人形机器人与具身智能实景实训专项行动的通知 发文字号： 工信厅联科函〔2026〕256号 成文日期： 2026-06-03 发布日期： 2026-06-08 发布机构： 工业和信息化部 分　　类： 高新技术发展及产业化 ​工业和信息化部办公厅 国务院国"
+        },
+        {
+          "signal_type": "实景实训专项行动",
+          "source_id": "cie-expert-interpretation",
+          "source_name": "中国电子学会专家政策解读",
+          "source_url": "https://www.cie.org.cn/list_42/16252.html",
+          "url": "https://www.cie.org.cn/list_42/16252.html",
+          "title": "专家解读：实景实训 激活创新动能",
+          "published_at": "2026-06-10",
+          "evidence_role": "interpretation",
+          "excerpt": "以真实场景实训为主线，推动产品从样机演示迈向常态化作业、规模化落地。"
+        }
+      ]
+    },
+    {
+      "id": "embodied-policy-ae0140a4166395f1",
+      "topic_id": "embodied-ai",
+      "module": "policy",
+      "signal_type": "揭榜挂帅",
+      "title": "工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知",
+      "summary": "工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知，进入人形机器人与具身智能主题的政策信号。",
+      "event_date": "2023-09-13",
+      "date_basis": "政策发布",
+      "confidence": "confirmed",
+      "evidence": [
+        {
+          "source_name": "工信部科技司文件发布",
+          "source_id": "miit-science-tech-files",
+          "source_url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/index.html",
+          "url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/art/2023/art_b50cc90ffad54600b208275893d968a8.html",
+          "title": "工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知",
+          "published_at": "2023-09-13",
+          "checked_at": "2026-08-10T07:01:49.949669+00:00",
+          "evidence_role": "primary",
+          "excerpt": "工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知 首页 > 工业和信息化部 > 机关司局 > 科技司 > 文件发布 发文机关： 工业和信息化部办公厅 标　　题： 工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知 发文字号： 工信厅科函〔2023〕235号 成文日期： 2023-08-28 发布日期： 2023-09-13 发布机构： 科技司 分　　类： 高技术管理 工业和信息化部办公厅关于组织开展2023年未来产业创新任务揭榜挂帅工作的通知 发布时间：2023-09-13 17:25 来源：科技司 "
+        }
+      ]
+    }
   ]
 }
