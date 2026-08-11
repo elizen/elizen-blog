@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#1F4E78">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Malaysia Checklist">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>马来西亚家庭出行 Checklist</title>
+<style>
+:root{
+  --bg:#f6f7f9;--card:#fff;--text:#172033;--muted:#6b7280;--line:#e5e7eb;
+  --accent:#1f4e78;--ok:#e7f5e4;--must:#fff0eb;--suggest:#fff8d8;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.wrap{max-width:920px;margin:0 auto;padding:calc(12px + env(safe-area-inset-top)) 12px calc(28px + env(safe-area-inset-bottom))}
+.hero{
+  background:linear-gradient(135deg,#1f4e78,#355f86);color:#fff;border-radius:20px;padding:18px;
+  box-shadow:0 8px 24px rgba(31,78,120,.16)
+}
+h1{font-size:23px;line-height:1.25;margin:0 0 7px}
+.sub{font-size:13px;opacity:.9}
+.progress-wrap{margin-top:14px}
+.progress-line{height:10px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden}
+.progress{height:100%;width:0;background:#fff;border-radius:999px;transition:.2s}
+.progress-text{margin-top:7px;font-size:13px}
+.install-note{display:none;background:#edf6ff;border:1px solid #d4e8f8;color:#264a66;border-radius:14px;padding:12px 14px;margin-top:12px;font-size:13px;line-height:1.55}
+.toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+button{
+  border:0;border-radius:13px;padding:12px 10px;font-weight:650;font-size:14px;background:#fff;color:var(--accent);
+  box-shadow:0 1px 2px rgba(0,0,0,.05)
+}
+button:active{transform:scale(.99)}
+.filterbar{display:flex;gap:8px;overflow:auto;padding:2px 0 10px;scrollbar-width:none}
+.filterbar::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:#425466;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600}
+.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:15px 16px;font-weight:750;display:flex;align-items:center;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+.count{font-size:12px;color:var(--muted);font-weight:650}
+.items{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:13px 14px;border-bottom:1px solid var(--line);background:#fff}
+.item:last-child{border-bottom:0}.item.done{background:var(--ok)}
+.check{width:28px;height:28px;appearance:none;-webkit-appearance:none;border:2px solid #aab2bf;border-radius:8px;background:#fff;display:grid;place-content:center}
+.check:checked{background:var(--accent);border-color:var(--accent)}
+.check:checked:after{content:"✓";color:white;font-size:19px;font-weight:800;line-height:1}
+.main{min-width:0}.name{font-size:15px;font-weight:680;line-height:1.35}.desc{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.45}
+.tag{font-size:11px;font-weight:750;padding:5px 8px;border-radius:999px;white-space:nowrap}
+.must{background:var(--must);color:#9a3412}.suggest{background:var(--suggest);color:#806000}.optional{background:#eef2f7;color:#596273}
+.hidden{display:none!important}
+.footer{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+@media (max-width:520px){
+  .item{grid-template-columns:34px 1fr;gap:8px}
+  .tag{grid-column:2;justify-self:start}
+}
+@media print{
+  body{background:#fff}.wrap{max-width:none;padding:0}.hero{background:#fff;color:#000;box-shadow:none;border:1px solid #bbb}
+  .toolbar,.filterbar,.install-note,.footer{display:none!important}
+  details{break-inside:avoid;border-color:#bbb}
+  .item{padding:7px 9px;grid-template-columns:24px 1fr auto}
+  .check{width:18px;height:18px;border-radius:4px}.check:checked:after{font-size:13px}
+  .name{font-size:12px}.desc{font-size:10px}.tag{font-size:9px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <h1>🇲🇾 马来西亚家庭出行 Checklist</h1>
+    <div class="sub">三大一小 · 吉隆坡 + 热浪岛 · 可安装 · 可离线</div>
+    <div class="progress-wrap">
+      <div class="progress-line"><div class="progress" id="progress"></div></div>
+      <div class="progress-text" id="progressText">已完成 0 / 0</div>
+    </div>
+    <div class="install-note" id="installNote">
+      iPhone 安装：请用 Safari 打开本页 → 点“分享” → “添加到主屏幕”。安装后可离线使用。
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <button onclick="toggleInstallNote()">安装到 iPhone</button>
+    <button onclick="window.print()">打印 / 导出 PDF</button>
+    <button onclick="expandAll()">全部展开</button>
+    <button onclick="collapseAll()">全部折叠</button>
+    <button onclick="checkMust()">勾选全部必须项</button>
+    <button onclick="resetAll()">清空全部勾选</button>
+  </div>
+
+  <div class="filterbar">
+    <button class="chip active" data-filter="all">全部</button>
+    <button class="chip" data-filter="open">只看未完成</button>
+    <button class="chip" data-filter="must">只看必须项</button>
+  </div>
+
+  <div id="list"></div>
+  <div class="footer">勾选状态保存在当前设备浏览器中；PWA 离线缓存由浏览器管理。</div>
+</div>
+
+<script>
+const DATA = {
+"证件":[
+["护照","4本；有效期≥6个月","must"],["护照资料页电子版","手机、云端各存一份","must"],["嘟嘟相关证件","护照；出生证明电子版备用","suggest"],
+["MDAC数字入境卡","4人分别填写；抵达日前3天内办理","must"],["MDAC凭证","4人分别截图/保存PDF","must"],["往返机票订单","手机离线保存","must"],
+["酒店订单","吉隆坡+热浪岛；保存地址、电话、订单号","must"],["热浪岛交通订单","航班/接送/码头/船票逐项核对","must"],["旅行保险","三大一小全部覆盖","suggest"]],
+"支付通信":[["Visa / Mastercard","至少2张，最好不同银行","must"],["马币现金","少量现金，码头/小店备用","suggest"],["支付宝/微信","确认境外支付可用","suggest"],
+["eSIM / SIM","至少两台手机有独立网络","must"],["Grab","提前登录并绑定支付方式","must"],["离线地图","吉隆坡、码头、热浪岛","suggest"]],
+"数码":[["手机及充电线","按实际设备","must"],["多口充电器","USB-C多口更方便","must"],["英标 Type G 转换插头","建议2个以上","must"],
+["充电宝","1–2个；随身登机，不托运","must"],["手表充电器","容易遗漏","suggest"],["耳机","飞机使用","suggest"],["iPad","嘟嘟长途交通使用","suggest"],
+["iPad离线内容","电影、动画、书、游戏提前下载","suggest"],["AirTag","行李箱按需放置","optional"]],
+"衣物":[["短袖","每人4–6件，按天数调整","must"],["短裤 / 薄裤","每人3–4条","must"],["内衣裤","按天数+1–2套","must"],["袜子","运动鞋使用","suggest"],
+["薄长裤","商场空调、防蚊","suggest"],["薄外套","飞机和商场空调","must"],["睡衣","每人1套","suggest"],["运动鞋","吉隆坡步行","must"],
+["凉鞋 / 洞洞鞋","热浪岛使用","must"],["折叠伞","1–2把","suggest"]],
+"热浪岛":[["泳衣","每人最好2套轮换","must"],["嘟嘟长袖防晒泳衣","建议2套","must"],["成人防晒衣 / Rash Guard","浮潜使用","must"],
+["SPF50+防晒霜","脸部、身体","must"],["儿童防晒霜","嘟嘟单独准备","must"],["遮阳帽","每人1顶","must"],["墨镜","成人按需","suggest"],
+["手机防水袋","2–3个；出发前试漏水","must"],["干湿分离袋","装湿泳衣","must"],["防水包","船上、浮潜使用","suggest"],
+["成人浮潜面镜","在意卫生/舒适度可自带","optional"],["嘟嘟浮潜面镜","合脸型儿童款","must"],["儿童救生衣","先确认酒店尺码；不确定则自带","must"],
+["涉水鞋","珊瑚/石头区域按需","suggest"],["晕船用品","成人、儿童分别准备","must"]],
+"洗护防蚊":[["牙刷牙膏","全家","must"],["洁面 / 护肤","旅行装","suggest"],["湿巾","2–3包","must"],["纸巾","随身若干","must"],["免洗洗手液","小瓶","suggest"],["驱蚊液","成人+儿童适用款","must"],["止痒用品","蚊虫叮咬后使用","suggest"]],
+"常备药":[["退烧药","成人及儿童剂型分别准备","must"],["体温计","1个","must"],["肠胃药","按家庭日常习惯准备","must"],["口服补液盐","腹泻/高温脱水备用","suggest"],
+["抗过敏药","成人/儿童适用剂型","suggest"],["创可贴","普通+防水","suggest"],["碘伏棉签","小伤口备用","suggest"],["晕车 / 晕船药","儿童注意年龄及剂量","must"],["固定服用药物","足量并多准备1–2天","must"]],
+"嘟嘟":[["儿童耳机","飞机/iPad使用","suggest"],["小背包","自己背水、玩具等","suggest"],["水杯","1个","must"],["小零食","飞机、转车、坐船","must"],
+["书","1–2本即可","suggest"],["小玩具","1–2个","suggest"],["随身备用衣服","完整1套，不托运","must"],["塑料袋 / 呕吐袋","坐船备用","must"]],
+"随身包":[["4本护照","绝不放托运行李","must"],["钱包 / 银行卡","随身","must"],["充电宝","随身登机","must"],["重要药物","随身，不托运","must"],
+["嘟嘟备用衣物","1套","must"],["薄外套","飞机使用","suggest"],["湿巾 / 纸巾","随身","suggest"],["零食","嘟嘟及全家","suggest"]],
+"出发前":[["检查门窗","离家前检查","must"],["水 / 电 / 燃气","按需要关闭","must"],["清理垃圾","全部清掉","suggest"],["冰箱易坏食物","提前清理","suggest"],
+["航班状态","出发当天再次检查","must"],["机场交通","提前预约/叫车","must"],["热浪岛天气及船班","上岛前一天再次确认","must"]]
+};
+
+const storageKey="malaysia-family-checklist-pwa-v1";
+let state=JSON.parse(localStorage.getItem(storageKey)||"{}");
+let filter="all";
+
+const idOf=(cat,name)=>cat+"::"+name;
+const labelText=l=>l==="must"?"必须":l==="suggest"?"建议":"可选";
+
+function render(){
+  const root=document.getElementById("list"); root.innerHTML="";
+  Object.entries(DATA).forEach(([cat,items])=>{
+    const d=document.createElement("details"); d.open=true;
+    const s=document.createElement("summary");
+    s.innerHTML=`<span>${cat}</span><span class="count" data-cat="${cat}"></span>`;
+    const box=document.createElement("div"); box.className="items";
+    items.forEach(([name,desc,level])=>{
+      const id=idOf(cat,name), done=!!state[id];
+      const hidden=(filter==="open"&&done)||(filter==="must"&&level!=="must");
+      const row=document.createElement("label");
+      row.className="item"+(done?" done":"")+(hidden?" hidden":"");
+      row.innerHTML=`<input class="check" type="checkbox" ${done?"checked":""} data-id="${id}">
+        <div class="main"><div class="name">${name}</div><div class="desc">${desc}</div></div>
+        <span class="tag ${level}">${labelText(level)}</span>`;
+      box.appendChild(row);
+    });
+    d.appendChild(s); d.appendChild(box); root.appendChild(d);
+  });
+  bind(); updateProgress();
+}
+function bind(){
+  document.querySelectorAll(".check").forEach(c=>c.addEventListener("change",e=>{
+    state[e.target.dataset.id]=e.target.checked;
+    localStorage.setItem(storageKey,JSON.stringify(state)); render();
+  }));
+}
+function updateProgress(){
+  let total=0,done=0;
+  Object.entries(DATA).forEach(([cat,items])=>{
+    let c=0; items.forEach(([name])=>{total++;if(state[idOf(cat,name)]){done++;c++;}});
+    const el=document.querySelector(`[data-cat="${cat}"]`); if(el)el.textContent=`${c}/${items.length}`;
+  });
+  const pct=total?Math.round(done/total*100):0;
+  document.getElementById("progress").style.width=pct+"%";
+  document.getElementById("progressText").textContent=`已完成 ${done} / ${total}（${pct}%）`;
+}
+function expandAll(){document.querySelectorAll("details").forEach(x=>x.open=true)}
+function collapseAll(){document.querySelectorAll("details").forEach(x=>x.open=false)}
+function resetAll(){if(confirm("确定清空所有勾选吗？")){state={};localStorage.setItem(storageKey,"{}");render()}}
+function checkMust(){
+  Object.entries(DATA).forEach(([cat,items])=>items.forEach(([name,_,level])=>{if(level==="must")state[idOf(cat,name)]=true}));
+  localStorage.setItem(storageKey,JSON.stringify(state));render();
+}
+function toggleInstallNote(){const n=document.getElementById("installNote");n.style.display=n.style.display==="block"?"none":"block"}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");filter=b.dataset.filter;render();
+}));
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js"));
+}
+render();
+</script>
+</body>
+</html>
