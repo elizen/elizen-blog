@@ -3,31 +3,69 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EI Radar · 具身智能产业雷达</title>
-    <meta name="description" content="从政策、标准、企业、技术和场景中追踪具身智能产业信号。" />
+    <title>EI Radar · 今日产业信号</title>
+    <meta name="description" content="从政策、标准、企业、技术、资本和真实场景中，读取人形机器人与具身智能产业信号。" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="radar-page">
-    <div class="radar-shell">
-      <header class="radar-topbar">
-        <a class="radar-brand" href="/"><span class="radar-glyph">EI</span><span><b>EI RADAR</b><small>具身智能产业雷达</small></span></a>
-        <nav class="radar-nav" aria-label="主导航"><a href="/topics">主题</a><a href="/standards">标准</a><a href="/about/sources">来源与方法</a><a href="/updates">更新说明</a></nav>
+  <body class="radar-page aihot-page">
+    <div class="radar-shell aihot-shell">
+      <header class="radar-topbar aihot-topbar">
+        <a class="radar-brand" href="/" aria-label="EI Radar 首页"><span class="radar-glyph">EI</span><span><b>EI RADAR</b><small>具身智能产业情报台</small></span></a>
+        <nav class="radar-nav aihot-nav" aria-label="主导航">
+          <a class="active" href="/">今日重点</a>
+          <a href="/signals">最新信号</a>
+          <a href="/topics">热点主题</a>
+          <a href="/reports">日报简报</a>
+          <a href="/signals">全部信号</a>
+        </nav>
       </header>
+
       <main>
-        <section class="radar-hero">
+        <section class="aihot-hero">
           <div>
-            <p class="eyebrow accent">INDUSTRY SIGNALS / 01</p>
-            <h1>看见产业<br /><em>正在成形的东西。</em></h1>
-            <p class="radar-lead">把政策、标准、企业、技术和真实场景放进同一张时间线上。每条信号都保留它从哪里来，以及它还缺什么证据。</p>
-            <a class="radar-primary-action" href="/topics/embodied-ai">进入主题：人形机器人与具身智能 <span>↗</span></a>
+            <p class="eyebrow accent">EI RADAR · TODAY</p>
+            <h1>今天，产业<br /><em>往哪儿走？</em></h1>
+            <p class="aihot-lead">把政策、标准、企业、资本、技术和场景放在一张证据时间线上。先看变化，再回到原文。</p>
           </div>
-          <div class="radar-hero-note"><span>现在的判断</span><strong>标准不再是终点，<br />而是产业进入下一阶段的接口。</strong><small>Phase 1 · China humanoid & embodied intelligence</small></div>
+          <div class="aihot-anchor"><span>数据锚点</span><strong id="home-anchor">正在读取</strong><small>更新来自已登记公开来源</small></div>
         </section>
-        <section id="radar-overview" class="radar-overview" aria-label="主题概览"></section>
-        <section class="radar-section-head"><div><p class="eyebrow">TOPIC INDEX</p><h2>从一个主题开始</h2></div><a href="/topics">查看全部主题 →</a></section>
-        <section id="topic-cards" class="topic-cards" aria-live="polite"></section>
+
+        <section class="aihot-layout">
+          <div class="aihot-main-column">
+            <section class="hot-topics-panel">
+              <div class="aihot-section-heading"><div><p class="eyebrow">CURRENT HOT TOPICS</p><h2>先看三件事</h2></div><span class="aihot-section-note">按产业影响与新近度排序</span></div>
+              <div id="hot-topics" class="hot-topic-list" aria-live="polite"></div>
+            </section>
+
+            <section class="signal-stream-panel">
+              <div class="aihot-section-heading"><div><p class="eyebrow">LATEST SIGNALS</p><h2>最新信号</h2></div><a class="text-link" href="/signals">查看全部 ↗</a></div>
+              <div id="today-highlights" class="signal-stream" aria-live="polite"></div>
+            </section>
+          </div>
+
+          <aside id="radar-sidebar" class="radar-sidebar" aria-label="当前雷达">
+            <section class="sidebar-card sidebar-topic-card" id="home-topic-card"></section>
+            <section class="sidebar-card">
+              <div class="sidebar-heading"><p class="eyebrow">SIGNAL MIX</p><span>当前主题</span></div>
+              <div id="home-signal-mix" class="mix-list"></div>
+            </section>
+            <section class="sidebar-card">
+              <div class="sidebar-heading"><p class="eyebrow">EVIDENCE</p><span>事实强度</span></div>
+              <div id="home-evidence-mix" class="evidence-mix"></div>
+              <p class="sidebar-note">官方原文直接确认事实；核对来源补充上下文；观点解读不等同于事实。</p>
+            </section>
+            <section class="sidebar-card sidebar-standards-card">
+              <p class="eyebrow">STANDARD RADAR</p>
+              <h3>标准是产业进入下一阶段的接口。</h3>
+              <p>查看项目、征求意见、报批和已发布标准的完整时间线。</p>
+              <a class="text-link" href="/standards">进入标准雷达 ↗</a>
+            </section>
+            <section class="sidebar-source-link"><span>已登记来源</span><strong id="home-source-count">—</strong><a href="/about/sources">查看来源与方法 ↗</a></section>
+          </aside>
+        </section>
       </main>
-      <footer class="radar-footer"><span>EI Radar · 事实与解释分层记录</span><span><a href="/updates">更新说明</a> · <a href="/admin">运维后台</a></span></footer>
+
+      <footer class="radar-footer"><span>EI Radar · 只把有出处的变化放进时间线</span><span><a href="/about/sources">来源与方法</a> · <a href="/updates">更新说明</a></span></footer>
     </div>
     <script src="home.js"></script>
   </body>
