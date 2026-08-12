@@ -1,11 +1,33 @@
-const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;", "'":"&#39;"}[char]));
+const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
 const signalId = decodeURIComponent(location.pathname.split("/").filter(Boolean).pop() || "");
-const evidenceLabels = { primary: "官方原文", corroboration: "核对来源", interpretation: "观点解读" };
-const metadataLabels = { entity: "企业", amount: "金额", round: "轮次", use: "资金用途", financing_date: "融资日期", verification_status: "核验状态" };
+const evidenceLabels = {primary: "官方原文", corroboration: "核对来源", interpretation: "观点解读"};
+const confidenceLabels = {confirmed: "已确认", corroborating: "待交叉核对", candidate: "候选线索"};
+const metadataLabels = {entity: "企业", amount: "金额", round: "轮次", use: "资金用途", financing_date: "融资日期", verification_status: "核验状态"};
+const moduleLabels = {standard: "标准", policy: "政策", capital: "投融资", industry: "产业", technology: "技术", interpretation: "解读"};
 
-fetch(`api/signals/${encodeURIComponent(signalId)}`).then((response) => { if (!response.ok) throw new Error("not found"); return response.json(); }).then(({ signal }) => {
+function nextAction(signal) {
+  if (signal.confidence === "confirmed") return "继续跟踪后续事件和关联标准";
+  if (signal.confidence === "corroborating") return "打开核对来源，回到原文确认";
+  return "把它留在候选池，等待一级证据";
+}
+
+function whoShouldCare(signal) {
+  if (signal.module === "standard") return "标准组织、企业研发与合规团队";
+  if (signal.module === "capital") return "产业投资人、创业团队与供应链企业";
+  if (signal.module === "technology") return "研究者、算法团队与产品工程师";
+  if (signal.module === "policy") return "政府部门、标准组织与产业参与者";
+  return "关注具身智能产业进展的读者";
+}
+
+function renderSidebar(signal) {
+  const evidence = signal.evidence || [];
+  document.querySelector("#signal-sidebar").innerHTML = `<section class="sidebar-card sidebar-topic-card"><p class="eyebrow accent">DECISION BRIEF</p><span class="confidence large ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><h2>${escapeHtml(moduleLabels[signal.module] || signal.signal_type || "行业信号")}</h2><p>${escapeHtml(signal.event_date || "日期待确认")} · ${escapeHtml(signal.date_basis || "日期依据待确认")}</p></section><section class="sidebar-card"><div class="sidebar-heading"><p class="eyebrow">WHY IT MATTERS</p><span>产业意义</span></div><p class="brief-text">${escapeHtml(signal.summary)}</p></section><section class="sidebar-card"><div class="sidebar-heading"><p class="eyebrow">WHO SHOULD CARE</p><span>相关角色</span></div><p class="brief-text">${escapeHtml(whoShouldCare(signal))}</p></section><section class="sidebar-card sidebar-standards-card"><p class="eyebrow">NEXT SIGNAL</p><h3>${escapeHtml(nextAction(signal))}</h3><p>${evidence.length} 条证据已挂接到这条信号。</p></section>`;
+}
+
+fetch(`api/signals/${encodeURIComponent(signalId)}`).then((response) => { if (!response.ok) throw new Error("信号不存在"); return response.json(); }).then(({signal}) => {
   document.title = `${signal.title} · EI Radar`;
   const metadata = Object.entries(signal.metadata || {}).filter(([, value]) => value !== "" && value != null).map(([key, value]) => `<div><span>${escapeHtml(metadataLabels[key] || key)}</span><strong>${escapeHtml(Array.isArray(value) ? value.join("、") : value)}</strong></div>`).join("");
-  const metadataSection = metadata ? `<section class="signal-facts structured-facts"><div class="topic-block-heading"><div><p class="eyebrow">STRUCTURED EVENT</p><h2>结构化字段</h2></div></div>${metadata}</section>` : "";
-  document.querySelector("#signal-detail").innerHTML = `<header class="signal-detail-head"><div><p class="eyebrow accent">${escapeHtml(signal.module)} · ${escapeHtml(signal.signal_type)}</p><h1>${escapeHtml(signal.title)}</h1><p class="signal-summary">${escapeHtml(signal.summary)}</p></div><span class="confidence large ${signal.confidence}">${escapeHtml(signal.confidence)}</span></header><section class="signal-facts"><div><span>事件日期</span><strong>${escapeHtml(signal.event_date || "待核")}</strong></div><div><span>日期依据</span><strong>${escapeHtml(signal.date_basis)}</strong></div><div><span>主题</span><strong>${escapeHtml(signal.topic_id)}</strong></div></section>${metadataSection}<section class="evidence-section"><div class="topic-block-heading"><div><p class="eyebrow">EVIDENCE TIMELINE</p><h2>证据时间线</h2></div><span>${signal.evidence.length} 条</span></div><div class="evidence-list">${signal.evidence.map((item) => `<article class="evidence-item"><div class="evidence-dot"></div><div><div class="evidence-meta"><span>${evidenceLabels[item.evidence_role] || item.evidence_role}</span><time>${escapeHtml(item.published_at || item.checked_at || "")}</time></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.excerpt || "保留原文链接，未生成无依据的延伸判断。")}</p><small>${escapeHtml(item.source_name)}</small><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">打开原文 ↗</a></div></article>`).join("") || '<div class="block-empty">暂无证据</div>'}</div></section>`;
-}).catch(() => { document.querySelector("#signal-detail").innerHTML = '<div class="empty-state error-state">信号不存在或暂时无法读取</div>'; });
+  const evidence = signal.evidence || [];
+  document.querySelector("#signal-detail").innerHTML = `<header class="signal-detail-head"><div><p class="eyebrow accent">${escapeHtml(moduleLabels[signal.module] || signal.module)} · ${escapeHtml(signal.signal_type)}</p><h1>${escapeHtml(signal.title)}</h1><p class="signal-summary">${escapeHtml(signal.summary)}</p></div><span class="confidence large ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span></header><section class="signal-facts"><div><span>事件日期</span><strong>${escapeHtml(signal.event_date || "待核")}</strong></div><div><span>日期依据</span><strong>${escapeHtml(signal.date_basis || "待核")}</strong></div><div><span>证据数量</span><strong>${evidence.length} 条</strong></div></section>${metadata ? `<section class="signal-facts structured-facts"><div class="topic-block-heading"><div><p class="eyebrow">STRUCTURED EVENT</p><h2>结构化字段</h2></div></div>${metadata}</section>` : ""}<section class="signal-evidence-section"><div class="topic-block-heading"><div><p class="eyebrow">EVIDENCE TIMELINE</p><h2>证据时间线</h2></div><span>${evidence.length} 条</span></div><div class="evidence-list">${evidence.map((item) => `<article class="evidence-item"><div class="evidence-dot"></div><div><div class="evidence-meta"><span>${escapeHtml(evidenceLabels[item.evidence_role] || item.evidence_role)}</span><time>${escapeHtml(item.published_at || item.checked_at || "")}</time></div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.excerpt || "保留原文链接，未生成无依据的延伸判断。")}</p><small>${escapeHtml(item.source_name || "公开来源")}</small><a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">打开原文 ↗</a></div></article>`).join("") || '<div class="block-empty">暂无证据</div>'}</div></section>`;
+  renderSidebar(signal);
+}).catch((error) => { document.querySelector("#signal-detail").innerHTML = `<div class="empty-state error-state">${escapeHtml(error.message)}</div>`; });

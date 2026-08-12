@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>最新信号 · EI Radar</title>
+    <meta name="description" content="浏览人形机器人与具身智能产业的政策、标准、融资、企业、技术和解读信号。" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="radar-page aihot-page">
+    <div class="radar-shell aihot-shell">
+      <header class="radar-topbar aihot-topbar">
+        <a class="radar-brand" href="/" aria-label="EI Radar 首页"><span class="radar-glyph">EI</span><span><b>EI RADAR</b><small>具身智能产业情报台</small></span></a>
+        <nav class="radar-nav aihot-nav" aria-label="主导航">
+          <a href="/">今日重点</a><a class="active" href="/signals">最新信号</a><a href="/topics">热点主题</a><a href="/reports">日报简报</a><a href="/signals">全部信号</a>
+        </nav>
+      </header>
+      <main>
+        <section class="subpage-hero aihot-subpage-hero"><p class="eyebrow accent">ALL SIGNALS · EI RADAR</p><h1>所有变化，<br /><em>按证据排列。</em></h1><p>不追求把所有新闻堆在一起，只保留能回到来源、能进入产业判断的公开信号。</p></section>
+        <section class="signals-layout">
+          <div class="signals-main-column">
+            <div class="signals-toolbar"><label class="signal-search"><span>⌕</span><input id="signal-search" type="search" placeholder="搜索公司、标准、政策或关键词" /></label><div class="signal-filter-row" role="group" aria-label="信号类型"><button class="signal-filter active" data-module="全部">全部</button><button class="signal-filter" data-module="policy">政策</button><button class="signal-filter" data-module="standard">标准</button><button class="signal-filter" data-module="capital">投融资</button><button class="signal-filter" data-module="industry">产业</button><button class="signal-filter" data-module="technology">技术</button></div><div class="signal-filter-row" role="group" aria-label="证据强度"><button class="signal-filter active" data-confidence="全部">全部证据</button><button class="signal-filter" data-confidence="confirmed">已确认</button><button class="signal-filter" data-confidence="corroborating">待核对</button><button class="signal-filter" data-confidence="candidate">候选</button></div></div>
+            <div class="signals-result-heading"><div><p class="eyebrow">SIGNAL STREAM</p><h2 id="signal-result-title">最新信号</h2></div><span id="signal-result-count">—</span></div>
+            <div id="signal-feed" class="signal-stream" aria-live="polite"></div>
+          </div>
+          <aside class="radar-sidebar signals-sidebar"><section class="sidebar-card"><div class="sidebar-heading"><p class="eyebrow">HOW TO READ</p><span>证据规则</span></div><div class="read-rule"><span class="confidence confirmed">已确认</span><p>公司、政府、标准平台或其他正式页面直接支持事实。</p></div><div class="read-rule"><span class="confidence corroborating">待核对</span><p>媒体、联盟或投资方转述，先作为产业线索使用。</p></div><div class="read-rule"><span class="confidence candidate">候选</span><p>发现性来源，等待进一步回到原文。</p></div></section><section class="sidebar-card sidebar-standards-card"><p class="eyebrow">KEEP THE SOURCE</p><h3>每条信号都可以回到它的出处。</h3><p>打开详情，查看日期依据、来源角色和证据时间线。</p></section></aside>
+        </section>
+      </main>
+      <footer class="radar-footer"><span>EI Radar · 信号不是结论，证据链才是</span><span><a href="/about/sources">来源与方法</a> · <a href="/updates">更新说明</a></span></footer>
+    </div>
+    <script src="signals.js"></script>
+  </body>
+</html>
