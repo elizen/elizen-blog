@@ -17,6 +17,10 @@ const confidenceLabels = {
 
 const priority = {policy: 0, capital: 1, industry: 2, standard: 3, technology: 4, interpretation: 5};
 
+function signalIntro(signal) {
+  return signal.metadata?.editorial?.intro || signal.summary || "这条信号还没有生成读者说明。";
+}
+
 function dateValue(signal) {
   return signal.event_date || signal.created_at || "";
 }
@@ -38,7 +42,7 @@ function signalCard(signal, featured = false) {
   const label = moduleLabels[signal.module] || signal.signal_type || "行业信号";
   return `<a class="feed-card ${featured ? "feed-card-featured" : ""}" href="/signals/${encodeURIComponent(signal.id)}">
     <div class="feed-card-marker"><span>${escapeHtml(label)}</span><time>${escapeHtml(formatDate(dateValue(signal)))}</time></div>
-    <div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signal.summary)}</p>
+    <div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p>
       <div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "产业信号")}</span><b>打开简报 ↗</b></div>
     </div>
   </a>`;
@@ -46,7 +50,7 @@ function signalCard(signal, featured = false) {
 
 function renderHotTopics(signals) {
   const items = sortedSignals(signals).slice(0, 3);
-  document.querySelector("#hot-topics").innerHTML = items.length ? items.map((signal, index) => `<a class="hot-topic-row" href="/signals/${encodeURIComponent(signal.id)}"><span class="hot-topic-rank">${String(index + 1).padStart(2, "0")}</span><div><span class="hot-topic-label">${escapeHtml(moduleLabels[signal.module] || signal.signal_type || "行业信号")} · ${escapeHtml(formatDate(dateValue(signal)))}</span><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signal.summary)}</p></div><span class="hot-topic-arrow">↗</span></a>`).join("") : '<div class="empty-state">当前暂无热点信号。</div>';
+  document.querySelector("#hot-topics").innerHTML = items.length ? items.map((signal, index) => `<a class="hot-topic-row" href="/signals/${encodeURIComponent(signal.id)}"><span class="hot-topic-rank">${String(index + 1).padStart(2, "0")}</span><div><span class="hot-topic-label">${escapeHtml(moduleLabels[signal.module] || signal.signal_type || "行业信号")} · ${escapeHtml(formatDate(dateValue(signal)))}</span><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p></div><span class="hot-topic-arrow">↗</span></a>`).join("") : '<div class="empty-state">当前暂无热点信号。</div>';
 }
 
 function renderSignalMix(signals) {
