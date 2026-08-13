@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-32acd2faa4a5726a",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "New work with @nvidia: evaluating robot policies entirely inside a world model. The policy acts, the model imagines the consequences, and the imagined evals pre",
+    "summary": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+    "event_date": "2026-06-18",
+    "date_basis": "文章发布",
+    "confidence": "candidate",
+    "created_at": "2026-06-18",
+    "updated_at": "2026-06-18",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+        "why_it_matters": "世界模型是机器人从即时反应走向长时规划的关键中间层，但预测是否可信仍决定它能否落地。",
+        "watch_next": "继续核对预测误差、真实环境验证和是否能支撑长时任务。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "x-physical-int",
+        "source_name": "Physical Intelligence X",
+        "source_url": "https://x.com/physical_int",
+        "url": "https://x.com/physical_int/status/2067678249904493008",
+        "title": "New work with @nvidia: evaluating robot policies entirely inside a world model. The policy acts, the model imagines the consequences, and the imagined evals pre",
+        "published_at": "2026-06-18",
+        "checked_at": "2026-08-13T10:43:33.698818+00:00",
+        "evidence_role": "discovery",
+        "excerpt": "New work with @nvidia: evaluating robot policies entirely inside a world model. The policy acts, the model imagines the consequences, and the imagined evals predict real-world results. 🧵 real vs world-model rollout side by side📷 https://t.co/yR9JmyAE4G"
+      }
+    ]
+  }
+}
