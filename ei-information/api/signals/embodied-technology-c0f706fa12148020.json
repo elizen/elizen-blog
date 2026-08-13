@@ -6,11 +6,11 @@
     "signal_type": "研究发布",
     "title": "DerainSplat: Feed-Forward Clean 3D Gaussian Splatting from Sparse Rainy Views",
     "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
-    "event_date": "2026-08-03",
-    "date_basis": "论文发布",
+    "event_date": "2026-08-13T09:40:08.092237+00:00",
+    "date_basis": "核查时间",
     "confidence": "confirmed",
     "created_at": "2026-08-03",
-    "updated_at": "2026-08-03",
+    "updated_at": "2026-08-13T09:40:08.092237+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
@@ -25,8 +25,8 @@
         "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
         "url": "http://arxiv.org/abs/2608.02191v1",
         "title": "DerainSplat: Feed-Forward Clean 3D Gaussian Splatting from Sparse Rainy Views",
-        "published_at": "2026-08-03",
-        "checked_at": "2026-08-13T08:24:39.536539+00:00",
+        "published_at": null,
+        "checked_at": "2026-08-13T09:40:08.092237+00:00",
         "evidence_role": "primary",
         "excerpt": "Although image deraining has advanced substantially, existing methods mainly focus on 2D image restoration. As spatial intelligence applications such as embodied AI and autonomous driving continue to emerge, reconstructing clean 3D scenes from sparse rainy views in a feed-forward manner becomes increasingly important. Existing feed-forward 3D Gaussian Splatting (3DGS) methods often assume clean inputs and collapse under rainy conditions. To this end, we present \\textbf{\\textit{DerainSplat}}, a feed-forward framework that reconstructs clean 3D scenes from only a few rainy views. To support this task, we build a large-scale multi-view derain dataset through a four-stage synthesis pipeline that sequentially models overcast illumination, depth-dependent haze, rain streaks, and lens raindrops, producing privileged weather factors. We introduce a weather net that predicts the weather factors from rainy context and yields two support maps. Scene support modulates cross-view cost-volume matching, while radiance support drives depth-aligned appearance fusion to fill corrupted pixels. The derived geometry evidence further attenuates Gaussian opacity to reduce spurious structures. A rainy cyc"
       }
