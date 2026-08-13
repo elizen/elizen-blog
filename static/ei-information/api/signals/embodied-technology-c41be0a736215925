@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-c41be0a736215925",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "VLAs with Long and Short-Term Memory",
+    "summary": "这项研究聚焦机器人操作任务，尝试把感知、语言理解和动作控制连接起来，完成更稳定的抓取或操作。",
+    "event_date": "2026-03-03",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-03-03",
+    "updated_at": "2026-03-03",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人操作任务，尝试把感知、语言理解和动作控制连接起来，完成更稳定的抓取或操作。",
+        "why_it_matters": "灵巧操作是具身智能最接近真实生产和服务场景的能力，也是检验模型泛化和控制可靠性的直接环节。",
+        "watch_next": "继续核对物体变化、未见场景和长序列操作中的成功率。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "physical-intelligence-blog",
+        "source_name": "Physical Intelligence 官方博客",
+        "source_url": "https://www.pi.website/blog",
+        "url": "https://www.pi.website/research/memory",
+        "title": "VLAs with Long and Short-Term Memory",
+        "published_at": "2026-03-03",
+        "checked_at": "2026-08-13T05:14:52.928909+00:00",
+        "evidence_role": "primary",
+        "excerpt": "VLAs with Long and Short-Term Memory Physical Intelligence (π) Home Research Join Us VLAs with Long and Short-Term Memory Published March 3, 2026 Email research@physicalintelligence.company Marcel Torne, Karl Pertsch, Homer Walke, Kyle Vedder, Suraj Nair, Brian Ichter, Allen Ren, Haohuan Wang, Jiaming Tang, Kyle Stachowicz, Karan Dhabalia, Michael Equi, Quan Vuong, Jost Tobias Springenberg, Sergey Levine, Chelsea Finn, Danny Driess Paper MEM .pdf Loading… Current robotic foundation models can follow commands like \"wash the frying pan\" , \"fold the laundry\" , or \"make a peanut butter sandwich\" , performing intricate\nand complex motor skills. But we don’t just want robots that perform\nshort individual skills, we want robots that can do a job, like cleaning an\nentire kitchen or cooking a meal. As the individual skills become more robust,\nthe bottleneck is increasingly in how the robot deploys these skills to solve\ncomplex tasks, not the skills themselves. For complex, multi-stage behaviors\nlike cleaning a kitchen or preparing a meal, it’s not enough to just master\nthe individual motor skills. The robot must maintain a coherent narrative\nabout where it is in the task, remember where the"
+      }
+    ]
+  }
+}

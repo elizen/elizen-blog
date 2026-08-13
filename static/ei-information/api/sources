@@ -1,0 +1,837 @@
+{
+  "sources": [
+    {
+      "source_id": "sh-embodied-policy",
+      "name": "上海市具身智能产业政策",
+      "homepage": "https://www.shanghai.gov.cn/",
+      "tier": "A",
+      "region": "上海",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "产业发展实施方案、训练场、应用和产业集群",
+      "evidence_policy": "primary",
+      "notes": "后续按市政府和市经信部门栏目拆分采集。",
+      "modules": [
+        "policy",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "sac-tc591",
+      "name": "全国机器人标准化技术委员会（TC591/SC5）",
+      "homepage": "https://std.samr.gov.cn/",
+      "tier": "A",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "机器人国家标准、标准计划和人形机器人分委会",
+      "evidence_policy": "primary",
+      "notes": "复用现有国家标准业务平台采集。",
+      "modules": [
+        "standard"
+      ]
+    },
+    {
+      "source_id": "bj-embodied-policy",
+      "name": "北京市及经开区具身智能政策",
+      "homepage": "https://www.beijing.gov.cn/",
+      "tier": "A",
+      "region": "北京",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "产业计划、实景实训、应用场景和园区政策",
+      "evidence_policy": "primary",
+      "notes": "后续按北京市政府和经信/科技部门栏目拆分采集。",
+      "modules": [
+        "policy",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "samr-standards",
+      "name": "国家市场监督管理总局标准技术管理司",
+      "homepage": "https://www.samr.gov.cn/bzjss/",
+      "tier": "A",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "国家标准公告、计划、征求意见和标准解读",
+      "evidence_policy": "primary",
+      "notes": "国家标准平台的公告入口。",
+      "modules": [
+        "policy",
+        "standard"
+      ]
+    },
+    {
+      "source_id": "unitree-ipo-prospectus",
+      "name": "宇树科技上交所招股书披露",
+      "homepage": "https://static.sse.com.cn/stock/disclosure/announcement/c/202603/002178_20260320_QY8F.pdf",
+      "tier": "A",
+      "region": "中国",
+      "kind": "pdf",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "IPO申报、公司业务和资本市场披露",
+      "evidence_policy": "primary",
+      "notes": "交易所披露文件，暂手工挂接；不纳入标准项目采集。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "miit-tc1",
+      "name": "工业和信息化部人工智能标准化技术委员会",
+      "homepage": "https://miittc1.caict.ac.cn/",
+      "tier": "A",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人工智能标准工作组、标准公示与发布",
+      "evidence_policy": "primary",
+      "notes": "包括数据、模型、平台和赋能应用工作组。",
+      "modules": [
+        "standard",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "miit-tc8",
+      "name": "工业和信息化部人形机器人与具身智能标准化技术委员会",
+      "homepage": "https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2025/art_91588a03c1694803b04f6e7674ac973a.html",
+      "tier": "A",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人形机器人与具身智能基础共性、关键技术、部组件、整机、应用和安全",
+      "evidence_policy": "primary",
+      "notes": "当前以工信部科技司公告和文件为准，待稳定委员会站点确认后再自动抓取。",
+      "modules": [
+        "standard",
+        "technology",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "miit-science-tech-files",
+      "name": "工业和信息化部科技司文件发布",
+      "homepage": "https://www.miit.gov.cn/jgsj/kjs/wjfb/",
+      "tier": "A",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "政策通知、专项行动、揭榜挂帅、标准与技术文件",
+      "evidence_policy": "primary",
+      "notes": "优先作为政策事实源。",
+      "modules": [
+        "policy",
+        "standard",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "sz-embodied-policy",
+      "name": "深圳市具身智能机器人政策",
+      "homepage": "https://stic.sz.gov.cn/",
+      "tier": "A",
+      "region": "深圳",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "技术创新与产业发展行动计划、产业扶持和应用",
+      "evidence_policy": "primary",
+      "notes": "后续按市科技创新局和工信部门栏目拆分采集。",
+      "modules": [
+        "policy",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "primalverse-lenovo",
+      "name": "联想控股元昊动力融资公告",
+      "homepage": "https://www.legendholdings.com.cn/News/detail.aspx?contentid=2709&nodeid=1124&page=ContentPage",
+      "tier": "A",
+      "region": "中国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "PrimalVerse融资、4D世界模型和应用",
+      "evidence_policy": "primary",
+      "notes": "被投方投资方母集团官网公告，可确认融资事实。",
+      "modules": [
+        "capital",
+        "technology",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "limx-official",
+      "name": "逐际动力官方融资公告",
+      "homepage": "https://www.limxdynamics.com/zh/news/BK000063",
+      "tier": "A",
+      "region": "中国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "逐际动力融资、产品和全球部署",
+      "evidence_policy": "primary",
+      "notes": "公司官方新闻，可确认融资事实；估值仍以公司披露或外部核对为准。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "x-1x-tech",
+      "name": "1X Technologies",
+      "homepage": "https://x.com/1XTechnologies",
+      "tier": "A/B",
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "家用人形机器人、产品和部署动态",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需标注来源性质。",
+      "modules": [
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "x-figure",
+      "name": "Figure",
+      "homepage": "https://x.com/Figure_robot",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人产品、模型和企业发布",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需标注来源性质。",
+      "modules": [
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "figure-news",
+      "name": "Figure 官方新闻",
+      "homepage": "https://www.figure.ai/news",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "enterprise_news",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人形机器人产品、模型、生产、部署和融资披露",
+      "evidence_policy": "primary",
+      "notes": "企业公告；融资与部署主张保留企业自述属性。",
+      "modules": [
+        "industry",
+        "technology",
+        "capital"
+      ]
+    },
+    {
+      "source_id": "holiday-official",
+      "name": "Holiday Robotics官方融资公告",
+      "homepage": "https://holiday-robotics.com/blog/series-a",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "Holiday Robotics融资与工业人形机器人业务",
+      "evidence_policy": "primary",
+      "notes": "公司官方博客公告，可确认融资事实。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "humanoid-official",
+      "name": "Humanoid官方公告",
+      "homepage": "https://thehumanoid.ai/humanoid-raises-152-million-at-1-35-billion-post-money-valuation-becoming-europes-first-pure-play-humanoid-robotics-unicorn/",
+      "tier": "A/B",
+      "region": "英国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "Humanoid融资、估值、AI平台与商业部署披露",
+      "evidence_policy": "primary",
+      "notes": "公司官方公告，可确认公司自述的融资事实；不替代监管文件。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "x-physical-int",
+      "name": "Physical Intelligence",
+      "homepage": "https://x.com/physical_int",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "物理世界 AI、机器人学习和企业发布",
+      "evidence_policy": "corroboration",
+      "notes": "企业自述需回链官网或论文。",
+      "modules": [
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "physical-intelligence-blog",
+      "name": "Physical Intelligence 官方博客",
+      "homepage": "https://www.pi.website/blog",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "enterprise_news",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "机器人基础模型、VLA、数据和真实部署研究",
+      "evidence_policy": "primary",
+      "notes": "企业研究/博客原文；不等同于同行评审论文。",
+      "modules": [
+        "technology",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "walden-official",
+      "name": "Walden Robotics官方公告",
+      "homepage": "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth",
+      "tier": "A/B",
+      "region": "美国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "Walden Robotics融资、投资方与工业部署披露",
+      "evidence_policy": "primary",
+      "notes": "公司官方公告，可确认公司自述的融资事实；估值与投资方仍标注为公司口径。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "arxiv-embodied-ai",
+      "name": "arXiv 具身智能论文",
+      "homepage": "https://export.arxiv.org/",
+      "tier": "A/B",
+      "region": "全球",
+      "kind": "api",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "具身智能、机器人学习和视觉语言动作模型论文",
+      "evidence_policy": "primary",
+      "notes": "论文原文是研究证据；未区分同行评审状态，不直接等同于产业落地。",
+      "modules": [
+        "technology",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "sac-tc28",
+      "name": "全国信息技术标准化技术委员会（TC28）",
+      "homepage": "https://nits.org.cn/",
+      "tier": "A/B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "weekly",
+      "coverage": "人工智能和具身智能工作组动态、标准公开与成果",
+      "evidence_policy": "primary",
+      "notes": "TC28/WG41 具身智能工作组作为重点观察对象。",
+      "modules": [
+        "standard",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "unitree-news",
+      "name": "宇树科技新闻",
+      "homepage": "https://www.unitree.com/cn/news/",
+      "tier": "A/B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "企业产品发布、技术进展、融资与产业部署",
+      "evidence_policy": "primary",
+      "notes": "企业自述可作为公司事实的一手证据；融资与市场判断需再找外部核对源。",
+      "modules": [
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "xingdong-hony",
+      "name": "弘毅投资星动纪元融资报道",
+      "homepage": "https://ebs.publicnow.com/view/0B4297EE147CBC4962EA5130F0AEFEF5105AC1E1",
+      "tier": "A/B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "星动纪元融资、产品与物流场景进展核对",
+      "evidence_policy": "primary",
+      "notes": "投资方公告镜像，可确认投资方口径的融资事实；不替代监管文件。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "discover-puhua",
+      "name": "普华资本求之科技融资公告",
+      "homepage": "https://www.puhuacapital.com/mobile/index.php/news/info/315",
+      "tier": "A/B",
+      "region": "中国",
+      "kind": "enterprise_news",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "求之科技融资事件核对",
+      "evidence_policy": "primary",
+      "notes": "投资方官网项目公告，可确认公司与融资事实；不替代监管文件。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "agibot-news",
+      "name": "智元创新官方新闻",
+      "homepage": "https://www.agibot.com.cn/News/Company",
+      "tier": "A/B",
+      "region": "中国",
+      "kind": "enterprise_news",
+      "collection": "auto",
+      "cadence": "daily",
+      "coverage": "具身机器人产品、技术、量产和部署动态",
+      "evidence_policy": "primary",
+      "notes": "企业自述作为一手事实源；融资金额仍需投资方或监管披露核验。",
+      "modules": [
+        "industry",
+        "technology",
+        "capital"
+      ]
+    },
+    {
+      "source_id": "xynova-21jingji",
+      "name": "21世纪经济报道曦诺未来融资报道",
+      "homepage": "https://m.21jingji.com/article/20260721/herald/8d14e1bdd5d04876ed1b810a04f0a551.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "曦诺未来A+轮融资与灵巧手业务核对",
+      "evidence_policy": "corroboration",
+      "notes": "媒体核对源，一级披露待补。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "lingjing-thecapital",
+      "name": "The Capital灵境智源融资报道",
+      "homepage": "https://www.thecapital.com.cn/newsDetail/124010",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "灵境智源天使轮及天使+轮融资核对",
+      "evidence_policy": "corroboration",
+      "notes": "公开报道核对源，一级披露待补。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "zhongsong-eastmoney",
+      "name": "东方财富中科新松融资报道",
+      "homepage": "https://finance.eastmoney.com/a/202607083798642921.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "中科新松融资事件核对",
+      "evidence_policy": "corroboration",
+      "notes": "报道引用公司口径，仍保留二级证据属性。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "lexiang-eastmoney",
+      "name": "东方财富乐享科技融资报道",
+      "homepage": "https://finance.eastmoney.com/a/202607023791716625.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "乐享科技融资与家庭具身智能产品发布核对",
+      "evidence_policy": "corroboration",
+      "notes": "媒体核对源，不替代公司或投资方正式披露。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "morphi-eastmoney",
+      "name": "东方财富墨奇智能融资报道",
+      "homepage": "https://finance.eastmoney.com/a/202607073795902913.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "墨奇智能融资事件核对",
+      "evidence_policy": "corroboration",
+      "notes": "报道引用投资机构口径，仍保留二级证据属性。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "shouxing-eastmoney",
+      "name": "东方财富首形科技融资报道",
+      "homepage": "https://finance.eastmoney.com/a/202607213815251258.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "首形科技A2轮融资与仿生机器人业务核对",
+      "evidence_policy": "corroboration",
+      "notes": "媒体核对源，不替代公司或投资方正式披露。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "cie-expert-interpretation",
+      "name": "中国电子学会专家政策解读",
+      "homepage": "https://www.cie.org.cn/list_42/16252.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人与具身智能实景实训专项行动政策解读",
+      "evidence_policy": "interpretation",
+      "notes": "作为同一政策信号的权威解读证据，暂以人工挂接。",
+      "modules": [
+        "policy",
+        "industry",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "embodied-scenario-alliance",
+      "name": "人形机器人场景应用联盟",
+      "homepage": "https://mp.weixin.qq.com/s/Yc9ICjiN7dlcDQyz__WUPg",
+      "tier": "B",
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "场景应用、联盟活动和产业协作",
+      "evidence_policy": "corroboration",
+      "notes": "已确认一篇公众号盘点文章作为样本入口；文章统计属于不完全统计，先做二级证据，必须回链企业/投资方/交易所披露。",
+      "modules": [
+        "industry",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "discover-pedaily",
+      "name": "投资界求之科技融资报道",
+      "homepage": "https://news.pedaily.cn/202607/565737.shtml",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "求之科技融资事件核对",
+      "evidence_policy": "corroboration",
+      "notes": "媒体核对源，不替代公司或投资方正式披露。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "tashan-xinhua",
+      "name": "新华社他山科技融资报道",
+      "homepage": "https://www.news.cn/tech/20260710/849daf41608941d28ebdb2e403127fbb/c.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "他山科技B轮融资与触觉技术进展核对",
+      "evidence_policy": "corroboration",
+      "notes": "权威媒体核对源，不替代公司或投资方正式披露。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "xinhua-policy-report",
+      "name": "新华社政策报道",
+      "homepage": "https://www.news.cn/",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "重大政策发布与产业任务报道",
+      "evidence_policy": "corroboration",
+      "notes": "用于核对政策传播范围与公开目标，不替代政府原文。",
+      "modules": [
+        "policy",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "qianjue-xinhua-finance",
+      "name": "新华财经千觉机器人融资报道",
+      "homepage": "https://wap.eastmoney.com/a/202607143805686338.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "千觉机器人融资与视触觉技术进展核对",
+      "evidence_policy": "corroboration",
+      "notes": "新华财经转载入口，一级披露待补。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "limx-caixin",
+      "name": "财新逐际动力融资报道",
+      "homepage": "https://companies.caixin.com/m/2026-07-14/102464082.html",
+      "tier": "B",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "逐际动力Pre-IPO融资与估值核对",
+      "evidence_policy": "corroboration",
+      "notes": "媒体核对源，不替代公司或投资方正式披露。",
+      "modules": [
+        "capital",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "x-google-deepmind",
+      "name": "Google DeepMind",
+      "homepage": "https://x.com/GoogleDeepMind",
+      "tier": "B/C",
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "机器人、世界模型、智能体和 AI 研究发布",
+      "evidence_policy": "interpretation",
+      "notes": "官方社交账号；重要内容回链 DeepMind 研究或产品原文。",
+      "modules": [
+        "technology",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "holiday-linkedin",
+      "name": "Holiday Robotics官方LinkedIn",
+      "homepage": "https://www.linkedin.com/company/holiday-robotics",
+      "tier": "B/C",
+      "region": "美国",
+      "kind": "social",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "Holiday Robotics融资与FRIDAY产品进展核对",
+      "evidence_policy": "corroboration",
+      "notes": "公司社交账号口径，待正式新闻稿或投资方披露。",
+      "modules": [
+        "capital",
+        "industry",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "x-thehumanoidhub",
+      "name": "The Humanoid Hub",
+      "homepage": "https://x.com/TheHumanoidHub",
+      "tier": "B/C",
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "人形机器人技术、企业、产品和产业解读",
+      "evidence_policy": "corroboration",
+      "notes": "优先回链企业官网、论文或发布原文。",
+      "modules": [
+        "industry",
+        "technology",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "primalverse-eastmoney",
+      "name": "东方财富元昊动力融资报道",
+      "homepage": "https://caifuhao.eastmoney.com/news/20260724103551324940220",
+      "tier": "B/C",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "元昊动力/PrimalVerse种子轮融资与4D世界模型核对",
+      "evidence_policy": "corroboration",
+      "notes": "公开报道核对源，一级披露待补。",
+      "modules": [
+        "capital",
+        "technology"
+      ]
+    },
+    {
+      "source_id": "leaderobot",
+      "name": "机器人大讲堂",
+      "homepage": "https://wx.leaderobot.com/",
+      "tier": "B/C",
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "机器人产业新闻、企业动态、会议和行业解读",
+      "evidence_policy": "corroboration",
+      "notes": "用于发现与核对，不单独确认政策或融资事实。",
+      "modules": [
+        "industry",
+        "technology",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "thepaper-policy-interpretation",
+      "name": "澎湃新闻政策解读",
+      "homepage": "https://www.thepaper.cn/",
+      "tier": "B/C",
+      "region": "中国",
+      "kind": "html",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "政策背景、落地场景与产业解读",
+      "evidence_policy": "interpretation",
+      "notes": "用于提取政策的执行路径与产业含义，需回链官方原文。",
+      "modules": [
+        "policy",
+        "industry",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "x-drfeifei",
+      "name": "Fei-Fei Li",
+      "homepage": "https://x.com/drfeifei",
+      "tier": "C",
+      "region": "全球",
+      "kind": "x",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "空间智能、计算机视觉、机器人和 AI 政策观点",
+      "evidence_policy": "interpretation",
+      "notes": "专家观点，不作产业事实唯一依据。",
+      "modules": [
+        "technology",
+        "interpretation"
+      ]
+    },
+    {
+      "source_id": "x-robot-intelli-lab",
+      "name": "Robot Intelligence Lab",
+      "homepage": "https://x.com/RobotIntelliLab",
+      "tier": "C",
+      "region": "英国",
+      "kind": "x",
+      "collection": "candidate",
+      "cadence": "manual",
+      "coverage": "机器人智能研究机构动态",
+      "evidence_policy": "interpretation",
+      "notes": "候选研究账号，启用前继续核验与具身智能主题的持续相关性。",
+      "modules": [
+        "technology",
+        "research"
+      ]
+    },
+    {
+      "source_id": "x-yuchen-xiao5",
+      "name": "Yuchen Xiao · Unitree Embodied AI",
+      "homepage": "https://x.com/YuchenXiao5",
+      "tier": "C",
+      "region": "中国",
+      "kind": "x",
+      "collection": "candidate",
+      "cadence": "manual",
+      "coverage": "宇树具身智能研发人员的技术与产品观察",
+      "evidence_policy": "interpretation",
+      "notes": "候选观察账号，启用前继续核验稳定性和原始链接比例。",
+      "modules": [
+        "technology",
+        "industry"
+      ]
+    },
+    {
+      "source_id": "embodied-intelligence-lab-wechat",
+      "name": "具身智能研究室",
+      "homepage": "",
+      "tier": "C",
+      "region": "中国",
+      "kind": "manual",
+      "collection": "manual",
+      "cadence": "manual",
+      "coverage": "具身智能技术研究和行业解读",
+      "evidence_policy": "interpretation",
+      "notes": "待确认可归属的公众号入口，只做发现与观点。",
+      "modules": [
+        "technology",
+        "interpretation"
+      ]
+    }
+  ]
+}

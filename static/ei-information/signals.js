@@ -2,6 +2,8 @@ const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => 
 
 const labels = {standard: "标准", policy: "政策", capital: "投融资", industry: "产业", technology: "技术", interpretation: "解读"};
 const confidenceLabels = {confirmed: "已确认", corroborating: "待交叉核对", candidate: "候选线索"};
+const staticSite = Boolean(document.querySelector('meta[name="ei-radar-static"]'));
+const signalHref = (id) => staticSite ? `signal.html?id=${encodeURIComponent(id)}` : `/signals/${encodeURIComponent(id)}`;
 const state = {data: null, query: "", module: "全部", confidence: "全部"};
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -18,7 +20,7 @@ function visibleSignals() {
 }
 
 function card(signal) {
-  return `<a class="feed-card" href="/signals/${encodeURIComponent(signal.id)}"><div class="feed-card-marker"><span>${escapeHtml(labels[signal.module] || signal.signal_type || "行业信号")}</span><time>${escapeHtml(formatDate(dateValue(signal)))}</time></div><div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p><div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "行业信号")}</span><b>查看证据 ↗</b></div></div></a>`;
+  return `<a class="feed-card" href="${signalHref(signal.id)}"><div class="feed-card-marker"><span>${escapeHtml(labels[signal.module] || signal.signal_type || "行业信号")}</span><time>${escapeHtml(formatDate(dateValue(signal)))}</time></div><div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p><div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "行业信号")}</span><b>查看证据 ↗</b></div></div></a>`;
 }
 
 function render() {

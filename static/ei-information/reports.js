@@ -10,6 +10,7 @@ const PERIODS = {
 const MODULE_LABELS = {standard: "标准", policy: "政策", capital: "投融资", industry: "产业", technology: "技术", interpretation: "解读"};
 const MODULE_PRIORITY = {policy: 0, standard: 1, capital: 2, industry: 3, technology: 4, interpretation: 5};
 const REPORT_COPY = {judgment: "本期判断", why: "为什么值得看", next: "接下来观察"};
+const staticSite = Boolean(document.querySelector('meta[name="ei-radar-static"]'));
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"}[char]));
@@ -78,7 +79,7 @@ function signalSource(signal) {
 }
 
 function signalLink(signal) {
-  return `/signals/${encodeURIComponent(signal.id)}`;
+  return staticSite ? `signal.html?id=${encodeURIComponent(signal.id)}` : `/signals/${encodeURIComponent(signal.id)}`;
 }
 
 function signalDate(signal) {

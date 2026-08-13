@@ -1,0 +1,52 @@
+{
+  "signal": {
+    "id": "embodied-capital-manual-29807223f321ff9f",
+    "topic_id": "embodied-ai",
+    "module": "capital",
+    "signal_type": "融资事件",
+    "title": "Walden Robotics 获得3亿美元融资",
+    "summary": "据联盟融资盘点，Walden Robotics 于2026年7月16日获得3亿美元融资；金额与投资方待回链核验。",
+    "event_date": "2026-07-16",
+    "date_basis": "文章披露融资日期",
+    "confidence": "confirmed",
+    "created_at": "2026-07-16",
+    "updated_at": "2026-07-16",
+    "metadata": {
+      "entity": "Walden Robotics",
+      "amount": "3亿美元",
+      "round": "未披露",
+      "financing_date": "2026-07-16",
+      "use": "未在本文披露",
+      "verification_status": "一级证据已确认（日期差异待核）",
+      "editorial": {
+        "intro": "Walden Robotics 获得3亿美元融资披露了一笔具身智能相关融资。据联盟融资盘点，Walden Robotics 于2026年7月16日获得3亿美元融资；金额与投资方待回链核验",
+        "why_it_matters": "这笔融资的意义不只在金额，还在资金是否流向产品研发、量产或真实场景；金额、轮次和用途仍应以一级披露为准。",
+        "watch_next": "继续核对公司或投资方公告，并观察融资后的产品、订单和交付进展。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "walden-official",
+        "source_name": "Walden Robotics官方公告",
+        "source_url": "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth",
+        "url": "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth",
+        "title": "Walden Robotics Launches with $300 Million",
+        "published_at": "2026-07-15",
+        "checked_at": null,
+        "evidence_role": "primary",
+        "excerpt": "公司公告确认Walden从隐身状态启动并获得3亿美元融资；官方发布日期为7月15日，联盟条目记为7月16日，日期存在一天差异。"
+      },
+      {
+        "source_id": "embodied-scenario-alliance",
+        "source_name": "人形机器人场景应用联盟",
+        "source_url": "https://mp.weixin.qq.com/s/Yc9ICjiN7dlcDQyz__WUPg",
+        "url": "https://mp.weixin.qq.com/s/Yc9ICjiN7dlcDQyz__WUPg",
+        "title": "Walden Robotics 获得3亿美元融资",
+        "published_at": "2026-08-05",
+        "checked_at": null,
+        "evidence_role": "corroboration",
+        "excerpt": "文章称本轮由丰田汽车和 Deviation Capital 共同领投，NVIDIA、波音等参与。"
+      }
+    ]
+  }
+}
