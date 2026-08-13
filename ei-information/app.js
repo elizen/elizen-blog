@@ -174,7 +174,7 @@ function parseHash() {
 }
 
 async function loadData() {
-  const response = await fetch("api/data.json");
+  const response = await fetch(staticSite ? "api/standards.json" : "api/data.json");
   if (!response.ok) throw new Error("本地数据读取失败");
   state.data = await response.json();
   parseHash();

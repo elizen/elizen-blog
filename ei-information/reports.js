@@ -52,7 +52,7 @@ function anchorDate() {
   if (checked) return checked.slice(0, 10);
   const dates = [
     ...(state.data?.signals || []).map((signal) => signal.event_date?.slice(0, 10)),
-    ...(state.data?.projects || []).flatMap((project) => (project.events || []).map((event) => event.date?.slice(0, 10))),
+    ...(state.data?.projects || state.data?.standard_projects || []).flatMap((project) => (project.events || []).map((event) => event.date?.slice(0, 10))),
   ].filter(Boolean).sort();
   return dates.at(-1) || new Date().toISOString().slice(0, 10);
 }
@@ -76,7 +76,7 @@ function collectRadarSignals(window) {
 }
 
 function collectStandardEvents(window) {
-  return (state.data?.projects || []).flatMap((project) => (project.events || [])
+  return (state.data?.projects || state.data?.standard_projects || []).flatMap((project) => (project.events || [])
     .filter((event) => inWindow(event.date, window))
     .map((event) => ({project, event})))
     .sort((left, right) => (right.event.date || "").localeCompare(left.event.date || ""));
@@ -259,7 +259,7 @@ function render() {
 }
 
 async function loadData() {
-  const response = await fetch(staticSite ? "api/data.json" : "api/data.json");
+  const response = await fetch(staticSite ? "api/radar.json" : "api/radar.json");
   if (!response.ok) throw new Error("产业数据读取失败");
   state.data = await response.json();
   render();
