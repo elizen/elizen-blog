@@ -4,6 +4,14 @@ const evidenceLabels = {primary: "官方原文", corroboration: "核对来源", 
 const confidenceLabels = {confirmed: "已确认", corroborating: "待交叉核对", candidate: "候选线索"};
 const metadataLabels = {entity: "企业", amount: "金额", round: "轮次", use: "资金用途", financing_date: "融资日期", verification_status: "核验状态"};
 const moduleLabels = {standard: "标准", policy: "政策", capital: "投融资", industry: "产业", technology: "技术", interpretation: "解读"};
+const readerLabels = {
+  standard: ["STANDARD NOTE", "标准说明"],
+  policy: ["POLICY NOTE", "政策要点"],
+  capital: ["CAPITAL NOTE", "融资说明"],
+  industry: ["INDUSTRY NOTE", "产业说明"],
+  technology: ["TECHNOLOGY NOTE", "技术说明"],
+  interpretation: ["INTERPRETATION", "解读摘要"],
+};
 
 function nextAction(signal) {
   const editorial = signal.metadata?.editorial || {};
@@ -38,10 +46,11 @@ function readingSections(signal) {
   const insight = editorial(signal);
   const evidence = primaryEvidence(signal);
   const isPaper = signal.module === "technology" && (signal.signal_type === "研究发布" || evidence.source_name === "arXiv具身智能论文");
+  const [readingEyebrow, readingTitle] = isPaper ? ["PAPER INTRODUCTION", "论文介绍"] : (readerLabels[signal.module] || ["SIGNAL NOTE", "信号说明"]);
   const sourceExcerpt = evidence.excerpt || "原文未提供可抽取摘要，请打开原文核对研究内容。";
   const intro = insight.intro || signal.summary || "这条信号还没有生成读者说明。";
   const whyItMatters = insight.why_it_matters || signal.summary || "这条信号需要结合原文和其他来源继续判断。";
-  return `<section class="signal-reading" aria-label="信号解读"><div class="signal-reading-heading"><p class="eyebrow">READER TAKEAWAY</p><h2>先把这条信号读懂。</h2></div><article class="reading-lead"><p class="eyebrow accent">一句话判断</p><p>${escapeHtml(intro)}</p></article><div class="reading-grid"><article class="reading-card paper-introduction"><div class="sidebar-heading"><p class="eyebrow">${isPaper ? "PAPER INTRODUCTION" : "SIGNAL NOTE"}</p><span>${isPaper ? "论文介绍" : "信号说明"}</span></div><p>${escapeHtml(sourceExcerpt)}</p><small>${escapeHtml(evidence.source_name || "公开来源")} · ${isPaper ? "原始摘要摘录" : "来源摘录"}</small></article><article class="reading-card why-it-matters"><div class="sidebar-heading"><p class="eyebrow">WHY IT MATTERS</p><span>为什么值得看</span></div><p>${escapeHtml(whyItMatters)}</p></article></div></section>`;
+  return `<section class="signal-reading" aria-label="信号解读"><div class="signal-reading-heading"><p class="eyebrow">READER TAKEAWAY</p><h2>先把这条信号读懂。</h2></div><article class="reading-lead"><p class="eyebrow accent">一句话判断</p><p>${escapeHtml(intro)}</p></article><div class="reading-grid"><article class="reading-card paper-introduction"><div class="sidebar-heading"><p class="eyebrow">${readingEyebrow}</p><span>${readingTitle}</span></div><p>${escapeHtml(sourceExcerpt)}</p><small>${escapeHtml(evidence.source_name || "公开来源")} · ${isPaper ? "原始摘要摘录" : "来源摘录"}</small></article><article class="reading-card why-it-matters"><div class="sidebar-heading"><p class="eyebrow">WHY IT MATTERS</p><span>为什么值得看</span></div><p>${escapeHtml(whyItMatters)}</p></article></div></section>`;
 }
 
 function renderSidebar(signal) {
