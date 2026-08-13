@@ -34,4 +34,4 @@ $("#signal-search").addEventListener("input", (event) => { state.query = event.t
 $$(`[data-module]`).forEach((button) => button.addEventListener("click", () => { state.module = button.dataset.module; $$(`[data-module]`).forEach((item) => item.classList.toggle("active", item === button)); render(); }));
 $$(`[data-confidence]`).forEach((button) => button.addEventListener("click", () => { state.confidence = button.dataset.confidence; $$(`[data-confidence]`).forEach((item) => item.classList.toggle("active", item === button)); render(); }));
 
-fetch("api/data").then((response) => { if (!response.ok) throw new Error("信号数据暂时无法读取"); return response.json(); }).then((data) => { state.data = data; render(); }).catch((error) => { $("#signal-feed").innerHTML = `<div class="empty-state error-state">${escapeHtml(error.message)}</div>`; });
+fetch("api/data.json").then((response) => { if (!response.ok) throw new Error("信号数据暂时无法读取"); return response.json(); }).then((data) => { state.data = data; render(); }).catch((error) => { $("#signal-feed").innerHTML = `<div class="empty-state error-state">${escapeHtml(error.message)}</div>`; });

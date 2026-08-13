@@ -242,7 +242,7 @@ function selectPeriod(period) {
 }
 
 async function loadData() {
-  const response = await fetch("api/data");
+  const response = await fetch("api/data.json");
   if (!response.ok) throw new Error("产业数据读取失败");
   state.data = await response.json();
   render();

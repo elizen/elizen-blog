@@ -89,6 +89,6 @@ function render(data) {
   renderEvidenceMix(signals);
 }
 
-fetch("api/radar").then((response) => { if (!response.ok) throw new Error("主题数据暂时无法读取"); return response.json(); }).then(render).catch((error) => {
+fetch("api/radar.json").then((response) => { if (!response.ok) throw new Error("主题数据暂时无法读取"); return response.json(); }).then(render).catch((error) => {
   document.querySelector("#today-highlights").innerHTML = `<div class="empty-state error-state">${escapeHtml(error.message)}</div>`;
 });
