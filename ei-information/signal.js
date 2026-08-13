@@ -52,8 +52,10 @@ function readingSections(signal) {
   const [readingEyebrow, readingTitle] = isPaper ? ["PAPER INTRODUCTION", "论文介绍"] : (readerLabels[signal.module] || ["SIGNAL NOTE", "信号说明"]);
   const sourceExcerpt = evidence.excerpt || "原文未提供可抽取摘要，请打开原文核对研究内容。";
   const intro = insight.intro || signal.summary || "这条信号还没有生成读者说明。";
-  const whyItMatters = insight.why_it_matters || signal.summary || "这条信号需要结合原文和其他来源继续判断。";
-  return `<section class="signal-reading" aria-label="信号解读"><div class="signal-reading-heading"><p class="eyebrow">READER TAKEAWAY</p><h2>先把这条信号读懂。</h2></div><article class="reading-lead"><p class="eyebrow accent">一句话判断</p><p>${escapeHtml(intro)}</p></article><div class="reading-grid"><article class="reading-card paper-introduction"><div class="sidebar-heading"><p class="eyebrow">${readingEyebrow}</p><span>${readingTitle}</span></div><p>${escapeHtml(sourceExcerpt)}</p><small>${escapeHtml(evidence.source_name || "公开来源")} · ${isPaper ? "原始摘要摘录" : "来源摘录"}</small></article><article class="reading-card why-it-matters"><div class="sidebar-heading"><p class="eyebrow">WHY IT MATTERS</p><span>为什么值得看</span></div><p>${escapeHtml(whyItMatters)}</p></article></div></section>`;
+  const sourceLink = evidence.url
+    ? `<a class="text-link ${isPaper ? "paper-source-link" : ""}" href="${escapeHtml(evidence.url)}" target="_blank" rel="noreferrer">${isPaper ? "打开论文原文 ↗" : "打开原文 ↗"}</a>`
+    : "";
+  return `<section class="signal-reading" aria-label="信号解读"><div class="signal-reading-heading"><p class="eyebrow">READER TAKEAWAY</p><h2>先把这条信号读懂。</h2></div><article class="reading-lead"><p class="eyebrow accent">一句话判断</p><p>${escapeHtml(intro)}</p></article><div class="reading-grid"><article class="reading-card paper-introduction"><div class="sidebar-heading"><p class="eyebrow">${readingEyebrow}</p><span>${readingTitle}</span></div><p>${escapeHtml(sourceExcerpt)}</p><small>${escapeHtml(evidence.source_name || "公开来源")} · ${isPaper ? "原始摘要摘录" : "来源摘录"}</small>${sourceLink}</article></div></section>`;
 }
 
 function renderSidebar(signal) {
