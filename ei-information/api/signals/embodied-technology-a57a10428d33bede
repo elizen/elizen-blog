@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-a57a10428d33bede",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Self-Evolving Learning for Embodied AI with Criticality Model",
+    "summary": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+    "event_date": "2026-08-12T00:19:24.729306+00:00",
+    "date_basis": "核查时间",
+    "confidence": "confirmed",
+    "created_at": "2026-07-30",
+    "updated_at": "2026-08-12T00:19:24.729306+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+        "why_it_matters": "VLA 的记忆、推理和实时执行能力，直接决定具身智能能否从演示动作走向长时任务和真实部署。",
+        "watch_next": "继续核对实验是否覆盖真实机器人、长时任务和跨场景泛化。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2607.28251v1",
+        "title": "Self-Evolving Learning for Embodied AI with Criticality Model",
+        "published_at": null,
+        "checked_at": "2026-08-13T03:10:13.286194+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Despite rapid advances in policy pretraining, embodied AI systems routinely plateau during task-specific finetuning. The root cause lies in how finetuning data are collected: the default pipeline gathers data randomly, treating every sample as informative. Datasets become dominated by nominal scenarios, while rare failure cases--the most valuable for improvement--are missed. We propose a self-evolving method that breaks this plateau. Our core insight is that a state-wise criticality model, learned from the policy's own execution outcomes to predict the probability of future failure, can guide importance sampling toward failure-prone scenarios. After replacing redundant nominal scenarios with diverse failure-prone ones, importance weights are used to resample the data during training. This effectively preserves an unbiased learning objective while fundamentally increasing the information density of the training pool. Across quadrupedal locomotion, multi-task manipulation, vision-language-action benchmarks, and a real-robot task, our method reduces failure rates by 51--67% relative to trained baselines and by 8-25% relative to state-of-the-art vision-language-action models."
+      }
+    ]
+  }
+}

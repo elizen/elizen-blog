@@ -1,5 +1,8 @@
 const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
-const signalId = decodeURIComponent(location.pathname.split("/").filter(Boolean).pop() || "");
+const staticSite = Boolean(document.querySelector('meta[name="ei-radar-static"]'));
+const pathSignalId = location.pathname.split("/").filter(Boolean).pop() || "";
+const querySignalId = new URLSearchParams(location.search).get("id") || "";
+const signalId = decodeURIComponent(staticSite ? querySignalId : pathSignalId);
 const evidenceLabels = {primary: "官方原文", corroboration: "核对来源", interpretation: "观点解读"};
 const confidenceLabels = {confirmed: "已确认", corroborating: "待交叉核对", candidate: "候选线索"};
 const metadataLabels = {entity: "企业", amount: "金额", round: "轮次", use: "资金用途", financing_date: "融资日期", verification_status: "核验状态"};
