@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2607.29596v1",
         "title": "FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling",
         "published_at": null,
-        "checked_at": "2026-08-13T03:10:13.286194+00:00",
+        "checked_at": "2026-08-13T09:40:08.092237+00:00",
         "evidence_role": "primary",
         "excerpt": "Vision-language-action models (VLAs), which leverage the cognition of multimodal information to infer physical-world actions, provide a generalized solution for embodied AI applications. Conventional VLAs usually concentrate on current digital cognition. While some efforts are made to enhance VLAs' reasoning capabilities by capturing temporal information, encoding the long-context history causes an efficiency-decreasing issue. To reconcile the conflict between capturing temporal information and maintaining inference efficiency in VLAs, this paper introduces FibVLA, an efficient framework featuring temporal perception of long-context history. Specifically, we leverage logarithmic hindsight sampling to both proprioceptive states and visual frames to capture long-term temporal dependencies with minimal redundancy. For the action expert, we introduce the flow matching to produce action distributions, and the Fibonacci recurrent inference strategy to generate long-range planning steps based on real-time closed-loop feedback. Experiments demonstrate that FibVLA significantly improves action smoothness and success rates without retraining large-scale visual encoders. Efficiency analysis d"
       }

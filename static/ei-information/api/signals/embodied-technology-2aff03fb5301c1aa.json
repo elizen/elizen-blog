@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-2aff03fb5301c1aa",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Beyond VLAs: How World Action Models Reshape Robot Manipulation",
+    "summary": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+    "event_date": "2026-08-13T09:38:35.272698+00:00",
+    "date_basis": "核查时间",
+    "confidence": "confirmed",
+    "created_at": "2026-08-13T09:40:20.406079+00:00",
+    "updated_at": "2026-08-13T09:38:35.272698+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+        "why_it_matters": "VLA 的记忆、推理和实时执行能力，直接决定具身智能能否从演示动作走向长时任务和真实部署。",
+        "watch_next": "继续核对实验是否覆盖真实机器人、长时任务和跨场景泛化。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/beyond-vlas-how-world-action-models-reshape-robot-manipulation/",
+        "title": "Beyond VLAs: How World Action Models Reshape Robot Manipulation",
+        "published_at": null,
+        "checked_at": "2026-08-13T09:38:35.272698+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Beyond VLAs: How World Action Models Reshape Robot Manipulation | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics English 中文 Beyond VLAs: How World Action Models Reshape Robot Manipulation Aug 04, 2026 By Saeed Babamohamadi Like Discuss (0) L T F R E AI-Generated Summary Like Dislike World Action Models (WAMs), built on video world models instead of vision-language models (VLMs), provide robot policies with stronger physical generalization, enabling zero-shot transfer to new tasks, robots, and environments by leveraging learned dynamics rather than only semantic mappings. The open NVIDIA Cosmos 3 model, based on a Mixture-of-Transformers architecture and trained on a vast multimodal dataset including hundreds of millions of images, videos, and action samples, serves as a robust foundation for post-training WAM-based robot policies. Cosmos 3 enables practical deployment at multiple tiersfrom high-throughput workstation serving to real-time on-device inference with NVIDIA Jetson hardwarewhile providing measurable improvements in policy performance and requiring significantly less task-specific data for "
+      }
+    ]
+  }
+}
