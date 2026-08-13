@@ -8,6 +8,7 @@ const state = {
     unitName: "",
   },
   selectedId: null,
+  selectedProject: null,
 };
 
 const FOCUS_PARTICIPANTS = [
@@ -62,7 +63,7 @@ function renderStats() {
   const due = projects.filter((project) => { const d = daysUntil(project.deadline); return d !== null && d >= 0 && d <= 7; }).length;
   const candidates = all.filter((project) => project.confidence === "candidate").length;
   $("#stat-projects").textContent = projects.length;
-  $("#stat-new").textContent = projects.filter((project) => project.events?.length).length;
+  $("#stat-new").textContent = projects.filter((project) => project.event_count || project.events?.length).length;
   $("#stat-due").textContent = due;
   $("#stat-candidates").textContent = candidates;
 }
@@ -80,9 +81,7 @@ function projectButton(project) {
 
 function bindProjectButtons() {
   $$(`[data-project-id]`).forEach((button) => button.addEventListener("click", () => {
-    state.selectedId = button.dataset.projectId;
-    renderList();
-    renderDetail();
+    void selectProject(button.dataset.projectId);
   }));
 }
 
@@ -146,7 +145,10 @@ function renderParticipants(project) {
 
 function renderDetail() {
   const panel = $("#detail-panel");
-  const project = (state.data?.projects || []).find((item) => item.id === state.selectedId);
+  const project = state.selectedProject?.id === state.selectedId
+    ? state.selectedProject
+    : (!staticSite ? (state.data?.projects || []).find((item) => item.id === state.selectedId) : null);
+  if (state.selectedId && !project) { panel.innerHTML = '<div class="detail-empty"><div>正在加载项目详情……</div></div>'; return; }
   if (!project) { panel.innerHTML = '<div class="detail-empty"><div><b>◎</b>选择一个标准项目<br />查看它的完整时间线</div></div>'; return; }
   const events = [...(project.events || [])].sort((a, b) => new Date(a.date) - new Date(b.date));
   const committee = project.committee || "待从附件表格提取";
@@ -168,6 +170,31 @@ function renderDetail() {
 
 function render() { renderStats(); renderList(); renderDetail(); }
 
+async function selectProject(id) {
+  state.selectedId = id || null;
+  state.selectedProject = null;
+  renderList();
+  renderDetail();
+  if (!state.selectedId) return;
+  if (!staticSite) {
+    state.selectedProject = (state.data?.projects || []).find((item) => item.id === state.selectedId) || null;
+    renderDetail();
+    return;
+  }
+  try {
+    const summary = (state.data?.projects || []).find((item) => item.id === state.selectedId);
+    const detailKey = summary?.detail_key || encodeURIComponent(state.selectedId);
+    const response = await fetch(`api/projects/${detailKey}.json`);
+    if (!response.ok) throw new Error("项目详情读取失败");
+    const payload = await response.json();
+    if (state.selectedId !== id) return;
+    state.selectedProject = payload.project || null;
+    renderDetail();
+  } catch (error) {
+    if (state.selectedId === id) $("#detail-panel").innerHTML = `<div class="detail-empty error-state"><div>${escapeHtml(error.message)}</div></div>`;
+  }
+}
+
 function parseHash() {
   const match = location.hash.match(/^#unit=(.+)$/);
   state.filters.unitName = match ? decodeURIComponent(match[1]) : "";
@@ -179,8 +206,9 @@ async function loadData() {
   state.data = await response.json();
   parseHash();
   const first = state.filters.unitName ? (state.data.projects || []).find((project) => (project.participants || []).some((item) => item.name === state.filters.unitName)) : visibleProjects()[0];
-  state.selectedId = first?.id || null;
+  state.selectedId = null;
   render();
+  await selectProject(first?.id || null);
 }
 
 function escapeHtml(value) { return String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char])); }
@@ -189,5 +217,5 @@ $("#search-input").addEventListener("input", (event) => { state.filters.query = 
 $$(`[data-level]`).forEach((button) => button.addEventListener("click", () => { state.filters.level = button.dataset.level; $$(`[data-level]`).forEach((item) => item.classList.toggle("active", item === button)); renderList(); }));
 $$(`[data-status]`).forEach((button) => button.addEventListener("click", () => { state.filters.status = button.dataset.status; $$(`[data-status]`).forEach((item) => item.classList.toggle("active", item === button)); renderList(); }));
 $$(`[data-topic]`).forEach((button) => button.addEventListener("click", () => { state.filters.topic = button.dataset.topic; $$(`[data-topic]`).forEach((item) => item.classList.toggle("active", item === button)); renderList(); }));
-window.addEventListener("hashchange", () => { parseHash(); state.selectedId = state.filters.unitName ? (state.data?.projects || []).find((project) => (project.participants || []).some((item) => item.name === state.filters.unitName))?.id : null; render(); });
+window.addEventListener("hashchange", () => { parseHash(); const first = state.filters.unitName ? (state.data?.projects || []).find((project) => (project.participants || []).some((item) => item.name === state.filters.unitName)) : null; void selectProject(first?.id || null); });
 loadData().catch((error) => { $("#project-list").innerHTML = `<div class="empty-state error-state">${escapeHtml(error.message)}</div>`; });
