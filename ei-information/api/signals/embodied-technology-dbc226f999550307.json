@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.01127v2",
         "title": "MiniWorld: Democratizing the Training of Video World Models from Scratch",
         "published_at": "2026-08-02",
-        "checked_at": "2026-08-14T11:12:53.344452+00:00",
+        "checked_at": "2026-08-14T12:16:44.012199+00:00",
         "evidence_role": "primary",
         "excerpt": "Video world models predict future observations conditioned on historical observations and control signals, enabling long-horizon generation through autoregressive state transitions. Unlike conventional video generation models that primarily capture visual appearance and motion, video world models learn the underlying dynamics governing environment evolution under agent actions, providing a foundation for embodied AI and interactive simulation. Recent progress has largely relied on adapting pretrained video generation models through post-training or distillation. Although effective, these approaches often require complex training pipelines, substantial computational resources, and suffer from the mismatch between bidirectional pretraining and causal streaming inference. Recent studies have shown that training autoregressive video world models from scratch is feasible and scalable. However, the community still lacks a lightweight, transparent, and fully reproducible baseline trainable end-to-end with modest computational resources. We present MiniWorld, a reproducible framework for training streaming video world models from scratch. MiniWorld employs a block-causal Video Diffusion Tr"
       }
