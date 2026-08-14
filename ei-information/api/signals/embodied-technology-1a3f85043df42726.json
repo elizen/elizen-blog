@@ -6,11 +6,11 @@
     "signal_type": "研究发布",
     "title": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models",
     "summary": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
-    "event_date": "2026-08-14T13:20:50.048462+00:00",
+    "event_date": "2026-08-14T14:24:15.872316+00:00",
     "date_basis": "核查时间",
     "confidence": "confirmed",
     "created_at": "2026-08-13T09:40:20.406079+00:00",
-    "updated_at": "2026-08-14T13:20:50.048462+00:00",
+    "updated_at": "2026-08-14T14:24:15.872316+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/pretrained-to-imagine-fine-tuned-to-act-the-rise-of-world-action-models/",
         "title": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models",
         "published_at": null,
-        "checked_at": "2026-08-14T13:18:59.230357+00:00",
+        "checked_at": "2026-08-14T14:22:35.330116+00:00",
         "evidence_role": "primary",
         "excerpt": "Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics Pretrained to Imagine, Fine-Tuned to Act: The Rise of World-Action Models Jun 15, 2026 By Moritz Reuss Like Discuss (0) L T F R E Quick glossary for readers new to VLA/WAM terminology VLA Vision-Language-Action model: a robot policy that starts from a pretrained VLM backbone and adapts it to generate actions from visual observations and language instructions. Large-scale VLM pretraining is a core part of the recipe. See Pi-0 and GR00T N1 . WAM World-Action Model: a policy that starts from a pretrained world-model or video backbone and adapts it to represent or predict how the scene changes over time and emit corresponding actions. We use WAM as the term throughout this post. VLM Vision-Language Model: a model pretrained on image-text or video-text data to produce language outputs grounded in visual inputs, usually before being adapted for robot control. Video backbone A pretrained video model reused as the central representation or generator inside a robot policy. World model A m"
       }
