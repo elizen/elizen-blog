@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.02191v1",
         "title": "DerainSplat: Feed-Forward Clean 3D Gaussian Splatting from Sparse Rainy Views",
         "published_at": "2026-08-03",
-        "checked_at": "2026-08-14T20:45:07.363834+00:00",
+        "checked_at": "2026-08-14T22:51:47.140981+00:00",
         "evidence_role": "primary",
         "excerpt": "Although image deraining has advanced substantially, existing methods mainly focus on 2D image restoration. As spatial intelligence applications such as embodied AI and autonomous driving continue to emerge, reconstructing clean 3D scenes from sparse rainy views in a feed-forward manner becomes increasingly important. Existing feed-forward 3D Gaussian Splatting (3DGS) methods often assume clean inputs and collapse under rainy conditions. To this end, we present \\textbf{\\textit{DerainSplat}}, a feed-forward framework that reconstructs clean 3D scenes from only a few rainy views. To support this task, we build a large-scale multi-view derain dataset through a four-stage synthesis pipeline that sequentially models overcast illumination, depth-dependent haze, rain streaks, and lens raindrops, producing privileged weather factors. We introduce a weather net that predicts the weather factors from rainy context and yields two support maps. Scene support modulates cross-view cost-volume matching, while radiance support drives depth-aligned appearance fusion to fill corrupted pixels. The derived geometry evidence further attenuates Gaussian opacity to reduce spurious structures. A rainy cyc"
       }
