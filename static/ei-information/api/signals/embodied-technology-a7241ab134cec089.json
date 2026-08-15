@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.08053v1",
         "title": "PhysX-CoT: Structured Physical Reasoning from a Single Image to Simulation-Ready 3D Assets",
         "published_at": "2026-08-08",
-        "checked_at": "2026-08-15T18:59:51.606326+00:00",
+        "checked_at": "2026-08-15T20:03:06.040761+00:00",
         "evidence_role": "primary",
         "excerpt": "Simulation-ready 3D assets are central to robotics and embodied AI. Generating them from a single image is usually framed as a vision-language model that emits a serialized asset for a decoder to turn into geometry and physical fields, leaving the image-to-3D reasoning implicit. We argue the limiting factor is this output-centric view: part placement and local shape are entangled in one global-coordinate token stream, and the intermediate physical states are never exposed for supervision, conditioning, or verification. PhysX-CoT instead casts single-image asset generation as an explicit structured physical reasoning process, an ordered and machine-parseable trajectory of part-level states covering decomposition, 2D and 3D grounding, relations, coarse geometry, and surface cues that we separately supervise, use to condition geometry, and treat as reward targets. Geometry is factorized so that 3D boxes carry placement and local codes carry shape, and CoT-aligned GRPO optimizes parse validity, grounding, geometry, placement, and physical consistency. Under a unified protocol that retrains all learned baselines on the same backbone, data, and frozen decoder, PhysX-CoT outperforms the c"
       }

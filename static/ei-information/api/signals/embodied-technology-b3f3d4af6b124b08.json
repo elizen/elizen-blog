@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.06833v2",
         "title": "Unordered Landmark Visual Navigation",
         "published_at": "2026-08-07",
-        "checked_at": "2026-08-15T18:59:51.606326+00:00",
+        "checked_at": "2026-08-15T20:03:06.040761+00:00",
         "evidence_role": "primary",
         "excerpt": "Image-goal navigation is a fundamental capability for embodied AI, yet its practical deployment is strained by strong prior assumptions. Existing methods predominantly rely on temporally ordered video streams or auxiliary sensors (e.g., depth, LiDAR) to maintain spatial consistency. These sequential and multimodal dependencies severely restrict scalability, especially when deploying robots using crowd-sourced or pre-recorded unordered image collections. When temporal priors are removed, current methods struggle with severe perceptual aliasing, noisy associations, and catastrophic mapping failures. To address this underexplored challenge, we propose Unordered Landmark Visual Navigation (ULVN), a unified RGB-only framework free from temporal and odometric priors. ULVN systematically mitigates error accumulation by integrating mapping, localization, and planning. Specifically, it constructs a robust 2D topological map directly from unstructured images via calibrated geometric verification and maximum spanning forest refinement. For closed-loop execution, ULVN abandons sequential heuristics, utilizing a graph-based belief propagation filter with entropy-adaptive fusion for global local"
       }
