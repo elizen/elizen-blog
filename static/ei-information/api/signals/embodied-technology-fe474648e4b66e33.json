@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.18840v1",
         "title": "Beyond Placement and Articulation: Usage-Driven Code Scenes for Embodied Interaction",
         "published_at": "2026-08-19",
-        "checked_at": "2026-08-24T20:50:25.769752+00:00",
+        "checked_at": "2026-08-24T21:53:54.437602+00:00",
         "evidence_role": "primary",
         "excerpt": "Indoor scene synthesis provides essential environments for embodied AI, robotic manipulation, and simulation-based policy learning. Recent code-based scene generation methods produce editable and extensible environments, yet they remain focused on visual construction and object-level articulation, leaving the functional usage of scenes largely unmodeled. To address this problem, we present RoomWright, an agentic usage-driven framework for generating 3D scenes represented entirely as code for embodied interaction. RoomWright performs usage-driven object reasoning, which treats each anchor as a task centre and admits task-required objects and their affordances. A code agent further enables multi-part interaction by compiling each interaction into a trigger, condition, effect rule that updates structured object states, capturing causal dependencies across objects. Moreover, since manipuland orientation is ambiguous and hard to recover from pixels, RoomWright alleviates this via annotation-informed usage-guided orientation. Extensive experiments demonstrate the effectiveness of our method. The resulting scenes are executable, editable, and simulation-ready, providing interactive enviro"
       }
