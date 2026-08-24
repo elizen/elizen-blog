@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.10864v1",
         "title": "Multi-View Relational Distillation for Spatial Reasoning with Vision-Language Models",
         "published_at": "2026-08-11",
-        "checked_at": "2026-08-16T15:27:11.063790+00:00",
+        "checked_at": "2026-08-24T02:44:24.841221+00:00",
         "evidence_role": "primary",
         "excerpt": "Vision-language models (VLMs) have achieved strong image and video understanding, yet their visual-spatial representations remain geometrically fragile, leading to failures in spatial reasoning needed for embodied AI, robotics, and autonomous driving. Prior approaches to geometry grounding either fine-tune VLMs on spatial question answering, which can perpetuate spurious visual representations, or fuse features from large geometry-grounded vision models, which substantially increases model size at inference. Knowledge distillation from geometry-grounded vision models offers an alternative, but directly matching multi-view teacher features can disrupt the pretrained alignment between visual and textual representations, degrading object- and language-semantic capabilities. We propose multi-view relational distillation (MVRD), which distills patch-wise cosine similarities across views instead of the teacher features themselves. These relations encode geometric correspondences adequate for spatial understanding, while leaving the student representation underdetermined, allowing it to remain close to its pretrained vision- language space. Across representative VLMs, MVRD improves visual"
       }

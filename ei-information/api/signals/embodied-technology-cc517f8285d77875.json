@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.08491v1",
         "title": "TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models",
         "published_at": "2026-08-09",
-        "checked_at": "2026-08-16T15:27:11.063790+00:00",
+        "checked_at": "2026-08-24T02:44:24.841221+00:00",
         "evidence_role": "primary",
         "excerpt": "Reward models are a bottleneck for reinforcement learning in embodied AI. Long-horizon robotic manipulation requires scalable vision feedback beyond handcrafted rewards or task-specific annotations. Existing open-source VLM reward judges like RoboReward adopt simple 1--5 trajectory progress scoring, lacking pairwise preferences for RLHF, DPO and Bradley-Terry frameworks, while failing to optimize video scene understanding. Augmenting RoboReward with pairwise comparison and video-QA supervision causes inconsistency between pairwise preferences and pointwise scores, introducing training noise and hurting downstream performance---an issue aggregation methods such as TrustJudge cannot resolve. To address this, we propose TrustRoboReward, a multi-paradigm reward modeling framework equipped with Preference-Ordered Isotonic Score Editing (POISE). We construct a unified four-paradigm dataset with trajectory progress scoring (Score-A), video-QA answer quality scoring (Score-B), and their pairwise counterparts (Pair-A, Pair-B). Pairwise labels align better with human judgment than pointwise scores, inspiring us to calibrate pointwise scores to avoid score-pair reversals against pairwise pref"
       }
