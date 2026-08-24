@@ -6,11 +6,11 @@
     "signal_type": "研究发布",
     "title": "Develop Lightweight USD Runtimes Faster with AI Agents",
     "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
-    "event_date": "2026-08-24T19:47:32.819287+00:00",
+    "event_date": "2026-08-24T20:50:40.117433+00:00",
     "date_basis": "核查时间",
     "confidence": "confirmed",
     "created_at": "2026-08-13T09:40:20.406079+00:00",
-    "updated_at": "2026-08-24T19:47:32.819287+00:00",
+    "updated_at": "2026-08-24T20:50:40.117433+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/develop-lightweight-usd-runtimes-faster-with-ai-agents/",
         "title": "Develop Lightweight USD Runtimes Faster with AI Agents",
         "published_at": null,
-        "checked_at": "2026-08-24T19:45:58.502393+00:00",
+        "checked_at": "2026-08-24T20:48:50.165213+00:00",
         "evidence_role": "primary",
         "excerpt": "Develop Lightweight USD Runtimes Faster with AI Agents | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Simulation / Modeling / Design English 中文 Develop Lightweight USD Runtimes Faster with AI Agents Jul 15, 2026 By Dillon Bailey and Pomi Lee Like Discuss (0) L T F R E AI-Generated Summary Like Dislike nanousd-labs, part of NVIDIA Omniverse Labs, enables developers to generate lightweight, spec-compliant USD runtimes directly from the USD Core Specification using AI agents, bypassing the need to adapt large legacy codebases and allowing for tailored memory, performance, and ABI constraints. The methodology treats the USD Core Specification, authored by the Alliance for OpenUSD, as a formal contract that agents parse and implement, with compliance validated against specification-derived test suites; engineers focus on architectural choices while agents automate spec-to-code tasks such as parsing, scene composition, and value resolution. nanousd provides a stable C ABI data layer runtimedistinct from renderingallowing seamless integration with existing OpenUSD stacks, and supporting dynamic backend swapping wh"
       }
