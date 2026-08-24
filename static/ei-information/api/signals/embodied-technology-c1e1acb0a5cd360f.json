@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.15636v1",
         "title": "Algorithm-Architecture Co-Design for Efficient VLA Inference via Speculative Inference and Verification",
         "published_at": "2026-08-16",
-        "checked_at": "2026-08-24T11:16:24.265765+00:00",
+        "checked_at": "2026-08-24T12:20:32.356525+00:00",
         "evidence_role": "primary",
         "excerpt": "Vision-Language-Action (VLA) models have demonstrated remarkable capabilities in the field of embodied AI, but their high computational cost and limited predicted action length hinder real-time deployment. Although Dadu-Corki, a dedicated accelerator for efficient embodied AI, has been introduced, it does not exploit the inherent interaction patterns between the robot and its environment, which results in a relatively short predicted action length. We observe that robotic environments naturally alternate between active states-where precise actions are crucial-and inactive states-where actions have limited impact on task success. This insight enables a new scheduling opportunity: long-action-length speculative prediction in inactive states, paired with selective verification in active states. We propose SpecVLA, an algorithm-system co-design framework that adaptively balances action length, inference latency, and task reliability. On the algorithm side, SpecVLA introduces a state-aware VLA inference execution paradigm and a hardware-friendly construction of a smaller verification model (sVLA) using differential residuals and block-wise mixed-precision quantization. On the system sid"
       }
