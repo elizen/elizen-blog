@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/how-to-post-train-autonomous-vehicle-models-in-closed-loop-with-nvidia-alpamayo/",
         "title": "How to Post-Train Autonomous Vehicle Models in Closed-Loop with NVIDIA Alpamayo",
         "published_at": "2026-05-31",
-        "checked_at": "2026-08-24T03:46:25.835689+00:00",
+        "checked_at": "2026-08-24T04:50:06.465657+00:00",
         "evidence_role": "primary",
         "excerpt": "How to Post-Train Autonomous Vehicle Models in Closed-Loop with NVIDIA Alpamayo | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics English 中文 How to Post-Train Autonomous Vehicle Models in Closed-Loop with NVIDIA Alpamayo May 31, 2026 By Boris Ivanovic and Marco Pavone Like Discuss (0) L T F R E Developing autonomous vehicle (AV) policies requires bridging an important gap between training and deployment. Vision-language-action (VLA) models that can reason over more complex driving scenes and produce richer intermediate reasoning are predominantly trained in open-loop, where model outputs are directly compared to ground-truth behaviors without considering their effect on the environment. In deployment, however, a driving policy runs in closed-loop, where every braking, steering, and navigation decision affects the environment, and small errors can compound over time. A systematic means to address this challenge is provided by NVIDIA Alpamayo , an open portfolio of AI models, simulation frameworks, and physical AI datasets for AV development. Alpamayo includes the AlpaSim AV simulation platform and the "
       }
