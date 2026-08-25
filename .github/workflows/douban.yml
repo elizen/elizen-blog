@@ -5,6 +5,7 @@ on:
     # 原为 "0 0,0,12,23 * * *"：0 点重复且整点运行，易与 ei-radar 的 :15 推送撞车。
     # 改为去重后错峰到 :40，每日两次足够；手动触发仍可用 star(watch: started)。
     - cron: "40 0,12 * * *"
+  workflow_dispatch:
   watch:
     types: [started]
 
