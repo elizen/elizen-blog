@@ -319,6 +319,33 @@
       <blockquote class="quote reveal"><p>${esc(x.text)}</p><cite>—— ${esc(x.source)}</cite></blockquote>`).join("");
   }
 
+  /* ---------- 影像：封面假体，点击就地开播（官方播放器外链） ---------- */
+  const films = $("#films .film-grid");
+  if (films && D.videos) {
+    const thumb = v => v.platform === "youtube"
+      ? `https://i.ytimg.com/vi/${v.vid}/hqdefault.jpg`
+      : v.pic;
+    films.innerHTML = D.videos.map((v, i) => `
+      <figure class="film reveal">
+        <div class="film-cover" data-film="${i}" title="点击就地播放">
+          <img src="${thumb(v)}" alt="" loading="lazy">
+          <span class="film-play">▶</span>
+          <span class="film-dur">${esc(v.dur)}</span>
+          <span class="film-src">${v.platform === "youtube" ? "YouTube" : "B站"}</span>
+        </div>
+        <figcaption><b>${esc(v.title)}</b><span>${esc(v.tag)} · ${esc(v.dur)}</span></figcaption>
+      </figure>`).join("");
+    films.addEventListener("click", ev => {
+      const c = ev.target.closest(".film-cover");
+      if (!c || c.dataset.loaded) return;
+      const v = D.videos[+c.dataset.film];
+      c.dataset.loaded = "1";
+      c.innerHTML = v.platform === "youtube"
+        ? `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.vid)}?autoplay=1&rel=0" title="${esc(v.title)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`
+        : `<iframe src="https://player.bilibili.com/player.html?bvid=${encodeURIComponent(v.vid)}&page=1&high_quality=1&danmaku=0&autoplay=0" title="${esc(v.title)}" allow="encrypted-media" allowfullscreen></iframe>`;
+    });
+  }
+
   /* ---------- 随机一首（现在真的播） ---------- */
   const rb = $("#rb-btn");
   if (rb) {
