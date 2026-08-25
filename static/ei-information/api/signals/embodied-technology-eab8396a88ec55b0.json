@@ -6,11 +6,11 @@
     "signal_type": "研究发布",
     "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
     "summary": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
-    "event_date": "2026-08-25T01:05:21.133368+00:00",
+    "event_date": "2026-08-25T02:09:03.172907+00:00",
     "date_basis": "核查时间",
     "confidence": "confirmed",
     "created_at": "2026-08-24T02:44:42.118682+00:00",
-    "updated_at": "2026-08-25T01:05:21.133368+00:00",
+    "updated_at": "2026-08-25T02:09:03.172907+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
         "title": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control",
         "published_at": null,
-        "checked_at": "2026-08-25T01:03:38.698451+00:00",
+        "checked_at": "2026-08-25T02:07:13.025813+00:00",
         "evidence_role": "primary",
         "excerpt": "Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics Post-Train NVIDIA Cosmos 3 Edge for On-Device Robot Control Aug 19, 2026 By Saeed Babamohamadi Like Discuss (0) L T F R E Robots need policies that can adapt to their sensors, environments, and tasks while running on onboard computing hardware. World models offer a foundation for learning physical interactions, but their size can make on-device deployment difficult. This changes with the new NVIDIA Cosmos 3 Edge. Cosmos 3 Edge is a 4B omni-model (with a 2B NVIDIA Nemotron-based reasoner) in the Cosmos 3 family. It was pretrained on the same physical-world data as NVIDIA Cosmos 3 Nano and NVIDIA Cosmos 3 Super and starts with the same grounding in how objects move and interact. Plus, the model is small enough to run on-device on NVIDIA Jetson Thor . What you’ll build By the end of this tutorial, you’ll have a post-trained Cosmos 3 Edge manipulation policy that can run on Jetson Thor and be evaluated in closed-loop simulation. You’ll learn how to: Post-train Cosmos 3 Edge to predict robot action"
       }
