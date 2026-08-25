@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2608.19375v1",
         "title": "Learning the Right Abstraction: Neural Reduced Dynamics for Complex Robot Control",
         "published_at": "2026-08-19",
-        "checked_at": "2026-08-25T04:16:14.928439+00:00",
+        "checked_at": "2026-08-25T05:21:27.585472+00:00",
         "evidence_role": "primary",
         "excerpt": "High-fidelity embodied AI simulators provide realistic evaluation of complex robotic systems, but their computational cost limits their direct use for large-scale reinforcement learning campaigns. We advocate the use of less accurate but more expeditious simulations, which might draw on data-driven, e.g., neural dynamics, models. This contribution argues that the practical value of a neural dynamics model for complex robot control lies in learning the \\emph{right abstraction}: a reduced state that preserves the control-relevant physics of the high-fidelity system while enabling high-throughput policy learning. We develop a neural reduced dynamics (NRD) framework that separates the state the model propagates from what can be supplied as an input or recovered analytically, trains policies entirely inside the frozen learned model, and validates them back in the high-fidelity simulator. Two case studies instantiate it across three control tasks: terrain-aware HMMWV trajectory tracking on rigid, bumpy and deformable Continuum Representation Model (CRM) terrain; and goal reaching for a stock tracked vehicle and its front-mounted articulated arm. Every policy transfers back to the high-fi"
       }
