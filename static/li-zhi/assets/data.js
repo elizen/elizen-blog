@@ -2694,6 +2694,96 @@ window.LIZHI_DATA = {
    "source": "《南方人物周刊》《李志：黑夜里寻找一点点欢愉》，2018年1月"
   }
  ],
+ "videos": [
+  {
+   "platform": "youtube",
+   "vid": "ce6G267pKlQ",
+   "title": "i/O 2014 跨年演唱会 · 4K 全场",
+   "tag": "跨年全场 · 4K修复",
+   "dur": "2:36:41"
+  },
+  {
+   "platform": "youtube",
+   "vid": "P4XMA9iFZrE",
+   "title": "叁缺壹巡演 · 吉隆坡站全程",
+   "tag": "2025 巡演 · 复出后的完整实录",
+   "dur": "2:15:47"
+  },
+  {
+   "platform": "youtube",
+   "vid": "2mCrkWQW9Lk",
+   "title": "洗心革面，相信未来 · 南京跨年全场",
+   "tag": "2018-2019 · 最后一场公开跨年",
+   "dur": "5:52:50"
+  },
+  {
+   "platform": "youtube",
+   "vid": "AgkJ9j3ph1g",
+   "title": "2016 北京不插电现场 全场",
+   "tag": "不插电 · 全场",
+   "dur": "2:06:05"
+  },
+  {
+   "platform": "youtube",
+   "vid": "2QA5TbRMjx4",
+   "title": "杭州酒球会「叁·行觞」专场",
+   "tag": "LiveHouse · 全场",
+   "dur": "2:29:33"
+  },
+  {
+   "platform": "youtube",
+   "vid": "tFsjGxMM5To",
+   "title": "这个世界会好吗 · 相信未来跨年现场",
+   "tag": "太合音乐官方 · 25万播放",
+   "dur": "6:18"
+  },
+  {
+   "platform": "youtube",
+   "vid": "U--_v8l6Jiw",
+   "title": "和你在一起 · 「家」跨年现场",
+   "tag": "太合音乐官方",
+   "dur": "4:21"
+  },
+  {
+   "platform": "youtube",
+   "vid": "NPzOrqAN6hk",
+   "title": "山阴路的夏天 · 相信未来跨年现场",
+   "tag": "太合音乐官方",
+   "dur": "4:49"
+  },
+  {
+   "platform": "bilibili",
+   "vid": "BV1jCGPzXEW5",
+   "title": "愿爱无忧特别专场——南京市民李先生",
+   "tag": "B站 · 51 分钟专场 · 大陆可看",
+   "dur": "51:19",
+   "pic": "https://i2.hdslb.com/bfs/archive/16ecf76b688568d6224826d2f4023e14327148fe.jpg"
+  },
+  {
+   "platform": "bilibili",
+   "vid": "BV1nU4y157co",
+   "title": "和你在一起 · 李先生",
+   "tag": "B站 · 经典现场 · 大陆可看",
+   "dur": "3:48",
+   "pic": "https://i2.hdslb.com/bfs/archive/95fa42a88ef5039623ede03af5d1800bf47e2885.jpg"
+  },
+  {
+   "platform": "bilibili",
+   "vid": "BV1W44y1h7k4",
+   "title": "梵高先生 · 后半段炸裂了",
+   "tag": "B站 · 名场面 · 大陆可看",
+   "dur": "5:37",
+   "pic": "https://i2.hdslb.com/bfs/archive/dfb5beb12e796842de11c92fc9eb6a5f4ef360d5.jpg"
+  },
+  {
+   "platform": "bilibili",
+   "vid": "BV1nb4y1e7Xx",
+   "title": "被禁忌的游戏 · Live",
+   "tag": "B站 · 现场 · 大陆可看",
+   "dur": "3:26",
+   "pic": "https://i0.hdslb.com/bfs/archive/4211334d0b7c57b4b8187189a72a871fb1658034.jpg"
+  }
+ ],
  "playlist": [
   {
    "name": "倒影",
