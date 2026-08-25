@@ -335,6 +335,9 @@
         </div>
         <figcaption><b>${esc(v.title)}</b><span>${esc(v.tag)} · ${esc(v.dur)}</span></figcaption>
       </figure>`).join("");
+    /* 保险：无论观察器时序如何，卡片必须可见 */
+    requestAnimationFrame(() =>
+      document.querySelectorAll("#films .film.reveal").forEach(el => el.classList.add("vis")));
     films.addEventListener("click", ev => {
       const c = ev.target.closest(".film-cover");
       if (!c || c.dataset.loaded) return;
