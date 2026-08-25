@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李志简史 · 这就是逼哥</title>
+<meta name="description" content="李志（逼哥）非官方粉丝档案：年表、唱片、歌曲里的南京地理、外链资源索引。黑白南京，油墨纸感。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="sidenav" aria-label="章节导航">
+  <a href="#prologue"><span class="dot"></span><span class="label">序</span></a>
+  <a href="#chronicle"><span class="dot"></span><span class="label">年表</span></a>
+  <a href="#discography"><span class="dot"></span><span class="label">唱片</span></a>
+  <a href="#geography"><span class="dot"></span><span class="label">地理</span></a>
+  <a href="#sound"><span class="dot"></span><span class="label">声音</span></a>
+  <a href="#words"><span class="dot"></span><span class="label">语录</span></a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-kicker">LIZHI CHRONICLES <b>·</b> 1978 → ∞ <b>·</b> NANJING</div>
+  <h1 class="hero-title" id="hero-title"></h1>
+  <p class="hero-sub">从金坛到南京，从酒吧高凳到工体东路，<br>
+  从《被禁忌的游戏》到叁叁肆——<br>
+  <em>一个人的编年史，一代人的背景音。</em></p>
+  <div class="seal" id="seal" title="别点">逼哥</div>
+  <div class="ticker"><div class="ticker-track" id="ticker"></div></div>
+  <div class="hero-foot">
+    <span>EST. 2004 · 第一盘自费录音</span>
+    <span>非官方 · 粉丝整理</span>
+    <span>SCROLL ↓</span>
+  </div>
+</header>
+
+<main>
+  <section id="prologue" class="section paper">
+    <div class="sec-head reveal"><span class="sec-no">01</span><h2 class="sec-title">序</h2><span class="sec-en">PROLOGUE</span></div>
+    <div class="prologue-grid">
+      <div class="prologue-copy reveal">
+        <p>李志，1978 年生于江苏金坛。大学退学，酒吧驻唱，自费录碟。在没有任何唱片工业帮助的年代里，他用最笨的办法做音乐：<strong>一年一年地写，一场一场地唱</strong>。</p>
+        <p>他较真到出了名：调音不对会骂人，观众说话会停下来等你安静。他把每一场跨年音乐会做成仪式，把巡演做成一个要走十二年的计划。2019 年之后，他的歌从各大平台消失，但硬盘里、车库里、深夜的路途上，这些旋律从未下架。</p>
+        <p>这份档案不是纪念——他还在。<strong>这只是个索引</strong>：告诉你他做过什么，去过哪里，以及现在去哪里还能听到他。</p>
+      </div>
+      <div class="pull-line reveal">实迷途其未远，觉今是而昨非</div>
+    </div>
+    <div class="fact-strip reveal" id="facts"></div>
+  </section>
+
+  <section id="chronicle" class="section">
+    <div class="sec-head reveal"><span class="sec-no">02</span><h2 class="sec-title">年表</h2><span class="sec-en">CHRONICLE</span></div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="discography" class="section paper">
+    <div class="sec-head reveal"><span class="sec-no">03</span><h2 class="sec-title">唱片</h2><span class="sec-en">DISCOGRAPHY</span></div>
+    <div class="disc-note reveal">▶ 点任意曲目行，就在这一页播——线路不顺会自动换线，直到出声为止。</div>
+    <div class="album-list" id="albums"></div>
+    <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap" class="reveal">
+      <a class="chip" href="https://github.com/PetalsOnaWet/lizhi" target="_blank" rel="noopener">音频资源仓库（网盘汇总）↗</a>
+      <a class="chip" href="https://lizhi.dengdengju.com/" target="_blank" rel="noopener">在线播放器（291 首）↗</a>
+    </div>
+  </section>
+
+  <section id="geography" class="section">
+    <div class="sec-head reveal"><span class="sec-no">04</span><h2 class="sec-title">地理</h2><span class="sec-en">NANJING GEOGRAPHY</span></div>
+    <div class="geo-grid" id="geo"></div>
+    <div class="geo-caption reveal">* 他很少直接写「南京」，但南京全在他的路牌上。</div>
+  </section>
+
+  <section id="sound" class="section">
+    <div class="sec-head reveal"><span class="sec-no">05</span><h2 class="sec-title">声音</h2><span class="sec-en">WHERE TO LISTEN</span></div>
+    <div class="link-cols" id="links"></div>
+    <div class="random-box reveal">
+      <div class="rb-text">
+        <span>TONIGHT'S PICK</span>
+        <b>今晚听哪首？<span id="rb-result"></span></b>
+      </div>
+      <button class="btn" id="rb-btn">抽一张</button>
+    </div>
+  </section>
+
+  <section id="words" class="section paper">
+    <div class="sec-head reveal"><span class="sec-no">06</span><h2 class="sec-title">语录</h2><span class="sec-en">SPOKEN</span></div>
+    <div class="quotes" id="quotes"></div>
+  </section>
+</main>
+
+<footer class="colophon">
+  <div class="colo-grid">
+    <p>本站为非商业粉丝档案。所有音频、文字作品的著作权归李志先生及权利人所有。曲目音频经公共镜像仓库（nj-lizhi/song）在线流式播放，歌词全文不在本站范围；如权利人认为任何链接不适当，联系即删。</p>
+  </div>
+  <div class="colo-end">
+    <span>LIZHI CHRONICLES · 黑白南京 · 油墨纸感</span>
+    <span>DATA <i id="data-date"></i> · MADE WITH 认真</span>
+  </div>
+</footer>
+
+<div class="player" id="player" hidden>
+  <img class="pl-cover" id="pl-cover" alt="">
+  <div class="pl-info"><b id="pl-name">—</b><span id="pl-album"></span></div>
+  <div class="pl-controls">
+    <button class="pl-btn" id="pl-prev" title="上一首">⏮</button>
+    <button class="pl-btn big" id="pl-toggle" title="播放 / 暂停">▶</button>
+    <button class="pl-btn" id="pl-next" title="下一首">⏭</button>
+  </div>
+  <div class="pl-seek" id="pl-seek"><div class="pl-bar" id="pl-bar"></div></div>
+  <span class="pl-time" id="pl-time">0:00 / 0:00</span>
+  <span class="pl-mode" id="pl-mode">CDN</span>
+  <button class="pl-btn tiny" id="pl-close" title="关闭">×</button>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
