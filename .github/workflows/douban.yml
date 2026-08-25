@@ -1,42 +1,60 @@
 # .github/workflows/douban.yml
 name: douban
-on: 
+on:
   schedule:
-  - cron: "0 0,0,12,23 * * *"
+    # 原为 "0 0,0,12,23 * * *"：0 点重复且整点运行，易与 ei-radar 的 :15 推送撞车。
+    # 改为去重后错峰到 :40，每日两次足够；手动触发仍可用 star(watch: started)。
+    - cron: "40 0,12 * * *"
   watch:
     types: [started]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: douban-sync
+  cancel-in-progress: false
 
 jobs:
   douban:
     name: Douban mark data sync
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      
-    - name: Delete old Douban files
-      run: rm -rf ./data/douban
-    - name: movie
-      uses: lizheming/doumark-action@master
-      with:
-        id: elizen
-        type: movie
-        format: csv
-        dir: ./data/douban
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: book
-      uses: lizheming/doumark-action@master
-      with:
-        id: elizen
-        type: book
-        format: csv
-        dir: ./data/douban
+      - name: Delete old Douban files
+        run: rm -rf ./data/douban
 
-    - name: Restore official Douban poster URLs
-      run: python3 .github/update-douban-posters.py
-  
-    - name: Commit
-      uses: EndBug/add-and-commit@v9
-      with:
-        message: 'chore: update douban data'
-        add: './data/douban'
+      - name: movie
+        uses: lizheming/doumark-action@master
+        with:
+          id: elizen
+          type: movie
+          format: csv
+          dir: ./data/douban
+
+      - name: book
+        uses: lizheming/doumark-action@master
+        with:
+          id: elizen
+          type: book
+          format: csv
+          dir: ./data/douban
+
+      - name: Restore official Douban poster URLs
+        run: python3 .github/update-douban-posters.py
+
+      # 关键一步：提交前先把远端拉平。别人（ei-radar、人工）刚推过也能干净落上去，
+      # 不再整条 run 报 non-fast-forward 失败。
+      - name: Sync with remote before commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin master
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'chore: update douban data'
+          add: './data/douban'

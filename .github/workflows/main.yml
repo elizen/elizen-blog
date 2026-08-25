@@ -5,11 +5,16 @@ on:
     branches:
       - master
 
+# ei-radar 每小时推数据会连环触发构建：让最新的排队构建顶掉旧的，省时间省额度
+concurrency:
+  group: hugo-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3  # v2 does not have submodules option now
+      - uses: actions/checkout@v4  # v2 does not have submodules option now
        # with:
        #   submodules: true
 
