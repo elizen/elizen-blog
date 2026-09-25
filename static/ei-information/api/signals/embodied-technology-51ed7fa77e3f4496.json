@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-51ed7fa77e3f4496",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Perceptron's Isaac 0.5 is a 36B open-weight embodied foundation model with only 2.5B active per token. The model - Perception, reasoning, and control all read f",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": null,
+    "date_basis": "核查时间",
+    "confidence": "candidate",
+    "created_at": "2026-08-27T16:22:06.162853+00:00",
+    "updated_at": "2026-08-27T17:25:51.879791+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "x-thehumanoidhub",
+        "source_name": "The Humanoid Hub",
+        "source_url": "https://x.com/TheHumanoidHub",
+        "url": "https://x.com/TheHumanoidHub/status/2092974952769048876",
+        "title": "Perceptron's Isaac 0.5 is a 36B open-weight embodied foundation model with only 2.5B active per token. The model - Perception, reasoning, and control all read f",
+        "published_at": null,
+        "checked_at": "2026-08-27T17:24:51.105883+00:00",
+        "evidence_role": "discovery",
+        "excerpt": "Perceptron's Isaac 0.5 is a 36B open-weight embodied foundation model with only 2.5B active per token. The model - Perception, reasoning, and control all read from one shared backbone, so it makes visual decisions mid-trajectory - Null-expert routing lets each token use between https://t.co/ThyKCaMUYc"
+      }
+    ]
+  }
+}

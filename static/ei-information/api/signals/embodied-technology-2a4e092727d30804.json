@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-2a4e092727d30804",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents",
+    "summary": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+    "event_date": "2026-08-26",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-08-26T21:08:18.087272+00:00",
+    "updated_at": "2026-09-25T02:23:41.869124+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+        "why_it_matters": "运动规划连接感知、世界模型和执行控制，是具身智能从算法演示走向可靠运行的关键环节。",
+        "watch_next": "继续核对复杂场景、碰撞率和真实机器人上的执行效果。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/how-to-train-a-cross-embodiment-robot-navigation-policy-with-ai-agents/",
+        "title": "How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents",
+        "published_at": "2026-08-26",
+        "checked_at": "2026-09-25T02:21:50.826309+00:00",
+        "evidence_role": "primary",
+        "excerpt": "How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics English 한국어 中文 How to Train a Cross-Embodiment Robot Navigation Policy with AI Agents Aug 26, 2026 By Yan Chang , Mihir Acharya , Wei Liu , Katie Washabaugh and Aishwarya Singh Like Discuss (0) L T F R E AI-Generated Summary COMPASS adapts the pretrained NVIDIA X-Mobility policy into residual specialists for specific robots and environments using reinforcement learning. An agent-driven workflow with human approval gates automates environment validation, scene preparation, smoke testing, residual training, checkpoint evaluation, and runtime packaging. The reference implementation uses the Boston Dynamics Spot quadruped across three scene paths: a built-in warehouse, generated SAGE-10K indoor scenes, and captured environments reconstructed with NVIDIA Omniverse NuRec. Training launches a standard residual RL workflow that saves periodic checkpoints, monitors reward components and safety metrics, and preserves evidence for matched-condition evaluation. Evaluation compares the base X-Mo"
+      }
+    ]
+  }
+}
