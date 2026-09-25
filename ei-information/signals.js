@@ -8,9 +8,32 @@ const state = {data: null, query: "", module: "全部", confidence: "全部"};
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
-function dateValue(signal) { return signal.event_date || signal.created_at || ""; }
+function dateValue(signal) {
+  return signal.date_basis === "核查时间" || !signal.event_date
+    ? signal.created_at || ""
+    : signal.event_date;
+}
 function formatDate(value) { return value ? value.slice(0, 10).replace(/-/g, ".") : "日期待确认"; }
 function signalIntro(signal) { return signal.metadata?.editorial?.intro || signal.summary || "这条信号还没有生成读者说明。"; }
+function formatFirstSeen(value) {
+  if (!value) return "日期待确认";
+  if (!/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:?\d{2})$/i.test(value)) return formatDate(value);
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date(value));
+  const date = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${date.year}.${date.month}.${date.day}`;
+}
+function signalDate(signal) {
+  if (signal.date_basis === "核查时间" || !signal.event_date) {
+    const firstSeen = signal.created_at ? `首次发现 ${formatFirstSeen(signal.created_at)}` : "首次发现";
+    return `${firstSeen} · 事件日期待确认`;
+  }
+  return formatDate(signal.event_date);
+}
 
 function visibleSignals() {
   return (state.data?.signals || []).filter((signal) => {
@@ -20,7 +43,7 @@ function visibleSignals() {
 }
 
 function card(signal) {
-  return `<a class="feed-card" href="${signalHref(signal.id)}"><div class="feed-card-marker"><span>${escapeHtml(labels[signal.module] || signal.signal_type || "行业信号")}</span><time>${escapeHtml(formatDate(dateValue(signal)))}</time></div><div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p><div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "行业信号")}</span><b>查看证据 ↗</b></div></div></a>`;
+  return `<a class="feed-card" href="${signalHref(signal.id)}"><div class="feed-card-marker"><span>${escapeHtml(labels[signal.module] || signal.signal_type || "行业信号")}</span><time>${escapeHtml(signalDate(signal))}</time></div><div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p><div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "行业信号")}</span><b>查看证据 ↗</b></div></div></a>`;
 }
 
 function render() {

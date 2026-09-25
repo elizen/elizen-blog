@@ -47,14 +47,41 @@ function routePeriod() {
   return PERIODS[segment] ? segment : "daily";
 }
 
+function isoDate(value) {
+  if (typeof value !== "string") return null;
+  let date = value.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  if (/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:?\d{2})$/i.test(value)) {
+    const timestamp = new Date(value);
+    if (Number.isNaN(timestamp.getTime())) return null;
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Shanghai",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(timestamp);
+    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    date = `${values.year}-${values.month}-${values.day}`;
+  }
+  const parsed = new Date(`${date}T00:00:00.000Z`);
+  return Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date ? null : date;
+}
+
+function chinaToday() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
 function anchorDate() {
-  const checked = state.data?.checked_at;
-  if (checked) return checked.slice(0, 10);
-  const dates = [
-    ...(state.data?.signals || []).map((signal) => signal.event_date?.slice(0, 10)),
-    ...(state.data?.projects || state.data?.standard_projects || []).flatMap((project) => (project.events || []).map((event) => event.date?.slice(0, 10))),
-  ].filter(Boolean).sort();
-  return dates.at(-1) || new Date().toISOString().slice(0, 10);
+  const today = chinaToday();
+  const checked = isoDate(state.data?.checked_at);
+  return checked && checked <= today ? checked : today;
 }
 
 function currentWindow() {
@@ -64,19 +91,29 @@ function currentWindow() {
 }
 
 function inWindow(value, window) {
-  const date = value?.slice(0, 10);
+  const date = isoDate(value);
   return Boolean(date && date >= window.start && date <= window.end);
 }
 
+function signalPeriodDate(signal) {
+  return signal.date_basis === "核查时间"
+    ? isoDate(signal.created_at)
+    : isoDate(signal.event_date);
+}
+
 function collectRadarSignals(window) {
-  return (state.data?.signals || []).filter((signal) => inWindow(signal.event_date, window)).sort((left, right) => {
+  return (state.data?.signals || []).filter((signal) => inWindow(signalPeriodDate(signal), window)).sort((left, right) => {
     const priority = (MODULE_PRIORITY[left.module] ?? 9) - (MODULE_PRIORITY[right.module] ?? 9);
-    return priority || (right.event_date || "").localeCompare(left.event_date || "");
+    return priority || (signalPeriodDate(right) || "").localeCompare(signalPeriodDate(left) || "");
   });
 }
 
 function collectStandardEvents(window) {
-  return (state.data?.projects || state.data?.standard_projects || []).flatMap((project) => (project.events || [])
+  return (state.data?.projects || state.data?.standard_projects || []).filter((project) => {
+    const hasIdentifier = [project.plan_number, project.standard_number]
+      .some((value) => typeof value === "string" && value.trim());
+    return hasIdentifier || project.confidence === "confirmed";
+  }).flatMap((project) => (project.events || [])
     .filter((event) => inWindow(event.date, window))
     .map((event) => ({project, event})))
     .sort((left, right) => (right.event.date || "").localeCompare(left.event.date || ""));
@@ -95,7 +132,9 @@ function signalLink(signal) {
 }
 
 function signalDate(signal) {
-  return signal.date_basis === "核查时间" ? "日期待确认" : formatDate(signal.event_date);
+  return signal.date_basis === "核查时间"
+    ? `新发现 ${formatDate(signalPeriodDate(signal))} · 事件日期待确认`
+    : formatDate(signal.event_date);
 }
 
 function standardStorySummary(story) {
@@ -120,7 +159,7 @@ function buildBrief(signals, window) {
   const leadIntro = editorial(lead, "intro", lead.summary);
   const clipped = leadIntro.length > 160 ? `${leadIntro.slice(0, 160)}…` : leadIntro;
   const windowLabel = undatedCount === signals.length ? "本次采集" : `${formatDate(window.start)}—${formatDate(window.end)}`;
-  const dateNote = undatedCount ? `其中 ${undatedCount} 条发布日期待确认。` : "";
+  const dateNote = undatedCount ? `其中 ${undatedCount} 条按首次发现时间收录，事件日期待确认。` : "";
   return `${windowLabel}收录 ${signals.length} 条统一信号，主要集中在${groups.slice(0, 3).map((group) => group.label).join("、")}。${dateNote}${clipped}`;
 }
 
@@ -175,15 +214,17 @@ function reportData() {
   const radarSignals = collectRadarSignals(window);
   const standardEvents = collectStandardEvents(window);
   const signals = radarSignals.length ? radarSignals : standardEvents;
-  const themeGroups = radarSignals.length ? buildThemeGroups(radarSignals) : [{
-    id: "theme-standard",
-    index: "01",
-    module: "standard",
-    label: "标准",
-    title: "标准项目出现新的程序节点",
-    summary: standardEvents.length ? standardStorySummary(standardEvents[0]) : "本期没有足够的标准事件形成主题段落。",
-    signals: standardEvents,
-  }];
+  const themeGroups = radarSignals.length
+    ? buildThemeGroups(radarSignals)
+    : standardEvents.length ? [{
+      id: "theme-standard",
+      index: "01",
+      module: "standard",
+      label: "标准",
+      title: "标准项目出现新的程序节点",
+      summary: standardStorySummary(standardEvents[0]),
+      signals: standardEvents,
+    }] : [];
   return {
     window,
     radarSignals,
@@ -196,7 +237,9 @@ function reportData() {
       signals: signals.length,
       sources: new Set(radarSignals.flatMap((signal) => (signal.evidence || []).map((item) => item.source_name)).filter(Boolean)).size || (standardEvents.length ? new Set(standardEvents.map(standardStorySource)).size : 0),
       themes: themeGroups.length,
-      days: new Set(signals.map((signal) => signal.event_date || signal.event?.date).filter(Boolean).map((date) => date.slice(0, 10))).size,
+      days: new Set(signals.map((signal) => signal.event
+        ? isoDate(signal.event.date)
+        : signal.date_basis === "核查时间" ? null : isoDate(signal.event_date)).filter(Boolean)).size,
     },
   };
 }

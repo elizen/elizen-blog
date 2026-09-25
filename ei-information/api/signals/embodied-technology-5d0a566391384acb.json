@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-5d0a566391384acb",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "A Mathematical Theory of Pragmatic Information",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-09-10",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-10",
+    "updated_at": "2026-09-10",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2609.10986v3",
+        "title": "A Mathematical Theory of Pragmatic Information",
+        "published_at": "2026-09-10",
+        "checked_at": "2026-09-23T00:30:37.961317+00:00",
+        "evidence_role": "primary",
+        "excerpt": "We propose a mathematical theory of pragmatic information that connects communication, control, and decision-making. Its central notion is the isoteleia mapping, which formalizes equifinality: distinct semantic paths that lead to the same optimal action are treated as pragmatically equivalent. This mapping yields a three-tier hierarchy of syntactic, semantic, and pragmatic information, in which each successive abstraction removes distinctions that are irrelevant to the task. We then define pragmatic entropy, up/down pragmatic mutual information, channel capacity, and rate-distortion, and prove lossless source coding, channel coding, and rate-distortion theorems that extend Shannon's results. These measures quantify decision uncertainty, reliable transmission, and task-oriented compression at the level of terminal actions. We further introduce pragmatic value of information (VoI) and pragmatic cost of information (CoI) as decision-theoretic duals to rate-distortion and capacity, and develop a Lagrangian dual framework for cross-layer optimization. The resulting pragmatic efficiency bound $\\mathcal{E}_p(λ)=\\sup_R[Φ_p(R)-λ\\mathrm{CoI}_p(R)]$ characterizes the maximum net utility attai"
+      }
+    ]
+  }
+}

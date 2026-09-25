@@ -31,12 +31,35 @@ function signalIntro(signal) {
 }
 
 function dateValue(signal) {
-  return signal.event_date || signal.created_at || "";
+  return signal.date_basis === "核查时间" || !signal.event_date
+    ? signal.created_at || ""
+    : signal.event_date;
 }
 
 function formatDate(value) {
   if (!value) return "日期待确认";
   return value.slice(0, 10).replace(/-/g, ".");
+}
+
+function formatFirstSeen(value) {
+  if (!value) return "日期待确认";
+  if (!/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:?\d{2})$/i.test(value)) return formatDate(value);
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date(value));
+  const date = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${date.year}.${date.month}.${date.day}`;
+}
+
+function signalDate(signal) {
+  if (signal.date_basis === "核查时间" || !signal.event_date) {
+    const firstSeen = signal.created_at ? `首次发现 ${formatFirstSeen(signal.created_at)}` : "首次发现";
+    return `${firstSeen} · 事件日期待确认`;
+  }
+  return formatDate(signal.event_date);
 }
 
 function sortedSignals(signals) {
@@ -50,7 +73,7 @@ function sortedSignals(signals) {
 function signalCard(signal, featured = false) {
   const label = moduleLabels[signal.module] || signal.signal_type || "行业信号";
   return `<a class="feed-card ${featured ? "feed-card-featured" : ""}" href="${signalHref(signal.id)}">
-    <div class="feed-card-marker"><span>${escapeHtml(label)}</span><time>${escapeHtml(formatDate(dateValue(signal)))}</time></div>
+    <div class="feed-card-marker"><span>${escapeHtml(label)}</span><time>${escapeHtml(signalDate(signal))}</time></div>
     <div class="feed-card-content"><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p>
       <div class="feed-card-foot"><span class="confidence ${escapeHtml(signal.confidence)}">${escapeHtml(confidenceLabels[signal.confidence] || signal.confidence)}</span><span>${escapeHtml(signal.signal_type || "产业信号")}</span><b>打开简报 ↗</b></div>
     </div>
@@ -59,7 +82,7 @@ function signalCard(signal, featured = false) {
 
 function renderHotTopics(signals) {
   const items = sortedSignals(signals).slice(0, 3);
-  document.querySelector("#hot-topics").innerHTML = items.length ? items.map((signal, index) => `<a class="hot-topic-row" href="${signalHref(signal.id)}"><span class="hot-topic-rank">${String(index + 1).padStart(2, "0")}</span><div><span class="hot-topic-label">${escapeHtml(moduleLabels[signal.module] || signal.signal_type || "行业信号")} · ${escapeHtml(formatDate(dateValue(signal)))}</span><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p></div><span class="hot-topic-arrow">↗</span></a>`).join("") : '<div class="empty-state">当前暂无热点信号。</div>';
+  document.querySelector("#hot-topics").innerHTML = items.length ? items.map((signal, index) => `<a class="hot-topic-row" href="${signalHref(signal.id)}"><span class="hot-topic-rank">${String(index + 1).padStart(2, "0")}</span><div><span class="hot-topic-label">${escapeHtml(moduleLabels[signal.module] || signal.signal_type || "行业信号")} · ${escapeHtml(signalDate(signal))}</span><h3>${escapeHtml(signal.title)}</h3><p>${escapeHtml(signalIntro(signal))}</p></div><span class="hot-topic-arrow">↗</span></a>`).join("") : '<div class="empty-state">当前暂无热点信号。</div>';
 }
 
 function renderSignalMix(signals) {
