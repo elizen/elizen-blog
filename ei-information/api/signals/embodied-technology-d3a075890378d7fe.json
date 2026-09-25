@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-08-13T09:40:20.406079+00:00",
-    "updated_at": "2026-09-25T20:15:06.590787+00:00",
+    "updated_at": "2026-09-25T21:21:12.718053+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/generate-trajectories-reasoning-traces-and-auto-labels-with-nvidia-alpamayo-2-super/",
         "title": "Generate Trajectories, Reasoning Traces, and Auto-Labels with NVIDIA Alpamayo 2 Super",
         "published_at": "2026-08-04",
-        "checked_at": "2026-09-25T20:13:01.870379+00:00",
+        "checked_at": "2026-09-25T21:19:25.751786+00:00",
         "evidence_role": "primary",
         "excerpt": "Robotics English 中文 Generate Trajectories, Reasoning Traces, and Auto-Labels with NVIDIA Alpamayo 2 Super Aug 04, 2026 By Boris Ivanovic and Marco Pavone Discuss (0) L T F R E AI-Generated Summary NVIDIA Alpamayo 2 Super is an open 34-billion-parameter vision-language-action model that combines a 32-billion-parameter Cosmos 3 Super Reasoner with a 2-billion-parameter diffusion-based Action Expert for autonomous vehicle development. The model processes up to seven cameras for 360-degree perception and jointly produces trajectories, Chain-of-Causation reasoning traces, meta-actions, visual question answering with 2D grounding, and structured auto-labels from a single foundation. Open-loop evaluation on 1,434 challenging samples from the Physical AI AV Dataset shows a 6.4-second minADE_6 of 0.911 m, a reasoning score of 0.433 on the Physical AI AV Reasoning Benchmark, and a LingoQA score of 79.2, leading Qwen2.5-VL 72B by 17.0 points. Closed-loop simulation with NVIDIA AlpaSim on 913 reconstructed scenes yields an AlpaSim Score of 1.50 ± 0.13, revealing collisions and close encounters that open-loop metrics miss. Meta-action prediction achieves 74.59 lateral IoU, 61.91 longitudinal Io"
       }

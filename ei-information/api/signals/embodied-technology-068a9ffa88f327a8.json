@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-09-21",
-    "updated_at": "2026-09-25T20:15:06.590787+00:00",
+    "updated_at": "2026-09-25T21:21:12.718053+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究聚焦机器人操作任务，尝试把感知、语言理解和动作控制连接起来，完成更稳定的抓取或操作。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2609.24170v1",
         "title": "An Unexpected Robot Policy: Early Evaluations of GPT-6 Astra on RoboDojo and Beyond",
         "published_at": "2026-09-21",
-        "checked_at": "2026-09-25T20:14:51.444591+00:00",
+        "checked_at": "2026-09-25T21:21:01.188666+00:00",
         "evidence_role": "primary",
         "excerpt": "Embodied AI systems are often organized into System 1 and System 2. System 1 is typically a pretrained policy that generates actions at high frequency, whereas System 2 is often instantiated as a vision-enabled language model for high-level planning. We ask whether a large language model (LLM) can act as the policy for robot manipulation without task-specific finetuning. We call this setting LLM as policy. We evaluate three LLMs on all 42 RoboDojo tasks and compare their scores with 40 public policies. Astra and GPT-5.5 use the official 50-episode-per-task protocol; DeepSeek-Flash uses 10 episodes per task. GPT-6 Astra achieves 22.48% average success rate and 28.97 Score over 2,100 trials, ranking above every public entry. Yet GPT-5.5 and DeepSeek-Flash reach only 0.88% and 1.92% average success rate with the same post-processing. We find that Astra exhibits a sharply polarized capability profile. It generalizes well to tasks that require semantic understanding but not high-precision control. In contrast, it performs poorly on tasks that require precision, dynamic control, or complex bimanual coordination. In-context experiments show no aggregate benefit from one-shot demonstration"
       }
