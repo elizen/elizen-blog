@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-08-13T09:40:20.406079+00:00",
-    "updated_at": "2026-09-25T05:45:22.170578+00:00",
+    "updated_at": "2026-09-25T06:51:47.925638+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/develop-humanoid-robot-policies-end-to-end-with-nvidia-isaac-gr00t/",
         "title": "Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T",
         "published_at": "2026-07-07",
-        "checked_at": "2026-09-25T05:43:26.951023+00:00",
+        "checked_at": "2026-09-25T06:49:50.118041+00:00",
         "evidence_role": "primary",
         "excerpt": "Robotics English 中文 Develop Humanoid Robot Policies End-to-End with NVIDIA Isaac GR00T Jul 07, 2026 By Edith Llontop and Brandon Neel Discuss (1) L T F R E AI-Generated Summary The NVIDIA Isaac GR00T Development Platform unifies every stage of the humanoid robot pipeline, from data collection and model training to large-scale evaluation and deployment readiness. GR00T 1.7 is the first open, commercially usable vision-language-action model for generalized humanoid skills, released under the Apache 2.0 license with a 3-billion-parameter base checkpoint. The model introduces a Cosmos-Reason2-2B (Qwen3-VL architecture) backbone, robust pretraining on ~32K hours of real and ~8K hours of simulated data, and full ONNX and TensorRT export support. Benchmarks show consistent improvements over N1.6, including DROID-F0 (+10%), DROID-F6 (+61%), SimplerEnv Bridge (+5%), and Fractal (+2%). An end-to-end simulation workflow demonstrates environment setup with Isaac Lab-Arena, demonstration collection via Isaac Teleop and CloudXR, LeRobot format conversion, post-training with frozen language model, and closed-loop policy evaluation. The platform is being adopted by humanoid makers including 1X, Ag"
       }
