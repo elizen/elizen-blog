@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-09-16",
-    "updated_at": "2026-09-25T11:20:05.449709+00:00",
+    "updated_at": "2026-09-25T12:27:25.181940+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2609.18111v1",
         "title": "A Comprehensive Review of Generative Physical Artificial Intelligence",
         "published_at": "2026-09-16",
-        "checked_at": "2026-09-25T11:19:49.366682+00:00",
+        "checked_at": "2026-09-25T12:27:08.086720+00:00",
         "evidence_role": "primary",
         "excerpt": "The integration of large-scale foundation models with physical embodiments has led to significant advancements in robotics known as Generative Physical Artificial Intelligence (GPAI). These agentic AI systems autonomously perceive, reason, and act in complex real-world situations. This survey comprehensively analyzes GPAI systems, focusing on their architectural foundations, current applications, and key limitations. We introduce a taxonomy of five distinct approaches: Robot Foundation Models (RFMs) for cross-platform skill transfer; Vision-Language Action (VLA) models for end-to-end multi-modal perception and control; Large Behavior Models (LBMs) for human-like movement generation; Diffusion Policy Models (DPMs) for diffusion model-based temporally coherent action generation; and World Foundation Models (WFMs) for physics-compliant simulation and data generation. We examine how these approaches complement each other: WFMs generate training data for VLAs and DPMs, RFMs enable cross-platform deployment of learned policies, while LBMs provide motion priors for natural behavior. Through examples across autonomous vehicles, industrial automation, healthcare robotics, and humanoid syste"
       }
