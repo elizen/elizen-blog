@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-09-16",
-    "updated_at": "2026-09-25T20:15:06.590787+00:00",
+    "updated_at": "2026-09-25T21:21:12.718053+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2609.20887v1",
         "title": "BirdsongChat: A Hybrid Multi-Agent Framework for Multimodal Embodied Behavior Simulation",
         "published_at": "2026-09-16",
-        "checked_at": "2026-09-25T20:14:51.444591+00:00",
+        "checked_at": "2026-09-25T21:21:01.188666+00:00",
         "evidence_role": "primary",
         "excerpt": "Multimodal embodied systems require translating human intentions into interpretable and coordinated behaviors across heterogeneous modalities. However, existing multimodal agents often rely on implicit representations, limiting controllability and cross-modal consistency. We present a hybrid multi-agent framework for interactive multimodal behavior simulation that bridges semantic reasoning and physical execution through a Unified Parameter Representation (UPR). LLM-based reasoning agents transform multimodal inputs into UPR, which encodes behavioral states and interpretable control parameters for simulation agents generating synchronized 3D motion, spatialized soundscapes, and environmental behaviors. We develop BirdsongChat as a prototype implementation of the proposed framework, using interactive avian behavior simulation as a testbed that tightly couples motion, vocalization, and environmental context. BirdsongChat is evaluated on text- and image-guided scenarios involving species, behaviors, affective states, environments, and multi-bird interactions. The system achieves normalized scores of 94.4\\% for cross-modal coherence, 100% for affective consistency, and 92.6% for genera"
       }
