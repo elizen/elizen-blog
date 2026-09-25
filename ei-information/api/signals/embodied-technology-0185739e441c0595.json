@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-08-13T09:40:20.406079+00:00",
-    "updated_at": "2026-09-25T09:06:41.789666+00:00",
+    "updated_at": "2026-09-25T10:13:32.515357+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/developing-healthcare-robotics-with-gpu-native-medical-physics-simulation/",
         "title": "Developing Healthcare Robotics with GPU-Native Medical Physics Simulation",
         "published_at": "2026-07-28",
-        "checked_at": "2026-09-25T09:04:38.236230+00:00",
+        "checked_at": "2026-09-25T10:11:27.086638+00:00",
         "evidence_role": "primary",
         "excerpt": "Simulation / Modeling / Design English 中文 Developing Healthcare Robotics with GPU-Native Medical Physics Simulation Jul 28, 2026 By Cristiana Dinea , Przemysław Korzeniowski , Javier Gamazo Tejero , Lukas Zbinden , Max Allan and Mostafa Toloui Discuss (1) L T F R E AI-Generated Summary Endoluminal Simulation Module enables real-time simulation of flexible catheter navigation through patient-specific vasculature using GPU-accelerated XPBD solvers. Surgical Simulation Module models soft-tissue deformation and surgical interactions with haptic feedback at over 30 frames per second on a single consumer GPU. Cosmos-H family of generative world models produces realistic surgical video from robot actions, with Cosmos-H-Dreams enabling interactive simulation at more than 30 frames per second via FlashDreams inference engine. Classical physics solvers and generative simulation complement each other, providing deterministic physical guarantees and diverse visual realism respectively for healthcare robotics training. Unified simulation loops combine anatomical digital twins, device mechanics, and fluoroscopic imaging in a single GPU-resident pipeline for high-throughput reinforcement learning"
       }
