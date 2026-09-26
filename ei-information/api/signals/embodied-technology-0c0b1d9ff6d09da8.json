@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-09-16",
-    "updated_at": "2026-09-26T02:52:30.658493+00:00",
+    "updated_at": "2026-09-26T05:05:33.369265+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2609.19104v1",
         "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
         "published_at": "2026-09-16",
-        "checked_at": "2026-09-26T02:52:17.166492+00:00",
+        "checked_at": "2026-09-26T05:05:24.084800+00:00",
         "evidence_role": "primary",
         "excerpt": "Factory work is a promising early scenario for embodied AI: assigning repetitive manual jobs to robots has clear economic payoff, and a structured station keeps the jobs tractable for current policies. Vision-Language-Action (VLA) models now dominate as the policy paradigm for these robots. The inference latency of VLA models directly affects robot responsiveness and motion smoothness. However, existing VLA inference frameworks do not fully exploit the characteristics of embodied workloads or account for the distinct bottlenecks across different stages of VLA inference. In this paper, we first characterize embodied workloads and identify substantial task similarity across repeated robot executions. We further find that such similarity extends beyond observations and action trajectories to internal model states. Drawing on these observations, we present rMuscle, a real-time VLA inference framework inspired by human muscle memory. It exploits cross-execution similarity through a dual-phase muscle-memory cache. The Context Cache reuses visual-token outputs to reduce computation, while the Action Cache reuses neuron activation patterns to reduce weight accesses. We keep both the cache "
       }
