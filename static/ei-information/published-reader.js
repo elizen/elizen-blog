@@ -7,10 +7,10 @@
   "use strict";
 
   const SECTIONS = Object.freeze({
-    latest: { label: "最新", kind: "all" },
+    latest: { label: "综合动态", kind: "all" },
     articles: { label: "文章资讯", kind: "article" },
     papers: { label: "论文研究", kind: "paper" },
-    policies: { label: "地方政策", kind: "policy" },
+    policies: { label: "政策文件", kind: "policy" },
     wechat: { label: "关注公众号", kind: "wechat" },
     standards: { label: "标准跟踪", kind: "standard" },
     daily: { label: "日报", period: "daily" },
@@ -20,9 +20,10 @@
   });
   const KINDS = new Set(["article", "paper", "policy", "standard"]);
   const CHANNELS = new Set(["website", "wechat", "x"]);
-  const STAGES = new Set(["proposal", "drafting", "consultation", "review", "published", "effective", "withdrawn"]);
-  const STAGE_LABELS = Object.freeze({ proposal: "提案", drafting: "起草中", consultation: "征求意见", review: "审查中", published: "已发布", effective: "已实施", withdrawn: "已废止" });
-  const FILTERS = Object.freeze({ policies: ["region"], wechat: ["source"], standards: ["organization", "stage"] });
+  const STAGES = new Set(["proposal", "drafting", "consultation", "review", "approval", "published", "effective", "withdrawn"]);
+  const STAGE_LABELS = Object.freeze({ proposal: "提案", drafting: "起草中", consultation: "征求意见", review: "审查中", approval: "报批", published: "已发布", effective: "已实施", withdrawn: "已废止" });
+  const FILTERS = Object.freeze({ policies: ["region"], wechat: ["source"], standards: ["organization", "stage", "standard_type"] });
+  const PAGE_SIZE = 60;
 
   function escapeHtml(value) {
     return String(value == null ? "" : value).replace(/[&<>"']/g, (char) => ({
@@ -97,6 +98,41 @@
     return { schema_version: data.schema_version, articles, briefings };
   }
 
+  function normalizeArchive(data) {
+    if (!data || typeof data !== "object" || Array.isArray(data) || data.schema_version !== 1 || !Array.isArray(data.items)) return [];
+    return data.items.map((item) => {
+      if (!item || typeof item !== "object" || Array.isArray(item) || typeof item.id !== "string" || !item.id.startsWith("archive-") ||
+          typeof item.title !== "string" || !item.title.trim() || typeof item.intro !== "string" ||
+          !item.source || typeof item.source !== "object" || Array.isArray(item.source) || typeof item.source.id !== "string" || !item.source.id.trim()) return null;
+      const sourceUrl = safeSourceUrl(item.source.url);
+      const catalog = projectCatalog(item.catalog);
+      const archive = item.archive;
+      if (!sourceUrl || !catalog || !KINDS.has(item.catalog.kind) || !CHANNELS.has(item.catalog.source_channel) ||
+          item.format !== "archive_record" || !archive || typeof archive !== "object" || Array.isArray(archive)) return null;
+      const recordedAt = validDate(archive.recorded_at);
+      const optionalText = (value) => typeof value === "string" ? value : "";
+      const events = Array.isArray(archive.events) ? archive.events.map((event) => {
+        if (!event || typeof event !== "object" || Array.isArray(event)) return null;
+        const url = event.url == null || event.url === "" ? "" : safeSourceUrl(event.url);
+        if (event.url && !url) return null;
+        return { title: optionalText(event.title), type: optionalText(event.type), date: validDate(event.date), url, source_name: optionalText(event.source_name) };
+      }).filter((event) => event && event.title) : [];
+      const attachments = Array.isArray(archive.attachments) ? archive.attachments.map((attachment) => {
+        if (!attachment || typeof attachment !== "object" || Array.isArray(attachment)) return null;
+        const url = safeSourceUrl(attachment.url);
+        return url && typeof attachment.title === "string" && attachment.title.trim() ? { title: attachment.title, url } : null;
+      }).filter(Boolean) : [];
+      return {
+        id: item.id, title: item.title, intro: item.intro, body: "", published_at: validDate(item.published_at),
+        source: { id: item.source.id, url: sourceUrl }, catalog, format: "archive_record",
+        archive: { recorded_at: recordedAt, standard_number: optionalText(archive.standard_number), plan_number: optionalText(archive.plan_number),
+          level: optionalText(archive.level), status: optionalText(archive.status), organization: optionalText(archive.organization),
+          department: optionalText(archive.department), implementation_date: validDate(archive.implementation_date), deadline: validDate(archive.deadline),
+          drafting_units: Array.isArray(archive.drafting_units) ? archive.drafting_units.filter((unit) => typeof unit === "string" && unit.trim()) : [], events, attachments },
+      };
+    }).filter(Boolean);
+  }
+
   function validTimestamp(value, now = Date.now()) {
     if (typeof value !== "string") return "";
     const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:Z|[+-](\d{2}):(\d{2}))$/);
@@ -144,10 +180,18 @@
   }
   function periodForSection(section) { return SECTIONS[section] ? SECTIONS[section].period : null; }
   function articleKind(article) { return article.catalog ? article.catalog.kind : "article"; }
+  function standardRecordType(item) {
+    if (item && item.catalog && item.catalog.kind === "standard") {
+      return item.format === "archive_record" && item.id.startsWith("archive-standard-") ? "project" : "announcement";
+    }
+    return "other";
+  }
   function isBriefing(item) { return Boolean(item && Array.isArray(item.sections) && item.period); }
   function entryDate(item) { return isBriefing(item) ? item.end_date : dateKey(item.published_at); }
   function sortEntries(entries) {
-    return entries.slice().sort((a, b) => (Date.parse(b.published_at || `${entryDate(b)}T00:00:00Z`) || 0) - (Date.parse(a.published_at || `${entryDate(a)}T00:00:00Z`) || 0) || a.id.localeCompare(b.id));
+    const sortDate = (item) => item.catalog && item.catalog.kind === "standard" && item.archive && item.archive.recorded_at
+      ? (item.published_at || item.archive.recorded_at) : item.published_at || entryDate(item);
+    return entries.slice().sort((a, b) => (Date.parse(sortDate(b)) || 0) - (Date.parse(sortDate(a)) || 0) || a.id.localeCompare(b.id));
   }
   function arxivWorkId(value) {
     const safeUrl = safeSourceUrl(value);
@@ -157,24 +201,65 @@
     const match = url.pathname.match(/^\/(?:abs|html|pdf)\/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?\/?$/i);
     return match ? match[1] : null;
   }
+  function duplicateKey(item) {
+    const workId = arxivWorkId(item.source && item.source.url);
+    return workId ? `arxiv:${workId}` : `${item.source && item.source.id || ""}\n${safeSourceUrl(item.source && item.source.url) || ""}`;
+  }
   function mergedNews(snapshot, placement = "main") {
-    const editedSources = new Set(snapshot.articles.map((item) => `${item.source.id}\n${safeSourceUrl(item.source.url) || ""}`));
-    const editedArxivWorks = new Set(snapshot.articles.flatMap((item) => {
-      const workId = arxivWorkId(item.source.url);
-      return workId ? [`${item.source.id}\n${workId}`] : [];
-    }));
-    return (snapshot.news ? snapshot.news.items : []).filter((item) => item.placement === placement &&
-      !editedSources.has(`${item.source.id}\n${safeSourceUrl(item.source.url) || ""}`) &&
-      !editedArxivWorks.has(`${item.source.id}\n${arxivWorkId(item.source.url) || ""}`));
+    const edited = new Set((snapshot.articles || []).map(duplicateKey));
+    return (snapshot.news ? snapshot.news.items : []).filter((item) => (!placement || item.placement === placement) && !edited.has(duplicateKey(item)));
+  }
+  function mergedArchive(snapshot) {
+    const articles = snapshot.articles || [];
+    const archiveItems = snapshot.archive ? snapshot.archive.items : [];
+    const higherPriorityItems = [...articles, ...((snapshot.news && snapshot.news.items) || [])];
+    const higherPriority = new Set(higherPriorityItems.map(duplicateKey));
+    const higherPriorityUrls = new Set(higherPriorityItems.map((item) => safeSourceUrl(item.source && item.source.url)).filter(Boolean));
+    return archiveItems.filter((item) => {
+      if (standardRecordType(item) === "project") return true;
+      const url = safeSourceUrl(item.source && item.source.url);
+      return !higherPriority.has(duplicateKey(item)) && !higherPriorityUrls.has(url);
+    });
+  }
+  function isOfficialWechat(value) {
+    const safeUrl = safeSourceUrl(value);
+    return Boolean(safeUrl && new URL(safeUrl).hostname.toLowerCase() === "mp.weixin.qq.com");
+  }
+  function interleaveByKind(entries) {
+    const groups = new Map();
+    const topical = /机器人|具身|人形|人工智能|robot|humanoid|embodied|physical\s*ai/i;
+    const kindsInOrder = ["article", "standard", "policy", "paper"];
+    for (const item of sortEntries(entries)) {
+      const kind = articleKind(item);
+      if (!groups.has(kind)) groups.set(kind, []);
+      groups.get(kind).push(item);
+    }
+    for (const group of groups.values()) group.sort((a, b) => Number(topical.test(`${b.title} ${b.intro}`)) - Number(topical.test(`${a.title} ${a.intro}`)));
+    const kindOrder = [...kindsInOrder, ...[...groups.keys()].filter((kind) => !kindsInOrder.includes(kind))];
+    const result = [];
+    for (const relevant of [true, false]) {
+      while (kindOrder.some((kind) => (groups.get(kind) || []).some((item) => topical.test(`${item.title} ${item.intro}`) === relevant))) {
+        for (const kind of kindOrder) {
+          const group = groups.get(kind) || [];
+          const index = group.findIndex((item) => topical.test(`${item.title} ${item.intro}`) === relevant);
+          if (index >= 0) result.push(...group.splice(index, 1));
+        }
+      }
+    }
+    return result;
   }
   function collection(snapshot, section) {
     if (!SECTIONS[section]) return [];
     if (periodForSection(section)) return sortEntries(snapshot.briefings.filter((item) => item.period === periodForSection(section)));
     if (section === "discover") return sortEntries(mergedNews(snapshot, "secondary"));
-    if (section === "latest") return sortEntries([...snapshot.articles, ...mergedNews(snapshot)]);
-    if (section === "wechat") return sortEntries(snapshot.articles.filter((item) => item.catalog && item.catalog.source_channel === "wechat"));
+    if (section === "latest") return interleaveByKind([...snapshot.articles, ...mergedNews(snapshot), ...mergedArchive(snapshot)]);
+    if (section === "wechat") return sortEntries([
+      ...snapshot.articles.filter((item) => item.catalog && item.catalog.source_channel === "wechat"),
+      ...mergedArchive(snapshot).filter((item) => item.catalog.source_channel === "wechat" && isOfficialWechat(item.source.url)),
+    ]);
     return sortEntries([...snapshot.articles.filter((item) => articleKind(item) === SECTIONS[section].kind),
-      ...mergedNews(snapshot).filter((item) => item.catalog.kind === SECTIONS[section].kind)]);
+      ...mergedNews(snapshot).filter((item) => item.catalog.kind === SECTIONS[section].kind),
+      ...mergedArchive(snapshot).filter((item) => item.catalog.kind === SECTIONS[section].kind)]);
   }
   function optionsFor(snapshot, section) {
     const entries = collection(snapshot, section);
@@ -183,6 +268,7 @@
     if (section === "standards") return {
       organization: uniqueOptions(entries.map((item) => [item.catalog && item.catalog.standard && item.catalog.standard.organization, item.catalog && item.catalog.standard && item.catalog.standard.organization])),
       stage: uniqueOptions(entries.map((item) => [item.catalog && item.catalog.standard && item.catalog.standard.stage, item.catalog && item.catalog.standard && STAGE_LABELS[item.catalog.standard.stage]])),
+      standard_type: [{ value: "project", label: "标准项目" }, { value: "announcement", label: "标准公告" }],
     };
     return {};
   }
@@ -200,6 +286,7 @@
       if (section === "wechat" && filters.source && item.source.id !== filters.source) return false;
       if (section === "standards") {
         const standard = item.catalog && item.catalog.standard;
+        if (filters.standard_type && standardRecordType(item) !== filters.standard_type) return false;
         if (filters.organization && (!standard || standard.organization !== filters.organization)) return false;
         if (filters.stage && (!standard || standard.stage !== filters.stage)) return false;
       }
@@ -213,6 +300,9 @@
     const standard = catalog && catalog.standard;
     return [item.title, item.intro, item.body, item.source.id, catalog && catalog.kind, catalog && catalog.source_name,
       catalog && catalog.source_channel, catalog && catalog.region, catalog && catalog.paper && catalog.paper.url,
+      item.archive && Object.values(item.archive).filter((value) => typeof value === "string").join(" "),
+      item.archive && item.archive.events.flatMap((event) => [event.title, event.type, event.source_name]).join(" "),
+      item.archive && item.archive.drafting_units.join(" "),
       standard && standard.identifier, standard && standard.organization, standard && standard.stage,
       standard && STAGE_LABELS[standard.stage], standard && standard.as_of].filter(Boolean).join(" ");
   }
@@ -249,14 +339,23 @@
   function renderArticle(article) {
     const catalog = article.catalog;
     const kind = articleKind(article);
+    const archive = article.archive;
+    const archiveStandard = Boolean(archive && kind === "standard");
     const detail = [];
     if (kind === "policy" && catalog && catalog.region) detail.push(`地区：${escapeHtml(catalog.region)}`);
-    if (catalog && catalog.source_name) detail.push(`来源：${escapeHtml(catalog.source_name)}`);
-    if (kind === "standard" && catalog && catalog.standard) {
+    if (catalog && catalog.source_name && !archiveStandard) detail.push(`来源：${escapeHtml(catalog.source_name)}`);
+    if (kind === "standard" && catalog && catalog.standard && !archiveStandard) {
       const standard = catalog.standard;
       if (standard.organization) detail.push(`组织：${escapeHtml(standard.organization)}`);
       if (standard.identifier) detail.push(`编号：${escapeHtml(standard.identifier)}`);
       if (standard.stage && standard.as_of) detail.push(`进展：${escapeHtml(STAGE_LABELS[standard.stage])} · 截至 ${dateLabel(standard.as_of)}`);
+    }
+    if (archive) {
+      if (!archiveStandard) {
+        if (archive.recorded_at) detail.push(`收录日期：${dateLabel(archive.recorded_at)}`);
+        if (archive.organization) detail.push(`归口单位：${escapeHtml(archive.organization)}`);
+        if (archive.department) detail.push(`主管部门：${escapeHtml(archive.department)}`);
+      }
     }
     const paperUrl = kind === "paper" && catalog && catalog.paper ? catalog.paper.url : null;
     const paperLink = paperUrl ? sourceLink(article, "论文原文", paperUrl) : "";
@@ -267,17 +366,30 @@
       : sourceLink(article, "查看原文", sourceUrl);
     const sourceHost = article.source.url ? new URL(article.source.url).hostname.replace(/^www\./, "") : "";
     const isNews = article.format === "source_excerpt";
+    const meta = [...(article.published_at ? [`${isNews ? "原文发布时间" : "发布日期"}：${isNews ? timestampLabel(article.published_at) : dateLabel(article.published_at)}`] : []), ...detail];
+    if (!meta.length && sourceHost) meta.push(`来源：${escapeHtml(sourceHost)}`);
+    const standardFields = archiveStandard ? [
+      ["标准编号", archive.standard_number], ["计划号", archive.plan_number], ["层级", archive.level], ["档案阶段", archive.status],
+      ["归口单位", archive.organization], ["主管部门", archive.department], ["收录日期", archive.recorded_at],
+      ["实施日期", archive.implementation_date], ["截止日期", archive.deadline],
+    ].filter(([, value]) => value).map(([label, value]) => `<div><dt>${label}</dt><dd>${escapeHtml(label.includes("日期") ? dateLabel(value) : value)}</dd></div>`).join("") : "";
+    const standardDl = standardFields ? `<dl class="published-standard-details">${standardFields}</dl>` : "";
+    const draftingUnits = archiveStandard && archive.drafting_units.length ? `<p class="published-drafting-units"><strong>起草单位：</strong>${archive.drafting_units.map(escapeHtml).join("、")}</p>` : "";
+    const archiveDetails = archive && archive.events.length ? `<section class="published-section"><h2>事件记录</h2><ol class="published-events">${archive.events.map((event) => `<li>${event.date ? `<time>${dateLabel(event.date)}</time> · ` : ""}${event.url ? sourceLink(article, event.title, event.url) : escapeHtml(event.title)}${event.type ? ` · ${escapeHtml(event.type)}` : ""}${event.source_name ? ` · ${escapeHtml(event.source_name)}` : ""}</li>`).join("")}</ol></section>` : "";
+    const attachments = archive && archive.attachments.length ? `<section class="published-section"><h2>附件</h2><ul class="published-events">${archive.attachments.map((attachment) => `<li>${sourceLink(article, attachment.title, attachment.url)}</li>`).join("")}</ul></section>` : "";
+    const archiveNotice = archive && kind === "standard" ? `<p class="published-archive-note">阶段与事件按原记录展示，最新状态以来源原文为准。</p>` : "";
+    const introLabel = archiveStandard ? "内容范围：" : archive && article.intro ? "原文摘录：" : kind === "paper" ? "论文简介：" : "";
     return `<article class="article${isNews ? " published-news" : ""}"><h1 class="article-title">${escapeHtml(article.title)}</h1>
-      <p class="published-meta">${isNews ? "原文发布时间：" : "发布日期："}${isNews ? timestampLabel(article.published_at) : dateLabel(article.published_at)}${detail.length ? ` · ${detail.join(" · ")}` : sourceHost ? ` · 来源：${escapeHtml(sourceHost)}` : ""}</p>
       ${sourceLinkMarkup ? `<p class="published-original">${sourceLinkMarkup}</p>` : ""}
-      ${article.intro ? `<p class="published-intro">${isNews ? '<span class="published-news-label">原文摘要</span>' : kind === "paper" ? "论文简介：" : ""}${escapeHtml(article.intro)}</p>` : ""}${isNews ? "" : paragraphs(article.body)}</article>`;
+      ${archiveStandard ? standardDl : meta.length ? `<p class="published-meta">${meta.join(" · ")}</p>` : ""}
+      ${draftingUnits}${article.intro ? `<p class="published-intro">${isNews ? '<span class="published-news-label">原文摘要</span>' : introLabel}${escapeHtml(article.intro)}</p>` : ""}${isNews || archive ? "" : paragraphs(article.body)}${archiveNotice}${archiveDetails}${attachments}</article>`;
   }
   function citationMarkup(section, articleMap) {
     const citations = [...new Set(section.article_ids)].map((id) => articleMap.get(id)).filter(Boolean);
     if (!citations.length) return "";
     return `<div class="published-citations" aria-label="相关已发布内容">${citations.map((article) => `<div class="published-citation">
       <a href="${escapeHtml(internalArticleHref(article))}">${escapeHtml(article.title)}</a>
-      <small>发布日期：${dateLabel(article.published_at)}${sourceLink(article, " · 原文")}</small></div>`).join("")}</div>`;
+      <small>${article.published_at ? `发布日期：${dateLabel(article.published_at)}` : ""}${sourceLink(article, " · 原文")}</small></div>`).join("")}</div>`;
   }
   function renderBriefing(briefing, snapshot) {
     const articleMap = new Map(snapshot.articles.map((article) => [article.id, article]));
@@ -293,13 +405,17 @@
     return entries.map((item) => {
       const briefing = isBriefing(item);
       const targetSection = briefing ? item.period : section;
-      const meta = briefing ? `${item.end_date} · ${SECTIONS[item.period].label}` : [item.format === "source_excerpt" ? timestampLabel(item.published_at) : dateKey(item.published_at), item.catalog && item.catalog.source_name].filter(Boolean).join(" · ");
+      const archiveDate = item.format === "archive_record" && item.archive.recorded_at &&
+        (!item.published_at || standardRecordType(item) === "project") ? `收录日期：${dateKey(item.archive.recorded_at)}` : "";
+      const publishedDate = item.published_at ? (item.format === "source_excerpt" ? timestampLabel(item.published_at) : `发布日期：${dateKey(item.published_at)}`) : "";
+      const displayDate = standardRecordType(item) === "project" ? (archiveDate || publishedDate) : (publishedDate || archiveDate);
+      const meta = briefing ? `${item.end_date} · ${SECTIONS[item.period].label}` : [displayDate, item.catalog && item.catalog.source_name].filter(Boolean).join(" · ");
       const id = item.id;
-      const category = briefing ? "简报" : item.format === "source_excerpt" ? (articleKind(item) === "paper" ? "论文快讯" : "资讯快讯") : ({ paper: "论文", policy: "政策", standard: "标准" }[articleKind(item)] || "文章");
+      const category = briefing ? "简报" : item.format === "archive_record" ? (articleKind(item) === "standard" ? standardRecordType(item) === "project" ? "标准项目" : "标准公告" : ({ paper: "论文档案", policy: "政策档案" }[articleKind(item)] || "资讯档案")) : item.format === "source_excerpt" ? (articleKind(item) === "paper" ? "论文快讯" : "资讯快讯") : ({ paper: "论文", policy: "政策", standard: "标准" }[articleKind(item)] || "文章");
       const params = new URLSearchParams({ section: targetSection, id });
       if (state.q) params.set("q", state.q);
       for (const key of FILTERS[targetSection] || []) if (state.filters && state.filters[key]) params.set(key, state.filters[key]);
-      const summary = briefing ? "" : item.intro;
+      const summary = briefing ? "" : item.intro ? `${item.format === "archive_record" ? articleKind(item) === "standard" ? "内容范围：" : "原文摘录：" : ""}${item.intro}` : "";
       return `<a class="item-row${id === selectedId ? " selected" : ""}" href="${escapeHtml(`?${params}`)}" data-entry-id="${escapeHtml(id)}" data-entry-type="${briefing ? "briefing" : "article"}"${id === selectedId ? ' aria-current="true"' : ""}>
         <span class="item-meta">${escapeHtml(meta)}</span><span class="item-title">${escapeHtml(item.title)}</span><span class="item-kind">${category}</span>${summary ? `<span class="item-summary">${escapeHtml(summary)}</span>` : ""}</a>`;
     }).join("");
@@ -309,7 +425,7 @@
     const rawSection = params.get("section");
     const section = Object.hasOwn(SECTIONS, rawSection) ? rawSection : "latest";
     const filters = {};
-    for (const key of ["region", "source", "organization", "stage"]) if (params.has(key)) filters[key] = params.get(key);
+    for (const key of ["region", "source", "organization", "stage", "standard_type"]) if (params.has(key)) filters[key] = params.get(key);
     return { section, id: params.get("id") || "", q: params.get("q") || "", filters, explicitId: params.has("id") };
   }
   function writeState(state, mode, win) {
@@ -322,7 +438,7 @@
   function filterMarkup(section, options, filters) {
     const fields = FILTERS[section] || [];
     if (!fields.length) return "";
-    const labels = { region: "地区", source: "公众号", organization: "组织", stage: "进展" };
+    const labels = { region: "地区", source: "公众号", organization: "组织", stage: "进展", standard_type: "标准类别" };
     const controls = fields.map((key) => {
       const active = Object.hasOwn(filters, key);
       const valid = active && options[key].some((option) => option.value === filters[key]);
@@ -344,13 +460,16 @@
 
     let snapshot = { articles: [], briefings: [] };
     let news = { updated_at: null, items: [] };
+    let archive = { items: [] };
     let loadError = false;
+    let archiveError = false;
+    let pageLimit = PAGE_SIZE;
     let mobileReading = Boolean(readState(win.location).id);
     let lastSelection = null;
     const panel = win.document.getElementById("reading-panel");
     const navigation = win.document.getElementById("primary-nav");
     function render() {
-      const view = { ...snapshot, news };
+      const view = { ...snapshot, news, archive };
       const state = readState(win.location);
       const result = filterResult(view, state.section, state.filters);
       const q = state.q.trim().toLocaleLowerCase();
@@ -358,15 +477,29 @@
       const selected = state.id ? entries.find((item) => item.id === state.id) || null : entries[0] || null;
       heading.textContent = SECTIONS[state.section].label;
       const countUnit = periodForSection(state.section) ? "期简报" : state.section === "latest" ? "条内容" : "条内容";
-      subtitle.textContent = state.q ? `搜索：${state.q}` : `${entries.length} ${countUnit}`;
+      subtitle.textContent = state.q ? `搜索：${state.q} · ${entries.length} ${countUnit}` : `${entries.length} ${countUnit}${state.section === "latest" ? " · 优先机器人与具身智能，分类交替展示" : ""}`;
       if (!state.q && news.updated_at && ["latest", "articles", "papers", "discover"].includes(state.section)) {
         subtitle.textContent += ` · 收录更新 ${timestampLabel(news.updated_at)}`;
       }
-      tools.innerHTML = `<label class="search-field"><img class="ui-icon" src="reader-assets/icons/search.svg" alt="" aria-hidden="true"><input type="search" data-search aria-label="搜索${SECTIONS[state.section].label}" placeholder="搜索${SECTIONS[state.section].label}" value="${escapeHtml(state.q)}"></label>${filterMarkup(state.section, result.options, state.filters)}`;
-      list.innerHTML = loadError ? '<p class="published-empty published-error">暂时无法读取发布内容。</p>' : result.invalid.length ? '<p class="published-empty">筛选条件在当前栏目中没有匹配内容，请重新选择。</p>' : state.q && !entries.length ? '<p class="published-empty">没有找到匹配的内容。</p>' : listMarkup(entries, state.section, selected && selected.id, state);
+      const counters = [
+        ["standards", "标准"], ["policies", "政策"], ["articles", "资讯"], ["papers", "论文"],
+      ].map(([section, label]) => {
+        const entries = collection(view, section);
+        const count = section === "standards"
+          ? `<b>${entries.length}</b><small>项目 ${entries.filter((item) => standardRecordType(item) === "project").length} · 公告 ${entries.filter((item) => standardRecordType(item) === "announcement").length}</small>`
+          : `<b>${entries.length}</b>`;
+        return `<a class="published-category" href="?section=${section}" data-section="${section}"><span>${label}</span>${count}</a>`;
+      }).join("");
+      tools.innerHTML = `<nav class="published-categories" aria-label="分类数量">${counters}</nav><label class="search-field"><img class="ui-icon" src="reader-assets/icons/search.svg" alt="" aria-hidden="true"><input type="search" data-search aria-label="搜索${SECTIONS[state.section].label}" placeholder="搜索${SECTIONS[state.section].label}" value="${escapeHtml(state.q)}"></label>${filterMarkup(state.section, result.options, state.filters)}`;
+      const shownEntries = entries.slice(0, pageLimit);
+      const more = entries.length > shownEntries.length ? `<button class="published-load-more" type="button" data-load-more>加载更多（剩余 ${entries.length - shownEntries.length} 条）</button>` : "";
+      list.innerHTML = loadError ? '<p class="published-empty published-error">暂时无法读取发布内容。</p>' : result.invalid.length ? '<p class="published-empty">筛选条件在当前栏目中没有匹配内容，请重新选择。</p>' : state.q && !entries.length ? '<p class="published-empty">没有找到匹配的内容。</p>' : `${listMarkup(shownEntries, state.section, selected && selected.id, state)}${more}`;
       list.setAttribute("aria-busy", "false");
-      reader.innerHTML = loadError ? '<p class="published-empty published-error">暂时无法读取发布内容。</p>' : selected ? (isBriefing(selected) ? renderBriefing(selected, view) : renderArticle(selected)) : `<p class="published-empty">${state.id ? "链接对应的内容当前不可用。" : state.q ? "没有找到匹配的内容。" : result.invalid.length ? "筛选条件在当前栏目中没有匹配内容。" : "目前没有可阅读的内容。"}</p>`;
+      const archiveNotice = archiveError ? '<div class="published-empty" role="status">部分历史档案暂时无法读取。 <button type="button" data-retry-catalog>重试</button></div>' : "";
+      reader.innerHTML = `${archiveNotice}${loadError ? '<p class="published-empty published-error">暂时无法读取发布内容。</p>' : selected ? (isBriefing(selected) ? renderBriefing(selected, view) : renderArticle(selected)) : `<p class="published-empty">${state.id ? "链接对应的内容当前不可用。" : state.q ? "没有找到匹配的内容。" : result.invalid.length ? "筛选条件在当前栏目中没有匹配内容。" : "目前没有可阅读的内容。"}</p>`}`;
       reader.setAttribute("aria-busy", "false");
+      const retryCatalog = reader.querySelector("[data-retry-catalog]");
+      if (retryCatalog) retryCatalog.addEventListener("click", () => { retryCatalog.disabled = true; fetchArchive(); });
       shell.classList.toggle("mobile-reading", mobileReading);
       if (panel && lastSelection !== (selected && selected.id)) panel.scrollTop = 0;
       lastSelection = selected && selected.id;
@@ -379,6 +512,7 @@
         const current = readState(win.location);
         const id = search.value === current.q ? current.id : "";
         mobileReading = false;
+        pageLimit = PAGE_SIZE;
         writeState({ ...current, q: search.value, id }, "replace", win);
         render();
         const next = tools.querySelector("[data-search]");
@@ -391,6 +525,7 @@
         if (control.value) filters[control.dataset.filter] = control.value;
         else delete filters[control.dataset.filter];
         mobileReading = false;
+        pageLimit = PAGE_SIZE;
         writeState({ ...current, id: "", filters }, "push", win);
         render();
       }));
@@ -399,7 +534,17 @@
         const filters = { ...current.filters };
         delete filters[button.dataset.clearFilter];
         mobileReading = false;
+        pageLimit = PAGE_SIZE;
         writeState({ ...current, id: "", filters }, "push", win);
+        render();
+      }));
+      const loadMore = list.querySelector("[data-load-more]");
+      if (loadMore) loadMore.addEventListener("click", () => { pageLimit += PAGE_SIZE; render(); });
+      tools.querySelectorAll("[data-section]").forEach((link) => link.addEventListener("click", (event) => {
+        event.preventDefault();
+        pageLimit = PAGE_SIZE;
+        writeState({ section: link.dataset.section, id: "", q: "", filters: {} }, "push", win);
+        mobileReading = false;
         render();
       }));
       list.querySelectorAll("[data-entry-id]").forEach((link) => link.addEventListener("click", (event) => {
@@ -413,6 +558,7 @@
     win.document.querySelectorAll("[data-section]").forEach((link) => link.addEventListener("click", (event) => {
       event.preventDefault();
       const section = link.dataset.section;
+      pageLimit = PAGE_SIZE;
       writeState({ section, id: "", q: "", filters: {} }, "push", win);
       navigation.classList.remove("menu-open");
       mobileReading = false;
@@ -428,6 +574,17 @@
     const back = win.document.querySelector("[data-back]");
     if (back) back.addEventListener("click", () => { mobileReading = false; shell.classList.remove("mobile-reading"); });
     win.addEventListener("popstate", () => { mobileReading = Boolean(readState(win.location).id); render(); });
+    function fetchArchive() {
+      win.fetch("catalog.json", { cache: "no-store" }).then((response) => {
+        if (!response.ok) throw new Error("catalog");
+        return response.json();
+      }).then((data) => {
+        if (!data || typeof data !== "object" || Array.isArray(data) || data.schema_version !== 1 || !Array.isArray(data.items)) throw new Error("catalog");
+        archive = { items: normalizeArchive(data) };
+        archiveError = false;
+        render();
+      }).catch(() => { archiveError = true; render(); });
+    }
     render();
     win.fetch("data.json", { cache: "no-store" }).then((response) => {
       if (!response.ok) throw new Error("snapshot");
@@ -438,7 +595,8 @@
       if (!response.ok) throw new Error("news");
       return response.json();
     }).then((data) => { news = normalizeNews(data); render(); }).catch(() => {});
+    fetchArchive();
   }
 
-  return { SECTIONS, STAGE_LABELS, FILTERS, escapeHtml, safeSourceUrl, normalizeSnapshot, normalizeNews, projectCatalog, dateKey, articleKind, articleSection, collection, optionsFor, filterResult, visibleEntries, resolveSelection, paragraphs, readState, writeState, renderArticle, renderBriefing, listMarkup, filterMarkup, internalArticleHref, boot };
+  return { SECTIONS, STAGE_LABELS, FILTERS, PAGE_SIZE, escapeHtml, safeSourceUrl, normalizeSnapshot, normalizeNews, normalizeArchive, projectCatalog, dateKey, articleKind, articleSection, standardRecordType, collection, optionsFor, filterResult, visibleEntries, resolveSelection, paragraphs, readState, writeState, renderArticle, renderBriefing, listMarkup, filterMarkup, internalArticleHref, boot };
 });

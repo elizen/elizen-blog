@@ -22,6 +22,19 @@
 .published-filter-control button { min-width: 44px; padding: 4px 8px; color: #52616d; background: white; border: 1px solid #cfd7dc; border-radius: 4px; cursor: pointer; font: inherit; white-space: nowrap; }
 .published-filter-control button:disabled { color: #9ba4aa; background: #f7f7f5; cursor: default; }
 .item-kind { width: fit-content; padding: 2px 7px; color: #65737e; background: #f2f3f2; border-radius: 3px; font-size: 11px; line-height: 1.5; }
+.published-categories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin-bottom: 10px; }
+.published-category { display: grid; min-width: 0; justify-items: center; gap: 2px; padding: 6px 3px; color: #52616d; text-align: center; text-decoration: none; background: #f7f7f5; border: 1px solid #e5e7e6; border-radius: 3px; font-size: 12px; }
+.published-category b { min-width: 0; color: var(--ink); font-size: 10px; font-variant-numeric: tabular-nums; font-weight: 600; overflow-wrap: anywhere; }
+.published-category small { max-width: 100%; color: #697680; font-size: 9px; line-height: 1.25; white-space: normal; overflow-wrap: anywhere; }
+.published-standard-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 10px 0 16px; border-top: 1px solid var(--line); }
+.published-standard-details > div { min-width: 0; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); }
+.published-standard-details dt { color: var(--muted); font-size: 12px; }
+.published-standard-details dd { margin: 2px 0 0; color: var(--ink); overflow-wrap: anywhere; }
+.published-drafting-units { color: #43515c; }
+.published-load-more { display: block; width: calc(100% - 32px); margin: 14px 16px; padding: 10px; color: #52616d; background: #fff; border: 1px solid #d9d9d4; border-radius: 3px; cursor: pointer; font: inherit; }
+.published-events { display: grid; gap: 8px; padding-left: 22px; color: #43515c; }
+.published-events time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.published-archive-note { color: var(--muted); font-size: 13px; }
 #reader-shell .published-empty { color: #596875; background: #fbfaf7; border-color: #e3e1dc; border-radius: 3px; }
 #reader-shell .published-meta { border-color: #d9d9d4; }
 #reader-shell .published-intro { color: #35434d; }
