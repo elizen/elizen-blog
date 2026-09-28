@@ -20,6 +20,16 @@
 .published-document summary { color: #263540; font-size: 18px; font-weight: 550; cursor: pointer; }
 .published-reading-section { min-width: 0; margin: 18px 0; overflow-wrap: anywhere; }
 .published-reading-section h3 { margin: 0 0 8px; color: #35434d; font-size: 17px; line-height: 1.55; }
+.published-bilingual-summary { margin: 12px 0 20px; padding: 14px 16px; border-left: 3px solid #8fa9a2; background: #f6f8f6; }
+.published-bilingual-summary h3 { margin: 0 0 6px; color: #35434d; font-size: 15px; }
+.published-bilingual-summary [lang="en"] { margin-top: 14px; }
+.published-bilingual-summary .published-paragraph { margin: 0 0 8px; }
+.published-summary-source { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+.published-original-abstract { margin: 12px 0; color: #43515c; }
+.published-original-abstract summary { cursor: pointer; font-size: 14px; }
+.published-original-abstract h3 { margin: 12px 0 4px; font-size: 14px; }
+.published-unit-roster { margin: 16px 0; }
+.published-unit-roster summary { font-size: 14px; color: #43515c; cursor: pointer; }
 .published-paragraph { margin: 12px 0; color: #43515c; }
 .nav-group-label { padding: 16px 12px 4px; color: #818b92; font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
 .reader-tools { margin-top: 10px; }
