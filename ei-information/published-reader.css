@@ -1,0 +1,40 @@
+.published-empty { margin: 18px; padding: 22px; color: #687684; background: #f7f7f5; border: 1px solid #e5e7e6; border-radius: 4px; line-height: 1.75; }
+.published-error { color: #71431f; background: #fff4e9; border-color: #f0d1bc; }
+.published-period { margin: 2px 0 18px; color: var(--muted); font-size: 14px; }
+.published-section { margin: 30px 0; }
+.published-section h2 { margin: 0 0 10px; padding-left: 13px; border-left: 4px solid var(--accent); font-size: 20px; line-height: 1.5; }
+.published-section p { margin: 9px 0; color: #43515c; }
+.published-citations { display: grid; margin-top: 14px; border-top: 1px solid var(--line); }
+.published-citation { display: grid; gap: 5px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.published-citation a { width: fit-content; color: var(--accent); text-underline-offset: 3px; }
+.published-citation small { color: var(--muted); }
+.published-original { margin: 5px 0 16px; }
+.published-meta { margin: 10px 0 22px; padding-bottom: 18px; color: var(--muted); font-size: 14px; border-bottom: 1px solid #aeb8bd; }
+.published-intro { margin: 25px 0 27px; color: #263540; font-size: 19px; font-weight: 520; line-height: 1.85; }
+.published-paragraph { margin: 12px 0; color: #43515c; }
+.nav-group-label { padding: 16px 12px 4px; color: #818b92; font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.reader-tools { margin-top: 10px; }
+.published-filter-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.published-filter { display: grid; gap: 5px; color: #687684; font-size: 12px; }
+.published-filter-control { display: flex; gap: 5px; min-width: 0; }
+.published-filter select { width: 100%; min-width: 0; min-height: 38px; padding: 5px 8px; color: var(--ink); background: #fff; border: 1px solid #cfd7dc; border-radius: 4px; font: inherit; }
+.published-filter select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.published-filter-control button { min-width: 44px; padding: 4px 8px; color: #52616d; background: white; border: 1px solid #cfd7dc; border-radius: 4px; cursor: pointer; font: inherit; white-space: nowrap; }
+.published-filter-control button:disabled { color: #9ba4aa; background: #f7f7f5; cursor: default; }
+.item-kind { width: fit-content; padding: 2px 7px; color: #65737e; background: #f2f3f2; border-radius: 3px; font-size: 11px; line-height: 1.5; }
+#reader-shell .published-empty { color: #596875; background: #fbfaf7; border-color: #e3e1dc; border-radius: 3px; }
+#reader-shell .published-meta { border-color: #d9d9d4; }
+#reader-shell .published-intro { color: #35434d; }
+#reader-shell .published-section h2 { border-left-width: 2px; }
+#reader-shell .published-news-label { display: block; margin-bottom: 8px; color: #687684; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+#reader-shell .item-row { border-bottom: 1px solid #e3e1dc; border-radius: 2px; }
+#reader-shell .item-row:focus-visible, #reader-shell a:focus-visible, #reader-shell button:focus-visible, #reader-shell input:focus-visible, #reader-shell select:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+@media (min-width: 851px) {
+  #reader-shell #primary-nav { overflow-y: auto; }
+}
+@media (max-width: 850px) {
+  .nav-links { max-height: min(70dvh, 560px); overflow-y: auto; overscroll-behavior: contain; }
+  .nav-group-label { grid-column: 1 / -1; padding: 8px 10px 3px; }
+  .published-intro { font-size: 18px; }
+  .published-section h2 { font-size: 19px; }
+}
