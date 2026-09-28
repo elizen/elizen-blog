@@ -149,10 +149,23 @@
   function sortEntries(entries) {
     return entries.slice().sort((a, b) => (Date.parse(b.published_at || `${entryDate(b)}T00:00:00Z`) || 0) - (Date.parse(a.published_at || `${entryDate(a)}T00:00:00Z`) || 0) || a.id.localeCompare(b.id));
   }
+  function arxivWorkId(value) {
+    const safeUrl = safeSourceUrl(value);
+    if (!safeUrl) return null;
+    const url = new URL(safeUrl);
+    if (url.hostname.replace(/^www\./, "") !== "arxiv.org") return null;
+    const match = url.pathname.match(/^\/(?:abs|html|pdf)\/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?\/?$/i);
+    return match ? match[1] : null;
+  }
   function mergedNews(snapshot, placement = "main") {
     const editedSources = new Set(snapshot.articles.map((item) => `${item.source.id}\n${safeSourceUrl(item.source.url) || ""}`));
+    const editedArxivWorks = new Set(snapshot.articles.flatMap((item) => {
+      const workId = arxivWorkId(item.source.url);
+      return workId ? [`${item.source.id}\n${workId}`] : [];
+    }));
     return (snapshot.news ? snapshot.news.items : []).filter((item) => item.placement === placement &&
-      !editedSources.has(`${item.source.id}\n${safeSourceUrl(item.source.url) || ""}`));
+      !editedSources.has(`${item.source.id}\n${safeSourceUrl(item.source.url) || ""}`) &&
+      !editedArxivWorks.has(`${item.source.id}\n${arxivWorkId(item.source.url) || ""}`));
   }
   function collection(snapshot, section) {
     if (!SECTIONS[section]) return [];
