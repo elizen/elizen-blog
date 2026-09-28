@@ -78,6 +78,8 @@
       source: { id: plainText(item.source && item.source.id), url: safeSourceUrl(item.source && item.source.url) },
       catalog: schemaVersion === 3 ? projectCatalog(item.catalog) : null,
     };
+    const reading = normalizeReading(item.reading);
+    if (reading) article.reading = reading;
     return article;
   }
   function projectBriefing(item) {
@@ -106,7 +108,12 @@
       sections: Array.isArray(value.sections) ? value.sections.slice(0, 100).filter((section) => section && typeof section === "object" && !Array.isArray(section))
         .map((section) => ({ heading: typeof section.heading === "string" ? section.heading.slice(0, 60000) : "", text: typeof section.text === "string" ? section.text.slice(0, 60000) : "" })).filter((section) => section.text.trim()) : [],
     };
-    return reading.points.some((point) => point.trim()) || reading.sections.length ? reading : null;
+    if (value.mode === "abstract" && value.summary && typeof value.summary === "object" && !Array.isArray(value.summary) &&
+        typeof value.summary.zh === "string" && value.summary.zh.trim() &&
+        typeof value.summary.en === "string" && value.summary.en.trim()) {
+      reading.summary = { zh: value.summary.zh.slice(0, 800), en: value.summary.en.slice(0, 3000) };
+    }
+    return reading.points.some((point) => point.trim()) || reading.sections.length || reading.summary ? reading : null;
   }
 
   function normalizeArchive(data) {
@@ -140,8 +147,18 @@
         ...(reading ? { reading } : {}),
         archive: { recorded_at: recordedAt, standard_number: optionalText(archive.standard_number), plan_number: optionalText(archive.plan_number),
           level: optionalText(archive.level), status: optionalText(archive.status), organization: optionalText(archive.organization),
-          department: optionalText(archive.department), implementation_date: validDate(archive.implementation_date), deadline: validDate(archive.deadline),
-          drafting_units: Array.isArray(archive.drafting_units) ? archive.drafting_units.filter((unit) => typeof unit === "string" && unit.trim()) : [], events, attachments },
+          department: optionalText(archive.department), counterpart_organization: optionalText(archive.counterpart_organization),
+          executing_organization: optionalText(archive.executing_organization),
+          implementation_date: validDate(archive.implementation_date), deadline: validDate(archive.deadline),
+          drafting_units: Array.isArray(archive.drafting_units) ? archive.drafting_units.filter((unit) => typeof unit === "string" && unit.trim()) : [],
+          lead_units: Array.isArray(archive.lead_units) ? archive.lead_units.filter((unit) => typeof unit === "string" && unit.trim()) : [],
+          participating_units: Array.isArray(archive.participating_units) ? archive.participating_units.filter((unit) => typeof unit === "string" && unit.trim()) : [],
+          related_units: Array.isArray(archive.related_units) ? archive.related_units.filter((unit) => typeof unit === "string" && unit.trim()) : [],
+          metadata_sources: Array.isArray(archive.metadata_sources) ? archive.metadata_sources.map((source) => {
+            if (!source || typeof source !== "object" || Array.isArray(source) || typeof source.title !== "string" || !source.title.trim()) return null;
+            const url = safeSourceUrl(source.url);
+            return url ? { title: source.title, url } : null;
+          }).filter(Boolean) : [], events, attachments },
       };
     }).filter(Boolean);
   }
@@ -314,10 +331,12 @@
     const standard = catalog && catalog.standard;
     return [item.title, item.intro, item.body, item.source.id, catalog && catalog.kind, catalog && catalog.source_name,
       item.reading && [...item.reading.points, ...item.reading.sections.flatMap((section) => [section.heading, section.text])].join(" "),
+      item.reading && item.reading.summary && [item.reading.summary.zh, item.reading.summary.en].join(" "),
       catalog && catalog.source_channel, catalog && catalog.region, catalog && catalog.paper && catalog.paper.url,
       item.archive && Object.values(item.archive).filter((value) => typeof value === "string").join(" "),
       item.archive && item.archive.events.flatMap((event) => [event.title, event.type, event.source_name]).join(" "),
       item.archive && item.archive.drafting_units.join(" "),
+      item.archive && [item.archive.counterpart_organization, item.archive.executing_organization, ...item.archive.lead_units, ...item.archive.participating_units, ...item.archive.related_units, ...item.archive.metadata_sources.flatMap((source) => [source.title, source.url])].join(" "),
       standard && standard.identifier, standard && standard.organization, standard && standard.stage,
       standard && STAGE_LABELS[standard.stage], standard && standard.as_of].filter(Boolean).join(" ");
   }
@@ -385,29 +404,39 @@
     if (!meta.length && sourceHost) meta.push(`来源：${escapeHtml(sourceHost)}`);
     const standardFields = archiveStandard ? [
       ["标准编号", archive.standard_number], ["计划号", archive.plan_number], ["层级", archive.level], ["档案阶段", archive.status],
-      ["归口单位", archive.organization], ["主管部门", archive.department], ["收录日期", archive.recorded_at],
+      ["归口单位", archive.organization], ["对口单位", archive.counterpart_organization], ["执行单位", archive.executing_organization], ["主管部门", archive.department], ["收录日期", archive.recorded_at],
       ["实施日期", archive.implementation_date], ["截止日期", archive.deadline],
     ].filter(([, value]) => value).map(([label, value]) => `<div><dt>${label}</dt><dd>${escapeHtml(label.includes("日期") ? dateLabel(value) : value)}</dd></div>`).join("") : "";
     const standardDl = standardFields ? `<dl class="published-standard-details">${standardFields}</dl>` : "";
-    const draftingUnits = archiveStandard && archive.drafting_units.length ? `<p class="published-drafting-units"><strong>起草单位：</strong>${archive.drafting_units.map(escapeHtml).join("、")}</p>` : "";
+    const draftingText = archiveStandard && archive.drafting_units.length ? `<p class="published-drafting-units"><strong>起草单位：</strong>${archive.drafting_units.map(escapeHtml).join("、")}</p>` : "";
+    const draftingUnits = archiveStandard && archive.drafting_units.length > 8 ? `<details class="published-unit-roster"><summary>完整起草单位（${archive.drafting_units.length} 家）</summary>${draftingText}</details>` : draftingText;
+    const leadUnits = archiveStandard && archive.lead_units.length ? `<p class="published-drafting-units"><strong>牵头单位：</strong>${archive.lead_units.map(escapeHtml).join("、")}</p>` : "";
+    const participatingUnits = archiveStandard && archive.participating_units.length ? `<p class="published-drafting-units"><strong>参与单位：</strong>${archive.participating_units.map(escapeHtml).join("、")}</p>` : "";
+    const relatedUnits = archiveStandard ? archive.related_units.filter((unit) => !archive.drafting_units.includes(unit)) : [];
+    const relatedUnitsMarkup = relatedUnits.length ? `<p class="published-drafting-units"><strong>相关单位：</strong>${relatedUnits.map(escapeHtml).join("、")}</p>` : "";
+    const metadataSources = archiveStandard && archive.metadata_sources.length ? `<section class="published-section published-metadata-sources"><h2>机构信息依据</h2><ul>${archive.metadata_sources.map((source) => `<li>${sourceLink(article, source.title, source.url)}</li>`).join("")}</ul></section>` : "";
     const archiveDetails = archive && archive.events.length ? `<section class="published-section"><h2>事件记录</h2><ol class="published-events">${archive.events.map((event) => `<li>${event.date ? `<time>${dateLabel(event.date)}</time> · ` : ""}${event.url ? sourceLink(article, event.title, event.url) : escapeHtml(event.title)}${event.type ? ` · ${escapeHtml(event.type)}` : ""}${event.source_name ? ` · ${escapeHtml(event.source_name)}` : ""}</li>`).join("")}</ol></section>` : "";
     const attachments = archive && archive.attachments.length ? `<section class="published-section"><h2>附件与补充原文</h2><ul class="published-events">${archive.attachments.map((attachment) => `<li>${sourceLink(article, attachment.title, attachment.url)}</li>`).join("")}</ul></section>` : "";
     const archiveNotice = archive && kind === "standard" ? `<p class="published-archive-note">阶段与事件按原记录展示，最新状态以来源原文为准。</p>` : "";
     const reading = article.reading || (archive && archive.reading);
     const readingLabel = reading && (reading.mode === "official" ? reading.points.length ? "内容要点" : "文件内容" : reading.mode === "abstract" ? "研究摘要" : "内容摘读");
+    const originalAbstract = reading && reading.mode === "abstract" && reading.summary
+      ? [...reading.points.map((point) => `<p class="published-paragraph">${escapeHtml(point)}</p>`), ...reading.sections.map((section) => `${section.heading ? `<h3>${escapeHtml(section.heading)}</h3>` : ""}${paragraphs(section.text)}`)].join("") : "";
     const readingMarkup = reading ? `<section class="published-reading" aria-label="${readingLabel}">
       <h2>${readingLabel}${reading.mode === "official" ? '<small>（原文节选）</small>' : ""}</h2>
-      ${reading.points.length ? `<ul class="published-reading-points">${reading.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>` : ""}
+      ${reading.summary ? `<section class="published-bilingual-summary"><div lang="zh-CN"><h3>论文中文总结</h3>${paragraphs(reading.summary.zh)}</div><div lang="en"><h3>English summary</h3>${paragraphs(reading.summary.en)}</div><p class="published-summary-source">AI 辅助整理，基于原文摘要</p></section>` : ""}
+      ${originalAbstract ? `<details class="published-original-abstract"><summary>展开原始摘要</summary>${originalAbstract}</details>` : ""}
+      ${reading.points.length && !reading.summary ? `<ul class="published-reading-points">${reading.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}</ul>` : ""}
       ${reading.mode === "official" && reading.sections.length ? `<details class="published-document"${reading.points.length ? "" : " open"}><summary>展开文件正文</summary>
         <p class="published-archive-note">按收录版本整理，适用状态及附件以发布机构原文为准。</p>
         ${reading.sections.map((section) => `<section class="published-reading-section">${section.heading ? `<h3>${escapeHtml(section.heading)}</h3>` : ""}${paragraphs(section.text)}</section>`).join("")}</details>` : ""}
-      ${reading.mode !== "official" ? reading.sections.map((section) => `<section class="published-section published-reading-section">${section.heading ? `<h2>${escapeHtml(section.heading)}</h2>` : ""}${paragraphs(section.text)}</section>`).join("") : ""}
+      ${reading.mode !== "official" && !originalAbstract ? reading.sections.map((section) => `<section class="published-section published-reading-section">${section.heading ? `<h2>${escapeHtml(section.heading)}</h2>` : ""}${paragraphs(section.text)}</section>`).join("") : ""}
       </section>` : "";
     const introLabel = archiveStandard ? "内容范围：" : archive && article.intro ? "原文摘录：" : kind === "paper" ? "论文简介：" : "";
     return `<article class="article${isNews ? " published-news" : ""}"><h1 class="article-title">${escapeHtml(article.title)}</h1>
       ${sourceLinkMarkup ? `<p class="published-original">${sourceLinkMarkup}</p>` : ""}
       ${archiveStandard ? standardDl : meta.length ? `<p class="published-meta">${meta.join(" · ")}</p>` : ""}
-      ${draftingUnits}${article.intro && !reading ? `<p class="published-intro">${isNews ? '<span class="published-news-label">原文摘要</span>' : introLabel}${escapeHtml(article.intro)}</p>` : ""}${isNews || archive ? "" : paragraphs(article.body)}${readingMarkup}${archiveNotice}${archiveDetails}${attachments}</article>`;
+      ${leadUnits}${participatingUnits}${draftingUnits}${relatedUnitsMarkup}${article.intro && !reading ? `<p class="published-intro">${isNews ? '<span class="published-news-label">原文摘要</span>' : introLabel}${escapeHtml(article.intro)}</p>` : ""}${readingMarkup}${isNews || archive ? "" : reading && article.body ? `<section class="published-section"><h2>研究导读</h2>${paragraphs(article.body)}</section>` : paragraphs(article.body)}${archiveNotice}${metadataSources}${archiveDetails}${attachments}</article>`;
   }
   function citationMarkup(section, articleMap) {
     const citations = [...new Set(section.article_ids)].map((id) => articleMap.get(id)).filter(Boolean);
@@ -623,5 +652,5 @@
     fetchArchive();
   }
 
-  return { SECTIONS, STAGE_LABELS, FILTERS, PAGE_SIZE, escapeHtml, safeSourceUrl, normalizeSnapshot, normalizeNews, normalizeArchive, projectCatalog, dateKey, articleKind, articleSection, standardRecordType, collection, optionsFor, filterResult, visibleEntries, resolveSelection, paragraphs, readState, writeState, renderArticle, renderBriefing, listMarkup, filterMarkup, internalArticleHref, boot };
+  return { SECTIONS, STAGE_LABELS, FILTERS, PAGE_SIZE, escapeHtml, safeSourceUrl, normalizeReading, normalizeSnapshot, normalizeNews, normalizeArchive, projectCatalog, dateKey, articleKind, articleSection, standardRecordType, collection, optionsFor, filterResult, visibleEntries, resolveSelection, paragraphs, readState, writeState, renderArticle, renderBriefing, listMarkup, filterMarkup, internalArticleHref, boot };
 });

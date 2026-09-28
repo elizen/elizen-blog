@@ -13,6 +13,20 @@
       "id": "bcc41ecf38994dbb819849c1b118394c",
       "intro": "这篇研究把能量、耗散与控制输入纳入世界模型，再利用模型预测选择导航动作。它关注的是路径能否被机器人实际执行，而不只是几何上能否绕开障碍。",
       "published_at": "2026-08-10",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Physically consistent motion planning remains a fundamental challenge in embodied AI, as generated trajectories must strictly conform to real-world execution dynamics. While latent world models offer a promising approach by predicting these dynamics, existing methods learn unconstrained future representations where absorbed physics remains implicit.\n\nTherefore, they fail to form reusable physical knowledge, which compromises reliability in unpredictable open-world navigation. To address this, we propose a novel Energy-Structured Latent World Model (ELWM).\n\nOur key idea is to structure the ELWM latent state to explicitly carry energy and momentum, ensuring strictly causal transitions via dissipation and control ports. Trained on multimodal RGB-D and inertial interaction histories, our model guarantees physically consistent predictions.\n\nWe further implement this for motion planning by constructing Physics-Conditioned Neural Time Fields (PC-NTF), a key technical cornerstone that integrates ELWM into an arrival time field via the Eikonal equation to yield a physically-informed navigation policy. Across held-out scenes, our evaluation reveals significant improvements.\n\nCompared to generic latent models, PC-NTF reduces 0.8-s motion-prediction NRMSE from 0.36 to 0.29.Against Active Neural Time Fields, it improves navigation success from 81.3% to 89.7% and SPL from 0.64 to 0.73, while cutting the physical collision rate from 12.1% to 5.8% and the Eikonal residual from 0.083 to 0.031.\n\nBeyond these targeted gains, our results demonstrate that embedding explicit physical structures into latent spaces intrinsically bridges the gap between predictive world models and safe, dynamically feasible motion planning."
+          }
+        ],
+        "summary": {
+          "en": "The paper argues that latent world models leave physics implicit, limiting reusable knowledge and reliable planning. ELWM explicitly represents energy and momentum with causal transitions through dissipation and control ports; PC-NTF integrates it into an arrival-time field using the Eikonal equation for navigation. On held-out scenes, the authors report lower motion-prediction error than generic latent models and, against Active Neural Time Fields, higher navigation success and SPL alongside fewer physical collisions and lower Eikonal residual.",
+          "zh": "论文针对潜在世界模型虽能预测动力学、却未显式保存可复用物理规律，可能导致开放环境规划不可靠的问题，提出能量结构化潜在世界模型 ELWM，将能量和动量纳入潜在状态，并通过耗散与控制端口确保因果转移；再以物理条件神经时间场 PC-NTF结合Eikonal方程用于导航规划。留出场景评估中，作者报告相对通用潜在模型预测误差下降，并相对 Active Neural Time Fields提高成功率和SPL、降低物理碰撞率及方程残差。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2608.09876v1"
@@ -295,6 +309,20 @@
       "id": "240a840ec8c44b43b00e625f72f89fa0",
       "intro": "这项研究针对 Ego-Exo4D 的稀疏三维姿态标注，利用同步的第一视角和多视角视频重建连续人体运动，发布人体网格数据与相应处理流程。",
       "published_at": "2026-09-24",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Ego-Exo4D is a large-scale dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied AI. However, the dataset ships with only sparse 3D human pose annotations, and reconstructing dense human motion from its multi-view captures is nontrivial.\n\nTo this end, we present Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for Ego-Exo4D's captures, and release the accompanying reconstruction pipeline. The code, dataset, and documentation can be found at https://abhiram824.github.io/egoexo4d_human_meshes."
+          }
+        ],
+        "summary": {
+          "en": "Ego-Exo4D provides synchronized egocentric and multi-view video, but its sparse 3D pose annotations make dense motion reconstruction difficult. The paper introduces Ego-Exo4D-HM, a collection of 4D human-motion reconstructions for the dataset, together with a reconstruction pipeline. It is presented as a resource for skill learning, assessment, activity understanding, and embodied AI; the abstract reports no quantitative evaluation.",
+          "zh": "Ego-Exo4D虽提供同步的第一视角与多视角视频，但原有三维人体姿态标注较稀疏，难以直接恢复稠密动作。论文提出Ego-Exo4D-HM，为数据集中的拍摄内容构建四维人体运动重建，并同时发布相应重建流程。摘要将其定位为支持技能学习、评估、活动理解和具身智能研究的数据资源；未在摘要中报告定量效果。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2609.30187v1"
@@ -314,6 +342,20 @@
       "id": "93677f1f031d4910ac66d197df8072d4",
       "intro": "Metric-Bench 考察视觉语言模型能否利用图中已知尺寸的物体，推断其他物体的实际大小和距离。它把空间理解从识别物体推进到可度量的空间关系。",
       "published_at": "2026-09-22",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Metric reasoning is a critical and challenging task for Vision Language Models (VLMs), playing a pivotal role in embodied AI tasks such as robotic manipulation and autonomous navigation.\n\nHowever, current spatial reasoning remains bottlenecked by rigid pixel-level supervision; such localized optimization often compromises general multimodal intelligence, triggering performance degradation or catastrophic forgetting of broad reasoning capabilities.\n\nTo address these limitations, we introduce Metric-Bench, a focused benchmark designed to guide metric-spatial reasoning using contextual information. By incorporating in-image reference objects with known physical dimensions, Metric-Bench guides models to implicitly learn the 2D-to-3D mapping without camera intrinsics.\n\nWe further present MetricReasoner, a task-adapted reinforcement fine-tuning recipe for reference-grounded metric reasoning, using structured prompts and verifiable numerical rewards.\n\nExtensive experiments on Metric-Bench demonstrate that our approach significantly enhances spatial metric understanding, outperforming existing and even larger proprietary models by 43.1\\%, while improving downstream embodied performance over a spatial-specialized counterpart by 30.4\\% on RoboSpatial overall accuracy and 9.3\\% on ERQA, and additionally delivering consistent gains on general benchmarks (15.9\\% on V$\\star$Bench, 88.9\\% on BLINK), indicating that the proposed adaptation does not necessarily compromise general VLM capabilities."
+          }
+        ],
+        "summary": {
+          "en": "The work addresses metric spatial reasoning without relying on rigid pixel-level supervision that may harm broader multimodal abilities. Metric-Bench uses reference objects of known dimensions to guide 2D-to-3D scale reasoning without camera intrinsics; MetricReasoner is fine-tuned with structured prompts and verifiable numerical rewards. Experiments report gains over existing and larger proprietary models, plus improvements on RoboSpatial, ERQA, and general benchmarks, without establishing universal preservation of capability.",
+          "zh": "为减少像素级监督可能损害通用多模态能力的问题，论文提出Metric-Bench，以图中已知尺寸的参照物引导视觉语言模型从二维图像推断尺度，无需相机内参；并以可验证数值奖励微调MetricReasoner。实验报告其基准表现超过既有及更大型专有模型，且在RoboSpatial、ERQA和一般视觉基准上有提升。结果支持该适配方案，但不等于所有通用能力均获保证。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2609.25841v1"
@@ -333,6 +375,20 @@
       "id": "8c8cb362315e4ec49fef205d985d0ba1",
       "intro": "MotionForge 面向动态物体的长时序操作，构建了包含 40 项任务、11 种运动模式的仿真基准。它同时测试环境变化和模型推理延迟带来的影响。",
       "published_at": "2026-09-22",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Recent advances in learning-based robot policies have demonstrated promising progress, yet they are predom- inantly evaluated in static or quasi-static environments. In dynamic manipulation, objects and scenes continuously evolve while the robot perceives, reasons, and acts.\n\nHowever, recent dynamic simulation benchmarks largely focus on short-horizon, reactive interactions with simple motion patterns and offer limited support for both systematic evaluation under domain shifts and model-agnostic real-time execution protocols.\n\nTo bridge these gaps, we introduce MotionForge, the first large- scale simulation benchmark and data-generation pipeline tailored to jointly evaluate domain shifts and long-horizon interaction in dynamic manipulation. MotionForge comprises 40 dynamic interaction tasks spanning 11 distinct motion patterns, with dedicated support for 17 long-horizon tasks.\n\nOur benchmark introduces two key novelties: （1） a systematic evaluation protocol for assessing policy robustness under both single-factor (e.g., only backgrounds shift) and joint domain shifts (e.g., simultaneous shifts of objects, backgrounds, lighting, and speed); and （2） a decoupled, latency-aware execution protocol where the environ- ment continuously evolves independently of policy inference time.\n\nExtensive evaluations of representative general-purpose robot policies on our benchmark reveal substantial limitations under joint domain shifts.\n\nThese findings expose a critical gap between current policy capabilities and the requirements of robust long- horizon manipulation of dynamic objects under domain shifts, establishing MotionForge as a comprehensive testbed for future research in embodied AI."
+          }
+        ],
+        "summary": {
+          "en": "MotionForge targets gaps in dynamic-manipulation benchmarks, which often use short reactive tasks and limited motion patterns. The simulation benchmark contains 40 tasks, 11 motion patterns, and 17 long-horizon tasks. It tests both single-factor and joint domain shifts, while allowing the environment to evolve independently of policy inference latency. Evaluations of representative general-purpose policies reveal substantial limitations under joint shifts, indicating a gap in robust long-horizon manipulation.",
+          "zh": "现有动态操作基准多为短时、简单运动，且难系统测试域偏移与实时执行。MotionForge提供40项动态交互任务、11类运动模式及17项长时任务，在仿真中分别考察单因素和多因素联合变化，并让环境独立于策略推理持续演化。代表性通用机器人策略在联合域偏移下暴露明显局限；论文据此提出能力与稳健长时操作需求之间仍有差距。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2609.25689v1"
@@ -352,6 +408,20 @@
       "id": "c93d97a7976b4f8089a25612ade7243e",
       "intro": "Uranus 使用关节轨迹条件自回归扩散模型，根据机器人动作持续生成多视角观测。它尝试降低传统仿真环境构建成本，并支持在线交互而非一次性生成整段视频。",
       "published_at": "2026-09-21",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Scalable simulation is essential for robot data generation, policy training, evaluation, and safe iteration, yet real-world interaction is costly and conventional simulators require labor-intensive construction. We present Uranus, a data-driven robot simulator built around a joint-trajectory-conditioned autoregressive diffusion model.\n\nUranus offers three key capabilities: （1） streaming, open-ended rollout, which receives future joint-position trajectories online and autoregressively generates one latent frame per step, corresponding to four RGB frames, without a fixed horizon; （2） low-latency generation, achieving 24 FPS after inference optimization; and （3） scalable, extensible robot control, providing a unified interface for synchronized multi-view generation across diverse robot embodiments and camera configurations.\n\nWe conduct comprehensive quantitative and qualitative evaluations on both in-distribution and out-of-distribution data, providing an objective assessment of Uranus and clearly identifying its current limitations. We release the code and model weights to empower the community with practical tools and insights."
+          }
+        ],
+        "summary": {
+          "en": "Uranus is a data-driven robot simulator intended to reduce the cost of real interaction and labor-intensive simulator construction. It uses a joint-trajectory-conditioned autoregressive diffusion model, accepts future joint positions online, and generates open-ended rollouts without a fixed horizon. After inference optimization, the authors report 24 FPS and synchronized multi-view control across robot embodiments and camera setups. They evaluate in- and out-of-distribution data and acknowledge limitations without detailing them in the abstract.",
+          "zh": "为降低真实交互成本和传统仿真搭建负担，Uranus提出以关节轨迹为条件的自回归扩散式数据驱动机器人模拟器。系统可在线接收未来关节位置并持续生成潜在帧，不设固定时域；优化后报告生成速度为24 FPS，并提供跨机器人形态与相机配置的同步多视角控制接口。作者在分布内外数据上做定量、定性评估，也说明仍存在局限，但摘要未具体列出。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2609.24815v3"
@@ -371,6 +441,20 @@
       "id": "28f03aff42374a609d091bd9d6e42157",
       "intro": "DeCap 将全身控制中的平滑性拆成上肢与下肢两组约束，试图同时保留下肢应对地形的灵活性与上肢的稳定性，减少依赖反复调整奖励权重。",
       "published_at": "2026-09-21",
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Embodied AI systems, particularly humanoid robots deployed in real world scenarios require whole-body control policies that are both task-responsive and physically smooth. However, smoothness is not uniform across the body: lower body must remain sufficiently reactive, while the upper body must be tightly regulated to preserve stability.\n\nExisting reinforcement learning approaches typically impose smoothness through auxiliary terms in the reward function, which compete with task objectives, treating the body as uniform and provide no direct control over the physical quantities responsible for smooth behavior.\n\nWe introduce DeCap (Decoupled Constraint-aware policy), a constrained reinforcement learning algorithm that decouples whole-body smoothness into separate upper- and lower-body constraint groups, each formulates smoothness as explicit constraints on physical motion limits.\n\nTo improve constraint satisfaction near feasibility boundaries, DeCap incorporates a bounded barrier penalty that activates proactively as limits are approached and remains bounded at the constraint limit.\n\nOn real-world humanoid whole-body control task, DeCap reduces upper-body action rate by 2.50x and acceleration by 2.18x relative to reward-based smoothness policies, while also improving lower-body smoothness and reducing transient motion.\n\nWe demonstrate that a fixed set of smoothness constraints transfers across diverse terrains, alleviating the need of extensive reward tuning."
+          }
+        ],
+        "summary": {
+          "en": "DeCap addresses the mismatch between upper- and lower-body smoothness needs and the competition between reward penalties and task objectives. Its constrained reinforcement-learning method assigns separate physical motion limits to the two body regions and uses a bounded barrier penalty near feasibility boundaries. In a real-world humanoid control task, it reduces upper-body action rate by 2.50 times and acceleration by 2.18 times versus reward-based policies, while improving lower-body smoothness. Fixed constraints transfer across terrains.",
+          "zh": "针对全身控制中上下肢平滑需求不同、奖励惩罚又会与任务目标竞争的问题，DeCap将平滑性拆成上、下身独立的物理运动约束，并加入接近可行边界时启动且有界的屏障惩罚。在真实人形机器人全身控制任务中，相较奖励式平滑策略，上身动作变化率降低2.50倍、加速度降低2.18倍，同时下身平滑性改善、瞬态动作减少。摘要还报告固定约束可迁移到不同地形。"
+        }
+      },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/html/2609.24552v1"
