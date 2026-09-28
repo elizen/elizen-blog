@@ -28,13 +28,26 @@
 #reader-shell .published-section h2 { border-left-width: 2px; }
 #reader-shell .published-news-label { display: block; margin-bottom: 8px; color: #687684; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
 #reader-shell .item-row { border-bottom: 1px solid #e3e1dc; border-radius: 2px; }
+#reader-shell .collection-heading h1 { font-size: 23px; }
+#reader-shell .item-meta { font-size: 12px; }
 #reader-shell .item-row:focus-visible, #reader-shell a:focus-visible, #reader-shell button:focus-visible, #reader-shell input:focus-visible, #reader-shell select:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 @media (min-width: 851px) {
   #reader-shell #primary-nav { overflow-y: auto; }
+  #reader-shell .nav-links a, #reader-shell .nav-secondary a { font-size: 14px; }
+  #reader-shell .item-title { font-size: 16px; }
+  #reader-shell .item-summary { font-size: 13px; }
+  #reader-shell .article { font-size: 16px; line-height: 1.75; }
+  #reader-shell .article-title { font-size: clamp(26px, 2vw, 30px); }
+  #reader-shell .article-lead, #reader-shell .published-intro { font-size: 16px; font-weight: 450; line-height: 1.75; }
+  #reader-shell .article-section h2, #reader-shell .article-section h3, #reader-shell .published-section h2 { font-size: 18px; }
+  #reader-shell .published-news-label { font-weight: 500; }
 }
 @media (max-width: 850px) {
   .nav-links { max-height: min(70dvh, 560px); overflow-y: auto; overscroll-behavior: contain; }
   .nav-group-label { grid-column: 1 / -1; padding: 8px 10px 3px; }
-  .published-intro { font-size: 18px; }
-  .published-section h2 { font-size: 19px; }
+  #reader-shell .item-title { font-size: 16px; }
+  #reader-shell .article { font-size: 16px; line-height: 1.75; }
+  #reader-shell .article-title { font-size: 24px; }
+  #reader-shell .article-lead, #reader-shell .published-intro { font-size: 16px; font-weight: 450; line-height: 1.75; }
+  #reader-shell .article-section h2, #reader-shell .article-section h3, #reader-shell .published-section h2 { font-size: 17px; }
 }

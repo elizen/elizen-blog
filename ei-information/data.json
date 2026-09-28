@@ -89,6 +89,384 @@
         "url": "https://www.shanghai.gov.cn/nw12344/20250806/f9cb53544505426d807055ca20bd69fc.html"
       },
       "title": "上海具身智能实施方案：把模型、公共平台和应用场景放进同一套安排"
+    },
+    {
+      "body": "公司披露，采集流程包含质量筛选、反作弊、去重、分布再平衡和标注。数据来自家庭、餐饮、物流等实际环境，随后用于 Helix 训练。\n\n这提供了观察机器人数据业务的一个具体切口：上传量之外，还要看样本重复度、任务覆盖和处理质量。文中的规模及投入数字属于 Figure 自行披露，不等同于数据对模型效果的独立验证。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "d7283e1705944895a4d739d90acaf9ef",
+      "intro": "Figure 推出 Index，用手机应用组织真实场景中的人类活动采集。它关注的不是再增加一批演示视频，而是如何同时扩大任务、物体和环境的多样性。",
+      "published_at": "2026-08-25",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/introducing-index"
+      },
+      "title": "Figure Index：把真实人类活动变成机器人训练数据"
+    },
+    {
+      "body": "据公司介绍，这组导航实验使用人类视频训练，让机器人根据自然语言在真实家庭空间内移动，不依赖该任务的机器人示教。Brookfield 的住宅和商业空间为采集提供了环境。\n\n这里应区分导航迁移与通用操作：机器人能从视频学会走向目标，并不意味着所有抓取、接触或家庭任务都能以同样方式完成。后续更值得看跨环境测试及失败情形。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "c12a6e733d4744fabacb79cbca95452f",
+      "intro": "Figure 介绍了扩大人类行为数据采集的 Project Go-Big，并展示 Helix 从第一视角视频学习导航的结果。研究重点是人类行为能否迁移到机器人的移动控制。",
+      "published_at": "2025-09-18",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/project-go-big"
+      },
+      "title": "Project Go-Big：从第一视角人类视频学习机器人导航"
+    },
+    {
+      "body": "公告介绍了来料检查、工序检测、整机测试，以及机器人在运行中的诊断、维护和软件升级机制。这些环节说明，批量制造并不只是提高组装速度，还需要持续处理现场故障。\n\n每小时一台是公司披露的生产节拍，不能直接换算为全年实际交付量。判断规模化进展，还需结合良率、有效运行时间、维护负担及客户使用情况。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "d59162246ff9424b95cee4fc564d59f4",
+      "intro": "Figure 披露 BotQ 已交付超过 350 台 Figure 03，并将生产节拍从每天一台提高到每小时一台。制造扩张同时服务于数据采集、可靠性测试和场景部署。",
+      "published_at": "2026-04-29",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/ramping-figure-03-production"
+      },
+      "title": "Figure 03 产线爬坡：制造规模如何反过来推动模型迭代"
+    },
+    {
+      "body": "这不表示机器人独立完成了整车制造。公告将任务指标拆成作业周期、放置准确率和人工干预次数，也介绍了前臂故障如何影响下一代产品的腕部电子设计。\n\n这份材料的价值在于给出生产任务及维护反馈。读者可据此关注实际工位能力，而非仅凭累计车辆数推断机器人的通用性或经济回报。相关运行数据由 Figure 披露。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "29315d582abe4daf95154fe997ca5664",
+      "intro": "Figure 总结了 Figure 02 在宝马斯帕坦堡工厂的部署。具体任务是向工装装载钣金件；公司报告累计运行超过 1,250 小时，参与了超过 3 万辆汽车的生产。",
+      "published_at": "2025-11-19",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/production-at-bmw"
+      },
+      "title": "Figure 02 在宝马产线的复盘：把节拍、精度和干预次数一起看"
+    },
+    {
+      "body": "系统仍采用分层设计：高层解释场景与目标，中间层输出全身关节目标，底层负责平衡、接触与协调。输入结合视觉、触觉和本体感知，而不是仅靠相机识别后执行固定动作。\n\n公告展示了长时序自主操作的一个具体实例，但单次连续演示不足以代表普遍成功率。跨家庭重复测试、失败恢复和人工介入情况，是评价这类能力的重要补充。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "9dc1e8ad31424eaf959d17617abf5e74",
+      "intro": "Figure 发布 Helix 02，将此前偏重上肢的控制扩展到全身，并展示连续四分钟的厨房任务。核心变化是把移动、接触操作和平衡作为相互耦合的问题处理。",
+      "published_at": "2026-01-27",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/helix-02"
+      },
+      "title": "Helix 02：将行走、操作和平衡纳入全身控制体系"
+    },
+    {
+      "body": "掌心相机用于补充抓取时被遮挡的视野，触觉反馈则帮助判断接触和滑移。公告还介绍了软质外覆、无线充电及面向量产的结构和工艺调整。\n\n这些改动反映出感知、控制和可制造性需要协同设计。不过，硬件发布中的能力目标不等于家庭场景已经普遍可用；实际可靠性与交付表现仍需另看后续运行材料。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "99bcb1ef9faa49849cd0023c192cab29",
+      "intro": "Figure 的第三代人形机器人围绕 Helix、家庭使用和规模制造重新设计。掌心相机、指尖触觉及新的视觉系统，是这次硬件变化的重点。",
+      "published_at": "2025-10-09",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/introducing-figure-03"
+      },
+      "title": "Figure 03：为视觉触觉控制与批量制造重做本体"
+    },
+    {
+      "body": "公告明确了合作方、首个部署地点和任务方向，但没有给出可用于独立评价的机器人数量、任务成功率或投入产出数据。\n\n它首先是一条商业合作进展，而不是规模化运行效果的结论。后续应关注具体工位、实际运行时长和人工干预水平，才能判断这一合作能否复制到更多物流设施。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "8f317c1369e84b7e9b6a66363d0866b2",
+      "intro": "Figure 宣布与 Catalyst Brands 达成商业合作，从美国里诺的配送物流中心开始，面向供应链中的高体力负荷任务部署人形机器人。",
+      "published_at": "2026-05-26",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/figure-signs-agreement-with-catalyst-brands"
+      },
+      "title": "Figure 与 Catalyst Brands 合作：从物流中心切入商业部署"
+    },
+    {
+      "body": "这三项投入分别对应机器人本体供给、模型训练能力和行为数据来源。把资金用途放在一起看，比单独关注估值数字更能理解公司的扩张路径。\n\n这里保留公告原始时间和承诺资本口径，不将历史融资写成近期新消息，也不把融资估值当作产品收入、交付能力或投资回报的证明。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Figure"
+      },
+      "id": "44a9c7f7cd394f7c90edfbff84b50d01",
+      "intro": "Figure 于 2025 年 9 月宣布，C 轮承诺投资额超过 10 亿美元，投后估值为 390 亿美元。公告将制造扩张、训练算力和真实世界数据列为主要投入方向。",
+      "published_at": "2025-09-16",
+      "source": {
+        "id": "figure-news",
+        "url": "https://www.figure.ai/news/series-c"
+      },
+      "title": "Figure C 轮融资公告：资本投向制造、算力与数据采集"
+    },
+    {
+      "body": "报道围绕协作抬举任务，介绍了人体与机器人耦合建模、硬件尺寸优化，以及用传感器估计人体关节负荷的方法。它提示我们，人机协作的评价对象可以是双方构成的系统。\n\n报道中的负荷改善对应特定实验条件，不能直接等同于长期舒适度或医疗效果。本条是媒体研究导读，原文同时提供论文地址，技术细节应结合论文核查。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "机器人大讲堂"
+      },
+      "id": "add666eeb31844a385eac15b206143a4",
+      "intro": "机器人大讲堂介绍了 IIT 与 INAIL 的 ergoCub 研究：在设计机器人肢体和控制策略时，同时考虑与之协作的人体负荷，而不只优化机器人自身表现。",
+      "published_at": "2026-08-09",
+      "source": {
+        "id": "leaderobot",
+        "url": "https://www.leaderobot.com/news/preview/9027"
+      },
+      "title": "ergoCub 人机协作研究：把人的负荷写进机器人设计目标"
+    },
+    {
+      "body": "报道涉及第一视角视频、触觉手套、UMI 夹爪等采集形式，以及商业、工业和家庭场景的数据服务。它反映了训练数据从各家自建向专业化供应链延伸的一种路径。\n\n融资及产能描述来自这篇报道，不视作独立审计结果。判断数据业务质量，还需进一步比较可用样本比例、场景多样性、权利边界和下游模型效果。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "机器人大讲堂"
+      },
+      "id": "be576e826c0049c3b5f03126c68a7260",
+      "intro": "机器人大讲堂报道恺望数据完成逾亿元战略融资，参与方包括多家具身智能企业。值得关注的是，这些企业不仅采购数据，也以投资者身份参与数据供给建设。",
+      "published_at": "2026-08-08",
+      "source": {
+        "id": "leaderobot",
+        "url": "https://www.leaderobot.com/news/preview/9021"
+      },
+      "title": "恺望数据融资报道：机器人企业开始投资自己的数据供应链"
+    },
+    {
+      "body": "Robin 没有机械臂，主要承担陪伴、解释和互动任务；大型医院中的导航由远程操作员监控，工作人员也会提供个性化信息。断联停止移动，是其运行边界的一部分。\n\n这类案例说明，服务价值并不必然来自完全自主。但报道中的个案不构成普遍医疗疗效的证明，评价时应区分交互体验、人工支持和临床证据。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "机器人大讲堂"
+      },
+      "id": "517723dfb09840f79d772f4b301b279c",
+      "intro": "机器人大讲堂介绍了面向医院陪伴场景的 Robin。它以轮式移动、对话和游戏提供交互服务，报道同时说明了远程操作员与医护人员的参与。",
+      "published_at": "2026-08-07",
+      "source": {
+        "id": "leaderobot",
+        "url": "https://www.leaderobot.com/news/preview/9007"
+      },
+      "title": "Robin 医院陪伴机器人：交互服务与自主能力要分开看"
+    },
+    {
+      "body": "报道区分了集中交付活动的整体规模与现场首批 30 台的交付情况，不能把两者直接当作同一个已完成数字。产品配置涉及激光雷达、测温、气体传感与视觉识别。\n\n从应用角度看，机器人本体只是巡检系统的一环。实际价值还取决于异常识别、工单处理和维护流程能否闭合；文中性能与规模为报道口径，并非本网站实测。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "机器人大讲堂"
+      },
+      "id": "b0da1ac8a25b49549265df93702c7ee7",
+      "intro": "机器人大讲堂报道武汉光谷举行工业巡检机器人集中交付，并介绍诚芯智联的巡检产品。材料涉及自主导航、传感采集、告警上报及园区任务协同。",
+      "published_at": "2026-08-07",
+      "source": {
+        "id": "leaderobot",
+        "url": "https://www.leaderobot.com/news/preview/9002"
+      },
+      "title": "武汉四足机器人交付：从导航模组走向巡检系统"
+    },
+    {
+      "body": "方法结合多相机约束与人体运动先验，恢复身体、手部姿态及空间轨迹。其用途包括行为分析、技能评估，以及从人类活动中学习机器人行为。\n\n这是一项数据与重建方法工作，不是已经完成的人到机器人通用迁移。将其用于控制训练时，还需处理重建误差、人体与机器人结构差异及任务适配。全文和摘要页均已核对，本条采用首次投稿日期。",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "https://arxiv.org/abs/2609.30187v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv · Maddukuri、Pavlakos"
+      },
+      "id": "240a840ec8c44b43b00e625f72f89fa0",
+      "intro": "这项研究针对 Ego-Exo4D 的稀疏三维姿态标注，利用同步的第一视角和多视角视频重建连续人体运动，发布人体网格数据与相应处理流程。",
+      "published_at": "2026-09-24",
+      "source": {
+        "id": "arxiv-embodied-ai",
+        "url": "https://arxiv.org/html/2609.30187v1"
+      },
+      "title": "Ego-Exo4D-HM：为人类活动视频补上连续三维人体运动"
+    },
+    {
+      "body": "研究同时提出 MetricReasoner，通过结构化提示与可验证的数值奖励进行任务适配。作者在度量推理及若干其他基准上进行比较，讨论空间能力与一般多模态能力能否兼顾。\n\n对机器人而言，这类能力可能帮助导航与操作中的尺度判断。不过，图像问答指标不等于真实机器人任务成功率；部署仍需检查相机条件、参照物可靠性和控制误差。",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "https://arxiv.org/abs/2609.25841v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv · Xi 等"
+      },
+      "id": "93677f1f031d4910ac66d197df8072d4",
+      "intro": "Metric-Bench 考察视觉语言模型能否利用图中已知尺寸的物体，推断其他物体的实际大小和距离。它把空间理解从识别物体推进到可度量的空间关系。",
+      "published_at": "2026-09-22",
+      "source": {
+        "id": "arxiv-embodied-ai",
+        "url": "https://arxiv.org/html/2609.25841v1"
+      },
+      "title": "Metric-Bench：让视觉语言模型借助参照物理解真实尺寸"
+    },
+    {
+      "body": "基准包含 17 项长时序任务，并区分单因素与多因素同时变化的测试。其执行协议让环境运动与策略推理解耦，避免机器人计算时世界也随之暂停。\n\n这有助于检验模型在变化场景中持续行动的能力。论文指出现有策略在联合变化条件下仍有限制，但仿真结果不能直接替代真实硬件验证；碰撞、安全和传感误差还需单独考察。",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "https://arxiv.org/abs/2609.25689v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv · Liu 等"
+      },
+      "id": "8c8cb362315e4ec49fef205d985d0ba1",
+      "intro": "MotionForge 面向动态物体的长时序操作，构建了包含 40 项任务、11 种运动模式的仿真基准。它同时测试环境变化和模型推理延迟带来的影响。",
+      "published_at": "2026-09-22",
+      "source": {
+        "id": "arxiv-embodied-ai",
+        "url": "https://arxiv.org/html/2609.25689v1"
+      },
+      "title": "MotionForge：让操作基准中的世界在机器人思考时继续运动"
+    },
+    {
+      "body": "模型接收未来关节位置及场景信息，逐步预测动作对应的视觉结果。论文报告了低延迟、多视角和跨本体方面的实验，同时公开代码与模型权重。\n\n这里的输入是指定的运动轨迹，不能把视觉预测直接视为完整的力学求解或安全验证。本文依据 v3 阅读；首次投稿为 9 月 21 日，该版更新于 9 月 23 日，列表按首次投稿日期排列。",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "https://arxiv.org/abs/2609.24815v3"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv · D-Robotics Large Model Team"
+      },
+      "id": "c93d97a7976b4f8089a25612ade7243e",
+      "intro": "Uranus 使用关节轨迹条件自回归扩散模型，根据机器人动作持续生成多视角观测。它尝试降低传统仿真环境构建成本，并支持在线交互而非一次性生成整段视频。",
+      "published_at": "2026-09-21",
+      "source": {
+        "id": "arxiv-embodied-ai",
+        "url": "https://arxiv.org/html/2609.24815v3"
+      },
+      "title": "Uranus：用关节轨迹驱动可交互的机器人视频仿真"
+    },
+    {
+      "body": "方法采用约束强化学习，并在动作接近物理限制时加入有界障碍惩罚。作者通过真实人形机器人及不同地形测试，对比动作变化率、加速度和瞬态运动。\n\n它提供的是一种控制设计与实验结果，不是机器人在任意环境中的安全保证。使用时仍需结合具体关节限制、载荷和任务边界，评估约束能否有效迁移。",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "https://arxiv.org/abs/2609.24552v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv · Panchal 等"
+      },
+      "id": "28f03aff42374a609d091bd9d6e42157",
+      "intro": "DeCap 将全身控制中的平滑性拆成上肢与下肢两组约束，试图同时保留下肢应对地形的灵活性与上肢的稳定性，减少依赖反复调整奖励权重。",
+      "published_at": "2026-09-21",
+      "source": {
+        "id": "arxiv-embodied-ai",
+        "url": "https://arxiv.org/html/2609.24552v1"
+      },
+      "title": "DeCap：把人形机器人运动平滑性从奖励项改为显式约束"
+    },
+    {
+      "body": "与研发目标并列的，还有跨本体数据集、模型训练支持、检验检测、中小试基地和标准体系。文件提出围绕软硬件接口、评价测试、场景应用、安全与伦理制定标准。\n\n这些内容体现了从技术研究到验证和应用的配套安排。文件中的 2027 年产业规模、企业数量及场景指标都是发展目标，不应写成已实现成果；具体参与条件还需看后续实施通知。",
+      "catalog": {
+        "kind": "policy",
+        "region": "深圳",
+        "source_channel": "website",
+        "source_name": "深圳市科技创新局"
+      },
+      "id": "f5450efd0b274ebc947494207040e763",
+      "intro": "深圳发布 2025—2027 年具身智能机器人行动计划，将核心零部件、机器人 AI 芯片、灵巧手、模型和本体控制纳入重点任务，同时安排公共平台与场景开放。",
+      "published_at": "2025-03-03",
+      "source": {
+        "id": "sz-embodied-policy",
+        "url": "https://stic.sz.gov.cn/gkmlpt/content/12/12052/mpost_12052515.html"
+      },
+      "title": "深圳具身智能行动计划：技术攻关、公共平台与应用场景并行"
+    },
+    {
+      "body": "官方介绍将模型分工拆开：VLA 负责将视觉和语言转为动作，ER 模型规划与跟踪多步任务，端侧版本处理网络时延与本地运行需求。材料展示了不同机器人本体及末端执行器上的测试。\n\n这不是一个模型在所有硬件上的统一可用性承诺。官方也指出多指精细操作仍有挑战；评估时应按任务、手部结构、速度和适配数据分别比较，避免仅凭演示推断普遍能力。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "Google DeepMind"
+      },
+      "id": "e65d3a9b8be1436487d3d5edf078ec31",
+      "intro": "Google DeepMind 发布 Gemini Robotics 2 系列，分别面向视觉语言动作控制、长时序具身推理和本地运行。更新重点包括全身运动、灵巧操作及多机器人协作。",
+      "published_at": "2026-07-30",
+      "source": {
+        "id": "deepmind-robotics-blog",
+        "url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+      },
+      "title": "Gemini Robotics 2：全身控制、具身推理与端侧模型分工协同"
+    },
+    {
+      "body": "公告将这批标准的作用定位于支撑人工智能、工业互联网等领域技术和产业发展。本条依据公告正文介绍发布事实，具体编号、适用范围与实施日期应以对应标准登记页和正式文本为准。\n\n对具身智能平台建设而言，相关标准可作为模型平台与产业支撑体系的背景材料，但不能仅凭标题认定其条款都直接适用于机器人控制。这里标示的日期是公告时间。",
+      "catalog": {
+        "kind": "standard",
+        "source_channel": "website",
+        "source_name": "全国信息技术标准化技术委员会",
+        "standard": {
+          "as_of": "2026-09-11",
+          "organization": "TC28",
+          "stage": "published"
+        }
+      },
+      "id": "d3f389afcce34dd081b77a8102138ea2",
+      "intro": "全国信标委发布消息，《人工智能 开源模型平台技术要求》等 8 项归口推荐性国家标准获批。这是标准发布进展，不是征求意见或立项通知。",
+      "published_at": "2026-09-11",
+      "source": {
+        "id": "sac-tc28",
+        "url": "https://nits.org.cn/tc28/hydt/202609/a7589c415fcc48b5b3ee99ac08ee2d31.shtml"
+      },
+      "title": "TC28 发布动态：开源模型平台等 8 项推荐性国家标准获批"
+    },
+    {
+      "body": "这批文件的类型是国家标准化指导性技术文件，不能写成强制性国家标准。公告确认了获批事实，但标题层面的参考架构也不等于某类产品已经获得合规认证。\n\n它与具身智能的关联主要在工业智能体及系统架构背景。具体适用边界需要回到正式文本；本条仅整理公告明确表达的内容，日期采用页面显示的 2026 年 8 月 6 日。",
+      "catalog": {
+        "kind": "standard",
+        "source_channel": "website",
+        "source_name": "全国信息技术标准化技术委员会",
+        "standard": {
+          "as_of": "2026-08-06",
+          "organization": "TC28",
+          "stage": "published"
+        }
+      },
+      "id": "7212f28251c04fe48e0af2ca43c6d310",
+      "intro": "全国信标委公告称，《人工智能 工业智能体参考架构》等 5 项归口国家标准化指导性技术文件获批，涉及人工智能、计算机图形图像等方向。",
+      "published_at": "2026-08-06",
+      "source": {
+        "id": "sac-tc28",
+        "url": "https://nits.org.cn/tc28/hydt/202608/0893763dd42f4ab0be40f582aa7b3ae3.shtml"
+      },
+      "title": "工业智能体参考架构等指导性技术文件获批发布"
+    },
+    {
+      "body": "会议内容强调国家标准与行业标准协同，以及基础共性、关键技术、安全伦理等方向的标准供给。它可帮助读者了解标准组织的工作重点。\n\n会议召开本身不等同于某个项目立项、征求意见或正式发布，因此这条按文章资讯呈现，不新增虚构的标准阶段。列表日期为页面发布时间 6 月 2 日，正文另保留会议发生日期。",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "全国信息技术标准化技术委员会"
+      },
+      "id": "0d8ae3f0b18f4c63a8501e9937215445",
+      "intro": "全国信标委报道，SAC/TC28/WG41 具身智能工作组于 2026 年 6 月 1 日召开会议，讨论组织建设、标准体系、急需标准及应用推广。",
+      "published_at": "2026-06-02",
+      "source": {
+        "id": "sac-tc28",
+        "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
+      },
+      "title": "TC28 具身智能工作组会议：关注国行标协同与急需标准供给"
     }
   ],
   "briefings": [
@@ -186,7 +564,7 @@
       "title": "九月专题：从家庭任务演示走向可比较的泛化证据"
     }
   ],
-  "published_at": "2026-09-27T20:09:09+08:00",
-  "release_id": "d2c02d23-def2-413b-b59b-135e48ad3b3c",
+  "published_at": "2026-09-28T13:23:31+08:00",
+  "release_id": "4e97ce90-34d7-4288-9bed-1b8cb373b3f8",
   "schema_version": 3
 }
