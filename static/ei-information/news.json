@@ -2323,7 +2323,11 @@
             "heading": "",
             "text": "Flow-based vision-language-action (VLA) models are highly effective for generalist robot manipulation, yet their reliance on computationally expensive VLM encoding and multi-step iterative action generation imposes a significant latency bottleneck.\n\nThe resulting inference latency makes it difficult for robots to respond quickly, especially in dynamic environments. We address this limitation with RAVEL (Rolling Asynchronous VLA Enabling Low-Latency Control), an asynchronous inference framework that addresses the computational bottlenecks of both the VLM backbone and the action expert.\n\nTo reduce the delay from multi-step action denoising, RAVEL allows near-term actions to be executed after a single denoising step by carrying partially denoised future actions forward in a rolling buffer.\n\nTo avoid blocking on slow VLM encoding, RAVEL decouples VLM encoding from rolling action generation, allowing the action expert to operate continuously using the latest available VLM context, while a lightweight Fast Observation Pathway (FOP) directly conditions the action expert on current observations.\n\nAcross simulated and real-world manipulation tasks, RAVEL consistently achieves substantially lower response latency while maintaining the task capability of the underlying VLA, enabling high-frequency and responsive closed-loop control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RAVEL, an asynchronous inference framework for flow-based vision-language-action models, targeting latency from visual-language encoding and iterative action generation. It decouples encoding from rolling action generation, lets the action expert use the latest available context, and adds a Fast Observation Pathway for current observations. A rolling buffer carries partially denoised future actions forward so near-term actions can be executed after one denoising step. The authors report lower response latency while maintaining the underlying model’s task capability across simulated and real-world manipulation tasks.",
+          "zh": "论文提出 RAVEL，一种面向流式视觉—语言—动作模型的异步推理框架，旨在缓解视觉语言模型编码和多步动作生成带来的延迟。它将视觉语言编码与滚动动作生成解耦，使动作专家使用最新可用上下文持续运行，并通过快速观测通路直接利用当前观测；滚动缓冲区则保留部分去噪的未来动作，使近期动作经单步去噪后即可执行。作者报告，在仿真和真实操作任务中，该方法降低了响应延迟，同时保持底层模型的任务能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2354,7 +2358,11 @@
             "heading": "",
             "text": "Unattended interactive autonomy - machines that step into danger in place of humans and complete tasks with human tools - remains a missing capability in mission-critical operations. These domains offer scarce training data and only onboard compute, yet deployed systems must face novelty without erasing prior competence.\n\nWe introduce Continual Field-Adaptive Models (CFAMs), which learn efficiently in the lab and continue learning after deployment through autonomous, gradient-free, on-device updates. CFAM uses a complementary learning architecture with a frozen slow-learning component and a fast-learning Capsule Field.\n\nThe slow component contains three cortices: Sensor, which maps multimodal input into 3D-grounded geometry; Reasoning, which decomposes tasks into skills and evaluates outcomes; and Action, which executes geometric skills. The Capsule Field stores field learning one-shot and gradient-free as Competence Capsules.\n\nSkill installation is few-shot in the lab and continual in the field; open-world novelty is outside scope. We evaluate CFAM across five embodiments: manipulator, quadruped, humanoid, quadrotor, and off-road vehicle. Baselines (pi0, CogACT, SpatialVLA) use the same in-house multi-embodiment dataset for physical-platform comparisons.\n\nCFAM reaches the operating point of a standard policy trained on the full prior-training dataset using 40% of the data, or 2.5x fewer trajectories. At test time, autonomous capture of verified near-OOD cases improves action success by 13.9 percentage points. In sequential simulation, backward transfer is -0.5 percentage points versus -11.4 for LoRA.\n\nCFAM therefore provides a bounded form of post-deployment physical intelligence: few-shot skill learning, autonomous field growth from verified near-OOD experience, and retention of prior competence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Continual Field-Adaptive Models (CFAMs) for post-deployment physical AI. CFAM combines a frozen slow-learning component, with Sensor, Reasoning, and Action cortices, and a fast Capsule Field that stores learning as gradient-free Competence Capsules. Skills are installed few-shot in the lab, while verified near-OOD experience can be captured autonomously in the field; open-world novelty is outside scope. Evaluations cover five embodiments. The authors report reaching a full-data standard policy’s operating point with 40% of the data and a 13.9 percentage-point action-success improvement from autonomous capture of verified near-OOD cases.",
+          "zh": "论文提出持续现场自适应模型 CFAM，面向部署后的物理智能系统，采用冻结的慢学习组件与快速学习的 Capsule Field，通过无梯度设备端更新持续积累能力。慢组件包含感知、推理和动作模块；技能可在实验室通过少样本安装，现场则以能力胶囊记录学习。作者在五类机器人形态上评估，并称使用全部先前训练数据的 40% 即达到标准策略的运行水平；对经验证的近分布外案例进行自主捕获后，动作成功率提高 13.9 个百分点。新颖开放世界情形不在研究范围内。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2385,7 +2393,11 @@
             "heading": "",
             "text": "Long-term human habitation and in-situ development on the Moon open a new era of space utilization. In this context, robots are a key technology for facilitating the construction of future human outposts.\n\nToward the deployment and establishment of human habitation modules on the lunar surface, we propose a combined system consisting of inflatable modules and a modular, reconfigurable robotic system.\n\nThis paper presents a report demonstrating various robot-assisted task executions using real hardware, namely the modular and reconfigurable robot MoonBot and the inflatable module HIDAS, to enhance the reliability of their deployment and maintenance.\n\nThe demonstrated tasks include robotic inspection during inflation, module position alignment, final safety locking, and three-dimensional mapping for post-deployment maintenance. All demonstrations were conducted either in a laboratory environment or at a lunar analogue test site.\n\nFinally, lessons learned are discussed to provide essential insights for this robotic application to future lunar habitation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper reports hardware demonstrations of robot-assisted deployment and maintenance for inflatable habitation modules, using the reconfigurable MoonBot robot and HIDAS module. Demonstrated tasks include inspection during inflation, module alignment, final safety locking, and three-dimensional mapping for post-deployment maintenance. All demonstrations took place in a laboratory or at a lunar analogue test site. The authors also discuss lessons learned for applying this robotic system to future lunar habitation.",
+          "zh": "论文报告了机器人辅助部署和维护月球充气居住舱的实物演示，系统由可重构模块化机器人 MoonBot 和充气模块 HIDAS 组成。展示任务包括充气过程中的机器人检查、舱体位置对准、最终安全锁定，以及部署后的三维测绘维护。所有演示均在实验室或月球类比测试场地进行，并讨论了相关经验，为未来月球居住设施应用提供参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2416,7 +2428,11 @@
             "heading": "",
             "text": "Language-conditioned robot policies have made clear progress in multitask manipulation, but task-relevant local visual evidence usually stays hidden inside a visual backbone or attention layers. This leaves the policy difficult to inspect and fragile under visual change, two symptoms of a missing explicit, task-aligned local visual channel.\n\nWe present TLC-DiT, a plug-in extension of the Multitask Diffusion Transformer (DiT) policy that adds explicit task-guided local visual feature maps without changing the diffusion objective or the action-generation process.\n\nFor each camera view, frozen DINOv2 patch features are modulated by the CLIP task embedding through FiLM and refined by a lightweight CoordConv CNN adapter into smooth spatial maps, which are concatenated with the original global image, language, joint-state, and timestep conditions.\n\nOn LIBERO, TLC-DiT reaches a 93.5% average success rate, compared with 86.5% for Multitask DiT and 79.25% for SmolVLA. On LIBERO-plus, the total success rate improves from 54.07% to 57.24%, with larger gains under camera, background, and sensor-noise changes.\n\nIn real-world bimanual tasks, TLC-DiT raises Teabag Putting completion from 44% to 89% while maintaining comparable Match Box Opening performance. Feature-map visualizations confirm that the model attends to task-relevant regions across views and perturbations, providing a direct way to inspect the visual evidence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TLC-DiT, a plug-in extension to a Multitask Diffusion Transformer policy that adds explicit task-guided local visual feature maps without changing the diffusion objective or action-generation process. CLIP task embeddings modulate frozen DINOv2 patch features, which a lightweight adapter refines into spatial maps. The authors report improved success rates on LIBERO, LIBERO-plus, and real-world bimanual tasks, with gains under visual perturbations. Feature-map visualizations indicate attention to task-relevant regions across views and perturbations.",
+          "zh": "论文提出 TLC-DiT，作为多任务扩散 Transformer 策略的插件式扩展，加入显式、任务引导的局部视觉特征图，不改变扩散目标或动作生成过程。方法以 CLIP 任务嵌入调制冻结的 DINOv2 图像块特征，再经轻量适配器生成空间图，并与原有条件拼接。作者报告，该方法在 LIBERO、LIBERO-plus 及真实双臂任务中取得成功率提升，尤其在视觉扰动下有所改善；特征图可视化显示模型关注任务相关区域。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
