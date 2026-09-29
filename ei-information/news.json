@@ -3443,7 +3443,11 @@
             "heading": "",
             "text": "FMCW LiDAR measures per-point radial Doppler velocity alongside range, providing a motion cue unavailable in conventional time-of-flight sensors. Exploiting this signal at long range remains understudied.\n\nWe present an FMCW LiDAR dataset of 575 sequences (57.5K frames) with over 8 million annotated 3D boxes across 16 detection classes and per-point labels across 24 semantic classes, captured by six commercial FMCW LiDAR sensors and six paired 4K cameras across eight Bay Area cities, including 237 nighttime sequences, with annotations extending to 400m.\n\nWe define a benchmark with three tasks: 3D object detection, scene flow estimation, and semantic segmentation. Detection and scene flow are evaluated across three range bins to 400m, with a public evaluation server.\n\nWe explore the impact of Doppler measurements on flagship recognition tasks, and find significant improvements up to 2X in detection AP of far-away vehicles and pedestrians, particularly in low-latency single-frame settings. We similarly find scene flow accuracy is significantly improved with Doppler measurements across all ranges.\n\nOur dataset and benchmark have been publicly released at https://scenes.aeva.com."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an FMCW LiDAR dataset and benchmark for long-range perception, comprising 575 sequences and 57.5K frames, with 3D boxes for 16 detection classes and point labels for 24 semantic classes. The benchmark covers 3D detection, scene flow, and semantic segmentation, with evaluations extending to 400 meters. The authors report that Doppler measurements improve detection AP for distant vehicles and pedestrians by up to 2X, especially in single-frame settings, and improve scene-flow accuracy across ranges.",
+          "zh": "论文介绍了一个面向远距离感知的FMCW激光雷达数据集和基准，包含575段序列、5.75万帧、16类三维检测框和24类逐点语义标签，数据由六台商用传感器及配对相机采集，标注距离最远达400米。基准涵盖三维目标检测、场景流估计和语义分割。作者报告，利用多普勒测量可显著提升远距离车辆和行人的检测表现，单帧低延迟设置下检测AP最高提升至两倍；场景流精度在各距离范围也有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3474,7 +3478,11 @@
             "heading": "",
             "text": "Dexterous robotic hands perform complex, contact-rich manipulation. Imitation learning provides a route to such skills, but collecting human demonstrations with accurate hand actions and rich tactile information remains a key bottleneck.\n\nWe present MILE, a teleoperation-based data-collection system comprising the wearable MILE exoskeleton and the mechanically corresponding MILE-Tac robotic hand.\n\nBecause human-hand anatomy and wearability place tighter constraints on the high-DoF wearable, our human-first design begins with the MILE exoskeleton, equipped with custom modular joint encoders for accurate joint-angle acquisition.\n\nWe then design the MILE-Tac robotic hand to share the exoskeleton's selected kinematic topology and joint-axis arrangement while satisfying robot-side implementation constraints, and equip its fingertips with compact visuotactile sensor modules.\n\nThis correspondence enables direct exoskeleton-to-robot joint-space command transfer without online task-space inverse-kinematics retargeting. During teleoperation, the system synchronously records task-specific visual observations, four fingertip visuotactile streams, robot-hand proprioception, and exoskeleton-derived action commands.\n\nIn a four-task teleoperation benchmark, MILE achieved a mean success rate of 76%, compared with 28% and 8% for glove-based and vision-based baselines, respectively. For downstream imitation learning, we trained paired ACT and DP policies with and without tactile input on MILE-collected demonstrations.\n\nThe tactile-input variants achieved higher success rates in all paired evaluations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MILE, a teleoperation data-collection system combining a wearable exoskeleton with a robot hand that shares its selected kinematic topology and joint-axis arrangement. The system transfers commands directly in joint space and records visual, visuotactile, proprioceptive, and action data. In a four-task benchmark, MILE achieved a 76% mean success rate, compared with 28% and 8% for glove-based and vision-based baselines. Policies trained with tactile input had higher success in all paired evaluations.",
+          "zh": "论文提出MILE遥操作数据采集系统，由可穿戴外骨骼和具有对应运动学结构的机器人手组成。外骨骼通过模块化关节编码器采集关节角度，机器人手指尖配有视觉触觉传感器。两者的运动学对应关系支持直接关节空间指令传递，并同步记录视觉、触觉、本体感觉和动作数据。在四项遥操作任务中，MILE平均成功率为76%，高于手套和视觉基线；使用MILE数据训练的模仿学习策略加入触觉输入后，在所有配对评估中成功率更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3505,7 +3513,11 @@
             "heading": "",
             "text": "Paired video-action demonstrations enable autonomous surgical behavior, but such data is scarce: robots perform roughly 1% of surgeries, while video-only data is abundant.\n\nLearning 3D object flow offers an embodiment-agnostic way to utilize video data, but flow alone specifies how an object should move, not where and when the tool should engage it, a distinction that is critical in surgery. We introduce SurgFlow, a framework that learns 3D Object-Centric Contact Flow from stereo surgical video without action labels.\n\nFor each object point, it predicts a future 3D trajectory and contact scores. We extract targets via 3D tracking and tool-object proximity, train a flow matching generator to predict them, and use predicted contact to trigger grasp and release while optimizing end effector motion from flow.\n\nOn the da Vinci Research Kit (dVRK), SurgFlow succeeds in 37 of 39 stage evaluations across tissue retraction, bimanual reveal, needle pickup, and handover, outperforming baselines trained on equal data with or without action labels.\n\nZero-shot transfer to a humanoid-based laparoscopic robot achieves 85% and 70% average success under similar and novel camera viewpoints, respectively."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SurgFlow learns 3D object-centric contact flow from stereo surgical video without action labels. It predicts future trajectories and contact scores for object points, using these predictions to trigger grasping and release and to optimize end-effector motion. On a da Vinci Research Kit, it succeeded in 37 of 39 stage evaluations across four manipulation tasks and outperformed baselines trained with equal data. The authors also report zero-shot transfer to a humanoid-based laparoscopic robot, with average success rates of 85% and 70% under similar and novel camera viewpoints.",
+          "zh": "论文提出SurgFlow，从不含动作标签的立体手术视频学习三维物体中心接触流，为物体各点预测未来轨迹和接触分数，并据此触发抓取或释放、优化末端运动。在达芬奇研究平台的组织牵引、双手暴露、针拾取和交接阶段评估中，该方法39项中成功37项，并优于使用相同数据训练的基线。作者还报告其向人形腹腔镜机器人零样本迁移，在相似和新颖相机视角下的平均成功率分别为85%和70%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3536,7 +3548,11 @@
             "heading": "",
             "text": "Flexible neural electrode threads must be placed at a prescribed depth while the cortical surface moves with cardiac and respiratory pulsation. A controller tracking a fixed point in the laboratory frame cannot distinguish commanded insertion from tissue motion; the error appears as both a depth offset and relative tip--tissue velocity during contact.\n\nThis paper formulates thread insertion in tissue-relative coordinates: a harmonic observer predicts delayed cortical-surface motion over the control horizon, a constrained MPC regulates the tip relative to that prediction while limiting actuator effort and lateral relative velocity, and an augmented disturbance state removes the steady offset from persistent contact force and model mismatch.\n\nIn a 1-DOF MuJoCo benchmark, the controller reaches RMS relative-placement errors of 12.0\\um\\ free-space and 1.9\\um\\ in contact, versus 18.3/176.8\\um\\ for delayed-feedback impedance and 286.1/275.5\\um\\ for laboratory-frame PD -- the lower contact offset costs more peak contact force (3.43 vs.\\ 2.00~mN), since it drives to commanded depth rather than yielding to tissue.\n\nA 3-DOF extension reduces lateral shear velocity from 1.34 to 0.50~mm/s at 2.1\\um\\ lateral placement error, and a feasibility-restoring soft-slack formulation keeps the shear constraint solvable under degraded sensing where a matched hard-constraint controller fails.\n\nA two-vertex Lyapunov certificate for the finite-horizon gain holds over $-40\\%/{+}50\\%$ reflected-mass mismatch, and the 1-DOF QP solves in under 0.4~ms at the 95th percentile.\n\nThese results are a simulation-based control benchmark, not a clinical safety claim: the modeled tip is a rigid contact point, and flexible-thread mechanics, a validated force constraint, biological damage thresholds, and hardware-realistic sensing and timing remain necessary before deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies insertion control for neural threads in pulsating tissue and proposes regulating the tip relative to predicted tissue motion using a harmonic observer, constrained model predictive control, and a disturbance state. In a 1-DOF MuJoCo benchmark, the method reduced relative-placement error, with higher peak contact force; a 3-DOF extension reduced lateral shear velocity. The authors characterize these results as simulation-based, not a clinical safety claim, and identify flexible-thread mechanics, validated force limits, biological damage thresholds, and hardware-realistic sensing and timing as unresolved needs.",
+          "zh": "论文研究脉动组织中的神经电极线插入控制，提出以组织相对坐标调节针尖位置的方法：谐波观测器预测皮层运动，受约束的模型预测控制器调节相对运动，并以扰动状态补偿持续接触力和模型误差。在1自由度MuJoCo仿真中，该方法降低了相对放置误差，但接触时峰值力更高；3自由度扩展降低横向剪切速度。作者强调这些是仿真基准结果，不构成临床安全结论；柔性线体力学、经验证的力约束、生物损伤阈值及硬件级传感和时序仍待解决。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
