@@ -3739,7 +3739,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models leverage large-scale pretraining to ultimately achieve generalist manipulation. Deployed VLA policies must support continual learning to acquire new tasks over time. Teaching a VLA a new task generally requires finetuning it on demonstrations of that task.\n\nHowever, naively finetuning on downstream tasks causes the policy to forget earlier tasks and degrades generalist capabilities. This failure is known as catastrophic forgetting. Most continual learning methods counter it by replaying data from earlier tasks. However, the old task demonstrations are not always readily available.\n\nIn this paper, we introduce SAMBAR, a continual learning algorithm that prevents catastrophic forgetting during VLA finetuning without requiring access to the demonstrations of any previously learned task. We propose to cast continual learning as a constrained optimization problem and solve it with the method of multipliers.\n\nIn our approach, the method of multipliers drives the policy to learn the new task without the model parameters drifting far away from their previous values. In contrast to a standard regularization penalty, the method of multipliers raises the penalty as the constraint violation accumulates by using a dual variable.\n\nWe also selectively anchor the parameters critical to previous tasks to preserve past knowledge, leaving other parameters free for new task acquisition. The combination of dual variable and selective anchoring, therefore, balances knowledge acquisition with knowledge retention.\n\nWe evaluate our method, SAMBAR, on the LIBERO simulation benchmark and on hardware. When sequentially finetuning on a VLA, every replay-free baseline we compare against completely forgets the first task it learned, whereas SAMBAR retains every task it has learned."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SAMBAR, a continual learning algorithm for vision-language-action models that does not require demonstrations from previously learned tasks. It frames learning as constrained optimization, using the method of multipliers to limit parameter drift and selectively anchoring parameters considered critical to past tasks. The authors evaluate SAMBAR on the LIBERO simulation benchmark and on hardware. They report that compared replay-free baselines completely forget the first task after sequential fine-tuning, while SAMBAR retains every learned task.",
+          "zh": "论文提出 SAMBAR，一种无需访问旧任务示范数据的视觉-语言-动作模型持续学习算法。它将持续学习表述为约束优化，并用乘子法限制模型参数偏离原值；同时选择性锚定对旧任务关键的参数，为新任务保留可调整空间。作者在 LIBERO 仿真基准和硬件上评估该方法，并称与其比较的无回放基线在顺序微调后完全遗忘首个任务，而 SAMBAR 保留了已学习任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3770,7 +3774,11 @@
             "heading": "",
             "text": "Vision-Language-Action models (VLAs) represent a significant frontier in embodied intelligence, aiming to bridge digital knowledge with physical-world interaction. Despite their remarkable performance, foundational VLAs are hindered by the prohibitive computational and data demands inherent to their large-scale architectures.\n\nTo this end, recent studies improve VLA efficiency from different views, e.g., real-time inference, training computation, and scalable data collection. However, these efforts are mostly studied separately. A unified view is still missing for understanding how efficiency should be optimized across the full VLA lifecycle.\n\nTo bridge this gap, this survey presents the first comprehensive review of Efficient Vision-Language-Action models (Efficient VLAs) across the entire model-training-data pipeline.\n\nSpecifically, we introduce a unified taxonomy to systematically organize the disparate efforts in this domain, categorizing current techniques into three core pillars: （1） Efficient Model Design, focusing on efficient architectures and model compression; （2） Efficient Training, which reduces computational burdens during model learning; and （3） Efficient Data Collection, which addresses the bottlenecks in acquiring and utilizing robotic data.\n\nThrough a critical review of state-of-the-art methods within this framework, this survey provides an organized reference for the community and summarizes representative applications, delineates key challenges, and charts a roadmap for future research.\n\nWe maintain a continuously updated project page to track our latest developments: https://evla-survey.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey examines efforts to improve the efficiency of vision-language-action models, noting that work on real-time inference, training computation, and data collection has often been studied separately. It presents a unified taxonomy spanning the model, training, and data pipeline, with three categories: efficient model design, efficient training, and efficient data collection. The authors review representative methods and applications, identify challenges, and outline directions for future research, positioning the survey as an organized reference for the field.",
+          "zh": "这篇综述聚焦高效视觉-语言-动作模型，指出现有研究分别关注实时推理、训练计算和数据收集，缺少贯穿模型、训练与数据流程的统一视角。作者提出涵盖整个流程的分类框架，将方法归为高效模型设计、高效训练和高效数据收集三类，并梳理代表性应用、挑战及未来研究方向。文章旨在为相关研究提供系统化参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3801,7 +3809,11 @@
             "heading": "",
             "text": "World-Action Models (WAMs) have emerged as a promising paradigm for embodied control by coupling future visual prediction with action generation. However, many existing WAMs rely on photorealistic future prediction, which incurs high inference latency and makes real-time robot deployment difficult.\n\nWe introduce Efficient-WAM, a World-Action Model motivated by the idea that a compact future branch can still support effective action generation, even at lower visual fidelity.\n\nEfficient-WAM improves inference efficiency via a compact video expert transferred from WAN-2.2-5B, token-sparse video latents, and asymmetric video-action denoising that allocates fewer sampling steps to video than to actions.\n\nInstead of prioritizing visual fidelity, Efficient-WAM treats future video prediction as a compact guidance signal for action generation. Experiments on RoboTwin 2.0 and real-world manipulation tasks show that Efficient-WAM maintains strong action performance despite visibly coarse future predictions.\n\nOur 1B-parameter model achieves 98 ms per action chunk during physical deployment, over 30x faster than the Motus baseline with comparable task success."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Efficient-WAM, a world-action model that combines future visual prediction with action generation. Its compact video expert, token-sparse video latents, and asymmetric denoising are designed to make inference more efficient. The model uses future video as a guidance signal for generating actions rather than prioritizing visual fidelity. Experiments on RoboTwin 2.0 and real-world manipulation tasks are reported to show strong action performance despite visibly coarse predictions. The authors report 98 ms per action chunk in physical deployment and comparable task success to the Motus baseline.",
+          "zh": "论文提出 Efficient-WAM，一种将未来视觉预测与动作生成结合的世界-动作模型。它使用紧凑视频分支、稀疏视频潜变量及非对称去噪，将未来视频作为动作生成的引导信号，而非追求高视觉保真度。作者报告，该模型在 RoboTwin 2.0 和真实世界操作任务中保持较强动作表现，尽管预测画面较粗糙；其实体部署每个动作块耗时 98 毫秒，且任务成功率与 Motus 基线相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3832,7 +3844,11 @@
             "heading": "",
             "text": "Many planning and control tasks for tendon-driven continuum robots (TDCRs) require the complete Cartesian backbone geometry. We present a reduced Cartesian framework for planar, axially compressible TDCRs that propagates equilibrium configurations along prescribed tendon-force and tendon-displacement trajectories.\n\nThe backbone is represented by two global position fields. Following exact variation, a Taylor-Galerkin reduction condenses prescribed spatial properties and distributed loads into offline moment vectors, yielding analytic reduced residuals and Jacobians without online spatial quadrature or numerical differentiation.\n\nAnalytical differentiation and residual correction yield first-order rate systems requiring one fixed-dimensional linear solve per rate evaluation after initial equilibrium alignment on a regular branch.\n\nAcross four simulated cases covering variable tendon routing, nonuniform geometry, axial compression, and their combined effects, the propagated Cartesian shapes and distributed strains closely match pointwise geometrically variable-strain (GVS) equilibrium solutions.\n\nResidual correction suppresses propagation drift across the tested step sizes while adding only about 0.98% to the mean update time of uncorrected Euler. The proposed method requires 0.508 ms per update on average, approximately 11 times faster than pointwise GVS solves.\n\nDisplacement-driven experiments yield a maximum normalized mean backbone position error of 1.02% and a maximum end-effector position error of 0.28%.These results support efficient and accurate Cartesian full-shape prediction along prescribed actuation paths."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a reduced Cartesian framework for planar, axially compressible tendon-driven continuum robots. It propagates equilibrium configurations and full backbone shapes along prescribed tendon-force or displacement trajectories. Spatial properties and distributed loads are condensed offline, while rate evaluations use a fixed-dimensional linear solve; residual correction is used to limit propagation drift. Across four simulated cases, propagated shapes and strains closely match pointwise geometrically variable-strain equilibrium solutions. Displacement-driven experiments report backbone and end-effector position errors.",
+          "zh": "论文提出一种面向平面、可轴向压缩腱驱连续体机器人的降阶笛卡尔框架，用于沿给定腱力或位移轨迹传播平衡构型及完整骨架形状。该方法预先凝聚空间属性与分布载荷，在线通过固定维度线性求解更新速率，并以残差校正抑制传播漂移。四种仿真案例中，预测形状和应变接近逐点 GVS 平衡解；位移驱动实验报告了骨架位置与末端位置误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
