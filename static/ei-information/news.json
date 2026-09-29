@@ -2791,7 +2791,11 @@
             "heading": "",
             "text": "Scale-consistent ego-motion estimation is fundamental for autonomous ground robots. Bird's-Eye-View (BEV) representation naturally addresses the scale drift problem of monocular visual odometry (MVO) by providing a metric-scaled planar workspace, enabling the simplification of 6-DoF ego-motion to a more robust 3-DoF model.\n\nHowever, existing BEV-based methods suffer from two key limitations: sparse supervision signals from pose-only training, and information loss during perspective-to-BEV projection. We present BEV-ODOM2, an enhanced framework in the BEV-ODOM line that addresses both limitations without supervision modalities beyond the pose ground truth.\n\nOur approach introduces （1） pose-derived dense rigid BEV flow supervision, which reparameterizes the 3-DoF pose ground truth into a pixel-level training signal, and （2） Perspective View (PV)-BEV fusion, which computes correlation volumes before projection to retain additional motion cues and help alleviate projection ambiguity.\n\nAn enhanced rotation sampling strategy further balances diverse motion patterns during training. We evaluate on four datasets with varied spatial scales: KITTI, Oxford, NCLT, and our newly collected ZJH-VO benchmark. BEV-ODOM2 reduces the RTE of BEV-ODOM by 39% on average across the four datasets.\n\nIt further enables closed-loop navigation on a physical robot with centimeter-level cross-track error. Real-time inference on an NVIDIA Jetson AGX Orin confirms edge deployment feasibility. The code and the ZJH-VO dataset are publicly released to facilitate future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BEV-ODOM2, a monocular visual odometry framework for ground robots. It derives dense rigid BEV flow supervision from pose ground truth and fuses perspective-view and BEV features before projection to preserve motion cues and reduce projection ambiguity. An enhanced rotation sampling strategy is also used during training. The authors report an average 39% reduction in relative translation error compared with BEV-ODOM across KITTI, Oxford, NCLT, and ZJH-VO. They also report closed-loop navigation on a physical robot and real-time inference on a Jetson AGX Orin.",
+          "zh": "论文提出 BEV-ODOM2，用于地面机器人的单目视觉里程计。方法以位姿真值生成稠密刚性 BEV 光流监督，并在投影前融合透视视图与 BEV 特征，以保留运动线索、缓解投影歧义；训练中还采用旋转采样策略。作者称，该方法在 KITTI、Oxford、NCLT 和 ZJH-VO 四个数据集上的相对平移误差较 BEV-ODOM 平均降低 39%。论文还报告了实体机器人闭环导航和 Jetson AGX Orin 实时推理结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2822,7 +2826,11 @@
             "heading": "",
             "text": "Robot-aided operations in space stations are essential for reducing the workload of astronauts and improving the efficiency of on-orbit activities.\n\nMulti-limbed intra-vehicular robots (MLIVRs) equipped with grappling end-effectors have emerged as a promising solution, as they can securely grasp pre-existing interfaces, such as handrails and seat tracks, thereby enabling stable locomotion and forceful manipulation in microgravity environments.\n\nSince graspable locations on these interfaces are spatially limited and discretely distributed, motion planning for MLIVRs must be addressed jointly with foothold planning. This paper presents a simultaneous path and foothold planning framework based on graph theory for MLIVRs.\n\nThe proposed method efficiently searches for feasible stance sequences for a multi-limbed robot while satisfying manipulability constraints.\n\nThe effectiveness of the proposed framework is validated through simulations in a 3D model of the International Space Station (ISS) cabin, demonstrating its capability to generate feasible and efficient locomotion plans in realistic intra-vehicular environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a graph-based framework for simultaneous path and foothold planning for multi-limbed robots operating inside space stations. Because graspable interfaces such as handrails and seat tracks provide spatially limited, discrete locations, the planner jointly considers robot paths and limb footholds. It searches for feasible stance sequences subject to manipulability constraints. The authors validate the framework in simulations using a three-dimensional model of an International Space Station cabin, where it generates feasible and efficient locomotion plans. The reported validation is in simulation.",
+          "zh": "论文提出一种基于图论的同步路径与落脚点规划框架，面向在空间站舱内活动的多肢机器人。由于扶手和座椅导轨等可抓握位置有限且离散，规划需要联合考虑机器人路径和各肢体的支撑位置。该方法搜索满足可操作性约束的可行姿态序列。作者在国际空间站舱段的三维模型中进行仿真，结果显示框架能够生成可行且高效的舱内移动计划；文中验证范围为仿真环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2853,7 +2861,11 @@
             "heading": "",
             "text": "Learning agile robotic policies requires large-scale demonstrations, but translating abundant human motion data to robots is bottlenecked by the embodiment gap and missing dynamic information.\n\nTo bridge this gap, we propose Scalable Physics-Informed DExterous Retargeting (SPIDER), a physics-based retargeting framework to transform and augment kinematic-only human demonstrations into dynamically feasible robot trajectories at scale.\n\nOur key insight is that human demonstrations should provide global task structure and objective, while a sampling-based solver can be used to find the feasible solution given the physics constraints.\n\nAs a general framework, SPIDER is an efficient physics-based retargeting method that can be applied to both humanoid whole-body loco-manipulation and dexterous manipulation across 9 humanoid/dexterous hand embodiments, 6 datasets and 3 simulators.\n\nBy bypassing the need for policy optimization, it achieves state-of-the-art performance while being 10x faster than reinforcement learning (RL) baselines. Furthermore, SPIDER enables physics-based data augmentation, such as imposing external payloads, perturbations, and new contact patterns, to generate diverse data.\n\nWe demonstrate that the retargeted motion can be executed on the robot directly open-loop or serve as feasible reference motion for efficient RL policy learning.\n\nOur pipeline enables large-scale generation of robot trajectories from human motion, and we release a dataset of 6,520 simulated demonstrations across four hands and 191 dataset-specific object identities to support future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SPIDER, a physics-based framework that retargets and augments kinematic human demonstrations into robot trajectories feasible under dynamics constraints. Demonstrations provide task structure and objectives, while a sampling-based solver searches for feasible solutions. The authors report applications to humanoid whole-body loco-manipulation and dexterous manipulation across multiple embodiments, datasets, and simulators, and state that SPIDER is ten times faster than reinforcement learning baselines. Retargeted motions can be executed open-loop on a robot or used as references for policy learning. The paper also releases a dataset of simulated demonstrations.",
+          "zh": "论文提出 SPIDER，一种物理驱动的灵巧动作重定向框架，将仅含运动学信息的人类示范转换并扩增为满足动力学约束的机器人轨迹。其思路是由示范提供任务结构和目标，再用基于采样的求解器寻找可行解。作者称，该方法可用于多种人形机器人全身移动操作和灵巧操作，并在多种具身、数据集及仿真器上评估；相较强化学习基线速度快十倍。论文还报告了仿真示范数据集，并称重定向动作可直接开环执行或作为强化学习参考动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2884,7 +2896,11 @@
             "heading": "",
             "text": "Deep reinforcement learning (DRL) algorithms for movement control are typically evaluated and benchmarked on sequential decision tasks where imprecise actions may be corrected with later actions, thus allowing high returns with noisy actions.\n\nIn contrast, we focus on an under-researched class of high-risk, high-precision motion control problems where actions carry irreversible outcomes, driving sharp peaks and ridges to plague the state-action reward landscape.\n\nUsing computational pool as a representative example of such problems, we propose and evaluate State-Conditioned Shooting (SCOOT), a novel DRL algorithm that builds on advantage-weighted regression (AWR) with three key modifications: 1) Performing policy optimization only using elite samples, allowing the policy to better latch on to the rare high-reward action samples; 2) Utilizing a mixture-of-experts (MoE) policy, to allow switching between reward landscape modes depending on the state; 3) Adding a distance regularization term and a learning curriculum to encourage exploring diverse strategies before adapting to the most advantageous samples.\n\nWe showcase our features' performance in learning physically-based billiard shots demonstrating high action precision and discovering multiple shot strategies for a given ball configuration."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies high-risk, high-precision motion control, where actions can have irreversible outcomes and the reward landscape contains sharp peaks and ridges. Using computational pool as an example, the authors propose State-Conditioned Shooting (SCOOT), a deep reinforcement learning algorithm based on advantage-weighted regression. It optimizes using elite samples, uses a mixture-of-experts policy for state-dependent reward modes, and adds distance regularization and a learning curriculum to encourage diverse exploration before adapting to advantageous samples. The authors demonstrate precise billiard shots and the discovery of multiple strategies for a given configuration.",
+          "zh": "论文研究高风险、高精度运动控制问题，其中动作可能造成不可逆结果，奖励景观因此呈现尖峰和脊线。作者以计算机桌球为例，提出 State-Conditioned Shooting（SCOOT），一种基于优势加权回归的深度强化学习算法。其设计包括仅用精英样本优化策略、采用混合专家策略以适应不同状态下的奖励模式，以及加入距离正则项和学习课程，先鼓励多样探索，再适应高回报样本。作者展示了物理桌球击球任务中的高精度控制及多种策略发现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
