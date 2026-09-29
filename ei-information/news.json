@@ -3023,7 +3023,11 @@
             "heading": "",
             "text": "We propose a hierarchical control framework to address severe dynamic instabilities and navigational drift that arise when a two-wheeled inverted pendulum (TWIP) robot attempts asymmetric object manipulation.\n\nWhile two-wheeled platforms are highly manoeuvrable, their constant balancing adjustments make onboard odometry highly unreliable for precise navigation. Furthermore, the addition of a side-mounted robotic arm introduces unactuated lateral roll moments when a payload is lifted, a challenge heavily compounded on uneven terrain.\n\nTo solve these coupled problems, our architecture divides the workload. An offboard vision system tracks overhead ArUco markers to provide high-latency global waypoint navigation, bypassing odometry drift. Simultaneously, a low-latency onboard control loop rejects active physical disturbances using inertial and encoder data.\n\nIn our physical experiments, this dual-loop approach enabled the custom-built robot to navigate accurately, reject transient impacts from speed bumps, adapt to a dynamic seesaw ramp, and carry a payload securely without falling over its narrow wheelbase."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a hierarchical control framework for two-wheeled inverted-pendulum robots performing asymmetric object manipulation. An offboard vision system tracks overhead ArUco markers for global waypoint navigation, while a low-latency onboard loop uses inertial and encoder data to reject disturbances. In physical experiments, the custom-built robot navigated accurately, resisted transient speed-bump impacts, adapted to a dynamic seesaw ramp, and carried a payload without falling.",
+          "zh": "本文提出一种分层控制框架，处理两轮倒立摆机器人进行非对称物体操作时的动态不稳定和导航漂移。系统通过外部视觉追踪 ArUco 标记提供全局航点导航，并以机载惯性与编码器数据构成低延迟控制回路，抵抗物理扰动。实物实验中，定制机器人实现了准确导航，抵抗减速带的瞬时冲击，适应动态跷跷板坡道，并在不倾倒的情况下携带负载。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3054,7 +3058,11 @@
             "heading": "",
             "text": "Geometry-grounded vision models, such as VGGT, have emerged as robust visual encoders, providing essential geometric priors for robotic manipulation. However, the high computational cost of these models often leads to slow inference, limiting their practical applications in real-world robotics.\n\nThis paper introduces eVGGT, a lightweight geometry-aware vision encoder distilled from the high-performing VGGT.\n\nOur findings demonstrate two primary advantages: i) integrating eVGGT into imitation learning frameworks (including ACT and Diffusion Policy) yields up to a 6.3% improvement in success rate over standard 2D encoders across bimanual and single-arm tasks in both simulation and real-world settings with variable viewpoints; ii) eVGGT achieves a nearly 5 times speedup and a 63% reduction in memory usage compared to state-of-the-art geometry-aware encoders while maintaining comparable task performance.\n\nThese results suggest that eVGGT substantially alleviates the performance-latency bottleneck that has limited geometry-aware visuomotor policies in real-world deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces eVGGT, a lightweight geometry-aware vision encoder distilled from VGGT to reduce inference costs. The authors report that adding it to imitation-learning frameworks, including ACT and Diffusion Policy, improves success rates by up to 6.3% over standard 2D encoders across bimanual and single-arm tasks in simulation and real-world settings with variable viewpoints. Compared with state-of-the-art geometry-aware encoders, eVGGT is nearly five times faster and uses 63% less memory while maintaining comparable task performance.",
+          "zh": "本文提出轻量级几何感知视觉编码器 eVGGT，由 VGGT 蒸馏而来，旨在降低几何视觉模型的推理成本。作者报告，将其用于 ACT 和 Diffusion Policy 等模仿学习框架，在仿真和真实环境、双臂与单臂任务及变化视角下，相比标准二维编码器成功率最高提升 6.3%。与先进几何感知编码器相比，eVGGT 推理速度近乎提高五倍、内存使用减少 63%，同时保持相近任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3085,7 +3093,11 @@
             "heading": "",
             "text": "Transferring human demonstrations to dexterous robots remains challenging because differences in hand morphology and contact dynamics often cause retargeted motions to fail at producing the intended object behavior. We present \\textbf{FoLD}, a framework for learning dexterous manipulation of articulated objects through explicit force guidance.\n\nFoLD compute compensatory force fields from human demonstrations together with the robot's current interaction state, yielding a force prior that promotes the demonstrated object motion. This force prior informs a residual policy that adapts retargeted hand motions to the contact requirements of the task.\n\nWe evaluate FoLD on a public benchmark for articulated object manipulation, where it consistently outperforms state-of-the-art baselines across tasks and embodiments. We further validate FoLD on real dexterous robot platforms, demonstrating successful transfer of human manipulation skills to robot execution.\n\nHere is the link of our project page: https://gghgghgghgg.github.io/FoLD-project-page/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FoLD, a framework for learning dexterous manipulation of articulated objects through explicit force guidance. It computes compensatory force fields from human demonstrations and the robot’s current interaction state, forming a force prior that guides a residual policy in adapting retargeted hand motions to task contact requirements. The authors report that FoLD consistently outperforms state-of-the-art baselines across tasks and embodiments on a public benchmark, and demonstrate transfer of human manipulation skills on real dexterous robot platforms.",
+          "zh": "本文提出 FoLD，通过显式力引导学习灵巧机器人对关节物体的操作。该方法根据人类演示和机器人的当前交互状态计算补偿力场，形成促进目标物体运动的力先验，并用它引导残差策略调整重定向的手部动作，以适应接触要求。作者称，FoLD 在公开基准的不同任务和机器人形态上持续优于先进基线，并在真实灵巧机器人平台上验证了人类操作技能向机器人执行的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3116,7 +3128,11 @@
             "heading": "",
             "text": "Robotic manipulation is typically evaluated by task success, but reaching the correct final state does not guarantee safe execution. A robot may succeed despite contamination, premature release, or incorrect sequencing.\n\nThese failures are poorly captured by task-completion metrics or isolated state checks because safety often depends on how behavior unfolds over time. We introduce SafeManip, a benchmark for evaluating temporal safety directly from low-level manipulation rollouts across eight physical and semantic categories.\n\nSafeManip grounds symbolic manipulation predicates into reusable temporal properties over finite executions, formalized with LTLf. We further introduce ManipVerse, a property ontology enabling semantic safety rules generalize across objects, tasks, and environments.\n\nFinally, SafeManip introduces per-trigger safety metrics that normalize violations by the safety-relevant opportunities that activate each obligation, accounting for differences in how often those opportunities arise across policies and tasks. We instantiate SafeManip on RoboCasa365 and LIBERO to audit seven state-of-the-art robot foundation-model policies.\n\nOur results reveal a gap between task capability and temporal safety: higher task success does not necessarily imply safer execution, successful rollouts can still contain violations, and failure patterns vary systematically across safety categories, task horizons, and manipulation suites.\n\nSafeManip provides a reusable layer for evaluating how safely manipulation tasks are executed, not only whether they are completed."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SafeManip, a benchmark for evaluating temporal safety in low-level manipulation rollouts across eight physical and semantic categories. It formalizes reusable safety properties over finite executions with LTLf and presents the ManipVerse ontology for generalizing rules across objects, tasks, and environments. Per-trigger metrics normalize violations by safety-relevant opportunities. Applied to seven robot foundation-model policies on RoboCasa365 and LIBERO, the benchmark reveals that higher task success does not necessarily mean safer execution; successful rollouts can contain violations, with patterns varying by category, task horizon, and suite.",
+          "zh": "本文提出 SafeManip 基准，用于从低层操作轨迹评估机器人操作过程中的时间安全性，涵盖八类物理与语义类别。它以有限轨迹上的 LTLf 时间属性表达可复用的安全规则，并引入 ManipVerse 本体，使规则可跨物体、任务和环境泛化；另以逐触发指标按相关安全机会归一化违规情况。作者在 RoboCasa365 和 LIBERO 上评估七种机器人基础模型策略，发现任务成功率较高不必然代表执行更安全，成功轨迹仍可能违规，且违规模式随类别、任务时长和基准套件而异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
