@@ -1375,7 +1375,11 @@
             "heading": "",
             "text": "Before a team of robots moves, each proposed step must be checked for collisions with other robots and with obstacles. We present CollisionGAT, a graph-attention network that reads the current and proposed states of moving agents together with locally relevant stationary obstacles and returns one collision-risk score per moving agent.\n\nAny controller can use these scores to accept, repair, replan, or postpone a proposed step. We mount CollisionGAT on a continuous path-following controller and on GATeD, an obstacle-blind D* Lite planner that uses typed vetoes to update its planning graphs. Exact geometric checks supply the training labels and independently audit every executed step."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CollisionGAT, a controller-agnostic method for screening proposed motion steps for collision risk. Its graph-attention network takes moving agents’ current and proposed states, along with locally relevant stationary obstacles, and outputs one risk score per agent. Controllers can use the scores to accept, repair, replan, or postpone a step. The authors apply it to a continuous path-following controller and GATeD, using exact geometric checks for training labels and independent audits of executed steps.",
+          "zh": "论文提出 CollisionGAT，一种与控制器无关的单步碰撞筛查方法。图注意力网络读取移动智能体当前状态和拟议状态，以及局部相关的静态障碍物，并为每个移动智能体输出碰撞风险分数。控制器可据此接受、修正、重新规划或推迟动作。作者将其用于连续路径跟随控制器和 GATeD 规划器；训练标签由精确几何检查生成，每个执行步骤也由其独立审查。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1406,7 +1410,11 @@
             "heading": "",
             "text": "Video anomaly detection for patrol robots and surveillance systems must recognize abnormal interactions among familiar entities. Existing pixel-reconstruction and isolated-entity methods may fail when individual entities appear normal but their spatial or motion relations are abnormal.\n\nThis work presents Interaction-Centric Network for Temporal Entity-Relation Analysis and Consistency Testing (INTERACT), a framework for unsupervised video anomaly detection.\n\nPerson-Object Appearance-Motion Interaction (POAMI) moves beyond isolated-entity encoding by jointly modeling the appearance, motion, and spatial configurations of persons and objects in each frame. The resulting representations capture both individual entity states and their cross-entity context.\n\nBased on these representations, Target Geometry-Guided Relational Interaction Prediction (TGRIP) predicts target entity interaction states from historical relational memory and target-frame geometry without explicit identity tracking.\n\nMotion-Interaction Reconstruction and Alignment (MIRA) then evaluates these predictions through conditional flow reconstruction and semantic consistency checking, providing complementary anomaly evidence beyond prediction error alone. INTERACT achieves state-of-the-art performance, obtaining a frame-level AUC of 84.5% on the ShanghaiTech benchmark.\n\nAblation studies show that removing cross-entity attention causes the largest performance drop, demonstrating the necessity of relational modeling. INTERACT is particularly effective for anomalies caused by changes in relations among people and objects, while maintaining competitive performance in general scenarios.\n\nThe source code will be made publicly available at https://github.com/ppworkhard/INTERACT."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces INTERACT, an unsupervised video anomaly detection framework designed to identify abnormal interactions among familiar entities. POAMI jointly models the appearance, motion, and spatial configurations of people and objects. TGRIP predicts target interactions from historical relational memory and target-frame geometry without explicit identity tracking, while MIRA assesses predictions using conditional flow reconstruction and semantic consistency. The authors report a frame-level AUC of 84.5% on ShanghaiTech; ablations show the largest drop when cross-entity attention is removed.",
+          "zh": "论文提出用于无监督视频异常检测的 INTERACT，旨在识别熟悉实体之间的异常交互。POAMI 联合建模人物和物体的外观、运动及空间配置；TGRIP 根据历史关系记忆与目标帧几何预测交互状态，无需显式身份跟踪；MIRA 通过条件流重建和语义一致性检查评估预测。作者报告其在 ShanghaiTech 基准上的帧级 AUC 为 84.5%，消融研究中移除跨实体注意力造成最大性能下降，并称该方法对关系变化导致的异常尤为有效。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1437,7 +1445,11 @@
             "heading": "",
             "text": "We present an end-to-end QP-based policy framework that enables systematic policy construction with minimal domain-specific design, while preserving the transparency and interpretability of model-based control.\n\nThe proposed policy representation supports both domain-randomized model-based auto-tuning, where policy parameters are optimized over distributions of disturbances and model variations, and black-box policy construction, where the problem is formulated in terms of a (possibly) unknown model without requiring explicit notions of states, inputs, or the underlying system dynamics.\n\nWe establish connections to existing policy representations and control paradigms, including robust control, multilayer perceptrons, and robot learning, and interpret our end-to-end QP policies as a common abstraction of these approaches.\n\nWe validate the resulting framework in both simulation and hardware, demonstrating a broad range of applications spanning robustness, automatic policy tuning, and control under unknown system dynamics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an end-to-end QP-based policy framework intended to reduce domain-specific design while retaining the transparency and interpretability of model-based control. Its representation supports domain-randomized model-based auto-tuning and black-box policy construction when the model may be unknown, without requiring explicit states, inputs, or system dynamics. The authors connect the framework to robust control, multilayer perceptrons, and robot learning. They report validation in both simulation and hardware across applications involving robustness, automatic tuning, and control under unknown dynamics.",
+          "zh": "论文提出端到端的 QP 策略框架，目标是在减少领域专用设计的同时，保留基于模型控制的透明性和可解释性。该表示支持基于领域随机化的模型策略自动调优，也支持在模型可能未知、无需显式定义状态、输入或系统动力学时进行黑箱策略构建。作者阐述了该框架与鲁棒控制、多层感知机及机器人学习等方法的联系，并在仿真和硬件上验证其应用，涵盖鲁棒性、自动调优及未知动力学条件下的控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1468,7 +1480,11 @@
             "heading": "",
             "text": "Manipulating a Rubik's Cube with a single dexterous hand is a challenging test of sustained, contact-rich control: the hand must execute successive layer turns while keeping the cube secure. Each turn requires some fingers to support the cube while others push a moving layer, release contact, and reset for the next move.\n\nTo learn this coordination, we introduce FINGR (Future-supervised Interaction Network with Geometric Representations), a policy that combines finger-relative geometry with future interaction prediction. A shared point encoder expresses the cube relative to each fingertip and aggregates its points without depending on cubie indexing.\n\nLearned future tokens share the observation encoder and receive supervision for contact-force changes, layer-turn progress, and finger joint displacement at multiple time scales. The resulting representation conditions a flow policy that directly generates finger actions.\n\nOn a real dexterous hand, our policy achieves 99.0% success over 300 turn attempts, compared with 79.7% for the base flow policy. Integrated with grasping and table-assisted regrasping, the policy solves all ten scrambled $2\\times2\\times2$ cubes in a mean complete-system time of approximately 137 seconds.\n\nThe project website is available at https://www.lyt0112.com/projects/FINGR"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FINGR, a learned policy for manipulating a Rubik’s Cube with a dexterous hand. It combines fingertip-relative geometric representations with future interaction prediction, supervising contact-force changes, layer-turn progress, and finger-joint displacement at multiple time scales. A flow policy then generates finger actions. On a real hand, the authors report 99.0% success over 300 turn attempts, compared with 79.7% for a base flow policy. With grasping and table-assisted regrasping, the system solved all ten scrambled 2×2×2 cubes in about 137 seconds on average.",
+          "zh": "论文提出 FINGR，用于学习灵巧手操控魔方的策略。它结合指尖相对几何表示与未来交互预测，以多时间尺度监督接触力变化、层转动进度和手指关节位移，再由流策略生成手指动作。作者报告真实灵巧手在 300 次转动尝试中的成功率为 99.0%，基础流策略为 79.7%。结合抓取和桌面辅助重新抓握后，该系统解开了全部十个打乱的 2×2×2 魔方，平均完整系统用时约 137 秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
