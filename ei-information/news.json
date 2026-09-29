@@ -4363,7 +4363,11 @@
             "heading": "",
             "text": "In human-robot interaction, traditional interfaces such as joysticks and handheld tablets introduce latency into navigation tasks and require the operator's explicit attention on the device, instead of the robot.\n\nWe propose a new human-robot interaction framework in which a human communicates intent directly through sparse multimodal signals such as physical pushes and spoken commands. Human intent is represented as a parameterized linear dynamical system (LDS) that encodes the desired goal and motion behavior.\n\nThe robot estimates this intent (parameters) online using a particle filter, where each particle represents a candidate LDS hypothesis and is reweighted online as new information becomes available. We validate this framework on a robotic blimp, whose inherent compliance and collision tolerance make it well-suited for repeated physical interaction.\n\nExperiments with multiple participants across 300 trials show that combining pushes and voice commands identifies the intended goal in 86% of trials within at most five interactions, with most trials resolved in two. The inferred dynamical systems can also produce curved trajectories that avoid obstacles known only to the human."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes HINT-Blimp, a human-robot interaction framework in which people express intent through sparse multimodal cues, including physical pushes and spoken commands. Intent is represented as a parameterized linear dynamical system and estimated online with a particle filter. In experiments with multiple participants over 300 trials on a robotic blimp, combined pushes and voice identified the intended goal in 86% of trials within five interactions, with most resolved in two. Inferred systems also produced curved paths around obstacles known only to the human.",
+          "zh": "论文提出 HINT-Blimp 人机交互框架，允许人通过稀疏的多模态信号（如推、语音命令）直接表达意图，并以参数化线性动力系统表示目标和运动方式。机器人使用粒子滤波在线估计意图。作者在飞艇上开展多参与者实验，共300次试验；推与语音结合时，86%的试验在不超过五次交互内识别目标，多数在两次内完成。推断出的动力系统还能生成避开仅人类已知障碍物的曲线轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4394,7 +4398,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) acquire behavioral priors by modeling future scene evolution, but predicting detailed futures in pixel or latent space incurs substantial cost. Recent evidence that co-training gains persist without test-time generation raises a question: what must a WAM learn to improve control?\n\nWe introduce Copper-Policy, which learns a compact World representation with the policy rather than relying on a predefined target space. Through temporal joint-embedding prediction, it predicts future observation embeddings conditioned on task intention without reconstructing pixels.\n\nThis prediction and action decoding shape the representation jointly, while the policy retains access to current-frame spatial detail for execution. Representation analyses show that the learned features better separate task-driven change from perturbations and provide complementary information for control.\n\nCompact prediction targets reduce training tokens per sample, enabling a 2B-parameter model trained in 9.67 hours on 8$\\times$ RTX 5090 GPUs and 6$\\times$ faster than Fast-WAM on matched A100 GPUs. Copper-Policy outperforms every compared method without embodied pretraining on RoboTwin and several embodied-pretrained VLAs on LIBERO-Plus (80.85%).\n\nOn three challenging real-robot tasks, it performs comparably to $\\pi_{0.5}$ and attains a higher average score. Together, these results show that Copper-Policy combines strong control performance with efficient training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Copper-Policy jointly learns a compact world representation and policy by predicting future observation embeddings conditioned on task intent, without reconstructing pixels. The policy retains current-frame spatial detail for execution. The authors report that the features better distinguish task-driven changes from perturbations and provide complementary control information. Compact targets reduce training tokens. In reported evaluations, Copper-Policy outperforms compared methods without embodied pretraining on RoboTwin and several embodied-pretrained VLAs on LIBERO-Plus; on three real-robot tasks it performs comparably to π0.5 and has a higher average score.",
+          "zh": "论文提出 Copper-Policy，通过与策略联合学习紧凑的世界表征，以任务意图为条件预测未来观测嵌入，而不重建像素；策略同时保留当前帧空间细节用于执行。作者报告，所学特征能更好地区分任务变化与扰动，并为控制提供互补信息。该方法降低训练令牌开销；在 RoboTwin、LIBERO-Plus 及三项真实机器人任务上的结果显示其控制表现较强，真实任务平均分高于 π0.5。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4425,7 +4433,11 @@
             "heading": "",
             "text": "Uncrewed aerial manipulators (UAMs) integrate robotic arms with aerial platforms for three-dimensional physical interaction. However, enlarging the workspace increases arm-induced disturbances, while existing geometric representations face a trade-off between geometric fidelity and computational efficiency in close-proximity interaction.\n\nThis paper presents QuadHand, a compact quadrotor aerial manipulator with a 3-DoF arm, gripper, and battery-assisted passive CoG compensation module to reduce dominant arm-induced disturbances.\n\nWe further propose MRC-SDF, a Multi-articulated Robot-Centric Signed Distance Field that preserves fine geometric detail with tractable computation, and a spatiotemporal whole-body trajectory optimization framework that jointly optimizes the quadrotor and manipulator for safe and executable trajectory generation.\n\nSimulations and real-world experiments demonstrate safe and executable aerial manipulation in complex environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents QuadHand, a compact quadrotor aerial manipulator equipped with a three-degree-of-freedom arm, gripper, and battery-assisted passive center-of-gravity compensation module intended to reduce arm-induced disturbances. It introduces MRC-SDF, a multi-articulated robot-centric signed distance field designed to preserve geometric detail with tractable computation, and a spatiotemporal whole-body trajectory optimization framework that jointly plans the quadrotor and arm. Simulations and real-world experiments demonstrate safe, executable aerial manipulation in complex environments.",
+          "zh": "论文介绍 QuadHand，一种配备三自由度机械臂、夹爪和电池辅助被动质心补偿模块的紧凑型四旋翼空中操作机器人，旨在减小机械臂引起的扰动。作者提出多关节机器人中心有符号距离场 MRC-SDF，以兼顾几何细节与计算可行性，并提出时空全身轨迹优化框架，联合优化飞行器与机械臂。仿真和真实实验表明，该系统可在复杂环境中生成安全且可执行的空中操作轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4456,7 +4468,11 @@
             "heading": "",
             "text": "Differentiable physics is increasingly used in robotic material manipulation for system identification, trajectory or skill optimization, demonstration generation, and robot or end-effector design. These applications depend on gradients propagated through long, contact-rich simulation rollouts.\n\nWe study the numerical reliability of those gradients using two Material Point Method (MPM) system-identification benchmarks derived from elastoplastic and granular manipulation. The benchmarks provide controlled cases for three effects that also arise in broader differentiable physics-based optimization.\n\nGPU many-to-one sums whose order depends on thread scheduling changed long-horizon gradients and reversed the sign of one parameter gradient relative to a deterministic reference.\n\nFinite-difference checks became less reliable for longer rollouts because repeated-run loss variation grew much faster than the loss change produced by the tested parameter perturbations. Observation and loss definitions changed optimization behaviour and the solution preferred by an independent metric.\n\nThese results motivate reproducible accumulation, finite-difference validation that compares perturbation-induced loss changes with repeated-run variation, and explicit reporting of objective construction when differentiable simulation is used for robotic optimization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines gradient reliability in differentiable physics optimization for robotic material manipulation using two Material Point Method system-identification benchmarks based on elastoplastic and granular manipulation. The authors report that GPU many-to-one sums dependent on thread scheduling alter long-horizon gradients and reverse one parameter gradient’s sign relative to a deterministic reference. Finite-difference checks become less reliable on longer rollouts because repeated-run loss variation grows faster than perturbation-induced loss changes. Observation and loss definitions also affect optimization behavior and the solution preferred by an independent metric.",
+          "zh": "论文研究机器人材料操作中可微物理优化的梯度数值可靠性，使用基于弹塑性和颗粒操作的两个物质点法系统辨识基准。作者发现，依赖线程调度顺序的 GPU 多对一求和会改变长时域梯度，并使一个参数梯度相对确定性参考值反号；长时域下，有限差分也更难可靠，因为重复运行损失波动增长快于参数扰动造成的损失变化。观测与损失定义还会影响优化行为及独立指标偏好的解。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
