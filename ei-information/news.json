@@ -1095,7 +1095,11 @@
             "heading": "",
             "text": "Persistent semantic occupancy mapping is essential for embodied scene understanding. However, perspective-based systems provide limited spatial coverage, while existing panoramic methods primarily predict local volumes from single observations.\n\nWe introduce PanOVOcc, a training-free framework for persistent open-vocabulary semantic occupancy mapping from panoramic sequences. PanOVOcc unifies panoramic SLAM, open-vocabulary perception, and long-term spatial voxel memory within an online architecture, continuously integrating geometric and semantic evidence into a global, language-queryable map.\n\nTo facilitate systematic evaluation of this setting, we establish Pan-Replica and Pan-Holo360D, two benchmarks pairing continuous panoramic RGB-D sequences with scene-level semantic occupancy ground truth across synthetic and real-world scenes.\n\nCompared with the strongest evaluated baseline for each metric, PanOVOcc improves occupancy IoU and semantic mIoU by absolute +20.03 and +7.06 on Pan-Replica, and by +43.26 and +20.16 on Pan-Holo360D, respectively. The source code and the established benchmarks will be available at https://github.com/bakereet/PanOVOcc."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PanOVOcc, a training-free framework for persistent open-vocabulary semantic occupancy mapping from panoramic sequences. Its online architecture combines panoramic SLAM, open-vocabulary perception, and long-term spatial voxel memory to integrate geometric and semantic evidence into a language-queryable global map. The authors also establish Pan-Replica and Pan-Holo360D benchmarks spanning synthetic and real-world scenes. Against the strongest evaluated baseline for each metric, they report absolute gains in occupancy IoU and semantic mIoU.",
+          "zh": "本文提出 PanOVOcc，一种无需训练的框架，用于从全景序列构建持久、开放词汇的语义占据地图。该在线架构结合全景 SLAM、开放词汇感知和长期空间体素记忆，将几何与语义证据持续整合为可通过语言查询的全局地图。作者建立了 Pan-Replica 和 Pan-Holo360D 两个基准，涵盖合成及真实场景。相较各指标最强的已评估基线，作者报告了占据 IoU 和语义 mIoU 的绝对提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1126,7 +1130,11 @@
             "heading": "",
             "text": "Glove-based motion capture is emerging as a scalable approach to collecting dexterous-hand demonstration data. However, due to the kinematic gap between the human and robot hand, the recorded human motions cannot be executed directly on the robot, especially for contact-rich tool-use tasks involving in-hand reorientation.\n\nPrior work bridges this gap in simulation through reinforcement learning (RL) or trajectory optimization, but the human contact pattern is hard to preserve under such formulations, often producing unnatural manipulation and unstable functional grasps.\n\nThese methods also train a separate policy or solve a separate optimization for each reference trajectory, which is inefficient. To solve these problems, we propose DexTaG, a tactile-guided RL framework for dexterous manipulation.\n\nDuring training, tactile signals captured by the glove guide policy search toward the measured human contact pattern, reducing reliance on precise reference geometry for contact supervision. To improve efficiency, we train a single generalizable retargeter jointly on all training trajectories of the same object.\n\nThe retargeter is further distilled into a tactile-free student controller conditioned on the target object trajectory for real-world deployment.\n\nOn marker-pen and hammer manipulation tasks, DexTaG learns natural, contact-rich behaviors that baselines with distance-based contact heuristics fail to learn, generalizes to held-out trajectories of the same object and task, and outperforms single-trajectory baselines on OakInk2."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes DexTaG, a tactile-guided reinforcement learning framework for dexterous manipulation that addresses the kinematic gap between human and robot hands. During training, glove-captured tactile signals guide policy search toward human contact patterns. A generalizable retargeter is jointly trained on trajectories for the same object and distilled into a tactile-free student controller for deployment. In marker-pen and hammer tasks, the authors report natural contact-rich behaviors, generalization to held-out trajectories of the same object, and better performance than single-trajectory baselines on OakInk2.",
+          "zh": "本文提出 DexTaG，一种以触觉信号引导的灵巧操作强化学习框架，旨在应对人手与机器人手的运动学差异及接触丰富任务中的演示迁移问题。训练时，手套采集的触觉信号引导策略搜索贴近人的接触模式；针对同一物体的多条训练轨迹联合训练一个通用重定向器，并将其蒸馏为部署时使用的无触觉学生控制器。在马克笔和锤子操作任务中，作者报告其学得自然的接触行为、泛化至同物体的未见轨迹，并在 OakInk2 上优于单轨迹基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1157,7 +1165,11 @@
             "heading": "",
             "text": "Scaling up robotic manipulation is primarily bottlenecked by the scarcity of real-world robot data. While recent approaches leverage human video demonstrations to mitigate this shortage, they remain computationally expensive and still rely on paired human-robot data for domain alignment.\n\nAlthough current state-of-the-arts excel at long-horizon tasks, they struggle with the delicate and precise control required for complex tool manipulation. To overcome these limitations, we introduce P2P-T, from Pixel to Poses for Tool Manipulation, a data-efficient, object-centric framework that learns tool use directly from human demonstrations.\n\nP2P-T bridges the cognitive and physical execution gap through a two-stage approach. First, pretraining an object-centric world model to extract stable pose priors; second, integrating these priors into an efficient, pose-aware low-level policy.\n\nBy utilizing a robust automated data processing pipeline powered by modern foundation models, P2P-T completely bypasses the need for human-robot aligned data. This reduces overall training overhead drastically.\n\nWith minimal per-task fine-tuning, our framework achieves a 73% improvement over the previous state of the art in execution performance on complex, real-world tool manipulation tasks that currently remain out of reach for standard large-scale pretrained models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents P2P-T, a data-efficient, object-centric framework for learning tool use from human demonstrations, targeting reliance on scarce robot data and paired human-robot data. It first pretrains an object-centric world model to extract stable pose priors, then incorporates them into an efficient pose-aware low-level policy. The authors say an automated pipeline powered by foundation models removes the need for human-robot aligned data and substantially reduces training overhead. With minimal task-specific fine-tuning, they report a 73% execution-performance improvement over the prior state of the art on complex real-world tool manipulation tasks.",
+          "zh": "本文提出 P2P-T，一种从人类演示中学习工具操作的数据高效、以物体为中心的框架，目标是减少对稀缺机器人数据及配对人机数据的依赖。方法分两阶段：先预训练物体中心世界模型以提取稳定位姿先验，再将先验整合进高效的位姿感知低层策略。作者称，自动化数据处理流程利用基础模型，无需人机对齐数据，并显著降低训练开销。摘要报告，在复杂真实世界工具操作任务上，经少量任务微调后，执行表现较此前最佳方法提升 73%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1188,7 +1200,11 @@
             "heading": "",
             "text": "Vision-language-action and world-action models are increasingly popular, yet remain bottlenecked by physical interaction data that is scarce, institutionally siloed, and task-heterogeneous. A natural federated solution is to let each client adapt a shared foundation model through parameter-efficient fine-tuning, avoiding the exchange of full-model updates.\n\nHowever, federating these adapters is nontrivial, as naive aggregation can entangle incompatible updates, while incorporating MoE-style routing into federated aggregation may dilute specialization and destabilize expert selection. We present RoboFL, which instantiates MoSAIC (Mixture of Slotted Adapters) for federated world-action learning.\n\nMoSAIC directly installs locally trained LoRA adapters as the expert branches of a server MoE. Server-side routers learn token assignments over these prior-informed branches while jointly refining routing and expert parameters.\n\nForesight-to-Action Routing Distillation (FARD) aligns routing across the model's three paths, while Path-Consensus Expert Aggregation (PCEA) converts complete expert updates into a compact global adapter for personalized redistribution.\n\nExperiments on RoboTwin 2.0, RLBench, and a real-world Franka robot arm show the superiority of RoboFL with structured expert assembly, as it outperforms centralized PEFT InternVLA-A1 by 12.23% on the Franka arm, while reducing per-round client communication by up to 86.81% relative to MoE-based federated VLA baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboFL, applying MoSAIC to federated world-action learning. The server installs clients’ locally trained LoRA adapters as expert branches in a mixture-of-experts model and trains routers to assign tokens while refining routing and expert parameters. FARD aligns routing across three model paths, while PCEA converts complete expert updates into a compact global adapter for personalized redistribution. Experiments on RoboTwin 2.0, RLBench, and a real Franka arm are reported. The authors report a 12.23% gain over centralized PEFT InternVLA-A1 on Franka and up to 86.81% lower per-round client communication than MoE-based federated VLA baselines.",
+          "zh": "本文提出 RoboFL，将 MoSAIC 用于联邦世界动作模型学习。服务器把客户端本地训练的 LoRA 适配器直接作为 MoE 专家分支，并训练路由器分配 token、联合优化路由与专家参数。FARD 用于对齐模型三条路径的路由，PCEA 则将完整专家更新转为紧凑的全局适配器以供个性化再分发。在 RoboTwin 2.0、RLBench 和真实 Franka 机械臂实验中，作者报告 RoboFL 优于结构化专家组装的比较方案；在 Franka 上较集中式 PEFT InternVLA-A1 高 12.23%，相较基于 MoE 的联邦 VLA 基线，每轮客户端通信量最多减少 86.81%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
