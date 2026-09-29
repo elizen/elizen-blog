@@ -1687,7 +1687,11 @@
             "heading": "",
             "text": "Incorporating dense visual information into motion planning remains challenging, as geometric planners rely on abstracted scene representations that discard visual richness, while learned visual models often lack geometric interpretability and computational efficiency.\n\nThis paper introduces CollisionSplatting, a simple, modular, GPU-accelerated, probability-inspired distance metric with tunable conservatism that operates directly on standard 3D Gaussian Splatting (3DGS) scenes.\n\nWhen combined with learned image-conditioned reward functions, this metric enables joint geometric and visual planning by unifying collision-aware costs with image-space objectives.\n\nWe integrate the metric into GPU-accelerated Model Predictive Path Integral (MPPI) and Rapidly-Exploring Random Tree (RRT) planners, and show on-par or better collision-classification performance compared to representative baselines while achieving substantially higher collision-checking throughput and significantly lower VRAM usage.\n\nFinally, we demonstrate the effectiveness of our metric in real-world vision-guided navigation and manipulation tasks, highlighting 3DGS as a practical bridge between rich perception and real-time motion planning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CollisionSplatting, a tunably conservative, GPU-accelerated, probability-inspired distance metric that operates directly on standard 3D Gaussian Splatting scenes. Combined with learned image-conditioned rewards, it supports joint geometric and visual planning and is integrated into MPPI and RRT planners. The authors report collision classification on par with or better than representative baselines, higher collision-checking throughput, and lower VRAM use. They also demonstrate the metric in real-world vision-guided navigation and manipulation tasks.",
+          "zh": "论文提出 CollisionSplatting，一种可调保守程度、GPU 加速且受概率启发的距离度量，可直接用于标准 3D 高斯泼溅（3DGS）场景。结合图像条件奖励函数后，它将碰撞代价与图像空间目标用于联合规划，并集成到 MPPI 和 RRT 规划器。作者报告，其碰撞分类表现与代表性基线相当或更好，同时碰撞检查吞吐量更高、显存占用更低；论文还展示了该方法在真实视觉导航与操作任务中的应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1718,7 +1722,11 @@
             "heading": "",
             "text": "Policies with memory can learn along two backward paths: through the physical states their actions produce and through the representations they store. Transformer-XL and truncated backpropagation through time cut the second path at stored history while keeping its values. We ask when this cut matters.\n\nHolding the forward computation fixed and varying only derivative edges, we measure parameter gradients, the updates the optimizer applies, and continued training in a Transformer vessel-trajectory model and a quadrotor tracking policy.\n\nIn the vessel model, detaching the key-value cache shrank the gradient to about a tenth of its norm, with little rotation, when gradients flowed through all earlier physical states, but barely changed it under one-step physical credit.\n\nIn this strongly clipped regime the optimizer, not the gradient, set how far updates differed: global-norm clipping removed most of the gradient difference between memory-cut graphs, whereas AdamW turned a 2% gradient difference between two placements of the cut into update differences of up to 31% at the step where the placement was switched.\n\nIn a quadrotor trained from initialization with 0.20 m/s velocity noise, removing memory raised tracking error by 43% and cutting memory gradients raised it by 32%; at low noise the cut's mean cost exceeded the value of memory.\n\nTwo-step truncation segments gave no measurable gain, although with hidden velocity a two-step window captured most of the value of memory; eight-step segments removed half to three quarters of the cost. Switching the cut on only for the last fifth of training understated its cost about threefold at 0.20-0.30 m/s, but not at low noise or with hidden velocity.\n\nThese results suggest measuring the cost of a memory cut by training with it from initialization, and comparing backward graphs by the updates the optimizer applies rather than by raw gradients."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how cutting the memory-gradient path affects training, holding forward computation fixed while changing backward graphs in a vessel-trajectory model and a quadrotor policy. Detaching the cache greatly reduced gradient norm under full physical-state credit in the vessel model, but had little effect under one-step credit. Clipping and AdamW altered how gradient differences translated into updates. Quadrotor results showed higher tracking error when memory or its gradients were removed, with effects depending on noise and observability. The authors recommend training with cuts from initialization and comparing optimizer updates.",
+          "zh": "论文研究截断反向传播中切断记忆梯度路径的影响，并在船舶轨迹模型和四旋翼跟踪策略中固定前向计算、改变反向图。船舶模型中，缓存分离在完整物理状态信用分配下显著缩小梯度范数，在单步信用分配下影响很小；梯度裁剪与 AdamW 会改变梯度差异对应的更新差异。四旋翼实验显示，移除记忆或切断记忆梯度会提高跟踪误差，且影响随噪声和可观测性而变。作者据此建议从初始化起训练截断模型，并比较优化器实际更新。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1749,7 +1757,11 @@
             "heading": "",
             "text": "Memory-dependent manipulation requires robots to make decisions using information that is no longer available to their current sensors, such as recalling an earlier visual cue, tracking task progress, counting repeated events, or estimating elapsed time. We present ReCAT, a language-conditioned policy with structured recurrent memory.\n\nAn instruction-conditioned encoder forms features from the current observation. A recurrent memory integrates the observation stream through Mamba-2 layers and one causal attention layer. A flow-matching Transformer decoder reads the current and the historical representation through separate cross-attention in every block.\n\nReCAT reaches 95.3\\% average success on LIBERO and 62.4\\% on RMBench, with the best or tied-best result on six of nine tasks. On three real-robot tasks probing spatial recall, event counting, and interval timing, the best ReCAT variant reaches 66.7\\% average success, against 8.3\\% for the strongest short-history baseline.\n\nControlled comparisons within ReCAT show that the observation encoder and every-block memory conditioning are needed for this performance.\n\nThey also show that update rules developed for efficient sequence modeling behave differently as robot memory: additive updates have the highest observed success on counting and timing, and delta-rule updates on spatial recall. Project website is at https://intuitive-robots.github.io/ReCAT"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ReCAT, a language-conditioned robot manipulation policy that integrates observations into recurrent memory and uses a flow-matching Transformer decoder to read current and historical representations. The authors report average success rates on LIBERO and RMBench, and higher average success for the best variant than a short-history baseline across three real-robot tasks involving spatial recall, event counting, and interval timing. Controlled comparisons indicate that the observation encoder and memory conditioning in every decoder block are needed. Observed results vary by memory update rule across task types.",
+          "zh": "论文提出 ReCAT，一种用于机器人操作的语言条件策略，使用循环记忆整合观测，并通过流匹配 Transformer 解码器读取当前与历史表征。作者报告其在 LIBERO 和 RMBench 上取得相应平均成功率，在空间回忆、事件计数和间隔计时三项真实机器人任务中，最佳变体的平均成功率高于短历史基线。受控比较显示，观测编码器和逐层记忆条件化对表现有必要；不同记忆更新规则在计数、计时与空间回忆任务上的观察结果各异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1780,7 +1792,11 @@
             "heading": "",
             "text": "Vision-Language-Action models are increasingly effective for robotic manipulation, yet most predict actions directly from current observations without explicitly modeling future scene evolution.\n\nRecent methods introduce future prediction to improve action generation, but dense future modeling often requires expensive iterative denoising, while one-step alternatives can underperform their multi-step counterparts.\n\nTo reconcile efficient future modeling with strong action performance, we present SLIP-VLA, a policy learning framework that equips VLA models with a Single-Step Latent Imagination for future-aware action prediction.\n\nSLIP-VLA obtains temporally dense future latent representations with a single denoising update, and we improve the perceptual sufficiency of these representations by aligning intermediate latents with future geometric and semantic features.\n\nWe further improve their control sufficiency through action-conditioned latent world modeling and inverse dynamics modeling, explicitly coupling latent transitions with robot actions. SLIP-VLA achieves state-of-the-art performance across diverse simulation benchmarks and real-world manipulation tasks, while its single-step latent imagination takes only 12 ms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SLIP-VLA, which adds single-step latent imagination to vision-language-action models to predict future perceptual representations for action generation. It produces temporally dense future latents with one denoising update and aligns intermediate representations with future geometric and semantic features. Action-conditioned latent world modeling and inverse dynamics modeling couple latent transitions with robot actions. The authors report state-of-the-art performance across diverse simulation benchmarks and real-world manipulation tasks, with single-step latent imagination taking 12 milliseconds.",
+          "zh": "论文提出 SLIP-VLA，为视觉—语言—动作模型加入单步潜在想象，以预测未来感知表征并辅助动作生成。该方法通过一次去噪更新获得时间上密集的未来潜在表征，并将中间表征与未来几何及语义特征对齐；同时采用动作条件潜在世界建模和逆动力学建模，使潜在状态转移与机器人动作关联。作者称该方法在多种仿真基准和真实操作任务中达到当前最佳表现，单步潜在想象耗时 12 毫秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
