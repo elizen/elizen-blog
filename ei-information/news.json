@@ -4643,7 +4643,11 @@
             "heading": "",
             "text": "Cooperative payload transportation using multiple Unmanned Aerial Vehicles (UAVs) poses challenges in stability, coordination, and robustness, especially under external disturbances and unmodeled dynamics.\n\nThis work proposes a dual-UAV payload transportation framework supported by a compact, custom-designed force sensor measuring the interaction force at the UAV cable anchor point.\n\nThe sensor design and mathematical model are presented, and its performance is characterized through static and dynamic tests evaluating linearity, hysteresis, repeatability, and crossload. The control architecture follows a cascade structure: fast inner loops handle vehicle stabilization, while outer loops are designed to compensate for the measured forces.\n\nThe approach is validated through simulations and indoor experiments under position uncertainty. Payload-drop and constrained-space tests assess the proposed sensing and control architecture against literature-based distributed references, showing improved stabilization, coordination, and disturbance rejection.\n\nA video of the experiments is available at: https://youtu.be/rIw9-fvV8Qw."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a dual-UAV cable-suspended payload framework with a compact custom force sensor at the cable anchor point. It describes the sensor design and mathematical model, and reports static and dynamic tests of linearity, hysteresis, repeatability, and crossload. A cascaded controller uses fast inner loops for vehicle stabilization and outer loops to compensate for measured forces. The authors report validation in simulation and indoor experiments under position uncertainty; payload-drop and constrained-space tests indicate improved stabilization, coordination, and disturbance rejection over literature-based distributed references.",
+          "zh": "本文提出一种用于双无人机缆绳悬挂载荷运输的框架，配备安装在无人机缆绳锚点处的紧凑型定制力传感器，并介绍其设计和数学模型。传感器通过静态与动态测试评估线性度、迟滞、重复性和交叉载荷。控制采用级联结构，以快速内环稳定飞行器、外环补偿测得的力。作者报告称，该方法在位置不确定条件下经仿真和室内实验验证；载荷投放及受限空间测试显示，相较基于文献的分布式参考方法，稳定性、协同和抗扰表现有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4674,7 +4678,11 @@
             "heading": "",
             "text": "In the field of Vision-Language Navigation (VLN), aerial datasets remain limited in their ability to combine scale, diversity, and realism, often relying on either costly real-world scenes or visually limited simulations. To address these challenges, we introduce FlyMirage, a highly scalable and fully automated data generation pipeline for aerial VLN.\n\nOur approach leverages large language models (LLM) as an environment designer to promote scene diversity, paired with a generative world model that instantiates these designs into high-fidelity 3D Gaussian Splatting (3DGS) scenes.\n\nTo substantially reduce human labor and ensure the feasibility of flight data, FlyMirage automates scene exploration and semantic information acquisition, and further integrates a dynamically feasible planner for uncrewed aerial vehicle (UAV) trajectory generation.\n\nUtilizing this toolchain, we generate a large-scale, diverse, and photorealistic aerial VLN dataset. We further fine-tune the widely used pi_0 model on this dataset and demonstrate the improvement our data brings to the model's ability to navigate in completely unseen environments, both in simulation and in the real world.\n\nProject website: https://lij1500.github.io/flymirage_website/ ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FlyMirage, an automated pipeline for generating aerial vision-language navigation data. Large language models design diverse environments, which a generative world model instantiates as high-fidelity 3D Gaussian Splatting scenes. The pipeline automates scene exploration and semantic information acquisition and uses a dynamically feasible planner to generate UAV trajectories. The authors create a large, diverse, photorealistic dataset and fine-tune pi_0 on it. They report improved navigation in completely unseen environments, evaluated both in simulation and in the real world.",
+          "zh": "本文提出FlyMirage，一个面向空中视觉语言导航的数据自动生成流程。该方法用大型语言模型设计多样环境，并通过生成式世界模型将设计实例化为高保真3D高斯泼溅场景；流程还自动探索场景、获取语义信息，并使用满足动力学可行性的规划器生成无人机轨迹。作者据此构建大规模、多样且写实的数据集，并在其上微调pi_0模型。作者报告称，该数据提升了模型在完全未见环境中的导航能力，评估涵盖仿真和真实世界。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4705,7 +4713,11 @@
             "heading": "",
             "text": "Vision and touch are naturally complementary for dexterous manipulation. Yet they are represented in fundamentally different forms: visual observations are dense and spatially structured, whereas tactile measurements are sparse, heterogeneous, and robot-centric.\n\nThis mismatch makes it challenging to establish explicit spatial correspondence between the two modalities, particularly when they are fused in latent space. However, each tactile measurement is associated with a known location on the robot's kinematic chain, offering a localization prior that could bridge this representational gap.\n\nThis raises a natural question: can this localization prior be used to construct a shared representation that explicitly aligns touch with vision?\n\nWe introduce Tac2Pix, an image-space visuo-tactile fusion framework that projects sparse tactile measurements onto the RGB image plane using forward kinematics and camera calibration, then renders them as force-aware saliency maps. By expressing touch in the same pixel space as vision, Tac2Pix directly leverages pretrained 2D visual representations.\n\nWe further employ zero-initialized input adaptation to preserve the original visual pathway at the start of policy learning. To assess whether this geometry-based interface yields consistent policy gains, we evaluate Tac2Pix on three simulated and three real-world dexterous manipulation tasks.\n\nIn simulation, Tac2Pix consistently improves visuo-tactile policy learning across tasks, policy architectures, and visual backbones. In real-world experiments, it improves average success under visual occlusion by 26.7 percentage points over the strongest latent visuo-tactile fusion baseline, with gains persisting under both random and physical occlusions.\n\nTogether, these results support image space as an effective interface for fusing sparse touch with pretrained visual representations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Tac2Pix projects sparse tactile measurements onto the RGB image plane using forward kinematics and camera calibration, rendering force-aware saliency maps so touch and vision share pixel space. Zero-initialized input adaptation is used to preserve the original visual pathway at the start of policy learning. The method is evaluated on three simulated and three real-world dexterous manipulation tasks. The authors report consistent simulation gains across tasks, policy architectures, and visual backbones. In real-world experiments, average success under visual occlusion improves by 26.7 percentage points over the strongest latent fusion baseline, with gains under random and physical occlusions.",
+          "zh": "本文提出Tac2Pix，通过正向运动学和相机标定，将稀疏触觉测量投影到RGB图像平面，并渲染为感知力的显著图，使触觉与视觉共享像素空间；零初始化输入适配用于在策略学习开始时保留原视觉通路。作者在三个模拟和三个真实灵巧操作任务中评估该方法。仿真中，Tac2Pix在不同任务、策略架构和视觉骨干下均改善了视触觉策略学习；真实实验中，面对视觉遮挡，其平均成功率比最强的潜在空间融合基线高26.7个百分点，随机及物理遮挡下均有提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4736,7 +4748,11 @@
             "heading": "",
             "text": "Real-world robotic manipulation requires visuomotor policies capable of robust 3D scene reasoning under varying camera viewpoints.\n\nWhile recent 3D-aware manipulation policies have shown promise, they still face several limitations: (i) reliance on multi-view observations during inference, which is impractical in camera-constrained deployments; (ii) insufficient geometric fidelity in learned representations, limiting precise and viewpoint-robust control; and (iii) the lack of effective mechanisms for transferring pretrained 3D representations to downstream visuomotor policies.\n\nTo address these challenges, we present GEM3D (Geometrically-Grounded 3D Manipulation), a unified 3D representation and policy learning framework for view-generalizable robotic manipulation.\n\nGEM3D learns amodal 3D representations from single-view RGB-D observations by jointly enforcing point-cloud reconstruction and Gaussian-splatting-based novel-view consistency during pretraining.\n\nA multi-step distillation strategy then transfers the learned geometric understanding into a deployable single-view visuomotor policy for downstream manipulation control. Experiments on 12 RLBench tasks and three real-world tasks demonstrate strong manipulation performance.\n\nFurther zero-shot evaluations on eight RLBench tasks and the real-world tasks show robust generalization to unseen camera poses and substantial gains over existing methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GEM3D, a 3D representation and policy learning framework for view-generalizable robotic manipulation. It learns amodal 3D representations from single-view RGB-D observations, jointly enforcing point-cloud reconstruction and Gaussian-splatting-based novel-view consistency during pretraining. A multi-step distillation strategy transfers this geometric understanding into a deployable single-view visuomotor policy. The authors report strong performance on 12 RLBench tasks and three real-world tasks. Zero-shot evaluations on eight RLBench tasks and the real-world tasks indicate generalization to unseen camera poses and substantial gains over existing methods.",
+          "zh": "本文提出GEM3D，一个用于视角泛化机器人操作的三维表征与策略学习框架。它从单视角RGB-D观测学习非显式遮挡的三维表征，并在预训练中联合约束点云重建和基于高斯泼溅的新视角一致性；随后通过多步蒸馏，将几何理解迁移到可部署的单视角视觉运动策略。作者报告称，该方法在12项RLBench任务和三项真实任务中表现良好；在八项RLBench任务及真实任务上的零样本评估显示，它能泛化到未见相机位姿，并较现有方法取得显著提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
