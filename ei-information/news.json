@@ -1235,7 +1235,11 @@
             "heading": "",
             "text": "Modular Aerial Robot Systems (MARS) consist of multiple drone modules that are physically bound together to form a single structure for flight. Exploiting structural redundancy, MARS can be reconfigured into different formations to mitigate unit or rotor failures and maintain stable flight.\n\nPrior work on MARS self-reconfiguration has solely focused on maximizing controllability margins to tolerate a single rotor or unit fault for rectangular-shaped MARS.\n\nWe propose TransforMARS, a general fault-tolerant reconfiguration framework that transforms arbitrarily shaped MARS under multiple rotor and unit faults while ensuring continuous in-air stability. Specifically, we develop algorithms to first identify and construct minimum controllable assemblies containing faulty units.\n\nWe then plan feasible disassembly-assembly sequences to transport MARS units or subassemblies to form target configuration. Our approach enables more flexible and practical feasible reconfiguration.\n\nWe validate TransforMARS in challenging arbitrarily shaped MARS configurations, demonstrating substantial improvements over prior works in both the capacity of handling diverse configurations and the number of faults tolerated. The videos and source code of this work are available at https://github.com/RuiHuangNUS/TransforMARS"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TransforMARS, a fault-tolerant reconfiguration framework for arbitrarily shaped modular aerial robot systems facing multiple rotor or unit faults while maintaining continuous in-air stability. It identifies and constructs minimum controllable assemblies containing faulty units, then plans feasible disassembly and assembly sequences to move units or subassemblies into a target configuration. Validation on challenging configurations is reported to improve on prior work in the range of configurations handled and the number of tolerated faults.",
+          "zh": "论文提出 TransforMARS，一种面向任意形状模块化空中机器人系统的容错重构框架，针对多个旋翼或单元故障，在保持空中连续稳定的条件下调整构型。方法先识别并构造包含故障单元的最小可控组件，再规划可行的拆卸与组装序列，以移动单元或子组件形成目标构型。作者在具有挑战性的任意形状构型中验证了该方法，并报告其处理多样构型和容忍故障数量方面优于既有工作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1266,7 +1270,11 @@
             "heading": "",
             "text": "Reward transfer in Inverse Reinforcement Learning (IRL) is unreliable when policies must generalize to unseen combinations of environment dynamics and task goals.\n\nWe propose Factorized Contrastive Abstractions for Transferable IRL (ConTraIRL), a framework that enables compositional reward transfer by learning decoupled latent representations of these two factors. ConTraIRL uses a dual-encoder architecture that maps observations into separate dynamics and goal latent spaces, trained with a dual contrastive objective.\n\nTemporal alignment encourages the dynamics encoder to learn goal-invariant structure, while the goal encoder captures dynamics-invariant features. This factorization supports reward inference under recombined dynamics-goal settings.\n\nExperiments on continuous control benchmarks demonstrate effective few-shot transfer to unseen dynamics-goal pairings, improving sample efficiency and reward recovery over transfer IRL baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses unreliable reward transfer in inverse reinforcement learning when environment dynamics and task goals appear in unseen combinations. ConTraIRL uses dual encoders to map observations into separate dynamics and goal latent spaces, trained with a dual contrastive objective. Temporal alignment encourages each representation to be invariant to the other factor, supporting reward inference under recombined settings. Experiments on continuous control benchmarks report few-shot transfer to unseen pairings and improvements in sample efficiency and reward recovery over transfer IRL baselines.",
+          "zh": "论文针对逆强化学习中奖励难以迁移到未见过的环境动力学与任务目标组合的问题，提出 ConTraIRL。该框架用双编码器将观测映射到相互分离的动力学和目标潜在空间，并通过双重对比目标训练；时间对齐旨在使动力学表示不受目标影响、目标表示不受动力学影响，从而支持重新组合条件下的奖励推断。连续控制基准实验显示，该方法能够对未见组合进行少样本迁移，并在样本效率和奖励恢复方面优于迁移式逆强化学习基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1297,7 +1305,11 @@
             "heading": "",
             "text": "Vision-language models are increasingly used for driving-scene understanding, yet the semantic relations expressed in their outputs are often difficult to verify against the underlying traffic situation.\n\nThis paper introduces a deterministic multi-dataset predicate framework that derives driving-scene semantics from measurable geometric, kinematic, temporal, map, and traffic-control evidence.\n\nDataset-specific interfaces are used only to recover the required scene information, while predicate definitions remain unchanged across nuPlan and nuScenes and are materialised in a common Predicate Knowledge Graph.\n\nQuantitative semantic validation against manually annotated predicate relations on 200 scenarios from each dataset yields macro F1 scores of 0.94 on nuPlan and 0.93 on nuScenes, with an average cross-dataset difference of 0.02 across the shared predicates.\n\nThe Predicate KG is further evaluated using a frozen LLaVA-OneVision-7B model on the nine NuPlanQA subtasks.\n\nPredicate grounding achieves the highest accuracy among the evaluated visual-input conditions in seven of nine NuPlanQA subtasks, including Traffic Light (53.2% to 71.5%), Situation Assessment (76.2% to 86.1%), and Action Recommendation (82.9% to 89.0%).\n\nWeather/Lighting remains essentially unchanged (89.4% vs. 88.8%), consistent with the absence of corresponding predicates, while Predicate KG only input outperforms metadata-only input in eight of nine subtasks.\n\nThe results show that deterministic predicates provide a consistent and traceable semantic representation and, under oracle grounding, can reduce visual dependence for reasoning tasks covered by the predicate vocabulary."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a deterministic, multi-dataset predicate framework that derives driving-scene semantics from measurable geometric, kinematic, temporal, map, and traffic-control evidence. Dataset-specific interfaces recover scene information for nuPlan and nuScenes, while predicate definitions remain fixed in a shared knowledge graph. Manual validation on 200 scenarios per dataset reports macro F1 scores of 0.94 and 0.93, with a 0.02 average cross-dataset difference for shared predicates. With frozen LLaVA-OneVision-7B on NuPlanQA, grounding achieves the highest accuracy among visual-input conditions in seven of nine subtasks.",
+          "zh": "论文提出确定性的多数据集谓词框架，从可测的几何、运动学、时间、地图和交通控制证据中推导驾驶场景语义，并将结果汇入统一谓词知识图谱。nuPlan 与 nuScenes 使用不同接口提取场景信息，但谓词定义保持一致。基于两数据集各200个场景的人工标注验证，宏平均F1分别为0.94和0.93，共享谓词的跨数据集平均差异为0.02。使用冻结的LLaVA-OneVision-7B评估NuPlanQA时，谓词接地在九项子任务中的七项达到所测视觉输入条件下最高准确率；作者指出，在oracle接地下，该表示可降低相关推理任务对视觉输入的依赖。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1328,7 +1340,11 @@
             "heading": "",
             "text": "Humanoid avatars extend human physical presence beyond the body, enabling people to participate in social, service, and labor activities through remotely operated robots. This requires teleoperation systems capable of realizing diverse and dynamic whole-body behaviors while maintaining responsive human-robot synchronization.\n\nWe present General Action Expert(GAE), a unified learning framework for general-purpose, low-latency humanoid whole-body teleoperation. To cover diverse human behaviors, GAE builds a large-scale human motion dataset from heterogeneous sources, including videos, animations, and motion capture, followed by standardization and augmentation.\n\nGAE then addresses the noise and embodiment mismatch in human motions with a two-stage training paradigm: a privileged generator policy first tracks human motion references in simulation and rolls out feasible humanoid trajectories; a deployable executor policy then learns to track these generated trajectories under curriculum domain randomization.\n\nFor responsive human-robot synchronization, GAE introduces a latency-conditioned anticipation mechanism that adaptively compensates for end-to-end delay during real-time teleoperation.\n\nSimulation and real-world experiments on Unitree G1 and Westlake O1 robots demonstrate that GAE enables humanoids to smoothly mirror diverse, agile, and expressive human behaviors. Project website: https://wangyf0928.github.io/gae-wlrobotics/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GAE, a unified learning framework for low-latency, whole-body humanoid teleoperation intended to support diverse, dynamic behavior and responsive human-robot synchronization. It builds a standardized and augmented human-motion dataset from videos, animations, and motion capture. Training has two stages: a privileged generator tracks motion references in simulation and produces feasible robot trajectories, then a deployable executor learns to track them with curriculum domain randomization. A latency-conditioned anticipation mechanism compensates for end-to-end delay. Simulation and real-world experiments on Unitree G1 and Westlake O1 robots show smooth mirroring of diverse, agile, expressive behaviors.",
+          "zh": "论文提出 GAE，一种面向实时人形机器人全身遥操作的统一学习框架，目标是在低延迟下实现多样且动态的行为，并保持人机同步。系统从视频、动画和动作捕捉等异构来源构建并标准化、增强人体动作数据；随后采用两阶段训练：特权生成策略在仿真中跟踪动作参考并生成可行轨迹，可部署执行策略通过课程式领域随机化学习跟踪轨迹。框架还引入延迟条件化预判机制，以补偿端到端延迟。仿真及Unitree G1和Westlake O1机器人的真实实验显示，机器人可平滑模仿多样、敏捷且富有表现力的人类行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1359,7 +1375,11 @@
             "heading": "",
             "text": "Before a team of robots moves, each proposed step must be checked for collisions with other robots and with obstacles. We present CollisionGAT, a graph-attention network that reads the current and proposed states of moving agents together with locally relevant stationary obstacles and returns one collision-risk score per moving agent.\n\nAny controller can use these scores to accept, repair, replan, or postpone a proposed step. We mount CollisionGAT on a continuous path-following controller and on GATeD, an obstacle-blind D* Lite planner that uses typed vetoes to update its planning graphs. Exact geometric checks supply the training labels and independently audit every executed step."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CollisionGAT, a controller-agnostic method for screening proposed motion steps for collision risk. Its graph-attention network takes moving agents’ current and proposed states, along with locally relevant stationary obstacles, and outputs one risk score per agent. Controllers can use the scores to accept, repair, replan, or postpone a step. The authors apply it to a continuous path-following controller and GATeD, using exact geometric checks for training labels and independent audits of executed steps.",
+          "zh": "论文提出 CollisionGAT，一种与控制器无关的单步碰撞筛查方法。图注意力网络读取移动智能体当前状态和拟议状态，以及局部相关的静态障碍物，并为每个移动智能体输出碰撞风险分数。控制器可据此接受、修正、重新规划或推迟动作。作者将其用于连续路径跟随控制器和 GATeD 规划器；训练标签由精确几何检查生成，每个执行步骤也由其独立审查。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1390,7 +1410,11 @@
             "heading": "",
             "text": "Video anomaly detection for patrol robots and surveillance systems must recognize abnormal interactions among familiar entities. Existing pixel-reconstruction and isolated-entity methods may fail when individual entities appear normal but their spatial or motion relations are abnormal.\n\nThis work presents Interaction-Centric Network for Temporal Entity-Relation Analysis and Consistency Testing (INTERACT), a framework for unsupervised video anomaly detection.\n\nPerson-Object Appearance-Motion Interaction (POAMI) moves beyond isolated-entity encoding by jointly modeling the appearance, motion, and spatial configurations of persons and objects in each frame. The resulting representations capture both individual entity states and their cross-entity context.\n\nBased on these representations, Target Geometry-Guided Relational Interaction Prediction (TGRIP) predicts target entity interaction states from historical relational memory and target-frame geometry without explicit identity tracking.\n\nMotion-Interaction Reconstruction and Alignment (MIRA) then evaluates these predictions through conditional flow reconstruction and semantic consistency checking, providing complementary anomaly evidence beyond prediction error alone. INTERACT achieves state-of-the-art performance, obtaining a frame-level AUC of 84.5% on the ShanghaiTech benchmark.\n\nAblation studies show that removing cross-entity attention causes the largest performance drop, demonstrating the necessity of relational modeling. INTERACT is particularly effective for anomalies caused by changes in relations among people and objects, while maintaining competitive performance in general scenarios.\n\nThe source code will be made publicly available at https://github.com/ppworkhard/INTERACT."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces INTERACT, an unsupervised video anomaly detection framework designed to identify abnormal interactions among familiar entities. POAMI jointly models the appearance, motion, and spatial configurations of people and objects. TGRIP predicts target interactions from historical relational memory and target-frame geometry without explicit identity tracking, while MIRA assesses predictions using conditional flow reconstruction and semantic consistency. The authors report a frame-level AUC of 84.5% on ShanghaiTech; ablations show the largest drop when cross-entity attention is removed.",
+          "zh": "论文提出用于无监督视频异常检测的 INTERACT，旨在识别熟悉实体之间的异常交互。POAMI 联合建模人物和物体的外观、运动及空间配置；TGRIP 根据历史关系记忆与目标帧几何预测交互状态，无需显式身份跟踪；MIRA 通过条件流重建和语义一致性检查评估预测。作者报告其在 ShanghaiTech 基准上的帧级 AUC 为 84.5%，消融研究中移除跨实体注意力造成最大性能下降，并称该方法对关系变化导致的异常尤为有效。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1421,7 +1445,11 @@
             "heading": "",
             "text": "We present an end-to-end QP-based policy framework that enables systematic policy construction with minimal domain-specific design, while preserving the transparency and interpretability of model-based control.\n\nThe proposed policy representation supports both domain-randomized model-based auto-tuning, where policy parameters are optimized over distributions of disturbances and model variations, and black-box policy construction, where the problem is formulated in terms of a (possibly) unknown model without requiring explicit notions of states, inputs, or the underlying system dynamics.\n\nWe establish connections to existing policy representations and control paradigms, including robust control, multilayer perceptrons, and robot learning, and interpret our end-to-end QP policies as a common abstraction of these approaches.\n\nWe validate the resulting framework in both simulation and hardware, demonstrating a broad range of applications spanning robustness, automatic policy tuning, and control under unknown system dynamics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an end-to-end QP-based policy framework intended to reduce domain-specific design while retaining the transparency and interpretability of model-based control. Its representation supports domain-randomized model-based auto-tuning and black-box policy construction when the model may be unknown, without requiring explicit states, inputs, or system dynamics. The authors connect the framework to robust control, multilayer perceptrons, and robot learning. They report validation in both simulation and hardware across applications involving robustness, automatic tuning, and control under unknown dynamics.",
+          "zh": "论文提出端到端的 QP 策略框架，目标是在减少领域专用设计的同时，保留基于模型控制的透明性和可解释性。该表示支持基于领域随机化的模型策略自动调优，也支持在模型可能未知、无需显式定义状态、输入或系统动力学时进行黑箱策略构建。作者阐述了该框架与鲁棒控制、多层感知机及机器人学习等方法的联系，并在仿真和硬件上验证其应用，涵盖鲁棒性、自动调优及未知动力学条件下的控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1452,7 +1480,11 @@
             "heading": "",
             "text": "Manipulating a Rubik's Cube with a single dexterous hand is a challenging test of sustained, contact-rich control: the hand must execute successive layer turns while keeping the cube secure. Each turn requires some fingers to support the cube while others push a moving layer, release contact, and reset for the next move.\n\nTo learn this coordination, we introduce FINGR (Future-supervised Interaction Network with Geometric Representations), a policy that combines finger-relative geometry with future interaction prediction. A shared point encoder expresses the cube relative to each fingertip and aggregates its points without depending on cubie indexing.\n\nLearned future tokens share the observation encoder and receive supervision for contact-force changes, layer-turn progress, and finger joint displacement at multiple time scales. The resulting representation conditions a flow policy that directly generates finger actions.\n\nOn a real dexterous hand, our policy achieves 99.0% success over 300 turn attempts, compared with 79.7% for the base flow policy. Integrated with grasping and table-assisted regrasping, the policy solves all ten scrambled $2\\times2\\times2$ cubes in a mean complete-system time of approximately 137 seconds.\n\nThe project website is available at https://www.lyt0112.com/projects/FINGR"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FINGR, a learned policy for manipulating a Rubik’s Cube with a dexterous hand. It combines fingertip-relative geometric representations with future interaction prediction, supervising contact-force changes, layer-turn progress, and finger-joint displacement at multiple time scales. A flow policy then generates finger actions. On a real hand, the authors report 99.0% success over 300 turn attempts, compared with 79.7% for a base flow policy. With grasping and table-assisted regrasping, the system solved all ten scrambled 2×2×2 cubes in about 137 seconds on average.",
+          "zh": "论文提出 FINGR，用于学习灵巧手操控魔方的策略。它结合指尖相对几何表示与未来交互预测，以多时间尺度监督接触力变化、层转动进度和手指关节位移，再由流策略生成手指动作。作者报告真实灵巧手在 300 次转动尝试中的成功率为 99.0%，基础流策略为 79.7%。结合抓取和桌面辅助重新抓握后，该系统解开了全部十个打乱的 2×2×2 魔方，平均完整系统用时约 137 秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
