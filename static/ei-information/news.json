@@ -1763,7 +1763,11 @@
             "heading": "",
             "text": "Human video datasets offer an abundant and diverse source of interaction data that can complement expensive real-robot data. To bridge the human-to-robot embodiment gap, existing approaches either robotize videos in task-matched settings or address observation and action alignment separately.\n\nIn this work, we systematically examine whether robotized human videos can serve as an effective and scalable source of robot-aligned supervision.\n\nTo this end, we develop a robotization pipeline that converts heterogeneous human videos into robot-aligned observations and action trajectories while inferring missing intermediate signals across annotation levels.\n\nUsing this pipeline, we construct the HuRo dataset, comprising about 630K robotized episodes and 142M processed frames from five human-video sources.\n\nAcross four real-world manipulation tasks, pretraining a VLA policy on increasing amounts of robotized human-video data improves overall completion from 51.5% to 80.3% and OOD completion under spatial and visual shifts from 34.9% to 72.2%.\n\nAblations further show that visual robotization improves OOD robustness and that end-to-end pretraining with retargeted actions outperforms visual-only transfer. Project website: https://3587jjh.github.io/HuRo."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HuRo presents a pipeline for converting heterogeneous human videos into robot-aligned observations and action trajectories, and reports a dataset of about 630K episodes and 142M processed frames. Across four real-world manipulation tasks, the authors report that more robotized-video pretraining raises overall completion from 51.5% to 80.3% and completion under spatial and visual shifts from 34.9% to 72.2%. Ablations indicate benefits from visual robotization and retargeted-action pretraining over visual-only transfer.",
+          "zh": "HuRo研究将人类视频转化为机器人对齐的观察和动作轨迹，并构建包含约63万段机器人化episode、1.42亿处理帧的数据集。作者在四项真实世界操作任务中报告，随着预训练数据增加，整体完成率由51.5%升至80.3%，空间和视觉分布偏移下的完成率由34.9%升至72.2%。消融结果显示，视觉机器人化有助于OOD鲁棒性，使用重定向动作的端到端预训练优于仅视觉迁移；这些结果来自所述任务评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1794,7 +1798,11 @@
             "heading": "",
             "text": "Vision-language navigation (VLN) models perform well but target compute-rich platforms, limiting deployment on memory- and power-constrained robotic edge devices. Compression alone does not establish whether a VLN model fits the memory, latency, and energy budgets of an edge platform while preserving navigation behavior.\n\nWe introduce EdgeVLN, a runtime-aware, deployment-ready quantized VLN model that closes this gap. EdgeVLN combines a quantized StreamVLN model with Latent Trajectory Termination Extractor (LATTE), a lightweight causal transformer that improves real-time stopping by predicting a Stop Action verifier rank.\n\nBoth execute through our llama.cpp VLN driver, which reconstructs streaming context and prunes memory tokens on-board. We characterize a pretrained StreamVLN backbone across weight quantization from 8 to 2 bits and multiple inference runtimes to identify a feasible operating point.\n\nLATTE reuses backbone hidden states within the budget freed by quantization, requiring neither a second vision encoder nor an additional backbone forward pass. We evaluate six backbone precisions and seven candidate stop heads on BF16 and IQ4 NL across all 1,839 R2R VLN-CE val-unseen episodes.\n\nWe measure success rate (SR) in simulation and latency, energy, and resident memory on an NVIDIA Jetson Orin NX 16 GB. LATTE achieves our highest SR, 58.02 percent on the deployed 4-bit model, exceeding the BF16 baseline with only 0.013 s additional latency per navigation step.\n\nFour-bit formats achieve nearly identical SR, but step energy varies 36.8 times by execution path. Only IQ4 NL under our VLN driver fits the board, using 11.35 GB resident memory while running 20.8 times faster and using 13.3 times less energy than storage-streamed BF16.INT2 collapses.\n\nRuntime selection, memory-token pruning, and quantization are essential for efficient edge deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "EdgeVLN combines a quantized StreamVLN model with LATTE, a lightweight stopping verifier, and uses a llama.cpp driver to reconstruct streaming context and prune memory tokens. The authors evaluate navigation success in simulation and measure latency, energy, and resident memory on a Jetson Orin NX 16 GB. LATTE reaches 58.02% success with the deployed 4-bit model, with 0.013 seconds of additional latency per step over the BF16 baseline. They report that only IQ4 NL fits the board under their driver.",
+          "zh": "EdgeVLN面向受内存和功耗限制的机器人边缘设备，将量化StreamVLN与轻量级停止动作验证器LATTE结合，并通过llama.cpp驱动器重建流式上下文、裁剪记忆token。作者在R2R VLN-CE仿真验证集评估导航成功率，并在Jetson Orin NX 16 GB上测量延迟、能耗和常驻内存。部署的4位模型配合LATTE达到58.02%成功率，较BF16基线每步仅增加0.013秒延迟；作者称只有IQ4 NL在其驱动器下适配该设备。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1825,7 +1833,11 @@
             "heading": "",
             "text": "Modern robot policies predict a chunk of future actions from a single observation, execute only a prefix, and discard the rest before replanning. Choosing the length of this prefix, the execution horizon, poses a trade-off between reactivity and efficiency. A short horizon keeps the policy reactive to the environment, but requires frequent policy calls.\n\nRecent test-time methods adaptively select the horizon for each chunk, but they either read model internals, where the signal must be chosen for each architecture, or draw extra samples, which adds cost.\n\nWe propose *Action Upcycling*, a training-free algorithm that reuses actions the policy would otherwise discard, without accessing model internals or drawing extra samples. We find that discarded actions stay close to their replanned versions as long as the action velocity remains smooth.\n\nAction Upcycling therefore extends the execution horizon up to the point where the velocity begins to fluctuate.\n\nExtensive experiments on simulated and real-world manipulation tasks show that Action Upcycling reduces policy calls by 1.2--1.7$\\times$ with no loss in success rate, across multiple Vision-Language-Action Models (VLAs) and even a World Action Model (WAM).\n\nIt applies to any chunked policy at negligible cost and is orthogonal to other policy acceleration methods such as few-step sampling and streaming action decoding, opening a new axis for policy acceleration."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Action Upcycling is a training-free method that reuses actions a chunked policy would otherwise discard, without accessing model internals or drawing extra samples. It extends the execution horizon while action velocity remains smooth, stopping when velocity begins to fluctuate. Experiments on simulated and real-world manipulation tasks report 1.2–1.7 times fewer policy calls with no loss in success rate across multiple Vision-Language-Action Models and a World Action Model. The method is described as compatible with chunked policies at negligible cost.",
+          "zh": "Action Upcycling是一种无需训练的算法，在分块策略中复用原本会被丢弃的动作，不读取模型内部信息，也不额外采样。其依据是：只要动作速度保持平滑，被丢弃动作就会接近重新规划后的动作，因此可将执行时域延长至速度开始波动处。作者在模拟和真实世界操作任务中报告，该方法适用于多种视觉语言动作模型及一种世界动作模型，将策略调用次数减少1.2至1.7倍且成功率无损；结论限于所述实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1856,7 +1868,11 @@
             "heading": "",
             "text": "We study whether a manually specified runtime supervisor can correct recurring failures of an existing end-to-end parking policy in a fixed CARLA parking lot. The vision-based Transformer architecture is inherited from Yang et al.; our contribution is a timed, rule-based Parametric Safety Shield (PSS) applied to its control outputs.\n\nThe PSS uses hand-calibrated speed, position, and duration thresholds to intervene in observed failure modes, including boundary exits, delayed braking, and stalled or oscillatory control. In the reported closed-loop evaluation, 16 held-out target slots and six initial poses are each evaluated in four rounds (384 attempts per configuration).\n\nTarget success increases from 327/384 (85.16%) for the retrained policy to 375/384 (97.66%) with the PSS; mean position and orientation errors among successful attempts are 0.21m and 0.33 degrees. These results show an improvement within this simulator setup.\n\nThe repeated attempts share one map, vehicle, and sensor configuration, and the PSS uses simulator world coordinates; thus the results do not establish generalization to other lots or real vehicles, or a formal safety guarantee."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study adds a timed, rule-based Parametric Safety Shield to an existing end-to-end parking policy in a fixed CARLA lot. Using hand-calibrated speed, position, and duration thresholds, the shield intervenes in failures such as boundary exits, delayed braking, and stalled or oscillatory control. In the reported closed-loop simulation, success rises from 327/384 attempts for the retrained policy to 375/384 with the shield. The authors state that the single-map setup and simulator coordinates do not establish transfer to other lots or real vehicles, or a formal safety guarantee.",
+          "zh": "研究在固定CARLA停车场中，为既有端到端停车策略添加基于时间规则的参数化安全屏蔽器（PSS）。该监督器依据人工校准的速度、位置和持续时间阈值，对越界、制动延迟及停滞或振荡控制进行干预。在报告的闭环仿真中，16个留出目标车位和6种初始姿态各进行四轮评估；成功次数从重训练策略的327/384升至使用PSS后的375/384。作者指出，单一地图、车辆和传感器配置及仿真世界坐标限制了结论，不能据此证明跨场地或真实车辆泛化，也不构成形式安全保证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
