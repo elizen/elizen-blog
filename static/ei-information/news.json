@@ -3599,7 +3599,11 @@
             "heading": "",
             "text": "In embodied intelligence, the embodiment gap between robotic and human hands brings significant challenges for learning from human demonstrations. Although some studies have attempted to bridge this gap using reinforcement learning, they remain confined to merely reproducing human manipulation, resulting in limited task performance.\n\nMoreover, current methods struggle to support diverse robotic hand configurations. In this paper, we propose UniBYD, a unified framework that uses a dynamic reinforcement learning algorithm to discover manipulation policies aligned with the robot's physical characteristics.\n\nTo enable consistent modeling across diverse robotic hand morphologies, UniBYD incorporates a unified morphological representation (UMR).\n\nBuilding on UMR, we design a dynamic PPO with an annealed reward schedule, enabling reinforcement learning to transition from offline-informed imitation of human demonstrations to online-adaptive exploration of policies better adapted to diverse robotic morphologies, thereby going beyond mere imitation of human hands.\n\nTo address the severe state drift caused by the incapacity of early-stage policies, we design a hybrid Markov-based shadow engine that provides fine-grained guidance to anchor the imitation within the expert's manifold. To evaluate UniBYD, we propose UniManip, the first benchmark for cross-embodiment manipulation spanning diverse robotic morphologies.\n\nExperiments demonstrate a 44.08% average improvement in success rate over the current state-of-the-art. Our project page is https://zhanheng-creator.github.io/UniBYD."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes UniBYD, a manipulation-learning framework for diverse robotic hand morphologies that aims to move beyond reproducing human demonstrations. It combines a unified morphological representation, dynamic PPO with an annealed reward schedule, and a hybrid Markov-based shadow engine intended to address early-policy state drift. The authors also introduce UniManip as a cross-embodiment benchmark. In experiments, they report a 44.08% average success-rate improvement over the current state of the art.",
+          "zh": "论文提出 UniBYD，一个面向不同机器人手部形态的操作学习框架，旨在超越对人类示范的简单模仿。框架采用统一形态表示、带退火奖励调度的动态 PPO，以及用于缓解早期策略状态漂移的混合马尔可夫影子引擎，并提出跨具身操作基准 UniManip。作者报告，实验中其成功率平均比当前最先进方法高 44.08%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3630,7 +3634,11 @@
             "heading": "",
             "text": "Action-conditioned world models (ACWMs) aim to simulate future observations conditioned on embodied actions. However, learning controllable ACWMs requires large-scale action-labeled data, which remains costly to collect.\n\nLatent action models (LAMs) mitigate this bottleneck by inferring latent actions from videos without executable action labels, but existing LAMs are typically trained with reconstruction-only objectives and therefore entangle action-relevant dynamics with action-irrelevant visual confounders.\n\nWith such objectives, LAM favors visual context over action dynamics, therefore downstream ACWMs exhibit residual motion under zero actions and fail to reproduce supplied dynamics. We propose CD-LAM, a causally debiased framework for LAM-based ACWMs.\n\nCD-LAM introduces three debiasing objectives: embodiment-centric reconstruction, action-centric contrastive learning, and latent space calibration, which together encourage embodiment-focused, action-aware, and well-calibrated representations.\n\nCD-LAM reduces action-following error by up to 42% and 35% when conditioned on latent and robot actions, while improving fidelity, and matching DreamDojo reference with over 12$\\times$ fewer adaptation updates. CD-LAM also adapts LTX-2.3-22B into an ACWM with competitive quality using only 3.2% of DreamDojo-14B's sample exposures.\n\nOn X-VLA, pretraining with CD-LAM instead of baseline LAM consistently improves success rates by up to 5 percent point across LIBERO, LIBERO-Plus, and RoboTwin C2R."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CD-LAM, a framework intended to reduce visual confounding in latent-action-model-based action-conditioned world models. It combines embodiment-centric reconstruction, action-centric contrastive learning, and latent-space calibration. The authors report that action-following error falls by up to 42% with latent actions and 35% with robot actions, while matching a DreamDojo reference with over 12 times fewer adaptation updates. CD-LAM pretraining also improves X-VLA success rates by up to five percentage points across LIBERO, LIBERO-Plus, and RoboTwin C2R.",
+          "zh": "论文提出 CD-LAM，用于减少基于潜在动作模型的动作条件世界模型中的视觉混杂影响。该方法结合以具身为中心的重建、以动作为中心的对比学习和潜在空间校准。作者报告，在潜在动作和机器人动作条件下，动作跟随误差最高分别降低 42% 和 35%；适配更新次数比 DreamDojo 参考方法少逾 12 倍。使用 CD-LAM 预训练也提升了 X-VLA 在 LIBERO、LIBERO-Plus 和 RoboTwin C2R 上的成功率，最高增加 5 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3661,7 +3669,11 @@
             "heading": "",
             "text": "Physical changes or sensing errors can invalidate embodied agents' task-relevant beliefs. AquaMend compares re-probing, rollback, and supported continuation on a probe-belief-action graph under an expected-loss objective covering sensing, physical recovery, and uncorrected failures.\n\nA joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum requires independence, separability, and fully resolving probes; the general policy has no global optimality guarantee.\n\nAcross 32 paired scenarios in a self-constructed simulation benchmark, AquaMend recovers in 28/32 cases and reduces mean complete loss by 21.6% versus restart. Its paired loss difference from decision-theoretic troubleshooting (DTT) is not statistically significant after Holm correction.\n\nAgainst the all-candidate ablation, online decision time decreases by 12.3% overall but increases by 3.4% in the uncovered late stage."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes AquaMend for handling invalid beliefs in embodied agents by comparing re-probing, rollback, and continuation under an expected-loss objective. A joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum depends on independence, separability, and fully resolving probes; the general policy has no global optimality guarantee. In 32 paired scenarios in a self-constructed simulation benchmark, AquaMend recovered in 28 cases and reduced mean complete loss by 21.6% versus restart. Its paired loss difference from decision-theoretic troubleshooting was not statistically significant after Holm correction.",
+          "zh": "论文提出 AquaMend，在预期损失目标下比较重新探测、回滚和继续执行，以应对具身智能体的信念失效。其联合后验用于指导带条件检测能力筛选的一步策略；每信念三选一最优结论依赖独立性、可分性和探测完全解析等条件，一般策略没有全局最优保证。在自建仿真基准的 32 组成对情景中，系统恢复了 28 例，较重启使平均完整损失降低 21.6%；与决策论故障排查的配对损失差异经 Holm 校正后不显著。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3692,7 +3704,11 @@
             "heading": "",
             "text": "A central premise of latent world models is that predicting the future encourages representations to internalize the physics of their environment. We ask which physical quantities are accessible in learned latent states, how this depends on training, and how those quantities relate to the model's predictions.\n\nWe present PokeWorld, a simulated environment in which a robot finger pushes objects whose mass, drag, and contact stiffness vary across episodes while remaining visually identical. We first measure parameter recovery from raw observation sequences, then train matched action-conditioned world models. Prediction targets can strongly shape latent content.\n\nFor example, contact stiffness becomes decodable when touch is predicted, while providing touch only as an input does not. Longer-horizon prediction improves estimation of position and velocity from learned representations relative to single-step prediction. Drag is recoverable from raw observations, but has weak linear readout from the learned latent states.\n\nYet the models' glide forecasts depend systematically on drag. Experiments on RH20T reproduce the same input-target dependence on real multimodal robot data. Together, these results show that observations, prediction targets, and prediction horizons shape both which physical quantities are accessible in latent states and how they affect future predictions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates which physical quantities are accessible in latent world-model states and how training targets and prediction horizons affect them. In the simulated PokeWorld environment, object mass, drag, and contact stiffness vary while appearance remains the same. The authors find that contact stiffness becomes decodable when touch is a prediction target, and longer-horizon prediction improves position and velocity estimation. Drag is recoverable from raw observations but has weak linear readout from latents, although glide forecasts depend systematically on it. Experiments on RH20T reproduce the same input-target dependence.",
+          "zh": "论文研究潜在世界模型的表示能否包含环境物理量，以及训练目标和预测时域的影响。作者在模拟环境 PokeWorld 中改变物体质量、阻力和接触刚度，并训练动作条件世界模型。结果显示，触觉作为预测目标时接触刚度可从潜在状态解码；较长时域预测改善位置和速度估计，而阻力虽可从原始观测恢复，却难以从潜在状态线性读出，但模型的滑行预测仍系统性依赖阻力。RH20T 实验复现了输入与目标的相同依赖关系。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
