@@ -4439,7 +4439,11 @@
             "heading": "",
             "text": "Inspection planning seeks a minimum-length collision-free robot tour that observes a given set of points of interest (POIs).Sampling-based methods reduce this continuous problem to a graph inspection planning (GIP) problem over a discrete roadmap, which is then solved using combinatorial solvers.\n\nDense roadmaps capture diverse inspection viewpoints and motion shortcuts, and thus admit higher-quality solutions, but they induce large combinatorial search spaces on which state-of-the-art GIP solvers struggle to find good solutions within practical time budgets.\n\nRoadmap sparsification---restructuring a dense roadmap into a compact representation that preserves connectivity and path lengths---can alleviate this burden.\n\nHowever, existing sparsification approaches are either agnostic to the underlying inspection task, or strive to ensure coverage of the POIs without accounting for the quality of the resulting inspection plan.\n\nWe present Inspection-SPARS, which is, to our knowledge, the first inspection-roadmap sparsifier with POI coverage and path-quality guarantees relative to the dense roadmap.\n\nTo this end, we generalize the SPARS framework, a popular task-agnostic sparsifier, from purely geometric criteria to task-oriented ones, introducing an inspection-aware vertex admission mechanism that treats POI coverage as a first-class sparsification criterion alongside connectivity and path quality.\n\nExperiments in realistic 3D environments show that Inspection-SPARS reduces vertex and edge counts by 4-8x while preserving coverage, allowing the GIP solver to compute tours up to 25% shorter than with the dense roadmap or state-of-the-art inspection roadmap.\n\nMore broadly, Inspection-SPARS shows that sparsification can be made task-aware without sacrificing guarantees on solution quality."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Inspection-SPARS, a task-oriented roadmap sparsifier that considers point-of-interest coverage alongside connectivity and path quality. The authors claim coverage and path-quality guarantees relative to a dense roadmap. Experiments in realistic 3D environments report 4–8× fewer vertices and edges while preserving coverage, and tours up to 25% shorter than those computed with a dense roadmap or a state-of-the-art inspection roadmap. These findings are reported for the described experiments.",
+          "zh": "论文提出 Inspection-SPARS，一种面向检查任务的稀疏路标图方法，在稀疏化时将兴趣点覆盖与连通性、路径质量共同纳入考虑，并声称相对于稠密路标图提供覆盖和路径质量保证。作者报告，在真实感三维环境实验中，该方法将顶点和边数量减少4至8倍，同时保持覆盖；图检查规划求解器得到的巡检路线最长比稠密路标图或现有先进检查路标图短25%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4470,7 +4474,11 @@
             "heading": "",
             "text": "Object navigation requires an embodied agent to find an object in an unseen environment under partial observability and a limited motion budget. Existing methods primarily optimize where the robot should go next by ranking candidate destinations.\n\nIn contrast to these methods, we present SOR-Nav, a hierarchical navigation system that explicitly arbitrates between continuing to explore the current context and abandoning it for a more promising reachable region.\n\nFirst, an autonomous semantic exploration system is built that accumulates persistent 3D object clusters and organizes reachable frontiers into a cluster decision graph to provide an efficient search abstraction.\n\nThen, SOR-Nav uses a context-gated LLM-driven object-search supervisor to evaluate the suitability of the current search context and decide whether to continue exploration or perform cross-region relocation to another reachable frontier cluster.\n\nAcross the complete, unfiltered validation sets of HM3D-v1, HM3D-v2, and MP3D, SOR-Nav achieves the strongest reported Success Rate (SR) and Success weighted by Path Length (SPL) on all three benchmarks. On MP3D in particular, it more than doubles the previous best SPL from 18.1\\% to 38.5\\% while increasing SR from 50.7\\% to 61.8\\%.\n\nNested HM3D-v2 ablations validate the proposed decision structure, while a continuous three-target physical deployment demonstrates persistent ObjectNav operation in real-world scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SOR-Nav, a hierarchical system for object navigation under partial observability. It builds persistent 3D object clusters, organizes reachable frontiers in a cluster decision graph, and uses a context-gated LLM supervisor to choose between continued local exploration and relocation to another reachable cluster. The authors report the strongest SR and SPL on the complete validation sets of HM3D-v1, HM3D-v2, and MP3D; on MP3D, SPL rises from 18.1% to 38.5% and SR from 50.7% to 61.8%. Ablations and a continuous three-target physical deployment are also described.",
+          "zh": "论文提出分层导航系统 SOR-Nav，用于在部分可观测环境中寻找目标物体。系统构建持续累积的三维物体簇，并以簇决策图组织可达前沿；由上下文门控的语言模型搜索监督器判断继续当前区域探索，还是转移到其他可达前沿簇。作者报告，在 HM3D-v1、HM3D-v2 和 MP3D 的完整验证集上，该方法三项基准的成功率及路径长度加权成功率均为报告中最高；MP3D 上 SPL 从此前最佳18.1%升至38.5%，成功率从50.7%升至61.8%。消融和连续三目标实机部署提供了补充验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4501,7 +4509,11 @@
             "heading": "",
             "text": "World-action models can jointly predict future visual observations and robot actions. However, discrepancies may exist between their visual predictions and the consequences implied by generated actions. We observe that WAMs can often generate visually plausible task-completion outcomes before producing action sequences that reliably achieve them.\n\nConsequently, we treat the WAM-generated visual prediction as a goal-conditioned visual proposal rather than a directly executable plan. We use a frozen action-conditioned world model to predict action-conditioned consequences and construct feedback based on consistency between the two future predictions and alignment with the terminal goal.\n\nLeveraging this feedback, we employ Flow Policy Optimization (FPO) to optimize the action head of the WAM. This framework avoids online robot interaction and additional training of task-specific reward models. Across four real-world UR5 manipulation tasks, our method increases the mean success rate from 43.4% to 75.1%, compared with 61.4% for $\\pi_{0.5}$.\n\nThese results show that cross-model prediction discrepancy can provide useful feedback for improving robot policies under the evaluated manipulation tasks. Website: https://imagine-to-achieve.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses discrepancies between visual predictions from world-action models and outcomes implied by their generated actions. It treats predicted visuals as goal-conditioned proposals and uses a frozen action-conditioned world model to estimate action consequences. Feedback based on prediction consistency and terminal-goal alignment is used with Flow Policy Optimization to improve the model’s action head, without online robot interaction or additional task-specific reward-model training. Across four real-world UR5 manipulation tasks, the authors report mean success increasing from 43.4% to 75.1%, compared with 61.4% for π0.5; the claim is limited to those evaluated tasks.",
+          "zh": "论文关注世界—动作模型生成的视觉预测与动作实际暗示的结果可能不一致的问题。作者将视觉预测视为目标条件视觉提议，并使用冻结的动作条件世界模型预测动作后果，再依据两种预测的一致性及其与终端目标的对齐构造反馈，通过流策略优化改进模型的动作头。该方法无需在线机器人交互或额外训练任务专用奖励模型。在四项真实世界 UR5 操作任务中，作者报告平均成功率由43.4%升至75.1%，对照 π0.5 为61.4%；结论限于所评估任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4532,7 +4544,11 @@
             "heading": "",
             "text": "Learning from demonstration (LfD) has enabled humanoid robots to acquire diverse whole-body skills, but extending this paradigm to human-object interaction (HOI) is limited by the availability of robot-compatible interaction references.\n\nWe present HOI-Retarget, a contact-centric retargeting method that transfers HOI onto a humanoid robot for large-scale motion-data generation. Its windowed trajectory optimization uses every labeled contact as a target in the object frame, balancing body tracking, foot support and smoothness under the robot's kinematic limits.\n\nThe method can augment a single demonstration across object sizes, absorb contacts reconstructed from monocular video, and extend to several robots manipulating one object. We publicly release the code and the retargeted motion dataset."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HOI-Retarget, a contact-centric method for transferring human-object interactions to humanoid robots to support large-scale motion-data generation. Its windowed trajectory optimization treats each labeled contact as a target in the object frame, balancing body tracking, foot support, and smoothness under the robot’s kinematic limits. The authors state that the method can augment a single demonstration across object sizes, incorporate contacts reconstructed from monocular video, and extend to multiple robots manipulating one object. They report publicly releasing code and a retargeted motion dataset.",
+          "zh": "论文提出 HOI-Retarget，一种以接触为中心的人与物体交互动作重定向方法，旨在将交互动作迁移到 humanoid 机器人并生成大规模运动数据。其窗口化轨迹优化将每个标注接触点作为物体坐标系中的目标，同时权衡身体跟踪、足部支撑和平滑性，并遵守机器人运动学限制。作者称，该方法可将单次演示扩展到不同物体尺寸、吸收从单目视频重建的接触信息，也可扩展为多个机器人共同操作一个物体；论文说明公开发布代码和重定向动作数据集。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
