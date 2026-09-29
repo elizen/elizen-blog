@@ -147,7 +147,11 @@
             "heading": "",
             "text": "Manual visual inspection on assembly lines is a persistent manufacturing bottleneck: operator fatigue over extended shifts lowers defect-detection rates. This paper presents the design, integration, and field deployment of an AI-assisted collaborative inspection cell at the Silverline kitchen-appliance factory, developed within the AI-PRISM project.\n\nThe cell couples a Universal Robots UR 10e cobot carrying a machine-vision defect-detection pipeline with a Comau Racer-5 cobot for functional tests, coordinated through ROS 2 Humble on an Ubuntu 22.04 LTS server.\n\nMulti-modal data (Basler camera imagery, TIA microphone acoustics, and SPS electrical-safety measurements) are logged locally and visualised in real time with Grafana.\n\nWe report the practical deployment challenges (close-proximity safety, AI robustness under glare and reflections, ROS 2 namespace collisions across two cobots, and operating-system and dependency issues) together with the engineering solutions adopted, and structure the integration through a four-level Human-Robot Interaction analysis.\n\nThe deployed cell cuts per-unit quality-check time from 82 s to 61 s (about 25%), raises final-control resource efficiency from 0.75 to 0.88, reduces operator visual-inspection viewing time by 82%, and significantly lowers operator mental demand (p = 0.005, NASA-TLX)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes an AI-assisted collaborative inspection cell deployed at a kitchen-appliance factory. Two cobots perform visual defect detection and functional testing, coordinated through ROS 2, while multimodal data are logged locally and visualized in real time. The authors discuss deployment challenges involving close-proximity safety, robustness to glare and reflections, namespace collisions, and system dependencies, along with adopted solutions. They report shorter per-unit inspection time, higher resource efficiency, reduced operator viewing time, and lower NASA-TLX mental demand.",
+          "zh": "论文介绍了在家电工厂部署的 AI 协作检测单元：两台协作机器人分别执行视觉缺陷检测和功能测试，并通过 ROS 2 协调，多模态数据在本地记录并实时可视化。作者梳理了近距离安全、反光环境下的识别鲁棒性、命名空间冲突及系统依赖等部署挑战和应对方案，并以四层人机交互分析组织集成工作。作者报告，部署后单件质检时间由 82 秒降至 61 秒，资源效率由 0.75 提至 0.88，操作员视觉检查时间减少 82%，NASA-TLX 心理需求显著降低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -178,7 +182,11 @@
             "heading": "",
             "text": "Recent large-scale Vision-and-Language Navigation (VLN) models deliver strong accuracy but remain costly to deploy due to their large parameter counts and computational requirements. We tackle efficient VLN in two steps. First, we build a high-performing teacher that makes navigation evidence selection explicit and compressible.\n\nThe teacher introduces a small set of learnable query slots to extract global and local action-sufficient navigable evidence from panoramic observations via a Navigable Query Generator, then progressively grounds these evidence tokens to the instruction with an Instruction-Query Aligner for policy prediction.\n\nSecond, using this explicit query bottleneck as a distillation interface, we train a compact student by transferring both where to attend and what to do. We distill the teacher's global and local navigable queries with a navigation-aware token-adaptive objective, then further match action distributions during fine-tuning.\n\nExperiments on standard VLN benchmarks demonstrate that our student nearly matches the teacher's navigation performance while reducing the number of parameters by 93.65% compared to the teacher."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses the deployment cost of large vision-and-language navigation models with a two-stage approach: an explicit-evidence teacher followed by a compact student. The teacher uses learnable query slots to extract global and local navigable evidence and align it with instructions for policy prediction. The student distills these queries and action distributions. Experiments on standard VLN benchmarks show, according to the authors, that the student nearly matches the teacher's navigation performance while using 93.65% fewer parameters. The abstract does not establish performance beyond these benchmarks.",
+          "zh": "论文针对视觉语言导航模型部署成本高的问题，提出先构建可显式选择导航证据的教师模型，再以其查询瓶颈为接口训练紧凑学生模型。教师通过可学习查询槽提取全局和局部可导航证据，并将其与指令对齐以预测策略；学生则蒸馏这些查询及动作分布。在标准视觉语言导航基准实验中，作者报告学生模型的导航表现接近教师，同时参数量减少 93.65%。摘要未说明这些结论在基准之外的适用范围。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -209,7 +217,11 @@
             "heading": "",
             "text": "Collecting real-world navigation data for mobile robots typically requires platform-specific teleoperation, making large-scale collection expensive and difficult to scale.\n\nWe introduce Universal Navigation Interface (UNI), a robot-free data collection paradigm that uses a four-wheeled rollator walker (rollator) and smartphone to collect physically constrained human demonstrations.\n\nBecause the rollator cannot climb stairs, negotiate uncut curbs, or pass through narrow gaps, demonstrations are naturally biased toward wheeled-feasible routes. Using UNI, we collect 37.2 km of real-world navigation data and recover metric trajectories that directly supervise goal-conditioned navigation models.\n\nFine-tuning visual-navigation models on UNI reduces trajectory prediction error by 17.4-24.8% on held-out UNI demonstrations. Evaluation on other navigation datasets shows benefits that vary by dataset and metric. We further demonstrate closed-loop transfer to a powered wheelchair in curb, staircase, and curb-cut scenarios.\n\nThese results support low-cost physical proxies as a practical source of navigation supervision collected without the target robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Universal Navigation Interface (UNI), which uses a four-wheeled rollator and smartphone to collect human navigation demonstrations without the target robot. Since the rollator cannot cross stairs, uncut curbs, or narrow gaps, its demonstrations favor routes feasible for wheeled platforms. The authors recover metric trajectories to supervise goal-conditioned navigation models. Fine-tuning reduces trajectory prediction error on held-out UNI demonstrations; benefits on other datasets vary by dataset and metric. They also demonstrate closed-loop transfer to a powered wheelchair in curb, staircase, and curb-cut scenarios.",
+          "zh": "论文提出通用导航接口 UNI：使用四轮助行器和智能手机收集无需目标机器人参与的人类导航示范。助行器不能通过楼梯、未修整路缘或狭窄间隙，因此示范路线天然偏向轮式机器人可行路径；研究据此恢复度量轨迹，以监督目标条件导航模型。作者报告，在保留的 UNI 示范上微调视觉导航模型可降低轨迹预测误差；在其他数据集上的收益因数据集和指标而异。论文还展示了向电动轮椅的闭环迁移，涵盖路缘、楼梯和路缘坡道场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -240,7 +252,11 @@
             "heading": "",
             "text": "We present DM$^3$-Nav, a fully decentralized multi-agent semantic navigation system supporting multimodal open-vocabulary goal specification and multi-object missions. In our setting, decentralization implies operation without a central coordinator, global map aggregation, or shared global state at runtime.\n\nRobots operate autonomously and coordinate through ad-hoc pairwise communication, exchanging local maps, goal status, and navigation intent without synchronization. An implicit task allocation mechanism combining intent broadcasting and distance-weighted frontier selection reduces redundant exploration while preserving decentralized operation.\n\nEvaluations on HM3DSem scenes using the HM3Dv0.2 and GOAT-Bench datasets demonstrate that DM$^3$-Nav matches or exceeds centralized and shared-map baselines while eliminating single points of failure inherent in centralized architectures.\n\nFinally, we validate our approach in a real-world office environment using two mobile robots, demonstrating successful deployment relying entirely on onboard sensing and computation. A video of our real-world experiments is available online: https://drive.google.com/file/d/1QiUSCn5rIvtuTUqtuXLPgmt6S8x9-MCZ/view?usp=drive_link"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DM³-Nav, a fully decentralized multi-robot semantic navigation system for multimodal open-vocabulary goals and multi-object missions. Robots operate without a central coordinator, aggregated global map, or shared global runtime state, exchanging local maps, goal status, and navigation intent through ad-hoc pairwise communication. An implicit task-allocation mechanism aims to reduce redundant exploration. Evaluations in HM3DSem scenes with HM3Dv0.2 and GOAT-Bench show performance matching or exceeding centralized and shared-map baselines. The authors also report an office deployment with two mobile robots using onboard sensing and computation.",
+          "zh": "论文提出 DM³-Nav，一种完全去中心化的多机器人语义导航系统，支持多模态开放词汇目标和多物体任务。机器人不依赖中央协调器、全局地图汇总或运行时共享全局状态，而通过临时点对点通信交换局部地图、目标状态和导航意图；隐式任务分配旨在减少重复探索。HM3DSem 场景及 HM3Dv0.2、GOAT-Bench 数据集评估显示，系统表现达到或超过集中式和共享地图基线。作者还在真实办公室用两台移动机器人验证部署，依靠机载感知和计算运行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
