@@ -1903,7 +1903,11 @@
             "heading": "",
             "text": "This article presents a concept-centric paradigm for building agents that can learn continually and reason flexibly. The concept-centric agent utilizes a vocabulary of neuro-symbolic concepts. These concepts, such as object, relation, and action concepts, are grounded on sensory inputs and actuation outputs.\n\nThey are also compositional, allowing for the creation of novel concepts through their structural combination. To facilitate learning and reasoning, the concepts are typed and represented using a combination of symbolic programs and neural network representations.\n\nLeveraging such neuro-symbolic concepts, the agent can efficiently learn and recombine them to solve various tasks across different domains, ranging from 2D images, videos, 3D scenes, and robotic manipulation tasks.\n\nThis concept-centric framework offers several advantages, including data efficiency, compositional generalization, continual learning, and zero-shot transfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The article presents a concept-centric paradigm for agents intended to learn continually and reason flexibly. Its vocabulary includes neuro-symbolic object, relation, and action concepts grounded in sensory inputs and actuation outputs. Typed concepts combine symbolic programs with neural network representations and can be structurally composed into novel concepts. The authors say agents can learn and recombine these concepts across tasks involving images, videos, 3D scenes, and robotic manipulation, with claimed benefits including data efficiency, compositional generalization, continual learning, and zero-shot transfer.",
+          "zh": "文章提出以概念为中心的智能体构建范式，旨在支持持续学习与灵活推理。智能体使用神经符号概念词汇，涵盖对象、关系和动作，并将概念锚定于感知输入和执行输出。概念具有组合性，可通过结构组合形成新概念；其类型化表示结合符号程序与神经网络。作者称，该框架可高效学习和重组概念，以处理图像、视频、三维场景及机器人操作等任务，并具备数据效率、组合泛化、持续学习和零样本迁移等优势。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1934,7 +1938,11 @@
             "heading": "",
             "text": "Recent zero-shot Vision-and-Language Navigation (VLN) methods increasingly rely on multimodal large language models (MLLMs) to reason over visual observations, navigation instructions, and candidate actions.\n\nAlthough effective, repeatedly invoking autoregressive multimodal reasoning at every navigation step introduces substantial inference latency, limiting the responsiveness of embodied agents.\n\nWe propose NavJev, an efficient VLN framework that reformulates online navigation from repeated multimodal generation into compact visual compression followed by lightweight typed action selection.\n\nSpecifically, Action-Centric Visual Compression (ACVC) integrates waypoint geometry, BLIP captions, and RAM semantic tags into compact representations of candidate actions, while Discriminative Action-Semantic Memory (DASM) filters shared semantics and maintains discriminative action-specific evidence across navigation steps.\n\nBased on these representations, Jev directly performs structured probabilistic decisions over the available action set. Experiments on R2R-CE show that NavJev achieves 27.0% SR and 22.4% SPL with only 0.65 s per navigation step, while substantially reducing inference latency and cost compared with MLLM-based VLN methods.\n\nThe project page is available at https://kai-sheng-caesar.github.io/NavJev/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes NavJev to reduce latency from repeatedly applying autoregressive multimodal reasoning during vision-and-language navigation. It compresses visual information about candidate actions before lightweight typed action selection. Action-Centric Visual Compression combines waypoint geometry, BLIP captions, and RAM semantic tags; Discriminative Action-Semantic Memory filters shared semantics while retaining action-specific evidence across steps. Jev then makes structured probabilistic decisions over available actions. In R2R-CE experiments, the authors report 27.0% SR, 22.4% SPL, and 0.65 seconds per step, with reduced latency and cost versus MLLM-based methods.",
+          "zh": "文章提出 NavJev，用于降低视觉语言导航中反复进行多模态自回归推理带来的延迟。该框架先压缩候选动作的视觉信息，再进行轻量级、类型化动作选择。动作中心视觉压缩整合航点几何信息、BLIP 描述和 RAM 语义标签；判别式动作语义记忆过滤共有语义，并保留跨导航步骤的动作特异证据。Jev 据此对可选动作作结构化概率决策。在 R2R-CE 实验中，作者报告其成功率为 27.0%、SPL 为 22.4%，每步耗时 0.65 秒，并称相较基于多模态大语言模型的方法显著降低延迟与成本。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1965,7 +1973,11 @@
             "heading": "",
             "text": "Online safe reinforcement learning (RL) seeks policies that maximize reward while satisfying safety constraints. Reward and safety can induce multimodal action distributions, challenging the prevailing primal-dual methods: Gaussian actors may collapse onto a single suboptimal mode, and optimization over the nonconvex Lagrangian landscape can be unstable.\n\nDiffusion and flow policies can represent such distributions, but recent work with a diffusion actor relies on estimating and matching the score of an augmented-Lagrangian target policy. Instead, we differentiate the augmented objective directly through the generation path of a flow policy, so no score needs to be estimated.\n\nBecause a flow policy lacks a readily available action log-density for entropy regularization, we build on the density-free kinetic-energy regularizer of FLAC, a recent reward-only method, and propose Reparameterized Augmented-Lagrangian Flow Actor with Least Energy (RAFALE), an off-policy actor-critic method for safe RL.\n\nWe formulate its update as a constrained one-ended generalized Schr\\\"odinger bridge and show that, for each source draw, this path-space problem is exactly an entropy-regularized problem in action space.\n\nAt positive noise, its solution reweights the reward-only action distribution only where the estimated cost exceeds a threshold set by the Lagrange multiplier. As the noise vanishes, the optimal value converges to that of a least-energy map objective that the flow policy optimizes directly.\n\nAcross seven Safety-Gymnasium tasks, RAFALE achieves competitive reward with mean final cost within budget on every task, whereas strong baselines trade one for the other; ablations support the necessity of both its augmented objective and its flow actor."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RAFALE, an off-policy actor-critic method for safe reinforcement learning with potentially multimodal reward and safety objectives. It differentiates an augmented objective through a flow policy’s generation path, avoiding score estimation, and uses a density-free kinetic-energy regularizer. The authors formulate the update as a constrained one-ended generalized Schrödinger bridge and state that, for each source draw, the path-space problem equals an entropy-regularized action-space problem. Across seven Safety-Gymnasium tasks, they report competitive reward and mean final cost within budget on every task; ablations support the augmented objective and flow actor.",
+          "zh": "文章针对安全强化学习中奖励与安全约束可能诱发多峰动作分布、使高斯策略陷入次优模式及原始—对偶优化不稳定的问题，提出 RAFALE，一种离策略演员—评论家方法。它沿流策略的生成路径直接对增广目标求导，无需估计分数，并采用密度无关的动能正则项。作者将更新表述为受约束的单端广义薛定谔桥，并说明其路径空间问题对每个源样本等价于动作空间中的熵正则问题。七项 Safety-Gymnasium 任务中，作者报告其奖励具竞争力且各任务平均最终成本均在预算内；消融实验支持增广目标和流策略的必要性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1996,7 +2008,11 @@
             "heading": "",
             "text": "The design of multi-agent robotic systems involves tightly coupled decisions spanning heterogeneous domains, including robot design, fleet composition, and planning. Much effort has been devoted to isolated improvements in these domains, while system-level co-design considering trade-offs and task requirements remains underexplored.\n\nIn this work, we present a formal and compositional framework for the task-driven co-design of heterogeneous multi-robot systems, and propose robotic phase diagrams as a qualitative design guideline.\n\nBuilding on monotone co-design theory, we introduce general abstractions of robots, fleets, planners, executors, and evaluators as interconnected design problems with well-defined interfaces that are agnostic to both implementations and tasks.\n\nThis structure enables efficient joint optimization of robot design, fleet composition, and planning under task-specific performance constraints. A series of case studies demonstrates the capabilities of the framework.\n\nNew component solutions can be seamlessly incorporated, including robot types, task profiles, and probabilistic sensing objectives, while non-obvious design alternatives are systematically uncovered with optimality guarantees.\n\nThe results highlight the flexibility, scalability, and interpretability of the proposed approach, illustrate how formal co-design enables principled reasoning about complex heterogeneous multi-robot systems, and how a robotic phase diagram qualitatively guides the design."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a task-driven framework for co-designing heterogeneous multi-robot systems, jointly considering robot design, fleet composition, and planning. It also proposes robotic phase diagrams as qualitative design guides. Drawing on monotone co-design theory, the framework models robots, fleets, planners, executors, and evaluators as connected design problems with defined interfaces independent of implementation and task. Case studies demonstrate joint optimization under task-specific performance constraints and incorporation of new robot types, task profiles, and probabilistic sensing objectives. The authors report systematic discovery of non-obvious alternatives with optimality guarantees, and describe the approach as flexible, scalable, and interpretable.",
+          "zh": "文章提出面向任务的异构多机器人系统协同设计框架，联合考虑机器人设计、编队组成与规划，并提出机器人相图作为定性设计指南。框架基于单调协同设计理论，将机器人、编队、规划器、执行器和评估器抽象为具有明确定义接口的互联设计问题，接口不依赖具体实现或任务。该结构支持在任务性能约束下进行联合优化。案例研究展示了纳入新机器人类型、任务配置和概率感知目标的能力；作者称框架可系统发现非显然设计方案并提供最优性保证，也强调其灵活性、可扩展性和可解释性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
