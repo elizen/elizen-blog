@@ -1547,7 +1547,11 @@
             "heading": "",
             "text": "Recent vision-language-action (VLA) policies demonstrate promising generalization across diverse short-horizon tasks. However, they remain unreliable on long-horizon tasks, partly because the large-scale training data is biased toward single-stage manipulation tasks that are cheaper to demonstrate.\n\nA single weak atomic skill can cause failures across multiple multi-stage tasks. To address such failures, existing methods often require experts to identify the bottleneck and provide additional demonstrations, making the improvement costly and potentially impractical after deployment.\n\nTo this end, we present a Self-Evolving Embodied System (SEES) that learns from failures and improves the VLA policy without additional expert demonstrations. SEES decomposes long-horizon tasks into atomic tasks and routes them to corresponding family policies. Each family consists of related atomic skills that share one VLA adapter.\n\nDuring execution, the system automatically monitors atomic-task outcomes to identify the most frequently failing atomic skills as the current bottlenecks. To overcome these bottlenecks, SEES constructs tailored RL tasks in simulation by restoring previously encountered states and generating task-specific success criteria with an LLM.\n\nOnline RL updates the shared family adapters to promote positive transfer among related atomic skills and cumulative improvement across evolution rounds. Extensive experiments show that SEES can be integrated with different VLA backbones to progressively improve their long-horizon performance.\n\nWe also observe continued improvement on unseen tasks, providing evidence of transfer beyond the evolution settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SEES, a system intended to improve vision-language-action policies from execution failures without additional expert demonstrations. It decomposes long-horizon tasks into atomic tasks, routes them to family policies with shared adapters, monitors outcomes to identify frequent failure bottlenecks, and constructs targeted reinforcement-learning tasks in simulation for online updates. The authors report that experiments with different VLA backbones show progressive gains on long-horizon tasks and continued improvement on unseen tasks, which they interpret as evidence of transfer beyond the evolution settings.",
+          "zh": "论文提出自进化具身系统 SEES，旨在从执行失败中改进视觉—语言—动作策略，而无需额外专家示范。系统将长程任务拆为原子任务并分配给共享适配器的技能族策略，监测失败频率以识别瓶颈，再在仿真中构造针对性强化学习任务并在线更新适配器。作者报告，广泛实验显示该方法可与不同 VLA 主干结合，逐步提升长程任务表现，并在未见任务上持续改善，作为超出进化设置的迁移证据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1578,7 +1582,11 @@
             "heading": "",
             "text": "World models learn internal representations of environment dynamics to predict future states, enabling agents to optimize action plans without physical interactions.\n\nHowever, developing world models that genuinely internalize underlying causal physical laws to explicitly reason about action preconditions and subsequent state transitions remains an open challenge.\n\nIn this paper, we propose VIDEAS, a data distillation framework that transforms continuous physical dynamics from operational videos into explicit action semantics for foundation models.\n\nSpecifically, it deconstructs visual demonstrations into discrete action trajectories and utilizes advanced vision-language models (VLMs) to extract structured knowledge encapsulating action preconditions and effects.\n\nTo ensure physical consistency, we introduce a prior-guided trajectory simulation mechanism grounded within a text-based environment to rigorously validate the extracted knowledge. Notably, we incorporate negative trajectories to enrich knowledge completeness and enhance data diversity to mitigate cognitive bias.\n\nFurthermore, we present VIDEAS-WM, an 8B/9B-parameter suite of language-based world models trained on 34K high-quality samples derived from AgiBot-World dataset.\n\nExtensive experiments demonstrate that VIDEAS-WM establishes state-of-the-art performance in high-level embodied action semantic reasoning, exhibiting profound physical understanding and robust generalization across unseen scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VIDEAS, a framework that converts continuous physical dynamics in operational videos into explicit action semantics for foundation models. It decomposes demonstrations into discrete action trajectories, uses vision-language models to extract action preconditions and effects, and validates the extracted knowledge through prior-guided trajectory simulation in a text-based environment. Negative trajectories are included to broaden the data. The authors also present VIDEAS-WM, a suite of language-based world models trained on samples from AgiBot-World, and report state-of-the-art results in high-level embodied action semantic reasoning and generalization to unseen scenarios.",
+          "zh": "论文提出 VIDEAS，将操作视频中的连续物理过程转化为显式动作语义，供基础模型使用。框架把视觉示范拆成离散动作轨迹，由视觉语言模型提取动作前提与效果，并通过文本环境中的先验引导轨迹仿真检验物理一致性；还纳入负向轨迹以扩展知识。作者构建了基于 AgiBot-World 数据集样本训练的 VIDEAS-WM 模型套件，并报告其在高层具身动作语义推理方面达到所称的当前最佳表现，且能泛化到未见场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1609,7 +1617,11 @@
             "heading": "",
             "text": "Closed-loop evaluation of surgical robots requires tissue that deforms, can be grasped and lifted, and reproduces the anatomy in which the robot will operate.\n\nWe present a simulator in which this tissue is reconstructed from a fixed-view RGB-D recording of the surgical field, composited to remove the instruments, closed into watertight volumes and tetrahedralised; the pipeline was applied unchanged to three specimens of two species (thirteen organs, 146,061 tetrahedra, no inverted elements).\n\nFor one specimen, the organs are placed in a bimanual cell in which two Franka FR3 arms operate motorised instruments through 6 mm trocars.\n\nThe core contribution is the numerical and contact design that keeps this cell stable: implicit integration, simulation meshes separate from collision meshes, numerical guards, and a grasp constraint captured at the live tissue pose.\n\nIn 45 repeated grasp-lifts, a friction grasp held the tissue in 0 of 15 trials and each constraint grasp in 13 of 15; on displaced tissue, a rest-pose constraint produced one-step snaps of up to 17.8 mm, which live-pose capture eliminates.\n\nAgainst the recording, front-surface depth error is 1.33 to 1.41 mm, organ silhouette IoU is 0.80, and in five grasp-lifts reproduced from video the landmark displacement RMSE is 11.8 mm against 14.2 mm for a static prediction. Biofidelity is not claimed; the environment is intended for closed-loop feasibility, safety, contact and policy screening."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a deformable-tissue simulator for evaluating laparoscopic robot policies. Tissue is reconstructed from fixed-view RGB-D recordings, with instruments removed before the volumes are closed and tetrahedralized. The design uses implicit integration, separate simulation and collision meshes, numerical safeguards, and grasp constraints captured at the tissue’s live pose. In reported trials, constraint grasps held tissue more often than friction grasps, while live-pose capture avoided abrupt snaps associated with rest-pose constraints. The authors report geometric and displacement errors against recordings and state that they do not claim biofidelity; the environment is intended for closed-loop feasibility, safety, contact, and policy screening.",
+          "zh": "论文介绍一种用于腹腔镜手术机器人策略评估的组织模拟器。组织由固定视角 RGB-D 记录重建，并经过器械移除、封闭和四面体化；核心设计包括隐式积分、分离模拟与碰撞网格、数值保护措施，以及在组织实时姿态下捕获的抓取约束。实验中，约束抓取在重复提拉试验中的保持情况优于摩擦抓取，实时姿态捕获避免了复位姿态约束造成的瞬时跳变。作者报告了与记录的几何及位移误差，并明确不主张生物逼真度，定位为闭环可行性、安全、接触和策略筛选环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1640,7 +1652,11 @@
             "heading": "",
             "text": "We introduce EfficientTDMPC, a sample-efficient model-based reinforcement learning method for continuous control built on the TD-MPC family of algorithms. Central to this family is a planner that aims to find an action sequence that maximizes the estimated return.\n\nThe return is estimated using a learned model and value networks, each of which can introduce error. EfficientTDMPC introduces three contributions that improve performance by aiming to reduce this error. First, we introduce a multi-horizon planning objective that evaluates the value at different rollout depths and averages them.\n\nSecond, to our knowledge we are the first to train a value-equivalent dynamics ensemble. Our improved objective then averages over rollouts from multiple dynamics heads. Third, we add pessimistic reanalyze for tasks that can terminate early.\n\nApplying our contributions to a recent baseline (BMPC) yields EfficientTDMPC, which to our knowledge is the new state of the art in sample efficiency on HumanoidBench and the DeepMind Control Suite, reaching BMPC's final aggregated performance using 57\\% fewer environment steps."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EfficientTDMPC, a sample-efficient model-based reinforcement-learning method for continuous control built on the TD-MPC family. Its changes include a multi-horizon planning objective that averages value estimates across rollout depths, a value-equivalent dynamics ensemble whose multiple heads contribute rollouts, and pessimistic reanalyze for tasks that may terminate early. Applied to BMPC, the method is reported by the authors to achieve state-of-the-art sample efficiency on HumanoidBench and the DeepMind Control Suite, reaching BMPC’s final aggregated performance with 57% fewer environment steps.",
+          "zh": "论文提出 EfficientTDMPC，一种面向连续控制、基于 TD-MPC 系列的样本高效模型强化学习方法。它采用多预测时域规划目标，对不同展开深度的价值估计取平均；训练价值等价动力学集成，并汇总多个动力学头的展开结果；对可提前终止的任务加入悲观式再分析。作者将这些改进应用于 BMPC，并声称该方法在 HumanoidBench 和 DeepMind Control Suite 上达到新的样本效率最佳水平，以少 57% 的环境步数达到 BMPC 最终聚合表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
