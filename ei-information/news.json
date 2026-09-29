@@ -4019,7 +4019,11 @@
             "heading": "",
             "text": "We present the design and implementation of HASTA (Hopper with Adjustable Stiffness for Terrain Adaptation), a vertical hopping robot with real-time tunable leg stiffness, aimed at optimizing energy efficiency across various ground profiles (a pair of ground stiffness and damping conditions).\n\nBy adjusting leg stiffness, we aim to maximize apex hopping height, a key metric for energy-efficient vertical hopping. We hypothesize that softer legs perform better on soft, damped ground by minimizing penetration and energy loss, while stiffer legs excel on hard, less damped ground by reducing limb deformation and energy dissipation.\n\nThrough experimental tests and simulations, we find the best leg stiffness within our selection for each combination of ground stiffness and damping, enabling the robot to achieve maximum steady-state hopping height with a constant energy input.\n\nThese results support our hypothesis that tunable stiffness improves energy-efficient locomotion in controlled experimental conditions. In addition, the simulation provides insights that could aid in the future development of controllers for selecting leg stiffness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors present HASTA, a vertical hopping robot with real-time tunable leg stiffness, and study energy efficiency across ground conditions with different stiffness and damping. Experiments and simulations identify the best stiffness among those tested for each condition, allowing maximum steady-state hopping height with constant energy input. The results support the authors’ hypothesis that tunable stiffness aids energy-efficient locomotion under controlled experimental conditions. The simulations may inform future controllers for selecting leg stiffness.",
+          "zh": "本文介绍 HASTA，一种可实时调节腿部刚度的垂直跳跃机器人，研究其在不同地面刚度和阻尼条件下的能效。作者通过实验和仿真，在所选刚度范围内为各地面条件找出对应的最佳刚度，使机器人在恒定能量输入下达到最大稳态跳跃高度。结果支持作者关于可调刚度有助于受控实验条件下节能运动的假设；仿真还为未来刚度选择控制器的开发提供参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4050,7 +4054,11 @@
             "heading": "",
             "text": "Sampling-based motion planners guided by diffusion models produce high-quality trajectories in a single run, yet the stochastic diversity available at inference time is left largely unexploited.\n\nWe present two inference-time diversification strategies for a fixed, pretrained DiTree model, combined via H-Graph hybridization, and evaluate them on a holonomic AntMaze robot across 15 maze scenarios.\n\nThe first, factorial diversity, sweeps the random seed and Diffusion Goal Bias (DGB) parameter, the second, refinement-only diversity, sweeps the diffusion refinement strength (RS) that controls how much an RRT-generated trajectory is edited.\n\nBecause a single-run baseline only partially succeeds, we additionally compare H-Graph results with pool-based statistics. H-Graph improves the mean pool length of the factorial and refinement-only diversities by 18.8% and 14.5%, respectively. In addition, it also improves the best individual candidate's lengths by 9.7% and 6.8%, respectively.\n\nAnd last, compared with the successful baseline's trajectory length, it improves the results by 18.2% and 19.9%, respectively. These results show that inference-time parameter variation is a reliable, training-free source of path diversity, and that H-Graph hybridization reliably converts this diversity into shorter, higher quality trajectories."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose two inference-time diversification strategies for a fixed, pretrained DiTree model and combine them using H-Graph hybridization. They evaluate the methods on a holonomic AntMaze robot across 15 maze scenarios. H-Graph improves mean pool length and best individual candidate length for both strategies relative to pool-based statistics, and improves trajectory length relative to the successful single-run baseline. The authors conclude that varying inference-time parameters provides training-free path diversity, which H-Graph turns into shorter, higher-quality trajectories.",
+          "zh": "本文针对扩散模型引导的采样式运动规划，提出两种在推理时为固定预训练 DiTree 模型增加多样性的策略，并结合 H-Graph 混合。在 15 种迷宫场景的全向 AntMaze 机器人评估中，作者报告 H-Graph 相较于池统计基准改善了两种策略的平均路径长度和最佳单条候选路径长度；相较于成功的单次基线路径长度也有改善。作者据此认为，推理时改变参数可在不重新训练的情况下产生路径多样性，H-Graph 可将其转化为更短、质量更高的轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4081,7 +4089,11 @@
             "heading": "",
             "text": "We present an action sequence transfer system that adaptively transfers user action sequences across different target spaces.\n\nGiven an input action sequence from a source space and scene graph representations of both the source and target environments, our system predicts a corresponding action sequence in the target space by adapting to the spatial and object constraints of the new environment.\n\nTo achieve this, we leverage multi-level representations of user activity to generalize actions at varying levels of abstraction. To demonstrate our system, we collect a new scene graph-based dataset derived from the Ego4D GoalStep dataset for evaluation.\n\nResults indicate that our system can generate valid action sequences even between spaces with drastically different object configurations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors present a system that transfers user action sequences between different target spaces. Given a source sequence and scene graph representations of the source and target environments, it predicts a corresponding sequence adapted to the target’s spatial and object constraints. The approach uses multi-level representations of user activity to generalize actions at different levels of abstraction. The authors evaluate it with a new scene-graph-based dataset derived from Ego4D GoalStep. Results indicate it can generate valid action sequences across spaces with substantially different object configurations.",
+          "zh": "本文提出一种动作序列迁移系统：输入源环境中的动作序列，以及源环境和目标环境的场景图表示，系统会根据目标空间的空间关系和物体约束预测对应动作序列。方法利用用户活动的多层级表示，以不同抽象程度泛化动作。作者构建了一个源自 Ego4D GoalStep 数据集、基于场景图的新数据集用于评估。结果表明，即使物体配置差异很大的空间之间，该系统也能生成有效动作序列。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4112,7 +4124,11 @@
             "heading": "",
             "text": "World-action models use predicted visual futures to condition robot actions, yet execution feedback can invalidate parts of a prediction while leaving its task structure useful. We propose Revisable Temporal Planning (RTP), which maintains the visual future as a persistent action condition and revises it after feedback.\n\nIts central mechanism is a learned revision bridge: it resumes an intermediate state saved during visual generation and adapts its continuation to current observations. Visual and action supervision connect this revision to subsequent control.\n\nTime-aware history supplies observed evidence, and an adaptive policy selects retention, bridge revision, or fresh replanning from new noise before decoding the next action. On RoboMME and RMBench, RTP achieves task-averaged success rates of 48.6% and 84.8%, respectively.\n\nMatched comparisons support learned continuation; estimated checkpoint-source and action-prefix effects are positive but less precisely resolved. These results connect feedback-driven visual-plan revision to closed-loop task performance. Project Page: https://PLACEHOLDER.github.io/RTP/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose Revisable Temporal Planning (RTP), which keeps a predicted visual future as an action condition and revises it using execution feedback. A learned revision bridge resumes from an intermediate state saved during visual generation and adapts the continuation to current observations. Time-aware history supplies evidence, while an adaptive policy chooses whether to retain the plan, revise it, or replan. RTP achieves task-averaged success rates of 48.6% on RoboMME and 84.8% on RMBench. Matched comparisons support learned continuation; estimated checkpoint-source and action-prefix effects are positive but less precisely resolved.",
+          "zh": "本文提出可修订时序规划（RTP），让世界—动作模型在接收执行反馈后保留并修订视觉未来计划。其学习式修订桥从视觉生成过程中保存的中间状态继续生成，并依据当前观测调整后续内容；时间感知历史提供观测证据，自适应策略选择保留计划、修订或重新规划。在 RoboMME 和 RMBench 上，RTP 的任务平均成功率分别为 48.6% 和 84.8%。对照结果支持学习式续接；检查点来源和动作前缀的估计影响为正，但证据精度较低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
