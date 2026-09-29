@@ -1235,7 +1235,11 @@
             "heading": "",
             "text": "Modular Aerial Robot Systems (MARS) consist of multiple drone modules that are physically bound together to form a single structure for flight. Exploiting structural redundancy, MARS can be reconfigured into different formations to mitigate unit or rotor failures and maintain stable flight.\n\nPrior work on MARS self-reconfiguration has solely focused on maximizing controllability margins to tolerate a single rotor or unit fault for rectangular-shaped MARS.\n\nWe propose TransforMARS, a general fault-tolerant reconfiguration framework that transforms arbitrarily shaped MARS under multiple rotor and unit faults while ensuring continuous in-air stability. Specifically, we develop algorithms to first identify and construct minimum controllable assemblies containing faulty units.\n\nWe then plan feasible disassembly-assembly sequences to transport MARS units or subassemblies to form target configuration. Our approach enables more flexible and practical feasible reconfiguration.\n\nWe validate TransforMARS in challenging arbitrarily shaped MARS configurations, demonstrating substantial improvements over prior works in both the capacity of handling diverse configurations and the number of faults tolerated. The videos and source code of this work are available at https://github.com/RuiHuangNUS/TransforMARS"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TransforMARS, a fault-tolerant reconfiguration framework for arbitrarily shaped modular aerial robot systems facing multiple rotor or unit faults while maintaining continuous in-air stability. It identifies and constructs minimum controllable assemblies containing faulty units, then plans feasible disassembly and assembly sequences to move units or subassemblies into a target configuration. Validation on challenging configurations is reported to improve on prior work in the range of configurations handled and the number of tolerated faults.",
+          "zh": "论文提出 TransforMARS，一种面向任意形状模块化空中机器人系统的容错重构框架，针对多个旋翼或单元故障，在保持空中连续稳定的条件下调整构型。方法先识别并构造包含故障单元的最小可控组件，再规划可行的拆卸与组装序列，以移动单元或子组件形成目标构型。作者在具有挑战性的任意形状构型中验证了该方法，并报告其处理多样构型和容忍故障数量方面优于既有工作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1266,7 +1270,11 @@
             "heading": "",
             "text": "Reward transfer in Inverse Reinforcement Learning (IRL) is unreliable when policies must generalize to unseen combinations of environment dynamics and task goals.\n\nWe propose Factorized Contrastive Abstractions for Transferable IRL (ConTraIRL), a framework that enables compositional reward transfer by learning decoupled latent representations of these two factors. ConTraIRL uses a dual-encoder architecture that maps observations into separate dynamics and goal latent spaces, trained with a dual contrastive objective.\n\nTemporal alignment encourages the dynamics encoder to learn goal-invariant structure, while the goal encoder captures dynamics-invariant features. This factorization supports reward inference under recombined dynamics-goal settings.\n\nExperiments on continuous control benchmarks demonstrate effective few-shot transfer to unseen dynamics-goal pairings, improving sample efficiency and reward recovery over transfer IRL baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses unreliable reward transfer in inverse reinforcement learning when environment dynamics and task goals appear in unseen combinations. ConTraIRL uses dual encoders to map observations into separate dynamics and goal latent spaces, trained with a dual contrastive objective. Temporal alignment encourages each representation to be invariant to the other factor, supporting reward inference under recombined settings. Experiments on continuous control benchmarks report few-shot transfer to unseen pairings and improvements in sample efficiency and reward recovery over transfer IRL baselines.",
+          "zh": "论文针对逆强化学习中奖励难以迁移到未见过的环境动力学与任务目标组合的问题，提出 ConTraIRL。该框架用双编码器将观测映射到相互分离的动力学和目标潜在空间，并通过双重对比目标训练；时间对齐旨在使动力学表示不受目标影响、目标表示不受动力学影响，从而支持重新组合条件下的奖励推断。连续控制基准实验显示，该方法能够对未见组合进行少样本迁移，并在样本效率和奖励恢复方面优于迁移式逆强化学习基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1297,7 +1305,11 @@
             "heading": "",
             "text": "Vision-language models are increasingly used for driving-scene understanding, yet the semantic relations expressed in their outputs are often difficult to verify against the underlying traffic situation.\n\nThis paper introduces a deterministic multi-dataset predicate framework that derives driving-scene semantics from measurable geometric, kinematic, temporal, map, and traffic-control evidence.\n\nDataset-specific interfaces are used only to recover the required scene information, while predicate definitions remain unchanged across nuPlan and nuScenes and are materialised in a common Predicate Knowledge Graph.\n\nQuantitative semantic validation against manually annotated predicate relations on 200 scenarios from each dataset yields macro F1 scores of 0.94 on nuPlan and 0.93 on nuScenes, with an average cross-dataset difference of 0.02 across the shared predicates.\n\nThe Predicate KG is further evaluated using a frozen LLaVA-OneVision-7B model on the nine NuPlanQA subtasks.\n\nPredicate grounding achieves the highest accuracy among the evaluated visual-input conditions in seven of nine NuPlanQA subtasks, including Traffic Light (53.2% to 71.5%), Situation Assessment (76.2% to 86.1%), and Action Recommendation (82.9% to 89.0%).\n\nWeather/Lighting remains essentially unchanged (89.4% vs. 88.8%), consistent with the absence of corresponding predicates, while Predicate KG only input outperforms metadata-only input in eight of nine subtasks.\n\nThe results show that deterministic predicates provide a consistent and traceable semantic representation and, under oracle grounding, can reduce visual dependence for reasoning tasks covered by the predicate vocabulary."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a deterministic, multi-dataset predicate framework that derives driving-scene semantics from measurable geometric, kinematic, temporal, map, and traffic-control evidence. Dataset-specific interfaces recover scene information for nuPlan and nuScenes, while predicate definitions remain fixed in a shared knowledge graph. Manual validation on 200 scenarios per dataset reports macro F1 scores of 0.94 and 0.93, with a 0.02 average cross-dataset difference for shared predicates. With frozen LLaVA-OneVision-7B on NuPlanQA, grounding achieves the highest accuracy among visual-input conditions in seven of nine subtasks.",
+          "zh": "论文提出确定性的多数据集谓词框架，从可测的几何、运动学、时间、地图和交通控制证据中推导驾驶场景语义，并将结果汇入统一谓词知识图谱。nuPlan 与 nuScenes 使用不同接口提取场景信息，但谓词定义保持一致。基于两数据集各200个场景的人工标注验证，宏平均F1分别为0.94和0.93，共享谓词的跨数据集平均差异为0.02。使用冻结的LLaVA-OneVision-7B评估NuPlanQA时，谓词接地在九项子任务中的七项达到所测视觉输入条件下最高准确率；作者指出，在oracle接地下，该表示可降低相关推理任务对视觉输入的依赖。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1328,7 +1340,11 @@
             "heading": "",
             "text": "Humanoid avatars extend human physical presence beyond the body, enabling people to participate in social, service, and labor activities through remotely operated robots. This requires teleoperation systems capable of realizing diverse and dynamic whole-body behaviors while maintaining responsive human-robot synchronization.\n\nWe present General Action Expert(GAE), a unified learning framework for general-purpose, low-latency humanoid whole-body teleoperation. To cover diverse human behaviors, GAE builds a large-scale human motion dataset from heterogeneous sources, including videos, animations, and motion capture, followed by standardization and augmentation.\n\nGAE then addresses the noise and embodiment mismatch in human motions with a two-stage training paradigm: a privileged generator policy first tracks human motion references in simulation and rolls out feasible humanoid trajectories; a deployable executor policy then learns to track these generated trajectories under curriculum domain randomization.\n\nFor responsive human-robot synchronization, GAE introduces a latency-conditioned anticipation mechanism that adaptively compensates for end-to-end delay during real-time teleoperation.\n\nSimulation and real-world experiments on Unitree G1 and Westlake O1 robots demonstrate that GAE enables humanoids to smoothly mirror diverse, agile, and expressive human behaviors. Project website: https://wangyf0928.github.io/gae-wlrobotics/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GAE, a unified learning framework for low-latency, whole-body humanoid teleoperation intended to support diverse, dynamic behavior and responsive human-robot synchronization. It builds a standardized and augmented human-motion dataset from videos, animations, and motion capture. Training has two stages: a privileged generator tracks motion references in simulation and produces feasible robot trajectories, then a deployable executor learns to track them with curriculum domain randomization. A latency-conditioned anticipation mechanism compensates for end-to-end delay. Simulation and real-world experiments on Unitree G1 and Westlake O1 robots show smooth mirroring of diverse, agile, expressive behaviors.",
+          "zh": "论文提出 GAE，一种面向实时人形机器人全身遥操作的统一学习框架，目标是在低延迟下实现多样且动态的行为，并保持人机同步。系统从视频、动画和动作捕捉等异构来源构建并标准化、增强人体动作数据；随后采用两阶段训练：特权生成策略在仿真中跟踪动作参考并生成可行轨迹，可部署执行策略通过课程式领域随机化学习跟踪轨迹。框架还引入延迟条件化预判机制，以补偿端到端延迟。仿真及Unitree G1和Westlake O1机器人的真实实验显示，机器人可平滑模仿多样、敏捷且富有表现力的人类行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
