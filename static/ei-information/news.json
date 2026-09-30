@@ -1111,7 +1111,11 @@
             "heading": "",
             "text": "Robot motion planning in everyday environments must satisfy hard geometric constraints while accounting for context-dependent semantic risk. We present a foundation-model-guided, topology-aware semantic risk field that extends manipulation safety beyond collision avoidance.\n\nFor each manipulated-object/scene-object pair, a foundation model provides six directional risk weights and a pair-specific spatial decay scale. The method combines these priors with voxelized 3D scene geometry using topology-aware shielding and geodesic spatial decay.\n\nA GPU-parallel backend batches object-level distance and risk computations to construct a dense 3D field that serves as a modular cost for downstream motion planning. We evaluate the field's shielding behavior under full and partial barriers and compare its 3D workspace representation with a pixel-wise semantic-prior baseline.\n\nAcross three household simulation scenarios, trajectories optimized with the proposed field have lower semantic exposure than collision-only trajectories under the same geometric constraints. We also evaluate the computational practicality and reliability of the supporting pipeline.\n\nTogether, these results support the proposed field as a practical topology-aware semantic cost representation for manipulation planning beyond collision avoidance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a foundation-model-guided, topology-aware semantic risk field for manipulation planning that considers context-dependent risk alongside geometric constraints. It combines directional risk weights and pair-specific spatial decay scales with voxelized scene geometry, topology-aware shielding, and geodesic decay; a GPU-parallel backend constructs a dense 3D field. In three household simulation scenarios, optimized trajectories showed lower semantic exposure than collision-only trajectories under the same geometric constraints. The authors also evaluate shielding behavior and the pipeline’s computational practicality and reliability.",
+          "zh": "本文提出一种由基础模型引导、具备拓扑感知能力的语义风险场，用于在满足几何约束的同时，将操作规划中的安全考虑扩展到碰撞避免之外。方法针对被操作物体与场景物体的组合，利用基础模型提供的方向风险权重和空间衰减尺度，并结合体素化场景几何、拓扑屏蔽及测地衰减构建稠密三维风险场。GPU并行后端批量计算物体间距离和风险。在三种家庭仿真场景中，相同几何约束下，使用该风险场优化的轨迹比仅考虑碰撞的轨迹具有更低语义暴露；作者还评估了屏蔽行为及支撑流程的计算实用性和可靠性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1142,7 +1146,11 @@
             "heading": "",
             "text": "Video-based policy learning is particularly promising, as it illustrates target behaviors without requiring action annotations or embodiment-matched demonstrations. A central challenge is deciding what information should be transferred from the video to the robot.\n\nExisting approaches commonly convert visual observations into scalar similarity or value signals, or ask foundation models to directly generate reward code. These approaches can make the temporal structure of a task difficult to inspect, ground, and reuse.\n\nWe present Video2STL, a framework that converts observation-only videos into parametric Signal Temporal Logic (STL) specifications and uses the resulting formal representation for robot learning. A vision-language model extracts an embodiment-independent semantic event trace and constructs a bank of symbolic temporal specifications.\n\nThe model determines the task structure, while numerical predicate thresholds and temporal bounds are grounded from successful robot trajectories.\n\nFor policy learning, we separate short- and long-timescale temporal information: short-horizon specifications provide dense rewards through rolling-window quantitative robustness, while a causal monitor over a retained long-horizon specification provides one-time progress rewards for valid temporal prefixes.\n\nThe same representation supports cross-embodiment transfer from human or animal videos to robot control.\n\nAcross four manipulation tasks, Video2STL achieves $85.8\\%$ average success-once and $67.0\\%$ success-at-end, compared with $81.5\\%/59.5\\%$ for native dense PPO and $65.0\\%/42.3\\%$ for Text2Reward; in quadruped locomotion, Qwen-3.8 and GPT-5.6-based Video2STL policies achieve $100\\%$ success across velocities from $0.3$ to $2.1\\,\\mathrm{m/s}$ while remaining competitive in high-speed energy efficiency.\n\nProject webpage: \\href{https://video2stl.github.io/}{video2stl}."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Video2STL converts observation-only videos into parametric Signal Temporal Logic specifications for robot policy learning. A vision-language model extracts an embodiment-independent event trace and creates symbolic specifications; successful robot trajectories ground predicate thresholds and temporal bounds. Short-horizon specifications provide dense rewards, while a causal monitor over a retained long-horizon specification rewards valid temporal prefixes. The representation also supports transfer across embodiments. The authors report higher success metrics than the compared methods across four manipulation tasks, and 100% success across tested velocities in quadruped locomotion, with competitive high-speed energy efficiency.",
+          "zh": "Video2STL将仅含观察信息的视频转换为参数化信号时序逻辑规范，并用于机器人策略学习。视觉语言模型提取与具体机器人形态无关的语义事件轨迹并构造符号规范；任务结构由模型确定，谓词阈值和时间边界则依据成功的机器人轨迹确定。学习中，短时域规范通过滚动窗口定量鲁棒性提供稠密奖励，长时域规范的因果监视器则为有效时间前缀提供一次性进度奖励，同一表示也支持跨形态迁移。四项操作任务中，作者报告其成功一次率和最终成功率高于所比较方法；四足运动实验中，基于Qwen-3.8和GPT-5.6的策略在所测速度范围内均报告100%成功，并在高速能效方面具有竞争力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1173,7 +1181,11 @@
             "heading": "",
             "text": "We present a straightforward but effective method for repurposing existing contact-rich dexterous manipulation demonstrations. Starting from inputs of hand and object trajectories, our method outputs high-quality nonlinear trajectory warps that account for intermediate waypoints, environmental barriers, temporal shifts, and varied start/end configurations.\n\nFoundational to our method is the utilization of contact distributions, which we show allows us to reliably compute complex and high-dimensional dexterous hand trajectories following a simple object-centric warp specification pipeline.\n\nWe evaluate our method across 12 variations sourced from 4 demonstrations in a publicly available dataset of human hand motion data, perform baseline comparisons, and demonstrate generalization of our approach to different manipulators. Results and code will be made available on publication."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a method for repurposing contact-rich dexterous manipulation demonstrations. Given hand and object trajectories, it produces nonlinear trajectory warps that account for intermediate waypoints, environmental barriers, temporal shifts, and varied start and end configurations. The method uses contact distributions and an object-centric warp specification pipeline to compute complex, high-dimensional hand trajectories. It is evaluated on 12 variations drawn from four demonstrations in a publicly available human hand motion dataset, with baseline comparisons and demonstrations of generalization to different manipulators. Results and code are stated to be forthcoming upon publication.",
+          "zh": "本文提出一种用于改造接触丰富的灵巧操作演示的方法。输入为手部和物体轨迹，输出为非线性轨迹变形，可纳入中间路径点、环境障碍、时间偏移以及不同起始和结束配置。方法以接触分布为基础，并采用以物体为中心的变形规范流程，据作者称能够可靠地计算复杂的高维灵巧手轨迹。评估使用公开人手运动数据集中的4段演示及其12种变体，并进行了基线比较，也展示了方法对不同操作器的泛化。作者表示，结果和代码将在发表时提供。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1204,7 +1216,11 @@
             "heading": "",
             "text": "Long-horizon policies trained with reinforcement learning can still achieve high return through inefficient interactions, while rare efficient behaviors discovered during training may be forgotten. We argue that temporal efficiency itself provides a source of self-supervision for reinforcement learning.\n\nWe introduce Temporal Self-Imitation Learning (TSIL), a reinforcement learning framework that mines temporally efficient successful trajectories generated during learning and converts them into reusable supervision for future policy improvement.\n\nTSIL progressively refines learning using configuration-conditioned adaptive temporal targets derived from fast successful trajectories, while preserving and replaying efficient behaviors through efficiency-weighted self-imitation learning.\n\nAcross 30 long-horizon tasks spanning robot manipulation and interactive navigation, TSIL consistently improves task success rates, learning efficiency, behavioral efficiency, and robustness to unstable training conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Temporal Self-Imitation Learning (TSIL), which mines temporally efficient successful trajectories produced during reinforcement learning and reuses them to supervise policy improvement. The authors argue that long-horizon policies can achieve high return through inefficient interactions and may forget rare efficient behaviors. TSIL derives configuration-conditioned adaptive temporal targets from fast successful trajectories and preserves and replays efficient behaviors through efficiency-weighted self-imitation. Across 30 long-horizon tasks in robot manipulation and interactive navigation, the authors report improvements in task success, learning and behavioral efficiency, and robustness to unstable training conditions.",
+          "zh": "本文提出时间自模仿学习（TSIL），利用强化学习过程中发现的高效成功轨迹，为后续策略改进提供可复用监督。作者指出，长时程策略即使获得较高回报，也可能通过低效交互实现，而训练中偶然发现的高效行为可能被遗忘。TSIL从快速成功轨迹中生成依配置而定的自适应时间目标，逐步改进学习，并通过按效率加权的自模仿学习保存和重放高效行为。在涵盖机器人操作和交互导航的30项长时程任务中，作者报告TSIL持续改善任务成功率、学习效率、行为效率，以及对训练不稳定的鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
