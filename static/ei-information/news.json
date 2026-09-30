@@ -2835,7 +2835,11 @@
             "heading": "",
             "text": "Autonomous parking in nonconvex and narrow environments remains challenging. Although optimal-control methods can explicitly enforce vehicle dynamics and collision constraints, nonconvexity compromises solver robustness and can cause failures.\n\nLarge language models (LLMs) exhibit strong semantic reasoning capabilities, but directly generating dense trajectories makes it difficult to guarantee physical feasibility.\n\nWe introduce SE-LLM-OCP, a unified framework in which LLMs make high-level discrete maneuver decisions, while an optimal-control module enforces low-level vehicle dynamics and collision constraints. Online, the LLM proposes sparse maneuver plans, decomposing the parking task into a sequence of short-horizon trajectory-optimization problems.\n\nA low-level solver then sequentially solves optimal-control problems. If the solver fails, the LLM aggregates failure evidence from the solver and validation stages to guide replanning. Offline, SE-LLM-OCP automatically evolves a structured decision-making knowledge base from scratch, driven by accumulated online failures.\n\nWe validate our proposed framework in simulation on a car-like vehicle model and on a differential-drive robot. Our experimental results show that SE-LLM-OCP enables safer autonomous parking in narrow scenarios and demonstrates transfer of the same maneuver representation to a different kinematic platform."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SE-LLM-OCP, assigning high-level discrete maneuver decisions to an LLM and vehicle-dynamics and collision constraints to an optimal-control module. The LLM proposes sparse plans that divide parking into short-horizon trajectory-optimization problems; solver or validation failures provide evidence for replanning. Offline, accumulated failures drive automatic development of a structured decision knowledge base. The authors validate the framework in simulation with a car-like model and a differential-drive robot, reporting safer parking in narrow scenarios and transfer of the maneuver representation across kinematic platforms.",
+          "zh": "论文提出 SE-LLM-OCP，将高层离散机动决策交给大语言模型，并由最优控制模块处理车辆动力学与避碰约束。模型在线提出稀疏机动计划，将停车拆分为短时域轨迹优化；求解或验证失败时，汇总失败证据以引导重规划。离线阶段，框架根据累积失败自动构建决策知识库。作者在类汽车模型和差速驱动机器人仿真中验证框架，并报告其支持狭窄场景下更安全的自主停车，以及机动表示向不同运动学平台的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2866,7 +2870,11 @@
             "heading": "",
             "text": "We propose NUDGE (Nudge Update via Differentiable GEometry), a training-free obstacle-avoidance procedure that can be incorporated in any robot policy based on diffusion or flow matching, including diffusion policies and vision-language-action models.\n\nOur work injects gradients from a signed distance field, a function returning each point's distance to the nearest obstacle, into the policy at inference time to steer it away from obstacles. It supports any common action parameterization, from absolute or relative joint poses to end-effector poses, through a differentiable joint-trajectory decoder.\n\nExperiments show that NUDGE preserves the policy's task distribution and runs reactively in real time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes NUDGE, a training-free obstacle-avoidance procedure for robot policies based on diffusion or flow matching, including diffusion policies and vision-language-action models. At inference time, it injects gradients from a signed distance field into the policy to steer actions away from obstacles. A differentiable joint-trajectory decoder supports common action parameterizations, including joint and end-effector poses. Experiments show that NUDGE preserves the policy’s task distribution and operates reactively in real time.",
+          "zh": "论文提出 NUDGE，这是一种无需训练的避障方法，可集成到基于扩散或流匹配的机器人策略中，包括扩散策略和视觉语言动作模型。方法在推理时将来自有符号距离场的梯度注入策略，引导动作远离障碍物，并通过可微关节轨迹解码器支持关节姿态或末端执行器姿态等常见动作参数化。实验显示，NUDGE 保持策略的任务分布，并可实时响应。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2897,7 +2905,11 @@
             "heading": "",
             "text": "Aerial seed broadcasting can reach remote restoration sites, but provides limited control over seed placement within the soil. This paper presents a geometry-assisted, tri-functional morphing robot that combines aerial access, ground locomotion, and controlled-depth seed embedding in a fly-drive-plant architecture.\n\nAfter landing, the platform reconfigures into a four-wheeled planting configuration: an electronically coupled dual-motor drive folds the rear arms outward to form ground wheels, while a descending front tray engages the propulsion motors with a drill gear train. Reusing the propulsion motors for drilling eliminates a dedicated drill drive.\n\nThe planting sequence forms a hole, dispenses a seed, and allows the vehicle to reposition on the ground or return to its flight configuration. Ground mobility supports repeated planting without requiring a separate flight between adjacent sites.\n\nA companion controller issues reconfiguration, tray, and seed-gate commands, while a dedicated autopilot handles flight control. The morphing and planting mechanisms are validated using a hardware prototype that demonstrates ground repositioning and seed embedding.\n\nThis proof of concept establishes a hardware basis for aerial-ground seed embedding through coordinated reconfiguration and actuator reuse."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a morphing robot combining flight, ground locomotion, and controlled-depth seed embedding for remote restoration sites. After landing, it reconfigures its rear arms as wheels and couples propulsion motors to a drill gear train through a descending tray, avoiding a dedicated drill drive. Its planting sequence makes a hole, dispenses a seed, and permits ground repositioning or return to flight configuration. A companion controller manages reconfiguration and planting mechanisms, while a separate autopilot handles flight. A hardware prototype demonstrates morphing, ground movement, and seed embedding as a proof of concept.",
+          "zh": "论文介绍一种兼具飞行、地面移动和定深播种功能的变形机器人，用于向偏远生态修复地点部署种子。着陆后，平台展开后臂形成地面车轮，并由前托盘将推进电机接入钻孔齿轮机构，省去独立钻孔驱动。种植流程包括打孔、投种及地面重新定位，也可恢复飞行构型。配套控制器管理变形、托盘和种门，独立自动驾驶仪负责飞行。硬件原型验证了机构变形、地面移动和种子嵌入；作者将其定位为概念验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2928,7 +2940,11 @@
             "heading": "",
             "text": "Language-guided navigation requires connecting partial observations to a persistent spatial reference and learning how actions change that representation. We introduce InsightMap, a framework that uses top-down maps as both explicit spatial memory and action-conditioned prediction targets.\n\nHistorical views are linked to labeled map locations, and a shared multimodal backbone jointly learns navigation action prediction and post-action map generation. Map prediction provides auxiliary training supervision, while navigation inference decodes actions from the observed spatial context.\n\nAn aligned RGB-D data pipeline supports a common interface for navigation, visual question answering, situated reasoning, and 3D grounding. On the validation-unseen splits of R2R-CE and RxR-CE, InsightMap achieves success rates (SR) of 56.9% and 54.9%, respectively.\n\nAdding map-prediction supervision improves R2R-CE SR by 4.3 and success weighted by path length (SPL) by 3.2 percentage points. On static spatial tasks, InsightMap achieves 103.7 CIDEr on ScanQA, 60.1% exact-match accuracy on SQA3D, and 53.1% grounding accuracy at 0.5 IoU on ScanRefer with detected object proposals.\n\nOn Unitree Go2, it outperforms NaVid and NaVILA in hallway, lab, and office environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces InsightMap, using top-down maps as spatial memory and action-conditioned prediction targets for language-guided navigation. Historical views link to labeled map locations, while a shared multimodal backbone learns navigation action prediction and post-action map generation. The authors report success rates of 56.9% on R2R-CE and 54.9% on RxR-CE validation-unseen splits. Map-prediction supervision raises R2R-CE success rate and success weighted by path length by 4.3 and 3.2 percentage points. The paper also reports results on static spatial tasks and Unitree Go2 environments.",
+          "zh": "论文提出 InsightMap，将俯视地图用作空间记忆和动作条件预测目标，以支持语言引导导航。历史视图与标注地图位置关联，共享多模态骨干网络联合学习导航动作预测和动作后地图生成；地图预测提供辅助监督。作者报告，该方法在 R2R-CE、RxR-CE 未见验证划分上的成功率分别为 56.9% 和 54.9%，加入地图预测监督使 R2R-CE 成功率和路径长度加权成功率分别提升 4.3 和 3.2 个百分点。论文还报告其在 ScanQA、SQA3D、ScanRefer 静态空间任务及 Unitree Go2 实地环境中的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
