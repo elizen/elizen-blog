@@ -163,7 +163,11 @@
             "heading": "",
             "text": "While contact-rich manipulation requires deliberate regulation of interaction forces, recent approaches to robot manipulation learning predominantly represent actions as target positions or poses.\n\nEven methods that incorporate force sensing either use it solely as an observation or, when predicting forces as part of the output, rely on a hybrid force controller. In this paper, we propose an imitation learning policy that predicts wrenches as its sole action output for direct use by a pure force controller.\n\nOur studies suggest that force-domain imitation learning depends critically on data collection, with force-feedback teleoperation improving policy performance by capturing the operator's deliberate force regulation.\n\nUsing Action Chunking with Transformers (ACT) as the base architecture, we train single-task models on bilateral wrench demonstrations and evaluate them on five contact-rich manipulation tasks.\n\nThe wrench policy matches or outperforms position-based baselines across all tasks, with gains varying according to the degree of deliberate force regulation each task requires. Cross-condition ablations show that the bilateral data collection interface and the wrench action space each contribute independently to performance.\n\nTo support further research, we will release over 1000 wrench-action demonstrations spanning these tasks on a companion website upon publication."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents Wrench-ACT, an imitation-learning policy that uses wrenches as its sole action output for direct execution by a pure force controller. Using ACT, the authors train single-task models on bilateral wrench demonstrations and evaluate them on five contact-rich manipulation tasks. They report that the wrench policy matches or outperforms position-based baselines on all tasks, with gains varying by the required degree of deliberate force regulation. Ablations indicate independent contributions from the bilateral data-collection interface and wrench action space.",
+          "zh": "本文提出 Wrench-ACT，一种模仿学习策略，以力旋量作为唯一动作输出，由纯力控制器直接执行。研究使用 ACT 架构，在五项接触丰富的操作任务上训练单任务模型，并比较基于力旋量和位置的策略。作者报告，力旋量策略在所有任务上达到或超过位置基线，提升程度随任务所需的力调节而异。消融研究显示，双边力反馈数据采集界面和力旋量动作空间各自对性能有独立贡献；研究还指出，力反馈遥操作有助于采集包含操作者主动调力行为的数据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "Robots must often continue a task after a target moves, the viewpoint shifts, or an obstacle appears, even though their earlier observations and committed actions reflect the previous scene. Many simulation robustness benchmarks fix external conditions at reset, leaving this temporal challenge underexamined.\n\nWe introduce LIBERO-MAX, a benchmark of 8,000 paired cases spanning eight types of changes to geometry, observations, appearance, clutter, and paths. Each pair compares task execution with and without a mid-task event, holding the task, initial state, policy seed, and pre-event action sequence fixed.\n\nThis controlled comparison distinguishes event-associated regressions from failures already present without the change. Across fourteen current VLA, hybrid, and world-action policies, events reduce success by 11.0-25.7 percentage points. Event profiles reveal shared vulnerabilities to geometry and observation changes, while policy-family rankings interleave.\n\nCamera controls show that robustness reflects both competence under the changed conditions and the trajectory from which they are encountered; varying query cadence does not eliminate the gap.\n\nTogether, the paired protocol and temporal diagnostics establish LIBERO-MAX as a reproducible testbed for diagnosing failures under mid-execution changes and measuring progress toward robot policies that remain effective as the world changes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LIBERO-MAX, a benchmark for assessing whether robot policies adapt to changes during task execution. It contains 8,000 paired cases across eight types of changes, with task, initial state, policy seed, and pre-event actions held fixed within each pair. Evaluations of fourteen existing VLA, hybrid, and world-action policies found that events reduced success by 11.0 to 25.7 percentage points. The authors report shared weaknesses to geometry and observation changes, interleaved policy-family rankings, and analyses of how camera controls and query cadence relate to robustness.",
+          "zh": "本文提出 LIBERO-MAX，用于评估机器人策略在任务执行中环境发生变化时的适应能力。基准包含 8,000 组配对案例，涵盖几何、观察、外观、杂乱程度和路径等八类变化；每对案例固定任务、初始状态、策略随机种子及事件前动作序列，以区分变化相关退化与原有失败。在对十四种现有策略的评估中，事件使成功率下降 11.0–25.7 个百分点。分析显示，各策略对几何和观察变化存在共同弱点，且策略家族排名交错。相机控制和查询频率实验进一步考察了变化发生时轨迹及查询节奏的影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "Dexterous manipulation requires tactile feedback. However, robot tactile demonstrations are difficult to scale,because dexterous-hand teleoperation provides limited tactile feedback to the operator. In contrast, human demonstrations offer a substantially more scalable source of diverse tactile interactions.\n\nMotivated by a simple premise: hands can change, but the underlying physics of interaction does not. We leverage human tactile data to improve dexterous manipulation policies. Specifically, we first build a tactile motion-capture system that synchronously records images, tactile signals, and hand motions.\n\nUsing this system, we construct the UVTA dataset spanning five contact-rich tasks, with 1,000 human demonstrations covering diverse interaction patterns and 150 robot demonstrations per task.\n\nTo transfer the underlying physics of human interaction to robot control, we propose a Unified Visual-Tactile-Action Model that maps both embodiments into aligned tactile and action representations and jointly predicts future action and tactile trajectories.\n\nThe joint objective enables human demonstrations to supervise contact-aware representation learning, while only robot actions are executed during deployment.\n\nIn real-robot evaluations across five tasks, our method achieves an average success rate of 70%, outperforming the strongest visual-tactile baseline, which achieves 29%, and an architecture ablation, which achieves 42%.\n\nPerformance improves consistently with additional human demonstrations and exhibits no saturation at 1,000 demonstrations per task, validating the effectiveness of scalable human tactile data for dexterous manipulation. Project page is available at https://uni-vta.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a Unified Visual-Tactile-Action Model that aligns human and robot tactile and action representations and jointly predicts future action and tactile trajectories; only robot actions are executed at deployment. The authors build a motion-capture system and a dataset covering five contact-rich tasks, with 1,000 human demonstrations and 150 robot demonstrations per task. In real-robot evaluations, the method achieved a reported average success rate of 70%, compared with 29% for the strongest visual-tactile baseline and 42% for an architecture ablation. Performance improved with more human demonstrations, with no saturation reported at 1,000 per task.",
+          "zh": "本文研究利用人类触觉演示提升灵巧操作策略，并提出统一视觉—触觉—动作模型，将人和机器人映射到对齐的触觉及动作表示，共同预测未来动作与触觉轨迹；部署时仅执行机器人动作。作者构建同步记录图像、触觉信号和手部运动的动捕系统，并据此形成涵盖五项接触丰富任务的数据集，包括 1,000 份人类演示及每项任务 150 份机器人演示。真实机器人评估中，该方法平均成功率为 70%，高于摘要所述视觉—触觉基线的 29% 和架构消融的 42%。作者报告，增加人类演示持续改善性能，在每项任务 1,000 份演示时未见饱和。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "Large language models (LLMs) are increasingly used as high-level planners in robot navigation, but their outputs may become unreliable when instructions are ambiguous, unsupported by the environment, or semantically inconsistent. This paper presents a Risk-Aware Semantic Grounding framework for trustworthy LLM-based robot planning.\n\nUnlike existing LLM-based planners that primarily optimize plan generation, we formulate semantic grounding reliability as a multi-dimensional risk estimation problem.\n\nThe proposed architecture explicitly models grounding uncertainty through ambiguity, hallucination and semantic-conflict risks before planning occurs, enabling the system to decide whether to execute the instruction, request clarification, or reject it.\n\nTo evaluate the approach, we introduce TRUST-NAV, a benchmark containing both standard navigation tasks and risk-inducing instruction scenarios. Experimental results show that while conventional LLM planners achieve strong performance on valid navigation tasks, the proposed framework substantially improves ambiguity detection and semantic conflict rejection.\n\nThese findings suggest that trustworthy robot planning should be evaluated not only by task completion, but also by the ability to recognize when execution should not occur."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents a risk-aware semantic grounding framework for LLM-based robot planning. It estimates ambiguity, hallucination, and semantic-conflict risks before planning, allowing the system to execute an instruction, seek clarification, or reject it. The authors introduce TRUST-NAV, a benchmark with standard navigation tasks and risk-inducing instruction scenarios. Their experiments show that, compared with conventional LLM planners, the framework improves ambiguity detection and rejection of semantic conflicts. The authors argue that evaluation should also consider whether a system recognizes when execution should not occur.",
+          "zh": "本文提出面向可信机器人规划的风险感知语义落地框架，用于应对大型语言模型在指令含糊、环境不支持或语义不一致时可能产生的不可靠输出。框架将语义落地可靠性建模为多维风险估计，并在规划前显式评估歧义、幻觉和语义冲突风险，使系统能够选择执行指令、请求澄清或拒绝指令。作者还提出 TRUST-NAV 基准，包含常规导航任务和诱发风险的指令场景。实验结果显示，相较于传统 LLM 规划器，该框架改善了歧义检测和语义冲突拒绝；作者据此主张，评估还应考察系统能否识别不应执行的情形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
