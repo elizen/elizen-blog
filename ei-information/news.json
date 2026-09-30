@@ -971,7 +971,11 @@
             "heading": "",
             "text": "A goal that is close in space can be far away in time. Obstacles, terrain, and the agent's own capabilities determine how long it takes to get there. Yet, critics in contrastive and survival reinforcement learning do not measure the distances in their representation space in units of time.\n\nWe therefore introduce ChronoSRL, which gives the critic's embeddings an explicit temporal geometry. The distance between state-action and goal embeddings is trained to match the time that the agent takes to reach the goal (goal-reaching time), while goals that were not reached, and goals from other trajectories, are pushed at least one discount horizon away.\n\nFurthermore, reaching a goal quickly once does not mean that reaching it is reliable in general, so the policy should not follow the temporal distance directly. Instead, we build on survival reinforcement learning and predict from our temporal embeddings not only the full distribution of goal-reaching times but also the time spent near the goal.\n\nThereby, the policy is trained to favor actions that reach the goal sooner and more reliably and that keep the agent near it. ChronoSRL learns faster and reaches higher performance than contrastive, action-chunked contrastive, and survival reinforcement learning baselines on seven standard locomotion and navigation benchmarks, even with much smaller networks.\n\nTo test the limits of self-supervised reinforcement learning, we introduce velocity tracking, goal-position reaching, and box climbing tasks with a quadruped robot in a realistic sim-to-real locomotion setup, and show how the shaping terms that are typical for robotics can be naturally incorporated into our framework.\n\nChronoSRL is the only one of the tested self-supervised reinforcement learning methods that learns to stay at the commanded velocities and goal positions, and climbs the highest boxes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ChronoSRL adds explicit temporal geometry to critic embeddings in self-supervised reinforcement learning. Embedding distances are trained to reflect goal-reaching time, while unreached goals and goals from other trajectories are placed at least one discount horizon away. The method also predicts goal-reaching-time distributions and time spent near goals to guide policies toward faster, more reliable reaching and sustained proximity. The authors report improvements over tested baselines on seven benchmarks and describe quadruped tasks in a realistic sim-to-real setup, where it alone among tested methods learned the specified behaviors.",
+          "zh": "ChronoSRL为自监督强化学习中的评论器嵌入引入显式时间几何，使状态动作与目标嵌入间的距离对应到达目标所需时间，并将未到达目标及其他轨迹目标推至至少一个折扣时域之外。框架还预测到达时间分布和目标附近停留时间，以训练策略更快、更可靠地到达并停留。作者报告，该方法在七项基准上优于所比较的基线；在四足机器人仿真到真实场景设置中，它是所测试方法中唯一学会保持指定速度和目标位置并攀爬最高箱体的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1002,7 +1006,11 @@
             "heading": "",
             "text": "Robot policies are frequently trained from human corrections, yet teleoperating a robot to provide corrections is burdensome, and human demonstrators are not always optimal.\n\nWe propose Blended DAgger (BlenDAgger), an approach for collecting data to train imitation learning policies by using shared control to blend the policy's and demonstrator's actions during interventions. By blending human and policy actions, we aim to improve the autonomous performance of manipulation policies.\n\nWe validate our approach across five manipulation tasks, two in the real world and three in simulation. Our approach achieves higher autonomous performance by 30 or more percentage points on two real-world tasks compared to a typical human-gated correction approach (HG-DAgger).\n\nWe also investigate the advantages of BlenDAgger that allow for higher autonomous performance, finding that BlenDAgger results in 57% smoother transitions between policy control and human interventions, and 14% higher trajectory similarity to the training data.\n\nIn a user study (n=14) on two real-world tasks, we find that BlenDAgger results in faster data collection (BF=13.32), and we do not find a difference in subjective perceptions. These results show that blended shared control leads to higher autonomous performance compared to typical methods for fine-tuning robot policies from fully teleoperated interventions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "BlenDAgger collects imitation-learning data by blending a robot policy's actions with a human demonstrator's actions during shared-control interventions. It was evaluated on five manipulation tasks, including two real-world and three simulated tasks. The authors report autonomous performance gains of at least 30 percentage points over a typical human-gated correction approach on two real-world tasks, along with smoother transitions and greater trajectory similarity to training data. A user study involving 14 participants found faster data collection and no detected difference in subjective perceptions.",
+          "zh": "BlenDAgger通过共享控制，在人工干预时融合机器人策略与示范者的动作，以收集模仿学习训练数据并提升操作策略的自主表现。研究在五项操作任务中验证该方法，其中两项在真实环境、三项在仿真环境。作者报告，在两项真实任务上，相较于典型的人类门控纠正方法，自主表现至少提高30个百分点；切换更平滑，轨迹与训练数据更相似。由14人参与的真实任务用户研究发现，数据收集更快，主观感受未发现差异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1033,7 +1041,11 @@
             "heading": "",
             "text": "We present Pow3R-SLAM, a real-time RGB-D simultaneous localization and mapping (SLAM) system that uses Pow3R for tracking and mapping. Inspired by MASt3R-SLAM, a recent work on monocular SLAM using two-view 3D reconstruction priors, we extend the work to incorporate depth as a prior on the network's prediction, rather than as geometry to fuse.\n\nWhere traditional RGB-D SLAM systems struggle with sparsity in the depth images, Pow3R utilizes the available depth to give a better-conditioned pointmap, while inferring the depths in empty regions from the two-view photometric, depth, and intrinsic data.\n\nEvaluated against MASt3R-SLAM following its protocol on 24 sequences from TUM, 7-Scenes, and Replica, Pow3R-SLAM runs 1.6x faster in wall time, has 15% lower mean trajectory error, a 3.1x lower unscaled error, and produces denser maps, with a 30% lower Chamfer distance.\n\nWe also introduce a hybrid variant that runs 2.1x faster than MASt3R-SLAM at 25.3 frames per second (FPS), while maintaining improved tracking and mapping accuracy. Against ORB-SLAM3 in RGB-D mode, Pow3R-SLAM is more accurate on TUM, 7-Scenes, and ETH3D-SLAM, and completes every TUM sequence.\n\nWhile Pow3R-SLAM can struggle on a small set of self-similar scenes, its overall performance shows that adding depth as a prior for two-view 3D reconstruction SLAM can be beneficial. A project webpage is available at: https://ChrisKolios.github.io/Pow3R-SLAM , and code will be made open-source upon acceptance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Pow3R-SLAM is a real-time RGB-D simultaneous localization and mapping system that uses Pow3R for tracking and mapping. It treats depth as a prior for network predictions rather than geometry to fuse, using available depth to improve pointmaps and inferring depths in empty regions from two-view data. Evaluations following the MASt3R-SLAM protocol on sequences from TUM, 7-Scenes, and Replica report faster runtime, lower trajectory error, denser maps, and lower Chamfer distance. A hybrid variant is also reported to run faster. The authors note difficulty on a small set of self-similar scenes.",
+          "zh": "Pow3R-SLAM是一种实时RGB-D同步定位与建图系统，使用Pow3R进行跟踪和建图，并将深度作为网络预测先验，而非待融合的几何数据。作者称，该方法利用稀疏深度改善点图条件，并从双视图信息推断空缺区域深度。按MASt3R-SLAM协议在TUM、7-Scenes和Replica序列上的评估显示，其运行速度更快、轨迹误差和Chamfer距离更低且地图更稠密；混合版本也报告了更高速度。作者指出，它在少数自相似场景中可能表现不佳。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1064,7 +1076,11 @@
             "heading": "",
             "text": "Visually plausible articulated assets may still fail during contact interactions or exhibit inaccurate motion. We present FACT (Fidelity-Aware Construction of Articulated Twins), an agentic framework that progressively constructs articulated twins to improve geometry, contact, and dynamic fidelity.\n\nThe agent drives an evidence--diagnosis--revision loop on a shared editable representation, selecting measurements and model edits using quantitative feedback, while numerical tools execute and validate the updates. It reconstructs editable articulated geometry from images through feature planning, targeted measurements, and diagnostic refinement.\n\nOn this reference, it repairs collision proxies through task-aware local repartitioning before fidelity-constrained compression. Finally, it constructs response models from passive-response videos, using simulation residuals to guide model revision and constrained physical parameter fitting.\n\nExperiments show that FACT improves geometric reconstruction over baselines, enables more reliable interaction with simpler collision proxies, and better reproduces held-out physical responses than direct parameter inference."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FACT is a framework for progressively constructing articulated twins with improved geometric, contact, and dynamic fidelity. It uses an evidence, diagnosis, and revision loop on a shared editable representation, selecting measurements and model edits from quantitative feedback. The system reconstructs articulated geometry from images, adjusts collision proxies for tasks before compression, and revises response models using passive-response videos and simulation residuals. Experiments report better geometric reconstruction than baselines, more reliable interaction with simpler collision proxies, and improved reproduction of held-out physical responses compared with direct parameter inference.",
+          "zh": "FACT是一种逐步构建可动关节孪生体的框架，旨在改善几何、接触和动态保真度。它在共享可编辑表示上运行证据、诊断与修订循环，根据定量反馈选择测量和模型修改，并由数值工具执行与验证更新。框架从图像重建可编辑关节几何，针对任务调整碰撞代理并压缩模型，还利用被动响应视频及仿真残差修订响应模型和拟合受约束的物理参数。实验显示，相较基线，其几何重建、简化碰撞代理下的交互可靠性及对留出物理响应的复现有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
