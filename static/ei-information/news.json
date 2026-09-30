@@ -3131,7 +3131,11 @@
             "heading": "",
             "text": "Training robot manipulation policies relies on costly robot demonstrations, making large-scale data collection impractical. Meanwhile, to improve policy generalization, existing approaches seek greater diversity in visual observations by varying object placements, viewpoints, and robot configurations during data collection.\n\nHowever, under a limited demonstration budget, this strategy forces the policy to model diverse visual observations, providing insufficient supervision to learn reliable observation-action correspondences under similar local conditions.\n\nOur study reveals that policies trained under this strategy achieve lower task success rates than those trained within a compact, visually and kinematically stable region. We refer to these stable regions as comfortable manipulation regions.\n\nTo exploit this finding, we propose ComManip, a learning paradigm that specializes manipulation policies to comfortable manipulation regions. During inference, ComManip repositions the mobile base until the detected target center enters the familiar image-space range estimated from comfortable-region demonstrations.\n\nIt then executes the same manipulation policy, enabling effective manipulation across diverse target locations. We conduct extensive experiments across multiple manipulation tasks, demonstration budgets, and policy families including ACT, $\\pi_{0.5}$, RDT, OpenVLA-OFT, and SmolVLA.\n\nThe results demonstrate that ComManip improves task success by roughly 20 percentage points or more across different policy architectures in large workspaces under limited demonstration budgets, suggesting that specializing manipulation policies to comfortable regions provides a more data-efficient learning paradigm for manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ComManip, which trains manipulation policies in visually and kinematically stable “comfortable” regions, arguing that this supports reliable observation-action learning under limited demonstration budgets. At inference, the mobile base is repositioned until the target center falls within a familiar image-space range, after which the same policy is used. Experiments across multiple tasks, budgets, and policy families report success-rate gains of roughly 20 percentage points or more in large workspaces.",
+          "zh": "论文提出 ComManip，针对机器人示范预算有限的问题，主张在视觉和运动学稳定的“舒适操作区域”训练策略，比追求观察多样性更有利于学习可靠的观察—动作对应关系。推理时，移动底座将目标中心调整到示范所覆盖的熟悉图像范围，再执行同一策略。作者报告，该方法在多种任务、预算和策略架构的大型工作空间实验中，成功率提升约20个百分点或更多。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3162,7 +3166,11 @@
             "heading": "",
             "text": "Fully autonomous tractor--trailer systems are increasingly deployed in logistics, agriculture, and industrial environments, where precise and robust path-tracking capabilities are essential.\n\nHowever, the articulation between the tractor and the trailer introduces additional nonlinearities and significantly complicates lateral and longitudinal control, particularly during reversing maneuvers. This paper introduces a novel path-tracking algorithm specifically designed for articulated vehicles with a single trailer.\n\nThe proposed method combines a lateral control law applied at the trailer level with a short-horizon predictive adjustment of the tractor steering angle, ensuring stable convergence toward the desired path in both forward and backward motion. The approach is geometry-based and requires no per-vehicle calibration or training.\n\nSimulation studies in a high-fidelity physics simulator demonstrate the ability of the controller to match or outperform classical and state-of-the-art methods in terms of accuracy, stability, and robustness to disturbances."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a path-tracking algorithm for articulated vehicles with a single trailer, covering forward and reverse maneuvers. It combines trailer-level lateral control with short-horizon predictive adjustment of tractor steering to converge toward a desired path. The geometry-based method requires no vehicle-specific calibration or training. Studies in a high-fidelity physics simulator indicate that its accuracy, stability, and disturbance robustness match or exceed those of classical and state-of-the-art methods.",
+          "zh": "论文提出一种用于单挂车铰接车辆前进和倒车的路径跟踪算法。该方法在挂车层面采用横向控制，并通过短时域预测调整牵引车转向角，以使车辆稳定收敛至目标路径；算法基于几何方法，无需针对具体车辆校准或训练。高保真物理仿真显示，该控制器在前进和倒车时的准确性、稳定性及抗扰性可匹配或优于经典方法和当前先进方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3193,7 +3201,11 @@
             "heading": "",
             "text": "Future prediction is increasingly used to improve vision-language-action (VLA) policies, based on the premise that anticipating scene evolution encourages representations useful for control. However, forecast quality alone does not establish that a policy has learned a better representation for action.\n\nThis distinction matters under distribution shift, where successful control depends on preserving spatial state and likely scene change beyond familiar configurations. We study what determines whether predictive supervision improves the visual representation used by a VLA policy.\n\nThrough controlled comparisons with matched target constructions, prediction horizons, and training conditions, we find that different prediction interfaces produce markedly different forecasts and visual representations, including in the spatial, dynamics, and action information that transfers beyond familiar scenes.\n\nWe trace these differences to how predictive errors shape the policy's visual stream. Consistent with this controlled finding, VLA policies trained with more direct, scene-matched future supervision show stronger robustness under simulated and physical distribution shifts.\n\nTogether, our results frame future prediction as a representation-learning design problem whose value for control depends on whether its supervision reaches the representations through which the policy acts."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how future-prediction supervision shapes the visual representations used by vision-language-action (VLA) policies. Controlled comparisons find that prediction interfaces produce different forecasts and representations, affecting how spatial, dynamics, and action information transfers beyond familiar scenes. The authors link these differences to how prediction errors shape the policy’s visual stream. Policies trained with more direct, scene-matched future supervision show stronger robustness under distribution shifts in simulated and physical settings.",
+          "zh": "论文研究未来预测监督如何影响视觉—语言—动作（VLA）策略的视觉表征及其控制能力。通过控制预测目标、时域和训练条件，作者发现不同预测接口会产生不同的预测结果与表征，并影响空间状态、动力学和动作信息向陌生场景的迁移。作者将差异关联到预测误差对策略视觉流的作用，并报告，采用更直接且与场景匹配的未来监督的策略，在仿真和实体环境的分布偏移下表现出更强鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3224,7 +3236,11 @@
             "heading": "",
             "text": "Autonomous exploration on uneven terrain requires ground robots to balance exploration efficiency, coverage completeness, and terrain safety. Detailed tsrrain reasoning improves local reliability but can slow large-scale exploration, whereas coarse region guidance expands quickly in open areas but can miss narrow passages and irregular traversable boundaries.\n\nTo address this challenge, this paper presents TASG-Explore, a traversability-aware sector-guided exploration framework for ground robots. The framework first performs hierarchical traversability analysis using variable-voxel ground fitting and adaptive 8-bit obstacle encoding.\n\nIt then splitting cost map into sectors, incrementally updates sector clusters, extracts terrain-coupled frontier viewpoints, and maintains a dynamic topological roadmap with unknown topological hypotheses. Finally, a sector-guided planner selects region targets and inserts local viewpoints to generate efficient exploration routes.\n\nBenchmark experiments in diverse challenging environments, including caves, forests, and rugged hills, show that TASG-Explore achieves the best overall performance among six representative state-of-the-art planners.\n\nThe proposed traversability analysis improves processing efficiency by 6.3 times while maintaining high accuracy, and the exploration planner improves exploration efficiency by 51% and increases coverage by up to 2.95 times in rugged hill scene. Large-scale real-world experiments further demonstrate the practical value of the proposed method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TASG-Explore, a traversability-aware, sector-guided exploration framework for ground robots on uneven terrain. It performs hierarchical terrain analysis, updates sector clusters, extracts terrain-coupled frontier viewpoints, and plans routes using region targets and local viewpoints. Benchmarks in caves, forests, and rugged hills report the best overall performance among six representative planners. The authors also report 6.3-fold faster traversability analysis, a 51% exploration-efficiency improvement, and up to 2.95 times greater coverage in a rugged-hill scene, alongside large-scale real-world experiments.",
+          "zh": "论文提出 TASG-Explore，一种面向崎岖地形地面机器人的可通行性感知分区探索框架。它进行分层地形分析，划分并更新区域簇，提取与地形相关的前沿视点，并以分区目标和局部视点规划路线。涵盖洞穴、森林和崎岖山地的基准实验显示，该方法在六种代表性先进规划器中总体表现最佳；作者还报告地形分析效率提高6.3倍、探索效率提高51%，崎岖山地场景覆盖率最高提升至2.95倍。大规模真实环境实验进一步展示其实用性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
