@@ -303,7 +303,11 @@
             "heading": "",
             "text": "Learning from human videos offers a promising route to acquiring diverse manipulation skills. Extending this capability beyond tabletop settings to long-horizon mobile manipulation requires adapting and composing demonstrated interactions across changing scenes and robot configurations.\n\nWe present Skill Assembly and Kinematic Imitation (SAKI), a framework connecting human-video skill acquisition, cross-demonstration assembly and closed-loop whole-body execution. SAKI prepares reusable object-centric skills that preserve task-critical interactions while allowing transfer paths to adapt.\n\nGiven a goal and supplied task dependencies, it selects and orders skills, binds their object roles to the current scene, and carries scene estimates and robot configuration between successive skills. Whole-body kinematic imitation generates coordinated base, arm and gripper motion.\n\nDuring execution, persistent object estimates maintain task references across viewpoint changes, while visual feedback updates remaining trajectories. Real-robot experiments demonstrate skill reuse across layouts and the composition of independently demonstrated interactions into continuous mobile tasks, including tidying and wiping.\n\nAblation results show that task-conditioned reference preparation substantially improves long-horizon task completion with whole-body optimisation and visual feedback held fixed. Check https://aus.bot/research/saki/ for video demos!"
           }
-        ]
+        ],
+        "summary": {
+          "en": "SAKI connects human-video skill acquisition, cross-demonstration skill assembly, and closed-loop whole-body execution for long-horizon mobile manipulation. Given a goal and supplied task dependencies, it selects and orders skills, binds object roles to the current scene, and carries scene estimates and robot configuration across skills. Whole-body kinematic imitation coordinates the base, arms, and gripper, while persistent object estimates and visual feedback support execution. Real-robot experiments demonstrate reuse across layouts and composition of interactions, including tidying and wiping. Ablations report improved task completion from task-conditioned reference preparation.",
+          "zh": "SAKI 是一种面向长时程移动操作的框架，将人类视频中的技能获取、跨演示技能组合与闭环全身执行连接起来。它依据目标和给定的任务依赖选择并排序技能，将物体角色匹配到当前场景，并在技能间传递场景估计和机器人配置；全身运动学模仿协调底盘、手臂和夹爪。执行时，持续物体估计维持任务参照，视觉反馈更新轨迹。真实机器人实验展示了不同布局下的技能复用及独立演示交互的组合，包括整理和擦拭。消融结果显示，在固定全身优化和视觉反馈时，任务条件化参照准备可显著改善长时程任务完成情况。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -334,7 +338,11 @@
             "heading": "",
             "text": "Many aerial tasks involving quadrotors demand both instant reactivity and long-horizon planning for obstacle avoidance, energy efficiency, or trajectory tracking. High-fidelity models enable accurate control but are too slow for long horizons. Low-fidelity planners scale but cannot directly control the system, necessitating cascaded architectures.\n\nPrevailing hierarchical approaches plan with a simplified model and use a high-fidelity controller for tracking, yet this decomposition is inherently suboptimal. The controller is limited by the coarse plan, and conventional MPC alternatives shorten the horizon to stay real-time feasible.\n\nWe present UNIQUE, an MPC architecture that replaces this hierarchical stacking with temporal cascading. The planning problem is formulated as the second-tail horizon of a single multi-phase MPC, rather than being solved separately.\n\nWe align costs across horizons, derive feasibility constraints for the point-mass planning model, and introduce transition constraints that convert high-fidelity states into meaningful low-fidelity states. Parallel point-mass and mixed-integer solvers address nonconvexities while incorporating progressive 3D obstacle smoothing over the planning horizon.\n\nIn simulations and real flights, under equal computational budgets, UNIQUE improves closed-loop tracking by up to 75% compared with standard MPC and hierarchical baselines. Ablations and Pareto analyses confirm performance gains across variations in horizon, constraint approximations, and smoothing schedules."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents UNIQUE, a quadrotor MPC architecture that uses temporal cascading instead of separate hierarchical planning and control. It formulates planning as the second-tail horizon of a single multi-phase MPC, aligns costs across horizons, derives feasibility constraints for a point-mass model, and uses transition constraints to map high-fidelity states to meaningful low-fidelity states. Parallel point-mass and mixed-integer solvers address nonconvexities with progressive 3D obstacle smoothing. In simulations and real flights, the authors report up to 75% better closed-loop tracking than standard MPC and hierarchical baselines under equal computational budgets.",
+          "zh": "文章提出 UNIQUE，一种用于四旋翼的模型预测控制架构，以时间级联取代分层规划与控制：规划问题被设为单个多阶段 MPC 的后段时域，而非独立求解。方法对齐不同地平线的代价，推导点质量规划模型的可行性约束，并用转换约束把高保真状态映射为有意义的低保真状态。并行点质量与混合整数求解器处理非凸性，并沿规划时域逐步平滑三维障碍物。在仿真和真实飞行中，作者报告相同计算预算下，相较标准 MPC 和分层基线，闭环跟踪最多提升 75%；消融和帕累托分析考察了多种设置变化下的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -365,7 +373,11 @@
             "heading": "",
             "text": "We present PAC-MAN, a perception-aware CBF-RL framework that couples control-barrier safety with deployment-realistic onboard sensing for whole-body humanoid dodgeball.\n\nThe deployed policy sees the ball only as segmentation-masked depth from a head-mounted camera, while training-time CBF guidance represents clearance to every body link, and an adversarial motion prior regularizes the resulting evasive reflexes.\n\nWe evaluate on a controlled any-link contact benchmark with seeded throws in two regimes: single throws and a deployment loop in which the robot walks back to its station and recovers between throws. On this benchmark, the policy comes within a few points of a privileged state oracle: a fixed onboard camera alone is adequate for evasion.\n\nWe find that usable barrier structure depends on perceptual observability: Joint-CBF gives the best performance with accurate ball states, degrades under fixed-camera observations when used only as training guidance, and recovers with a ball-tracking gimbal or privileged runtime filter.\n\nWe therefore deploy a lightweight Link-CBF policy zero-shot on the Unitree G1 in the real world, where it tolerates imperfect perception, succeeds on 95% of throws, and uses semantic segmentation to dodge different balls."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PAC-MAN combines control-barrier safety with deployment-oriented onboard perception for whole-body humanoid dodgeball evasion. The deployed policy receives only segmentation-masked ball depth from a head-mounted camera, while training guidance accounts for clearance to body links and uses an adversarial motion prior. A controlled contact benchmark evaluates single throws and a loop with recovery between throws; results indicate that a fixed onboard camera can support evasion close to a privileged state oracle. The authors report that barrier performance depends on perceptual observability. A lightweight Link-CBF policy is deployed zero-shot on a Unitree G1 and succeeds on 95% of real-world throws.",
+          "zh": "PAC-MAN 将控制屏障函数安全机制与面向部署的机载感知结合，用于人形机器人全身躲避躲避球。部署策略仅通过头部相机接收经分割掩码处理的球体深度信息；训练时的屏障引导考虑各身体连杆的间隙，并以对抗运动先验约束躲避动作。受控接触基准包含单次投球和机器人返回站位、恢复后继续投球两种设置。基准评估显示，仅固定机载相机也足以躲避，表现接近特权状态预言策略。作者指出屏障结构效果取决于感知可观测性，并报告在 Unitree G1 上零样本部署的轻量 Link-CBF 策略可容忍不完美感知，在真实环境中成功躲避 95% 的投球。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -396,7 +408,11 @@
             "heading": "",
             "text": "Robotic manipulation is inherently history-dependent, yet most pretrained robotic policies condition on only the current observation or a short temporal window.\n\nEquipping such policies with long-term memory remains challenging: existing approaches either feed the backbone multi-frame observation windows, which substantially increase inference cost, or rely on pre-defined semantic features, which limit task generality and may also require the retraining of the backbone to adapt to the memory.\n\nWe introduce DRAM (Delta-rule Recurrent Associative Memory), a plug-and-play memory module that can be attached to a wide range of pretrained robotic policies, endowing them with long-horizon memory without architectural modification or backbone retraining, requiring only task-specific post-training of the memory module and action expert.\n\nDRAM maintains a fixed-size associative memory using gated delta-rule linear attention, with a modified update that incorporates all tokens within each frame in parallel. An architecture-agnostic readout integrates historical context into action prediction across different policy architectures.\n\nExperiments show that DRAM consistently improves frozen pretrained policies over short-context baselines and alternative compact memory designs, validating its effectiveness as a fixed-size, post-hoc memory module trained with the backbone frozen."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DRAM is a plug-and-play recurrent associative memory module for pretrained robotic manipulation policies. It aims to provide long-horizon memory without changing the policy architecture or retraining its backbone, requiring task-specific post-training only for the memory module and action expert. DRAM maintains fixed-size associative memory with gated delta-rule linear attention and a modified update that processes all tokens in each frame in parallel. An architecture-agnostic readout adds historical context to action prediction. Experiments report consistent improvements over short-context baselines and alternative compact memory designs while the backbone remains frozen.",
+          "zh": "DRAM 是一种可插入预训练机器人策略的循环关联记忆模块，旨在为操作策略提供长时程记忆，而无需修改架构或重新训练主干网络；只需针对任务对记忆模块和动作专家进行后训练。它以门控 delta-rule 线性注意力维护固定大小的关联记忆，并修改更新方式，使每帧内所有 token 能并行纳入。与策略架构无关的读出机制将历史上下文整合进动作预测。实验显示，在主干冻结条件下，DRAM 持续提升预训练策略表现，优于短上下文基线和其他紧凑记忆设计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
