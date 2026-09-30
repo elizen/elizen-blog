@@ -2275,7 +2275,11 @@
             "heading": "",
             "text": "The ability to navigate toward sound sources extends a robot's reach beyond its visual field, enabling response to auditory events in unknown environments. To equip robots with this capability, existing methods couple acoustic and visual information through joint audio-visual learning in acoustic simulators.\n\nHowever, acoustic simulation is both low-fidelity and expensive, producing a domain gap that prevents reliable real-world deployment, while the discrete action spaces inherited from grid-based simulators introduce an additional kinematic gap on physical robots.\n\nTo alleviate these issues, we propose BCNav, a decoupled framework that separates the acoustic module from the learned navigation policy using direction-of-arrival (DOA) estimation: an estimator provides a scalar bearing to the sound source, so the navigation policy only processes depth images and a bearing angle, two inputs whose domain gaps are well characterized.\n\nWe collect shortest-path demonstrations with calibrated bearing noise injection and train the policy via imitation learning to output continuous velocity commands directly executable on ground robots.\n\nWe demonstrate the method in simulation and on a physical robot, navigating unknown environments without any acoustic fine-tuning, prior mapping, or real-world audio data collection. Code is available at https://github.com/york1to/bcnav."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BCNav, a sound-source navigation framework that separates acoustic processing from the learned policy. A direction-of-arrival estimator supplies a bearing, and the policy uses depth images and that bearing to produce continuous velocity commands. It is trained by imitation learning from shortest-path demonstrations with calibrated bearing noise. The authors report results in simulation and on a physical robot in unknown environments, without acoustic fine-tuning, prior mapping, or real-world audio collection.",
+          "zh": "论文提出 BCNav，一种将声学模块与导航策略解耦的声源导航框架。方向到达估计器提供声源方位角，策略以深度图像和方位角为输入，通过带校准方位噪声的最短路径示范进行模仿学习，并输出连续速度指令。作者报告，该方法在仿真和实体机器人上均能导航未知环境，且未进行声学微调、预先建图或真实音频采集。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2306,7 +2310,11 @@
             "heading": "",
             "text": "Sidewalks in the real world are crowded, cluttered, and less structured than roads, making 3D occupancy prediction a key ingredient for the safe navigation of mobile robots such as delivery bots and electric wheelchairs.\n\nExisting occupancy learning pipelines are largely designed for on-road autonomous driving and often train on large-scale paired LiDAR-RGB datasets with dense 3D supervision and multiple camera inputs, which are costly to collect and do not adequately capture sidewalk-specific characteristics.\n\nWe propose WalkOCC, a hybrid Ray-marching monocular 3D occupancy perception framework for robots operating on sidewalks. WalkOCC explicitly couples geometric grounding from LiDAR-RGB paired data with scalable learning from large-scale unpaired monocular images.\n\nIt bootstraps pseudo occupancy supervision from paired sequences and jointly learns image-level representations on additional 2D-only data. It yields stable optimization and improved generalization without requiring costly 3D occupancy annotations.\n\nExtensive experiments demonstrate consistent gains in prediction accuracy, fine-grained segmentation of subtle urban structures such as curbs and gutters, and robustness to environmental and cross-embodiment shifts compared with self-supervised image-based baselines.\n\nTo facilitate evaluation and benchmarking, we also introduce Sidewalk3D, a large-scale sidewalk perception dataset with LiDAR-camera paired sequences collected across multiple locations and time periods, along with 3D semantic occupancy annotations for evaluation. Code and data will be made available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WalkOCC, a monocular 3D occupancy perception framework for sidewalk robots. It combines geometric grounding from paired LiDAR-RGB data with learning from large collections of unpaired monocular images, bootstrapping pseudo occupancy supervision from paired sequences. The authors report improved prediction accuracy, segmentation of subtle structures such as curbs and gutters, and robustness to environmental and cross-embodiment shifts in experiments, without costly 3D occupancy annotations. They also introduce Sidewalk3D for evaluation and benchmarking.",
+          "zh": "论文提出 WalkOCC，用于人行道机器人的单目三维占用感知。该框架结合 LiDAR-RGB 配对数据提供的几何基础与大规模未配对单目图像的学习，通过配对序列生成伪占用监督，并利用额外二维数据学习图像表征。作者称该方法无需昂贵的三维占用标注，并在实验中提升预测准确性、路缘等细微结构分割及对环境和机器人形态变化的鲁棒性；论文还介绍了用于评测的 Sidewalk3D 数据集。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2337,7 +2345,11 @@
             "heading": "",
             "text": "Training robust social-navigation policies requires simulators with diverse scene layouts, terrain, and human motion, but constructing such environments and specifying pedestrian behavior is costly.\n\nWe propose an efficient pipeline that converts ordinary monocular walking videos directly into closed-loop social-navigation training environments in the policy's state space. Our key observation is that local social navigation primarily depends on two types of information: where the robot can traverse and how nearby pedestrians move.\n\nWe therefore represent the static scene as a metric traversability map, which can be rigidly transformed under counterfactual robot motion, while directly replaying the pedestrian trajectories recovered from the video over time.\n\nThis abstraction allows us to define the forward dynamics directly in the policy's state space and efficiently simulate counterfactual robot states without reconstructing or rendering photorealistic observations.\n\nThe resulting policy achieves 81.2% success in the independent Arena benchmark, compared with 75.0% for the strongest baseline, and succeeds in 19/20 real-robot trials without policy fine-tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a pipeline that turns ordinary monocular walking videos into closed-loop social-navigation training environments in policy state space. It represents static scenes with metric traversability maps and replays pedestrian trajectories recovered from video, enabling counterfactual robot-state simulation without photorealistic reconstruction or rendering. The reported policy achieves 81.2% success on the independent Arena benchmark, versus 75.0% for the strongest baseline, and succeeds in 19 of 20 real-robot trials without policy fine-tuning.",
+          "zh": "论文提出一种从普通单目步行视频构建社交导航训练环境的流程，将场景表示为可通行性地图，并回放从视频恢复的行人轨迹，从而在策略状态空间中模拟反事实机器人状态，无需重建或渲染逼真观测。作者报告，该策略在独立 Arena 基准中的成功率为 81.2%，最高基线为 75.0%；在真实机器人试验中，20 次有 19 次成功，且未进行策略微调。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2368,7 +2380,11 @@
             "heading": "",
             "text": "RGB-only end-to-end visual navigation policies remain vulnerable to collisions in real-world dynamic environments, motivating a dedicated safety layer.\n\nExisting visual Control Barrier Function (CBF) approaches seek to provide safety from RGB observations, but often rely on real-time rendering or explicit scene reconstruction and are primarily designed for static scenes, limiting their practicality for onboard deployment.\n\nWe propose a teacher-student visual distillation framework that transfers the safety behavior of a privileged CBF teacher to an RGB-only student filter for dynamic environments.\n\nThe student maps a short RGB history, robot velocity, and a nominal control action directly to a safe action, while the teacher uses ground-truth robot and obstacle states in a real-to-sim dynamic Gaussian Splatting environment.\n\nTo reduce the teacher-student information gap, the teacher constructs safety constraints only from obstacles observable within the student's RGB history.\n\nIt also accounts for obstacle-velocity uncertainty to improve robustness to motion variations, while action augmentation exposes the student to diverse safe and unsafe nominal actions to better capture the safety boundary. At deployment, the student requires only RGB observations and robot velocity, without explicit 3D reconstruction or online rendering.\n\nExperiments show that the proposed method outperforms visual CBF baselines and improves the safety of RGB-based navigation policies under dynamic obstacle motion. Project page: https://syeon-yoo.github.io/distill-cbf-site/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a teacher-student distillation framework for an RGB-only safety filter in dynamic visual navigation. The student maps a short RGB history, robot velocity, and nominal control to a safe action. The privileged teacher uses ground-truth states in a real-to-sim dynamic environment and limits its constraints to obstacles observable in the student's visual history. The method also models obstacle-velocity uncertainty and augments actions during training. Experiments show improvements over visual CBF baselines and greater safety for RGB-based navigation policies with moving obstacles.",
+          "zh": "论文提出教师—学生蒸馏框架，将特权控制屏障函数教师的安全行为转移给仅使用 RGB 的动态导航安全过滤器。学生根据短时 RGB 历史、机器人速度和名义控制输出安全动作；教师利用真实到仿真的动态环境中的状态信息，并仅依据学生可观测障碍物构造约束。作者还引入障碍物速度不确定性建模和动作增强。实验显示，该方法优于视觉 CBF 基线，并提升动态障碍物下 RGB 导航策略的安全性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
