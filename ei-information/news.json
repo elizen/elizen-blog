@@ -292,7 +292,7 @@
       },
       "format": "source_excerpt",
       "id": "news-06868f7e9d4dc952d4c3ce9f156e521cd5777086ad8b99ee2e947c773974e51a",
-      "intro": "arXiv:2609.34182v1 Announce Type: new Abstract: Dexterous manipulation requires tactile feedback.However, robot tactile demonstrations are difficult to scale,because dexterous-hand teleoperation provides limited tactile feedback to the operator. In contrast, human demonstrations offer a substantially more scalable source of diverse tactile interactions. Motivated by a simple premise: hands can change, but the underlying physics of interaction does not. We leverage human tactile data to improve dexterous manipulation policies. Specifically, we first build a tactile motion-capture system that synchronously",
+      "intro": "arXiv:2609.34182v2 Announce Type: new Abstract: Dexterous manipulation requires tactile feedback. However, robot tactile demonstrations are difficult to scale,because dexterous-hand teleoperation provides limited tactile feedback to the operator. In contrast, human demonstrations offer a substantially more scalable source of diverse tactile interactions. Motivated by a simple premise: hands can change, but the underlying physics of interaction does not. We leverage human tactile data to improve dexterous manipulation policies. Specifically, we first build a tactile motion-capture system that synchronously",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -301,13 +301,9 @@
         "sections": [
           {
             "heading": "",
-            "text": "Dexterous manipulation requires tactile feedback.However, robot tactile demonstrations are difficult to scale,because dexterous-hand teleoperation provides limited tactile feedback to the operator. In contrast, human demonstrations offer a substantially more scalable source of diverse tactile interactions.\n\nMotivated by a simple premise: hands can change, but the underlying physics of interaction does not. We leverage human tactile data to improve dexterous manipulation policies. Specifically, we first build a tactile motion-capture system that synchronously records images, tactile signals, and hand motions.\n\nUsing this system, we construct the UVTA dataset spanning five contact-rich tasks, with 1,000 human demonstrations covering diverse interaction patterns and 150 robot demonstrations per task.\n\nTo transfer the underlying physics of human interaction to robot control, we propose a Unified Visual-Tactile-Action Model that maps both embodiments into aligned tactile and action representations and jointly predicts future action and tactile trajectories.\n\nThe joint objective enables human demonstrations to supervise contact-aware representation learning, while only robot actions are executed during deployment.\n\nIn real-robot evaluations across five tasks, our method achieves an average success rate of 70%, outperforming the strongest visual-tactile baseline, which achieves 29%, and an architecture ablation, which achieves 42%.\n\nPerformance improves consistently with additional human demonstrations and exhibits no saturation at 1,000 demonstrations per task, validating the effectiveness of scalable human tactile data for dexterous manipulation. Project page is available at https://uni-vta.github.io/."
+            "text": "Dexterous manipulation requires tactile feedback. However, robot tactile demonstrations are difficult to scale,because dexterous-hand teleoperation provides limited tactile feedback to the operator. In contrast, human demonstrations offer a substantially more scalable source of diverse tactile interactions.\n\nMotivated by a simple premise: hands can change, but the underlying physics of interaction does not. We leverage human tactile data to improve dexterous manipulation policies. Specifically, we first build a tactile motion-capture system that synchronously records images, tactile signals, and hand motions.\n\nUsing this system, we construct the UVTA dataset spanning five contact-rich tasks, with 1,000 human demonstrations covering diverse interaction patterns and 150 robot demonstrations per task.\n\nTo transfer the underlying physics of human interaction to robot control, we propose a Unified Visual-Tactile-Action Model that maps both embodiments into aligned tactile and action representations and jointly predicts future action and tactile trajectories.\n\nThe joint objective enables human demonstrations to supervise contact-aware representation learning, while only robot actions are executed during deployment.\n\nIn real-robot evaluations across five tasks, our method achieves an average success rate of 70%, outperforming the strongest visual-tactile baseline, which achieves 29%, and an architecture ablation, which achieves 42%.\n\nPerformance improves consistently with additional human demonstrations and exhibits no saturation at 1,000 demonstrations per task, validating the effectiveness of scalable human tactile data for dexterous manipulation. Project page is available at https://uni-vta.github.io/."
           }
-        ],
-        "summary": {
-          "en": "The paper presents a unified visual-tactile-action model that uses human tactile demonstrations to improve dexterous manipulation policies. The authors build a system that synchronously records images, tactile signals, and hand motions, and use it to create a dataset spanning five contact-rich tasks. The model aligns human and robot tactile and action representations and jointly predicts future action and tactile trajectories; deployment executes robot actions. In real-robot evaluations, the authors report a 70% average success rate across five tasks, above the compared baseline and architecture ablation. Performance continues to improve with more human demonstrations, with no saturation reported at 1,000 per task.",
-          "zh": "论文提出统一视觉—触觉—动作模型，利用人类触觉演示改善灵巧操作策略。作者构建同步记录图像、触觉信号和手部动作的系统，并据此形成涵盖五项接触丰富任务的数据集。模型将人和机器人映射到对齐的触觉与动作表征，并联合预测未来动作和触觉轨迹；部署时执行机器人动作。作者报告，真实机器人五项任务评估的平均成功率为70%，高于所比较的视觉—触觉基线和架构消融结果；增加人类演示后性能持续提升，在每项任务1000条演示时未见饱和。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -712,7 +708,7 @@
       },
       "format": "source_excerpt",
       "id": "news-0dbfff7f98c47a4b24075a24ce953248fbcaa92f5e783605ff1c536f762f09c4",
-      "intro": "arXiv:2609.32453v1 Announce Type: new Abstract: Robotic manipulation is inherently history-dependent, yet most pretrained robotic policies condition on only the current observation or a short temporal window. Equipping such policies with long-term memory remains challenging: existing approaches either feed the backbone multi-frame observation windows, which substantially increase inference cost, or rely on pre-defined semantic features, which limit task generality and may also require the retraining of the backbone to adapt to the memory. We introduce DRAM (Delta-rule Recurrent Associative",
+      "intro": "arXiv:2609.32453v2 Announce Type: new Abstract: Robotic manipulation is inherently history-dependent, yet most pretrained robotic policies condition on only the current observation or a short temporal window. Equipping such policies with long-term memory remains challenging: existing approaches either feed the backbone multi-frame observation windows, which substantially increase inference cost, or rely on pre-defined semantic features, which limit task generality and may also require the retraining of the backbone to adapt to the memory. We introduce DRAM (Delta-rule Recurrent Associative",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -723,11 +719,7 @@
             "heading": "",
             "text": "Robotic manipulation is inherently history-dependent, yet most pretrained robotic policies condition on only the current observation or a short temporal window.\n\nEquipping such policies with long-term memory remains challenging: existing approaches either feed the backbone multi-frame observation windows, which substantially increase inference cost, or rely on pre-defined semantic features, which limit task generality and may also require the retraining of the backbone to adapt to the memory.\n\nWe introduce DRAM (Delta-rule Recurrent Associative Memory), a plug-and-play memory module that can be attached to a wide range of pretrained robotic policies, endowing them with long-horizon memory without architectural modification or backbone retraining, requiring only task-specific post-training of the memory module and action expert.\n\nDRAM maintains a fixed-size associative memory using gated delta-rule linear attention, with a modified update that incorporates all tokens within each frame in parallel. An architecture-agnostic readout integrates historical context into action prediction across different policy architectures.\n\nExperiments show that DRAM consistently improves frozen pretrained policies over short-context baselines and alternative compact memory designs, validating its effectiveness as a fixed-size, post-hoc memory module trained with the backbone frozen."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces DRAM, a recurrent associative memory module for adding long-horizon context to pretrained robotic manipulation policies. It maintains fixed-size memory with gated delta-rule linear attention, updates tokens within each frame in parallel, and uses an architecture-agnostic readout to inform action prediction. The authors say it requires neither architectural changes nor backbone retraining, only task-specific post-training of the memory module and action expert. Experiments report improvements over short-context baselines and alternative compact memory designs with the backbone frozen.",
-          "zh": "论文提出 DRAM（一种基于 Delta-rule 的循环关联记忆模块），用于为预训练机器人操作策略提供长时记忆。该模块保持固定大小的关联记忆，以门控 Delta-rule 线性注意力并行更新帧内令牌，再通过与架构无关的读出机制将历史信息用于动作预测。作者称，DRAM 可接入多种策略，无需修改架构或重新训练骨干网络，只需针对任务训练记忆模块和动作专家。实验显示，在骨干冻结条件下，DRAM 持续优于短上下文基线和其他紧凑记忆设计。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1517,7 +1509,7 @@
       },
       "format": "source_excerpt",
       "id": "news-1cffb920e5ef80471cb0d3c0f6fe729b73031625d30b4832d6f393a015e01073",
-      "intro": "arXiv:2609.33973v1 Announce Type: new Abstract: Manipulating a Rubik's Cube with a single dexterous hand is a challenging test of sustained, contact-rich control: the hand must execute successive layer turns while keeping the cube secure. Each turn requires some fingers to support the cube while others push a moving layer, release contact, and reset for the next move. To learn this coordination, we introduce FINGR (Future-supervised Interaction Network with Geometric Representations), a policy that combines finger-relative geometry with future",
+      "intro": "arXiv:2609.33973v2 Announce Type: new Abstract: Manipulating a Rubik's Cube with a single dexterous hand is a challenging test of sustained, contact-rich control: the hand must execute successive layer turns while keeping the cube secure. Each turn requires some fingers to support the cube while others push a moving layer, release contact, and reset for the next move. To learn this coordination, we introduce FINGR (Future-supervised Interaction Network with Geometric Representations), a policy that combines finger-relative geometry with future",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -1528,11 +1520,7 @@
             "heading": "",
             "text": "Manipulating a Rubik's Cube with a single dexterous hand is a challenging test of sustained, contact-rich control: the hand must execute successive layer turns while keeping the cube secure. Each turn requires some fingers to support the cube while others push a moving layer, release contact, and reset for the next move.\n\nTo learn this coordination, we introduce FINGR (Future-supervised Interaction Network with Geometric Representations), a policy that combines finger-relative geometry with future interaction prediction. A shared point encoder expresses the cube relative to each fingertip and aggregates its points without depending on cubie indexing.\n\nLearned future tokens share the observation encoder and receive supervision for contact-force changes, layer-turn progress, and finger joint displacement at multiple time scales. The resulting representation conditions a flow policy that directly generates finger actions.\n\nOn a real dexterous hand, our policy achieves 99.0% success over 300 turn attempts, compared with 79.7% for the base flow policy. Integrated with grasping and table-assisted regrasping, the policy solves all ten scrambled $2\\times2\\times2$ cubes in a mean complete-system time of approximately 137 seconds.\n\nThe project website is available at https://www.lyt0112.com/projects/FINGR"
           }
-        ],
-        "summary": {
-          "en": "The paper introduces FINGR, a learned policy for manipulating a Rubik’s Cube with a dexterous hand. It combines fingertip-relative geometric representations with future interaction prediction, supervising contact-force changes, layer-turn progress, and finger-joint displacement at multiple time scales. A flow policy then generates finger actions. On a real hand, the authors report 99.0% success over 300 turn attempts, compared with 79.7% for a base flow policy. With grasping and table-assisted regrasping, the system solved all ten scrambled 2×2×2 cubes in about 137 seconds on average.",
-          "zh": "论文提出 FINGR，用于学习灵巧手操控魔方的策略。它结合指尖相对几何表示与未来交互预测，以多时间尺度监督接触力变化、层转动进度和手指关节位移，再由流策略生成手指动作。作者报告真实灵巧手在 300 次转动尝试中的成功率为 99.0%，基础流策略为 79.7%。结合抓取和桌面辅助重新抓握后，该系统解开了全部十个打乱的 2×2×2 魔方，平均完整系统用时约 137 秒。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1902,7 +1890,7 @@
       },
       "format": "source_excerpt",
       "id": "news-265ae0a059b6acc9d993f2aac7b9f3cf332afd444587fc02c368a5eaba13f3f0",
-      "intro": "arXiv:2609.34911v1 Announce Type: new Abstract: Modern robot policies predict a chunk of future actions from a single observation, execute only a prefix, and discard the rest before replanning. Choosing the length of this prefix, the execution horizon, poses a trade-off between reactivity and efficiency. A short horizon keeps the policy reactive to the environment, but requires frequent policy calls. Recent test-time methods adaptively select the horizon for each chunk, but they either read model internals, where the signal",
+      "intro": "arXiv:2609.34911v2 Announce Type: new Abstract: Modern robot policies predict a chunk of future actions from a single observation, execute only a prefix, and discard the rest before replanning. Choosing the length of this prefix, the execution horizon, poses a trade-off between reactivity and efficiency. A short horizon keeps the policy reactive to the environment, but requires frequent policy calls. Recent test-time methods adaptively select the horizon for each chunk, but they either read model internals, where the signal",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -1911,13 +1899,9 @@
         "sections": [
           {
             "heading": "",
-            "text": "Modern robot policies predict a chunk of future actions from a single observation, execute only a prefix, and discard the rest before replanning. Choosing the length of this prefix, the execution horizon, poses a trade-off between reactivity and efficiency. A short horizon keeps the policy reactive to the environment, but requires frequent policy calls.\n\nRecent test-time methods adaptively select the horizon for each chunk, but they either read model internals, where the signal must be chosen for each architecture, or draw extra samples, which adds cost.\n\nWe propose *Action Upcycling*, a training-free algorithm that reuses actions the policy would otherwise discard, without accessing model internals or drawing extra samples. We find that discarded actions stay close to their replanned versions as long as the action velocity remains smooth.\n\nAction Upcycling therefore extends the execution horizon up to the point where the velocity begins to fluctuate.\n\nExtensive experiments on simulated and real-world manipulation tasks show that Action Upcycling reduces policy calls by 1.2--1.7$\\times$ with no loss in success rate, across multiple Vision-Language-Action Models (VLAs) and even a World Action Model (WAM).\n\nIt applies to any chunked policy at negligible cost and is orthogonal to other policy acceleration methods such as few-step sampling and streaming action decoding, opening a new axis for policy acceleration."
+            "text": "Modern robot policies predict a chunk of future actions from a single observation, execute only a prefix, and discard the rest before replanning. Choosing the length of this prefix, the execution horizon, poses a trade-off between reactivity and efficiency. A short horizon keeps the policy reactive to the environment, but requires frequent policy calls.\n\nRecent test-time methods adaptively select the horizon for each chunk, but they either read model internals, where the signal must be chosen for each architecture, or draw extra samples, which adds cost.\n\nWe propose Action Upcycling, a training-free algorithm that reuses actions the policy would otherwise discard, without accessing model internals or drawing extra samples. We find that discarded actions stay close to their replanned versions as long as the action velocity remains smooth.\n\nAction Upcycling therefore extends the execution horizon up to the point where the velocity begins to fluctuate. Extensive experiments on simulated and real-world manipulation tasks show that Action Upcycling reduces policy calls by 1.2-1.7x with no loss in success rate, across multiple Vision-Language-Action Models (VLAs) and even a World Action Model (WAM).\n\nIt applies to any chunked policy at negligible cost and is orthogonal to other policy acceleration methods such as few-step sampling and streaming action decoding, opening a new axis for policy acceleration."
           }
-        ],
-        "summary": {
-          "en": "Action Upcycling is a training-free method that reuses actions a chunked policy would otherwise discard, without accessing model internals or drawing extra samples. It extends the execution horizon while action velocity remains smooth, stopping when velocity begins to fluctuate. Experiments on simulated and real-world manipulation tasks report 1.2–1.7 times fewer policy calls with no loss in success rate across multiple Vision-Language-Action Models and a World Action Model. The method is described as compatible with chunked policies at negligible cost.",
-          "zh": "Action Upcycling是一种无需训练的算法，在分块策略中复用原本会被丢弃的动作，不读取模型内部信息，也不额外采样。其依据是：只要动作速度保持平滑，被丢弃动作就会接近重新规划后的动作，因此可将执行时域延长至速度开始波动处。作者在模拟和真实世界操作任务中报告，该方法适用于多种视觉语言动作模型及一种世界动作模型，将策略调用次数减少1.2至1.7倍且成功率无损；结论限于所述实验。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2147,7 +2131,7 @@
       },
       "format": "source_excerpt",
       "id": "news-2e8147a32f04e08ead4cbf8b7d819e734998f9ceff27cce68195543342f9ce6a",
-      "intro": "arXiv:2606.18363v2 Announce Type: replace Abstract: Language models trained on large-scale vision-language data have demonstrated strong potential for embodied agents. Harnessing models through embodied tools use offers a promising alternative to end-to-end vision-language-action systems by combining high-level reasoning with external modules for perception, planning, and control. However, it remains unclear what makes an effective harness for embodied manipulation, and to what extent such a harness can unlock embodied capabilities in a wide range of reasoning models. In this work",
+      "intro": "arXiv:2606.18363v3 Announce Type: replace Abstract: Language models trained on large-scale vision-language data have demonstrated strong potential for embodied agents. Harnessing models through embodied tools use offers a promising alternative to end-to-end vision-language-action systems by combining high-level reasoning with external modules for perception, planning, and control. However, it remains unclear what makes an effective harness for embodied manipulation, and to what extent such a harness can unlock embodied capabilities in a wide range of reasoning models. In this work",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -2158,17 +2142,13 @@
             "heading": "",
             "text": "Language models trained on large-scale vision-language data have demonstrated strong potential for embodied agents. Harnessing models through embodied tools use offers a promising alternative to end-to-end vision-language-action systems by combining high-level reasoning with external modules for perception, planning, and control.\n\nHowever, it remains unclear what makes an effective harness for embodied manipulation, and to what extent such a harness can unlock embodied capabilities in a wide range of reasoning models.\n\nIn this work, we present Guava, a harness framework for embodied tool use developed through systematic exploration of the design space of agent workflows, action spaces, and observation spaces.\n\nOur study identifies three key ingredients for effective embodied agents: iterative perception-reasoning-action loops, semantic action abstractions, and multimodal observations.\n\nTo understand whether these design principles are universal even to small models, we develop an end-to-end training pipeline that distills embodied manipulation capabilities into a 4B open-source model using fewer than 2K trajectories collected entirely in simulation.\n\nExperimental results in both simulation and real-world environments show performance comparable to frontier proprietary models while exhibiting strong generalization to unseen objects, novel instructions, and long-horizon tasks.\n\nResults suggest that a well-designed harness can serve as a scalable, model-agnostic interface for embodied manipulation, enabling strong emergent embodied capabilities in compact open-source models with minimal training data."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Guava, a harness framework for embodied manipulation developed by exploring agent workflows, action spaces, and observation spaces. It identifies iterative perception-reasoning-action loops, semantic action abstractions, and multimodal observations as key ingredients. The authors train a 4B open-source model through an end-to-end pipeline using fewer than 2,000 trajectories collected entirely in simulation. Experiments in simulation and real-world environments report performance comparable to frontier proprietary models, with generalization to unseen objects, novel instructions, and long-horizon tasks.",
-          "zh": "论文提出用于具身操作的 Guava 工具框架，通过系统探索智能体工作流、动作空间和观测空间来设计具身工具使用。研究指出，有效框架包含迭代的感知—推理—行动循环、语义化动作抽象和多模态观测。作者还用完全在仿真中收集的少于两千条轨迹，将操作能力蒸馏到一个 4B 开源模型。仿真和真实环境实验显示，该模型表现可比专有前沿模型，并能泛化至未见物体、新指令和长时任务。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
         "url": "https://arxiv.org/abs/2606.18363"
       },
-      "title": "Guava: Distilling Frontier VLM Agents into a Compact Model with a Manipulation Harness"
+      "title": "Guava: Distilling Frontier VLMs into a Compact Agent through a Robotic Manipulation Harness"
     },
     {
       "body": "",
@@ -3722,7 +3702,7 @@
       },
       "format": "source_excerpt",
       "id": "news-4fa75d87d23bbdb5d1ecb5f396e459f102c1444a7d93ff9fa667869ecaabe301",
-      "intro": "arXiv:2609.28973v2 Announce Type: replace Abstract: Physical changes or sensing errors can invalidate embodied agents' task-relevant beliefs. AquaMend compares re-probing, rollback, and supported continuation on a probe-belief-action graph under an expected-loss objective covering sensing, physical recovery, and uncorrected failures. A joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum requires independence, separability, and fully resolving probes; the general policy has no global optimality guarantee. Across 32 paired scenarios in a self-constructed simulation benchmark, AquaMend",
+      "intro": "arXiv:2609.28973v3 Announce Type: replace Abstract: Physical changes or sensing errors can invalidate embodied agents' task-relevant beliefs. AquaMend compares re-probing, rollback, and supported continuation on a probe-belief-action graph under an expected-loss objective covering sensing, physical recovery, and uncorrected failures. A joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum requires independence, separability, and fully resolving probes; the general policy has no global optimality guarantee. Across 32 paired scenarios in a self-constructed simulation benchmark, AquaMend",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -3733,11 +3713,7 @@
             "heading": "",
             "text": "Physical changes or sensing errors can invalidate embodied agents' task-relevant beliefs. AquaMend compares re-probing, rollback, and supported continuation on a probe-belief-action graph under an expected-loss objective covering sensing, physical recovery, and uncorrected failures.\n\nA joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum requires independence, separability, and fully resolving probes; the general policy has no global optimality guarantee.\n\nAcross 32 paired scenarios in a self-constructed simulation benchmark, AquaMend recovers in 28/32 cases and reduces mean complete loss by 21.6% versus restart. Its paired loss difference from decision-theoretic troubleshooting (DTT) is not statistically significant after Holm correction.\n\nAgainst the all-candidate ablation, online decision time decreases by 12.3% overall but increases by 3.4% in the uncovered late stage."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes AquaMend for handling invalid beliefs in embodied agents by comparing re-probing, rollback, and continuation under an expected-loss objective. A joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum depends on independence, separability, and fully resolving probes; the general policy has no global optimality guarantee. In 32 paired scenarios in a self-constructed simulation benchmark, AquaMend recovered in 28 cases and reduced mean complete loss by 21.6% versus restart. Its paired loss difference from decision-theoretic troubleshooting was not statistically significant after Holm correction.",
-          "zh": "论文提出 AquaMend，在预期损失目标下比较重新探测、回滚和继续执行，以应对具身智能体的信念失效。其联合后验用于指导带条件检测能力筛选的一步策略；每信念三选一最优结论依赖独立性、可分性和探测完全解析等条件，一般策略没有全局最优保证。在自建仿真基准的 32 组成对情景中，系统恢复了 28 例，较重启使平均完整损失降低 21.6%；与决策论故障排查的配对损失差异经 Holm 校正后不显著。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4247,7 +4223,7 @@
       },
       "format": "source_excerpt",
       "id": "news-57f685a01eff60f299092e6461887032c42a2ab95a173ebc5a8893dcd2e56db1",
-      "intro": "arXiv:2609.34823v1 Announce Type: new Abstract: Augmented dexterity has the potential to reduce the fatigue experienced by surgeons during repetitive surgical tasks. In this paper, we propose the first AGentic RObotics framework for SUrgical VIscoelastic DEbridement (AGRO-SUVIDE), the repeated removal of small fragments attached to a viscoelastic substrate. Leveraging the self-improving and coding capability of agents, AGRO-SUVIDE adopts a modular framework. Specifically, the demonstration analysis module automatically identifies recurring skills from a single expert demonstration, using both visual and",
+      "intro": "arXiv:2609.34823v2 Announce Type: new Abstract: Augmented dexterity has the potential to reduce the fatigue experienced by surgeons during repetitive surgical tasks. In this paper, we propose the first AGentic RObotics framework for SUrgical VIscoelastic DEbridement (AGRO-SUVIDE), the repeated removal of small fragments attached to a viscoelastic substrate. Leveraging the self-improving and coding capability of agents, AGRO-SUVIDE adopts a modular framework. Specifically, the demonstration analysis module automatically identifies recurring skills from a single expert demonstration, using both visual and",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -4258,11 +4234,7 @@
             "heading": "",
             "text": "Augmented dexterity has the potential to reduce the fatigue experienced by surgeons during repetitive surgical tasks. In this paper, we propose the first AGentic RObotics framework for SUrgical VIscoelastic DEbridement (AGRO-SUVIDE), the repeated removal of small fragments attached to a viscoelastic substrate.\n\nLeveraging the self-improving and coding capability of agents, AGRO-SUVIDE adopts a modular framework. Specifically, the demonstration analysis module automatically identifies recurring skills from a single expert demonstration, using both visual and kinematic information.\n\nThe construction module then builds each skill, either as a procedural model-based skill the agent codes against a scaffolded library or as a model-free policy-based skill.\n\nAt runtime, the monitoring module composes the skills into a loop-style graph sized to the number of fragments it observes, then verifies pre- and post-conditions of each skill to decide whether to advance or retry. We evaluate AGRO-SUVIDE through 340 physical trials on the da Vinci Research Kit (dVRK).\n\nAGRO-SUVIDE achieves an average single-fragment removal success rate of 85%, completing consecutive three-fragment removal at 60% and at 95% with one human intervention. It further generalizes to unseen five-fragment scenarios with an average success rate of 80% for single-fragment removal. Project page: https://surgical-robotics.github.io/AGRO-SUVIDE/"
           }
-        ],
-        "summary": {
-          "en": "The paper proposes AGRO-SUVIDE, an agentic robotics framework for repeatedly removing small fragments attached to a viscoelastic substrate. It identifies recurring skills from one expert demonstration using visual and kinematic information, then constructs procedural model-based or model-free policy-based skills. At runtime, the system arranges skills in a loop and checks their preconditions and postconditions to advance or retry. In 340 physical trials on the dVRK, the authors report 85% average single-fragment removal success, 60% for consecutive three-fragment removal, and 95% with one human intervention. In unseen five-fragment scenarios, average single-fragment success is 80%.",
-          "zh": "本文提出 AGRO-SUVIDE，一种面向外科黏弹性组织清创的智能体机器人框架，任务是反复移除附着在黏弹性基底上的小碎片。系统从单次专家示范中结合视觉与运动学信息识别重复技能，再构建程序化模型技能或基于策略的无模型技能；运行时将技能组成循环图，并检查前后条件以决定继续或重试。作者在 dVRK 上进行了340次实体试验，报告单碎片移除平均成功率为85%，连续移除三块碎片的成功率为60%，加入一次人工干预后为95%；对未见过的五碎片情景，单碎片移除平均成功率为80%。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4772,7 +4744,7 @@
       },
       "format": "source_excerpt",
       "id": "news-657a1b03c21eb8cabeec01be2d050c69bd8138125a6bba684d475820f074f47b",
-      "intro": "arXiv:2609.35717v1 Announce Type: new Abstract: Robots with kinematic loops, coupled actuators, and changing contacts require consistent models of configuration, motion, force, and dynamics. Yet these interfaces are often reconstructed separately for control and simulation, making closure and actuation consistency difficult to maintain. This paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface. From bodies, joints, frames, inertias, and actuator ports, it constructs closure paths and analytic residual Jacobians, then assembles",
+      "intro": "arXiv:2609.35717v2 Announce Type: new Abstract: Robots with kinematic loops, coupled actuators, and changing contacts require consistent models of configuration, motion, force, and dynamics. Yet these interfaces are often reconstructed separately for control and simulation, making closure and actuation consistency difficult to maintain. This paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface. From bodies, joints, frames, inertias, and actuator ports, it constructs closure paths and analytic residual Jacobians, then assembles",
       "placement": "main",
       "published_at": "2026-09-29T04:00:00+00:00",
       "reading": {
@@ -4781,13 +4753,9 @@
         "sections": [
           {
             "heading": "",
-            "text": "Robots with kinematic loops, coupled actuators, and changing contacts require consistent models of configuration, motion, force, and dynamics. Yet these interfaces are often reconstructed separately for control and simulation, making closure and actuation consistency difficult to maintain.\n\nThis paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface. From bodies, joints, frames, inertias, and actuator ports, it constructs closure paths and analytic residual Jacobians, then assembles feasible configurations through rank-checked continuation and correction.\n\nA tangent lift maps independent velocities to full robot and task motion, while paired actuator-port maps preserve virtual work. A constraint-curvature correction extends the reduction to accelerations and projected rigid-body dynamics, including floating-base and support modes.\n\nCycle-local evaluation, generated Jacobians, and dependency-aware reuse enable localized updates when closure inputs change. We evaluate physical loops and task-induced constraints on a Komatsu excavator, Unitree Go2, Franka Panda, Kangaroo, and a six-UPS Stewart platform.\n\nHigh-precision constrained-dynamics and independent Pinocchio checks confirm mechanical consistency; MuJoCo and Isaac Sim/PhysX executions demonstrate task performance and model reuse under native contact.\n\nFor Kangaroo, compilation reduces residual-and-Jacobian evaluation time by 96.7% and closed-loop rollout wall time by 66.8%, with dynamics and control held fixed."
+            "text": "Robots with kinematic loops, coupled actuators, and changing contacts require consistent models of configuration, motion, force, and dynamics. Yet these interfaces are often reconstructed separately for control and simulation, making closure and actuation consistency difficult to maintain.\n\nThis paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface. From bodies, joints, frames, inertias, and actuator ports, it constructs closure paths and analytic residual Jacobians, then assembles feasible configurations through rank-checked continuation and correction.\n\nA tangent lift maps independent velocities to full robot and task motion, while paired actuator-port maps preserve virtual work. A constraint-curvature correction extends the reduction to accelerations and projected rigid-body dynamics, including floating-base and support modes.\n\nCycle-local evaluation, generated Jacobians, and dependency-aware reuse enable localized updates when closure inputs change. We evaluate physical loops and task-induced constraints on a industrial excavator, Unitree Go2, Franka Panda, Kangaroo, and a six-UPS Stewart platform.\n\nHigh-precision constrained-dynamics and independent Pinocchio checks confirm mechanical consistency; MuJoCo and Isaac Sim/PhysX executions demonstrate task performance and model reuse under native contact.\n\nFor Kangaroo, compilation reduces residual-and-Jacobian evaluation time by 96.7% and closed-loop rollout wall time by 66.8%, with dynamics and control held fixed."
           }
-        ],
-        "summary": {
-          "en": "The paper presents RoboCompiler, a graph-native framework that compiles a canonical mechanism graph into a shared mechanical interface for closed-chain robot modeling, control, and simulation. It constructs closure paths and analytic residual Jacobians, assembles feasible configurations, and maps motion and actuator ports while accounting for constraint curvature. Evaluations cover physical loops and task constraints on several robots and platforms. The authors report consistency checks and simulator executions; for Kangaroo, evaluation time and closed-loop rollout time decrease under fixed dynamics and control.",
-          "zh": "论文提出 RoboCompiler，一种从规范机构图生成共享机械接口的图原生框架，用于闭链机器人建模、控制与仿真。框架构造闭合路径及解析残差雅可比，并通过秩检查延拓和修正组装可行构型；还以切空间映射、执行器端口映射和曲率修正处理运动、虚功及约束动力学。作者在多种机器人和平台上评估物理环路与任务约束，并以受约束动力学和 Pinocchio 检查机械一致性，以 MuJoCo、Isaac Sim/PhysX 展示原生接触下的任务表现和模型复用。Kangaroo 上报告残差与雅可比评估时间减少 96.7%、闭环运行时间减少 66.8%，动力学与控制保持固定。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5251,5 +5219,5 @@
       "title": "Humanoid Badminton: Learning Dynamic Racket Skills from Limited Human Motion Data"
     }
   ],
-  "updated_at": "2026-09-29T06:00:14.795415+00:00"
+  "updated_at": "2026-09-30T03:22:09.450211+00:00"
 }
