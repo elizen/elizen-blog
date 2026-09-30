@@ -1639,7 +1639,11 @@
             "heading": "",
             "text": "Robotic systems routinely encounter conflicting objectives, modeling errors, and degenerate contact conditions that render quadratic programs (QPs) infeasible.\n\nYet most optimization solvers and differentiable QP layers assume feasibility, leading to numerical failures, unstable gradients, or solver breakdown when constraints cannot be simultaneously satisfied. We present Elastic ODYN, a primal-dual non-interior-point QP solver that handles infeasibility through smooth squared-$\\ell_2$ elastic relaxations.\n\nThe formulation remains well posed under ill-conditioning and degeneracy, supports warm starting, and converges to closest-to-feasible solutions, with lightweight refinement recovering physically meaningful dual variables.\n\nBuilding on this framework, we develop Elastic ODYNLayer, a differentiable QP layer with stable gradients under infeasibility, and Elastic OdynSQP, an SQP method that resolves inconsistent subproblems and intrinsically infeasible optimal control tasks through selective constraint elasticity.\n\nAcross benchmark QPs, singular contact mechanics, differentiable parameter identification, and quadrupedal and humanoid trajectory optimization, Elastic ODYN outperforms state-of-the-art elastic QP solvers in robustness, warm-start performance, and convergence reliability, enabling optimization, simulation, control, and learning beyond standard feasibility assumptions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Elastic ODYN, a primal-dual non-interior-point QP solver that addresses infeasibility through smooth squared-ℓ₂ elastic relaxations. It also introduces a differentiable QP layer and an SQP method using selective constraint elasticity. The authors state that the framework remains well posed under ill-conditioning and degeneracy. Evaluations on benchmark QPs, contact mechanics, parameter identification, and quadrupedal and humanoid trajectory optimization report better robustness, warm-start performance, and convergence reliability than the compared elastic QP solvers.",
+          "zh": "论文提出 Elastic ODYN，一种通过平滑平方 ℓ₂ 弹性松弛处理不可行问题的原始—对偶非内点 QP 求解器，并扩展为可微 QP 层和 SQP 方法。作者称，该框架在病态和退化条件下仍适定，支持热启动，并能在选择性放松约束后求解不一致子问题。基准 QP、接触力学、参数辨识及四足和人形机器人轨迹优化评估显示，该方法在鲁棒性、热启动表现和收敛可靠性方面优于所比较的弹性 QP 求解器。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1670,7 +1674,11 @@
             "heading": "",
             "text": "Humanoid loco-manipulation benefits from one controller to coordinate locomotion, arm movements, and fall recovery. These behaviors are difficult to learn together from scratch because they require different skills and objectives.\n\nWe present HANDOFF, a training architecture that distills motion-tracking, locomotion, and recovery teachers into one 29-DoF policy, using context-conditioned KL losses over separate action slices and a soft mixture of experts.\n\nCommanded velocity continuously blends body supervision, while a binary recovery flag assigns the full action to the recovery teacher. The resulting controller takes a compact 10-D task-space command rather than a dense kinematic stream and does not switch policies at runtime.\n\nOn the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and obtains the largest robust manipulation workspace in a matched adapted-interface benchmark. The same controller executes natural-language-driven, multi-stage loco-manipulation tasks in simulation and hardware experiments without further data collection or fine-tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HANDOFF is a training architecture that distills motion-tracking, locomotion, and recovery teachers into a single 29-DoF humanoid policy. It uses context-conditioned KL losses over separate action slices and a soft mixture of experts, and accepts a compact 10-D task-space command without runtime policy switching. On the Unitree G1, the authors report state-of-the-art velocity tracking and the largest robust manipulation workspace in a matched adapted-interface benchmark. The controller also performed natural-language-driven, multistage tasks in simulation and hardware experiments without further data collection or fine-tuning.",
+          "zh": "论文提出 HANDOFF，将运动跟踪、移动和恢复教师策略蒸馏为一个 29 自由度控制策略，以协调人形机器人的移动、手臂动作和跌倒恢复。策略使用分动作切片的上下文条件 KL 损失及软专家混合，并以紧凑的 10 维任务空间指令控制，无需运行时切换策略。作者报告，在 Unitree G1 上其速度跟踪达到先进水平，并在匹配接口基准中获得最大的稳健操作工作空间；该控制器还在仿真和硬件实验中执行了自然语言驱动的多阶段任务，无需额外数据收集或微调。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1701,7 +1709,11 @@
             "heading": "",
             "text": "Diffusion and flow-matching Vision-Language-Action (VLA) policies generate action chunks through iterative denoising, incurring substantial inference latency that severely limits real-time robotic control.\n\nExisting acceleration methods treat an action chunk as a monolithic computational unit, ignoring a crucial physical reality of receding-horizon control: actions are generated jointly but consumed sequentially, resulting in inherently heterogeneous execution urgencies.\n\nWe exploit this asymmetry to introduce Urgency-Aware Denoising (UAD), a novel inference-time framework that allocates denoising computation according to when each action is physically needed. UAD releases time-critical urgent actions after fewer denoising steps while overlapping the continued background refinement of tail actions with physical execution.\n\nHowever, heterogeneous denoising introduces two key challenges: early-release errors in urgent actions and trajectory inconsistency in tail actions.\n\nUAD elegantly resolves both through two core mechanisms: Trajectory Reconciliation, which reconstructs unified internal state evolution to restore joint denoising coherence without additional model evaluations, and Ghost Action Correction, which leverages non-executed ghost continuations to dynamically compensate for early-release errors across remaining executable actions.\n\nExtensive evaluations across multiple VLA architectures, simulation benchmarks, and real-world manipulation tasks demonstrate that UAD achieves up to a 1.89x speedup in average action availability latency while maintaining comparable success rates to vanilla inference with optimal denoising budget, offering a more favorable success-latency trade-off than state-of-the-art VLA acceleration baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Urgency-Aware Denoising (UAD), which allocates denoising computation according to when actions are needed in receding-horizon control. Urgent actions are released earlier while tail actions continue to be refined during execution. Trajectory Reconciliation restores joint denoising coherence, and Ghost Action Correction uses unexecuted continuations to compensate for early-release errors. Across multiple VLA architectures, simulation benchmarks, and real-world manipulation tasks, the authors report up to a 1.89× speedup in average action availability latency with success rates comparable to vanilla inference, and a better success-latency trade-off than the compared acceleration baselines.",
+          "zh": "论文提出紧迫性感知去噪（UAD），按动作在滚动时域控制中的执行时机分配去噪计算，使急需动作较早输出，同时在机器人执行期间继续细化后续动作。方法通过轨迹协调恢复联合去噪一致性，并利用未执行的“幽灵动作”修正提前输出误差。作者报告，在多种 VLA 架构、仿真基准和真实操作任务的评估中，UAD 将平均动作可用延迟最高降低至原来的相应水平，实现最高 1.89 倍加速，同时保持与标准推理相近的成功率；其成功率—延迟权衡优于所比较的加速基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1732,7 +1744,11 @@
             "heading": "",
             "text": "World-Action Models (WAMs) improve robotic manipulation by conditioning action generation on predicted future observations, but future prediction adds further inference overhead to already expensive iterative action generation.\n\nAction chunking can amortize this cost over multiple actions, yet performance degrades over long execution horizons because later actions remain conditioned on stale observations.\n\nWe introduce STAIRCASE POLICY, a streaming inference and training framework that turns a flow-matching VLA into a JEPA-style WAM and partitions a large action chunk into sub-chunks at staggered denoising stages. Near-term actions are executed as soon as they become available, while later actions continue to be refined.\n\nAt each sub-chunk boundary, the future latent is re-predicted from the latest observation and used to update all unexecuted actions, enabling long-horizon execution without repeated full policy inference. The resulting future-prediction error can further serve as a signal for adaptive chunking.\n\nS-WAM achieves 97.7% on LIBERO and 87.9% on LIBERO-Plus, and improves performance across multiple policy backbones and real-robot tasks. It reaches 292.7 executed actions per second, $3.62\\times$ the throughput of conventional execution at comparable accuracy, while reducing time-to-first-action from 123.6 to 73.3 ms.\n\nWith additional inference optimizations, throughput further increases to 642.9 actions per second."
           }
-        ]
+        ],
+        "summary": {
+          "en": "STAIRCASE POLICY turns a flow-matching VLA into a JEPA-style world-action model and splits large action chunks into sub-chunks at staggered denoising stages. Near-term actions can execute while later ones are refined; at each boundary, future latents are re-predicted from the latest observation to update unexecuted actions. The authors report S-WAM results of 97.7% on LIBERO and 87.9% on LIBERO-Plus, with improvements across policy backbones and real-robot tasks. It reaches 292.7 executed actions per second, reported as 3.62× conventional throughput at comparable accuracy, and reduces time-to-first-action from 123.6 to 73.3 ms. Further inference optimizations raise throughput to 642.9 actions per second.",
+          "zh": "论文提出 STAIRCASE POLICY，将流匹配 VLA 转为 JEPA 风格的世界—动作模型，并在错开的去噪阶段把大动作块分成子块，供近期动作先执行、后续动作继续细化。每个子块边界处，模型根据最新观测重新预测未来潜变量，并更新尚未执行的动作，以支持长时域执行；预测误差还可用于自适应分块。作者报告，S-WAM 在 LIBERO 和 LIBERO-Plus 上分别达到 97.7% 和 87.9%，并改善多种策略骨干及真实机器人任务表现。其执行吞吐量为每秒 292.7 个动作，文中称在准确率相近时为常规执行的 3.62 倍；首次动作时间从 123.6 毫秒降至 73.3 毫秒，进一步优化后吞吐量达每秒 642.9 个动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
