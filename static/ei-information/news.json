@@ -3487,7 +3487,11 @@
             "heading": "",
             "text": "A pretrained video world model admits many plausible futures for a scene, but a robot must realize the exact task-conditioned one. To turn world models into executable robot policies, existing methods fine-tune the heavy world model backbone using large-scale robot data and computational resources.\n\nChallenging this status quo, we argue that the expensive part has already been paid in the world model pretraining since the representation space of a video world model lays out the diverse potential futures. In this case, what remains is to select the future that accomplishes the task and to read out the actions that realize it.\n\nWe formalize this task as actualization, which learns a task-conditioned selection and realization on top of a prior supplied by a frozen world model. This can be solved by a tiny actualizer model. We implement RoboActualizer with as few as 60M parameters on top of a frozen world model encoder.\n\nThe actualizer is composed of two lightweight DiT experts that jointly predict future latents and actions by flow matching. The model can be trained entirely on a single GPU with 32 GB peak memory.\n\nWith up to 100x fewer trainable parameters than existing WAMs and VLAs, RoboActualizer reaches great performance on simulation benchmarks including LIBERO, LIBERO-Plus, RoboTwin 2.0 and five tasks on two real-world platforms, with a low latency of 39 ms that allows real-time control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces actualization: selecting a task-conditioned future and producing actions to realize it on top of a frozen video world model. RoboActualizer uses two lightweight DiT experts to jointly predict future latents and actions through flow matching. The authors report training on a single GPU and performance on simulation benchmarks including LIBERO, LIBERO-Plus, and RoboTwin 2.0, as well as five tasks on two real-world platforms. They also report latency suitable for real-time control.",
+          "zh": "论文提出 actualization 方法：在冻结的视频世界模型先验上，以轻量模型选择符合任务的未来并生成实现该未来的动作。RoboActualizer由两个DiT专家组成，通过流匹配联合预测未来潜变量和动作，作者称其可在单张GPU上训练。论文报告，该方法在LIBERO、LIBERO-Plus、RoboTwin 2.0仿真基准及两个真实平台的五项任务上取得良好表现，并支持实时控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3518,7 +3522,11 @@
             "heading": "",
             "text": "This paper introduces a method for Model Predictive Path Integral (MPPI) control that optimizes sample generation towards an optimal trajectory through Stein Variational Gradient Descent (SVGD).MPPI relies upon predictive rollout of trajectories sampled from a distribution of possible actions.\n\nTraditionally, these action distributions are assumed to be unimodal and represented as Gaussian. This assumption can lead to suboptimal rollout predictions due to sample deprivation and, in the case of differentiable simulation, sensitivity to noise in the cost gradients.\n\nBy introducing SVGD updates in between MPPI environment steps, we present Stein-Optimized Predictive Path-Integral Inference (SOPPI), an MPPI/SVGD algorithm that can dynamically update noise distributions during rollouts to better capture action sampling distributions without an excessive increase in computational requirements.\n\nWe demonstrate the efficacy of SOPPI through experiments on a planar cart-pole, 7-DOF robot arm, a planar bipedal walker, and a Unitree G1 29-DOF Robot.\n\nResults indicate improved inference of an underlying multi-modal action distribution compared to other Stein-based MPPI algorithms, with improved system performance and similar or improved efficiency across a range of hyper-parameters."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SOPPI, which adds Stein Variational Gradient Descent updates between Model Predictive Path Integral control steps to adapt action noise distributions during rollouts. The authors note that the conventional unimodal Gaussian assumption can cause sample deprivation and sensitivity to noisy cost gradients in differentiable simulation. Experiments cover a planar cart-pole, a 7-DOF robot arm, a planar bipedal walker, and a Unitree G1. The reported results show better inference of multimodal action distributions, improved system performance, and similar or improved efficiency compared with other Stein-based MPPI algorithms.",
+          "zh": "论文提出SOPPI，将Stein变分梯度下降更新加入模型预测路径积分控制的采样过程中，以动态调整动作噪声分布。作者指出，传统单峰高斯假设可能造成样本不足，并在可微仿真中对代价梯度噪声敏感。实验涵盖平面倒立摆、七自由度机械臂、平面双足行走者和Unitree G1机器人。结果显示，相较其他基于Stein的方法，SOPPI对多模态动作分布的推断有所改善，系统表现提升，效率相近或更好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3549,7 +3557,11 @@
             "heading": "",
             "text": "Monocular RGB video provides an accessible source of human demonstrations for upper-body robot motion, yet video-driven human-to-robot transfer remains challenging because body and hand motion are recovered at different spatial scales, human and robot kinematics differ substantially, and fine distal motion is difficult to preserve across embodiments.\n\nWe present a geometry-preserving motion-retargeting framework that integrates unified body--hand reconstruction with morphology-independent geometric transfer.\n\nFrame-wise body estimates, video-level observations, and detailed hand evidence jointly constrain a single differentiable Momentum Human Rig (MHR) state, while transient hand artifacts are repaired in parameter space.\n\nThe reconstructed motion is represented by arm-segment directions, elbow configuration, relative palm orientation, and bilateral wrist relations, and is realized on the target robot through multi-stage inverse kinematics and robot-specific hand adaptation.\n\nWithin the broader system, Across-VAM provides video generation, whereas Across-WAM performs human-to-robot motion mapping. The method is evaluated on 16 monocular videos comprising 1,769 source frames, including 10 signing and six reach-to-grasp sequences.\n\nUnified reconstruction reduces mean hand reprojection error from 22.36 to 7.21 pixels relative to SAM 3D Body. All 16 retargeted trajectories completed kinematic simulation playback, and representative signing and reach-to-grasp motions were further demonstrated on a physical robot.\n\nThe results demonstrate a unified pipeline from monocular human video to coordinated upper-body motion on a dual-arm dexterous robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a geometry-preserving framework for retargeting upper-body motion from monocular video to robots. It combines body estimates, video-level observations, and hand evidence into a unified human state, then maps the reconstructed motion to a target robot using multi-stage inverse kinematics and robot-specific hand adaptation. Evaluation uses 16 videos containing signing and reach-to-grasp sequences. The authors report lower hand reprojection error than SAM 3D Body. All 16 retargeted trajectories completed kinematic simulation playback, and representative motions were demonstrated on a physical robot.",
+          "zh": "论文提出从单目视频到机器人上半身动作的几何保持运动重定向框架，将身体估计、视频观察和手部证据整合为统一的人体状态，再以形态无关的几何表示及分阶段逆运动学映射到目标机器人。系统在16段视频上评估，包含签名和伸手抓取动作；作者报告手部重投影误差低于SAM 3D Body。16条轨迹均完成运动学仿真播放，代表性动作还在实体机器人上演示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3580,7 +3592,11 @@
             "heading": "",
             "text": "Embodied systems must make knowledge acquired during one encounter usable in another despite changes in viewpoint, motion, and illumination.\n\nYet aggregate cross-video accuracy conflates failures of local perception with failures to preserve observation identity, establish correspondence, and compose evidence, obscuring whether local video understanding actually transfers. We introduce EgoGears, a complementary single- and multi-video benchmark designed to diagnose this transition.\n\nIt contains 567 single-video and 1,487 multi-video questions derived from 126 human-collected egocentric recordings covering 39 outdoor routes. Repeated traversals across movement speeds and lighting conditions ground comparisons in shared physical environments; 531 questions require alignment across independent recordings.\n\nSingle-video questions measure the local visual, spatial, and motion evidence available to a model, while multi-video questions test whether evidence remains bound to the correct observation and can be composed into consistent route relationships.\n\nWe report 29 single-video and 31 multi-video MLLM configurations across six model families in the main leaderboard. Among the 20 configurations evaluated comparably on both splits, every model performs worse on multi-video questions, with a mean decrease of 22.5 percentage points, and the gap persists when answer format and scoring are held fixed.\n\nThe gap is not explained simply by additional videos or recording boundaries. The central bottlenecks are observation--evidence binding and ordered route-state tracking. The code and benchmark are publicly available at https://github.com/lei-qi-233/EgoGears."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EgoGears, a benchmark for testing whether local video understanding transfers across encounters. It contains single-video and multi-video questions based on 126 egocentric recordings of outdoor routes; some questions require alignment across independent recordings. Single-video questions assess visual, spatial, and motion evidence, while multi-video questions test evidence binding and composition of route relationships. Across the model configurations evaluated comparably on both splits, the authors report worse multi-video performance for every model, with a mean decrease of 22.5 percentage points. They identify observation-evidence binding and ordered route-state tracking as central bottlenecks.",
+          "zh": "论文介绍EgoGears基准，用于评估局部视频理解能否跨不同遭遇迁移。基准包含来自126段第一人称户外路线录像的单视频和多视频问题，其中部分问题要求对齐独立录像。单视频题考查视觉、空间和运动证据；多视频题考查模型能否将证据绑定到正确观察并组合路线关系。作者报告，在可比的模型配置中，多视频表现均较差，平均下降22.5个百分点；主要瓶颈是观察与证据绑定及有序路线状态跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
