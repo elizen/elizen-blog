@@ -2059,7 +2059,11 @@
             "heading": "",
             "text": "Learning humanoid skills from videos typically requires a successful human demonstration, which often demands custom data collection. Although failures have traditionally been treated only as negative examples in robot learning, they can still reveal a usable trajectory prefix before the task fails, as well as the intended outcome.\n\nTo leverage this information from a failed-attempt video, we propose TRACC, a pipeline that imitates the useful portion of the motion trajectory and then completes the task based on the inferred task outcome.\n\nThe usable motion prefix serves as prior knowledge until the failure occurs, after which the task-completion reward guides the policy to learn the intended task goal without requiring a successful task trajectory. We evaluate our method on six in-the-wild failed human tasks from the Oops! dataset.\n\nOur experimental results demonstrate the effectiveness of the proposed approach for learning from failed attempts when no successful demonstration is available. Thus, these findings establish failed human videos as a viable source of supervision for humanoid skill learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRACC, a pipeline that learns from a failed human task video by imitating the usable motion prefix and then completing the task based on its inferred outcome. The prefix provides prior knowledge until failure, after which a task-completion reward guides the policy toward the intended goal without a successful demonstration trajectory. The authors evaluate the method on six in-the-wild failed tasks from the Oops! dataset and report experimental evidence of its effectiveness in that setting.",
+          "zh": "论文提出 TRACC，从一次失败的人类任务视频中提取失败前可用的运动轨迹片段，并根据推断出的任务结果继续完成任务。方法先将该片段作为先验，再以任务完成奖励引导策略学习目标，无需成功示范轨迹。作者在 Oops! 数据集的六项真实场景失败任务上评估，并报告结果表明该方法能利用失败尝试学习；结论限于所述实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2090,7 +2094,11 @@
             "heading": "",
             "text": "Search and Rescue (SAR) operations increasingly deploy heterogeneous teams of aerial and ground robots. However, conventional coverage methods typically do not translate perceived terrain into platform-specific reachability, while continuous image exchange imposes a high communication cost.\n\nWe propose an edge-centric, semantic-aware coverage planning framework that integrates aerial terrain perception, robot-specific traversability reasoning, and payload-efficient semantic state sharing.\n\nAerial observations are converted into compact semantic grid maps, enabling reachability-constrained area decomposition and capability-aware coverage paths that assign only regions admitted by each robot's capability profile.\n\nThe resulting perception-sharing-planning loop feeds semantic corrections into traversability reasoning and replanning, forming an application-level mechanism motivated by AI-enabled goal-oriented communication envisioned for AI-native 6G networks.\n\nFor the high-update case, transmitting semantic corrections reduces the application payload by a factor of approximately $82$ relative to periodic full-map sharing.\n\nAcross matched benchmark scenarios, the proposed method achieved $91.5\\%$ coverage with no capability-infeasible allocations, compared with $78.8\\%$ coverage and a $21.5\\%$ capability-infeasible allocation rate for LS-MCPP. Semantic corrections update the shared planning state without requiring repeated transmission of the complete map."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a semantic-aware coverage planning framework for heterogeneous aerial and ground robots in search and rescue. Aerial observations become compact semantic grid maps, which support reachability-constrained decomposition and capability-aware path assignment. Semantic corrections update the shared planning state. In the high-update case, the authors report an application payload about 82 times smaller than periodic full-map sharing. Across matched benchmark scenarios, they report 91.5% coverage with no capability-infeasible allocations; these are results for the described evaluations.",
+          "zh": "论文提出面向搜索救援机器人团队的语义感知覆盖规划框架，将空中地形观测转为紧凑语义网格，并结合各机器人能力和可通行性分配区域、规划路径。框架通过传递语义修正更新共享规划状态。作者报告，在高频更新情形下，相比周期性传输完整地图，语义修正使应用层载荷约减少至约八十二分之一；匹配基准场景中覆盖率为百分之九十一点五，且无能力不适配分配。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2121,7 +2129,11 @@
             "heading": "",
             "text": "We study reinforcement learning (RL) methods for cooperative multi-agent Vision-Language-Action (VLA) models. This problem is challenging because VLAs are pretrained on large-scale single-agent data and therefore lack the fine-grained coordination skills required for inter-robot collaboration.\n\nSupervised fine-tuning (SFT) on multi-robot demonstrations partially bridges this gap, but its performance is bounded by the demonstration data and cannot improve from its own experience. We present a three-stage reinforced fine-tuning (RFT) pipeline for multi-agent VLAs.\n\nFirst, initialization-aware data collection sweeps over initial configurations and invokes human demonstrations only when the pretrained VLA repeatedly fails, yielding robustness to initialization shift with reduced human cost.\n\nSecond, offline credit-filtered tuning assigns credit to individual agents and fine-tunes on per-agent trajectories with positive advantage rather than on entire joint rollouts. Third, we find existing online RL for VLAs are less effective for hard multi-agent tasks, which we attribute to noisy co-exploration and unstable updates.\n\nWe instead use online latent-space fine tuning, which freeze the VLA and perform RL in its latent noise space. We evaluate our multi-agent VLA with both $\\pi_0$ and $\\pi_{0.5}$ backbones across 11 tasks in RoboTwin, RoboFactory and real-world manipulation with two Franka robots.\n\nOur multi-agent VLA improves the average success rate by $+23.1\\%$, $+16.4\\%$, and $+44\\%$ on RoboTwin, RoboFactory, and real-world tasks, respectively. Code available at https://anonymous.4open.science/r/mavla_rft-2BC0/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a three-stage reinforced fine-tuning pipeline for cooperative multi-agent vision-language-action models. It uses demonstrations selectively when a pretrained model repeatedly fails, filters offline trajectories by individual-agent advantage, and performs online reinforcement learning in latent noise space while freezing the VLA. Evaluations use π0 and π0.5 backbones across tasks in RoboTwin, RoboFactory, and real-world manipulation with two Franka robots. The authors report average success-rate gains of 23.1%, 16.4%, and 44%, respectively, for those settings.",
+          "zh": "论文研究多智能体视觉—语言—动作模型的强化微调，提出三阶段流程：在预训练模型反复失败时才请求人工示范；离线阶段按单个智能体筛选正优势轨迹；在线阶段冻结模型，并在其潜在噪声空间进行强化学习。作者在 RoboTwin、RoboFactory 的任务及双 Franka 机器人真实操作中评估，报告平均成功率分别提升 23.1%、16.4% 和 44%；结果对应所述基准与实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2152,7 +2164,11 @@
             "heading": "",
             "text": "Complex robotic manipulation tasks frequently require a long-term memory of past events and actions.\n\nAs conditioning on full histories renders policies prone to spurious correlations and degrades performance, many approaches to policy memory involve compressing historical information through expensive VLM queries in-the-loop to process only task-salient information.\n\nIn this paper, we propose an alternative approach in which computationally intensive VLM queries are made during train-time to learn a lightweight latent memory that can be efficiently queried at deployment time.\n\nOur representation, which we call the \\textbf{workspace token}, is trained by （1） using a VLM to identify current and historical information necessary for completing a task, then （2） distilling these into the workspace token using a set-reconstruction decoder loss.\n\nIn both simulation and hardware, we show that the workspace token can be used as a drop-in replacement for observations during deployment, enabling policies to solve memory-intensive tasks without the need for VLM reasoning in-the-loop, in effect serving as a \\textbf{latent harness} for distilling a stronger reasoning models ability to solve long-horizon tasks to a reactive robotic policy.\n\nWe further demonstrate that the workspace tokens are not only more lightweight, but also lead to better policy performance compared to conditioning policies on explicit modalities like curated past image frames, motivating a ``latent'' approach to history curation and reasoning model harnesses more broadly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a workspace token, a lightweight latent memory for retaining current and historical information relevant to a task. During training, a vision-language model identifies that information, which is distilled using a set-reconstruction decoder loss. At deployment, the token can replace observations without in-the-loop VLM reasoning. The authors report in simulation and hardware that policies using the token solve memory-intensive tasks and perform better than policies conditioned on explicit modalities such as curated past image frames.",
+          "zh": "论文提出 workspace token，用于将完成任务所需的当前与历史信息压缩为轻量潜在记忆。训练时由视觉语言模型识别相关信息，再通过集合重建解码器损失进行蒸馏；部署时可用该 token 替代观测，避免在线调用视觉语言推理。作者报告，在仿真和硬件实验中，该方法支持完成记忆密集任务，并相较于使用筛选历史图像等显式模态取得更好的策略表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
