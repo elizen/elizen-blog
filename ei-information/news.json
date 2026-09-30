@@ -4079,7 +4079,11 @@
             "heading": "",
             "text": "Direct torque sensing is a growing need in the robotics community to enable precise control and interactions where torque estimation from motor current is not sufficient. This paper presents a novel disk-shaped magnetoelastic torque sensor with a compact axial envelope of about 1 cm, suitable for integration in robotic joints.\n\nA four-magnetometer architecture is used to measure the field modulated by the stress affecting a narrow magnetized region while rejecting the effects of parasitic cross forces. A custom-designed magnetic shield enhances the torque sensitivity while reducing the external stray fields by a factor 7x.\n\nThe device measures the torque with an accuracy of 1.34 %FS relative to the 50 Nm full scale (FS).The paper details the development of the sensor through the mechanical design, the magnetization procedure, and the experimental validation. The results demonstrate the potential of the proposed sensor for robotic applications."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a disk-shaped magnetoelastic torque sensor for robotic joints, with an axial envelope of about 1 cm. Its four-magnetometer architecture measures stress-induced changes in the field of a narrow magnetized region while rejecting parasitic cross-force effects. A custom magnetic shield reduces external stray fields by a factor of seven. Experimental validation reports torque accuracy of 1.34% of the 50 Nm full scale; the authors describe the design as promising for robotic applications.",
+          "zh": "论文提出一种用于机器人关节的盘形磁弹性扭矩传感器，轴向尺寸约为1厘米。传感器采用四磁力计架构，测量应力对狭窄磁化区域磁场的调制，并抑制寄生交叉力的影响；定制磁屏蔽将外部杂散场降低7倍。实验验证显示，该设备在50 Nm满量程下的扭矩测量精度为1.34%FS。作者认为该设计具有机器人应用潜力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4110,7 +4114,11 @@
             "heading": "",
             "text": "We study robotic in-context learning (ICL), an emerging paradigm that enables robots to infer and execute tasks from visual demonstrations.\n\nDespite its growing promise, the problem itself remains under-defined: a visual demonstration simultaneously conveys action trajectories, object semantics, manipulation affordances, spatial relations, and task goals, making it unclear what information the robot is actually expected to follow.\n\nIn this work, we first provide a clear problem definition of robot ICL that explicitly defines its learning target and resolves this fundamental prompt ambiguity. Building on this definition, we develop a minimalist and reproducible ICL framework (SimpleICL) with a visual prompt encoder and a low-cost data collection protocol.\n\nWithout massive pre-training or specialized data infrastructure, our framework achieves strong performance in both simulation and real-world environments. Extensive experiments further reveal several key properties of robot ICL, including action, semantic, composition, and affordance discrimination.\n\nWe will fully open-source our data and training pipeline to facilitate systematic and reproducible research on robot ICL. The project page can be found at https://simpleicl.github.io/simpleicl."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies robotic in-context learning, in which robots infer and execute tasks from visual demonstrations. The authors argue that demonstrations may convey trajectories, object semantics, affordances, spatial relations, and goals, leaving the intended learning target ambiguous. They define the problem and introduce SimpleICL, a minimalist, reproducible framework with a visual prompt encoder and low-cost data collection. They report strong performance in simulation and real-world environments without massive pre-training or specialized data infrastructure, and examine action, semantic, compositional, and affordance discrimination.",
+          "zh": "论文研究机器人上下文学习，即机器人根据视觉演示推断并执行任务。作者指出，演示可能同时传达动作轨迹、物体语义、操作可供性、空间关系和任务目标，因此需要明确机器人应学习的信息。他们提出问题定义和简约、可复现的SimpleICL框架，包含视觉提示编码器及低成本数据采集流程。作者称，该方法无需大规模预训练或专用数据基础设施，在仿真和真实环境中均表现良好；实验还分析了动作、语义、组合和可供性辨别能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4141,7 +4149,11 @@
             "heading": "",
             "text": "Quadrotor racing demands aggressive attitude and progress control while passing through every gate, and conventional quadrotor MPCC formulations state the prediction model in inertial coordinates and the attitude error in the body frame.\n\nWe present a Dual-Quaternion Model Predictive Contouring Control (DQ-MPCC) for quadrotor racing in which the pose is a unit dual quaternion and the contouring errors are projected onto the tangent space of the dual quaternion manifold, expressed in the desired body frame: the same rigid-body dynamics as the conventional model, in unified pose-twist coordinates in the body frame.\n\nWe compare DQ-MPCC against a baseline MPCC through Monte Carlo software-in-the-loop simulations and real-world racing on an eight-gate circuit of 11x4.5x3.65 m.\n\nWith the same gains in simulation and hardware, DQ-MPCC keeps every crossing of its completed flights within the prescribed geometric margin, whereas the baseline exceeds it, its median worst-gate offset growing by 71.5% sim-to-real against a 10.1% decrease for DQ-MPCC.\n\nAmong the configurations that keep every simulated gate crossing within the geometric margin, DQ-MPCC also reduces the minimum lap time by 6.7%, and by 10.5% in the real-world flights, while running onboard at 100 Hz."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DQ-MPCC for quadrotor racing, representing pose with a unit dual quaternion and projecting contouring errors onto the dual-quaternion manifold’s tangent space in the desired body frame. It compares the method with baseline MPCC in Monte Carlo software-in-the-loop simulations and real-world racing on an eight-gate circuit. The authors report that, with identical simulation and hardware gains, DQ-MPCC keeps all completed-flight gate crossings within the geometric margin, while the baseline exceeds it. For configurations meeting the simulated margin, minimum lap time is reduced by 6.7% in simulation and 10.5% in real flights; onboard operation is at 100 Hz.",
+          "zh": "论文提出用于四旋翼竞速的双四元数模型预测轮廓控制方法DQ-MPCC，以单位双四元数表示位姿，并在期望机体坐标系中将轮廓误差投影到双四元数流形的切空间。作者通过蒙特卡洛软件在环仿真和八门真实竞速，与基线MPCC进行比较。摘要称，在仿真和硬件使用相同增益时，DQ-MPCC完成飞行的所有门洞穿越均满足几何边界，而基线超出边界；在满足仿真边界的配置中，DQ-MPCC的最短圈速在仿真和真实飞行分别降低6.7%和10.5%，机载运行频率为100 Hz。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4172,7 +4184,11 @@
             "heading": "",
             "text": "Vision-language models can coordinate long-horizon robot manipulation, yet successful task reasoning still depends on whether local physical interactions produce the intended effects. We study how repeated interaction can improve this capability without updating the base model.\n\nWe introduce RoboHarn-Evo, a dual-loop harness that evolves Hierarchical Physical Knowledge (HPK) from physical experience. HPK couples two levels of reusable knowledge: Task Knowledge captures which subtask should be executed and when it is complete, while Action Knowledge captures object-relative geometric strategies and their physical effects.\n\nDuring execution, the agent retrieves knowledge at the corresponding decision level and grounds it in the current scene under the task goal. Across episodes, physical feedback is used to revise historical knowledge, update its applicability, and organize reusable entries for subsequent retrieval.\n\nExperiments on RMBench show that HPK improves average success by up to 24.2 percentage points across different agent models. With 80 interaction rollouts, held-out success rises from 48.3% to 75.0% for GPT-5.5 and from 70.0% to 88.3% for GPT-6.\n\nRoboHarn-Evo also resolves over 83% of historical knowledge errors while retaining 95.8% of valid knowledge, and transfers zero-shot from RMBench to RoboDojo with gains of 35.0 and 25.0 percentage points. These results demonstrate that physical interaction can be accumulated into reusable knowledge for improving subsequent manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboHarn-Evo is a dual-loop system that develops Hierarchical Physical Knowledge (HPK) from physical interaction without updating the base model. HPK combines task knowledge for selecting subtasks and judging completion with action knowledge about object-relative geometric strategies and their physical effects. The system retrieves and grounds knowledge during execution, then uses feedback to revise its applicability across episodes. On RMBench, the authors report average success improvements of up to 24.2 percentage points across agent models, resolving over 83% of historical knowledge errors while retaining 95.8% of valid knowledge. They also report zero-shot transfer gains on RoboDojo.",
+          "zh": "论文提出RoboHarn-Evo，通过双循环机制从机器人实际交互中演进分层物理知识（HPK），且不更新基础模型。HPK包含任务知识，用于选择子任务并判断完成时机；以及动作知识，记录相对物体的几何策略及其物理效果。执行时，系统按决策层级检索知识并结合当前场景与任务目标加以落实，再利用交互反馈修订知识并更新适用性。在RMBench实验中，作者报告不同智能体模型的平均成功率最高提升24.2个百分点；知识错误解决率超过83%，有效知识保留率为95.8%。摘要还报告了向RoboDojo零样本迁移的成功率提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
