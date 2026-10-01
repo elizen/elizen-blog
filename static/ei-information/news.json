@@ -847,7 +847,11 @@
             "heading": "",
             "text": "Marine litter is a growing threat to the underwater ecosystem, driving demand for autonomous survey methods that can locate debris efficiently over large areas.\n\nExisting survey methods typically follow predefined paths or operate with a single sensing modality, typically a camera (with image quality suffering in poor-visibility conditions) or sonar (usually noisy and low-resolution).\n\nWe present an active mapping framework in which a forward-looking sonar and a camera both feed into a shared Bayesian occupancy map, and an optimization problem is solved at each step to decide on the next best view.\n\nCandidate viewpoints are scored by a two-term utility that balances exploration of uncertain regions via voxel entropy against exploitation of likely objects. Each sensor is characterized by range- and bearing-dependent detection and false-alarm probability tables determined from data.\n\nWe evaluate the approach in a realistic underwater simulator, demonstrating that active mapping finds objects faster than a lawnmower coverage pattern, and that the dual-sensor approach works better than using either of the individual sensors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an underwater active-mapping framework that combines forward-looking sonar and camera data in a shared Bayesian occupancy map, optimizing the next viewpoint at each step. Viewpoint utility balances exploration of uncertain regions with exploitation of likely objects, using data-derived, range- and bearing-dependent detection and false-alarm probabilities. Evaluation in a realistic underwater simulator finds objects faster than a lawnmower coverage pattern and reports better performance for the dual-sensor approach than for either sensor alone.",
+          "zh": "论文提出一种水下主动测绘框架，将前视声呐与相机数据融合到共享的贝叶斯占据地图中，并在每一步优化下一观测视角。候选视角的效用兼顾不确定区域探索与潜在目标利用，传感器检测和误报概率依距离、方位并由数据确定。在真实感水下仿真器中的评估显示，该方法比割草机式覆盖路径更快找到目标，双传感器方案优于任一单传感器方案。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -878,7 +882,11 @@
             "heading": "",
             "text": "Robotic hand kinematic design involves combinatorial selection among multiple finger structures whose performance depends on both individual kinematic characteristics and inter-finger interactions.\n\nThis study presents a potential-dexterity-based quadratic unconstrained binary optimization (QUBO) formulation for combinatorial optimization of robotic hand kinematic structures.\n\nPotential dexterity-related metrics were evaluated through kinematic analysis and encoded into a 27-variable QUBO problem incorporating individual finger performance, thumb-to-finger workspace-overlap interactions, one-hot selection constraints, and pairwise structural compatibility.\n\nExhaustive evaluation of the design space established a reference optimum and enabled direct validation of the formulated objective.\n\nDiscretization sensitivity analysis showed that the selected design remained unchanged across the tested joint-space sampling intervals and at a finer workspace voxel resolution, while sensitivity was observed under coarse voxelization.\n\nSimulated annealing consistently recovered the reference optimum at higher sampling counts, and direct execution on D-Wave quantum annealing hardware also recovered the reference optimum under all tested sampling conditions.\n\nThese results demonstrate that the proposed formulation provides a common QUBO representation for constrained robotic hand kinematic structure selection and enables evaluation using exhaustive, classical annealing, and quantum annealing approaches."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a potential-dexterity-based QUBO formulation for combinatorial selection of robotic-hand kinematic structures. Its objective encodes individual-finger performance, thumb-to-finger workspace overlap, one-hot constraints, and structural compatibility. Exhaustive evaluation provides a reference optimum. The selected design remained unchanged across tested joint-space sampling intervals and at finer workspace voxel resolution, while coarse voxelization showed sensitivity. Simulated annealing recovered the reference optimum at higher sampling counts, and D-Wave quantum annealing hardware did so under all tested sampling conditions.",
+          "zh": "论文提出基于潜在灵巧度的 QUBO 表述，用于组合优化机器人手的运动学结构。目标函数编码单指性能、拇指与手指工作空间重叠、单选约束及结构兼容性，并通过穷举设计空间确定参考最优解。离散化敏感性分析显示，所选设计在测试的关节空间采样间隔及更细工作空间体素分辨率下保持不变，粗体素化时则有敏感性。较高采样数下模拟退火及所有测试条件下的 D-Wave 量子退火均恢复参考最优解。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -909,7 +917,11 @@
             "heading": "",
             "text": "Robotic manipulation integrates vision, touch, and language, whose importance shifts across stages: vision guides reaching, while touch, through its evolution over time, decides grasping, alignment, and contact.\n\nYet existing multi-modal manipulation policies typically use fixed temporal contexts and fusion strategies, despite shifts in what each modality contributes across different skills.\n\nWe study how vision and touch should be combined at the level of primitive skills, asking what each skill needs from each sensor, and propose a skill-conditioned representation in which the queried skill conditions fusion over modality-specific short-term observation tokens while attending to a sparse event memory that retains terminal observations from the last $K$ executed skills.\n\nEvaluated by skill progress estimation on three contact-rich tasks, it reduces slip-detection delay by 87% against fine-tuned SOTA progress models, twist-completion delay by 67.5% against a vision-only ablation, and progress error on a blind search task by 92% through sparse event memory.\n\nGains concentrate exactly where completion is defined by contact or task history. More broadly, our results suggest that observation formation not only policy architecture is a central challenge in multi-modal representation. Project Website: http://what-to-attend-what-to-keep.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how vision and touch should be combined across manipulation skills and proposes a skill-conditioned representation. The queried skill conditions fusion of short-term modality-specific observation tokens, while a sparse event memory attends to terminal observations from the last K executed skills. Evaluated on skill-progress estimation across three contact-rich tasks, the method reports reduced slip-detection delay versus fine-tuned state-of-the-art progress models, reduced twist-completion delay versus a vision-only ablation, and lower progress error on a blind-search task through sparse event memory. The authors say gains concentrate where contact or task history defines completion.",
+          "zh": "论文研究不同操作技能阶段应如何结合视觉与触觉，并提出技能条件化表征：当前技能控制对各模态短期观测令牌的融合，同时关注保存最近 K 个已执行技能终端观测的稀疏事件记忆。该方法在三个接触丰富任务上评估技能进展估计。摘要报告，相比微调的先进进展模型，滑移检测延迟降低 87%；相比纯视觉消融，扭转完成延迟降低 67.5%；稀疏事件记忆使盲搜索任务的进展误差降低 92%。作者称收益集中在由接触或任务历史定义完成状态的情形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -940,7 +952,11 @@
             "heading": "",
             "text": "Vision-Language Navigation (VLN) requires embodied agents to generate actions based on instructions and observations. General-purpose multimodal agents offer a promising basis for this task, but selecting plausible local actions does not ensure that execution remains consistent with the intended route, particularly in long-horizon tasks.\n\nMoreover, the accumulated interaction history increases the input required for subsequent decisions, resulting in a significant inference overhead.\n\nTo this end, we introduce \\method, an Agentic VLN framework that includes a Goal Agent that sets adaptive goals for local actions, a Verify Agent that dynamically verifies whether a goal has been completed, a Memory Agent for multimodal context compression, and a Visuomotor Agent to execute adaptive goals.\n\nSpecifically, the Goal Agent formulates adaptive goals based on the instruction, current observation, and execution history. Then the Visuomotor Agent executes navigation actions to achieve each goal, while the Verify Agent uses a goal-specific verification question to dynamically assess whether the observed outcomes satisfy the intended completion condition.\n\nVerified goal completion then marks a boundary for the Memory Agent to compress the corresponding multimodal interaction history while preserving information needed for subsequent navigation. We evaluate navigation on R2R-CE and RxR-CE, examine framework variants across three model backbones, and study context evolution during execution.\n\nFor Real-World evaluation, \\method achieves 83.3\\% success and 1.51\\,m navigation error across eight challenging routes evaluated three times each."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NavHarness, an agentic vision-language navigation framework with goal, verification, memory, and visuomotor agents. The Goal Agent sets adaptive local goals from instructions, observations, and execution history; the Visuomotor Agent acts, while the Verify Agent checks completion with a goal-specific question. Verified completion triggers the Memory Agent to compress multimodal history while retaining information for subsequent navigation. The study evaluates navigation on R2R-CE and RxR-CE, compares variants across three model backbones, and examines context evolution. Real-world evaluation covers eight challenging routes, each evaluated three times, with reported success of 83.3% and navigation error of 1.51 m.",
+          "zh": "论文提出用于视觉语言导航的智能体框架 NavHarness，由目标、验证、记忆和视觉运动智能体组成。目标智能体依据指令、当前观测及执行历史设定自适应局部目标；视觉运动智能体执行导航，验证智能体用目标专属问题判断完成情况，完成后由记忆智能体压缩相关多模态历史并保留后续导航所需信息。研究在 R2R-CE、RxR-CE 上评估导航，考察不同模型骨干的框架变体及执行期间的上下文变化。真实世界评估涵盖八条具有挑战性的路线，每条评估三次，报告成功率为 83.3%，导航误差为 1.51 米。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
