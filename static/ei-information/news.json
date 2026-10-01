@@ -1935,7 +1935,11 @@
             "heading": "",
             "text": "Robots operating in real-world environments must execute complex, multi-step bimanual tasks over long horizons rather than single, isolated actions.\n\nCurrent manipulation datasets struggle to support this capability: although single-arm datasets reach hundreds of thousands of trajectories, they typically provide only one high-level instruction per episode while the rare bimanual effort that does label subtasks annotates only a fraction of its hours.\n\nWe present FineART, a densely annotated bimanual manipulation dataset of 40,543 episodes, 1,718 hours, and 533,913 subtasks across 151 tasks. We also introduce FineART-VLA, a vision-language-action policy that predicts its own next subtask, and show that mid-training it this way yields substantial gains.\n\nSpecifically, success on a spatial disambiguation task increases from 32.0% to 100.0%, and step-by-step human subtask guidance lifts success on an unseen long-horizon task from 16.0% to 76.0%.\n\nFurthermore, after minimal fine-tuning on a new robot, the policy requires one-tenth the data of baselines without mid-training and generalizes zero-shot to completely unseen tasks on the new hardware. We open-source the full dataset, model weights, and training code."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FineART, a densely annotated bimanual manipulation dataset, and FineART-VLA, a vision-language-action policy that predicts its next subtask. The dataset contains 40,543 episodes, 1,718 hours, and 533,913 subtasks across 151 tasks. The authors report gains from mid-training the policy, including improved performance on spatial disambiguation and on an unseen long-horizon task with step-by-step human subtask guidance. They also report reduced data needs after minimal fine-tuning on a new robot and zero-shot transfer to unseen tasks on that hardware.",
+          "zh": "论文提出 FineART，一个面向双臂操作的密集标注数据集，包含40,543个片段、1,718小时及跨151项任务的533,913个子任务；并提出能预测下一子任务的视觉语言动作策略 FineART-VLA。作者报告，中期训练该策略可提升空间消歧任务表现；逐步提供人工子任务指导也提高了未见长时程任务的成功率。作者还称，在新机器人上少量微调后，策略所需数据量较基线少，并能零样本泛化至新硬件上的未见任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1966,7 +1970,11 @@
             "heading": "",
             "text": "Practical autonomous driving requires models that generalize by reasoning through spatial-temporal possibilities to exclude unsafe outcomes. While state-of-the-art (SOTA) methods use parallel planning architectures, they fail to explicitly couple speed decisions with agent behavior along the driving path, leading to suboptimal coordination.\n\nTo address this, we propose a cascaded framework that transforms longitudinal planning from an independent prediction task into a path-conditioned reasoning process.\n\nOn the model side, we introduce an anchor-based regression design that conditions longitudinal prediction on the lateral drive path, and reformulate longitudinal planning as 1D displacement prediction along the path. This reduces geometric uncertainty and sharpens the model's focus on interaction-driven dynamics.\n\nOn the data side, we introduce a planning-oriented data augmentation strategy that simulates rare safety-critical events by programmatically inserting agents and relabeling longitudinal targets to enforce collision avoidance.\n\nEvaluated on the challenging Bench2Drive benchmark, our method achieves SOTA performance with a driving score of 89.07 and a success rate of 73.18%, demonstrating significantly improved coordination and safety. Further evaluation on Fail2Drive confirms strong generalization to rare edge cases where parallel formulations typically fail.\n\nProject page:https://yanhaowu.github.io/AlignDrive/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes AlignDrive, a cascaded autonomous driving framework that conditions longitudinal planning on the lateral path. Its anchor-based regression predicts displacement along that path, while a planning-oriented augmentation strategy inserts agents and relabels targets to simulate rare safety-critical events. On the Bench2Drive benchmark, the authors report a driving score of 89.07 and a success rate of 73.18%. They also report strong generalization on Fail2Drive for rare edge cases where parallel planning formulations typically fail.",
+          "zh": "论文提出 AlignDrive，一种级联自动驾驶规划框架，将纵向规划设为受横向路径条件约束的推理过程。其方法以锚点回归预测路径上的纵向位移，并通过插入智能体及重标纵向目标来模拟少见的安全关键事件。在 Bench2Drive 基准上，作者报告驾驶得分89.07、成功率73.18%，并称在 Fail2Drive 上对少见边缘情况表现出较强泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1997,7 +2005,11 @@
             "heading": "",
             "text": "Robot manipulation policies are usually trained under the assumption that a commanded action produces the same motion as it did during training even after hours of operation.\n\nReal hardware violates this assumption as the motors gradually heat up, current saturates near contact, voltage sags under load, thus the same policy action can produce a weaker, delayed, or noisier motion.\n\nThese conditions are already measured by onboard telemetry, such as joint temperature, motor current, and supply voltage, yet this signal is typically used only for logging or safety checks rather than policy adaptation.\n\nWe introduce Telemetry-Aware Action Rectification (TeAR), a policy-agnostic method that turns a frozen manipulation policy into a telemetry-conditioned policy by rectifying its outgoing action before it reaches the low-level controller.\n\nTeAR learns a lightweight Transformer that combines the proposed action with live actuator telemetry and amplifies, damps, or biases individual action components. We evaluate TeAR across 18 policy-task pairs spanning 8 policy families and 5 manipulation tasks.\n\nIn an additional paired evaluation with degradation-model mismatch, TeAR achieves 31.8% success, compared with 25.6% for the base policy and 30.6% for an assumed-model inverse. On a physical arm, TeAR improves success under heating by 10-15% without on-robot fine-tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TeAR, a policy-agnostic method that rectifies a frozen manipulation policy’s actions using live actuator telemetry before they reach the low-level controller. A lightweight Transformer combines proposed actions with telemetry and adjusts individual action components. The evaluation spans 18 policy-task pairs. In a paired evaluation with degradation-model mismatch, TeAR achieves 31.8% success, compared with 25.6% for the base policy and 30.6% for an assumed-model inverse. On a physical arm, the authors report a 10–15% success improvement under heating without on-robot fine-tuning.",
+          "zh": "论文提出 TeAR，一种与策略无关的遥测感知动作校正方法，在冻结的操作策略动作送至低层控制器前进行修正。轻量级 Transformer 将拟议动作与实时执行器遥测结合，调整动作分量。评估覆盖18个策略—任务组合；在退化模型不匹配的配对评估中，TeAR成功率为31.8%，高于基策略和假设模型逆方法。作者还报告，实体机械臂在受热条件下使用 TeAR 后成功率提高10%至15%，无需机器人上微调。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2028,7 +2040,11 @@
             "heading": "",
             "text": "High-performance surgical master consoles offer intuitive articulated manipulation but are expensive and difficult to reproduce, while accessible commercial haptic devices lack built-in interfaces for surgical wrist articulation and continuous grasp.\n\nWe present a laparoscopic master in which general-purpose robot manipulators provide the programmable base and surgical-specific interaction is concentrated in a separable distal adapter.\n\nEach 6-DoF arm carries a custom 2-DoF direct-drive wrist, continuous grasp sensing, and clutch-based workspace management; the complete bimanual hardware costs approximately US$5,500, below common bimanual commercial haptic references.\n\nTo support sustained hand-guided use, we characterize current scaling, gravity, and break-away friction and use them for posture-dependent gravity compensation and motion-gated assistance, reducing continuous actuation and thermal loading. A common master state drives either Isaac Sim or an RCM-constrained dual-FR3 platform.\n\nMaster-state publication to FR3 target update adds at most 8 ms, and tip tracking shows 0.31-0.66 mm mean delay-aligned residuals.\n\nIn a porcine cholecystectomy experiment, five common operator-side metrics and hand/tip-speed distributions were compared descriptively with human in-vivo telemetry from 120 clinical Versius recordings of 99 cholecystectomy procedures; no interruption originated from the master console, and no abnormal clinical signs were recorded during the 7-day postoperative observation period.\n\nThese results demonstrate a surgical master built from general-purpose robot arms with surgical-specific interaction concentrated in a separable distal interface."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a laparoscopic surgical master console built around general-purpose robot arms, with surgical wrist articulation and continuous grasp interaction concentrated in a separable distal adapter. The system includes custom wrists, grasp sensing, clutch-based workspace management, and posture-dependent gravity compensation with motion-gated assistance. The authors report control latency and tip-tracking residuals. In a porcine in-vivo cholecystectomy experiment, operator-side metrics were compared descriptively with clinical telemetry. No interruption originated from the console, and no abnormal clinical signs were recorded during the seven-day postoperative observation.",
+          "zh": "论文介绍一种腹腔镜手术主控台，以通用机械臂作为可编程基座，并将手术腕部操作和连续抓握交互整合到可分离的末端适配器。系统包含自定义腕部、抓握感测及离合式工作空间管理，并采用姿态相关重力补偿和运动门控辅助。作者报告了控制延迟与尖端跟踪残差，并在猪体内胆囊切除实验中，将操作指标与临床遥测作描述性比较；实验期间未发生由主控台引起的中断，术后七日观察未记录异常临床征象。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
