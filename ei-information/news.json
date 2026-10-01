@@ -1267,7 +1267,11 @@
             "heading": "",
             "text": "World models jointly learn latent representations and dynamics that predict how high-dimensional observations evolve under actions. In this work, we propose a JEPA-style world model in which, rather than learning arbitrary latent dynamics, we restrict them to follow a bilinear parameterization.\n\nThis structure enables efficient planning and control while shifting the modeling burden onto the encoder, encouraging richer representations that expose the controllable geometry of the system. In particular, this structured parameterization allows us to structurally enforce action recoverability, thereby preventing representation collapse by construction.\n\nAlthough prescribing a bilinear parametrization may appear restrictive, we show that a broad class of nonlinear dynamical systems admits a transformation under which the dynamics become bilinear.\n\nEmpirically, we show across standard 2D and 3D control tasks that representations with bilinear-parameterized dynamics can be learned directly from high-dimensional observations, reducing planning time by nearly three orders of magnitude while retaining or even improving control accuracy.\n\nWe also propose more demanding regimes of longer-horizon planning and real-time control, and demonstrate that our method succeeds in both, moving JEPA-style world models beyond short-horizon offline planning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a JEPA-style world model with bilinear latent dynamics to support efficient planning and control. Its structure enforces action recoverability, which the authors say prevents representation collapse, and they argue that a broad class of nonlinear systems can be transformed into bilinear form. On standard 2D and 3D control tasks, the authors report learning representations from high-dimensional observations, nearly three orders of magnitude less planning time, and maintained or improved control accuracy. They also report success in longer-horizon planning and real-time control regimes.",
+          "zh": "本文提出一种 JEPA 风格世界模型，将潜在动力学限制为双线性参数化，以支持高效规划与控制，并通过结构约束确保动作可恢复，防止表示坍塌。作者指出，广泛一类非线性动力系统可经变换成为双线性形式。在标准二维和三维控制任务中，作者报告该方法可从高维观测直接学习表示，规划时间缩短近三个数量级，同时保持或提升控制精度；在更长时域规划和实时控制设置中也取得成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1298,7 +1302,11 @@
             "heading": "",
             "text": "Language models trained on large-scale vision-language data have demonstrated strong potential for embodied agents. Harnessing models through embodied tools use offers a promising alternative to end-to-end vision-language-action systems by combining high-level reasoning with external modules for perception, planning, and control.\n\nHowever, it remains unclear what makes an effective harness for embodied manipulation, and to what extent such a harness can unlock embodied capabilities in a wide range of reasoning models.\n\nIn this work, we present Guava, a harness framework for embodied tool use developed through systematic exploration of the design space of agent workflows, action spaces, and observation spaces.\n\nOur study identifies three key ingredients for effective embodied agents: iterative perception-reasoning-action loops, semantic action abstractions, and multimodal observations.\n\nTo understand whether these design principles are universal even to small models, we develop an end-to-end training pipeline that distills embodied manipulation capabilities into a 4B open-source model using fewer than 2K trajectories collected entirely in simulation.\n\nExperimental results in both simulation and real-world environments show performance comparable to frontier proprietary models while exhibiting strong generalization to unseen objects, novel instructions, and long-horizon tasks.\n\nResults suggest that a well-designed harness can serve as a scalable, model-agnostic interface for embodied manipulation, enabling strong emergent embodied capabilities in compact open-source models with minimal training data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Guava, a harness for embodied tool use developed by exploring agent workflows, action spaces, and observation spaces. It identifies iterative perception-reasoning-action loops, semantic action abstractions, and multimodal observations as key design ingredients. The authors also describe an end-to-end pipeline that distills manipulation capabilities into a 4B open-source model using fewer than 2K trajectories collected entirely in simulation. Experiments in simulation and real-world environments show performance comparable to frontier proprietary models and generalization to unseen objects, novel instructions, and long-horizon tasks.",
+          "zh": "本文提出 Guava，一种面向具身操作的工具使用框架，通过系统探索工作流、动作空间和观测空间，归纳出迭代感知—推理—行动循环、语义动作抽象和多模态观测三项设计要素。作者还构建端到端训练流程，以完全在仿真中采集的少于 2K 条轨迹，将操作能力蒸馏到 4B 开源模型。仿真和真实环境实验显示，该模型表现可比前沿专有模型，并能泛化到未见物体、新指令和长时域任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1329,7 +1337,11 @@
             "heading": "",
             "text": "Grinding and sanding are fundamental processes in industrial robotic surface finishing. However, physical trials are expensive and consume workpieces, making reproducible experiments difficult.\n\nWe present RoboFin3D, a sim-to-real platform built on Isaac Sim and the Newton physics engine, that provides physics-based grinding and sanding simulation for cheap and repeatable robotic surface finishing experiments.\n\nRoboFin3D utilizes a signed distance field (SDF) to model the changing geometry of the workpiece, enabling contact computation, live updates and rendering without an intermediate mesh. It additionally uses a separate surface field to model progressive surface appearance change during sanding.\n\nWe also introduce WeldGen, a weld sampling module, to generate weld beads on 8,918 real-world workpiece meshes for providing diverse simulation assets. The simulation parameters are calibrated on real experimental results and our evaluation demonstrates our simulation's fidelity against the real world.\n\nWe also demonstrate that simulation-generated data can be used to improve the performance of perception models. Simulation-only fine-tuning of SAM2 improves IoU for segmentation of unsanded regions from 77.15% to 84.47%, while combined synthetic and real training reaches 97.41%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboFin3D is a simulation platform for robotic grinding and sanding, built on Isaac Sim and the Newton physics engine to support inexpensive, repeatable experiments. It uses a signed distance field for changing workpiece geometry and a separate surface field for appearance changes during sanding. The authors introduce WeldGen to create weld-bead assets, calibrate simulation parameters using real experiments, and report fidelity against the real world. They also report improved SAM2 segmentation IoU after simulation-only fine-tuning, with a higher result from combined synthetic and real training.",
+          "zh": "本文介绍 RoboFin3D，一个基于 Isaac Sim 和 Newton 物理引擎的机器人打磨与砂磨仿真平台，旨在支持低成本、可重复实验。平台使用有符号距离场表示工件几何变化，并以独立表面场模拟砂磨造成的外观变化；另提供 WeldGen 模块生成焊缝仿真资产。作者称仿真参数经真实实验校准，评估显示仿真具有现实保真度。仿真数据微调 SAM2 后，未打磨区域分割 IoU 提升；合成数据与真实数据联合训练取得更高 IoU。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1360,7 +1372,11 @@
             "heading": "",
             "text": "The autonomous extraction of deep mineral deposits in abandoned underground mines is fundamentally a multi-agent integration problem. No single platform simultaneously offers the mobility to traverse kilometers of degraded drifts and the sensing payload required to characterize an ore body.\n\nThis article presents the onboard perception pipeline that bridges two heterogeneous agents within the PERSEPHONE autonomous mining mission.\n\nWhich consist of a lightweight Explorer robot that maps an unknown mine and generates a 3D scene graph of inspection targets, by running a zero-shot, vision-language semantic segmentation stack that detects mineral deposits directly from natural-language prompts.\n\nThe map and the graph are then handed to a second Inspector robot, which carries an advanced sensing payload and uses them to plan close-range inspection viewpoints.\n\nWe detail the complete pipeline, with emphasis on the geometric abstraction that turns raw detections into actionable inspection targets, spanning per-view bounding-box generation, cross-view box merging, plane fitting, and polygon extraction, and we report an extensive field validation in a subterranean test facility and in an active magnesite mine, covering both iron-vein and magnesite mineralization under realistic, perceptually degraded conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The article presents an onboard perception pipeline for the PERSEPHONE mining mission, linking Explorer and Inspector robots with different capabilities. Explorer maps an unknown mine and uses zero-shot vision-language semantic segmentation to detect mineral deposits from natural-language prompts, producing a 3D scene graph of inspection targets. Inspector receives the map and graph to plan close-range viewpoints with its sensing payload. The article details geometric processing from per-view bounding boxes through cross-view merging, plane fitting, and polygon extraction, and reports field validation in a subterranean test facility and an active magnesite mine.",
+          "zh": "本文介绍 PERSEPHONE 地下采矿任务中的机载感知流程，用于连接异构的 Explorer 与 Inspector 机器人。Explorer 对未知矿井建图，并通过零样本视觉语言语义分割，根据自然语言提示检测矿物，生成包含检查目标的三维场景图；地图和场景图随后交给携带先进传感设备的 Inspector，用于规划近距离检查视点。文章详述从逐视角边界框生成、跨视角合并到平面拟合和多边形提取的几何处理，并报告了地下测试设施及活跃菱镁矿矿区的实地验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
