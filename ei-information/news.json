@@ -3051,7 +3051,11 @@
             "heading": "",
             "text": "Open-world goods delivery requires mobile manipulators to follow free-form user instructions and manipulate potentially novel objects.\n\nExisting dual-system approaches use high-level grounding models to convert language into grounded visual prompts, but their low-level controllers can remain brittle under noisy perception, dynamic scenes, and contact-rich interactions.\n\nWe instead use a pretrained flow-matching vision-language-action model as the low-level control interface, leveraging its reactivity and robustness to environmental changes while treating the grounding output as a spatial cue for policy steering.\n\nOur key insight is that the pretrained VLA already provides a strong manipulation prior, while the spatial cue supplies the missing target information needed to guide actions under novel language--object mappings. Concretely, we introduce a lightweight cue-conditioned adapter.\n\nThe adapter is first trained with contrastive objectives to produce salient and spatially discriminative cue representations, and is then supervised to predict a diagonal affine transformation over the generated action chunk, aligning policy steering with the cued target.\n\nAcross tabletop and mobile-base settings, our method improves instruction following and manipulation success on both in-domain and out-of-domain objects, achieving up to near $2\\times$ improvement in average task success rate with negligible inference overhead."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a lightweight cue-conditioned adapter for open-world delivery manipulation. It uses a pretrained flow-matching vision-language-action model as the low-level controller and treats grounding output as a spatial cue. The adapter learns salient, spatially discriminative cue representations with contrastive objectives, then predicts a diagonal affine transformation over action chunks. In tabletop and mobile-base settings, the authors report improved instruction following and manipulation success on in-domain and out-of-domain objects, with average task success reaching nearly twice the baseline and negligible inference overhead.",
+          "zh": "本文提出用于开放场景配送操作的轻量级提示条件适配器，以预训练流匹配视觉语言动作模型作为低层控制接口，并将语言 grounding 结果作为空间提示引导策略。适配器先通过对比目标学习显著且具空间区分性的提示表示，再预测动作片段的对角仿射变换。在桌面和移动底座设置中，作者报告该方法提升了域内及域外物体上的指令遵循与操作成功率，平均任务成功率最高接近两倍，推理开销可忽略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3082,7 +3086,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies emphasize semantic understanding, whereas world-action models (WAMs) learn predictive representations of environment dynamics. Systems that expose a policy to both sources often still concentrate action computation on a single expert.\n\nWe present EWAM, an action-centric unified embodied model whose asymmetric joint attention lets action tokens read semantic, current-visual, predicted-future, and action information at every layer while the perceptual experts retain their distinct roles.\n\nWithout layer-wise supervision, EWAM develops an emergent depth-wise specialization: action queries attend mainly to vision-language features in shallow layers, to predicted future frames in intermediate layers, and to action tokens themselves in deep layers. This handoff replicates across tasks and is stable across denoising steps.\n\nCheckpoint tracking and causal interventions show that it is learned and that action generation depends on it. EWAM is pretrained in two separate regimes, one on cross-embodiment robot trajectories and one on human egocentric video. In simulation and real-robot experiments, it surpasses existing VLA, WAM, and hybrid baselines.\n\nHuman egocentric data improve both cross-embodiment transfer and real-robot robustness, and subtask-phase supervision improves long-horizon completion. Together, these results suggest that unified embodied learning can induce an ordered internal progression from semantic understanding, through visual foresight, to action formation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EWAM, an action-centric unified embodied model whose asymmetric joint attention gives action tokens access to semantic, current visual, predicted-future, and action information at every layer. Without layer-wise supervision, it develops shallow semantic, intermediate visual-foresight, and deep action specialization; checkpoint tracking and causal interventions indicate this structure is learned and affects action generation. In simulation and real-robot experiments, EWAM surpasses existing VLA, WAM, and hybrid baselines. The authors also report benefits from human egocentric data and subtask-phase supervision.",
+          "zh": "本文提出 EWAM，一种以动作生成 为中心的统一具身模型，通过非对称联合注意力，使动作 token 在各层读取语义、当前视觉、预测未来和动作信息。模型在无逐层监督时形成层级专门化：浅层主要关注视觉语言特征，中层关注预测帧，深层关注动作 token；检查点追踪和因果干预表明该结构是学习形成且影响动作生成的。仿真与真实机器人实验中，EWAM 超过既有基线；作者还报告人类第一视角数据提升迁移与鲁棒性，子任务阶段监督改善长时程完成。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3113,7 +3121,11 @@
             "heading": "",
             "text": "Egocentric human demonstrations offer an accessible source of task experience, but differences in body scale and controller response, together with missing robot states, limit their value as humanoid training supervision.\n\nWe present EgoAlign, a data-construction framework that converts these demonstrations into action and state supervision compatible with a general-purpose, continuous whole-body controller, without collecting physical-robot demonstrations. Using the target-robot model and simulator, EgoAlign guides demonstration collection through execution feedback.\n\nIt preserves locomotion references for visually guided periodic stepping while adapting upper-body interaction geometry through scale alignment and controller-in-the-loop refinement. A final causal replay reconstructs the corresponding robot states and motion-token labels for training with the human observations.\n\nWe assess the resulting supervision by fine-tuning a vision--language--action model solely on adapted human demonstrations and deploying it zero-shot on a physical humanoid. The resulting policies perform long-range object relocation, navigation to unseen goal positions, and independently evaluated foot interaction.\n\nRefinement improves simulated hand alignment and physical pickup success over kinematic alignment alone, while human collection reduces on-site acquisition time relative to teleoperation. https://lambdahumanoid.github.io/EgoAlign/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "EgoAlign converts egocentric human demonstrations into action and state supervision for a general-purpose continuous whole-body controller, without physical-robot demonstrations. Using a target robot model and simulator, it retains locomotion references, adapts upper-body interaction geometry through scale alignment and controller-in-the-loop refinement, and reconstructs robot states and motion-token labels through causal replay. The authors fine-tune a vision-language-action model only on adapted human demonstrations and deploy it zero-shot on a physical humanoid. Evaluations include long-range object relocation, navigation to unseen goals, and foot interaction; refinement improves simulated hand alignment and physical pickup success.",
+          "zh": "本文提出 EgoAlign，将人类第一视角演示转换为适用于通用连续全身控制器的动作和状态监督，无需采集实体机器人演示。该框架利用目标机器人模型与模拟器执行反馈，保留行走参考，并通过尺度对齐和控制器闭环细化调整上身交互几何，再以因果回放重建机器人状态及运动 token 标签。作者仅用适配后的人类演示微调模型，并在实体人形机器人上零样本部署，评估长距离物体搬运、前往未见目标位置及足部交互；细化改善模拟手部对齐和实体拾取成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3144,7 +3156,11 @@
             "heading": "",
             "text": "This work proposes the L1 Adaptive Model Predictive Path Integral (L1-MPPI).It cascades L1 adaptive control with the Model Predictive Path Integral (MPPI) to improve tracking of high-speed UAV trajectories.\n\nThanks to the L1augmentation, the tracking remains accurate even under model uncertainties and external disturbances, such as an additional payload or a mismatch in the modeled aerodynamic drag.\n\nIn contrast to existing MPPI approaches for UAV control that do not explicitly model aerodynamic effects, varying payloads, and typically neglect the dynamics of low-level motor controllers, our L1-MPPI approach enhances the dynamic model used in the MPPI by incorporating the low-level flight controller and motor dynamics, as well as an iterative mixing scheme that reflects the approach of the low-level controller.\n\nThe proposed method demonstrates improved tracking performance in both simulation and the real world, even when the UAV is subjected to an unknown payload. In flight with 35% mass increase, our approach lowers the RMSE by 58.61% with respect to plain MPPI.\n\nCompared to the same MPPI using an online mass estimator in place of the L1 augmentation, the RMSE is lower by 38.59%.During the real-world experiments the UAV reaches speeds up to 13.50 m/s and accelerations up to 2.5 g."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes L1-MPPI, which cascades L1 adaptive control with Model Predictive Path Integral control for high-speed UAV trajectory tracking. Its MPPI model includes low-level flight-controller and motor dynamics, with an iterative mixing scheme. The authors report improved tracking under model uncertainty and disturbances in simulation and real-world experiments. In flight with a 35% mass increase, RMSE is 58.61% lower than with plain MPPI and 38.59% lower than with the same MPPI using an online mass estimator instead of L1 augmentation.",
+          "zh": "本文提出 L1-MPPI，将 L1 自适应控制与模型预测路径积分控制结合，用于提升高速无人机轨迹跟踪。方法把低层飞控和电机动力学纳入 MPPI 动态模型，并采用迭代混合方案；作者称其可在模型不确定性和外部扰动下保持跟踪精度。仿真和真实飞行实验显示，相较普通 MPPI，该方法跟踪性能更好。载荷增加 35% 的飞行中，RMSE 降低 58.61%；相较以在线质量估计器替代 L1 增强的 MPPI，RMSE 降低 38.59%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
