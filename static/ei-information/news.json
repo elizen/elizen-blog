@@ -1079,7 +1079,11 @@
             "heading": "",
             "text": "Extending single Unmanned Aerial Vehicles (UAVs) exploration methods to multi-UAV teams can improve coverage speed and robustness, but introduces challenges such as consistent mapping, safe navigation, and deployment strategy.\n\nIn this work, we present a centralized multi-UAV exploration framework that enables the use of existing single-UAV sampling-based planners in a multi-UAV setting. The proposed architecture allows multiple UAVs to collaboratively explore unknown environments using a shared global Truncated Signed Distance Field (TSDF) map and centralized planning.\n\nBuilding on the voxblox library, we adapt its mapping pipeline to support real-time fusion of depth measurements from multiple UAVs into a common TSDF representation.\n\nIn addition, inter-UAV collision avoidance and robot self-filtering mechanisms are integrated into the system to ensure safe navigation and prevent reconstruction of other UAVs as static obstacles.\n\nThe framework is evaluated in simulation using four sampling-based exploration planners - RH-NBVP, KRH-NBVP, AEP, and KAEP - whose core sampling logic is preserved, with only system-level adaptations for multi-UAV operation.\n\nExperiments are conducted across multiple environments and under two deployment configurations: Joint Start (JS), where UAVs are initialized in close proximity, and Separated Start (SS), where UAVs are initialized in distinct locations.\n\nResults show that SS deployments consistently achieve faster exploration and improved coverage across all planners, highlighting the importance of the deployment strategy in multi-UAV exploration performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a centralized framework for multi-UAV exploration that adapts existing single-UAV sampling-based planners for team use. UAVs share a global truncated signed distance field map, built by fusing depth measurements, with inter-UAV collision avoidance and self-filtering mechanisms. In simulation, the authors evaluate four planners under joint-start and separated-start configurations. They report that separated starts consistently produce faster exploration and better coverage across all planners.",
+          "zh": "论文提出集中式多无人机探索框架，使现有单机采样式规划器可用于多机协作。系统共享全局截断符号距离场地图，并融合多架无人机的深度测量，同时集成机间避碰和机器人自过滤机制。作者在仿真中评估四种规划器及近距离、分散两种起始配置；结果显示，分散起始在各规划器下均实现更快探索和更高覆盖率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1110,7 +1114,11 @@
             "heading": "",
             "text": "Perceiving human motion via privacy-preserving 4D millimeter-wave (mmWave) radar is critical for next-generation human-robot interaction (HRI), where point cloud scene flow serves as a foundational motion representation.\n\nYet the extreme sparsity and noise of 4D radar point clouds make non-rigid motion flow estimation severely ill-posed--a challenge that existing rigid-centric methods and prior works fail to adequately address, largely because they neglect the rich Doppler velocity cues inherent in 4D radar.\n\nWe propose DiFF, a generative framework that marries Doppler-informed motion priors with a Kolmogorov-Arnold Network (KAN)-based conditional flow matching model. At its core, a KAN-attention mechanism enables expressive feature extraction, while a prior-guided generative process harnesses Doppler cues to regularize the ill-posed solution space.\n\nExtensive experiments show that DiFF achieves state-of-the-art (SOTA) performance across diverse real-world datasets, reducing 3D endpoint error to the millimeter scale on the mmBody benchmark."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes DiFF, a generative framework for estimating human motion flow from sparse, noisy 4D millimeter-wave radar point clouds. It combines Doppler-informed motion priors with conditional flow matching based on a Kolmogorov-Arnold Network, using KAN attention for feature extraction and a prior-guided generation process to constrain the solution. The authors report state-of-the-art performance across diverse real-world datasets and millimeter-scale 3D endpoint error on the mmBody benchmark.",
+          "zh": "论文提出 DiFF，一种利用多普勒信息估计人体运动流的生成框架，面向稀疏且含噪的4D毫米波雷达点云。方法结合多普勒运动先验与基于柯尔莫哥洛夫–阿诺德网络的条件流匹配，并以注意力机制提取特征、用先验约束生成过程。作者称，实验中该方法在多个真实数据集上达到最先进性能，并在 mmBody 基准上将三维端点误差降至毫米级。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1141,7 +1149,11 @@
             "heading": "",
             "text": "Mapless navigation in unknown and partially observable environments remains challenging for mobile robots, particularly when local minima prevent the robot from making progress toward its goal.\n\nExisting local navigation methods often lack an explicit mechanism for escaping such situations, while deep reinforcement learning (DRL) approaches typically learn recovery behaviors implicitly through reward design and policy optimization.\n\nIn this work, we propose \\textbf{LME} (Local-Minimum Escaper), a programmatic hierarchical framework that explicitly generates and reasons subgoals to guide robots out of local-minimum regions.\n\nLME operates solely on local observations and selects candidate subgoals using interpretable heuristic criteria that account for both surrounding obstacle geometry and candidate-location safety. A local planner then generates low-level motion commands toward the selected subgoal.\n\nThis design enables LME to handle environments both with and without local minima within a unified framework, while remaining independent of the underlying local planner and requiring no additional training.\n\nExtensive experiments in simulated and real-world environments demonstrate that LME provides robust navigation performance and generalizes to challenging unseen scenarios. Furthermore, the generated subgoals can be used to guide different local planners, substantially improving their ability to escape local minima.\n\nSuccessful deployments on both differential-drive and quadruped robots further demonstrate the practical applicability and generality of the proposed framework."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LME, a training-free hierarchical navigation framework that uses local observations to generate subgoals for escaping local minima. It selects candidates with interpretable criteria based on obstacle geometry and location safety, then relies on a local planner for motion commands. The authors state that simulated and real-world experiments demonstrate robust navigation, including in challenging unseen scenarios, and that the generated subgoals help different local planners escape local minima. Deployments on differential-drive and quadruped robots are also reported.",
+          "zh": "论文提出 LME，一种无需训练、仅依赖局部观测的分层导航框架，用程序化方法生成子目标，帮助机器人摆脱局部极小值。它依据障碍几何和候选位置安全性筛选子目标，再由局部规划器生成运动指令，并可与不同局部规划器配合。作者报告，仿真和真实环境实验显示该方法能应对有无局部极小值的场景，并在差速和四足机器人上成功部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1172,7 +1184,11 @@
             "heading": "",
             "text": "Vehicle-infrastructure cooperation can complement onboard sensing with broader and more informative observations of the traffic environment, providing valuable support for end-to-end autonomous driving.\n\nHowever, existing cooperative driving methods mainly exploit roadside information to enhance the representation of the current scene, while the future consequences of prospective driving actions are rarely modeled explicitly. This limits the ability of the planner to anticipate how its decisions may interact with the evolving traffic environment.\n\nTo address this issue, we propose V2X-WAM, a cooperative world action model that tightly couples cooperative scene understanding, action generation, and future-world reasoning.\n\nV2X-WAM constructs a reliability-aware spatiotemporal representation from vehicle- and infrastructure-side observations, while compressing infrastructure information into a compact quantized message for efficient communication.\n\nBased on the resulting cooperative representation, a multimodal planner generates prospective trajectories, which explicitly condition future occupancy and dynamic-flow prediction. The predicted world consequences are then fed back to refine the planned trajectory, forming a closed interaction between action and future-world evolution.\n\nExperiments on a large-scale real-world cooperative driving dataset demonstrate that V2X-WAM consistently improves planning accuracy and safety over representative end-to-end cooperative driving methods, while achieving stronger future-world prediction and substantially lower communication overhead.\n\nAblation studies further validate the effectiveness of the proposed design."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents V2X-WAM, combining reliability-aware spatiotemporal representations from vehicle and infrastructure observations with compact quantized infrastructure messages, multimodal trajectory planning, and future-world prediction. Planned trajectories condition predictions of future occupancy and dynamic flow, whose results feed back to refine the plan. On a large-scale real-world cooperative driving dataset, the authors report improved planning accuracy and safety, stronger future-world prediction, and substantially lower communication overhead than representative end-to-end cooperative driving methods. Ablation studies are reported as validating the design.",
+          "zh": "论文提出 V2X-WAM，将车端与路侧观测形成的可靠性感知时空表示、基础设施信息量化压缩、多模态轨迹规划和未来世界预测结合起来。规划轨迹用于条件化未来占用与动态流预测，预测结果再反馈以修正轨迹，构成闭环。作者报告，在大规模真实世界协同驾驶数据集上的实验中，该方法相比代表性端到端协同驾驶方法提升规划准确性和安全性、增强未来世界预测，并显著降低通信开销；消融实验验证了设计效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
