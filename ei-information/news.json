@@ -1731,7 +1731,11 @@
             "heading": "",
             "text": "Safe and efficient trajectory planning is essential in autonomous driving. However, existing end-to-end approaches often fall short in both computational efficiency and safety guarantees.\n\nMethods based on imitation learning suffer from causal confusion, while rule-based scoring approaches often incur heavy computational overhead and suffer from objective misalignment. Additionally, preference-based methods rely on strict pairwise annotations, limiting data utilization.\n\nTo overcome these limitations, we propose EMPlan, an efficient multi-modal trajectory planning method powered by reward-guided fine-tuning. We design a hybrid architecture that combines sparse anchors with an offset refinement module for efficient multi-modal trajectory prediction.\n\nSparse anchors provide coarse trajectory candidates with low latency, which are subsequently refined by the offset module for higher prediction accuracy. To enhance safety without incurring additional inference costs, we adopt a two-stage training paradigm consisting of pretraining and reward-guided fine-tuning.\n\nDuring fine-tuning, we leverage rule-based reward signals and unpaired preference supervision to refine the pretrained policy toward safer trajectory selection. We evaluate EMPlan on the non-reactive NAVSIM benchmark, where it strikes a favorable balance between planning accuracy and efficiency, demonstrating superior performance under real-time constraints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EMPlan, a multi-modal trajectory planning method that combines sparse anchors with an offset refinement module. Its two-stage training uses pretraining followed by reward-guided fine-tuning with rule-based rewards and unpaired preference supervision, aiming to improve safer trajectory selection without added inference cost. The authors evaluate it on the non-reactive NAVSIM benchmark and report a favorable balance of planning accuracy and efficiency, with strong performance under real-time constraints.",
+          "zh": "论文提出 EMPlan，一种面向自动驾驶的高效多模态轨迹规划方法，结合稀疏锚点与偏移量细化模块生成并优化轨迹候选。方法采用预训练和奖励引导微调两阶段训练，以规则奖励信号和非配对偏好监督调整策略，目标是在不增加推理成本的情况下提升安全性。作者在非反应式 NAVSIM 基准上评估，报告该方法兼顾规划准确性与效率，并在实时约束下表现较好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1762,7 +1766,11 @@
             "heading": "",
             "text": "General-purpose agents can plan, use tools, and revise their behavior from feedback, but it remains unclear whether these capabilities transfer from digital environments to embodied manipulation. To investigate this question, we introduce LIBERO-Agent, an agent-native benchmark for evaluating these agents in robot manipulation tasks.\n\nRather than asking agents to submit task-level Python control programs or operate through high-level robot skills, LIBERO-Agent provides an interactive robotic environment where agents can select which observations to inspect, process them with their own tools, and issue native action commands.\n\nLIBERO-Agent integrates 200 tasks into a common interaction framework and provides a 30-task primary suite that separates perception, short-horizon execution, and long-horizon composition.\n\nResults reveal a pronounced reliability gap: while agents perform well on perception and easy short-horizon tasks, their performance degrades substantially on hard short-horizon and long-horizon tasks. Richer observations improve short-horizon manipulation, while demonstration benefits depend on the agent and format.\n\nAmong these agents, GPT-6 Astra achieves the strongest overall performance. Further analysis shows its major advantage lies in mechanism interaction, especially when sustained physical contact is needed, while its remaining failures stem from cross-stage interference and geometric errors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LIBERO-Agent, a benchmark for evaluating general-purpose agents in direct robot manipulation. Agents inspect selected observations, process them with their own tools, and issue native action commands in an interactive environment. The benchmark includes 200 tasks and a 30-task primary suite spanning perception, short-horizon execution, and long-horizon composition. Results show strong performance on perception and easy short-horizon tasks but substantial degradation on harder and longer tasks. The authors report that richer observations help short-horizon manipulation, demonstration benefits vary, and GPT-6 Astra performs best overall, particularly in mechanism interaction.",
+          "zh": "论文介绍 LIBERO-Agent，这是一个评估通用智能体直接执行机器人操作任务的基准。智能体可在交互式机器人环境中选择观察内容、使用自身工具处理信息，并发出原生动作指令；基准包含 200 项任务及一个用于区分感知、短程执行和长程组合能力的 30 项主要套件。结果显示，智能体在感知和简单短程任务上表现较好，但在困难短程及长程任务上可靠性下降。作者还报告，丰富观察有助于短程操作，示范效果因智能体和格式而异；GPT-6 Astra 总体表现最强，其优势集中于机制交互，剩余失败与跨阶段干扰和几何误差有关。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1793,7 +1801,11 @@
             "heading": "",
             "text": "Complex robotic manipulation tasks frequently require a long-term memory of past events and actions.\n\nAs conditioning on full histories renders policies prone to spurious correlations and degrades performance, many approaches to policy memory involve compressing historical information through expensive VLM queries in-the-loop to process only task-salient information.\n\nIn this paper, we propose an alternative approach in which computationally intensive VLM queries are made during train-time to learn a lightweight latent memory that can be efficiently queried at deployment time.\n\nOur representation, which we call the workspace token, is trained by （1） using a VLM to identify current and historical information necessary for completing a task, then （2） distilling these into the workspace token using a set-reconstruction decoder loss.\n\nIn both simulation and hardware, we show that the workspace token can be used as a drop-in replacement for observations during deployment, enabling policies to solve memory-intensive tasks without the need for VLM reasoning in-the-loop, in effect serving as a latent harness for distilling a stronger reasoning models ability to solve long-horizon tasks to a reactive robotic policy.\n\nWe further demonstrate that the workspace tokens are not only more lightweight, but also lead to better policy performance compared to conditioning policies on explicit modalities like curated past image frames, motivating a latent approach to history curation and reasoning model harnesses more broadly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a workspace token as lightweight historical memory for robotic policies. During training, a vision-language model identifies current and past information needed for a task, and a set-reconstruction decoder loss distills that information into a latent token. At deployment, the token can replace observations without vision-language model reasoning in the loop. The authors report results in both simulation and hardware, saying the token supports memory-intensive tasks and yields lighter representations and better policy performance than conditioning on explicit modalities such as curated past image frames.",
+          "zh": "论文提出 workspace token，用于为机器人策略提供轻量级历史记忆。方法在训练阶段利用视觉语言模型识别完成任务所需的当前及历史信息，再通过集合重建解码器损失将其蒸馏为潜在记忆；部署时可用该 token 替代观察，无需在环路中调用视觉语言模型推理。作者称，在仿真和硬件实验中，该表示支持策略完成记忆密集型任务，并且相较于使用整理过的历史图像等显式模态，带来更轻量的表示和更好的策略表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1824,7 +1836,11 @@
             "heading": "",
             "text": "Group synchronization (GS) is the problem of estimating a set of $N$ unknown elements $g_1,\\ldots, g_N \\in \\mathcal{G}$ in a group $\\mathcal{G}$, given noisy measurements of a subset of their pairwise ratios $g_i^{-1} g_j$.\n\nGS problems lie at the core of many state estimation tasks in robotics and computer vision, including 3D vision, robotic mapping, inertial navigation, and molecular reconstruction. Unfortunately, GS problems are typically both high-dimensional and non-convex, and therefore hard to solve in general.\n\nIn this paper, we present Fast-Sync, a fast linear approximation method for GS that is suitable for initializing local manifold-based optimizers or certifiable global methods.\n\nOur approach generalizes chordal initialization to arbitrary matrix Lie groups, and additionally proposes two new key algorithmic enhancements: we show how to exploit both the Kronecker-product structure in the problem data matrix and the topology of the synchronization graph to improve speed, scalability, and accuracy.\n\nExperimental evaluation across several GS tasks demonstrates that Fast-Sync provides high-quality initializations that enable local optimizers to efficiently recover globally optimal GS solutions, achieving high success rates even with considerable measurement noise."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Fast-Sync, a fast linear approximation for group synchronization over arbitrary matrix Lie groups, intended to initialize local manifold optimizers or certifiable global methods. It generalizes chordal initialization and uses Kronecker-product structure in the data matrix along with synchronization-graph topology to improve speed, scalability, and accuracy. Experiments across several synchronization tasks show that Fast-Sync provides high-quality initializations, enabling local optimizers to recover globally optimal solutions efficiently, with high success rates even under considerable measurement noise.",
+          "zh": "论文提出 Fast-Sync，一种适用于任意矩阵李群的群同步快速线性近似方法，可为局部流形优化器或可认证的全局方法提供初始化。该方法将弦空间初始化推广到一般矩阵李群，并利用问题数据矩阵中的 Kronecker 积结构及同步图拓扑改进速度、可扩展性和准确性。作者在多个群同步任务上的实验显示，Fast-Sync 能提供高质量初始化，使局部优化器有效恢复全局最优解，并在测量噪声较大时仍取得较高成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
