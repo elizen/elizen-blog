@@ -1499,7 +1499,11 @@
             "heading": "",
             "text": "Soft pneumatic actuators (SPAs) are highly promising and have been extensively explored within the field of soft robotics. Under pneumatic pressure loads, an SPA undergoes bending deformation to perform specific tasks.\n\nA multi- or omni-directional SPA can bend and move in any direction within a 3D space, leveraging its multiple degrees of freedom to realize various mechanical functions. This work presents a systematic methodology using topology optimization (TO) to achieve an optimized design for a multi-directional SPAs.\n\nTo ensure manufacturing robustness, a three-field TO formulation considering blueprint, dilated, and eroded designs is implemented. Additionally, Darcy's law, incorporating a drainage term, is used to model the design-dependent nature of the pneumatic loading.\n\nA min-max optimization problem is formulated based on the target output deformations of the SPA unit and solved using the Method of Moving Asymptotes. The optimization yields a high-performing, unconventional geometric design. Finally, numerical simulations demonstrate that the optimized SPA successfully achieves versatile multi-directional movements."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a topology optimization methodology for designing multidirectional soft pneumatic actuators. To improve manufacturing robustness, it uses a three-field formulation with blueprint, dilated, and eroded designs, and models design-dependent pneumatic loading through Darcy’s law with a drainage term. A min-max problem based on target output deformations is solved using the Method of Moving Asymptotes. The resulting unconventional geometry is reported to achieve versatile multidirectional movements in numerical simulations.",
+          "zh": "本文提出一种基于拓扑优化的多方向软体气动执行器设计方法。为增强制造鲁棒性，采用包含蓝图、膨胀和腐蚀设计的三场拓扑优化，并以含排水项的达西定律描述依赖设计的气动载荷。研究将目标输出变形构造成最小—最大优化问题，并用移动渐近线法求解。优化得到一种非常规几何设计；数值仿真显示，该执行器能够实现多种方向的运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1530,7 +1534,11 @@
             "heading": "",
             "text": "In interactive scenarios, an autonomous driving system is required to generate ego actions under the influence of other agents' behaviors.\n\nExisting World Action Models (WAMs) typically model other agents as components of the world model rather than as decision-makers that fundamentally shape the action of the ego agent, which impairs their performance in dense interaction scenarios.\n\nWe introduce Reciprocal World Action Models (ReWAM), a game-theoretic world action modeling framework that captures the reciprocal influence between the ego agent and other agents by representing them as conditional responders whose actions are mutually influenced.\n\nWe instantiate this framework with a Level-$k$ response hierarchy, where role-specific ego and other action DiTs exchange compact strategy tokens through cross-agent attention while remaining grounded in a shared representation of the future driving world.\n\nTo learn the response policy of the ego agent from demonstrations, we formulate expert actions as samples from the best response distribution and jointly optimize the entire hierarchy using conditional flow matching. Our framework is evaluated on the NAVSIM dataset and achieves state-of-the-art performance compared to baselines.\n\nThe improvement is particularly significant in interactive scenarios, validating that modeling reciprocal responses provides a more effective foundation for interaction-aware world action generation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReWAM is a game-theoretic framework for world action modeling that represents the ego vehicle and other agents as conditional responders whose actions influence one another. Its Level-k hierarchy uses role-specific action diffusion transformers that exchange compact strategy tokens through cross-agent attention while sharing a representation of the future driving world. Expert actions are treated as samples from a best-response distribution, and the hierarchy is jointly optimized with conditional flow matching. On NAVSIM, the authors report state-of-the-art performance against baselines, with particularly notable gains in interactive scenarios.",
+          "zh": "本文提出互惠世界动作模型 ReWAM，用博弈论框架描述自车与其他车辆作为条件响应者时相互影响的动作。在 Level-k 响应层级中，角色特定的动作扩散变换器通过跨主体注意力交换策略令牌，并共享未来驾驶世界表征。研究将专家动作视为最佳响应分布样本，通过条件流匹配联合优化层级。在 NAVSIM 数据集评估中，作者报告其总体优于基线，且在交互场景中的提升尤为显著。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1561,7 +1569,11 @@
             "heading": "",
             "text": "We present PrefPI (Preference-Guided Policy Iteration), an iterative framework for steering pretrained generative robot policies using only relative preferences over self-generated trajectories.\n\nUnlike prior preference-learning methods that primarily sharpen modes already represented by the policy, we study steering beyond the initial effective support, where desired behaviors are rarely or never observed under the initial policy.\n\nOur key idea is to formulate preference learning as preference-conditioned generative modeling: preferred trajectories define a conditional distribution, whose density ratio with the broader behavior prior provides an implicit preference signal amplified by classifier-free guidance (CFG).\n\nRepeating this preference-conditioned modeling and guidance step yields a form of preference-guided policy iteration, turning incremental improvements toward previously inaccessible behaviors. Across diffusion policies and the PI0.5 flow- matching VLA in simulation and the real world, PrefPI produces substantial behavioral shifts with limited feedback.\n\nIn particular, PrefPI increases object transport height from 10.7 cm to 19.8 cm on real hardware with only 150 preference-labeled trajectories."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PrefPI is an iterative framework that steers pretrained generative robot policies using relative preferences between self-generated trajectories, including toward behaviors rarely or never produced by the initial policy. It treats preference learning as preference-conditioned generative modeling and uses classifier-free guidance to amplify an implicit preference signal. The process is repeated as preference-guided policy iteration. The authors report behavioral shifts across diffusion policies and the PI0.5 flow-matching VLA in simulation and the real world. On real hardware, transport height rose from 10.7 cm to 19.8 cm using 150 preference-labeled trajectories.",
+          "zh": "PrefPI 是一种迭代框架，利用模型自行生成轨迹之间的相对偏好，引导预训练生成式机器人策略探索初始策略较少或未覆盖的行为。方法将偏好学习表述为偏好条件生成建模，并通过无分类器引导强化隐式偏好信号，反复迭代以推动策略变化。作者在仿真和真实环境中的扩散策略及 PI0.5 流匹配视觉语言动作模型上报告了行为转变。真实硬件实验中，仅用 150 条偏好标注轨迹，物体搬运高度由 10.7 厘米增至 19.8 厘米。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1592,7 +1604,11 @@
             "heading": "",
             "text": "World action models (WAMs) are large embodied policies that jointly predict future video and the actions to execute, emitting a fixed-length action chunk per inference call.\n\nSuch a policy allocates its computational budget uniformly in time, unable to execute for longer over free-space motion or to spend more inference on contact-rich manipulation, which limits the throughput a WAM can reach when served in the cloud.\n\nWe present SplineWAM, which adaptively compresses the action trajectory into a fixed-size window of cubic B-spline parameters, fitting the knot times to the characteristics of the motion.\n\nOne parameter budget then decodes into chunks of varying temporal resolution and duration, and both the executed span and the interval until the next policy call follow from the prediction itself.\n\nAligning the video supervision to the fitted knot times of the demonstration rather than to a uniform grid concentrates the supervised frames where the action trajectory is complex.\n\nFor asynchronous deployment we introduce Jacobian-Pullback Real-Time Chunking (JP-RTC), which imposes chunk continuity on the decoded raw actions the robot executes rather than on the spline parameters, and corrects the parameters through the decoder so that the executed prefix agrees with the actions already committed.\n\nOn LIBERO-Plus and RoboCasa, SplineWAM improves success rate over an action chunking WAM by $8.2$ and $4.4$ points while cutting policy calls per episode by 22% and 26%.On three bimanual real-robot tasks under asynchronous execution, it leads or matches the baseline while decoding 1.2 to 1.6 times as much executed motion per call."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SplineWAM compresses action trajectories into a fixed-size set of cubic B-spline parameters, fitting knot times to motion characteristics so a parameter budget can represent actions at varying temporal resolutions and durations. The predicted trajectory determines both the execution span and the interval before the next policy call; video supervision is aligned to fitted knot times. For asynchronous deployment, JP-RTC enforces continuity on decoded actions the robot executes and adjusts parameters through the decoder. On LIBERO-Plus and RoboCasa, the authors report success-rate gains of 8.2 and 4.4 points and 22% and 26% fewer calls per episode. Across three bimanual real-robot tasks, it leads or matches the baseline.",
+          "zh": "SplineWAM 将动作轨迹压缩为固定数量的三次 B 样条参数，并根据运动特征拟合节点时间，使同一参数预算可表示不同时间分辨率和持续时长的动作。模型据此确定执行跨度及下次调用间隔，并将视频监督对齐到示范轨迹的节点时间。针对异步执行，作者提出 JP-RTC，在机器人实际执行的动作上保持片段连续性，并经解码器修正参数。在 LIBERO-Plus 和 RoboCasa 上，其成功率较基线分别提高 8.2 和 4.4 个百分点，单回合策略调用减少 22% 和 26%；三项双臂真实机器人任务中表现领先或持平。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
