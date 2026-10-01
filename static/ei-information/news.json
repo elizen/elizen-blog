@@ -939,7 +939,11 @@
             "heading": "",
             "text": "Class 8 trucks differ from passenger cars in geometry, dynamics, and maneuvering requirements. As a result, vision-language-action (VLA) models trained for passenger vehicles do not readily transfer to Class 8 trucks, particularly in unstructured scenarios such as accident scenes and construction zones.\n\nRather than training a truck-driving VLA from scratch, we propose an adapt-then-steer strategy that adapts an off-the-shelf VLA to generate trajectories for Class-8 trucks in these challenging scenarios.\n\nIn the adapt stage, we use NVIDIA's Alpamayo 1.5 as the base model, fine-tuning only its action-generation stack on a few hundred real-world construction and accident-related highway scenarios. In the steer stage, we introduce Flow Velocity Steering (FVS) to further refine the model's predictions while holding the adapted VLA fixed.\n\nFVS is a compact, flow-time-conditioned residual module that adds learned corrections to the action-space flow velocity used to update the action sequence at each generation step.\n\nIn open-loop evaluation on a scenario-disjoint held-out set, targeted fine-tuning more than halves single-candidate average displacement error (ADE) and final displacement error (FDE) over the entire 6.4 s horizon compared to the base model.\n\nUsing the same targeted demonstrations, FVS further reduces the fine-tuned model's full-horizon ADE and FDE by 13.9% and 16.5%, respectively.\n\nAt matched data budgets, targeted supervision yields 19-26% lower full-horizon ADE than general truck-driving supervision, while the targeted model remains competitive with a model fine-tuned on approximately 65 times as many general truck-driving scenarios. These results support adapt-then-steer for data-efficient vehicle-domain transfer to Class 8 trucks.\n\nOur project website is available at https://truckvla.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an adapt-then-steer approach for transferring an off-the-shelf vision-language-action model to Class 8 truck driving in unstructured scenes. It fine-tunes the action-generation stack of NVIDIA Alpamayo 1.5 on targeted highway scenarios, then applies Flow Velocity Steering while keeping the adapted model fixed. In open-loop evaluation on a scenario-disjoint held-out set, the authors report that targeted fine-tuning more than halves full-horizon ADE and FDE versus the base model, with steering reducing them further by 13.9% and 16.5%, respectively.",
+          "zh": "论文提出一种将现成视觉语言动作模型迁移至Class 8卡车驾驶的“先适配、再引导”方法，面向事故现场和施工区等非结构化场景。适配阶段微调NVIDIA Alpamayo 1.5的动作生成部分；引导阶段加入流速度引导模块，在模型固定时修正预测。作者报告，在场景不重叠的留出集开放环评估中，定向微调使全时域ADE和FDE较基础模型降低一半以上；引导模块又分别降低13.9%和16.5%。结果限于所述评估设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -970,7 +974,11 @@
             "heading": "",
             "text": "This paper proposes a communication-free multi-robot task allocation framework based solely on local observations. In this study, tasks are defined as reaching target locations. Each robot estimates the positions of neighboring robots using a Labeled Multi-Bernoulli (LMB) filter and independently assigns tasks through a greedy auction-based strategy.\n\nBy continuously updating state estimates and reallocating tasks during execution, the proposed method enables decentralized coordination without explicit communication.\n\nMonte Carlo simulations demonstrate that the proposed method enables effective cooperative task allocation without inter-robot communication while remaining robust to measurement clutter and observation uncertainty."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a communication-free framework for multi-robot task allocation based solely on local observations, with tasks defined as reaching target locations. Each robot estimates neighboring robots’ positions using a Labeled Multi-Bernoulli filter and independently assigns tasks through a greedy auction strategy. State estimates and assignments are updated during execution. Monte Carlo simulations show cooperative allocation without explicit inter-robot communication and report robustness to measurement clutter and observation uncertainty; the reported evidence is simulation-based.",
+          "zh": "论文提出一种仅依靠本地观测、无需机器人间通信的多机器人任务分配框架，其中任务定义为到达目标位置。每个机器人使用带标签多伯努利滤波器估计邻近机器人的位置，并通过贪心拍卖策略独立分配任务；执行期间持续更新状态估计并重新分配。蒙特卡洛仿真显示，该方法在没有显式通信时能够实现协作任务分配，并对测量杂波和观测不确定性保持稳健。结论依据仿真结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1001,7 +1009,11 @@
             "heading": "",
             "text": "Precise grounding matters. It specifies which object is the target and where that object is, even in clutter and for tiny objects, and it has to be fast enough for closed-loop control.\n\nYet vision-language-action (VLA) and world-action models (WAMs) take perception from general-purpose vision-language and video-generation backbones, which still fail in these settings. We introduce GroundingPI, a 4B grounding foundation model that generates points and boxes as quantized coordinates in a shared vocabulary.\n\nTraining combines multimodal and spatial pretraining, supervised fine-tuning, and reinforcement learning with GRPO, using supervision from public datasets and dedicated data engines.\n\nAgainst 44 baselines across 34 grounding benchmarks spanning 11 perceptual capabilities, GroundingPI establishes a new state of the art, averaging 73.68%, above the larger GPT-6 Astra (71.54%).As a downstream visual backbone, GroundingPI improves performance on robotic manipulation and autonomous driving.\n\nOn RoboTwin 2.0, it outperforms every mainstream backbone we evaluate in all four out-of-distribution settings, by up to 24.8% relative to the strongest backbone. On RoboCasa-GR1, GroundingPI trained with 50% of the demonstrations outperforms those baselines trained with 75%.\n\nOn nuScenes, used as the visual backbone, GroundingPI attains an average open-loop L2 error of 0.296 m. We systematically analyze GroundingPI's pretraining in scale and data composition. Downstream autonomous driving and robotic manipulation improve as the pretraining is scaled.\n\nAnalyzing the data recipe across these 11 perceptual capabilities shows dense grounding's substantial benefits for both, and OCR's potential as a catalyst for perceptual learning. These results support grounding as a perceptual foundation, and dedicated perceptual pretraining as a promising direction for foundation models of physical intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GroundingPI, a 4B grounding model that produces points and boxes as quantized coordinates. Its training combines multimodal and spatial pretraining, supervised fine-tuning, and reinforcement learning. The authors report a 73.68% average across 34 grounding benchmarks and improvements as a visual backbone for robotic manipulation and autonomous driving. They describe results on RoboTwin 2.0, RoboCasa-GR1, and nuScenes, and analyze how pretraining scale and data composition relate to downstream performance.",
+          "zh": "论文介绍GroundingPI，一种生成量化坐标点和边界框的40亿参数视觉定位基础模型，训练结合多模态与空间预训练、监督微调及强化学习。作者报告其在34项定位基准上的平均成绩为73.68%，高于所比较的基线，并称其作为视觉骨干可改善机器人操作和自动驾驶任务。在RoboTwin 2.0、RoboCasa-GR1及nuScenes上的结果属于论文所述评估；作者还分析了预训练规模和数据组成对下游表现的影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1032,7 +1044,11 @@
             "heading": "",
             "text": "Random exploration reveals how an environment can be traversed before a goal is specified. Can this experience support long-range planning without policy-improvement training?\n\nOur random-walk analysis explains what temporal relations contain: short horizons reveal geodesic geometry in the diffusion limit, while longer horizons reveal connectivity between regions before mixing removes these distinctions.\n\nWe learn these relations with a conditional energy-based model that estimates temporal log-density ratios through horizon-conditioned embeddings. The model is trained on observation pairs by noise-contrastive estimation, without action or reward labels. The planner queries these learned relations at different horizons as it moves toward the goal.\n\nAt test time, a separate local dynamics model predicts candidate action outcomes, and the temporal model evaluates their progress toward the goal by selecting or aggregating estimated improvements across horizons. The agent executes one action and replans with both models fixed.\n\nExperiments demonstrate long-range maze planning from random exploration using states and images. Learned score fields, embedding probes, and planned routes exhibit properties of a multiscale cognitive map. We further demonstrate egocentric navigation from random exploration and manipulation planning from suboptimal data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies long-range planning from random exploration without policy-improvement training. A conditional energy-based model learns temporal relations from observation pairs using noise-contrastive estimation, without action or reward labels. At test time, a separate local dynamics model predicts candidate outcomes, while the temporal model scores progress across horizons; the agent executes one action and replans with both models fixed. Experiments demonstrate maze planning from states and images, as well as egocentric navigation and manipulation planning from suboptimal data.",
+          "zh": "论文研究如何利用随机探索经验进行长程规划，而不通过策略改进训练。作者以条件能量模型从观测对学习不同时间跨度的时间关系，并用噪声对比估计训练，无需动作或奖励标签；规划器结合独立的局部动力学模型评估候选动作，每次执行一步后重新规划，两个模型保持固定。实验展示了基于随机探索状态和图像的迷宫规划，并报告了自我中心导航及基于次优数据的操作规划。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
