@@ -287,7 +287,11 @@
             "heading": "",
             "text": "Accurate velocity measurement is a fundamental requirement for autonomous surface and underwater vehicles. Commonly, velocity is provided by a Doppler velocity log (DVL) sensor, yet it becomes unavailable due to operational altitude constraints.\n\nIn such situations, electromagnetic logs (EMLogs) provide a critically robust alternative for continuous velocity estimation. However, raw EMLog measurements are inherently corrupted by systematic errors, which need to be calibrated prior mission begins.\n\nCurrently, a benchmarking comparative evaluation of how different calibration models perform under rapidly changing dynamic sea conditions is missing in the literature. To bridge this gap, this paper presents a comparative model-based calibration methodology that evaluates four distinct calibration models using two different estimation pipelines.\n\nThe proposed framework is rigorously validated on a unique 221 minutes of continuous real-world telemetry collected from the MARVEL surface vehicle during dynamic sea trials. The dataset contains two different EMLogs and DVL recordings.\n\nExperimental results demonstrate that the bias and scale error model implemented with the Kalman filter improves the speed estimation by 71%.\n\nWe also demonstrate that dynamical manoeuvres further improve the accuracy compared to standard straight-line paths, ultimately delivering a validated, real-time online calibration EMLog approach for autonomous surface vehicles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper compares four model-based EMLog calibration methods using two estimation pipelines and evaluates them on 221 minutes of continuous telemetry from dynamic sea trials with the MARVEL surface vehicle. The data include two EMLogs and DVL recordings. The authors report that a bias-and-scale-error model implemented with a Kalman filter improves speed estimation by 71%, and that dynamic manoeuvres improve accuracy compared with straight-line paths. They present a validated real-time online calibration approach for autonomous surface vehicles.",
+          "zh": "论文比较了四种电磁测速仪校准模型及两种估计流程，并用MARVEL水面艇动态海试中221分钟的连续遥测数据进行验证，数据包含两台电磁测速仪和DVL记录。作者报告，结合卡尔曼滤波的偏置与尺度误差模型使速度估计改善71%；动态机动相较直线路径也提高准确度。研究提出适用于自主水面艇的实时在线校准方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -318,7 +322,11 @@
             "heading": "",
             "text": "Unmanned aerial vehicle (UAV) relay networks can restore connectivity after communication infrastructure is damaged. Urban relay placement is difficult because line-of-sight blockage, communication range, altitude, and three-dimensional obstacles must be considered jointly.\n\nArm2Air transfers obstacle-avoidance skeletons from robot arms to UAV relay placement through cross-embodiment transfer.\n\nSource-domain robot-arm motions from a pretrained Neural MP model are converted into ordered skeletons that pretrain a transformer-based transfer platform, which is then adapted to the UAV domain using limited target data and Low-Rank Adaptation.\n\nThe transferred skeleton initializes a relay chain that is refined for connectivity, bottleneck capacity, delay, and movement cost. On nine held-out high-clutter 3D urban maps, Arm2Air reduced median end-to-end planning runtime by 64.9 percent relative to the fastest conventional planner.\n\nOn the high-obstruction group of a separate 30-map dense urban holdout, it increased bottleneck capacity by 32.6 percent, reduced capacity variance by 74.7 percent, reduced maximum hop distance by 13.2 percent, reduced hop-distance variance by 75.2 percent, and reduced relay displacement by 16.9 percent relative to IMPC-MD.\n\nWith only three target-domain training maps, Arm2Air reduced relay-position root mean square error by 53.6 percent relative to training from scratch while updating 0.134 million parameters, compared with 1.383 million for Scratch and Full Fine-tuning.\n\nThese results demonstrate computationally and data-efficient UAV relay placement and suggest a broader principle for transferring ordered structural priors across heterogeneous embodied tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Arm2Air transfers ordered obstacle-avoidance skeletons from pretrained robot-arm motions to UAV relay placement, then adapts the model with limited target-domain data using Low-Rank Adaptation. The skeleton initializes a relay chain refined for connectivity, capacity, delay, and movement cost. On nine held-out cluttered 3D urban maps, median planning runtime was 64.9% lower than the fastest conventional planner. On a separate dense-map holdout, the authors report several improvements over IMPC-MD; with three training maps, relay-position error was 53.6% lower than training from scratch.",
+          "zh": "Arm2Air将预训练机器人手臂运动转化为有序骨架，用于预训练迁移模型，再以少量无人机目标域数据和低秩适配迁移至中继部署。骨架初始化中继链，并针对连通性、瓶颈容量、时延和移动成本优化。在九张高杂波三维城市地图上，规划运行时间中位数较最快传统规划器降低64.9%；另在独立30张密集城市地图的高遮挡组中，相较IMPC-MD多项容量、跳距及位移指标改善。作者还报告，仅用三张训练地图时，位置误差较从头训练降低53.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -349,7 +357,11 @@
             "heading": "",
             "text": "Soft robots and tactile sensors have demonstrated great potential in delicate manipulation tasks. Soft pneumatic robots enable safe contact through compliance, and vision-based tactile sensors offer high-resolution touch perception.\n\nHowever, learning tactile manipulation with compliant robots has been challenging, bottlenecked by the lack of efficient simulation. Existing simulators typically model them in isolation, and exhibit large calibration gaps that are difficult to overcome efficiently.\n\nWe present PneuTac, a unified framework for tactile-feedback manipulation with soft pneumatic robots. We leverage the material point method (MPM) for modelling the dynamics of the soft robot and the deformable tactile membrane, and 3D Gaussian splatting (3DGS) for rendering.\n\nReal-to-sim modelling is done with a simple vision-based method, to then train action and perception networks for efficient simulation with surrogate models. We use the framework to drive a tactile-guided pipeline to collect demonstrations in simulation.\n\nThrough experiments on a custom-designed pneumatic soft finger with a tactile sensing tip, together with additional cross-device evaluations, we show that PneuTac is capable of accurately modelling soft robots with tactile sensors, and that policies trained with simulation-augmented demonstrations outperform baselines trained on the same real data on three real-world contact-rich compliant manipulation tasks, making it a practical framework for tactile manipulation on compliant hardware."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PneuTac combines the material point method to model soft pneumatic robots and deformable tactile membranes with 3D Gaussian splatting for rendering. The framework uses vision-based real-to-sim modelling and surrogate models to train action and perception networks, and collects demonstrations in simulation. Experiments with a custom pneumatic soft finger and additional cross-device evaluations indicate that it models soft robots with tactile sensors. On three real-world contact-rich compliant manipulation tasks, policies trained with simulation-augmented demonstrations outperformed baselines trained on the same real data.",
+          "zh": "PneuTac将物质点法用于软气动机器人和可变形触觉膜建模，并用3D高斯泼溅渲染，构建触觉反馈操作仿真框架。作者通过视觉方法进行真实到仿真的建模，再以替代模型训练动作与感知网络，并在仿真中采集示范。针对定制软指触觉装置的实验及跨设备评估显示，该框架能够建模带触觉传感器的软机器人；在三项真实世界、接触丰富的柔顺操作任务中，仿真增强示范训练的策略优于使用相同真实数据训练的基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -380,7 +392,11 @@
             "heading": "",
             "text": "Stochastic differential equations (SDEs) can be studied via It\\^{o} calculus and rough path theory. For stochastic optimal control, these two frameworks give distinct Pontryagin Maximum Principle (PMP) optimality conditions with forward-backward SDEs (FBSDEs) or rough differential equations.\n\nWe show that the adjoint equations of the It\\^{o} and rough PMPs are connected via the conditional expectation $p_t^{\\text{It\\^{o}}}=\\mathbb{E}[p_t^{\\text{rough}} \\mid \\mathcal{F}_t]$, where $\\mathcal{F}_t$ represents information available at time $t$.First, we derive a rough stochastic PMP for problems with adapted controls that does not use FBSDEs.\n\nIts proof extends the rough stochastic PMP over deterministic controls by considering stochastic needle variations. Second, we derive a unified PMP connecting the It\\^{o} and rough PMPs, using It\\^{o}-Stratonovich conversion formulas and duality identities between the forward tangent and backward adjoint SDEs.\n\nAs a first application, we rederive the adjoint matching method for fine-tuning generative models. As a second application, we propose an indirect shooting method for a class of feedback problems. Overall, these results give a new conditional bridge connecting two popular frameworks for stochastic optimal control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper connects the adjoint equations in Itô and rough-path stochastic optimal control through a conditional-expectation relation. It derives a rough stochastic Pontryagin Maximum Principle for adapted controls without using forward-backward SDEs, extending a result for deterministic controls through stochastic needle variations. The authors then formulate a unified principle using Itô–Stratonovich conversion and duality identities. Applications include rederiving the adjoint matching method for fine-tuning generative models and proposing an indirect shooting method for a class of feedback problems.",
+          "zh": "论文研究随机最优控制中的Itô与粗糙路径框架，指出两者伴随方程通过条件期望关系相连。作者首先为适应控制推导不依赖前后向随机微分方程的粗糙随机庞特里亚金极大值原理，并以随机针变分扩展确定性控制的证明。随后利用Itô–Stratonovich转换公式及前向切向与后向伴随方程的对偶恒等式，建立统一极大值原理。应用包括重新推导生成模型微调的伴随匹配方法，以及提出一类反馈问题的间接射击法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
