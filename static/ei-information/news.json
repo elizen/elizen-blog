@@ -1995,7 +1995,11 @@
             "heading": "",
             "text": "Efficient action generation in vision-language-action (VLA) models requires capturing both coarse action structure and fine-grained details. Discrete action tokens provide compact structural representations but sacrifice precision, while continuous action tokens offer high precision but often require multiple denoising steps.\n\nWe introduce Discrete Forcing, a flow-matching framework that combines these representations through an explicit coarse-to-fine generation process. It first predicts discrete action tokens to establish a coarse action structure, then uses them to guide continuous action refinement.\n\nThe discrete and continuous components share a common diffusion transformer backbone with specialized branches, maintaining a parameter count comparable to a conventional single-branch model while requiring only one forward pass per branch.\n\nExtensive evaluations across multiple benchmarks demonstrate improved performance and faster inference over a parameter-matched continuous action expert, with consistent performance gains as model capacity increases. Real-world experiments further demonstrate improvements on high-precision and dynamic manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Discrete Forcing, a flow-matching framework for vision-language-action models. It predicts discrete action tokens to establish a coarse structure, then uses them to guide continuous action refinement. The discrete and continuous components share a diffusion transformer backbone with specialized branches. The authors report better performance and faster inference than a parameter-matched continuous action expert across multiple benchmarks, as well as improvements on high-precision and dynamic manipulation tasks in real-world experiments.",
+          "zh": "论文提出 Discrete Forcing，一种用于视觉语言动作模型的流匹配框架，先预测离散动作 token 建立粗略结构，再以此引导连续动作细化。离散与连续部分共用扩散 Transformer 主干并设有专门分支。作者称，多项基准评估中，该方法相较参数量匹配的连续动作专家表现更好、推理更快；真实机器人实验显示其在高精度和动态操作任务上有所改进。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2026,7 +2030,11 @@
             "heading": "",
             "text": "While Vision-Language-Action (VLA) models enable flexible action generation, their generalization across diverse environmental elements, including manipulated objects, destinations, and backgrounds, is limited by the lack of diversity in robotic training data.\n\nTrained end-to-end on such data, VLAs tend to exploit visual shortcuts, associating actions with task-irrelevant visual features rather than the intended task semantics. These shortcuts block recomposition of elements already seen by the policy, that is, compositional generalization.\n\nExisting approaches mitigate such entanglement through task-relevant perception or targeted data diversification, but offer no explicit mechanism for unseen recomposition and require backbone-specific modifications with retraining.\n\nWe observe that under such recomposition, VLAs often fail at global grounding while retaining local manipulation skills that recover near the correct target in familiar configurations.\n\nTherefore, we propose Referential Guidance (ReGuide), a training-free wrapper that, given object poses from a grounding module, combines semantic and geometric rebinding to guide the end-effector into demonstration-supported configurations of the instructed referent, where the frozen policy can resume execution.\n\nExperiments in simulation across multiple VLA backbones as well as on a real robot show that ReGuide improves success rates under compositional shifts by up to 56.8 and 75.0 percentage points, respectively, while preserving standard-task performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Referential Guidance (ReGuide), a training-free wrapper intended to improve compositional generalization in vision-language-action models. Given object poses from a grounding module, it combines semantic and geometric rebinding to guide the end-effector into demonstration-supported configurations of the instructed object, where the frozen policy can resume. The authors report improved success rates under compositional shifts in simulation across multiple backbones and on a real robot, while preserving standard-task performance.",
+          "zh": "论文提出 Referential Guidance（ReGuide），一种无需训练的包装方法，用于改善视觉语言动作模型在物体、目标地点和背景重新组合时的泛化。方法利用接地模块提供的物体位姿，结合语义与几何重新绑定，引导末端执行器进入指令所指对象对应的示范支持配置，再由冻结策略继续执行。作者报告，仿真及真实机器人实验中，ReGuide 提高了组合变化下的成功率，同时保持标准任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2057,7 +2065,11 @@
             "heading": "",
             "text": "Large Language Models (LLMs) have emerged as powerful reasoning engines for embodied control. In particular, In-Context Learning (ICL) enables off-the-shelf, text-only LLMs to predict robot actions without any task-specific training while preserving their generalization capabilities.\n\nApplying ICL to bimanual manipulation remains challenging as the high-dimensional joint action space and tight inter-arm coordination constraints rapidly overwhelm standard context windows.\n\nTo address this, we introduce BiCICLe (Bimanual Coordinated In-Context Learning), the first framework that enables standard LLMs to perform few-shot bimanual manipulation without fine-tuning. BiCICLe frames bimanual control as a multi-agent leader-follower problem, decoupling the action space into sequential, conditioned single-arm predictions.\n\nEvaluated on 13 tasks from the TWIN benchmark, BiCICLe achieves 70.5% average success rate, outperforming the best training-free baseline by 6.1 percentage points and surpassing most supervised methods. We also demonstrate superior real-world performance on 3 tasks without hardware-specific retraining.\n\nThe project page is available at https://alesspalma.github.io/bicicle"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces BiCICLe, a framework for few-shot bimanual manipulation with standard large language models and no fine-tuning. It frames control as a multi-agent leader-follower problem, splitting the action space into sequential, conditioned single-arm predictions. On 13 TWIN benchmark tasks, the authors report a 70.5% average success rate, 6.1 percentage points above the best training-free baseline and higher than most supervised methods. They also report superior real-world performance on three tasks without hardware-specific retraining.",
+          "zh": "论文提出 BiCICLe，一种无需微调即可让标准大语言模型进行少样本双臂操作的框架。它将双臂控制建模为多智能体领导者—跟随者问题，把动作空间拆分为依次进行、相互条件化的单臂预测。作者报告，该方法在 TWIN 基准的 13 项任务上平均成功率为 70.5%，比最佳免训练基线高 6.1 个百分点，并超过多数监督方法；在 3 项真实任务中也表现较好，且无需针对硬件重新训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2088,7 +2100,11 @@
             "heading": "",
             "text": "The generalization capabilities of robotic manipulation policies are heavily influenced by the choice of visual representations.\n\nExisting approaches typically rely on representations extracted from pre-trained encoders, using two dominant types of features: global features, which summarize an entire image via a single pooled vector, and dense features, which preserve a patch-wise embedding from the final encoder layer.\n\nWhile widely used, both feature types mix task-relevant and irrelevant information, leading to poor generalization under distribution shifts, such as changes in lighting, textures, or the presence of distractors.\n\nIn this work, we explore an intermediate structured alternative: Slot-Based Object-Centric Representations (SBOCR), which group dense features into a finite set of object-like entities. This representation permits to naturally reduce the noise provided to the robotic manipulation policy while keeping enough information to efficiently perform the task.\n\nWe benchmark a range of global and dense representations against intermediate slot-based representations, across a suite of simulated and real-world manipulation tasks ranging from simple to complex. We evaluate their generalization under diverse visual conditions, including changes in lighting, texture, and the presence of distractors.\n\nOur findings reveal that SBOCR-based policies outperform dense and global representation-based policies in generalization settings, even without task-specific pretraining. These insights suggest that SBOCR is a promising direction for designing visual systems that generalize effectively in dynamic, real-world robotic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies Slot-Based Object-Centric Representations (SBOCR) for robotic manipulation. SBOCR groups dense visual features into a finite set of object-like entities, aiming to reduce noise supplied to a policy while retaining task-relevant information. The authors compare global, dense, and slot-based representations on simulated and real-world tasks, evaluating shifts in lighting, texture, and distractors. They report that SBOCR-based policies generalize better than policies using global or dense representations, even without task-specific pretraining.",
+          "zh": "论文研究用于机器人操作的槽式物体中心表示（SBOCR），将稠密视觉特征组织为有限数量的类物体实体，旨在减少输入策略的噪声，同时保留完成任务所需的信息。研究比较了全局、稠密和槽式表示，并在模拟及真实操作任务中考察对光照、纹理变化和干扰物的泛化。作者报告，SBOCR 策略在泛化设置下优于全局和稠密表示策略，即使没有针对任务的预训练也如此。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
