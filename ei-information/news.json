@@ -395,7 +395,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models enable task-conditioned interaction, but extending them to scene-scale aerial manipulation remains challenging due to costly whole-body demonstrations, latency-induced action-state misalignment, and cross-site behavior composition.\n\nWe present a unified framework for synthetic policy training and scene-scale execution on articulated uncrewed aerial manipulators (UAMs).A scene-reconfigurable pipeline synthesizes task-conditioned, kinodynamically feasible trajectories and synchronized multiview observations for VLA training without physical-platform demonstrations.\n\nMeasured-progress-aligned realization (MPAR) aligns asynchronously returned action chunks with measured execution progress and realizes them as continuous, dynamically feasible trajectories.\n\nA relational Scene Graph grounds language goals to object instances and feasible interaction regions, while topology-guided transfer connects local behaviors across sites. Local VLA skills achieve 39/60 successes (65.0%) in simulation under oracle target and feasible-handoff conditions.\n\nUnder 500-ms added latency, with and without a transient command-update stall, MPAR reduces median takeover phase error by 0.212 s over nominal-time alignment. The complete system completes 21/50 simulated multi-site missions (42.0%) and is further validated on a physical articulated UAM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a framework for synthetic policy training and scene-scale execution on articulated uncrewed aerial manipulators, without physical-platform demonstrations. It generates task trajectories and synchronized multiview observations, aligns asynchronous actions with measured execution progress, and uses scene graphs and topology-guided transfer to compose behaviors across sites. In simulation, local skills succeed in 65% of trials under oracle-target and feasible-handoff conditions. With added latency, progress-aligned realization reduces median takeover phase error versus nominal-time alignment. The complete system also completes simulated multi-site missions and is validated on a physical platform.",
+          "zh": "论文提出面向关节式无人飞行操作器的统一框架，支持合成策略训练与场景尺度执行，无需实体平台演示。系统合成任务轨迹和多视角观测，以实测执行进度对齐异步动作，并用场景图定位目标、通过拓扑连接跨地点技能。仿真中，局部技能在预言目标及可行交接条件下成功率为65%；加入500毫秒延迟时，进度对齐较名义时间对齐降低中位接管阶段误差。完整系统完成42%的多地点仿真任务，并在实体设备上进一步验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -426,7 +430,11 @@
             "heading": "",
             "text": "This paper presents a novel autonomous robotic assembly framework for constructing stable structures without relying on predefined architectural blueprints.\n\nInstead of following fixed plans, construction tasks are defined through targets and obstacles, allowing the system to adapt more flexibly to environmental uncertainty and variations during the building process. A reinforcement learning (RL) policy, trained using deep Q-learning with successor features, serves as the decision-making component.\n\nAs a proof of concept, we evaluate the approach on a benchmark of 15 2D robotic assembly tasks of discrete block construction. Experiments using a real-world closed-loop robotic setup demonstrate the feasibility of the method and its ability to handle construction noise.\n\nThe results suggest that our framework offers a promising direction for more adaptable and robust robotic construction in real-world environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an autonomous robotic assembly framework for building stable structures without predefined blueprints. Tasks are specified through targets and obstacles, and a reinforcement-learning policy trained with deep Q-learning and successor features makes decisions. As a proof of concept, the approach is evaluated on a benchmark of 15 two-dimensional discrete-block assembly tasks. Experiments with a real-world closed-loop robotic setup demonstrate feasibility and the ability to handle construction noise. The authors describe the framework as a promising direction for more adaptable and robust robotic construction.",
+          "zh": "论文提出一种无需预设建筑蓝图的自主机器人装配框架，以目标和障碍定义任务，并使用基于深度Q学习与后继特征训练的强化学习策略进行决策。作为概念验证，研究在由15项二维离散积木装配任务组成的基准上评估方法。真实闭环机器人实验展示了该方法的可行性及其处理施工噪声的能力。作者认为，这为更能适应真实环境的机器人建造提供了一个有前景的方向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -457,7 +465,11 @@
             "heading": "",
             "text": "Soft continuum robots can exploit distributed compliance for whole-body manipulation, but synthesizing behavior through changing contacts remains difficult. We address whole-body grasping and pick-and-throw from an initially ungrasped state through outcome-based actuation-space optimization.\n\nGrasping is quantified by tip angular sweep and body-object enclosure, while throwing further incorporates release-direction alignment and minimum release speed. These objectives allow grasping, acceleration, and release to emerge from compliant interaction without prescribing contact forces, contact locations, or body configurations.\n\nBecause the resulting actuation-to-outcome mapping is nonsmooth, we utilize derivative-free CMA-ES within an optimize-learn-refine framework. CMA-ES generates solutions for sampled conditions, a task-conditioned predictor learns warm starts, and CMA-ES refines them for unseen conditions.\n\nIn simulation, the method achieves 492/500 successful grasps (98.4%) and success rates of 98%, 97%, and 94% across three directional throwing trials. Learned initialization increases grasping success from 78.6% to 98.4% while reducing the median rollout count from 1184 to 816 in CMA-ES.\n\nHardware experiments achieve a 100% grasping success rate across 50 executions and a 100% pick-and-throw success rate across 30 executions, with 10 repetitions per direction. Together, these simulation and hardware results demonstrate the effectiveness of the proposed framework across both simulated and physical whole-body manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whole-body grasping and pick-and-throw with a spiral soft robot, starting from an ungrasped state. Its outcome-based actuation-space optimization does not prescribe contact forces, locations, or body configurations. An optimize-learn-refine framework uses derivative-free CMA-ES and a task-conditioned predictor to provide warm starts. In simulation, grasping succeeds in 98.4% of trials, while throwing success ranges from 94% to 98% across three directions. Learned initialization improves grasping performance and reduces median CMA-ES rollouts. Hardware experiments report successful outcomes in all 50 grasping executions and all 30 pick-and-throw executions.",
+          "zh": "论文研究螺旋软体机器人从未抓取状态出发的全身抓取与拾取投掷，采用基于结果的驱动空间优化，不预设接触力、接触位置或身体构型。其优化学习再细化框架以无导数CMA-ES搜索动作，并训练任务条件预测器提供暖启动。仿真中抓取成功率为98.4%，三种方向投掷成功率为94%至98%；学习初始化提高抓取成功率并减少中位优化回合数。硬件实验中，50次抓取和30次拾取投掷均全部成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -488,7 +500,11 @@
             "heading": "",
             "text": "Robot performance is often limited by the cost of iterating on morphology and control together, since every computer-aided design (CAD) change has to be carried into a simulation-ready model before control work begins.\n\nCo-design methods attempt to close this gap, but each uses a model generator written for a single platform or lack the use of real-world data to suggest that designs are plausible. We present Draft, a parametric generation tool whose generalized engine compiles any parametric tree of serial chains into a simulation-ready MJCF model, without CAD.\n\nIt allows engineers to explore design tradeoffs through easily adjustable models and evaluate how changes influence controller performance. Draft grounds the free parameters of each design using trends fitted to a survey of $114$ actuators and $49$ published robot descriptions, so that a generated robot is anchored to real-world hardware.\n\nWe validate those trends wholistically by building twins of four off-the-shelf robots, whose masses agree to $1.10\\times$ geometric mean fold error. Finally, we demonstrate how Draft exposes design tradeoffs by evaluating three quadrupeds through a two-stage reinforcement learning curriculum."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Draft, a parametric robot-generation tool that compiles trees of serial chains into simulation-ready MJCF models without CAD. It aims to make morphology and control iteration easier. Design parameters are grounded in trends fitted to a survey of 114 actuators and 49 published robot descriptions. The authors validate these trends by building digital twins of four off-the-shelf robots, reporting a geometric mean fold error of 1.10× for mass. They also demonstrate design-tradeoff evaluation for three quadrupeds using a two-stage reinforcement-learning curriculum.",
+          "zh": "论文介绍Draft，一种无需CAD、可将串联链参数树编译为可仿真MJCF模型的机器人参数化生成工具，旨在降低形态与控制联合迭代的成本。工具依据114种执行器和49份已发表机器人描述中的趋势，为设计参数提供现实硬件参照。作者通过四种现成机器人的数字孪生验证这些趋势，报告质量的几何平均折叠误差为1.10倍；并展示用两阶段强化学习课程评估三种四足机器人的设计权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
