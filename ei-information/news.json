@@ -2571,7 +2571,11 @@
             "heading": "",
             "text": "Behavioral cloning becomes challenging when the same observation admits several valid actions. We study how generative behavioral-cloning policies represent such multimodal expert behavior and identify different bottlenecks across model parameterizations.\n\nFor latent-variable policies, preserving demonstrated modes requires action-conditioned information in the latent representation. Excessive posterior-prior regularization can suppress this information and prevent the policy from distinguishing demonstrated modes.\n\nWeaker or aggregate regularization can preserve mode information, but shifts the challenge to ensuring that the deployment-time prior covers the relevant latent regions.\n\nFor action-space generative policies, multimodality is constrained by the smoothness of the base-to-action transport: a map with a small Lipschitz constant cannot assign substantial probability to many well-separated modes. Covering many modes therefore requires either sharp transitions in base space or off-support bridge regions in action space.\n\nExperiments on synthetic multimodal navigation and a physical-robot bimodal manipulation task support these mechanisms. In contrast, our analysis reveals limited conditional multimodality in standard robotic simulation benchmarks, where deterministic regression remains competitive."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how generative behavioral-cloning policies represent multiple valid expert actions for the same observation. For latent-variable policies, excessive posterior-prior regularization can suppress action-conditioned mode information, while weaker or aggregate regularization shifts the challenge to deployment-prior coverage. Action-space policies are constrained by the smoothness of the base-to-action transport. Synthetic multimodal navigation and physical-robot bimodal manipulation experiments support these mechanisms. The authors report limited conditional multimodality in standard robotic simulation benchmarks, where deterministic regression remains competitive.",
+          "zh": "本文研究生成式行为克隆策略如何表示同一观测下存在的多种有效专家动作，并分析不同模型参数化方式的瓶颈。潜变量策略需要保留动作条件信息；过强的后验—先验正则化可能抑制模式区分，较弱或聚合正则化则要求部署先验覆盖相关潜在区域。动作空间生成策略受基础分布到动作的传输平滑性约束。合成多模态导航和实体机器人双模态操作实验支持这些机制；作者还发现，标准机器人仿真基准中的条件多模态有限，确定性回归仍具竞争力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2602,7 +2606,11 @@
             "heading": "",
             "text": "Latent world models can achieve accurate latent prediction yet still differ substantially in downstream planning performance. We argue that a key source of this discrepancy lies in the structure of action-induced latent transitions.\n\nWe formalize action-identifiability through Bayes inverse risk, characterizing how much uncertainty about an action remains after observing the transition it induces. Model-predicted transitions can become highly self-decodable while encoding a domain-specific action relationship that fails to transfer to real environment transitions.\n\nWe characterize this mismatch through cross-domain inverse transfer, instantiated as the Action-Consistency Transfer Matrix (ATM), a $2\\times2$ inverse-risk matrix over real and predicted transition domains.\n\nAcross TwoRoom, PushT, and OGBench-Cube, true-transition action-identifiability tracks downstream planning substantially better than standard prediction loss, while the full ATM reveals highly self-decodable yet cross-domain-inconsistent predicted transitions.\n\nControlled interventions on the two domains further produce distinct transition structures and planning outcomes, supporting this decomposition. The same diagnostics also support lightweight model screening, reaching 98.81\\% pairwise ranking accuracy for candidates separated by more than 5\\% success."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors argue that accurate latent prediction can coexist with poor downstream planning because of the structure of action-induced latent transitions. They formalize action-identifiability using Bayes inverse risk and characterize cross-domain mismatch with the Action-Consistency Transfer Matrix, an inverse-risk matrix over real and predicted transitions. Across TwoRoom, PushT, and OGBench-Cube, action-identifiability on true transitions tracks planning better than standard prediction loss. Controlled interventions support the decomposition, and the diagnostics are also used for lightweight model screening.",
+          "zh": "本文提出，潜在世界模型的下游规划表现可能与潜在预测精度脱节，关键原因在于动作诱发的潜在转移结构。作者以贝叶斯逆风险形式化动作可识别性，并用真实与模型预测转移域间的交叉域逆向迁移刻画不匹配，构成动作一致性迁移矩阵 ATM。在 TwoRoom、PushT 和 OGBench-Cube 上，真实转移的动作可识别性比标准预测损失更能反映规划表现；矩阵也揭示预测转移可能高度自解码却跨域不一致。受控干预支持该分解，诊断还用于轻量模型筛选。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2633,7 +2641,11 @@
             "heading": "",
             "text": "GPT-6 Astra exhibits a remarkable ability to generate numerical robot actions, extending its role beyond high-level planning. To assess Astra's capabilities as general-purpose embodied policies, we conduct comprehensive evaluations across six domains, examining direct control, cooperation with learned policies, and feedback-driven adaptation.\n\nIn gripper manipulation, Astra can correct task targets and prepare contact conditions for subsequent policy execution; hybrid control with {\\pi}0.5 achieves 48% success on the evaluated RoboDojo subset.\n\nIn dexterous manipulation, hybrid control achieves 50% success in ten experience-guided DexJoCo trials, while direct in-hand control struggles to coordinate finger contacts. In mobile manipulation, hybrid control reaches 38.7% success on the evaluated RoboCasa365.\n\nIn navigation, Astra leads our local comparisons, reaching 92% success on RxR instruction following and 82% on HM3D object search, although search incurs substantial detours.\n\nIn locomotion, dense motion-reference generation remains unreliable: none of five sequential attempts on a single obstacle course reaches the goal, despite improvements in stability and forward progress. In humanoid loco-manipulation, Astra exceeds baseline methods on 13 of 30 HumanoidBench tasks with pretrained whole-body controllers.\n\nThese findings reveal a gap between useful task decisions and reliable physical control. Inference latency further constrains practical control: across 50 RoboDojo instances per condition, policy-assisted and direct control consume 624.8 million and 1.132 billion tokens.\n\nA 30-second locomotion run requires 250 model calls averaging 39.86 seconds each, with physics paused during inference."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates GPT-6 Astra as an embodied policy across six domains, including direct control, cooperation with learned policies, and feedback-driven adaptation. The authors report some success with hybrid control in gripper, dexterous, and mobile manipulation evaluations. Astra leads the reported local comparisons on navigation tasks, though object search involves substantial detours. Dense motion-reference generation remains unreliable in the tested locomotion course, while Astra exceeds baselines on some humanoid tasks with pretrained whole-body controllers. The findings indicate a gap between useful task decisions and reliable physical control, with inference latency also limiting practical control.",
+          "zh": "本文在六个领域评估 GPT-6 Astra 作为具身策略的能力，涵盖直接控制、与学习策略协作及反馈适应。作者报告，混合控制在若干抓取、灵巧操作和移动操作评测中取得一定成功；导航任务表现领先其本地比较，但物体搜索有明显绕行。密集动作参考生成的运动控制仍不可靠，五次单障碍课程尝试均未到达终点；在人形机器人全身控制任务中，Astra 在部分任务上超过基线。结果显示任务决策能力与可靠物理控制之间存在差距，推理延迟也限制实际控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2664,7 +2676,11 @@
             "heading": "",
             "text": "Frontier models excel at many digital benchmarks, yet their ability to drive a real car, an everyday human skill, remains largely untested. We present DrivingBench, to our knowledge the first benchmark where general-purpose vision-language models must drive a real car.\n\nThrough three tools, the models see camera frames from a Toyota Corolla and directly command its steering and velocity around a parking lot cone course at low speeds.\n\nThe car may continue moving while the model thinks and new commands replace the currently running one, so inference latency is part of the task, testing the models' abilities to observe, act, monitor, recover, and complete a long-horizon objective under such constraints.\n\nWe benchmark GPT-6 Astra, Claude Fable 5.1, GPT-5.6 Sol, and Grok 4.6 in vendor-native harnesses (Codex, Claude Code, Cursor) with up to three attempts each in one conversation; Astra is the only model to finish the course, on its second attempt, with no other attempt passing 50% of the course.\n\nTwo of the four models improved materially across attempts with retained context. We also detail the design principles behind our action interface, and show how the tool output format and the framing of the task combined to determine whether models would drive at all or refuse.\n\nWe release our harness, prompts, course map, and traces with video and telemetry for reproducibility."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DrivingBench, which the authors describe as the first benchmark requiring general-purpose vision-language models to drive a real car. Through three tools, models observe Toyota Corolla camera frames and directly command steering and velocity on a low-speed parking-lot course. Because the car can move during inference, latency, monitoring, and recovery are part of the task. Of four evaluated models, only GPT-6 Astra completed the course, on its second attempt; no other attempt passed half the course. The authors also discuss interface and task-framing effects and release materials for reproducibility.",
+          "zh": "本文介绍 DrivingBench，据作者所知，这是要求通用视觉语言模型驾驶真实汽车的首个基准。模型通过三个工具获取丰田 Corolla 的摄像头画面，并在停车场锥桶赛道以低速直接控制方向和速度；汽车在模型推理时仍可移动，因此延迟、监控和恢复能力均纳入任务。四个模型各在原生工具环境中最多尝试三次，只有 GPT-6 Astra 完成赛道，且是在第二次尝试；其余尝试均未通过一半赛程。作者还讨论动作接口、输出格式和任务表述对驾驶或拒绝行为的影响，并发布复现材料。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
