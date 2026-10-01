@@ -1219,7 +1219,11 @@
             "heading": "",
             "text": "In this paper, we present an approach for combining stochastic nonlinear model predictive control (SNMPC) and reinforcement learning (RL) to enable probabilistically-safe perception-based navigation in unknown environments. Our method first uses RL to train probabilistic actor-critic and sensor prediction models.\n\nWe then leverage these probabilistic models in a sampling-based SNMPC framework known as Probably Approximately Correct (PAC)-NMPC, which uses hard constraints to enforce finite-time statistical guarantees on the probability of collision and value function improvement.\n\nBy ensuring that our finite-horizon SNMPC policies decrease the value function in expectation, we can approach the long-horizon performance of the RL approach while satisfying probabilistic safety constraints.\n\nThrough simulation experiments, we show that our approach can improve the safety of perception-based RL navigation policies and scale to high dimensional systems with large sensor input spaces and complex nonlinear dynamics.\n\nWe also demonstrate our approach through hardware experiments, showing improved performance for vision-based navigation with an agile fixed-wing aerial vehicle in unknown environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper combines reinforcement learning with stochastic nonlinear model predictive control for perception-based navigation in unknown environments. Reinforcement learning trains probabilistic actor-critic and sensor prediction models, which a sampling-based PAC-NMPC framework then uses with hard constraints to provide finite-time statistical guarantees on collision probability and value improvement. Simulations show improved safety and scalability to high-dimensional systems. Hardware experiments demonstrate vision-based navigation in unknown environments with an agile fixed-wing aerial vehicle.",
+          "zh": "论文提出一种结合强化学习与随机非线性模型预测控制的方法，用于未知环境中的视觉感知导航。强化学习训练概率演员—评论家模型和传感器预测模型，随后由基于采样的 PAC-NMPC 利用这些模型，通过硬约束提供有限时域的碰撞概率和价值函数改进统计保证。仿真显示该方法可提高导航安全性，并扩展至高维系统；硬件实验则展示了其在未知环境中使用敏捷固定翼飞行器进行视觉导航的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1250,7 +1254,11 @@
             "heading": "",
             "text": "Retrieving objects from dense clutter requires rearrangement during which the manipulator can occlude objects while moving them. Repeated arm withdrawals to restore visibility interrupt execution. We introduce TRACE, a plan-conditioned imitation framework for retrieval under self-occlusion.\n\nA single unoccluded observation initializes a digital twin, where a privileged teacher generates a fixed nominal rollout. A recurrent student combines local rollout context, partial object observations, and proprioception to select actions that can correct deviations from the prediction.\n\nBehavior cloning initializes the student; DAgger refines it with teacher labels on student-visited states. The rollout remains fixed throughout execution, so the deployed student needs neither online teacher queries nor additional simulator rollouts during pushing.\n\nOn 511 simulation test scenes, TRACE achieves 90.7% success versus 43.4% for nominal replay and 96.7% for the privileged closed-loop teacher. At a matched 26,373-label budget, student-state supervision achieves 87.8% versus 66.7% for expert-only cloning, demonstrating gains beyond additional labels.\n\nOn a UR5e, TRACE achieves 90.0% success versus 95.0% for the closed-loop teacher, while reducing total execution time from 192.7 s to 67.3 s. It avoids the teacher's 16.8 sensing-related arm retractions per trial during pushing, retaining a final withdrawal for graspability evaluation. Code and data will be released at: https://trace-retrieval.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TRACE, a plan-conditioned imitation framework for retrieving objects from dense clutter despite self-occlusion. A privileged teacher creates a fixed rollout in a digital twin, while a recurrent student uses local rollout context, partial object observations, and proprioception to correct actions. Behavior cloning initializes the student and DAgger refines it on student-visited states. In 511 simulation scenes, TRACE reports 90.7% success. On a UR5e, it reports 90.0% success and shorter execution time than the closed-loop teacher, with fewer sensing-related arm retractions during pushing.",
+          "zh": "论文提出 TRACE，一种用于密集杂乱场景中物体取回的计划条件模仿框架，可在机械臂运动造成自遮挡时继续执行。数字孪生中的特权教师生成固定轨迹，循环学生依据局部轨迹上下文、部分物体观测和本体感知修正动作，并通过行为克隆和 DAgger 训练。仿真测试中，TRACE 成功率为 90.7%；UR5e 实验中为 90.0%，执行时间短于闭环教师，并减少推动过程中的感知相关机械臂回撤。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1281,7 +1289,11 @@
             "heading": "",
             "text": "Robotic agents use 3D scene graphs (3DSG) to perform tasks ranging from scene understanding to scene interaction.\n\nAlthough an extensive body of work addresses scene graph generation, little attention has been paid to optimizing the graph for consumption, which leaves state-of-the-art perception pipelines to work around their own scene graph and to pay a latency cost that does not fit the real-time budget a perception loop runs on.\n\nWe present Yggdrasil, the first 3D scene graph designed to be efficient for both generation and consumption: a layer-first hierarchical graph built from generic nodes, edges, and layers, which expresses the representations existing pipelines already produce, indoor or outdoor, flat or hierarchical, while natively answering the positional and semantic queries downstream tasks issue.\n\nAgainst a published DSG baseline, Yggdrasil answers queries up to $121\\times$ faster, and every query we measure falls between 2 and 127 microseconds, three to five orders of magnitude inside the 200 microsecond keyframe budget a 3DSG consumer lives in, on both a workstation and embedded class device.\n\nWe integrate Yggdrasil into three published pipelines spanning human trajectory prediction, object-goal navigation, and human-aware motion planning, where it removes up to 99% of the time each spends on its scene graph. The implementation, benchmark harness, and all three integrations are available online."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Yggdrasil, a three-dimensional scene graph designed for real-time querying and efficient generation and consumption. Its layer-first hierarchy uses generic nodes, edges, and layers to express existing pipeline representations and answer positional and semantic queries. Against a published DSG baseline, the authors report queries up to 121 times faster, with measured latency from 2 to 127 microseconds on a workstation and an embedded-class device. Integrations into three published pipelines reportedly remove up to 99% of their scene-graph processing time.",
+          "zh": "论文提出 Yggdrasil，一种面向实时查询的三维场景图，采用由通用节点、边和层构成的层优先层级结构，旨在兼顾生成与消费，并支持下游任务所需的位置和语义查询。与已发表的 DSG 基线相比，作者报告查询速度最高提升 121 倍，测得查询耗时为 2 至 127 微秒，并在工作站和嵌入式设备上测试。集成到三种已发表管线后，场景图处理耗时最多减少 99%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1312,7 +1324,11 @@
             "heading": "",
             "text": "Goal-conditioned visual navigation has been a long-standing testbed for embodied AI. We study a natural language-conditioned variant, language-conditioned visual navigation (LCVN), in which an embodied agent must follow a natural language instruction given only an initial egocentric observation.\n\nWithout access to goal images, the agent must rely on language to shape its perception and continuous control. We introduce the LCVN Dataset, a benchmark of 39,016 trajectories and 117,048 human-verified instructions spanning diverse environments and instruction styles.\n\nBuilding on this benchmark, we study two complementary paradigms: (i) latent-imagination policy learning, in which a diffusion-based world model (LCVN-WM) imagines future observations and an actor-critic agent (LCVN-AC) learns its policy entirely within the imagined latent space; and (ii) unified autoregressive prediction, in which a single multimodal backbone (LCVN-Uni) jointly predicts actions and observations in one forward pass over a shared token sequence.\n\nExperiments show that two paradigms offer complementary strengths: latent imagination produces more temporally coherent rollouts, whereas unified prediction generalizes better to unseen environments.\n\nTargeted ablations further isolate the contributions of language guidance, conditioning signals, and instruction style, clarifying when language grounding versus dynamics modeling is the performance bottleneck. Together, these findings position LCVN as a testbed for studying how language, imagination, and decision-making interact in embodied agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies language-conditioned visual navigation, where an embodied agent follows a natural-language instruction from an initial egocentric observation without goal images. The authors introduce a dataset of 39,016 trajectories and 117,048 human-verified instructions, then compare latent-imagination policy learning with unified autoregressive prediction of actions and observations. Experiments report that latent imagination yields more temporally coherent rollouts, while unified prediction generalizes better to unseen environments. Ablations examine language guidance, conditioning signals, and instruction style.",
+          "zh": "论文研究语言条件视觉导航：具身智能体仅凭初始自我中心观测，按自然语言指令导航，且无法使用目标图像。作者构建包含 39,016 条轨迹和 117,048 条经人工验证指令的数据集，并比较两种范式：在想象潜空间中学习策略，以及由统一自回归模型联合预测动作与观测。实验显示，前者生成的轨迹在时间上更连贯，后者对未见环境的泛化更好。消融分析进一步考察语言引导、条件信号和指令风格的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
