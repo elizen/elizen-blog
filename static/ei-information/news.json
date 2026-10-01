@@ -535,7 +535,11 @@
             "heading": "",
             "text": "Voluntary movements have long been hypothesised to be comprised of discrete primitives called submovements, as a descriptive model of human motor behaviour. However, existing methods scale poorly, and no principled method exists to determine whether a decomposition is informative.\n\nWe propose a spatiotemporal kernel correlation between primitive pairs as an identifiability criterion. Submovement-Identifiable Decomposition (Sub-ID) embeds this criterion in its adaptive-ridge regularisation, biasing the optimiser toward low-correlation solutions.\n\nIdentifiability is lost when primitives become collinear and recovered when they diverge spatially. On synthetic data, Sub-ID recovers ground-truth parameter distributions where existing methods fail; furthermore, when primitives overlap too heavily to be distinguished, the method explicitly detects this ambiguity rather than outputting misleading results.\n\nSub-ID extracts submovements from real three-dimensional, long-horizon movements, a regime no prior method addresses. This method has the potential to identify physiologically grounded primitives for motor control research and imitation learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Sub-ID, using spatiotemporal kernel correlation between pairs of submovement primitives as an identifiability criterion and adaptive-ridge regularization to favor low-correlation decompositions. Identifiability is lost when primitives are collinear and recovered when they diverge spatially. On synthetic data, the authors report recovery of ground-truth parameter distributions where existing methods fail, and detection of ambiguity when primitives overlap too heavily. They also report extracting submovements from real three-dimensional, long-horizon movements.",
+          "zh": "论文提出Sub-ID，将子运动基元对之间的时空核相关性作为可辨识性标准，并通过自适应岭正则化引导优化得到低相关分解。基元空间上分离时可恢复可辨识性；过度重叠、无法区分时，方法会检测并报告歧义。在合成数据上，作者称Sub-ID能恢复真实参数分布，而已有方法未能做到；论文还报告其可从真实三维长时程动作中提取子运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -566,7 +570,11 @@
             "heading": "",
             "text": "A robot that observes people interacting with objects should be able to carry out later requests that refer back to those interactions. Such requests may specify a grasp target by the role it played in a past event rather than by its name or appearance. Moreover, the target may no longer be visible when the robot is asked to act.\n\nWe present BeyondSCe, a zero-shot robotic grasping system for this event-referential setting. Given the event history and the current scene, the system identifies the requested object or part and localizes it for grasping.\n\nIf the target is occluded, it combines an event prior recovered from the history with current scene geometry to select camera viewpoints likely to reveal the target. The system uses pretrained models without additional task-specific training.\n\nIn real-robot experiments with a single wrist-mounted RGB-D camera, it achieves grasp success rates of 76% and 77% for initially visible and occluded targets, respectively, compared with 40% and 55% for the strongest baseline in each condition.\n\nOn four additional scenes with heavy occlusion, it increases grasp success rates from 75% to 95% while reducing the mean number of views from 3.35 to 2.20, compared with an active-perception baseline given the target's ground-truth 3D bounding box."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BeyondSCe, a zero-shot robotic grasping system that uses event history and the current scene to identify and localize a requested object or part, without additional task-specific training. When the target is occluded, it combines an event prior with scene geometry to select camera viewpoints likely to reveal it. In real-robot experiments using one wrist-mounted RGB-D camera, reported success rates were 76% for visible targets and 77% for occluded targets, versus 40% and 55% for the strongest baselines. In four heavily occluded scenes, it reports higher success and fewer views than an active-perception baseline.",
+          "zh": "论文提出BeyondSCe，一种无需额外任务专属训练的零样本机器人抓取系统，可依据交互事件历史和当前场景识别并定位请求指向的物体或部件。目标被遮挡时，系统结合事件历史先验与场景几何选择可能显露目标的相机视角。使用单个腕载RGB-D相机的真实机器人实验中，可见与遮挡目标的抓取成功率分别为76%和77%，高于各条件下最强基线的40%和55%。在四个重度遮挡场景中，相较主动感知基线，成功率由75%升至95%，平均视角数由3.35降至2.20。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -597,7 +605,11 @@
             "heading": "",
             "text": "Embodied navigation requires spatial representations that generalize across unseen environments, yet collecting large amounts of annotated data from real 3D environments is difficult.\n\nWe propose NaviScale for semantic-map-based object navigation (ObjectNav), whose predictor can be trained on pairs of partial and complete semantic maps without reconstructing a complete 3D environment for every training sample.\n\nThe framework generates large-scale semantic map training data by composing floorplans of real homes with room-level semantic and obstacle maps extracted from MP3D and HM3DSem.\n\nNaviScale increases data diversity in two ways: inter-room scaling increases floorplan-level structural diversity, while intra-room scaling fills each fixed floorplan with different combinations of room maps matched by room category.\n\nVisibility through Ray Casting (VisRC) converts the composed maps into partial observations that account for field of view, sensing range, and occlusion. The resulting dataset contains 192,000 semantic maps generated from 24,000 floorplans associated with 12,794 properties.\n\nWith 300k training iterations and the training and inference settings described in this paper, the system reaches 64.3% SR and 34.8% SPL on HM3D, together with 43.1% SR and 16.8% SPL on MP3D, without changing the prediction architecture.\n\nAdditional experiments evaluate the quality of the composed maps, the effects of semantic-segmentation errors, and deployment on a physical robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NaviScale, which generates training data for semantic-map-based ObjectNav without reconstructing a complete 3D environment for each sample. It composes real-home floorplans with room-level semantic and obstacle maps from MP3D and HM3DSem, varying floorplan structure and room-map combinations. Ray casting produces partial observations that account for field of view, sensing range, and occlusion. The resulting dataset contains 192,000 maps from 24,000 floorplans associated with 12,794 properties. Under the paper’s stated training and inference settings, the system reports SR and SPL results on HM3D and MP3D without changing the prediction architecture.",
+          "zh": "论文提出NaviScale，为语义地图物体导航生成大规模训练数据，无需为每个样本重建完整三维环境。框架将真实住宅平面图与从MP3D、HM3DSem提取的房间语义及障碍地图组合，并通过跨房间缩放、房间地图组合和射线投射生成考虑视野、感知范围与遮挡的局部观测。数据集包含192,000张语义地图，源自24,000张平面图及12,794处房产。在论文所述训练和推理设置下，系统在HM3D和MP3D上取得所报告的SR、SPL指标，且未更改预测架构；另有地图质量、分割误差及实体机器人部署实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -628,7 +640,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models demonstrate promising generalization in robotic manipulation, driven by advances in large-scale vision and language pre-training. This progress can be misleading.\n\nDespite the zero-shot perception and language capabilities of VLAs, their overall task performance often degrades under distribution shifts, revealing gaps in how these systems translate high-level understanding into robust behavior.\n\nTo systematically study this gap, we introduce Colosseum V2, a large-scale simulation benchmark for evaluating VLA generalization in robot learning across diverse conditions. The benchmark comprises 28 tasks spanning 13 task categories and two robot morphologies, covering a wide range of manipulation primitives and long-horizon behaviors.\n\nBuilt on the ManiSkill simulator, Colosseum V2 enables fast, GPU-parallelized evaluation and supports both in-domain and out-of-domain testing at scale. We evaluate state-of-the-art methods, including Action Chunking Transformers (ACT) and Pi0.5, and reveal limitations in both base performance and generalization.\n\nWe demonstrate strong correlations between simulation and real-world metrics that support the ecological validity of the benchmark.\n\nBy standardizing tasks, metrics, and evaluation protocols within a unified benchmark, Colosseum V2 enables reproducible and fair comparisons, reduced evaluation overhead, and accelerated progress toward general-purpose robot policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Colosseum V2, a large-scale simulation benchmark for studying vision-language-action model generalization in robot learning. Built on ManiSkill, it covers 28 tasks across 13 categories and two robot morphologies, and supports GPU-parallelized in-domain and out-of-domain evaluation. The authors assess methods including ACT and Pi0.5, reporting limitations in both base performance and generalization. They also report strong correlations between simulation and real-world metrics, which they say support the benchmark’s ecological validity. The benchmark standardizes tasks, metrics, and evaluation protocols.",
+          "zh": "论文提出Colosseum V2，一个用于评估机器人视觉-语言-动作模型泛化能力的大规模仿真基准，旨在研究模型在分布变化下任务表现下降的问题。基准基于ManiSkill，涵盖28项任务、13类任务和两种机器人形态，支持大规模域内与域外测试及GPU并行评估。作者评估ACT、Pi0.5等方法，并报告其基础表现和泛化能力存在局限。论文还称仿真指标与真实世界指标强相关，并认为该基准可支持可复现、公平比较，降低评估开销。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
