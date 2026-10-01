@@ -2215,7 +2215,11 @@
             "heading": "",
             "text": "World-Action Models (WAMs) couple visual dynamics with action prediction, bringing the rich priors of pretrained video models to robotic manipulation. However, their multi-view interfaces typically tile images or concatenate tokens, leaving the geometric relationships among synchronized cameras implicit.\n\nThis makes it harder to connect global scene context with the local geometry required for interaction. We introduce the Multi-View Geometry-Aware World-Action Model (MVG-WAM), which organizes these observations as related projections of one physical world rather than separate images on a canvas.\n\nOur model combines an epipolar-constrained global state with view-indexed geometric states jointly inferred from synchronized observations. Camera-aware routing supplies each video region with its corresponding geometric context and the shared global state, explicitly structuring the representation used for action prediction.\n\nWe further ground the geometry-aware representation in metric scale through multi-horizon future-depth supervision, without requiring depth decoding during action rollout. MVG-WAM achieves average success rates of 99.1% on LIBERO and 92.07% on RoboTwin 2.0, demonstrating competitive performance across both benchmarks.\n\nReal-world experiments on Cobot Magic further demonstrate a 91.3% success rate across 150 trials spanning three manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MVG-WAM, a world-action model that treats synchronized camera observations as related projections of one physical scene. It combines an epipolar-constrained global state with view-indexed geometric states, using camera-aware routing to provide video regions with geometric context and shared state. Multi-horizon future-depth supervision grounds the representation in metric scale without requiring depth decoding during action rollout. The authors report average success rates of 99.1% on LIBERO and 92.07% on RoboTwin 2.0, plus 91.3% across 150 real-world trials on Cobot Magic spanning three manipulation tasks.",
+          "zh": "论文提出多视角几何感知世界—动作模型 MVG-WAM，将同步相机观测视为同一物理世界的相关投影。模型结合受极线约束的全局状态与按视角索引的几何状态，并通过相机感知路由为视频区域提供相应几何信息和共享状态。多时域未来深度监督使表示具有度量尺度，动作执行时无需解码深度。作者报告，该模型在 LIBERO、RoboTwin 2.0 上的平均成功率分别为 99.1% 和 92.07%；在 Cobot Magic 上，跨三项操作任务的 150 次真实实验成功率为 91.3%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2246,7 +2250,11 @@
             "heading": "",
             "text": "Contingency games enable agents to anticipate and plan for other agents' hypothetical intents by constructing trajectories with a shared prefix and intent-dependent branches.\n\nWhile contingency games capture intent uncertainty, existing formulations rely on a single branching time, oversimplifying interactions in which different agents' intentions are revealed at different times.\n\nMoreover, the computational cost of such problems grows rapidly with the number of agents and intents, as all scenario-dependent best responses must be solved jointly.\n\nWe introduce a multi-branch contingency architecture in which sources of intent uncertainty can be resolved progressively at different branching times, allowing the planned trajectories to adapt to the asynchronous revelation of intents. We also develop an ADMM-based solver that exploits scenario-level parallelism.\n\nExperiments on tightly coupled three-agent interactions support that the proposed architecture outperforms the conventional single-branch while achieving a lower mean receding-horizon solve time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses contingency games, where agents plan trajectories with a shared prefix and branches tied to hypothetical intents. It notes that a single branching time cannot represent agents whose intents are revealed at different times, while jointly solving scenario-dependent best responses becomes costly as agents and intents increase. The authors propose an architecture that resolves uncertainty sources progressively at different branching times and an ADMM solver that uses scenario-level parallelism. Experiments on tightly coupled three-agent interactions support that the architecture outperforms the conventional single-branch approach while achieving a lower mean receding-horizon solve time.",
+          "zh": "论文研究多分支应急博弈，指出传统方法用单一分支时刻描述意图揭示，难以表示不同智能体意图在不同时间逐步显现的交互；同时，联合求解各情景最佳响应的计算成本会随智能体和意图数量快速增长。作者提出允许不确定性来源在不同分支时刻逐步消解的架构，并开发利用情景级并行性的 ADMM 求解器。针对紧密耦合的三智能体交互所做实验支持其架构优于传统单分支方法，且平均滚动时域求解时间更低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2277,7 +2285,11 @@
             "heading": "",
             "text": "Physical changes or sensing errors can invalidate embodied agents' task-relevant beliefs. AquaMend compares re-probing, rollback, and supported continuation on a probe-belief-action graph under an expected-loss objective covering sensing, physical recovery, and uncorrected failures.\n\nA joint posterior guides a one-step policy with conditional detection-power screening. The per-belief three-way optimum requires independence, separability, and fully resolving probes; the general policy has no global optimality guarantee.\n\nAcross 32 paired scenarios in a self-constructed simulation benchmark, AquaMend recovers in 28/32 cases and reduces mean complete loss by 21.6% versus restart. Its paired loss difference from decision-theoretic troubleshooting (DTT) is not statistically significant after Holm correction.\n\nAgainst the all-candidate ablation, online decision time decreases by 12.3% overall but increases by 3.4% in the uncovered late stage."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AquaMend addresses task-relevant beliefs invalidated by physical changes or sensing errors in embodied agents. It compares re-probing, rollback, and continuation on a probe-belief-action graph, minimizing expected loss across sensing, physical recovery, and uncorrected failures. A joint posterior and conditional detection-power screening guide a one-step policy. The per-belief three-way optimum depends on independence, separability, and fully resolving probes; the general policy has no global optimality guarantee. In 32 paired scenarios in a self-constructed simulation benchmark, it recovered in 28 cases and reduced mean complete loss by 21.6% versus restart. Its paired loss difference from DTT was not statistically significant after Holm correction.",
+          "zh": "AquaMend 面向具身智能体因物理变化或感知错误而失效的任务信念，在探测、回滚和继续执行之间进行选择。方法在探测—信念—动作图上以涵盖感知、物理恢复及未纠正失败的期望损失为目标，并用联合后验和条件检测能力筛选指导单步策略。逐信念三选一最优依赖独立性、可分性及探测完全解决问题等条件；一般策略不保证全局最优。在自建仿真基准的 32 个配对情景中，系统恢复 28 例，较重启使平均完全损失降低 21.6%；与 DTT 的配对损失差异经 Holm 校正后无统计显著性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2308,7 +2320,11 @@
             "heading": "",
             "text": "Contact-rich manipulation requires robots to sequence precise contacts, maintain stable grasps, and apply directed forces. Reinforcement learning (RL) can acquire such behaviors automatically, but its performance hinges on reward design: sparse rewards reduce the learning efficiency, while dense rewards are hard to specify.\n\nVisual reward learning addresses this by inferring rewards from action-free demonstrations. Because it conditions only on visual observations, it fails to capture rewards beyond visual goals. We propose Tactile Reward Learning (TaRL), a framework that learns rewards from tactile demonstrations.\n\nTaRL takes a sequence of tactile deformation maps as input, and regresses task-completion progress from both successful and failed demonstrations. Because TaRL captures local robot-object interaction, it provides informative feedback to learn firm grasps and correctly directed forces; meanwhile, it is robust to changes in scene layout such as object position.\n\nWe evaluate TaRL on four manipulation tasks in simulation and two in the real world. Used as a shaping reward, it substantially improves both sample efficiency and final success rate, raising success on Nut threading from 34% to 56% in simulation and on cube pickup from 37% to 97% in the real world.\n\nCombining tactile with visual rewards improves performance further. TaRL also generalizes across object instances: trained on box placement and directly deployed to can placement, it significantly improves policy learning on the new task. Project page is available at https://embodiedai-ntu.github.io/tarl."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Tactile Reward Learning (TaRL), which regresses task-completion progress from sequences of tactile deformation maps in successful and failed demonstrations. The authors say its feedback captures local robot-object interaction, supporting learning of firm grasps and correctly directed forces while tolerating changes in scene layout. Evaluation covers four manipulation tasks in simulation and two in the real world. As a shaping reward, TaRL improves sample efficiency and final success: nut threading rises from 34% to 56% in simulation, and cube pickup from 37% to 97% in the real world. Combining tactile and visual rewards improves results further; transfer from box placement training to can placement also improves policy learning on the new task.",
+          "zh": "论文提出触觉奖励学习框架 TaRL，从成功与失败示范的触觉形变图序列回归任务完成进度，为接触丰富的操作提供奖励信号。作者称，该信号能反馈局部人—物交互，有助于学习稳固抓握和方向正确的施力，并能适应场景布局变化。仿真中的四项操作任务和真实世界中的两项任务评估显示，将 TaRL 用作奖励塑形可提升样本效率与最终成功率：仿真螺母旋合从 34% 升至 56%，真实立方体拾取从 37% 升至 97%。结合视觉奖励可进一步改善表现；在箱体放置上训练后迁移到罐体放置，也提升了新任务的策略学习。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
