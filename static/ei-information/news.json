@@ -3528,7 +3528,11 @@
             "heading": "",
             "text": "Human demonstrations capture diverse scenes and rich whole-body skills without requiring robot teleoperation. Prior work on egocentric transfer has emphasized scene generalization in loco-manipulation under decoupled control, leaving direct transfer of coordinated whole-body skills less explored.\n\nWe present EgoHumanoid-V2, the first egocentric human-to-humanoid skill transfer framework for coordinated whole-body loco-manipulation. At its core, coarse-to-fine action alignment combines kinematic reference correction with dynamics-aware refinement. It improves end-effector pose accuracy while preserving whole-body coordination.\n\nWe also use robot-arm rendering and training-time image augmentation to reduce the visual embodiment gap and improve viewpoint robustness. On four real-world tasks, vision-language-action (VLA) policies trained on aligned human data show zero-shot skill transfer without target-task robot demonstrations.\n\nTask scores are comparable to those of policies trained on teleoperation data at a lower collection cost. These results support human data as direct skill supervision."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EgoHumanoid-V2, a framework for transferring egocentric human demonstrations into coordinated whole-body humanoid loco-manipulation skills. It combines kinematic reference correction with dynamics-aware refinement to improve end-effector pose accuracy while preserving coordination, and uses robot-arm rendering and training-time image augmentation to reduce the visual embodiment gap and improve viewpoint robustness. The authors report zero-shot transfer on four real-world tasks without target-task robot demonstrations, with scores comparable to teleoperation-trained policies at lower collection cost.",
+          "zh": "论文提出 EgoHumanoid-V2，用于将第一人称视角的人类示范迁移为机器人协调的全身移动操作技能。方法通过由粗到细的动作对齐，结合运动学参考修正与动力学感知细化，以提高末端位姿精度并保持全身协调；还采用机械臂渲染和训练时图像增强来缩小视觉具身差异、增强视角鲁棒性。作者报告，在四项真实世界任务中，基于对齐人类数据训练的视觉语言动作策略无需目标任务机器人示范即可零样本迁移，任务得分与遥操作数据训练的策略相当，而数据采集成本较低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3979,7 +3983,11 @@
             "heading": "",
             "text": "Robust and reliable perception is essential for autonomous robots operating in real-world environments, particularly in long-term missions where environmental conditions may change significantly over time.\n\nAlthough recent advances in Visual Foundation Models (VFMs) have improved open-vocabulary semantic segmentation, these models can still suffer from domain shift, which can significantly degrade performance if they are not adapted to the current environment.\n\nTraining-free domain adaptation is a relevant paradigm for adaptation, consisting of adjusting the model online using lightweight adapters. Recent approaches apply this on a per-frame basis, which is impractical for deployments on resource-constrained robotic hardware.\n\nTo tackle this, we propose a multi-signal domain shift detection method for training-free continual test-time adaptation (TF-CTTA) in open-vocabulary segmentation.\n\nOur method leverages temporal coherence across consecutive frames by monitoring and combining complementary aspects of domain shift (visual change, adapter mismatch, and semantic drift) to trigger adaptation only when needed. We validate our approach on a benchmark including indoor and outdoor environments and using real robotic data.\n\nWe demonstrate that our approach maintains segmentation accuracy while substantially reducing adaptations, making training-free adaptation practical and feasible for long-term, real-world robotic deployments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a multi-signal domain-shift detector for training-free continual test-time adaptation in open-vocabulary segmentation. It uses temporal coherence across frames and combines signals for visual change, adapter mismatch, and semantic drift to trigger adaptation only when needed, addressing the cost of per-frame adaptation on resource-constrained robots. The authors validate the method on a benchmark with indoor and outdoor environments and real robotic data, reporting that it maintains segmentation accuracy while substantially reducing the number of adaptations.",
+          "zh": "论文提出一种用于开放词汇语义分割的免训练持续测试时适应方法，通过多信号检测判断何时需要适应。方法利用连续帧的时间连贯性，联合监测视觉变化、适配器失配和语义漂移，仅在需要时触发适应，以减少资源受限机器人上的逐帧适应开销。作者在包含室内外环境及真实机器人数据的基准上验证，报告该方法在维持分割准确率的同时显著减少适应次数，并认为这使长期真实机器人部署更具可行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4010,7 +4018,11 @@
             "heading": "",
             "text": "Reinforcement learning explores effectively in domains such as Atari games, navigation, and locomotion, where novelty over states or dynamics is a sufficient signal.\n\nIn contrast, dexterous manipulation requires rich physical hand--object interactions, but existing methods often suffer from unstable contact-based novelty signals, inefficient distance novelty signals, or reliance on task-specific priors. We propose ContactExplorer, a general exploration method for dexterous manipulation tasks.\n\nContactExplorer represents contact as the intersection between object surface points and hand keypoints, encouraging dexterous hands to discover diverse and novel contact patterns, namely which fingers contact which object regions. It maintains a contact counter conditioned on discretized object states obtained via learned hash codes.\n\nThis counter is leveraged in two complementary ways: （1） a count-based contact coverage reward that promotes exploration of novel contact patterns, and （2） an energy-based reaching reward that guides the agent toward under-explored contact regions. We evaluate ContactExplorer on seven contact-rich manipulation tasks and five dexterous hand embodiments.\n\nExperimental results show that ContactExplorer substantially improves sample efficiency and success rates over existing exploration methods, that it reduces the need for task-specific priors, and that it remains effective across hand embodiments and transfers to the real world. Project page is https://contact-explorer.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ContactExplorer, a general exploration method for dexterous manipulation. It represents contact patterns through intersections between object surface points and hand keypoints, and maintains contact counts conditioned on discretized object states encoded by learned hash codes. A count-based coverage reward encourages novel patterns, while an energy-based reaching reward guides the agent toward under-explored contact regions. Across seven contact-rich tasks and five hand embodiments, the authors report improved sample efficiency and success rates, reduced reliance on task-specific priors, and transfer to the real world.",
+          "zh": "论文提出 ContactExplorer，一种面向灵巧操作任务的通用探索方法。它将手部关键点与物体表面区域的接触关系编码为接触模式，并通过学习得到的哈希码按离散物体状态维护接触计数。该计数用于两类奖励：基于计数的接触覆盖奖励鼓励发现新模式，基于能量的触达奖励引导智能体靠近探索不足的接触区域。作者在七项接触丰富的操作任务和五种灵巧手形态上评估，报告样本效率、成功率及跨手形态表现有所提升，并称方法可迁移至真实世界。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4041,7 +4053,11 @@
             "heading": "",
             "text": "Autonomous robot navigation relies on simultaneous localization and mapping (SLAM) to estimate motion and maintain an accurate pose within an environment. However, in axially uniform corridors such as long tunnels and pipelines, LiDAR odometry is fundamentally limited by unconstrained drift along the feature-weak travel direction.\n\nThis structural degeneracy cannot be resolved by local scan matching alone. To address this challenge, we propose the Degeneracy-orthogonal Contour Offset Descriptor (DeCOD), a structure-aligned geometric descriptor for cross-sectional landmarks.\n\nCross-sectional boundaries, such as pipe joints and structural rings, provide metric constraints along this degenerate axis, but distinguishing individual landmarks requires capturing subtle surface variations across nearly identical profiles.\n\nThe descriptor parameterizes signed normal deviation from estimated boundary contours, and matching explicitly resolves heading ambiguity and decouples first-order contour errors by distortion estimation.\n\nMatched landmarks yield geometric factors that enforce agreement in cross-section position and corridor axis alignment during pose-graph optimization, correcting longitudinal drift while leaving rotation about the common axis unconstrained.\n\nOn a public benchmark and in field experiments, DeCOD achieves robust landmark retrieval over standard 3D descriptors and successfully stabilizes trajectories across different odometry frontends, reliably constraining longitudinal drift under geometric degeneracy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DeCOD, a structure-aligned geometric descriptor intended to address LiDAR odometry drift along feature-poor corridors such as tunnels and pipelines. It encodes signed normal deviations from estimated cross-sectional boundary contours and uses distortion estimation to resolve heading ambiguity and decouple first-order contour errors. Matched landmarks contribute geometric factors to pose-graph optimization, constraining cross-section position and corridor-axis alignment to correct longitudinal drift while leaving rotation about the common axis unconstrained. The authors report robust retrieval and trajectory stabilization on a public benchmark and in field experiments.",
+          "zh": "论文针对长隧道、管道等轴向均匀环境中的激光雷达里程计漂移问题，提出退化正交轮廓偏移描述子 DeCOD。该描述子以相对于边界轮廓的有符号法向偏差表示横截面地标，并通过形变估计处理航向歧义及一阶轮廓误差。匹配地标生成的几何因子用于位姿图优化，约束横截面位置和廊道轴线方向，以校正纵向漂移，同时不约束绕公共轴的旋转。作者报告其在公开基准和实地实验中能稳健检索地标，并在不同里程计前端下稳定轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
