@@ -1407,7 +1407,11 @@
             "heading": "",
             "text": "Deep reinforcement learning (DRL) algorithms for movement control are typically evaluated and benchmarked on sequential decision tasks where imprecise actions may be corrected with later actions, thus allowing high returns with noisy actions.\n\nIn contrast, we focus on an under-researched class of high-risk, high-precision motion control problems where actions carry irreversible outcomes, driving sharp peaks and ridges to plague the state-action reward landscape.\n\nUsing computational pool as a representative example of such problems, we propose and evaluate State-Conditioned Shooting (SCOOT), a novel DRL algorithm that builds on advantage-weighted regression (AWR) with three key modifications: 1) Performing policy optimization only using elite samples, allowing the policy to better latch on to the rare high-reward action samples; 2) Utilizing a mixture-of-experts (MoE) policy, to allow switching between reward landscape modes depending on the state; 3) Adding a distance regularization term and a learning curriculum to encourage exploring diverse strategies before adapting to the most advantageous samples.\n\nWe showcase our features' performance in learning physically-based billiard shots demonstrating high action precision and discovering multiple shot strategies for a given ball configuration."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies high-risk, high-precision motion control, where actions can have irreversible outcomes, using computational pool as an example. It proposes SCOOT, a deep reinforcement learning algorithm based on advantage-weighted regression. SCOOT optimizes the policy using elite samples, uses a mixture-of-experts policy to switch reward landscape modes by state, and adds distance regularization and a learning curriculum. In physically based billiard shots, the authors demonstrate high action precision and discovery of multiple strategies for a given ball configuration.",
+          "zh": "论文研究动作可能造成不可逆结果的高风险、高精度运动控制问题，并以计算台球为例提出SCOOT算法。该方法在优势加权回归基础上，仅用精英样本优化策略，采用可随状态切换奖励模式的混合专家策略，并加入距离正则化和学习课程。作者展示了该算法在物理台球击球中的表现，能够学习高精度动作，并为同一球局发现多种击球策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1438,7 +1442,11 @@
             "heading": "",
             "text": "Recent advances in musculoskeletal modeling and reinforcement learning have enabled muscle-actuated agents to reproduce increasingly complex human motions.\n\nYet these capabilities remain largely confined to flat ground, in part because motion datasets rarely include aligned terrain geometry and because retargeting terrain interactions to complex musculoskeletal bodies is challenging. We present TERRA, an end-to-end pipeline for terrain-aware retargeting and control of musculoskeletal locomotion.\n\nFrom kinematic trajectories alone, TERRA combines terrain priors, estimated contacts, and negative free-space evidence to recover task-relevant support geometry. TERRA further considers anatomical, tendon-continuity, and contact constraints during retargeting.\n\nUsing the resulting motion-terrain pairs from five datasets, we successfully train a single muscle-actuated control policy on 9.4 hours of diverse locomotion.\n\nAcross reconstruction, retargeting, and held-out tracking benchmarks, TERRA improves terrain accuracy, sharply reduces anatomical and interaction violations, and achieves the highest observed completion rate over supported terrain families.\n\nOverall, TERRA provides a practical route from scene-less motion data to muscle-actuated locomotion over diverse non-flat terrain. Project website: https://cnai.epfl.ch/terra/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "TERRA is an end-to-end pipeline for terrain-aware retargeting and control of muscle-actuated locomotion. From kinematic trajectories alone, it uses terrain priors, estimated contacts, and negative free-space evidence to recover task-relevant support geometry, while retargeting accounts for anatomical, tendon-continuity, and contact constraints. The authors train one control policy on motion-terrain pairs from five datasets. Across reconstruction, retargeting, and held-out tracking benchmarks, they report improved terrain accuracy, fewer anatomical and interaction violations, and the highest observed completion rate over supported terrain families.",
+          "zh": "TERRA是一套面向肌肉驱动运动的地形感知重定向与控制流程。它仅从运动学轨迹出发，结合地形先验、估计接触和负向自由空间证据，恢复任务相关的支撑几何；重定向时考虑解剖、肌腱连续性与接触约束。作者利用五个数据集生成的运动—地形配对训练单一控制策略，并报告其在重建、重定向和留出跟踪基准上提升地形准确性、减少解剖及交互违规，且在支持的地形类别中取得最高观测完成率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1469,7 +1477,11 @@
             "heading": "",
             "text": "Although multicopter drones are traditionally designed for \"perception-only\" tasks, like mapping and exploration, recent work has sought to develop Unmanned Aerial Manipulators (UAMs) to solve mobile manipulation tasks.\n\nAerial manipulation performance can be impacted by \"downwash,\" the airflow produced by propellers, but current state-of-the-art UAMs either ignore downwash or treat it as a disturbance. Instead, is it possible to actively use downwash as a tool during manipulation? We design a drone soccer task to explore the feasibility of downwash-based manipulation.\n\nSpecifically, we develop a simplified downwash dynamics model which we use to train an RL policy to dribble a soccer ball. We further demonstrate that our policy transfers to real world deployment. This work provides key insights into novel manipulation capabilities for multicopters."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether multicopter downwash, the airflow produced by propellers, can be used as an active manipulation tool rather than treated as a disturbance. The authors design a drone soccer task, develop a simplified downwash dynamics model, and use it to train a reinforcement learning policy to dribble a soccer ball. They report that the policy also transfers to real-world deployment. The abstract does not detail the deployment conditions or its specific performance, and presents the work as offering insights into novel multicopter manipulation capabilities.",
+          "zh": "论文探讨多旋翼无人机能否将螺旋桨产生的下洗气流作为操控工具，而非仅视为干扰。作者设计无人机足球任务，建立简化的下洗动力学模型，并用该模型训练强化学习策略，使无人机推动足球运球。摘要称该策略还迁移到了真实世界部署，但未说明部署条件或具体表现。研究旨在提供多旋翼无人机新型操控能力的相关见解。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1500,7 +1512,11 @@
             "heading": "",
             "text": "Experimental investigation and modeling of flapping-wing aerial vehicles are limited by the scarcity of large-scale records that temporally align wing kinematics, aerodynamic responses, and flight states.\n\nExisting datasets are often limited in scale and affected by measurement noise and temporal misalignment between rapidly varying wing motion and the associated dynamic response, particularly during high-frequency flapping.\n\nWe introduce FlapKAD, an episode-structured simulation dataset comprising 2,000 rigid-wing flight episodes and 720,152 valid time steps, with bilateral wing kinematics, aerodynamic responses, and flight states recorded synchronously within a common clock.\n\nFlapKAD supports a unified bidirectional sequence-prediction benchmark constructed from the same temporally aligned episodes.\n\nThe forward task predicts future vertical force coefficients and body vertical velocity from histories of realized flap and twist angles, whereas the inverse task reconstructs future flap- and twist-angle trajectories from the corresponding response histories.\n\nA benchmark of eight representative time-series architectures across multiple prediction horizons reveals direction- and horizon-dependent model behavior, systematically higher reconstruction errors for twist angle than for flap angle, and no consistent advantage from increased architectural complexity.\n\nFlapKAD provides a reproducible dataset and benchmark for studying coupled wing-kinematic, aerodynamic, and flight-state dynamics in flapping-wing aerial vehicles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FlapKAD is a simulation dataset for flapping-wing aerial vehicles, with bilateral wing kinematics, aerodynamic responses, and flight states recorded synchronously on a common clock. It supports forward and inverse sequence-prediction benchmarks. The forward task predicts vertical force coefficients and body vertical velocity from flap and twist angle histories; the inverse task reconstructs future wing-angle trajectories from response histories. A benchmark of eight time-series architectures finds behavior varies by prediction direction and horizon, twist-angle reconstruction errors exceed flap-angle errors, and greater architectural complexity offers no consistent advantage.",
+          "zh": "FlapKAD是面向扑翼飞行器的仿真数据集，包含按统一时钟同步记录的双侧翼运动学、气动响应和飞行状态，并支持正向与逆向序列预测基准。正向任务根据扑动和扭转角历史预测垂直力系数及机体垂直速度；逆向任务根据响应历史重建未来翼角轨迹。对八种时序架构的基准比较显示，模型表现随预测方向和时域而异，扭转角重建误差高于扑动角，架构复杂度增加未带来一致优势。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
