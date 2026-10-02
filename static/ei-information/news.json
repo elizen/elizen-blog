@@ -2927,7 +2927,11 @@
             "heading": "",
             "text": "We present a planning and control approach to reactively use hand contacts to stabilize a humanoid in low stability scenarios, where only using feet contacts may result in a fall.\n\nCandidate contacts are sampled within the robot's reachable workspace, and a preview is computed by rolling out the centroidal dynamics through pre-impact, impact and post-impact phases. Sampled points are scored based on the Center of Pressure (CoP) control authority at the post-impact phase.\n\nCentral to our approach is a learned model of the robot's CoP region during post-impact, which enables rapid evaluation of candidate contact points compared to traditional optimization-based methods. The presented planner has two stages: the first selects an optimal bracing region and the second computes an optimal bracing point within the region.\n\nOur simulation results demonstrate an average increase in impulse resilience of 89% over recovery without hand contacts and 17% over a naive planning strategy (closest reachable region).We validate our framework on hardware, performing push tests while standing and walking.\n\nThe standing trials show an average 43% reduction in stabilization time compared to naive hand placement and the walking trials demonstrate a 18% reduction compared to baseline recovery (without hand contacts)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a planning and control approach that uses hand contacts to stabilize humanoid robots in low-stability situations where foot contacts alone may lead to a fall. It evaluates reachable candidate contacts through centroidal-dynamics rollouts and a learned model of the post-impact center-of-pressure region, selecting a bracing region and then a point within it. In simulation, impulse resilience increases by 89% over recovery without hand contacts and 17% over a closest-reachable-region strategy. Hardware push tests show reduced stabilization time while standing and walking.",
+          "zh": "本文提出一种利用手部接触提升人形机器人稳定性的规划与控制方法，面向仅靠足部接触可能跌倒的低稳定性场景。方法通过质心动力学预演评估候选接触点，并使用学习得到的冲击后压力中心区域模型加快评估，再分两阶段选择支撑区域和接触点。仿真显示，冲量抗扰能力较无手部接触恢复提高89%，较最近可达区域策略提高17%。硬件推搡试验中，站立稳定时间较朴素手部放置减少43%，行走恢复时间较无手部接触基线减少18%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2958,7 +2962,11 @@
             "heading": "",
             "text": "This report presents the \\textbf{OpenSpace Lab}'s solution to the Competition on Intelligent Information Gathering for Single and Multi-Robot Systems Workshops, organized as part of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026.\n\nOur team reached 1st place in the Single-Robot Public Track and 3rd place in both the Single- and Multi-Robot Private Tracks. The single-robot framework utilizes pre-trained map completion predictions for global planning to prioritize unexplored areas.\n\nTo reconcile map coverage with limited operation time, we introduce a remaining-time-based exploration strategy that integrates homing constraints into the decision-making process.\n\nFor multi-robot exploration, we utilize a utility-driven target selection strategy that balances observation gains, movement costs, and budget constraints, leveraging shared map and intent data to eliminate redundant search and maximize coordination efficiency.\n\nOur solution reached a 61.04\\% coverage rate in the Single-Robot Public Track, while reaching 39.53\\% and 39.91\\% coverage in the Single- and Multi-Robot Private Tracks, respectively.\n\nAn extended full-length paper based on this report is currently being prepared for submission, and the source code will be released upon acceptance of the full manuscript at https://github.com/OpenSpace-Lab/Indoor-Exploration-IROS2026."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This report describes OpenSpace Lab’s approach to the IROS 2026 indoor exploration competition. Its single-robot framework uses pretrained map-completion predictions to guide global planning and incorporates homing constraints through a remaining-time strategy. The multi-robot method balances observation gains, travel costs, and budget while using shared map and intent data to reduce redundant searches. The team placed first in the Single-Robot Public Track and third in both private tracks, with reported coverage rates of 61.04%, 39.53%, and 39.91%, respectively.",
+          "zh": "该报告介绍 OpenSpace Lab 为 IROS 2026 室内探索竞赛设计的方案。单机器人框架利用预训练地图补全预测规划全局探索，并依据剩余时间将返航约束纳入决策；多机器人策略结合观测收益、移动成本和预算，利用共享地图与意图数据减少重复搜索。团队在单机器人公开赛道获第一名，在单、多人私有赛道均获第三名；覆盖率分别为61.04%、39.53%和39.91%。作者称，基于报告扩展的完整论文正在准备投稿，代码将在论文获接收后发布。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2989,7 +2997,11 @@
             "heading": "",
             "text": "Continuous legged manipulation requires accurate end-effector tracking while the base keeps walking. Combining reinforcement learning (RL) with model predictive control (MPC) suits this task: the learned policy provides robust locomotion, while MPC coordinates the base and arm to compensate for tracking errors.\n\nHowever, MPC can compensate only for base motion that it can predict, and a learned policy's command response varies with gait phase, contact, and payload. We present ReCo, a framework that couples response-consistent locomotion with policy-aware MPC for legged manipulation.\n\nResponse shaping trains the policy to respond to commands consistently and repeatably across randomized dynamics. An identified closed-loop response model then lets MPC jointly plan locomotion commands and arm motion.\n\nOn the simulation benchmark, ReCo reduces position and orientation root-mean-square error (RMSE) by 28.7% and 27.4% relative to the best baseline for each metric. Real-world experiments demonstrate onboard continuous legged manipulation with coordinated base and arm motion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReCo combines response-consistent locomotion with policy-aware model predictive control for legged manipulation while the robot keeps walking. The method trains a locomotion policy to respond consistently across randomized dynamics, then uses an identified closed-loop response model so MPC can jointly plan locomotion commands and arm motion. On a simulation benchmark, it reduces position and orientation root-mean-square error by 28.7% and 27.4%, respectively, relative to the best baseline for each metric. Real-world experiments demonstrate onboard continuous manipulation with coordinated base and arm motion.",
+          "zh": "本文提出 ReCo，用于腿式机器人持续行走时的操作任务，将响应一致的运动策略与策略感知模型预测控制结合，以协调底盘和机械臂。作者指出，学习策略的指令响应会随步态相位、接触和负载变化；ReCo通过随机化动力学训练响应整形，并识别闭环响应模型供控制器联合规划运动指令与机械臂动作。在仿真基准中，相对各指标的最佳基线，位置和姿态均方根误差分别降低28.7%和27.4%。真实机器人实验展示了机载连续操作及底盘与机械臂协调运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3020,7 +3032,11 @@
             "heading": "",
             "text": "Coordinated bimanual manipulation is challenging because the motion of either arm can alter the shared 3D scene and thereby affect the other arm. Yet most diffusion policies generate actions without explicitly modeling these future geometric consequences, while predictive variants typically use future state only as auxiliary supervision or fixed conditioning.\n\nWe address this limitation by proposing JAMB, a diffusion policy that jointly denoises bimanual actions and future 3D point tracks. By allowing action and track hypotheses to evolve together within a shared Transformer, each can inform and refine the other throughout denoising.\n\nWe further ground multimodal representations in a shared spatiotemporal coordinate system to facilitate geometry-aware interaction during joint denoising.\n\nWe evaluate JAMB on diverse bimanual manipulation tasks in RoboTwin 2.0 and on a real-world robot, comparing it with action-only policies and alternative future-prediction approaches spanning different state representations and learning objectives.\n\nAcross 16 simulation tasks, JAMB achieves an average success rate of 83.4%, outperforming the strongest baseline by 23.9 percentage points. On three real-world tasks, it outperforms the action-only and auxiliary geometry prediction methods by 50.0 and 21.2 percentage points, respectively.\n\nBeyond these performance gains, JAMB shows stronger generalization to cluttered scenes and out-of-distribution backgrounds than the evaluated baselines. Together, these results demonstrate the effectiveness of our joint action-motion modeling framework for coordinated bimanual manipulation. Our project website is available at https://jam-bimanual.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "JAMB is a diffusion policy for coordinated bimanual manipulation that jointly denoises arm actions and future 3D point tracks within a shared Transformer. The action and track hypotheses can refine one another, while a shared spatiotemporal coordinate system supports geometry-aware interaction. Evaluation covers 16 RoboTwin 2.0 simulation tasks and three real-world tasks, against action-only policies and alternative future-prediction methods. JAMB reports an 83.4% average simulation success rate, 23.9 percentage points above the strongest baseline, and higher real-world performance than action-only and auxiliary geometry-prediction methods.",
+          "zh": "本文提出 JAMB，一种面向双臂协同操作的扩散策略，在共享 Transformer 中联合去噪双臂动作与未来三维点轨迹，使动作和轨迹假设在生成过程中相互调整，并以共享时空坐标表示支持几何交互。作者在 RoboTwin 2.0 的16项仿真任务及真实机器人三项任务中，将其与仅生成动作及其他未来预测方法比较。仿真平均成功率为83.4%，较最强基线高23.9个百分点；真实任务较动作策略和辅助几何预测方法分别高50.0和21.2个百分点。作者还报告其对杂乱场景和分布外背景的泛化更强。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
