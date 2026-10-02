@@ -1467,7 +1467,11 @@
             "heading": "",
             "text": "In this paper, we propose GTA-VLA(Guide, Think, Act), an interactive Vision-Language-Action (VLA) framework that enables spatially steerable embodied reasoning by allowing users to guide robot policies with explicit visual cues. Existing VLA models learn a direct \"Sense-to-Act\" mapping from multimodal observations to robot actions.\n\nWhile effective within the training distribution, such tightly coupled policies are brittle under out-of-domain (OOD) shifts and difficult to correct when failures occur.\n\nAlthough recent embodied Chain-of-Thought (CoT) approaches expose intermediate reasoning, they still lack a mechanism for incorporating human spatial guidance, limiting their ability to resolve visual ambiguities or recover from mistakes.\n\nTo address this gap, our framework allows users to optionally guide the policy with spatial priors, such as affordance points, boxes, and traces, which the subsequent reasoning process can directly condition on.\n\nBased on these inputs, the model generates a unified spatial-visual Chain-of-Thought that integrates external guidance with internal task planning, aligning human visual intent with autonomous decision-making. For practical deployment, we further couple the reasoning module with a lightweight reactive action head for efficient action execution.\n\nExtensive experiments demonstrate the effectiveness of our approach. On the in-domain SimplerEnv WidowX benchmark, our framework achieves a state-of-the-art 81.2% success rate.\n\nUnder OOD visual shifts and spatial ambiguities, a single visual interaction substantially improves task success over existing methods, highlighting the value of interactive reasoning for failure recovery in embodied control. More details of the project can be found here: https://github.com/FutianLabs/GTA-VLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GTA-VLA, an interactive vision-language-action framework that lets users guide robot policies with spatial visual cues such as affordance points, boxes, and traces. The model conditions a spatial-visual chain of thought on this guidance and its own task planning, then uses a lightweight reactive action head for execution. On the in-domain SimplerEnv WidowX simulation benchmark, the authors report an 81.2% success rate. They also report improved task success from one visual interaction under out-of-domain visual shifts and spatial ambiguity.",
+          "zh": "论文提出 GTA-VLA，一种支持用户通过视觉空间提示引导机器人策略的交互式视觉—语言—动作框架。用户可提供可供性点、边界框或轨迹，模型据此生成结合外部引导与内部任务规划的空间视觉思维链，并配合轻量反应式动作头执行。在 SimplerEnv WidowX 仿真基准的域内任务中，作者报告成功率为 81.2%。作者还称，在视觉域外变化和空间歧义下，单次视觉交互能提高任务成功表现；摘要未给出这些条件下的具体成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1498,7 +1502,11 @@
             "heading": "",
             "text": "Human videos are an abundant source of dexterous manipulation behaviors, but they lack tactile information that is crucial for contact-rich interaction. This raises a fundamental question: can robots learn deployable visual-tactile dexterous manipulation policies from human video demonstrations without robot-side data collection?\n\nWe present DEX-X, a framework for learning visual-tactile dexterous manipulation from human videos through simulation. Our key insight is that simulation can serve as a tactile completion engine.\n\nGiven monocular human demonstrations, DEX-X reconstructs hand-object interactions in simulation, where physically grounded contact dynamics provide tactile supervision unavailable in the original videos.\n\nLeveraging this recovered tactile information, we train visual-tactile dexterous manipulation policies and distill them into deployable policies operating on point-cloud observations and tactile sensing. We demonstrate zero-shot sim-to-real transfer on a dexterous hand-arm platform across diverse grasping and contact-rich tool-use tasks.\n\nThe teacher policy achieves 65.9% average success across six task categories in simulation, while the distilled visual-tactile policy achieves 93% success on real-world cube picking and 53% on the challenging table-cleaning task. Zero-shot generalization to unseen object geometries is also observed on object-picking tasks.\n\nOur results suggest that simulated interaction is a key bridge between human videos and deployable dexterous manipulation policies, providing the missing physical supervision needed for scalable robot skill learning from Internet-scale human video data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DEX-X learns visual-tactile dexterous manipulation from monocular human videos without robot-side data collection. It reconstructs hand-object interaction in simulation, using contact dynamics to provide tactile supervision absent from the videos, then distills trained policies into deployable policies that use point clouds and tactile sensing. The authors report a teacher-policy average success rate of 65.9% across six simulated task categories. The distilled policy achieves 93% success on real-world cube picking and 53% on table cleaning; zero-shot generalization to unseen object geometries is observed for picking.",
+          "zh": "论文提出 DEX-X，从单目人类操作视频学习视觉—触觉灵巧操作策略，目标是不依赖机器人端数据采集。该方法在仿真中重建手与物体的交互，以物理接触动力学补充视频缺少的触觉监督，再训练策略并蒸馏为使用点云观测和触觉感知的可部署策略。作者报告，教师策略在六类仿真任务上的平均成功率为 65.9%；蒸馏策略在真实立方体拾取任务中成功率为 93%，在具有挑战性的桌面清洁任务中为 53%。作者还观察到拾取任务对未见物体几何形状的零样本泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1529,7 +1537,11 @@
             "heading": "",
             "text": "Social navigation requires the robot to reason and respond in complex real-world environments.\n\nWhile recent works attempt to incorporate human-level intelligence into robot planning using large Vision-Language Models (VLMs), end-to-end frameworks often create an unpredictable black-box, and existing instruction-following methods are not designed for full autonomy.\n\nTo bridge this gap, we present G2-Nav, a novel framework that grounds abstract social reasoning and guards safe real-world deployment. Instead of asking the VLM for direct planning decisions, G2-Nav translates its semantic reasoning into a vision-language costmap with reliability and interpretability.\n\nThe VLM evaluates traversable regions and social agents from open-set perception, mapping social context into the costmap. To improve real-world robustness, the VLM performs semantic verification on upstream tracking, and we introduce a high-frequency safety check to guard against system latency prior to trajectory generation.\n\nWe demonstrate through real-world experiments that G2-Nav delivers safe, efficient, and socially compliant autonomous navigation in unstructured environments. Code is available at https://github.com/centiLinda/G2-Nav."
           }
-        ]
+        ],
+        "summary": {
+          "en": "G2-Nav is a framework for robot social navigation that converts vision-language model reasoning into an interpretable vision-language costmap rather than relying on direct planning decisions. The model assesses traversable regions and social agents from open-set perception and maps social context into costs. For robustness, it semantically verifies upstream tracking and applies a high-frequency safety check for system latency before trajectory generation. The authors report real-world experiments in which G2-Nav provides safe, efficient, socially compliant autonomous navigation in unstructured environments.",
+          "zh": "论文提出 G2-Nav，用于机器人社交导航。框架不让视觉—语言模型直接作出规划决策，而是将其语义推理转化为具有可靠性和可解释性的视觉—语言代价地图：模型评估可通行区域与社交对象，并把社交情境映射到地图中。为提高真实环境部署的稳健性，模型还对上游跟踪结果进行语义验证，并在轨迹生成前加入高频安全检查，以应对系统延迟。作者报告，真实世界实验显示该方法能在非结构化环境中实现安全、高效且符合社交规范的自主导航。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1560,7 +1572,11 @@
             "heading": "",
             "text": "We present a teleoperation system that enables a single operator to perform construction tasks on a Unitree G1 humanoid, combining extended reality (XR) based upper body control with pedal-based locomotion to enable simultaneous manipulation and locomotion.\n\nMotivated by persistent labor shortages, hazardous working conditions, and challenges in humanoid autonomy, we investigate teleoperation as a practical near-term approach for reducing physical strain on workers while generating high quality demonstration data.\n\nWe evaluate the system on two representative construction tasks drawn from O*NET occupational database, and report task success and completion time relative to a manual baseline. The system achieved 100% success on tool transport and 80% success on surface painting, with teleoperation requiring substantially more time compared to manual execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a teleoperation system for a Unitree G1 humanoid, combining extended-reality upper-body control with pedal-based locomotion so one operator can manipulate and move the robot simultaneously. The study examines teleoperation as a near-term approach to construction work, including its potential to reduce workers’ physical strain and generate demonstration data. Two representative tasks drawn from the O*NET occupational database are evaluated against a manual baseline for success and completion time. The system succeeds on 100% of tool-transport trials and 80% of surface-painting trials, while taking substantially longer than manual execution.",
+          "zh": "论文介绍一套用于 Unitree G1 人形机器人的远程操作系统，由扩展现实控制上半身，并以踏板控制移动，使单名操作者能同时进行操作与行走。研究将远程操作作为近期应用方案，考察其在减轻工人身体负担及获取示范数据方面的潜力。作者依据 O*NET 职业数据库选取两项代表性建筑任务，并与人工操作基线比较成功率和完成时间。系统在工具运输任务中成功率为 100%，在表面涂漆任务中为 80%；远程操作耗时明显长于人工执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
