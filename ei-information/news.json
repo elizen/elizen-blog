@@ -2103,7 +2103,11 @@
             "heading": "",
             "text": "Training Deep Reinforcement Learning (DRL) navigation policies for different robot configurations remains time-consuming. We present FlashNav, a GPU-based framework that trains robot-specific navigation policies within tens of seconds.\n\nA unified robot specification configures a lightweight simulator for batched motion updates, range sensing, and footprint collision checking over a shared occupancy map. The framework supports nonconvex footprints, different sensor configurations and drive types.\n\nBlockwise ray queries and selective observation recomputation after resets reduce simulation overhead, while GPU-resident replay and overlapping experience collection and learner updates support efficient off-policy training. Experiments covered five robot configurations and three computing platforms.\n\nWith FastDSAC on a single RTX 5090 GPU, FlashNav can train a deployable navigation policy in under 30 seconds. FlashNav achieved the highest success rate and score in the benchmark comparison. The selected policies were deployed on wheeled, quadrupedal, humanoid, and irregularly shaped robots without additional policy training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FlashNav, a GPU framework for training navigation policies tailored to different robot configurations. A unified specification configures a lightweight simulator, while blockwise ray queries, selective observation recomputation, and GPU-resident replay reduce overhead. The authors report that FastDSAC trains a deployable policy in under 30 seconds on a single RTX 5090, and that FlashNav achieved the highest success rate and score in benchmark comparisons. Selected policies were deployed without additional training on wheeled, quadrupedal, humanoid, and irregularly shaped robots.",
+          "zh": "论文介绍 FlashNav，一种面向不同机器人配置的 GPU 导航策略训练框架。它以统一规格配置轻量模拟器，并通过分块射线查询、选择性观测重算及 GPU 回放等方式降低训练开销。作者报告，FastDSAC 在单张 RTX 5090 上可在 30 秒内训练可部署策略；基准比较中其成功率和得分最高。选定策略无需额外训练，已部署于轮式、四足、人形及不规则形状机器人。实验覆盖五种配置和三种计算平台。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2134,7 +2138,11 @@
             "heading": "",
             "text": "Scuba divers are taught to control their depth to avoid rapid ascents and descents, which could result in serious injuries such as gas embolisms and barotrauma. However, many underwater tasks necessitate lateral control, maintaining distance between subsea structures such as coral reefs, submerged drilling instrumentation, or unexploded ordnance.\n\nIn this work, we discuss a first-of-its-kind wearable robotic solution providing thruster-actuated directional guidance to a diver, as distinct from prior propulsive-assistance exoskeletons.\n\nWe introduce ``Robotic Assisted Diver Movement in Confined Spaces'' (RADMCS), a wearable robot that assists divers in maintaining a fixed distance from subsea structures by leveraging perception techniques in monocular depth estimation and force-feedback from submersible thrusters to provide haptic feedback.\n\nIts small and compact form factor creates a foundational platform that could be expanded to include more sophisticated control and navigation behaviors.\n\nWe present results from Institutional Review Board (IRB) in-water studies with eight human scuba diver participants on threshold sensitivity tests in both a closed-water swimming facility and ocean environments; distance-maintaining experiments in a closed-water facility; and form, fit, and function testing in the ocean.\n\nWe demonstrate that relatively low thrust values (10 percent of maximum) allow robotic direction of a human's movement using the physical sensation of the robot's guidance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RADMCS, a wearable robot that uses thrusters to guide divers in maintaining a fixed distance from underwater structures. It combines monocular depth estimation with force feedback from submersible thrusters to provide haptic cues. The authors report in-water studies involving eight scuba divers: threshold-sensitivity tests in a closed-water facility and ocean environments, distance-maintaining experiments in the facility, and form, fit, and function testing in the ocean. They demonstrate that thrust at 10 percent of maximum can guide human movement through the physical sensation of the robot.",
+          "zh": "论文介绍 RADMCS，一种可穿戴机器人，旨在通过推进器提供方向引导，帮助潜水员与水下结构保持固定距离。系统利用单目深度估计感知，并以推进器的力反馈提供触觉提示。作者报告了八名潜水员参与的水中研究，包括封闭水域和海洋环境中的阈值敏感度测试、封闭水域距离保持实验，以及海洋中的形态、适配和功能测试。研究显示，最大推力的 10% 可通过机器人引导的身体感觉影响人的移动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2165,7 +2173,11 @@
             "heading": "",
             "text": "Signal Temporal Logic control synthesis frequently encounters physical infeasibility due to actuator limits or flawed task deadlines. Standard optimization methods model time by discretizing the horizon, which leads to exponential computational growth and prevents the extraction of continuous temporal adjustments.\n\nThis paper presents a geometric decision procedure that evaluates physical feasibility completely independently of the temporal horizon length. The method operates by transforming explicit temporal logic constraints into continuous spatial backward reachable sets evaluated at time zero.\n\nIt analytically inverts the Bhat-Bernstein settling-time integral to map temporal windows into continuous spatial boundaries, reducing the feasibility check to a local matrix and vector inclusion evaluation.\n\nWhen a specification is infeasible, the procedure extracts a Farkas dual certificate to isolate conflicting constraints and identifies the maximum geometric spatial gap.\n\nIt then analytically inverts the system's dynamic expansion to map this largest geometric gap into an exact, closed-form temporal delay, precisely fixing the boundary deficit to restore physical realizability. We formally prove the strict soundness, mathematically bounded completeness, and horizon-independent scalability of this procedure.\n\nExperimental evaluations on six-dimensional drone kinematics demonstrate sub-millisecond execution times, massive speedups over state-of-the-art optimization encodings, and computational immunity to deeply nested logical formulas."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a geometric decision procedure for assessing physical feasibility in Signal Temporal Logic control synthesis independently of the temporal horizon length. It transforms explicit temporal constraints into continuous spatial backward reachable sets and reduces feasibility checking to a local matrix and vector inclusion test. For infeasible specifications, it uses a Farkas dual certificate to identify conflicts and maps the largest geometric gap to a closed-form temporal delay. The authors prove soundness, bounded completeness, and horizon-independent scalability, and report sub-millisecond execution in six-dimensional drone-kinematics experiments.",
+          "zh": "论文提出一种用于信号时序逻辑控制合成的几何决策程序，旨在不依赖时间范围长度评估物理可行性。该方法把显式时序约束转换为连续空间后向可达集，并将可行性检查化为局部矩阵与向量包含判断。若规格不可行，程序利用 Farkas 对偶证书定位冲突约束，再将最大几何间隙解析映射为精确时间延迟以修复可实现性。作者证明了严格可靠性、有界完备性和与时间范围无关的可扩展性，并报告六维无人机运动学实验中的亚毫秒执行时间及对深层嵌套公式的计算免疫性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2196,7 +2208,11 @@
             "heading": "",
             "text": "When constraints conflict, an optimizer must determine which requirements to preserve and which to relax. On the one hand, a priority ordering specifies which requirements take precedence. On the other hand, penalty-based formulations encode their relative importance through numerical weights.\n\nDepending on these weights, a solution can improve its weighted score while violating intended priorities. We introduce TierCEM, a variant of the cross-entropy method that incorporates strict constraint priorities directly into elite selection without requiring per-constraint importance weights.\n\nTierCEM works by sequentially filtering sampled candidates, from highest- to lowest-priority constraint. If and when a constraint eliminates all remaining candidates, TierCEM returns to the last nonempty set and selects elites with the smallest violations of that blocking constraint, recursively preserving satisfaction of all higher-priority constraints.\n\nWe evaluate TierCEM on 2D navigation and contact-rich pushing tasks in proprioceptive and learned world-model settings. Experiments show that reversing the constraint ordering changes which constraints are violated under conflict.\n\nPrioritizing progress toward the task objective also enables TierCEM to relax lower-priority constraints when they would otherwise prevent further progress."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TierCEM, a cross-entropy method that incorporates strict constraint priorities into elite selection without assigning numerical importance weights to individual constraints. It filters candidates in priority order; if a constraint eliminates all remaining candidates, it returns to the last nonempty set and selects elites with the smallest violations of that blocking constraint while preserving higher-priority constraints. The authors evaluate the method on 2D navigation and contact-rich pushing tasks in proprioceptive and learned world-model settings. Experiments show that reversing priorities changes which constraints are violated under conflict.",
+          "zh": "论文提出 TierCEM，一种将严格约束优先级直接纳入精英样本选择的交叉熵方法，不需为各约束设置重要性权重。算法按优先级依次筛选样本；若某约束使剩余集合为空，则退回最近的非空集合，并在保留更高优先级约束满足情况的前提下，选择对阻塞约束违反最小的精英样本。作者在二维导航和接触丰富的推动任务中进行评估，涵盖本体感知和学习到的世界模型设置。实验显示，冲突时反转约束顺序会改变被违反的约束；将任务进展置于优先位置，也能放宽阻碍进展的低优先级约束。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
