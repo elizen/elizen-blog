@@ -1187,7 +1187,11 @@
             "heading": "",
             "text": "Reasoning-enabled VLA policies expose chain-of-thought (CoT) traces that appear to explain and guide their actions, creating a potential interface for runtime safety through reasoning monitoring and correction.\n\nIn this work, we define and operationalize two evaluation axes for assessing when this interface can improve embodied behavior: correctability, which measures whether unreliable reasoning can be detected and improved during generation, and actionability, which measures whether reasoning corrections produce behaviorally meaningful changes in the intended direction.\n\nTo enable correctability, we introduce Token-level Reward for Utility-Steered Chain-of-Thought (TRUST), an offline-trained value model that predicts eventual reasoning correctness from partial prefixes and uses these estimates to monitor and selectively steer reasoning generation in frozen VLA policies.\n\nOn the Alpamayo 1.5 driving VLA, TRUST monitors correctness with 88.9% accuracy and improves reasoning correctness from 75.9% to 90.0%.On a baseline-defined challenging subset in AlpaSim, TRUST reduces collision rate by 30.4% and maximum trajectory error by 11.5% relative to the unsteered policy, outperforming a compute-matched Best-of-4 baseline.\n\nOn the DeepThinkVLA manipulation VLA, TRUST improves the correctness of grasp-state claims from 69.3% to 90.2% and action-choice claims from 68.8% to 85.9%, yet closed-loop task performance on LIBERO-Plus remains largely unchanged.\n\nEmpirical analysis reveals intent-consistent behavioral effects in Alpamayo 1.5 but limited effects in DeepThinkVLA, helping interpret these different task-level outcomes.\n\nTogether, our results show that gains in reasoning correctness do not automatically imply gains in embodied performance, motivating evaluation of correctability and actionability when using CoT as a runtime safety interface."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper defines correctability and actionability to evaluate chain-of-thought monitoring in vision-language-action policies, and introduces TRUST, an offline-trained value model that predicts reasoning correctness from partial prefixes and selectively steers generation. In Alpamayo 1.5 and AlpaSim evaluations, the authors report improved reasoning correctness and driving metrics. For DeepThinkVLA, TRUST improves the correctness of grasp-state and action-choice claims, while closed-loop LIBERO-Plus task performance remains largely unchanged. The results indicate that more correct reasoning does not automatically improve embodied performance.",
+          "zh": "论文提出用推理监控与纠正评估视觉语言动作策略中思维链对具身行为的作用，并定义可纠正性和可行动性两个评价维度。作者提出离线训练的 TRUST 模型，从部分推理前缀预测正确性，并监控、选择性引导冻结策略的推理生成。在 Alpamayo 1.5 与 AlpaSim 仿真评测中，作者报告推理正确率和若干驾驶指标改善；在 DeepThinkVLA 上，抓取状态和动作选择声明的正确性提高，但 LIBERO-Plus 闭环任务表现基本不变。结果显示，推理正确性提升并不必然带来具身性能提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1218,7 +1222,11 @@
             "heading": "",
             "text": "We study the problem of navigating cluttered indoor environments with a humanoid robot.\n\nUnlike conventional methods that model navigation as a 2D path planning problem, humanoid traversal in cluttered environments requires continuous geometry-aware whole-body adaptation, including coordinated arm placement, torso adjustment, and gait modulation for collision-free movement through complex 3D spaces.\n\nWe introduce TANGO, the first whole-body vision-language navigation framework for language-conditioned humanoid traversal in cluttered environments. Given a natural-language instruction and egocentric RGB observations, TANGO directly predicts 29-DoF joint-space actions for downstream whole-body control.\n\nWe train TANGO entirely in simulation by synthesizing diverse collision-free traversal behaviors via global path planning, kinematic whole-body motion generation, obstacle-aware motion editing, and RL-based tracking. This pipeline provides dynamically feasible action supervision for learning language-conditioned whole-body policies.\n\nIn extensive simulation experiments, TANGO demonstrates state-of-the-art performance in vision-language navigation, while outperforming strong modular baselines in navigating challenging scenes requiring obstacle negotiation.\n\nLastly, we deploy TANGO zero-shot on a Unitree G1 humanoid robot, and observe robust language-guided traversal in cluttered real-world scenes without training on any real-world navigation data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TANGO, a language-conditioned whole-body vision-language navigation framework for humanoids in cluttered indoor environments. From natural-language instructions and egocentric RGB observations, it predicts 29-degree-of-freedom joint-space actions. Training is conducted entirely in simulation, where a pipeline synthesizes traversal behaviors using path planning, whole-body motion generation, obstacle-aware editing, and reinforcement-learning-based tracking. The authors report state-of-the-art simulation navigation results and advantages over modular baselines in obstacle negotiation. They also report zero-shot deployment on a Unitree G1 in cluttered real-world scenes.",
+          "zh": "论文研究人形机器人在室内杂乱环境中的导航，提出 TANGO，一种由语言条件控制的全身视觉语言导航框架。系统根据自然语言指令和机器人第一视角 RGB 观测，直接预测 29 自由度关节空间动作。训练完全在仿真中进行，通过路径规划、全身运动生成、障碍感知运动编辑及强化学习跟踪合成训练行为。作者报告，仿真实验中 TANGO 在视觉语言导航方面表现领先，并在需绕障场景中胜过模块化基线；此外，论文称其在 Unitree G1 上零样本部署，可在杂乱真实场景中依指令行进。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1249,7 +1257,11 @@
             "heading": "",
             "text": "This paper presents Adaptive Whole-body Loco-Manipulation, AdaptManip, a fully autonomous framework for humanoid robots to perform integrated navigation, object lifting, and delivery.\n\nUnlike prior imitation learning-based approaches that rely on human demonstrations and are often brittle to disturbances, AdaptManip aims to train a robust loco-manipulation policy via reinforcement learning without human demonstrations or teleoperation data.\n\nThe proposed framework consists of three coupled components: （1） a recurrent object state estimator that tracks the manipulated object in real time under limited field-of-view and occlusions; （2） a whole-body base policy for robust locomotion with residual manipulation control for stable object lifting and delivery; and （3） a LiDAR-based robot global position estimator that provides drift-robust localization.\n\nAll components are trained in simulation using reinforcement learning and deployed on real hardware in a zero-shot manner.\n\nExperimental results show that AdaptManip significantly outperforms baseline methods, including imitation learning-based approaches, in adaptability and overall success rate, while the learned estimator keeps tracking the object when visual observations are intermittent.\n\nWe further demonstrate fully autonomous real-world navigation, object lifting, and delivery on a humanoid robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents AdaptManip, an autonomous whole-body loco-manipulation framework for humanoid navigation, object lifting, and delivery. It uses reinforcement learning without human demonstrations or teleoperation data. Its components include a recurrent object-state estimator for limited views and occlusions, a whole-body locomotion policy with residual manipulation control, and LiDAR-based global localization. The authors say all components are trained in simulation and deployed zero-shot on real hardware. Experiments are reported to show better adaptability and overall success than baselines, alongside autonomous real-world navigation, lifting, and delivery.",
+          "zh": "论文提出 AdaptManip，一种用于人形机器人的自主全身移动操作框架，涵盖导航、物体举起与递送。该方法通过强化学习训练，不依赖人工示范或遥操作数据；组成部分包括在视野受限和遮挡下跟踪物体的循环状态估计器、结合残差操作控制的全身移动策略，以及基于激光雷达的全局位置估计器。作者称所有组件均在仿真中训练，并以零样本方式部署到真实硬件。实验结果显示其适应性和总体成功率优于基线，且真实人形机器人完成了自主导航、举物和递送。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1280,7 +1292,11 @@
             "heading": "",
             "text": "In this paper, we explore the impulsive dynamics common to single-joint, two-link models of walking and brachiating gaits with respect to slope and switching time. In particular, we investigate how the stability of a gait and bifurcations encountered within a family of gaits change under time-based and state-based switching of the impulsive dynamics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines impulsive dynamics in single-joint, two-link models of walking and brachiating gaits, focusing on slope and switching time. It investigates how gait stability and bifurcations within families of gaits change when impulsive dynamics are switched according to time-based versus state-based strategies. The abstract describes the scope and comparison being studied but does not provide specific findings or experimental results.",
+          "zh": "论文研究双连杆行走机器人和摆荡机器人中常见的冲击动力学，考察坡度与切换时间对步态的影响。作者比较基于时间和基于状态的冲击动力学切换方式，关注不同步态族中的稳定性变化以及出现的分岔。摘要仅说明研究问题与分析范围，没有报告具体结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
