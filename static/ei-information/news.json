@@ -2867,7 +2867,11 @@
             "heading": "",
             "text": "Dynamical Systems (DS) are reactive motion policies representing vector fields trained with theoretical guarantees of stability and convergence. To ensure safety during deployment in unknown environments they must be locally reshaped, either through modulation or geometric control barrier function strategies.\n\nHowever, depending on the geometry of the obstacles and the complexity of the DS, these local strategies can lead the system to unavoidable collisions or spurious attractors.\n\nIn this work, we certify safety with a value function drawn from the notion of backward reachability tube, which measures the worst-case safety along a rollout trajectory of the nominal DS. Usually, such a value function is intractable for a controlled system due to curse of dimensionality.\n\nWe show that in the DS-based learning-from-demonstration setting, the absence of a control input collapses the reachability problem to a deterministic rollout, and the presence of certain stability conditions truncates the infinite horizon to a finite one, resulting in a well-defined value function.\n\nWe further show that the value function we devised is the maximal forward-invariant subset of the obstaclefree region for the nominal DS flow. The application of this certificate function is validated across five DS constructions - analytical, Neural ODE, diffeomorphic latent space, LPV-DS, SE（3）and validate it on a Franka manipulator.\n\nModulation and geometric CBFs also suffer from saddle point in cases of headon approach towards an unsafe zone. We show that CBF-on-V avoids this pitfall entirely."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a safety certificate for dynamical-system motion policies, using a value function that captures worst-case safety along rollouts of the nominal policy. The authors argue that, without control inputs, the reachability problem in this learning-from-demonstration setting becomes a deterministic rollout, while stability conditions make the horizon finite. They state that the function gives the maximal forward-invariant subset of the obstacle-free region. Validation covers five system constructions and a Franka manipulator; the authors also report that CBF-on-V avoids a saddle-point issue in head-on approaches to unsafe zones.",
+          "zh": "本文提出一种用于动力系统运动策略的安全证书，以名义策略轨迹上的最坏情况安全性构造价值函数。作者指出，在无控制输入的学习示范动力系统中，可将可达性问题化为确定性 rollout，并借助稳定性条件截断无限时域；该函数被证明对应名义流在无障碍区域内的最大前向不变子集。作者在五类动力系统构造及 Franka 机械臂上验证方法，并称 CBF-on-V 可避免正面接近不安全区域时调制方法和几何 CBF 面临的鞍点问题。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2898,7 +2902,11 @@
             "heading": "",
             "text": "Pretrained robot policies provide useful action priors, but long-horizon manipulation still requires coordination between semantic reasoning and physical execution. Semantic reasoning operates at a coarser timescale than physical interaction, while episode-level failures provide limited guidance on which system component should be revised.\n\nWe propose DynaHarness, a dynamic physical harness that couples semantic reasoning with physical governance through a shared execution contract and turns failure evidence into validated capability revisions.\n\nTo be more specific, the slow brain proposes capabilities and symbolic arguments, while the fast brain grounds and monitors commands, refuses unresolved actions, substitutes capabilities, and requests replans when needed.\n\nThe physical execution contract bounds each accepted command and records execution evidence across analytic skills, recovery skills, and the frozen VLA. Failure attribution localizes faults in these records and directs targeted revisions of reusable capabilities or execution mechanisms.\n\nPaired regression checks govern admission or rejection, closing the self-evolution loop. On LIBERO-Pro, DynaHarness achieves 75.2% on 800 newly sampled initial states, compared with 17.5% for the frozen policy. With the same capability library, full dynamic execution reaches 74.0% versus 63.9% under nominal one-step replanning.\n\nThis demonstrates the value of DynaHarness as a dynamic physical harness that governs how existing capabilities are grounded, monitored, and coordinated during execution. Our project page is at https://denghaoyuan123.github.io/Dynaharness_page/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes DynaHarness, which couples semantic reasoning with physical execution governance through a shared execution contract. A slower component proposes capabilities and symbolic arguments; a faster one grounds and monitors commands, refuses unresolved actions, substitutes capabilities, or requests replanning. Execution records support failure attribution and targeted capability revisions, with paired regression checks governing admission. On LIBERO-Pro, the authors report 75.2% across 800 newly sampled initial states, compared with 17.5% for the frozen policy. With the same capability library, dynamic execution reaches 74.0%, versus 63.9% with nominal one-step replanning.",
+          "zh": "本文提出 DynaHarness，将语义推理与物理执行治理结合，以共享执行契约约束命令、记录执行证据，并据此定位失败、修订可复用能力。慢速模块提出能力和符号参数，快速模块负责落地与监控命令、拒绝未解决动作、替换能力或请求重新规划；成对回归检查决定修订是否纳入。在 LIBERO-Pro 上，作者报告其在800个新采样初始状态上达到75.2%，冻结策略为17.5%；使用相同能力库时，动态执行为74.0%，名义单步重规划为63.9%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2929,7 +2937,11 @@
             "heading": "",
             "text": "Monitoring building construction sites requires comparing the as-planned design with the as-built state, which can be estimated in real time using Simultaneous Localization and Mapping (SLAM) techniques. However, visual SLAM is prone to trajectory drift in construction environments, producing maps that are geometrically inaccurate with the actual environment.\n\nTo address this limitation, we augment an existing RGB-D SLAM system with structural priors derived from the Building Information Model (BIM).The system associates detected walls with their BIM counterparts and includes these correspondences as geometric constraints in the back-end optimization, reducing drift and enhancing global consistency.\n\nThe proposed method operates in real time and is validated on multiple real construction sites, achieving an average trajectory error reduction of 25.23% and a 7.14% improvement in map accuracy over state-of-the-art baselines.\n\nRobustness analyses further demonstrate resilience to incomplete BIM data and geometric discrepancies between as-planned models and the as-built environment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper addresses trajectory drift in visual SLAM for construction environments by adding structural priors from a Building Information Model (BIM) to an RGB-D SLAM system. Detected walls are associated with their BIM counterparts, and those correspondences become geometric constraints in back-end optimization. The authors report real-time operation and validation at multiple real construction sites, with a 25.23% reduction in average trajectory error and a 7.14% improvement in map accuracy over state-of-the-art baselines. Their robustness analyses also report resilience to incomplete BIM data and geometric discrepancies between planned models and the built environment.",
+          "zh": "本文针对施工环境中视觉 SLAM 易发生轨迹漂移的问题，将建筑信息模型（BIM）的结构先验加入现有 RGB-D SLAM 系统。系统将检测到的墙体与 BIM 中对应墙体关联，并在后端优化中把对应关系作为几何约束，以减少漂移并提高全局一致性。作者称该方法可实时运行，并在多个真实施工现场验证；相较先进基线，平均轨迹误差降低25.23%，地图精度提高7.14%。鲁棒性分析还显示，该方法可应对 BIM 数据不完整及设计模型与建成环境间的几何差异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2960,7 +2972,11 @@
             "heading": "",
             "text": "Robot brain models integrate vision, language, and robot state to generate actions for complex manipulation tasks. Most predict fixed-length action chunks that may span multiple task phases. This can obscure phase transitions and favor frequent action patterns, compromising action timing in dynamic environments.\n\nWe propose \\method, an ordered future-phase planning method for robot brain models. From current multimodal observations, it predicts the task phase at each future action position. The resulting planning representations condition the corresponding actions, preserving temporal alignment between task progress and action generation.\n\nTraining first learns the planner, then freezes it during action-model adaptation to maintain stable phase representations. We instantiate \\method on pretrained $\\pi_{0.5}$ and AcrossWAM1.0 robot brain models. Detailed quantitative evaluation uses the $\\pi_{0.5}$ implementation.\n\nOn conveyor-belt manipulation, \\method reduces offline joint-action error by approximately 22.5\\% relative to the original $\\pi_{0.5}$ model. It also improves phase-transition modeling and cross-phase action prediction. These results demonstrate the value of ordered future-phase planning for continuous action generation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ordered future-phase planning for robot brain models. From current multimodal observations, the method predicts the task phase at each future action position and uses those representations to condition corresponding actions, preserving temporal alignment. Training first learns the planner and then freezes it while adapting the action model, with the aim of keeping phase representations stable. The method is instantiated on pretrained π0.5 and AcrossWAM1.0 models, while detailed quantitative evaluation uses π0.5. In conveyor-belt manipulation, the authors report an approximately 22.5% reduction in offline joint-action error versus the original π0.5, along with improved phase-transition modeling and cross-phase action prediction.",
+          "zh": "本文提出一种面向机器人脑模型的有序未来阶段规划方法，根据当前多模态观测预测未来各动作位置对应的任务阶段，并用这些表示生成相应动作，以保持任务进展与动作的时间对齐。训练时先学习规划器，再冻结规划器以适配动作模型，旨在保持阶段表示稳定。作者将方法用于预训练的 π0.5 和 AcrossWAM1.0 模型，详细定量评估采用 π0.5。在传送带操作任务中，该方法相较原始 π0.5 将离线关节动作误差降低约22.5%，并改善阶段转换建模及跨阶段动作预测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
