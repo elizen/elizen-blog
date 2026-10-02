@@ -2663,7 +2663,11 @@
             "heading": "",
             "text": "Neural trajectory predictors can reach low prediction error while violating dynamics, actuator limits, or state constraints, especially when controls are unobserved and dynamics are partially specified.\n\nWe introduce the Markovian Dynamics Enforcer (MaDE), a time-invariant post-hoc operator mapping state-transition proposals onto a learned feasible dynamics manifold, trained on feasible states without ground-truth controls. For each transition it infers a control and recomputes the state through a completion model of known physics plus a learned residual.\n\nIt then corrects that control by gradient-based inequality reduction, so inequality satisfaction is best-effort within an iteration budget. Since every correction iterate re-enters the completion model, the returned state is dynamically consistent by construction relative to that model and the supplied previous-state anchor.\n\nMaDE drives dynamics residuals to essentially zero on fully specified simulated systems, and on an underspecified system leaves a smaller true-dynamics residual than the baselines. Designed to attach to arbitrary predictors, the frozen operator is evaluated downstream of recurrent, structured state-space, and transformer predictors.\n\nOn recorded vehicle trajectories the one-step residual against a kinematic bicycle model is 0.0071 to 0.0072 for MaDE and 0.1703 to 0.1714 for raw predictors. MaDE raises average displacement error by a factor of 1.57 to 1.83."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MaDE, a post-hoc operator that maps proposed state transitions onto a feasible dynamics manifold learned without ground-truth control labels. It infers controls, recomputes states through a model combining known physics and a learned residual, and uses gradient-based correction to reduce inequality violations on a best-effort basis. Returned states are consistent relative to that model and the previous-state anchor. Simulated and recorded-vehicle evaluations report lower dynamics residuals, alongside increased average displacement error.",
+          "zh": "论文提出马尔可夫动力学约束器 MaDE，将预测的状态转移映射到从可行状态学习的动力学流形上，不需要真实控制标签。它推断控制并通过已知物理与学习残差组成的模型重算状态，再以梯度方法尽力降低不等式约束违例；返回状态相对于该模型和前一状态锚点保持动力学一致。在完全指定的仿真系统中，动力学残差近乎为零；在欠指定系统中，真实动力学残差低于基线。车辆轨迹评估显示模型残差显著下降，但平均位移误差上升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2694,7 +2698,11 @@
             "heading": "",
             "text": "Urban micromobility applications, such as delivery robots, demand reliable navigation across large-scale urban environments while following long-horizon route instructions.\n\nThis task is particularly challenging due to the dynamic and unstructured nature of real-world city areas, yet most existing navigation methods remain tailored to short-scale and controllable scenarios.\n\nEffective urban micromobility requires two complementary levels of navigation skills: low-level capabilities such as point-goal reaching and obstacle avoidance, and high-level capabilities, such as route-visual alignment. To this end, we propose UrbanVLA, a route-conditioned Vision-Language-Action (VLA) framework designed for scalable urban navigation.\n\nOur method explicitly aligns noisy route waypoints with visual observations during execution, and subsequently plans trajectories to drive the robot. To enable UrbanVLA to master both levels of navigation, we employ a two-stage training pipeline.\n\nThe process begins with Supervised Fine-Tuning (SFT) using simulated environments and trajectories parsed from web videos. This is followed by Reinforcement Fine-Tuning (RFT) on a mixture of simulation and real-world data, which enhances the model's safety and adaptability in real-world settings.\n\nExperiments demonstrate that UrbanVLA surpasses strong baselines by more than 55% in the SocialNav task on MetaUrban. Furthermore, UrbanVLA achieves reliable real-world navigation, showcasing both scalability to large-scale urban environments and robustness against real-world uncertainties."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes UrbanVLA, a route-conditioned vision-language-action framework for long-horizon navigation in large urban environments. During execution, it aligns noisy route waypoints with visual observations and plans robot trajectories. A two-stage training pipeline uses simulated environments and web-video trajectories for supervised fine-tuning, followed by reinforcement fine-tuning on mixed simulation and real-world data. The authors report a greater than 55% improvement over strong baselines on MetaUrban's SocialNav task and describe reliable real-world navigation.",
+          "zh": "论文提出面向城市微型移动机器人的路线条件视觉—语言—动作框架 UrbanVLA，旨在支持大规模城市环境中的长程导航。方法在执行时将含噪路线航点与视觉观测对齐，再规划机器人轨迹，并通过结合仿真与真实数据的两阶段训练学习目标点到达、避障和路线视觉对齐能力。作者报告，在 MetaUrban 的 SocialNav 任务中，该方法超过强基线逾 55%，并称其在真实环境中实现可靠导航，能适应城市规模与现实不确定性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2725,7 +2733,11 @@
             "heading": "",
             "text": "World-model planners typically scale outward by rolling farther, sampling more trajectories, or optimizing longer, while assigning the same computation to every imagined transition.\n\nWe show that making every transition uniformly deeper wastes computation and can degrade planning because useful refinement is concentrated at a small set of decision-critical events.\n\nWe introduce DeepJEPA, a weight-tied joint-embedding predictive world model that treats transition depth as an inner test-time scaling axis and learns when another recurrent update is worth computing for each candidate and rollout step.\n\nAcross five visual-control settings, DeepJEPA improves or matches the strongest fixed-depth planner while averaging only 1.00-1.26 updates per transition. Its additional computation concentrates at contact onset and sustained object interaction, where latent corrections can change which candidates enter the planner's elite set and which action is selected.\n\nRepresentation probes further show that improved planning does not require uniformly better object-state decodability.\n\nDeepJEPA therefore reframes world-model scaling as a problem of allocating internal computation where it can change the planner's decision: think deeper at decision-critical transitions instead of making every rollout uniformly deeper or longer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DeepJEPA, a weight-tied joint-embedding predictive world model that treats transition depth as an internal test-time scaling dimension. It learns whether another recurrent update is useful for each candidate and rollout step. The authors argue that uniformly deepening transitions wastes computation and can hurt planning; extra updates instead concentrate around contact onset and sustained object interaction. Across five visual-control settings, DeepJEPA matches or improves on the strongest fixed-depth planner while averaging 1.00–1.26 updates per transition.",
+          "zh": "论文提出 DeepJEPA，一种权重共享的联合嵌入预测世界模型，将转移深度作为测试时的内部计算扩展维度，并学习对每个候选方案和 rollout 步骤判断是否值得追加递归更新。作者认为，对所有转移一律加深会浪费计算，甚至损害规划；额外更新主要集中于接触开始和持续物体交互等关键事件。在五种视觉控制设置中，DeepJEPA以每次转移平均 1.00–1.26 次更新，达到或超过最强固定深度规划器。探针结果显示，规划改进不要求物体状态可解码性全面提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2756,7 +2768,11 @@
             "heading": "",
             "text": "Autonomous colonoscopic navigation can reduce operator burden and the risk of loop formation or tissue trauma, but remains challenging due to deformable anatomy, weak-texture and specular endoscopic visuals, and contact-rich viscoelastic interactions.\n\nExisting methods either rely on geometry-driven pipelines, which are efficient and interpretable yet brittle due to manually engineered features and switching logic, or adopt learning-based policies, whose inferred depth/geometry can become temporally inconsistent or overly smooth under weak texture and specular highlights while simulation-trained variants (e.g., deep reinforcement learning) may further suffer from a sim-to-real gap.\n\nWe propose ColoACT, an autonomous navigation system that integrates an RGB-D-E based Action Chunking Transformer policy (ColoACT policy) for a compact self-propelled Bevel-Gear-Based Endoscopic Robot (BGER).\n\nThe ColoACT policy augments RGB with estimated relative depth and a gradient-based pseudo-elevation map to enhance fold-ridge saliency and other high-frequency geometric cues, and enables smooth continuous control of the BGER by predicting overlapping action chunks and fusing them via temporal ensembling.\n\nIn different \\textit{ex-vivo} porcine colons (approximately 60 cm), our system achieves success rates of 85.4\\% and 72.5\\% in straight and curved segments, respectively, and achieves 70\\% success in 90-degree turns and 60\\% in double-bend sequences, with feasibility further demonstrated in challenging triple-bend segments.\n\nThe project page is available at: https://Adamhu1.github.io/ColoACT/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ColoACT, an autonomous navigation system for a compact self-propelled endoscopic robot. Its action-chunking policy combines RGB images with estimated relative depth and a gradient-based pseudo-elevation map to emphasize geometric cues such as fold ridges. It predicts overlapping action chunks and fuses them temporally for continuous control. In ex-vivo porcine colons, the authors report success rates of 85.4% in straight segments, 72.5% in curved segments, 70% in 90-degree turns, and 60% in double bends, with feasibility also shown in triple bends.",
+          "zh": "论文提出 ColoACT，用于自推进斜齿轮内镜机器人 BGER 的自主结肠导航。其策略结合 RGB、估计相对深度和基于梯度的伪高程图，以突出皱襞脊线等几何线索；通过预测重叠动作块并进行时间集成实现平滑连续控制。作者在不同离体猪结肠中报告：直段和弯曲段成功率分别为 85.4% 和 72.5%，90 度转弯为 70%，双弯序列为 60%，并展示了三重弯曲段中的可行性。结果范围限于所述离体实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
