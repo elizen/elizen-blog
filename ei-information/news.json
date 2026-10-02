@@ -3347,7 +3347,11 @@
             "heading": "",
             "text": "Inspired by how humans reason over discrete objects and their relationships, we explore whether compact object-centric and object-relation representations can form a foundation for multitask robotic manipulation.\n\nMost existing robotic multitask models rely on dense embeddings that entangle both object and background cues, raising concerns about both efficiency and interpretability. In contrast, we study object-relation-centric representations as a pathway to more structured, efficient, and explainable visuomotor control. Our contributions are two-fold.\n\nFirst, we introduce LIBERO+, a fine-grained benchmark dataset designed to enable and evaluate object-relation reasoning in robotic manipulation.\n\nUnlike prior datasets, LIBERO+ provides object-centric annotations that enrich demonstrations with box- and mask-level labels as well as instance-level temporal tracking, supporting compact and interpretable visuomotor representations.\n\nSecond, we propose SlotVLA, a slot-attention-based framework that captures both objects and their relations for action decoding.\n\nIt uses a slot-based visual tokenizer to maintain consistent temporal object representations, a relation-centric decoder to produce task-relevant embeddings, and an LLM-driven module that translates these embeddings into executable actions.\n\nExperiments on LIBERO+ demonstrate that object-centric slot and object-relation slot representations drastically reduce the number of required visual tokens, while providing competitive generalization. Together, LIBERO+ and SlotVLA provide a compact, interpretable, and effective foundation for advancing object-relation-centric robotic manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LIBERO+, a benchmark for object-relation reasoning in robotic manipulation, and SlotVLA, a slot-attention-based framework for action decoding. LIBERO+ augments demonstrations with box, mask, and instance-level temporal tracking annotations. SlotVLA uses a slot-based visual tokenizer, a relation-centric decoder, and an LLM-driven action module. Experiments on LIBERO+ show that object-centric and object-relation slot representations substantially reduce the number of visual tokens while providing competitive generalization.",
+          "zh": "论文提出面向机器人操作中物体关系推理的 LIBERO+ 基准数据集和 SlotVLA 框架。LIBERO+ 为示范数据提供框、掩码及实例级时间跟踪标注；SlotVLA 通过基于槽位的视觉编码和关系解码生成动作。作者报告，在 LIBERO+ 实验中，物体中心及物体关系槽位表示大幅减少所需视觉令牌数量，同时保持有竞争力的泛化表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3378,7 +3382,11 @@
             "heading": "",
             "text": "Autonomous driving systems have become a central focus of intelligent transportation research, with End-to-End Learning and Modular Architectures offering two prominent design paradigms for their implementation.\n\nE2E Learning uses deep learning algorithms to map raw sensory inputs directly to driving actuators, providing a streamlined and adaptable solution. while Modular Architectures employ a pipeline-based approach, dividing the system into distinct subsystems for perception, cognition, planning, and control.\n\nThis paper presents a comprehensive comparative analysis of these paradigms, focusing on their strengths, limitations, and trade-offs to provide insights into their suitability for various autonomous driving applications. The study evaluates key factors such as interpretability, scalability, robustness, and real-world applicability.\n\nWhile End-to-End Learning emphasizes simplicity and adaptability in dynamic environments, it lacks transparency and is highly dependent on large datasets. Conversely, Modular Architectures offer superior interpretability and task-specific optimization, but face challenges related to integration complexity and scalability.\n\nTo address these limitations, hybrid approaches that combine the strengths of both paradigms have emerged, offering a promising direction for overcoming these challenges.\n\nBeyond this comparative synthesis, following work proposes a Four-Dimensional Architecture Selection Framework, comprising twelve binary criteria across safety, operating environment, data/computational resources, and deployment context, and validate it against ten published autonomous driving systems, correctly recommending 7/10 deployed architectures.\n\nThis work synthesizes existing literature to highlight key trade-offs between the paradigms and identifies hybrid architectures as a promising direction for future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper compares end-to-end learning and modular architectures for autonomous driving. It describes end-to-end systems as mapping raw sensor inputs directly to actuators, offering simplicity and adaptability but limited transparency and dependence on large datasets. Modular systems support interpretability and task-specific optimization, while facing integration and scalability challenges. The authors identify hybrid architectures as a promising direction. The abstract also reports a four-dimensional selection framework with twelve binary criteria that correctly recommended 7 of 10 published systems.",
+          "zh": "论文综合比较端到端学习与模块化架构在自动驾驶中的特点。摘要称，端到端方法直接将传感器输入映射为驾驶控制，较简洁且适应性强，但透明度不足并依赖大量数据；模块化架构具有较强可解释性和任务优化能力，却面临集成复杂及扩展性挑战。作者将混合架构视为有前景的研究方向，并报告一项四维架构选择框架在十个已发表系统中正确推荐了七个。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3409,7 +3417,11 @@
             "heading": "",
             "text": "General-purpose embodied robots should support both navigation toward language-specified destinations and dynamic person tracking under arbitrary initial target azimuths. However, existing methods typically rely on forward-facing observations and address these tasks with separate policies, limiting omnidirectional perception and unified closed-loop control.\n\nWe present UniTrackPLA, a unified panorama-language-action model for instruction-guided navigation and dynamic person tracking. Its Panoramic-Aware Encoding (PAE) preserves the temporal and azimuthal structure of perspective views projected from each panorama, enabling perspective-pretrained visual encoders to process omnidirectional observations.\n\nA shared vision-language backbone grounds instructions in the panoramic context and predicts continuous robot-centric waypoint chunks for both tasks.\n\nWorld-Action Consistency (WAC) further predicts action-conditioned future visual states and verifies waypoint prefixes online, allowing reliable actions to be reused while triggering replanning upon inconsistency.\n\nWe also introduce OmniTrackNav-Bench, comprising 5,000 simulated tracking trajectories, 10,000 simulated VLN routes, and 96 verified real-world routes, providing 919,978 waypoint-supervision instances. UniTrackPLA improves overall tracking SR from 23.50% to 35.00% and Omni-VLN SR/SPL from 13.00%/12.77% to 19.75%/19.29%.\n\nIncorporating 76 real-world routes further improves held-out EP@0.2m from 42.92% to 92.08%.Closed-loop experiments on a Go2-W robot demonstrate unified panoramic tracking and navigation across indoor and outdoor environments. The project page is at https://tw5775.github.io/UniTrackPLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniTrackPLA is a panoramic language-action model for instruction-guided navigation and dynamic person tracking. Its encoding preserves temporal and azimuthal structure across panoramic views, while a shared vision-language backbone predicts continuous waypoint chunks. A consistency module predicts future visual states and checks waypoint prefixes online, prompting replanning when needed. The authors introduce a benchmark containing simulated tracking trajectories and navigation routes, as well as verified real-world routes. They report improved tracking and panoramic navigation metrics, and describe closed-loop Go2-W robot experiments indoors and outdoors.",
+          "zh": "论文提出 UniTrackPLA，将语言指令导航与动态人员跟踪统一为全景语言动作模型。模型编码全景视角的时间和方位结构，并预测连续航点；世界动作一致性模块预测未来视觉状态、在线验证航点前缀，不一致时触发重新规划。作者介绍包含模拟轨迹、模拟导航路线及经验证真实路线的基准，并报告跟踪和全景导航指标提升。Go2-W 机器人闭环实验展示了室内外导航与跟踪；摘要所报结果包含模拟评估及真实路线数据设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3440,7 +3452,11 @@
             "heading": "",
             "text": "Robot manipulation models primarily reason from 2D observations while acting in the 3D physical world. To bridge this gap, recent work has augmented robot data with geometric priors such as depth, point clouds, and 3D trajectories, while renderable 3D Gaussian representations provide another promising form of 3D supervision.\n\nHowever, 3DGS representation is designed mainly for photometric fidelity and may not preserve real-world metric scale, particularly when the supplied camera extrinsics are unreliable.\n\nWe study the effect of extrinsic reliability and pose conditioning on feed-forward 3DGS, and propose a calibration-aware pipeline that anchors reconstructed scenes to the robot's metric workspace. Our experiments show that pose conditioning improves novel-view fidelity, while its geometric benefit depends on the reliability of the injected extrinsics.\n\nUsing this pipeline, we present a renderable, metric-pose-anchored dataset with scene-level reliability information for robot manipulation research. Our dataset is available at https://huggingface.co/datasets/wonguen/3DROID"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how extrinsic reliability and pose conditioning affect feed-forward 3D Gaussian Splatting. It proposes a calibration-aware pipeline that anchors reconstructed scenes to a robot's metric workspace. The authors report that pose conditioning improves novel-view fidelity, while its geometric benefit depends on the reliability of the injected camera extrinsics. Using the pipeline, they present a renderable dataset for robotic manipulation research, with metric-pose-anchored scenes and scene-level reliability information.",
+          "zh": "论文研究相机外参可靠性和位姿条件对前馈式 3D 高斯泼溅的影响，并提出将重建场景锚定到机器人公制工作空间的校准感知流程。作者报告，位姿条件改善新视角保真度，但几何方面的收益取决于所用外参的可靠性。基于该流程，论文提供面向机器人操作研究的可渲染数据集，其中包含公制位姿锚定场景及场景级可靠性信息。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
