@@ -551,7 +551,11 @@
             "heading": "",
             "text": "Autonomous exploration for mapping unknown large scale environments is a fundamental challenge in robotics, with efficiency in time, stability against map corruption and computational resources being crucial. This paper presents a novel approach to indoor exploration that addresses these key issues in existing methods.\n\nWe introduce a Simultaneous Localization and Mapping (SLAM)-aware region-based exploration strategy that partitions the environment into discrete regions, allowing the robot to incrementally explore and stabilize each region before moving to the next one. This approach significantly reduces redundant exploration and improves overall efficiency.\n\nAs the device finishes exploring a region and stabilizes it, we also perform SLAM keyframe marginalization, a technique which reduces problem complexity by eliminating variables, while preserving their essential information.\n\nTo improves robustness and further enhance efficiency, we develop a checkpoint system that enables the robot to resume exploration from the last stable region in case of failures, eliminating the need for complete re-exploration. Our method, tested in real homes, office and simulations, outperforms state-of-the-art approaches.\n\nThe improvements demonstrate substantial enhancements in various real world environments, with significant reductions in keyframe usage (85%), submap usage (50% office, 32% home), pose graph optimization time (78-80%), and exploration duration (10-15%).\n\nThis region-based strategy with keyframe marginalization offers an efficient solution for autonomous robotic mapping."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a SLAM-aware, region-based strategy for indoor exploration. A robot explores and stabilizes one region before moving on, marginalizes keyframes to reduce problem complexity, and uses checkpoints to resume from the latest stable region after failures. The authors report tests in real homes, offices, and simulations, and claim improvements over existing methods, including reductions in keyframe use, submap use, pose-graph optimization time, and exploration duration.",
+          "zh": "论文提出一种面向室内环境的SLAM感知区域探索策略，将环境划分为区域，机器人逐区探索并稳定地图后再前进，同时进行关键帧边缘化以降低问题复杂度，并通过检查点支持故障后从最近稳定区域恢复。作者称，该方法在真实住宅、办公室和仿真中优于现有方法，并报告关键帧使用量减少85%、位姿图优化时间减少78%至80%、探索时长减少10%至15%；子地图使用量在办公室和住宅分别减少50%和32%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -582,7 +586,11 @@
             "heading": "",
             "text": "Autoregressive Vision-Language-Action models often represent continuous robot actions as discrete token sequences, enabling action prediction with standard next-token objectives. FAST has substantially improved this representation by compactly encoding action containing diverse temporal frequencies into relatively few tokens.\n\nHowever, while such compression reduces the number of action tokens required for autoregressive prediction, it does not necessarily improve the efficiency of policy learning from limited demonstrations.\n\nIn particular, FAST typically assigns a single deterministic tokenization to each quantized action sequence, although multiple token sequences can represent and decode to the same robot motion. We investigate whether exploiting this representational redundancy can improve policy learning.\n\nIn this paper, we propose TOkenization of Action sequences with STochastic sampling (TOAST), a stochastic action tokenization method that samples alternative tokenizations of the same quantized action sequence during policy training.\n\nThis diversifies the discrete supervision while preserving the underlying robot action and requires no additional demonstrations.\n\nExperiments on LIBERO show that TOAST consistently improves over its deterministic counterpart, with the improvement increasing as training data decreases, achieving a 6.8 point gain in success rate when only 1/16 of training data is available.\n\nAcross four real-robot manipulation tasks, TOAST further improves mean success rate by 15.8 points over the deterministic counterpart. These results demonstrate the effectiveness of stochastic action tokenization for autoregressive robot policy learning, particularly when training data are limited."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TOAST, which randomly samples alternative tokenizations of the same quantized action sequence during policy training. This diversifies discrete supervision while preserving the robot action and requires no additional demonstrations. In LIBERO experiments, the authors report larger gains as training data decreases, including a 6.8-point success-rate improvement with only 1/16 of the training data. Across four real-robot manipulation tasks, they report a 15.8-point increase in mean success rate over deterministic tokenization.",
+          "zh": "论文提出TOAST，一种在策略训练中随机采样同一量化动作序列的不同离散标记表示的方法，以增加监督多样性，同时保持机器人动作不变，且不需要额外示范数据。作者在LIBERO实验中报告，训练数据越少，TOAST相对确定性标记方式的提升越大；仅使用1/16训练数据时，成功率提高6.8点。在四项真实机器人操作任务中，平均成功率提高15.8点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -613,7 +621,11 @@
             "heading": "",
             "text": "Unmanned aerial vehicles (UAVs) searching for ground targets from a high altitude face a unique challenge, particularly when the target is already within the field of view but effectively unobservable because of its small apparent scale. Standard object detectors often underperform in such scenarios because of resolution downscaling and limited context.\n\nIn contrast, active object search frameworks address this challenge by directing the agent to a suitable pose to gather richer visual information. However, flight regulations in urban airspace often restrict such physical movements for UAVs.\n\nAs an alternative active sensing approach, the UAV can leverage the pan-tilt-zoom (PTZ) mechanism of the onboard camera to dynamically adjust its field of view and sequentially gather enhanced visual information from specific regions of interest.\n\nOnce the candidate locations of the target are identified, it can deploy more expensive object detection schemes, such as an ensemble of multiple models, to get better reasoning at a fixed scale.\n\nIn this work, we formulate the sequential exploration with PTZ operation as a partially observable Markov decision process (POMDP), in which the agent maintains a belief state over the target's true location.\n\nTo solve the POMDP, we deploy partially observable Monte Carlo planning (POMCP), where we condition the sensing reliability on target object scale and deploy selective ensemble detection as an additional reasoning step.\n\nWe validate our methodology with experiments in a photorealistic simulator under different environmental conditions and vehicle states, showing detection of ground targets at variable scales with significantly fewer steps and minimal dependence on sensor resolution compared to baseline methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies sparse ground-target search by high-altitude UAVs under partial observability. It formulates sequential PTZ camera sensing as a partially observable Markov decision process and uses POMCP for planning. Sensing reliability is conditioned on target scale, with selective ensemble detection applied to candidate locations. In experiments using a photorealistic simulator across environmental conditions and vehicle states, the authors report detecting targets at varying scales in fewer steps than baseline methods, with minimal dependence on sensor resolution.",
+          "zh": "论文研究高空无人机在部分可观测条件下搜索稀疏地面目标，提出利用机载云台相机的平移、俯仰和变焦依次获取感兴趣区域信息，并将搜索建模为部分可观测马尔可夫决策过程，以POMCP规划。方法根据目标尺度估计感知可靠性，并在发现候选位置后使用选择性检测模型集成。作者在不同环境条件和飞行器状态的照片级仿真器中验证，报告相较基线用更少步骤检测不同尺度目标，且对传感器分辨率依赖较小。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -644,7 +656,11 @@
             "heading": "",
             "text": "Unmanned aerial vehicle (UAV) swarms increasingly rely on language-model agents to provide adaptive mission-level reasoning in uncertain environments.\n\nFully distributed control, in which each UAV hosts an independent Small Language Model (SLM), removes reliance on a centralized coordinator but introduces an information-management problem: long-running interaction histories can degrade the reasoning context, while indiscriminate information dissemination increases communication and inference overhead.\n\nWe address these challenges with a distributed UAV-agent architecture that enables continuous local SLM control through an event-driven reason-act-observe lifecycle. Runtime knowledge is represented as structured atomic notes and organized into core, local, and peer-specific memory.\n\nA deterministic interest-aware gossip engine selectively disseminates these notes according to recipient-specific semantic novelty and recency. We evaluate the architecture using ten UAVs in a simulated search-and-rescue mission.\n\nOur approach completes all experimental runs, whereas unrestricted flooding messages completes only 70-85\\%, and delegating forwarding decisions to the SLM prevents mission completion in every run.\n\nCompared with unrestricted flooding, our approach approximately halves inference-token consumption, reduces transmitted data, and achieves lower survivor-count error."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a distributed UAV-agent architecture in which each vehicle runs an independent Small Language Model through an event-driven reason-act-observe lifecycle. Runtime knowledge is stored as structured notes in core, local, and peer-specific memory. A deterministic interest-aware gossip engine selectively shares notes based on recipient-specific novelty and recency. In a simulated search-and-rescue mission with ten UAVs, the authors report completion in all experimental runs and, compared with unrestricted flooding, roughly half the inference-token consumption, less transmitted data, and lower survivor-count error.",
+          "zh": "论文提出一种分布式无人机智能体架构，每架无人机由独立小型语言模型持续控制，并通过事件驱动的“推理—行动—观察”流程运行。运行知识以结构化原子笔记保存，分为核心、本地和同伴记忆；确定性的兴趣感知式 gossip 引擎依据接收方相关的新颖性和时效性选择性传播笔记。作者在10架无人机的模拟搜救任务中评估，称该方法完成全部实验运行；相比无差别泛洪，推理令牌消耗约减半、传输数据更少，幸存者数量误差更低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2927,7 +2943,11 @@
             "heading": "",
             "text": "We present a planning and control approach to reactively use hand contacts to stabilize a humanoid in low stability scenarios, where only using feet contacts may result in a fall.\n\nCandidate contacts are sampled within the robot's reachable workspace, and a preview is computed by rolling out the centroidal dynamics through pre-impact, impact and post-impact phases. Sampled points are scored based on the Center of Pressure (CoP) control authority at the post-impact phase.\n\nCentral to our approach is a learned model of the robot's CoP region during post-impact, which enables rapid evaluation of candidate contact points compared to traditional optimization-based methods. The presented planner has two stages: the first selects an optimal bracing region and the second computes an optimal bracing point within the region.\n\nOur simulation results demonstrate an average increase in impulse resilience of 89% over recovery without hand contacts and 17% over a naive planning strategy (closest reachable region).We validate our framework on hardware, performing push tests while standing and walking.\n\nThe standing trials show an average 43% reduction in stabilization time compared to naive hand placement and the walking trials demonstrate a 18% reduction compared to baseline recovery (without hand contacts)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a planning and control approach that uses hand contacts to stabilize humanoid robots in low-stability situations where foot contacts alone may lead to a fall. It evaluates reachable candidate contacts through centroidal-dynamics rollouts and a learned model of the post-impact center-of-pressure region, selecting a bracing region and then a point within it. In simulation, impulse resilience increases by 89% over recovery without hand contacts and 17% over a closest-reachable-region strategy. Hardware push tests show reduced stabilization time while standing and walking.",
+          "zh": "本文提出一种利用手部接触提升人形机器人稳定性的规划与控制方法，面向仅靠足部接触可能跌倒的低稳定性场景。方法通过质心动力学预演评估候选接触点，并使用学习得到的冲击后压力中心区域模型加快评估，再分两阶段选择支撑区域和接触点。仿真显示，冲量抗扰能力较无手部接触恢复提高89%，较最近可达区域策略提高17%。硬件推搡试验中，站立稳定时间较朴素手部放置减少43%，行走恢复时间较无手部接触基线减少18%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2958,7 +2978,11 @@
             "heading": "",
             "text": "This report presents the \\textbf{OpenSpace Lab}'s solution to the Competition on Intelligent Information Gathering for Single and Multi-Robot Systems Workshops, organized as part of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026.\n\nOur team reached 1st place in the Single-Robot Public Track and 3rd place in both the Single- and Multi-Robot Private Tracks. The single-robot framework utilizes pre-trained map completion predictions for global planning to prioritize unexplored areas.\n\nTo reconcile map coverage with limited operation time, we introduce a remaining-time-based exploration strategy that integrates homing constraints into the decision-making process.\n\nFor multi-robot exploration, we utilize a utility-driven target selection strategy that balances observation gains, movement costs, and budget constraints, leveraging shared map and intent data to eliminate redundant search and maximize coordination efficiency.\n\nOur solution reached a 61.04\\% coverage rate in the Single-Robot Public Track, while reaching 39.53\\% and 39.91\\% coverage in the Single- and Multi-Robot Private Tracks, respectively.\n\nAn extended full-length paper based on this report is currently being prepared for submission, and the source code will be released upon acceptance of the full manuscript at https://github.com/OpenSpace-Lab/Indoor-Exploration-IROS2026."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This report describes OpenSpace Lab’s approach to the IROS 2026 indoor exploration competition. Its single-robot framework uses pretrained map-completion predictions to guide global planning and incorporates homing constraints through a remaining-time strategy. The multi-robot method balances observation gains, travel costs, and budget while using shared map and intent data to reduce redundant searches. The team placed first in the Single-Robot Public Track and third in both private tracks, with reported coverage rates of 61.04%, 39.53%, and 39.91%, respectively.",
+          "zh": "该报告介绍 OpenSpace Lab 为 IROS 2026 室内探索竞赛设计的方案。单机器人框架利用预训练地图补全预测规划全局探索，并依据剩余时间将返航约束纳入决策；多机器人策略结合观测收益、移动成本和预算，利用共享地图与意图数据减少重复搜索。团队在单机器人公开赛道获第一名，在单、多人私有赛道均获第三名；覆盖率分别为61.04%、39.53%和39.91%。作者称，基于报告扩展的完整论文正在准备投稿，代码将在论文获接收后发布。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2989,7 +3013,11 @@
             "heading": "",
             "text": "Continuous legged manipulation requires accurate end-effector tracking while the base keeps walking. Combining reinforcement learning (RL) with model predictive control (MPC) suits this task: the learned policy provides robust locomotion, while MPC coordinates the base and arm to compensate for tracking errors.\n\nHowever, MPC can compensate only for base motion that it can predict, and a learned policy's command response varies with gait phase, contact, and payload. We present ReCo, a framework that couples response-consistent locomotion with policy-aware MPC for legged manipulation.\n\nResponse shaping trains the policy to respond to commands consistently and repeatably across randomized dynamics. An identified closed-loop response model then lets MPC jointly plan locomotion commands and arm motion.\n\nOn the simulation benchmark, ReCo reduces position and orientation root-mean-square error (RMSE) by 28.7% and 27.4% relative to the best baseline for each metric. Real-world experiments demonstrate onboard continuous legged manipulation with coordinated base and arm motion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReCo combines response-consistent locomotion with policy-aware model predictive control for legged manipulation while the robot keeps walking. The method trains a locomotion policy to respond consistently across randomized dynamics, then uses an identified closed-loop response model so MPC can jointly plan locomotion commands and arm motion. On a simulation benchmark, it reduces position and orientation root-mean-square error by 28.7% and 27.4%, respectively, relative to the best baseline for each metric. Real-world experiments demonstrate onboard continuous manipulation with coordinated base and arm motion.",
+          "zh": "本文提出 ReCo，用于腿式机器人持续行走时的操作任务，将响应一致的运动策略与策略感知模型预测控制结合，以协调底盘和机械臂。作者指出，学习策略的指令响应会随步态相位、接触和负载变化；ReCo通过随机化动力学训练响应整形，并识别闭环响应模型供控制器联合规划运动指令与机械臂动作。在仿真基准中，相对各指标的最佳基线，位置和姿态均方根误差分别降低28.7%和27.4%。真实机器人实验展示了机载连续操作及底盘与机械臂协调运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3020,7 +3048,11 @@
             "heading": "",
             "text": "Coordinated bimanual manipulation is challenging because the motion of either arm can alter the shared 3D scene and thereby affect the other arm. Yet most diffusion policies generate actions without explicitly modeling these future geometric consequences, while predictive variants typically use future state only as auxiliary supervision or fixed conditioning.\n\nWe address this limitation by proposing JAMB, a diffusion policy that jointly denoises bimanual actions and future 3D point tracks. By allowing action and track hypotheses to evolve together within a shared Transformer, each can inform and refine the other throughout denoising.\n\nWe further ground multimodal representations in a shared spatiotemporal coordinate system to facilitate geometry-aware interaction during joint denoising.\n\nWe evaluate JAMB on diverse bimanual manipulation tasks in RoboTwin 2.0 and on a real-world robot, comparing it with action-only policies and alternative future-prediction approaches spanning different state representations and learning objectives.\n\nAcross 16 simulation tasks, JAMB achieves an average success rate of 83.4%, outperforming the strongest baseline by 23.9 percentage points. On three real-world tasks, it outperforms the action-only and auxiliary geometry prediction methods by 50.0 and 21.2 percentage points, respectively.\n\nBeyond these performance gains, JAMB shows stronger generalization to cluttered scenes and out-of-distribution backgrounds than the evaluated baselines. Together, these results demonstrate the effectiveness of our joint action-motion modeling framework for coordinated bimanual manipulation. Our project website is available at https://jam-bimanual.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "JAMB is a diffusion policy for coordinated bimanual manipulation that jointly denoises arm actions and future 3D point tracks within a shared Transformer. The action and track hypotheses can refine one another, while a shared spatiotemporal coordinate system supports geometry-aware interaction. Evaluation covers 16 RoboTwin 2.0 simulation tasks and three real-world tasks, against action-only policies and alternative future-prediction methods. JAMB reports an 83.4% average simulation success rate, 23.9 percentage points above the strongest baseline, and higher real-world performance than action-only and auxiliary geometry-prediction methods.",
+          "zh": "本文提出 JAMB，一种面向双臂协同操作的扩散策略，在共享 Transformer 中联合去噪双臂动作与未来三维点轨迹，使动作和轨迹假设在生成过程中相互调整，并以共享时空坐标表示支持几何交互。作者在 RoboTwin 2.0 的16项仿真任务及真实机器人三项任务中，将其与仅生成动作及其他未来预测方法比较。仿真平均成功率为83.4%，较最强基线高23.9个百分点；真实任务较动作策略和辅助几何预测方法分别高50.0和21.2个百分点。作者还报告其对杂乱场景和分布外背景的泛化更强。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
