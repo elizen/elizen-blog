@@ -1995,7 +1995,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models rely strongly on language for describing task information, despite having multimodal inputs. We hypothesize that other modalities in the state space may present opportunities for supplemental task conditioning, which may be particularly relevant in cluttered or otherwise ambiguous scenes.\n\nWe introduce two tuned models to test this hypothesis: （1） an electrophysiology-conditioned VLA (EC-VLA) that incorporates 8-channel electromyography envelopes as continuous conditioning input concatenated to the proprioceptive vector, and （2） a visually-annotated VLA (VA-VLA) that incorporates visual segmentation annotations to the image inputs.\n\nOn a cube-selection task evaluated across three participants, EC-VLA matches a language-prompted baseline in uncluttered, in-distribution conditions and substantially outperforms it in cluttered, out-of-distribution scenes.\n\nSimilarly, VA-VLA shows modest improvements over a language-prompted baseline in in-distribution scenes with substantial improvement in cluttered, out-of-distribution trials. Together, these results provide strong evidence for the potential benefit of task-conditioning beyond language."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors investigate whether task information beyond language can condition vision-language-action models, particularly in cluttered or ambiguous scenes. They introduce EC-VLA, which adds eight-channel electromyography envelopes to the proprioceptive vector, and VA-VLA, which adds visual segmentation annotations to images. In a cube-selection task with three participants, EC-VLA matches a language-prompted baseline in uncluttered, in-distribution conditions and substantially outperforms it in cluttered, out-of-distribution scenes. VA-VLA shows modest and substantial improvements in those respective settings.",
+          "zh": "研究探索在视觉—语言—动作模型中加入语言以外的任务条件信息，以应对杂乱或含糊场景。作者提出两种调优模型：EC-VLA将8通道肌电包络作为连续输入并入本体感觉向量，VA-VLA则把视觉分割标注加入图像输入。在三名参与者的立方体选择任务中，EC-VLA在整洁且同分布条件下与语言提示基线相当，在杂乱且分布外场景中表现更好；VA-VLA在同分布场景略有提升，在杂乱分布外试验中提升明显。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2026,7 +2030,11 @@
             "heading": "",
             "text": "We present Informed Belief Localization Trees* (Informed BLT*), a sampling-based belief space planning (BSP) algorithm that scales to large outdoor digital twins with point-cloud observations. We adapt RRT* and Informed RRT* to belief space using the $2$-Wasserstein ($W_2$) metric.\n\nAssuming isotropic Gaussian beliefs, sampled belief states can be connected efficiently while accounting for available information and probabilistic collision constraints. This enables steering and rewiring without repeatedly propagating observations, and allows previously computed measurement information to be reused.\n\nWe present a framework to generate semantically labelled digital twins for planning in real-world environments with point-cloud-based localization. Experiments in simulated environments and digital twins show faster initial solution discovery in most maps with competitive cost convergence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors present Informed BLT*, a sampling-based belief-space planning algorithm for large outdoor digital twins with point-cloud observations. It adapts RRT* and Informed RRT* using the 2-Wasserstein metric. Under an isotropic Gaussian belief assumption, it connects sampled belief states while accounting for available information and probabilistic collision constraints, reusing computed measurement information for steering and rewiring. The paper also describes a framework for generating semantically labelled digital twins. Experiments in simulated environments and digital twins show faster initial solution discovery on most maps, with competitive cost convergence.",
+          "zh": "作者提出Informed BLT*，一种面向大型户外数字孪生和点云观测的采样式信念空间规划算法，并以2-Wasserstein度量将RRT*及Informed RRT*扩展至信念空间。在各向同性高斯信念假设下，方法可连接采样信念状态，同时考虑信息可用性和概率碰撞约束，并复用先前计算的测量信息以支持转向和重连。作者还提出生成语义标注数字孪生的框架。仿真环境和数字孪生实验显示，该方法在多数地图上更快找到初始解，成本收敛表现具有竞争力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2057,7 +2065,11 @@
             "heading": "",
             "text": "Robotic world models predict action-conditioned future scenes, providing a foundation for understanding action outcomes. However, turning alternative predictions into useful learning signals remains challenging: similar candidates limit informative quality comparisons, while diverging trajectories require persistent maintenance of their individual histories.\n\nWe introduce FutureWorlds, a framework that unifies candidate construction, history maintenance, and learning from relative quality. Built on a multimodal discrete autoregressive model, FutureWorlds uses diverse beam search during reinforcement learning to construct candidate futures that balance confidence and diversity.\n\nCandidate-specific bounded memory preserves scene states and ensures that generation and policy scoring use matching histories. We further propose MemSPO (Memory-Conditioned Search-Guided Policy Optimization), which converts video trajectory rewards into group-relative advantages to optimize the world model.\n\nOn RT-1, BridgeV2, and RoboCasa, FutureWorlds reduces LPIPS for 32-frame predictions by 14.78%, 20.84%, and 9.12%, respectively, relative to the strongest baseline on each dataset. Under fixed evaluation configurations, only 200 MemSPO updates further improve generation quality and support continued prediction beyond the training horizon.\n\nMemory ablations, decoding sensitivity analysis, and optical-flow evaluation show that these gains extend beyond visual quality to more accurate motion prediction and more consistent object states. Project page and code: https://github.com/Alexander-wu/FutureWorlds."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FutureWorlds is a framework for learning robotic world models from candidate futures, combining candidate construction, history maintenance, and relative-quality learning. Based on a multimodal discrete autoregressive model, it uses diverse beam search during reinforcement learning and candidate-specific bounded memory so generation and policy scoring use matching histories. Its MemSPO method converts video-trajectory rewards into group-relative advantages. On RT-1, BridgeV2, and RoboCasa, 32-frame prediction LPIPS is reduced by 14.78%, 20.84%, and 9.12% against each dataset’s strongest baseline. With fixed evaluation configurations, 200 updates further improve generation and support predictions beyond the training horizon.",
+          "zh": "FutureWorlds是一种从候选未来学习机器人世界模型的框架，结合候选构造、历史维护和相对质量学习。它基于多模态离散自回归模型，在强化学习中用多样化束搜索构造未来，并以候选专属的有限记忆保存场景状态，使生成与策略评分使用匹配历史。作者提出MemSPO，将视频轨迹奖励转为组内相对优势以优化模型。在RT-1、BridgeV2和RoboCasa数据集上，32帧预测的LPIPS相对各自最强基线降低14.78%、20.84%和9.12%。固定评估配置下，200次更新进一步提升生成质量并支持超出训练时域的预测；消融、解码敏感性和光流评估还显示运动预测与物体状态一致性有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2088,7 +2100,11 @@
             "heading": "",
             "text": "When the system model is not fully known, measurement error and limited excitation can leave several models consistent with the same finite data. A command judged safe for one model may fail for another, while limited control authority can prevent the corrective action needed to preserve safety.\n\nTo ensure safety under model uncertainty and asymmetric input limits, we develop a finite-data certificate that determines whether a command can enforce a prescribed safety inequality.\n\nFor a linearly parameterized safety channel with exactly known regressors and bounded aggregate residual error, we derive a support formula for the worst-case safety contribution of all data-consistent models. The formula identifies the regressor directions that admit a finite bound, allowing rank-deficient records to contribute to safety certification.\n\nUsing certified componentwise bounds on actuator tracking error yields an affine inequality with a necessary and sufficient test for pointwise command feasibility. The affine inequality reduces computation of the closest certified command to a scalar root-finding problem.\n\nIt also yields a closed-form gate that selects the largest certified fraction of a prescribed command segment. The proposed certificate guarantees output safety within its operating domain, provided the feedback is locally Lipschitz and the uncertainty bounds remain valid. Domain retention and full-state continuation extend this guarantee to all time.\n\nA vehicle study demonstrates that output safety can be certified from finite measurements in a safety-critical setting with model and actuator uncertainty."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors develop a finite-data certificate for deciding whether a command can enforce a prescribed safety inequality when the model is uncertain and actuator limits are asymmetric. For a linearly parameterized safety channel with known regressors and bounded aggregate residual error, they derive a support formula for the worst-case safety contribution across data-consistent models, allowing rank-deficient records to contribute. Certified componentwise actuator tracking-error bounds yield a necessary and sufficient affine test for pointwise command feasibility; computing the closest certified command becomes scalar root finding. Under stated feedback and uncertainty-bound conditions, the certificate guarantees output safety within its operating domain, with domain retention and full-state continuation extending the guarantee to all time. A vehicle study demonstrates certification from finite measurements.",
+          "zh": "本文针对模型未知、有限数据和非对称控制输入限制下的安全控制，提出有限数据证书，用于判定命令能否满足指定安全不等式。对于回归量精确已知、总残差误差有界的线性参数化安全通道，作者推导了所有与数据一致模型的最坏安全贡献支持公式，使秩亏记录也可用于认证。结合执行器跟踪误差的分量界，得到逐点命令可行性的充要仿射判据，并将最近认证命令的计算化为标量求根。方法还提供选择给定命令段最大认证比例的闭式门控。在局部利普希茨反馈且不确定性界有效等条件下，证书在工作域内保证输出安全；域保持和全状态延拓将保证扩展至全时间。车辆研究展示了在模型和执行器不确定情形下以有限测量认证输出安全。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
