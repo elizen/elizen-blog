@@ -1327,7 +1327,11 @@
             "heading": "",
             "text": "Continual imitation learning evaluates whether a robot can learn new knowledge without forgetting previously learned skills. However, retaining task performance does not ensure the behavior remains grounded in language because policies may rely on scene cues, object associations, or memorized task structure.\n\nWe introduce a benchmark protocol to study how language-guided behavior changes as robotic policies learn successive tasks. We construct meaning-preserving and meaning-changing instruction variants for the Goal, Spatial, Object, and Long suites of LIBERO.\n\nPolicy experiments focus on LIBERO-Goal, evaluating Original and Paraphrase instructions after each continual-learning stage. We compare representative continual imitation learning methods under their original assumptions while separating task competence from language sensitivity.\n\nThe proposed diagnostics complement standard learning and forgetting metrics by measuring semantic robustness, goal adaptation, and language sensitivity.\n\nResults show that strong continual-learning performance does not always translate to reliable language grounding, and our diagnostics help determine whether retained skills remain correctly guided by their instructions. Additional materials are available at https://sites.google.com/view/stillgrounded"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a benchmark protocol for studying language grounding in continual imitation learning. It creates meaning-preserving and meaning-changing instructions for LIBERO’s Goal, Spatial, Object, and Long suites. Experiments on LIBERO-Goal compare representative methods across learning stages using original and paraphrased instructions, separating task competence from language sensitivity. The proposed diagnostics cover semantic robustness, goal adaptation, and language sensitivity. Results indicate that strong continual-learning performance does not necessarily yield reliable language grounding within the evaluated benchmark and experimental setup.",
+          "zh": "本文提出用于研究机器人持续模仿学习中语言落地情况的基准方案，构造 LIBERO Goal、Spatial、Object 和 Long 套件的保义与变义指令。在 LIBERO-Goal 上，研究者比较代表性方法在持续学习各阶段对原始指令和改写指令的表现，并将任务能力与语言敏感性分开评估。诊断指标涵盖语义稳健性、目标适应和语言敏感性。结果显示，持续学习表现强并不必然意味着语言落地可靠；研究结论限于所述基准及实验设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1358,7 +1362,11 @@
             "heading": "",
             "text": "Efficient indoor LiDAR perception is challenging because mobile robots must understand cluttered three-dimensional environments under strict latency and memory constraints.\n\nExisting point-based and voxel-based methods often incur substantial computational overhead, whereas conventional bird's-eye-view (BEV) representations improve efficiency at the cost of discarding vertical geometric information.\n\nWe present IndoorBEV, a lightweight LiDAR perception framework that mitigates this tradeoff through a height-aware BEV representation and geometry-conditioned feature fusion.\n\nIndoorBEV summarizes the vertical point distribution in each BEV cell using statistical height features and multi-frequency height encoding, allowing informative three-dimensional cues to be processed efficiently by two-dimensional convolutions.\n\nA lightweight encoder then integrates complementary geometric features with multi-scale local representations and compact global scene context. Decoupled dense prediction heads jointly produce semantic BEV maps and oriented object bounding boxes. IndoorBEV contains only 0.6M parameters and requires 2.3 MB of model storage.\n\nOn an NVIDIA AGX Orin, it uses 21.52 MB of GPU memory per inference and achieves a mean latency of 169.6 ms under a 200 ms perception deadline, with a deadline miss ratio of 1.8\\%.\n\nEvaluations on simulated scenes, real-world robot scans, and an open-source indoor point-cloud dataset demonstrate a favorable tradeoff among perception accuracy, latency, and memory consumption.\n\nThese results indicate that explicitly encoding vertical geometry within a compact BEV representation provides an effective approach to resource-efficient indoor LiDAR perception."
           }
-        ]
+        ],
+        "summary": {
+          "en": "IndoorBEV is a lightweight LiDAR perception framework for indoor mobile robots. It encodes statistical and multi-frequency height information in bird’s-eye-view cells, then fuses geometry-conditioned features with multi-scale local representations and compact global context. Its prediction heads produce semantic BEV maps and oriented object boxes. The authors report 0.6 million parameters and 2.3 MB of model storage, and evaluate inference on an NVIDIA AGX Orin. Tests using simulated scenes, real robot scans, and an open-source dataset indicate a favorable accuracy, latency, and memory tradeoff.",
+          "zh": "本文提出 IndoorBEV，一种面向室内移动机器人的轻量级实时激光雷达感知框架。它在鸟瞰图单元中编码统计高度特征和多频高度信息，并通过几何条件特征融合处理几何线索与多尺度局部及全局场景信息；解耦预测头输出语义鸟瞰图和定向目标框。作者报告模型有 0.6M 个参数、存储占用 2.3 MB，并在 NVIDIA AGX Orin 上测试延迟和显存。仿真场景、真实机器人扫描及公开数据集评估显示其在准确率、延迟和内存间取得有利权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1389,7 +1397,11 @@
             "heading": "",
             "text": "A robot may lose sight of an object it must later retrieve, need to recall what a person demonstrated earlier, or track which steps of a task it has already completed. Current vision-language-action (VLA) policies often fail once the information needed for action disappears from the current observation, making memory critical for long-horizon robot behavior.\n\nExisting approaches typically provide longer histories or learn implicit memory from observation-action trajectories. But action supervision tells a policy how to act, not what to remember: it does not specify which past facts should persist or how they should change as new evidence arrives.\n\nWe therefore separate maintaining an evidence-grounded account of the past from learning how to act on it. This insight motivates Explicit Concept Memory (ECoMEM), which represents task-relevant history with a reusable library of grounded concepts.\n\nAn evidence-based Writer selects and updates these records, while a learned Reader turns them into memory tokens that directly condition the VLA. Across 16 RoboMME tasks, ECoMEM leads the evaluated robot policies on 15 tasks.\n\nOn two new real-robot tasks, the same memory library either transfers directly or requires only one new concept, achieving 86.1% success versus 8.6% for a no-memory VLA. These results show that explicit concepts provide a reusable and extensible memory interface for robot control. Project website: https://ecomem.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Explicit Concept Memory (ECoMEM) for memory-dependent robot control. It separates maintaining an evidence-grounded account of task-relevant history from learning actions: a Writer selects and updates concept records, and a learned Reader converts them into tokens that condition a vision-language-action policy. Across 16 RoboMME tasks, the authors report that ECoMEM leads the evaluated policies on 15. In two new real-robot tasks, the memory library transfers directly or needs one additional concept; reported success is 86.1%, compared with 8.6% for a no-memory policy.",
+          "zh": "本文提出显式概念记忆 ECoMEM，用于机器人依赖记忆的控制。该方法将维护有证据依据的任务相关历史与学习如何行动分开：Writer 选择并更新概念记录，Reader 将记录转换为用于条件化视觉语言动作策略的记忆 token。在 RoboMME 的 16 项任务中，作者报告 ECoMEM 在 15 项上领先受评估策略。在两个新的真实机器人任务中，记忆库可直接迁移或仅需新增一个概念，成功率为 86.1%，无记忆策略为 8.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1420,7 +1432,11 @@
             "heading": "",
             "text": "This paper presents a guidance algorithm for micro aerial vehicles operating in unknown, cluttered environments using only onboard sensing. The method is based on a panel formulation originally derived from aerodynamic potential-flow theory and generates smooth, collision-free guidance vectors from locally perceived obstacles.\n\nThe approach is extended to unknown environments by constructing and updating the obstacle representation online from onboard LiDAR measurements. The resulting obstacle-avoidance field is integrated with a nominal guiding vector field to produce the final control input.\n\nThe system is experimentally validated in indoor flight tests under two scenarios: waypoint navigation and directional guidance. In both cases, the vehicle successfully completes its task while avoiding all obstacles in real time using only onboard perception.\n\nThe results demonstrate that the method is computationally lightweight and suitable for onboard implementation, with pointcloud processing identified as the main practical limitation. These results support the feasibility of lightweight onboard guidance in unknown environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a guidance algorithm for micro aerial vehicles in unknown, cluttered environments using onboard sensing. Based on a panel formulation from aerodynamic potential-flow theory, it generates smooth collision-free vectors from locally perceived obstacles. Onboard LiDAR measurements update the obstacle representation online, and the avoidance field is combined with a nominal guidance vector field to form the control input. Indoor flight tests cover waypoint navigation and directional guidance; the vehicle completes both tasks while avoiding obstacles in real time. The authors identify point-cloud processing as the main practical limitation.",
+          "zh": "本文提出一种用于未知、杂乱环境中微型飞行器的引导算法，仅使用机载传感。方法基于气动势流理论中的面板模型，从局部感知障碍物生成平滑且无碰撞的引导向量；系统利用机载激光雷达在线构建并更新障碍物表示，再将避障场与名义引导向量场结合形成控制输入。室内飞行实验涵盖航点导航和方向引导两种情境，飞行器均完成任务并实时避开障碍。作者指出点云处理是主要实际限制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
