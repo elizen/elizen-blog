@@ -2571,7 +2571,11 @@
             "heading": "",
             "text": "A pretrained video world model admits many plausible futures for a scene, but a robot must realize the exact task-conditioned one. To turn world models into executable robot policies, existing methods fine-tune the heavy world model backbone using large-scale robot data and computational resources.\n\nChallenging this status quo, we argue that the expensive part has already been paid in the world model pretraining since the representation space of a video world model lays out the diverse potential futures. In this case, what remains is to select the future that accomplishes the task and to read out the actions that realize it.\n\nWe formalize this task as actualization, which learns a task-conditioned selection and realization on top of a prior supplied by a frozen world model. This can be solved by a tiny actualizer model. We implement RoboActualizer with as few as 60M parameters on top of a frozen world model encoder.\n\nThe actualizer is composed of two lightweight DiT experts that jointly predict future latents and actions by flow matching. The model can be trained entirely on a single GPU with 32 GB peak memory.\n\nWith up to 100x fewer trainable parameters than existing WAMs and VLAs, RoboActualizer reaches great performance on simulation benchmarks including LIBERO, LIBERO-Plus, RoboTwin 2.0 and five tasks on two real-world platforms, with a low latency of 39 ms that allows real-time control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes actualization: a lightweight model selects a task-appropriate future from a frozen pretrained video world model and reads out actions to realize it. RoboActualizer uses two DiT experts to jointly predict future latents and actions through flow matching. The authors report training on a single GPU and strong performance on simulation benchmarks, including LIBERO, LIBERO-Plus, and RoboTwin 2.0, as well as five tasks on two real-world platforms. The abstract distinguishes these evaluation settings.",
+          "zh": "论文提出 actualization 框架：冻结预训练视频世界模型，由轻量模型从其表示的多种可能未来中选择符合任务的未来，并生成实现该未来的动作。RoboActualizer 使用两个 DiT 专家，通过 flow matching 联合预测未来潜在状态和动作。作者称其可在单张 GPU 上训练，并在 LIBERO、LIBERO-Plus、RoboTwin 2.0 仿真基准及两个真实平台的五项任务上取得良好表现；摘要未将仿真与真实平台结果混为一谈。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2602,7 +2606,11 @@
             "heading": "",
             "text": "Safe social navigation requires a robot to anticipate not only the future consequences of its actions, but also whether a nominal action can actually be executed under surrounding physical and social constraints. We present Social-WM, an efficient latent world-model planning framework trained from egocentric RGB video sequences.\n\nOur key observation is that social-navigation experience contains a systematic discrepancy between the nominal action and the realizable action: a nominal forward action may be fully executed in free space, but needs to be constrained when heading towards a pedestrian or obstacle.\n\nSocial-WM learns these safety-relevant consequences directly through action-conditioned future prediction, where the target is the actual observed future following each command. We further introduce a realizable inverse-dynamics objective that associates observed latent transitions with the action actually realized rather than the nominal one.\n\nAt deployment, candidate actions are imagined through the latent world model, and the inverse dynamics model estimates their realizability; nominal--realizable discrepancy then provides a safety signal before execution. The learned dynamics and realizability model remain goal-independent and support both position- and image-goal navigation.\n\nOn Social-HM3D, Social-WM achieves 63.77% success while reducing human collisions to 21.67%, and maintains strong performance under zero-shot transfer to Social-MP3D, without explicit pedestrian tracking, privileged human state, or online reinforcement learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Social-WM, a latent world-model planning framework learned from egocentric RGB video. It predicts the observed future following a command and uses realizable inverse dynamics to associate latent transitions with actions actually executed. At deployment, candidate actions are imagined and their realizability estimated; the gap between nominal and realizable actions acts as a pre-execution safety signal. The authors report 63.77% success and 21.67% human collisions on Social-HM3D, with zero-shot transfer to Social-MP3D.",
+          "zh": "论文提出 Social-WM，一种从第一人称 RGB 视频序列学习的潜在世界模型规划框架。它通过动作条件未来预测学习命令实际执行后的结果，并以可实现逆动力学关联潜在状态变化与实际执行的动作。部署时，模型想象候选动作的后果，并估计其可实现性，以名义动作与实际动作的差异作为执行前安全信号。作者报告，该方法在 Social-HM3D 上成功率为 63.77%、人类碰撞率为 21.67%，并能零样本迁移至 Social-MP3D。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2633,7 +2641,11 @@
             "heading": "",
             "text": "Quadrupedal locomotion requires balancing conflicting objectives such as command tracking, stability, and energy efficiency, yet conventional reinforcement learning (RL) hardcodes these priorities into a fixed scalar reward at training time.\n\nWe present PROMO (Preference-Conditioned Multi-Objective Reinforcement Learning), a semantic multi-objective approach that makes this trade-off an explicit runtime input to a single locomotion policy.\n\nPROMO conditions the policy on deployment facing preferences while keeping embodiment-specific locomotion priors fixed, thereby separating operator intent from reward shaping terms required for viable gait generation.\n\nCompared with fixed-objective controllers, multi-objective baselines, and independently trained specialists, PROMO achieves objective specialization and robustness from a single deployable policy.\n\nAcross 100 sampled preferences in simulation, 67 behaviors are non-dominated under exact Pareto dominance, with a mean preference-objective correlation of 0.843, demonstrating broad Pareto coverage and predictable preference response.\n\nThe same policy transfers zero-shot to a Unitree Go2, where preference changes alone reduce specific energy by up to 30.4%, position error by 38.7%, and peak body-attitude deviation by 59.0% relative to the balanced preference.\n\nThese results establish preference-conditioned multi-objective RL as a practical runtime interface for adaptive legged locomotion, extending its role beyond offline Pareto-set construction. Open-source code and videos are available at https://amrmousa.com/promo/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PROMO, a quadruped locomotion policy that takes deployment-time preferences as input to express trade-offs among objectives such as command tracking, stability, and energy efficiency, while keeping embodiment-specific priors fixed. The authors report that, across 100 sampled preferences in simulation, 67 behaviors are non-dominated and mean preference-objective correlation is 0.843. The same policy transfers zero-shot to a Unitree Go2; relative to the balanced preference, changing preferences alone reduces specific energy, position error, and peak body-attitude deviation.",
+          "zh": "论文提出 PROMO，使四足机器人单一运动策略在部署时接收偏好输入，以表达对指令跟踪、稳定性和能效等目标的权衡，同时固定具身相关的运动先验。作者报告，在仿真中对 100 个采样偏好进行评估时，67 种行为处于非支配状态，偏好与目标的平均相关性为 0.843。该策略还零样本迁移到 Unitree Go2；相对于平衡偏好，仅改变偏好即可降低特定能耗、位置误差和峰值姿态偏差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2664,7 +2676,11 @@
             "heading": "",
             "text": "World action models (WAMs) combine robot action generation with future state prediction. Existing WAMs typically predict videos or learned visual latents, which represent interaction geometry only implicitly and may retain appearance information unrelated to control.\n\nWe introduce SkeleWAM, a compact WAM that represents a manipulation scene as a sparse 3D skeleton composed of robot joints, object centers, and interaction points. Constructed online from current RGB-D observations and robot proprioception, the skeleton provides a unified geometric state for action generation and future skeleton prediction.\n\nFuture skeleton prediction provides additional geometric supervision for action learning without requiring visual reconstruction. At inference, SkeleWAM generates actions directly from the current skeleton and language instruction, while Medoid Action Consensus (MAC) serves as an auxiliary consensus strategy for stochastic action samples.\n\nOn LIBERO-Plus, SkeleWAM achieves an overall success rate of 85.9% with 57.1M parameters, outperforming Cosmos-Policy by 3.7 percentage points. These results demonstrate that sparse 3D robot--object structure provides an effective state space for robust and parameter-efficient world action learning.\n\nThe project is available at https://skelewam-project.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SkeleWAM, which represents a manipulation scene as a sparse 3D skeleton of robot joints, object centers, and interaction points, built online from RGB-D observations and robot proprioception. The representation supports action generation and future skeleton prediction, providing geometric supervision without visual reconstruction. At inference, actions are generated from the current skeleton and a language instruction; Medoid Action Consensus is an auxiliary strategy for stochastic samples. The authors report 85.9% success on LIBERO-Plus with 57.1M parameters.",
+          "zh": "论文提出 SkeleWAM，将操作场景表示为稀疏三维骨架，包含机器人关节、物体中心和交互点；该表示由当前 RGB-D 观测与机器人本体感知在线构建，用于动作生成和未来骨架预测。未来骨架预测为动作学习提供几何监督，无需重建视觉画面。推理时，模型根据当前骨架和语言指令直接生成动作，并可用 Medoid Action Consensus 辅助处理随机动作样本。作者报告其在 LIBERO-Plus 上成功率为 85.9%，参数量为 57.1M。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
