@@ -311,7 +311,7 @@
       },
       "format": "source_excerpt",
       "id": "news-12f132b86484dedbceacc2c7a276c231dd00eb03a0041a40edbacfdb7c1d059a",
-      "intro": "arXiv:2607.27627v2 Announce Type: replace Abstract: Unmanned aerial vehicle (UAV) relay networks can restore connectivity after communication infrastructure is damaged. Urban relay placement is difficult because line-of-sight blockage, communication range, altitude, and three-dimensional obstacles must be considered jointly. Arm2Air transfers obstacle-avoidance skeletons from robot arms to UAV relay placement through cross-embodiment transfer. Source-domain robot-arm motions from a pretrained Neural MP model are converted into ordered skeletons that pretrain a transformer-based transfer platform, which is then adapted to the UAV",
+      "intro": "arXiv:2607.27627v3 Announce Type: replace Abstract: Unmanned aerial vehicle (UAV) relay networks can restore connectivity after communication infrastructure is damaged. Urban relay placement is difficult because line-of-sight blockage, communication range, altitude, and three-dimensional obstacles must be considered jointly. Arm2Air transfers obstacle-avoidance skeletons from robot arms to UAV relay placement through cross-embodiment transfer. Source-domain robot-arm motions from a pretrained Neural MP model are converted into ordered skeletons that pretrain a transformer-based transfer platform, which is then adapted to the UAV",
       "placement": "main",
       "published_at": "2026-10-01T04:00:00+00:00",
       "reading": {
@@ -322,11 +322,7 @@
             "heading": "",
             "text": "Unmanned aerial vehicle (UAV) relay networks can restore connectivity after communication infrastructure is damaged. Urban relay placement is difficult because line-of-sight blockage, communication range, altitude, and three-dimensional obstacles must be considered jointly.\n\nArm2Air transfers obstacle-avoidance skeletons from robot arms to UAV relay placement through cross-embodiment transfer.\n\nSource-domain robot-arm motions from a pretrained Neural MP model are converted into ordered skeletons that pretrain a transformer-based transfer platform, which is then adapted to the UAV domain using limited target data and Low-Rank Adaptation.\n\nThe transferred skeleton initializes a relay chain that is refined for connectivity, bottleneck capacity, delay, and movement cost. On nine held-out high-clutter 3D urban maps, Arm2Air reduced median end-to-end planning runtime by 64.9 percent relative to the fastest conventional planner.\n\nOn the high-obstruction group of a separate 30-map dense urban holdout, it increased bottleneck capacity by 32.6 percent, reduced capacity variance by 74.7 percent, reduced maximum hop distance by 13.2 percent, reduced hop-distance variance by 75.2 percent, and reduced relay displacement by 16.9 percent relative to IMPC-MD.\n\nWith only three target-domain training maps, Arm2Air reduced relay-position root mean square error by 53.6 percent relative to training from scratch while updating 0.134 million parameters, compared with 1.383 million for Scratch and Full Fine-tuning.\n\nThese results demonstrate computationally and data-efficient UAV relay placement and suggest a broader principle for transferring ordered structural priors across heterogeneous embodied tasks."
           }
-        ],
-        "summary": {
-          "en": "Arm2Air transfers ordered obstacle-avoidance skeletons from pretrained robot-arm motions to UAV relay placement, then adapts the model with limited target-domain data using Low-Rank Adaptation. The skeleton initializes a relay chain refined for connectivity, capacity, delay, and movement cost. On nine held-out cluttered 3D urban maps, median planning runtime was 64.9% lower than the fastest conventional planner. On a separate dense-map holdout, the authors report several improvements over IMPC-MD; with three training maps, relay-position error was 53.6% lower than training from scratch.",
-          "zh": "Arm2Air将预训练机器人手臂运动转化为有序骨架，用于预训练迁移模型，再以少量无人机目标域数据和低秩适配迁移至中继部署。骨架初始化中继链，并针对连通性、瓶颈容量、时延和移动成本优化。在九张高杂波三维城市地图上，规划运行时间中位数较最快传统规划器降低64.9%；另在独立30张密集城市地图的高遮挡组中，相较IMPC-MD多项容量、跳距及位移指标改善。作者还报告，仅用三张训练地图时，位置误差较从头训练降低53.6%。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -486,7 +482,7 @@
       },
       "format": "source_excerpt",
       "id": "news-1bfdafc4107d251850b90b7f5301bfd5ad4f5afe241d886621b02277791cf7a7",
-      "intro": "arXiv:2609.38202v1 Announce Type: new Abstract: Soft continuum robots can exploit distributed compliance for whole-body manipulation, but synthesizing behavior through changing contacts remains difficult. We address whole-body grasping and pick-and-throw from an initially ungrasped state through outcome-based actuation-space optimization. Grasping is quantified by tip angular sweep and body-object enclosure, while throwing further incorporates release-direction alignment and minimum release speed. These objectives allow grasping, acceleration, and release to emerge from compliant interaction without prescribing contact forces, contact locations, or body",
+      "intro": "arXiv:2609.38202v2 Announce Type: new Abstract: Soft continuum robots can exploit distributed compliance for whole-body manipulation, but synthesizing behavior through changing contacts remains difficult. We address whole-body grasping and pick-and-throw from an initially ungrasped state through outcome-based actuation-space optimization. Grasping is quantified by tip angular sweep and body-object enclosure, while throwing further incorporates release-direction alignment and minimum release speed. These objectives allow grasping, acceleration, and release to emerge from compliant interaction without prescribing contact forces, contact locations, or body",
       "placement": "main",
       "published_at": "2026-10-01T04:00:00+00:00",
       "reading": {
@@ -497,11 +493,7 @@
             "heading": "",
             "text": "Soft continuum robots can exploit distributed compliance for whole-body manipulation, but synthesizing behavior through changing contacts remains difficult. We address whole-body grasping and pick-and-throw from an initially ungrasped state through outcome-based actuation-space optimization.\n\nGrasping is quantified by tip angular sweep and body-object enclosure, while throwing further incorporates release-direction alignment and minimum release speed. These objectives allow grasping, acceleration, and release to emerge from compliant interaction without prescribing contact forces, contact locations, or body configurations.\n\nBecause the resulting actuation-to-outcome mapping is nonsmooth, we utilize derivative-free CMA-ES within an optimize-learn-refine framework. CMA-ES generates solutions for sampled conditions, a task-conditioned predictor learns warm starts, and CMA-ES refines them for unseen conditions.\n\nIn simulation, the method achieves 492/500 successful grasps (98.4%) and success rates of 98%, 97%, and 94% across three directional throwing trials. Learned initialization increases grasping success from 78.6% to 98.4% while reducing the median rollout count from 1184 to 816 in CMA-ES.\n\nHardware experiments achieve a 100% grasping success rate across 50 executions and a 100% pick-and-throw success rate across 30 executions, with 10 repetitions per direction. Together, these simulation and hardware results demonstrate the effectiveness of the proposed framework across both simulated and physical whole-body manipulation tasks."
           }
-        ],
-        "summary": {
-          "en": "The paper studies whole-body grasping and pick-and-throw with a spiral soft robot, starting from an ungrasped state. Its outcome-based actuation-space optimization does not prescribe contact forces, locations, or body configurations. An optimize-learn-refine framework uses derivative-free CMA-ES and a task-conditioned predictor to provide warm starts. In simulation, grasping succeeds in 98.4% of trials, while throwing success ranges from 94% to 98% across three directions. Learned initialization improves grasping performance and reduces median CMA-ES rollouts. Hardware experiments report successful outcomes in all 50 grasping executions and all 30 pick-and-throw executions.",
-          "zh": "论文研究螺旋软体机器人从未抓取状态出发的全身抓取与拾取投掷，采用基于结果的驱动空间优化，不预设接触力、接触位置或身体构型。其优化学习再细化框架以无导数CMA-ES搜索动作，并训练任务条件预测器提供暖启动。仿真中抓取成功率为98.4%，三种方向投掷成功率为94%至98%；学习初始化提高抓取成功率并减少中位优化回合数。硬件实验中，50次抓取和30次拾取投掷均全部成功。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -766,7 +758,7 @@
       },
       "format": "source_excerpt",
       "id": "news-28a41b748c6ce76a6f4913ce3400d2df02adbeb0131c29a54a8da7fe2790f600",
-      "intro": "arXiv:2609.40245v1 Announce Type: new Abstract: Robot navigation in dynamic, human-centered environments requires socially-compliant decisions grounded in robust scene understanding. Recent Vision-Language Models (VLMs) exhibit promising capabilities such as object recognition, common-sense reasoning, and contextual understanding, capabilities that align with the nuanced requirements of social robot navigation. However, it remains unclear whether VLMs can accurately understand complex social navigation scenes (e.g., inferring the spatial-temporal relations among agents and human intentions), which is essential for safe and socially compliant",
+      "intro": "arXiv:2609.40245v2 Announce Type: new Abstract: Robot navigation in dynamic, human-centered environments requires socially-compliant decisions grounded in robust scene understanding. Recent Vision-Language Models (VLMs) exhibit promising capabilities such as object recognition, common-sense reasoning, and contextual understanding, capabilities that align with the nuanced requirements of social robot navigation. However, it remains unclear whether VLMs can accurately understand complex social navigation scenes (e.g., inferring the spatial-temporal relations among agents and human intentions), which is essential for safe and socially compliant",
       "placement": "main",
       "published_at": "2026-10-01T04:00:00+00:00",
       "reading": {
@@ -775,13 +767,9 @@
         "sections": [
           {
             "heading": "",
-            "text": "Robot navigation in dynamic, human-centered environments requires socially-compliant decisions grounded in robust scene understanding.\n\nRecent Vision-Language Models (VLMs) exhibit promising capabilities such as object recognition, common-sense reasoning, and contextual understanding, capabilities that align with the nuanced requirements of social robot navigation.\n\nHowever, it remains unclear whether VLMs can accurately understand complex social navigation scenes (e.g., inferring the spatial-temporal relations among agents and human intentions), which is essential for safe and socially compliant robot navigation.\n\nWhile some recent works have explored the use of VLMs in social robot navigation, no existing work systematically evaluates their ability to meet these necessary conditions.\n\nIn this paper, we introduce the Social Navigation Scene Understanding Benchmark (SocialNav-SUB), a Visual Question Answering (VQA) dataset and benchmark designed to evaluate VLMs for scene understanding in real-world social robot navigation scenarios.\n\nSocialNav-SUB provides a unified framework for evaluating VLMs against human and rule-based baselines across VQA tasks requiring spatial, spatiotemporal, and social reasoning in social robot navigation.\n\nThrough experiments with state-of-the-art VLMs, we find that while the best-performing VLM achieves an encouraging probability of agreeing with human answers, it still underperforms simpler rule-based approach and human consensus baselines, indicating critical gaps in social scene understanding of current VLMs.\n\nOur benchmark sets the stage for further research on foundation models for social robot navigation, offering a framework to explore how VLMs can be tailored to meet real-world social robot navigation needs. An overview of this paper along with the code and data can be found at https://larg.github.io/socialnav-sub."
+            "text": "Robot navigation in dynamic, human-centered environments requires socially-compliant decisions grounded in robust scene understanding.\n\nRecent Vision-Language Models (VLMs) exhibit promising capabilities such as object recognition, common-sense reasoning, and contextual understanding, capabilities that align with the nuanced requirements of social robot navigation.\n\nHowever, it remains unclear whether VLMs can accurately understand complex social navigation scenes (e.g., inferring the spatial-temporal relations among agents and human intentions), which is essential for safe and socially compliant robot navigation.\n\nWhile some recent works have explored the use of VLMs in social robot navigation, no existing work systematically evaluates their ability to meet these necessary conditions.\n\nIn this paper, we introduce the Social Navigation Scene Understanding Benchmark (SocialNav-SUB), a Visual Question Answering (VQA) dataset and benchmark designed to evaluate VLMs for scene understanding in real-world social robot navigation scenarios.\n\nSocialNav-SUB provides a unified framework for evaluating VLMs against human and rule-based baselines across VQA tasks requiring spatial, spatiotemporal, and social reasoning in social robot navigation.\n\nThrough experiments with state-of-the-art VLMs, we find that while the best-performing VLM achieves an encouraging probability of agreeing with human answers, it still underperforms simpler rule-based approach and human consensus baselines, indicating critical gaps in social scene understanding of current VLMs.\n\nOur benchmark sets the stage for further research on foundation models for social robot navigation, offering a framework to explore how VLMs can be tailored to meet real-world social robot navigation needs. An overview of this paper along with the code and data can be found at https://larg.github.io/stars."
           }
-        ],
-        "summary": {
-          "en": "The paper presents SocialNav-SUB, a visual question answering dataset and benchmark for evaluating vision-language models’ understanding of real-world social robot navigation scenes. Its tasks require spatial, spatiotemporal, and social reasoning, and results are compared with human and rule-based baselines. The study examines whether models can infer relations among agents and human intentions. Experiments show that the best-performing model has an encouraging probability of agreeing with human answers, yet still underperforms simpler rule-based approaches and human consensus. The authors identify gaps in current models’ social scene understanding and offer the benchmark as a framework for further research.",
-          "zh": "论文介绍 SocialNav-SUB，这是用于评估视觉语言模型理解真实社交机器人导航场景的数据集与基准，涵盖空间、时空和社会推理类视觉问答任务，并与人类及规则方法基线比较。研究关注模型能否理解参与者之间的时空关系及人的意图。实验显示，表现最佳的模型与人类答案保持一致的概率令人鼓舞，但仍低于较简单的规则方法和人类共识基线。作者据此指出当前模型在社交场景理解方面仍有明显不足，并将该基准作为相关研究的评估框架。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3571,7 +3559,7 @@
       },
       "format": "source_excerpt",
       "id": "news-879a4b647d87e5eb81aa9b87908146206007ce9a9648c8333c484fb6bfb6e284",
-      "intro": "arXiv:2609.40177v1 Announce Type: new Abstract: Safe social navigation requires a robot to anticipate not only the future consequences of its actions, but also whether a nominal action can actually be executed under surrounding physical and social constraints. We present Social-WM, an efficient latent world-model planning framework trained from egocentric RGB video sequences. Our key observation is that social-navigation experience contains a systematic discrepancy between the nominal action and the realizable action: a nominal forward action may be fully",
+      "intro": "arXiv:2609.40177v2 Announce Type: new Abstract: Safe social navigation requires a robot to anticipate not only the future consequences of its actions, but also whether a nominal action can actually be executed under surrounding physical and social constraints. We present Social-WM, an efficient latent world-model planning framework trained from egocentric RGB video sequences. Our key observation is that social-navigation experience contains a systematic discrepancy between the nominal action and the realizable action: a nominal forward action may be fully",
       "placement": "main",
       "published_at": "2026-10-01T04:00:00+00:00",
       "reading": {
@@ -3664,7 +3652,7 @@
       },
       "format": "source_excerpt",
       "id": "news-8af31d1facd12fd1a9108e02447d7309c5ff67861ec6dcb061ba96c3f79a88a4",
-      "intro": "arXiv:2609.39888v1 Announce Type: cross Abstract: Neural trajectory predictors can reach low prediction error while violating dynamics, actuator limits, or state constraints, especially when controls are unobserved and dynamics are partially specified. We introduce the Markovian Dynamics Enforcer (MaDE), a time-invariant post-hoc operator mapping state-transition proposals onto a learned feasible dynamics manifold, trained on feasible states without ground-truth controls. For each transition it infers a control and recomputes the state through a completion model of known physics plus a",
+      "intro": "arXiv:2609.39888v2 Announce Type: cross Abstract: Neural trajectory predictors can reach low prediction error while violating dynamics, actuator limits, or state constraints, especially when controls are unobserved and dynamics are partially specified. We introduce the Markovian Dynamics Enforcer (MaDE), a time-invariant post-hoc operator mapping state-transition proposals onto a learned feasible dynamics manifold, trained on feasible states without ground-truth controls. For each transition it infers a control and recomputes the state through a completion model of known physics plus a",
       "placement": "main",
       "published_at": "2026-10-01T04:00:00+00:00",
       "reading": {
@@ -4955,5 +4943,5 @@
       "title": "Behavioral Persistence and Incomplete Functional Transfer of Co-evolved Communication in Evolutionary Robotics"
     }
   ],
-  "updated_at": "2026-10-01T04:20:50.723377+00:00"
+  "updated_at": "2026-10-02T03:14:32.832011+00:00"
 }
