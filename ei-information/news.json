@@ -1591,7 +1591,11 @@
             "heading": "",
             "text": "Vision-language models (VLMs) and vision-language-action models (VLAs) have recently driven rapid progress in general-purpose robots, yet most progress has focused on single-robot settings.\n\nExtending these capabilities to multi-robot systems remains challenging because robots must coordinate long-horizon behaviors while maintaining reliable, fine-grained execution. We introduce DuoMind, a distributed hierarchical framework for multi-robot coordination through semantic communication.\n\nEach robot uses a VLA-based action model for low-level execution and a VLM-based orchestrator for high-level reasoning and inter-agent coordination. At each planning step, the orchestrator at each robot reasons over the task instruction, local observations, and messages received from other robots.\n\nIt then generates low-level instructions for the action model and semantic messages for peer robots. This architecture exploits the complementary strengths of pretrained models by combining the semantic reasoning capabilities of VLMs with the precise action-generation capabilities of VLAs.\n\nTo address the scarcity of benchmarks for multi-robot coordination, we further develop RoboPoly, a benchmark comprising long-horizon manipulation tasks that require coordinated, closed-loop execution under distributed control.\n\nExperiments on RoboPoly and RoboTwin demonstrate that DuoMind improves multi-robot task performance, while ablation studies confirm the contributions of hierarchical orchestration and semantic communication. More details are available on our project page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DuoMind, a distributed hierarchical framework for coordinating robots through semantic communication. Each robot uses a vision-language-action model for low-level execution and a vision-language-model orchestrator for reasoning over task instructions, local observations, and peer messages, then generating action instructions and semantic messages. The authors also present RoboPoly, a benchmark of long-horizon manipulation tasks. They report improved multi-robot task performance on RoboPoly and RoboTwin, with ablations supporting the contributions of hierarchical orchestration and semantic communication.",
+          "zh": "论文提出DuoMind，一种通过语义通信实现多机器人协调的分布式分层框架。每台机器人以视觉语言动作模型负责低层执行，并由视觉语言模型编排器根据任务指令、本地观测和其他机器人消息进行高层推理、生成动作指令与协作消息。作者还构建了RoboPoly长时程操作基准。论文称，在RoboPoly和RoboTwin上的实验显示该方法提升多机器人任务表现，消融研究支持分层编排和语义通信的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1622,7 +1626,11 @@
             "heading": "",
             "text": "Frontier vision-language models (VLMs) combine scene estimation, interaction grounding, and executable actions. Understanding how these abilities support complete robotic tasks is central to evaluating their readiness as robot generalists.\n\nWe introduce Embodied Agent Arena to examine where local competence supports, or falls short of, complete task success across Geometry, Spatial Reasoning, Affordance, Task Planning, and Manipulation.\n\nThe arena contains 1,000 cases drawn from 32 established sources and GeoProbe, our new benchmark for geometric estimation on Blender renders and real-scene images. A minimal harness preserves source observations and operations while separating metric precision, functional grounding, and native goal completion.\n\nWe evaluate seven VLMs, analyze Astra's task-specific advantages, and compare richer-observation execution protocols and multi-round review. Across the arena, Astra's advantage is strongest in precise estimation and usable-contact localization; completing coordinated, goal-directed actions remains the key gap to robot generalism."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Embodied Agent Arena to assess how vision-language model abilities in geometry, spatial reasoning, affordance, task planning, and manipulation translate into complete robotic task success. The arena includes cases from established sources and GeoProbe, a benchmark for geometric estimation using Blender renders and real-scene images. The authors evaluate seven models and report that Astra's strongest advantages are precise estimation and usable-contact localization. They identify coordinated, goal-directed action completion as the main remaining gap to robot generalism.",
+          "zh": "论文介绍Embodied Agent Arena，用于评估视觉语言模型在几何、空间推理、可供性、任务规划和操作方面的能力如何转化为完整机器人任务成功。该评测包含来自既有来源及GeoProbe的案例；GeoProbe涵盖Blender渲染图像和真实场景图像的几何估计。作者评估了七种模型，并指出Astra在精确估计和可用接触位置定位方面优势最明显，而完成协调的目标导向动作仍是通向机器人通才能力的主要差距。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1653,7 +1661,11 @@
             "heading": "",
             "text": "As robotic hardware and learning methods advance, humanoids need tools to perform tasks beyond their inherent physical limits. Successful tool use requires selecting a suitable tool and coordinating manipulation and, when needed, locomotion to complete the task. Existing benchmarks do not jointly evaluate these capabilities on a humanoid.\n\nWe introduce HumanoidToolBench, an 18-task benchmark spanning three scenarios, three execution levels, and two tool-set modes, together with ToolBook, a dataset of 3.1k demonstrations collected in simulation and on a real Unitree G1.\n\nEvaluation of seven policies in simulation and three on the real robot reveals substantial gaps between selecting a suitable tool and completing the task. Focused GR00T N1.7 probes show reduced selection accuracy on unseen tools and continued task execution under unrelated instructions.\n\nCode and data are available at https://snu-pi.github.io/HumanoidToolBench/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HumanoidToolBench, a benchmark for humanoid tool use from selecting tools through mobile execution, and ToolBook, a dataset of demonstrations collected in simulation and on a real Unitree G1. The authors evaluate seven policies in simulation and three on the real robot, reporting substantial gaps between choosing a suitable tool and completing a task. Focused probes of GR00T N1.7 show lower selection accuracy for unseen tools and continued task execution under unrelated instructions.",
+          "zh": "论文提出HumanoidToolBench，用于评测人形机器人从工具选择到移动执行的工具使用能力，并介绍ToolBook演示数据集。数据集演示来自仿真和真实Unitree G1。作者在仿真中评估七种策略，并在真实机器人上评估三种策略，发现合适工具的选择与完成任务之间存在明显差距。针对GR00T N1.7的专项探测还显示，其面对未见工具时选择准确率下降，并会在收到无关指令后继续执行任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1684,7 +1696,11 @@
             "heading": "",
             "text": "Aerial grasp-and-lift tasks require whole-body coordination across approach, acquisition, and lifting under partial target observations. Early approach failures can limit exposure to later task stages during training, while changing visibility complicates alignment and closure timing during execution.\n\nWe present a recurrent teacher-student framework that learns a single policy in simulation to jointly command flight, arm motion, and gripper closure without an explicit task-phase input.\n\nA privileged teacher learns through reinforcement learning with a critical-state curriculum that exposes acquisition and lifting states before connecting them to normal approach trajectories.\n\nIts behavior is distilled into a recurrent visual student that replaces privileged target states with dual-view point clouds and proprioception, integrating observation history for closed-loop control. A dedicated closure objective supervises closure timing from sustained model-defined readiness sequences.\n\nTraining and primary evaluation use a simulated acquisition-and-payload model with condition-triggered latching, virtual attachment, and wrench-based payload loading for short-distance lifting.\n\nAcross 8,996 completed simulation episodes under this model, the frozen student achieves full-task success rates of 99.97%, 97.14%, and 95.84% under nominal, physics/control-randomized, and additional camera-randomized conditions, respectively. The nominal latch-count-weighted mean of per-seed 90th-percentile alignment errors at acquisition is 8.12 mm."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a recurrent teacher-student framework that learns a single policy in simulation to coordinate flight, arm motion, and gripper closure from partial visual observations. A reinforcement-learning teacher uses a critical-state curriculum, and its behavior is distilled into a visual student that combines dual-view point clouds, proprioception, and observation history. Training and primary evaluation use a simulated model with condition-triggered latching, virtual attachment, and wrench-based payload loading. In simulation under this model, the authors report high full-task success rates across nominal, physics/control-randomized, and additional camera-randomized conditions.",
+          "zh": "论文提出一种循环式教师—学生框架，在仿真中学习单一策略，以部分视觉观测协调飞行、机械臂运动和夹爪闭合。教师通过强化学习和关键状态课程学习，再将行为蒸馏给结合双视角点云、本体感觉及观测历史的视觉学生策略。训练和主要评估采用带条件触发锁定、虚拟附着及基于力和力矩载荷的仿真模型。在该模型的仿真评估中，作者报告学生策略在名义、物理与控制随机化、以及额外相机随机化条件下均取得较高全任务成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
