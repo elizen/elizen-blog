@@ -2243,7 +2243,11 @@
             "heading": "",
             "text": "Enabling robots to estimate the kinematic parameters of articulated objects unlocks a wide range of capabilities for interaction and manipulation. The estimation has to happen from the information the robot currently observes, often just a single RGB image of an object it has never seen before.\n\nCurrent single-image approaches couple articulation part segmentation with articulation estimation, making their predictions vulnerable to missed detections and incorrect part associations, and they regress metric 3D geometry that a single view fixes only up to scale.\n\nWe present QueryArt, a model that estimates articulation parameters from a single RGB image, a 2D query point, and camera intrinsics. QueryArt is trained to estimate the 3D articulation geometry relative to the queried point and in units of its depth, which keeps its target identifiable from the image alone.\n\nA single depth measurement at the query point then supplies the scale and recovers the metric parameters. We train QueryArt on a curated mixture of synthetic and real-world articulation datasets. We evaluate QueryArt on several benchmarks and compare it against recent baselines.\n\nQueryArt outperforms recent baselines on most articulation metrics, including on out-of-distribution data. To demonstrate the model's capabilities in real-world settings, we evaluate QueryArt on a mobile manipulator across 57 manipulation trials spanning 16 object parts and five viewpoint classes, achieving a 70.2% success rate.\n\nWe provide code and videos at: https://abwerby.github.io/queryart/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents QueryArt, which estimates articulation parameters from a single RGB image, a 2D query point, and camera intrinsics. It predicts 3D articulation geometry relative to the query point and in units of that point’s depth; one depth measurement then supplies scale for metric parameters. Trained on synthetic and real-world datasets, QueryArt is evaluated on benchmarks and reported to outperform recent baselines on most articulation metrics, including out-of-distribution data. In 57 mobile-manipulator trials, it achieves a 70.2% success rate.",
+          "zh": "论文提出 QueryArt，从单张 RGB 图像、二维查询点和相机内参估计物体的关节参数。模型预测相对于查询点、以该点深度为单位的三维关节几何，再由查询点的一次深度测量确定尺度并恢复度量参数。作者使用合成与真实数据集训练，并在多个基准上评估；结果显示其在多数关节指标上优于近期基线，包括分布外数据。在移动操作平台的57次操作试验中，跨16个物体部件和五类视角，成功率为70.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2274,7 +2278,11 @@
             "heading": "",
             "text": "Autonomous driving is a cornerstone technology for the future of intelligent transportation, where end-to-end learning has emerged as a transformative paradigm that directly maps multimodal sensory inputs to driving actions through unified differentiable models.\n\nWhile offering advantages, the effectiveness of end-to-end autonomous driving (E2E-AD) is ultimately determined by the quality of its training ecosystem. This paper provides a comprehensive review of training methods and ecosystem for E2E-AD. We introduce a Data-Strategy-Platform taxonomy that conceptualizes training as an interdependent system.\n\nThe data layer defines what can be learned, the strategy layer governs how learning aligns with driving objectives, and the platform layer supports scalability and continuous evolution.\n\nWithin this framework, we survey recent advances across data-centric pipelines, learning paradigms, and training infrastructures, and analyze their interplay in shaping model performance, robustness, and deployability.\n\nFinally, we reflect on current limitations and articulate a forward-looking vision that emphasizes a shift from data quantity to data value, from isolated optimization to foundation-driven generalization, and from static training to integrated training-testing loops, aiming toward robust, scalable, and trustworthy autonomous driving systems.\n\nWe maintain a continuously updated repository tracking cutting-edge literature and works at \\href{https://github.com/Jiaaqiliu/Awesome-Training-Ecosystem-for-E2E-AD}{Our Project Page}."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey reviews training methods and the ecosystem for end-to-end autonomous driving, proposing a Data-Strategy-Platform taxonomy. The data layer defines what can be learned, the strategy layer aligns learning with driving objectives, and the platform layer supports scalability and continued evolution. The authors survey data-centric pipelines, learning paradigms, and training infrastructures, and analyze their interplay with model performance, robustness, and deployability. They discuss current limitations and envision greater emphasis on data value, foundation-driven generalization, and integrated training-testing loops.",
+          "zh": "这篇综述回顾端到端自动驾驶的训练方法与生态系统，并提出“数据—策略—平台”分类框架：数据层界定可学习内容，策略层使学习与驾驶目标对齐，平台层支持规模化和持续演进。作者梳理数据流程、学习范式和训练基础设施的进展，并分析它们与模型性能、鲁棒性和可部署性的关系。论文指出现有限制，并展望从数据数量转向数据价值、从孤立优化转向基础模型驱动的泛化，以及建立整合训练与测试的循环。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2305,7 +2313,11 @@
             "heading": "",
             "text": "We propose a human-factor-aware method of allocating robot supervision tasks to multiple human operators. In scenarios where multiple operators occasionally teleoperate multiple robots to help the robots overcome difficulties, the allocation of the supervisory control tasks to humans needs to consider the real-time cognitive states of individual operators.\n\nHowever, most existing methods assume fixed supervisory capacity per operator and overlook fluctuations in the human factors such as workload and fatigue. As a result, workload distribution can be unbalanced where some operators become overloaded while the others remain underused.\n\nOur method dynamically regulates supervisory capacity and allocates tasks in a way that maintains balanced mental workload, prevents overload, and improves overall team performance. The allocation method uses a greedy strategy that minimizes estimated operator workloads with task prioritization.\n\nRobots are assigned to operators by reflecting their current supervisory capacity where the required effort depends on the types of tasks.\n\nIn the user study, the analysis across predefined time intervals shows that the proposed method consistently achieves higher performance and lower behavioral signs of fatigue compared to a baseline method that does not consider human factors.\n\nThese results highlight adaptive capacity adjustment as an effective preventive mechanism for sustaining operator performance in long-duration, high-demand settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a human-factor-aware method for assigning supervisory tasks across multiple operators and robots. It dynamically adjusts each operator’s supervisory capacity based on current cognitive state and uses a greedy strategy with task prioritization to balance estimated workloads and prevent overload. Robot assignments reflect current capacity and task effort. In a user study analyzed across predefined time intervals, the method consistently achieves higher performance and shows fewer behavioral signs of fatigue than a baseline that does not account for human factors.",
+          "zh": "论文提出一种面向人因的任务分配方法，为多名操作员分配对多台机器人的监督任务。该方法根据操作员实时认知状态动态调整监督能力，并以贪心策略结合任务优先级，尽量平衡估计的工作负荷、避免过载。机器人分配会考虑操作员当前能力及不同任务所需的投入。在用户研究预设时间区间的分析中，与不考虑人因的基线相比，该方法持续取得更高表现，并呈现较少的疲劳行为迹象。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2336,7 +2348,11 @@
             "heading": "",
             "text": "This paper introduces a novel tactile sensor for in-hand manipulation with slip-aware control that integrates velocity and force/torque sensing with pressure map estimation into a single device with a deformable contact pad. To the best of our knowledge, this is the first sensor to combine these sensing modalities within a single compliant structure.\n\nThe sensor features a deformable contact surface and can robustly track both flat and curved surfaces across a wide range of diffuse surface materials. Its performance is evaluated through a comprehensive set of experiments that highlight both its capabilities and limitations.\n\nThe sensor is designed for rapid and low-cost fabrication using a combination of standard PCB manufacturing and rapid prototyping techniques."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a deformable tactile sensor for in-hand manipulation and slip-aware control, combining velocity and force/torque sensing with pressure-map estimation. The authors describe it as, to their knowledge, the first sensor to integrate these modalities in one compliant structure. Its deformable contact surface is reported to track flat and curved surfaces across a wide range of diffuse materials. Experiments assess its capabilities and limitations. The sensor is designed for rapid, low-cost fabrication using standard PCB manufacturing and rapid prototyping.",
+          "zh": "论文介绍一种用于手内操作的可变形触觉传感器，集成速度、力/扭矩感测与压力分布图估计，并支持感知滑移的控制。作者称，据其所知，这是首个在单一柔顺结构中结合这些感测模态的传感器。该设备具有可变形接触表面，可追踪平面和曲面，并适用于多种漫反射表面材料。论文通过一系列实验评估其性能，展示能力与局限；传感器采用标准 PCB 制造和快速原型技术，面向快速、低成本制造。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
