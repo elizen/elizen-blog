@@ -2231,7 +2231,11 @@
             "heading": "",
             "text": "Indirect manipulation of deep-seated deformable anatomy inaccessible to the robot is challenging in robot-assisted minimally invasive surgery (RAMIS) because intervening tissues spatially filter deformation transmission. Passive observations can be ambiguous because the Decoupled and Blocked modes may produce similar motion responses.\n\nWe propose CADeT, a causal-aware deformation transmission framework that integrates structural causal model (SCM) with active sensing to infer a latent transmission mode and estimate a state-dependent adhesion Jacobian online.\n\nDuring normal manipulation, control actions update the mode belief; when ambiguity persists, an additional probing action is selected to improve mode distinguishability. The mode belief and learned Jacobian are incorporated into a belief-aware model predictive controller for indirect target-shape control.\n\nValidation in simulation and on the da Vinci research kit (dVRK), using phantom and ex vivo porcine tissues, shows higher mode-identification accuracy and faster shape-error convergence than the evaluated model-free and model-based baselines.\n\nThese results show that active sensing improves mode identification and indirect deformation control under the evaluated conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes CADeT for indirectly manipulating deep soft tissue that a robot cannot access directly. It combines a structural causal model with active sensing to infer deformation-transmission modes and estimate a state-dependent adhesion Jacobian online. When observations remain ambiguous, it selects a probing action, then uses the resulting belief and learned Jacobian for model-predictive control. Simulation and dVRK validation with phantom and ex vivo porcine tissues show higher mode-identification accuracy and faster shape-error convergence than the evaluated baselines.",
+          "zh": "论文提出 CADeT，用于机器人无法直接触及的深部软组织间接形变操控。该框架结合结构因果模型与主动感知，在线推断形变传递模式并估计状态相关的粘附雅可比矩阵；在歧义持续时选择探测动作，并将信念与学习到的雅可比用于模型预测控制。仿真及 dVRK 上的仿体和离体猪组织验证显示，在所评估条件下，其模式识别准确率和形状误差收敛速度优于对比基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2262,7 +2266,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models face a timing gap between low-rate inference and high-rate robot execution. We characterize this gap through end-to-end latency measurements of model inference and the robot execution chain.\n\nRepeated Flow Matching denoising contributes substantially to inference cost, while robot-side delays mainly arise from perception acquisition, communication scheduling, and physical response.\n\nAnalysis of the velocity field shows relatively stable magnitude and direction in early integration, followed by stronger directional correction near the terminal steps. Based on this stage heterogeneity, we propose two-stage non-uniform denoising, reducing the number of steps from 10 to 2 and model-inference time from 61.557 ms to 21.956 ms.\n\nWe also develop a distributed real-time VLA framework with independent inference, action-publication, and robot-control rates, modular observation acquisition, and action-provenance logging. Using {\\pi}0.5 as the baseline, we evaluate six real-time execution methods on a long-horizon physical garment-folding task.\n\nLegato performs best overall among training-based methods, while Temporal Smoothing leads among training-free methods; both perform strongly in task success, completion time, action continuity, and acceleration smoothness.\n\nCombining two-step denoising with representative execution methods substantially reduces inference cost with a small reduction in task performance. These results motivate joint optimization of model-inference efficiency and robot-system timing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper characterizes latency between vision-language-action model inference and high-rate robot execution, attributing substantial inference cost to repeated Flow Matching denoising and robot-side delays mainly to sensing, communication, and physical response. It proposes stage-aware two-step denoising, reducing steps from 10 to 2, and a distributed real-time execution framework. On a long-horizon physical garment-folding task using π0.5 as baseline, Legato leads among training-based methods and Temporal Smoothing among training-free methods. Combining two-step denoising lowers inference cost with a small performance reduction.",
+          "zh": "论文分析视觉语言动作模型推理与机器人执行之间的时延，并指出重复流匹配去噪是推理成本的重要来源，机器人端延迟主要来自感知获取、通信调度和物理响应。作者提出阶段感知的非均匀两阶段去噪，将步骤数由10减至2，并构建分布式实时执行框架。在长时程实体服装折叠任务中，以 π0.5 为基线评估六种方法；Legato 和 Temporal Smoothing 分别在训练型和免训练方法中表现最佳。结合两步去噪可显著降低推理成本，但任务表现略有下降。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2293,7 +2301,11 @@
             "heading": "",
             "text": "Long-horizon planning is critical for safe autonomous driving in complex scenarios. Existing methods improve planning continuity with temporal memory, but such memory may become invalid and mislead decisions when the driving command changes. Thus, selectively leveraging useful history while suppressing command-inconsistent memory remains a key challenge.\n\nTo address this issue, we propose MomADv2, a reliable state-space memory framework for long-horizon end-to-end autonomous driving.\n\nAt its core, MomADv2 introduces a Selective State-Space Planning Memory Query Module, which filters historical planning queries based on temporal continuity and command consistency, selects planning modes relevant to the current command, and models the evolution of planning intentions through a selective state-space mechanism.\n\nTo further alleviate local trajectory deviations and error accumulation in long-horizon planning, we design a Flow-Matching Trajectory Residual Refiner. It learns a continuous residual correction field from the refined planning output to the expert trajectory, enabling fine-grained trajectory refinement while preserving the stability of anchor-based planning.\n\nExtensive experiments on closed-loop NAVSIM and Bench2Drive, as well as open-loop nuScenes, demonstrate that MomADv2 improves long-horizon planning consistency and reduces the average collision rate by 15.6% over MomAD under 6-second planning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MomADv2, a state-space memory framework for long-horizon end-to-end autonomous-driving planning. Its planning-memory query module filters historical queries for temporal continuity and command consistency, selecting modes relevant to the current command. A trajectory residual refiner learns a continuous correction field toward expert trajectories to address local deviations and accumulated error. Experiments on closed-loop NAVSIM and Bench2Drive and open-loop nuScenes are reported to improve planning consistency; under six-second planning, average collision rate is 15.6% lower than MomAD.",
+          "zh": "论文提出 MomADv2，一种用于端到端自动驾驶长时程规划的状态空间记忆框架。其记忆查询模块依据时间连续性和驾驶指令一致性筛选历史规划信息，并选择适配当前指令的规划模式；轨迹残差精炼器则学习从规划输出到专家轨迹的连续修正场，以减少局部偏差和误差累积。作者报告，在闭环 NAVSIM、Bench2Drive 和开环 nuScenes 实验中，MomADv2 提升了长时程规划一致性；在6秒规划设置下，相比 MomAD 平均碰撞率降低15.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2324,7 +2336,11 @@
             "heading": "",
             "text": "Safe navigation in dynamic environments requires anticipating future environmental states to account for spatiotemporal risks, specifically when and where collisions may occur. To this end, occupancy grid map (OGM) prediction has been widely adopted as an effective approach.\n\nHowever, existing OGM-based navigation methods often struggle to achieve accurate and efficient forecasting and fail to fully exploit the temporal information in predicted OGMs during planning.\n\nTo address these challenges, we propose FORTE, a navigation framework that directly exploits the spatiotemporal evolution of predicted occupancy from the perspectives of spatiotemporal occupancy overlap and occupancy directivity.\n\nBased on these properties, FORTE evaluates multiple topology-distinct paths and selects the suitable one without explicit object detection or tracking.\n\nTo support online planning, we formulate a latent diffusion model-based OGM predictor that generates the entire forecast horizon in a non-autoregressive manner while maintaining temporal consistency through temporal shift modules. Extensive evaluations demonstrate that FORTE outperforms state-of-the-art baselines.\n\nFor prediction, FORTE achieves up to 215.3% higher IoU and 5.24x faster inference; for navigation, it yields up to a 3.5x higher success rate."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes FORTE for spatiotemporal risk-aware navigation in dynamic environments. It evaluates topologically distinct paths using spatiotemporal overlap and directivity in predicted occupancy grids, without explicit object detection or tracking. Its latent diffusion predictor produces the full forecast horizon non-autoregressively, using temporal-shift modules to maintain consistency. The reported evaluations show gains over state-of-the-art baselines: up to 215.3% higher occupancy-prediction IoU, 5.24 times faster inference, and a 3.5 times higher navigation success rate. The abstract does not specify the conditions for these maxima.",
+          "zh": "论文提出 FORTE，用于动态环境中的时空风险感知导航。框架利用预测占据栅格的时空重叠和方向性评估拓扑不同的路径，无需显式检测或跟踪物体；其潜在扩散模型以非自回归方式预测完整时间范围，并通过时间移位模块保持一致性。作者报告的评估显示，FORTE 优于对比方法：占据预测 IoU 最高提高215.3%，推理速度最高快5.24倍，导航成功率最高提高3.5倍。摘要未进一步说明这些最高值对应的具体评测条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
