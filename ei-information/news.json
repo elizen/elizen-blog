@@ -287,7 +287,11 @@
             "heading": "",
             "text": "Unmanned aerial vehicle (UAV) relay networks can restore connectivity after communication infrastructure is damaged. Urban relay placement is difficult because line-of-sight blockage, communication range, altitude, and three-dimensional obstacles must be considered jointly.\n\nArm2Air transfers obstacle-avoidance skeletons from robot arms to UAV relay placement through cross-embodiment transfer.\n\nSource-domain robot-arm motions from a pretrained Neural MP model are converted into ordered skeletons that pretrain a transformer-based transfer platform, which is then adapted to the UAV domain using limited target data and Low-Rank Adaptation.\n\nThe transferred skeleton initializes a relay chain that is refined for connectivity, bottleneck capacity, delay, and movement cost. On nine held-out high-clutter 3D urban maps, Arm2Air reduced median end-to-end planning runtime by 64.9 percent relative to the fastest conventional planner.\n\nOn the high-obstruction group of a separate 30-map dense urban holdout, it increased bottleneck capacity by 32.6 percent, reduced capacity variance by 74.7 percent, reduced maximum hop distance by 13.2 percent, reduced hop-distance variance by 75.2 percent, and reduced relay displacement by 16.9 percent relative to IMPC-MD.\n\nWith only three target-domain training maps, Arm2Air reduced relay-position root mean square error by 53.6 percent relative to training from scratch while updating 0.134 million parameters, compared with 1.383 million for Scratch and Full Fine-tuning.\n\nThese results demonstrate computationally and data-efficient UAV relay placement and suggest a broader principle for transferring ordered structural priors across heterogeneous embodied tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Arm2Air transfers obstacle-avoidance skeletons from a pretrained robot-arm model to UAV relay placement, adapting with limited target-domain data and low-rank adaptation. The transferred skeleton initializes a relay chain that is refined for connectivity, bottleneck capacity, delay, and movement cost. The authors report a 64.9% reduction in median planning runtime on nine held-out cluttered maps. On a separate dense-map holdout, the high-obstruction group showed improved capacity and reduced relay displacement relative to IMPC-MD. With three target maps, position error was lower than training from scratch.",
+          "zh": "Arm2Air 将预训练机器人臂模型生成的避障骨架迁移到无人机中继布设，并用少量目标域数据和低秩适配进行调整。迁移骨架初始化中继链，再针对连通性、瓶颈容量、时延和移动成本优化。在九张高障碍城市地图上，作者报告其中位端到端规划时间较最快传统规划器降低64.9%；在另一组30张密集城市地图的高遮挡子集上，相较IMPC-MD，瓶颈容量提高32.6%，中继位移降低16.9%。仅用三张目标域训练地图时，其定位误差较从头训练降低53.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -318,7 +322,11 @@
             "heading": "",
             "text": "A scan supplies labeled images and a geometric reference. We separate their contributions in a recognizer whose scan-derived prototype matrix acts as a supervised head's fixed output layer.\n\nOn T-LESS, HOPE and 18 self-collected industrial parts, we test real, random and exactly permuted prototypes, matched geometry-free classifiers, stronger appearance rules and paired background protocols.\n\nAcross DINOv2-giant and MetaCLIP-H with real-background queries, the largest fused-accuracy advantage of the real prototypes over either control is one percentage point; larger differences favor controls, by up to 2.8 points in arm means.\n\nOn HOPE with DINOv2-giant the head alone is 2.8 points above exact permutations (95% interval: 0.8-4.7); this advantage does not reach fusion and is not observed on MetaCLIP-H. On DINOv2-giant, matched logistic regression comes within 0.5 points of fusion on T-LESS and exceeds it on HOPE and the self-collected parts.\n\nAgainst white cutouts, real HOPE query backgrounds lower image-prototype accuracy by 43 points on DINOv2-giant and 13 on MetaCLIP-H. The audit separates prototype content, label supervision and query protocol."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study examines scan-derived class prototypes in a recognizer using frozen foundation features, separating label supervision, prototype content, and query-background protocol. It compares real, random, and permuted prototypes with geometry-free classifiers on T-LESS, HOPE, and 18 self-collected industrial parts. With real-background queries, the largest fused-accuracy advantage for real prototypes over controls is one percentage point; larger differences favor controls. On DINOv2-giant, logistic regression approaches or exceeds fusion on some datasets. Comparisons with white cutouts show that query backgrounds affect image-prototype accuracy.",
+          "zh": "本文考察扫描得到的类别原型在冻结基础特征识别器中的作用，并区分标签监督、原型内容和查询背景协议。研究在T-LESS、HOPE及18种自采工业零件上比较真实、随机和置换原型，以及几何无关分类器。使用真实背景查询时，真实原型融合准确率相对对照的最大优势为1个百分点，较大差异反而有利于对照。DINOv2-giant上的逻辑回归在部分数据集接近或超过融合结果。白色抠图与真实背景的比较显示，背景会显著影响图像原型准确率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -349,7 +357,11 @@
             "heading": "",
             "text": "Multiple UAVs can cooperatively transport heavy payloads while controlling their position and orientation.\n\nTrajectory-based methods offer high agility while satisfying system constraints, but can produce uneven force distributions when the tension-to-wrench allocation is redundant or ill-conditioned, particularly under geometric mismatch and low-level tracking errors. We propose a hybrid planning-and-control framework to address this problem.\n\nA global planner generates payload trajectories and cable-force references by exploring the allocation null space under a prescribed internal-force setting. These references augment the cost of a centralized local planner, promoting feasible force distributions while generating trajectories for all UAVs.\n\nAn admittance filter then compares the planned forces with onboard cable-tension estimates and adjusts the kinematic references to improve force tracking in degenerate or near-degenerate configurations.\n\nSimulations and experiments involving four to ten UAVs demonstrate more balanced tension distributions during both hovering and demanding agile maneuvers, without compromising agility or payload-tracking performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a hybrid planning and control framework for multiple UAVs transporting a suspended payload. A global planner explores the allocation null space under a prescribed internal-force setting to produce payload trajectories and cable-force references, which guide a centralized local planner. An admittance filter compares planned forces with onboard tension estimates and adjusts kinematic references to improve tracking in degenerate configurations. Simulations and experiments with four to ten UAVs show more balanced tension distributions during hovering and agile maneuvers, while maintaining agility and payload-tracking performance.",
+          "zh": "本文提出用于多架无人机协同吊运的混合规划与控制框架，针对冗余或病态的张力到合力分配可能造成受力不均的问题。全局规划器在设定内力条件下探索分配零空间，生成载荷轨迹和缆绳力参考，并将其用于集中式局部规划器的代价设计。导纳滤波器比较规划力与机载张力估计，调整运动参考以改善退化构型下的力跟踪。涉及4至10架无人机的仿真和实验显示，该方法在悬停及敏捷机动中可实现更均衡的张力分布，同时保持敏捷性和载荷跟踪表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -380,7 +392,11 @@
             "heading": "",
             "text": "Soft continuum robots can exploit distributed compliance for whole-body manipulation, but synthesizing behavior through changing contacts remains difficult. We address whole-body grasping and pick-and-throw from an initially ungrasped state through outcome-based actuation-space optimization.\n\nGrasping is quantified by tip angular sweep and body-object enclosure, while throwing further incorporates release-direction alignment and minimum release speed. These objectives allow grasping, acceleration, and release to emerge from compliant interaction without prescribing contact forces, contact locations, or body configurations.\n\nBecause the resulting actuation-to-outcome mapping is nonsmooth, we utilize derivative-free CMA-ES within an optimize-learn-refine framework. CMA-ES generates solutions for sampled conditions, a task-conditioned predictor learns warm starts, and CMA-ES refines them for unseen conditions.\n\nIn simulation, the method achieves 492/500 successful grasps (98.4%) and success rates of 98%, 97%, and 94% across three directional throwing trials. Learned initialization increases grasping success from 78.6% to 98.4% while reducing the median rollout count from 1184 to 816 in CMA-ES.\n\nHardware experiments achieve a 100% grasping success rate across 50 executions and a 100% pick-and-throw success rate across 30 executions, with 10 repetitions per direction. Together, these simulation and hardware results demonstrate the effectiveness of the proposed framework across both simulated and physical whole-body manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whole-body grasping and pick-and-throw with a spiral soft robot, using outcome-based actuation-space optimization from an initially ungrasped state. Objectives measure tip sweep, body enclosure, release-direction alignment, and minimum release speed. Its optimize-learn-refine procedure uses derivative-free CMA-ES to generate solutions, trains a task-conditioned predictor for warm starts, and refines solutions for unseen conditions. In simulation, 492 of 500 grasps succeeded, with throwing success rates of 94% to 98% across three directions. Hardware trials reported success in all 50 grasp executions and all 30 pick-and-throw executions.",
+          "zh": "本文研究螺旋软体机器人从未抓取状态实现全身抓取与抓取后抛掷，采用基于结果的驱动空间优化。目标函数衡量末端角度扫掠、身体对物体的包围，以及抛掷时的释放方向和最低速度。作者以无导数CMA-ES构建“优化—学习—精炼”流程：先为采样条件生成解，再训练任务条件预测器提供热启动，并对未见条件精炼。仿真中500次抓取有492次成功，三种方向抛掷成功率为94%至98%；硬件实验报告50次抓取和30次抓取抛掷均全部成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
