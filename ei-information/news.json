@@ -863,7 +863,11 @@
             "heading": "",
             "text": "Most current grasp synthesis systems are trained offline and remain fixed during deployment. While this works well when deployment conditions resemble the training data, performance can degrade when robots encounter conditions they have not seen before, such as unfamiliar objects.\n\nIn this work, we present a continual-learning framework for single-view 6-DoF grasp synthesis for a parallel-jaw gripper in cluttered scenes.\n\nRather than finetuning a large parametric model, our method adapts through memory in a learned embedding space: grasp outcomes update future grasp scores, while optional user demonstrations are recalled and transferred to new scenes as additional candidate grasps.\n\nWe evaluate our method in simulation and in extensive real-world experiments comprising over 1500 grasp trials.\n\nWe show that our method matches the performance of existing 6-DoF grasping baselines even before adaptation, improves online on unseen objects from categories absent or underrepresented during training, and supports long-horizon continual learning with limited forgetting.\n\nIn real-world experiments, our method reaches over 90\\% success rates on several challenging object categories after only 50 online grasp attempts. Videos and code at https://giuschio.github.io/cl_grasping/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a continual-learning framework for single-view 6-DoF grasp synthesis with a parallel-jaw gripper in clutter. It updates grasp scores from outcomes in a learned embedding space and can recall and transfer optional user demonstrations, without fine-tuning a large parametric model. In simulation and more than 1,500 real-world grasp trials, the authors report baseline-level performance before adaptation, online gains on unfamiliar objects, and limited forgetting over long horizons. Real-world success exceeded 90% on several challenging categories after 50 online attempts.",
+          "zh": "本文提出一种用于杂乱场景中平行夹爪单视角六自由度抓取合成的持续学习框架。方法在学习到的嵌入空间中利用抓取结果更新后续抓取评分，并可回忆和迁移用户示范；作者称无需微调大型参数模型。仿真及包含超过1500次抓取试验的真实实验显示，该方法适应前可匹敌现有基线，并能在线改善对训练中缺失或较少见类别物体的抓取表现，且长期学习时遗忘有限。真实实验中，若干困难类别在50次在线尝试后成功率超过90%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -894,7 +898,11 @@
             "heading": "",
             "text": "While humans readily repurpose a book, a stone, or a shoe to drive a nail, robots trained on specific tools fail to transfer the same function to novel ones -- a gap we formalize as functional generalization.\n\nFunctionally equivalent tools share visually recognizable functional intent, such as where contact can occur and how a contact region should move to the target. However, this perceptual similarity does not directly carry over to action space, where each tool demands a different motor pattern to realize the function.\n\nTo bridge this gap, we explore intermediate representations including affordance images, human video prompts, functional videos and object masks, and 2D keypoint trajectories, finding that keypoint trajectories best balance functional expressiveness and action groundability.\n\nBuilding on this, we present FuncBridge, a two-stage framework that decouples functional reasoning from action execution: learning to predict generalizable keypoint trajectories from action-free data, then grounding them into robot actions with limited demonstrations.\n\nAcross a benchmark spanning ten tools and three functions, including hitting, sweeping, and hooking, FuncBridge consistently outperforms state-of-the-art methods on unseen tools in both simulation and the real world."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies functional generalization: transferring a learned tool function to novel tools. The authors compare intermediate representations and find that 2D keypoint trajectories best balance functional expressiveness and action grounding. Their two-stage FuncBridge framework first predicts generalizable trajectories from action-free data, then grounds them into robot actions using limited demonstrations. On a benchmark with ten tools and three functions—hitting, sweeping, and hooking—the authors report that FuncBridge consistently outperforms state-of-the-art methods on unseen tools in both simulation and the real world.",
+          "zh": "本文研究机器人如何将已学工具功能迁移到新工具，并将这一问题称为功能泛化。作者比较了多种中间表示，发现二维关键点轨迹较好地兼顾功能表达能力与动作落地性。据此提出两阶段框架FuncBridge：先用无动作数据预测可泛化的关键点轨迹，再通过有限示范将轨迹转化为机器人动作。在涵盖十种工具及击打、扫动、钩取三种功能的基准测试中，作者报告该方法在仿真和真实环境的未见工具任务上持续优于现有先进方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -925,7 +933,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies have demonstrated impressive capabilities in generalizable robotic manipulation, but their deployment in the real world remains challenging due to potential collisions involving different parts of the robot, manipulated objects, and the surrounding environment.\n\nExisting inference-time VLA safety frameworks typically rely on simplified end-effector-centered representations that do not explicitly model the full articulated robot and attached-object geometry. In this paper, we present WBAG, a safety framework that models the robot's whole-body and grasp-dependent attached geometry.\n\nWBAG constructs a grasp-conditioned safe set that adapts the protected geometry as objects are grasped, then converts this evolving geometry into differentiable CBF constraints that minimally modify the VLA's native six-dimensional operational-space action for collision avoidance across robot, scene, and attached geometry.\n\nOn the SafeLIBERO benchmark, a variant of LIBERO augmented with obstacles for safety evaluation, WBAG achieves the best overall safety and safe task success among the evaluated methods under a scene-level safety evaluator that monitors all eligible non-task objects, reaching 97.38\\% aggregate Scene Safety and 59.38\\% Safe Success."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WBAG, a safety framework for vision-language-action manipulation that models the robot’s whole body and grasp-dependent attached-object geometry. It builds a grasp-conditioned safe set and converts the evolving geometry into differentiable control barrier function constraints, minimally modifying the policy’s native six-dimensional operational-space action for collision avoidance. On SafeLIBERO, a LIBERO variant augmented with obstacles, the authors report the best overall safety and safe task success among evaluated methods, with 97.38% aggregate Scene Safety and 59.38% Safe Success.",
+          "zh": "本文提出WBAG，用于降低视觉-语言-动作策略在机器人操作中与机器人本体、被抓物体及环境发生碰撞的风险。该框架显式建模机器人全身和随抓取变化的附着物几何，构造抓取条件安全集，并将其转换为可微控制屏障函数约束，以尽量少地修改策略原有的六维操作空间动作。在加入障碍物用于安全评估的SafeLIBERO基准上，作者报告WBAG在受评方法中总体安全性和安全任务成功表现最佳，场景安全率为97.38%，安全成功率为59.38%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -956,7 +968,11 @@
             "heading": "",
             "text": "Purpose: Pedicle screw placement is technically demanding in scoliosis treatment. High precision is required due to limited visibility, anatomical variability, and the risk of complications. Although robotic systems assist CT-based planning and execution, they still rely on ionizing intraoperative imaging and complex registration.\n\nThis study proposes robotic pedicle drilling with real-time preventive breach detection using electrical bioimpedance sensing. Methods: We developed a robotic approach combined with a pedicle-drilling tool equipped with a proprioceptive electrical bioimpedance sensor developed by SpineGuard.\n\nA real-time detection algorithm was designed to analyze the electrical bioimpedance signal during drilling and identify abrupt changes in conductivity associated with potential breaches towards the spinal canal. The method operates without external devices or sensors.\n\nResults: The ex vivo experiments showed that the proposed method prevented breaches in 100 of the 51 drilling cases. These findings demonstrate the system's ability to detect potentially hazardous events during drilling and to stop the procedure before. The ex vivo experiments demonstrated that the proposed method prevented breaches in all 51 drilling cases.\n\nConclusions: This work demonstrates the feasibility of robotic pedicle drilling with electrical bioimpedance sensing for real-time breach prevention. Using only the tool signal, the method eliminates the need for external sensing systems and supports safer pedicle screw placement."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes robotic pedicle drilling with real-time detection of potential breaches using an electrical bioimpedance sensor built into the drilling tool. An algorithm identifies abrupt conductivity changes associated with possible breaches and stops the procedure. The authors state that the method uses only the tool signal and needs no external devices or sensors. In ex vivo experiments, they report preventing breaches in all 51 drilling cases and describe the approach as feasible. The abstract also contains a conflicting “100 of 51” statement; the repeated result says all 51.",
+          "zh": "本文提出一种机器人椎弓根钻孔方法，通过工具内置的电生物阻抗传感器实时检测潜在骨壁穿破，并在检测到与穿破相关的电导率突变时停止操作。作者称该方法只分析钻具信号，无需外部设备或传感器。离体实验部分报告在51例钻孔中均预防了穿破，并据此展示该方法进行实时穿破预防的可行性。摘要另有“51例中预防100例”的矛盾表述；此处采用其随后重复的“全部51例”描述，结论仍限于离体实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
