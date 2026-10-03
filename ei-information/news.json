@@ -23,7 +23,11 @@
             "heading": "",
             "text": "Manipulating dynamic objects remains an open challenge for Vision-Language-Action (VLA) models. Although recent VLAs generalize well in static manipulation, dynamic scenes introduce a latency-induced perception-execution mismatch: object states continue to evolve during inference, making actions predicted from past observations stale at execution time.\n\nWe present DynamicVLA, a latency-aware VLA model for dynamic object manipulation. It combines a compact 0.4B architecture and convolutional vision encoder for efficient multimodal inference with a continuous inference schedule that overlaps reasoning and execution for non-blocking control.\n\nLatent-aware Action Streaming then discards latency-invalid action prefixes and executes only the temporally valid suffix of each predicted chunk, preserving action-time alignment under dynamic object motion.\n\nTo fill the missing foundation of dynamic manipulation data, we introduce the Dynamic Object Manipulation (DOM) benchmark, built with an automated collection pipeline that gathers 200K synthetic episodes across 2.8K scenes and 206 objects, and enables fast collection of 2K real-world episodes without teleoperation.\n\nExtensive evaluations in simulation and on real robots show that DynamicVLA improves dynamic manipulation success under changing object motion, perception-heavy instructions, and unseen motion patterns."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DynamicVLA, a latency-aware vision-language-action model for manipulating dynamic objects. It combines a compact architecture and convolutional vision encoder with continuous inference and latent-aware action streaming, overlapping reasoning and execution while retaining only temporally valid actions. The authors also introduce the DOM benchmark and its data-collection pipeline. They report that evaluations in simulation and on real robots show improved dynamic manipulation success under changing object motion, perception-heavy instructions, and unseen motion patterns.",
+          "zh": "论文提出 DynamicVLA，一种面向动态物体操作、考虑推理延迟的视觉—语言—动作模型。它采用紧凑架构和卷积视觉编码器，并通过连续推理及潜在感知动作流机制，使推理与执行重叠，并仅执行预测动作块中时间上仍有效的部分。论文还介绍 DOM 基准及其数据收集流程。作者报告，仿真和真实机器人评估显示，该模型在物体运动变化、感知密集型指令和未见运动模式下提升了动态操作成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -54,7 +58,11 @@
             "heading": "",
             "text": "Latent world models plan by scoring candidate action sequences with distances in latent space. However, task success is judged by physical quantities, which we call the success-criterion quantities. In all four latent world models we examine, the end-effector position is encoded in the latent state with an error larger than the success criterion allows.\n\nSuch a latent state cannot separate successful candidates from failing ones. We propose an auxiliary loss that uses success-criterion quantities as training targets, whereas existing latent world models take them only as inputs.\n\nDuring training, a linear head on the encoder and predictor outputs regresses the success-criterion quantities, and the regression error is added to the training loss. The head is discarded after training, so the model, its cost, and its inputs at test time are unchanged.\n\nThis loss alone improves the success rate on PushT and cube by 3.5% and 3.4% (absolute), respectively, and both improvements are statistically significant. A success criterion thus specifies what a world model must retain in its latent state, and we show that it can serve directly as a training target."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper observes that latent world models score candidate actions by latent-space distances, while task success depends on physical quantities. In all four models examined, end-effector position error in the latent state exceeds the success criterion's tolerance. The authors propose an auxiliary training loss that regresses criterion-related quantities from encoder and predictor outputs; its linear head is removed at test time. They report statistically significant absolute success-rate gains of 3.5% on PushT and 3.4% on cube.",
+          "zh": "论文指出，潜在世界模型以潜在空间距离评估候选动作，但任务成败取决于物理量；所考察的四种模型中，末端执行器位置的潜在表示误差超过成功判据允许的范围。作者提出将成功判据涉及的量作为训练目标的辅助损失：训练时用线性头回归这些量并加入损失，测试时移除该头。作者报告，该方法在 PushT 和 cube 任务上的成功率分别绝对提高 3.5% 和 3.4%，且具有统计显著性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -85,7 +93,11 @@
             "heading": "",
             "text": "This paper addresses the control of multi-input strict-feedback nonlinear systems subject to a joint capacity constraint, in which the admissible input set is a coupled subset of the individual actuator limits.\n\nUnlike existing constraint-handling methods that enforce actuator bounds channel by channel and may unnecessarily suppress admissible control directions, we develop an Anisotropic Joint-Admissibility-Preserving Input Realization (AJ-APIR) framework that explicitly exploits the geometry of the joint constraint.\n\nThe proposed realization constructs a state-dependent gain matrix whose spectral decomposition separates the commanded input into normal and tangential directions relative to the constraint boundary.\n\nThe normal component is attenuated as the boundary is approached, while the tangential component is preserved, which allows the admissible control effort to be redistributed without loss of tracking authority. Integrated with a backstepping controller, the AJ-APIR framework guarantees forward invariance of the joint admissible set for all time.\n\nWe establish exponential convergence of the tracking error to zero together with uniform boundedness of all closed-loop signals, and characterize the resulting command-demand behavior under the joint constraint.\n\nSimulation results for a representative second-order, two-input nonlinear system subject to a power-budget constraint demonstrate the efficacy of the proposed method to enforce the joint input constraint."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses control of multi-input strict-feedback nonlinear systems under a coupled capacity constraint. Its AJ-APIR framework uses the joint constraint geometry to construct a state-dependent gain matrix that separates commanded inputs into normal and tangential components. Near the boundary, it attenuates the normal component while preserving the tangential one. Integrated with backstepping, the method guarantees forward invariance of the admissible set; the authors establish exponential tracking-error convergence to zero and uniform boundedness of closed-loop signals. Simulations on a representative second-order, two-input system demonstrate constraint enforcement.",
+          "zh": "论文研究受联合容量约束的多输入严格反馈非线性系统控制。作者提出 AJ-APIR 框架，利用联合约束几何构造依赖状态的增益矩阵，将指令输入分解为相对约束边界的法向和切向分量：接近边界时削弱法向分量，同时保留切向分量。与反步控制器结合后，该方法保证联合可行输入集始终正向不变，并证明跟踪误差指数收敛至零、闭环信号一致有界。针对代表性二阶双输入系统的仿真展示了约束执行效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -116,7 +128,11 @@
             "heading": "",
             "text": "Environmental robotic sampling requires considering the dual influence of water currents on robotic motion and particle transport. Existing marine robotics simulators generally model flow, autonomy, and sampling targets separately, limiting joint evaluation of mission cost and sampling performance.\n\nH-SPAR integrates spatially and temporally varying velocity fields, Lagrangian particle transport, probabilistic sampling, and ROS 2/Gazebo-based uncrewed surface vehicle (USV) autonomy. In this work, shared precomputed flow fields drive particle advection and current-induced forces during closed-loop vehicle execution.\n\nPath-planning experiments show that the existing current-aware planner SVF-RRT* achieves 69.4% lower upstream cost than conventional RRT* at the planning level, but this reduction falls to 41.7% during execution under time-varying currents, reflecting temporal flow variation, vehicle motion constraints, and path deviation omitted during planning.\n\nCoverage experiments show that sweep orientation changes the particle-sampling rate by up to 22.2% under the complete H-SPAR configuration. These findings highlight the importance of evaluating planning, vehicle execution, particle transport, and sampling together under consistent hydrodynamic conditions.\n\nThe project webpage is available at https://sites.google.com/view/h-spar, and the open-source code is available on GitHub at https://github.com/naviiidz/h-spar-sim."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents H-SPAR, a simulation framework combining time-varying flow fields, Lagrangian particle transport, probabilistic sampling, and ROS 2/Gazebo-based uncrewed surface vehicle autonomy. Shared precomputed flow fields drive particle advection and current-induced forces during closed-loop execution. In planning experiments, SVF-RRT* had 69.4% lower upstream cost than RRT* at the planning stage, but the reduction was 41.7% during execution under changing currents. Coverage experiments found that sweep orientation changed the particle-sampling rate by up to 22.2% in the complete configuration.",
+          "zh": "论文介绍 H-SPAR，一种将时空变化水流、拉格朗日粒子输运、概率采样和基于 ROS 2/Gazebo 的无人水面艇自主系统结合的仿真框架；共享的预计算流场用于粒子输运和闭环运行中的水流作用力。路径规划实验中，SVF-RRT* 在规划阶段的上游代价比 RRT* 低 69.4%，但在时变水流下执行时降幅为 41.7%。覆盖实验显示，在完整配置下，扫掠方向可使粒子采样率变化最高达 22.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3115,7 +3131,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models unify visual perception, language understanding, and action generation, offering new opportunities for automation in additive manufacturing (AM).However, deployment in AM remains challenging because adapting these models to unseen robot embodiments is costly, and performance can degrade under environment changes.\n\nIn this work, we present a framework for deploying OpenVLA-OFT on a FAIRINO FR3 robot in a fixed AM workcell. A data pipeline converts monocular real-world demonstrations into OpenVLA-compatible TFDS/RLDS datasets to support adaptation to the FR3 embodiment. At runtime, each inference request predicts an eight-step chunk of 7-D actions.\n\nThe FR3 executes each chunk open loop before capturing a new observation, providing closed-loop feedback between chunks. The system uses a cloud-edge architecture in which the FR3 client streams observations to a remote inference server through a FastAPI interface.\n\nIn 42 physical A-to-B object-transfer trials, evenly split between red and blue targets, the system succeeded in 39 (92.9%).All three failures occurred during final placement, when insufficient release-height control caused the object to topple.\n\nAn illumination sweep identified a low-error luminance range of 85-125 on a 0-255 scale, with the lowest mean spatial error at 95."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a framework for deploying OpenVLA-OFT on an FR3 robot in a fixed additive-manufacturing workcell. Real monocular demonstrations are converted into datasets for adapting the model to the robot embodiment. Each inference predicts an eight-step chunk of 7-D actions; the robot executes it open loop before taking a new observation, providing feedback between chunks, while observations are sent to a remote server. In 42 physical transfer trials, 39 succeeded. All three failures occurred at final placement due to insufficient release-height control. An illumination sweep reports a low-error luminance range of 85–125, with the lowest mean spatial error at 95.",
+          "zh": "本文提出将 OpenVLA-OFT 部署于固定增材制造工作单元 FR3 机器人的框架，并以真实单目演示构建适配该本体的数据集。每次推理预测包含八步的 7 维动作块，机器人开环执行后再采集观测，以块间反馈形成闭环；观测通过云边架构传至远程推理服务器。42 次实体物体转移试验中成功 39 次，三次失败均发生在最终放置阶段，原因是释放高度控制不足。光照扫描报告低误差亮度范围为 85 至 125，最低平均空间误差出现在 95。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3146,7 +3166,11 @@
             "heading": "",
             "text": "We focus on language-conditioned flow-based manipulation, where robot flows (robot velocity fields) serve as embodiment-agnostic, motion-centric representations for leveraging data collected from multiple robot platforms.\n\nThis task is crucial because language-conditioned manipulation is essential for practical robotic systems, yet scaling robot foundation models remains limited by the labor-intensive collection of embodiment-specific data.\n\nExisting methods either coarsely approximate robot flows with sparse keypoint displacements, or cannot handle language-conditioned manipulation. To address this limitation, we propose NarrativeFlow, which models robot flows as continuous velocity fields using a flow-matching formulation conditioned on language.\n\nAccordingly, NarrativeFlow generates robot flows that are physically consistent with real-world manipulation. To validate NarrativeFlow, we have conducted experiments on standard datasets for language-conditioned manipulation. The experimental results show that NarrativeFlow outperforms representative baseline methods on standard evaluation metrics.\n\nFurthermore, through real-world experiments, we show that NarrativeFlow achieves higher success rates than baseline methods across multiple manipulation tasks. The project page is available at https://shota0520.github.io/NarrativeFlow-project-page/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "NarrativeFlow addresses language-conditioned manipulation by representing robot flows as continuous velocity fields and modeling them with language-conditioned flow matching. The authors aim to use data collected from multiple robot platforms, noting that prior approaches either approximate flows with sparse keypoint displacements or cannot handle language-conditioned manipulation. On standard datasets, NarrativeFlow outperforms representative baselines on standard evaluation metrics. Real-world experiments report higher success rates than baseline methods across multiple manipulation tasks; the abstract provides no task names, metric values, or experiment scale.",
+          "zh": "NarrativeFlow 面向语言条件下的流式机器人操作，将机器人流表示为连续速度场，并通过流匹配公式结合语言进行建模，旨在利用来自多个机器人平台的数据。作者指出，现有方法要么用稀疏关键点位移粗略近似机器人流，要么无法处理语言条件操作。标准数据集实验中，该方法在标准评估指标上优于代表性基线；真实机器人实验则显示，它在多项操作任务中的成功率高于基线。摘要未给出具体任务、指标数值或实验规模。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3177,7 +3201,11 @@
             "heading": "",
             "text": "Reinforcement learning (RL) for dexterous manipulation must discover finger-object contacts and then control the object precisely; the action noise that serves the first goal can interfere with the second.\n\nIn trajectory-guided settings such as ViViDex, where RL refine hand-object trajectories from human video, our baseline PPO runs end near their initial action noise after 5M steps, motivating explicit control of exploration scale.\n\nDexPolicy makes that scale an explicit function of training steps, annealing from broad to narrow exploration while holding loss, architecture, reward, and optimizer settings fixed. We study three policy-optimization settings: PPO, critic-free GRPO continuation, and a flow-parameterized PPO variant (FPO).\n\nAcross five YCB objects and three training seeds, mean deterministic Target success rises from 49.4% to 68.1% (FPO), 14.1% to 45.4% (GRPO), and 32.0% to 35.7% (PPO).\n\nOn a RealMan RM75 arm with an Inspire/RH56 hand, 360 trials over three objects raise mean Target success from 25.0% to 85.0% (FPO), 10.0% to 63.3% (GRPO), and 8.3% to 43.3% (PPO), with one trained model per object-method condition.\n\nPPO component screening favors noise control over the tested optimizer contraction; the selected PPO schedule yields higher mean Target success than linear decay with the same endpoints on three tested objects.\n\nTraining return, deterministic Target success, and tolerance to execution noise dissociate; schedules should therefore be judged by terminal task success under the intended execution conditions, per task and policy-optimization setting. Code: https://github.com/AIGeeksGroup/DexPolicy. Website: https://aigeeksgroup.github.io/DexPolicy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work proposes DexPolicy, which anneals exploration from broad to narrow as a function of training steps for trajectory-guided dexterous manipulation. It compares PPO, critic-free GRPO continuation, and flow-parameterized PPO (FPO). Evaluations cover five YCB objects and three training seeds, while physical-arm experiments cover three objects and 360 trials; the abstract reports changes in mean deterministic Target success for each method. PPO component screening favors noise control, and the selected schedule exceeds linear decay with the same endpoints on three tested objects. The authors report that training return, deterministic success, and tolerance to execution noise can diverge.",
+          "zh": "本文研究轨迹引导灵巧操作中的探索尺度调度，提出 DexPolicy，按训练步数将探索从宽到窄退火，并比较 PPO、GRPO 延续训练和流参数化 PPO（FPO）。在五种 YCB 物体、三个训练种子的评估中，三种方法的平均确定性 Target 成功率均有不同幅度变化；实体机械臂实验涵盖三种物体、共 360 次试验，亦报告各方法成功率变化。作者还报告，PPO 组件筛选更支持噪声控制，且所选调度在三个测试物体上优于端点相同的线性衰减。研究指出，训练回报、确定性成功率与执行噪声容忍度并不一致。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3208,7 +3236,11 @@
             "heading": "",
             "text": "Recent advances in motion generation and whole-body tracking have enabled humanoid robots to execute increasingly diverse motions, yet the same motion capabilities may be requested repeatedly during continual deployment.\n\nReliable reuse is challenging because intervening motions can change the robot's entry state, making previously successful motions unsafe to replay blindly. Meanwhile, validated capabilities accumulate during deployment, while bounded storage requires deciding which ones are worth retaining.\n\nTo address these challenges, we present HumanoidTTT, a framework for test-time capability reuse in continual humanoid control. Specifically, we introduce Selective Full-Motion Reuse, which authorizes direct reuse of validated complete motions only from certified applicable entry states, allowing accepted reuse to bypass fresh generation.\n\nWe further introduce Test-Time Capability Consolidation, which adapts which qualified capabilities persist in a bounded Full-Motion Store using subsequent deployment reuse as feedback.\n\nExperiments demonstrate zero unsafe accepts and a 16.4$\\times$ end-to-end speedup over fresh generation, while online consolidation improves avoided generator calls by 13.2 per 200 requests over its frozen counterpart.\n\nOverall, HumanoidTTT enables reliable and efficient reuse of validated motion capabilities while adaptively retaining useful capabilities throughout continual deployment. Code: https://github.com/AIGeeksGroup/HumanoidTTT. Website: https://aigeeksgroup.github.io/HumanoidTTT."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HumanoidTTT is a test-time capability reuse framework for continual humanoid control. Its Selective Full-Motion Reuse method permits direct reuse of validated complete motions only from certified applicable entry states. Test-Time Capability Consolidation adjusts which qualified capabilities remain in a bounded store, using subsequent deployment reuse as feedback. Experiments report zero unsafe accepts and a 16.4× end-to-end speedup over fresh generation. Online consolidation avoids 13.2 more generator calls per 200 requests than its frozen counterpart. The authors describe the framework as enabling reliable reuse while adapting which capabilities are retained.",
+          "zh": "HumanoidTTT 是用于持续人形机器人控制的测试时能力复用框架。它提出选择性全动作复用，仅允许在经认证适用的进入状态下直接复用已验证动作；能力整合机制则依据后续部署中的复用反馈，在有界存储中调整保留的能力。实验报告零次不安全接受，相较重新生成实现 16.4 倍端到端加速；在线整合相较冻结版本，每 200 次请求多避免 13.2 次生成器调用。作者认为，该框架可在持续部署中复用已验证动作并自适应保留有用能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
