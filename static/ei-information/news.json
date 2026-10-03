@@ -1967,7 +1967,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models struggle on history-dependent manipulation tasks, where the current observation alone does not determine the action, and the policy needs a memory of the history. Existing memory methods decide what to remember by design, for example, keeping frames with large pixel changes, and show inconsistent gains across tasks.\n\nWe view what to remember as an optimisation problem. From the POMDP formulation of imitation learning, we show that the optimal memory maximises the conditional mutual information $I(a_t; m_t \\mid o_t)$ between the action and the memory given the current observation.\n\nIntuitively, this means preserving the action-relevant information in the history that is not already contained in the current observation. Based on our analysis, we propose Divide-and-Remember (D&R), a recursive memory method that learns a memory function $m_t = M(h_t)$ and scales to long contexts while staying compute-light.\n\nIt involves two strategies: （1） the selection over the full history is divided recursively into subproblems of top-$K$ selection over $2K$ tokens, so that fixed-size, lightweight selectors learned end-to-end support an unbounded history; （2） all recursion blocks share one selector, which captures the selection rule common to every block and keeps the method efficient.\n\nOn RoboMME, a benchmark of 16 long-horizon manipulation tasks that require remembering when, where, what, and how to act, D&R achieves a state-of-the-art average success rate with consistent gains across all four suites under a budget of only 64 tokens; real-robot experiments show the same gain.\n\nCode, checkpoints and more results are at https://dnr-memory.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper treats memory selection for history-dependent VLA manipulation as an optimization problem, arguing that optimal memory maximizes conditional mutual information between action and memory given the current observation. It proposes Divide-and-Remember, which recursively decomposes history selection and shares a lightweight selector across blocks to handle long contexts. On 16 RoboMME tasks, the authors report state-of-the-art average success and consistent gains across four suites under a 64-token budget; real-robot experiments show the same gain.",
+          "zh": "论文针对视觉-语言-动作模型在依赖历史的操作任务中记忆不足的问题，将记忆选择表述为优化，并指出最优记忆应最大化给定当前观测时动作与记忆间的条件互信息。据此提出递归方法 Divide-and-Remember：递归拆分全历史选择，并让各模块共享轻量选择器，以支持长上下文。在 RoboMME 的 16 项任务上，作者报告其在 64 个记忆 token 预算下四个任务组均有稳定提升且平均成功率达到最优；真实机器人实验也显示相同趋势。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1998,7 +2002,11 @@
             "heading": "",
             "text": "This paper studies decentralized safe path following for multiple quadrotors on intersecting paths, where safety requires both collision avoidance and strict adherence to pre-assigned routes.\n\nThe proposed controller reformulates transverse feedback linearization as a constrained quadratic program with four equality constraints: two enforce convergence to and strict adherence to the path, and two prescribe the desired speed and heading.\n\nSafety is achieved by relaxing only the along-path speed constraint, while the path and heading constraints remain hard. Under the stated assumptions, and for admissible initial conditions, the controller guarantees that all agents converge to and thereafter follow their assigned paths, avoid collisions, and avoid attitude singularities.\n\nWe evaluate the controller in the Drake physics engine on non-planar intersecting paths and compare it against two nominal-plus-safety-filter cascades. Code and additional results are available at https://gradslab.github.io/safe_multiquad_pf/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies decentralized safe path following for multiple quadrotors on intersecting routes, requiring collision avoidance and strict route adherence. Its controller formulates transverse feedback linearization as a constrained quadratic program. Safety is obtained by relaxing only the along-path speed constraint while retaining hard path and heading constraints. Under the stated assumptions and admissible initial conditions, the authors provide guarantees of convergence, continued path following, collision avoidance, and avoidance of attitude singularities. Evaluation uses non-planar intersecting paths in the Drake physics engine and compares two cascaded baselines.",
+          "zh": "论文研究多架四旋翼在相交路径上的分散式安全路径跟随，要求同时避免碰撞并严格遵循预设路线。控制器将横向反馈线性化改写为带四个等式约束的二次规划，仅放宽沿路径速度约束以实现安全，其余路径与航向约束保持硬约束。作者在所述假设及可容许初始条件下给出收敛、持续跟随、避碰和避免姿态奇异的理论保证，并在 Drake 物理引擎的非平面相交路径上评估，与两种基线级联方法比较。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2029,7 +2037,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) policies provide strong behavioral priors for dexterous manipulation, yet adapting them on real robots remains challenging because high-DoF contact failures are difficult for humans to correct and online interaction is expensive.\n\nWe present BORA, an offline-to-online reinforcement learning system that integrates an action-conditioned critic into a consistency-policy VLA and reuses the learned critic for frozen-base residual adaptation.\n\nTo obtain executable corrective data, BORA combines wearable arm--hand teleoperation with a demonstration-guided local policy that translates coarse human intent into coordinated, embodiment-specific finger motions for contact-rich skills.\n\nOnline robot rollouts and human corrections are mixed with offline data to update only a lightweight residual actor, avoiding full-model fine-tuning. We evaluate BORA on six real-world tasks using single-arm and bimanual platforms equipped with two dexterous-hand models.\n\nWith only 20 online trajectories per task, BORA improves average success from 60.8% to 82.5% on standard objects and from 52% to 70% on held-out objects, while policy assistance substantially improves intervention reliability in bimanual twisting.\n\nThese results demonstrate a practical route from executable human correction to efficient real-robot VLA adaptation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "BORA is an offline-to-online reinforcement learning system for adapting dexterous manipulation VLA policies. It adds an action-conditioned critic to a consistency-policy VLA and reuses that critic for residual adaptation with the base model frozen. Wearable teleoperation and a demonstration-guided local policy produce executable corrections; online rollouts, human corrections, and offline data update only a lightweight residual actor. Across six real-world tasks on single-arm and bimanual platforms, the authors report that 20 online trajectories per task raise average success from 60.8% to 82.5% on standard objects and from 52% to 70% on held-out objects.",
+          "zh": "论文提出 BORA，将离线到在线强化学习用于灵巧操作 VLA 模型适配：在一致性策略中加入动作条件 critic，并将其用于冻结基础模型上的残差适配。系统结合可穿戴遥操作与示范引导的局部策略生成可执行纠正数据，再混合在线轨迹、人工纠正和离线数据，仅更新轻量残差 actor。作者在配备两种灵巧手的单臂及双臂平台上评估六项真实任务；每项任务仅用 20 条在线轨迹，标准物体成功率由 60.8% 升至 82.5%，留出物体由 52% 升至 70%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2060,7 +2072,11 @@
             "heading": "",
             "text": "Legible planning is the creation of plans that best disambiguate their goals from a set of other candidates from an observer's perspective. In this paper we propose a method for legible planning for arbitrary PDDL domains, by extending previous research on legibility to classical planning without requiring to construct ad-hoc planners.\n\nWe also discuss how the observer perspective may be estimated through a second order theory of mind that connects the planner's and the observer's task spaces. Our solution can for example be deployed in human-robot teaming scenarios, where an autonomous robot in a team can implicitly communicate its goal by producing legible plans.\n\nWe present benchmark results on several PDDL planning domains. Our results generally show that plan legibility is a trade-off with plan efficiency, however, not all planning domains allows to increase legibility in the same way and a regularizing factor to balance legibility and efficiency was proved necessary."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a legible planning method for arbitrary PDDL domains, extending prior work to classical planning without requiring custom planners. Legibility means producing plans that help an observer distinguish the intended goal from alternatives. It also discusses estimating the observer’s perspective through a second-order theory of mind connecting planner and observer task spaces, with human-robot teaming as a possible application. Benchmark results across several PDDL domains generally show a trade-off between legibility and efficiency. The authors report that domains differ in how legibility can be increased and that a regularizing factor is needed to balance the objectives.",
+          "zh": "论文提出一种适用于任意 PDDL 领域的可读性规划方法，将既有可读性研究扩展到经典规划，无需构建专用规划器。可读性旨在从观察者角度生成能更清晰区分候选目标的计划；论文还讨论通过连接规划者与观察者任务空间的二阶心智理论估计观察者视角，并以人机协作为潜在应用场景。多个 PDDL 领域的基准结果总体显示，计划可读性与效率存在权衡；不同领域提升可读性的方式并不相同，且需要正则化因子平衡两者。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
