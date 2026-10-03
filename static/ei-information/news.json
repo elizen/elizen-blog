@@ -4347,7 +4347,11 @@
             "heading": "",
             "text": "Robotic object packing has been a core challenge for robotic deployment in logistics, industry, etc., due to the curse of dimensionality in combinatorial search and the difficulty of dealing with dynamic collision constraints for irregularly shaped objects.\n\nCurrent heuristic and learning-based methods mainly assume a limited spatial discretization resolution of space, and computation becomes extremely inefficient as discretization accuracy increases.\n\nIn this work, we eliminate this assumption by introducing SOPO-CD, which frames sequential object placement as a differentiable nonlinear optimization problem with hard constraints in a decomposed free space. We formulate the constraints of placing a convex object inside a convex hull as constraining the vertices of the object to lie inside the convex hull.\n\nThe constraints and their derivatives can be written in closed form and calculated efficiently. We implement a custom solver that achieves local-optimal placements within tightly constrained space in milliseconds; a $50 \\times$ speedup compared to a fine-grained grid search method.\n\nWe evaluate our framework on 2D Tangram, 2D Tetris, and 3D Bin Packing, and have demonstrated strong computational performance and packing utility. We also demonstrate its real-world applicability for solving the Tangram puzzle using a robot equipped with a dexterous hand."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SOPO-CD, which formulates sequential object placement as differentiable nonlinear optimization in decomposed free space. It expresses containment of a convex object in a convex hull by constraining the object's vertices, with constraints and derivatives computed in closed form. A custom solver finds locally optimal placements in milliseconds and is reported to be 50 times faster than fine-grained grid search. Evaluations cover 2D Tangram, 2D Tetris, 3D bin packing, and a robot-hand Tangram demonstration.",
+          "zh": "本文提出 SOPO-CD，将顺序物体放置建模为分解自由空间中的可微非线性优化问题，并以物体顶点位于凸包内表达凸物体放入凸空间的约束。约束及其导数可闭式计算；自定义求解器在受限空间中以毫秒级求得局部最优放置，相较细粒度网格搜索快 50 倍。作者在二维七巧板、二维俄罗斯方块和三维箱体装箱任务中评估，并展示机器人灵巧手求解七巧板的真实应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4378,7 +4382,11 @@
             "heading": "",
             "text": "Human hand-object demonstrations offer a reusable source of dexterous robot manipulation data, but transferring them across embodiments requires physically feasible retargeting. Existing physics-based approaches face limitations in retargeting success, motion-specific training efficiency, or both.\n\nTo address these limitations, we introduce FlashDexRetarget, an RL-based framework for high-success, efficient dexterous motion retargeting.\n\nTo make the demonstrated interaction easier to learn, we combine object point-cloud observations, hand-object distance features, and future trajectory encodings with complementary rewards that supervise object motion and reference hand-object relationships.\n\nTo further accelerate learning, we employ separate left- and right-hand actor critic networks and adapt the off-policy algorithm, FlashSAC to dexterous motion tracking.\n\nOn a benchmark of 50 motions spanning single-object and two-object interactions, FlashDexRetarget achieves a 90% success rate, approximately 2.5x that of the evaluated sampling-based baselines, while requiring up to 100x less training compute than the evaluated RL-based baselines.\n\nEvaluations on both XHand and Sharpa Wave Hand show consistent gains, and component-wise ablations examine the contributions of our design choices.\n\nBeyond the 50-motion benchmark, experiments with 200, 500, and 1,000 motions demonstrate that our method remains stable at larger scales and produces successful retargeted motions more efficiently as the training set grows.\n\nQualitative replay results using real-world-captured demonstrations further illustrate the applicability of our framework to recorded human manipulation. Videos and code are available at https://davian-robotics.github.io/FlashDexRetarget/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FlashDexRetarget, an RL framework for transferring human hand-object demonstrations to dexterous robot hands. It combines object point clouds, hand-object distances, future trajectory encodings, and complementary rewards, with separate left- and right-hand actor-critic networks and an adapted FlashSAC algorithm. On a 50-motion benchmark, the authors report 90% success, about 2.5 times the evaluated sampling-based baselines, and up to 100 times less training compute than evaluated RL baselines. Evaluations include two hand platforms, larger motion sets, ablations, and qualitative replay of recorded demonstrations.",
+          "zh": "本文提出基于强化学习的 FlashDexRetarget，用于将人手物体操作示范重定向到灵巧机器人手。方法结合物体点云、手物距离特征、未来轨迹编码及互补奖励，并采用左右手分离的 actor-critic 网络和适配后的 FlashSAC。在涵盖单物体与双物体交互的 50 个动作基准上，作者报告成功率为 90%，约为所评估采样基线的 2.5 倍，训练计算量最多比所评估强化学习基线少 100 倍。XHand、Sharpa Wave Hand 评估、消融及更大动作集实验显示其表现；真实采集示范的定性回放展示适用性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4409,7 +4417,11 @@
             "heading": "",
             "text": "Guiding a tractor along a predefined reference path is a key component of precision agriculture. This study develops a path tracking controller based on Nonlinear Model Predictive Control, which incorporates multiple segments of a piecewise-linear reference path directly into the objective function.\n\nIn addition, methods for selecting viable reference segments from the full path are presented. The control system is evaluated during a field test with a tractor controlled via the Tractor Implement Management steering interface.\n\nThe NMPC solver converged on average after 3.45 ms and tracked the curved reference path with a mean absolute cross-track error of 6.1 cm."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study develops a nonlinear model predictive control path tracker for an agricultural tractor. It incorporates multiple segments of a piecewise-linear reference path directly into the objective function and presents methods for selecting viable segments from the full path. The system was evaluated in a field test using the tractor's Tractor Implement Management steering interface. The authors report average solver convergence after 3.45 ms and a mean absolute cross-track error of 6.1 cm while tracking a curved reference path.",
+          "zh": "本文为农业拖拉机开发基于非线性模型预测控制的路径跟踪器，将分段线性参考路径的多个路段直接纳入目标函数，并提出从完整路径中选择可行参考路段的方法。系统通过拖拉机的 Tractor Implement Management 转向接口进行田间测试。作者报告，NMPC 求解器平均在 3.45 毫秒后收敛，并跟踪曲线路径时获得 6.1 厘米的平均绝对横向误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4440,7 +4452,11 @@
             "heading": "",
             "text": "Robotic manipulation of labware is difficult when transparent or reflective objects must be identified and localized. Coded planar fiducials are a practical retrofit: easy to print, they leave the marked face flat and graspable. Yet a single planar tag is least reliable in near-frontal views, where perspective cues fade.\n\nNon-planar geometries restore those cues but intrude on the flat face that a parallel-jaw gripper must contact. Our idea is to tilt multiple tags within one compact footprint, so that each tag is seen at a non-frontal angle even when the marker faces the camera.\n\nWe propose the quARtet marker, a 3D-printable fiducial embodying this idea: all detected corners of its four tilted AprilTags enter one Perspective-n-Point solve, and a shared configuration defines the fabricated geometry and the detector model. Because tilting consumes flat area, its three layouts trade pose-estimation consistency against graspability.\n\nIn robot-referenced, same-setup fixed-camera experiments, all three layouts reduced the mean frontal orientation error from 2.18 degree for a single planar tag to 0.24-0.47 degree and the root-mean-square position error from 1.50 to 0.17-0.20 mm. A robot-mounted-camera pose-hold test confirmed this separation under closed-loop visual feedback.\n\nIn swing-down trials under identical conditions, the two layouts with flat contact strips retained the object with about 2 mm of in-grasp slip, whereas the layout without flat strips slipped by roughly 100 mm.\n\nFor the tested conditions, the results support a rule: the layout without flat strips when pose-estimation consistency dominates, a layout with flat strips when the marked face must remain graspable."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes quARtet, a 3D-printable fiducial with four tilted AprilTags whose detected corners feed a single Perspective-n-Point solve. Three layouts trade pose consistency against graspability. In robot-referenced fixed-camera experiments under the same setup, they reduced mean frontal orientation error and root-mean-square position error compared with a single planar tag. A robot-mounted-camera pose-hold test examined closed-loop feedback. In swing-down trials under identical conditions, layouts with flat contact strips had about 2 mm of in-grasp slip, while the layout without strips slipped by roughly 100 mm; the reported design guidance applies to tested conditions.",
+          "zh": "本文提出可 3D 打印的 quARtet 多标签标记，将四个倾斜 AprilTag 的检测角点共同用于一次 PnP 位姿求解，并以共享配置定义实体几何和检测器模型。三种布局在位姿一致性与可抓取性之间权衡。在同一设置的机器人参考固定相机实验中，三种布局的正面朝向平均误差为 0.24–0.47 度，位置均方根误差为 0.17–0.20 毫米，均优于单平面标签。机器人安装相机的位姿保持测试验证了闭环反馈下的表现；摆落测试中，带平接触条布局约滑移 2 毫米，无平条布局约滑移 100 毫米。结论限于所测条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
