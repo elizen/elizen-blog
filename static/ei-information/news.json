@@ -4487,7 +4487,11 @@
             "heading": "",
             "text": "This paper explores a reward-based policy to achieve zero-shot transfer between source and target environments with completely different observation spaces.\n\nWhile humans can demonstrate impressive adaptation capabilities, deep neural network policies often struggle to adapt to a new environment and require a considerable amount of samples for successful transfer.\n\nInstead, we propose a novel reward-based policy only conditioned on rewards and actions, enabling zero-shot adaptation to new environments with completely different observations. We discuss the challenges and feasibility of a reward-based policy and then propose a practical algorithm for training.\n\nWe demonstrate that a reward policy can be trained within three different environments, Pointmass, Cartpole, and 2D Car Racing, and transferred to completely different observations, such as different color palettes or 3D rendering, or Stretch robot navigation in Habitat-Sim, in a zero-shot manner.\n\nWe also demonstrate that a reward-based policy can further guide the training of an observation-based policy in the target environment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper explores a policy conditioned only on rewards and actions for zero-shot transfer between environments with completely different observation spaces. The authors discuss its challenges and feasibility and propose a practical training algorithm. They demonstrate training in Pointmass, Cartpole, and 2D Car Racing, followed by transfer to different color palettes, 3D rendering, and Stretch robot navigation in Habitat-Sim. They also show that the reward-based policy can guide training of an observation-based policy in the target environment.",
+          "zh": "论文探讨一种仅以奖励和动作作为条件的奖励策略，旨在源环境与观测空间完全不同的目标环境之间实现零样本迁移。作者讨论其挑战与可行性，并提出训练算法。在 Pointmass、Cartpole 和 2D Car Racing 环境中训练后，该策略被展示可迁移到不同颜色、三维渲染及 Habitat-Sim 中的 Stretch 机器人导航。作者还展示了它可用于指导目标环境中的观测策略训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4518,7 +4522,11 @@
             "heading": "",
             "text": "General-purpose manipulation requires both semantic reasoning over task constraints and reliable execution of contact-rich actions. We present ACE, an agentic manipulation harness that composes a high-level language agent with a reusable mask-conditioned visuomotor policy.\n\nGiven an open-ended instruction, the agent solves semantic constraints, binds objects to destination roles, and decomposes the task into executable transfers represented by tracked pick-and-place masks.\n\nExecution feedback supports outcome assessment, re-grounding, and retry, while persistent object and task context preserves earlier associations when manipulation changes visible cues. We evaluate ACE on two physical multi-step tabletop tasks, Semantic Formula Assembly and Constraint Retrieval.\n\nThe visuomotor policy is trained only on generic pick-and-place demonstrations and reused without complete demonstrations of either evaluation task, enabling task-level zero-shot composition. Across 20 randomized trials per task, ACE achieves 70% and 80% success, respectively, compared with 55% and 70% without persistent context.\n\nThese results suggest that an agentic harness can extend a primitive-trained manipulation policy to semantically distinct tasks through explicit object-destination interfaces and closed-loop execution feedback."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ACE, a manipulation harness combining a high-level language agent with a reusable mask-conditioned visuomotor policy. Given an open-ended instruction, the agent resolves semantic constraints, assigns objects to destination roles, and decomposes the task into transfers represented by tracked pick-and-place masks. Execution feedback supports assessment, re-grounding, and retry; persistent context retains earlier associations. Evaluated on two physical multi-step tabletop tasks, with a policy trained only on generic pick-and-place demonstrations, ACE achieves 70% and 80% success over 20 randomized trials per task, versus 55% and 70% without persistent context.",
+          "zh": "论文提出 ACE，一种将高层语言智能体与可复用的掩码条件视觉运动策略组合的操作框架。智能体解析开放指令中的语义约束，将物体关联到目标角色，并分解为由跟踪抓放掩码表示的转移步骤；执行反馈用于评估结果、重新定位和重试，持久上下文则保留先前关联。策略仅以通用抓放演示训练，并用于两个实体多步桌面任务，未使用完整任务演示。每项任务进行20次随机试验，成功率分别为70%和80%；无持久上下文时为55%和70%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4549,7 +4557,11 @@
             "heading": "",
             "text": "Building reliable robot capabilities across diverse tasks requires substantial human effort to develop and maintain skills, design rewards, and integrate perception with control. We present Reconstruct, Practice, Go Real (RPG), a framework for autonomous improvement of robot execution systems without updating model weights.\n\nRPG identifies manipulation capabilities in an offline dataset and constructs related practice tasks in simulation. During practice, RPG uses execution feedback, privileged simulator state, and available dataset videos to diagnose failures.\n\nIt develops new reusable symbolic skills, refines existing skills, and revises the system prompt based on these diagnoses. Cross-task evaluation tests individual candidate changes and merged revisions before they are retained for reuse.\n\nAt test time, a multimodal LLM uses the resulting system prompt and skill library to coordinate perception and robot control.\n\nOn held-out initializations of 22 manipulation tasks, RPG improves task success from 28.6% after the first practice round to 95.0% after 15 rounds, outperforming all evaluated baselines, including ASPIRE (75.5%) and CaP-Agent0 powered by GPT-6 Astra Pro (60.0%).\n\nAfter a common calibration and hardware-adaptation procedure, the frozen system succeeds in all 30 physical trials, with ten trials on each of three tasks. Project Website: https://rpg-robot.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RPG, a framework for improving robot execution systems without updating model weights. It identifies manipulation capabilities in offline data, builds related simulation practice tasks, and diagnoses failures using execution feedback, privileged simulator state, and available videos. RPG creates or refines reusable symbolic skills and revises the system prompt, evaluating candidate and merged changes across tasks before reuse. On held-out initializations of 22 tasks, success rises from 28.6% after the first practice round to 95.0% after 15 rounds, exceeding evaluated baselines. The frozen system succeeds in all 30 physical trials across three tasks after calibration and hardware adaptation.",
+          "zh": "论文提出 RPG 框架，使机器人执行系统无需更新模型权重即可自主改进。RPG 从离线数据集识别操作能力，在仿真中构造练习任务，并结合执行反馈、特权模拟器状态和可用视频诊断失败，据此创建或改进符号技能并修订系统提示词；候选修改及合并版本经跨任务评估后保留。22项留出初始化任务的成功率从首轮练习的28.6%升至15轮后的95.0%，高于所评估基线。经过共同校准和硬件适配后，冻结系统在三项实体任务各10次试验中均成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4580,7 +4592,11 @@
             "heading": "",
             "text": "Robots operating in the physical world will increasingly need to coordinate with other robots, particularly in manipulation tasks where an object may be too large or heavy for a single robot to carry alone.\n\nPhysical limitations caused by hardware degradation or actuator faults can restrict the actions a robot can reliably execute, yet these limitations may be unknown to its partner.\n\nWe study whether a helper can infer a robot partner's physical constraints from observing it coordinate with another robot, then use the inferred capability to coordinate with the same partner on a new task. This is difficult because a demonstration shows what the constrained robot did, but not what it could have done.\n\nIn physically coupled tasks, the other robot may also compensate for its limitations, making those limitations difficult to identify from the constrained robot's behavior alone. Our key insight is that these constraints shape the joint behavior of the team, making the actions of both robots informative about the constrained partner's capability.\n\nWe introduce Watch, Infer, Coordinate, a benchmark spanning three physically coupled manipulation settings, together with an inference approach that scores candidate constraints using observed joint behavior.\n\nAcross all three settings, our method substantially improves constraint inference and zero-shot coordination, approaching an oracle with access to the true constraints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether a helper robot can infer a partner’s physical constraints by observing its coordination with another robot, then use that inference in a new task with the same partner. Hardware degradation or actuator faults can limit reliable actions, and compensation by the other robot can obscure those limits. The authors introduce a benchmark covering three physically coupled manipulation settings and an approach that scores candidate constraints from joint behavior. Across all three settings, they report substantially improved constraint inference and zero-shot coordination, approaching an oracle with access to the true constraints.",
+          "zh": "论文研究协作助手能否通过观察机器人与另一机器人协作，推断其物理限制，并将推断用于与同一伙伴完成新任务。硬件退化或执行器故障可能限制可靠动作，而协作行为也可能掩盖这些限制，因为伙伴会进行补偿。作者提出观察联合行为的思路，并介绍涵盖三种物理耦合操作场景的基准及一种为候选限制评分的推断方法。摘要称，该方法在三个场景中均显著改善限制推断和零样本协作，表现接近掌握真实限制的预言机。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
