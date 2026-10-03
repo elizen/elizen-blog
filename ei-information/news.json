@@ -3551,7 +3551,11 @@
             "heading": "",
             "text": "A common approach to world-model simulation for vision-language-action (VLA) systems is to predict future RGB observations and then re-encode them into policy inputs, introducing an indirect interface between simulation and downstream policy execution.\n\nWe instead investigate whether world dynamics can be modeled in a compact, policy-oriented state derived from VLM visual tokens. A key challenge is that raw VLM visual tokens are high-dimensional, making efficient and accurate autoregressive dynamics modeling challenging.\n\nTo address this, we introduce Token-World, an action-conditioned world model that compresses VLM features into a compact token state, learns future dynamics in this reduced space, and maps predicted states back to the original policy-facing representation for downstream use.\n\nAcross manipulation benchmarks, Token-World improves open-loop feature fidelity and policy-action consistency over recent world-model simulators, with slower degradation over long rollout horizons.\n\nIn closed-loop evaluation, its simulated policy performance correlates more strongly with reference policy performance than Ctrl-World ($r=0.794$ vs.\\ $0.583$), while requiring lower simulation latency. Ablations further show that compact-representation design and dimensionality substantially affect future-state prediction.\n\nCode will be available at https://chuyaofu.github.io/Token-World/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Token-World models manipulation dynamics in a compact, policy-oriented state derived from vision-language model visual tokens. It compresses features, predicts future states, and maps them back to the policy-facing representation. On manipulation benchmarks, the authors report better open-loop feature fidelity and policy-action consistency than recent simulators, with slower degradation over long rollouts. In closed-loop evaluation, simulated performance correlates more strongly with reference policy performance than Ctrl-World and has lower simulation latency. Ablations show that representation design and dimensionality affect prediction.",
+          "zh": "Token-World 探索在由视觉语言模型视觉 token 得到的紧凑策略状态中建模机器人操作的世界动态。该方法压缩特征、预测未来状态，并将其映射回策略表示。在操作基准测试中，作者报告其开环特征保真度和策略动作一致性优于近期模拟器，长时序退化较慢。闭环评估中，模拟策略表现与参考策略表现的相关性高于 Ctrl-World，且模拟延迟更低；消融研究显示表示设计和维度会影响预测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3582,7 +3586,11 @@
             "heading": "",
             "text": "In this paper, we study how to achieve one-step action generation in Robotic Foundation Models (RFMs), aiming to overcome the high inference latency of multi-step flow matching. MeanFlow provides a promising framework for this goal, yet its direct application leads to performance collapse.\n\nWe discover that this stems from two distinctive dynamics exhibited in the RFM velocity field: （1） the ``local acceleration\" exhibits stability early on, but surges sharply towards the end of the denoising process, and （2） the spread of its magnitudes across samples widens as denoising progresses.\n\nTo address these issues, we introduce Kinematic MeanFlow (K-MF), a novel one-step action policy tailored for RFMs. Specifically, grounded in a kinematic identity, K-MF decouples the time derivative term in the MeanFlow formulation into two sub-interval terms separated by an intermediate point.\n\nThis decoupled formulation enables the two terms to capture early-stage and late-stage denoising dynamics, respectively, while mitigating the error amplification across the process.\n\nAs a result, our K-MF empowers RFMs to achieve one-step action generation in both training from scratch and fine-tuning paradigms across diverse tasks, while outperforming multi-step flow matching in most settings.\n\nIn terms of inference efficiency, K-MF reduces action-head latency of GR00T-N1.6 by 67.5%~74.4% across L40 and Jetson Orin in eager and compiled modes, yielding end-to-end latency reductions of 30.3%~54.9%.Code will be available at https://github.com/IntelChina-AI/K-MF."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Kinematic MeanFlow (K-MF) targets one-step action generation in robotic foundation models to reduce the inference latency of multi-step flow matching. The authors attribute MeanFlow's performance collapse to local acceleration surging late in denoising and velocity magnitudes spreading across samples. Using a kinematic identity, K-MF splits the time-derivative term into two sub-interval terms separated by an intermediate point, modeling early and late dynamics while mitigating error amplification. The authors report applicability across tasks in both training-from-scratch and fine-tuning settings, outperforming multi-step flow matching in most settings. Reported latency reductions apply to the evaluated hardware and modes.",
+          "zh": "Kinematic MeanFlow（K-MF）旨在让机器人基础模型实现单步动作生成，以降低多步流匹配的推理延迟。作者将 MeanFlow 性能崩溃归因于速度场局部加速度在去噪后期骤升，以及样本间速度幅值分布随去噪扩大。K-MF依据运动学恒等式，将时间导数项拆为由中间点分隔的两个子区间项，以分别刻画早期和后期动态并缓解误差放大。作者报告，该方法在从头训练和微调中适用于多种任务，且多数设置优于多步流匹配；在指定硬件与运行模式下，动作头及端到端延迟均有所降低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3613,7 +3621,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) predict visual futures and robot actions, yet they remain susceptible to task-incomplete imagination, where plausible, action-consistent predictions omit the transition needed for task completion.\n\nIn this paper, we show that this failure is not inherent to the world model backbone, but emerges when adapted for short-chunk control, which can repeatedly favor plausible local continuations over task-completing transitions.\n\nTo address this, we introduce Completion Aware Guidance (CAG), a training-free sampling method that guides generation toward task completion. Across representative WAMs, CAG improves success from 64% to 70% on a RoboTwin 2.0 subset and from 69% to 75% in zero-shot simulation, while reducing task-incomplete imagination from 79% to 40%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "World Action Models predict visual futures and robot actions, but may generate plausible, action-consistent futures that omit transitions needed to complete a task. The authors argue this failure emerges when models are adapted for short-chunk control, where plausible local continuations can be favored repeatedly. They introduce Completion Aware Guidance (CAG), a training-free sampling method intended to guide generation toward task completion. Across representative WAMs, the reported evaluations show higher success rates on a RoboTwin 2.0 subset and in zero-shot simulation, alongside a reduction in task-incomplete imagination.",
+          "zh": "世界动作模型同时预测视觉未来和机器人动作，但可能产生看似合理且与动作一致、却遗漏任务完成所需转变的想象。作者指出，这类失败并非世界模型骨干本身固有，而是在适配短动作块控制时出现，因为局部延续可能反复取代完成任务的转变。为此，他们提出无需训练的采样引导方法 Completion Aware Guidance（CAG），引导生成趋向任务完成。在代表性世界动作模型评估中，CAG提高了 RoboTwin 2.0 子集和零样本仿真中的成功率，并降低了任务未完成的想象比例。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3644,7 +3656,11 @@
             "heading": "",
             "text": "Reliable video world models could provide scalable predictive environments for robot learning, planning, and evaluation. However, generated robot videos can violate physical principles and complete tasks through physically implausible behavior, limiting their reliability for robot learning and planning.\n\nCurrent video-generation benchmarks exclude physics that are inherently hidden by visuals (e.g., weight, viscosity, friction).Due to this, video models are evaluated on the fidelity of physics, not the underlying accuracy of physics. We introduce PhysicsLENS, a dataset and benchmark for evaluating plausibility of physical properties grounded in robotics.\n\nPhysicsLENS uses matched scenario pairs that hold the same conditioning frame and task, while varying underlying physics in the scene description. Scenarios are curated from public robot video sources and annotated across seven physical domains: collision, gravity, momentum, friction, deformation, fluid, and causality.\n\nWe evaluate across four video generation models, producing over 400 human-annotated labels. Results show that plausible-looking videos often ignore the stated property (34 of 47), and that stating the property lowers plausibility only slightly and not significantly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PhysicsLENS is a dataset and benchmark for assessing whether video generation models represent plausible physical properties relevant to robotics, including properties such as weight, viscosity, and friction that are hidden from visuals alone. It uses matched scenario pairs with the same conditioning frame and task but different physics in the scene description. Scenarios from public robot video sources cover seven domains: collision, gravity, momentum, friction, deformation, fluid, and causality. The study evaluates four video generation models with human annotations. It reports that plausible-looking videos often ignore stated properties, while stating a property reduces plausibility only slightly and not significantly.",
+          "zh": "PhysicsLENS 是一个用于评估视频生成模型能否呈现机器人相关物理属性合理性的基准和数据集，关注重量、黏度、摩擦等无法仅从画面直接观察的属性。它使用匹配场景对：保持条件帧和任务相同，同时改变场景描述中的物理设定；数据来自公开视频，并覆盖碰撞、重力、动量、摩擦、形变、流体和因果七个领域。研究评估了四种视频生成模型，并获得人工标注。结果显示，外观合理的视频常忽略指定属性；明确写出属性仅略微降低合理性，且差异不显著。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
