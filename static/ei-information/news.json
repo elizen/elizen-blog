@@ -1827,7 +1827,11 @@
             "heading": "",
             "text": "Training robust social-navigation policies requires simulators with diverse scene layouts, terrain, and human motion, but constructing such environments and specifying pedestrian behavior is costly.\n\nWe propose an efficient pipeline that converts ordinary monocular walking videos directly into closed-loop social-navigation training environments in the policy's state space. Our key observation is that local social navigation primarily depends on two types of information: where the robot can traverse and how nearby pedestrians move.\n\nWe therefore represent the static scene as a metric traversability map, which can be rigidly transformed under counterfactual robot motion, while directly replaying the pedestrian trajectories recovered from the video over time.\n\nThis abstraction allows us to define the forward dynamics directly in the policy's state space and efficiently simulate counterfactual robot states without reconstructing or rendering photorealistic observations.\n\nThe resulting policy achieves 81.2% success in the independent Arena benchmark, compared with 75.0% for the strongest baseline, and succeeds in 19/20 real-robot trials without policy fine-tuning. Project page: https://jiaming.im/VideoSocNav"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a pipeline that converts ordinary monocular walking videos into closed-loop social-navigation training environments. It represents static scenes with metric traversability maps and replays pedestrian trajectories recovered from video, enabling counterfactual robot-state simulation in policy space without photorealistic reconstruction or rendering. The authors report 81.2% success on the independent Arena benchmark, compared with 75.0% for the strongest baseline, and 19 successes in 20 real-robot trials without policy fine-tuning.",
+          "zh": "论文提出一种将普通单目行走视频转化为闭环社交导航训练环境的流程：用度量可通行性地图表示静态场景，并按时间回放从视频恢复的行人轨迹，从而在策略状态空间中模拟机器人反事实状态，无需重建或渲染逼真观测。作者报告，该策略在独立 Arena 基准中成功率为81.2%，高于最强基线的75.0%；未微调策略的真实机器人试验中成功19/20次。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1858,7 +1862,11 @@
             "heading": "",
             "text": "We present $multipanda\\_ros2$, a novel open-source ROS2 architecture for multi-robot control of Franka Robotics robots. Leveraging ros2 control, this framework provides native ROS2 interfaces for controlling any number of robots from a single process.\n\nOur core contributions address key challenges in real-time torque control, including interaction control and robot-environment modeling. A central focus of this work is sustaining a 1kHz control frequency, a necessity for real-time control and a minimum frequency required by safety standards.\n\nMoreover, we introduce a controllet-feature design pattern that enables controller-switching delays of $\\le 2$ ms, facilitating reproducible benchmarking and complex multi-robot interaction scenarios.\n\nTo bridge the simulation-to-reality (sim2real) gap, we integrate a high-fidelity MuJoCo simulation with quantitative metrics for both kinematic accuracy and dynamic consistency (torques, forces, and control errors).\n\nFurthermore, we demonstrate that real-world inertial parameter identification can significantly improve force and torque accuracy, providing a methodology for iterative physics refinement.\n\nOur work extends approaches from soft robotics to rigid dual-arm, contact-rich tasks, showcasing a promising method to reduce the sim2real gap and providing a robust, reproducible platform for advanced robotics research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a ROS2 architecture for controlling multiple Franka robots from a single process, with a focus on real-time torque control, interaction control, and robot-environment modeling. The authors report sustaining a 1 kHz control frequency and using a controllet-feature design pattern to keep controller-switching delays at or below 2 ms. They integrate MuJoCo simulation with quantitative measures of kinematic accuracy and dynamic consistency, and describe real-world inertial parameter identification as a way to improve force and torque accuracy.",
+          "zh": "论文介绍面向 Franka 机器人的多机 ROS2 控制架构，可在单一进程中控制任意数量的机器人，并聚焦实时力矩控制、交互控制与机器人环境建模。作者称框架维持1 kHz控制频率，采用 controllet-feature 设计以将控制器切换延迟控制在2 ms以内，并结合 MuJoCo 仿真评估运动学精度和动力学一致性。论文还报告，利用真实机器人惯性参数识别可提升力和力矩精度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1889,7 +1897,11 @@
             "heading": "",
             "text": "Large language model (LLM) based agents are often criticized for lacking spatial understanding and mainly exploiting statistical text patterns. We investigate their spatial comprehension through an architecture combining geometrical tools with a LLM serving as a high-level orchestrator in grid-world environments.\n\nThe agent first collects geodesic trajectories, which are then vector-quantized to extract a representative subset. Offline, the LLM associates a natural language description of the underlying behavioral patterns to each selected trajectory, making it a tool. Online, the LLM chooses the appropriate tool conditioned on the current state and goal.\n\nLow-level control is handled by primitive actions that execute the trajectory associated with the tool. From an agentic AI perspective, this approach separates learning into two levels: tool discovery is handled through unsupervised quantization of trajectories, while reasoning and decision-making are handled by the LLM.\n\nWe test the approach in a partially observable dynamic 2D grid environment with an open vision-language model (Qwen3.6-35B-A3B).\n\nPairing the geometry-derived tool library with an agent-centered zoom tool and a collision detection tool lets a fast, non-reasoning configuration match the goal-reaching rate of a much more costly chain-of-thought version, while cutting the cost of a decision from minutes to seconds."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates a spatial decision architecture that combines geometric tools with a large language model, tested in grid-world environments. Geodesic trajectories are collected and vector-quantized; the model assigns natural-language descriptions to representative patterns as tools, then selects a tool online based on the current state and goal. Primitive actions execute the associated trajectory. In a partially observable, dynamic 2D grid environment, the authors report that adding geometry-derived tools, an agent-centered zoom tool, and collision detection lets a fast, non-reasoning setup match the goal-reaching rate of a chain-of-thought version while reducing decision time from minutes to seconds.",
+          "zh": "论文研究几何工具与大语言模型结合的空间决策架构，并在网格世界中测试。系统先收集测地轨迹，经向量量化形成代表性轨迹，再由语言模型为轨迹模式生成自然语言描述并作为工具；在线时，模型根据状态和目标选择工具，低层动作执行对应轨迹。作者在部分可观测、动态二维网格环境中使用开放视觉语言模型进行测试，并报告加入几何工具、视角缩放和碰撞检测工具后，快速非推理配置达到与链式思维版本相同的目标到达率，决策耗时从分钟降至秒级。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1920,7 +1932,11 @@
             "heading": "",
             "text": "Maintaining balance under external hand forces is critical for humanoid bimanual manipulation, where interaction forces propagate through the kinematic chain and constrain the feasible manipulation envelope.\n\nWe propose FAME, a force-adaptive reinforcement learning framework that conditions a standing policy on a learned latent context encoding upper-body joint configuration and bimanual interaction forces jointly, since the base moment a load induces depends on the arm configuration through which it acts.\n\nTraining applies isotropically sampled 3D forces at each hand under an upper-body pose curriculum, exposing the policy to manipulation-induced perturbations across continuously varying arm configurations.\n\nAt deployment the interaction force is not measured but reconstructed online from joint torques and states through rigid-body inverse dynamics, requiring no wrist force/torque sensing.\n\nWe evaluate over $100$ upper-body configurations under swept hand forces, scoring each trial by a task-level criterion that requires the robot both to remain upright and to hold its hands near where the task placed them; all such results run with the estimated force in the loop.\n\nAt a $150$,mm tolerance FAME reaches $38.9\\%$ task success, against $16.6\\%$ for a policy given the same force without encoding, $4.3\\%$ for a pose-conditioned curriculum policy, and $24.7\\%$ for an adversarially trained locomotion policy, which stays upright but recovers by stepping and so relocates the hands.\n\nWe further demonstrate transfer to task-generated interaction forces in a MuJoCo kitchen environment, and to asymmetric and bimanual loading on a full-scale Unitree H1-2.Code and videos are available on the https://correlllab.github.io/fame_website."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes FAME, a force-adaptive reinforcement learning framework for humanoid standing policies, conditioned on a latent representation of upper-body joint configuration and bimanual interaction forces. Training applies sampled 3D forces at both hands across an upper-body pose curriculum. At deployment, forces are estimated online from joint torques and states using rigid-body inverse dynamics, without wrist force sensors. In evaluations across more than 100 upper-body configurations with swept hand forces, the authors report 38.9% task success at 150 mm tolerance, compared with three lower-performing policies. They also demonstrate transfer in a MuJoCo kitchen environment and under asymmetric and bimanual loading on a full-scale humanoid.",
+          "zh": "论文提出 FAME 力自适应强化学习框架，使人形机器人站立策略依据上身关节构型与双手交互力的联合潜在表征进行调整。训练时在双手施加采样的三维力，并采用上身姿态课程；部署时通过刚体逆动力学从关节力矩和状态在线估算交互力，无需腕部力传感器。作者在超过100种上身构型和扫掠手力评估中报告，150 mm 容差下任务成功率为38.9%，并高于文中比较的三种策略；另展示了 MuJoCo 厨房环境任务力及全尺寸 Unitree H1-2 非对称和双手负载下的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
