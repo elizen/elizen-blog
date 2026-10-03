@@ -2495,7 +2495,11 @@
             "heading": "",
             "text": "Future prediction is increasingly used to improve vision-language-action (VLA) policies, based on the premise that anticipating scene evolution encourages representations useful for control. However, forecast quality alone does not establish that a policy has learned a better representation for action.\n\nThis distinction matters under distribution shift, where successful control depends on preserving spatial state and likely scene change beyond familiar configurations. We study what determines whether predictive supervision improves the visual representation used by a VLA policy.\n\nThrough controlled comparisons with matched target constructions, prediction horizons, and training conditions, we find that different prediction interfaces produce markedly different forecasts and visual representations, including in the spatial, dynamics, and action information that transfers beyond familiar scenes.\n\nWe trace these differences to how predictive errors shape the policy's visual stream. Consistent with this controlled finding, VLA policies trained with more direct, scene-matched future supervision show stronger robustness under simulated and physical distribution shifts.\n\nTogether, our results frame future prediction as a representation-learning design problem whose value for control depends on whether its supervision reaches the representations through which the policy acts."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study examines how predictive supervision affects the visual representations used by vision-language-action policies for control. In controlled comparisons with matched targets, horizons, and training conditions, different prediction interfaces produce different forecasts and representations of spatial, dynamics, and action information, affecting transfer beyond familiar scenes. The authors attribute these differences to how prediction errors shape the visual stream. Tests under simulated and physical distribution shifts show stronger robustness for policies trained with more direct, scene-matched future supervision.",
+          "zh": "论文研究预测监督如何影响视觉—语言—动作（VLA）策略用于控制的视觉表征。受控比较显示，在目标构造、预测时域和训练条件匹配时，不同预测接口会产生不同的预测结果及空间、动态和动作信息表征，并影响其向熟悉场景之外的迁移。作者将差异归因于预测误差对视觉信息流的塑造。仿真和实体环境中的分布偏移实验显示，采用更直接且场景匹配的未来监督训练的策略具有更强鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2526,7 +2530,11 @@
             "heading": "",
             "text": "Unsupervised skill discovery has emerged as a promising approach for leveraging reward-free datasets to pretrain general-purpose policies. However, current skill discovery methods either require access to expert data or exhibit limited generalization, failing to transfer effectively to previously unseen layouts.\n\nA key challenge is to learn representations that capture the temporal structure of the environment while remaining robust to variations across layouts.\n\nTo address this issue, we present an objective for learning action-aware temporal representations that satisfy the functional equivariance property while preserving the local temporal structure of the environment.\n\nBuilding upon this embedding, we further propose unsupervised skill discovery using bisimulation, which learns transferable skills by conditioning the behavior of skills exclusively on the subset of state features that directly affect their execution.\n\nThis enforces invariant behavior across different layouts, enabling skills to transfer effectively to other configurations.\n\nFinally, through comprehensive empirical evaluations, we show that skills learned in a given environment can be effectively applied to solve downstream tasks in various environment layouts, demonstrating strong out-of-distribution generalization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a goal-conditioned bisimulation approach to unsupervised skill discovery, aimed at transferring skills to unseen environment layouts. Its objective learns action-aware temporal representations with functional equivariance while preserving local temporal structure. Skills are then learned using bisimulation and conditioned only on state features that directly affect their execution, encouraging invariant behavior across layouts. The authors report that comprehensive empirical evaluations show skills learned in one environment can solve downstream tasks in varied layouts, with strong out-of-distribution generalization.",
+          "zh": "论文提出一种用于无监督技能发现的目标条件双模拟方法，旨在让技能迁移到未见过的环境布局。其目标是学习具备功能等变性、同时保留环境局部时间结构的动作感知表征；随后依据双模拟学习技能，并仅让技能行为依赖直接影响执行的状态特征，以促进不同布局间的行为不变性。作者报告，综合实证评估显示，在一个环境中学习的技能可用于不同布局中的下游任务，并表现出较强的分布外泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2557,7 +2565,11 @@
             "heading": "",
             "text": "Dynamic Movement Primitives (DMPs) provide a compact and stable formulation for trajectory representation and generalization in robot skill learning. However, their predefined basis layout limits the allocation of approximation capacity according to stage-dependent precision requirements.\n\nTo address this issue, this article proposes Stage-Criticality-Guided Dynamic Movement Primitives (SC-DMPs) with adaptive basis allocation for precision-critical skill learning. Operator-robot interaction stiffness and a trajectory-consistency cue derived from cross-demonstration task-space variability are integrated to construct a stage-criticality index.\n\nGuided by this index, basis centers are redistributed in normalized time through inverse cumulative criticality and mapped to the canonical phase domain, while their bandwidths are refined to adjust local approximation support. This enables denser and more flexible representation at high-criticality stages while retaining sparser allocation elsewhere.\n\nExperiments on handwriting trajectories and three real-robot tasks show that the inferred criticality is concentrated in geometrically demanding and task-constrained regions.\n\nComparisons with DMPs, ProMPs, ProDMP, GP-MP, and KMP demonstrate improved trajectory reproduction, endpoint generalization, and task-critical accuracy while retaining a compact model and the stable structure of classical DMPs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Stage-Criticality-Guided Dynamic Movement Primitives (SC-DMPs), which adapt basis allocation for precision-critical robot skills. The method combines operator-robot interaction stiffness with cross-demonstration task-space variability to estimate stage criticality, then adjusts basis centers and bandwidths so critical stages receive denser representation. Experiments on handwriting trajectories and three real-robot tasks found criticality concentrated in geometrically demanding or task-constrained regions. Comparisons with several trajectory methods showed improved reproduction, endpoint generalization, and task-critical accuracy, while retaining a compact model and the stable structure of classical DMPs.",
+          "zh": "论文提出阶段关键性引导的动态运动基元（SC-DMP），通过自适应分配基函数，提高精度关键型机器人技能的轨迹表示能力。方法结合操作者—机器人交互刚度与跨示范任务空间变化，构造阶段关键性指标，并据此调整归一化时间中的基函数中心及带宽，使关键阶段表示更密集。手写轨迹和三项真实机器人任务实验显示，关键性集中于几何要求高或受任务约束的区域。与多种轨迹方法的比较显示，其轨迹复现、端点泛化和任务关键精度有所改善，同时保持模型紧凑及经典DMP结构稳定性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2588,7 +2600,11 @@
             "heading": "",
             "text": "LLM-based robots use Large Language Models (LLMs) as planners to translate natural language instructions into policies such as grasp(), move_to(), and open_gripper().Jailbreak attacks on these robots extend the threat from generating malicious content to executing harmful behaviors.\n\nHowever, we find that existing jailbreak attempts against LLM-based robots that produce malicious-looking policies (intent jailbreaks) often fail to induce harmful physical actions by robots (behavior jailbreaks), due to robot-specific constraints, such as logical errors and hallucinated control APIs.\n\nIn this paper, we demystify the intent-behavior gap and investigate its root causes to inform effective defenses. Our measurement study finds that current LLM jailbreak methods overlook robot-specific syntax constraints (e.g., executable control APIs) and physical feasibility (e.g., ordering of policies and hardware/kinematic constraints).\n\nTo bridge the gap, we introduce POEF (POlicy EFfective Jailbreak), an automated red-teaming framework that takes into account the robot-specific constraints during both the optimization and evaluation processes.\n\nSpecifically, POEF employs the hidden-layer gradients from an unaligned LLM to guide the jailbreak prompt optimization and uses a multi-agent evaluator to assess the feasibility of the generated policies.\n\nExperiments on commercial robots, including the Unitree G1, the Franka robotic arm, and simulators, show that POEF achieves an 80% behavior jailbreak success rate and transfers across various LLMs. In addition, we propose two defense strategies that mitigate the behavior jailbreak risks.\n\nOur findings indicate an urgent need for stronger countermeasures before LLM-based robots are deployed at scale. The homepage is available at https://zjushine.github.io/poef.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies the gap between malicious intent and actual behavior in jailbreak attacks on robots planned by large language models. It reports that malicious-looking policies often fail to cause harmful actions because of robot-specific constraints, including invalid control APIs and physical infeasibility. The authors introduce POEF, an automated red-teaming framework that accounts for syntax and feasibility during prompt optimization and evaluation. Experiments on commercial robots and simulators report an 80% behavior-jailbreak success rate and transfer across LLMs. The paper also proposes two defense strategies.",
+          "zh": "论文研究基于大语言模型的机器人越狱攻击中，恶意意图与实际行为之间的落差。作者发现，现有攻击生成的恶意策略常因机器人特有约束而未能引发有害动作，例如控制接口错误或物理上不可行。为弥合差距，论文提出POEF自动化红队框架，在提示优化和评估中纳入接口语法与物理可行性，并用未对齐模型隐藏层梯度引导优化、以多智能体评估策略可行性。商业机器人及模拟器实验显示，行为越狱成功率为80%，且可迁移至多种模型；论文还提出两种缓解风险的防御策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
