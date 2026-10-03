@@ -23,7 +23,11 @@
             "heading": "",
             "text": "Manipulating dynamic objects remains an open challenge for Vision-Language-Action (VLA) models. Although recent VLAs generalize well in static manipulation, dynamic scenes introduce a latency-induced perception-execution mismatch: object states continue to evolve during inference, making actions predicted from past observations stale at execution time.\n\nWe present DynamicVLA, a latency-aware VLA model for dynamic object manipulation. It combines a compact 0.4B architecture and convolutional vision encoder for efficient multimodal inference with a continuous inference schedule that overlaps reasoning and execution for non-blocking control.\n\nLatent-aware Action Streaming then discards latency-invalid action prefixes and executes only the temporally valid suffix of each predicted chunk, preserving action-time alignment under dynamic object motion.\n\nTo fill the missing foundation of dynamic manipulation data, we introduce the Dynamic Object Manipulation (DOM) benchmark, built with an automated collection pipeline that gathers 200K synthetic episodes across 2.8K scenes and 206 objects, and enables fast collection of 2K real-world episodes without teleoperation.\n\nExtensive evaluations in simulation and on real robots show that DynamicVLA improves dynamic manipulation success under changing object motion, perception-heavy instructions, and unseen motion patterns."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DynamicVLA, a latency-aware vision-language-action model for manipulating dynamic objects. It combines a compact architecture and convolutional vision encoder with continuous inference and latent-aware action streaming, overlapping reasoning and execution while retaining only temporally valid actions. The authors also introduce the DOM benchmark and its data-collection pipeline. They report that evaluations in simulation and on real robots show improved dynamic manipulation success under changing object motion, perception-heavy instructions, and unseen motion patterns.",
+          "zh": "论文提出 DynamicVLA，一种面向动态物体操作、考虑推理延迟的视觉—语言—动作模型。它采用紧凑架构和卷积视觉编码器，并通过连续推理及潜在感知动作流机制，使推理与执行重叠，并仅执行预测动作块中时间上仍有效的部分。论文还介绍 DOM 基准及其数据收集流程。作者报告，仿真和真实机器人评估显示，该模型在物体运动变化、感知密集型指令和未见运动模式下提升了动态操作成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -54,7 +58,11 @@
             "heading": "",
             "text": "Latent world models plan by scoring candidate action sequences with distances in latent space. However, task success is judged by physical quantities, which we call the success-criterion quantities. In all four latent world models we examine, the end-effector position is encoded in the latent state with an error larger than the success criterion allows.\n\nSuch a latent state cannot separate successful candidates from failing ones. We propose an auxiliary loss that uses success-criterion quantities as training targets, whereas existing latent world models take them only as inputs.\n\nDuring training, a linear head on the encoder and predictor outputs regresses the success-criterion quantities, and the regression error is added to the training loss. The head is discarded after training, so the model, its cost, and its inputs at test time are unchanged.\n\nThis loss alone improves the success rate on PushT and cube by 3.5% and 3.4% (absolute), respectively, and both improvements are statistically significant. A success criterion thus specifies what a world model must retain in its latent state, and we show that it can serve directly as a training target."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper observes that latent world models score candidate actions by latent-space distances, while task success depends on physical quantities. In all four models examined, end-effector position error in the latent state exceeds the success criterion's tolerance. The authors propose an auxiliary training loss that regresses criterion-related quantities from encoder and predictor outputs; its linear head is removed at test time. They report statistically significant absolute success-rate gains of 3.5% on PushT and 3.4% on cube.",
+          "zh": "论文指出，潜在世界模型以潜在空间距离评估候选动作，但任务成败取决于物理量；所考察的四种模型中，末端执行器位置的潜在表示误差超过成功判据允许的范围。作者提出将成功判据涉及的量作为训练目标的辅助损失：训练时用线性头回归这些量并加入损失，测试时移除该头。作者报告，该方法在 PushT 和 cube 任务上的成功率分别绝对提高 3.5% 和 3.4%，且具有统计显著性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -85,7 +93,11 @@
             "heading": "",
             "text": "This paper addresses the control of multi-input strict-feedback nonlinear systems subject to a joint capacity constraint, in which the admissible input set is a coupled subset of the individual actuator limits.\n\nUnlike existing constraint-handling methods that enforce actuator bounds channel by channel and may unnecessarily suppress admissible control directions, we develop an Anisotropic Joint-Admissibility-Preserving Input Realization (AJ-APIR) framework that explicitly exploits the geometry of the joint constraint.\n\nThe proposed realization constructs a state-dependent gain matrix whose spectral decomposition separates the commanded input into normal and tangential directions relative to the constraint boundary.\n\nThe normal component is attenuated as the boundary is approached, while the tangential component is preserved, which allows the admissible control effort to be redistributed without loss of tracking authority. Integrated with a backstepping controller, the AJ-APIR framework guarantees forward invariance of the joint admissible set for all time.\n\nWe establish exponential convergence of the tracking error to zero together with uniform boundedness of all closed-loop signals, and characterize the resulting command-demand behavior under the joint constraint.\n\nSimulation results for a representative second-order, two-input nonlinear system subject to a power-budget constraint demonstrate the efficacy of the proposed method to enforce the joint input constraint."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses control of multi-input strict-feedback nonlinear systems under a coupled capacity constraint. Its AJ-APIR framework uses the joint constraint geometry to construct a state-dependent gain matrix that separates commanded inputs into normal and tangential components. Near the boundary, it attenuates the normal component while preserving the tangential one. Integrated with backstepping, the method guarantees forward invariance of the admissible set; the authors establish exponential tracking-error convergence to zero and uniform boundedness of closed-loop signals. Simulations on a representative second-order, two-input system demonstrate constraint enforcement.",
+          "zh": "论文研究受联合容量约束的多输入严格反馈非线性系统控制。作者提出 AJ-APIR 框架，利用联合约束几何构造依赖状态的增益矩阵，将指令输入分解为相对约束边界的法向和切向分量：接近边界时削弱法向分量，同时保留切向分量。与反步控制器结合后，该方法保证联合可行输入集始终正向不变，并证明跟踪误差指数收敛至零、闭环信号一致有界。针对代表性二阶双输入系统的仿真展示了约束执行效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -116,7 +128,11 @@
             "heading": "",
             "text": "Environmental robotic sampling requires considering the dual influence of water currents on robotic motion and particle transport. Existing marine robotics simulators generally model flow, autonomy, and sampling targets separately, limiting joint evaluation of mission cost and sampling performance.\n\nH-SPAR integrates spatially and temporally varying velocity fields, Lagrangian particle transport, probabilistic sampling, and ROS 2/Gazebo-based uncrewed surface vehicle (USV) autonomy. In this work, shared precomputed flow fields drive particle advection and current-induced forces during closed-loop vehicle execution.\n\nPath-planning experiments show that the existing current-aware planner SVF-RRT* achieves 69.4% lower upstream cost than conventional RRT* at the planning level, but this reduction falls to 41.7% during execution under time-varying currents, reflecting temporal flow variation, vehicle motion constraints, and path deviation omitted during planning.\n\nCoverage experiments show that sweep orientation changes the particle-sampling rate by up to 22.2% under the complete H-SPAR configuration. These findings highlight the importance of evaluating planning, vehicle execution, particle transport, and sampling together under consistent hydrodynamic conditions.\n\nThe project webpage is available at https://sites.google.com/view/h-spar, and the open-source code is available on GitHub at https://github.com/naviiidz/h-spar-sim."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents H-SPAR, a simulation framework combining time-varying flow fields, Lagrangian particle transport, probabilistic sampling, and ROS 2/Gazebo-based uncrewed surface vehicle autonomy. Shared precomputed flow fields drive particle advection and current-induced forces during closed-loop execution. In planning experiments, SVF-RRT* had 69.4% lower upstream cost than RRT* at the planning stage, but the reduction was 41.7% during execution under changing currents. Coverage experiments found that sweep orientation changed the particle-sampling rate by up to 22.2% in the complete configuration.",
+          "zh": "论文介绍 H-SPAR，一种将时空变化水流、拉格朗日粒子输运、概率采样和基于 ROS 2/Gazebo 的无人水面艇自主系统结合的仿真框架；共享的预计算流场用于粒子输运和闭环运行中的水流作用力。路径规划实验中，SVF-RRT* 在规划阶段的上游代价比 RRT* 低 69.4%，但在时变水流下执行时降幅为 41.7%。覆盖实验显示，在完整配置下，扫掠方向可使粒子采样率变化最高达 22.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
