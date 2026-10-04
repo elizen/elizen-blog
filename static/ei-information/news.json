@@ -1003,7 +1003,11 @@
             "heading": "",
             "text": "Long-term object search requires learning where objects usually appear from repeated but uneven observations of a changing environment.\n\nWe formulate retrospective open-vocabulary memory as probabilistic inference from censored observations, where the key idea is to reason with evidence per opportunity: a detection or non-detection should influence belief only in proportion to the robot's opportunity to observe the corresponding location.\n\nWe introduce ECROM, which uses this principle to estimate long-term prevalence for concepts specified only at query time and converts the resulting belief directly into an active-search prior.\n\nTo evaluate this problem, we introduce a controlled long-term benchmark in ten HM3D homes that independently varies object placement and observation opportunity across repeated traversals. ECROM improves support-level AP on held-out queries by 4.5 points and search SPL by 4.2 points over the strongest competing memory in each metric.\n\nThe benchmark, dataset, and code will be open-sourced."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper frames long-term object search as probabilistic inference from censored observations, accounting for how much opportunity a robot had to observe each location. ECROM estimates long-term prevalence for concepts specified at query time and uses the belief as an active-search prior. In a controlled benchmark spanning ten HM3D homes, with object placement and observation opportunity varied independently, it improves support-level AP by 4.5 points and search SPL by 4.2 points over the strongest competing memory for each metric on held-out queries.",
+          "zh": "论文研究机器人在长期、反复但不均衡的观察中如何判断物体通常出现的位置，并将其表述为基于删失观测的概率推断。提出 ECROM，按机器人观察各地点的机会加权利用检测与未检测证据，估计查询时才指定概念的长期出现率，并据此形成主动搜索先验。在十个 HM3D 住宅构成的受控基准上，基准独立改变物体位置和观察机会；留出查询中，ECROM 的支持级 AP 和搜索 SPL 分别比各自指标上最强的竞争记忆方法高 4.5 和 4.2 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1034,7 +1038,11 @@
             "heading": "",
             "text": "Share the light, not the map. We study next-best-view selection for a team of robots, each of which builds its own 3D Gaussian Splatting map and keeps it private. A robot picks the view with the largest expected information gain (EIG) about the splats along its own path. This gain depends on the other maps.\n\nTheir splats occlude its own and shine behind them, so the gain has to be evaluated against the pooled map. No robot has this map. We show that the coupling passes through only two ray quantities, the transmittance in front of a splat and the radiance behind it, and that both are sums over the hits of the ray.\n\nHence, they decompose across the robots, and each robot sums them over depth bins in its own map, along the rays of a candidate view, and sends the sums with their pose derivatives. The robot planning the view turns them into its EIG and gradient on SO（3）.Transmittance and Radiance Aggregates, communicated for the EIG, give the protocol its name: TRACE.\n\nNo robot shares its splats, and the message size does not grow with a map. We prove that the reconstruction is exact unless a depth bin behind a splat mixes hits of two robots, and we bound the error otherwise.\n\nOver 100 next-best-view decisions in Habitat-Sim, TRACE picks a heading within 15 degrees of the centralized one in 83.3% of the cases, and its views reach 97.9% of the centralized EIG."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies next-best-view selection when robots keep their individual 3D Gaussian Splatting maps private. TRACE communicates ray aggregates for transmittance and radiance, along with pose derivatives, so a planning robot can estimate expected information gain and its gradient on SO(3) without sharing splats or maps. The authors prove exact reconstruction except when a depth bin behind a splat mixes hits from two robots, and bound the error otherwise. In more than 100 Habitat-Sim decisions, headings are within 15 degrees of the centralized choice in 83.3% of cases, and views attain 97.9% of centralized expected information gain.",
+          "zh": "论文研究多机器人各自保留 3D Gaussian Splatting 地图时的下一最佳视角选择。TRACE 通过沿候选视线汇总深度分箱中的透射率和后方辐射及其位姿导数，让规划机器人估计期望信息增益及其在 SO(3) 上的梯度，而无需共享地图或 splat。作者证明，除 splat 后方深度分箱混合不同机器人的命中外，重建是精确的，并对其他情况给出误差界。在 Habitat-Sim 的 100 多次决策中，TRACE 有 83.3% 的选择与集中式方案相差不超过 15 度，视角达到其 97.9% 的期望信息增益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1065,7 +1073,11 @@
             "heading": "",
             "text": "Recent progress in contact-rich robotic manipulation has been striking, yet most deployed systems remain confined to simple, scripted routines. One of the barriers is the lack of motion planning algorithms that can provide verifiable guarantees for safety, efficiency and reliability.\n\nConstant-Time Motion Planning (CTMP) is a recent step toward such guarantees for collision-free motion in a priori known environments:: a preprocessing phase enables queries to be answered within a fixed, user-specified time budget (e.g., 10 milliseconds).\n\nHowever, CTMP certifies only reachability---a binary predicate---and ignores the manipulation behavior that completes the task, which is increasingly stochastic (e.g., a learned skill) and whose success no single offline rollout can establish, let alone certify.\n\nWe introduce the Behavioral Constant-Time Motion Planner (B-CTMP), which extends CTMP to two-step manipulation tasks in semi-structured environments: a collision-free motion to a behavior initiation state, followed by execution of a behavior such as grasping or insertion.\n\nB-CTMP departs from prior CTMP in two ways: neighborhoods are constructed in object-pose space rather than robot configuration space, and coverage is established by statistical certification rather than a reachability check.\n\nA plan is cached only if repeated rollouts lower-bound its success rate above a user-specified threshold, and we prove these bounds hold simultaneously across the entire cache at a prescribed confidence level. For deterministic behaviors a single rollout suffices, recovering the binary check of prior CTMP as a special case.\n\nWe evaluate B-CTMP on three manipulation tasks---shelf picking, plug insertion, and wheel replacement---in simulation and on real robots. B-CTMP's certified plans succeed consistently where baselines fail during behavior execution, and it rejects infeasible object poses in constant time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "B-CTMP extends constant-time motion planning to two-step manipulation in semi-structured environments: collision-free motion to a behavior initiation state, followed by a behavior such as grasping or insertion. It builds neighborhoods in object-pose space and uses statistical certification for coverage. Plans are cached only when repeated rollouts place a lower bound on success above a user-set threshold; the authors prove the bounds hold simultaneously across the cache at a prescribed confidence level. They evaluate shelf picking, plug insertion, and wheel replacement in simulation and on real robots, reporting consistent success where baselines fail during behavior execution and constant-time rejection of infeasible poses.",
+          "zh": "论文提出 B-CTMP，将恒定时间运动规划扩展到半结构化环境中的两阶段操作任务：先无碰撞移动至行为起始状态，再执行抓取或插入等行为。它在物体位姿空间构建邻域，并通过统计认证而非单纯可达性检查确定覆盖；只有重复试验的成功率下界超过用户阈值时才缓存计划，同时证明这些界以指定置信度对整个缓存同时成立。确定性行为中，单次试验即可退化为原有二元检查。作者在货架取物、插头插入和车轮更换的仿真及真实机器人任务中评估，报告认证计划能在基线于行为执行时失败的场景中持续成功，并能恒定时间拒绝不可行位姿。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1096,7 +1108,11 @@
             "heading": "",
             "text": "Learning-based driving planners are usually trained and evaluated in open loop against logged trajectories. In closed loop, a trajectory with small displacement error can still stall the vehicle, steer it into a conflict with surrounding agents, or be executed with abrupt braking.\n\nWe introduce Closed-Loop Refinement and Execution (CLRE), a hierarchical receding-horizon control framework designed to mitigate these failure modes while leaving the upstream planner frozen and adding no new learned model.\n\nThe upper layer treats the nominal trajectory as a reference and solves a finite-horizon optimal control problem that trades route progress against interaction with predicted agents.\n\nSolving it from several initializations gives a candidate set, and a prediction-conditioned oriented-bounding-box (OBB) feasibility test retains only candidates whose minimum predicted OBB clearance over the horizon meets a threshold.\n\nThe lower layer executes the lowest-cost survivor, or a route-centerline backup when none remains, through the tracking controller supplied with the planner, augmented by a range-based speed bound and a saturated proportional braking law.\n\nIn closed-loop simulation on 126 Bench2Drive routes with VAD as the upstream planner, CLRE raises the driving score from 43.41 to 56.42 and route completion from 57.27 to 72.23, and reduces collision events from 70 to 53."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CLRE, a hierarchical receding-horizon control framework for closed-loop execution of learned driving planners. It keeps the upstream planner frozen and adds no learned model. The upper layer optimizes route progress and interactions with predicted agents, then filters candidates using predicted oriented-bounding-box clearance. The lower layer executes the lowest-cost surviving candidate or uses a route-centerline backup, with a range-based speed bound and saturated proportional braking. In closed-loop simulation on 126 Bench2Drive routes using VAD, the driving score rises from 43.41 to 56.42, route completion from 57.27 to 72.23, and collision events fall from 70 to 53.",
+          "zh": "论文提出闭环精化与执行框架 CLRE，以分层滚动时域控制降低学习型驾驶规划器在闭环执行中的停滞、冲突和急刹风险，同时保持上游规划器冻结且不增加学习模型。上层将名义轨迹作为参考，优化路线进展与周边预测交通参与者的交互，并通过有向包围盒间隙筛选候选轨迹；下层执行成本最低的可行候选，若无候选则采用路线中心线备份，并加入基于距离的速度约束和饱和比例制动。在使用 VAD 的 126 条 Bench2Drive 路线闭环仿真中，驾驶分数由 43.41 升至 56.42，路线完成度由 57.27 升至 72.23，碰撞事件由 70 降至 53。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
