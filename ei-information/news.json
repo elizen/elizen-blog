@@ -2883,7 +2883,11 @@
             "heading": "",
             "text": "Vision--language--action (VLA) models provide strong priors for robotic manipulation but are typically deployed as frozen policies, unable to improve from their own failures. Real-world reinforcement learning (RL) offers a path to continued improvement, yet manual environment resets and task-success supervision hinder autonomous learning.\n\nWe introduce \\textbf{FIND}, an agentic real-world RL framework that closes the loop between scene understanding, weakness-aware practice, self-evaluation, and policy improvement in a persistent workspace.\n\nFIND reframes autonomous practice as a scene-conditioned, performance-aware task-selection problem: instead of restoring a predefined scene after each rollout, it uses the resulting scene to determine what to practice next.\n\nA vision--language agent identifies feasible tasks from a predefined library, prioritizes those with lower recent success rates, and evaluates outcomes using paired pre- and post-execution observations. We instantiate FIND with a frozen $\\pi_{0.5}$ VLA and residual off-policy RL.\n\nAcross eight real-world manipulation tasks, the independent human-assessed success rate improves from $55\\%$ to $71.9\\%$.A representative run completes 456 autonomous episodes within 6 hours of interaction, requiring 30 scene-recovery interventions and no human-provided reward labels during online learning.\n\nAblations and systematic evaluations further examine key design choices, agent evaluation accuracy, and human intervention requirements. Our website is made publicly available at: FIND.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FIND, a framework for autonomous real-world reinforcement learning that connects scene understanding, weakness-aware task selection, self-evaluation, and policy improvement. It selects feasible tasks from a predefined library based on the resulting scene, prioritizes tasks with lower recent success rates, and evaluates outcomes from before-and-after observations. Implemented with a frozen π₀.₅ VLA and residual off-policy RL, FIND is reported to raise independently human-assessed success from 55% to 71.9% across eight real-world manipulation tasks.",
+          "zh": "论文提出 FIND，一种面向真实世界机器人的自主强化学习框架，将场景理解、按薄弱项选择练习任务、自我评估与策略改进连成闭环。系统根据每次执行后的场景，从预定义任务库中选择可行任务，并优先练习近期成功率较低的任务；通过执行前后观测评估结果。作者在冻结的 π₀.₅ VLA 和残差离策略强化学习上实现该方法，并报告其在八项真实操作任务上的独立人工评估成功率由55%升至71.9%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2914,7 +2918,11 @@
             "heading": "",
             "text": "Vision-language-action policies inherit both capabilities and input representations from pretrained vision-language models, showing great potential for robotic manipulation across diverse industrial settings.\n\nAs these policies increasingly use interaction history, organizing the representation of historical observations determines how experiences enter temporal context and how relationships across time are modeled, which is a generally ignored challenge in previous works.\n\nIn this work, we believe solving this challenge requires an architectural reconstruction and propose WorldToken. WorldToken encodes each timestep's observations into one world token, processes the resulting history with a causal Transformer, and generates action chunks with a diffusion action head.\n\nUnified token enables long horizon tasks while relieving the memory requirement of the temporal backbone, hence improving performance. This design also offers high interpretability and allows advances in language modeling, such as pre-training and scaling, to be transferred to robot interaction policies.\n\nIn RoboCasa experiments, WorldToken successfully handles most tasks with 85M parameters and achieves 59.4% mean closed-loop success close to $\\pi_{0.5}$ with 3.35B parameters. On the memory benchmark RMBench Blocks Ranking, WorldToken can reach the context of two minutes and achieves a success rate of 95%.\n\nIn addition, holdout action RMSE is well described by power-law fits, and its closed-loop success rate improves consistently with increasing training data size in a study involving approximately 350,000 closed-loop evaluation episodes across 50 trained policies on RoboCasa, showing its scaling potential.\n\nWe also conduct experiments to analyze information preservation and history use in WorldToken, providing empirical grounding for future work."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes WorldToken for temporal sequence modeling in robotic imitation learning. It encodes observations at each timestep as one world token, processes history with a causal Transformer, and generates action chunks using a diffusion head. The authors say the unified token supports long-horizon tasks while reducing temporal-backbone memory requirements. In RoboCasa experiments, the 85M-parameter model achieves 59.4% mean closed-loop success; on RMBench Blocks Ranking, it reaches a two-minute context and 95% success. The paper also reports studies of action-error fits and success as training data grows.",
+          "zh": "论文提出 WorldToken，用于机器人模仿学习中的时间序列建模。该方法将每个时刻的观测编码为一个 world token，由因果 Transformer 处理历史，再通过扩散动作头生成动作片段。作者称统一 token 有助于长时域任务并降低时间骨干网络的内存需求。在 RoboCasa 实验中，85M 参数模型的平均闭环成功率为59.4%；在 RMBench Blocks Ranking 上，报告可使用两分钟上下文并达到95%成功率。论文还报告了动作误差拟合及训练数据规模与闭环成功率的关系研究。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2945,7 +2953,11 @@
             "heading": "",
             "text": "Event cameras have microsecond-level temporal resolution and high dynamic range which make them more resilient to motion blur and poor illumination than standard frame-based cameras. Event-camera visual odometry (VO) pipelines maximize these benefits when they process the asynchronous event stream at the native temporal resolution.\n\nContinuous-time Gaussian process (GP) regression and a white-noise-on-acceleration (WNOA) prior can handle asynchronous measurements but result in a prohibitively large estimation state when applied naively.\n\nThis paper presents a continuous-time event-camera stereo VO pipeline that maintains the native measurement times of asynchronous events while also running in real time. It reduces the estimation states to keytimes while maintaining full temporal resolution by interpolating measurements to their exact timestamps with a physically founded WNOA prior.\n\nThis decouples the state size from the dense number of measurements without discarding their asynchronous nature. The real-time continuous-time VO pipeline is evaluated on the MVSEC and DSEC datasets. It provides estimates in real time that are more accurate than ES-PTAM, a state-of-the-art discrete estimator, in all but one of the tested sequences.\n\nThe pipeline respectively provides estimates at 22 Hz and 6 Hz on MVSEC and DSEC and RMS relative errors of 0.46 cm and 0.038 degrees across all valid sequences, which were 11 and 15 times better than ES-PTAM, respectively."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a continuous-time stereo visual odometry pipeline for event cameras that runs in real time while preserving the native timestamps of asynchronous measurements. It reduces estimation states to keytimes and interpolates measurements to their exact timestamps using a white-noise-on-acceleration prior, avoiding state growth with the dense measurement stream. Evaluations on the MVSEC and DSEC datasets are reported. The authors state that estimates are more accurate than those of the discrete estimator ES-PTAM in all but one tested sequence, and provide rates and relative errors for both datasets.",
+          "zh": "论文提出一种连续时间事件相机双目视觉里程计流程，在保留异步事件原生测量时间的同时实现实时运行。方法将估计状态缩减至关键时刻，并利用白噪声加速度先验将测量插值到精确时间戳，从而避免状态规模随密集测量数量增长。该流程在 MVSEC 和 DSEC 数据集上评估；作者报告，除一个测试序列外，其估计均比离散估计器 ES-PTAM 更准确，并给出两数据集上的运行频率和相对误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2976,7 +2988,11 @@
             "heading": "",
             "text": "Visuomotor policies trained via imitation learning often inherit the unnecessarily slow timing of teleoperated demonstrations. Yet uniform speedup is unreliable because different phases of a manipulation task tolerate acceleration differently.\n\nIn this work, we introduce AdaTempo, a self-supervised method that accelerates visuomotor policies by exploiting shared relative-tempo structure in demonstrations.\n\nAdaTempo establishes phase correspondence, aggregates the aligned relative tempo into a consensus, and maps it to a continuous speedup profile used to resample demonstrations into accelerated training trajectories.\n\nTraining standard policies such as ACT or Diffusion Policy on these resampled trajectories directly embeds the desired tempo in the learned behavior, without runtime tempo selection or online retiming.\n\nExtensive evaluations show that AdaTempo achieves up to a $3.57\\times$ speedup and yields a stronger success--speed trade-off than the original policies and representative acceleration baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AdaTempo, a self-supervised method that uses shared relative-tempo structure in demonstrations to speed up visuomotor policies. It aligns task phases across demonstrations, aggregates the aligned relative tempo into a consensus, and maps it to a continuous speedup profile for resampling demonstrations into accelerated training trajectories. The authors state that training standard policies such as ACT or Diffusion Policy on these trajectories embeds the target tempo without runtime tempo selection or online retiming. Evaluations report up to 3.57× speedup and a stronger success-speed trade-off.",
+          "zh": "论文提出 AdaTempo，一种自监督方法，利用示范中的共享相对节奏结构加速视觉运动策略。方法先建立不同示范间的阶段对应关系，再汇总对齐后的相对节奏形成共识，并将其转换为连续加速曲线，以重采样示范并生成加速训练轨迹。作者称，在重采样轨迹上训练 ACT 或 Diffusion Policy 等标准策略，可将目标节奏直接融入行为，无需运行时节奏选择或在线重定时。评估报告最高3.57倍加速，并改善成功率与速度之间的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
