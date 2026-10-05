@@ -551,7 +551,11 @@
             "heading": "",
             "text": "Long-horizon tasks with sparse rewards pose an exploration bottleneck for goal-conditioned reinforcement learning: a policy started from the initial state rarely reaches the goal and receives no learning signal.\n\nReference motions, hand-designed curricula, and shaped rewards supply this signal but require demonstrations or task-specific engineering; automatic start-state and goal curricula avoid this but typically expand from one side only, so the full distance to the target must be covered from that side.\n\nWe propose the Bidirectional Voronoi-biased Exploration curriculum for Reinforcement learning (BVER), which expands from both ends at once.\n\nInspired by bidirectional RRT planning, BVER grows start states outward from the goal and goals outward from the initial state distribution, biases both toward unexplored task space, and steers them toward each other, training one goal-conditioned policy on both.\n\nOn point-mass mazes, quadrupedal box climbing, and robot-arm ring-on-peg transfer, BVER learns faster than all compared reference-free curricula.\n\nOn box climbing, it reaches 95% success on a 0.4 m box in roughly 65% fewer iterations than the best of them, is the only one of them to learn to climb a 0.7 m box, and yields a policy robust to start, goal, and yaw variation.\n\nWithout a demonstration, it approaches the sample efficiency of reference-based curricula on the 0.4 m box and on ring-on-peg transfer. Ablations show that expanding from both ends outperforms either direction alone."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces BVER, a bidirectional exploration curriculum for goal-conditioned reinforcement learning. It expands start states from the goal and goals from the initial-state distribution, biases both toward unexplored task space, and steers them toward each other while training one policy. Across point-mass mazes, quadrupedal box climbing, and robot-arm ring transfer, the authors report faster learning than the compared reference-free curricula. Ablations indicate that bidirectional expansion outperforms either direction alone.",
+          "zh": "论文提出面向目标条件强化学习的双向 Voronoi 偏置探索课程 BVER，同时从目标向外扩展起始状态、从初始状态分布向外扩展目标，并引导两侧探索相遇，以训练单一策略。在点质量迷宫、四足机器人爬箱和机械臂套环任务中，作者报告其学习速度超过所比较的免参考课程；爬箱仿真中，达到指定箱体成功率所需迭代更少，并能学会攀爬更高箱体。消融结果显示双向扩展优于单向扩展。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -582,7 +586,11 @@
             "heading": "",
             "text": "Predictive world models enable robots to simulate the visual outcomes of their actions, but state-of-the-art diffusion-based models remain costly because generating each rollout requires multi-step iterative denoising. We introduce DriftWorld, an action-conditioned world model based on drifting generative models.\n\nDriftWorld learns a conditional drift during training, enabling it to generate future observations for a given action sequence in a single forward pass during inference.\n\nAcross Bridge-V2, RT-1, Language Table, Push-T, and Robomimic, DriftWorld runs at over 40 fps and is 12+ times faster than diffusion-based baselines, while matching or improving their visual generation quality.\n\nThis makes DriftWorld an efficient world model for robot simulation and further enables downstream applications including inference-time action search and offline policy evaluation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DriftWorld is an action-conditioned world model based on drifting generative models. It learns a conditional drift during training and generates future observations for an action sequence in a single forward pass at inference. On Bridge-V2, RT-1, Language Table, Push-T, and Robomimic, the authors report speeds above 40 frames per second and at least 12 times faster inference than diffusion-based baselines, with comparable or improved visual generation quality. They also describe applications in action search and offline policy evaluation.",
+          "zh": "论文提出 DriftWorld，一种基于漂移生成模型的动作条件世界模型。模型在训练时学习条件漂移，使其在推理时能够通过一次前向计算，根据动作序列生成未来观测。作者在 Bridge-V2、RT-1、Language Table、Push-T 和 Robomimic 上报告，该模型运行速度超过每秒 40 帧，比扩散模型基线快至少 12 倍，同时视觉生成质量相当或更好。论文还指出，这种效率支持推理时动作搜索和离线策略评估等应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -613,7 +621,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models aim to perform diverse manipulation tasks, but task success in existing rigid-body benchmarks does not indicate whether they preserve objects. We introduce ManiPhysicsZoo, which consolidates literature-supported material properties, 3D meshes, and supporting references into reusable object assets.\n\nUsing these assets, a solver-based assessment computes grasp-specific damage thresholds from object geometry, material properties, and recorded grasp conditions and compares them with recorded contact forces to assess potential deformation and fracture.\n\nBuilding on these components, ManiPhysicsBench evaluates object preservation in LIBERO and SimplerEnv across three physics axes and three difficulty levels. Public VLA checkpoints show a substantial gap between task success and safe success, defined as task completion while preserving the object.\n\nTheir gripper commands concentrate near full opening and closure, with largely similar aggregate distributions across objects, consistent with binary gripper supervision. We examine how object-specific continuous gripper labels change model behavior by retraining a VLA model.\n\nThe retrained model shows more object-dependent gripping and higher safe success, but lower task success and limited generalization of object-preserving behavior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ManiPhysicsZoo, a collection of object assets, and ManiPhysicsBench for evaluating whether vision-language-action models preserve objects during manipulation. A solver estimates damage thresholds from geometry, material properties, and grasp conditions, then compares them with recorded contact forces to assess possible deformation or fracture. Evaluations in LIBERO and SimplerEnv reveal a gap between task success and safe success. Retraining with object-specific continuous gripper labels produces more object-dependent gripping and higher safe success, but lower task success and limited generalization of preservation behavior.",
+          "zh": "论文介绍 ManiPhysicsZoo 对象资产库，并据此构建 ManiPhysicsBench，用于评估视觉语言动作模型在操作任务中是否保持物体完好。基于物体几何、材料属性和抓取条件，求解器计算损伤阈值，并与记录的接触力比较，以评估潜在变形或断裂。对 LIBERO 和 SimplerEnv 的评估显示，任务成功与安全成功之间存在明显差距。作者还发现，使用对象特定的连续夹爪标签重新训练后，抓取行为更依对象而变且安全成功率更高，但任务成功率较低，保物行为的泛化有限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -644,7 +656,11 @@
             "heading": "",
             "text": "Coding agents have emerged as a promising paradigm for robot manipulation: a language model writes the robot controller as a program, and agents built in this way now operate robots without robot-specific training. Whether this paradigm is also safe, however, has not been asked.\n\nWe evaluate coding agents under a safety constraint, where each task pairs a manipulation goal with an obstacle the robot must not touch. The agent pursues the goal but collides with the obstacle in most cases, treating task completion as its sole objective.\n\nThe agent reasons about the obstacle in its traces, and the prompt already forbids touching it, so neither perception nor instruction is at fault; the fault lies in the planning, where the stated constraint never becomes a priority. By decomposing manipulation into a route phase and a contact-rich moment, we locate the source of the failure.\n\nAlong the route, the model cannot prioritize the safety constraint, having no notion of a clearing route and none of replanning once a chosen route becomes infeasible. At the contact, it is unaware that contact execution is bounded by the same constraint. To close this gap, we present SafeHarness, which equips the model with two obstacle-aware harnesses.\n\nObstacle-aware route planning grounds the objects as bounding boxes and draws candidate routes over them as sequences of waypoints. The agent then plans a route in advance, verifies it, replans when necessary, and only then executes it. Obstacle-aware contact execution instead selects the contact position so that the contact itself avoids the obstacle.\n\nSafeHarness attains 81.2% task success and 91.9% collision avoidance with GPT-6-Astra, surpassing the previous SOTA by 13.7 and 23.0 points, and the same agent without harnesses by 31.2 and 57.5 points, respectively."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates coding agents on robot manipulation tasks that require achieving a goal while avoiding an obstacle. The agent collides in most cases, despite reasoning about the obstacle and receiving an instruction not to touch it. The authors attribute the failures to planning, including weak prioritization of safety, lack of route checking and replanning, and failure to apply the constraint during contact. SafeHarness adds obstacle-aware waypoint route planning, verification and replanning, plus contact-position selection that avoids obstacles. With GPT-6-Astra, the authors report 81.2% task success and 91.9% collision avoidance.",
+          "zh": "论文评估编程智能体执行机器人操作时的安全性：任务要求机器人达成操作目标，同时避开障碍物。作者报告，智能体虽能在推理记录中识别障碍物且提示已禁止碰撞，仍在多数案例中发生碰撞。分析将问题定位于规划：智能体未优先处理安全约束，也缺少路线清空判断、重规划能力及对接触阶段约束的认识。为此提出 SafeHarness，加入基于边界框和航点的障碍感知路线规划与验证、必要时重规划，以及避障接触位置选择。使用 GPT-6-Astra 时，论文报告任务成功率为 81.2%，避碰率为 91.9%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
