@@ -23,7 +23,11 @@
             "heading": "",
             "text": "World action models (WAMs) have emerged as a promising paradigm for robotic control by jointly predicting future visual dynamics and actions from an initial observation and instruction. However, existing WAMs struggle with long-horizon prediction, as generating dense video rollouts is highly inefficient.\n\nSome recent WAMs address this by predicting a single future frame without generating the full video, but this approach neglects how to progress toward the goal.\n\nWe present ProWAM, a progressive world action model that jointly predicts actions and an ordered sequence of sparse visual sub-goals, providing explicit visual guidance to anchor action generation throughout task execution.\n\nThis design scales naturally, as sub-goal prediction can be learned from large-scale action-free videos, allowing the video backbone to offload complex visual planning from the action policy.\n\nFor efficient action generation, ProWAM executes a single video-backbone forward pass to cache sparse sub-goal features, eliminating iterative full-video generation and requiring only lightweight action denoising during replanning. Across extensive evaluations, ProWAM achieves superior out-of-distribution robustness.\n\nOn simulation benchmarks, it sets new state-of-the-art results on LIBERO-Plus (85.8%) and randomized RoboTwin (75.7%), outperforming the strongest baseline with relative gains of up to +35.9%.On RoboCasa365, ProWAM achieves a 48.1% success rate and 18.2% on the challenging Composite-Unseen split, ranking 4th overall.\n\nCrucially, in zero-shot real-world experiments, ProWAM achieves 70.0% success, outperforming the strongest baseline by +15.0 (from 55.0% to 70.0%, a +27.3% relative gain) in novel scenes. These results demonstrate the value of progress-indexed visual foresight for closed-loop control. Our program is in https://sii-ferenas.github.io/ProWAM-page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ProWAM, a progressive world action model that jointly predicts actions and an ordered sequence of sparse visual sub-goals to guide action generation during task execution. It proposes learning sub-goal prediction from action-free videos and caching sub-goal features with one video-backbone forward pass, followed by lightweight action denoising during replanning. The authors report results on simulation benchmarks and zero-shot real-world experiments, limited to the described evaluation settings.",
+          "zh": "论文提出渐进式世界动作模型 ProWAM，联合预测动作与有序的稀疏视觉子目标，为任务执行中的动作生成提供视觉指引。模型可借助无动作标注视频学习子目标，并通过一次视频骨干前向计算缓存其特征，以轻量动作去噪支持重规划。作者报告其在多个仿真基准上的表现及零样本真实世界实验结果；这些结果限于所述评测设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -54,7 +58,11 @@
             "heading": "",
             "text": "Robotic locomotion is often approached with the goal of maximizing robustness and reactivity by increasing motion control frequency. We challenge this intuitive notion by demonstrating robust and dynamic locomotion with a learned motion controller executing at as low as 8 Hz on a real ANYmal C quadruped.\n\nThe robot is able to robustly and repeatably achieve a high heading velocity of 1.5 m/s, traverse uneven terrain, and resist unexpected external perturbations. We further present a comparative analysis of deep reinforcement learning (RL) based motion control policies trained and executed at frequencies ranging from 5 Hz to 200 Hz.\n\nWe show that low-frequency policies are less sensitive to actuation latencies and variations in system dynamics. This is to the extent that a successful sim-to-real transfer can be performed even without any dynamics randomization or actuation modeling. We support this claim through a set of rigorous empirical evaluations.\n\nMoreover, to assist reproducibility, we provide the training and deployment code along with an extended analysis at https://articulated.robots.ox.ac.uk/lfmc/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies learned low-frequency motion control and reports deployment at rates as low as 8 Hz on a real ANYmal C quadruped. The authors say the robot repeatedly reaches a high heading velocity, crosses uneven terrain, and resists unexpected external perturbations. They compare deep reinforcement learning policies trained and executed at frequencies from 5 to 200 Hz, reporting that low-frequency policies are less sensitive to actuation latency and changes in system dynamics. They also report sim-to-real transfer without dynamics randomization or actuation modeling.",
+          "zh": "论文研究低频运动控制，并报告一款真实 ANYmal C 四足机器人使用最低 8 Hz 的学习控制器实现运动。作者称机器人能够重复达到较高航向速度、通过不平地形并抵抗意外外力。论文还比较了训练和执行频率为 5 至 200 Hz 的深度强化学习策略，报告低频策略对执行延迟和系统动力学变化较不敏感，并称在未采用动力学随机化或执行器建模时也完成了仿真到现实迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -85,7 +93,11 @@
             "heading": "",
             "text": "Adversarial patches can disrupt Vision-Language-Action (VLA) models by manipulating visual observations, leading to failures in robot control. However, it remains poorly understood which internal mechanisms underlie these failures and how targeted interventions can mitigate them.\n\nIn this work, we mechanistically analyze VLA representations using a sparse autoencoder (SAE) and identify a feature whose activation strongly correlates with the presence of an adversarial patch. Based on this analysis, we suppress the identified feature at inference time only when a linear probe detects an attack.\n\nThis intervention improves robustness without the cost of fine-tuning the VLA. We evaluate our method against VLA adversarial patch attacks on LIBERO-10.Conditional intervention improves success rate under intermittent attacks, whereas continuously applying the same intervention substantially degrades policy performance.\n\nThese results show that attack-related internal representations can provide useful targets for VLA adversarial defense and that controlling when to intervene is important for limiting disruption to nominal policy behavior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper analyzes mechanisms behind adversarial patch failures in vision-language-action models. Using a sparse autoencoder, the authors identify a feature whose activation strongly correlates with a patch, then suppress it at inference only when a linear probe detects an attack. Evaluated against attacks on LIBERO-10, the intervention requires no VLA fine-tuning. The authors report improved success under intermittent attacks with conditional intervention, while continuously applying it substantially degrades policy performance.",
+          "zh": "论文分析视觉语言动作模型对抗贴片攻击的内部机制，使用稀疏自编码器识别出一个与贴片存在强相关的特征，并在推理时仅于线性探针检测到攻击时抑制该特征。作者在 LIBERO-10 上评估这一无需微调模型的干预，报告条件式干预可提升间歇攻击下的成功率，而持续干预会明显降低策略表现。研究据此指出，攻击相关内部表征可用于防御，干预时机也会影响正常策略行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -116,7 +128,11 @@
             "heading": "",
             "text": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead.\n\nWe introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with selective observation: the agent composes classical robot primitives and learned vision-language-action (VLA) policies into Python cells that perform conditional checks and local retries, returning only explicitly requested images and state feedback for replanning.\n\nAcross 700 simulated task instances from LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, we compare PyRUA-Lean with a tool-calling baseline using the same GPT-6 Astra planner and underlying robot primitives. Under equal LLM-call budgets, PyRUA-Lean increases overall success from 63.1% to 71.7%.\n\nOn instances solved by both agents, it uses 49% fewer LLM calls and 65% fewer input tokens."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PyRUA-Lean, a code-execution framework in which an agent composes classical robot primitives and learned vision-language-action policies into Python cells. These cells perform conditional checks and local retries, returning selectively requested images and state feedback for replanning. In 700 simulated task instances across LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, the authors compare it with a tool-calling baseline using the same planner and primitives. They report higher overall success under equal call budgets and fewer calls and input tokens on instances solved by both agents.",
+          "zh": "论文提出 PyRUA-Lean，让智能体将传统机器人动作原语与学习型视觉语言动作策略组合成可执行的 Python 单元，进行条件检查和局部重试，并选择性返回图像及状态反馈以供重规划。作者在 LIBERO-PRO、RoboTwin 2.0 和 RoboCasa365 的 700 个仿真任务实例上，与使用相同规划器和动作原语的工具调用基线比较；在相同模型调用预算下，报告总体成功率提高，并在双方均解决的实例上减少调用和输入词元。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
