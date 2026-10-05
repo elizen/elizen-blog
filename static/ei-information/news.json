@@ -3315,7 +3315,11 @@
             "heading": "",
             "text": "As robots are increasingly deployed in unstructured, real-world environments, the ability to reason about complex spatial and semantic relationships among objects remains a fundamental challenge in enabling robust and generalizable manipulation and navigation.\n\nFor example, deciding where to search for an object that is not in plain sight depends on where it is physically plausible as well as semantically likely. Popular methods such as cosine similarity with CLIP struggle to disambiguate between spatially and semantically similar objects that could contain a target object.\n\nWe propose Landmark-Oriented Container Discrimination Using Spatial Graphs (LOCUS).To jointly reason about spatial information and semantics, we train a GNN to update CLIP embeddings on a full environment scene graph by passing embedding information between nodes based on proximity.\n\nCLIP embeddings, augmented by semantic knowledge from a fusion of household ontologies provide a robust semantic signal. We evaluate in simulation on a noiseless scene graph from simulator metadata, making the approach detection-agnostic.\n\nOur approach outperforms random, CLIP, Tidybot, and an LLM planner in the majority of room classes and configurations in simulation. To show our approach is robust to scene graph node placement and label noise, we demonstrate a physical mobile manipulator running in an exploration pipeline start-to-finish including scene graph labels from Detic."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LOCUS uses a graph neural network to pass embedding information between nearby nodes in an environment scene graph, combining spatial relationships with semantic information to identify plausible containers for a target object. It builds on CLIP embeddings and household ontology knowledge. The simulation evaluation uses noiseless scene graphs from simulator metadata, making the method detection-agnostic; the authors report that it outperforms random, CLIP, Tidybot, and an LLM planner in most room classes and configurations. They also demonstrate an end-to-end mobile-manipulator exploration pipeline using scene-graph labels from Detic.",
+          "zh": "LOCUS利用图神经网络在环境场景图的节点间传递嵌入信息，以结合空间关系与语义信息，辅助判断目标物体可能位于哪些容器中。方法以CLIP嵌入为基础，并融合家庭本体知识。仿真评估使用来自模拟器元数据的无噪声场景图，因此不依赖检测器；作者报告其在多数房间类别和配置中优于随机、CLIP、Tidybot和大语言模型规划器。另展示了移动操作机器人在探索流程中从头到尾运行，并使用Detic生成场景图标签。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3346,7 +3350,11 @@
             "heading": "",
             "text": "Vision-based tactile sensors (VBTS) provide rich contact information for robotic manipulation, but existing designs can be hard to simplify and adapt to the size and constraints of humanoid fingertips.\n\nWe introduce \\textbf{GlowTact}, a pressure-responsive vision-based tactile sensing mechanism that directly visualizes contact pressure. \\textbf{GlowTact} requires only single-color, non-directional illumination, and the raw tactile image directly represents the pressure distribution without explicit geometry reconstruction.\n\nThis simple sensing principle enables compact, customizable tactile sensors while preserving high sensitivity and rich spatial detail. We demonstrate gram-scale contact detection, accurate normal-force estimation, and reconstruction of fine contact geometry, including M1 screw threads.\n\nThese results establish \\textbf{GlowTact} as a practical new sensing technology for compact humanoid fingertips, combining a durable nitrile membrane and simple optical design with sensitive and information-rich tactile perception."
           }
-        ]
+        ],
+        "summary": {
+          "en": "GlowTact is a pressure-responsive, vision-based tactile sensing mechanism that directly visualizes contact pressure. It uses single-color, non-directional illumination, and its raw tactile image represents pressure distribution without explicit geometry reconstruction. The authors report that this principle supports compact, customizable sensors while retaining sensitivity and spatial detail. Demonstrations include gram-scale contact detection, normal-force estimation, and reconstruction of fine contact geometry, including M1 screw threads. The paper presents GlowTact as a sensing technology for compact humanoid fingertips, using a nitrile membrane and a simple optical design.",
+          "zh": "GlowTact是一种视觉触觉传感机制，通过压力响应直接呈现接触压力分布。它只需单色、无方向性照明，原始触觉图像即可表示压力分布，无需显式重建几何形状。作者称，该设计可实现紧凑且可定制的传感器，并展示了克级接触检测、法向力估计以及包括M1螺纹在内的精细接触几何重建。论文将其定位为适用于紧凑型人形机器人指尖的传感技术，采用耐用的丁腈膜和简化光学设计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3377,7 +3385,11 @@
             "heading": "",
             "text": "The ability of a device to localize itself within its surroundings is a fundamental prerequisite for spatial computing. Visual-inertial odometry (VIO) has proven to be a cost-effective and accurate solution for this task.\n\nRobots, wearables, XR devices, and drones can benefit significantly from efficient implementations of VIO since they allow for cooler, lighter, and cheaper devices with longer battery life and a better user experience.\n\nIn this work, we propose to enhance the efficiency of a VIO system by leveraging the Hexagon DSP, a commodity co-processor present in many modern smartphones and XR devices. Our approach offloads the visual frontend of a stereo-inertial odometry system to the DSP while keeping the backend on the main CPU.\n\nBy optimizing the implementation for the DSP architecture, we achieve significant reductions in power consumption and latency compared to CPU-only execution.\n\nOur system, HexVIO, demonstrates a 67% reduction in power consumption or an 86% increase in throughput on a commodity smartphone, with the ability to sustain long-term real-time 30 fps tracking for 0.83 W, corresponding to ~18 hours of tracking on the testing device.\n\nThese results highlight the potential of commodity DSPs for enabling all-day visual-inertial tracking in robotics and mobile devices."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HexVIO offloads the visual frontend of a stereo-inertial odometry system to a Hexagon digital signal processor found in many smartphones and XR devices, while keeping the backend on the main CPU. The implementation is optimized for the DSP architecture. On a commodity smartphone, the authors report either a 67% reduction in power consumption or an 86% increase in throughput compared with CPU-only execution. The system sustains real-time tracking at 30 fps using 0.83 W, corresponding to about 18 hours on the testing device.",
+          "zh": "HexVIO将双目惯性里程计系统的视觉前端卸载到智能手机等设备中的Hexagon数字信号处理器上，同时让后端运行于主CPU，并针对DSP架构进行优化。作者报告，在一款商用智能手机上，与仅使用CPU相比，系统功耗降低67%，或吞吐量提高86%；其可持续以30帧每秒实时跟踪，功耗为0.83瓦，对应测试设备约18小时的跟踪时间。论文据此指出，商用DSP有望支持机器人和移动设备实现长时间视觉惯性跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3408,7 +3420,11 @@
             "heading": "",
             "text": "This paper examines the role of Novel View Synthesis (NVS) in geometric representation learning. In principle, NVS should reason about 3D scene structure, thereby enabling transferable multi-view geometric representations. Yet, existing encoder-based NVS methods yield poor representations.\n\nThis is not because of a lack of supervisory signal, but rather due to inconspicuous architectural choices: \\textit{spatially expressive decoders} that dilute representational capabilities of the scene encoder, and \\textit{low-level pixel-space targets} that hinder feature learning.\n\nWe present SNAP, a self-supervised encoder-decoder transformer that addresses both through a pose-conditioned local decoder and a latent-space reconstruction objective. SNAP is task agnostic, and we show that it is competitive with special-purpose geometry-supervised methods.\n\nSNAP also performs competitively against self-supervised representations across five tasks: visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation. Remarkably, SNAP's patch features exhibit emergent viewpoint invariance that approaches heavily supervised models despite lower compute and data budgets.\n\nUnder camera shifts where standard 2D representations collapse, SNAP degrades more gracefully, revealing that restricting decoder expressivity actively prevents the suppression of transferable geometric structure. https://snap-nvs.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies novel view synthesis for geometric representation learning and introduces SNAP, a self-supervised encoder-decoder transformer. The authors argue that existing methods can learn poor representations because spatially expressive decoders dilute the scene encoder and pixel-space targets hinder feature learning. SNAP uses a pose-conditioned local decoder and latent-space reconstruction. The paper reports competitive performance on visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation. Its patch features show emergent viewpoint invariance, and it degrades more gracefully than standard 2D representations under camera shifts.",
+          "zh": "论文研究新视角合成在几何表征学习中的作用，并提出自监督编码器—解码器Transformer SNAP。作者认为，既有方法表现不佳与空间表达能力过强的解码器及像素空间重建目标有关；SNAP采用姿态条件局部解码器和潜在空间重建目标。论文报告，SNAP在视觉定位、姿态估计、点对应、深度估计和机器人操作五项任务上具有竞争力，其图像块特征呈现出视角不变性。在相机移动导致常规二维表征失效时，SNAP的性能退化更平缓。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
