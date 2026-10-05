@@ -1531,7 +1531,11 @@
             "heading": "",
             "text": "Joint embedding predictive architectures (JEPAs) predict future latent representations without reconstructing observations, enabling world models to focus on high-level semantic dynamics. However, a JEPA can preserve high dimensional visual information while discarding information about the physical consequences of actions.\n\nWe call this failure mode causal dynamics information collapse and propose action-grounded vision-invariance latent (AVL) to prevent this collapse.\n\nWe first use the executed action as an auxiliary dynamics anchor that encourages the model to preserve dynamics information, and then use a vision-invariance pathway which aligns perturbed and clean latent predictions without discarding dynamics information, forcing the model to fully understand and utilize causal dynamics information.\n\nWe validate AVL on four robotic control tasks (TwoRoom, PushT, OGBench Cube, and Reacher), showing that it substantially improves success rates under visual perturbations while preserving clean-environment performance.\n\nWe further evaluate physical consequence alignment, clean-noisy dynamics consistency, and the causal effect of targeted transition subspace erasure. Collectively, these results indicate that dynamic information causally relevant to planning is preserved from collapse under AVL."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes action-grounded vision-invariance latent (AVL) to address causal dynamics information collapse in JEPA world models, where visual information may be retained while action consequences are lost. AVL uses executed actions as auxiliary dynamics anchors and aligns perturbed with clean latent predictions through a vision-invariance pathway. Across four robotic control tasks, the authors report improved success under visual perturbations while preserving clean-environment performance. Additional evaluations indicate that dynamics information relevant to planning is retained.",
+          "zh": "论文提出 AVL，用于缓解联合嵌入预测架构世界模型中的因果动力学信息坍塌：模型可能保留视觉信息，却丢失动作的物理后果。方法以执行动作作为动力学辅助锚点，并通过视觉不变路径对齐受扰与干净的潜在预测，同时保留动力学信息。作者在四项机器人控制任务中报告，AVL 提高了视觉扰动下的成功率，并保持干净环境中的表现；其他评估也支持规划相关动力学信息得到保留。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1562,7 +1566,11 @@
             "heading": "",
             "text": "Enabling robots to estimate the kinematic parameters of articulated objects unlocks a wide range of capabilities for interaction and manipulation. The estimation has to happen from the information the robot currently observes, often just a single RGB image of an object it has never seen before.\n\nCurrent single-image approaches couple articulation part segmentation with articulation estimation, making their predictions vulnerable to missed detections and incorrect part associations, and they regress metric 3D geometry that a single view fixes only up to scale.\n\nWe present QueryArt, a model that estimates articulation parameters from a single RGB image, a 2D query point, and camera intrinsics. QueryArt is trained to estimate the 3D articulation geometry relative to the queried point and in units of its depth, which keeps its target identifiable from the image alone.\n\nA single depth measurement at the query point then supplies the scale and recovers the metric parameters. We train QueryArt on a curated mixture of synthetic and real-world articulation datasets. We evaluate QueryArt on several benchmarks and compare it against recent baselines.\n\nQueryArt outperforms recent baselines on most articulation metrics, including on out-of-distribution data. To demonstrate the model's capabilities in real-world settings, we evaluate QueryArt on a mobile manipulator across 57 manipulation trials spanning 16 object parts and five viewpoint classes, achieving a 70.2% success rate.\n\nWe provide code and videos at: https://abwerby.github.io/queryart/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces QueryArt, which estimates articulation parameters from a single RGB image, a 2D query point, and camera intrinsics. It predicts 3D articulation geometry relative to the query point and in units of its depth; one depth measurement then recovers metric scale. Trained on a mixture of synthetic and real-world datasets, QueryArt outperforms recent baselines on most articulation metrics, including out-of-distribution data. In a mobile-manipulator evaluation spanning 57 trials, it achieves a reported 70.2% success rate.",
+          "zh": "论文提出 QueryArt，从单张 RGB 图像、二维查询点和相机内参估计物体关节参数。模型预测相对于查询点、以该点深度为单位的三维关节几何，再用查询点的一次深度测量恢复公制尺度。作者使用合成与真实数据训练，并在多个基准上评估；QueryArt 在多数关节指标上优于近期基线，包括分布外数据。移动操作实验覆盖 57 次试验，成功率为 70.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1593,7 +1601,11 @@
             "heading": "",
             "text": "During contact-rich manipulation, interactions between a robot and its environment carry information about local geometry: a surface prevents penetration, a bore guides a peg. A controller that exploits these interactions can comply with environmental constraints while preserving task intent.\n\nRobot-earning systems commonly use position, hybrid force-position, or Cartesian impedance control. Their prescribed tracking objectives, stiffness, or force-control directions may not match local constraints and may degrade performance.\n\nWe learn a proprioceptive reflex policy in simulation on three simple interaction primitives: a spring, a plane, and a rail. The policy maps task-space commands to joint-position targets using state history, without direct force or geometrical measurements. Once trained, it serves as a frozen execution layer beneath higher-level controllers.\n\nWe evaluate it in dual-arm box lifting, peg insertion, and surface following. In box lifting, the reflex kept the force below the threshold while the baseline failed. In rough-surface following it stayed below the 10 N reference, on par with tuned hybrid force-position control.\n\nIn 0.02 mm peg insertion It reduced mean estimated contact force to less than half that of the baseline while increasing hardware success rates from at most 22 % to 36-58 %.By separating contact response from command generation, the reflex policy provides motion planners, learned policies, and teleoperators with robust contact-rich execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper learns a proprioceptive reflex policy in simulation for contact-rich manipulation. Using state history, it maps task-space commands to joint-position targets without direct force or geometry measurements, then operates as a frozen execution layer beneath higher-level controllers. Evaluations cover dual-arm box lifting, peg insertion, and surface following. The authors report meeting stated force limits in lifting and rough-surface following. In 0.02 mm peg insertion, estimated contact force was less than half the baseline, while hardware success rates rose from at most 22% to 36–58%.",
+          "zh": "论文在仿真中学习一种本体感觉反射策略，用于接触丰富的操作。策略以状态历史为依据，将任务空间命令映射为关节位置目标，不直接测量力或几何；训练后作为冻结执行层服务于高层控制器。作者评估了双臂箱体搬运、插销插入和表面跟随。在箱体搬运与粗糙表面跟随中，策略满足所述力阈值或参考；在 0.02 毫米插入任务中，估计接触力低于基线一半，硬件成功率由至多 22% 提升至 36%–58%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1624,7 +1636,11 @@
             "heading": "",
             "text": "Embodied agents interacting with the same physical process may maintain heterogeneous, asynchronous, and observer-relative representations. Rather than assuming that such representations should always be globally aligned, we investigate which distinctions among them must actually be resolved for coherent interaction.\n\nWe formalize this question through relational sufficiency: an interaction-specific relational-evidence map defines the representational ambiguity left unresolved by comparison, and sufficiency holds when each residual ambiguity fiber lies within an interaction-equivalence class.\n\nWhen this condition fails, additional sensorimotor anchors must separate precisely the ambiguities that can change the interaction-relevant outcome.\n\nFor smooth systems, we derive a local first-order lower bound on the number of inde- pendent scalar anchors required, given by the dimension of directions that are invisible to relational evidence but visible to the interaction-relevant map.\n\nWe instantiate the theory in two variants of an asynchronous hand-off scenario that share the same observer agents, representations, transports, and relational evidence. Relative synchronization requires no additional anchor, whereas hand-off at an absolute time requires exactly one.\n\nThe analysis there- fore provides a task-relative stopping condition for representational alignment: residual disagreement need not be eliminated when it is invariant with respect to the interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper asks which differences among embodied agents’ heterogeneous, asynchronous representations must be resolved for coherent interaction. It formalizes relational sufficiency: residual ambiguity after comparison is acceptable when each ambiguity fiber lies within an interaction-equivalence class. If not, sensorimotor anchors must distinguish ambiguities that can alter the outcome. For smooth systems, the authors derive a local first-order lower bound on the number of scalar anchors. In two asynchronous hand-off variants, relative synchronization needs none, while hand-off at an absolute time requires exactly one.",
+          "zh": "论文研究具身智能体间表示对齐所需的条件，提出关系充分性：比较后残留的表示歧义，若均落在同一交互等价类中，则无需进一步消除。若条件不成立，额外的感知运动锚点应区分会改变交互结果的歧义。对光滑系统，作者推导所需标量锚点数量的一阶局部下界。在两个异步交接情境变体中，相对同步不需额外锚点，而绝对时间交接恰需一个。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
