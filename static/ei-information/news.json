@@ -147,7 +147,11 @@
             "heading": "",
             "text": "Physics simulators and motion planners require convex collision geometry, yet image-to-3D generative models output dense, frequently non-manifold visual meshes. Bridging the two today takes a slow, brittle reconstruct-then-decompose pipeline of repair, decimation, and approximate convex decomposition.\n\nWe present I2CD, which predicts a convex decomposition directly from a single RGB image.\n\nRather than train a new image-to-3D model, I2CD freezes the pretrained Hunyuan3D-2 image-conditioned diffusion transformer and shape decoder and trains only a lightweight cross-attention head (38M parameters, under ten GPU-hours) whose learned \"convex-slot\" tokens emit the halfplane parameters of $K$ convex polytopes.\n\nThe output is compact, convex by construction, and loads into physics engines without any post-processing, in ${\\sim}0.5$s per image. On $227$ held-out OmniObject3D and Google Scanned Objects instances, I2CD attains the highest volumetric IoU among eight reconstruct-then-decompose pipelines while running $6$-$37\\times$ faster end-to-end.\n\nIn a cross-simulator study in MuJoCo, PyBullet, Genesis, and Isaac Sim, every engine uses I2CD geometry as delivered, whereas raw generated meshes \"load\" everywhere but are silently replaced by a different collision shape in most cases or need seconds to minutes of per-object preprocessing.\n\nOn a physical xArm7, I2CD produces planner-ready geometry for a $20$-object cluttered scene in $11$s versus $328$s for the strongest baseline, at comparable pick-and-place execution success ($85$ vs. $90$ of $100$ trials)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "I2CD predicts a convex decomposition directly from one RGB image by training a lightweight cross-attention head while freezing a pretrained image-conditioned model and shape decoder. Its output consists of convex polytopes defined by halfplane parameters. On 227 held-out instances, the authors report the highest volumetric IoU among eight reconstruct-then-decompose pipelines and 6–37× faster end-to-end runtime. In four simulators, the geometry is used as delivered. On an xArm7 physical setup, preparing a 20-object scene took 11 seconds; pick-and-place succeeded in 85 of 100 trials, compared with 90 for the baseline.",
+          "zh": "I2CD提出从单张RGB图像直接预测凸分解，以满足物理仿真器和运动规划器对凸碰撞几何的需求。该方法冻结预训练的图像条件模型与形状解码器，仅训练轻量交叉注意力头，输出由半平面参数定义的凸多面体。在227个留出实例上，作者报告其体积IoU高于八种先重建再分解的流程，端到端速度快6至37倍。MuJoCo、PyBullet、Genesis和Isaac Sim均直接使用其几何；xArm7实验中，20物体场景的规划几何生成用时11秒，100次抓放成功85次，基线为328秒和90次。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -178,7 +182,11 @@
             "heading": "",
             "text": "Imitation learning for contact-rich manipulation requires high-quality expert data that is expensive to obtain. This makes learning a sample-efficient policy a key issue. To address this, we propose VISTA, a workspace-level equivariant visuotactile diffusion policy for data-efficient contact-rich imitation learning.\n\nVISTA projects visual and tactile observations into spherical tokens, injects tactile contact cues into visual spherical directions through permutation-equivariant spherical fusion, and rotates the fused harmonic representation using the end-effector orientation.\n\nThe resulting representation conditions an equivariant diffusion policy to predict spatially consistent actions. Extensive experiments in both simulation and real-world robotic settings show that VISTA substantially improves data efficiency over strong visuotactile imitation learning baselines. Project website: https://vista-paper.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "VISTA is a workspace-level equivariant visuotactile diffusion policy for data-efficient imitation learning in contact-rich manipulation. It projects visual and tactile observations into spherical tokens, fuses tactile contact cues into visual spherical directions, and rotates the fused harmonic representation according to end-effector orientation. This representation conditions a diffusion policy to predict spatially consistent actions. The authors report that experiments in simulation and real-world robotic settings show substantially improved data efficiency over strong visuotactile imitation-learning baselines.",
+          "zh": "VISTA是一种面向接触丰富操作、强调数据效率的工作空间级等变视觉触觉扩散策略。它将视觉和触觉观测投影为球面令牌，通过置换等变球面融合把触觉接触线索注入视觉球面方向，再依据末端执行器姿态旋转融合后的调和表示。该表示用于条件化扩散策略，以预测空间一致的动作。作者称，在仿真和真实机器人实验中，VISTA相较于强视觉触觉模仿学习基线显著提高了数据效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -209,7 +217,11 @@
             "heading": "",
             "text": "In lifelong reinforcement learning, retaining previously learned policies is not sufficient for effective transfer to a new task. Useful knowledge may be distributed across several prior policies, and its relevance may change as the learner acquires experience.\n\nOne hypothesis is that task similarity can be effectively used in a continual learning setting to find and combine previously learned policies. To test it, Adaptive Mask Selection and Composition (AMSC) is designed to estimate similarity from online experience via non-parametric Wasserstein task embeddings from state-action-reward samples.\n\nThe z-score-normalized sparsemax of the similarity scores are used to derive a variable-size support to periodically choose and weight policies to form a prior when learning a new task. On CT-graph and MiniGrid, AMSC achieves higher mean performance and forward transfer than the evaluated modular composition baselines while exhibiting no forgetting.\n\nResults on Continual World suggest that identifying relevant prior knowledge and determining its layer-specific composition may require additional layer-specific tuning. Ablations show that selecting relevant sources and determining how strongly to reuse them are central to these gains.\n\nIndependently measured pairwise transfer is also positively associated with task-embedding similarity. These results indicate that task similarity can be an effective criterion to select and weight specific knowledge for reuse in lifelong reinforcement learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AMSC estimates task similarity from online state-action-reward samples using non-parametric Wasserstein task embeddings. It applies z-score-normalized sparsemax scores to periodically select and weight a variable set of prior policies as a learning prior for a new task. On CT-graph and MiniGrid, the authors report higher mean performance and forward transfer than evaluated modular composition baselines, with no forgetting. Results on Continual World suggest layer-specific tuning may be needed. Ablations indicate that both selecting useful sources and setting their reuse strength contribute to the reported gains.",
+          "zh": "AMSC研究如何在终身强化学习中根据在线经验寻找并组合已有策略。它从状态、动作和奖励样本构造非参数Wasserstein任务嵌入，以估计任务相似度，再用归一化稀疏权重周期性选择并加权策略，形成新任务学习的先验。在CT-graph和MiniGrid上，作者报告其平均表现和前向迁移高于所评估的模块组合基线，且没有遗忘。Continual World结果显示，识别相关知识及确定分层组合可能需要额外调优；消融实验指出，来源选择及复用强度均与收益相关。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -240,7 +252,11 @@
             "heading": "",
             "text": "Finding an optimal behaviour policy within a given environment is a widely studied problem in domains as diverse as games, robotics, energy infrastructure, communication networks, and multi-agent systems.\n\nNumerous benchmarks have been developed to support such research, but the vast majority assume that the agent's embodiment (design) is fixed, focusing instead on policy learning alone. Lifting this assumption gives rise to a broader class of problems in which optimizing embodiment and policy separately is highly suboptimal.\n\nAn agent's embodiment strongly shapes which control policies can be discovered, while the optimal embodiment is in turn defined by the policies it admits. To help the research community study this class of problems explicitly and systematically, we introduce Co-Design Gym - a suite of benchmark environments for jointly optimizing embodiment and policy.\n\nOur environments span domains such as robotic manipulation and locomotion, multi-robot cooperation, deformable and soft dynamics, video games, electricity grids, wireless networks, F1 racing, multi-agent warehouses, and optimal control, offering 20 environment families (domains), with over 85 distinct co-design presets in total.\n\nWe further contribute a systematic evaluation of representative co-design algorithms, characterizing the current state of the art. Together, these contributions lay the groundwork for cumulative, comparable progress in co-design."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Co-Design Gym is a benchmark suite for jointly optimizing agent embodiment and policy, addressing settings where most benchmarks fix the design and focus only on policy learning. The authors argue that embodiment shapes which control policies can be discovered, while desirable embodiment depends on the policies it enables. The suite covers domains including robotic manipulation and locomotion, multi-robot cooperation, deformable dynamics, games, electricity grids, wireless networks, F1 racing, multi-agent warehouses, and optimal control. It contains 20 environment families and more than 85 co-design presets, alongside a systematic evaluation of representative algorithms.",
+          "zh": "Co-Design Gym是一套用于联合优化智能体形态与策略的基准环境，针对现有多数基准将形态固定、仅关注策略学习的设定。该项目指出，形态会影响可发现的控制策略，而理想形态也取决于其支持的策略。基准覆盖机器人操作与运动、多机器人协作、可变形和软体动力学、电子游戏、电网、无线网络、F1赛车、多智能体仓库及最优控制等领域，共含20类环境和85个以上的协同设计预设。作者还系统评估了代表性算法，以支持后续可比较研究。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
