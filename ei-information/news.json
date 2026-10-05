@@ -23,7 +23,11 @@
             "heading": "",
             "text": "World action models (WAMs) have emerged as a promising paradigm for robotic control by jointly predicting future visual dynamics and actions from an initial observation and instruction. However, existing WAMs struggle with long-horizon prediction, as generating dense video rollouts is highly inefficient.\n\nSome recent WAMs address this by predicting a single future frame without generating the full video, but this approach neglects how to progress toward the goal.\n\nWe present ProWAM, a progressive world action model that jointly predicts actions and an ordered sequence of sparse visual sub-goals, providing explicit visual guidance to anchor action generation throughout task execution.\n\nThis design scales naturally, as sub-goal prediction can be learned from large-scale action-free videos, allowing the video backbone to offload complex visual planning from the action policy.\n\nFor efficient action generation, ProWAM executes a single video-backbone forward pass to cache sparse sub-goal features, eliminating iterative full-video generation and requiring only lightweight action denoising during replanning. Across extensive evaluations, ProWAM achieves superior out-of-distribution robustness.\n\nOn simulation benchmarks, it sets new state-of-the-art results on LIBERO-Plus (85.8%) and randomized RoboTwin (75.7%), outperforming the strongest baseline with relative gains of up to +35.9%.On RoboCasa365, ProWAM achieves a 48.1% success rate and 18.2% on the challenging Composite-Unseen split, ranking 4th overall.\n\nCrucially, in zero-shot real-world experiments, ProWAM achieves 70.0% success, outperforming the strongest baseline by +15.0 (from 55.0% to 70.0%, a +27.3% relative gain) in novel scenes. These results demonstrate the value of progress-indexed visual foresight for closed-loop control. Our program is in https://sii-ferenas.github.io/ProWAM-page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ProWAM, a progressive world action model that jointly predicts actions and an ordered sequence of sparse visual sub-goals to guide action generation during task execution. It proposes learning sub-goal prediction from action-free videos and caching sub-goal features with one video-backbone forward pass, followed by lightweight action denoising during replanning. The authors report results on simulation benchmarks and zero-shot real-world experiments, limited to the described evaluation settings.",
+          "zh": "论文提出渐进式世界动作模型 ProWAM，联合预测动作与有序的稀疏视觉子目标，为任务执行中的动作生成提供视觉指引。模型可借助无动作标注视频学习子目标，并通过一次视频骨干前向计算缓存其特征，以轻量动作去噪支持重规划。作者报告其在多个仿真基准上的表现及零样本真实世界实验结果；这些结果限于所述评测设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -54,7 +58,11 @@
             "heading": "",
             "text": "Robotic locomotion is often approached with the goal of maximizing robustness and reactivity by increasing motion control frequency. We challenge this intuitive notion by demonstrating robust and dynamic locomotion with a learned motion controller executing at as low as 8 Hz on a real ANYmal C quadruped.\n\nThe robot is able to robustly and repeatably achieve a high heading velocity of 1.5 m/s, traverse uneven terrain, and resist unexpected external perturbations. We further present a comparative analysis of deep reinforcement learning (RL) based motion control policies trained and executed at frequencies ranging from 5 Hz to 200 Hz.\n\nWe show that low-frequency policies are less sensitive to actuation latencies and variations in system dynamics. This is to the extent that a successful sim-to-real transfer can be performed even without any dynamics randomization or actuation modeling. We support this claim through a set of rigorous empirical evaluations.\n\nMoreover, to assist reproducibility, we provide the training and deployment code along with an extended analysis at https://articulated.robots.ox.ac.uk/lfmc/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies learned low-frequency motion control and reports deployment at rates as low as 8 Hz on a real ANYmal C quadruped. The authors say the robot repeatedly reaches a high heading velocity, crosses uneven terrain, and resists unexpected external perturbations. They compare deep reinforcement learning policies trained and executed at frequencies from 5 to 200 Hz, reporting that low-frequency policies are less sensitive to actuation latency and changes in system dynamics. They also report sim-to-real transfer without dynamics randomization or actuation modeling.",
+          "zh": "论文研究低频运动控制，并报告一款真实 ANYmal C 四足机器人使用最低 8 Hz 的学习控制器实现运动。作者称机器人能够重复达到较高航向速度、通过不平地形并抵抗意外外力。论文还比较了训练和执行频率为 5 至 200 Hz 的深度强化学习策略，报告低频策略对执行延迟和系统动力学变化较不敏感，并称在未采用动力学随机化或执行器建模时也完成了仿真到现实迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -85,7 +93,11 @@
             "heading": "",
             "text": "Adversarial patches can disrupt Vision-Language-Action (VLA) models by manipulating visual observations, leading to failures in robot control. However, it remains poorly understood which internal mechanisms underlie these failures and how targeted interventions can mitigate them.\n\nIn this work, we mechanistically analyze VLA representations using a sparse autoencoder (SAE) and identify a feature whose activation strongly correlates with the presence of an adversarial patch. Based on this analysis, we suppress the identified feature at inference time only when a linear probe detects an attack.\n\nThis intervention improves robustness without the cost of fine-tuning the VLA. We evaluate our method against VLA adversarial patch attacks on LIBERO-10.Conditional intervention improves success rate under intermittent attacks, whereas continuously applying the same intervention substantially degrades policy performance.\n\nThese results show that attack-related internal representations can provide useful targets for VLA adversarial defense and that controlling when to intervene is important for limiting disruption to nominal policy behavior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper analyzes mechanisms behind adversarial patch failures in vision-language-action models. Using a sparse autoencoder, the authors identify a feature whose activation strongly correlates with a patch, then suppress it at inference only when a linear probe detects an attack. Evaluated against attacks on LIBERO-10, the intervention requires no VLA fine-tuning. The authors report improved success under intermittent attacks with conditional intervention, while continuously applying it substantially degrades policy performance.",
+          "zh": "论文分析视觉语言动作模型对抗贴片攻击的内部机制，使用稀疏自编码器识别出一个与贴片存在强相关的特征，并在推理时仅于线性探针检测到攻击时抑制该特征。作者在 LIBERO-10 上评估这一无需微调模型的干预，报告条件式干预可提升间歇攻击下的成功率，而持续干预会明显降低策略表现。研究据此指出，攻击相关内部表征可用于防御，干预时机也会影响正常策略行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -116,7 +128,11 @@
             "heading": "",
             "text": "Vision language model (VLM) agents can control robots through visual feedback and action primitives, but repeated model invocations and redundant observations incur substantial token overhead.\n\nWe introduce PyRUA-Lean, an interactive code-execution framework that couples feedback-driven primitive composition with selective observation: the agent composes classical robot primitives and learned vision-language-action (VLA) policies into Python cells that perform conditional checks and local retries, returning only explicitly requested images and state feedback for replanning.\n\nAcross 700 simulated task instances from LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, we compare PyRUA-Lean with a tool-calling baseline using the same GPT-6 Astra planner and underlying robot primitives. Under equal LLM-call budgets, PyRUA-Lean increases overall success from 63.1% to 71.7%.\n\nOn instances solved by both agents, it uses 49% fewer LLM calls and 65% fewer input tokens."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PyRUA-Lean, a code-execution framework in which an agent composes classical robot primitives and learned vision-language-action policies into Python cells. These cells perform conditional checks and local retries, returning selectively requested images and state feedback for replanning. In 700 simulated task instances across LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, the authors compare it with a tool-calling baseline using the same planner and primitives. They report higher overall success under equal call budgets and fewer calls and input tokens on instances solved by both agents.",
+          "zh": "论文提出 PyRUA-Lean，让智能体将传统机器人动作原语与学习型视觉语言动作策略组合成可执行的 Python 单元，进行条件检查和局部重试，并选择性返回图像及状态反馈以供重规划。作者在 LIBERO-PRO、RoboTwin 2.0 和 RoboCasa365 的 700 个仿真任务实例上，与使用相同规划器和动作原语的工具调用基线比较；在相同模型调用预算下，报告总体成功率提高，并在双方均解决的实例上减少调用和输入词元。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1715,7 +1731,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models that couple pretrained Vision-Language Models (VLMs) with continuous action experts have achieved strong manipulation performance, yet generalization to out-of-distribution (OOD) language instructions remains poor.\n\nA known challenge is the structural imbalance in VLA data, where language is far less diverse than visual and action content, making policies prone to visual shortcuts.\n\nWhile discrete-action methods mitigate this through vision-language co-training, continuous action experts lack such protection: they start from random initialization and learn entirely from imbalanced data, producing noisy gradients that corrupt the VLM and fail to exploit its language capability.\n\nWe address this from a Bayesian perspective, factorizing the policy into a language-agnostic Vision-Action (VA) prior and a language-conditioned VLA likelihood, and propose APT, a two-stage training method emphasizing Action expert PreTraining.\n\nIn Stage 1, the action expert is pretrained as a VA prior on vision-action pairs from a frozen VLM, bypassing the language imbalance. In Stage 2, language tokens are injected through a gated fusion mechanism that integrates VLM features while preserving the learned visuomotor prior.\n\nAPT applies to mainstream VLA architectures, including the $\\pi$ and GR00T-style architectures. Comprehensive experiments validate that APT achieves consistent gains on unseen instructions and compositional tasks. Project Page: https://xukechun.github.io/papers/APT/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes APT, a two-stage training method intended to improve vision-language-action policies’ generalization to out-of-distribution instructions. First, an action expert is pretrained on vision-action pairs from a frozen vision-language model, forming a language-agnostic prior. Then language tokens are introduced through gated fusion while preserving that visuomotor prior. The authors say APT applies to several mainstream architectures and report consistent experimental gains on unseen instructions and compositional tasks; the abstract gives no specific gain magnitudes.",
+          "zh": "论文提出 APT，一种面向视觉—语言—动作策略的两阶段训练方法，旨在改善对分布外语言指令的泛化。第一阶段在冻结视觉—语言模型提供的视觉—动作对上预训练动作专家，形成不依赖语言的先验；第二阶段通过门控融合注入语言特征，同时保留已学习的视觉运动先验。作者称该方法适用于多种主流架构，并报告实验显示其在未见指令和组合任务上取得持续提升。摘要未提供具体提升幅度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1746,7 +1766,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models often require costly real-world demonstrations to adapt to contact-rich manipulation tasks, particularly when generalization across object placements is needed.\n\nWe propose SARI (Simulated Approach, Real Interaction), a phase-split sim-and-real co-training framework built on a simple insight: spatial coverage and contact physics should be acquired from the domains best suited to them.\n\nSpecifically, free-space approaches require spatial diversity but tolerate modest simulation gaps, making them ideal for synthetic generation; conversely, contact interactions demand accurate physics but vary little across object placements, allowing a few real demonstrations to generalize across the workspace.\n\nSARI generates diverse simulated approaches in a photorealistic digital twin while collecting real contact interactions at only a few placements.\n\nPost-trained on these phase-segmented demonstrations, a single policy seamlessly stitches simulated approaches with real contact interactions using visual appearance alignment and a shared camera-relative action representation--without explicit phase labels or hand-coded switches.\n\nAcross five real-world contact-rich manipulation tasks, SARI reduces real-data collection time by 34.3% and achieves 27.5% success at unseen placements, where all full-task sim-real baselines fail completely (0%)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SARI is a co-training framework that splits contact-rich manipulation demonstrations by task phase. It generates varied free-space approaches in simulation and collects real contact interactions at a few placements. A single policy connects the phases using visual appearance alignment and a shared camera-relative action representation, without explicit phase labels or hand-coded switches. Across five real-world tasks, the authors report a 34.3% reduction in real-data collection time and 27.5% success at unseen placements; full-task sim-to-real baselines scored 0% in that setting.",
+          "zh": "论文提出 SARI，一种将仿真与真实示范按操作阶段拆分的协同训练框架，用于接触丰富的操控任务。框架在仿真中生成多样的自由空间接近动作，并在少数位置采集真实接触交互；单一策略依靠视觉外观对齐和共享的相机相对动作表示衔接两者，无需显式阶段标签或手工切换。作者报告，在五项真实世界任务中，真实数据采集时间减少34.3%，未见位置成功率为27.5%；完整任务仿真—现实基线在该设置下成功率为0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1777,7 +1801,11 @@
             "heading": "",
             "text": "Closed-loop learned locomotion is established on commercial quadrupeds but remains uncommon at the sub-kilogram scale. Continuous-rotation legs give MiNI-Q, a 270 g quadruped, access to supporting configurations on either side of the body. We exploit this range with a single posture-conditioned reinforcement-learning policy that runs entirely onboard.\n\nA continuous joint-space reference on the torus $T^8$ and its gravity-conditioned transformation connect upright walking, inverted walking, and landing recovery without state machines or phase switching.\n\nCoordinated posture and release curricula train this behavior family; identified actuation, cross-engine validation, and embedded execution support hardware transfer.\n\nThe same sub-100k-parameter network tracks forward velocity with RMSE of 0.037 m/s upright and 0.050 m/s inverted, resumes walking in 24 of 30 release trials, and operates with four interchangeable foot geometries across four indoor surfaces.\n\nHardware experiments and simulation ablations connect these capabilities to the representation, conditioning, and training choices that exploit the platform's motion range. Demonstration videos and supplementary material are available on the project website: https://submissionreview.github.io/around-the-world/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies MiNI-Q, a 270 g quadruped with continuous-rotation legs, and presents an onboard posture-conditioned reinforcement-learning policy. A continuous joint-space reference and gravity-conditioned transformation connect upright and inverted walking with landing recovery, without state machines or phase switching. The authors report velocity-tracking errors for both postures, walking recovery in 24 of 30 release trials, and operation with multiple foot geometries across indoor surfaces. Hardware experiments and simulation ablations examine how representation, conditioning, and training choices contribute to these capabilities.",
+          "zh": "论文研究 MiNI-Q，一种重270克、采用连续旋转腿的四足机器人，并提出完全在机载运行的姿态条件强化学习策略。该策略通过连续关节空间参考及重力条件变换，连接正立行走、倒立行走和着陆恢复，无需状态机或阶段切换。作者报告同一网络在两种姿态下的速度跟踪误差、释放试验恢复行走次数，以及在不同足部几何和室内表面上的运行情况。硬件实验与仿真消融用于分析表示方式、条件输入和训练选择的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1808,7 +1836,11 @@
             "heading": "",
             "text": "Automated liquid handlers execute digital protocols, but operators must assemble the deck and confirm that the physical setup matches the intended experiment. We present the Labware Setup Checker, a passive vision system that verifies deck preparation on an Opentrons Flex without modifying its hardware or firmware.\n\nA consumer webcam mounted outside the robot supplies images to a browser application. The checker segments the deck into slots, corrects slot assignments using the known deck geometry, classifies the labware, and compares the observed setup with a reference protocol library to report missing, misplaced, or unexpected labware.\n\nIt operates independently of the robot controller and does not interrupt or gate a run. During SwabSeq Respiratory Viral Panel (RVP) pre-PCR deck preparation, the checker tracked a slot from empty to a base and then to the completed plate-and-base assembly, identifying the completed assembly in all 29 frames before robot motion.\n\nAcross these frames, 95.1% of the 348 labware classifications for slots requiring exact matches agreed with the protocol reference. In 480 frames with partially occluded reservoirs, all 6,720 slot assignments were correct.\n\nAcross three camera positions and two lighting conditions, slot assignment was 100% correct, and 97.73% of labware classifications matched the protocol reference. Median verification time was 2.10 s on a laptop using only its CPU and 4.24 s from frame capture to receipt of results during AWS deployment in the laboratory.\n\nThese results show that an external camera and independent software can provide verification of deck setup against protocol requirements within seconds, allowing operators to review the physical setup before starting a run."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents the Labware Setup Checker, a passive vision system that checks deck preparation on an Opentrons Flex using an external consumer webcam and browser application. It segments deck slots, corrects assignments using deck geometry, classifies labware, and compares observations with a protocol reference library to flag missing, misplaced, or unexpected items. It runs independently of the robot controller and does not gate operation. The abstract reports frame-level results for a pre-PCR setup, classification and slot-assignment performance across camera, lighting, and occlusion conditions, and verification times on a laptop and in an AWS deployment.",
+          "zh": "论文介绍 Labware Setup Checker，这是一种通过外置消费级摄像头和浏览器应用，核对 Opentrons Flex 液体处理机器人台面配置的被动视觉系统。它分割台面槽位、依据台面几何修正分配、识别器皿，并与协议参考库比较，以报告缺失、错放或意外器皿；系统独立于机器人控制器，不会阻断运行。摘要报告了特定预 PCR 准备过程中的逐帧识别结果，以及多相机位置、光照和遮挡条件下的槽位分配与分类表现，也给出笔记本本地和实验室云端部署的验证耗时。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
