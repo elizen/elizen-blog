@@ -1715,7 +1715,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models that couple pretrained Vision-Language Models (VLMs) with continuous action experts have achieved strong manipulation performance, yet generalization to out-of-distribution (OOD) language instructions remains poor.\n\nA known challenge is the structural imbalance in VLA data, where language is far less diverse than visual and action content, making policies prone to visual shortcuts.\n\nWhile discrete-action methods mitigate this through vision-language co-training, continuous action experts lack such protection: they start from random initialization and learn entirely from imbalanced data, producing noisy gradients that corrupt the VLM and fail to exploit its language capability.\n\nWe address this from a Bayesian perspective, factorizing the policy into a language-agnostic Vision-Action (VA) prior and a language-conditioned VLA likelihood, and propose APT, a two-stage training method emphasizing Action expert PreTraining.\n\nIn Stage 1, the action expert is pretrained as a VA prior on vision-action pairs from a frozen VLM, bypassing the language imbalance. In Stage 2, language tokens are injected through a gated fusion mechanism that integrates VLM features while preserving the learned visuomotor prior.\n\nAPT applies to mainstream VLA architectures, including the $\\pi$ and GR00T-style architectures. Comprehensive experiments validate that APT achieves consistent gains on unseen instructions and compositional tasks. Project Page: https://xukechun.github.io/papers/APT/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes APT, a two-stage training method intended to improve vision-language-action policies’ generalization to out-of-distribution instructions. First, an action expert is pretrained on vision-action pairs from a frozen vision-language model, forming a language-agnostic prior. Then language tokens are introduced through gated fusion while preserving that visuomotor prior. The authors say APT applies to several mainstream architectures and report consistent experimental gains on unseen instructions and compositional tasks; the abstract gives no specific gain magnitudes.",
+          "zh": "论文提出 APT，一种面向视觉—语言—动作策略的两阶段训练方法，旨在改善对分布外语言指令的泛化。第一阶段在冻结视觉—语言模型提供的视觉—动作对上预训练动作专家，形成不依赖语言的先验；第二阶段通过门控融合注入语言特征，同时保留已学习的视觉运动先验。作者称该方法适用于多种主流架构，并报告实验显示其在未见指令和组合任务上取得持续提升。摘要未提供具体提升幅度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1746,7 +1750,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models often require costly real-world demonstrations to adapt to contact-rich manipulation tasks, particularly when generalization across object placements is needed.\n\nWe propose SARI (Simulated Approach, Real Interaction), a phase-split sim-and-real co-training framework built on a simple insight: spatial coverage and contact physics should be acquired from the domains best suited to them.\n\nSpecifically, free-space approaches require spatial diversity but tolerate modest simulation gaps, making them ideal for synthetic generation; conversely, contact interactions demand accurate physics but vary little across object placements, allowing a few real demonstrations to generalize across the workspace.\n\nSARI generates diverse simulated approaches in a photorealistic digital twin while collecting real contact interactions at only a few placements.\n\nPost-trained on these phase-segmented demonstrations, a single policy seamlessly stitches simulated approaches with real contact interactions using visual appearance alignment and a shared camera-relative action representation--without explicit phase labels or hand-coded switches.\n\nAcross five real-world contact-rich manipulation tasks, SARI reduces real-data collection time by 34.3% and achieves 27.5% success at unseen placements, where all full-task sim-real baselines fail completely (0%)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SARI is a co-training framework that splits contact-rich manipulation demonstrations by task phase. It generates varied free-space approaches in simulation and collects real contact interactions at a few placements. A single policy connects the phases using visual appearance alignment and a shared camera-relative action representation, without explicit phase labels or hand-coded switches. Across five real-world tasks, the authors report a 34.3% reduction in real-data collection time and 27.5% success at unseen placements; full-task sim-to-real baselines scored 0% in that setting.",
+          "zh": "论文提出 SARI，一种将仿真与真实示范按操作阶段拆分的协同训练框架，用于接触丰富的操控任务。框架在仿真中生成多样的自由空间接近动作，并在少数位置采集真实接触交互；单一策略依靠视觉外观对齐和共享的相机相对动作表示衔接两者，无需显式阶段标签或手工切换。作者报告，在五项真实世界任务中，真实数据采集时间减少34.3%，未见位置成功率为27.5%；完整任务仿真—现实基线在该设置下成功率为0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1777,7 +1785,11 @@
             "heading": "",
             "text": "Closed-loop learned locomotion is established on commercial quadrupeds but remains uncommon at the sub-kilogram scale. Continuous-rotation legs give MiNI-Q, a 270 g quadruped, access to supporting configurations on either side of the body. We exploit this range with a single posture-conditioned reinforcement-learning policy that runs entirely onboard.\n\nA continuous joint-space reference on the torus $T^8$ and its gravity-conditioned transformation connect upright walking, inverted walking, and landing recovery without state machines or phase switching.\n\nCoordinated posture and release curricula train this behavior family; identified actuation, cross-engine validation, and embedded execution support hardware transfer.\n\nThe same sub-100k-parameter network tracks forward velocity with RMSE of 0.037 m/s upright and 0.050 m/s inverted, resumes walking in 24 of 30 release trials, and operates with four interchangeable foot geometries across four indoor surfaces.\n\nHardware experiments and simulation ablations connect these capabilities to the representation, conditioning, and training choices that exploit the platform's motion range. Demonstration videos and supplementary material are available on the project website: https://submissionreview.github.io/around-the-world/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies MiNI-Q, a 270 g quadruped with continuous-rotation legs, and presents an onboard posture-conditioned reinforcement-learning policy. A continuous joint-space reference and gravity-conditioned transformation connect upright and inverted walking with landing recovery, without state machines or phase switching. The authors report velocity-tracking errors for both postures, walking recovery in 24 of 30 release trials, and operation with multiple foot geometries across indoor surfaces. Hardware experiments and simulation ablations examine how representation, conditioning, and training choices contribute to these capabilities.",
+          "zh": "论文研究 MiNI-Q，一种重270克、采用连续旋转腿的四足机器人，并提出完全在机载运行的姿态条件强化学习策略。该策略通过连续关节空间参考及重力条件变换，连接正立行走、倒立行走和着陆恢复，无需状态机或阶段切换。作者报告同一网络在两种姿态下的速度跟踪误差、释放试验恢复行走次数，以及在不同足部几何和室内表面上的运行情况。硬件实验与仿真消融用于分析表示方式、条件输入和训练选择的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1808,7 +1820,11 @@
             "heading": "",
             "text": "Automated liquid handlers execute digital protocols, but operators must assemble the deck and confirm that the physical setup matches the intended experiment. We present the Labware Setup Checker, a passive vision system that verifies deck preparation on an Opentrons Flex without modifying its hardware or firmware.\n\nA consumer webcam mounted outside the robot supplies images to a browser application. The checker segments the deck into slots, corrects slot assignments using the known deck geometry, classifies the labware, and compares the observed setup with a reference protocol library to report missing, misplaced, or unexpected labware.\n\nIt operates independently of the robot controller and does not interrupt or gate a run. During SwabSeq Respiratory Viral Panel (RVP) pre-PCR deck preparation, the checker tracked a slot from empty to a base and then to the completed plate-and-base assembly, identifying the completed assembly in all 29 frames before robot motion.\n\nAcross these frames, 95.1% of the 348 labware classifications for slots requiring exact matches agreed with the protocol reference. In 480 frames with partially occluded reservoirs, all 6,720 slot assignments were correct.\n\nAcross three camera positions and two lighting conditions, slot assignment was 100% correct, and 97.73% of labware classifications matched the protocol reference. Median verification time was 2.10 s on a laptop using only its CPU and 4.24 s from frame capture to receipt of results during AWS deployment in the laboratory.\n\nThese results show that an external camera and independent software can provide verification of deck setup against protocol requirements within seconds, allowing operators to review the physical setup before starting a run."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents the Labware Setup Checker, a passive vision system that checks deck preparation on an Opentrons Flex using an external consumer webcam and browser application. It segments deck slots, corrects assignments using deck geometry, classifies labware, and compares observations with a protocol reference library to flag missing, misplaced, or unexpected items. It runs independently of the robot controller and does not gate operation. The abstract reports frame-level results for a pre-PCR setup, classification and slot-assignment performance across camera, lighting, and occlusion conditions, and verification times on a laptop and in an AWS deployment.",
+          "zh": "论文介绍 Labware Setup Checker，这是一种通过外置消费级摄像头和浏览器应用，核对 Opentrons Flex 液体处理机器人台面配置的被动视觉系统。它分割台面槽位、依据台面几何修正分配、识别器皿，并与协议参考库比较，以报告缺失、错放或意外器皿；系统独立于机器人控制器，不会阻断运行。摘要报告了特定预 PCR 准备过程中的逐帧识别结果，以及多相机位置、光照和遮挡条件下的槽位分配与分类表现，也给出笔记本本地和实验室云端部署的验证耗时。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
