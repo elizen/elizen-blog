@@ -411,7 +411,11 @@
             "heading": "",
             "text": "A key challenge in bringing embodied intelligence into the real world is transferring capabilities from simulation to reality and enabling agents to continually adapt after deployment.\n\nEnd-to-end vision-language-action policies provide strong manipulation capabilities, but their transfer to physical environments typically relies on calibrating simulated visual and dynamical conditions, collecting additional target-domain demonstrations, and optimizing the policy through further training.\n\nTool-using embodied agents offer flexible task orchestration, yet existing systems primarily emphasize task execution and experience reuse within a given environment, with limited support for transferring procedural knowledge and continuously adapting it across simulation and reality.\n\nWe propose RoboBridge, a framework that treats sim-to-real transfer as the continued adaptation of executable task skills. The agent represents task knowledge as procedures connecting task intent, observations, tool operations, and outcome verification.\n\nInteraction feedback is used to generate candidate skill revisions, which are evaluated before being persisted or rejected. A pretrained vision-language-action policy is exposed as a reusable action tool and enhanced with inference-time guidance, enabling fine-grained execution without retraining the underlying policy.\n\nRoboBridge grounds transferable skills in task semantics and interaction interfaces shared across simulation and reality. This representation preserves reusable task structure while allowing environment-dependent operations to be selectively revised through real-world execution feedback.\n\nWe evaluate the framework on LIBERO-PRO and corresponding physical tasks, studying both skill evolution and post-transfer adaptation. Our framework provides a route from one-shot policy deployment to continual procedural learning across environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes RoboBridge, a framework for sim-to-real transfer that represents task knowledge as executable procedures linking intent, observations, tool operations, and outcome verification. Interaction feedback generates candidate skill revisions, which are evaluated before acceptance or rejection. A pretrained vision-language-action policy serves as a reusable action tool with inference-time guidance, without retraining the underlying policy. The authors evaluate skill evolution and post-transfer adaptation on LIBERO-PRO and corresponding physical tasks.",
+          "zh": "论文提出 RoboBridge，一个面向具身智能仿真到现实迁移的框架，将任务知识表示为连接任务意图、观察、工具操作和结果验证的可执行流程。框架利用交互反馈提出技能修订并评估后再保留或拒绝，将预训练视觉—语言—动作策略作为可复用动作工具，通过推理时引导实现细粒度执行而无需重新训练底层策略。作者在 LIBERO-PRO 及对应实体任务上评估技能演化和迁移后的适应。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -442,7 +446,11 @@
             "heading": "",
             "text": "This paper presents the design and evaluation of a myoelectric tentacle-shaped prosthesis integrating electromyographic (EMG) control, sensorless object detection, and vibrotactile feedback. The objective was to develop a responsive and intuitive assistive device that adapts to various object shapes while providing sensory feedback to the user.\n\nThe system relies on EMG signals to control the motion of a flexible, biomimetic structure whose curling geometry follows a logarithmic spiral, enabling it to coil around objects. To ensure stable control, the EMG signal is normalized and filtered, and a threshold-based method identifies user intention.\n\nObject contact is detected through a slope-based analysis of motor current, eliminating the need for external sensors, and a haptic feedback strategy based on cumulative vibrotactile stimulation conveys spatial information about the tentacle's configuration. The system was evaluated through quantitative and qualitative tests.\n\nThe results demonstrate a low response time (77 ms on average), enabling smooth real-time interaction; an object-detection success rate above 90%, confirming robustness despite EMG variability; and an effective haptic feedback strategy that allowed users to reliably identify the folding zone of the tentacle.\n\nThe proposed biomimetic design promotes further investigation of expressive artificial limbs by prioritizing expressive functionality over adherence to a predefined, anthropomorphic form factor."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents and evaluates a biomimetic tentacle-shaped myoelectric prosthesis combining EMG control, sensorless object-contact detection, and vibrotactile feedback. Its flexible structure curls around objects following a logarithmic spiral. The system filters and normalizes EMG signals, uses a threshold to identify user intent, and detects contact by analyzing motor-current slopes. Quantitative and qualitative tests report an average response time of 77 ms, object-detection success above 90%, and users' reliable identification of the tentacle's folding zone.",
+          "zh": "论文介绍并评估一种仿生触手形肌电假肢，结合肌电控制、无外部传感器的物体接触检测和振动触觉反馈。柔性结构按对数螺旋形态卷绕物体；系统通过滤波、归一化肌电信号及阈值识别用户意图，并根据电机电流斜率检测接触。定量与定性测试显示，平均响应时间为77毫秒，物体检测成功率超过90%，用户能够可靠识别触手的折叠区域。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -473,7 +481,11 @@
             "heading": "",
             "text": "Robot demonstrations may contain useful behavior even when individual episodes are inefficient or unsuccessful.\n\nTrajectory stitching offers a way to compose these behaviors into improved training data, but identifying useful connections and verifying their feasibility is difficult in high-dimensional robot data, where many prior methods rely on low-dimensional state representations.\n\nWe introduce NEEDLE, an offline dataset-augmentation algorithm that addresses these challenges by adding short, verified action bridges between recorded observations in high-dimensional robot demonstrations.\n\nFirst, NEEDLE identifies and creates connections that bypass suboptimal detours, broaden action coverage, and augment the original dataset with failed trajectories, using only RGB images, proprioception, and episode-level outcomes, without new environment interaction or privileged object state.\n\nNext, we present a sampling technique that incorporates accepted bridges into policy training without synthesizing intermediate images or discarding the original demonstrations, allowing policies to learn alternative actions while retaining the original dataset's coverage.\n\nOn real-robot tasks, NEEDLE improves success rate over the strongest baseline on each task by an average of 21 percentage points. Videos and supplementary materials are on https://needle-work.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NEEDLE, an offline robot dataset-augmentation algorithm that adds short, verified action bridges between recorded observations in high-dimensional demonstrations. The bridges can bypass suboptimal detours and expand action coverage. NEEDLE uses only RGB images, proprioception, and episode-level outcomes, without new environment interaction or privileged object state. A sampling method incorporates accepted bridges into policy training while retaining the original demonstrations. On real-robot tasks, the reported success rate improves by an average of 21 percentage points over the strongest baseline for each task.",
+          "zh": "论文提出 NEEDLE，一种离线机器人数据集增强算法，通过在高维演示数据的已记录观察之间添加经过验证的短动作桥接，绕过低效路径并扩展动作覆盖。该方法仅使用 RGB 图像、本体感知和回合级结果，无需新的环境交互或特权物体状态。其采样方法将获接受的桥接纳入策略训练，同时保留原始演示数据。在真实机器人任务中，相较各任务最强基线，成功率平均提高21个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -504,7 +516,11 @@
             "heading": "",
             "text": "In dynamic open-world environments, autonomous agents often encounter novelties that hinder their ability to find plans to achieve their goals. Specifically, traditional symbolic planners fail to generate plans when the robot's planning domain lacks the operators that enable it to interact appropriately with novel objects in the environment.\n\nWe propose a neuro-symbolic architecture that integrates symbolic planning, reinforcement learning, and a large language model (LLM) to learn how to handle novel objects.\n\nIn particular, we leverage the common sense reasoning capability of the LLM to identify missing operators, generate plans with the symbolic AI planner, and write reward functions to guide the reinforcement learning agent in learning control policies for newly identified operators.\n\nOur method outperforms the state-of-the-art methods in operator discovery as well as operator learning in continuous robotic domains.Our webpage and code can be access here: https://helenlu66.github.io/hybridLLMguided/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a neuro-symbolic architecture combining symbolic planning, reinforcement learning, and a large language model to help agents handle novel objects in open-world environments. When a planning domain lacks operators needed to interact with such objects, the LLM uses common-sense reasoning to identify missing operators and writes reward functions to guide reinforcement learning in learning their control policies. A symbolic planner generates plans. The authors report that their method outperforms state-of-the-art methods in operator discovery and learning in continuous robotic domains.",
+          "zh": "论文提出一种结合符号规划、强化学习与大型语言模型的神经符号架构，用于帮助自主智能体应对开放环境中的新颖物体。当规划领域缺少与新物体交互所需的操作符时，语言模型利用常识推理识别缺失操作符，并为强化学习智能体编写奖励函数，以学习相应控制策略；符号规划器则生成计划。作者称，该方法在连续机器人领域的操作符发现和学习方面均优于现有先进方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
