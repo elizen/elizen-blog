@@ -2259,7 +2259,11 @@
             "heading": "",
             "text": "Motor impairments affecting the upper limb significantly reduce autonomy in daily activities, particularly for tasks involving object manipulation. Assistive robotic arms offer a promising solution, provided they can be controlled in an intuitive, reliable, and responsive manner.\n\nAmong human--machine interface approaches, surface electromyography (sEMG) enables non-invasive access to muscle activity and thus to the user's motor intentions. This work proposes a real-time sEMG-based interface for the teleoperation of an assistive robotic arm.\n\nThe system relies on four-channel sEMG acquisition, signal preprocessing, segmentation into sliding windows, and classification using a one-dimensional convolutional neural network (CNN).\n\nSeveral real-time strategies are investigated, including threshold-based onset detection, a two-stage classification approach (rest vs movement followed by gesture recognition), and a single classifier handling both rest and five gestures. The complete pipeline is implemented and evaluated both in simulation and on a real robotic platform.\n\nThe CNN-based approach achieves high classification performance, with a test accuracy above 90\\% and strong generalization on experimentally acquired signals.\n\nThe system exhibits stable real-time behavior, with an average latency of approximately 0.32 s consistent with the chosen windowing strategy, and the robot can be controlled reliably using discrete gestures, producing coherent and smooth movements in both simulated and real environments.\n\nThese findings demonstrate the feasibility of sEMG-based telecontrol for assistive robotics and highlight the importance of integrating signal processing, deep learning, and control strategies within a unified real-time framework.\n\nFuture work may explore hybrid control approaches combining sEMG with additional sensing modalities to further improve robustness and usability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a real-time surface electromyography interface for teleoperating an assistive robotic arm. Four-channel signals are preprocessed, segmented into sliding windows, and classified by a one-dimensional convolutional neural network. The study compares threshold-based onset detection, two-stage classification, and a unified classifier. Evaluation in simulation and on a real robotic platform reports test accuracy above 90% and average latency of about 0.32 seconds. The authors report stable gesture control and coherent, smooth movements in both settings.",
+          "zh": "本文提出一种基于表面肌电信号的实时界面，用于远程操控辅助机械臂。系统采集四通道肌电信号，经预处理和滑动窗口分段后，由一维卷积神经网络识别动作；研究比较了阈值起始检测、两阶段分类及统一分类器方案。作者在仿真和真实机器人平台上评估完整流程，报告测试准确率超过90%，平均延迟约0.32秒，且离散手势可实现稳定控制和连贯平滑运动。结果支持该方案的可行性，未来工作可探索融合其他传感方式。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2290,7 +2294,11 @@
             "heading": "",
             "text": "We present Move-Then-Operate, a Vision language action framework that explicitly decouples robotic manipulation into two distinct behavioral phases: coarse relocation (move) and contact-critical interaction (operate).\n\nUnlike monolithic policies that conflate these heterogeneous regimes, our architecture employs a dual-expert policy routed by a learnable phase selector, introducing a structural inductive bias that isolates phase-specific dynamics.\n\nPhase labels are automatically generated via an MLLM-based pipeline conditioned on lightweight contextual cues such as end-effector velocity and subtask decomposition to ensure alignment with human motor patterns.\n\nEvaluated on the RoboTwin2 benchmark, our method achieves an average success rate of $68.9\\%$, outperforming the monolithic $\\pi_0$ baseline by $24\\%$.\n\nIt matches or exceeds models trained on $10\\times$ more data and reaches peak performance in $40\\%$ fewer training steps, demonstrating that architectural disentanglement of move and operate phases is a highly effective and efficient strategy for mastering high-precision manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Move-Then-Operate is a vision-language-action framework that separates manipulation into coarse relocation and contact-critical interaction. A learnable phase selector routes a dual-expert policy, while an MLLM-based pipeline generates phase labels from contextual cues such as end-effector velocity and subtask decomposition. On the RoboTwin2 benchmark, the method reaches 68.9% average success, exceeding the monolithic π₀ baseline by 24%. The authors also report performance matching or surpassing models trained on ten times more data, with peak performance reached in 40% fewer training steps.",
+          "zh": "本文提出 Move-Then-Operate 视觉语言动作框架，将机器人操作划分为粗略移动和接触敏感的交互两个阶段，并用可学习阶段选择器路由双专家策略。阶段标签由多模态大语言模型流程根据末端速度、子任务分解等上下文线索自动生成。在 RoboTwin2 基准测试中，该方法平均成功率为68.9%，比单体 π₀ 基线高24%；作者还报告其匹配或超过使用多十倍数据训练的模型，并以少40%的训练步数达到峰值表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2321,7 +2329,11 @@
             "heading": "",
             "text": "Transferring robotic skills from simulation to reality requires task knowledge that remains usable across differences in perception, dynamics, and embodiment. We introduce Skill2Real, an agentic policy framework that learns executable skills through a shared application programming interface (API).\n\nA Proposer-Verifier-Governor (PVG) loop uses privileged simulation evidence to diagnose outcomes and validate updates, while keeping learned skills grounded in public observations and API semantics. The Cerebellum first acquires local manipulation skills; the Brain then learns task-level composition with the Cerebellum frozen.\n\nBoth memories transfer to the real robot without task-policy fine-tuning or skill-memory updates. As GPT-5.6 Sol learns skills on LIBERO-90, evaluating each frozen checkpoint with GPT-6 Astra raises LIBERO-Pro Long success from 2.0% to 56.3%, without training on Pro Long.\n\nIndependent Robosuite training reaches 85.1% and 89.4% mean success with Sol and Opus 5 across seven tasks, respectively. Frozen Sol-trained LIBERO-90 skills achieve 78.75% mean completion across four real-world manipulation tasks with Astra.\n\nRemoving the Verifier or Governor during LIBERO-90 training lowers final Pro Long success by 17.3 and 13.3 percentage points, respectively. These results support learning and transferring a hierarchy of executable skills through a common robot interface."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Skill2Real is an agentic framework for learning executable robot skills through a shared API. Its Proposer-Verifier-Governor loop uses privileged simulation evidence to diagnose outcomes and validate updates, while grounding skills in public observations and API semantics. A “Cerebellum” learns local manipulation skills before a frozen version is composed into task-level behavior by a “Brain.” The authors report transfer to a real robot without task-policy fine-tuning or skill-memory updates, alongside results on LIBERO-Pro Long, Robosuite, and four real-world tasks. Removing the Verifier or Governor reduced final benchmark success.",
+          "zh": "Skill2Real 是一种通过共享机器人 API 学习可执行技能的智能体策略框架。提议者—验证者—治理者循环利用仿真中的特权证据诊断结果并验证更新，同时使技能依托公开观测和 API 语义。小脑先学习局部操作技能，大脑在小脑冻结后学习任务级组合；作者称两类记忆可转移至真实机器人，无需任务策略微调或技能记忆更新。摘要报告了 LIBERO-Pro Long、Robosuite 及四项真实操作任务的成功或完成结果，并称移除验证者或治理者会降低最终表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2352,7 +2364,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) benchmarks measure whether a policy completes a requested manipulation task, but binary success can hide safety violations along the trajectory: a policy may reach the goal while applying excessive contact, disturbing bystander objects, destabilizing a held object, or entering robot self-contact.\n\nWe present SafeVLA-Bench, a post-hoc safety-evaluation framework for existing simulator-based VLA benchmarks that reveals violations missed by success-only evaluation. It encodes task-aware safety requirements as Signal Temporal Logic (STL) invariants with quantitative robustness semantics.\n\nAlongside native success, it reports the safety rate and the success-but-unsafe rate (SBU) used in prior safety evaluations, and introduces the Violation Severity Index (VSI), a bounded worst-violation depth score.\n\nWe instantiate SafeVLA-Bench on LIBERO and RoboCasa-365, evaluating twenty-seven policy-benchmark entries across tabletop and kitchen manipulation tasks.\n\nHigh task success does not imply safe execution: the fifteen tabletop policies above 90% mean success still have 18-28% unsafe-episode rates, and 38-56% of successful RoboCasa-365 rollouts violate at least one active safety clause. A post-training case study further shows that SafeVLA-Bench can be used to improve policy safety.\n\nProject page: https://safevla.org"
           }
-        ]
+        ],
+        "summary": {
+          "en": "SafeVLA-Bench is a post-hoc safety evaluation framework for simulator-based vision-language-action benchmarks. It encodes task-aware requirements as Signal Temporal Logic invariants with quantitative robustness semantics, reporting safety rate, success-but-unsafe rate, and a bounded Violation Severity Index. The framework is instantiated on LIBERO and RoboCasa-365 across 27 policy-benchmark entries. The authors report that 15 tabletop policies with over 90% mean success still have unsafe-episode rates of 18–28%, while 38–56% of successful RoboCasa-365 rollouts violate at least one active safety clause. A post-training case study examines safety improvement.",
+          "zh": "SafeVLA-Bench 是面向现有仿真视觉语言动作基准的事后安全评估框架，用于发现仅看任务成功率会遗漏的轨迹安全违规。它将任务相关要求编码为带定量鲁棒性语义的信号时序逻辑不变量，并报告安全率、成功但不安全率及有界违规严重度指数。研究在 LIBERO 和 RoboCasa-365 上评估27个策略—基准条目。作者报告，桌面任务中成功率超过90%的15个策略仍有18%至28%的不安全回合；RoboCasa-365成功轨迹中有38%至56%违反至少一项安全条款。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
