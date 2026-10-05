@@ -831,7 +831,11 @@
             "heading": "",
             "text": "Inspired by human vision, we introduce a framework using active gaze to enable fine-grained bimanual manipulation with only a single stereo camera. EyeRobot 2.0 physically attends to a 3D fixation point in the scene by swiveling two eye viewpoints to center their gaze on it.\n\nThe resulting images are processed foveally by allocating more visual tokens to the image centers, focusing computation on task-relevant features.\n\nSuch Active Visual Fixation (AVF) requires carefully coordinated gaze during task execution, which we accomplish hierarchically by first training a low-level gaze servoing policy conditioned on a goal object, then training a target selector which emits fixation goals based on task progress.\n\nBoth modules are trained with RL on real-world data: the first is trained with a dense geometric reward and the second co-trains with the BC gripper policy which allows it to discover fixation sequences that can resemble a human's fixation sequence while performing the task.\n\nEyeRobot 2.0 further takes advantage of fixation by canonicalizing gripper information into a fixation-relative SE（3） frame, which compacts the size of the action distribution to learn.\n\nWe collect teleoperation data for 7 real-world and 6 simulated tasks, and conduct over 1000 physical and 1800 simulated robot trials comparing EyeRobot 2.0 against passive stereo and ego + wrist camera policies trained on the same data. Removing wrist cameras is costly for standard policies: with only passive stereo, real-world success drops from 52% to 27%.\n\nEyeRobot 2.0 closes this gap with only stereo, outperforming passive stereo by 40% in real and 20% in sim. It matches ego + wrist policies when their wrist views are clear (69% vs. 64%), and more than doubles their success when grasped objects occlude the wrist cameras (48% vs. 22%)"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EyeRobot 2.0, which actively steers two eye viewpoints toward 3D fixation points and gives image centers more visual tokens to support bimanual manipulation with one stereo camera. It hierarchically trains gaze servoing and fixation-goal selection, and represents gripper information relative to the fixation frame. In reported real and simulated trials, passive stereo policies lose performance without wrist cameras. EyeRobot 2.0 improves over passive stereo and performs especially well when grasped objects occlude wrist-camera views.",
+          "zh": "论文提出 EyeRobot 2.0，利用双眼视角主动转向场景中的三维注视点，并对图像中心分配更多视觉令牌，以单个立体相机支持双臂精细操作。系统分层训练注视控制和目标选择策略，并将夹爪信息表示在相对注视点的坐标系中。作者报告了真实与模拟任务试验：仅用被动立体视觉的标准策略真实成功率由52%降至27%；EyeRobot 2.0较被动立体视觉在真实和模拟中分别高40%和20%，并在腕部视野被遮挡时优于带腕部相机策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -862,7 +866,11 @@
             "heading": "",
             "text": "We present a generalized implementation of Look-Back and Look-Ahead Adaptive Model Predictive Control (LLA-MPC), a learning-free framework for real-time, rapid adaptive system identification and control. The original formulation was demonstrated only in simulation, for autonomous racing with a fixed model structure.\n\nOur implementation has modular dynamics and integrators, and we validate it on the F1TENTH platform under constrained computation and noisy state estimation. The system identifies tire parameters online by evaluating thousands of candidate models in real time on an embedded computer.\n\nExperiments with low-friction tires across changing surfaces show that LLA-MPC completes high-speed tracking tasks where a fixed nominal model fails. Code, videos, and our related work are available at: https://lla-control.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a generalized implementation of Look-Back and Look-Ahead Adaptive Model Predictive Control, a learning-free framework for rapid online system identification and control. Its modular dynamics and integrators are validated on the F1TENTH platform under limited computation and noisy state estimates. The system evaluates thousands of candidate models on embedded hardware to identify tire parameters online. Experiments with low-friction tires across changing surfaces report successful high-speed tracking where a fixed nominal model fails.",
+          "zh": "论文介绍 Look-Back and Look-Ahead Adaptive Model Predictive Control（LLA-MPC）的通用实现。这一无需学习的框架通过实时评估大量候选模型进行系统辨识与控制；实现包含模块化动力学和积分器。作者在计算受限、状态估计含噪的 F1TENTH 平台上验证系统，在线辨识轮胎参数。低摩擦轮胎在不同路面上的实验显示，该方法能完成高速跟踪任务，而固定标称模型会失败。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -893,7 +901,11 @@
             "heading": "",
             "text": "Long-horizon compositional manipulation has become increasingly important for real-world robot deployment, where a single task involves multiple coordinated subtasks. Existing world-action models (WAMs) jointly predict short-horizon visual futures and actions, but typically lack explicit subtask-level reasoning.\n\nWe propose Visual Goal-conditioned Action Reasoning (ViGAR), a hierarchical framework that factorizes manipulation into a visual subgoal planner and a subgoal executor. Given the current observation and global instruction, the subgoal planner predicts a visual subgoal for the next subtask.\n\nThe subgoal executor then jointly generates future visual trajectories and actions conditioned on the predicted subgoal. Both components share a pretrained world-model representation, enabling task-level planning and action generation to benefit from common physical knowledge.\n\nMoreover, our framework naturally supports in-context learning: using a global goal image as context can induce different subtask decompositions and behaviors without parameter updates.\n\nOn the RoboTwin Clean2Random benchmark, ViGAR achieves 82.00% and 67.02% success rates under the Clean and Random settings, respectively, surpassing the strongest baseline by 12.86 percentage points in average success rate. Real-world robot experiments on five compositional and two in-context learning tasks further confirm the effectiveness of ViGAR."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ViGAR, a hierarchical framework for long-horizon compositional manipulation. A visual subgoal planner predicts the next subtask's visual goal from the observation and global instruction; an executor then generates future visual trajectories and actions conditioned on that goal. Both components share a pretrained world-model representation. The framework also supports in-context behavior changes using a global goal image without parameter updates. On RoboTwin Clean2Random, reported success rates are 82.00% in Clean and 67.02% in Random; real-robot experiments cover compositional and in-context tasks.",
+          "zh": "论文提出 ViGAR，将长时程组合操作拆分为视觉子目标规划器和子目标执行器：前者根据当前观察和全局指令预测下一子任务的视觉目标，后者据此联合生成未来视觉轨迹与动作。两部分共享预训练世界模型表示，并支持通过全局目标图像进行无需参数更新的情境学习。在 RoboTwin Clean2Random 基准的 Clean 和 Random 设置中，成功率分别为82.00%和67.02%；作者还报告了五项组合任务和两项情境学习任务的真实机器人实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -924,7 +936,11 @@
             "heading": "",
             "text": "Scalable driving simulators typically execute vehicle commands using prescribed behavioral or kinematic rules, overlooking the physics of tire-road interfaces, thereby limiting their ability to capture how adverse road and environmental conditions alter vehicle execution and propagate through traffic.\n\nTo address this limitation, we present SceneFactory-3D, a GPU-batched, physics-grounded multi-agent driving simulator. Vehicles execute acceleration and steering commands via suspension- and friction-limited forces evaluated at each wheel-contact point.\n\nSpatially varying friction, per-world 3D heightfields, gravity, and rigid contact consistently govern wheel motion and chassis collisions.\n\nPer-world terrain isolation and GPU batching enable SceneFactory-3D to run matched physical counterfactuals in parallel: traffic scenario setup and vehicle controllers remain fixed while only the road condition changes, enabling the resulting closed-loop effects to be evaluated across parallel worlds.\n\nTo demonstrate the advantage of the SceneFactory-3D-enabled counterfactual evaluation, we conduct an empirical study on vehicle controllers' sensitivity to road conditions. We study three learned-policy families on 1,024 matched 12-vehicle worlds per condition, and two classical planners on a shared 32-world subset, across 21 friction and grade conditions.\n\nWhen friction drops from 1.0 to 0.18, the share of vehicles that clear the work zone safely falls by 6 to 90 percentage points across learned policies (18-19 for classical planners), and near-collision situations become more frequent for every learned policy. Code: https://github.com/SmallWorldLab/SceneFactory_3D"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SceneFactory-3D, a GPU-batched, physics-grounded multi-agent driving simulator. Vehicle commands are executed through suspension- and friction-limited forces at wheel contacts, with varying friction, 3D terrain, gravity, and rigid contacts represented. Its counterfactual evaluation keeps scenario setup and controllers fixed while changing road conditions across parallel worlds. In the reported study, reducing friction from 1.0 to 0.18 lowered safe work-zone clearance among learned policies by 6 to 90 percentage points and among classical planners by 18 to 19 points; near collisions became more frequent for every learned policy.",
+          "zh": "论文提出 SceneFactory-3D，一种 GPU 批处理、基于物理的多智能体驾驶模拟器，以轮胎接地点的悬架和摩擦限制力执行车辆指令，并通过摩擦变化、三维地形、重力和刚体接触模拟路面条件。其反事实评估在并行世界中固定交通场景和控制器、只改变路况。作者研究了不同摩擦和坡度条件下学习策略与经典规划器的表现；摩擦系数从1.0降至0.18时，学习策略安全通过施工区的车辆比例下降6至90个百分点，经典规划器下降18至19个百分点，且所有学习策略的近碰撞情况更频繁。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
