@@ -2523,7 +2523,11 @@
             "heading": "",
             "text": "Learning general-purpose robot policies requires large-scale real-world interaction data, yet collecting robot demonstrations remains expensive and difficult to scale.\n\nEgocentric videos offer abundant human interaction experience with task-relevant semantics for robotic manipulation, but direct transfer is challenging for two reasons: latent actions inferred from frame reconstruction can be dominated by nuisance variation such as ego-camera motion, and human and robot behaviors often exhibit different temporal dynamics.\n\nWe propose WING (World Action Learning via INteraction-Centric Spectral Latent Guidance), a framework for transferring interaction knowledge from egocentric videos to robot policies. WING first separates observer-induced motion from hand-object interaction and distills the interaction-centric component into latent actions.\n\nIt then exploits the observation that cross-embodiment task semantics are concentrated in slowly varying temporal structures, identifying shared low-frequency components between egocentric latent actions and robot behaviors in the spectral domain and using them to guide action generation.\n\nWING achieves average success rates of 99.20% on LIBERO, 93.80% on RoboTwin 2.0, and 57.7% on RoboCasa-GR1, and also performs strongly across four real-world manipulation tasks under diverse generalization settings.\n\nThese results show that interaction-centric spectral guidance provides an effective and scalable way to transfer physical interaction knowledge from human egocentric video to robot control. Project page: https://mikuz12.github.io/wing/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WING, which separates observer-induced motion from hand-object interaction in egocentric video and distills the interaction component into latent actions. It uses shared, slowly varying low-frequency structures between human video actions and robot behavior to guide action generation. The authors report success rates of 99.20% on LIBERO, 93.80% on RoboTwin 2.0, and 57.7% on RoboCasa-GR1, as well as strong results across four real-world manipulation tasks under varied generalization settings.",
+          "zh": "论文提出 WING，将第一视角视频中的观察者运动与手物交互分离，并把交互信息提炼为潜在动作。方法利用人类与机器人行为中缓慢变化的低频结构，指导机器人动作生成。作者报告，该方法在 LIBERO、RoboTwin 2.0 和 RoboCasa-GR1 上取得所列成功率，并在四项真实世界操作任务及多种泛化设置中表现良好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2554,7 +2558,11 @@
             "heading": "",
             "text": "Model-based reinforcement learning (MBRL) achieves strong sample efficiency by planning within learned latent dynamics, yet its performance degrades substantially under unseen visual distractions such as background variations, lighting changes, or camera shifts.\n\nUnlike model-free RL, where encoder perturbations affect only single-step predictions, MBRL suffers from a two-level vulnerability: visual distractions first push encoder outputs out of distribution, and these errors then compound through recursive latent rollouts over the planning horizon.\n\nWe propose visual generalization via latent-space consistency in model-based RL (VIGOR), a framework that enables zero-shot generalization to unseen visual distractions while retaining the sample efficiency of its MBRL backbone.\n\nVIGOR integrates three interdependent components: (i) asymmetric weak-to-strong augmentation, which pairs weak-only and weak-to-strong latent views within a single batch; (ii) dynamics-level consistency, which enforces augmentation-invariant transition predictions through direct latent regression; and (iii) encoder-level stabilization, which prevents encoder drift under the cross-augmentation supervision imposed by dynamics-level consistency.\n\nEvaluations on the DeepMind Control Suite (DMC) and Robosuite show that VIGOR outperforms state-of-the-art model-free and model-based baselines, surpassing the second-best baseline by 3.4% on DMC and 43.6% on Robosuite.\n\nAblations further show that VIGOR's robustness is augmentation-agnostic: replacing the default augmentation with alternatives from distinct perturbation families preserves strong generalization, confirming that latent-space consistency, not the augmentation choice, drives robustness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes VIGOR, a framework for zero-shot generalization to unseen visual distractions in model-based reinforcement learning while retaining sample efficiency. It combines asymmetric weak-to-strong augmentation, dynamics-level consistency, and encoder-level stabilization. Evaluations on the DeepMind Control Suite and Robosuite reportedly show improvements over model-free and model-based baselines, with margins of 3.4% and 43.6% over the second-best baseline, respectively. Ablations indicate strong generalization persists with alternative augmentations.",
+          "zh": "论文提出 VIGOR，通过潜在空间一致性提升基于模型的强化学习对未见视觉干扰的零样本泛化能力，同时保留其样本效率。框架结合弱到强数据增强、动力学层一致性约束和编码器稳定机制。作者称，在 DeepMind Control Suite 与 Robosuite 评测中，VIGOR 优于模型自由和基于模型的基线；消融实验显示，替换增强方式后仍保持较强泛化表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2585,7 +2593,11 @@
             "heading": "",
             "text": "Monocular semantic scene completion (SSC) for quadruped robots remains underexplored in real crowded indoor environments, where human-scene occlusion disrupts static geometry and human occupancy predictions are often incomplete or spatially misplaced. We present CrowdOcc, an RGB-D dataset and monocular SSC framework for this setting.\n\nCrowdOcc contains 25.1K frames from 11 indoor scenes, with semantic occupancy annotations constructed through static dynamic decoupling.\n\nOur framework combines: (i) Normal Guided Scene Geometry Fusion (NGSGF) to complement depth-aware lifting with surface-normal cues for occlusion robust geometry; and (ii) Human-Centric Sparse Interaction (HCSI) to selectively model human-human and local human scene relations in 3D.\n\nOur method achieves state-of-the-art SSC performance on CrowdOcc's scene-disjoint test set, reaching 15.80 IoU, 11.40 mIoU, and 46.23 Human IoU, demonstrating generalization to unseen indoor scenes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CrowdOcc, an RGB-D dataset and monocular semantic scene completion framework for quadruped robots in crowded indoor environments. The dataset contains 25.1K frames from 11 indoor scenes, with occupancy annotations constructed through static-dynamic decoupling. The framework combines surface-normal-guided geometry fusion with selective modeling of human-human and local human-scene relations in 3D. On a scene-disjoint test set, the authors report state-of-the-art performance, including 15.80 IoU, 11.40 mIoU, and 46.23 Human IoU.",
+          "zh": "论文介绍 CrowdOcc，这是面向拥挤室内环境四足机器人的 RGB-D 数据集及单目语义场景补全框架。数据集包含来自 11 个室内场景的 25.1K 帧，并通过静态与动态解耦构建语义占用标注。方法融合表面法线引导的场景几何信息，并选择性建模三维空间中的人际及局部人景关系。作者报告，该方法在按场景划分的测试集上取得当前最佳表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2616,7 +2628,11 @@
             "heading": "",
             "text": "Generalist robot policies, such as vision-language-action models (VLAs) and world-action models (WAMs), combine powerful pretrained backbones with expressive generative action heads trained via flow matching on large-scale robotic datasets.\n\nDespite their strong empirical performance in robotic manipulation, these policies lack mechanisms to quantify confidence in their predictions and to detect when their actions may be unreliable.\n\nThis presents a critical limitation for real-world deployment in non-stationary environments, where models inevitably encounter scenarios outside their pretraining distribution and may fail without warning.\n\nTo address this, we derive an efficient method to quantify epistemic uncertainty in flow-matching models by leveraging velocity-field disagreement (VFD) across a small ensemble. We successfully use this uncertainty estimate for detecting failures during deployment and active fine-tuning of flow-based generalist policies.\n\nFor the latter, we propose SAVE, a simple yet effective method for uncertainty-guided active multitask fine-tuning that reduces the number of costly expert demonstrations required to adapt generalist policies to new tasks. We conduct experiments in simulation and the real world, across VLAs and a WAM.\n\nVFD yields better-calibrated uncertainty estimates predictive of downstream performance and detects failures with 8 pp higher overall accuracy than existing methods. Across three real-world tasks, SAVE improves final average success from 39 % to 47 % with a fixed demonstration budget.\n\nOur results show that measuring epistemic uncertainty with VFD enhances both failure awareness and adaptation of generalist robot policies. Project website: tum-lsy.github.io/uq_generalist_policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper derives an efficient estimate of epistemic uncertainty for flow-matching robot policies using velocity-field disagreement (VFD) across a small ensemble. It applies this estimate to deployment failure detection and active fine-tuning, and proposes SAVE for uncertainty-guided multitask adaptation with fewer expert demonstrations. Experiments cover simulation and the real world, using vision-language-action models and a world-action model. The authors report better-calibrated uncertainty, higher failure-detection accuracy, and an increase in average success from 39% to 47% across three real-world tasks under a fixed demonstration budget.",
+          "zh": "论文提出利用小型集成模型间速度场分歧（VFD）估计流匹配机器人策略的认知不确定性，并将其用于部署故障检测与主动微调。作者进一步提出 SAVE，以不确定性引导多任务微调，减少适配新任务所需的专家演示。仿真及真实世界实验涵盖视觉语言动作模型和世界动作模型。作者报告，VFD 的校准与故障检测表现较好；三项真实世界任务中，固定演示预算下平均成功率由 39% 提升至 47%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
