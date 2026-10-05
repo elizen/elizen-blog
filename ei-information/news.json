@@ -3799,7 +3799,11 @@
             "heading": "",
             "text": "Long-term semantic navigation requires a robot to reuse past observations after appearance and scene change, but semantic memories are only useful if the robot can relocalize into the memory without corrupting it with false visual matches.\n\nWe propose CROSS, a change-robust topological memory that introduces a pre-commitment localization layer between visual place recognition and map update. Instead of treating a retrieved keyframe as an immediate place association or loop-closure factor, CROSS lifts each RGB-D retrieval into a candidate global SE（3） pose mode using relative pose estimation.\n\nA bounded Gaussian-mixture filter then propagates competing continuous trajectory branches with odometry, rejects branches that are physically inconsistent, and promotes only persistent branches to loop closures. This moves ambiguity handling from discrete place IDs or post-hoc graph-factor rejection to continuous pose-space validation before map commitment.\n\nAcross public long-term relocalization benchmarks and real quadruped object-navigation experiments, CROSS improves reuse of a single sparse RGB-D memory under illumination, seasonal, dynamic-scene, and object-level change. Project page: https://jiaming.im/CROSS/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes CROSS, a change-robust topological memory for long-term relocalization and semantic navigation. It adds a pre-commitment localization layer between visual place recognition and map updates, converting RGB-D retrievals into candidate global poses. A bounded Gaussian-mixture filter tracks competing trajectory branches, rejects physically inconsistent ones, and promotes persistent branches to loop closures. The authors report improved reuse of sparse RGB-D memory under illumination, seasonal, dynamic-scene, and object-level changes, based on public benchmarks and real quadruped navigation experiments.",
+          "zh": "论文提出 CROSS，一种面向长期重定位与语义导航的抗变化拓扑记忆。它在视觉地点识别和地图更新之间加入预提交定位层，将 RGB-D 检索转为候选全局位姿，并用有界高斯混合滤波跟踪竞争轨迹分支、排除物理不一致分支，仅将持续存在的分支提升为闭环约束。作者报告称，在公开长期重定位基准和真实四足机器人目标导航实验中，该方法改善了稀疏 RGB-D 记忆在光照、季节、动态场景及物体变化下的复用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3830,7 +3834,11 @@
             "heading": "",
             "text": "Generative planners based on diffusion/flow matching can learn to synthesize long-horizon trajectories from demonstrations. However, real-world deployment requires (i) enforcing safety constraints during execution and (ii) tight online replanning at fast execution rates.\n\nPrior safe diffusion/flow planners generate the agent's full trajectory at once, while repeatedly perturbing intermediate states to satisfy safety constraints. This approach is not only computationally intensive, but also introduces distribution shift since the learned sampling dynamics is distinct from the system's execution dynamics.\n\nWe propose SafeStreamingFlow, a goal-conditioned planner that aligns flow sampling dynamics with execution dynamics by sequentially integrating a learned state vector field with hierarchical state prediction. Importantly, we need to enforce safety constraints only for the executed step via high order control barrier functions.\n\nAcross navigation, racing, and locomotion benchmarks, SafeStreamingFlow reduces planning latency and improves safety compared to existing methods, while maintaining competitive goal-reaching success."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SafeStreamingFlow, a goal-conditioned planner addressing the computational cost and dynamics mismatch of generating full trajectories and repeatedly perturbing intermediate states for safety. It sequentially integrates a learned state vector field with hierarchical state prediction to align sampling with execution dynamics, and applies high-order control barrier functions only to the step being executed. Across navigation, racing, and locomotion benchmarks, the authors report lower planning latency and improved safety compared with existing methods, while maintaining competitive goal-reaching success.",
+          "zh": "论文提出 SafeStreamingFlow，一种目标条件化规划器，针对扩散或流匹配规划器整段生成轨迹、反复扰动中间状态以满足安全约束所带来的计算负担和采样动力学与执行动力学不一致问题。该方法通过层级状态预测，顺序积分学习到的状态向量场，使采样动力学与执行动力学对齐，并仅对实际执行步骤使用高阶控制障碍函数施加安全约束。作者报告称，在导航、赛车和运动基准上，该方法降低规划延迟、提高安全性，同时保持有竞争力的目标到达成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3861,7 +3869,11 @@
             "heading": "",
             "text": "Sampling-based model predictive control (MPC) is a powerful approach to trajectory optimization, but its performance depends on an informative cost function that often requires substantial domain knowledge to design. An alternative is to derive objectives directly from the system dynamics.\n\nEmpowerment, defined as the channel capacity between an agent's inputs and its future state, provides such a goal-agnostic objective and has been shown to produce useful behaviors across a range of domains.\n\nHowever, existing empowerment-based controllers have two key limitations: empowerment is estimated using a virtual probing policy distinct from the executed control policy, obscuring its connection to the resulting behavior; and its computation typically requires second-order derivatives of the dynamics, limiting compatibility with standard MPC methods.\n\nWe formulate empowerment using a single policy for both probing and acting, directly linking the empowerment objective to the executed behavior. The resulting objective requires only first-order derivatives and can be optimized with standard MPC solvers, either alone or in combination with a task-specific cost.\n\nWe evaluate the proposed approach on classical control tasks and show that combining empowerment with task costs matches or exceeds the success rate achieved by either objective alone. Our formulation provides a practical bridge between standard MPC and intrinsically motivated control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper develops a way to use empowerment in sampling-based model predictive control. Empowerment is defined as the channel capacity between an agent’s inputs and future state. The authors identify limitations in prior approaches: they use a virtual probing policy different from the executed policy and typically require second-order dynamics derivatives. Their formulation uses one policy for probing and acting, needs only first-order derivatives, and can be optimized with standard MPC solvers alone or alongside task costs. On classical control tasks, the authors report that combining empowerment with task costs matches or exceeds the success rate of either objective alone.",
+          "zh": "论文研究如何将赋能度目标用于采样式模型预测控制。作者将赋能度定义为智能体输入与未来状态之间的信道容量，并指出既有方法使用不同于实际控制的虚拟探测策略，且通常需要系统动力学的二阶导数。所提方法用同一策略进行探测和行动，使目标直接关联实际行为，并将所需导数降至一阶，可由标准 MPC 求解器单独优化或与任务成本结合。在经典控制任务评估中，作者报告称，赋能度与任务成本结合后的成功率达到或超过单独使用任一目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3892,7 +3904,11 @@
             "heading": "",
             "text": "Tactile sensing provides essential contact information for robotic manipulation, yet incorporating it into pretrained vision-language-action (VLA) models remains challenging. A common concern is that simply introducing touch during task-specific fine-tuning may fail to bridge the cross-modal gap, yielding limited gains or even reduced success.\n\nConsequently, existing methods often rely on large-scale tactile policy pretraining or separate visuotactile alignment, adding data requirements and training stages. We introduce SimpleTouch, a simple VLA extension that augments $\\pi_{0.5}$ with a tactile expert, to test whether these additional stages are necessary.\n\nLeveraging all tokens from a frozen pretrained tactile encoder, the expert learns from action supervision and multi-horizon prediction of future tactile latents. This single-stage training uses only task demonstrations, without additional tactile policy pretraining or separate alignment.\n\nWith 50 demonstrations per task, SimpleTouch achieves the highest success rate among evaluated methods on all six UniVTAC tasks. Its average success rate reaches 77.5%, compared with 45.2% for FTP-$\\pi_{0.5}$ and 66.7% for FTP-1, corresponding to gains of 32.3 and 10.8 percentage points, respectively.\n\nAcross four real-world tasks, it averages 71.3%, exceeding FTP-1 by 8.8 percentage points. These results demonstrate that, given pretrained VLA and tactile representations, additional tactile policy pretraining is not a prerequisite for strong performance on these tasks, offering a simpler route to contact-rich manipulation.\n\nProject page: https://simpletouch-robot.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SimpleTouch, which extends a pretrained vision-language-action model, π0.5, with a tactile expert to investigate contact-rich manipulation without tactile policy pretraining or separate cross-modal alignment. The expert uses all tokens from a frozen pretrained tactile encoder and is trained in one stage on task demonstrations with action supervision and multi-horizon prediction of future tactile latents. The authors report the highest success rate among evaluated methods on all six UniVTAC tasks with 50 demonstrations per task, averaging 77.5%, and an average of 71.3% across four real-world tasks. They conclude that extra tactile policy pretraining is not prerequisite for strong results on these evaluated tasks.",
+          "zh": "论文提出 SimpleTouch，用触觉专家扩展预训练视觉-语言-动作模型 π0.5，以研究任务微调是否能在无需触觉策略预训练或单独跨模态对齐的情况下支持接触丰富的操作。该方法利用冻结的预训练触觉编码器的全部 token，通过动作监督和多时间跨度的未来触觉潜变量预测进行单阶段训练，仅使用任务演示。作者报告称，每项任务使用 50 条演示时，该方法在六项 UniVTAC 任务中的成功率均为参评方法最高，平均为 77.5%；四项真实世界任务的平均成功率为 71.3%。这些结果针对所评估任务，作者认为额外触觉策略预训练并非取得强性能的先决条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
