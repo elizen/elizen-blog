@@ -691,7 +691,11 @@
             "heading": "",
             "text": "We study the problem of scaling dynamic loco-manipulation from a single free-rolling sphere to multiple spheres transported simultaneously on the back of a wheel-legged quadruped, without fences, grippers, or mechanical stops.\n\nMultiple identical free-rolling spheres form an unordered set with no persistent identity: their ordering may change independently at each history frame, creating a \\emph{per-frame permutation symmetry} that standard history-concatenation set encoders do not explicitly enforce -- these encoders impose only a shared, diagonal permutation symmetry over the full history.\n\nWe show that this symmetry mismatch leads to a concrete failure mode in curriculum-based reinforcement learning.\n\nWithin the same PPO training budget, flat MLPs and branch-wise encoders plateau at or below the two-sphere stage, while a history-concatenation Deep Sets baseline (\\HCDS) fails to progress past the two-sphere stage in our runs unless ball-to-slot assignments are randomised during training, suggesting that it exploits slot indices as a curriculum shortcut rather than learning identity-free multi-sphere dynamics.\n\nWe propose \\textbf{Per-Frame Deep Sets (\\PFDS)}, which performs permutation-invariant pooling within each history frame before temporal readout; we prove that \\PFDS is $\\Gframe$-invariant and universally approximates continuous $\\Gframe$-invariant policies.\n\nA $2{\\times}2$ ablation over encoder architecture and slot randomisation separates the architectural and data-augmentation pathways, and \\PFDS reaches the five-sphere stage with 100\\% no-drop transport in simulation across all five random seeds.\n\nWe further distill the \\PFDS teacher into \\TactSet via DAgger, replacing privileged sphere-state observations with a $16{\\times}16$ Boolean union contact map, yielding a compact and naturally $\\Gframe$-invariant tactile representation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies transporting multiple free-rolling spheres on a wheel-legged quadruped and identifies a mismatch between per-frame sphere order changes and conventional history-concatenation encoders. The authors propose Per-Frame Deep Sets (PFDS), which pools permutation-invariant features within each history frame before temporal readout. They prove its invariance and universal approximation property for continuous invariant policies. Under the reported PPO budget, PFDS reaches the five-sphere stage with no drops in simulation across five seeds. The teacher is also distilled with DAgger into a tactile representation based on a Boolean contact map.",
+          "zh": "论文研究轮足四足机器人在背部同时运输多个自由滚动球体的问题，重点指出球体在每段历史中的无序性与常规历史拼接编码器的对称性不匹配。作者提出逐帧深度集合（PFDS），先在每帧内进行置换不变池化，再进行时间读取，并证明其不变性及连续不变策略的通用逼近性质。在相同 PPO 训练预算下，仿真中 PFDS 在五个随机种子上均达到五球阶段且无球掉落；作者还通过 DAgger 将其蒸馏为使用布尔接触图的触觉表示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -722,7 +726,11 @@
             "heading": "",
             "text": "We address the Person Goal Navigation (PersonNav) problem, enabling robots to search for people under realistic constraints on information accessibility and language uncertainty. This tackles the current solutions revolving around rigid person finding systems requiring exact knowledge of the individual for item-delivery in indoor settings.\n\nWhile the focus in literature is on learned methods using unavailable public or sparse data due to human privacy. We propose a planning framework that combines distance and semantic information about the recipient (habits and intent) weighted by the trust of the user-provided information.\n\nA synthetic benchmark of scenarios is also developed including actors, items, and requests to evaluate performance before real-world deployment aiming to simulate natural language human-robot interactions. Results show our informed search outperforms classical distance-based graph baselines, while semantics alone lead to ungrounded, sporadic search.\n\nOur method achieves strong gains over baselines, with an LLM-based variant performing comparably, and its explicit belief representation naturally supports future Bayesian filtering. Hardware tests demonstrate our method supports real-world embodiment able to leverage between semantic and distance information in a real setting.\n\nThis work moves toward more intelligent mobile service agents capable of human-like, informed search in realistic environments to be leveraged in day-to-day use. https://anonymous.4open.science/r/personnavsite-4ED2/index.html."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper addresses Person Goal Navigation with a planning framework that combines distance, recipient-related semantics such as habits and intent, and trust in user-provided information. The authors develop a synthetic benchmark with actors, items, and requests. They report that informed search outperforms classical distance-based graph baselines, while semantics alone produces ungrounded, sporadic search. An LLM-based variant performs comparably, and hardware tests show that the method can combine semantic and distance information in a real setting. The abstract gives no numerical effect size.",
+          "zh": "论文针对个人目标导航，提出一种结合距离、收件人的语义信息（如习惯和意图）及用户信息可信度的机器人搜索规划框架，并构建包含角色、物品和请求的合成场景基准。作者报告，该方法优于经典的基于距离的图搜索基线；仅使用语义信息会导致缺乏依据且零散的搜索。基于大语言模型的变体表现相近，硬件测试则显示该方法可在真实环境中结合语义与距离信息。摘要未提供具体提升幅度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -753,7 +761,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) generate both future video and robot actions, offering two connected outputs for post-training supervision. How can a pretrained WAM learn from a stronger Teacher on the histories it encounters during execution? We present WAM-OPD, which collects Student rollout histories and queries a Teacher for paired video and action targets.\n\nThe Student learns from both targets while retaining its one-step video and action generation at deployment. Across 12 RoboTwin 2.0 tasks, WAM-OPD improves average success from 33.8% to 65.7%; across four real-robot tasks, it improves average success from 51.4% to 64.6%.\n\nWith the collected Student histories held fixed, joint video-action supervision achieves the highest observed success on all three ablation tasks, while either modality alone also improves performance. A separate comparison with Teacher-generated histories finds task-dependent differences between the two history sources.\n\nThese results demonstrate the value of paired video-action supervision for improving WAM policies without increasing their deployed sampling budget."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors present WAM-OPD, a post-training method for world action models. It collects Student rollout histories and queries a Teacher for paired video and action targets, which the Student learns from jointly. Reported average success rises from 33.8% to 65.7% across 12 RoboTwin 2.0 tasks, and from 51.4% to 64.6% across four real-robot tasks. With Student histories fixed, joint supervision has the highest observed success on all three ablation tasks, while either modality alone also helps. Comparisons of history sources vary by task.",
+          "zh": "论文提出 WAM-OPD，用于世界动作模型的后训练：收集学生模型执行时的历史，并向教师模型查询配对的视频与动作目标，供学生同时学习。作者报告，在 RoboTwin 2.0 的12项任务中，平均成功率从33.8%升至65.7%；在四项真实机器人任务中，从51.4%升至64.6%。固定学生历史的消融实验中，联合监督在三项任务上取得最高观测成功率，单一模态也能改善表现；教师生成历史与学生历史的比较则因任务而异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -784,7 +796,11 @@
             "heading": "",
             "text": "Long-term object search requires learning where objects usually appear from repeated but uneven observations of a changing environment.\n\nWe formulate retrospective open-vocabulary memory as probabilistic inference from censored observations, where the key idea is to reason with evidence per opportunity: a detection or non-detection should influence belief only in proportion to the robot's opportunity to observe the corresponding location.\n\nWe introduce ECROM, which uses this principle to estimate long-term prevalence for concepts specified only at query time and converts the resulting belief directly into an active-search prior.\n\nTo evaluate this problem, we introduce a controlled long-term benchmark in ten HM3D homes that independently varies object placement and observation opportunity across repeated traversals. ECROM improves support-level AP on held-out queries by 4.5 points and search SPL by 4.2 points over the strongest competing memory in each metric.\n\nThe benchmark, dataset, and code will be open-sourced. Project page: https://jiaming.im/ecrom/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper formulates retrospective open-vocabulary memory for long-term object search as probabilistic inference from censored observations. Its central principle is to weight detections and non-detections according to the robot’s opportunity to observe each location. The authors introduce ECROM to estimate long-term prevalence for concepts specified at query time and use the resulting belief as an active-search prior. In a controlled benchmark across ten HM3D homes, ECROM improves support-level AP on held-out queries by 4.5 points and search SPL by 4.2 points over the strongest competing memory on each metric.",
+          "zh": "论文研究长期物体搜索中的开放词汇记忆，针对环境变化且观察机会不均的问题，将其表述为基于删失观测的概率推断：检测或未检测的证据应按机器人观察相应位置的机会加权。作者提出 ECROM，用于估计查询时才指定概念的长期出现率，并将信念转化为主动搜索先验。评测基准覆盖十个 HM3D 家庭，分别控制物体放置与观察机会。作者报告，ECROM 在留出查询上的支持级 AP 提高4.5点，搜索 SPL 提高4.2点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
