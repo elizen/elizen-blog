@@ -1143,7 +1143,11 @@
             "heading": "",
             "text": "This work addresses open-loop control of a soft continuum robot (SCR) from video-learned latent dynamics. Visual Oscillator Networks (VONs) from previous work are used, which provide mechanically interpretable 2D oscillator latents through an attention broadcast decoder (ABCD).\n\nOpen-loop, single-shooting optimal control is performed in latent space to track image-specified waypoints without camera feedback. An interactive SCR live simulator enables design of static, dynamic, and extrapolated targets and maps them to model-specific latent waypoints.\n\nOn a two-segment pneumatic SCR, Koopman, MLP, and oscillator dynamics, each with and without ABCD, are evaluated on setpoint and dynamic trajectories. ABCD-based models consistently reduce image-space tracking error. The VON and ABCD-based Koopman models attain the lowest mean squared errors (MSEs).\n\nAblation and simulation stress tests confirm that training and architecture choices support open-loop performance, including static holding, stable extrapolated equilibria, and relaxation to rest.\n\nTo the best of our knowledge, this is the first demonstration of reliable long-horizon open-loop control of a physical soft robot using interpretable latent dynamics models learned solely from video."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work studies open-loop control of a soft continuum robot using video-learned latent dynamics and image-specified waypoints, without camera feedback. In evaluations involving a two-segment pneumatic robot and simulation, models using an attention broadcast decoder consistently reduce image-space tracking error; VON and Koopman models achieve the lowest mean squared errors. Ablations and simulation stress tests examine static holding, extrapolated equilibria, and relaxation to rest. The authors describe this as the first reliable long-horizon demonstration on a physical soft robot using interpretable dynamics learned solely from video.",
+          "zh": "本文研究基于视频学习的潜在动力学，对软连续体机器人进行无摄像头反馈的开环控制。作者在潜在空间中进行单次射击最优控制，并以图像指定航点。在两段式气动机器人及仿真评估中，使用注意力广播解码器的模型持续降低图像空间跟踪误差，VON和Koopman模型取得最低均方误差。消融与仿真压力测试考察了静态保持、外推平衡点和回归静止。作者称这是仅从视频学习的可解释潜在动力学模型控制实体软机器人的首次可靠长时域演示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1174,7 +1178,11 @@
             "heading": "",
             "text": "Transformer policies are attractive for multi-agent robot learning because self-attention can model interactions among agents. However, multi-agent teams are unordered, while transformers typically process agents as ordered token sequences. We study how this mismatch affects cooperative navigation policies under agent-order permutations.\n\nOur results show that low permutation error alone can be misleading: policies may appear robust simply because all agents choose the same action. We therefore evaluate policies using both permutation-consistency metrics and action-collapse diagnostics, including action diversity, same-action fraction, and maximum action frequency.\n\nA PPO-ID baseline yields non-collapsed behavior but remains order-sensitive, while strong equivariance regularization can still induce homogeneous behavior.\n\nA weak equivariance penalty improves the robustness while preserving more diverse actions for teams with \\(N=3\\) agents, whereas teams with \\(N=4\\) agents require substantially smaller regularization weights.\n\nThese findings suggest that multi-agent transformer policies should be evaluated not only by return and permutation robustness, but also by whether they maintain non-collapsed, differentiated multi-agent behavior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies cooperative navigation policies under permutations of agent order. The authors argue that low permutation error can be misleading when all agents select the same action, so they assess both permutation consistency and action-collapse diagnostics, including action diversity and action frequency. A PPO-ID baseline avoids collapse but remains order-sensitive, while strong equivariance regularization can produce homogeneous behavior. A weak penalty improves robustness while preserving more action diversity for teams of three; teams of four require substantially smaller weights. The authors recommend evaluating differentiated behavior alongside return and permutation robustness.",
+          "zh": "本文研究多智能体Transformer策略在智能体顺序置换下的协作导航表现。作者指出，低置换误差可能只是所有智能体选择相同动作所致，因此同时考察置换一致性和动作多样性、同动作比例及最高动作频率等塌缩指标。PPO-ID基线行为未塌缩但对顺序敏感，强等变正则仍可能造成动作同质化。对三智能体团队，较弱惩罚可提升鲁棒性并保留更多动作多样性；四智能体团队需要明显更小的正则权重。作者建议评估时也检查行为是否保持差异化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1205,7 +1213,11 @@
             "heading": "",
             "text": "World models paired with model predictive control (MPC) can be trained offline on large-scale datasets of expert trajectories and enable generalization to a wide range of planning tasks at inference time.\n\nCompared to traditional MPC procedures, which rely on slow search algorithms or on iteratively solving optimization problems exactly, gradient-based planning offers a computationally efficient alternative. However, the performance of gradient-based planning has thus far lagged behind that of other approaches.\n\nIn this paper, we propose improved methods for training world models that enable efficient gradient-based planning. We begin with the observation that although a world model is trained on a next-state prediction objective, it is used at test-time to instead estimate a sequence of actions. The goal of our work is to close this train-test gap.\n\nTo that end, we propose train-time data synthesis techniques that enable significantly improved gradient-based planning with existing world models. At test time, our approach outperforms or matches the classical gradient-free cross-entropy method (CEM) across a variety of object manipulation and navigation tasks in 10% of the time budget."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper addresses the train-test gap in world models used for gradient-based planning. The authors note that models are trained to predict next states but are used at test time to estimate action sequences. They propose training-time data synthesis techniques to improve gradient-based planning with existing world models. Across a variety of object manipulation and navigation tasks, their approach is reported to outperform or match the classical gradient-free cross-entropy method (CEM) within 10% of the time budget. The abstract does not specify the evaluation setting.",
+          "zh": "本文关注世界模型用于基于梯度的规划时的训练与测试差距。作者指出，模型训练目标是预测下一状态，但测试时需估计动作序列，并提出训练时数据合成方法来改进现有世界模型的梯度规划。在多种物体操作和导航任务中，作者报告其方法在十分之一的时间预算内，表现优于或匹配传统的无梯度交叉熵方法（CEM）。摘要未说明这些结果所依据的具体实验环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1236,7 +1248,11 @@
             "heading": "",
             "text": "A growing body of work suggests that tactile sensing gives robot policies contact information that complements vision in dexterous manipulation. However, visuo-tactile robot data remains scarce: dexterous demonstrations require teleoperating robots, which limits dataset scale.\n\nHuman demonstrations are far cheaper to collect and offer a path to scale this data, but only if human and robot hands carry tactile sensors with corresponding signals. This requires sensors that conform to different hand geometries, cover the full hand, and share a common layout across embodiments.\n\nWe present SoTa, a low-cost capacitive tactile skin that provides full-hand coverage on humans and robots while preserving a shared layout of 202 taxels across corresponding finger and palm regions. Our multilayer design with fabric electrodes enables in-house fabrication of thin, soft skins with customizable geometry for under $10 in materials per skin.\n\nThe sensor retains over 97% of its initial response span after 10,000 loading-unloading cycles with traces retaining continuity through 1,280 tight-fist folding cycles. The shared taxel layout supports human-robot co-training with a common tactile encoder and no learned cross-sensor mapping.\n\nAcross three contact-rich manipulation tasks, tactile observations improve in-distribution success over vision-only policies. With a fixed robot demonstration budget, adding human demonstrations more than doubles mean success across eight evaluation conditions, from 22.8% to 45.9%, improving success in all five out-of-distribution conditions.\n\nWe plan to open-source the resources needed to fabricate and operate these skins."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SoTa, a low-cost capacitive tactile skin providing full-hand coverage on human and robot hands, with a shared layout of 202 taxels across corresponding finger and palm regions. The authors report customizable multilayer fabric-electrode skins costing under $10 in materials per skin. Sensors retain over 97% of their initial response span after 10,000 loading-unloading cycles, and traces remain continuous through 1,280 tight-fist folding cycles. In three contact-rich tasks, tactile input improves in-distribution success. With a fixed robot demonstration budget, adding human demonstrations raises mean success across eight evaluation conditions from 22.8% to 45.9%, including improvements in all five out-of-distribution conditions.",
+          "zh": "本文提出SoTa，一种低成本电容式触觉皮肤，可覆盖人手和机器人手，并在对应手指与掌部区域共用202个触点的布局。作者称，多层织物电极设计可按不同手型定制，材料成本每片低于10美元。传感器在一万次加载循环后保留超过97%的初始响应范围，折叠握拳循环后导线仍连续。在三项接触密集操作任务中，触觉观测提升了分布内成功率；固定机器人示范量时加入人类示范，使八种评估条件的平均成功率从22.8%升至45.9%，且五种分布外条件均有提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
