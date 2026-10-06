@@ -567,7 +567,11 @@
             "heading": "",
             "text": "We investigate the mutual visibility problem for a swarm of $n\\ge3$ autonomous mobile robots under the budget-constrained mobility fault model. The robots are opaque, so if three robots are collinear, the middle robot obstructs the visibility between the other two.\n\nEach robot is assigned a finite movement budget, reflecting its limited energy, that bounds the total distance it may traverse during the execution. Moreover, an arbitrary number of robots may become permanently immobile due to mobility faults.\n\nThe objective is to design a distributed algorithm that enables the non-faulty robots to coordinate their movements so that, within a finite time, every non-faulty robot attains unobstructed visibility of all robots in the system, including the faulty ones, while respecting the prescribed movement budget.\n\nWe consider luminous robots operating under the $\\mathsf{SSYNC}$ model with non-rigid movements, without any agreement on their local coordinate systems, and equipped only with a {\\it common fixed reference point}.We present a deterministic distributed algorithm that solves the problem despite an arbitrary number of mobility faults.\n\nThe algorithm guarantees mutual visibility for the non-faulty robots, respects the movement budget of every robot, provides collision-free movements for the robots, and uses only 12 light colors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies mutual visibility for opaque autonomous robots with finite movement budgets, where any number may become permanently immobile. Under the SSYNC model with non-rigid movement, no agreement on local coordinate systems, and a common fixed reference point, the authors present a deterministic distributed algorithm. They claim it enables non-faulty robots to see every robot in finite time, respects each robot’s movement budget, and avoids collisions, using 12 light colors.",
+          "zh": "论文研究预算受限移动故障模型下，至少三台不透明自主机器人的互相可见问题：机器人移动总距离受预算限制，任意数量的机器人可能永久失去移动能力。作者在 SSYNC、非刚性移动且无局部坐标系共识的设定下，提出确定性分布式算法，使非故障机器人在有限时间内看见系统中所有机器人，同时遵守预算并避免碰撞。算法使用12种灯光颜色，且仅依赖共同固定参考点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -598,7 +602,11 @@
             "heading": "",
             "text": "Equipping humanoid robots with coherent and adaptable personas is crucial for fostering natural, engaging, and trustworthy human-robot interaction (HRI).However, existing approaches often rely on static, hard-coded identities that lack the flexibility to adapt to individual user contexts.\n\nIn this paper, we present PACE (Persona Adaptation through Conversational Elicitation), a novel framework for the interactive generation and deployment of structured personas on the Ameca humanoid robot.\n\nOur system introduces an Interactive Persona Elicitation Pipeline, enabling the robot to dynamically synthesize a tailored, psychologically grounded identity through user Q&A. This elicitation process feeds into a persona prompt compilation phase, generating a structured persona prompt built upon multi-perspective dimensions.\n\nWe detail the Embodied System Integration required to translate this structured specification into expressive, multimodal humanoid behaviors.\n\nThrough a comprehensive empirical HRI evaluation, we assess the impact of dynamically generated personas on user trust, perceived anthropomorphism, persona consistency, personal relevance, and interaction quality compared to a generic baseline.\n\nThese contributions establish a scalable pathway for deploying personalized, interactive, and reliable identities in embodied humanoid assistants. Video demo is available at: https://lipzh5.github.io/PACE/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents PACE, a framework for interactively generating and deploying structured personas on the Ameca humanoid robot. User question-and-answer exchanges inform a tailored identity, which is compiled into a multi-perspective persona prompt and translated into expressive multimodal behavior. The authors describe the embodied system integration and an empirical HRI evaluation comparing dynamically generated personas with a generic baseline on trust, perceived anthropomorphism, persona consistency, personal relevance, and interaction quality. The abstract does not report evaluation outcomes.",
+          "zh": "论文提出 PACE，用于在 Ameca 人形机器人上交互式生成和部署结构化 persona。系统通过用户问答合成个性化身份，再将其编译为包含多视角维度的 persona 提示，并将规格转化为富有表现力的多模态行为。作者介绍了具身系统集成，并报告开展了实证人机交互评估，比较动态生成 persona 与通用基线在用户信任、感知拟人性、身份一致性、个人相关性和交互质量方面的表现；摘要未给出评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -629,7 +637,11 @@
             "heading": "",
             "text": "Physical intelligence refers to intelligence systems that understand, reason about, and act in accordance with the physical world and its underlying laws, dynamics, and constraints.\n\nUnlike conventional AI systems, physical intelligence interacts continuously with uncertain physical environments, and its actions produce consequences that are physically irreversible.\n\nAs existing trustworthy AI frameworks have been developed primarily for digital AI systems, they do not fully capture the distinctive challenges of Physical Intelligence, such as physical safety, cyber-physical security, and physical manufacturing process. To address this gap, we present a survey of trustworthy physical intelligence principles.\n\nFirst, we characterize the core capabilities and challenges of physical intelligence. Second, we examine the role of physics in AI. Third, we trace the end-to-end physical intelligence life cycle across five core stages and introduce Trustworthy Physical Intelligence Operationalization (T-PAIO).\n\nFourth, we develop the Trustworthy Physical Intelligence (T-PAI) framework, a theoretical framework that organizes key trustworthiness principles and provides a foundation for governing trustworthy physical intelligence systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey argues that trustworthy AI frameworks designed mainly for digital systems do not fully address physical intelligence challenges, including physical safety, cyber-physical security, and manufacturing processes. The authors characterize physical intelligence capabilities and challenges, examine the role of physics in AI, and describe a life cycle with five core stages. They introduce Trustworthy Physical Intelligence Operationalization (T-PAIO) and develop the theoretical T-PAI framework to organize trustworthiness principles and provide a foundation for governance.",
+          "zh": "这篇综述指出，物理智能持续与不确定的物理环境交互，行动可能造成不可逆后果；现有可信人工智能框架主要面向数字系统，未充分覆盖物理安全、网络物理安全和制造过程等挑战。作者概述物理智能的核心能力与挑战，考察物理学在人工智能中的作用，并沿五个核心阶段梳理其全生命周期，提出可信物理智能运行化方案 T-PAIO。文中还构建理论框架 T-PAI，用于组织可信原则并为系统治理提供基础。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -660,7 +672,11 @@
             "heading": "",
             "text": "Online control of execution speed is essential for deploying robot policies in real-world scenarios, as robots may need to speed up under time constraints or slow down to facilitate human interaction and improve safety.\n\nHowever, imitation-learned policies inherit the execution speed of their demonstrations, and test-time speed modification can introduce unrecoverable out-of-distribution observations, reducing task success.\n\nWe observe that the directional inconsistency of action chunks reflects task-phase criticality, indicating how aggressively action step lengths can be modified while preserving task success. Based on this observation, we introduce FreeSpeed, a training-free module that post-processes action chunks from pretrained policies.\n\nFreeSpeed resamples each predicted chunk at the requested rate, then uses directional inconsistency between adjacent actions as the primary signal for rescaling. This signal adaptively determines how closely the execution speed can approach the requested speed, allowing flexible speed adjustment within the evaluated limits without compromising task success.\n\nAcross three policy families and 50 simulated tasks, FreeSpeed supports online speed changes, with realized execution rates spanning 0.22x to 2.53x among settings that preserve per-task success.\n\nAcross four real-world manipulation tasks, FreeSpeed achieves an average success rate of 94.0%, matching the frozen policy's 93.8%, while realizing execution rates from 0.38x to 1.97x."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FreeSpeed is a training-free module that post-processes action chunks from pretrained robot policies to adjust execution speed online. It resamples chunks at the requested rate and uses directional inconsistency between adjacent actions to guide speed rescaling, aiming to preserve task success. The authors evaluate it across three policy families and 50 simulated tasks. In four real-world manipulation tasks, they report a 94.0% average success rate, compared with 93.8% for the frozen policy; reported speed ranges apply to settings that preserve per-task success.",
+          "zh": "FreeSpeed 是一种无需训练的模块，用于后处理预训练机器人策略的动作片段，以在线调整执行速度。它先按请求速率重采样动作，再依据相邻动作的方向不一致程度调节速度，以适应任务阶段并尽量维持成功率。作者在三类策略和50项仿真任务中评估在线速度变化；在四项真实操作任务中，报告其平均成功率为94.0%，与冻结策略的93.8%相当。摘要给出的速度范围仅适用于各任务成功率得以保持的设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
