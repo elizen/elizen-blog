@@ -971,7 +971,11 @@
             "heading": "",
             "text": "In recent years, Unmanned Aerial Vehicles (UAVs) or drones have been increasingly adopted in urban environments for applications such as parcel delivery, infrastructure inspection, emergency response, and drone light shows.\n\nA non-negligible issue is how to manage the increasing number of drones operated by different entities, to enable them to cooperatively avoid potential collisions and determine conflict-free short-term flight paths in urban airspace.\n\nThis paper presents a Prediction-Based Short-Term Decentralized Greedy (PB-STDG) guidance algorithm for a structured Drone Road System (DRS).\n\nPB-STDG extends the original STDG algorithm by introducing a prediction mechanism that enables drones to anticipate the decisions of neighboring drones using additional information shared in beacon packets, aiming to address the over-conservative behavior observed in the STDG algorithm.\n\nSeveral simulation scenarios are conducted to evaluate and compare the proposed algorithm with STDG. The results show that PB-STDG improves traffic efficiency while maintaining a safety level comparable to that of STDG."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents PB-STDG, a prediction-based short-term decentralized greedy guidance algorithm for structured drone road systems. Extending STDG, it uses additional information in beacon packets to anticipate neighboring drones’ decisions, with the aim of reducing the original algorithm’s over-conservative behavior. In several simulation scenarios, comparisons show improved traffic efficiency while maintaining a safety level comparable to STDG.",
+          "zh": "论文提出面向结构化无人机道路系统的预测型短期分散贪心引导算法 PB-STDG，在原 STDG 基础上利用信标包中的额外信息预测邻近无人机的决策，旨在缓解原算法过于保守的问题。多个仿真场景的比较结果显示，该算法提高了交通效率，同时保持与 STDG 相当的安全水平。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1002,7 +1006,11 @@
             "heading": "",
             "text": "Vision-based autonomous navigation for low-cost robots remains a fundamental challenge, primarily due to the significant gap between simulated training environments and real-world operational conditions. Direct policy transfer from simulation is often ineffective, while training exclusively on real data is impractical.\n\nWe propose a hybrid transfer learning framework that effectively bridges the sim-to-real gap by combining domain randomization with feature-level domain adaptation.\n\nOur method employs a dual convolutional variational autoencoder architecture with a shared decoder, trained on an extensive set of 45225 simulated images and a minimal set of only 4556 real-world samples. This architecture learns a compact, common latent representation space that aligns the distributions of both domains.\n\nThe adaptation process is further enhanced by two complementary data augmentation techniques designed to expand the limited real-world data.\n\nExperimental evaluation demonstrates that our method achieves an average success rate of almost 91% on image classification tasks for real-world indoor navigation, significantly outperforming both simulation-only and real-world-only training.\n\nWe validate these findings through a direct, real-world deployment, where the proposed policy successfully guides a low-cost robot in a reactive exploration task.\n\nFurthermore, we validate the model's efficiency through a rigorous computational estimation, confirming its suitability for resource-constrained embedded platforms such as the Raspberry Pi 4 and NVIDIA Jetson Nano. This work presents a practical solution for developing effective and efficient navigation policies for low-cost robotic systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a sim-to-real transfer framework for low-cost robot navigation that combines domain randomization with feature-level adaptation. A dual convolutional variational autoencoder with a shared decoder learns a common latent representation, while two augmentation methods expand limited real-world data. Experiments report an average success rate of almost 91% on real-world indoor navigation image classification tasks. The authors also describe a real-robot reactive exploration deployment and computational estimates indicating suitability for constrained embedded platforms.",
+          "zh": "论文提出结合域随机化与特征级域适配的低成本机器人仿真到现实迁移框架，使用共享解码器的双卷积变分自编码器学习两种域的共同潜在表示，并通过数据增强扩展有限的真实数据。实验报告称，该方法在真实室内导航图像分类任务中平均成功率接近 91%，并通过真实机器人反应式探索部署验证策略；计算估算则显示其适用于资源受限的嵌入式平台。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1033,7 +1041,11 @@
             "heading": "",
             "text": "Policies with memory can learn along two backward paths: through the physical states their actions produce and through the representations they store. Transformer-XL and truncated backpropagation through time cut the second path at stored history while keeping its values. We ask when this cut matters.\n\nHolding the forward computation fixed and varying only derivative edges, we measure parameter gradients, the updates the optimizer applies, and continued training in a Transformer vessel-trajectory model and a quadrotor tracking policy.\n\nIn the vessel model, detaching the key-value cache shrank the gradient to about a tenth of its norm, with little rotation, when gradients flowed through all earlier physical states, but barely changed it under one-step physical credit.\n\nIn this strongly clipped regime the optimizer, not the gradient, set how far updates differed: global-norm clipping removed most of the gradient difference between memory-cut graphs, whereas AdamW turned a 2% gradient difference between two placements of the cut into update differences of up to 31% at the step where the placement was switched.\n\nIn a quadrotor trained from initialization with 0.20 m/s velocity noise, removing memory raised tracking error by 43% and cutting memory gradients raised it by 32%; at low noise the cut's mean cost exceeded the value of memory.\n\nTwo-step truncation segments gave no measurable gain, although with hidden velocity a two-step window captured most of the value of memory; eight-step segments removed half to three quarters of the cost. Switching the cut on only for the last fifth of training understated its cost about threefold at 0.20-0.30 m/s, but not at low noise or with hidden velocity.\n\nThese results suggest measuring the cost of a memory cut by training with it from initialization, and comparing backward graphs by the updates the optimizer applies rather than by raw gradients."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies when truncating backpropagation through policy memory matters, measuring gradients, optimizer updates, and continued training in a vessel-trajectory model and a quadrotor tracking policy. Reported effects depend on physical-state credit assignment, clipping, optimizer, noise, and truncation timing. In the described quadrotor setting, removing memory or cutting its gradients increased tracking error. Two-step truncation showed no measurable gain, while longer segments reduced cost in specific conditions. The authors recommend training with the cut from initialization and comparing optimizer-applied updates.",
+          "zh": "论文研究策略记忆中断反向传播的影响，分别考察船舶轨迹模型和四旋翼跟踪策略中的梯度、优化器更新及后续训练。结果显示，影响取决于物理状态信用分配、梯度裁剪、优化器、噪声及截断时机；在所述四旋翼设置中，移除记忆或切断记忆梯度会增加跟踪误差。两步截断未带来可测收益，而更长片段在特定设置下降低成本。作者建议从初始化时就训练记忆切断，并比较优化器实际更新。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1064,7 +1076,11 @@
             "heading": "",
             "text": "Hierarchical control architectures are widely used to decompose complex control problems into interacting control levels and are particularly important in robotics, where planning, whole-body motion, and lower-level control must be coordinated across different levels of abstraction and time scales.\n\nTheir overall closed-loop performance, however, depends strongly on parameters distributed across the hierarchy, such that tuning controllers on different levels independently may neglect relevant cross-layer interactions. We propose a contextual Bayesian optimization framework for joint parameter learning in hierarchical control systems.\n\nRather than modeling closed-loop performance only as a scalar black-box function, we retain separate observations of task performance, realization quality, and control effort. A correlated multi-output Gaussian process models these performance components, while their known aggregation into the overall closed-loop objective is evaluated analytically.\n\nThe formulation exploits three complementary consequences of hierarchical control: informative performance quantities exposed by the hierarchy, coupling between parameters of different controller levels, and variations of these relations with operating conditions.\n\nWe evaluate the approach for humanoid loco-manipulation, jointly tuning a centroidal predictive controller and a whole-body controller for physical box pushing under varying box mass. The proposed method achieves the lowest mean empirical regret during both training and adaptation among the considered baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes contextual Bayesian optimization for jointly learning parameters in hierarchical control systems. It models task performance, realization quality, and control effort as separate outputs using a correlated multi-output Gaussian process, then analytically evaluates their aggregate closed-loop objective. The method uses hierarchy-exposed performance measures, cross-level parameter coupling, and changes in those relations across operating conditions. In humanoid physical box-pushing evaluations with varying box mass, jointly tuning centroidal predictive and whole-body controllers yielded the lowest mean empirical regret among the considered baselines during training and adaptation.",
+          "zh": "论文提出用于分层控制系统联合参数学习的上下文贝叶斯优化框架，将任务表现、实现质量和控制 effort 分别建模，并以相关多输出高斯过程描述这些指标，再解析计算整体闭环目标。该方法利用层级结构提供的性能信息、跨控制层参数耦合及其随运行条件变化的关系。在人形机器人不同箱体质量下的物理推箱任务中，联合调节质心预测控制器和全身控制器；相较所考虑的基线，训练和适应期间的平均经验遗憾最低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
