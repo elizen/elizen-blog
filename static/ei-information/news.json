@@ -4795,7 +4795,11 @@
             "heading": "",
             "text": "Evaluating end-to-end autonomous driving under rare, safety-critical vehicle-pedestrian interactions requires photorealistic, sensor-level scenarios. However, trajectory-based scenario generators cannot synthesize raw visual observations, whereas video-based approaches lack controllability.\n\nTo bridge this gap, we present ControlPed, a novel framework that combines trajectory-level conflict synthesis with 3D Gaussian Splatting (3DGS) to generate photorealistic, motion-controllable safety-critical scenarios.\n\nBuilt upon HazardPed, a dataset derived from 10,352 traffic videos comprising 422 conflict trajectories, HD maps, and 857 annotated 3D human motions, ControlPed first generates conflict trajectories, lifts them into 3D human motion sequences via text-conditioned motion diffusion, and finally renders multi-view sensor observations using animatable 3DGS avatars.\n\nSafety evaluation in 88 rendered photorealistic scenarios reveals that seven leading end-to-end driving models suffer a severe performance drop, with their mean HDScore plunging from 88.8 to 47.4, exposing major failure modes under dangerous pedestrian behaviors.\n\nThe dataset and testing benchmarks will be released to facilitate safety assessment of vehicle-pedestrian interactions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ControlPed, which combines conflict-trajectory synthesis with 3D Gaussian Splatting to generate controllable pedestrian motions and photorealistic sensor observations. Using a dataset of traffic videos, conflict trajectories, HD maps, and annotated human motions, it generates trajectories, converts them into 3D motions with text-conditioned diffusion, and renders multi-view observations with animatable 3DGS avatars. In evaluation on 88 rendered scenarios, the authors report that seven end-to-end driving models’ mean HDScore falls from 88.8 to 47.4.",
+          "zh": "论文提出 ControlPed，将冲突轨迹生成与 3D Gaussian Splatting 结合，生成可控的行人危险运动和写实传感器观测。该方法基于包含交通视频、冲突轨迹、高清地图及标注人体运动的数据集，先生成冲突轨迹，再通过文本条件运动扩散映射为三维人体动作，并用可动画化的 3DGS 人体模型渲染多视角观测。在 88 个渲染场景的安全评估中，作者报告七种端到端驾驶模型的平均 HDScore 从 88.8 降至 47.4。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4826,7 +4830,11 @@
             "heading": "",
             "text": "When using reinforcement learning (RL) for contact-rich robotic manipulation, vision can provide task-relevant information that complements robot proprioception. However, vision-enabled policies tend to overfit to the visual conditions seen during training, limiting their robustness and transferability.\n\nWe present a human-in-the-loop RL framework that employs teacher-student distillation to achieve robust performance across multiple task variants, trained entirely in the real world without requiring domain randomization or data augmentation.\n\nA vision-enabled teacher distills its knowledge into a vision-free student that relies solely on pose, twist, and wrench sensing, combining fast training with strong task generalization.\n\nOn the real-world NIST assembly benchmark board, our approach achieves 95% overall success after approximately 50 minutes of training on 3 representative tasks, including robust generalization to 8 unseen task variants. Fine-tuning with distillation achieves full success on the most challenging task.\n\nWe demonstrate that the resulting policies outperform baselines in both robustness and adaptability. Page: https://tuwien-asl.github.io/VE2VF/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VE2VF, a human-in-the-loop reinforcement learning framework that uses teacher-student distillation to improve contact-rich robotic manipulation across task variants. A vision-enabled teacher transfers knowledge to a student that relies only on pose, twist, and wrench sensing. Training takes place entirely in the real world without domain randomization or data augmentation. On the real-world NIST assembly benchmark board, the method reaches 95% overall success after about 50 minutes across three representative tasks and generalizes to eight unseen variants. Distillation fine-tuning achieves full success on the most challenging task.",
+          "zh": "论文提出 VE2VF，一种人在环路的强化学习框架，通过教师—学生蒸馏提升接触密集型机器人操作在多种任务变体上的表现。视觉教师将知识蒸馏给仅依赖位姿、速度及力觉传感的学生策略。训练完全在真实环境进行，不使用域随机化或数据增强。在真实 NIST 装配基准板的三个代表性任务上，约 50 分钟训练后总体成功率达到 95%，并泛化至八种未见变体；蒸馏微调使最具挑战的任务达到完全成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4857,7 +4865,11 @@
             "heading": "",
             "text": "A vision--language--action (VLA) policy can complete complex tasks while ignoring the evidence that should determine its actions. An object held near the wrist camera can displace the instructed target.\n\nLanguage and action show the same pattern: a familiar noun can trigger the operation it was paired with in training even after the verb changes, and a gripper that closed on nothing may lift anyway.\n\nWe call these dependencies modality shortcuts: regularities in successful demonstrations make visual, lexical, or motor cues sufficient to predict expert actions without the task evidence needed for the underlying decision. More demonstrations of the same kind can raise task success while leaving these shortcuts intact.\n\nWe propose Perturbot which makes task-relevant evidence easier to use and shortcuts insufficient on their own: it applies task-preserving wrist-view perturbations, enriches instructions with decision-relevant captions, and adds random and failed trajectory segments relabeled with the behavior they contain.\n\nIt complements scaling by changing what is scaled, and leaves inference unchanged. Moreover, we propose GroundingFscore, an offline score that diagnoses how severely a policy relies on modality shortcuts.\n\nTask success rate shows whether a policy improves, while GroundingFscore reveals whether the policy scales healthily, relying on task evidence rather than shortcuts. Together, Perturbot and GroundingFscore provide a training-and-evaluation framework for disentangling VLA decisions from shortcut priors while preserving responsiveness to task-relevant evidence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper calls a vision-language-action policy’s reliance on visual, lexical, or motor cues from demonstrations “modality shortcuts.” It argues that more demonstrations of the same kind may improve task success without removing those shortcuts. PerturbBot aims to make task evidence more useful through task-preserving wrist-view perturbations, decision-relevant instruction captions, and randomly sampled or failed trajectory segments relabeled by their behavior. Inference remains unchanged. The authors also introduce GroundingFscore, an offline measure of shortcut reliance, to complement task success when evaluating policy training.",
+          "zh": "论文将视觉—语言—动作策略对训练示范中视觉、词语或动作线索的依赖称为模态捷径，并指出增加同类示范可能提高任务成功率，却不一定消除捷径。作者提出 PerturbBot，通过保持任务的腕部视角扰动、补充与决策相关的指令描述，以及加入随机和失败轨迹片段并按其行为重新标注，促使策略利用任务证据。推理过程保持不变。论文还提出离线指标 GroundingFscore，用于诊断策略对模态捷径的依赖，并与任务成功率共同评估训练效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4888,7 +4900,11 @@
             "heading": "",
             "text": "Captured human-object interactions provide rich supervision for humanoid loco-manipulation, but they are sparse, heterogeneous, and not directly executable by robots. We introduce InterMimicGen, a self-evolving motion-imitation framework in which robot motion data and a tracking policy improve each other.\n\nFirst, we consolidate motion-captured human-object interaction datasets and retarget them into humanoid robot references while preserving whole-body coordination and dexterous hand-object relationships. This produces a large and diverse humanoid robot reference collection for dexterous whole-body loco-manipulation.\n\nSecond, we train a physics-based generalist tracker that executes these references in simulation on a humanoid with dexterous hands, covering a scale and diversity beyond prior humanoid tracking systems for loco-manipulation.\n\nThird, we close a data flywheel: each round makes small, task-preserving changes to where an interaction takes place and how the body performs it, fine-tunes the tracker on them, and keeps only the variants whose simulated execution completes the task, which seed the next round.\n\nWith more iterations, these small edits compound into broader coverage around the sparse original demonstrations while preserving task semantics and motion quality.\n\nExperiments show contact-preserving retargeting across robot configurations, broad tracking with a single generalist policy, executable motions that keep growing over augmentation rounds, and transfer to real robots.\n\nInterMimicGen provides a unified path from heterogeneous human demonstrations to a continually expanding motion resource for humanoid robot learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces InterMimicGen, a self-evolving motion-imitation framework for expanding humanoid loco-manipulation data. It retargets human-object interaction motions as robot references, trains a generalist tracker in physics simulation, and makes task-preserving changes to interaction locations and body motions. Only variants that complete the task in simulation seed later rounds. The authors state that iterations broaden coverage around sparse demonstrations while retaining task semantics and motion quality. Experiments report contact-preserving retargeting across robot configurations, broad tracking by one policy, growth in executable motions, and transfer to real robots.",
+          "zh": "论文提出 InterMimicGen，通过自演化运动模仿扩大人形机器人全身移动操作的数据覆盖。方法将多源人体—物体交互动作重定向为机器人参考动作，训练物理仿真中的通用跟踪策略，再对交互位置和身体动作作保持任务的小幅修改，只保留仿真执行成功的变体用于后续迭代。作者称这些迭代能在保留任务语义和动作质量的同时扩展稀疏示范的覆盖范围。实验报告了跨机器人配置的接触保持重定向、单一策略的广泛跟踪能力、动作集合增长及向真实机器人的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
