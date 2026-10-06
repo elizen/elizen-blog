@@ -707,7 +707,11 @@
             "heading": "",
             "text": "The For\\^et Montmorency (FoMo) dataset is a comprehensive multi-season data collection, recorded over the span of one year in a boreal forest. Featuring a unique combination of on- and off-pavement environments with significant environmental changes, the dataset challenges established odometry and SLAM pipelines.\n\nSome highlights of the data include the accumulation of snow exceeding 1 m, significant vegetation growth in front of sensors, and operations at the traction limits of the platform. In total, the FoMo dataset includes over 64 km of six diverse trajectories, repeated during 12 deployments throughout the year.\n\nThe dataset features data from one rotating and one hybrid solid-state lidar, a Frequency Modulated Continuous Wave (FMCW) radar, full-HD images from a stereo camera and a wide lens monocular camera, as well as data from two IMUs.\n\nGround Truth is calculated by post-processing three GNSS receivers mounted on the Uncrewed Ground Vehicle (UGV) and a static GNSS base station. Additional metadata, such as one measurement per minute from an on-site weather station, camera calibration intrinsics, and vehicle power consumption, is available for all sequences.\n\nTo highlight the relevance of the dataset, we performed a preliminary evaluation of the robustness of a lidar-inertial, radar-gyro, and a visual-inertial localization and mapping techniques to seasonal changes. We show that seasonal changes have serious effects on the re-localization capabilities of the state-of-the-art methods.\n\nThe dataset and development kit are available at https://fomo.norlab.ulaval.ca."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FoMo is a multi-season robot navigation dataset collected over one year in a boreal forest, covering paved and off-pavement environments with substantial seasonal changes. It contains more than 64 km across six diverse trajectories, repeated over 12 deployments, with data from lidar, FMCW radar, cameras, and two IMUs. Ground truth is post-processed from vehicle-mounted GNSS receivers and a static base station; weather, camera calibration, and power metadata are also provided. A preliminary evaluation reports serious seasonal effects on relocalization by three localization and mapping approaches.",
+          "zh": "FoMo 是一套在北方针叶林历时一年的多季节机器人导航数据集，涵盖铺装与非铺装环境及显著季节变化。数据包含六条轨迹、超过64公里的记录，并在全年12次部署中重复采集，使用多种激光雷达、雷达、相机和IMU。真值由车载GNSS接收机及静态基站后处理获得，另提供天气、相机标定和车辆能耗等元数据。作者初步评估了三类定位建图方法，称季节变化严重影响其重定位能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -738,7 +742,11 @@
             "heading": "",
             "text": "For ground robots operating in outdoor environments, understanding the properties of the underlying terrain is essential for ensuring reliable operation. In most perception-based studies, this problem is formulated as categorical classification with a fixed number of classes defined during training.\n\nWe propose an approach that enables new surface classes to be added as trainable vectors, which can subsequently be used to address higher-level tasks.\n\nBy employing a learning paradigm based on predicting the robot's next state in time and using attention blocks, we improved classification accuracy to 98.56% on the Belyaev-Kushnarev dataset and 94.8% on BorealTC."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses terrain understanding for ground robots operating outdoors, noting that perception studies commonly treat it as classification over a fixed set of training classes. The authors propose a surface representation approach in which new surface classes can be added as trainable vectors for use in higher-level tasks. The learning method predicts the robot’s next state in time and uses attention blocks. The reported classification accuracy is 98.56% on the Belyaev-Kushnarev dataset and 94.8% on BorealTC.",
+          "zh": "本文针对户外地面机器人的地形理解问题，指出常见感知研究将其设定为训练阶段固定类别数的分类任务。作者提出一种表面表示学习方法，可将新的表面类别作为可训练向量加入，并用于更高层任务。该方法通过预测机器人下一时刻状态并采用注意力模块进行学习；在 Belyaev-Kushnarev 数据集上的分类准确率为98.56%，在 BorealTC 上为94.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -769,7 +777,11 @@
             "heading": "",
             "text": "In this paper, we present a distributed cascade force control system (DCFC) for multiple robots with the aim of pushing a rigid object towards a desired moving target without their inter-robot communication. These mobile robots are equipped with 360-degree vision-based soft tactile sensors utilized to determine contact location and resultant impact force.\n\nBy investigating the dynamics of moving rigid objects on the flat, we proposed a distributed cascade control. The inner loop control incorporates contact force and positioning, ensuring the robots' pushing contact and application of the desired force to the object.\n\nThe outer loop control coordinates the robots to push the object in a desired direction without inter-robot communication, regardless of the unknown object mass. The stability and convergence of the system are verified using the Lyapunov stability theory.\n\nWe also conducted simulation and real-word experiments to validate the performance of the proposed control method, and the experimental results showcase the successful coordination of multiple robots in pushing an object towards a moving desired direction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a distributed cascade force control system for multiple robots pushing a rigid object toward a moving target without inter-robot communication. The robots use 360-degree vision-based soft tactile sensors to determine contact locations and impact forces. An inner loop controls contact force and positioning, while an outer loop coordinates the pushing direction and is described as independent of unknown object mass. Stability and convergence are verified using Lyapunov stability theory. Simulations and real-world experiments are reported, with results showing coordinated pushing toward a moving desired direction.",
+          "zh": "本文提出分布式级联力控制系统，使多个机器人在不进行机器人间通信的情况下，将刚性物体推向移动目标。机器人利用360度视觉软触觉传感器确定接触位置和冲击力；内环控制接触力与位置，外环协调推送方向，并声称可应对未知物体质量。作者通过李雅普诺夫稳定性理论验证系统稳定性与收敛性，并开展仿真和真实实验，报告多机器人成功协调推动物体朝目标移动方向运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -800,7 +812,11 @@
             "heading": "",
             "text": "Self driving vehicles have emerged as a reliable technology that has the capability to transform transportation and mobility. The development of self driving cars requires significant advances in a number of areas, including perception, localization, decision making, and control.\n\nThis research paper is based on the project implementation of the combination of object detection using YOLO (You Only Look Once), depth sensing using MiDaS for the localization and perception of obstacles, perspective transform, and decision making for path planning in self driving cars.\n\nThe contemporary state of the technology for object detection, depth sensing, localization, and path planning evaluates the performance of the combined system through simulations and experiments. The results show that the combination of YOLO and MiDaS provides a new robust system for object detection and depth sensing.\n\nThis research paper contributes to the advancement of self driving car technology and provides new and innovative approaches to the perception and localization of obstacles in the environment. Keywords: YOLO, MiDaS, perception, localization, decision making"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a self-driving vehicle project combining YOLO object detection, MiDaS depth sensing, perspective transformation, and decision making for obstacle perception, localization, and path planning. The authors evaluate the combined system through simulations and experiments. They report that combining YOLO and MiDaS provides a new robust system for object detection and depth sensing. The abstract does not specify experimental conditions or provide quantitative results.",
+          "zh": "本文描述一项自动驾驶项目实现，将 YOLO 用于物体检测、MiDaS 用于深度感知，并结合透视变换和决策方法进行障碍物定位、感知及路径规划。作者通过仿真和实验评估组合系统，报告 YOLO 与 MiDaS 的结合形成了用于物体检测和深度感知的新型稳健系统。摘要未提供具体实验条件或量化结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
