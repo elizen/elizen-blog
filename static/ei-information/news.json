@@ -2603,7 +2603,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work characterizes four vision-language-action models in batch-one, deadline-driven robot control. The authors profile single inferences on an edge GPU server and two onboard SoCs, and evaluate closed-loop operation. They report that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, while frequency scaling produces platform-dependent energy-latency tradeoffs. Overlapping inference and action execution also trades accuracy, speed, and energy, with no configuration dominating across deployment service objectives.",
+          "zh": "本文分析视觉—语言—动作模型在具身机器人单批次、周期性控制场景中的运行特征。作者在边缘GPU服务器和两种机载SoC上，对四种代表性模型进行单次推理剖析，并开展闭环评估。结果显示，动作张量维度及平台配置会影响计算或内存瓶颈，频率调节带来的能耗—时延折中因平台而异；推理与动作执行重叠则形成准确性、速度和能耗权衡，没有一种配置在所有部署服务目标下占优。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2634,7 +2638,11 @@
             "heading": "",
             "text": "World action models (WAMs) have emerged as a promising paradigm for robotic manipulation. They act by first predicting how a task should be performed and then decoding the actions from that future. However, the remaining actions are invalid once execution drifts from the prediction.\n\nSimply replanning from the already out of distribution state rarely restores what the task still requires; existing execution monitors decide when to stop, but not what to restore. We observe that the answer is already in hand: the future the WAM predicted before acting depicts exactly the states it intended to pass through.\n\nWe introduce FAVOR (Future Anchored Verification and Online Recovery), a lightweight framework that keeps these predicted frames as anchors and uses them for verification and recovery. An Anchor Verifier compares each observation with its anchor, together with the executed actions, to flag deviations that break the task.\n\nAnchor-Guided Recovery uses a vision-language model to turn the flagged anchor into a short corrective instruction. Under strengthened instruction guidance, the WAM executes this instruction to return to the intended future. It then resumes the task.\n\nFAVOR raises the task success of the base WAM from 97.85% to 98.10% on LIBERO and from 72.60% to 72.98% on LIBERO-Plus without modifying the policy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FAVOR, a framework for verifying and recovering world action models during robotic manipulation. It retains predicted future frames as anchors; an Anchor Verifier compares observations and executed actions with these anchors to flag task-breaking deviations. A vision-language model converts a flagged anchor into a short corrective instruction, which the WAM follows under strengthened instruction guidance before resuming the task. The authors report improved base-model task success on LIBERO and LIBERO-Plus without modifying the policy.",
+          "zh": "本文提出FAVOR，用于在世界动作模型执行机器人操作任务时，借助模型行动前预测的未来画面进行验证和在线恢复。锚点验证器结合观测与已执行动作识别可能破坏任务的偏差；恢复模块通过视觉—语言模型生成简短纠正指令，并在强化指令引导下让模型回到预期状态后继续任务。摘要报告，FAVOR在LIBERO和LIBERO-Plus上提高了基础模型的任务成功率，且无需修改策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2665,7 +2673,11 @@
             "heading": "",
             "text": "Kinematic motion planners are among the most widely used control approaches in robotic applications. By modeling the robot as a first-order system, they generate a feedback-based desired velocity field that guides the robot toward a target while avoiding obstacles.\n\nHowever, extending such feedback planners to systems with higher-order dynamics, while preserving safety and stability properties, is not a straightforward task.\n\nIn the present work, we propose an approach that adapts existing feedback-based kinematic motion planners to second-order autonomous systems while retaining their safety and almost global asymptotic stability guarantees.\n\nWe consider two general classes of kinematic motion planners: those derived from navigation functions and those defined directly through desired velocity fields without relying on an underlying navigation function.\n\nTo validate the proposed methodology, two feedback-based kinematic motion planners are adapted to second-order systems and evaluated both in simulations and experimentally."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work proposes adapting feedback-based kinematic motion planners to autonomous systems with second-order dynamics, while retaining safety and almost-global asymptotic stability guarantees. It considers planners derived from navigation functions and planners defined directly through desired velocity fields. The authors adapt two feedback-based kinematic planners to second-order systems and evaluate them in simulations and experiments. The abstract does not specify quantitative outcomes or detailed experimental results.",
+          "zh": "本文提出一种方法，将基于反馈的运动学运动规划器扩展到具有二阶动力学的自主系统，并声称保留安全性和几乎全局渐近稳定性保证。研究涵盖两类规划器：基于导航函数的规划器，以及直接定义期望速度场的规划器。作者将两个反馈式运动学规划器改造为二阶系统，并通过仿真和实验进行评估。摘要未给出具体实验结果或量化性能数据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2696,7 +2708,11 @@
             "heading": "",
             "text": "Adverse weather and poor illumination remain major challenges for robust ego-trajectory planning in mobile autonomy. 4D radar offers reliable sensing under adverse conditions and direct radial-velocity measurements.\n\nHowever, sensing robustness does not necessarily translate into robust downstream planning, while existing 4D radar benchmarks focus primarily on perception rather than trajectory planning. We present Radar2Plan, a modular benchmark for open-loop ego-trajectory planning using real-world 4D radar data.\n\nRadar2Plan connects sensor encoders, scene representations, and planning heads through common interfaces, enabling controlled comparisons between different sensor and planner configurations.\n\nUsing DSERT-RoLL and MAN TruckScenes, we evaluated seven combinations of camera, 4D radar, and LiDAR in four representative planning baselines and 12 weather and illumination conditions under a unified protocol. To our knowledge, Radar2Plan is the first benchmark dedicated to evaluating real-world 4D radars for autonomous driving planning.\n\nExperiments show that 4D radar alone supports competitive ego-trajectory planning and robust performance under adverse conditions. Sensor-configuration comparisons further demonstrate its complementary value to other modalities, while revealing dependencies on sensor combination and planning architecture.\n\nThe modular design also supports additional datasets, sensing modalities, and planners, providing a flexible foundation for future research on radar-based autonomous driving planning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Radar2Plan, a modular benchmark for open-loop ego-trajectory planning with real-world 4D radar data. Common interfaces connect sensor encoders, scene representations, and planning heads for controlled comparisons. The authors evaluate seven camera, radar, and LiDAR configurations across four planning baselines and varied weather and illumination conditions using two datasets. They report that 4D radar alone supports competitive planning and robust performance in adverse conditions; its complementary value depends on sensor combinations and planning architecture.",
+          "zh": "本文介绍Radar2Plan，这是一个使用真实4D雷达数据评估开环自车轨迹规划的模块化基准。它通过统一接口连接传感器编码器、场景表示和规划器，支持比较不同传感器与规划配置。作者基于两个数据集，评估相机、4D雷达和激光雷达的七种组合、四种规划基线及多种天气和光照条件。实验显示，单独使用4D雷达可实现有竞争力的规划表现，并在恶劣条件下保持稳健；其与其他模态的互补效果取决于传感器组合和规划架构。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
