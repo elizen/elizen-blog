@@ -2479,7 +2479,11 @@
             "heading": "",
             "text": "Building generalizable robot agents for diverse applications remains a fundamental challenge. While imitation learning-based policies can perform well in familiar training environments, they often struggle to generalize to novel scenes, layouts, and task compositions.\n\nTo this end, we present World Action Planner, an agentic robot planning system in which the agent searches for and composes executable action plans through imagination with an action-conditioned world model. The search proceeds in a coarse-to-fine manner.\n\nFirst, the agent performs global action optimization by reasoning over imagined world-model rollouts to identify potential failures and refine the proposed action plan. It then performs local action search, comparing the imagined future outcomes of neighboring candidates to select the best action for execution.\n\nAcross compositional long-horizon tasks, novel object layouts, and real-robot planning on novel tasks without expert demonstrations, World Action Planner consistently outperforms state-of-the-art end-to-end generalist policy models and VLM planners, demonstrating the effectiveness of world-model-based action search for generalizable robot decision making.\n\nQualitative results and videos are available at https://worldactionplanner.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces World Action Planner, a robot planning system that searches and composes executable plans using an action-conditioned world model. Its coarse-to-fine process first optimizes plans against imagined rollouts to identify potential failures, then compares neighboring action candidates before execution. The authors report consistent improvements over end-to-end generalist policies and VLM planners on compositional long-horizon tasks, novel layouts, and real-robot planning on novel tasks without expert demonstrations; the abstract gives no further experimental details.",
+          "zh": "论文提出 World Action Planner，一种利用动作条件世界模型进行想象和搜索的机器人规划系统。它先通过全局优化检查想象 rollout 中的潜在失败并改进计划，再比较邻近候选动作的预测结果，选择动作执行。作者称，在组合式长时程任务、新物体布局，以及没有专家示范的新任务真实机器人规划中，该方法持续优于端到端通用策略模型和视觉语言模型规划器。摘要未提供具体实验细节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2510,7 +2514,11 @@
             "heading": "",
             "text": "Forward-backward (FB) representations provide a powerful framework for learning the successor representation (SR) in continuous spaces by enforcing a low-rank factorization.\n\nHowever, a fundamental spectral mismatch often exists between the high-rank transition dynamics of continuous environments and the low-rank bottleneck of the FB architecture, making accurate low-rank representation learning difficult. In this work, we analyze temporal abstraction as a mechanism to mitigate this mismatch.\n\nBy characterizing the spectral properties of the transition operator, we show that temporal abstraction acts analogously to a low-pass filter that suppresses high-frequency spectral components. This suppression reduces the effective rank of the induced SR while preserving a formal bound on the resulting value function error.\n\nEmpirically, we show that this alignment is a key factor for stable FB learning, particularly at high discount factors where bootstrapping becomes error-prone. Our results identify temporal abstraction as a principled mechanism for shaping the spectral structure of the underlying MDP and enabling effective long-horizon representations in continuous control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies temporal abstraction as a way to address the spectral mismatch between high-rank transition dynamics in continuous environments and the low-rank bottleneck of forward-backward representations. The authors characterize temporal abstraction as a low-pass filter that suppresses high-frequency components, lowers the effective rank of the induced successor representation, and preserves a formal bound on value-function error. Empirically, they report more stable learning, especially with high discount factors, in continuous-control settings.",
+          "zh": "论文分析时间抽象如何缓解连续环境转移动态的高秩特征与前向—后向表示低秩瓶颈之间的谱失配。作者指出，时间抽象类似低通滤波器，可抑制高频谱成分、降低诱导后继表示的有效秩，同时保留价值函数误差的形式化界限。实验结果显示，这种谱对齐有助于前向—后向表示稳定学习，尤其是在高折扣因子、引导误差更易出现时；研究聚焦连续控制中的长时程表示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2541,7 +2549,11 @@
             "heading": "",
             "text": "Panoramic images provide a complete 360-degree field of view, enabling comprehensive scene understanding for embodied perception.\n\nHowever, heterogeneous embodied platforms exhibit substantial differences in observation viewpoints and spatial layouts, giving rise to cross-embodiment observation shifts that pose additional challenges to consistent and reliable panoramic perception, while systematic studies of this problem remain limited.\n\nTo bridge this gap, we introduce a new task, termed Cross-Embodiment Open Panoramic Segmentation.\n\nMeanwhile, we establish EmbPASS, a multi-platform panoramic semantic segmentation benchmark spanning Vehicle, Drone, Wearable, and Quadruped platforms under a unified semantic taxonomy, providing a testbed for systematically studying cross-embodiment panoramic perception.\n\nWe further propose EPONet, an open-vocabulary panoramic semantic segmentation network that integrates Relation-Aware Metric Adapter (RAMA) and Content-Adaptive Semantic Transfer (CAST) to enhance spatial modeling and semantic transfer under heterogeneous embodied observations.\n\nExtensive experiments show that EPONet achieves the best platform-balanced performance on EmbPASS with 35.82% mIoU, outperforming the strongest baseline by 1.10%, while remaining competitive on existing panoramic segmentation benchmarks. The source code and EmbPASS benchmark will be made publicly available at https://github.com/guopj1/EmbPASS."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper defines Cross-Embodiment Open Panoramic Segmentation and introduces EmbPASS, a benchmark covering vehicle, drone, wearable, and quadruped platforms with a unified semantic taxonomy. It also proposes EPONet, an open-vocabulary network using relation-aware metric adaptation and content-adaptive semantic transfer. Experiments report 35.82% mIoU and the best platform-balanced performance on EmbPASS, 1.10% above the strongest baseline, while remaining competitive on existing panoramic segmentation benchmarks.",
+          "zh": "论文提出跨具身开放全景分割任务，并建立 EmbPASS 基准，涵盖车辆、无人机、可穿戴设备和四足平台，采用统一语义分类体系。作者还提出开放词汇网络 EPONet，结合关系感知度量适配器与内容自适应语义迁移，以应对不同平台观测差异。实验显示，EPONet 在 EmbPASS 上取得 35.82% mIoU，平台均衡表现最佳，比最强基线高 1.10%，并在现有全景分割基准上保持竞争力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2572,7 +2584,11 @@
             "heading": "",
             "text": "Recent advances in frontier models enable robot manipulation from only a few demonstrations, but high inference latency limits their use for real-time robot control. To bridge this gap, we study two complementary approaches that connect frontier reasoning with low-latency local execution.\n\nFirst, we use a frontier model to autonomously generate demonstrations that supplement human demonstrations for training a fast local policy. We augment its in-context examples with corrective demonstration segments that show how to recover from physical errors, improving generation reliability.\n\nGeneration time and cost decrease as successful examples accumulate in context, suggesting a path toward more efficient data collection. At deployment, a harness combines frontier-generated instructions with a fast local policy, enabling efficient execution while preserving the frontier model's ability to guide and correct actions.\n\nWith low-latency execution delegated to the local policy, the bottleneck shifts to its capacity to reliably follow the frontier model's diverse instructions. Our second bridge introduces dense language supervision across three nested granularities---primitive, atomic, and composite---with multi-aspect descriptions at each level.\n\nAcross long-horizon tasks in RoboCasa 365 and BEHAVIOR-1K, where instructions change as execution progresses, the combined supervision achieves the highest performance under both oracle and frontier-model instructors, demonstrating more reliable instruction following through the policy's language interface.\n\nFinally, we evaluate both bridges together on a crossword task that combines semantic planning and manipulation within a fixed time budget. These results support autonomous demonstration generation and dense language supervision as complementary components for connecting frontier reasoning to low-latency local execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines two complementary ways to connect frontier reasoning with low-latency robot execution. One uses a frontier model to generate demonstrations, including corrective segments for physical-error recovery, to train a fast local policy; the authors report that generation time and cost decrease as successful examples accumulate. The other adds dense language supervision at primitive, atomic, and composite levels. Results on long-horizon benchmarks and a time-limited crossword manipulation task support combining the approaches.",
+          "zh": "论文研究连接前沿模型推理与低延迟机器人执行的两种互补方法。第一种让前沿模型自主生成示范，并加入展示物理错误恢复的纠正片段，以补充人工示范、训练快速本地策略；作者称成功示例积累后，生成时间和成本会下降。第二种在原语、原子和复合三个层级提供多方面的密集语言监督。在 RoboCasa 365 和 BEHAVIOR-1K 长时程任务及限时填字操控任务中，结果支持两种方法互补，但摘要未给出具体数值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
