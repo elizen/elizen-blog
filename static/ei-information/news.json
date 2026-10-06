@@ -2975,7 +2975,11 @@
             "heading": "",
             "text": "Powered neck exoskeletons are developed to restore head-neck motions for those with neck muscle weakness. Current methods using hand-held input devices to control these robotic systems are unintuitive or non-viable for these populations. Alternatively, the eyes coordinate with the head to accomplish many daily tasks.\n\nTherefore, movements of the eyes can be a useful signal to control the neck exoskeletons without needing to use the hands. However, previous control models lack biobehavioral basis as well as means to personalize the control behavior, causing unnatural head-neck movements.\n\nThis paper presents a novel eye-tracking controller design leveraging the vestibulo-ocular reflex to emulate natural eyehead coordination. Personalization tools were also designed, consisting of sliders to allow users to adjust the parameters of this controller. Here, we present the technical design and validation of this system in human users.\n\nCompared to the previous eye-tracking model, the new controller provides natural head motions personalized to the user through more natural velocity profiles and a 24 percent average increase of accurate motion intent detection.\n\nThis system provides a powerful platform for studying eye-tracking controllers in the context of personalization and preference, and ultimately restoring the lost head-neck mobility in patient populations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an eye-tracking controller for neck exoskeletons that uses the vestibulo-ocular reflex to model natural eye-head coordination. Sliders let users personalize controller parameters. In validation with human users, the authors report more natural velocity profiles and a 24% average increase in accurate motion-intent detection compared with a previous eye-tracking model. They describe the system as a platform for studying personalization and preference, with the longer-term aim of restoring head-neck mobility in patient populations.",
+          "zh": "论文提出一种用于颈部外骨骼的眼动控制器，借鉴前庭眼反射来模拟自然的眼头协调，并提供滑块供用户个性化调整参数。作者报告，该系统在人类用户验证中，相较既有眼动模型产生更自然的速度曲线，并使准确动作意图检测平均提升24%。论文将其定位为研究个性化与偏好的平台，并提出其最终可用于帮助恢复患者头颈活动能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3006,7 +3010,11 @@
             "heading": "",
             "text": "Benchmarks expose vision-language-action (VLA) policies to few canonical instructions, while exhaustive deployment testing is impossible.\n\nWe introduce Object-Grounded Attention Monitoring (OGAM), connecting systematic testing to runtime assurance: testing reveals attention divergence between successful and failed executions, and OGAM uses this signal to stop failures beyond the finite suite.\n\nWe generate scene-grounded instructions through pairwise combinations of action templates and objects, and separately test meaning-preserving paraphrases.\n\nAll 87 out-of-benchmark cases reveal problematic behavior across OpenVLA, OpenVLA-OFT, UniVLA, and $\\pi_{0.5}$: none completes any of the 24 feasible instructions, while infeasible or hazardous requests also trigger behavior substitution.\n\nAt each action query, we project gradient-weighted visual attention through object masks and group it by instruction role for comparison across tasks and policies.\n\nDynamic time warping aligns this course with a successful reference despite speed differences; conformal calibration on successful episodes sets the early-stopping threshold for sustained deviations, with a nominal false-stop target of $\\alpha=0.05$.\n\nAcross four policies, OGAM stops 87-100% of failed episodes at median times of 5-12s within a 20s budget, with observed false-stop rates of 3-5%, without failure-labeled training. Finite testing thus identifies attention patterns that support online intervention before failure fully unfolds."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Object-Grounded Attention Monitoring (OGAM), which uses attention differences between successful and failed executions in finite testing to intervene at runtime. It groups gradient-weighted visual attention by instruction role, aligns it with a successful reference using dynamic time warping, and calibrates an early-stopping threshold on successful episodes. Across four VLA policies, the authors report stopping 87–100% of failed episodes within a 20-second budget, with median times of 5–12 seconds and observed false-stop rates of 3–5%, without failure-labeled training.",
+          "zh": "论文提出物体接地注意力监测方法OGAM，将有限场景测试中成功与失败执行的注意力差异用于运行时干预。方法按指令角色汇总经物体掩码投影的梯度加权视觉注意力，用动态时间规整与成功参考对齐，并依据成功回合校准提前停止阈值。在四种VLA策略上，作者报告OGAM在20秒预算内停止87%至100%的失败回合，中位停止时间为5至12秒，观测误停率为3%至5%，且无需失败标注训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3037,7 +3045,11 @@
             "heading": "",
             "text": "Long-horizon planning with latent world models requires reasoning across timescales and levels of abstraction. Existing task-agnostic JEPA world models predict and plan at a single timescale or with multiple horizons in one shared latent space.\n\nWe introduce H-JEPA, an end-to-end recipe for training a hierarchy of action-conditioned JEPAs in which each level predicts farther ahead in its own learned latent space. Planning proceeds top-down: the top level optimizes progress toward the goal, and each level's predictions become subgoals for the planner below it.\n\nWhen factors in the data evolve at separated timescales, higher levels discard fast, unpredictable detail and retain slower task-relevant state. Across four simulated navigation and manipulation environments, hierarchical planning improves over a flat JEPA; on Visual AntMaze, a three-level hierarchy raises success from 18% to 73% using less planner compute.\n\nAblations attribute these gains to both temporal decomposition and higher-level goal representations. With inverse-dynamics supervision, the approach extends to diverse real-robot videos from DROID, where hierarchy improves offline planning fidelity at lower planner compute."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents H-JEPA, an end-to-end method for training hierarchical, action-conditioned JEPA world models. Each level predicts farther ahead in its own learned latent space, and planning proceeds top-down, turning higher-level predictions into subgoals for lower levels. In four simulated navigation and manipulation environments, hierarchical planning outperforms a flat JEPA. On Visual AntMaze, success rises from 18% to 73% with less planner compute. With inverse-dynamics supervision, the method also improves offline planning fidelity on real-robot DROID videos at lower planner compute.",
+          "zh": "论文提出H-JEPA，一种端到端训练分层、动作条件化JEPA世界模型的方法，各层在各自学习的潜在空间预测不同时间跨度，规划则自顶向下将高层预测转为低层子目标。在四种仿真导航与操作环境中，分层规划优于平坦JEPA；Visual AntMaze成功率从18%升至73%，且规划计算量更低。消融实验将收益归因于时间分解和高层目标表征。结合逆动力学监督后，该方法在DROID真实机器人视频上提升离线规划保真度并降低规划计算量。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3068,7 +3080,11 @@
             "heading": "",
             "text": "Autonomous robots operating over long periods must keep their environmental memory up to date as the world changes between visits. In semi-static environments, an object may be replaced in place by a different but geometrically and semantically similar instance, making the identity change difficult to detect from geometry or coarse semantics alone.\n\nWe present FOCUS, an uncertainty-aware framework for object-level change detection and map maintenance. We formulate semi-static memory maintenance as probabilistic inference that fuses geometric likelihood with appearance likelihood rendered from a 3D Gaussian map.\n\nA recursive three-state estimator maintains whether each mapped object is PERSISTED, REPLACED, or REMOVED.\n\nTo account for imperfect 3DGS rendering, we model the rendered appearance evidence probabilistically rather than using it as a direct change score, with the model parameters automatically calibrated from a change-free replay of the initial mapping session.\n\nWe evaluate our method on a new Isaac Sim warehouse benchmark with ambiguous in-place replacements and on the real-world TorWIC dataset. It improves object-level replacement F1 from 0.20 to 0.84 over a probabilistic baseline and transfers to real-world data without manual parameter retuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FOCUS, a framework for object-level change detection and map maintenance in semi-static environments. It uses probabilistic inference to combine geometric likelihood with appearance likelihood rendered from a 3D Gaussian map, and a recursive three-state estimator labels objects as persisted, replaced, or removed. Appearance evidence is modeled probabilistically to account for imperfect rendering, with parameters calibrated from a change-free replay of the initial mapping session. On an Isaac Sim warehouse benchmark and the real-world TorWIC dataset, the authors report replacement F1 improving from 0.20 to 0.84 over a probabilistic baseline, with transfer to real data without manual retuning.",
+          "zh": "论文提出FOCUS，用于半静态环境中的物体级变化检测与地图维护。该框架以概率推断融合几何似然和由3D高斯地图渲染的外观似然，并通过递归三状态估计器标记物体为持续存在、被替换或已移除。为应对渲染不完美，外观证据按概率建模，参数由初次建图阶段无变化的回放自动校准。在Isaac Sim仓库基准和真实TorWIC数据集上的评估中，作者报告替换F1由概率基线的0.20提升至0.84，并迁移至真实数据而无需人工重新调参。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
