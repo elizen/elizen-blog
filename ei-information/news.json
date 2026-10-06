@@ -3567,7 +3567,11 @@
             "heading": "",
             "text": "Tactile sensing is particularly valuable for contact-rich robotic manipulation. Recent work has made substantial progress in tactile representation learning for robotic manipulation.\n\nHowever, similar tactile observations can arise from interaction conditions with very different task-risk implications, such as sensor noise, task-necessary variations, and emerging undesirable contact.\n\nWithout context-grounded risk information, these cases can be ambiguous to downstream policies, leading to unnecessary corrections to benign variations or delayed responses to genuinely risky contact. To address this limitation, we propose Risk-Aware Tactile Encoding (RATE), which learns tactile representations that encode task-conditioned interaction risk.\n\nSpecifically, history-conditioned prediction captures interaction context, while alert supervision associates this context with task-conditioned risk. The learned risk-aware representation complements conventional tactile features through a lightweight residual adapter.\n\nExperiments in both simulation and the real world demonstrate substantial improvements in task success, with controlled ablations confirming the complementary benefits of alert-guided learning and predictive temporal modeling."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Risk-Aware Tactile Encoding (RATE) to represent task-conditioned interaction risk when similar tactile observations can imply different levels of risk. It uses history-conditioned prediction to capture interaction context and alert supervision to associate that context with risk, adding the representation through a lightweight residual adapter. The authors report substantial task-success improvements in both simulation and real-world experiments. Controlled ablations support complementary contributions from alert-guided learning and predictive temporal modeling.",
+          "zh": "论文提出风险感知触觉编码（RATE），针对相似触觉观测可能对应不同任务风险的问题，学习任务条件化的交互风险表示。方法通过历史条件预测捕捉交互上下文，以警报监督关联风险，并用轻量残差适配器补充常规触觉特征。作者称，仿真和真实世界实验均显示任务成功率显著提升；消融实验支持警报引导学习和时间预测建模各自带来补充收益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3598,7 +3602,11 @@
             "heading": "",
             "text": "The construction industry faces persistent labor shortages, low productivity that costs the global economy over $1.6 trillion annually, and one of the highest injury rates among major industries. These factors motivate the use of autonomous robots to improve efficiency and worker safety.\n\nExisting language-grounded navigation systems, however, rely on semantic scene understanding alone and lack access to construction-specific context such as architectural plans, evolving work schedules, and safety constraints. As a result, they localize permanent building features unreliably and cannot safely navigate active jobsites.\n\nWe present CORNAV, a blueprint-grounded, schedule-aware navigation framework that operates from 2D CAD drawings and project schedules without requiring a Building Information Model.\n\nCORNAV aligns architectural blueprints against hierarchical open-vocabulary 3D scene graphs to ground object queries, converts project schedules into time-varying navigation constraints, and validates requests through an LLM-based safety module that escalates hazardous zones before planning.\n\nAn A* planner then enforces mandatory exclusion zones while preferentially avoiding higher-risk areas.\n\nAcross an indoor office and a real construction site, blueprint grounding raises task success from 13.0% to 72.2% over semantic retrieval alone, schedule awareness eliminates all hard-zone violations, and the safety module correctly rejects hazardous requests arising from mislabeled project schedules."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CORNAV, a construction-site navigation framework that uses 2D CAD drawings and project schedules without requiring a Building Information Model. It aligns blueprints with hierarchical open-vocabulary 3D scene graphs, converts schedules into time-varying navigation constraints, and uses an LLM-based safety module to review requests. An A* planner enforces exclusion zones and prefers routes away from higher-risk areas. Across an indoor office and a real construction site, the authors report improved task success from blueprint grounding, no hard-zone violations with schedule awareness, and rejection of hazardous requests tied to mislabeled schedules.",
+          "zh": "论文提出 CORNAV，一种利用二维 CAD 图纸和项目进度表进行施工现场导航的框架，无需建筑信息模型。它将图纸与分层开放词汇三维场景图对齐，将进度表转为随时间变化的导航约束，并由基于大语言模型的安全模块审查请求；A*规划器执行强制禁入区约束并优先避开高风险区域。作者报告，在室内办公室和真实工地测试中，图纸定位、进度感知及安全审查取得摘要所述结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3629,7 +3637,11 @@
             "heading": "",
             "text": "Vision-based tactile sensors (VBTSs) are a promising technology for robots, providing them with dense signals that can be translated into a multi-faceted understanding of contact. However, existing VBTS tactile surfaces make use of silicone gels, which provide high sensitivity but easily deteri- orate from loading and surface wear.\n\nFurthermore, existing literature lacks rigorous durability and sensitivity evaluations targeted for intrinsic sensor performance.\n\nWe propose that polyurethane rubber, a typically harder material used for high-load applications like shoe soles, rubber wheels, and industrial gaskets, may provide improved physical gel resilience, potentially at the cost of sensitivity.\n\nIn addition, we propose a methodological framework to evaluate and compare tactile sensor hardware across designs and material compositions. Our resilience tests assess sensor durability across normal loading, shear loading, and abrasion.\n\nFor sensitivity, we introduce learning-free assessments of force and spatial sensitivity to isolate intrinsic sensor capabilities from the confounding effects of downstream dataset and network architecture choices.\n\nWe also perform a system-level validation using a bottle cap loosening and tightening task to show the translation of our controlled test results with a real-world example. Our results show that polyurethane substantially improves resilience.\n\nWhile it sacrifices sensitivity at low forces, the effective force range is largely increased, revealing the utility of polyurethane VBTSs over silicone versions in more rugged, high-load applications."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a learning-free framework for evaluating the resilience and sensitivity of vision-based tactile sensors, and investigates polyurethane rubber as an alternative to silicone surfaces. Resilience tests cover normal loading, shear loading, and abrasion; sensitivity assessments measure force and spatial response without downstream learning choices. A bottle-cap loosening and tightening task provides system-level validation. The authors report that polyurethane improves resilience, reduces sensitivity at low forces, and largely increases the effective force range, suggesting utility in rugged, high-load applications.",
+          "zh": "论文提出用于评估视觉触觉传感器耐久性与灵敏度的方法，并研究以聚氨酯橡胶替代硅胶表面。耐久性测试涵盖法向载荷、剪切载荷和磨损；灵敏度评估以免学习方式测量力和空间响应，旨在隔离传感器本身的能力。作者还用瓶盖拧松与拧紧任务进行系统级验证。结果显示，聚氨酯提升了耐久性，在低力下灵敏度有所降低，但扩大了有效力范围，适用于更坚固、高负载的应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3660,7 +3672,11 @@
             "heading": "",
             "text": "World action models jointly learn to forecast world dynamics and predict robot actions, such that the learned internal world dynamics guide accurate actions.\n\nExisting approaches typically represent the world as RGB frames or latent counterparts while predicting actions as end-effector poses or joint angles, but they often struggle to capture the 3D spatial structure and contact geometry central to dexterous manipulation.\n\nWe introduce Point World Action Model (PointWAM), a 3D world action model that decomposes the world into a scene (i.e., environment) and hands (i.e., actor), and jointly forecasts both as 3D point trajectories within a shared space-time coordinate frame.\n\nThis explicit, disentangled representation enables effective pre-training on large-scale human demonstration videos without requiring any task-specific object or keypoint selection.\n\nGiven a colored point cloud and a language instruction, PointWAM predicts how the scene and hands co-evolve in 3D space over time, then retargets the forecast hand motion to robot actions. Pre-training on human videos improves average DexJoCo success by 56.9 percentage points, and scene-trajectory supervision adds 10.9 points over forecasting the hands alone.\n\nWith both, PointWAM surpasses the prior state of the art on ten DexJoCo tasks by 11.7 points and outperforms strong VLAs on a real robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PointWAM, a 3D world action model for dexterous manipulation. It separates the environment scene from the acting hands and jointly predicts their 3D point trajectories in a shared space-time frame. Given a colored point cloud and language instruction, it forecasts how scene and hands evolve, then retargets the predicted hand motion to robot actions. The representation supports pre-training on human demonstration videos without task-specific object or keypoint selection. The authors report gains on DexJoCo tasks and performance above strong vision-language-action models on a real robot.",
+          "zh": "论文提出 PointWAM，一种用于灵巧机器人操作的三维世界动作模型，将环境场景与手部动作分解表示，并在共享时空坐标系中联合预测二者的三维点轨迹。给定彩色点云和语言指令，模型预测场景与手部随时间的变化，再将手部运动迁移为机器人动作。该表示支持利用人类演示视频进行预训练，无需针对任务选择物体或关键点。作者报告其在 DexJoCo 和真实机器人上的表现优于摘要所述基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
