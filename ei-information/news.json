@@ -1855,7 +1855,11 @@
             "heading": "",
             "text": "Latent world models enable robots to plan by predicting the consequences of actions. Planning long tasks with control-rate actions requires many prediction steps, which enlarges the search space and accumulates error. Skill-level actions shorten these sequences, but a symbolic skill vocabulary requires domain knowledge and labeled demonstrations.\n\nWe construct skill-level actions from the inputs of a flow-matching policy trained on demonstrations segmented into complete skills. The policy maps a noise seed and an observation, optionally with a code or label, to a complete skill execution, so one execution is one world-model transition.\n\nOn this mechanism we propose four action abstractions with increasing task knowledge: a compressed seed, two discrete codes learned from the demonstrations, and a symbolic label. We evaluate them with a common world-model training procedure and planning framework on simulated block rearrangement tasks that require up to 14 sequential skills.\n\nThe symbolic label succeeds in over 90% of the tasks that require up to six skills and degrades beyond. Without any label, an object-centric learned code matches it on single-skill tasks and retains half to three quarters of its success on tasks of two to five skills.\n\nAblations attribute much of the label's advantage to its planner knowing which actions are applicable, rather than to the label itself. Beyond six skills the search, not the world model, limits success. Project page: https://andreumatoses.github.io/research/flow-skill-wm"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors construct skill-level actions from the inputs to a flow-matching policy trained on demonstrations of complete skills, then compare four abstractions in simulated block rearrangement tasks requiring up to 14 sequential skills. Symbolic labels achieve over 90% success on tasks requiring up to six skills, with performance declining on longer tasks. Without labels, an object-centric learned code matches the label on single-skill tasks and retains half to three quarters of its success on tasks of two to five skills. Ablations attribute much of the label advantage to planner knowledge of action applicability; beyond six skills, search is the limiting factor.",
+          "zh": "本文从基于示范训练、并将完整技能作为输出的流匹配策略输入中构造技能级动作，用于长时程规划。作者比较压缩噪声种子、两种学习得到的离散码和符号标签四种抽象，并在最多需要14个连续技能的模拟积木重排任务中评估。符号标签在最多六技能的任务中成功率超过90%，更长任务表现下降；无标签的物体中心学习码在单技能任务上与其相当，在二至五技能任务中保留其一半至四分之三的成功率。消融结果表明，标签优势很大程度来自规划器知道动作适用条件；超过六技能后，搜索成为限制因素。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1886,7 +1890,11 @@
             "heading": "",
             "text": "In safety-critical domains such as autonomous driving, systems must be evaluated across a large number of environment conditions, often represented as composite scenarios built from primitive scenarios.\n\nExisting statistical model checking (SMC) approaches analyze each composite scenario independently, requiring many expensive simulations and resulting in substantial redundant computation when scenarios share common structure.\n\nThis work introduces a scenario-based compositional SMC framework for safety and co-safety specifications, enabling efficient analysis of composite scenarios.\n\nOur approach decomposes scenarios into primitives and specifications into sub-specifications, verifies each primitive independently, and composes the resulting statistical estimates using importance sampling and kernel density estimation.\n\nOur empirical evaluation shows that the proposed framework can accurately answer verification queries for previously unseen composite scenarios while reducing simulation cost through parallelization and trace reuse."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a compositional statistical model checking framework for safety and co-safety specifications over composite scenarios. It decomposes scenarios into primitives and specifications into sub-specifications, verifies primitives independently, and combines statistical estimates using importance sampling and kernel density estimation. The empirical evaluation reports that the method accurately answers verification queries for previously unseen composite scenarios and reduces simulation cost through parallelization and trace reuse. The abstract does not give quantitative cost reductions or further details about the evaluation conditions.",
+          "zh": "本文提出面向安全与余安全规格的场景组合式统计模型检查框架，以减少独立分析复合场景所需的重复仿真。方法将场景分解为基本场景、将规格分解为子规格，分别验证各基本场景，再通过重要性采样和核密度估计组合统计估计。经验评估显示，该框架能够准确回答此前未见复合场景的验证查询，并通过并行化和轨迹复用降低仿真成本。摘要未说明具体领域外的实验条件或量化降幅。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1917,7 +1925,11 @@
             "heading": "",
             "text": "Robotic manipulation often requires inferring task-relevant states from past interactions when the current observation alone is insufficient to determine the appropriate action.\n\nDespite progress in benchmarking memory-augmented vision-language-action (VLA) models, application-oriented tasks requiring history-dependent semantic inference remain underrepresented. We introduce GiT (Grounded in Time), a dataset and benchmark for grounding manipulation decisions in past events across biolaboratory, household, and industrial scenarios.\n\nIt includes real-robot and Universal Manipulation Interface (UMI) style demonstrations covering 18 bimanual tasks, together with simulation data and a ManiSkill-based evaluation suite covering nine tasks.\n\nFine-grained subtask annotations and annotated counterfactual task pairs, in which similar current observations require different actions depending on prior events, support policy learning and targeted evaluation of history use.\n\nEvaluations of representative end-to-end VLA models in simulation and on selected real-world tasks reveal substantial room for improvement in history-dependent manipulation. The dataset and benchmark are available at the project page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce GiT, a dataset and benchmark for grounding robotic manipulation decisions in past events across biolaboratory, household, and industrial settings. It contains real-robot and UMI-style demonstrations for 18 bimanual tasks, simulation data, and a ManiSkill-based evaluation suite covering nine tasks. Fine-grained subtask annotations and counterfactual task pairs support policy learning and targeted assessment of whether models use history. Evaluations of representative end-to-end vision-language-action models in simulation and on selected real-world tasks indicate substantial room for improvement in history-dependent manipulation.",
+          "zh": "本文介绍GiT（Grounded in Time），一个用于机器人操作中基于过去事件进行时间定位的数据集与基准，覆盖生物实验室、家庭和工业场景。数据包含真实机器人及UMI风格示范，涉及18项双臂任务，并提供仿真数据和基于ManiSkill、覆盖九项任务的评测套件。细粒度子任务标注和反事实任务对可用于策略学习及定向评估历史信息的使用。对代表性端到端视觉语言动作模型的仿真评测及部分真实任务评测显示，依赖历史的操作仍有较大改进空间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1948,7 +1960,11 @@
             "heading": "",
             "text": "Ultrasound visual servoing is essential for autonomous robotic ultrasound, yet 6-DoF probe control from 2D B-mode images remains challenging due to limited and ambiguous out-of-plane motion cues. Existing methods typically rely on anatomical priors or handcrafted visual features, limiting their generalizability across imaging targets.\n\nInspired by trackerless 3D ultrasound reconstruction, we propose Recon2Servo, a visual servoing framework that learns image-to-motion inference directly from B-mode images for 6-DoF probe control.\n\nA DINOv3 encoder with low-rank adaptation and a bidirectional relation module estimate the relative probe pose between current and target images to guide iterative closed-loop target-view alignment.\n\nThe framework combines supervised relative-pose learning, reconstruction-guided closed-loop adaptation, and bounded residual pose correction to improve motion inference during servoing.\n\nEvaluations on a public dataset and an in-house dataset collected from 12 healthy volunteers using different ultrasound systems demonstrate its effectiveness in reconstructed-volume servoing.\n\nAdditional real-robot demonstrations of target-view alignment and dynamic tracking on a human forearm are provided in the supplementary video: https://youtu.be/qwsOdI-GMYk."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Recon2Servo learns image-to-motion inference from 2D B-mode ultrasound images for six-degree-of-freedom probe visual servoing. It uses a low-rank-adapted DINOv3 encoder and a bidirectional relation module to estimate relative probe pose between current and target images and guide iterative closed-loop alignment. The framework also combines supervised relative-pose learning, reconstruction-guided adaptation, and bounded residual pose correction. Evaluations on a public dataset and an in-house dataset collected from 12 healthy volunteers using different ultrasound systems demonstrate reconstructed-volume servoing. Supplementary video shows real-robot target alignment and dynamic tracking on a human forearm.",
+          "zh": "本文提出Recon2Servo，通过直接从二维B模式超声图像学习图像到运动的推断，实现六自由度探头视觉伺服。框架使用经低秩适配的DINOv3编码器和双向关系模块估计当前图像与目标图像间的相对探头位姿，以迭代闭环对齐目标视图；方法还结合监督式相对位姿学习、重建引导的闭环适配及有界残差位姿校正。作者在公开数据集和来自12名健康志愿者、使用不同超声系统采集的自建数据集上评估，并报告重建体积伺服效果；补充视频展示了人体前臂上的真实机器人对齐和动态跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2103,7 +2119,11 @@
             "heading": "",
             "text": "The neck, specifically the cervical spine, is a highly fragile and mobile part of the body with a high risk of catastrophic injury. Whether someone is injured on a battlefield, in a natural disaster, or in an athletic event, great care is always taken with the cervical spine when transporting, rolling, or moving the patient.\n\nIn this work, we present an algorithm and adaptations for bi-manual robots to stabilize the cervical spine during rolling maneuvers. We investigate techniques to maximize grip strength within safety bounds and present a control approach for proper neck rotation.\n\nWe found that with our approach, a bi-manual robot is capable of achieving human-level performance in maintaining target rotational alignments. The axial alignment for the robot with prediction was within .21 degrees of human novices."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an algorithm and adaptations for bimanual robots to stabilize the cervical spine during rolling maneuvers. It investigates maximizing grip strength within safety bounds and controlling neck rotation. The authors report human-level performance in maintaining target rotational alignments. With prediction, the robot’s axial alignment was within 0.21 degrees of that of human novices. The abstract does not specify the evaluation setting.",
+          "zh": "论文提出一种双臂机器人算法及适配方案，用于患者滚动操作时稳定颈椎，并研究安全约束下增强抓握力和控制颈部旋转的方法。作者称，该方法使机器人在保持目标旋转对齐方面达到与人类相当的表现；带预测时，机器人轴向对齐误差在文中报告为与人类新手相差0.21度。摘要未说明这些结果的具体实验环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2134,7 +2154,11 @@
             "heading": "",
             "text": "Robots need to anticipate how their actions will change the world, since manipulation success hinges on the resulting contacts and object motions.\n\nHowever, existing Vision-Language-Action (VLA) policies that predict future observations from shared features leave the forecast decoupled from the actions the policy will actually execute, and impose no physical constraints on how the scene may evolve. We introduce ForeAct3D, a framework for policy-grounded future world modeling within VLA policies.\n\nLearnable geometric queries decode depth, semantic segmentation, and camera pose from the policy representation into current and future semantic 3D scene states, and the future queries are conditioned on the policy-generated action chunk to ground the forecast in the planned interaction.\n\nA physical-consistency closure relates the two states through background staticity and instance-level rigidity, and anchors the wrist-camera pose to end-effector kinematics. These objectives shape the shared representation used for action generation during training, and no future prediction is required at inference.\n\nWithout robot pretraining, ForeAct3D achieves 98.3\\% average success on LIBERO and an average task length of 3.73 on CALVIN, outperforming its base policy on every suite.\n\nAblations show that semantic 3D supervision, physical consistency, and action conditioning each improve manipulation performance, and that action conditioning substantially improves future object localization.\n\nReal-world experiments on spatial placement, object insertion, and sequential manipulation further raise average success from 6.7\\% to 37.8\\% over the base policy. The project page and code are available at https://github.com/anthonytao80-crypto/ForeAct3D."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ForeAct3D grounds future scene predictions in action chunks generated by a vision-language-action policy. Geometric queries predict current and future semantic 3D states, with physical-consistency objectives based on static backgrounds, rigid objects, and wrist-camera and end-effector kinematics. These objectives shape the shared representation during training; future prediction is not needed at inference. The authors report improvements over the base policy on LIBERO and CALVIN without robot pretraining, and higher average success in real-world trials involving placement, insertion, and sequential manipulation.",
+          "zh": "ForeAct3D将未来场景预测与视觉语言动作策略生成的动作序列关联，并用几何查询预测当前和未来的语义三维场景状态，以背景静止、物体刚性及手腕相机与末端运动学关系施加物理一致性约束。训练时这些目标塑造共享表征，推理时不需预测未来。作者报告，在无机器人预训练时，该方法在LIBERO和CALVIN上优于基础策略；消融显示各组成部分有助于操作表现，真实机器人实验涵盖空间放置、物体插入和序列操作，平均成功率较基础策略提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2165,7 +2189,11 @@
             "heading": "",
             "text": "Long-horizon mobile manipulation requires a task plan and the motion that executes it. Generative planners trained on demonstration produce both in one pass, requiring neither a symbolic domain nor search. To date, however, they have relied on thousands of scripted demonstrations of fixed-base arms and executed open loop.\n\nThis paper presents a hybrid flow matching planner: a single network generates the symbolic plan with masked discrete flow matching and the motion trajectory with continuous flow matching. Unlike prior generative planners, we aim to learn from a much smaller set of demonstrations and to execute the plan in closed loop.\n\nTwo properties of the data compensate for the small dataset. A demonstration resumed from any of its intermediate actions is itself a demonstration, which multiplies the training samples and enables replanning after every action. Objects of the same kind are interchangeable, which turns demonstrations of one goal into demonstrations of every permuted goal.\n\nOur base implementation produces valid plans on 68% of held-out scenes; a training and generation scheme for the discrete plan raises this to 76%, and replanning after every action raises the task completion rate from 40% to 53% in a kinematic simulation.\n\nThe planner matches the task completion rate of motion-only flow matching policies while additionally providing the symbolic plan, and it outperforms previous hybrid diffusion formulations on both task completion and plan validity. We validate the planner on a real mobile manipulator.\n\nVideos and project page: https://andreumatoses.github.io/research/hybrid-flow-planning"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a hybrid flow-matching planner that generates a symbolic task plan with masked discrete flow matching and a motion trajectory with continuous flow matching. It aims to learn from fewer demonstrations and execute closed-loop. The method uses demonstrations resumed from intermediate actions and interchangeable objects to expand training examples and support replanning. In kinematic simulation, valid plans increased from 68% to 76% of held-out scenes with a revised discrete-plan scheme, while replanning raised task completion from 40% to 53%. The authors also report validation on a real mobile manipulator.",
+          "zh": "论文提出混合流匹配规划器，由单一网络以离散流匹配生成符号任务计划、以连续流匹配生成运动轨迹，目标是用较少真实演示进行闭环规划。作者利用演示可从中间动作继续、同类物体可互换这两种性质扩充训练样本并支持重规划。运动学仿真中，基础实现对68%的留出场景生成有效计划，改进离散计划训练与生成方案后为76%；逐动作重规划使任务完成率从40%升至53%。论文还称在真实移动操作机器人上进行了验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2196,7 +2224,11 @@
             "heading": "",
             "text": "Simulated evaluation is increasingly used alongside real-world evaluation of robot policies because it is cheaper and easier to repeat; however, its value depends on how closely its outcomes track the real robot's.\n\nWe test whether our reconstruction pipeline, combining metrically scaled object geometry, authored physical parameters and scene reconstruction, reduces disagreement between simulated and real robot scores relative to a default open-source recipe.\n\nWe constructed two simulated versions of one bimanual robot cell: an authored reconstruction, using object geometry at estimated metric scale, projected textures, authored physics and our own scene splat; and a baseline, referred to as the default reconstruction, using the open-source recipe of a generative single-image mesh, engine-default physics and a Gaussian-splat scene.\n\nBoth reconstructions use the same object photographs and scene video. Two policies ran five tasks each, giving ten task-policy pairs, which we call cells; each cell was run twenty times in each reconstruction with all other settings held fixed. Both reconstructions were scored against the same real trials, graded by a third-party evaluator.\n\nPearson correlation between the ten simulated and real cell means is r = 0.90 for the authored reconstruction and 0.51 for the default. Mean score error is 6.97 percentage points for the authored reconstruction and 17.54 for the default, a reduction of 10.56 percentage points.\n\nThese results show that improving the quality of the environment reconstruction through higher visual fidelity, authored physics and metric scale makes the simulation more faithful to the real world and narrows the sim-to-real gap.\n\nWe release the harness, the per-trial scores, every reported run's configuration, and the assets and scenes of both reconstructions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study compares two simulated reconstructions of one bimanual robot cell: an authored version with metrically scaled object geometry, authored physics, and a reconstructed scene, and a baseline using an open-source recipe. Both use the same photographs and scene video. Two policies perform five tasks each; each task-policy pair is run twenty times per reconstruction and compared with the same real trials. The authors report simulated-to-real mean-score correlations of 0.90 and 0.51, and mean score errors of 6.97 and 17.54 percentage points, respectively. They conclude that higher-quality reconstruction narrows the sim-to-real gap.",
+          "zh": "研究比较同一双臂机器人工作单元的两种仿真重建：一种采用估计公制尺度的物体几何、定制物理参数和场景重建，另一种采用开源默认方案。两种重建使用相同照片与场景视频；两项策略各执行五项任务，每个任务—策略组合在每种重建中运行二十次，并与相同真实试验评分比较。作者报告，定制重建的仿真与真实均分相关系数为0.90，默认重建为0.51；均分误差分别为6.97和17.54个百分点。作者认为提高环境重建质量可缩小仿真与现实的差距。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
