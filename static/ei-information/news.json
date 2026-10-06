@@ -1855,7 +1855,11 @@
             "heading": "",
             "text": "Latent world models enable robots to plan by predicting the consequences of actions. Planning long tasks with control-rate actions requires many prediction steps, which enlarges the search space and accumulates error. Skill-level actions shorten these sequences, but a symbolic skill vocabulary requires domain knowledge and labeled demonstrations.\n\nWe construct skill-level actions from the inputs of a flow-matching policy trained on demonstrations segmented into complete skills. The policy maps a noise seed and an observation, optionally with a code or label, to a complete skill execution, so one execution is one world-model transition.\n\nOn this mechanism we propose four action abstractions with increasing task knowledge: a compressed seed, two discrete codes learned from the demonstrations, and a symbolic label. We evaluate them with a common world-model training procedure and planning framework on simulated block rearrangement tasks that require up to 14 sequential skills.\n\nThe symbolic label succeeds in over 90% of the tasks that require up to six skills and degrades beyond. Without any label, an object-centric learned code matches it on single-skill tasks and retains half to three quarters of its success on tasks of two to five skills.\n\nAblations attribute much of the label's advantage to its planner knowing which actions are applicable, rather than to the label itself. Beyond six skills the search, not the world model, limits success. Project page: https://andreumatoses.github.io/research/flow-skill-wm"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors construct skill-level actions from the inputs to a flow-matching policy trained on demonstrations of complete skills, then compare four abstractions in simulated block rearrangement tasks requiring up to 14 sequential skills. Symbolic labels achieve over 90% success on tasks requiring up to six skills, with performance declining on longer tasks. Without labels, an object-centric learned code matches the label on single-skill tasks and retains half to three quarters of its success on tasks of two to five skills. Ablations attribute much of the label advantage to planner knowledge of action applicability; beyond six skills, search is the limiting factor.",
+          "zh": "本文从基于示范训练、并将完整技能作为输出的流匹配策略输入中构造技能级动作，用于长时程规划。作者比较压缩噪声种子、两种学习得到的离散码和符号标签四种抽象，并在最多需要14个连续技能的模拟积木重排任务中评估。符号标签在最多六技能的任务中成功率超过90%，更长任务表现下降；无标签的物体中心学习码在单技能任务上与其相当，在二至五技能任务中保留其一半至四分之三的成功率。消融结果表明，标签优势很大程度来自规划器知道动作适用条件；超过六技能后，搜索成为限制因素。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1886,7 +1890,11 @@
             "heading": "",
             "text": "In safety-critical domains such as autonomous driving, systems must be evaluated across a large number of environment conditions, often represented as composite scenarios built from primitive scenarios.\n\nExisting statistical model checking (SMC) approaches analyze each composite scenario independently, requiring many expensive simulations and resulting in substantial redundant computation when scenarios share common structure.\n\nThis work introduces a scenario-based compositional SMC framework for safety and co-safety specifications, enabling efficient analysis of composite scenarios.\n\nOur approach decomposes scenarios into primitives and specifications into sub-specifications, verifies each primitive independently, and composes the resulting statistical estimates using importance sampling and kernel density estimation.\n\nOur empirical evaluation shows that the proposed framework can accurately answer verification queries for previously unseen composite scenarios while reducing simulation cost through parallelization and trace reuse."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a compositional statistical model checking framework for safety and co-safety specifications over composite scenarios. It decomposes scenarios into primitives and specifications into sub-specifications, verifies primitives independently, and combines statistical estimates using importance sampling and kernel density estimation. The empirical evaluation reports that the method accurately answers verification queries for previously unseen composite scenarios and reduces simulation cost through parallelization and trace reuse. The abstract does not give quantitative cost reductions or further details about the evaluation conditions.",
+          "zh": "本文提出面向安全与余安全规格的场景组合式统计模型检查框架，以减少独立分析复合场景所需的重复仿真。方法将场景分解为基本场景、将规格分解为子规格，分别验证各基本场景，再通过重要性采样和核密度估计组合统计估计。经验评估显示，该框架能够准确回答此前未见复合场景的验证查询，并通过并行化和轨迹复用降低仿真成本。摘要未说明具体领域外的实验条件或量化降幅。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1917,7 +1925,11 @@
             "heading": "",
             "text": "Robotic manipulation often requires inferring task-relevant states from past interactions when the current observation alone is insufficient to determine the appropriate action.\n\nDespite progress in benchmarking memory-augmented vision-language-action (VLA) models, application-oriented tasks requiring history-dependent semantic inference remain underrepresented. We introduce GiT (Grounded in Time), a dataset and benchmark for grounding manipulation decisions in past events across biolaboratory, household, and industrial scenarios.\n\nIt includes real-robot and Universal Manipulation Interface (UMI) style demonstrations covering 18 bimanual tasks, together with simulation data and a ManiSkill-based evaluation suite covering nine tasks.\n\nFine-grained subtask annotations and annotated counterfactual task pairs, in which similar current observations require different actions depending on prior events, support policy learning and targeted evaluation of history use.\n\nEvaluations of representative end-to-end VLA models in simulation and on selected real-world tasks reveal substantial room for improvement in history-dependent manipulation. The dataset and benchmark are available at the project page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce GiT, a dataset and benchmark for grounding robotic manipulation decisions in past events across biolaboratory, household, and industrial settings. It contains real-robot and UMI-style demonstrations for 18 bimanual tasks, simulation data, and a ManiSkill-based evaluation suite covering nine tasks. Fine-grained subtask annotations and counterfactual task pairs support policy learning and targeted assessment of whether models use history. Evaluations of representative end-to-end vision-language-action models in simulation and on selected real-world tasks indicate substantial room for improvement in history-dependent manipulation.",
+          "zh": "本文介绍GiT（Grounded in Time），一个用于机器人操作中基于过去事件进行时间定位的数据集与基准，覆盖生物实验室、家庭和工业场景。数据包含真实机器人及UMI风格示范，涉及18项双臂任务，并提供仿真数据和基于ManiSkill、覆盖九项任务的评测套件。细粒度子任务标注和反事实任务对可用于策略学习及定向评估历史信息的使用。对代表性端到端视觉语言动作模型的仿真评测及部分真实任务评测显示，依赖历史的操作仍有较大改进空间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1948,7 +1960,11 @@
             "heading": "",
             "text": "Ultrasound visual servoing is essential for autonomous robotic ultrasound, yet 6-DoF probe control from 2D B-mode images remains challenging due to limited and ambiguous out-of-plane motion cues. Existing methods typically rely on anatomical priors or handcrafted visual features, limiting their generalizability across imaging targets.\n\nInspired by trackerless 3D ultrasound reconstruction, we propose Recon2Servo, a visual servoing framework that learns image-to-motion inference directly from B-mode images for 6-DoF probe control.\n\nA DINOv3 encoder with low-rank adaptation and a bidirectional relation module estimate the relative probe pose between current and target images to guide iterative closed-loop target-view alignment.\n\nThe framework combines supervised relative-pose learning, reconstruction-guided closed-loop adaptation, and bounded residual pose correction to improve motion inference during servoing.\n\nEvaluations on a public dataset and an in-house dataset collected from 12 healthy volunteers using different ultrasound systems demonstrate its effectiveness in reconstructed-volume servoing.\n\nAdditional real-robot demonstrations of target-view alignment and dynamic tracking on a human forearm are provided in the supplementary video: https://youtu.be/qwsOdI-GMYk."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Recon2Servo learns image-to-motion inference from 2D B-mode ultrasound images for six-degree-of-freedom probe visual servoing. It uses a low-rank-adapted DINOv3 encoder and a bidirectional relation module to estimate relative probe pose between current and target images and guide iterative closed-loop alignment. The framework also combines supervised relative-pose learning, reconstruction-guided adaptation, and bounded residual pose correction. Evaluations on a public dataset and an in-house dataset collected from 12 healthy volunteers using different ultrasound systems demonstrate reconstructed-volume servoing. Supplementary video shows real-robot target alignment and dynamic tracking on a human forearm.",
+          "zh": "本文提出Recon2Servo，通过直接从二维B模式超声图像学习图像到运动的推断，实现六自由度探头视觉伺服。框架使用经低秩适配的DINOv3编码器和双向关系模块估计当前图像与目标图像间的相对探头位姿，以迭代闭环对齐目标视图；方法还结合监督式相对位姿学习、重建引导的闭环适配及有界残差位姿校正。作者在公开数据集和来自12名健康志愿者、使用不同超声系统采集的自建数据集上评估，并报告重建体积伺服效果；补充视频展示了人体前臂上的真实机器人对齐和动态跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
