@@ -3211,7 +3211,11 @@
             "heading": "",
             "text": "Safe robot control often requires combining long-horizon performance optimization with hard state and input constraints, but existing approaches tend to address this tradeoff partially.\n\nSampling-based model predictive control (MPC) methods such as model predictive path integral (MPPI) are effective in handling nonlinear and nonconvex environments, yet their finite-sample rollouts and unconstrained weighted-average update can return an unsafe control.\n\nDeterministic nonlinear MPC can explicitly incorporate constraints, but its real-time safety and performance depends strongly on warm starts and local convergence. Hamilton--Jacobi reachability (HJR) provides rigorous safety certificates, but offline value-function computation remains practical only for reduced-order models.\n\nWe propose ReSQ-MPPI, a reachability-informed generation--refinement architecture that combines these complementary strengths. An HJR value function computed offline for a reduced-order model guides online MPPI sampling toward safe, promising trajectory candidates.\n\nThe MPPI solution is then refined by a small number of sequential quadratic programming (SQP) iterations in a full-order MPC problem.\n\nA key observation is that the standard MPPI inference step is an unconstrained weighted least-squares problem; ReSQ-MPPI replaces it with a constrained MPC refinement that recovers the MPPI update when it is feasible and minimally modifies it otherwise.\n\nSimulations in cluttered navigation and autonomous racing environments demonstrate that ReSQ-MPPI improves safety and performance over standalone MPPI, MPC, and reachability-filtered sampling-based control baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ReSQ-MPPI, a generation-and-refinement architecture for safe nonlinear predictive control. An offline Hamilton–Jacobi reachability value function for a reduced-order model guides online MPPI sampling, and a few sequential quadratic programming iterations refine the candidate in a full-order MPC problem. The constrained refinement recovers the MPPI update when feasible and minimally modifies it otherwise. Simulations in cluttered navigation and autonomous racing show improved safety and performance over the reported baselines.",
+          "zh": "论文提出 ReSQ-MPPI，一种面向安全非线性预测控制的生成与细化架构。它使用针对降阶模型离线计算的 Hamilton–Jacobi 可达性价值函数，引导在线 MPPI 采样，再通过全阶模型预测控制中的少量序列二次规划迭代细化结果。约束细化在可行时恢复 MPPI 更新，否则尽量小幅修改。拥挤导航和自动赛车仿真显示，该方法相较文中所列基线提升了安全性和性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3242,7 +3246,11 @@
             "heading": "",
             "text": "Frontier vision-language models (VLMs) increasingly estimate scenes, ground interactions, and generate executable actions. How far these native capabilities support embodied generalism across diverse tasks remains unclear.\n\nWe introduce Embodied Agent Arena to assess seven VLM agents across Geometry, Spatial Reasoning, Affordance, Task Planning, and Manipulation. The arena contains 1,000 cases drawn from 32 established sources and GeoProbe, our new benchmark for geometric estimation on Blender renders and real-scene images.\n\nA minimal harness preserves source observations and operations while leaving perception, reasoning, and action selection to the model. Separate measures of metric precision, functional grounding, and native goal completion connect local competence to complete task outcomes.\n\nAstra's strengths in precise estimation and usable-contact localization coexist with endpoint errors in tracing and low household-task completion. Supplementary comparisons of richer observations and multi-round review show model- and task-dependent effects.\n\nCurrent VLM agents thus fall short of embodied generalism: they often make partial progress without satisfying all task goals within allotted time and interaction budgets."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Embodied Agent Arena to evaluate seven vision-language model agents on geometry, spatial reasoning, affordance, task planning, and manipulation. Its cases draw on established sources and GeoProbe, a benchmark for geometric estimation using Blender renders and real-scene images. Evaluation separates metric precision, functional grounding, and native goal completion. The authors report that current agents often make partial progress but fail to satisfy all goals within allotted time and interaction budgets, and conclude that they fall short of embodied generalism.",
+          "zh": "论文介绍 Embodied Agent Arena，用于评估七种视觉语言模型智能体在几何、空间推理、可供性、任务规划和操作方面的表现。测试集含来自既有来源及 GeoProbe 基准的案例，后者涵盖 Blender 渲染图和真实场景图像中的几何估计。评估分别考察度量精度、功能性接地和原生目标完成。作者报告，当前智能体常能取得部分进展，却未能在规定时间和交互预算内完成全部目标，因此尚未达到具身通用能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3273,7 +3281,11 @@
             "heading": "",
             "text": "The enduring vision of general-purpose robots serving humanity hinges fundamentally on policy steerability. However, prevailing paradigms of learning from expert demonstrations demand massive real-world data even on simplified grippers, rendering them prohibitively expensive for high-dimensional, data-scarce dexterous hands.\n\nTo overcome this bottleneck, we present a full-stack system that scales dexterous VLA pre-training from egocentric human videos and enables data-efficient real-robot post-training.\n\nIt integrates EgoSmith, a data pipeline that curates in-the-wild egocentric videos into 9,606 hours of pre-training data with 8.3x higher throughput and better accuracy than prior SOTA; a unified Robot Stack for teleoperation and human-in-the-loop correction tailored for dexterous hands; and EgoSteer, a world-model-enhanced VLA operating on a morphology-aligned action space.\n\nHuman data pre-training equips EgoSteer with language-guided manipulation priors, which are grounded through robot post-training and further refined via DAgger. Empirically, EgoSteer robustly executes free-form instructions across 45 diverse tasks, demonstrating adherence to user intent amid multiple candidate tasks and generalization.\n\nThe pre-trained model also few-shot adapts to five complex long-horizon tasks, including box folding, on two embodiments with 79% average progress. All system code, datasets, model checkpoints, and an evaluation gallery are publicly available at https://egosteer.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EgoSteer, a full-stack system for dexterous manipulation that pre-trains on egocentric human videos and supports data-efficient real-robot post-training. It combines a video curation pipeline, a robot stack for dexterous-hand teleoperation and human-in-the-loop correction, and a world-model-enhanced vision-language-action model with a morphology-aligned action space. The authors report execution of free-form instructions across 45 tasks and few-shot adaptation to five complex long-horizon tasks on two embodiments, with 79% average progress.",
+          "zh": "论文提出 EgoSteer，一个利用第一人称人类视频进行灵巧操作预训练、并支持真实机器人高效后训练的全栈系统。系统包含视频数据整理流程、面向灵巧手遥操作和人在环纠正的机器人平台，以及采用形态对齐动作空间的世界模型增强型视觉语言动作模型。作者报告，该系统能在 45 项多样任务中执行自由形式指令，并能在两种机器人形态上对五项复杂长时程任务进行少样本适配，平均进度为 79%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3304,7 +3316,11 @@
             "heading": "",
             "text": "Inter-robot communication is a key enabling technology in cooperative robotics applications.\n\nWhile wireless communication is ubiquitous, simple, and effective, it has inherent limitations: the receiving robot cannot easily localise the source of an incoming signal, clock synchronisation is challenging, and signals are broadcast to all nearby devices rather than targeted recipients.\n\nOptical communication provides a complementary channel that is inherently directional and spatially localised, directly addressing these limitations.\n\nEvent cameras are bio-inspired dynamic vision sensors that respond to changes in image intensity with high temporal resolution, high dynamic range, and low latency, making them well-suited as receivers for high-rate optical communication in cooperative robotic systems.\n\nIn this paper, we propose the Asynchronous Tracking and Optical Communication (ATOC) system, which integrates LED smart-beacon modulation, event-based detection, optical tracking, and event-data demodulation in a single pipeline.\n\nBy simultaneously tracking and demodulating multiple LED smart beacons, ATOC transforms a conventional visual marker into a robust communication channel suitable for a wide range of high-impact robotics applications. We validate ATOC in a suite of laboratory studies and two 'applications': a smart-city demonstration and a 3D motion-capture system."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ATOC, an Asynchronous Tracking and Optical Communication system that combines LED smart-beacon modulation, event-based detection, optical tracking, and event-data demodulation in one pipeline. The authors describe optical communication as a directional, spatially localized complement to wireless communication, addressing challenges in source localization, clock synchronization, and targeted reception. ATOC tracks and demodulates multiple LED beacons simultaneously. The system is validated in laboratory studies, a smart-city demonstration, and a 3D motion-capture application.",
+          "zh": "论文提出异步跟踪与光学通信系统 ATOC，将 LED 智能信标调制、事件相机检测、光学跟踪和事件数据解调整合进单一流程。作者指出，光学通信可提供方向性和空间定位特征，补充无线通信在信号源定位、时钟同步及定向接收方面的局限。ATOC 可同时跟踪并解调多个 LED 信标。实验室研究以及智慧城市演示和三维动作捕捉应用验证了该系统；摘要未说明超出这些验证场景的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
