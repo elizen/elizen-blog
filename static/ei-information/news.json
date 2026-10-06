@@ -1111,7 +1111,11 @@
             "heading": "",
             "text": "End-to-end (E2E) driving policies have advanced rapidly on open-loop (OL) benchmarks, yet OL evaluation cannot reveal whether a policy can withstand compounding errors, recover from failures, or interact safely with surrounding actors.\n\nWe introduce NavSafe-$\\infty$, a photorealistic closed-loop (CL) benchmark comprising 280 scenarios spanning 28 event types, each with success and failure criteria defined within a structured traffic-safety taxonomy, yielding category-level capability scores for Traffic Crashes, Vulnerable Road User Crashes, Traffic Violations, and Traffic Incidents.\n\nAfter evaluating 20 E2E policies, we find that OL gains do not reliably transfer to CL safety.\n\nAnalysis of two common remedies reveals that （1） passive demonstration perturbation helps mainly when CL rollouts stay near their perturbed training states, and （2） OL reinforcement-learning fine-tuning exhibits reward hacking by trading safety margin for ego progress, which CL feedback amplifies into compounding safety-critical errors.\n\nTogether, these results demonstrate the blind spot of OL benchmarks indicating CL safety success. The benchmark and an extensible toolbox for customizable event curation and policy diagnosis will be open-sourced to facilitate future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NavSafe-∞, a photorealistic closed-loop driving benchmark with 280 scenarios across 28 event types and category-level safety scores. Evaluation of 20 end-to-end policies shows that open-loop gains do not reliably transfer to closed-loop safety. The authors report that passive demonstration perturbation helps mainly when rollouts remain near perturbed training states, while open-loop reinforcement-learning fine-tuning can trade safety margin for progress, with closed-loop feedback compounding safety-critical errors.",
+          "zh": "论文提出 NavSafe-∞，一个包含280个场景、覆盖28类事件的逼真闭环驾驶安全基准，并按交通碰撞、弱势道路使用者碰撞、交通违规和交通事件评估能力。对20种端到端策略的评估显示，开环表现提升不能稳定转化为闭环安全。作者还发现，被动示范扰动主要在闭环轨迹接近扰动训练状态时有帮助；开环强化学习微调则可能通过牺牲安全余量换取自车进展，且闭环反馈会加剧连锁安全错误。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1142,7 +1146,11 @@
             "heading": "",
             "text": "Most humanoid loco-manipulation controllers require human motion data to learn whole-body coordination and posture, leaving policies reliant on external sources to provide this data.\n\nWe present OCLO (Online-posture Compliant LOco-manipulation), a humanoid loco-manipulation system trained without human motion data and commanded only through two end-effector targets.\n\nBecause these targets do not uniquely determine whole-body posture, OCLO generates pelvis height and torso orientation online using an analytic reachability prior, further refined through policy-in-the-loop sampling with a task-agnostic cost.\n\nOCLO also learns whole-body compliance by displacing end-effector references according to measured forces through a spring-damper model, encouraging the legs, waist, and pelvis to yield to external loads.\n\nIn simulation, using the reachability prior leads to a 77.8% success rate in acquiring the commanded reference, a vast improvement over the 37.8% success rate accomplished without the prior. Further, refinement reduces end-effector orientation error across all evaluated tasks.\n\nThe same posture module improves a pretrained SONIC controller on four of five tasks. Without compliance training, policies tend to lose balance under disturbances rather than sacrifice tracking.\n\nOn a Unitree G1, OCLO maintains balance under end-effector disturbances that cause its ablations to fail and performs seven loco-manipulation tasks, including crouched walking and picking up a box from a low surface. Project website: https://oclo-humanoid.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OCLO, a humanoid loco-manipulation system trained without human motion data and commanded through two end-effector targets. It generates pelvis height and torso orientation online using a reachability prior refined through policy-in-the-loop sampling, and learns compliance by adjusting references according to measured forces. In simulation, the prior improves reference acquisition success and posture refinement reduces orientation error across evaluated tasks. On a Unitree G1, the system maintains balance under disturbances and performs seven loco-manipulation tasks.",
+          "zh": "论文提出 OCLO，一种无需人类动作数据、仅由两个末端执行器目标指令的人形机器人移动操作系统。它通过可达性先验及策略内采样在线生成骨盆高度和躯干姿态，并依据测得的力调整末端参考以学习全身顺应性。仿真中，可达性先验提升了参考目标获取成功率，姿态模块改善了多个任务的末端朝向误差；在 Unitree G1 实验中，系统能在扰动下保持平衡并完成七项移动操作任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1173,7 +1181,11 @@
             "heading": "",
             "text": "Robot learning in simulation depends on the objects the simulator offers. Many tasks need objects with separate parts, joints that allow the required motion, and physical properties that remain valid under contact.\n\nExisting methods recover this structure anew for every image: generative models predict parts and joints that mostly fail to settle or move in simulation, and general-purpose agents need a long session of model calls for each photograph.\n\nAffordCraft builds such an asset from a single RGB image and a task instruction by retrieval instead of generation: it locates the object and the part to operate, selects a matching entry from a library of articulated assets, and fits it to the image while keeping its parts and joints intact.\n\nWithout any box or mask marking the object, AffordCraft produces a physically valid asset for 1,703 of 2,000 photographs from 31 categories. Five generative methods pass on at most 45% of the same photographs and, at the median, need 10 to 78 times our GPU time per valid asset.\n\nOn 50 cluttered images, 162 of 237 annotated objects pass the same physical test after automatic detection. Growing the library from 141 to 11,372 entries needs no change to the method and raises category coverage from 46% to 100% and the share of selections with the requested label from 18% to 51%.\n\nWe also build manipulation tasks from the constructed assets, both with single objects and in composed scenes; policies trained on scripted demonstrations complete both kinds of tasks from initial states unseen in training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AffordCraft constructs articulated simulation assets from a single RGB image and task instruction by retrieving and fitting library entries while preserving their parts and joints. Without object boxes or masks, it produces physically valid assets for 1,703 of 2,000 photographs; on cluttered images, 162 of 237 annotated objects pass the physical test after automatic detection. Expanding the asset library increases category coverage and requested-label selection share. Policies trained on scripted demonstrations complete tasks with single objects and composed scenes from unseen initial states.",
+          "zh": "论文提出 AffordCraft，从单张 RGB 图像和任务指令出发，通过检索与拟合已有铰接资产，构建保留部件和关节结构的仿真对象。无需标注框或掩码时，该方法在2000张照片中的1703张上生成物理有效资产；在杂乱图像中，经自动检测的237个标注对象有162个通过物理测试。扩充资产库可提高类别覆盖率和标签匹配比例。作者还报告，基于构建资产生成的操作策略能完成训练中未见初始状态下的单物体及组合场景任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1204,7 +1216,11 @@
             "heading": "",
             "text": "Vision-language-action models benefit from the understanding and reasoning capabilities of pretrained vision-language models, but action-only supervision provides limited grounding in world dynamics.\n\nConversely, world-action models inherit spatiotemporal priors from video generation models, yet remain limited in semantic understanding and reasoning under distribution shifts.\n\nWe introduce UniWAM, a unified architecture that integrates a physical reasoner, a world generator, and an action predictor to jointly learn semantic understanding of the physical world, visual generation, and action prediction.\n\nTo ensure the quality of the training data, we developed a rigorous data cleaning and annotation pipeline for both human egocentric data and robot data.\n\nTo adapt the vision-language component to embodied tasks while preserving its inherited language capabilities, we represent low-level actions in natural language and introduce a pre-training recipe that assigns complementary supervision from visual question answering (VQA) data, human egocentric data, and robot demonstrations to the appropriate model components.\n\nDuring post-training, future visual noise augmentation reduces reliance on precise future predictions, while history-conditioned flow matching uses encoded action history to initialize action generation. Together, these designs significantly reduce denoising steps while maintaining performance.\n\nUniWAM achieves state-of-the-art (SOTA) performance across multiple evaluations, including in-distribution performance, robustness, generalization, instruction following, and long-horizon task execution.\n\nFurthermore, we uncover a log-linear scaling law of unified human-robot co-training, demonstrating the effectiveness of large-scale pre-training on a mixture of human and robot data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniWAM combines a physical reasoner, world generator, and action predictor to jointly learn semantic understanding, visual generation, and action prediction. The authors describe data cleaning and annotation for human egocentric and robot data, natural-language representations of low-level actions, and complementary pretraining supervision. Post-training uses future visual noise augmentation and history-conditioned flow matching to reduce denoising steps while maintaining performance. The paper reports state-of-the-art results across several evaluations and a log-linear scaling law for unified human-robot co-training.",
+          "zh": "论文提出 UniWAM，将物理推理器、世界生成器和动作预测器整合为统一架构，共同学习物理世界语义理解、视觉生成与动作预测。作者为人类第一视角及机器人数据建立清洗标注流程，并以自然语言表示低层动作，结合视觉问答、人类数据和机器人示范进行预训练。后训练采用未来视觉噪声增强和历史条件流匹配，以减少去噪步骤并维持性能。作者报告，该模型在多项评测中取得先进表现，并发现人机联合训练呈对数线性缩放规律。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
