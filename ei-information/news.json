@@ -1311,7 +1311,11 @@
             "heading": "",
             "text": "GPU-parallel simulation provides abundant robot interaction, but existing benchmarks rarely combine this scale with heterogeneous manipulation tasks and standardized multi-task RL evaluation.\n\nWe introduce Hebero (Heterogeneous Benchmark for Robot Learning), a GPU-parallel Isaac Lab benchmark that enables efficient joint training and evaluation of a single policy across all 40 heterogeneous tasks. Scaling experiments show that increasing parallel replicas per task improves success under a fixed wall-clock budget.\n\nTo support learning with sparse rewards and limited demonstrations, we propose Demonstration-Guided Policy Optimization (DGPO), which reuses demonstrations for dense tracking rewards and asymmetric value learning. Its shared stack supports controlled comparisons of learner-specific demonstration interfaces within PPO.\n\nWithin DGPO framework, we introduce IW-ABC, which uses a lightweight per-task learning progress signal to coordinate adaptive behavior cloning (ABC), relaxing demonstration guidance with task progress, and importance weighting (IW), emphasizing lagging tasks in PPO updates.\n\nWith 50 demonstrations per task, IW-ABC achieves 90.1% state-input mean success, outperforming the strongest baseline FAMO-ABC by 7.8 percentage points. Its visual counterpart reaches 93.5% mean success.\n\nReal-world experiments further demonstrate that a single multi-task policy trained in simulation can successfully perform four tasks on a physical Piper robot. The project page is available at https://hebero-rl.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Hebero, a GPU-parallel Isaac Lab benchmark for jointly training and evaluating one policy across 40 heterogeneous tasks. Scaling experiments report improved success with more parallel replicas per task under a fixed time budget. The authors introduce DGPO, which uses demonstrations for tracking rewards and asymmetric value learning, and IW-ABC, which adapts demonstration guidance and task weighting according to learning progress. With 50 demonstrations per task, reported mean success is 90.1% for state input and 93.5% for vision. A simulation-trained policy also performs four tasks on a physical Piper robot.",
+          "zh": "论文介绍 Hebero，一个基于 Isaac Lab 的 GPU 并行机器人学习基准，支持单一策略在 40 项异质任务上联合训练和评估；实验显示，在固定时间预算下，增加每项任务的并行副本可提升成功率。作者提出 DGPO，以示范数据构造跟踪奖励并支持非对称价值学习，并提出 IW-ABC，根据任务进度调节行为克隆指导和 PPO 更新中的任务权重。使用每项任务 50 个示范时，作者报告状态输入平均成功率为 90.1%，高于基线；视觉版本为 93.5%。仿真训练的策略还在实体 Piper 机器人上完成了四项任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1342,7 +1346,11 @@
             "heading": "",
             "text": "Ensuring safe driving while maintaining travel efficiency for autonomous vehicles in dynamic and occluded environments is a critical challenge. This paper proposes an occlusion-aware contingency safety-critical planning approach for real-time autonomous driving.\n\nLeveraging reachability analysis for risk assessment, forward reachable sets of phantom vehicles are used to derive risk-aware dynamic velocity boundaries.\n\nThese velocity boundaries are incorporated into a biconvex nonlinear programming (NLP) formulation that formally enforces safety using spatiotemporal barrier constraints, while simultaneously optimizing exploration and fallback trajectories within a receding horizon planning framework.\n\nTo enable real-time computation and coordination between trajectories, we employ the consensus alternating direction method of multipliers (ADMM) to decompose the biconvex NLP problem into low-dimensional convex subproblems. The effectiveness of the proposed approach is validated through simulations and real-world experiments in occluded intersections.\n\nExperimental results demonstrate enhanced safety and improved travel efficiency, enabling real-time safe trajectory generation in dynamic occluded intersections under varying obstacle conditions. The project page is available at https://zack4417.github.io/oacp-website/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an occlusion-aware safety-critical planning method for autonomous driving in dynamic environments. It uses reachability analysis and forward reachable sets of phantom vehicles to derive risk-aware velocity boundaries. These boundaries enter a biconvex nonlinear program that enforces safety through spatiotemporal barrier constraints while optimizing exploration and fallback trajectories. Consensus ADMM decomposes the problem into low-dimensional convex subproblems to support real-time computation and trajectory coordination. Simulations and real-world experiments at occluded intersections are reported; the authors say the method improves safety and travel efficiency and generates safe trajectories in real time under varying obstacle conditions.",
+          "zh": "论文提出一种面向动态、遮挡环境中自动驾驶的安全关键规划方法。该方法利用可达性分析评估风险，并通过幽灵车辆的前向可达集推导风险感知的动态速度边界；随后将边界纳入双凸非线性规划，以时空屏障约束形式化保证安全，同时优化探索轨迹和回退轨迹。作者使用共识 ADMM 将问题分解为低维凸子问题，以支持实时计算和轨迹协调。仿真及遮挡交叉口的真实世界实验用于验证方法；作者报告其在不同障碍条件下提高安全性与通行效率，并可实时生成安全轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1373,7 +1381,11 @@
             "heading": "",
             "text": "Navigation and manipulation are core capabilities in Embodied AI, but training agents to perform them directly in the real world is costly, time-consuming, and unsafe. Therefore, sim-to-real transfer has emerged as a key approach, yet the sim-to-real gap persists.\n\nThis survey examines how physics simulators address this gap by analyzing properties that have received limited attention in prior surveys. We also analyze their features for navigation and manipulation tasks, as well as their hardware requirements.\n\nAdditionally, we offer a resource with benchmark datasets, metrics, simulation platforms, and methods to help researchers select suitable tools while accounting for hardware constraints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey examines physics simulators for robotic navigation and manipulation in embodied AI. It notes that real-world training is costly, time-consuming, and potentially unsafe, while sim-to-real transfer remains challenged by a persistent gap. The authors analyze simulator properties that received limited attention in earlier surveys, along with features relevant to navigation and manipulation and their hardware requirements. They also provide a resource covering benchmark datasets, metrics, simulation platforms, and methods, intended to help researchers choose tools while accounting for hardware constraints.",
+          "zh": "这篇综述关注具身智能中的机器人导航与操作，指出在真实世界直接训练智能体成本高、耗时且存在安全风险，因此仿真到现实迁移成为重要路径，但仿真与现实之间的差距仍然存在。文章分析物理仿真器如何应对这一差距，考察以往综述较少关注的仿真器属性，以及其对导航和操作任务的功能特点与硬件需求。作者还提供一项资源，汇集基准数据集、评价指标、仿真平台和方法，供研究者结合硬件限制选择工具。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1404,7 +1416,11 @@
             "heading": "",
             "text": "When searching for an object, people choose their next move by considering both likely target locations and places already explored. The current view can cue place-associated memories, bringing target relevance and prior exploration into the same spatial context.\n\nIn many zero-shot object navigation (ZSON) methods, however, vision-language models (VLMs) infer promising search areas from egocentric images, while exploration history is represented separately, e.g., as text or maps.\n\nThis separation either requires an additional fusion step or leaves the correspondence between memory and route choices implicit for the VLM to recover. We instead make exploration memory directly visible on visual route choices.\n\nWe propose MarvisNav, a ZSON framework that maintains a topological graph and projects candidate nodes together with their exploration states onto egocentric views as memory-bearing visual route choices. These states capture local exploration progress beyond binary visitation.\n\nBy binding exploration state directly to each visual candidate, MarvisNav enables the VLM to jointly evaluate target relevance and exploration state without a separate post-hoc fusion or reranking stage. Without policy training, MarvisNav achieves state-of-the-art performance on HM3D (81.2% SR and 42.5% SPL), while remaining competitive on MP3D.\n\nIt also outperforms representative VLM-based methods with far fewer VLM calls (e.g., 7.5% of WMNav).Real-robot experiments across diverse scenes further validate its practical deployability.\n\nBeyond MarvisNav, our study shows that memory representation shapes VLM decisions and ZSON performance, highlighting that effective memory use depends not only on its availability, but also on how it is represented. Code and project page will be available at \\url{https://wangjincheng1998.github.io/MarvisNav/}."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MarvisNav, a zero-shot object navigation framework that requires no policy training. It maintains a topological graph and projects candidate nodes with their local exploration states onto egocentric views, allowing a vision-language model to assess target relevance and exploration together without a separate fusion or reranking stage. The authors report 81.2% success and 42.5% SPL on HM3D, competitive performance on MP3D, and substantially fewer model calls than representative VLM-based methods. Real-robot experiments across diverse scenes are reported as evidence of practical deployability. The study also highlights how memory representation shapes decisions and navigation performance.",
+          "zh": "论文提出 MarvisNav，一种无需策略训练的零样本物体导航框架。它维护拓扑图，并将候选节点及其局部探索进度投影到第一人称视图，使视觉语言模型能在同一视觉路线选项中评估目标相关性和探索状态，免去单独的后处理融合或重排序。作者报告该方法在 HM3D 上取得 81.2% 成功率和 42.5% SPL，在 MP3D 上保持竞争力；相较代表性视觉语言模型方法，调用次数也显著减少。多场景真实机器人实验用于验证部署可行性。研究还指出，记忆的表征方式会影响模型决策和导航表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
