@@ -3783,7 +3783,11 @@
             "heading": "",
             "text": "Robotic minimally invasive surgery offers well-documented clinical benefits, but the cost and infrastructure requirements of purpose-built platforms limit access in rural and lower-resourced facilities.\n\nRecent work has teleoperated general-purpose robots for laparoscopic tasks and in vivo procedures, but relied on handheld instruments coupled through passive linkages rather than native robotic actuation. Instead, we adapt da Vinci Classic and Xi instruments onto general-purpose robots that can integrate in clinical workflows.\n\nWe present DASH, a da Vinci Adapter for Serial-link and Humanoid platforms, consisting of two types of adapters that require no modification to the instruments themselves.\n\nEach adapter is compatible with many robotic platform load capacities, engages the instrument's native latch, and wirelessly identifies inserted tools to load instrument-specific kinematics and coupling matrices. Teleoperated experiments demonstrate the efficacy of DASH and its benefits for enabling research access to surgical robotic platforms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DASH, an adapter platform for mounting da Vinci Classic and Xi instruments on general-purpose serial-link and humanoid robots without modifying the instruments. Its adapters accommodate a range of robot load capacities, engage the instruments’ native latch, and wirelessly identify inserted tools to load instrument-specific kinematics and coupling matrices. Teleoperated experiments demonstrate DASH’s efficacy and its potential to broaden research access to surgical robotic platforms.",
+          "zh": "论文提出 DASH，一种将 da Vinci Classic 和 Xi 手术器械安装到通用串联机器人及人形机器人上的适配器平台，无需改动器械本身。适配器可适配多种机器人负载能力，接合器械原有锁扣，并通过无线方式识别器械，以载入相应运动学和耦合矩阵。遥操作实验展示了该平台的有效性及其对手术机器人研究的支持作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3814,7 +3818,11 @@
             "heading": "",
             "text": "Vision-language models (VLMs) have shown promising spatial reasoning capabilities from static visual inputs, where the evidence needed to answer a question is available in the provided views.\n\nHowever, in cluttered environments, answer-relevant evidence may be occluded rather than absent: an object may lie beneath a pile, be covered by another object, or have identifying information facing away from the camera. Answering such questions requires physical interaction to reveal the hidden evidence.\n\nWe formalize this setting as Manipulation-Grounded Visual Question Answering (MG-VQA), where an agent answers a question about an initially cluttered scene by using manipulation as an intermediate evidence-gathering operation.\n\nWe introduce MG-VQA-Bench, comprising 600 human-verified questions across four spatial reasoning tasks, and evaluate it in a cluttered tabletop interactive environment.\n\nEight VLMs are evaluated under three levels of environment access: Direct (image only), Perception (pointing, segmentation, and scene graphs), and Manipulation (perception, grasping, and pushing).\n\nAcross all models, Direct and Perception achieve average success rates of 36.2% and 37.6%, respectively, only slightly above an image-blind chance baseline of 32.7%.In contrast, Manipulation raises average success to 56.8% (40.8-83.0% across models).\n\nStronger tool-calling VLMs, GPT~6~Astra (83.0%) and Gemini~3.8~Flash (69.3%), search persistently and re-ground after unsuccessful interactions, while weaker models often answer without gathering sufficient evidence or stop prematurely after failed actions.\n\nOur results highlight the need for VLM agents that use manipulation for persistent, physically grounded evidence gathering and recovery. Code and benchmark is available here: https://github.com/vineet2104/MG-VQA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper defines manipulation-grounded visual question answering (MG-VQA), in which an agent manipulates a cluttered scene to reveal evidence needed to answer a question. The authors introduce a benchmark of 600 human-verified questions across four spatial reasoning tasks and evaluate eight vision-language models in an interactive tabletop environment. In these evaluations, adding grasping and pushing yields higher average success than image-only or perception-level access. The authors emphasize persistent physical evidence gathering and recovery after unsuccessful actions.",
+          "zh": "论文将操作接地视觉问答（MG-VQA）定义为：智能体通过操作场景来显露被遮挡的证据，从而回答初始杂乱场景中的问题。作者提出包含四类空间推理任务、经人工验证的 600 个问题的基准，并在桌面交互环境中评测八种视觉语言模型。实验显示，加入抓取和推动能力后，模型平均成功率高于仅使用图像或感知信息；作者指出，持续收集物理证据并在失败后恢复仍是关键能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3845,7 +3853,11 @@
             "heading": "",
             "text": "Optimisation-based parking planners usually impose collision constraints only at the time samples, so a vehicle corner can cut an obstacle between samples, and no executable trajectory exists until the solver converges.\n\nWe present a planner for car-like vehicles with reverse gear in which every iterate of the optimisation phase satisfies the discretised dynamics exactly and keeps the whole vehicle rectangle clear of obstacles between the samples.\n\nEach time interval receives one convex corridor that holds all vehicle corners at both ends and is shrunk by a sweep margin bounding how far the corner paths leave their chords.\n\nSeparating half-planes give the corridors a direction out of obstacles when the initial guess is in collision; later, heading-aligned boxes are grown from the speed, curvature and step of the current iterate and rebuilt after accepted steps.\n\nA feasibility-perturbed trust-region sequential quadratic programming method projects each step onto the dynamics by feedback and verifies it exactly; the cost decreases monotonically, and once the corridors stop changing, limit points are Karush-Kuhn-Tucker points of the corridor-constrained problem or violate a constraint qualification.\n\nOn 820 benchmark cases the planner succeeds in 818 without penetration (797 from the first initial guess), none of the 7103 evaluated optimisation-phase iterates is unusable, and it succeeds in 96.5% of the cases when 99% of the initial guesses intersect an obstacle.\n\nIts maneuvers take 0.7% longer in the median than those of a similarly certified exact-collision baseline. The guarantees hold for the planning model, not for a physical vehicle."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a motion planner for car-like vehicles with reverse gear. Its optimization iterates satisfy discretized dynamics and use convex corridors with sweep margins to keep the full vehicle clear of obstacles between time samples. A trust-region sequential quadratic programming method projects steps back onto the dynamics. In benchmark evaluations, the planner succeeds in 818 of 820 cases. The authors clarify that the guarantees apply to the planning model and do not establish equivalent guarantees for a physical vehicle.",
+          "zh": "论文提出一种面向可倒车类汽车的非完整运动规划器。优化过程中，每次迭代都满足离散动力学，并通过凸走廊和扫掠裕量约束车辆整体在采样点之间避开障碍；信赖域序列二次规划方法则将迭代投影回动力学约束。基准测试中，规划器在 820 个案例中成功处理 818 个。作者强调，这些保证针对规划模型成立，不代表真实车辆也获得相同保证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3876,7 +3888,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) policies are typically evaluated under the assumption that the robot starts acting only after the user has finished typing or speaking. In real interactions, however, entering an instruction can take several seconds, leaving the policy idle for a substantial fraction of the interaction.\n\nPartial instructions may already contain sufficient information to begin acting before the full instruction arrives. We introduce Premover, a parameter-lightweight module that reduces interaction latency by overlapping instruction delivery with robot execution while keeping the VLA backbone frozen.\n\nPremover uses a learned vision-language focus map to identify where the current partial instruction refers in the visual scene, and an action readiness gate to determine when execution can begin. On the SO-101 robot with speech and online transcription, Premover reduces mean wall-clock time by 17.9%, from 60.5s to 49.7s, while maintaining task success rates.\n\nIn simulation on LIBERO with pi0.5 at the speaking rate, Premover reduces mean wall-clock time by 8.3% while maintaining comparable success to waiting for the complete instruction before execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Premover, a lightweight module that overlaps instruction delivery with robot execution while keeping the vision-language-action backbone frozen. A learned vision-language focus map identifies scene regions referred to by partial instructions, and a readiness gate decides when to start acting. On the SO-101 robot with speech and online transcription, mean wall-clock time decreases by 17.9% while task success rates are maintained. In LIBERO simulation with pi0.5, time decreases by 8.3%, with success comparable to waiting for the full instruction.",
+          "zh": "论文提出 Premover，这是一种轻量模块，可在用户仍在输入或说出指令时，让视觉语言动作策略提前开始执行，同时保持策略主干冻结。它利用学习得到的视觉语言焦点图定位部分指令涉及的场景区域，并用就绪门控判断何时启动。在 SO-101 机器人语音实验中，平均实际耗时减少 17.9%，任务成功率保持；在 LIBERO 仿真中，耗时减少 8.3%，成功率与等待完整指令后执行相近。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
