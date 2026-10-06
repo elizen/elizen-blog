@@ -3271,7 +3271,11 @@
             "heading": "",
             "text": "Visual imitation policies must learn which image regions matter for action, whether applying the same operation to different objects or selecting a language-specified target. We introduce ResCue (Residual Spatial Cueing), which converts language-derived target information into a spatial condition for visual policy learning.\n\nPretrained grounding produces a target mask; an independent cue encoder adds its features to spatial RGB features before further visual processing and pooling. This retains scene context while making the target explicit.\n\nWith Diffusion Policy (DP), ResCue achieves 56.5% average success across 15 simulated tasks, versus 33.1% for DP and 40.% for the strongest baseline, $\\pi_0$, with gains in both ordinary manipulation and instruction-dependent object selection. On three real-world bimanual tasks, it reaches 60.0%, compared with 31.7% for $\\pi_0$.\n\nMatched-mask ablations favor residual fusion over input-level and pooled alternatives, while test-time interventions show that target-correct guidance matters for execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ResCue, which turns language-specified target information into a spatial condition. A pretrained grounding model produces a target mask, and an independent cue encoder adds its features to spatial RGB features before further processing and pooling, preserving scene context while making the target explicit. With Diffusion Policy, the authors report a 56.5% average success rate across 15 simulated tasks and higher success on three real-world bimanual tasks than the compared baseline. Ablations favor residual fusion, and test-time interventions indicate that target-correct guidance matters.",
+          "zh": "论文提出 ResCue，将语言指定的目标信息转化为空间条件：预训练定位模型生成目标掩码，独立提示编码器将其特征加到空间 RGB 特征中，再进行视觉处理与池化，以保留场景上下文并突出目标。使用 Diffusion Policy 时，作者报告其在 15 项仿真任务上平均成功率为 56.5%，高于所比较的基线；在三项真实世界双臂任务上也报告了更高成功率。消融比较支持残差融合优于输入级和池化替代方案，测试时干预则显示目标正确的引导对执行很重要。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3302,7 +3306,11 @@
             "heading": "",
             "text": "Efficient and robust tracking of surgical robotic instruments is important for robot-assisted minimally invasive surgery, yet remains challenging due to the complexity of surgical scenes and the unconventional geometry of surgical instruments. Keypoint-based approaches are efficient, but their performance depends on reliable feature detection.\n\nImproving these detectors with real-world supervision is difficult because accurate real-world annotations are costly to obtain at scale. To address this limitation, we introduce a tracker-guided self-training framework that adapts a model pretrained on synthetic images to unlabeled real-world videos.\n\nGiven measured robot joint states, an uncertainty-aware EKF recursively corrects the instrument pose and the observable joint angles by comparing projected model features with detected keypoints, shaft boundaries, and mask-derived cues.\n\nAn RTS smoother subsequently refines the resulting trajectory, which is projected into pseudo-labels for fine-tuning the feature detector without laborious pose annotations.\n\nExperiments on real-world videos demonstrate consistent improvements from self-training across all evaluated keypoint metrics, and the resulting model outperforms prior approaches in both accuracy and runtime. The code and data will be released upon publication."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a tracker-guided self-training framework that adapts a model pretrained on synthetic images to unlabeled real-world videos, reducing the need for costly pose annotations. Using measured robot joint states, an uncertainty-aware EKF recursively corrects instrument pose and observable joint angles by comparing projected model features with detected keypoints, shaft boundaries, and mask cues. An RTS smoother refines the trajectory, which is projected into pseudo-labels for detector fine-tuning. Experiments on real-world videos show consistent self-training gains across evaluated keypoint metrics, with the resulting model outperforming prior approaches in accuracy and runtime.",
+          "zh": "论文提出一种由跟踪器引导的自训练框架，将在合成图像上预训练的模型适配到无标注真实视频，以减少获取真实姿态标注的需求。方法利用机器人关节状态，通过不确定性感知 EKF 比较投影模型特征与检测到的关键点、器械轴边界及掩码线索，递归校正器械姿态和可观测关节角；随后用 RTS 平滑器细化轨迹，并投影为伪标签以微调特征检测器。作者报告，真实视频实验中自训练在所有评估关键点指标上均带来稳定提升，所得模型在准确率和运行时间上优于先前方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3333,7 +3341,11 @@
             "heading": "",
             "text": "Robotic controllers increasingly rely on analytical models, simulators, cost-query interfaces, and learned world models. However, physical deployment can deviate from nominal assumptions, and additional disturbances may arise even when the model itself is accurate.\n\nIn control systems, disturbance observers (DOB) are widely used to estimate such unmeasured effects from nominal models and measured feedback. Classical DOB formulations are generally built around explicit plant models.\n\nThis paper develops the sampling-based disturbance observer (SDOB), extending the DOB principle to a broader range of models, including simulators and learned world models, through state-rollout or cost-query interfaces.\n\nSDOB separates two observable channels: state-effect disturbances, for which the feedback state differs from its prediction, and cost disturbances, for which the same query state receives different costs as the perceived environment changes.\n\nDiverse simulation and real-robot experiments across traditional and learned models demonstrate the effectiveness of SDOB in compensating for sim-to-real mismatch and improving control performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper develops the sampling-based disturbance observer (SDOB), extending the disturbance-observer principle to models such as simulators and learned world models that provide state-rollout or cost-query interfaces. It distinguishes state-effect disturbances, where feedback differs from predicted state, from cost disturbances, where the same query state receives different costs as the perceived environment changes. The authors note that physical deployment can introduce disturbances even when a model is accurate. Diverse simulation and real-robot experiments across traditional and learned models demonstrate SDOB’s effectiveness in compensating for sim-to-real mismatch and improving control performance.",
+          "zh": "论文提出采样式扰动观测器 SDOB，将传统扰动观测器原理扩展到仿真器和学习式世界模型等可通过状态滚动或成本查询访问的模型。SDOB 区分两类可观测通道：状态效应扰动表现为反馈状态与预测状态不同；成本扰动表现为环境感知变化时，同一查询状态得到不同成本。作者指出，物理部署可能偏离名义假设，即使模型本身准确也会出现额外扰动。传统 DOB 通常依赖显式对象模型；论文报告了在传统与学习模型上的多种仿真和真实机器人实验，显示该方法可补偿仿真到现实的偏差并改善控制性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3364,7 +3376,11 @@
             "heading": "",
             "text": "Memory is essential for long-horizon robotic manipulation, where successful actions may depend on past events that are no longer recoverable from the current observation. As episodes grow longer, however, retaining the full history becomes increasingly costly, creating a fundamental scalability challenge for memory-augmented policies.\n\nExisting approaches address this challenge by either storing selected past observations in a bounded memory bank or compressing interaction history into a fixed-size parametric state through Test-Time Training (TTT).\n\nYet these formulations do not explicitly distinguish between historical information that can already be recovered from the policy's current context and information that must persist beyond it.\n\nWe introduce TTT-RM, which repurposes TTT as Residual Memory, using fast weights not to generically compress history but to complement a bounded memory bank by preserving task-relevant historical information that cannot be recovered from the policy's current context.\n\nConcretely, TTT-RM learns a history decoder that reconstructs historical representations from the current observation and retrieved memory. The resulting reconstruction residual captures what this context fails to explain and serves as the learning target for TTT.\n\nThe TTT slow weights are optimized against this residual target so that online fast-weight updates learn to encode complementary historical information over time. The fast-weight state is then queried to produce a residual memory representation that conditions action generation.\n\nExtensive experiments on memory-intensive simulation benchmarks and real-world tasks show that TTT-RM consistently improves across multiple memory designs, outperforms diverse baselines, and supports sustained execution on a three-minute, eight-stage stowing task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TTT-RM, using test-time training as residual memory to complement a bounded memory bank with task-relevant history that cannot be recovered from current context. A history decoder reconstructs historical representations from the current observation and retrieved memory; the reconstruction residual becomes the TTT learning target. Online fast weights then encode complementary historical information and produce a residual memory representation for conditioning actions. The authors report consistent improvements across memory-intensive simulation benchmarks and real-world tasks, gains over diverse baselines, and sustained execution on a three-minute, eight-stage stowing task.",
+          "zh": "论文提出 TTT-RM，将测试时训练用作残差记忆，以补充有界记忆库中无法从当前上下文恢复的任务相关历史信息。方法训练历史解码器，根据当前观测和检索到的记忆重建历史表示，并以重建残差作为 TTT 的学习目标；在线快速权重由此编码互补历史信息，生成用于动作条件化的残差记忆表示。作者报告，该方法在依赖记忆的仿真基准和真实任务中持续改善表现，优于多种基线，并支持在一项三分钟、八阶段的收纳任务中持续执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
