@@ -303,7 +303,11 @@
             "heading": "",
             "text": "Learning from human demonstrations is a reliable way to teach robots new tasks, but the gains from each additional demonstration shrink as the policy improves. Continued improvement can instead come from supervised deployment, where an operator places the objects and intervenes when the policy fails.\n\nWe ask how to maximize improvement from a fixed budget of supervised episodes on high-precision manipulation tasks with wide ranges of object placements. We observe that failures can concentrate in a small subset of initial states, so uniform collection spends much of the operator's time on states the policy already handles.\n\nMulligan makes the initial-state distribution a decision, starting each round's episodes at observed failures and untried states. To further improve data efficiency, we augment interactive imitation learning with a value function trained on all data, including failures that imitation discards.\n\nAcross three real-world tasks evaluated on 2,550 held-out, blinded episodes and two simulated tasks, Mulligan outperforms uniform initial-state sampling at matched collection budgets, and combined with value-based action selection, HiL-IDQL+Mulligan, improves final real-task success by 10-34 percentage points.\n\nWith operator interventions, the human-robot team completes 98% of collection episodes, remaining productive while the policy learns. Videos, code, and data are available at https://mulligan.page/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Mulligan targets efficient data collection for high-precision manipulation under a fixed budget of supervised episodes. It selects initial states from observed failures and untried states, and trains a value function using all collected data, including failures omitted by imitation learning. Across three real-world tasks evaluated in held-out, blinded episodes and two simulated tasks, the authors report better performance than uniform sampling at matched budgets. Combined with value-based action selection, it improves final real-task success by 10–34 percentage points; operator interventions enable completion of 98% of collection episodes.",
+          "zh": "Mulligan针对高精度操作任务，研究如何在固定监督回合预算下更有效地收集机器人学习数据。该方法根据观察到的失败状态和未尝试状态选择每轮初始状态，并利用包括失败数据在内的全部数据训练价值函数。在三项真实任务的留出盲测回合及两项仿真任务中，作者报告其在相同采集预算下优于均匀采样；结合基于价值的动作选择后，真实任务最终成功率提高10至34个百分点。操作员介入时，采集回合完成率为98%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -334,7 +338,11 @@
             "heading": "",
             "text": "Learning robot policies directly on physical systems remains difficult because data collection is costly and policy exploration can be unsafe. We introduce Visual and Motor Policies from Sampling-Based Planning (VAMPS), a framework that uses Model Predictive Path Integral (MPPI) control to train reusable policies without human demonstrations.\n\nVAMPS supports two training modes. For one-step proprioceptive policies, it operates iteratively in simulation: the policy warm-starts MPPI, and the refined trajectories provide new supervision as the policy changes. A learned terminal value improves short-horizon planning, while an Implicit Q-Learning (IQL) critic guides the policy update.\n\nIterative refinement outperforms training once on frozen MPPI data, and we transfer the learned locomotion policy to a Unitree Go2.For visuomotor policies, VAMPS operates directly from real-robot data. MPPI uses task-specific state estimates to plan and execute trajectories while recording RGB and sensor observations on a Flexiv Rizon 10S.\n\nAction Chunking with Transformers predicts action chunks, reducing the effective prediction horizon, and is trained offline on this fixed dataset. We demonstrate visuomotor pick-and-place and force-aware whiteboard erasing. In the latter task, the policy additionally observes the measured $6$-D wrench and desired normal force.\n\nThese results show that VAMPS can learn policies either in simulation followed by hardware transfer or directly from autonomously collected real-robot data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "VAMPS uses sampling-based planning to train robot policies without human demonstrations, through either simulation followed by hardware transfer or direct collection of real-robot data. For proprioceptive policies, the method iteratively uses the policy to warm-start MPPI and obtains supervision from refined trajectories, with a learned terminal value and an IQL critic supporting policy updates. The authors report that iterative refinement outperforms training once on frozen MPPI data and transfer a locomotion policy to hardware. For visuomotor policies, autonomous MPPI data collection supports offline training for pick-and-place and force-aware whiteboard erasing.",
+          "zh": "VAMPS利用基于采样的规划训练无需人工示范的机器人策略，涵盖仿真训练后迁移和直接使用真实机器人数据两种方式。对于本体感觉策略，方法迭代地以策略初始化MPPI规划，并用改进轨迹提供监督，同时结合学习到的终端价值和IQL评论器更新策略；作者称迭代优化优于一次性使用固定MPPI数据训练，并将运动策略迁移至硬件。对于视觉运动策略，MPPI在Flexiv机器人上自主规划并采集图像与传感器数据，再离线训练动作分块模型；展示任务包括视觉抓放和感知力的白板擦除。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -365,7 +373,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) and world-action models (WAMs) often degrade under out-of-distribution task variations despite retaining partial task capability.\n\nTo recover such capability, we propose RoboIRS, an inference-time internal representation steering method that uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions without updating policy parameters.\n\nOn 15 simulation tasks with a frozen $\\pi 0.5$ policy, RoboIRS improves the average success rate from 44.4% to 66.2%, outperforming alternative inference-time intervention baselines while adding little inference time.\n\nWe further validate RoboIRS on real-robot manipulation using the same $\\pi 0.5$ policy and demonstrate its applicability to a world-action model Cosmos Policy, where the average success rate improves from 35.4% to 55.4%.\n\nThese results show that directly steering internal robot-policy representations can improve the performance of robot policies at inference time. Project website is available at https://rollingoat.github.io/roboirs/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboIRS is an inference-time representation-steering method intended to recover capabilities that vision-language-action and world-action models retain under out-of-distribution task variations. It uses successful and failed rollouts to train linear classifiers, identify outcome-relevant intervention locations, and derive task-specific steering directions without changing policy parameters. On simulation tasks with a frozen π0.5 policy, the reported average success rate rises from 44.4% to 66.2%. The authors also report real-robot manipulation validation and an improvement with Cosmos Policy, supporting the method’s use for inference-time policy enhancement.",
+          "zh": "RoboIRS是一种推理时内部表征引导方法，旨在恢复视觉语言动作模型和世界动作模型在分布外任务变化下保留的部分能力。它使用成功与失败的运行轨迹训练线性分类器，选择与结果相关的干预位置并生成任务特定的引导方向，而不更新策略参数。在冻结的π0.5策略上，仿真任务平均成功率由44.4%升至66.2%；作者还报告了真实机器人操作验证，并在Cosmos Policy上观察到平均成功率提升。结果支持该方法可在推理阶段改善机器人策略表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -396,7 +408,11 @@
             "heading": "",
             "text": "Virtual Model Control (VMC) is an approach to design a controller for force-controlled robots in complex uncertain environments. While this method was primarily investigated for legged robot locomotion in the past, it can be more generally applicable to other types of robotic systems.\n\nThis paper investigates the VMC framework for reaching tasks in a force-controlled robotic arm. We propose six different approaches to designing virtual models in order to achieve reaching tasks in environments with obstacles and uncertainties. A force-controlled 8 degree-of-freedom humanoid robot was used to validate the proposed approach in the real world.\n\nWe conducted three experiments to test the performance of VMC controllers in terms of predictability, sensitivity to external force, and adaptability against known and unknown obstacles.\n\nExperimental analyses show that, even though the proposed approach needs to sacrifice accuracy and trajectory optimality, it enables us to design complex reaching motions under uncertainties, in an intuitive and extendable manner."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper investigates Virtual Model Control (VMC) for reaching tasks with a force-controlled robotic arm in uncertain environments, and proposes six approaches to designing virtual models. The approach is validated in the real world using an eight-degree-of-freedom force-controlled humanoid robot. Three experiments examine controller predictability, sensitivity to external forces, and adaptability to known and unknown obstacles. The experimental analysis indicates a trade-off: the approach sacrifices some accuracy and trajectory optimality, while enabling intuitive and extensible design of complex reaching motions under uncertainty.",
+          "zh": "本文研究虚拟模型控制（VMC）在力控机械臂不确定环境下执行到达任务的应用，并提出六种虚拟模型设计方法。研究使用一台八自由度力控人形机器人进行真实环境验证，通过三项实验考察控制器的可预测性、对外力的敏感性，以及对已知和未知障碍物的适应能力。实验分析表明，该方法需要牺牲一定精度和轨迹最优性，但作者认为它能够以直观且可扩展的方式设计不确定条件下的复杂到达运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
