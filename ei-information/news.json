@@ -1499,7 +1499,11 @@
             "heading": "",
             "text": "Learning action-conditioned world models for dexterous manipulation that are genuinely controllable requires capturing complex, high-dimensional hand kinematics from limited real-world data.\n\nWe present Mask2Real-WM, a two-stage world model that improves controllability for dexterous hands under a limited real-data budget by decoupling pixel prediction into a dynamics model and a rendering model. The dynamics model predicts future segmentation masks from past masks and a high-dimensional action sequence.\n\nThe rendering model converts the predicted masks into photorealistic RGB images. This design allows us to train the dynamics model on a large synthetic dataset spanning the full range of hand motions and interactions. We then fine-tune the dynamics model and train the rendering model on only 2.5 h of real demonstrations to obtain a controllable world model.\n\nWe compare five models with matched training recipes on a 23-DoF robotic system, measuring per-DoF controllability both with random target commands and with sinusoidal per-DoF actuation, judged blind by human raters. The decoupled model achieves the strongest controllability, with further gains from simulation data.\n\nBeyond improved controllability, Mask2Real-WM produces sharper frames while maintaining comparable perceptual quality."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Mask2Real-WM, a two-stage world model for dexterous manipulation. A dynamics model predicts future segmentation masks from past masks and actions; a rendering model converts those masks into photorealistic RGB images. The authors train the dynamics model on synthetic data and use 2.5 hours of real demonstrations for fine-tuning and rendering-model training. In blind comparisons on a 23-DoF robotic system, the decoupled model shows the strongest controllability, with further gains from simulation data, and produces sharper frames with comparable perceptual quality.",
+          "zh": "论文提出 Mask2Real-WM，一种两阶段灵巧操作世界模型：动力学模型根据历史分割掩码和动作预测未来掩码，渲染模型再将其转换为逼真 RGB 图像。作者利用合成数据训练动力学模型，并以 2.5 小时真实演示进行微调和训练渲染模型。在 23 自由度机器人系统上的盲评比较中，解耦模型可控性最强，加入仿真数据后进一步提升；生成帧更清晰，感知质量相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1530,7 +1534,11 @@
             "heading": "",
             "text": "A bipedal robot cannot deviate from its path to avoid an obstacle without disturbing its balance, and this coupling is most severe on underactuated platforms such as the biped considered here, which has four actuated joints per leg and no hip or ankle roll.\n\nThis paper presents a Hierarchical Reinforcement Learning (HRL) framework in which a High-Level (HL) policy observes the robot pose, 36 raycast proximity measurements, moving-obstacle states, and a receding-horizon local goal, and outputs a body-velocity command $(v_x, v_y, \\omega_{yaw})$ every ten control steps, while a velocity-conditioned Low-Level (LL) policy tracks each command through PD-controlled joint targets.\n\nBoth policies are trained jointly with Soft Actor-Critic (SAC).Because the converged gait is task-agnostic, it is frozen and driven by classical planners over the same command interface, yielding three controlled baselines: SAC+A*, SAC+RRT*, and SAC+APF.\n\nAcross 100 evaluation trials per method in randomized PyBullet environments, the proposed method reaches the goal in 98.0% of static and 88.0% of dynamic trials, against at most 78.0% and 68.0% for the planner hybrids, with path lengths within 4% of the A* reference, and ablations confirm that each observation channel and reward term contributes materially to this performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a hierarchical reinforcement learning framework for collision-free locomotion of an underactuated biped. A high-level policy uses robot pose, raycast proximity measurements, moving-obstacle states, and a local goal to issue body-velocity commands; a low-level policy tracks them through joint targets. Both are trained jointly with SAC, after which the gait is frozen and driven by classical planners. In randomized PyBullet simulations, the method reaches goals in 98.0% of static and 88.0% of dynamic trials, outperforming the planner hybrids described and keeping path lengths close to the A* reference. Ablations indicate that each observation channel and reward term contributes.",
+          "zh": "论文提出用于欠驱动双足机器人无碰撞行走的分层强化学习框架。高层策略根据机器人姿态、射线测距、移动障碍物状态和局部目标输出身体速度指令，低层策略通过关节目标跟踪指令；两者使用 SAC 联合训练，收敛步态随后由经典规划器驱动。在随机化 PyBullet 仿真环境的评估中，该方法在静态和动态场景分别以 98.0% 和 88.0% 到达目标，优于所比较的规划器混合方法，路径长度接近 A* 参考。消融结果显示各观测通道和奖励项均有贡献。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1561,7 +1569,11 @@
             "heading": "",
             "text": "Generative models such as diffusion and flow matching have become dominant paradigms for visuomotor policy learning, yet their reliance on iterative denoising incurs high inference latency incompatible with real-time robotic control.\n\nWe present Fast Legendre-polynomial Action policy via Sparse History-anchored flow (FLASH Policy), which replaces discrete action-chunk generation with continuous Legendre polynomial trajectory representation.\n\nSpecifically, by fitting expert demonstrations under sparse temporal sampling, FLASH enables a single inference to cover a significantly extended action horizon.\n\nTo further accelerate generation, FLASH initiates the flow matching process from history polynomial coefficients rather than uninformative Gaussian noise, shortening the transport distance and enabling accurate single-step inference.\n\nMoreover, analytic polynomial differentiation directly provides desired velocity feed-forward signals to the torque controller without numerical approximation.\n\nExtensive experiments on five simulated and two real-world manipulation tasks demonstrate that FLASH achieves state-of-the-art success rates ($\\ge 92\\%$ across all tasks), a per-episode inference time of $31.40\\,ms$ (up to $175\\times$ faster than diffusion policies and $18\\times$ faster than prior flow matching policies), up to $4\\times$ faster training convergence than ACT, and $5\\times$ to $7\\times$ reduction in controller tracking error compared to discrete-action baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FLASH, a visuomotor policy that represents trajectories with continuous Legendre polynomials. Sparse temporal sampling of expert demonstrations lets a single inference cover a longer action horizon. Its flow-matching process starts from polynomial coefficients derived from history rather than Gaussian noise, shortening generation, while analytic differentiation provides velocity feed-forward signals to the torque controller. The authors report experiments on five simulated and two real-world manipulation tasks, with success rates of at least 92% across tasks and improvements over the compared baselines in inference speed, training convergence time, and controller tracking error.",
+          "zh": "论文提出 FLASH，一种以连续勒让德多项式表示轨迹的视觉运动策略，通过稀疏时间采样拟合专家演示，使单次推理覆盖更长动作时域。其流匹配从历史多项式系数而非高斯噪声开始，以缩短生成过程；解析求导还为力矩控制器提供期望速度前馈。作者报告，在五项仿真和两项真实操作任务中，该方法均取得至少 92% 成功率，并在推理速度、训练收敛时间及控制器跟踪误差方面优于所比较基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1592,7 +1604,11 @@
             "heading": "",
             "text": "Training-free acceleration of a diffusion policy is accepted when an internal similarity signal reports that the shortcut changed nothing.\n\nWe price every monitor a control loop can afford in closed-loop success rather than feature distance, over $114$ accelerator configurations and four policy families: two accelerators each clear their own gate's bar and log every reuse as certified, while on one task one finishes every episode and the other none.\n\nA monitor is two designs, not one --- the statistic it reads, and what it does when that statistic fires. Published gates re-arm after every rejection, and under that response even an oracle handed every forward pass and the exact local action error loses twenty points; absorbing the same statistic costs one point, and most of its speed.\n\nWhat makes a response that never forgets affordable is a statistic that rarely fires, and what it must measure is deviation from the policy the accelerator replaced --- which a chunked policy has already paid for, its last plan not yet expired and free to read.\n\nGuarding every call this way cuts per-call compute by $1.55$--$3.09\\times$, where any reference-requiring check at the same coverage would have to stop accelerating altogether. On three of our four families the schedule alone already holds the pre-stated $\\pm2$-point margin.\n\nWhat the monitor is measurably worth shows in three places: on the fourth family, where it rescues the candidate selection landed on; on four configurations it did not select; and on a contact-rich fifth family, chosen where the schedule was expected to fail and run after every design choice was frozen, where no unmonitored arm at its speed holds the margin and the monitored one does."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies training-free monitors for accelerating diffusion policies and argues that both the measured statistic and the response when it fires affect closed-loop success. Across accelerator configurations and policy families, the authors report that published gates which re-arm after rejection can lose success even with an oracle monitor of local action error; an absorbing response reduces that loss but sacrifices speed. They propose using a chunked policy’s unexpired previous plan to measure deviation from the replaced policy. The paper reports lower per-call compute and that the monitor meets a prespecified success margin for some families and configurations, with additional evaluation on a contact-rich task.",
+          "zh": "论文研究扩散策略加速中的无训练监测器，强调监测指标及其触发后的响应方式共同决定闭环成功表现。作者报告，在多种加速配置和策略系列中，已发表的门控机制若每次拒绝后重新启用，即使获得精确局部动作误差的预言式监测器也会损失成功率；采用吸收式响应可减少损失，但会牺牲速度。论文提出利用分块策略尚未过期的上一计划衡量偏离原策略的程度，并报告该监测方式降低单次计算量；在部分策略系列和配置中满足预设成功率差距，另在接触丰富任务中展示监测器的效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
