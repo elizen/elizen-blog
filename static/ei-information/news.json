@@ -2259,7 +2259,11 @@
             "heading": "",
             "text": "Behavior-cloned policies often learn multiple behavior modes from demonstration datasets, including modes that are unsafe or otherwise undesired at deployment. For example, a policy trained on diverse handover demonstrations may learn to pass a knife blade-first.\n\nStandard remedies such as data curation and inference-time steering either require access to the original demonstrations for full retraining or add substantial inference-time overhead. To address this gap, we propose MoRE(Mode Redirection), which redirects policy rollouts toward desired behavior modes through a short \"uncloning\" step.\n\nSpecifically, MoRE distills the redirection signal from a temporary mode classifier into the policy weights to steer behavior. A retain loss balances this edit by preserving desired-mode competence, allowing the standalone policy to suppress unwanted modes with zero inference-time overhead.\n\nAcross eight simulated and real-world tasks, MoRE improves the average deployment success rate (SR) by 44 percentage points over the original mixed-mode policy. Among all compared adaptation and steering baselines, MoRE achieves the strongest SR and approaches the filtered-data retraining reference, while preserving task competence and inference speed.\n\nMoRE also generalizes across robot policy backbones, including Diffusion Policy and the Pi0.5 VLA, diverse task categories, and real-world deployments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes MoRE, a short “uncloning” step that distills redirection signals from a temporary mode classifier into policy weights. A retain loss is used to preserve competence in desired behavior modes, so the standalone policy can suppress unwanted modes without inference-time overhead. Across eight simulated and real-world tasks, the authors report a 44-percentage-point average deployment success-rate gain over the original mixed-mode policy. They say MoRE outperforms the compared adaptation and steering baselines and approaches filtered-data retraining.",
+          "zh": "论文提出 MoRE，通过短暂的“反克隆”步骤，将临时模式分类器提供的重定向信号蒸馏到策略权重中，并以保留损失维持期望行为模式的能力，使独立策略抑制不希望出现的模式而无需推理时额外开销。作者报告，在八项仿真及现实任务中，其平均部署成功率较原混合模式策略提高44个百分点，并称其优于所比较的适配与引导基线，接近过滤数据重训参考；评估涵盖 Diffusion Policy、Pi0.5 VLA 及现实部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2290,7 +2294,11 @@
             "heading": "",
             "text": "Autonomous social navigation requires balancing efficiency, physical safety, and social compliance. Reinforcement Learning (RL) methods provide a viable and effective solution but often rely on unrealistic assumptions, such as the knowledge of humans' position and velocity.\n\nIn this paper, we introduce JESSI (JAX-based E2E Safe Social Interpretable navigation), a lightweight end-to-end RL framework that maps raw LiDAR scans directly to kinematically feasible control commands.\n\nJESSI enhances safety via Dirichlet-parameterized continuous action spaces and deterministic bounding, while an integrated attention-based perception module extracts probabilistic human states for interpretable, socially aware decision-making.\n\nThrough extensive simulations and real-world deployment on a differential-drive robot, we demonstrate that jointly optimizing the RL policy with a supervised perception signal in a multi-task paradigm enhances social behavior.\n\nUltimately, JESSI is able to balance high navigation success rates and superior social behaviors compared to state-of-the-art baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces JESSI, an end-to-end reinforcement learning framework that maps raw LiDAR scans to kinematically feasible control commands. It uses Dirichlet-parameterized continuous action spaces and deterministic bounding for safety, alongside attention-based perception that extracts probabilistic human states for interpretable social decisions. The authors report that jointly optimizing the policy and a supervised perception signal in a multi-task setup enhances social behavior. In simulations and deployment on a differential-drive robot, they report high navigation success and superior social behavior compared with state-of-the-art baselines.",
+          "zh": "论文介绍 JESSI，一种端到端强化学习框架，将原始激光雷达扫描映射为满足运动学约束的控制指令。该方法以 Dirichlet 参数化连续动作空间和确定性边界增强安全性，并用基于注意力的感知模块提取概率化的人体状态，以支持可解释的社会导航决策。作者称，在仿真及差速驱动机器人现实部署中，多任务联合优化策略与监督感知信号提升了社会行为；与先进基线相比，JESSI兼具较高导航成功率和更优社会行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2321,7 +2329,11 @@
             "heading": "",
             "text": "Floorplans provide compact and widely available geometric maps for indoor localization, but existing high-performing floorplan-based methods still convert them into dense scene-specific offline databases, tying accuracy, storage, and runtime to the sampling resolution of the discretized pose space.\n\nWe present FreeLoc, an online RGB-based floorplan localization framework that treats the floorplan as a directly queryable geometric map.\n\nFreeLoc introduces an efficient online geometric querying and diffusion-aided refinement scheme, which retrieves plausible pose anchors through on-the-fly floorplan ray querying and refines them into accurate continuous pose estimates.\n\nFor sequential localization, FreeLoc develops an online likelihood construction strategy that bridges single-frame localization and probabilistic temporal fusion by constructing likelihoods from coarse-sampled candidates and refined pose hypotheses, enabling histogram-filter-based temporal fusion without offline databases.\n\nExperiments demonstrate real-time online inference and state-of-the-art performance in both single-frame and sequential localization, while real-world results validate practical deployability in indoor robotic localization scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FreeLoc, an online RGB indoor localization framework that treats a floorplan as a directly queryable geometric map, without an offline dense scene database. It retrieves plausible pose anchors through online ray queries and refines them into continuous estimates with diffusion assistance. For sequential localization, it builds likelihoods from coarse candidates and refined hypotheses for histogram-filter temporal fusion. The authors report real-time online inference and state-of-the-art performance in single-frame and sequential localization experiments; real-world results are presented as evidence of practical deployability for indoor robots.",
+          "zh": "论文提出 FreeLoc，一种在线 RGB 室内定位框架，将平面图作为可直接查询的几何地图，避免依赖离线密集场景数据库。它通过在线射线查询获取候选位姿锚点，再以扩散辅助方法细化为连续位姿估计；序列定位则从粗采样候选和细化假设构造似然，并用直方图滤波进行时序融合。作者报告实验实现实时在线推理，并在单帧与序列定位中达到先进性能；现实结果用于验证其在室内机器人定位中的实际可部署性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2352,7 +2364,11 @@
             "heading": "",
             "text": "Kalman filter (KF)-based multi-object tracking (MOT) remains a strong baseline for autonomous driving due to its strong performance, computational efficiency and interpretability.\n\nIn most practical systems, the process noise and measurement noise covariances are defined globally and shared across object classes, presuming identical uncertainty characteristics across heterogeneous traffic participants. This work revisits this assumption and proposes CANMOT, a class-aware and object-aligned noise modeling framework for KF-based 3D MOT.\n\nClass-specific diagonal process and measurement covariance matrices are introduced and optionally expressed in the object coordinate frame to preserve longitudinal-lateral anisotropy.\n\nSystematic experiments on the nuScenes benchmark show that class-aware and object-aligned noise modeling improves tracking performance and substantially reduces identity switches compared to state-of-the-art (SotA).\n\nIn addition, the consistency of the estimated uncertainty is analyzed using the Average Normalized Estimation Error Squared (ANEES) and $\\chi^2$-based violation tests. The results reveal severe overconfidence in standard KF-based MOT baselines.\n\nWhile the proposed formulation improves calibration without modifying the underlying filtering framework, it still exhibits substantial inconsistency, highlighting the need for further research in this area. Code is available at https://github.com/rst-tu-dortmund/CANMOT"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes CANMOT, a class-aware noise modeling framework for Kalman-filter-based 3D multi-object tracking. It assigns class-specific diagonal process and measurement covariance matrices, optionally expressed in object coordinates to preserve longitudinal-lateral anisotropy. Experiments on nuScenes show improved tracking performance and fewer identity switches. The authors assess uncertainty consistency with ANEES and chi-squared violation tests, finding severe overconfidence in standard KF-based MOT baselines. CANMOT improves calibration without changing the filtering framework, but substantial inconsistency remains.",
+          "zh": "论文提出 CANMOT，针对自动驾驶三维多目标跟踪中的卡尔曼滤波器，按类别建模过程噪声与测量噪声协方差，并可在目标坐标系中表达以保留纵横向差异。在 nuScenes 基准上的实验显示，该建模提升跟踪表现并减少身份切换。作者还用 ANEES 与基于卡方的违例检验分析不确定性，发现标准卡尔曼跟踪基线存在严重过度自信。尽管该方法改善校准且不改变滤波框架，估计仍明显不一致。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
