@@ -3631,7 +3631,11 @@
             "heading": "",
             "text": "Most vision-language-action models represent future motion as fixed-rate action chunks, tying temporal resolution and prediction horizon to a fixed output budget.\n\nThis pointwise representation wastes capacity on highly correlated neighboring actions, leaves temporal continuity and smoothness to be learned implicitly, and forces a tradeoff between long-horizon coverage and the local precision required for contact-rich manipulation.\n\nTo address these limitations, we introduce Vela, a vision-language-action foundation model that represents future robot behavior as continuous trajectories.\n\nVela combines a compact spline-based action representation with motion-dependent temporal support and a shared action interface for heterogeneous embodiments, allowing a fixed output budget to adapt its temporal resolution across motions.\n\nWe pretrain Vela on large-scale multi-embodiment robot data and evaluate it on LIBERO-X, EBench, and two real-world long-horizon tasks, egg-cake cooking and potato shredding, obtaining promising results across simulation and physical manipulation.\n\nThese results highlight the potential of continuous action representations as a foundation for future embodied foundation models. Project page and more results: https://clementine24.github.io/Vela/ ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Vela, a vision-language-action foundation model that represents future robot behavior as continuous trajectories. It combines compact spline-based actions, motion-dependent temporal support, and a shared interface for heterogeneous embodiments so a fixed output budget can vary temporal resolution across motions. The authors pretrain on multi-embodiment robot data and report promising results in simulation and physical manipulation on LIBERO-X, EBench, and two real-world long-horizon tasks: egg-cake cooking and potato shredding.",
+          "zh": "论文提出 Vela，一种将机器人未来行为表示为连续轨迹的视觉—语言—动作基础模型。它结合紧凑的样条动作表示、依运动变化的时间支撑，以及面向异构具身的共享动作接口，使固定输出预算能够随运动调整时间分辨率。作者使用多具身机器人数据预训练，并在 LIBERO-X、EBench 和两个真实世界长时任务（鸡蛋糕烹制、土豆切丝）中评估，报告了仿真与实体操作中的有希望结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3662,7 +3666,11 @@
             "heading": "",
             "text": "This letter proposes DNPush, a Distributed Nonparallel Pushing force controller for cooperative object transport without inter-robot communication.\n\nEach robot uses local force measurements, a preassigned force weight, and a locally expressed desired transport direction, without requiring an object model, contact locations, a CoM estimate, or moment arm magnitudes online. DNPush regulates nonparallel force magnitudes from local force direction misalignments through a reciprocal-sine law.\n\nUnder the stated contact conditions, Lyapunov analysis with LaSalle's invariance principle proves convergence to a unique rotational equilibrium, where perpendicular force contributions cancel and the net torque from normal forces is zero. Object velocity converges to the desired transport direction, and suitable contact regions exist for convex polygons.\n\nSimulations isolate the reciprocal-sine scaling mechanism, five-robot coordination, and active rotational damping. Hardware experiments with soft tactile differential-drive robots achieve a velocity direction error of 0.61 deg +/- 0.79 deg over five trials with a fixed transport direction and demonstrate object transport through waypoints with three robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes DNPush, a distributed nonparallel pushing force controller for cooperative object transport without inter-robot communication. Robots regulate force magnitudes using local force measurements, assigned weights, and locally expressed desired directions; online control does not require an object model, contact locations, a center-of-mass estimate, or moment-arm magnitudes. Under stated contact conditions, Lyapunov analysis establishes convergence to a unique rotational equilibrium and alignment of object velocity with the desired direction. Simulations examine the mechanism, while hardware experiments demonstrate transport with tactile differential-drive robots.",
+          "zh": "论文提出 DNPush，一种无需机器人间通信的分布式非平行推力控制器，用于多机器人协同搬运物体。各机器人依据本地力测量、预设力权重和局部期望运输方向调节非平行力大小；在线控制不需要物体模型、接触位置、质心估计或力臂大小。在所述接触条件下，李雅普诺夫分析证明系统收敛到唯一旋转平衡，物体速度方向趋近期望方向。仿真分析控制机制；硬件实验使用软触觉差速机器人，报告了五次试验的方向误差，并展示三机器人经路径点搬运物体。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3693,7 +3701,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models face a timing gap between low-rate inference and high-rate robot execution. We characterize this gap through end-to-end latency measurements of model inference and the robot execution chain.\n\nRepeated Flow Matching denoising contributes substantially to inference cost, while robot-side delays mainly arise from perception acquisition, communication scheduling, and physical response.\n\nAnalysis of the velocity field shows relatively stable magnitude and direction in early integration, followed by stronger directional correction near the terminal steps. Based on this stage heterogeneity, we propose two-stage non-uniform denoising, reducing the number of steps from 10 to 2 and model-inference time from 61.557 ms to 21.956 ms.\n\nWe also develop a distributed real-time VLA framework with independent inference, action-publication, and robot-control rates, modular observation acquisition, and action-provenance logging. Using {\\pi}0.5 as the baseline, we evaluate six real-time execution methods on a long-horizon physical garment-folding task.\n\nLegato performs best overall among training-based methods, while Temporal Smoothing leads among training-free methods; both perform strongly in task success, completion time, action continuity, and acceleration smoothness.\n\nCombining two-step denoising with representative execution methods substantially reduces inference cost with a small reduction in task performance. These results motivate joint optimization of model-inference efficiency and robot-system timing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies the timing gap between vision-language-action inference and robot execution, attributing substantial inference cost to repeated Flow Matching denoising and robot-side delays mainly to perception, communication scheduling, and physical response. Based on observed variation in the velocity field across integration stages, it proposes two-stage non-uniform denoising, reducing steps from 10 to 2 and inference time from 61.557 ms to 21.956 ms. With π0.5 as baseline, six execution methods are evaluated on a physical long-horizon garment-folding task. Combining two-step denoising with representative methods lowers inference cost with a small performance reduction.",
+          "zh": "论文分析视觉—语言—动作模型推理与机器人执行之间的时延，并指出重复 Flow Matching 去噪是推理成本的重要来源，机器人侧延迟主要来自感知获取、通信调度和物理响应。作者根据速度场在积分早期较稳定、末步方向修正较强的特点，提出两阶段非均匀去噪，将步数从 10 降至 2，模型推理时间从 61.557 毫秒降至 21.956 毫秒。以 π0.5 为基线，作者在实体长时服装折叠任务中比较六种执行方法；结合两步去噪后，推理成本下降而任务表现略有降低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3724,7 +3736,11 @@
             "heading": "",
             "text": "Partnered human-humanoid interaction couples locomotion with continuous physical contact. A humanoid needs to coordinate with a person's motion while responding to interaction forces and maintaining stable and natural movement. We present CoDance, a framework for learning reactive and compliant human-humanoid interaction from video.\n\nWe study partnered dancing as a challenging instantiation, where a humanoid coordinates its footsteps with a moving partner and maintains continuous two-hand contact. Given a single video of two human dancers, CoDance retargets their motions into a robot reference and a moving partner.\n\nWe introduce a multi-link compliance augmentation that transforms the kinematic demonstration into force-aware training data by adapting the robot reference under structured forces at both hands. Policies trained on this data follow the observed partner while preserving the demonstrated locomotion style and responding compliantly to physical interaction.\n\nIn simulation, the policies adapt their footsteps to changes in the partner and reproduce approximately 80% of the wrist displacement encoded by the augmented demonstrations. On a physical humanoid, CoDance enables sustained two-hand dancing with a human partner including repeated transitions between forward and backward motions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CoDance, a framework for learning reactive and compliant human-humanoid interaction from video, studied through partnered dancing. From one video of two human dancers, it retargets motion into a robot reference and a moving partner. A multi-link compliance augmentation adapts the reference under structured forces at both hands to create force-aware training data. In simulation, policies adjust footsteps to partner changes and reproduce approximately 80% of the wrist displacement in the augmented demonstrations. A physical humanoid demonstrates sustained two-hand dancing with a human, including repeated transitions between forward and backward motion.",
+          "zh": "论文提出 CoDance，从视频学习具反应性和柔顺性的人形机器人交互，并以双人舞为研究场景。给定一段两名人类舞者的视频，方法将动作重定向为机器人参考动作和移动伙伴，并通过多连杆柔顺性增强，在双手结构化受力下调整机器人参考动作，生成力感知训练数据。仿真中，策略能根据伙伴变化调整步伐，并复现增强示范中约 80% 的腕部位移。实体人形机器人实验展示了与人类持续双手接触跳舞，并反复完成前进与后退转换。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
