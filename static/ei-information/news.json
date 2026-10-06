@@ -2463,7 +2463,11 @@
             "heading": "",
             "text": "Aerial vision-and-language navigation (VLN) enables unmanned aerial vehicles to execute long-horizon natural-language instructions from visual observations in complex three-dimensional environments.\n\nHowever, recent aerial VLN models often rely on large-scale vision-language backbones and dense visual histories, imposing substantial computation and memory costs that hinder onboard deployment.\n\nWe propose LightVLN, a lightweight history-aware aerial VLN framework that combines a compact 0.5B language backbone with compact representations of both historical and current observations. LightVLN compresses each historical frame into a single token using visual features already computed by the policy.\n\nIt further introduces history- and instruction-conditioned local aggregation to reduce the current observation from 256 to 32 visual tokens while preserving navigation-relevant spatial information. With up to 16 historical frames, the policy uses at most 48 observation-derived tokens.\n\nOn the public OpenFly dataset, LightVLN achieves 50.93% Test-Seen and 36.14% Test-Unseen success rates (SR), outperforming the evaluated 7B language-backbone baselines on most reported metrics. It also achieves 25.83% SR on AerialVLN-S Val-Seen.\n\nIn a reconstructed unseen campus, we deploy LightVLN on a DJI M350 RTK with an external Jetson Orin NX 16 GB for closed-loop onboard-compute real-to-sim hardware-in-the-loop (HIL) evaluation, achieving 14.61 Hz model inference and 11.13 Hz end-to-end decision updates.\n\nThese results demonstrate the effectiveness and efficiency of LightVLN for aerial navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes LightVLN, a lightweight aerial vision-and-language navigation framework with a compact language backbone. It compresses each historical frame into one token and uses history- and instruction-conditioned local aggregation to reduce current-observation tokens. The authors report success rates on OpenFly and AerialVLN-S, with LightVLN outperforming evaluated 7B-backbone baselines on most reported metrics. They also conduct closed-loop, onboard-compute real-to-sim hardware-in-the-loop evaluation in a reconstructed unseen campus and report inference and decision-update rates.",
+          "zh": "论文提出轻量级空中视觉语言导航框架 LightVLN，采用紧凑语言骨干网络，并将历史帧压缩为单个视觉令牌；通过历史和指令条件下的局部聚合，将当前观测令牌由256个减至32个。在 OpenFly 和 AerialVLN-S 数据集上报告了导航成功率，并称其在多数已报告指标上优于所评估的7B语言骨干基线。作者还在重建的未见校园中开展闭环机载计算实虚结合硬件在环评估，报告了模型推理和端到端决策更新频率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2494,7 +2498,11 @@
             "heading": "",
             "text": "We propose a hierarchical control framework to address severe dynamic instabilities and navigational drift that arise when a two-wheeled inverted pendulum (TWIP) robot attempts asymmetric object manipulation.\n\nWhile two-wheeled platforms are highly manoeuvrable, their constant balancing adjustments make onboard odometry highly unreliable for precise navigation. Furthermore, the addition of a side-mounted robotic arm introduces unactuated lateral roll moments when a payload is lifted, a challenge heavily compounded on uneven terrain.\n\nTo solve these coupled problems, our architecture divides the workload. An offboard vision system tracks overhead ArUco markers to provide high-latency global waypoint navigation, bypassing odometry drift. Simultaneously, a low-latency onboard control loop rejects active physical disturbances using inertial and encoder data.\n\nIn our physical experiments, this dual-loop approach enabled the custom-built robot to navigate accurately, reject transient impacts from speed bumps, adapt to a dynamic seesaw ramp, and carry a payload securely without falling over its narrow wheelbase."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a hierarchical control framework for navigation and asymmetric manipulation by a two-wheeled inverted pendulum robot. An offboard vision system tracks overhead ArUco markers to provide global waypoint navigation, while a low-latency onboard loop uses inertial and encoder data to reject physical disturbances. In physical experiments, the authors report accurate navigation, rejection of transient speed-bump impacts, adaptation to a dynamic seesaw ramp, and secure payload carrying without the robot falling over.",
+          "zh": "论文提出用于两轮倒立摆机器人导航和非对称操作的分层控制框架，针对负载搬运时的导航漂移、动态不稳定和侧向滚转力矩问题。系统由两部分组成：机外视觉系统跟踪顶部 ArUco 标记，提供全局航点导航；机载低延迟控制回路利用惯性与编码器数据抑制物理扰动。作者报告称，在实体机器人实验中，该方法支持机器人准确导航、抵抗减速带的瞬态冲击、适应动态跷跷板坡道，并在不倾倒的情况下稳定搬运负载。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2525,7 +2533,11 @@
             "heading": "",
             "text": "Autoware is an open-source autonomous driving software platform widely adopted by researchers and industry developers. Originally developed primarily for public-road applications, including passenger vehicles, taxis, and buses, Autoware is increasingly being extended to off-road environments such as construction and agricultural sites.\n\nConstruction sites, however, differ fundamentally from public roads and challenge many assumptions underlying conventional autonomous driving systems. They are characterized by unstructured terrain, airborne dust, continuously evolving site conditions, and construction-specific objects.\n\nThis paper presents lessons learned from ongoing efforts to extend an Autoware-based autonomous driving system to large dump trucks operating at construction sites. We identify gaps between public-road and off-road construction applications across the sensing, mapping, localization, perception, planning, and control modules of the Autoware stack.\n\nWe then discuss potential solutions for addressing these gaps, with particular emphasis on ongoing LiDAR-based perception pipeline development and findings from field testing. Finally, we propose a roadmap toward end-to-end autonomous driving for construction vehicles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes ongoing efforts to extend Autoware to large dump trucks at construction sites, where unstructured terrain, airborne dust, changing conditions, and construction-specific objects challenge public-road assumptions. It identifies gaps between road and construction applications across sensing, mapping, localization, perception, planning, and control. The authors discuss potential solutions, focusing on development of a LiDAR perception pipeline and findings from field testing, and propose a roadmap toward end-to-end autonomous driving for construction vehicles.",
+          "zh": "论文总结将 Autoware 扩展至建筑工地大型自卸卡车自动驾驶的持续工作，指出非结构化地形、扬尘、场地持续变化及专用目标等因素，使工地环境不同于公共道路。作者从感知、地图、定位、感知、规划和控制模块分析道路与越野施工应用间的差距，并讨论可能的解决方向，重点介绍正在开发的激光雷达感知流程及现场测试发现。论文最后提出面向工程车辆端到端自动驾驶的路线图；摘要未声称该路线图已实现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2556,7 +2568,11 @@
             "heading": "",
             "text": "Soft tactile sensors elevate robotic touch through enhanced flexibility and adaptability, yet most existing designs depend on embedded electronics that are susceptible to interference and environmental limitations.\n\nIn this work, we leverage fluid-solid interactions to develop a class of soft tactile sensors that operate entirely without electronics at the sensing site. The sensor comprises a fluid-filled elastomeric channel connected to only two external pressure sensors.\n\nTouching different regions of the elastomeric surface displaces the viscous fluid, producing distinct pressure patterns that encode both touch position and force.\n\nThese signals are decoded through a machine learning framework that integrates feature extraction, soft clustering, and adaptive neuro-fuzzy inference to achieve accurate localization and force estimation.\n\nWe validate this concept through single-point touch localization and force estimation in a linear (1D) sensor and extend the same sensing principle to 2D tactile mapping by routing the channel across the surface using space-filling curves, while maintaining the same minimal hardware setup.\n\nThis simple approach remains effective in environments where conventional electronic sensors often fail, such as underwater or in the presence of magnetic interference."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents soft tactile sensors based on fluid-solid interaction, with no electronics at the sensing site. A fluid-filled elastomeric channel connects to two external pressure sensors; touch produces pressure patterns that encode location and force. A machine-learning framework combines feature extraction, soft clustering, and adaptive neuro-fuzzy inference for localization and force estimation. The authors demonstrate single-point localization and force estimation with a one-dimensional sensor, then extend the principle to two-dimensional tactile mapping using space-filling channel paths and the same minimal hardware.",
+          "zh": "论文提出一种利用流固相互作用的软触觉传感器，在传感位置无需电子元件：充液弹性通道连接两个外部压力传感器，触碰表面不同区域会产生可表征位置和作用力的压力模式。机器学习框架结合特征提取、软聚类和自适应神经模糊推理，用于定位与力估计。作者通过一维传感器的单点触摸定位和力估计验证该方法，并以空间填充曲线路由通道扩展到二维触觉映射，保持相同的精简硬件配置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
