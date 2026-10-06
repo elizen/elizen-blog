@@ -2915,7 +2915,11 @@
             "heading": "",
             "text": "Micro unmanned aerial vehicles (micro-UAVs) are small enough to reach confined spaces that larger robots cannot access, but too small to carry the sensing and computing power required for autonomous flight.\n\nWe move the localization stack entirely off the aerial platform onto a quadruped robot with a 7-degree-of-freedom (DOF) arm, which supplies the micro-UAV (27 g bare, 42 g with fiducial markers) its full 6-DOF pose.\n\nA camera at the arm's end-effector detects AprilTag fiducial markers on the drone and composes that observation with the quadruped's own self-localization to place the drone in a shared map frame, so the ground robot localizes its partner, rather than only tracking it relative to the camera.\n\nThe arm acts as an actively-controlled observer, repositioning to keep the drone in view as both robots move; the drone carries only an inertial measurement unit and fuses the external pose to fly commanded setpoints. In lab flights the external pose is accurate to 12-16 mm, enough to fly the drone autonomously within 2-5 cm of motion-capture-fed control.\n\nHaving the quadruped actively follow the drone reduces the tracking error from 11.0 cm to 6.9 cm by holding the camera in the close range, where the markers are most accurate."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a system in which a quadruped provides localization and active tracking for a micro-UAV. A camera on its seven-degree-of-freedom arm detects AprilTags on the drone and combines those observations with the quadruped’s self-localization to estimate the drone’s pose in a shared map frame. In lab flights, external pose accuracy was 12–16 mm. The authors report autonomous flight within 2–5 cm of motion-capture-fed control and a reduction in tracking error from 11.0 cm to 6.9 cm when the quadruped actively follows the drone.",
+          "zh": "本文提出由四足机器人为微型无人机提供定位与主动跟踪的方案。四足机器人搭载七自由度机械臂，末端相机识别无人机上的 AprilTag，并结合四足机器人的自定位，将无人机位姿置于共享地图坐标系；机械臂还会调整位置以持续观测移动中的无人机。实验室飞行中，外部位姿精度为 12–16 毫米。作者称，该精度支持无人机在自主飞行时与动作捕捉控制保持 2–5 厘米距离；主动跟随使跟踪误差从 11.0 厘米降至 6.9 厘米。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2946,7 +2950,11 @@
             "heading": "",
             "text": "Vision-language-action models (VLAs) inherit strong semantic grounding from pretrained vision-language backbones but are typically optimized for predicting actions rather than future observations. They can see and act, but they do not imagine the future before acting.\n\nWorld action models (WAMs) built on video diffusion backbones can imagine but treat language as frozen conditioning on a continuous latent space. Unified models bring these modalities into one architecture, but they either decode autoregressively, one token at a time, or keep video continuous with an auxiliary action head.\n\nIn this work, we present SUAVE, a Single vocabulary Unified Action-Video modEl in which a masked diffusion transformer generates video and actions conditioned on language, with all three modalities represented as discrete tokens in a shared sequence.\n\nChoosing which tokens to mask at inference turns the same network into a world model, a robot policy, or a video-action model. For action-free co-training, the action positions of unlabeled video are filled with mask tokens and excluded from the loss. Simulation and real-world experiments demonstrate two findings.\n\nFirst, a single SUAVE model predicts long-horizon video and acts as a policy, competitive with dedicated world models and specialized action policies on static and dynamic manipulation tasks.\n\nOn a real robot, our model generates subgoal images and an action chunk spanning one second of motion in 1,030 ms on an RTX 5090 GPU, sustaining closed-loop control at 2.5 actions per second. Second, pretraining on robot video and co-training on human video substantially improves policy performance and zero-shot robustness to distribution shift.\n\nTogether, these results show that masked diffusion is a practical and versatile foundation for unified video-action modeling."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SUAVE, a masked-diffusion transformer that represents language, video, and actions as discrete tokens in one sequence. By choosing which tokens to mask at inference, the same model can serve as a world model, robot policy, or video-action model. Simulation and real-world experiments show long-horizon video prediction and manipulation performance competitive with dedicated models. On a real robot, it generated subgoal images and a one-second action chunk in 1,030 ms on an RTX 5090. The authors also report improved policy performance and zero-shot robustness to distribution shifts from robot-video pretraining and human-video co-training.",
+          "zh": "本文提出 SUAVE，一种以掩码扩散 Transformer 统一生成视频与动作的模型。语言、视频和动作均表示为离散 token；推理时选择不同的掩码位置，可将同一网络用于世界模型、机器人策略或视频动作模型。仿真与真实世界实验显示，该模型可预测长时程视频并执行操作任务，表现可与专用世界模型和动作策略竞争。真实机器人实验中，模型在 RTX 5090 上以 1,030 毫秒生成子目标图像和一秒动作片段。作者还报告，机器人视频预训练及人类视频协同训练提升了策略表现与零样本分布偏移鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2977,7 +2985,11 @@
             "heading": "",
             "text": "Early development unfolds in caregiver-infant dyads, where infants' sensorimotor streams are shaped by physical contact and face-to-face interaction. Yet developmental robotics simulators commonly model infants in isolation, limiting the study of caregiver-mediated experience.\n\nWe present a caregiver-enabled extension of the Multi-Modal Infant Model (MIMo) in MuJoCo that turns MIMo into a controllable platform for replaying dyadic interaction and generating dense infant-perspective observations.\n\nThe system provides (i) an articulated caregiver model compatible with MIMo morphologies, parameterized from anthropometrics and optionally resized to a recorded caregiver; (ii) a workflow to replay naturalistic caregiver-infant holding and soothing interactions; and (iii) logging and visualizing the infant's first-person multimodal experience (we show touch and vision).\n\nWe showcase the tool on touch by introducing origin-aware contact logging that disambiguates self-, caregiver-, and environment-generated contact and supports aggregation into touch-rate statistics comparable to manual coding.\n\nWhile we showcase tactile analysis, the platform is intended more broadly as a generator of multimodal dyadic datasets (touch and egocentric vision) for modeling the development of social interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a caregiver-enabled extension of the Multi-Modal Infant Model in MuJoCo for replaying caregiver-infant interactions and generating infant-perspective observations. It includes an articulated caregiver model parameterized from anthropometrics, a workflow for replaying holding and soothing interactions, and tools to log and visualize touch and vision. The demonstrated tactile analysis uses origin-aware contact logs to distinguish self-generated, caregiver-generated, and environment-generated contact, supporting touch-rate statistics. The authors describe the broader platform as a generator of multimodal dyadic datasets for modeling social-interaction development.",
+          "zh": "本文介绍在 MuJoCo 中扩展的多模态婴儿模型 MIMo，使其能与具身照护者共同模拟互动，并生成婴儿视角的触觉和视觉观察。系统包含可适配 MIMo 身体形态、依据人体测量参数化的照护者模型，可重放自然的抱持与安抚互动，并记录和可视化婴儿的多模态体验。作者展示了触觉分析功能：具备来源识别的接触日志可区分自我、照护者及环境接触，并支持汇总触摸率。平台更广泛的目标是生成用于研究社会互动发展的双人多模态数据集。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3008,7 +3020,11 @@
             "heading": "",
             "text": "This paper introduces Dr-LiSA, a first-of-its-kind direct method for localizing 2D spinning radar intensity measurements in $SE（3）$ against 3D lidar maps.\n\nRadar-lidar localization combines the complementary strengths of the two sensing modalities: radar is robust to adverse weather and precipitation, while lidar provides high-fidelity 3D maps in favourable conditions.\n\nHowever, existing radar-lidar localization methods are restricted to planar $SE（2）$ localization and have generally fallen short of the accuracy achieved by lidar-lidar and even radar-radar systems. A key challenge is the substantial sensing-modality gap between radar and lidar, which observe and represent scene structure in fundamentally different ways.\n\nDr-LiSA bridges this gap using a learned forward model that predicts radar measurements from a lidar submap at a candidate pose, enabling direct photometric alignment of predicted and observed radar scans in $SE（3）$.\n\nDr-LiSA outperforms prior radar-lidar approaches in $SE（2）$ while achieving planar accuracy competitive with state-of-the-art radar-radar localization across more than 90 km of on-road data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Dr-LiSA, a direct method for localizing 2D spinning radar intensity scans in SE(3) against 3D lidar maps. To address the difference between radar and lidar scene representations, a learned forward model predicts radar measurements from a lidar submap at a candidate pose. The method then directly aligns predicted and observed scans photometrically. The authors report that Dr-LiSA outperforms prior radar-lidar approaches in SE(2), with planar accuracy competitive with state-of-the-art radar-radar localization across more than 90 km of on-road data.",
+          "zh": "本文提出 Dr-LiSA，一种将二维旋转雷达强度扫描与三维激光雷达地图直接对齐、在 SE(3) 中定位的方法。为应对雷达与激光雷达在场景表示上的差异，该方法使用学习得到的前向模型，根据候选位姿下的激光雷达子地图预测雷达测量，再对预测扫描与观测扫描进行光度对齐。作者称，Dr-LiSA 在 SE(2) 中优于既有雷达—激光雷达方法；在超过 90 公里的道路数据上，其平面定位精度与先进雷达—雷达定位方法相当。摘要未报告其 SE(3) 定位精度结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
