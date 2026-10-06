@@ -1219,7 +1219,11 @@
             "heading": "",
             "text": "Collision avoidance among convex bodies is a fundamental problem in robotics. Control Barrier Functions (CBFs) provide a practical framework for real-time safety filtering due to their computational efficiency. For general convex bodies, exact separation measures, such as distance or scaling factor, are typically computed through optimization.\n\nExisting CBF formulations often obtain the required gradient via differentiable optimization (diffOpt), adding computational overhead.\n\nIn contrast, we leverage the Gilbert-Johnson-Keerthi (GJK) algorithm to obtain the current witness pair---the pair of points realizing the minimum distance or penetration depth---and formulate a CBF, termed GJK-CBF, whose gradient is constructed directly from the relative rigid-body motion of the witness pair, without resorting to diffOpt.\n\nThis formulation applies to both 2D and 3D environments across a broad class of convex body pairs, provided that at least one in each one-to-one interaction is strictly convex.\n\nThe proposed GJK-CBF is validated in various scenarios, including multi-robot position swapping in both 2D and 3D, navigation through a vertical slit in 3D, and its applicability to manipulators.\n\nThe results demonstrate collision-free motion across all scenarios while reducing the conservativeness introduced by geometric approximations, particularly in narrow environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GJK-CBF for collision avoidance between convex rigid bodies on SE(3). It uses the GJK algorithm to obtain a witness pair and constructs the control barrier function gradient directly from the pair’s relative rigid-body motion, without differentiable optimization. The method applies to 2D and 3D interactions when at least one body in each pair is strictly convex. The authors report collision-free motion and reduced conservativeness from geometric approximations in simulations involving robot position swaps, slit navigation, and manipulators.",
+          "zh": "本文提出 GJK-CBF，用于在 SE(3) 上实现凸刚体碰撞规避。方法使用 GJK 算法得到当前见证点对，并依据其相对刚体运动直接构造控制屏障函数梯度，无需可微优化。该方法适用于二维和三维环境中的多类凸体交互，条件是每对交互中至少有一个刚体严格凸。作者在二维和三维机器人位置交换、三维狭缝导航及机械臂场景中验证方法，报告各场景均实现无碰撞运动，并减少几何近似带来的保守性；证据来自文中所述验证场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1250,7 +1254,11 @@
             "heading": "",
             "text": "Action-conditioned robot world models must respond precisely to robot trajectories while preserving realistic visual dynamics, yet learning both from heterogeneous robot videos remains challenging.\n\nSimulation offers structured motion supervision, but appearance differences hinder direct transfer, and inaccurate simulation predictions can misguide real-video generation. We present SimForcing, a simulation-guided framework that uses simulation both as a source of transferable motion knowledge and as a controllable reference for prediction.\n\nFirst, we transfer motion knowledge from a simulation teacher through latent-motion distillation, aligning temporal changes in latent space to internalize motion priors while mitigating the influence of appearance differences.\n\nSecond, we introduce multi-block simulation conditioning with condition dropout to exploit predicted simulation trajectories without relying excessively on their accuracy.\n\nOur simulation-conditioning classifier-free guidance scheme unifies these two ideas by balancing predictions based on internalized motion knowledge with those additionally guided by simulation latents. The jointly trained student generates both simulation conditions and real-domain videos, requiring no additional world model at inference.\n\nOn Bridge, SimForcing achieves the best PSNR, SSIM, LPIPS, and FVD among the compared methods without external embodied pretraining. Evaluation on InternData-A1 further supports its applicability across robot datasets.\n\nMoreover, using our trained world model to initialize a vision-language-action model improves LIBERO success, suggesting its utility for downstream policy learning. \\url{https://github.com/Wang-Xiaodong1899/SimForcing}"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SimForcing, which uses simulation as both a source of transferable motion knowledge and a controllable prediction reference for real-domain robot world models. Latent-motion distillation aligns temporal changes, while multi-block simulation conditioning, condition dropout, and classifier-free guidance reduce reliance on simulation prediction accuracy. The jointly trained student generates simulation-conditioned and real-domain videos without an additional inference-time world model. The authors report leading results on four video metrics on Bridge among compared methods, applicability on InternData-A1, and improved LIBERO success after initializing a vision-language-action model.",
+          "zh": "本文提出 SimForcing，以仿真作为可迁移运动知识来源和可控预测参考，训练面向真实域的机器人世界模型。方法通过潜在运动蒸馏对齐时间变化，并使用带条件丢弃的多块仿真条件输入及分类器自由引导，降低对仿真预测准确性的依赖。联合训练的学生模型可生成仿真条件和真实域视频，推理时无需额外世界模型。作者报告，该方法在 Bridge 数据集的四项视频指标上优于比较方法，在 InternData-A1 上显示跨数据集适用性；用其初始化视觉语言动作模型也提高了 LIBERO 成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1281,7 +1289,11 @@
             "heading": "",
             "text": "Diffusion- and flow-based robot policies have recently become widespread in robotic Imitation Learning (IL) due to their high performance and ability to model continuous and multimodal distributions.\n\nHowever, the iterative denoising procedure used by these models introduces significant prediction latency, hindering high-frequency closed-loop robot control and leading to jittery, unstable motion when frequent updates to the robot's action predictions are used.\n\nTherefore, it is common practice to train models to predict chunks of actions that can be executed sequentially without feedback, even when this reduces responsiveness and may mean the most recent state information is not used.\n\nIn this article, we present Adaptive Mean Flow (AMF), a flow-based IL method that enables smooth and responsive, fully closed-loop robot control. AMF uses Mean Flow, which is an accelerated form of Flow Matching (FM), to minimize prediction latency.\n\nTo ensure smoothness and consistency across predictions, AMF uses a corrupted version of the trajectory from the previous step when predicting new robot actions, with the signal-to-noise ratio increasing over the time parameter of the trajectory.\n\nThis discourages large changes in the prediction from one step to the next, while allowing freedom to adapt the predictions for future steps. We evaluate AMF across a wide range of simulated and real robot tasks and demonstrate significantly improved performance compared with baselines. Code: https://github.com/akselva/Adaptive-mean-flow-RoboticIL."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Adaptive Mean Flow (AMF), a flow-based imitation learning method for smooth, responsive, fully closed-loop robot control. It uses Mean Flow, an accelerated form of Flow Matching, to reduce prediction latency. When predicting new actions, AMF uses a corrupted version of the previous trajectory, with signal-to-noise ratio increasing over the trajectory’s time parameter. This discourages abrupt changes between predictions while allowing future actions to adapt. The authors report improved performance over baselines across a range of simulated and real robot tasks.",
+          "zh": "本文提出 Adaptive Mean Flow（AMF），一种旨在支持平滑、响应迅速的全闭环机器人模仿学习方法。AMF 使用加速形式的 Flow Matching，即 Mean Flow，以降低预测延迟；预测新动作时，还利用上一步轨迹的受扰版本，并使信噪比随轨迹时间参数增加，从而抑制相邻预测的大幅变化，同时允许调整未来动作。作者指出，扩散和流策略的迭代去噪会造成延迟，按块顺序执行动作则可能降低响应性。作者报告 AMF 在多种仿真和真实机器人任务上优于基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1312,7 +1324,11 @@
             "heading": "",
             "text": "Ergodic control drives robots to spend time in each region in proportion to a spatial distribution of interest, making it well suited for dense spatiotemporal environmental monitoring.\n\nExisting safe ergodic controllers rely on offline trajectory optimization or hierarchical architectures, which limit real-time applicability and decouple the ergodicity objective from the safety constraint. This paper presents a quadratic programming (QP)-based controller that treats ergodicity and safety jointly.\n\nWe first introduce a Gaussian-kernel ergodic metric that, unlike the classical indicator-based metric, is time differentiable.\n\nThis allows the exponential decay of the metric to be imposed as a time-varying control barrier function (CBF) constraint, relaxed by a slack variable, alongside hard CBF constraints for region containment and inter-robot collision avoidance.\n\nWe establish that the resulting QP remains feasible from any safe initial configuration and that, up to the slack term, the ergodic metric decays exponentially. Simulations show improved performance over baseline methods, and experiments with three aerial vehicles validate the work on real hardware."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a quadratic-programming controller that jointly handles ergodicity and safety in multi-robot systems. It introduces a time-differentiable Gaussian-kernel ergodic metric and imposes its exponential decay as a time-varying control barrier function constraint with a slack variable, alongside hard constraints for region containment and inter-robot collision avoidance. The authors establish feasibility from any safe initial configuration and exponential metric decay up to the slack term. Simulations show improvement over baselines, and experiments with three aerial vehicles validate the method on real hardware.",
+          "zh": "本文提出基于二次规划的多机器人安全遍历控制器，将遍历目标与安全约束联合处理。作者引入时间可微的高斯核遍历度量，并将其指数衰减要求作为带松弛变量的时变控制屏障函数约束，同时设置区域约束和机器人间避碰的硬约束。作者证明所得二次规划从任意安全初始配置均保持可行，且除松弛项外，遍历度量指数衰减。仿真显示该方法优于基线；三架航空器的真实硬件实验验证了该方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
