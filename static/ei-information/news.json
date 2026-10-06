@@ -3971,7 +3971,11 @@
             "heading": "",
             "text": "Learning from trajectory demonstrations offers a route to active-inference control of complex systems whose dynamics are difficult to model explicitly.\n\nWe introduce generative active-inference control (GenAIF), in which one generative trajectory model learns from demonstrations and measured action interventions to supply a goal-conditioned policy distribution and a state-to-observation likelihood mapping.\n\nFrom this control design, we derive three model requirements: (i) useful action proposals, (ii) accurate prediction under imposed actions, and (iii) probabilistic observation evidence for belief updating and expected information gain.\n\nWe benchmark diffusion, autoregressive Transformers, conditional variational autoencoders (CVAEs), and flow matching in a MuJoCo manipulation task with multiple physical conditions. Diffusion delivers the strongest control across the tested dynamics, while CVAE combines comparable short-horizon prediction with much faster inference.\n\nCorrect conditioning is decisive, and trajectory reuse offers further computational savings. With the same frozen models, a hidden-dynamics experiment demonstrates prompt belief adaptation after an unannounced tilt change; subsequent instability identifies sustained inference as a remaining challenge.\n\nThese findings support the use of shared generative trajectory models to connect action proposal, controlled prediction, and observation evidence within GenAIF."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces generative active-inference control (GenAIF), using a trajectory model trained on demonstrations and measured action interventions to provide goal-conditioned policies and state-to-observation likelihoods. It sets out requirements for action proposals, controlled prediction, and probabilistic observation evidence, then benchmarks four model families in a MuJoCo manipulation task across physical conditions. Diffusion performs strongest in control, while CVAE offers comparable short-horizon prediction with faster inference. A hidden-dynamics experiment shows prompt belief adaptation to an unannounced tilt change, though sustained inference remains unstable.",
+          "zh": "论文提出生成式主动推理控制（GenAIF），用一个从轨迹示范和测得的动作干预中学习的生成模型，提供目标条件动作策略分布及状态到观测的似然映射。作者据此提出动作建议、受控预测和概率观测证据三项模型要求，并在 MuJoCo 操作任务的多种物理条件下比较扩散模型、自回归 Transformer、条件变分自编码器和流匹配。测试中扩散模型控制表现最强，条件变分自编码器推理更快且短期预测相当。隐藏动力学实验显示模型能对未告知的倾斜变化调整信念，但持续推理仍不稳定。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4002,7 +4006,11 @@
             "heading": "",
             "text": "Soft robots present significant modelling challenges due to their non-linearity, complex dynamics and potentially intricate geometries. These difficulties in accurate system identification and dynamics modelling limit their applications in precise robotics tasks.\n\nPrior modelling approaches typically suffer from trade-offs in accuracy, computational efficiency, or speed. The differentiable finite element method (FEM) offers a promising balance between these desiderata for soft robot modelling, and enables the use of gradients for efficient calibration and trajectory optimisation.\n\nIn this paper, we propose an end-to-end differentiable FEM-based framework designed to streamline modelling and system identification for pneumatic soft robots, enabling the generation of reliable models for downstream tasks.\n\nThe framework automates the conversion of computer-aided designs into voxelised tetrahedral viscoelastic FEM meshes that accurately represent the robot's geometry and actuation mechanism.\n\nBy integrating easily acquired point cloud data with differentiable FEM, the framework achieves precise identification of material and dynamic actuation parameters using a minimal experimental setup. Additionally, the differentiable nature of the model facilitates trajectory optimisation by leveraging gradients from robot dynamics and contact interactions.\n\nWe validate the framework by modelling a complex bellow-shaped pneumatic soft robot and demonstrate its efficacy in real-world motion planning tasks. Experimental results indicate high modelling accuracy, with a maximum positional error of less than 3 mm, and successful application in tasks such as path following and grasping."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an end-to-end differentiable finite element framework for modelling and identifying pneumatic soft robots. It converts computer-aided designs into voxelised tetrahedral viscoelastic meshes and combines these with point-cloud data to identify material and dynamic actuation parameters. Differentiability also supports trajectory optimisation using gradients from robot dynamics and contact interactions. The authors validate the framework on a complex bellow-shaped robot and report a maximum positional error below 3 mm in real-world experiments, with successful path-following and grasping tasks.",
+          "zh": "论文提出面向气动软体机器人的端到端可微有限元建模与系统辨识框架，可将计算机辅助设计自动转换为体素化四面体黏弹性有限元网格，并结合易获取的点云数据识别材料及动态驱动参数。模型的可微特性也用于基于动力学和接触梯度进行轨迹优化。作者以复杂波纹管形气动软体机器人验证该方法，并报告真实运动规划实验中的最大位置误差小于3毫米，且完成路径跟随和抓取任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4033,7 +4041,11 @@
             "heading": "",
             "text": "Humanoid perceptive locomotion has made significant progress and shows great promise, yet achieving robust multi-directional locomotion on complex terrains remains underexplored. To tackle this challenge, we propose RPL, a two-stage training framework that enables multi-directional locomotion on challenging terrains, and remains robust with payloads.\n\nRPL first trains terrain-specific expert policies with privileged height map observations to master decoupled locomotion and manipulation skills across different terrains, and then distills them into a transformer policy that leverages multiple depth cameras to cover a wide range of views.\n\nDuring distillation, we introduce two techniques to robustify multi-directional locomotion, depth feature scaling based on velocity commands and random side masking, which are critical for asymmetric depth observations and unseen widths of terrains.\n\nFor scalable depth distillation, we develop an efficient multi-depth system that ray-casts against both dynamic robot meshes and static terrain meshes in massively parallel environments, achieving a 5-times speedup over the depth rendering pipelines in existing simulators while modeling realistic sensor latency, noise, and dropout.\n\nExtensive real-world experiments demonstrate robust multi-directional locomotion with payloads (2kg) across challenging terrains, including 20{\\deg} slopes, staircases with different step lengths (22 cm, 25 cm, 30 cm), and 25 cm by 25 cm stepping stones separated by 60 cm gaps."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RPL, a two-stage framework for multi-directional humanoid locomotion on challenging terrain and robustness under payloads. Terrain-specific expert policies trained with privileged height maps are distilled into a Transformer policy using multiple depth cameras. The method adds velocity-command-based depth feature scaling and random side masking. Its parallel multi-depth system is reported to be five times faster than depth-rendering pipelines in existing simulators. Real-world experiments demonstrate locomotion with a 2 kg payload across slopes, staircases, and separated stepping stones.",
+          "zh": "论文提出两阶段框架RPL，用于训练人形机器人在复杂地形上的多方向感知运动，并增强负载条件下的稳健性。方法先以特权高度图训练地形专用专家策略，再将其蒸馏为利用多台深度相机的Transformer策略；训练中采用按速度指令缩放深度特征和随机侧向遮蔽。作者还开发并行多深度系统，据称较现有模拟器深度渲染流程提速5倍。真实机器人实验展示了负载2千克时跨越斜坡、楼梯和间隔踏石的运动表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4064,7 +4076,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models encode semantic information from vision-language pretraining, but manipulation also requires precise spatial reasoning. We present GeoBridge-VLA, a two-stage method for learning geometric features from a pretrained VLA's frozen visual encoder and using them for action prediction.\n\nStage I trains a feature bridge and geometry decoder with depth supervision. Stage II freezes these modules and trains a gated residual interface together with the action-side projections and action expert. The residual augments the existing visual tokens without adding a second image encoder or increasing the token count.\n\nDeployment requires RGB, robot state, and language, but no depth observations. Under matched evaluation conditions, GeoBridge-VLA achieves 70.9% success on LIBERO, compared with 60.0% for SmolVLA. Disabling the residual in the same trained checkpoint reduces success from 70.90% to 69.85%, with mixed effects across suites.\n\nOn a physical ROBOTIS OMY robot, GeoBridge-VLA succeeds in 148 of 200 trials (74.0%) across four tasks, compared with 108 of 200 (54.0%) for SmolVLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GeoBridge-VLA, a two-stage method that learns geometric features from a pretrained VLA's frozen visual encoder for action prediction. Depth supervision trains a feature bridge and geometry decoder; a gated residual interface and action modules are then trained. The residual augments existing visual tokens without another image encoder or more tokens. Deployment uses RGB, robot state, and language, without depth observations. Under matched evaluation, the method reports 70.9% LIBERO success versus 60.0% for SmolVLA, and 74.0% versus 54.0% over 200 physical-robot trials.",
+          "zh": "论文提出GeoBridge-VLA，通过两阶段方法从预训练视觉语言动作模型的冻结视觉编码器学习几何特征，并将其用于动作预测。方法先以深度监督训练特征桥接模块和几何解码器，再训练门控残差接口及动作侧模块；残差增强现有视觉标记，无需增加图像编码器或标记数量。部署输入为RGB、机器人状态和语言，不需要深度观测。在匹配评估条件下，LIBERO成功率为70.9%，高于SmolVLA的60.0%；实体机器人四项任务中成功率为74.0%，对照为54.0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
