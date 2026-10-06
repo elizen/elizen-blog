@@ -163,7 +163,11 @@
             "heading": "",
             "text": "When a team of robots delegates planning and mutual trust to LLM agents, a single compromised robot can corrupt the shared outcome. We study this threat in a grounded task: a multi-robot survey in which measurements can be verified against the physical world, but every verification costs budget that would otherwise advance the mission.\n\nWe treat the compromised robot as a stealthy adversary in the system-theoretic sense: it is limited not by an energy bound but by the team's own detectors. We then derive two bounds. First, the probability that the adversary's reports are verified is bounded below in terms of the degrees in the communication graph and the verification budget.\n\nSecond, the map error caused by any stealthy adversary is bounded above by the value of a linear program over the adversary's bias distributions; its solution is an exchange rate between stealth budget and damage: below a critical verification level the worst stealthy attack tells rare, full-magnitude lies on the records least likely to be verified, and above it the better purchase is small biases hidden in the noise.\n\nIn experiments where the honest robots are LLM agents, both bounds hold at the budget the attack actually spent. The experiments also show that which records an LLM robot re-checks is unbiased, but how much it re-checks is unpredictable."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies stealthy corruption by one compromised robot in an LLM-coordinated multi-robot surveying task where measurements can be checked against the physical world. It derives a lower bound on report verification probability based on communication-graph degrees and verification budget, and an upper bound on map error through a linear program over attack biases. The authors claim that low verification favors rare, full-scale lies, while higher verification favors small biases hidden in noise. LLM-robot experiments support both bounds at the budget spent.",
+          "zh": "论文研究由 LLM 智能体协调的多机器人测绘任务中，单个受损机器人如何隐蔽地篡改共享结果。作者给出两项界限：通信图结构和核验预算共同约束虚假报告被核验的概率；隐蔽攻击造成的地图误差受一个关于偏差分布的线性规划上界约束。作者声称，核验不足时最有利的攻击是对较少被核验的记录偶尔撒大谎，核验较充分时则以小偏差隐藏在噪声中。LLM 机器人实验显示，在攻击实际使用的预算下两项界限成立；重查哪些记录没有偏向，但重查多少不可预测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the visual representations used across tasks and action policies.\n\nExisting attacks on these models optimize against the victim's actions or predicted futures and therefore require access to target-model outputs. In this paper, we propose an attack, TAPDreamer, against world action models that instead uses a public encoder alone to construct a fixed local perturbation that transfers across tasks and action architectures.\n\nTAPDreamer requires no target-policy queries. Our key insight is that interactions between patch-induced changes in attention weights and value vectors broadcast a nearly identical representation shift far beyond the patch footprint, and this shift remains stable across task observations.\n\nGuided by this insight, TAPDreamer uses six frames from one source task to maximize the global L1 distance between clean and patched encoder representations.\n\nIn closed-loop evaluation, one frozen patch per benchmark, covering about 6.5% of the input, reduces FastWAM's success rate from 97.7% to 0.0% across 40 LIBERO tasks and from 90.8% to 0.0% across 50 RoboTwin tasks; matched random patches retain 81.5% and 79.2% success.\n\nThe same patches reduce success to 2.1% and 0.8% on two DreamWAM configurations and to 10.0% on Motus. These results show that protecting downstream action generation alone is insufficient: defenses for world action models must also secure shared visual encoders against persistent local perturbations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TAPDreamer, a transferable adversarial patch attack on world action models. It uses only a public encoder and six frames from one source task to optimize a fixed local perturbation, without querying the target policy. The authors attribute transfer to a stable representation shift that spreads beyond the patch through changes in attention weights and value vectors. In closed-loop evaluations, frozen patches covering about 6.5% of the input reduced success across FastWAM, two DreamWAM configurations, and Motus; the authors argue shared visual encoders need protection.",
+          "zh": "论文提出 TAPDreamer，一种面向世界动作模型的可迁移对抗贴片攻击。它仅使用公开编码器，以一个源任务的六帧优化固定局部扰动，无需查询目标策略。作者认为，贴片改变注意力权重和值向量后，会在贴片区域之外造成近似一致、且跨任务观察稳定的表征偏移。闭环评估中，每个基准使用一个冻结贴片，覆盖约 6.5% 输入；摘要报告其在 FastWAM、两种 DreamWAM 配置及 Motus 上显著降低成功率，并据此指出共享视觉编码器也需要防护。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "Embodied world models predict the visual consequences of candidate actions before execution. However, existing action-conditioned world models often adopt uniformly weighted visual generation objectives that can be misaligned with embodied prediction needs.\n\nEven with explicit motion conditioning, these objectives can underemphasize spatially sparse changes that are critical to interaction. We propose KineWorld, a transport-aware world-modeling framework that extends robot kinematics from motion conditioning to the spatial allocation of generative supervision.\n\nKinematic Transport Lifting (KTL) constructs renderer-derived, camera-aligned transport fields from commanded robot motion. Transport-Aware World Diffusion (TAWD) calibrates their motion support on the video-latent grid and reweights future-RGB flow matching through a normalized mixture of uniform and transport-focused distributions.\n\nWe train KineWorld using ALOHA-AgileX bimanual manipulation data from RoboTwin 2.0.KineWorld achieves an EWMScore-P of 68.95 in single-view evaluation and a TWB-Score of 54.82 in multi-view evaluation. These results support a shift from appearance fitting toward action-consequence modeling for embodied decision-making."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents KineWorld, an embodied world-modeling framework that uses robot kinematics to allocate spatial generative supervision. Kinematic Transport Lifting builds camera-aligned transport fields from commanded motion; Transport-Aware World Diffusion calibrates motion support on the video-latent grid and reweights future-RGB flow matching with a mixture of uniform and transport-focused distributions. The model is trained on ALOHA-AgileX bimanual manipulation data from RoboTwin 2.0. The authors report an EWMScore-P of 68.95 in single-view evaluation and a TWB-Score of 54.82 in multi-view evaluation.",
+          "zh": "论文提出 KineWorld，一种将机器人运动学用于空间生成监督分配的具身世界模型框架。其运动学传输提升模块根据指令运动构建与相机对齐的传输场；传输感知世界扩散模块在视频潜在网格上校准运动支持，并通过均匀与聚焦传输场的混合分布重加权未来 RGB 流匹配。模型使用 RoboTwin 2.0 的 ALOHA-AgileX 双臂操作数据训练。作者报告，单视角评估的 EWMScore-P 为 68.95，多视角评估的 TWB-Score 为 54.82，并认为结果支持从外观拟合转向动作后果建模。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "Transferring visual representations pretrained on human videos to robot manipulation requires learning reliable correspondences between human and robot demonstrations. However, paired demonstrations can differ in execution rate and in the proportion of non-key frames that do not directly reflect task progress.\n\nFrames at the same relative timestamp may therefore represent different task stages, which can cause correspondence learning to fail. To address these issues, we propose Frame-Level Temporal Alignment (FLTA), a framework that uses two temporal priors to adapt visual encoders pretrained on human videos for robot manipulation.\n\nIt learns shared task-progress representations without frame-level correspondence annotations, allowing frames at different relative temporal positions to match. A global progress prior combines normalized temporal positions with visual similarity to construct a soft correspondence target.\n\nA local temporal order prior penalizes backward transitions while allowing stays and varying forward rates to accommodate execution-rate differences.\n\nWith ResNet-50 and ViT encoders, our method achieves relative improvements of 46.93% and 65.96%, respectively, over the best baselines in average simulation success rates and achieves higher task success rates on real-world manipulation tasks.\n\nThese results also suggest that effective human-robot adaptation depends less on the number of parameters updated than on which parameters are selected. Our project page is available at https://rtx5090ultra.github.io/FLTA-Project-Page/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Frame-Level Temporal Alignment (FLTA) to adapt visual encoders pretrained on human videos for robot manipulation. Without frame-level correspondence labels, it matches demonstrations at different relative time positions using a global task-progress prior and a local temporal-order prior that permits stays and varying forward rates. With ResNet-50 and ViT encoders, the authors report relative improvements of 46.93% and 65.96% over the best baselines in average simulation success rates, and higher success on real-world manipulation tasks. They suggest parameter selection matters more than the number updated.",
+          "zh": "论文提出帧级时间对齐（FLTA），用于将在人类视频上预训练的视觉编码器适配到机器人操作。该方法通过全局任务进度先验和局部时间顺序先验，在无需帧级对应标注的情况下，匹配相对时间位置不同的演示帧，并允许停留及不同的前进速度。使用 ResNet-50 和 ViT 编码器时，作者报告仿真平均成功率较最佳基线分别相对提升 46.93% 和 65.96%，真实操作任务成功率也更高。作者还指出，适配效果可能更取决于选择更新哪些参数，而非更新参数数量。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
