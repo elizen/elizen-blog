@@ -3627,7 +3627,11 @@
             "heading": "",
             "text": "Video planning has emerged as a flexible framework for robot manipulation, in which a generative model predicts a video of task completion, and a downstream module translates the predicted frames into actions.\n\nHowever, existing methods typically ignore information from past interactions, limiting their ability to adapt to latent physical properties that can only be revealed through trial and error, such as whether a door should be pushed or pulled, or how friction affects object dynamics.\n\nWhen a plan fails, these methods usually replan from scratch without leveraging the information revealed by the failure. To address this limitation, we introduce RELIC, REplanning with Latent embedding refInement and Candidate rejection, a video planning framework that adapts to hidden physical properties from test-time failures.\n\nRELIC optimizes a latent embedding that captures the environment's hidden physical properties from interaction videos and introduces a rejection-based sampling mechanism that filters out hypotheses inconsistent with prior failures.\n\nAcross eight tasks in two simulation suites, RELIC consistently reduces the number of replanning steps required for success, and linear probes show that its embedding captures the hidden parameters from the interaction itself rather than from scene appearance.\n\nAcross four challenging real-world robotic manipulation tasks involving hidden interaction modes, e.g., friction, center of mass, and object mass, RELIC raises the one-shot replanning success rate of a video planning baseline from 30.0% to 63.8% after a single physical interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RELIC, a video-planning framework that optimizes a latent embedding from interaction videos to capture hidden physical properties and uses rejection-based sampling to filter hypotheses inconsistent with prior failures. Across eight tasks in two simulation suites, RELIC reduces the replanning steps needed for success; linear probes indicate that its embedding captures parameters revealed by interaction. In four real-world manipulation tasks, one physical interaction raises a baseline’s one-shot replanning success rate from 30.0% to 63.8%.",
+          "zh": "论文提出 RELIC 视频规划框架，通过交互视频优化潜在嵌入，以捕捉环境隐藏的物理属性，并用基于拒绝的采样排除与先前失败不一致的假设。在两套仿真环境的八项任务中，该方法减少了成功所需的重规划步骤；线性探针结果显示嵌入反映交互揭示的隐藏参数。在四项真实机器人操作任务中，单次物理交互后，视频规划基线的一次重规划成功率由30.0%升至63.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3658,7 +3662,11 @@
             "heading": "",
             "text": "We propose to use Quality-Diversity (QD) algorithms to solve robotic prehensile manipulation tasks in open-ended environments. Our approach enables the efficient discovery of a wide range robust grasp configurations, which serve as reliable starting points for generating diverse prehensile manipulation trajectories on articulated objects.\n\nThe resulting diversity in manipulation behaviors enhances generalization and adaptability, enabling effective deployment continuously evolving open-world settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes using Quality-Diversity (QD) algorithms for robotic prehensile manipulation in open-ended environments. The approach aims to efficiently discover a broad range of robust grasp configurations, which can serve as starting points for generating diverse manipulation trajectories on articulated objects. The authors state that diversity in manipulation behaviors enhances generalization and adaptability for deployment in continuously evolving open-world settings. The abstract does not report specific experimental results.",
+          "zh": "论文提出使用质量多样性（QD）算法解决开放环境中的机器人抓取操作任务。该方法旨在高效发现多种稳健的抓取构型，并将其作为起点，为关节式物体生成多样的抓取操作轨迹。作者认为，操作行为的多样性能够增强泛化与适应能力，从而支持在持续演变的开放世界环境中部署。摘要未报告具体实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3689,7 +3697,11 @@
             "heading": "",
             "text": "Human demonstrations offer rich examples of precise dexterous manipulation and a promising source of robot training data. However, high-fidelity reproduction of demonstrated motions and hand-object interactions across robot embodiments remains challenging under physical constraints.\n\nWe present DexForge, a differentiable physics-grounded framework for converting human video demonstrations into high-fidelity robot trajectories.\n\nWe reconstruct spherical-Gaussian object models and hand-object motion from visual observations, then build a differentiable simulator combining efficient Gaussian collision detection with existing differentiable dynamics.\n\nBased on this simulator, DexForge combines contact-aware kinematic retargeting with force-aware dynamics retargeting: robot-adapted stable contacts guide kinematic reference construction and subsequent gradient-based control refinement for precise physical motion reproduction.\n\nExperiments on 130 DexYCB and HOT3D demonstrations across seven dexterous hands show success-rate gains of approximately 35-53 percentage points over the baseline, with object position and orientation tracking errors on successful trajectories reduced by approximately 34-67% and 71-78%, respectively.\n\nFurther experiments demonstrate open-loop transfer to MuJoCo and real-robot execution. Our project page is available at https://wmz1226.github.io/DexForge/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DexForge, a differentiable physics-grounded framework for converting human video demonstrations into robot trajectories. It reconstructs object models and hand-object motion, then combines contact-aware kinematic retargeting with force-aware dynamics retargeting for control refinement. Experiments covering 130 demonstrations and seven dexterous hands report success-rate gains of about 35–53 percentage points over a baseline. On successful trajectories, position and orientation tracking errors fall by about 34–67% and 71–78%, respectively. The paper also reports open-loop transfer to MuJoCo and real-robot execution.",
+          "zh": "论文提出 DexForge，一种基于可微物理的框架，可将人类视频演示转换为机器人轨迹。方法重建物体模型及手物运动，并结合接触感知的运动学重定向和力感知的动力学重定向进行控制优化。在涵盖130段演示和七种灵巧手的实验中，相较基线，成功率提高约35至53个百分点；成功轨迹的位置与姿态跟踪误差分别降低约34%至67%和71%至78%。论文还报告了向 MuJoCo 的开环迁移及真实机器人执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3720,7 +3732,11 @@
             "heading": "",
             "text": "We present RAGrasp, a retrieval-augmented pipeline for planar parallel-jaw grasping from a compact set of locally collected, grasp-annotated RGB-D (color and depth) templates.\n\nUnlike task-specific predictors trained primarily on large public or synthetic grasp datasets, RAGrasp requires no end-to-end retraining for a new deployment.Its template memory is constructed from observations collected with the deployment camera, robot, and gripper in the target workspace, thereby aligning stored examples with the local sensing and embodiment conditions.\n\nThe system uses self-supervised DINOv2 visual fea- tures together with appearance and depth cues to prompt the Segment Anything Model 2 (SAM2), which isolates the query object. A two-stage geometry-semantic retrieval cascade then selects a template, and a confidence gate chooses one of two grasp- transfer estimators.\n\nThe transferred grasp is refined using mask- support and silhouette-contact constraints before calibrated 2D- to-3D conversion. In real-world trials, RAGrasp achieves 20/20 successful grasps on seen objects and 19/20 on unseen objects.\n\nWithin the evaluated setting, the results demonstrate deployment- specific grasp adaptation from limited local annotation and tolerance to the tested viewpoint and illumination changes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RAGrasp, a pipeline for planar parallel-jaw grasping using a compact set of locally collected RGB-D templates annotated with grasps. It segments query objects using visual features, appearance, and depth cues, retrieves a template through a two-stage geometry-semantic cascade, and selects a grasp-transfer estimator based on confidence. The transferred grasp is refined and converted to 3D. In real-world trials, it succeeds on 20/20 seen objects and 19/20 unseen objects. Within the evaluated setting, the authors report adaptation from limited local annotation and tolerance to tested viewpoint and illumination changes.",
+          "zh": "论文提出 RAGrasp，通过少量本地采集并标注抓取信息的 RGB-D 模板，实现平行夹爪的平面抓取。系统结合视觉特征、外观与深度线索分割查询物体，再以两阶段几何和语义检索选择模板，并依据置信度选择抓取迁移估计器；迁移结果经过约束细化并转换为三维坐标。真实场景试验中，已见物体抓取成功20/20，未见物体19/20。作者称，在评估设置内，该方法可利用有限本地标注适配部署，并能容忍所测试的视角和光照变化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
