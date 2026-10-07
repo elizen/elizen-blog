@@ -3523,7 +3523,11 @@
             "heading": "",
             "text": "Learning dexterous manipulation benefits from human demonstration datasets that capture diverse and natural hand-object interactions. In particular, contact points and forces provide supervision on where and how strongly to interact, which cannot be fully captured by motion trajectories alone.\n\nHowever, methods for jointly capturing hand and object motion, contact points, and forces remain limited. Moreover, severe occlusion from hand-object interaction challenges accurate tracking of both hands and objects. To address these limitations, we present a Visual-Inertial-CONtact based hand-object tracking (VICON) framework.\n\nIt holistically captures both hand and object motion along with contact information during manipulation, even under severe occlusion. First, we adopt a visual-inertial glove and an RGB-D camera for accurate hand tracking, and redesign the glove to incorporate contact sensing.\n\nSpecifically, force-sensitive resistors (FSRs) are placed on the glove based on human grasp frequency to synchronously record contact states and calibrated normal forces. Second, without requiring pre-existing CAD models, we estimate object poses using RGB-D images and a mesh reconstructed from a monocular video.\n\nWe propose factor-graph-based object trajectory estimation that fuses object-pose estimates weighted by visibility under hand-object occlusion, FSR measurements, and a hand-motion prior.\n\nAcross 40 motion-capture sessions with five objects, VICON achieves a 2.5% failed-frame rate compared with 50.9-64.6% for the baselines, with median errors of 3.9 mm and 3.0 degrees under occlusion.\n\nUsing VICON, we construct a dataset containing synchronized hand-object motion, contact points, and normal forces, and will publicly release an expanded dataset covering 10 object categories at https://github.com/VICON-dataset/dataset."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VICON, a hand-object tracking framework designed to capture motion, contact points, and normal forces during manipulation, including under severe occlusion. It combines a visual-inertial glove, an RGB-D camera, glove-mounted force sensors, and object pose estimates based on RGB-D images and a mesh reconstructed from monocular video, without requiring existing CAD models. A factor graph fuses visibility-weighted pose estimates, sensor measurements, and a hand-motion prior. The authors report results from motion-capture sessions involving five objects and describe a synchronized dataset.",
+          "zh": "论文提出 VICON，一种用于操作数据集的手部与物体跟踪框架，旨在严重遮挡下同步捕获手物运动、接触点和法向力。系统结合视觉惯性手套、RGB-D 相机及基于抓握频率布置的力敏电阻，并通过单目视频重建网格估计物体位姿，无需已有 CAD 模型。因子图融合按可见度加权的位姿估计、传感器测量和手部运动先验。作者报告，在 40 次、涉及五种物体的动捕会话中，失败帧率及遮挡条件下的中位误差优于基线，并据此构建同步数据集。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3554,7 +3558,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) couple action generation with future visual prediction for robotic manipulation. However, completing the joint video-action denoising process at each replanning cycle incurs substantial latency, delaying action updates and limiting closed-loop responsiveness.\n\nWe present Rolling-WAM, a formulation that distributes joint denoising across successive replanning cycles. Our method maintains a sliding window of video-action chunks at staggered noise levels. At each step, a rolling noise schedule fully denoises the imminent action chunk for execution, while partially refining farther-future chunks.\n\nAs the window advances with new camera observations, the retained future chunks continue their denoising process. This distributes the computational cost over time while carrying an evolving visual-action context across chunk boundaries.\n\nEvaluations on LIBERO, RoboTwin, and a real-world Unitree G1 humanoid show that Rolling-WAM achieves competitive manipulation performance. By removing the need to denoise the entire prediction horizon from scratch, it delivers a 4.5x steady-state replanning speedup over standard joint WAMs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Rolling-WAM distributes joint video-action denoising across successive replanning cycles to reduce the latency of denoising an entire prediction horizon anew at every cycle. It maintains a sliding window of chunks at staggered noise levels: the imminent action chunk is fully denoised for execution, while farther-future chunks are partially refined. As new camera observations arrive, retained chunks continue to be refined. Evaluations on LIBERO, RoboTwin, and a real Unitree G1 humanoid show competitive manipulation performance and a reported 4.5-fold steady-state replanning speedup over standard joint WAMs.",
+          "zh": "论文提出 Rolling-WAM，通过在连续重规划周期中分配联合视频与动作去噪，降低每轮从头完成整个预测时域去噪造成的延迟。方法维护处于不同噪声水平的滑动窗口：当前动作片段被完全去噪以供执行，较远未来片段则逐步细化；窗口随新相机观测推进，并保留片段间演进的视觉动作上下文。作者在 LIBERO、RoboTwin 和 Unitree G1 实机上评估，报告其操作表现具有竞争力，稳态重规划速度较标准联合 WAM 提升 4.5 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3585,7 +3593,11 @@
             "heading": "",
             "text": "Emergency obstacle avoidance requires a mobile robot to brake or change its heading within the available distance. This paper investigates the dependence of maneuver performance and odometric error on approach speed for a differential-drive robot.\n\nA footprint-clearance analysis and a normalized wheel-motion index provide a kinematic description of five braking and turning maneuvers. The principal experiment comprises 540 block-randomized trials on tile, of which 539 are retained, at commanded approach speeds of 45, 55, and 65 cm/s. An overhead camera provides an independent pose reference.\n\nWhen encoder, gyro, and camera heading changes are evaluated over complete motion records, the mean encoder discrepancy increases by 4.7-5.1 degrees for the two reverse-spin maneuvers between the lowest and highest speeds; the arc and brake-assisted pivot change by less than 0.4 degrees.\n\nLarger encoder discrepancy is associated with lower avoidance success after adjustment for distance, speed, maneuver, day, and turn direction. Gyro discrepancies remain approximately 3 degrees for the reverse spins. Estimated reaction distances for 90% success and their uncertainty quantify the maneuver trade-offs.\n\nThe results support speed-specific empirical characterization of emergency maneuvers and distinguish encoder error from recovery motion and measurement-window mismatch."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies how approach speed relates to emergency avoidance performance and odometric error in a differential-drive robot. It describes five braking and turning maneuvers using footprint clearance and a normalized wheel-motion index. The main experiment retained 539 randomized trials on tile at commanded speeds of 45, 55, and 65 cm/s, with an overhead camera as an independent pose reference. Encoder discrepancies increased with speed for two reverse-spin maneuvers but changed little for the arc and brake-assisted pivot. Larger discrepancies were associated with lower avoidance success after adjustment for specified factors.",
+          "zh": "论文研究差速移动机器人在不同接近速度下的紧急避障表现与里程计误差，并以占地间隙分析和归一化轮运动指标描述五种制动、转向动作。主要实验在瓷砖地面进行，共保留 539 次随机区组试验，速度为 45、55 和 65 cm/s，并用俯视相机提供独立位姿参考。完整运动记录显示，两种反向旋转动作的编码器角度差异随速度增加，而弧线和制动辅助枢转变化较小；较大编码器差异与较低避障成功率相关。作者据此支持按速度进行经验表征，并区分编码器误差、恢复运动和测量窗口不匹配。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3616,7 +3628,11 @@
             "heading": "",
             "text": "Designing effective reward functions in RL typically requires substantial expertise and trial and error. Recent work automates this process with LLM-based systems that generate and iteratively improve reward code using policy feedback.\n\nHowever, these methods are often hard to compare because they differ in implementation details, feedback assumptions, and evaluation environments. To address this, we introduce a Benchmark for Iterative Reward Design (BIRD) that expresses existing methods in a unified configuration and evaluation space.\n\nThis lets us compare algorithms directly, ablate individual design choices, and prototype new components under matched feedback conditions and policy-training budgets. Across MuJoCo, Meta-World, Assistax, and HumanoidBench, we identify a small set of simple design choices that consistently improve performance.\n\nCombining these choices yields significantly better performance than the evaluated methods from prior work. Our results highlight the strength of simple baselines and motivate further study of when additional algorithmic complexity improves iterative reward design. Code is available at https://github.com/safety-research/bird."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces BIRD, a benchmark that places iterative reward-design methods in a unified configuration and evaluation space. These methods use policy feedback to generate and improve reward code, but differences in implementation, feedback assumptions, and environments make comparisons difficult. BIRD supports direct comparisons, ablations, and component prototyping under matched feedback conditions and policy-training budgets. Across MuJoCo, Meta-World, Assistax, and HumanoidBench, the authors report that a small set of simple design choices consistently improves performance, and that combining them outperforms the evaluated prior methods.",
+          "zh": "论文介绍 BIRD 基准，用统一的配置与评估空间比较基于大语言模型的迭代奖励设计方法。这些方法通过策略反馈生成并改进强化学习奖励代码，但实现细节、反馈假设和评测环境差异使比较困难。BIRD 支持在匹配的反馈条件和策略训练预算下直接比较算法、消融设计选择及试验新组件。作者在 MuJoCo、Meta-World、Assistax 和 HumanoidBench 上发现，一组简单设计选择能稳定提升表现；组合这些选择后，结果显著优于所评估的既有方法，并强调简单基线的价值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
