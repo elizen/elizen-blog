@@ -2339,7 +2339,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models increasingly rely on diffusion- or flow-matching-based action heads to generate continuous robot actions. These action heads typically process the denoising trajectory in a largely uniform manner.\n\nHowever, we observe that the conditioning focus naturally shifts across denoising stages: early stages combine language instructions and visual observations to establish a coarse action trajectory, whereas later stages place greater emphasis on current visual observations for action alignment.\n\nBased on this insight, we introduce StairVLA, a stage-aware hierarchical action generation framework that uses partially denoised actions as a natural interface between coarse long-horizon action generation and local refinement.\n\nA high-level VLA performs early denoising to produce a reusable long-horizon partially denoised action trajectory, while a lightweight refiner operates at a higher frequency to refine local action chunks using the latest observations. This design amortizes expensive high-level VLA computation while preserving frequent closed-loop correction.\n\nOn LIBERO, our GR00T-style instantiation improves average success from 96.5% to 97.8% while reducing amortized inference latency from 115.0 ms to 44.2 ms per action chunk. More broadly, across two VLA backbones, simulation benchmarks, and real-robot tasks, StairVLA consistently reduces inference cost while maintaining strong task performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces StairVLA, a stage-aware hierarchical action generation framework for vision-language-action models. The authors observe that early denoising combines language and vision to form coarse trajectories, while later stages emphasize current visual observations for alignment. A high-level model produces a reusable, partially denoised long-horizon trajectory, and a lightweight refiner updates local chunks using recent observations. On LIBERO, a GR00T-style implementation raises average success from 96.5% to 97.8% and lowers amortized latency from 115.0 ms to 44.2 ms per chunk. The authors also report reduced inference cost with strong performance across simulations and real-robot tasks.",
+          "zh": "论文提出 StairVLA，一种面向视觉语言动作模型的阶段感知分层动作生成框架。作者观察到，去噪早期侧重结合语言指令与视觉观测形成粗略轨迹，后期则更关注当前视觉观测以对齐动作。高层模型生成长时程的部分去噪轨迹，轻量精炼器依据最新观测高频修正局部动作片段。在 LIBERO 上，GR00T 风格实现将平均成功率从 96.5% 提高到 97.8%，并将摊销推理延迟从每个动作片段 115.0 毫秒降至 44.2 毫秒。作者还报告称，该方法在两种模型骨干、仿真基准和真实机器人任务中降低推理成本，同时保持较强任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2370,7 +2374,11 @@
             "heading": "",
             "text": "Automated Guided Vehicle (AGV) fleets in production and logistics environments rely on a system-wide emergency stop to handle local anomalies such as malfunctions, hazards, or contaminated areas. While safe, this approach halts the entire fleet even when only a small area is affected, causing unnecessary downtime.\n\nThis paper proposes dead zones --- a formally defined localized isolation approach that serves as an additional fail-operational mechanism for situations where a full system-wide halt is not strictly needed. Rather than shutting down the entire fleet, a dead zone isolates the anomalous area, allowing unaffected robots to continue operating normally.\n\nWe introduce two operational strategies: basic dead zone handling, in which affected robots enter a dead zone and stop, and dead zone handling with escaping, in which robots that are sufficiently far from a dead zone reroute around it.\n\nFor escaping on counterclockwise trajectories we prove collision-freedom with a bounded arrival delay for all escaping robots, provided a minimum pairwise separation is kept between robots.\n\nExperimental evaluation confirms the theoretical guarantees and characterizes the throughput tradeoffs between all three approaches: full emergency stop, basic dead zone handling, and dead zone handling with escaping."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes dead zones as a formally defined way to isolate anomalous areas in automated guided vehicle fleets, allowing unaffected robots to continue instead of stopping the whole fleet. It describes two strategies: affected robots stop inside a dead zone, or robots sufficiently far away reroute around it. For escaping robots on counterclockwise trajectories, the authors prove collision freedom and bounded arrival delay, assuming a minimum pairwise separation. Experimental evaluation is reported to confirm the theoretical guarantees and characterize throughput tradeoffs among a fleet-wide emergency stop and the two dead-zone strategies.",
+          "zh": "论文提出用于自动导引车车队的“死区”机制，以局部隔离异常区域，避免仅有小范围受影响时仍全队紧急停止，使未受影响的机器人继续运行。作者定义了两种策略：受影响机器人进入死区并停止；以及距离足够远的机器人绕行死区。对于逆时针轨迹下的绕行策略，论文证明在机器人保持最低两两间距的条件下，所有绕行机器人均无碰撞，且到达延迟有界。实验评估称验证了理论保证，并比较了全队急停、基本死区处理和带绕行死区处理三种方式的吞吐量权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2401,7 +2409,11 @@
             "heading": "",
             "text": "We present RACER, a hierarchical control framework for wheel-based quadruped racing that combines an MPPI planner with a learned residual dynamics model and a low-level RL velocity tracker. The planner augments a nominal unicycle kinematic model with a neural residual term to capture the closed-loop tracking behavior of the RL policy.\n\nTo train this residual model under limited real-world data, we propose Low-Rank Residual Adaptation (LoRRA), a two-stage approach that pre-trains on large-scale simulation data for broad coverage and then fine-tunes on a small real-world dataset with a low-rank constraint.\n\nIn simulation, we empirically validate our engineering choices by showing (A) Residual dynamics improve the overall performance of our pipeline by capturing the tracking error of RL velocity tracker at high-speed cornering. (B) Residual dynamics trained with both source-domain and target-domain data gives racing performance significantly better than the residual dynamics trained with only target-domain data. (C) Low-rank constraint at target-domain adaptation gives higher success rates and higher performance than full-tune and from-scratch when domain gap in ground coefficient or joint gain increases."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RACER, a hierarchical framework for wheel-based quadruped racing that combines an MPPI planner, a learned residual dynamics model, and a low-level reinforcement-learning velocity tracker. The planner adds a neural residual to a nominal unicycle model to represent closed-loop tracking behavior. To train with limited real-world data, LoRRA pre-trains on large-scale simulation data and then fine-tunes on a small real-world dataset under a low-rank constraint. In simulation, the authors report that residual dynamics capture tracking errors in high-speed cornering, combined source- and target-domain training outperforms target-only training, and low-rank adaptation achieves higher success and performance than full fine-tuning or training from scratch as specified domain gaps increase.",
+          "zh": "论文介绍 RACER，一种用于轮式四足机器人竞速的分层控制框架，结合 MPPI 规划器、学习得到的残差动力学模型和低层强化学习速度跟踪器。规划器在标称独轮车运动学模型上加入神经残差项，以刻画速度跟踪策略的闭环行为。为在真实数据有限时训练残差模型，作者提出 LoRRA：先用大规模仿真数据预训练，再以低秩约束在少量真实数据上微调。仿真验证显示，残差模型可捕捉高速转弯时的跟踪误差；结合源域和目标域数据优于仅用目标域数据；目标域低秩适配在地面系数或关节增益差异增大时，比全量微调和从头训练有更高成功率和表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2432,7 +2444,11 @@
             "heading": "",
             "text": "Teleoperation serves as the fallback solution to autonomous driving but reliable functions of the teleoperation require a certain amount of mobile network resources, which cannot be guaranteed at all times. Therefore, predictive quality of service (pQoS) is introduced as a concept to increase the resilience of the teleoperation.\n\nIn this paper, based on a data measurement campaign, we propose a prediction framework to prediction two important network KPIs of teleoperation: uplink data-rate and round-trip latency.\n\nFurthermore, we introduce a method to alleviate the performance degradation of machine-learning-based prediction models on previously unseen data due to concept drift by incorporating historic data into the prediction pipeline.\n\nAdditionally, we introduce the metric of critical scenario detection to evaluate the prediction performance specifically for teleoperation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses mobile-network quality-of-service prediction for vehicle teleoperation, which serves as a fallback for autonomous driving but depends on network resources that may not always be available. Based on a data measurement campaign, the authors propose a framework to predict two teleoperation network indicators: uplink data rate and round-trip latency. They also introduce a method that incorporates historical data into the prediction pipeline to mitigate machine-learning performance degradation on previously unseen data caused by concept drift. A critical-scenario detection metric is proposed to assess prediction performance specifically for teleoperation.",
+          "zh": "论文关注自动驾驶车辆远程操控所依赖的移动网络服务质量预测。远程操控可作为自动驾驶的后备方案，但所需网络资源并非始终有保障，因此作者采用预测服务质量来增强其韧性。基于一项数据测量活动，论文提出预测框架，用于预测远程操控的两个网络关键指标：上行数据速率和往返时延。作者还提出将历史数据纳入预测流程，以减轻机器学习模型因概念漂移而在未见数据上出现的性能下降，并引入“关键场景检测”指标，专门评估面向远程操控的预测表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
