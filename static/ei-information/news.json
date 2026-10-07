@@ -3563,7 +3563,11 @@
             "heading": "",
             "text": "Task-conditioned manipulation requires grounding instructions to task-relevant functional parts rather than object categories.\n\nThis setting is scene-dependent and often one-to-many in cluttered scenes: the same object may afford different interactions across tasks, while a single task may correspond to either one functional region or multiple valid functional regions, depending on the scene layout.\n\nExisting affordance datasets and benchmarks remain misaligned with this setting, as they typically focus on grasping or object-level affordances, rely on synthetic scenes, or assume a single instruction-region correspondence.\n\nWe present Affordance2Action (A2A), a benchmark-centered learning framework for scene-level, task-conditioned part affordance grounding.\n\nAt its core is A2A-Bench, a manipulation-oriented benchmark that covers both single-region and multi-region instruction correspondences in everyday scenes, with the latter highlighting the ambiguity and diversity of affordance grounding in realistic multi-object environments.\n\nTo construct it at scale, we build A2A-AffordGen, an agent-assisted annotation pipeline that combines language-model filtering, interactive part segmentation, instance-level mask-out refinement, task-reasoning instruction generation, and human verification.\n\nA2A-Bench's supervision further supports diverse downstream applications, with real-time affordance grounding and affordance-conditioned manipulation policies as two representative examples.\n\nExperiments show that A2A exposes substantial gaps in generic segmentation, VLM-based grounding, and affordance distillation baselines, while improving task-level localization and providing useful spatial priors for downstream manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Affordance2Action (A2A), a framework and benchmark for grounding task instructions in one or multiple functional regions in everyday scenes. Its A2A-AffordGen annotation pipeline combines language-model filtering, interactive part segmentation, instance-mask refinement, task-reasoning instruction generation, and human verification. The authors report that experiments expose gaps in generic segmentation, vision-language grounding, and affordance-distillation baselines. They also report improved task-level localization and useful spatial priors for downstream manipulation.",
+          "zh": "论文提出 Affordance2Action（A2A），用于在日常场景中依据任务指令定位一个或多个具有功能的区域，并构建相应基准 A2A-Bench。其辅助标注流程 A2A-AffordGen 结合语言模型筛选、交互式部件分割、实例掩码细化、任务推理式指令生成和人工核验。摘要称，实验显示通用分割、视觉语言模型定位及 affordance 蒸馏基线存在明显差距；该框架提升了任务级定位，并为下游操作提供空间先验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3594,7 +3598,11 @@
             "heading": "",
             "text": "World-action models (WAMs) such as Cosmos 3 jointly generate future video and robot actions from an observation and instruction.\n\nAdapting one such model with a lightweight LoRA fine-tune to a previously unseen robot, a Unitree G1 humanoid with five-fingered BrainCo hands, exposes a video-action asymmetry: the video renders plausible task executions, while the co-generated action is systematically mis-targeted.\n\nWe evaluate closed-loop real-robot trials at three cumulative stages: pre-grasp, grasp, and pick-and-place. The native action succeeds only approximately 17%, 10%, and 7% of the time, respectively, and performs worse on held-out objects.\n\nWe propose AutodidactWAM, a hand-pose estimator trained without teleoperation, followed by inverse kinematics, that runs on the model's generated video to recover action estimates. Paired with the native prediction, these recovered actions provide preferred targets for fine-tuning only the action-related layers, while the generated video is teacher-forced.\n\nWe compare supervised relabeling with a rectified-flow adaptation of Diffusion-DPO. After one-time embodiment adaptation, self-distillation requires no additional task-specific teleoperation. The recovered-action gate reaches approximately 75%, 47%, and 42% pre-grasp, grasp, and pick-and-place success, compared with 17%, 10%, and 7% for the native action.\n\nA hybrid objective combining preference supervision, supervised target fitting, and Cartesian trajectory anchoring (DPO+SFT+DTW) performs best: on Oreo, the training object, it reaches 90% pre-grasp and 20% full-task success; on a held-out object, it reaches 80% and 30%.\n\nPlain Flow-DPO reaches 0% success despite 1.000 validation preference accuracy, indicating that the combination of training objectives, rather than the contrastive objective alone, drives the observed gains."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies a video-action asymmetry after adapting a world-action model to a previously unseen Unitree G1: generated videos look plausible, while predicted actions are often mis-targeted. AutodidactWAM estimates hand poses from generated video and uses inverse kinematics to recover action targets for fine-tuning, without additional task-specific teleoperation. In closed-loop real-robot trials, the authors report higher success with the recovered-action gate. A hybrid objective combining preference supervision, target fitting, and trajectory anchoring performs best in the reported object settings.",
+          "zh": "论文研究将世界-动作模型迁移到此前未见的 Unitree G1 人形机器人后出现的视频与动作不对称：生成视频看似合理，但动作定位常有偏差。作者提出 AutodidactWAM，从模型生成视频估计手部姿态并经逆运动学恢复动作，再用恢复动作作为微调目标，无需额外任务专属遥操作。真实机器人闭环试验中，作者报告恢复动作门控提升各阶段成功率；结合偏好监督、目标拟合与轨迹锚定的混合目标表现最佳。结果仅涵盖所述机器人、任务和物体设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3625,7 +3633,11 @@
             "heading": "",
             "text": "Flow policies have become a standard policy class for learning robot behaviors from demonstrations, but reinforcement learning is still critical for improving pre-trained flow policies or learning them from scratch through interaction.\n\nWe introduce QF3 (Fast Flow RL with Filtered Q-Gradients), an online off-policy RL algorithm that trains a flow policy with flow matching plus the critic's action gradient, backpropagated through a one-step prediction of the flow's output.\n\nTo keep updates where the critic and this prediction are reliable, QF3 applies the critic gradient only to action dimensions that stay near the replay action. To our knowledge, QF3 is the first off-policy flow RL method to train humanoid locomotion policies from scratch and transfer them zero-shot to hardware.\n\nPaired with a high-throughput off-policy training recipe, it trains humanoid locomotion and motion-tracking policies with a 10x wall-clock speedup over FPO++, a recent on-policy flow RL method. We further apply QF3 to fine-tune pretrained flow-based manipulation policies on both ABC-Sim and Robomimic tasks.\n\nThese results suggest that QF3 can both learn robot policies from scratch and refine those acquired from demonstrations. Website: https://qf3-rl.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces QF3, an online off-policy reinforcement-learning algorithm for flow policies. It combines flow matching with the critic's action gradient, propagated through a one-step prediction of the flow output, and applies that gradient only to action dimensions near the replay action. The authors report training humanoid locomotion policies from scratch and transferring them zero-shot to hardware. With a high-throughput recipe, locomotion and motion-tracking training is reported to be ten times faster than FPO++. QF3 is also applied to fine-tune pretrained manipulation policies on ABC-Sim and Robomimic tasks.",
+          "zh": "论文提出 QF3，一种在线离策略强化学习算法，通过流匹配训练流策略，并将评论家对动作的梯度反向传播至流输出的一步预测。为限制不可靠更新，算法只对接近回放动作的动作维度应用评论家梯度。作者称，QF3 可从零训练人形机器人运动策略并零样本迁移至硬件；配合高吞吐训练方案，其运动及动作跟踪策略的墙钟训练速度比 FPO++ 快十倍。论文还报告在 ABC-Sim 和 Robomimic 任务上微调预训练操作策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3656,7 +3668,11 @@
             "heading": "",
             "text": "Can changing only the language instruction redirect a VLA policy's end effector, or does the visually driven motion prior dominate? We present Atomic Motion Coordinate, a geometry-grounded coordinate for steerable and force-responsive manipulation.\n\nEach arm owns thirteen signed translation, rotation, and hold atoms grounded from text and forward kinematics with vision withheld, and the coordinate is injected into every action-expert block via weighted codebook alignment.\n\nContact history modulates the same coordinate through a bounded spherical residual that is recomputed from a fixed nominal latent to regenerate only the unexecuted horizon suffix. Across 7,520 offline horizon interventions, opposite-atom separation reaches 92.5/83.1% (single/dual) versus 39.1/24.0% for LA4VLA-style.\n\nAcross 50 real-robot trials per task, AMC raises OOD fruit progress from 60.5% to 87.8%; force adaptation raises Plug/Vase from 59.0/71.5% to 78.5/75.2%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Atomic Motion Coordinate (AMC), a geometry-grounded representation for language-steerable, force-responsive manipulation. Each arm uses thirteen signed translation, rotation, and hold atoms grounded from text and forward kinematics without vision; weighted codebook alignment injects the coordinate into action-expert blocks. Contact history modulates it with a bounded spherical residual, recomputing only the unexecuted horizon suffix from a fixed nominal latent. The authors report offline horizon-intervention separation results and real-robot trial outcomes for out-of-distribution fruit progress and force adaptation on plug and vase tasks.",
+          "zh": "论文提出 Atomic Motion Coordinate（AMC），一种用于语言可控、力响应操作的几何坐标表示。每条机械臂有十三种带符号的平移、旋转和保持原子，依据文本与正向运动学构建，且不使用视觉；该坐标通过加权码本对齐注入动作专家模块。接触历史则通过有界球面残差调节同一坐标，并从固定名义潜变量重新生成尚未执行的动作时域后缀。作者报告了离线时域干预中的原子分离结果，以及每项任务 50 次真实机器人试验中的水果操作进度和插头、花瓶力适应结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
