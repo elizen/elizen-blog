@@ -1079,7 +1079,11 @@
             "heading": "",
             "text": "Despite advances in reinforcement and imitation learning, achieving both precise control and dynamic whole-body behaviors in long-horizon tasks remains challenging. Existing approaches typically follow two paradigms: coupled whole-body policies for global coordination and decoupled policies for modular precision.\n\nHowever, effectively combining these two types of controllers to achieve agility, robustness, and precision remains challenging. In this work, we propose BAT, an online policyswitching framework that dynamically selects between coupled and decoupled whole-body RL generalist controllers according to the evolving motion context.\n\nBAT employs two complementary switching predictors: OpVQ-VAE provides motion-token-based predictions with strong generalization, while OpHRL provides closed-loop, state-aware predictions.\n\nA Token-Familiarity Router (TFR) selects between their predictions, favoring OpHRL for familiar token sequences and OpVQ-VAE for unfamiliar ones when their predictions disagree. BAT achieves 85.2% success on seen long-horizon motion combinations, while retaining 71.3% success on unseen motions.\n\nBAT also outperforms existing whole-body controllers on individual motions and demonstrates successful zero-shot deployment on the Unitree G1 humanoid."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BAT, an online policy-switching framework that chooses between coupled and decoupled whole-body reinforcement-learning controllers based on motion context. It combines motion-token predictions from OpVQ-VAE with closed-loop, state-aware predictions from OpHRL, using a token-familiarity router when predictions disagree. The authors report 85.2% success on seen long-horizon motion combinations and 71.3% on unseen motions, and state that BAT outperforms existing whole-body controllers on individual motions and was deployed zero-shot on a Unitree G1.",
+          "zh": "论文提出 BAT 在线策略切换框架，根据运动情境在耦合式与解耦式全身强化学习控制器之间动态选择。框架结合 OpVQ-VAE 的运动 token 预测与 OpHRL 的闭环状态感知预测，并由 token 熟悉度路由器在预测不一致时选择其一。作者报告，BAT 在已见长时序动作组合上的成功率为 85.2%，未见动作上为 71.3%，并称其在单项动作上优于现有全身控制器，且在 Unitree G1 上实现零样本部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1110,7 +1114,11 @@
             "heading": "",
             "text": "This paper presents a hierarchical density-based model predictive control framework for safe collaborative manipulation by multiple quadrupedal robots. The framework enables a team of robots to push a shared object to a desired pose using only the initial and goal poses, without requiring a precomputed reference trajectory.\n\nA centralized box-level MPC optimizes contact forces while enforcing a control-density constraint for goal convergence and obstacle avoidance.\n\nEach robot then solves its own distributed robot-level whole-body MPC, under a stated shared-information assumption, to track its moving contact location while accounting for static obstacles and the time-varying positions of neighboring robots.\n\nThe approach is evaluated in MuJoCo using whole-body contact dynamics for two and three Unitree Go2 quadrupeds collaboratively pushing rigid objects through narrow passages.\n\nComparisons with matched Control Barrier Function and RRT* based tracking baselines demonstrate the effectiveness of the proposed density-based formulation for push-only, force- and torque-coupled manipulation tasks. Implementation videos are available at https://jaggu2606.github.io/go2-density-mpc-pushing/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a hierarchical, density-based model predictive control framework for teams of quadrupedal robots pushing a rigid object to a target pose without a precomputed reference trajectory. A centralized object-level controller optimizes contact forces while enforcing a density constraint for goal convergence and obstacle avoidance. Each robot then uses distributed whole-body MPC to track its moving contact location while accounting for static obstacles and neighboring robots. The approach is evaluated in MuJoCo with two and three Unitree Go2 robots pushing objects through narrow passages, and compared with matched control-barrier-function and RRT* tracking baselines.",
+          "zh": "论文提出一种分层、基于密度函数的模型预测控制框架，用于多台四足机器人协作推动刚性物体至目标位姿，无需预先计算参考轨迹。集中式物体级控制器优化接触力，并通过控制密度约束处理目标收敛与避障；各机器人再以分布式全身控制跟踪移动接触位置，并考虑静态障碍物和邻近机器人的位置。在 MuJoCo 中，作者评估了两台和三台 Unitree Go2 通过狭窄通道推物体的情形，并与匹配的控制障碍函数及 RRT* 跟踪基线比较。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1141,7 +1149,11 @@
             "heading": "",
             "text": "We consider obstacle localization for a team of robots cooperatively transporting a rigid payload without explicit inter-robot communication. A leader robot directs the payload's motion, while follower robots assist and react to locally detected obstacles.\n\nThe leader measures the followers' aggregate wrench, i.e., the combined force and torque they exert on the payload, but cannot directly distinguish their individual reactions. We design a follower control law that allows the leader to recover obstacle locations from these measurements.\n\nEach follower resists motion toward nearby obstacles, resulting in a piecewise-linear relationship between the payload's translational and angular velocity and the aggregate wrench. Changes between adjacent linear regions reveal an obstacle's bearing and distance and identify the responding follower.\n\nWe give sufficient conditions for exact recovery at a fixed payload configuration and develop an adaptive probing procedure in which the leader applies translational and rotational inputs to the payload to obtain the required measurements. We demonstrate the performance of the proposed method in simulations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies obstacle localization for robots transporting a rigid payload without explicit inter-robot communication. A leader measures the followers’ aggregate force and torque on the payload but cannot distinguish their individual reactions. The proposed follower control law resists motion toward nearby obstacles, creating a piecewise-linear relation between payload velocity and aggregate wrench. Changes between adjacent linear regions reveal obstacle bearing and distance and identify the responding follower. The authors provide sufficient conditions for exact recovery at a fixed payload configuration, develop an adaptive probing procedure, and demonstrate performance in simulations.",
+          "zh": "论文研究在无显式机器人间通信时，如何根据领导机器人测得的从机器人合计力和力矩定位障碍物。作者设计从机器人控制律，使其抵抗朝向附近障碍物的运动；由此，载荷平移和转动速度与合计力和力矩呈分段线性关系。相邻线性区域的变化可揭示障碍物方位和距离，并识别作出反应的从机器人。论文给出固定载荷构型下精确恢复的充分条件，并提出领导机器人施加平移和转动输入的自适应探测过程，性能通过仿真展示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1172,7 +1184,11 @@
             "heading": "",
             "text": "**Context:** Deep Neural Networks (DNNs) increasingly control Cyber-Physical Systems (CPSs), yet small input perturbations can cause unsafe system-level behavior.\n\nExisting approaches often optimize perturbations for individual images and evaluate them only in simulation, limiting their generalizability and practical validity. **Objectives:** This work aims to generate robustness tests that remain effective across operational observations and to evaluate whether the resulting failures transfer from simulation to a physical robot. **Methods:** We propose an explainability-guided multi-objective evolutionary approach that generates sparse perturbations over representative images selected through visual and behavioral clustering.\n\nAggregated Integrated Gradients guide mutations toward influential image regions.\n\nWe evaluate the approach on a DNN-controlled LeoRover in Gazebo, conduct an ablation study, and validate a stratified subset of perturbations on the physical robot. **Results:** The approach achieved a median success rate of 70.0%, compared with 53.85% for unguided search, and increased median hypervolume from 0.65 to 0.73.\n\nMulti-image optimization improved the success rate from 50.0% to 57.5%, while XAI guidance further increased it to 70.0%.\n\nIn the sim-to-real evaluation, simulation achieved 0.95 precision and 0.67 recall, and simulated and physical failure times showed a significant positive correlation of 0.617. **Conclusion:** Combining multi-image optimization with explainability-guided search improves robustness testing for DNN-controlled robotic systems.\n\nSimulation effectively identifies and prioritizes transferable failures, but physical validation remains necessary because some real-world failures are not reproduced in simulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an explainability-guided, multi-objective evolutionary search to generate sparse perturbation tests for DNN-controlled robotic navigation across operational observations. It selects representative images through visual and behavioral clustering and uses aggregated Integrated Gradients to guide mutations toward influential regions. The approach is evaluated on a LeoRover in Gazebo, with a stratified subset of perturbations also validated on the physical robot. The authors report a median success rate of 70.0%, versus 53.85% for unguided search, and simulation precision and recall of 0.95 and 0.67. They state that physical validation remains necessary.",
+          "zh": "论文提出结合可解释性引导与多目标进化搜索的方法，为 DNN 控制的机器人导航系统生成可跨运行观测的稀疏扰动测试。方法依据视觉与行为聚类选取代表性图像，并用聚合积分梯度引导搜索修改有影响的图像区域。作者在 Gazebo 中评估 LeoRover，并在实体机器人上验证分层抽取的扰动子集。报告的中位成功率为 70.0%，无引导搜索为 53.85%；仿真达到 0.95 精确率和 0.67 召回率。作者称仿真有助于筛选可迁移故障，但仍需实体验证，因为部分现实故障未在仿真中重现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
