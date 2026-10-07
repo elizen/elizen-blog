@@ -443,7 +443,11 @@
             "heading": "",
             "text": "This paper presents sparse calibration-based personalization for kernel-based gait phase and walking speed co-estimation from wearable inertial measurement units (IMUs).A 28-speed reference library was constructed from bilateral thigh and shank trajectories in a 20-subject locomotion dataset.\n\nRather than directly applying population-average kernels, the method combines a user-specific baseline estimated from three calibration speeds with a principal-component (PC) model of baseline-centered kinematic deviations. Offline validation showed that personalized kernels reduced phase error relative to the population kernel.\n\nIn a single-participant online pilot evaluation, the personalized kernels produced numerically lower mean phase and speed errors and ran in real time on embedded hardware. However, the speed effect was not significant, and pairwise phase differences did not remain significant after multiple-comparison correction.\n\nThe pilot evaluation establishes wearable implementation feasibility while indicating reference-to-online dataset mismatch and the need for larger-cohort validation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents sparse calibration-based personalization for estimating gait phase and walking speed from wearable IMUs. It estimates a user-specific baseline from three calibration speeds and models baseline-centered kinematic deviations with principal components. Offline validation found lower phase error than with a population kernel. In a single-participant online pilot, personalized kernels had numerically lower mean phase and speed errors and ran in real time on embedded hardware. The speed effect was not significant, and phase differences did not remain significant after multiple-comparison correction. The authors note dataset mismatch and the need for larger-cohort validation.",
+          "zh": "论文提出一种基于稀疏校准的个性化方法，用可穿戴惯性测量单元同时估计步态相位和行走速度。方法以三种校准速度估计个人基线，并结合基线中心化运动学偏差的主成分模型。离线验证显示，个性化核的相位误差低于总体核。单参与者在线试点中，相位和速度平均误差数值较低，并可在嵌入式硬件实时运行；但速度效果不显著，经过多重比较校正后相位差异也未保持显著。作者指出数据集不匹配，并认为仍需更大队列验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -474,7 +478,11 @@
             "heading": "",
             "text": "Imitation learning, also known as learning from demonstrations, is a popular approach to train AI models; however, the vulnerability of these models to adversarial attacks remains underexplored.\n\nWe present the first systematic study of adversarial attacks, across a range of both classic and recently proposed imitation learning algorithms, including Vanilla Behavior Cloning (Vanilla BC), LSTM-GMM, Implicit Behavior Cloning (IBC), Diffusion Policy (DP), and Vector-Quantized Behavior Transformer (VQ-BET).\n\nWe study the vulnerability of these methods to white-box, grey-box and black-box adversarial perturbations. Our experiments reveal that most existing methods are highly vulnerable to these attacks, including black-box transfer attacks that transfer across algorithms.\n\nWhite-box attacks cause at least a 65% reduction in average task success across all evaluated tasks and algorithms, while the black-box transfer attacks reduce task success by up to 88% on Lift, 99% on Can, and 100% on Square.\n\nTo the best of our knowledge, we are the first to study and compare the vulnerabilities of different popular imitation learning algorithms to both white-box and black-box attacks. Our findings highlight the vulnerabilities of modern imitation learning algorithms, paving the way for future work in addressing such limitations.\n\nVideos and code are available at https://sites.google.com/view/uap-attacks-on-bc."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper systematically studies adversarial vulnerabilities across several imitation learning methods, including Vanilla BC, LSTM-GMM, IBC, Diffusion Policy, and VQ-BET. It evaluates white-box, grey-box, and black-box perturbations. Experiments show that most evaluated methods are highly vulnerable, including to black-box transfer attacks across algorithms. White-box attacks reduce average task success by at least 65% across all evaluated tasks and algorithms. Black-box transfer attacks reduce success by up to 88% on Lift, 99% on Can, and 100% on Square. The authors describe this as the first comparison of these vulnerabilities across popular methods.",
+          "zh": "论文系统比较多种模仿学习策略对对抗扰动的脆弱性，涵盖白盒、灰盒和黑盒攻击，以及 Vanilla BC、LSTM-GMM、IBC、Diffusion Policy 和 VQ-BET。实验显示，多数受评估方法容易受到攻击，包括跨算法迁移的黑盒攻击。白盒攻击在所有评估任务和算法中使平均任务成功率至少下降65%；黑盒迁移攻击在 Lift、Can 和 Square 任务中的成功率降幅分别最高达88%、99%和100%。作者称这是对这些常用策略相关脆弱性的首次研究和比较。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -505,7 +513,11 @@
             "heading": "",
             "text": "Human--robot co-transportation of deformable objects requires predicting object deformation during motion, since obstacle clearance depends on both the grasp points and the unactuated interior. We present a hierarchical planning framework that combines a learned cloth model with a reduced-order whole-body model of a dual-arm mobile manipulator.\n\nA physics-residual conditional recurrent variational autoencoder (p-cRVAE) predicts the full cloth configuration from grasp-point observations by learning a residual correction to a computationally efficient linearized physics model, limiting error accumulation over 40-step planning horizon.\n\nThe predicted cloth dynamics are embedded in a model predictive path integral (MPPI) planner using a reduced-order representation of a dual-arm mobile manipulator that preserves the non-holonomic base constraint and arm workspace limits. An MPC layer subsequently refines the sampled motion into smooth, executable references for whole-body control.\n\nThe reduced-order formulation achieves tracking performance comparable to the full 17-DoF model while reducing computation time by approximately 80%.\n\nAcross four co-transportation scenarios and two carrying speeds, the proposed framework maintains cloth-obstacle clearance where a corner-following baseline results in collisions, while whole-body refinement reduces final cloth deformation from 0.93\\,m to 0.28\\,m."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes hierarchical planning for human-robot cloth co-transport, combining a learned cloth model with a reduced-order whole-body model of a dual-arm mobile manipulator. A physics-residual recurrent variational autoencoder predicts cloth configuration from grasp-point observations, and its predictions feed an MPPI planner followed by MPC refinement. The authors report tracking comparable to a full 17-DoF model with about 80% less computation time. Across four scenarios and two carrying speeds, the framework maintained cloth-obstacle clearance where a corner-following baseline collided; whole-body refinement also reduced final cloth deformation.",
+          "zh": "论文提出用于人机协同搬运布料的分层规划框架，将学习得到的布料模型与双臂移动操作机器人的降阶全身模型结合。物理残差条件循环变分自编码器根据抓取点观测预测布料构型，并修正线性化物理模型；预测结果进入模型预测路径积分规划器，再由模型预测控制层细化运动。作者报告，降阶模型的跟踪表现与17自由度模型相当，计算时间约减少80%。在四种场景和两种搬运速度下，该框架保持布料与障碍物间隙，而拐角跟随基线发生碰撞；全身细化也降低了最终布料变形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -536,7 +548,11 @@
             "heading": "",
             "text": "Engaging K-12 students in authentic scientific research remains a significant challenge, particularly at the intersection of environmental science and robotics. We introduce the Jar Jar ROV, a low-cost, open-source Remotely Operated Vehicle (ROV) platform designed for citizen science-based water quality monitoring by middle school students.\n\nThis paper presents the design of the platform and the results of a large-scale deployment with over 100 students across a US state who built, programmed, and deployed the ROVs in local lakes. The educational framework yielded high student engagement in hands-on activities, with ROV construction earning a perfect average score from mentors.\n\nScientifically, the program established a grassroots monitoring network, generating nearly eleven thousand validated measurements of temperature, pH, dissolved oxygen, and turbidity. However, our evaluation identified a critical \"engagement gap,\" with student interest declining sharply during more complex tasks such as electronics assembly and data uploading.\n\nThis paper contributes both a validated, scalable model for integrating robotics into environmental education and a data-driven roadmap for future improvements.\n\nThese enhancements focus on lowering technical barriers and creating a more intuitive link between data collection and scientific discovery, addressing a key challenge in empowering the next generation of citizen scientists."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Jar Jar ROV, a low-cost, open-source remotely operated vehicle for middle school water-quality monitoring through citizen science. In a deployment involving over 100 students across one US state, students built, programmed, and used the ROVs in local lakes. Mentors gave ROV construction a perfect average score. The program generated nearly 11,000 validated measurements of temperature, pH, dissolved oxygen, and turbidity. The evaluation also found a sharp decline in student interest during more complex tasks such as electronics assembly and data uploading. The authors propose lowering technical barriers and making the link between data collection and scientific discovery more intuitive.",
+          "zh": "论文介绍低成本开源遥控水下机器人 Jar Jar ROV，供中学生开展基于公民科学的水质监测，并报告其在美国一个州、超过100名学生中的部署。学生参与了机器人的制作、编程和湖泊部署；导师对机器人搭建活动的平均评分为满分。该项目建立了基层监测网络，产生近1.1万条经验证的温度、pH、溶解氧和浊度测量数据。评估还发现，学生在电子装配和数据上传等复杂任务中的兴趣明显下降。作者据此提出降低技术门槛、改善数据采集与科学发现联系的后续方向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
