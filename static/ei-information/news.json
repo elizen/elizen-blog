@@ -815,7 +815,11 @@
             "heading": "",
             "text": "Large language models (LLMs) let users direct heterogeneous multi-robot systems (MRS) through natural language, but make task interpretation, robot assignment, and coordination difficult to inspect and change.\n\nBased on a formative study with 12 non-expert users, we developed MRPilot, a mixed reality system organized around four stages of supervision and intervention. MRPilot represents robot-team plans and execution states as structured commitments shared across synchronized situated and overview views.\n\nAcross four stages, it helps users resolve ambiguous references (Forming), review plans before execution (Reviewing), monitor distributed execution (Following), and make robot-level or team-level changes when problems arise (Repairing).\n\nIn a within-subjects study with 20 participants in a virtual reality-simulated home, MRPilot reduced workload, increased situational awareness, transparency, trust, and perceived control compared with a conventional LLM-based conversational interface using the same LLM planner and robot capabilities.\n\nWe provide design implications for multi-scale intervention, adaptive supervision, and calibrated reliance in LLM-based MRS."
           }
-        ]
+        ],
+        "summary": {
+          "en": "MRPilot is a mixed-reality system for supervising and intervening in LLM-based multi-robot teams. Across four stages—forming, reviewing, following, and repairing—it presents plans and execution states in synchronized situated and overview views. The design draws on a formative study with 12 non-experts. In a within-subjects study with 20 participants in a virtual-reality-simulated home, the authors report lower workload and higher situational awareness, transparency, trust, and perceived control than with a conversational interface using the same planner and robot capabilities.",
+          "zh": "MRPilot 是面向大语言模型多机器人系统的混合现实监督与干预系统，围绕形成、审查、跟随和修复四阶段，以同步的现场视图和总览视图展示团队计划及执行状态。研究基于12名非专家的形成性研究设计系统，并在虚拟现实模拟家庭中对20名参与者开展被试内研究。与使用相同规划器和机器人能力的对话界面相比，作者报告其降低工作负荷，并提升态势感知、透明度、信任和感知控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -846,7 +850,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have become a central paradigm for robot policy learning, which predict actions in three forms: raw action chunks, discrete action tokens, or continuous action latents. However, existing action representations primarily model action trajectories, with limited consideration of the visual dynamics induced by these actions.\n\nWe introduce ViDAL, a Visual Dynamics-grounded Action Latent Space that anchors continuous action latents in the future visual dynamics of the scene. Specifically, ViDAL learns action latent space by training an Action Variational Autoencoder (Action VAE) to reconstruct action chunks while aligning its latent with future scene dynamics.\n\nWhen integrated into downstream robot policies, the proposed Action VAE serves as a plug-in action interface compatible with multiple VLA architectures and enables optional future-video prediction as an additional capability.\n\nEmpirically, ViDAL outperforms competitive baselines on LIBERO with 98.1% average success, improves a multi-task $\\pi_{0.5}$ policy on RoboTwin 2.0 from 54.3% to 65.5% (Clean) and from 33.2% to 43.1% (Random) success rates over 50 dual-arm tasks, and yields 20.0% and 23.4% absolute success-rate gains on real-world single-arm Franka and dual-arm ARX robot platforms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ViDAL introduces a continuous action latent space grounded in future visual scene dynamics. Its Action VAE reconstructs action chunks while aligning the latent representation with predicted future dynamics. The module can serve as a plug-in action interface for multiple vision-language-action architectures and supports optional future-video prediction. The authors report results on LIBERO, dual-arm tasks in RoboTwin 2.0, and real-world Franka single-arm and ARX dual-arm platforms, including the success rates stated in the abstract. These claims are bounded by the reported benchmarks and platform evaluations.",
+          "zh": "ViDAL 提出一种以未来场景视觉动态为基础的连续动作潜在空间，并通过动作变分自编码器重建动作片段，同时对齐潜变量与未来场景动态。该模块可作为兼容多种视觉-语言-动作架构的插件式动作接口，并支持可选的未来视频预测。作者报告，在 LIBERO、RoboTwin 2.0 的双臂任务及真实 Franka 单臂和 ARX 双臂平台上，ViDAL 或集成策略取得了摘要所列的成功率表现；这些结果来自所述基准和平台评测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -877,7 +885,11 @@
             "heading": "",
             "text": "Portable mobile-manipulation demonstrations can help alleviate data scarcity for embodied intelligence, but obtaining reliable, low-cost, and robot-free motion supervision from RGB observations remains challenging.\n\nExisting approaches often rely on teleoperation or specialized devices equipped with additional sensing hardware, while directly using estimated visual odometry (VO) trajectories can introduce inconsistencies due to accumulated drift and imperfect motion supervision.\n\nWe present the Visual-Odometry-Conditioned Mobile Manipulation Interface (VOMMI), a portable demonstration collection and learning framework that connects portable RGB demonstrations to vision-language-action (VLA) post-training through offline trajectory reconstruction and online visual-motion conditioning.\n\nVOMMI synchronizes body and hand views to capture navigation context and local object interactions without requiring human-robot kinematic correspondence calibration. R2-VO refines offline demonstration trajectories using sparse geometric anchors and produces causal local-motion tokens over multiple prediction horizons for online policy conditioning.\n\nAn action-group residual adapter incorporates these tokens only into the base branch. Experiments use a 500-trajectory portable for each task, with 75 trajectories held out for RGB-VO evaluation, and 200 robot demonstrations as references.\n\nOur policy, post-trained only on portable demonstrations, achieves 18.2% lower base-velocity error than a policy trained with robot-collected demonstrations, while maintaining comparable end-effector translation accuracy.\n\nOffline reconstruction reduces absolute trajectory errors for the body and hand streams by 24.6% on average relative to the best evaluated baseline for each stream. The complete system improves the mean success rate by 8.3 percentage points over OpenPI 0.5 across three real-robot tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "VOMMI connects portable RGB demonstrations to vision-language-action post-training through offline trajectory reconstruction and online visual-motion conditioning. It synchronizes body and hand views without human-to-robot kinematic calibration. R2-VO refines trajectories using sparse geometric anchors and generates local-motion tokens for policy conditioning. The authors report that a policy trained only on portable demonstrations has 18.2% lower base-velocity error than one trained with robot-collected demonstrations, with comparable end-effector translation accuracy. Across three real-robot tasks, the complete system improves mean success rate over OpenPI 0.5 by 8.3 percentage points.",
+          "zh": "VOMMI 是将便携式 RGB 示范用于移动操作学习的框架，通过离线轨迹重建和在线视觉运动条件化连接示范与视觉-语言-动作模型后训练。系统同步身体与手部视角，无需人体与机器人运动学对应标定；R2-VO 使用稀疏几何锚点修正轨迹并生成局部运动令牌。作者报告，仅用便携式示范后训练的策略，底盘速度误差较机器人示范训练策略低18.2%，末端执行器平移精度相近；三项真实机器人任务的平均成功率较 OpenPI 0.5 高8.3个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -908,7 +920,11 @@
             "heading": "",
             "text": "We present a repertoire-free benchmark for soft-robot damage recovery under nine online trials. The protocol pairs damage masks within each morphology, retains a measured nominal fallback, and separates method development from evaluation on new bodies.\n\nA Gaussian-process expected-improvement (GP-EI) reference controller adapts actuator phases using three initialization probes and six feedback-selected rollouts. Across two disjoint 75-body cohorts, it outperforms random search, Sobol, CEM, and CMA-ES under equal budgets.\n\nGP-EI improves the worst-mask gain on 69/75 confirmation bodies and exceeds these four baselines by 0.235-0.310 mean worst-mask reward. A TuRBO-style local GP is the closest comparator; the paired confidence interval includes zero.\n\nPost-confirmation fixed-controller replay finds 5.06 voxel widths of mean recovery together with a 0.0031 increase in worst-mask p99 geometric edge strain; a strict no-added-demand deployment gate retains 48.7% of mean gain.\n\nIn a frozen development stress test that physically removes 10% of occupied voxels, GP-EI improves 71/75 bodies and exceeds official BoTorch TuRBO by 0.356 mean worst-mask gain.\n\nTogether, the replayable controllers, body-level inference, and frozen-cohort evaluation provide a reference for measuring the added value of learned damage priors and future adaptation methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a repertoire-free benchmark for soft-robot damage recovery within nine online trials, with evaluation on new bodies. Its Gaussian-process expected-improvement controller uses three initialization probes and six feedback-selected rollouts. Across two disjoint cohorts of 75 bodies, the authors report that it outperforms random search, Sobol, CEM, and CMA-ES under equal budgets. Confirmation evaluation, fixed-controller replay, and a frozen development stress test report recovery or gain results. The paired confidence interval against the closest TuRBO-style local Gaussian-process comparator includes zero.",
+          "zh": "该研究提出无动作库的软体机器人损伤恢复基准，要求在九次在线试验内适应，并在新机体上评估。高斯过程期望改进控制器使用三次初始化探测和六次反馈选择的试验；在两个各含75个机体的队列中，作者报告其优于随机搜索、Sobol、CEM 和 CMA-ES。确认评估、固定控制器回放及冻结开发压力测试均呈现相应恢复或增益结果；其中与 TuRBO 风格局部高斯过程的配对置信区间包含零。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
