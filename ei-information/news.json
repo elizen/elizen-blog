@@ -2199,7 +2199,11 @@
             "heading": "",
             "text": "This paper presents the design and control strategy for MetaMorpher, a metamorphic Unmanned Aerial Vehicle (UAV), capable of both spinning-wing hover and fixed flying-wing cruise flight.\n\nSince control of the cruise configuration is comparatively well established in the literature, this paper focuses on control of the MetaMorpher in hover mode, building on the flight dynamics model and conceptual design validated in previous work.\n\nThe control algorithm is implemented using one of two phase-synchronized strategies: motor propulsion, which pulses motor thrust in synchrony with the vehicle's rotation, or flap propulsion, a novel strategy that pulses the deflection of the wing-mounted elevons. We evaluate both strategies in simulation through different flight experiments.\n\nSimulation results confirm the mathematical model and show stable reference tracking, demonstrating flap propulsion as a lightweight, decoupled alternative for hover control. Experimental testing validated the vertical-dynamics propulsion model against the physical prototype, demonstrating very good steady-state agreement across different configurations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MetaMorpher, a metamorphic UAV designed for spinning-wing hover and fixed-wing cruise, and focuses on hover control. It compares phase-synchronized motor-thrust pulses with pulses of wing-mounted elevon deflection. Simulations are reported to confirm the mathematical model and show stable reference tracking, with flap propulsion presented as a lightweight, decoupled alternative. Physical prototype tests validate the vertical-dynamics propulsion model and show very good steady-state agreement across configurations.",
+          "zh": "论文介绍了可在旋翼式悬停与固定翼巡航间变形的MetaMorpher无人机，重点研究悬停控制。作者比较了与机体旋转同步的电机推力脉冲和机翼升降副翼偏转脉冲两种策略。仿真显示模型得到验证且参考跟踪稳定，并表明襟翼推进可作为轻量、解耦的悬停控制方案。实物测试则验证了垂直动力学推进模型，并报告不同构型下稳态结果吻合良好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2230,7 +2234,11 @@
             "heading": "",
             "text": "Robot manipulation systems using Vision-Language-Action (VLA) model backbones typically use just one VLA for task execution. However, individual VLAs do not perform well across different task states and environments. We introduce a framework for dynamically composing multiple VLA policies during execution: StepWise Action Policy Routing (SWAP).\n\nSWAP formulates policy routing as an offline reinforcement learning problem, learning a routing critic that selects the most appropriate policy at each decision step given the current observation. SWAP enables robots to select new policies to execute online rather than committing to a single policy for the duration of an episode.\n\nWe evaluate SWAP on both real-world DROID manipulation tasks and LIBERO simulation experiments. SWAP improves over fixed-policy execution and routing baselines, giving absolute improvements in real-world task success up to 33% while reducing successful trajectory robot action step length by 28.3%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SWAP, a framework that dynamically composes multiple vision-language-action policies during robot execution. It formulates routing as offline reinforcement learning and trains a critic to select a policy at each decision step from the current observation. Evaluations use real-world DROID manipulation tasks and LIBERO simulation experiments. The authors report improvements over fixed-policy execution and routing baselines, including up to 33% absolute improvement in real-world task success and a 28.3% reduction in robot action steps along successful trajectories.",
+          "zh": "论文提出SWAP框架，在机器人执行任务时动态组合多个视觉—语言—动作策略。该方法将策略路由表述为离线强化学习问题，训练路由评价器，根据当前观测逐步选择策略，使机器人可在执行过程中切换策略。作者在真实DROID操作任务和LIBERO仿真实验中评估该方法，报告其优于固定策略执行和路由基线；真实任务成功率绝对提升最高达33%，成功轨迹的机器人动作步数缩短28.3%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2261,7 +2269,11 @@
             "heading": "",
             "text": "Remotely operated vehicles (ROVs) are widely used to explore and inspect underwater environments such as caves, shipwrecks, and submerged infrastructure. These missions require accurate 3D understanding of the surrounding environment, which depends on both reliable vehicle localization and metric scene reconstruction.\n\nHowever, external positioning is often unavailable underwater, requiring small ROVs to rely primarily on onboard perception. Optic vision provides rich visual and geometric information but suffers from scale ambi- guity and trajectory drift, whereas 2D imaging sonar provides metric range but incomplete 3D geometry.\n\nExisting underwater reconstruction approaches typically address these limitations separately or assume known sensor poses, leaving localization and reconstruction disconnected.\n\nWe present SURGE, a camera sonar framework that jointly estimates the ROV trajectory and target location by integrating visual and acoustic observations within a factor graph, then uses the recovered metric poses for sonar Gaussian splatting.\n\nExperiments on real underwater RGB sonar observations show that SURGE substantially improves localization consistency over conventional vision based pose estimation and produces a more compact, natively metric reconstruction than RGB Gaussian splatting baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SURGE, a framework that combines camera and sonar observations for underwater localization and reconstruction. It jointly estimates an ROV trajectory and target location in a factor graph, then uses the recovered metric poses for sonar Gaussian splatting. The authors report experiments on real underwater RGB and sonar observations. Compared with conventional vision-based pose estimation, SURGE improves localization consistency; compared with RGB Gaussian-splatting baselines, it produces a more compact reconstruction with native metric scale.",
+          "zh": "论文提出SURGE，一种联合相机与声呐观测的水下重建和定位框架。它在因子图中估计遥控潜水器轨迹及目标位置，再利用恢复的度量位姿进行声呐高斯泼溅重建。作者指出，该方法旨在结合视觉信息与声呐测距，处理视觉尺度模糊、轨迹漂移及声呐三维几何不完整等问题。真实水下RGB与声呐观测实验显示，相比传统视觉位姿估计，其定位一致性显著提高；相较RGB高斯泼溅基线，重建更紧凑且原生具备度量尺度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2292,7 +2304,11 @@
             "heading": "",
             "text": "Deep-water biological observation is essential for understanding marine organisms and their interactions with the environment. However, conventional optical and acoustic approaches can introduce stimuli that alter animal behavior and bias biological observations.\n\nThis paper proposes a fluorescence-enhanced whisker array sensing system that pinpoints underwater hydrodynamic sources through local optical readout rather than direct source imaging. Five spatially oriented whiskers, fabricated with nitinol cores and fluorescent urethane shells, are integrated with ultraviolet excitation and a monocular camera.\n\nImage enhancement and segmentation are applied to track the whisker deformation. A lightweight convolutional neural network captures temporal and cross-whisker features from 2 s sequences to estimate source localization.\n\nPool experiments achieve a mean spatial localization error of 88 mm, with 73.5 mm in radius and $2.5^\\circ$ in angle, across a test region of 600 mm with $\\pm30^\\circ$.\n\nReal-time localization of a moving thruster demonstrates the capability of the proposed method in dynamic scenarios, highlighting its potential for integration into underwater robots for hydrodynamic source detection, localization, and tracking in low-light environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a fluorescence-enhanced whisker array for locating underwater hydrodynamic sources through local optical readout rather than direct source imaging. Five oriented whiskers with fluorescent shells are paired with ultraviolet excitation and a monocular camera. Image processing tracks deformation, and a lightweight convolutional neural network estimates source location from two-second sequences. Pool experiments report a mean spatial error of 88 mm, with 73.5 mm radial and 2.5-degree angular error within the stated test region. Real-time localization of a moving thruster demonstrates operation in a dynamic scenario.",
+          "zh": "论文提出一种荧光增强的触须阵列传感系统，通过局部光学读数定位水下流体动力源，而非直接成像源本身。系统由五根不同朝向、带荧光外壳的触须、紫外激发和单目相机构成，并通过图像处理跟踪形变，再用轻量卷积神经网络分析两秒序列。水池实验报告平均空间定位误差为88毫米，径向误差73.5毫米、角度误差2.5度，测试区域为600毫米及正负30度。移动推进器的实时定位展示了其动态场景能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
