@@ -1763,7 +1763,11 @@
             "heading": "",
             "text": "Robots operating in real-world environments must often execute complex, multi-step bimanual tasks over long horizons rather than single, isolated actions.\n\nCurrent manipulation datasets provide limited support for this capability: although single-arm datasets reach hundreds of thousands of trajectories, they typically provide only one high-level instruction per episode, while existing bimanual datasets provide subtask annotations for only part of their recorded hours.\n\nWe present FineART, a densely annotated bimanual manipulation dataset comprising 40,543 episodes (1,718 hours) and 533,913 subtasks across 151 tasks. We also introduce FineART-VLA, a vision-language-action policy that predicts its own next subtask to guide its actions.\n\nMid-training on FineART's subtask annotations improves FineART-VLA's success at following spatial instructions from 32.0% to 100.0%.With step-by-step human subtask guidance, success on unseen long-horizon tasks increases from 16.0% to 76.0%.\n\nFurthermore, FineART-VLA matches baseline performance on a new robot with 10x less fine-tuning data and generalizes zero-shot to unseen tasks. We open-source the full dataset, model weights, and training code."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FineART, a densely annotated bimanual manipulation dataset with 40,543 episodes, 1,718 hours of data, and 533,913 subtasks across 151 tasks. It also introduces FineART-VLA, which predicts its next subtask to guide actions. The authors report that mid-training on FineART annotations raises spatial-instruction success from 32.0% to 100.0%; with step-by-step human guidance, success on unseen long-horizon tasks rises from 16.0% to 76.0%. They also report baseline performance on a new robot with ten times less fine-tuning data and zero-shot generalization to unseen tasks.",
+          "zh": "论文介绍了 FineART，一个包含 40,543 个双臂操作回合、1,718 小时数据和 533,913 个子任务的密集标注数据集，涵盖 151 项任务；并提出可预测下一子任务以引导动作的 FineART-VLA。作者报告，在 FineART 子任务标注上进行中期训练后，空间指令成功率从 32.0% 提高到 100.0%；提供逐步人工子任务指导时，未见长时程任务成功率从 16.0% 提高到 76.0%。作者还称，该模型在新机器人上以少十倍微调数据达到基线表现，并可零样本泛化至未见任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1794,7 +1798,11 @@
             "heading": "",
             "text": "Human video offers a scalable source of robot demonstrations, yet most human-to-humanoid retargeting methods assume a legged robot with human-like kinematics. This assumption does not hold for mobile-base humanoids equipped with a wheeled base, vertical lift, and two arms.\n\nHuman walking must be expressed through base motion, while torso bending may require coordinated lift and arm motion. We address this mismatch with a task-conditioned framework that assigns reconstructed human motion to base, lift, and arm responsibilities before robot-specific realization.\n\nThe allocator preserves the human-derived path, stabilizes heading, separates turn and translation when needed, retimes commands to satisfy base limits, and repairs lift and arm trajectories.\n\nA deployment adapter then converts the reference to 50 Hz commands using stationary-base detection, deadband and slew-rate filtering, time-consistent playback scaling, and separate linear and angular gains.\n\nWe evaluate the resulting references with human-derived task-space comparisons, policy-free simulation replay, and a qualitative execution on a physical robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses human-motion retargeting for mobile-base humanoids with wheels, a vertical lift, and two arms. Its task-conditioned framework assigns reconstructed human motion to base, lift, and arm responsibilities before producing robot-specific references. The allocator preserves the human-derived path, stabilizes heading, can separate turning from translation, retimes commands for base limits, and repairs lift and arm trajectories. A deployment adapter converts references into 50 Hz commands. Evaluation consists of human-derived task-space comparisons, policy-free simulation replay, and a qualitative execution on a physical robot.",
+          "zh": "论文针对带轮式底座、升降机构和双臂的移动操作人形机器人，提出一种任务条件化的人体动作重定向框架，将重建的人体动作分配给底座、升降和手臂，再转换为特定机器人的参考动作。分配器保留人体动作路径、稳定朝向，并在需要时分离转向与平移，同时调整时序以满足底座限制并修复升降和手臂轨迹。部署适配器将参考动作转换为 50 Hz 指令。评估包括人体任务空间比较、无策略仿真回放，以及在实体机器人上的定性执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1825,7 +1833,11 @@
             "heading": "",
             "text": "We introduce Task-Space Imitation Guidance for Efficient Reinforcement Learning (TIGER), a reward-construction and pretraining framework for sparse-reward tabletop robotic manipulation.\n\nTIGER treats an action-chunked imitation policy not as an executable controller or action prior, but as a local task-space progress estimator: predicted action chunks are converted, using controller-aware action-to-motion mapping, into short-horizon end-effector references, and the RL agent receives dense progress rewards toward these references while the sparse environment reward remains the dominant objective.\n\nDuring pretraining, TIGER uses imitation-guided look-ahead signals to relax conservative value penalties for actions predicted to make task-space progress, reducing off-manifold exploration during early online RL.\n\nAcross simulation and real-robot experiments, TIGER improves early sample efficiency and reduces measured safety violations while matching or improving final success rates relative to prior RL and IL-RL baselines on the evaluated tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TIGER, a reward-construction and pretraining framework for sparse-reward tabletop manipulation. It treats an action-chunked imitation policy as a local task-space progress estimator rather than an executable controller or action prior. Predicted chunks are mapped to short-horizon end-effector references, which provide dense progress rewards while the sparse environment reward remains dominant. During pretraining, imitation-guided look-ahead signals relax conservative value penalties for actions expected to advance task-space progress. In the evaluated simulation and real-robot experiments, the authors report improved early sample efficiency, fewer measured safety violations, and final success rates matching or exceeding prior baselines.",
+          "zh": "论文提出 TIGER，用于稀疏奖励桌面机器人操作的奖励构造与预训练。它将分块模仿策略视为局部任务空间进展估计器，而非可执行控制器或动作先验；系统把预测动作块转换为短时域末端执行器参考，并据此提供密集进展奖励，同时让环境稀疏奖励保持主导。预训练阶段利用模仿引导的前瞻信号，放宽对预测可推进任务空间动作的保守价值惩罚。作者报告，在仿真和真实机器人实验的评估任务中，TIGER 提高了早期样本效率、减少测得的安全违规，并达到与既有基线相当或更高的最终成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1856,7 +1868,11 @@
             "heading": "",
             "text": "As large language models (LLMs) are increasingly integrated into engineering workflows, students require hands-on experience to learn how to collaborate with them critically. This paper presents a scalable gamified workshop designed for engineering Master's students to practice human-AI collaboration in navigation planning.\n\nUsing a mobile web interface across 10 workshop sessions, a total of 226 students wrote prompts for a non-reasoning and a reasoning LLM to solve grid-based navigation tasks of increasing complexity. The system returned robot-executable plans, trajectory visualizations, and automated scoring, culminating in a live demonstration on a Boston Dynamics Spot robot.\n\nIn a post-workshop questionnaire, 81.5% reported substantial learning and 91.0% reported high engagement. Analysis of the submitted prompts revealed that students changed their strategies from step-by-step instructions for the non-reasoning LLM toward providing higher-level guidance for complex problem-solving tasks.\n\nWe conclude that such interactive simulation-to-reality environments are viable for teaching the verification and collaboration skills necessary for responsible LLM use in engineering. Code is available at: https://github.com/renchizhhhh/LLM-robotics-workshop"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a gamified workshop for engineering master's students to practice human-AI collaboration through navigation planning. Across 10 sessions, 226 students used a mobile web interface to prompt non-reasoning and reasoning LLMs on increasingly complex grid-based tasks. The system returned robot-executable plans, trajectory visualizations, and automated scores, followed by a live demonstration with a Boston Dynamics Spot robot. In a post-workshop questionnaire, 81.5% reported substantial learning and 91.0% high engagement. Prompt analysis found a shift from step-by-step instructions toward higher-level guidance for complex problem solving.",
+          "zh": "论文介绍了一项面向工程硕士生的游戏化工作坊，让学生通过导航规划练习与大语言模型协作。10 场工作坊共 226 名学生使用移动网页界面，向非推理和推理型模型提交提示，以解决复杂度逐渐增加的网格导航任务；系统提供机器人可执行计划、轨迹可视化和自动评分，并以 Boston Dynamics Spot 机器人现场演示收尾。问卷中，81.5% 的学生报告学到很多，91.0% 报告参与度高。提示分析显示，学生从给非推理模型逐步指令，转向为复杂问题提供较高层次的指导。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
