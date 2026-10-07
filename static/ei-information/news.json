@@ -287,7 +287,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies infer grasp actions primarily from visual observations and robot state, but do not explicitly represent the physical response observed after contact. We present MIM-VLA, a motor-feedback-based architecture that encodes recent gripper current, position, velocity, and signal validity as a 128-dimensional interaction token.\n\nA motor-only Motor Interaction Module (MIM) is pretrained with human-reviewed contact and interaction-phase labels and then conditions only the gripper-action pathway of SmolVLA; arm actions and the position-control interface remain unchanged.\n\nThe same token supports the MEM selector VLM that compares candidate interactions and produces evidence-conditioned selections and explanations.\n\nWe evaluate MIM-VLA in three real-world settings: comparing the interaction resistance of visually different objects, disambiguating visually similar real and replica objects through active probing, and gently grasping fragile objects, including held-out instances.\n\nAcross 13 object pairs, MIM-VLA selects the higher-resistance object in 75.0% of trials, compared with 48.8% for the SmolVLA baseline. For the evaluated tasks, the approach uses motor feedback already available from the gripper and does not require an additional tactile array, force-torque sensor, calibrated force estimate, or direct current control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MIM-VLA, which encodes gripper current, position, velocity, and signal validity into an interaction token that conditions SmolVLA’s gripper-action pathway; arm actions and the position-control interface remain unchanged. Pretraining uses human-reviewed contact and interaction-phase labels. Real-world evaluations cover resistance comparisons, active probing of visually similar objects, and gentle grasping of fragile objects. Across 13 object pairs, it selected the higher-resistance object in 75.0% of trials, versus 48.8% for the SmolVLA baseline.",
+          "zh": "论文提出 MIM-VLA，用夹爪电流、位置、速度及信号有效性编码为交互 token，并以此调节 SmolVLA 的夹爪动作通路；机械臂动作和位置控制接口保持不变。该模块以人工审核的接触和交互阶段标签预训练。真实机器人评测涵盖物体阻力比较、主动探测相似物体及轻柔抓取易碎物品。在 13 对物体中，系统选择阻力较高物体的试验比例为 75.0%，SmolVLA 基线为 48.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -318,7 +322,11 @@
             "heading": "",
             "text": "Generative action models based on diffusion and flow matching have been increasingly adopted in vision-language-action (VLA) policies for their ability to capture diverse behaviors, including multiple valid action sequences under the same observation and instruction.\n\nTheir iterative sampling procedures, however, require repeated network evaluations to generate each action chunk, increasing inference latency in closed-loop control. We propose ESP (Energy-Score Policy), a teacher-free approach that maps policy context and noise directly to an action chunk in a single network evaluation.\n\nESP trains the action head with the energy score rather than mean squared error. Whereas squared-error regression targets the conditional mean, the energy score is strictly proper: its expected value is uniquely minimized by the target distribution.\n\nThis provides a principled objective for learning multimodal action distributions without iterative sampling, with exact recovery at the population optimum when the model can represent the target distribution.\n\nExperiments on both simulation and real-world manipulation tasks demonstrate competitive task success with substantially lower action-generation latency than the flow matching baseline. These results support direct distributional learning as an efficient alternative to iterative generative robot policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ESP (Energy-Score Policy), which maps policy context and noise directly to an action chunk in one network evaluation, aiming to reduce the latency of iterative sampling. It trains the action head with the energy score; the authors state that its expected value is uniquely minimized by the target distribution and that exact recovery at the population optimum is possible when the model can represent that distribution. Simulation and real-world manipulation experiments show competitive task success and substantially lower action-generation latency than a flow-matching baseline.",
+          "zh": "论文提出 ESP（Energy-Score Policy），将策略上下文和噪声直接映射为动作块，单次网络评估即可生成动作，旨在降低扩散和流匹配策略迭代采样带来的延迟。它使用能量分数训练动作头；作者指出，该分数的期望值在目标分布处唯一最小，并在模型可表示目标分布时于总体最优点精确恢复该分布。仿真和真实操作任务实验显示，ESP 的任务成功表现具有竞争力，动作生成延迟显著低于流匹配基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -349,7 +357,11 @@
             "heading": "",
             "text": "We present HRDexDB, a real-world 4D dexterous grasping dataset capturing 3D hand-object interaction trajectories over time across five embodiments. The dataset comprises 3.2K trials over 100 diverse objects.\n\nUsing a synchronized multi-camera system and an integrated reconstruction pipeline, HRDexDB provides multi-view and egocentric RGB observations, 3D hand geometry, robot states, and object 6D pose trajectories, together with success/failure annotations.\n\nHuman and robotic hands interact with shared objects, enabling the study of embodiment-dependent grasp strategies and contact patterns. We demonstrate the dataset's utility through human-to-robot contact map transfer, visual robot-object contact estimation, and retrieval-assisted grasping.\n\nTogether, these results establish HRDexDB as a resource for studying and learning dexterous interactions across human and robotic embodiments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HRDexDB, a real-world four-dimensional dexterous grasping dataset with hand-object interaction trajectories across five embodiments. It contains 3.2K trials involving 100 objects, with multi-view and egocentric RGB observations, 3D hand geometry, robot states, object 6D pose trajectories, and success or failure annotations. Humans and robotic hands interact with shared objects, enabling study of embodiment-dependent grasp strategies and contact patterns. The authors demonstrate uses in human-to-robot contact-map transfer, visual robot-object contact estimation, and retrieval-assisted grasping.",
+          "zh": "论文介绍 HRDexDB，一个覆盖五种具身形式的真实世界四维灵巧抓取数据集，记录手与物体随时间变化的三维交互轨迹。数据集包含 3.2K 次试验和 100 种物体，并提供多视角及第一人称 RGB 观测、手部几何、机器人状态、物体六维位姿轨迹及成功或失败标注。人类与机器人手操作共同物体，可用于研究具身形式相关的抓取策略和接触模式。论文展示了其在人类到机器人接触图迁移、视觉接触估计及检索辅助抓取中的用途。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -380,7 +392,11 @@
             "heading": "",
             "text": "Off-road navigation exposes a robot to potentially hazardous terrain en route. Although learning-based navigation uses safety supervision to choose which path to drive, it provides no runtime alarm when the robot following that path is heading into danger.\n\nSuch an alarm must be learned from field logs, where human intervention preempts the failure and the failure itself is therefore never observed. The human judges driving unsafe early but typically intervenes only once failure is clearly near, so the intervention marks that judgment late.\n\nThat earlier judgment is what a runtime alarm must detect, yet no prior intervention-supervised method has targeted it.\n\nTo address this problem, we introduce CUSP (CUSUM-governed Survival model of the Perception onset), a model-agnostic runtime hazard alarm that learns this moment from intervention-terminated logs. \"Cusp\" is a word for the point at which one state is about to turn into another, and the moment we target is exactly such a cusp: the point at which safe driving turns unsafe in a human's judgment.\n\nWe call this point the perception onset and annotate it separately from the intervention. A visual hazard head is trained on the annotated onset with a discrete-time survival objective so that driving with and without an onset both supervise the head, and a CUSUM accumulates the predicted onset risk into alarms.\n\nWe evaluate CUSP at five unseen sites, two autonomous and three teleoperated, with 142 events and every method tuned to the same rate of ten false alarms per hour. CUSP detected 85 events compared to 26 for the best of nine adapted baselines, and the margin comes from hazards to which every signal in the navigation model is blind."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CUSP, a runtime hazard alarm learned from off-road navigation logs that end when a human intervenes. It distinguishes the earlier “perception onset,” when a person judges driving to be turning unsafe, from the intervention itself. A visual hazard head is trained on onset annotations, and CUSUM accumulates predicted risk into alarms. Across five unseen sites—two autonomous and three teleoperated—with methods tuned to ten false alarms per hour, CUSP detected 85 events, compared with 26 for the best of nine adapted baselines. The authors attribute the margin to hazards invisible to every navigation-model signal.",
+          "zh": "论文提出 CUSP，一种从人工干预终止的越野导航日志中学习运行时危险警报的方法。它区分人类较早判断驾驶将变得不安全的“感知起点”与实际干预时刻，并在起点标注上训练视觉危险头，再用 CUSUM 累积预测风险形成警报。作者在五个未见场地评测，包括两个自主驾驶场地和三个遥操作场地；各方法均调至每小时十次误报。CUSP 检出 85 个事件，九种适配基线中最佳者检出 26 个；作者称优势来自导航模型信号均无法感知的危险。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
