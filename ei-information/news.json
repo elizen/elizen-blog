@@ -643,7 +643,11 @@
             "heading": "",
             "text": "Computed tomography (CT)-guided needle biopsies are critical for diagnosing a range of conditions, including lung cancer, but present challenges such as limited in-bore space, prolonged procedure times, and radiation exposure.\n\nRobotic assistance offers a promising solution by improving needle trajectory accuracy, reducing radiation exposure, and enabling real-time adjustments. In our previous work, we introduced a robotic platform designed for accurate needle insertion within the confined CT bore.\n\nHowever, its performance in clinical settings is restricted by limited dexterity and a constrained workspace. In this study, we present an 11-degree-of-freedom (DOF) robotic system that integrates a 6-DOF robotic base with an improved 5-DOF cable-driven end-effector, yielding a significantly expanded workspace and enhanced dexterity.\n\nTo leverage the hyper-redundant degrees of freedom, we introduce a weighted inverse kinematics controller, along with a null-space control strategy to optimize maneuverability and dexterity.\n\nBy using a task-oriented weight matrix as a hyperparameter, the system provides a two-stage priority scheme fit for both large-scale movement and fine in-bore adjustments. In clinically relevant simulated scenarios, the system demonstrates a consistent 97% reachability rate across various human models.\n\nIn addition, the task-oriented weight-matrix policy is extensively explored in five representative subtasks seen during needle biopsy through both simulation and real-world experiments, demonstrating superior tracking accuracy and enhanced manipulability for CT-guided procedures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents an 11-DOF redundant robot for CT-guided needle insertion, combining a 6-DOF base with an improved 5-DOF cable-driven end-effector. A weighted inverse-kinematics controller and null-space strategy use a task-oriented weight matrix to prioritize large movements and fine adjustments inside the CT bore. In clinically relevant simulations, the system achieves a reported 97% reachability across human models. Simulations and real-world experiments on five representative subtasks show improved tracking accuracy and manipulability.",
+          "zh": "本文提出用于 CT 引导针刺的 11 自由度冗余机器人系统，由 6 自由度底座和改进的 5 自由度绳驱末端执行器组成，并采用加权逆运动学与零空间控制。任务导向权重矩阵形成适用于大范围移动和 CT 孔内微调的两阶段优先策略。临床相关仿真中，系统在不同人体模型上达到 97% 的可达率；五类代表性子任务的仿真和真实实验显示，该策略具有更高的跟踪精度和可操作性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -674,7 +678,11 @@
             "heading": "",
             "text": "Scenario-based MPC is an attractive strategy for chance-constrained motion planning that approximates uncertainty via a finite set of sampled scenarios. As a sampling-based method, scenario-based MPC is sensitive to distribution mismatch.\n\nWe address this problem in the context of Safe-Horizon Model Predictive Control (SH-MPC) with obstacles governed by switching dynamic modes.\n\nFrom finite mode observations, we construct a confidence set for the unknown categorical mode law and derive a multiplicative domination bound that transfers a Safe-Horizon collision-risk certificate from a selected scenario-sampling distribution to every law in the confidence set.\n\nWasserstein geometry is used to regularize probability reallocation among modes according to the similarity of their induced trajectory predictions, while a collision-risk surrogate biases sampling toward dangerous modes.\n\nThe resulting certificate explicitly quantifies the additional tightening required under distribution mismatch and exposes the multiplicative conservatism that arises when several obstacle-wise transfer factors are combined"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses distribution mismatch in Safe-Horizon Model Predictive Control when obstacles follow switching dynamic modes. Using finite mode observations, the authors construct a confidence set for the unknown categorical mode distribution and derive a multiplicative domination bound that transfers a collision-risk certificate from a chosen sampling distribution to laws in that set. Wasserstein geometry regularizes probability reallocation among modes, while a collision-risk surrogate favors dangerous modes. The resulting certificate quantifies additional tightening under mismatch and the conservatism from combining obstacle-wise transfer factors.",
+          "zh": "本文研究障碍物动态模式切换且模式概率分布未知时，安全时域模型预测控制中的分布失配问题。作者利用有限模式观测构造未知类别分布的置信集，并推导乘法支配界，将选定采样分布下的碰撞风险证书迁移至置信集中的其他分布。方法以 Wasserstein 几何正则化模式间的概率重分配，并通过碰撞风险替代量偏向危险模式采样。所得证书量化了分布失配所需的额外收紧，并揭示多个障碍物转移因子组合产生的保守性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -705,7 +713,11 @@
             "heading": "",
             "text": "Dexterous manipulation presents substantial challenges for imitation learning due to its high-dimensional action space and complex contact-rich dynamics. Policies trained purely from demonstrations often suffer from compounding errors during deployment and require large amounts of expert data to achieve reliable performance.\n\nTo move beyond the limitations of demonstration data, in this work, we propose DexPIE, a post-training framework for dexterous policy improvement from experience collected through real-world deployment.\n\nFirst, DexPIE enables effective exploration coverage through a dexterous-hand-adapted intervention system and multi-stage DAgger-style data collection across initial and intermediate task stages.\n\nMeanwhile, we enhance consistency between training and inference to reduce the distribution shift between rollouts and demonstration data, better aligning rollout behavior with demonstrations, allowing the critic to learn a value function induced by a more consistent underlying policy.\n\nTogether, these components provide reliable supervision for policy evaluation. Finally, DexPIE improves the policy through conditioning on a continuous optimality indicator, allowing the policy to leverage the quality of data in a more fine-grained manner.\n\nAcross three challenging real-world dexterous manipulation tasks, DexPIE achieves a 37.3% improvement in success rate over the demonstration-based reference policy, outperforming all baseline methods and demonstrating stronger robustness. The source code and dataset will be made publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose DexPIE, a post-training framework that improves dexterous manipulation policies using experience collected during real-world deployment. It combines a dexterous-hand-adapted intervention system with multi-stage DAgger-style collection, and seeks to reduce training-inference distribution shift so a critic can learn values for a more consistent policy. Policy improvement conditions on a continuous optimality indicator to use data quality more finely. Across three challenging real-world tasks, the authors report a 37.3% success-rate improvement over a demonstration-based reference policy and stronger robustness than baselines.",
+          "zh": "本文提出 DexPIE，一个利用真实部署经验改进灵巧操作策略的后训练框架。它通过适配灵巧手的人工干预系统和跨初始及中间任务阶段的多阶段 DAgger 式数据收集来扩展探索覆盖，并提升训练与推理的一致性，以支持价值函数学习。策略再通过连续最优性指标进行条件化，从而利用不同质量的数据。在三项具有挑战性的真实世界灵巧操作任务中，作者报告其成功率较演示数据参考策略提高 37.3%，并优于基线方法、表现出更强鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -736,7 +748,11 @@
             "heading": "",
             "text": "The collision cone used by velocity-space control barrier functions is conservative: it rejects every relative velocity aimed into an obstacle, however slow.\n\nWe propose the \\emph{shifted collision-cone CBF} (SC3BF), which adds a state-dependent \\emph{allowance} to the cone condition, so the robot may approach the obstacle at a rate that grows with distance and with its own speed.\n\nSC3BF is enforced by an ordinary quadratic program, and its safe set is forward invariant under bounded inputs without a minimum forward speed or a clearance margin. We prove that a nonzero allowance preserving safety always exists, and derive one in closed form.\n\nAgainst three velocity-space baselines on a kinematic bicycle among up to $100$ moving obstacles, SC3BF reaches the goal more often and modifies the nominal input less than half as much."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes the shifted collision-cone control barrier function (SC3BF) to reduce conservatism in velocity-space barrier functions, which reject any relative velocity aimed into an obstacle, however slow. SC3BF adds a state-dependent allowance, permitting approach rates that increase with distance and robot speed. It is enforced through an ordinary quadratic program. The authors prove forward invariance of the safe set under bounded inputs without a minimum forward speed or clearance margin, and derive a nonzero safe allowance in closed form. In comparisons involving a kinematic bicycle and up to 100 moving obstacles, SC3BF reaches the goal more often than three baselines and changes the nominal input less than half as much.",
+          "zh": "本文提出移位碰撞锥控制屏障函数 SC3BF，以缓解速度空间控制屏障函数的保守性：传统条件会排除所有指向障碍物的相对速度，即使速度很慢。SC3BF 在锥条件中加入依赖状态的容许量，使机器人可按随距离和自身速度增长的速率接近障碍物。该方法通过常规二次规划实施；作者证明，在有界输入下安全集正向不变，且无需最小前进速度或间隙裕度，并给出保持安全的非零容许量闭式解。在最多 100 个移动障碍物的运动学自行车对比中，SC3BF 比三个基线更常到达目标，且对名义输入的改动不到其一半。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
