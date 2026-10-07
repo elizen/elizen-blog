@@ -999,7 +999,11 @@
             "heading": "",
             "text": "Cluttered indoor environments, where large and heavy objects are scattered across diverse surfaces, require humanoid robots to sequentially navigate, grasp, transport, and accurately place each item at its target location within a single uninterrupted episode.\n\nThis long-horizon, whole-body loco-manipulation task remains a significant challenge for current methods.\n\nPrevious approaches often suffer from two main issues: easy-reward bias, where training overemphasizes early transport stages at the expense of later ones, and catastrophic forgetting, where focusing on later stages leads to a decline in earlier-stage performance.\n\nIn this work, we introduce Humanoid Horizon, a unified policy framework designed to overcome these limitations through three interrelated mechanisms.\n\nThe Parallel Training Strategy organizes $N$ scenes into $S$ concurrent stage streams governed by a shared policy, ensuring all transport stages receive continuous gradient updates and removing the bottleneck of sequential optimization.\n\nThe Dynamic Starting Mechanism updates each environment's initial state with terminal states from upstream rollouts, gradually broadening transition coverage and enhancing robustness at stage boundaries.\n\nReward Gating sets the reward to zero for the rest of the episode in later-stage streams when the immediately preceding object is displaced beyond a set threshold, so the shared policy learns not to disturb a just-placed object and earlier placements are preserved throughout the episode.\n\nCollectively, these strategies achieve per-stage success rates exceeding 80\\% on the two-object LHM-Humanoid benchmark (350 training scenes, 66 held-out scenes).As the number of sequentially transported objects grows beyond two, success declines with the horizon, but the degradation is graceful relative to the sharp drop seen in all baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Humanoid Horizon, a shared-policy framework for sequential whole-body navigation, transport, and placement by humanoid robots. It combines concurrent training streams for different stages, dynamic initialization from upstream terminal states, and reward gating when a previously placed object is displaced beyond a threshold. On the two-object LHM-Humanoid benchmark, per-stage success rates exceed 80%. Success declines as the number of objects grows, though the authors report a more gradual drop than for the baselines.",
+          "zh": "论文提出 Humanoid Horizon，用于 humanoid 机器人在单个连续任务中依次搬运并放置多个物体。框架通过并行训练各阶段、用上游 rollout 的终止状态动态更新初始状态，以及在前一物体被移位超过阈值时对后续阶段奖励门控，缓解阶段训练不均和遗忘。在两物体 LHM-Humanoid 基准上，各阶段成功率超过 80%；物体数增加时成功率仍会下降，但作者称其退化较基线平缓。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1030,7 +1034,11 @@
             "heading": "",
             "text": "Egocentric human data offer a path to scaling robot learning beyond costly robot demonstrations, yet the embodiment gap makes raw human trajectories a poor supervisory target for control.\n\nOur key insight is that, although low-level actions are embodiment-specific, their underlying motion intent can capture task-relevant structure that transfers across humans and robots. We introduce EgoLAP, a VLA pre-training framework that jointly learns from human and robot trajectories through a shared language-based action chain-of-thought.\n\nEgoLAP expresses motion intent as structured, temporally abstracted language actions and pairs them with motion-level reasoning grounded in scene geometry, physics, and object affordances.\n\nAcross extensive real-world and simulated experiments, EgoLAP transfers human experience to robot control more effectively than alternative action representations and reaches 80.1% mean real-world task progress, a 2.3x performance gain over alternative action representations.\n\nMotion-level reasoning also outperforms a composite reasoning format that combines subtask, object-box, and visual-trace reasoning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EgoLAP, a vision-language-action pre-training framework that jointly learns from human and robot trajectories using a shared language-based action chain of thought. It represents motion intent as temporally abstracted language actions and pairs them with reasoning grounded in scene geometry, physics, and object affordances. Across real-world and simulated experiments, the authors report more effective transfer than with alternative action representations, with 80.1% mean real-world task progress and a 2.3-fold gain. Motion-level reasoning also outperforms a composite reasoning format.",
+          "zh": "论文提出 EgoLAP，一种通过共享语言动作思维链联合利用人类与机器人轨迹的视觉—语言—动作预训练框架。它将运动意图表示为有时间抽象的结构化语言动作，并结合基于场景几何、物理和物体可供性的运动层推理。作者报告，在真实世界和仿真实验中，该表示比其他动作表示更有效地将人类经验迁移至机器人控制，真实世界任务进度均值为 80.1%，为对照表示的 2.3 倍；运动层推理也优于一种复合推理格式。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1061,7 +1069,11 @@
             "heading": "",
             "text": "Humanoid household manipulation requires the arms to act while the body balances, steps and changes posture. We present BiGym 2.0, an adaptation of BiGym for the Unitree G1 across 20 household tasks using a unified whole-body controller for demonstration and evaluation.\n\nThe suite provides 60 native human virtual-reality demonstrations per task with synchronised multi-camera views and full-body execution records. We benchmark vision-language-action fine-tuning, imitation learning, demo-driven reinforcement learning, and cold-start coding agents given the interaction budget of online reinforcement learning.\n\nWith the same onboard views, proprioception and whole-body controller for every method, vision-language-action fine-tuning has the highest nine-task mean, and agent-developed programs outperform every demo-driven reinforcement learning baseline on this mean and lead on bimanual reaching.\n\nCross-workspace stacking remains open, $\\pi_{0.5}$ stays low on pick-box, and multi-object transport is hard for imitation learning, demo-driven reinforcement learning and coding agents. All environments, human demonstrations, and evaluation traces are open-sourced at https://github.com/swirl-uk/BiGym2."
           }
-        ]
+        ],
+        "summary": {
+          "en": "BiGym 2.0 adapts the BiGym benchmark to the Unitree G1, covering 20 household tasks with a unified whole-body controller for demonstrations and evaluation. Each task includes 60 native human VR demonstrations, synchronized multi-camera views, and full-body execution records. The paper compares vision-language-action fine-tuning, imitation learning, demo-driven reinforcement learning, and cold-start coding agents. With shared observations and control, vision-language-action fine-tuning has the highest mean across nine tasks; coding agents outperform demo-driven reinforcement learning baselines on that mean and lead in bimanual reaching. Several tasks remain challenging.",
+          "zh": "论文介绍 BiGym 2.0，这是面向 Unitree G1 的家庭操作基准，涵盖 20 项任务，并使用统一全身控制器进行示范与评估。每项任务提供 60 份原生 VR 人类示范，以及同步多相机视角和全身执行记录。基准比较视觉—语言—动作微调、模仿学习、示范驱动强化学习和冷启动编程智能体。作者报告，视觉—语言—动作微调在九项任务均值上最高，编程智能体超过示范驱动强化学习基线且在双手到达任务领先；跨工作区堆叠等任务仍具挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1092,7 +1104,11 @@
             "heading": "",
             "text": "When learning probabilistic policies from human demonstrations, data-efficient learning and fast adaptations to new scenarios are key requirements. One popular way to achieve intuitive and reliable adaptations is through non-parametric, typically kernel-based, methods.\n\nHowever, existing solutions either fail to account for the geometry of manifolds common in robotics, limiting data efficiency, or, when geometry-aware, provide unreliable uncertainty estimates or require retraining to adapt.\n\nWe propose a non-parametric approach leveraging geometric priors in scenarios of data scarcity and heteroscedastic uncertainties for probabilistic modeling.\n\nWe utilize the method to formulate policies based on time or robot state, where non-separable diagonal kernels allow capturing uncertainty relations between degrees of freedom for same-sized in- and outputs. Fast updates, requiring less than 3 ms for a trajectory involving both position and orientation are possible through an optimized formulation.\n\nOur approach supports both manifold-valued input and manifold-valued output with large orientation changes. Using task parameterization, adaptation to different object poses is easily possible. We evaluate the approach on a set of toy examples and on real robot manipulation tasks both in autonomous execution and in shared control scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a non-parametric probabilistic imitation learning method with geometric priors for data-scarce settings and adaptation to new scenarios. It models manifold geometry and heteroscedastic uncertainty, using non-separable diagonal kernels to capture uncertainty relations across degrees of freedom for equal-sized inputs and outputs. The authors report updates in under 3 ms for trajectories involving position and orientation. The method supports manifold-valued inputs and outputs, large orientation changes, and task-parameterized adaptation to object poses. Evaluation covers toy examples and real robot manipulation in autonomous and shared-control settings.",
+          "zh": "论文提出一种带几何先验的非参数概率模仿学习方法，面向示范数据稀缺且需适应新情境的任务。该方法对流形几何和异方差不确定性建模，并以非可分对角核捕捉同维输入与输出各自由度间的不确定性关系。作者报告，对同时包含位置和方向的轨迹，快速更新耗时少于 3 毫秒；方法支持流形值输入和输出，可处理较大的方向变化，并可通过任务参数化适应不同物体姿态。评估包括玩具示例和真实机器人操作的自主执行与共享控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
