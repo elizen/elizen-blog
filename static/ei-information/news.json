@@ -1483,7 +1483,11 @@
             "heading": "",
             "text": "Robot agents must connect their intended actions to observed outcomes while retaining the context needed to revise their choices over repeated attempts. Existing interfaces often leave these choices inside predefined tools or require agents to manage detailed execution code and its growing history.\n\nWe introduce RobotUse, a robot agent harness that organizes computation, context, and decisions around specifying and revising physical actions. Agents visually select targets and poses, while the backend handles geometry, motion planning, and control.\n\nSubagents retain detailed interactions within each subgoal and return the information needed for subsequent decisions. Continual harnessing lets agents learn from execution by updating a persistent playbook.\n\nOn RoboLab, RobotUse achieves 45% task success, outperforming CaP-X by 6.7 percentage points while maintaining compact decision contexts and reducing reliance on predefined action abstractions. Furthermore, we show that RobotUse learns from real-world execution despite imperfect feedback and transfers what it learns to subsequent tasks.\n\nProject page is available at https://robotuse-team.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RobotUse, a robot-agent harness for organizing computation, context, and decisions around specifying and revising physical actions. Agents select targets and poses visually, while the backend handles geometry, planning, and control. Subagents preserve interaction details within subgoals, and the harness updates a persistent playbook from execution. On RoboLab, the authors report 45% task success, 6.7 percentage points above CaP-X. They also report learning from real-world execution and transferring learning to later tasks.",
+          "zh": "论文介绍 RobotUse，一种用于机器人智能体的框架，将计算、上下文和决策组织起来以指定和修订物理动作。智能体通过视觉选择目标与姿态，后端处理几何、运动规划和控制；子智能体保留子目标交互细节，并向后续决策提供所需信息。框架还通过更新持久操作手册从执行中学习。在 RoboLab 上，任务成功率为45%，比 CaP-X 高6.7个百分点。作者还报告了从真实执行中学习并迁移到后续任务的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1514,7 +1518,11 @@
             "heading": "",
             "text": "Collaborative manipulation requires robots to perform complementary actions as interactions unfold. We study single-policy decentralized collaboration: every robot runs the same policy from its visual observations and proprioception, without task prompts, identity labels, or inter-robot messages.\n\nThe challenge is to learn complementary team behaviors within shared parameters and select appropriate actions from each robot's local observations. We introduce CoRE, which learns Collaboration-Role Experts from pooled multi-task, multi-robot demonstrations. Fused appearance and geometry provide local interaction evidence.\n\nQuery-conditioned cross-attention experts provide adaptable prediction paths, which a local router combines at each action-chunk position. During training, an action-expert alignment loss supervises expert selection using relative forced-route prediction errors against demonstrations under fixed inputs, without role labels.\n\nAcross simulation benchmarks, CoRE achieves the highest average performance among evaluated decentralized methods. Physical experiments demonstrate effective collaboration across diverse manipulation tasks and robustness to partner delays and slowdowns. Project page: https://aus.bot/research/core/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies decentralized collaborative manipulation in which each robot runs the same policy using local visual and proprioceptive observations, without prompts, identity labels, or inter-robot messages. CoRE learns collaboration-role experts from pooled multi-task, multi-robot demonstrations and routes actions using local interaction evidence. Across simulation benchmarks, it achieves the highest average performance among the evaluated decentralized methods. Physical experiments demonstrate collaboration on diverse manipulation tasks and robustness to partner delays and slowdowns.",
+          "zh": "论文研究单策略去中心化协作操作：每台机器人仅依据自身视觉观测和本体感觉运行相同策略，不使用任务提示、身份标签或机器人间消息。作者提出 CoRE，从多任务、多机器人演示中学习协作角色专家，并利用局部交互证据和路由器为动作块选择专家。在仿真基准中，CoRE 在受评估的去中心化方法中平均表现最高。实体实验显示其可在多种操作任务中协作，并能应对伙伴延迟和减速。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1545,7 +1553,11 @@
             "heading": "",
             "text": "A stable grasp does not guarantee kinematically feasible robotic insertion because the object-in-gripper transform may force the robot towards singularities or joint limits along the prescribed insertion path. We study post-grasp kinematic feasibility repair through object-in-gripper reorientation.\n\nGiven an achieved grasp and a fixed insertion path, we seek a small reorientation that restores kinematic feasibility. Sequential IK can miss such candidates by following an unfavorable joint-space path, while the nonsmooth feasibility landscape makes the search computationally expensive.\n\nWe evaluate candidates using a branch-aware IK graph that maximizes the minimum feasibility margin over the discretized insertion path and use a learned task-conditioned prior to improve query ordering. The selected reorientation is executed through tactile-based extrinsic manipulation.\n\nIn UR5e simulations, the planner without learned ranking reduces mean reorientation over successful trials by 51.5% compared with grid-based sequential IK. Adding learned ranking reduces this planner's mean planning time by an additional 51.1%.Real-robot experiments validate the complete pipeline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses post-grasp insertion feasibility by reorienting the object within the gripper for a fixed insertion path. It evaluates candidates with a branch-aware inverse-kinematics graph and uses a learned task-conditioned prior to improve query ordering; the chosen reorientation is executed through tactile-based extrinsic manipulation. In UR5e simulations, the planner without learned ranking reduced mean reorientation over successful trials by 51.5% relative to grid-based sequential IK. Learned ranking further reduced that planner's mean planning time by 51.1%. Real-robot experiments validated the complete pipeline.",
+          "zh": "论文研究通过改变物体在夹爪中的朝向，修复抓取后的机器人插入运动学可行性。给定已实现的抓取和固定插入路径，方法用分支感知的逆运动学图评估候选朝向，并以学习到的任务条件先验改善查询排序；选定朝向通过基于触觉的外在操作执行。在 UR5e 仿真中，不使用学习排序的规划器相较网格式顺序逆运动学，使成功试验的平均重定向幅度降低51.5%；加入学习排序后，平均规划时间再降低51.1%。真实机器人实验验证了完整流程。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1576,7 +1588,11 @@
             "heading": "",
             "text": "Despite its promise for scaling robot learning, egocentric manipulation data is still scarce today. Collection at scale requires vertically integrating ergonomic hardware with centimeter-precise 3D algorithms, at a precision that has not been publicly demonstrated.\n\nTo address this gap, we introduce RoboCap, a 250\\,g six-camera dual-IMU hat designed for in-the-wild egocentric data capture, and the Grounded API, a suite of device-agnostic 3D algorithms tuned for RoboCap.\n\nIn this report, we demonstrate how hardware, calibration, and 3D algorithms interact to achieve state-of-the-art performance on the public benchmarks: our SLAM across diverse settings and rigs, our depth estimation on egocentric settings, and our hand tracking when adapted to third-party devices."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The report introduces RoboCap, a 250-gram hat with six cameras and dual IMUs for egocentric data capture in the wild, alongside Grounded API, a suite of device-agnostic 3D algorithms tuned for the device. The authors describe the need to combine ergonomic hardware with centimeter-precise algorithms for large-scale collection. They report state-of-the-art performance on public benchmarks for SLAM across diverse settings and rigs, depth estimation in egocentric settings, and hand tracking adapted to third-party devices.",
+          "zh": "论文介绍 RoboCap，一款面向真实环境第一人称数据采集的帽式设备，配有六个摄像头和双 IMU，重量为250克；同时介绍适配该设备的 Grounded API，其中包含与设备无关的三维算法。作者指出，大规模采集需要将易用硬件与厘米级精度算法结合。报告称，其系统在公开基准上，涵盖多种场景和设备的 SLAM、第一人称场景深度估计，以及适配第三方设备后的手部跟踪，取得了先进表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
