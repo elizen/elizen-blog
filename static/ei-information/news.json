@@ -2043,7 +2043,11 @@
             "heading": "",
             "text": "End-to-end planners based on waypoint regression achieve strong open-loop accuracy, but they primarily learn to mimic expert geometry and remain difficult to adapt to deployment-time safety constraints.\n\nWe propose a query-based cost-learning framework that estimates bounded costs for dynamically reachable ego trajectory queries, rather than dense BEV cells or a small regressed trajectory set.\n\nCompact joint scene tokens capture coherent multimodal agent futures, while contingency-aware cost aggregation and cost-guided intra-cluster MPPI mixing convert the learned cost topology into feasible ego plans.\n\nOn nuScenes, our method improves over prior cost-estimation planners such as ST-P3 and NMP, outperforms most regression baselines in collision rate, while remaining competitive in L2, and retaining an interpretable cost interface.\n\nOn real-world driving logs, the proposed planner reduces collision rates compared with SparseDrive and Alpamayo without fine-tuning, while maintaining a diverse set of candidate trajectories."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes query-based cost learning that estimates bounded costs for dynamically reachable ego trajectories. Compact scene tokens, contingency-aware aggregation, and cost-guided intra-cluster MPPI mixing are used to produce feasible plans. On nuScenes, the method improves over prior cost-estimation planners and outperforms most regression baselines in collision rate while remaining competitive in L2. On real-world driving logs, it reduces collision rates compared with SparseDrive and Alpamayo without fine-tuning, while retaining diverse candidate trajectories.",
+          "zh": "论文提出一种基于查询的代价学习框架，在动态可达的自车轨迹查询上估计有界代价，并结合紧凑场景令牌、考虑意外情况的代价聚合和代价引导的簇内 MPPI 混合生成可行计划。在 nuScenes 上，该方法优于先前代价估计规划器，在碰撞率上超过多数回归基线，L2 指标保持竞争力。真实驾驶日志实验中，无需微调即可比 SparseDrive 和 Alpamayo 降低碰撞率，并保留多样候选轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2074,7 +2078,11 @@
             "heading": "",
             "text": "An electromagnetic (EM) digital twin gives mobile robots wireless situational awareness but depends on material conductivities that change with the environment. Online calibration faces initialization sensitivity and measurement travel costs.\n\nWe demonstrate a vision-language model (VLM)-guided framework using a Unitree G1 robot and NVIDIA Sionna, with two VLM calls: material classification maps visible materials through ITU-R P.2040 to conductivity priors for Sionna's gradient descent on accumulated received signal strength (RSS) measurements; waypoint planning selects the next measurement location online using residual RSS calibration error and image coverage.\n\nIn a real indoor scenario, the framework achieves a normalized mean absolute conductivity error of $1.74\\times10^{-4}$ within 20 m of travel; random initialization never converges, while random waypoints require over twice the travel."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The demo presents a vision-language-model-guided framework for online calibration of an electromagnetic digital twin using a Unitree G1 robot and NVIDIA Sionna. The model classifies visible materials and maps them through ITU-R P.2040 to conductivity priors for gradient descent on accumulated received signal strength measurements. It also selects measurement waypoints online using calibration residuals and image coverage. In a real indoor scenario, it achieves the reported normalized mean absolute conductivity error within 20 meters of travel; random initialization does not converge, and random waypoints require over twice the travel.",
+          "zh": "论文演示一种由视觉语言模型引导的电磁数字孪生在线校准框架，使用 Unitree G1 机器人和 NVIDIA Sionna。模型将可见材料分类，并通过 ITU-R P.2040 映射为电导率先验，供基于累计接收信号强度测量的梯度下降使用；同时根据校准误差和图像覆盖在线选择测量航点。在真实室内场景中，机器人行进 20 米内达到所报告的归一化平均绝对电导率误差；随机初始化未收敛，随机航点所需行程超过其两倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2105,7 +2113,11 @@
             "heading": "",
             "text": "Endovascular catheter navigation relies on continuous fluoroscopy, exposing patients and clinical staff to ionizing radiation throughout the procedure.\n\nWe investigate whether a physics-based world model can sustain the navigation task between deliberately sparse X-ray acquisitions, and whether the model can signal when its internal state estimate is no longer reliable.\n\nWe formulate sparse-fluoroscopy navigation as a partially observable Markov decision process where a Cosserat rod simulator supplies transition dynamics, sparse noisy projections provide observations, and a particle filter maintains a belief over the device state, reduced in this implementation to a tip state with a geometric contact proxy.\n\nWe evaluate this formulation in a deliberately simplified setting: a synthetic planar vessel phantom with a quasi-static rod model and simulated projections, without clinical or animal data.\n\nIn this setting, the belief-state model tracks the simulated tip with a root mean square error of 1.30 mm while acquiring observations at one fifteenth of the continuous rate (0.97 mm at every frame, 1.51 mm at one thirtieth), reported 90 percent credible intervals achieve 0.92 empirical coverage, and the belief-derived contact risk estimate discriminates unsafe contact events with an AUROC of 0.68.\n\nThese results constitute a proof of concept on a simplified simulation rather than a demonstration of clinical readiness; their purpose is to establish that calibrated belief, rather than point-estimate accuracy alone, is the essential property a sparse-imaging world model must deliver."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether a physics-based world model can support catheter navigation between sparse fluoroscopy acquisitions and indicate when its state estimate becomes unreliable. It formulates navigation as a partially observable decision process, using a Cosserat rod simulator for dynamics, sparse noisy projections as observations, and a particle filter to maintain a belief over device state. Evaluation is limited to a simplified synthetic planar vessel phantom with simulated projections, without clinical or animal data. The authors describe this as a proof of concept, not evidence of clinical readiness.",
+          "zh": "论文研究物理世界模型能否在稀疏透视成像间维持导管导航，并判断状态估计何时不可靠。方法将任务建模为部分可观测决策过程，以 Cosserat 杆模拟器提供动力学、稀疏噪声投影作为观测，并用粒子滤波维护器械状态信念。评估仅限简化的合成平面血管模型与模拟投影，不含临床或动物数据。作者报告该仿真中的尖端跟踪误差、可信区间覆盖率和接触风险判别结果，并强调这只是概念验证，不代表临床就绪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2136,7 +2148,11 @@
             "heading": "",
             "text": "Successfully manipulating many everyday objects, such as potato chips, requires precise force regulation. Failure to modulate force can lead to task failure or irreversible damage to the objects. Humans can precisely achieve this by adapting force from tactile feedback, even within a short period of physical contact. We aim to give robots this capability.\n\nHowever, commercial grippers exhibit high cost or high minimum force, making them unsuitable for studying force-controlled policy learning with everyday force-sensitive objects. We introduce TF-Gripper, a low-cost (~$150) force-controlled parallel-jaw gripper that integrates tactile sensing as feedback.\n\nIt has an effective force range of 0.45-45 N and is compatible with different robot arms. Additionally, we designed a teleoperation device paired with TF-Gripper to record human-applied grasping forces.\n\nWhile we can train standard low-frequency policies with the collected force data, achieving reliable performance remains challenging due to the reactive and contact-dependent nature of force-regulated manipulation.\n\nTo overcome this, we propose RETAF (REactive Tactile Adaptation of Force), a framework that decouples grasping force control from arm pose prediction. RETAF regulates force at high frequency using wrist images and tactile feedback, while a base policy predicts end-effector pose and gripper open/close action.\n\nOur experiments show that, compared to position control, direct force control with TF-Gripper improves grasp stability and overall task performance across six real-world tasks. We further show that tactile feedback is essential for force regulation, and that RETAF consistently outperforms baselines and can be integrated with various base policies.\n\nWe hope this work opens a path for scaling the learning of force-controlled policies in robotic manipulation. Project page: https://force-gripper.github.io ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TF-Gripper, a low-cost parallel-jaw gripper with tactile feedback, and RETAF, a framework that separates grasp-force control from arm-pose prediction. A base policy predicts end-effector pose and gripper opening or closing, while high-frequency control uses wrist images and tactile feedback to regulate force. In experiments across six real-world tasks, the authors report that direct force control improves grasp stability and overall task performance compared with position control. They also report that tactile feedback is essential and RETAF consistently outperforms baselines.",
+          "zh": "论文介绍低成本触觉力控平行夹爪 TF-Gripper，集成触觉反馈，并提出 RETAF 框架，将抓取力控制与机械臂姿态预测解耦：基础策略预测末端姿态及夹爪开合，高频控制则利用腕部图像和触觉调节力。作者称，六项真实任务实验中，与位置控制相比，直接力控提高了抓取稳定性和总体任务表现；触觉反馈对力调节至关重要，RETAF 持续优于基线，并可与不同基础策略结合。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
