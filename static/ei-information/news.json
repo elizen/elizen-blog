@@ -4979,7 +4979,11 @@
             "heading": "",
             "text": "Embodied agents exploring indoor environments require reliable semantic occupancy memory that persists across observations and revisits. Building such memory is challenging because each observation provides incomplete and uncertain geometric and semantic evidence.\n\nWe introduce GEM-Occ, a Gaussian Evidence Memory framework that consolidates evidence accumulated over time into persistent semantic occupancy memory. Local predictions are converted into occupied semantic Gaussians and free-space ray evidence.\n\nConfidence- and visibility-aware causal updates integrate supporting observations, suppress occupancy contradicted by observed free space, and preserve previously observed structures through occlusion. A hierarchical memory organization supports continued mapping and efficient queries across connected indoor spaces.\n\nTo evaluate this capability, we introduce HIOcc, a unified benchmark for embodied semantic occupancy memory. HIOcc establishes a shared semantic label space and evaluation framework spanning local prediction, room-level online mapping, and building-level mapping, while accommodating perspective and panoramic observations.\n\nExperiments on HIOcc demonstrate that GEM-Occ outperforms existing methods, enabling accurate semantic occupancy prediction and consistent online mapping across spatial scales with efficient memory usage and fast occupancy queries."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GEM-Occ, a Gaussian Evidence Memory framework that consolidates local predictions from successive observations into persistent semantic occupancy memory. Its confidence- and visibility-aware causal updates integrate supporting evidence, suppress occupancy contradicted by observed free space, and preserve structures through occlusion. The authors also introduce HIOcc, a benchmark spanning local prediction and room- and building-level mapping. Experiments on HIOcc are reported to show improvements over existing methods in prediction and online mapping.",
+          "zh": "论文提出GEM-Occ，用高斯证据记忆将多次观测中的局部预测整合为持久语义占据记忆，并通过置信度与可见性感知的因果更新处理支持证据、自由空间反证和遮挡。研究还提出HIOcc基准，统一语义标签及从局部预测到房间和建筑级映射的评估，并支持透视与全景观测。作者报告，HIOcc实验中GEM-Occ优于已有方法，在不同空间尺度实现准确预测和一致在线映射，并具有较高记忆效率和较快查询速度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5010,7 +5014,11 @@
             "heading": "",
             "text": "Most vision-language-action (VLA) models rely on current observations and lose task-relevant evidence once it leaves view, limiting performance on long-horizon, memory-dependent tasks. Existing efforts incorporate compressed historical features or sparse visual keyframes.\n\nHowever, isolated snapshots can leave the policy uncertain about what changed during past interactions and which action should follow. To overcome this limitation, we propose EvoMem-VLA, which constructs state-evolution memory by explicitly encoding and retaining observed changes between historical states.\n\nThese change representations preserve evidence of interaction outcomes, allowing the policy to track task progress beyond isolated snapshots. Specifically, we introduce conditional delta tokenization to encode ordered frame pairs into directional, source-conditioned delta tokens, each associated with its corresponding state evidence.\n\nA shared VLM backbone supports task-adaptive routing: normal long-horizon tasks follow a direct action route, whereas multi-stage tasks use a subtask route that generates an executable subtask as an additional input for action generation.\n\nWith a single jointly trained policy for each simulation benchmark, EvoMem-VLA achieves success rates of 80.7\\% on RMBench, 82.0\\% on RoboMME and 83.8\\% across four real-world tasks spanning two robot embodiments. These results represent substantial improvements over the previous state of the art in all three evaluation settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "EvoMem-VLA introduces state-evolution memory for vision-language-action models, explicitly encoding changes between historical states to retain evidence about interaction outcomes and task progress. Conditional delta tokenization represents ordered frame pairs as directional, source-conditioned delta tokens. A shared vision-language backbone routes ordinary long-horizon tasks directly to action generation and uses a generated executable subtask for multi-stage tasks. The authors report success rates of 80.7% on RMBench, 82.0% on RoboMME, and 83.8% across four real-world tasks involving two robot embodiments.",
+          "zh": "论文提出EvoMem-VLA，为视觉语言动作模型构建状态演化记忆，显式编码历史状态间的变化，以保留交互结果和任务进度证据。其条件增量词元化将有序帧对编码为方向性、源状态条件化的增量词元；共享视觉语言模型骨干则按任务选择直接动作或子任务路线。作者报告，每个仿真基准使用单一联合训练策略，在RMBench和RoboMME成功率分别为80.7%和82.0%，并在涵盖两种机器人形态的四项真实世界任务中达到83.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5041,7 +5049,11 @@
             "heading": "",
             "text": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fits poorly into an agent's context.\n\nThe full video slows every turn, fixed keyframes lose the contact detail that decides whether a grasp holds, and what the agent needs shifts from the task's structure while planning to the frames around each contact.\n\nWe introduce Recursive Video In-Context Learning (RV-ICL), a training-free method that turns a demonstration into a hierarchy the agent navigates rather than a prompt it receives. The hierarchy is built from the sub-events of the demonstration, such as grasps and releases.\n\nIts levels grow finer, from keyframes of the whole task to phases, moments and short clips, and are exposed through read-only tools. The agent reads the coarse levels before planning. During execution it re-enters the hierarchy whenever a step needs more detail and loads only the clip of its current sub-goal. One demonstration per task is enough.\n\nBuilt on RPent, RV-ICL raises success from 92.6% to 96.5% on LIBERO-PRO and from 86.7% to 95.8% on LIBERO-Plus."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RV-ICL, a training-free method that organizes a task demonstration into a hierarchy of keyframes, phases, moments, and short clips, accessible through read-only tools. The agent reviews coarse levels before planning and retrieves finer detail during execution for its current sub-goal; the hierarchy is built around sub-events such as grasps and releases. One demonstration per task is reported as sufficient. Built on RPent, RV-ICL raises success from 92.6% to 96.5% on LIBERO-PRO and from 86.7% to 95.8% on LIBERO-Plus.",
+          "zh": "论文提出无需训练的递归视频上下文学习方法RV-ICL，将任务演示组织为由粗到细的层级，内容包括关键帧、阶段、时刻和短片段，并以只读工具供智能体按需访问。智能体先读取粗层级进行规划，执行时再针对当前子目标加载更细视频片段；演示按抓取、释放等子事件构建，每项任务只需一个演示。基于RPent的评估中，作者报告其在LIBERO-PRO上的成功率从92.6%升至96.5%，在LIBERO-Plus上从86.7%升至95.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5072,7 +5084,11 @@
             "heading": "",
             "text": "Precise control and positioning of autonomous underwater vehicles (AUVs) is critical for sampling, maintenance, and survey applications. Reinforcement learning (RL) offers rapid controller development while handling a range of deployment parameters via domain randomization (DR).\n\nHowever, DR is limited by the underlying simulation's capacity to model real physics such as drag, which is a large contributor to sim-to-real gaps. Computational fluid dynamics (CFD) provides high-fidelity drag models but has significant computational cost.\n\nThus, in this paper we train surrogate approximations of CFD data of a given vehicle, providing drag estimates 700,000x faster than solving for drag at each time step with CFD within the RL training pipeline.\n\nWe deploy a Proximal Policy Optimization (PPO) policy zero-shot on a 6-DOF AUV in which policy training is performed on these surrogate drag models (SDMs), providing analysis on zero-shot transfer, reward shaping sensitivity, and physical parameter perturbations.\n\nOn 15 identical segments in the ocean, we observe median gains of 19% in mean tracking error and 31% in control effort compared to the equivalent inertia box model. Our SDM based RL controller better predicts zero-shot transfer and reaches the most waypoints across all three reward shaping choices that we evaluate.\n\nFinally, we add 0.907 kg to the vehicle perturbing the mass, center-of-mass, and center-of-buoyancy. The policy reaches 100% of waypoints only when the SDM drag model is used; the policy fails to reach any of the 15 waypoints when the other drag models are used."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper trains surrogate models on computational fluid dynamics data to estimate drag for reinforcement-learning control of autonomous underwater vehicles. The authors report that the surrogates provide drag estimates 700,000 times faster than solving with CFD at each training time step. A PPO policy trained with these models is deployed zero-shot on a six-degree-of-freedom AUV. Across 15 identical ocean segments, the authors report median improvements of 19% in mean tracking error and 31% in control effort versus an equivalent inertia box model. Under a physical parameter perturbation, only the surrogate-drag policy reaches all waypoints.",
+          "zh": "论文研究将计算流体力学（CFD）数据的代理模型用于自主水下航行器强化学习控制，以低计算成本估算阻力。作者称，该代理模型在训练流程中估算阻力的速度比逐时步CFD求解快700,000倍，并将基于其训练的PPO策略零样本部署到六自由度航行器上。在海洋中15段相同航程的比较中，相较等效惯性盒模型，平均跟踪误差和控制努力的中位数分别改善19%和31%。对车辆质量等物理参数进行扰动后，只有采用代理阻力模型的策略到达全部航点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
