@@ -3,6 +3,34 @@
     {
       "body": "",
       "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "NVIDIA Robotics"
+      },
+      "format": "source_excerpt",
+      "id": "news-2b931ee051188e7ce8c293078916d4531dcf7fa3e91f64129ee9ec16e3995f32",
+      "intro": "How we taught robots to assemble GB300 tester trays and what it taught us about robot learning, mechanical intelligence, and good old-fashioned engineering The...",
+      "placement": "main",
+      "published_at": "2026-10-07T18:21:03+00:00",
+      "reading": {
+        "mode": "excerpt",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "How we taught robots to assemble GB300 tester trays and what it taught us about robot learning, mechanical intelligence, and good old-fashioned engineering The..."
+          }
+        ]
+      },
+      "source": {
+        "id": "nvidia-robotics-blog",
+        "url": "https://developer.nvidia.com/blog/the-machines-that-make-the-machines/"
+      },
+      "title": "The Machines that Make the Machines"
+    },
+    {
+      "body": "",
+      "catalog": {
         "kind": "paper",
         "paper": {
           "url": "https://arxiv.org/abs/2610.07674"
@@ -4858,38 +4886,7 @@
         "url": "https://arxiv.org/abs/2610.07096"
       },
       "title": "TeleHairing: A Teleoperation Baseline for Robotic Haircutting"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.00729"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-d3981b907c064a74f3355fcdef19ac876171d8f8ec3622e0d03fb515eebaa064",
-      "intro": "arXiv:2610.00729v2 Announce Type: replace-cross Abstract: This paper explores a reward-based policy to achieve zero-shot transfer between source and target environments with completely different observation spaces. While humans can demonstrate impressive adaptation capabilities, deep neural network policies often struggle to adapt to a new environment and require a considerable amount of samples for successful transfer. Instead, we propose a novel reward-based policy only conditioned on rewards and actions, enabling zero-shot adaptation to new environments with completely different observations. We",
-      "placement": "main",
-      "published_at": "2026-10-07T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "This paper explores a reward-based policy to achieve zero-shot transfer between source and target environments with completely different observation spaces.\n\nWhile humans can demonstrate impressive adaptation capabilities, deep neural network policies often struggle to adapt to a new environment and require a considerable amount of samples for successful transfer.\n\nInstead, we propose a novel reward-based policy only conditioned on rewards and actions, enabling zero-shot adaptation to new environments with completely different observations. We discuss the challenges and feasibility of a reward-based policy and then propose a practical algorithm for training.\n\nWe demonstrate that a reward policy can be trained within three different environments, Pointmass, Cartpole, and 2D Car Racing, and transferred to completely different observations, such as different color palettes or 3D rendering, or Stretch robot navigation in Habitat-Sim, in a zero-shot manner.\n\nWe also demonstrate that a reward-based policy can further guide the training of an observation-based policy in the target environment."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.00729"
-      },
-      "title": "Reward as Observation: Learning Reward-Based Policies for Rapid Adaptation"
     }
   ],
-  "updated_at": "2026-10-07T04:04:25.289632+00:00"
+  "updated_at": "2026-10-07T18:31:41.849421+00:00"
 }
