@@ -1527,7 +1527,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform.\n\nTo tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools.\n\nWAMJET follows a bottleneck-driven workflow where the agent profiles inference, modifies targeted code, validates effects, and iteratively refines the acceleration stack as bottlenecks shift, while preserving action quality. Experiments span six WAMs, three coding agents, and two GPU architectures.\n\nWAMJET achieves up to 9.95x lossless speedup over upstream implementations. Approximation and hardware-aware optimization yield additional latency reductions, with comparable success rates. The results show that WAMJET can produce effective acceleration stacks for WAM deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WAMJET, an agentic harness for accelerating World Action Model (WAM) inference. It equips coding agents with reusable optimization guidance and tools for measurement and validation, following an iterative workflow of profiling bottlenecks, modifying targeted code, and checking effects while seeking to preserve action quality. Experiments cover six WAMs, three coding agents, and two GPU architectures. The authors report up to 9.95× lossless speedup over upstream implementations; approximation and hardware-aware optimizations further reduce latency with comparable success rates.",
+          "zh": "论文提出 WAMJET，一个用于加速世界动作模型（WAM）推理的智能体框架。它为编程智能体提供可复用的优化指导及测量、验证工具，按瓶颈分析、定向修改和效果验证的流程迭代优化，并力求保持动作质量。实验涵盖六种 WAM、三种编程智能体和两种 GPU 架构；作者报告，相比上游实现，最高可实现 9.95 倍无损加速，近似计算与硬件感知优化还能进一步降低延迟，成功率相近。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1558,7 +1562,11 @@
             "heading": "",
             "text": "Autonomous social navigation requires balancing efficiency, physical safety, and social compliance. Reinforcement Learning (RL) methods provide a viable and effective solution but often rely on unrealistic assumptions, such as the knowledge of humans' position and velocity.\n\nIn this paper, we introduce JESSI (JAX-based E2E Safe Social Interpretable navigation), a lightweight end-to-end RL framework that maps raw LiDAR scans directly to kinematically feasible control commands.\n\nJESSI enhances safety via Dirichlet-parameterized continuous action spaces and deterministic bounding, while an integrated attention-based perception module extracts probabilistic human states for interpretable, socially aware decision-making.\n\nThrough extensive simulations and real-world deployment on a differential-drive robot, we demonstrate that jointly optimizing the RL policy with a supervised perception signal in a multi-task paradigm enhances social behavior.\n\nUltimately, JESSI is able to balance high navigation success rates and superior social behaviors compared to state-of-the-art baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces JESSI, an end-to-end reinforcement learning framework that maps raw LiDAR scans to kinematically feasible control commands for safe, socially compliant navigation. It uses Dirichlet-parameterized continuous action spaces and deterministic bounding for safety, alongside attention-based perception that estimates probabilistic human states for interpretable social decisions. The authors evaluate JESSI in simulations and deploy it on a differential-drive robot. They report that jointly training the policy with a supervised perception signal improves social behavior and balances navigation success with social performance compared with state-of-the-art baselines.",
+          "zh": "论文提出 JESSI，一个将原始激光雷达扫描直接映射为运动学可行控制指令的端到端强化学习框架，面向安全且符合社交规范的导航。系统通过 Dirichlet 参数化连续动作空间和确定性边界增强安全性，并以注意力感知模块估计概率化的人体状态，支持可解释的社交决策。作者在仿真和差速机器人真实部署中评估该方法，报告称，将强化学习策略与监督式感知信号联合进行多任务优化可改善社交行为，并在导航成功率与社交表现间取得平衡，优于所比较的先进基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1589,7 +1597,11 @@
             "heading": "",
             "text": "Navigation for humanoid robots is critical, yet large-scale evaluation on physical hardware is often impractical due to cost and safety concerns, making simulation benchmarks essential.\n\nExisting VLN benchmarks achieve physically executable navigation, but still assume （1） all hazards are observable from elevation maps; （2） realized motions closely match desired motions.\n\nIn real environments, however, fallen bottles may be ambiguous in elevation maps, while phones and water spills may be difficult to differentiate; hazard avoidance by the locomotion policy can cause the robot's actual trajectory to deviate from the path intended by the VLN policy.\n\nSuch command-execution mismatch can accumulate and lead the robot toward unintended locations. To expose these failure modes, we introduce a benchmark that models both elevation-subtle hazards and execution deviations, together with a closed-loop VLN + locomotion control framework that continuously realigns high-level navigation with the robot's actual state.\n\nWe evaluate navigation in simulation and further validate the locomotion policy on a physical Unitree G1 humanoid robot. Results show that semantic input reduces contact with hazards poorly represented in elevation maps, while anti-deviation improves navigation success.\n\nThese findings highlight the need to evaluate humanoid navigation jointly in terms of route completion and hazard avoidance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper identifies two assumptions in humanoid navigation benchmarks: that elevation maps reveal all hazards and that executed motions closely follow desired paths. Subtle hazards and locomotion-induced deviations can instead lead robots off course. The authors introduce a benchmark modeling both elevation-subtle hazards and execution deviations, along with a closed-loop vision-language navigation and locomotion framework that realigns high-level navigation with the robot’s actual state. Navigation is evaluated in simulation, and the locomotion policy is validated on a physical Unitree G1. Results indicate that semantic input reduces contact with poorly represented hazards and anti-deviation improves navigation success.",
+          "zh": "论文指出，人形机器人导航基准常假设高程图能呈现所有危险，且实际运动贴合期望轨迹；细微障碍和避障引起的执行偏差可能使机器人偏离目标。作者提出同时建模高程图难以显现的危险与运动偏差的基准，并设计闭环视觉语言导航与运动控制框架，根据机器人实际状态持续校正高层导航。仿真评估及 Unitree G1 实机运动策略验证显示，语义输入减少了与高程图表征不足的危险物接触，抗偏差机制提升导航成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1620,7 +1632,11 @@
             "heading": "",
             "text": "Video is an abundant, inexpensive source of human motion data that is rich in extreme athletic behaviors. Making it usable for humanoid robots, however, is not a matter of simply retargeting a reconstructed trajectory: video-derived motion is physically inconsistent, devoid of actuation information, and says nothing about failure or recovery.\n\nWe present KungfuAthleteBot (KAB), a framework that treats learning high-dynamic motion from video as the central problem and resolves each of these three failure modes in turn. (C1) We build the KungfuAthlete dataset from videos of national-level martial artists and introduce a physics-guided parabolic trajectory correction that removes height floating, ground penetration, and high-frequency jitter from reconstructed aerial and landing phases. (C2) Because video carries no force information, strict tracking of a reconstructed trajectory is dynamically infeasible, and error-driven initialization keeps re-launching the policy from infeasible aerial poses.\n\nWe introduce physics-driven pseudo-low-kinetic-energy (LKE) sampling, our central mechanism for making such references learnable: it biases initialization towards dynamically feasible states, letting the policy discover feasible actuation patterns instead of imitating infeasible ones. (C3) Finally, we introduce a direct training paradigm in which disturbance rejection and fall recovery are learned inside the same policy that tracks the video motion, requiring no recovery reference data and no manual mode switching.\n\nOn a humanoid robot, KAB learns dynamic skills from video and recovers from arbitrary falls in about 0.7 s, the fastest reported recovery for a unified policy.\n\nAblations on the unified policy confirm the necessity of its components, supporting the view that repairing and compensating video data, rather than only collecting more of it, is what unlocks high-dynamic humanoid skills."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents KungfuAthleteBot (KAB), a framework for humanoid robots to learn high-dynamic skills from video while training disturbance rejection and fall recovery within the same policy. It introduces a martial arts video dataset, physics-guided parabolic trajectory correction for aerial and landing phases, and pseudo-low-kinetic-energy sampling that favors dynamically feasible initialization states. On a humanoid robot, the authors demonstrate learned dynamic skills and recovery from arbitrary falls in about 0.7 seconds, which they describe as the fastest reported recovery for a unified policy. Ablations support the necessity of the components.",
+          "zh": "论文提出 KungfuAthleteBot（KAB），旨在让人形机器人从视频学习高动态动作，并在同一策略中实现抗扰与跌倒恢复。方法包括构建武术视频数据集、用物理引导的抛物线轨迹校正改善空中及着地动作参考，以及通过伪低动能采样偏向动力学可行的初始化状态，使策略学习可行的驱动方式。作者在实体人形机器人上展示了动态技能学习及约 0.7 秒内从任意跌倒恢复，并称这是统一策略已报告的最快恢复时间。消融实验支持各组件的必要性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
