@@ -1343,7 +1343,11 @@
             "heading": "",
             "text": "Third-party evaluations of autonomous vehicle (AV) safety can play a vital role in improving public acceptance, building consumer confidence, and establishing effective safety standards. In Part I of this study, we propose a dedicated third-party testing initiative for systematically evaluating AV behavioral safety.\n\nIn this paper, we validate our proposed framework using Autoware.Universe, an open-source Level 4 Automated Driving System (ADS), tested both in simulated environments and on the physical test track at the University of Michigan's Mcity Testing Facility.\n\nThe results indicate that Autoware.Universe possesses 6 out of 14 behavioral competencies and exhibited a crash rate of 3.01x10^-3 crashes per mile, approximately 1,000 times higher than the average human driver crash rate. During the tests, we also uncovered a number of unknown unsafe scenarios for Autoware.Universe.\n\nThese findings underscore the necessity of behavioral safety evaluations for improving AV safety performance prior to widespread public deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper validates the behavioral safety assessment framework proposed in Part I using Autoware.Universe, an open-source Level 4 automated driving system. Tests were conducted in simulation and on a physical test track. The authors report that the system demonstrated 6 of 14 behavioral competencies, with a crash rate about 1,000 times the average human driver rate, and that testing uncovered previously unknown unsafe scenarios. They argue that behavioral assessment is necessary before widespread deployment.",
+          "zh": "本文使用 Autoware.Universe 验证第一部分提出的自动驾驶行为安全评估框架，测试涵盖仿真环境和实体测试赛道。作者报告，该系统具备14项行为能力中的6项，测试中每英里碰撞率约为人类驾驶员平均值的1000倍，并发现若干未知的不安全场景。作者据此强调，在自动驾驶汽车广泛部署前开展行为安全评估的必要性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1374,7 +1378,11 @@
             "heading": "",
             "text": "Gaussian Belief Propagation (GBP) is a distributed inference algorithm that passes messages in graphical models, making it attractive for scalable spatial intelligence.\n\nHowever, we find GBP most effective locally: it rapidly smooths message errors that vary sharply between neighbor variables, but corrects global errors across distant graph regions incrementally through long-range message propagations.\n\nWe propose Hierarchy-GBP (H-GBP), an iterative, two-stage framework that accelerates GBP by first solving these global errors with a coarse graph approximation (abstraction) and projecting the results back to the original graph (recovery), then refining the remaining local errors with GBP.\n\nWe prove H-GBP convergence to the optimum by deriving the combined matrix operator of our abstraction and recovery steps and analyzing its spectral radius. Experiments on linear sparse graphs show that H-GBP converges fundamentally faster than standard GBP.\n\nMoreover, we validate H-GBP on two important spatial problems: Pose Graph Optimization (PGO) and Bundle Adjustment (BA).H-GBP markedly accelerates large-scale PGO and achieves state-of-the-art runtime across all tested BA scales."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Hierarchy-GBP, a two-stage method that addresses global errors on a coarse graph, projects results back to the original graph, and then uses Gaussian Belief Propagation to refine local errors. The authors prove convergence to the optimum by analyzing the spectral radius of the combined abstraction and recovery operator. Experiments on linear sparse graphs show faster convergence than standard GBP. They also report substantial acceleration for large-scale pose graph optimization and state-of-the-art runtime across tested bundle-adjustment scales.",
+          "zh": "本文提出 Hierarchy-GBP，通过先在粗化图上处理全局误差、再将结果映射回原图并用高斯置信传播细化局部误差，加速因子图推断。作者通过分析抽象与恢复步骤的组合矩阵算子谱半径，证明该方法收敛至最优解。在线性稀疏图实验中，该方法比标准 GBP 收敛更快；在位姿图优化中加速明显，并在所有测试规模的束调整中取得作者所称的先进运行时间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1405,7 +1413,11 @@
             "heading": "",
             "text": "Before deploying runtime recovery for a frozen vision-language-action (VLA) policy, one must establish that an intervention improves success beyond ordinary run-to-run variation and that its complexity adds value over a simple action. We evaluate these questions on frozen $\\pi_{0.5}$ across four RoboTwin tasks.\n\nFor each test seed, we pair rollouts with and without correction and include a same-seed base-policy re-run as a placebo. Seed-cluster intervals and prespecified comparison rules assess net gains against stochastic outcome changes.\n\nAcross 3,888 paired episodes, the full pipeline raises success on beat_allowbreak block_allowbreak hammer by $+13.5$\\,pp (95\\% interval $[+9.4,+17.7]$), with no detectable gain on the other three tasks at the deployed weight.\n\nAmong failed base episodes on the responsive task, $43.2\\%$ succeed on a plain re-run, compared with $63.5\\%$ after correction; many nominal rescues therefore reflect the base policy's own variability.\n\nA fixed-time trigger and scripted return to an earlier joint configuration produce a net gain with no detected difference from the learned pipeline across two rounds, although our prespecified equivalence criterion is not met consistently. Pausing and a constant-action control do not yield comparable gains.\n\nOn this benchmark, the decision to intervene depends strongly on the task, and a paired placebo plus a simple retreat baseline are needed to establish what learned correction contributes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study evaluates runtime correction for a frozen vision-language-action policy on four RoboTwin tasks, using same-seed base-policy reruns as a placebo. The authors report that the full pipeline improves success on only one task, with no detectable gain on the other three at the deployed weight. On the responsive task, many failed base episodes succeed on rerun, indicating that some apparent rescues reflect policy variability. A fixed-time trigger and scripted return to an earlier joint configuration yield a net gain, with no detected difference from the learned pipeline, though prespecified equivalence is not consistently established.",
+          "zh": "本文在四项 RoboTwin 任务中评估冻结的视觉语言动作策略及其运行时纠正方法，并用同种子重跑作为安慰剂比较。作者报告，完整流程只在一项任务中显著提升成功率；其他三项在部署权重下未检测到增益。响应任务中，基础策略失败后重跑也有不少成功，说明部分表面上的挽救源于策略自身波动。固定时间触发并返回先前关节配置可带来净增益，与学习式流程未检测到差异，但预设等效标准并非始终满足。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1436,7 +1448,11 @@
             "heading": "",
             "text": "Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity.\n\nIn this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking.\n\nOur method introduces a continuous, sigmoid-based formulation to smooth the otherwise discrete event of tissue cutting, making it amenable to gradient-based optimization within a differentiable Position-Based Dynamics (PBD) simulation.\n\nTo account for uncertainty and improve robustness in the presence of noisy visual data, we incorporate Stein Variational Gradient Descent (SVGD) for particle-based probabilistic inference, generating multiple hypotheses for topological state estimation.\n\nBuilding on this foundation, we develop an autonomous dissection algorithm for thin-shell tissues that leverages topological updates to guide closed-loop cutting trajectory control.\n\nWe evaluate our approach in both simulated and real-world electrosurgical environments, demonstrating significant improvements in topological estimation accuracy and dissection precision over existing methods.\n\nOur results highlight the potential of this framework to advance automation in soft-tissue surgical procedures by enabling reliable perception and control in the presence of complex structural changes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ProCut, a differentiable framework for estimating and modeling topological changes such as cutting during deformable tissue tracking. It uses a continuous sigmoid formulation to smooth the discrete cutting event for gradient-based optimization in a differentiable Position-Based Dynamics simulation. Stein Variational Gradient Descent supports particle-based probabilistic inference and multiple hypotheses under noisy visual data. The authors apply the method to autonomous dissection control for thin-shell tissues and report improved topology estimation accuracy and dissection precision in simulated and real electrosurgical environments.",
+          "zh": "本文提出 ProCut，一种可微框架，用于在软组织变形跟踪中估计和建模切割等拓扑变化。方法以连续的 sigmoid 表述平滑离散切割事件，并在可微位置基动力学仿真中进行梯度优化；还结合 Stein 变分梯度下降进行基于粒子的概率推断，以处理视觉数据噪声并生成多个拓扑状态假设。作者将其用于薄壳组织自主切开控制，并报告仿真与真实电外科环境评估显示，拓扑估计准确度和切开精度优于既有方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
