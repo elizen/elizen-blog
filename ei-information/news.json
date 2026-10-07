@@ -187,7 +187,7 @@
       },
       "format": "source_excerpt",
       "id": "news-04ca9d57fee4e8c090588e6f447004864094d243ad7ae65f0d80200dab366bd2",
-      "intro": "arXiv:2610.06814v1 Announce Type: cross Abstract: World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the visual representations used across tasks and action policies. Existing attacks on these models optimize against the victim's actions or predicted futures and therefore require access to target-model outputs. In this paper, we propose an attack, TAPDreamer, against world action models that",
+      "intro": "arXiv:2610.06814v2 Announce Type: cross Abstract: World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the visual representations used across tasks and action policies. Existing attacks on these models optimize against the victim's actions or predicted futures and therefore require access to target-model outputs. In this paper, we propose an attack, TAPDreamer, against world action models that",
       "placement": "main",
       "published_at": "2026-10-06T04:00:00+00:00",
       "reading": {
@@ -196,12 +196,12 @@
         "sections": [
           {
             "heading": "",
-            "text": "World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the visual representations used across tasks and action policies.\n\nExisting attacks on these models optimize against the victim's actions or predicted futures and therefore require access to target-model outputs. In this paper, we propose an attack, TAPDreamer, against world action models that instead uses a public encoder alone to construct a fixed local perturbation that transfers across tasks and action architectures.\n\nTAPDreamer requires no target-policy queries. Our key insight is that interactions between patch-induced changes in attention weights and value vectors broadcast a nearly identical representation shift far beyond the patch footprint, and this shift remains stable across task observations.\n\nGuided by this insight, TAPDreamer uses six frames from one source task to maximize the global L1 distance between clean and patched encoder representations.\n\nIn closed-loop evaluation, one frozen patch per benchmark, covering about 6.5% of the input, reduces FastWAM's success rate from 97.7% to 0.0% across 40 LIBERO tasks and from 90.8% to 0.0% across 50 RoboTwin tasks; matched random patches retain 81.5% and 79.2% success.\n\nThe same patches reduce success to 2.1% and 0.8% on two DreamWAM configurations and to 10.0% on Motus. These results show that protecting downstream action generation alone is insufficient: defenses for world action models must also secure shared visual encoders against persistent local perturbations."
+            "text": "World models learn to predict how their environment will evolve, making them an important foundation for general-purpose robotic control. Yet world action models depend on camera inputs whose manipulation can corrupt the visual representations used across tasks and action policies.\n\nExisting attacks on these models optimize against the victim's actions or predicted futures and therefore require access to target-model outputs. In this paper, we propose an attack, TAPDreamer, against world action models that instead uses a public encoder alone to construct a fixed local perturbation that transfers across tasks and action architectures.\n\nTAPDreamer requires no target-policy queries. Our key insight is that interactions between patch-induced changes in attention weights and value vectors broadcast a nearly identical representation shift far beyond the patch footprint, and this shift remains stable across task observations.\n\nGuided by this insight, TAPDreamer uses six frames from one source task to maximize the global L1 distance between clean and patched encoder representations.\n\nIn closed-loop evaluation, one frozen patch per benchmark, covering about 6.5% of the input, reduces FastWAM's success rate from 97.7% to 0.0% across 40 LIBERO tasks and from 90.86% to 0.0% across 50 RoboTwin tasks; matched random patches retain 81.5% and 79.2% success.\n\nThe same patches reduce success to 1.45% and 1.00% on two DreamWAM configurations and to 10.60% on Motus. These results show that protecting downstream action generation alone is insufficient: defenses for world action models must also secure shared visual encoders against persistent local perturbations."
           }
         ],
         "summary": {
-          "en": "The paper proposes TAPDreamer, a transferable adversarial patch attack on world action models. It uses only a public encoder and six frames from one source task to optimize a fixed local perturbation, without querying the target policy. The authors attribute transfer to a stable representation shift that spreads beyond the patch through changes in attention weights and value vectors. In closed-loop evaluations, frozen patches covering about 6.5% of the input reduced success across FastWAM, two DreamWAM configurations, and Motus; the authors argue shared visual encoders need protection.",
-          "zh": "论文提出 TAPDreamer，一种面向世界动作模型的可迁移对抗贴片攻击。它仅使用公开编码器，以一个源任务的六帧优化固定局部扰动，无需查询目标策略。作者认为，贴片改变注意力权重和值向量后，会在贴片区域之外造成近似一致、且跨任务观察稳定的表征偏移。闭环评估中，每个基准使用一个冻结贴片，覆盖约 6.5% 输入；摘要报告其在 FastWAM、两种 DreamWAM 配置及 Motus 上显著降低成功率，并据此指出共享视觉编码器也需要防护。"
+          "en": "The paper proposes TAPDreamer, an attack on world action models that uses only a public encoder to create a fixed adversarial patch and requires no target-policy queries. The authors attribute transfer to a stable representation shift caused by patch-induced changes in attention weights and value vectors. They optimize using six frames from one source task. In closed-loop evaluations, patches covering about 6.5% of the input sharply reduced success rates across reported models and tasks; these findings are limited to the stated evaluation settings.",
+          "zh": "论文提出 TAPDreamer，一种仅使用公开编码器构造对抗补丁、无需查询目标策略的世界动作模型攻击方法。作者认为，补丁改变注意力权重和值向量后，会在补丁区域之外造成近似一致且跨任务稳定的表征偏移；方法用单一源任务的六帧优化全局表征距离。闭环评估中，每个基准使用一个覆盖约6.5%输入的固定补丁，在多个模型与任务上显著降低成功率；结果限于所报告的评估设置。"
         }
       },
       "source": {
@@ -1412,7 +1412,7 @@
       },
       "format": "source_excerpt",
       "id": "news-2cf2174709f8135debe30b585000d2faacbfff61a5869d000709049d8b06dcfb",
-      "intro": "arXiv:2606.03335v2 Announce Type: replace Abstract: GPU-parallel simulation provides abundant robot interaction, but existing benchmarks rarely combine this scale with heterogeneous manipulation tasks and standardized multi-task RL evaluation. We introduce Hebero (Heterogeneous Benchmark for Robot Learning), a GPU-parallel Isaac Lab benchmark that enables efficient joint training and evaluation of a single policy across all 40 heterogeneous tasks. Scaling experiments show that increasing parallel replicas per task improves success under a fixed wall-clock budget. To support learning with sparse rewards",
+      "intro": "arXiv:2606.03335v3 Announce Type: replace Abstract: GPU-parallel simulation provides abundant robot interaction, but existing benchmarks rarely combine this scale with heterogeneous manipulation tasks and standardized multi-task RL evaluation. We introduce Hebero (Heterogeneous Benchmark for Robot Learning), a GPU-parallel Isaac Lab benchmark that enables efficient joint training and evaluation of a single policy across all 40 heterogeneous tasks. Scaling experiments show that increasing parallel replicas per task improves success under a fixed wall-clock budget. To support learning with sparse rewards",
       "placement": "main",
       "published_at": "2026-10-06T04:00:00+00:00",
       "reading": {
@@ -1425,8 +1425,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents Hebero, a GPU-parallel Isaac Lab benchmark for jointly training and evaluating one policy across 40 heterogeneous tasks. Scaling experiments report improved success with more parallel replicas per task under a fixed time budget. The authors introduce DGPO, which uses demonstrations for tracking rewards and asymmetric value learning, and IW-ABC, which adapts demonstration guidance and task weighting according to learning progress. With 50 demonstrations per task, reported mean success is 90.1% for state input and 93.5% for vision. A simulation-trained policy also performs four tasks on a physical Piper robot.",
-          "zh": "论文介绍 Hebero，一个基于 Isaac Lab 的 GPU 并行机器人学习基准，支持单一策略在 40 项异质任务上联合训练和评估；实验显示，在固定时间预算下，增加每项任务的并行副本可提升成功率。作者提出 DGPO，以示范数据构造跟踪奖励并支持非对称价值学习，并提出 IW-ABC，根据任务进度调节行为克隆指导和 PPO 更新中的任务权重。使用每项任务 50 个示范时，作者报告状态输入平均成功率为 90.1%，高于基线；视觉版本为 93.5%。仿真训练的策略还在实体 Piper 机器人上完成了四项任务。"
+          "en": "The paper introduces Hebero, a GPU-parallel Isaac Lab benchmark for jointly training and evaluating one policy across 40 heterogeneous tasks. It also presents DGPO, which uses demonstrations for tracking rewards and asymmetric value learning, and IW-ABC, which adjusts behavioral-cloning guidance and task weighting according to per-task learning progress. With 50 demonstrations per task, the authors report 90.1% mean success for state inputs and 93.5% for the visual counterpart. Physical Piper robot experiments demonstrate four tasks using a policy trained in simulation.",
+          "zh": "论文介绍 Hebero，这是一个基于 Isaac Lab 的 GPU 并行机器人学习基准，支持在40个异质任务上联合训练和评估单一策略。作者还提出 DGPO，以演示数据提供跟踪奖励和非对称价值学习，并提出 IW-ABC，按任务进展调节行为克隆指导及更新中的任务权重。报告称，在每任务50条演示时，IW-ABC 的状态输入平均成功率为90.1%，视觉版本为93.5%；实体 Piper 机器人实验展示了仿真训练策略执行四项任务的能力。"
         }
       },
       "source": {
@@ -1867,7 +1867,7 @@
       },
       "format": "source_excerpt",
       "id": "news-358e8673083605396f7c1cf41d899f105c14e18a8b2b4177baa3ebddc3862110",
-      "intro": "arXiv:2610.04929v1 Announce Type: new Abstract: Robot agents must connect their intended actions to observed outcomes while retaining the context needed to revise their choices over repeated attempts. Existing interfaces often leave these choices inside predefined tools or require agents to manage detailed execution code and its growing history. We introduce RobotUse, a robot agent harness that organizes computation, context, and decisions around specifying and revising physical actions. Agents visually select targets and poses, while the backend handles geometry",
+      "intro": "arXiv:2610.04929v2 Announce Type: new Abstract: Robot agents must connect their intended actions to observed outcomes while retaining the context needed to revise their choices over repeated attempts. Existing interfaces often leave these choices inside predefined tools or require agents to manage detailed execution code and its growing history. We introduce RobotUse, a robot agent harness that organizes computation, context, and decisions around specifying and revising physical actions. Agents visually select targets and poses, while the backend handles geometry",
       "placement": "main",
       "published_at": "2026-10-06T04:00:00+00:00",
       "reading": {
@@ -1880,8 +1880,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents RobotUse, a robot agent harness that organizes computation, context, and decisions for specifying and revising physical actions. Agents visually select targets and poses; the backend handles geometry, motion planning, and control. Subagents retain detailed interactions within subgoals, while a persistent playbook supports learning from execution. On RoboLab, the authors report 45% task success, 6.7 percentage points above CaP-X, with compact decision contexts and reduced reliance on predefined action abstractions. They also report learning from real-world execution despite imperfect feedback and transferring learned information to subsequent tasks.",
-          "zh": "本文提出机器人智能体框架 RobotUse，用于组织计算、上下文和决策，以指定并修订物理动作。智能体通过视觉选择目标和姿态，后端负责几何、运动规划与控制；子智能体保留各子目标的详细交互，并返回后续决策所需信息。框架还通过持久化操作手册支持从执行中持续学习。在 RoboLab 上，作者报告任务成功率为45%，比 CaP-X 高6.7个百分点，同时保持紧凑决策上下文并减少对预定义动作抽象的依赖。作者还报告，RobotUse 能从反馈不完美的真实执行中学习，并将所得知识迁移至后续任务。"
+          "en": "The paper presents RobotUse, a robot-agent harness for organizing computation, context, and decisions around physical actions. Agents visually select targets and poses while a backend handles geometry, motion planning, and control. Subagents retain detailed interactions for each subgoal, and a persistent playbook supports learning from execution. On RoboLab, the authors report 45% task success, 6.7 percentage points above CaP-X. They also report learning from real-world execution despite imperfect feedback and transferring the learned information to later tasks.",
+          "zh": "论文提出 RobotUse，一种组织机器人计算、上下文和决策的代理框架。代理通过视觉选择目标与姿态，后端处理几何、运动规划和控制；子代理保留子目标交互细节，并向后续决策返回所需信息。框架还通过持久化操作手册从执行中持续学习。作者报告，在 RoboLab 上任务成功率为45%，比 CaP-X 高6.7个百分点，并称系统能从反馈不完美的真实执行中学习，并将所得经验迁移到后续任务。"
         }
       },
       "source": {
@@ -2147,7 +2147,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3bb2a7e27cafb3c76cd8bb9ea153c3d2b634d04844f19b0ffd84ff1e2becc218",
-      "intro": "arXiv:2610.03797v1 Announce Type: cross Abstract: World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform. To tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools. WAMJET",
+      "intro": "arXiv:2610.03797v2 Announce Type: cross Abstract: World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform. To tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools. WAMJET",
       "placement": "main",
       "published_at": "2026-10-06T04:00:00+00:00",
       "reading": {
@@ -2160,8 +2160,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces WAMJET, a harness that uses coding agents to accelerate inference for World Action Models. It provides reusable optimization guidance and measurement and validation tools. Its bottleneck-driven workflow profiles inference, targets code changes, checks their effects, and iteratively refines optimizations as bottlenecks shift while preserving action quality. Experiments cover six WAMs, three coding agents, and two GPU architectures. The authors report up to 9.95× lossless speedup over upstream implementations, with further latency reductions from approximation and hardware-aware optimization at comparable success rates.",
-          "zh": "论文介绍 WAMJET，这是一个通过编码代理加速世界动作模型推理的工具框架，提供可复用的优化指导、测量和验证工具。其工作流先分析推理瓶颈，再针对性修改代码、验证效果，并随着瓶颈变化迭代优化，同时尽量保持动作质量。实验涵盖六种世界动作模型、三种编码代理和两种 GPU 架构。作者报告，相比上游实现，WAMJET 的无损加速最高达 9.95 倍；近似计算和硬件感知优化还可降低延迟，成功率相近。"
+          "en": "The paper introduces WAMJET, an agentic harness for accelerating world action model inference. It gives coding agents reusable optimization guidance and tools for measurement and validation. Agents profile bottlenecks, modify targeted code, validate changes, and refine the optimization stack while preserving action quality. Experiments cover six world action models, three coding agents, and two GPU architectures. The authors report up to 9.95× lossless speedup over upstream implementations, with further latency reductions from approximation and hardware-aware optimization at comparable success rates.",
+          "zh": "论文提出 WAMJET，用代理式框架加速世界动作模型推理。该框架为编码代理提供可复用的优化指导，以及测量和验证工具；代理按瓶颈分析、修改代码、验证效果并迭代优化，同时保持动作质量。实验涉及六种世界动作模型、三种编码代理和两种 GPU 架构。作者报告，相较上游实现，最高可实现9.95倍无损加速；近似计算和硬件感知优化还能进一步降低延迟，且成功率相近。"
         }
       },
       "source": {
@@ -2427,7 +2427,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3fed6a020639b55c328b2b69b8ee0f724c98af893353c513f8c4448a63b619ca",
-      "intro": "arXiv:2610.05733v1 Announce Type: new Abstract: Autonomous social navigation requires balancing efficiency, physical safety, and social compliance. Reinforcement Learning (RL) methods provide a viable and effective solution but often rely on unrealistic assumptions, such as the knowledge of humans' position and velocity. In this paper, we introduce JESSI (JAX-based E2E Safe Social Interpretable navigation), a lightweight end-to-end RL framework that maps raw LiDAR scans directly to kinematically feasible control commands. JESSI enhances safety via Dirichlet-parameterized continuous action spaces and",
+      "intro": "arXiv:2610.05733v2 Announce Type: new Abstract: Autonomous social navigation requires balancing efficiency, physical safety, and social compliance. Reinforcement Learning (RL) methods provide a viable and effective solution but often rely on unrealistic assumptions, such as the knowledge of humans' position and velocity. In this paper, we introduce JESSI (JAX-based E2E Safe Social Interpretable navigation), a lightweight end-to-end RL framework that maps raw LiDAR scans directly to kinematically feasible control commands. JESSI enhances safety via Dirichlet-parameterized continuous action spaces and",
       "placement": "main",
       "published_at": "2026-10-06T04:00:00+00:00",
       "reading": {
@@ -2438,11 +2438,7 @@
             "heading": "",
             "text": "Autonomous social navigation requires balancing efficiency, physical safety, and social compliance. Reinforcement Learning (RL) methods provide a viable and effective solution but often rely on unrealistic assumptions, such as the knowledge of humans' position and velocity.\n\nIn this paper, we introduce JESSI (JAX-based E2E Safe Social Interpretable navigation), a lightweight end-to-end RL framework that maps raw LiDAR scans directly to kinematically feasible control commands.\n\nJESSI enhances safety via Dirichlet-parameterized continuous action spaces and deterministic bounding, while an integrated attention-based perception module extracts probabilistic human states for interpretable, socially aware decision-making.\n\nThrough extensive simulations and real-world deployment on a differential-drive robot, we demonstrate that jointly optimizing the RL policy with a supervised perception signal in a multi-task paradigm enhances social behavior.\n\nUltimately, JESSI is able to balance high navigation success rates and superior social behaviors compared to state-of-the-art baselines."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces JESSI, an end-to-end reinforcement learning framework that maps raw LiDAR scans to kinematically feasible control commands. It uses Dirichlet-parameterized continuous action spaces and deterministic bounding for safety, alongside attention-based perception that extracts probabilistic human states for interpretable social decisions. The authors report that jointly optimizing the policy and a supervised perception signal in a multi-task setup enhances social behavior. In simulations and deployment on a differential-drive robot, they report high navigation success and superior social behavior compared with state-of-the-art baselines.",
-          "zh": "论文介绍 JESSI，一种端到端强化学习框架，将原始激光雷达扫描映射为满足运动学约束的控制指令。该方法以 Dirichlet 参数化连续动作空间和确定性边界增强安全性，并用基于注意力的感知模块提取概率化的人体状态，以支持可解释的社会导航决策。作者称，在仿真及差速驱动机器人现实部署中，多任务联合优化策略与监督感知信号提升了社会行为；与先进基线相比，JESSI兼具较高导航成功率和更优社会行为。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5147,5 +5143,5 @@
       "title": "RefAtomNet++: Advancing Referring Atomic Video Action Recognition using Multi-Trajectory Semantic Retrieval"
     }
   ],
-  "updated_at": "2026-10-06T04:20:32.430743+00:00"
+  "updated_at": "2026-10-07T02:59:02.423938+00:00"
 }
