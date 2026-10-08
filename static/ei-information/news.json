@@ -3083,7 +3083,11 @@
             "heading": "",
             "text": "Contact-rich manipulation poses a discrete question and a continuous one at once, namely which contacts are active and how to move while they hold. The two are coupled by a change of dimension, since each contact that a robot maintains confines its motion to a lower-dimensional manifold.\n\nWe make that coupling the explicit object of planning by observing that a contact mode is not merely analogous to a stratum of the configuration space; it is one. A plan is then a walk over strata whose within-stratum segments are geodesics.\n\nOn two contact-rich manipulation tasks in simulation, pushing a T-shaped block around obstacles and reorienting a cube in a dexterous hand, our planner returns solutions within seconds with no mode, contact sequence, or stratum given in advance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper treats contact modes as strata of configuration space: maintaining contact confines robot motion to a lower-dimensional manifold. Planning is formulated as a walk across strata, with geodesic segments within each stratum. In simulation, the planner is evaluated on pushing a T-shaped block around obstacles and reorienting a cube in a dexterous hand. The authors report solutions within seconds without providing the mode, contact sequence, or stratum in advance.",
+          "zh": "论文将接触模式视为配置空间中的几何分层：维持接触会将机器人运动限制在更低维流形上。规划因此被表述为在不同分层间行走，并在每个分层内沿测地线移动。作者在仿真中测试了两项接触丰富的操作任务：推动 T 形块绕过障碍物，以及用灵巧手重新定向立方体。作者称，规划器能在数秒内求得解，且无需预先提供模式、接触序列或分层。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3114,7 +3118,11 @@
             "heading": "",
             "text": "Ensuring safety in autonomous driving requires continuous map maintenance supported by reliable quality indicators. In this context, it is crucial to identify when and where map updates should be triggered, for instance through crowdsourced data, and under which conditions a new map compilation should be deployed.\n\nThis paper focuses on effective metrics for assessing the quality of vector maps and guiding such decisions. We present a new metric called GOSPAM designed to measure map discrepancies in terms of location errors, existence, and completeness.\n\nThrough detailed simulations on both point and polyline feature maps, we analyze its sensitivity to common map degradation such as bias, false positives, false negatives, and coordinate errors.\n\nThe results demonstrate that GOSPAM offers a unified and interpretable measure that effectively captures various forms of map deviation, making it a strong candidate for map quality assessment in automotive applications."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GOSPAM, a metric for assessing vector map discrepancies in location, feature existence, and completeness, with the aim of informing map updates and deployment decisions. Simulations on point and polyline feature maps examine its sensitivity to degradation, including bias, false positives, false negatives, and coordinate errors. The authors report that GOSPAM captures multiple forms of map deviation through a unified, interpretable measure and describe it as a candidate for automotive map quality assessment.",
+          "zh": "论文关注用于评估矢量地图质量、指导地图更新和新版本部署的指标，并提出 GOSPAM，用于衡量位置误差、要素存在性和完整性方面的地图差异。作者通过点要素与折线要素地图的仿真，分析该指标对偏差、假阳性、假阴性和坐标误差等退化的敏感性。结果显示，GOSPAM能够以统一且可解释的方式捕捉多种地图偏差；作者认为它适用于汽车领域的地图质量评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3145,7 +3153,11 @@
             "heading": "",
             "text": "Reinforcement learning can improve vision-language-action (VLA) policies beyond supervised fine-tuning, although this typically involves further updates to the policy parameters. For flow-matching policies, iterative action generation provides an additional opportunity to incorporate task information during inference.\n\nWe introduce Guided Action Flow (GAF), which learns a compact, observation-conditioned action-value critic from robot task rollouts and applies its action gradient to steer reverse-time flow sampling. The supervised-fine-tuned VLA remains frozen throughout critic learning and deployment.\n\nPhysical-robot experiments show an increase in aggregate success from 60.0% to 82.5% across six nominal manipulation tasks. Under six altered-lighting and object-distractor conditions evaluated on three of these tasks, aggregate success improves from 34.2% to 49.2%.\n\nAblations and rollout analyses support the importance of the learned guidance direction and the critic's visual and proprioceptive inputs. With approximately 2.735M trainable critic parameters alongside a 0.45B-parameter VLA, GAF enables task outcomes to inform action generation through a compact inference-time guidance module."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Guided Action Flow (GAF) learns a compact, observation-conditioned action-value critic from robot rollouts and uses its action gradient to steer reverse-time flow sampling, while keeping the supervised-fine-tuned VLA frozen. Physical-robot experiments cover six nominal manipulation tasks and six altered-lighting or object-distractor conditions across three tasks. The authors report aggregate success increases from 60.0% to 82.5% and from 34.2% to 49.2%, respectively. Ablations and rollout analyses support the guidance direction and visual and proprioceptive inputs.",
+          "zh": "论文提出 Guided Action Flow（GAF），从机器人任务执行轨迹中学习紧凑的、以观测为条件的动作价值评价器，并用其动作梯度引导反向流采样；监督微调后的视觉—语言—动作策略在学习和部署期间保持冻结。实体机器人实验涵盖六项常规操作任务，以及三项任务中的六种光照变化和物体干扰条件，作者报告汇总成功率分别由 60.0% 升至 82.5%、由 34.2% 升至 49.2%。消融和轨迹分析支持其引导方向及视觉、本体感觉输入的重要性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3176,7 +3188,11 @@
             "heading": "",
             "text": "Dexterous manipulation policies trained in simulation often fail to transfer to the real world because of errors in contact timing and force regulation. Yet these policies can retain useful multi-finger coordination for task progression.\n\nWe propose ReDex, a framework for adapting a simulation-trained base policy to the real world by correcting local contact failures and incorporating tactile feedback.\n\nStarting from a proprioception-only base policy, ReDex allows a human operator to physically correct contact failures at selected fingers under compliant control during real-world rollouts, while the frozen base policy continues to control the remaining fingers.\n\nThese rollouts combine base policy execution, human-corrected finger motion, and fingertip force observations. We reconstruct force-informed targets from these rollouts to train a standalone force-conditioned policy via behavior cloning.\n\nThis design reduces human correction effort, enables learning of contact regulation from real-world interaction, and introduces force feedback into a proprioception-only policy without tactile simulation or complex full-hand teleoperation. We evaluate ReDex on two challenging, contact-rich dexterous manipulation tasks on real hardware.\n\nCompared with sim-to-real transferred base policies, ReDex increases Object Flipping success rate from 14\\% to 86\\% across two objects and average Screwdriver Rotation progress from 26.0% to 95.3% across three objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReDex adapts simulation-trained dexterous policies through compliant, human correction of selected fingers during real-world rollouts, while the frozen base policy controls the remaining fingers. It combines these rollouts with fingertip force observations to reconstruct targets for behavior-cloning a standalone force-conditioned policy. The approach adds force feedback without tactile simulation or complex full-hand teleoperation. On two real-hardware tasks, the authors report Object Flipping success rising from 14% to 86% across two objects, and average Screwdriver Rotation progress rising from 26.0% to 95.3% across three objects.",
+          "zh": "论文提出 ReDex，用于将仿真训练的灵巧操作策略适配到真实世界：在人类操作员通过柔顺控制纠正所选手指接触失败时，冻结的基础策略继续控制其他手指；结合这些轨迹和指尖力观测重建目标，再通过行为克隆训练力条件策略。该方法在不使用触觉仿真或复杂全手遥操作的情况下引入力反馈。真实硬件上的两项任务评估显示，相比迁移后的基础策略，物体翻转成功率在两个物体上从 14% 升至 86%，螺丝刀旋转平均进度在三个物体上从 26.0% 升至 95.3%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
