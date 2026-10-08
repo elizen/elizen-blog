@@ -1947,7 +1947,11 @@
             "heading": "",
             "text": "Deep-space crews cannot rely on real-time ground support for urgent off-nominal events. Initial alerts may underdetermine cause, while discriminating evidence may reside in crew observations or at locations that are unsafe, costly, or unavailable for crew inspection.\n\nWe present an evidence-driven architecture for human-agent-robot teaming in Earth-independent anomaly triage. Agentic AI is treated as a stateful coordinator over bounded, inspectable services rather than as a fully autonomous vehicle controller.\n\nA triage state manager maintains hypotheses, evidence provenance, uncertainty, operational context, and tool status; a crew-facing embodied agent elicits observations and explains assessment changes; and a mobile robot acquires targeted, localized evidence.\n\nTyped interfaces separate dialogue and orchestration from monitoring, robot command, context retrieval, and safety-critical control.\n\nTwo scenarios illustrate the architecture: a crewed deep-space mission based on an actual ISS ammonia false alarm, where suspected contamination restricts crew access, and a power-interface anomaly at a crewed lunar base, where robotic inspection distinguishes a local connector fault from other causes ambiguous in remote telemetry.\n\nOur main contribution is an authority-bounded closed evidence-loop architecture, exercised in a hardware-in-the-loop integration prototype using Reachy Mini and an Innate MARS mobile robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an architecture for human-agent-robot teaming in anomaly triage when crews cannot rely on real-time ground support. Agentic AI coordinates bounded, inspectable services rather than controlling a vehicle autonomously. A triage manager tracks hypotheses, evidence provenance, uncertainty, context, and tool status; an embodied agent elicits crew observations and explains assessment changes; and a mobile robot gathers targeted evidence. Two scenarios concern an ammonia alarm during a deep-space mission and a lunar-base power-interface anomaly. The architecture is exercised in a hardware-in-the-loop prototype.",
+          "zh": "论文提出一种用于地球独立异常分诊的人类、智能体与机器人协作架构，将智能体 AI 定位为协调有界且可检查服务的有状态协调器，而非全自主车辆控制器。架构管理假设、证据来源、不确定性、运行情境和工具状态，由面向乘员的具身智能体收集观察并解释评估变化，再由移动机器人获取定点证据。两个场景涉及深空任务中的氨警报和月球基地电源接口异常。作者在 Reachy Mini 与 Innate MARS 机器人组成的硬件在环集成原型中演示该证据闭环架构。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1978,7 +1982,11 @@
             "heading": "",
             "text": "Reinforcement learning (RL) fine-tuning improves vision-language-action (VLA) policies through closed-loop experience, yet generalization beyond the fine-tuning distribution remains limited.\n\nOur analysis reveals a selective reshaping of exploration: RL contracts behavior globally, yet diversifies successful trajectories, elicits success with fewer rollouts, and covers more of the latent task-valid solution space than supervised fine-tuning. Broader successful-mode coverage may provide alternative strategies under distribution shifts.\n\nInspired by this, we introduce DRIVE (Diversity-driven RL fIne-tuning for VLA gEneralization), which turns successful-behavior diversity into an explicit RL objective. DRIVE groups rollouts under matched task conditions, compares their trajectories with temporal alignment, and derives a success-conditioned intrinsic reward from relative behavioral diversity.\n\nThis design encourages broader coverage of feasible solutions without rewarding diverse failures or superficial timing differences. Across LIBERO-Plus, ManiSkill3, and RoboTwin 2.0, DRIVE improves the average out-of-domain (OOD) performance over vanilla RL fine-tuning by 5.3 points on $\\pi_0$ and 2.0 points on $\\pi_{0.5}$.\n\nOn a dual-arm AgileX PiPER-X platform, DRIVE further increases average OOD success from 64.1% to 73.3% (+9.2 points), demonstrating gains that persist under physical deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper reports that reinforcement-learning fine-tuning contracts VLA behavior overall while diversifying successful trajectories and covering more of the latent task-valid solution space than supervised fine-tuning. It introduces DRIVE, which makes successful-behavior diversity an explicit RL objective. Rollouts under matched task conditions are compared with temporal alignment, and relative diversity yields a success-conditioned intrinsic reward. Evaluations across LIBERO-Plus, ManiSkill3, RoboTwin 2.0, and a dual-arm AgileX PiPER-X platform show improved out-of-domain performance over vanilla RL fine-tuning.",
+          "zh": "论文分析指出，强化学习微调会整体收缩 VLA 策略行为，却使成功轨迹更多样，并比监督微调覆盖更多潜在的任务有效解空间。基于此，作者提出 DRIVE，将成功行为多样性纳入强化学习目标：在匹配任务条件下分组比较时间对齐的轨迹，并按成功条件计算内在奖励，以鼓励可行解覆盖而不奖励失败多样性或表面时间差异。在 LIBERO-Plus、ManiSkill3、RoboTwin 2.0 和双臂 AgileX PiPER-X 平台上的评估显示，其域外表现有所提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
