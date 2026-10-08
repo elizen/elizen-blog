@@ -3335,7 +3335,11 @@
             "heading": "",
             "text": "Tactile feedback provides embodied agents with physical information beyond visual observations, enabling more reliable interaction with the real world.\n\nHowever, despite the rapid progress of vision-tactile-language-action (VTLA) policies, there remains a lack of unified benchmarks for evaluating tactile-enabled robot manipulation across simulation and the real world.\n\nTo address this gap, we introduce OpenViTac, a visuo-tactile manipulation benchmark for evaluating robot policies across simulation and the real world. OpenViTac organizes contact-rich manipulation into four tactile-relevant capability dimensions and provides paired simulation-real-world settings for consistent evaluation of VLA, WAM, and VTLA policies.\n\nBuilding upon this benchmark, we investigate how different tactile representations and integration strategies affect the performance of pretrained VLA models. Correspondingly, we introduce OpenVTLA, a tactile augmentation framework that combines the best-performing representation and integration strategy.\n\nFurthermore, we leverage the paired benchmark setting to study sim-real co-training and analyze factors affecting cross-domain policy learning. Together, OpenViTac provides a unified platform for evaluating and advancing visuo-tactile robot manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces OpenViTac, a benchmark for evaluating visuo-tactile robot manipulation policies in simulation and the real world. It groups contact-rich manipulation into four tactile-relevant capability dimensions and pairs simulated and real settings for evaluating VLA, WAM, and VTLA policies consistently. The authors study how tactile representations and integration strategies affect pretrained VLA models, and present OpenVTLA, a tactile augmentation framework combining the best-performing choices. The paired benchmark is also used to investigate sim-real co-training and factors in cross-domain policy learning.",
+          "zh": "论文介绍 OpenViTac，这是一个用于评估机器人视觉触觉操作策略的仿真与现实世界基准。它将接触丰富的操作任务划分为四类与触觉相关的能力维度，并提供配对的仿真和现实设置，以一致评估 VLA、WAM 和 VTLA 策略。作者还研究不同触觉表征与融合策略对预训练 VLA 模型表现的影响，并提出触觉增强框架 OpenVTLA。借助配对基准，论文进一步考察仿真与现实联合训练，以及影响跨域策略学习的因素；摘要未报告具体性能数值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3366,7 +3370,11 @@
             "heading": "",
             "text": "Precision pesticide spraying is essential for optimizing application efficiency and ensuring uniform chemical distribution. Spraying performance is influenced by multiple factors, including environmental conditions such as temperature and wind speed, pesticide type, and the robot's capability to accurately perceive crops and target spray locations.\n\nExisting approaches predominantly emphasize crop detection and rely on predefined spraying parameters, whereas human operators dynamically adjust their spraying strategies by considering environmental conditions, region-specific crop characteristics, and the type of pesticide being applied.\n\nIn this study, we propose a context-aware adaptive spraying framework based on Vision-Language Models (VLMs), which enables robots to leverage spatial reasoning and integrate information from multiple sources, including crop type, pesticide type, and weather data, to make adaptive and optimized spraying decisions.\n\nSubsequently, a trajectory-tracking controller based on Model Predictive Path Integral (MPPI) control is employed to ensure precise navigation and accurate spraying at crop locations. The comparative results demonstrate that the proposed method improves accuracy by at least 30% in detecting crop rows.\n\nIn addition, the experimental evaluations conducted in two environments further demonstrate the robot's ability to flexibly adjust spraying volume and travel speed, while reducing pesticide drift."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a vision-language-model-based framework for context-aware adaptive pesticide spraying by agricultural robots. It combines crop type, pesticide type, and weather data to make spraying decisions using spatial reasoning, with a Model Predictive Path Integral trajectory-tracking controller for navigation and spraying at crop locations. Comparative results report at least a 30% improvement in crop-row detection accuracy. Experiments in two environments further indicate that the robot can adjust spray volume and travel speed flexibly while reducing pesticide drift; the abstract does not specify the environments.",
+          "zh": "论文提出一种基于视觉语言模型的农业机器人情境感知自适应喷洒框架。该框架结合作物类型、农药类型和天气数据，利用空间推理调整喷洒决策，并使用基于模型预测路径积分控制的轨迹跟踪器进行导航和定点喷洒。比较结果显示，作物行检测准确率至少提高30%。在两个环境中开展的实验还表明，机器人能够灵活调整喷洒量和行驶速度，并减少农药飘移。摘要未说明这两个环境的具体性质。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
