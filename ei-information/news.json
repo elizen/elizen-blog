@@ -2017,7 +2017,11 @@
             "heading": "",
             "text": "Motion planning in robotics requires not only computing collision-free paths but also certifying infeasibility when no such path exists.\n\nComplete methods are limited to low-dimensional spaces, while sampling-based planners scale efficiently but cannot provide finite-time infeasibility certificates, leaving this problem largely unresolved in high-dimensional spaces.\n\nIn this letter, we present a geometry-driven framework for certifying infeasibility through an explicit resolution-dependent analysis of configuration space topology.\n\nLeveraging signed distance field representations, the proposed method traces separating manifolds induced by obstacle boundaries directly in configuration space, enabling both detection of infeasibility and identification of the specific geometric cause.\n\nTo address computational challenges, we develop a parallel frontier-expansion algorithm that exploits GPU acceleration for efficient simplicial reconstruction in high-dimensional spaces. We validate the approach on 4-DOF and 5-DOF robot scenarios, certifying infeasibility within seconds for 4-DOF cases and under four minutes for 5-DOF cases.\n\nWe further discuss avenues for improving scalability to higher-dimensional spaces."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a geometry-driven framework for certifying motion-planning infeasibility through resolution-dependent analysis of configuration-space topology. Using signed distance fields, it traces separating manifolds induced by obstacle boundaries to detect infeasibility and identify geometric causes. A GPU-accelerated parallel frontier-expansion algorithm supports simplicial reconstruction in high-dimensional spaces. Validation covers 4- and 5-DOF robot scenarios; the authors report certification within seconds and under four minutes, respectively, and discuss possible paths to higher-dimensional scalability.",
+          "zh": "本文提出一种由几何驱动的运动规划不可行性认证框架，通过显式分析分辨率相关的构型空间拓扑，利用有符号距离场追踪障碍边界诱导的分隔流形，从而判断路径不可行并定位几何原因。作者还提出利用 GPU 并行的前沿扩展算法，以重建高维单纯形结构。仿真验证涵盖 4 自由度和 5 自由度机器人场景；作者报告该方法在前者数秒内、后者四分钟内完成认证，并讨论向更高维扩展的途径。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2048,7 +2052,11 @@
             "heading": "",
             "text": "As robots increasingly assist humans with diverse tasks, they need both geometric and semantic understanding of their surroundings. Moreover, robots often operate in unfamiliar environments and take on new tasks without knowing the relevant concepts ahead of time.\n\nThis motivates language-annotated 3D maps that support open-vocabulary scene understanding and human-robot interaction. We introduce ActiveLang, an autonomous system for active open-vocabulary 3D mapping with semantic-uncertainty-guided exploration.\n\nActiveLang performs online language-feature adaptation on a compact dual-Gaussian representation to jointly reconstruct scene geometry, appearance, and open-vocabulary semantics with modest memory overhead. Its planner efficiently selects informative viewpoints, enabling effective mapping with fewer observations and lower computational cost.\n\nExperiments on Replica and ScanNet++ demonstrate substantial improvements in 2D and 3D open-vocabulary segmentation over both online and offline baselines, highlighting that actively exploring scenes builds language-annotated 3D maps more efficiently."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ActiveLang is an autonomous system for active open-vocabulary 3D mapping guided by semantic uncertainty. It adapts language features online on a compact dual-Gaussian representation to reconstruct scene geometry, appearance, and open-vocabulary semantics with modest memory overhead. Its planner selects informative viewpoints to reduce observations and computational cost. Experiments on Replica and ScanNet++ are reported to show substantial improvements in 2D and 3D open-vocabulary segmentation over online and offline baselines, with active exploration enabling more efficient language-annotated mapping.",
+          "zh": "本文介绍 ActiveLang，一种以语义不确定性引导探索的主动开放词汇三维建图系统。系统在紧凑的双高斯表示上在线适配语言特征，联合重建场景几何、外观和开放词汇语义，并以较低内存开销运行；规划器选择信息丰富的视点，以更少观测和更低计算成本完成建图。作者在 Replica 和 ScanNet++ 上开展实验，报告其二维和三维开放词汇分割效果显著优于在线及离线基线，并指出主动探索可提高语言标注三维地图的构建效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2079,7 +2087,11 @@
             "heading": "",
             "text": "World Action Models (WAM) improve robot policies by augmenting sparse action supervision with dense future prediction. However, much of the predictable future is dominated by appearance and scene persistence rather than action-dependent dynamics.\n\nWe observe that several recent WAM designs, including optical flow, motion-centric representations, and latent actions, can be understood from a common perspective in which world supervision becomes more efficient as it contains a higher proportion of action-relevant variation.\n\nBased on this insight, we introduce Action Tangent Fields, which reformulate world supervision through a local Taylor expansion of how actions induce changes in future dynamics.\n\nWe represent future dynamics in Residual-VAE space, where the future latent remains recoverable from the current latent and its residual, and use a strong action-conditioned world model (ACWM) to probe the local correspondence between action variations and residual-world variations.\n\nThis local first-order structure is distilled into the WAM to guide its denoising supervision toward dynamics that are more tightly coupled to action, rather than merely predictable from appearance.\n\nAcross LIBERO-Plus, RoboTwin, and RoboTwin2.0-Plus, our method consistently improves robustness to lighting, background, camera, layout, and other environmental perturbations. Despite using no large-scale embodied pretraining, it achieves stronger robustness under several distribution shifts than pretrained policies.\n\nWe further distill multi-step VideoDiT denoising into a single step for efficient inference. Our results suggest that effective WAM supervision should remain information-rich while concentrating its predictive capacity on the directions along which actions change the future."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Action Tangent Fields, representing how actions locally change future dynamics and distilling that structure into a World Action Model’s denoising supervision. Future dynamics are represented in Residual-VAE space, while an action-conditioned world model probes local correspondences between action and residual variations. Across LIBERO-Plus, RoboTwin, and RoboTwin2.0-Plus, the authors report improved robustness to environmental perturbations. Without large-scale embodied pretraining, the method shows stronger robustness than pretrained policies under several distribution shifts, and multi-step VideoDiT denoising is distilled to one inference step.",
+          "zh": "本文提出动作切向场，将动作对未来动力学的影响表示为局部一阶结构，并将其蒸馏到世界动作模型中，使去噪监督更聚焦于随动作变化的动力学，而非仅由外观预测的内容。方法在 Residual-VAE 空间表示未来动力学，并借助动作条件世界模型探测动作变化与残差变化的局部对应关系。作者报告该方法在 LIBERO-Plus、RoboTwin 和 RoboTwin2.0-Plus 上提升了对多种环境扰动的鲁棒性；在未使用大规模具身预训练的情况下，对若干分布偏移的鲁棒性超过预训练策略，并将多步 VideoDiT 去噪蒸馏为单步推理。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
