@@ -913,7 +913,11 @@
             "heading": "",
             "text": "Latent world models have shown a remarkable ability to predict future states and to plan in the real world. In practice, however, we lack a principled way to estimate how their capabilities scale with model size, data, and compute, an open problem that slows progress in the field.\n\nIn this work we present RoboJEPA, a world model based on the Joint Embedding Predictive Architecture (JEPA) and trained on a large-scale dataset spanning 12 robotic embodiments.\n\nWe show that RoboJEPA's imagination error, the error of its latent rollouts, follows a second-order power law in compute, allowing us to predict model quality well beyond the scale at which the law is fit.\n\nWe further show that downstream robotic planning performance improves predictably with compute, and that imagination error is strongly correlated with it, making it a reliable proxy for real-robot evaluation.\n\nFinally, we demonstrate that latent world models can be deployed zero-shot as robotic agents, planning toward a single goal image to solve tasks requiring long-horizon planning on real hardware. We release all model checkpoints together with our training and robot deployment code.\n\nTo our knowledge, this is the first work to establish scaling laws for multi-embodiment robotic world models trained on real robot data, and RoboJEPA, at 8B parameters, is the largest JEPA predictor model trained to date."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboJEPA, a Joint Embedding Predictive Architecture world model trained on a large-scale dataset covering 12 robotic embodiments. The authors report that latent rollout error follows a second-order power law in compute and can predict model quality beyond the fitted scale. Downstream planning performance also improves predictably with compute and correlates strongly with imagination error. They demonstrate zero-shot deployment on real hardware for long-horizon tasks planned toward a single goal image.",
+          "zh": "论文介绍 RoboJEPA，一种基于联合嵌入预测架构、使用涵盖12种机器人形态的大规模数据训练的世界模型。作者报告，其潜在状态展开的想象误差遵循关于计算量的二阶幂律，可据此预测更大规模下的模型质量；下游规划表现也随计算量提升，且与想象误差强相关。作者还展示了该模型可零样本部署于真实硬件，依据单张目标图像执行长时程任务规划。相关结论来自论文所述训练与实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -944,7 +948,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform.\n\nTo tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools.\n\nWAMJET follows a bottleneck-driven workflow where the agent profiles inference, modifies targeted code, validates effects, and iteratively refines the acceleration stack as bottlenecks shift, while preserving action quality. Experiments span six WAMs, three coding agents, and two GPU architectures.\n\nWAMJET achieves up to 9.95x lossless speedup over upstream implementations. Approximation and hardware-aware optimization yield additional latency reductions, with comparable success rates. The results show that WAMJET can produce effective acceleration stacks for WAM deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WAMJET, an agentic harness for reducing inference costs in World Action Models, whose large video backbones and joint video-action prediction are expensive. Its bottleneck-driven workflow profiles inference, modifies targeted code, validates changes, and iteratively refines optimizations while preserving action quality. Experiments cover six WAMs, three coding agents, and two GPU architectures. The authors report up to 9.95× lossless speedup over upstream implementations; approximation and hardware-aware optimizations further reduce latency with comparable success rates.",
+          "zh": "论文提出 WAMJET，这是一种用于加速世界动作模型推理的代理式工具框架，目标是降低大型视频骨干网络及视频与动作联合预测带来的成本。它采用瓶颈驱动流程，由编码代理分析推理、修改针对性代码、验证效果，并随瓶颈变化迭代优化，同时保持动作质量。实验覆盖六种世界动作模型、三种编码代理和两种 GPU 架构。作者报告，相较上游实现，WAMJET最高实现9.95倍无损加速；近似和硬件感知优化还可进一步降低延迟，成功率相近。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -975,7 +983,11 @@
             "heading": "",
             "text": "Planning motions that respect the intrinsic geometry of a robot's configuration space, including its curvature and a configuration-dependent notion of cost, yields shorter, lower-energy, and more natural trajectories than planning under the ambient flat metric.\n\nExisting libraries for optimization on manifolds provide rich geometric primitives but do not plan around obstacles. While general-purpose motion planning libraries support many state spaces and custom distance functions, they do not yet treat a configuration-dependent Riemannian metric as the geometry that drives distance, interpolation, and geodesics.\n\nWe present geodex, an open-source C++20 library with Python bindings. The library exposes the manifold, its Riemannian metric, the retraction, and the sampler as independent, interchangeable components through a single sampling-based motion planning interface.\n\nThe same planner runs unchanged on canonical spaces $\\mathbb{R}^n$, $\\mathbb{T}^n$, $\\mathbb{S}^n$, matrix Lie groups such as $SO（2）$, $SE（2）$, $SO（3）$, and $SE（3）$, products of these spaces, and articulated-robot configuration spaces, each equipped with a user-defined Riemannian metric.\n\nWe make geodex publicly available with documentation, tests, and a reproducible benchmark suite."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents geodex, an open-source C++20 motion-planning library with Python bindings for manifold spaces equipped with configuration-dependent Riemannian metrics. The authors describe a gap in existing tools: manifold optimization libraries do not plan around obstacles, while general planners do not use such metrics to define distance, interpolation, and geodesics. geodex makes the manifold, metric, retraction, and sampler interchangeable components in one sampling-based interface, supporting canonical spaces, matrix Lie groups, their products, and articulated-robot configuration spaces.",
+          "zh": "论文介绍 geodex，一个提供 Python 绑定的开源 C++20 运动规划库，面向具有配置相关黎曼度量的流形空间。作者指出，现有流形优化库缺少避障规划能力，而通用规划库尚未将此类度量作为决定距离、插值和测地线的几何结构。geodex 将流形、度量、回缩和采样器设为可独立替换的组件，并通过统一的采样式规划接口支持多种经典空间、矩阵李群、它们的乘积及关节机器人配置空间。论文称该项目提供文档、测试和可复现基准。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1006,7 +1018,11 @@
             "heading": "",
             "text": "Benchmarks for measuring the quality of action-conditioned world models are still evolving and shifting away from visual similarity-based metrics to action-semantic and physically-grounded metrics. However, for domain and task-agnostic action-conditioned world model training, existing benchmarks provide a limited signal.\n\nBy training and evaluating diffusion world models on CounterStrike gameplay data, we confirm that qualitative playability does not correspond with metrics such as FVD, LPIPS, and JEDi. We term this the Virtual2Real gap.\n\nWe posit that, in lieu of reliable benchmarks, curating raw gameplay data and measuring a variety of diagnostic properties provides a more robust signal to bridge the gap, before the training even begins.\n\nWe present several curation strategies and a general-purpose kit for physical AI data curation called Kuration SDK, which is being open-sourced with this paper.\n\nThe SDK was instrumental in uncovering the root cause of the virtual2real gap in a specific case: why two world models trained on identical gameplay map, action and state distribution, behaved very differently when played in spite of having very similar LPIPS and FVD scores.\n\nThus, Kuration SDK has the potential to uncover the root causes of Virtual2Real gap in specific datasets and accelerate development of sample-efficient training datasets."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines the Virtual2Real gap in action-conditioned world models. Training and evaluation of diffusion world models on CounterStrike gameplay data led the authors to report that qualitative playability did not correspond to FVD, LPIPS, or JEDi metrics. They argue that, while reliable benchmarks remain limited, curating raw gameplay data and checking diagnostic properties before training may provide a more robust signal. The paper presents curation strategies and Kuration SDK, which the authors say helped identify the cause of differing behavior in one specific case.",
+          "zh": "论文讨论动作条件世界模型的虚拟到现实差距，并报告在《反恐精英》游戏数据上训练和评估扩散世界模型时，定性可玩性与 FVD、LPIPS、JEDi 等指标并不对应。作者主张，在可靠基准尚不足时，应在训练前整理原始游戏数据并检查多种诊断属性，以获得更稳健的信号。论文介绍用于物理人工智能数据整理的 Kuration SDK 及多种整理策略，并称该工具帮助查明一个特定案例中两个模型表现差异的根因；这一结论限于该案例。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
