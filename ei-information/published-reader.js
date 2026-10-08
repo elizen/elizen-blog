@@ -220,8 +220,7 @@
   function isBriefing(item) { return Boolean(item && Array.isArray(item.sections) && item.period); }
   function entryDate(item) { return isBriefing(item) ? item.end_date : dateKey(item.published_at); }
   function sortEntries(entries) {
-    const sortDate = (item) => item.catalog && item.catalog.kind === "standard" && item.archive && item.archive.recorded_at
-      ? (item.published_at || item.archive.recorded_at) : item.published_at || entryDate(item);
+    const sortDate = (item) => item.published_at || entryDate(item);
     return entries.slice().sort((a, b) => (Date.parse(sortDate(b)) || 0) - (Date.parse(sortDate(a)) || 0) || a.id.localeCompare(b.id));
   }
   function arxivWorkId(value) {
@@ -256,34 +255,11 @@
     const safeUrl = safeSourceUrl(value);
     return Boolean(safeUrl && new URL(safeUrl).hostname.toLowerCase() === "mp.weixin.qq.com");
   }
-  function interleaveByKind(entries) {
-    const groups = new Map();
-    const topical = /机器人|具身|人形|人工智能|robot|humanoid|embodied|physical\s*ai/i;
-    const kindsInOrder = ["article", "standard", "policy", "paper"];
-    for (const item of sortEntries(entries)) {
-      const kind = articleKind(item);
-      if (!groups.has(kind)) groups.set(kind, []);
-      groups.get(kind).push(item);
-    }
-    for (const group of groups.values()) group.sort((a, b) => Number(topical.test(`${b.title} ${b.intro}`)) - Number(topical.test(`${a.title} ${a.intro}`)));
-    const kindOrder = [...kindsInOrder, ...[...groups.keys()].filter((kind) => !kindsInOrder.includes(kind))];
-    const result = [];
-    for (const relevant of [true, false]) {
-      while (kindOrder.some((kind) => (groups.get(kind) || []).some((item) => topical.test(`${item.title} ${item.intro}`) === relevant))) {
-        for (const kind of kindOrder) {
-          const group = groups.get(kind) || [];
-          const index = group.findIndex((item) => topical.test(`${item.title} ${item.intro}`) === relevant);
-          if (index >= 0) result.push(...group.splice(index, 1));
-        }
-      }
-    }
-    return result;
-  }
   function collection(snapshot, section) {
     if (!SECTIONS[section]) return [];
     if (periodForSection(section)) return sortEntries(snapshot.briefings.filter((item) => item.period === periodForSection(section)));
     if (section === "discover") return sortEntries(mergedNews(snapshot, "secondary"));
-    if (section === "latest") return interleaveByKind([...snapshot.articles, ...mergedNews(snapshot), ...mergedArchive(snapshot)]);
+    if (section === "latest") return sortEntries([...snapshot.articles, ...mergedNews(snapshot), ...mergedArchive(snapshot)]);
     if (section === "wechat") return sortEntries([
       ...snapshot.articles.filter((item) => item.catalog && item.catalog.source_channel === "wechat"),
       ...mergedArchive(snapshot).filter((item) => item.catalog.source_channel === "wechat" && isOfficialWechat(item.source.url)),
@@ -403,6 +379,7 @@
     const meta = [...(article.published_at ? [`${isNews ? "原文发布时间" : "发布日期"}：${isNews ? timestampLabel(article.published_at) : dateLabel(article.published_at)}`] : []), ...detail];
     if (!meta.length && sourceHost) meta.push(`来源：${escapeHtml(sourceHost)}`);
     const standardFields = archiveStandard ? [
+      ["发布日期", article.published_at],
       ["标准编号", archive.standard_number], ["计划号", archive.plan_number], ["层级", archive.level], ["档案阶段", archive.status],
       ["归口单位", archive.organization], ["对口单位", archive.counterpart_organization], ["执行单位", archive.executing_organization], ["主管部门", archive.department], ["收录日期", archive.recorded_at],
       ["实施日期", archive.implementation_date], ["截止日期", archive.deadline],
@@ -459,10 +436,8 @@
     return entries.map((item) => {
       const briefing = isBriefing(item);
       const targetSection = briefing ? item.period : section;
-      const archiveDate = item.format === "archive_record" && item.archive.recorded_at &&
-        (!item.published_at || standardRecordType(item) === "project") ? `收录日期：${dateKey(item.archive.recorded_at)}` : "";
       const publishedDate = item.published_at ? (item.format === "source_excerpt" ? timestampLabel(item.published_at) : `发布日期：${dateKey(item.published_at)}`) : "";
-      const displayDate = standardRecordType(item) === "project" ? (archiveDate || publishedDate) : (publishedDate || archiveDate);
+      const displayDate = publishedDate || "原文发布日期待核实";
       const meta = briefing ? `${item.end_date} · ${SECTIONS[item.period].label}` : [displayDate, item.catalog && item.catalog.source_name].filter(Boolean).join(" · ");
       const id = item.id;
       const category = briefing ? "简报" : item.format === "archive_record" ? (articleKind(item) === "standard" ? standardRecordType(item) === "project" ? "标准项目" : "标准公告" : ({ paper: "论文档案", policy: "政策档案" }[articleKind(item)] || "资讯档案")) : item.format === "source_excerpt" ? (articleKind(item) === "paper" ? "论文快讯" : "资讯快讯") : ({ paper: "论文", policy: "政策", standard: "标准" }[articleKind(item)] || "文章");

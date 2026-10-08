@@ -5,37 +5,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.10039"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-01fc17d31d29928da09cdae0f71c778f7671437955c3abdc4580bb545d1ddb42",
-      "intro": "arXiv:2610.10039v1 Announce Type: new Abstract: This paper presents a video-to-model framework for automatically modeling the motion of a deformable suture thread from an input video. We utilize a recently developed CBF--CLF--QP numerical model that simplifies the characterization of deformable string motion through the selection of a small number of parameters. A perception module first localizes and tracks the thread in video, producing an ordered sequence of thread nodes. The observed thread motion is then processed by a spatio-temporal",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "This paper presents a video-to-model framework for automatically modeling the motion of a deformable suture thread from an input video. We utilize a recently developed CBF--CLF--QP numerical model that simplifies the characterization of deformable string motion through the selection of a small number of parameters.\n\nA perception module first localizes and tracks the thread in video, producing an ordered sequence of thread nodes. The observed thread motion is then processed by a spatio-temporal CNN network that estimates the effective parameters of a structured CBF--CLF--QP model. These parameters are used to simulate the thread under a user-defined needle velocity input.\n\nExperiments using unseen thread configurations and motion demonstrate that the framework can reliably reconstruct the thread behavior from video, automatically configure the structured model, and reproduce the expected thread motion with low tracking error.\n\nThe proposed approach reduces the need for manual parameter tuning and provides a step toward automatic video-based modeling of deformable linear objects."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10039"
-      },
-      "title": "Video-to-Model: Automatic Modeling of Deformable Linear Objects"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09479"
         },
         "source_channel": "website",
@@ -92,37 +61,6 @@
         "url": "https://arxiv.org/abs/2610.09631"
       },
       "title": "Fast and Robust Teach-and-Repeat Navigation Using MixVPR Visual Place Recognition*"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.08852"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-056e832ef918699bbcabf8153fae5423dc007085ace687484f2a7ee27c3f123b",
-      "intro": "arXiv:2610.08852v1 Announce Type: new Abstract: Self-driving laboratories (SDLs) are transforming chemical and materials discovery through closed-loop automation, yet automated infrastructure for physical manipulation of soft, deformable matter remains beyond current robotic platforms. A critical instance is autonomous droplet transport on an open surface, where contact-angle hysteresis, capillary pinning, and surface heterogeneity produce partially observable dynamics that pose significant challenges for classical model-based controllers. We introduce the first robotic platform for closed-loop autonomous liquid droplet navigation on an open",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Self-driving laboratories (SDLs) are transforming chemical and materials discovery through closed-loop automation, yet automated infrastructure for physical manipulation of soft, deformable matter remains beyond current robotic platforms.\n\nA critical instance is autonomous droplet transport on an open surface, where contact-angle hysteresis, capillary pinning, and surface heterogeneity produce partially observable dynamics that pose significant challenges for classical model-based controllers.\n\nWe introduce the first robotic platform for closed-loop autonomous liquid droplet navigation on an open, unconfined surface using model-based reinforcement learning. A two-axis tilting board coated with a thin silicone oil film drives the droplet, while an overhead camera provides real-time feedback.\n\nA learned policy was trained on just 50 to 150 physical episodes depending on geometric complexity, without simulation or analytical models.\n\nBeyond performance alone, the platform demonstrates three capabilities of interest to the SDL community: it robustly transfers zero-shot to unseen geometries; it autonomously discovers an oscillatory depinning strategy to free the droplet when it sticks; and it completes its full training pipeline in under 90 minutes.\n\nThese results extend reinforcement-learning manipulation from rigid microrobots to deformable soft-matter systems for next-generation SDLs."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.08852"
-      },
-      "title": "Autonomous Droplet Navigation via Model-Based Reinforcement Learning: Zero-Shot Transfer and Emergent Dynamics"
     },
     {
       "body": "",
@@ -191,37 +129,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.08863"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-0c84807b19a804e1a31dc0f27a5643755d7fe9c0d7e412e07d5ebe74a17f0e3e",
-      "intro": "arXiv:2610.08863v1 Announce Type: new Abstract: A common way for trajectory planning is to leverage generative models trained on large collections of expert trajectories. At inference time, the model generates executable trajectories by conditioning on task goal constraints. However, trajectory-based methods rely on costly supervision, scale poorly with sequence length, and often generalize poorly to unseen constraints such as novel start-goal pairs. We propose an alternative to learn the underlying state-space manifold and use the geometry of the manifold",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "A common way for trajectory planning is to leverage generative models trained on large collections of expert trajectories. At inference time, the model generates executable trajectories by conditioning on task goal constraints.\n\nHowever, trajectory-based methods rely on costly supervision, scale poorly with sequence length, and often generalize poorly to unseen constraints such as novel start-goal pairs. We propose an alternative to learn the underlying state-space manifold and use the geometry of the manifold for trajectory planning.\n\nThis approach requires only state observations and enables generalization to unseen constraints by con- structing trajectories on the learned manifold of the state space. Experiments on Maze2D and robotic motion-planning benchmarks show that Ariadne constructs feasible paths from state-only supervision and generalizes to unseen start-goal combinations.\n\nOn high-dimensional dual-arm planning, it remains competitive with trajectory-supervised and classical planners, while requiring no trajectory data for training."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.08863"
-      },
-      "title": "Trajectory Planning without Trajectory Data: A Manifold-Guided Approach"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09940"
         },
         "source_channel": "website",
@@ -247,41 +154,6 @@
         "url": "https://arxiv.org/abs/2610.09940"
       },
       "title": "Juno: Taming Predictive Latents for Vision-Language-Action Models"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09327"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-0fb7682f4a112fa82f0f0163df67601459cb380bfc9920ca3cf27c5dee9e8f75",
-      "intro": "arXiv:2610.09327v1 Announce Type: new Abstract: Automated insertion of board-to-board (BTB) connectors in 3C manufacturing requires both high visual accuracy and strong deployment robustness. This problem remains challenging because multi-variant connectors exhibit significant morphological and appearance variations, making stable cross-variant generalization difficult, while the mismatch between training and deployment under fixed-view inspection settings induces background spurious correlation and degrades real-world performance. To address these issues, this paper proposes MCFR, a Mask-Guided Coarse-to-Fine Regression framework for multi-variant BTB connector assembly",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Automated insertion of board-to-board (BTB) connectors in 3C manufacturing requires both high visual accuracy and strong deployment robustness.\n\nThis problem remains challenging because multi-variant connectors exhibit significant morphological and appearance variations, making stable cross-variant generalization difficult, while the mismatch between training and deployment under fixed-view inspection settings induces background spurious correlation and degrades real-world performance.\n\nTo address these issues, this paper proposes MCFR, a Mask-Guided Coarse-to-Fine Regression framework for multi-variant BTB connector assembly. By introducing an object-aware mask prior and explicit photometric refinement, the proposed method suppresses background interference and improves alignment accuracy and robustness in practical deployment.\n\nExperiments on a self-constructed multi-variant dataset, a BTB batch insertion testbed, and a real smartphone assembly task show that MCFR consistently outperforms representative baselines and achieves an average real-world insertion success rate of 99.25%.\n\nThese results demonstrate the effectiveness and practical potential of MCFR for automated assembly of multi-variant BTB connectors."
-          }
-        ],
-        "summary": {
-          "en": "The paper proposes MCFR, a mask-guided coarse-to-fine regression framework for assembling multi-variant board-to-board connectors. It combines an object-aware mask prior with explicit photometric refinement to suppress background interference and improve alignment accuracy and deployment robustness. Experiments on a self-constructed dataset, a batch insertion testbed, and a real smartphone assembly task are reported to outperform representative baselines, with an average real-world insertion success rate of 99.25%.",
-          "zh": "论文提出 MCFR，一种用于多变体板对板连接器装配的掩码引导粗到细回归框架。该方法结合目标感知掩码先验与显式光度细化，以抑制背景干扰并提升对准准确性和部署鲁棒性。作者报告，在自建多变体数据集、批量插入测试平台及真实智能手机装配任务上的实验中，MCFR 优于代表性基线，真实环境平均插入成功率为 99.25%。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09327"
-      },
-      "title": "MCFR: A Mask-Guided Coarse-to-Fine Regression Framework for Robust Multi-Variant Board-to-Board Connector Assembly"
     },
     {
       "body": "",
@@ -317,41 +189,6 @@
         "url": "https://arxiv.org/abs/2605.07943"
       },
       "title": "TAVIS: A Benchmark for Egocentric Active Vision and Anticipatory Gaze in Imitation Learning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2608.10025"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-11de4d3164f76db8e362e1efcd7e9cc2ef987276899be74d84f04ea04aa7d4d1",
-      "intro": "arXiv:2608.10025v2 Announce Type: replace Abstract: For safety-critical software, operational data (e.g. sequences of software successes and failures) can provide strong statistical support for reliability claims. However, insufficient detail about past software failures may leave assessments unable to account for important features of failure behavior. In this paper, we extend conservative Bayesian inference (CBI) techniques for reliability assessment to check the robustness of reliability claims based on such data. We show how insufficient detail in operational data can",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "For safety-critical software, operational data (e.g. sequences of software successes and failures) can provide strong statistical support for reliability claims. However, insufficient detail about past software failures may leave assessments unable to account for important features of failure behavior.\n\nIn this paper, we extend conservative Bayesian inference (CBI) techniques for reliability assessment to check the robustness of reliability claims based on such data.\n\nWe show how insufficient detail in operational data can undermine software reliability claims in autonomous vehicle (AV) safety assessment scenarios: even when used conservatively, low-fidelity data may yield dangerously optimistic conclusions.\n\nWhile these findings are consistent with previous work on the impact of statistical model fidelity in Bayesian software reliability assessments, our work clarifies why attempts to use low-fidelity data conservatively can be naive. To the best of our knowledge, we give the first conservative estimates of the impact of data fidelity on reliability assessments."
-          }
-        ],
-        "summary": {
-          "en": "The paper extends conservative Bayesian inference techniques to assess the robustness of software reliability claims based on operational data. In autonomous-vehicle safety assessment scenarios, it shows that insufficient detail about past failures can make low-fidelity data produce dangerously optimistic conclusions, even when used conservatively. The authors explain why conservative use of such data can be naive and state that, to their knowledge, this is the first work to provide conservative estimates of the impact of data fidelity on reliability assessments.",
-          "zh": "论文将保守贝叶斯推断技术扩展用于软件可靠性评估，以检验基于运行数据的可靠性主张是否稳健。作者在自动驾驶安全评估情境中说明，若历史失效数据缺少细节，即使采用保守方法，低保真数据仍可能导致过度乐观且危险的结论。论文澄清了保守使用低保真数据可能产生的局限，并称据其所知，这是首次对数据保真度影响给出保守估计。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2608.10025"
-      },
-      "title": "The Impact of Operational-Data Fidelity when Assessing Safety-Critical Autonomous-Vehicle Software"
     },
     {
       "body": "",
@@ -455,37 +292,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09695"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-184577b6a86ad1fb1f62242601119e301eaed3381e3ce3ff9dee202855758ea9",
-      "intro": "arXiv:2610.09695v1 Announce Type: new Abstract: Visual foundation models (VFMs) are increasingly integrated into end-to-end autonomous driving for their powerful representations, yet it remains unclear when these representations improve driving performance. To investigate this question, we introduce ViRA, a planner-agnostic visual representation alignment framework that keeps the planner architecture and inference cost unchanged. Our study reveals three findings: (1) VFM-guided visual representations consistently improve driving performance across diverse end-to-end planners, with gains extending to zero-shot closed-loop evaluation. (2) The",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Visual foundation models (VFMs) are increasingly integrated into end-to-end autonomous driving for their powerful representations, yet it remains unclear when these representations improve driving performance.\n\nTo investigate this question, we introduce ViRA, a planner-agnostic visual representation alignment framework that keeps the planner architecture and inference cost unchanged.\n\nOur study reveals three findings: （1） VFM-guided visual representations consistently improve driving performance across diverse end-to-end planners, with gains extending to zero-shot closed-loop evaluation. （2） The choice of VFM target matters for planning performance, and alignment to a different VFM can further benefit planners with pre-trained VFM encoders. （3） Auxiliary perception supervision reduces sensitivity to VFM target selection, narrowing the EPDMS spread across five targets from 2.7 to 0.5 points and potentially compensating for less effective VFM targets.\n\nGuided by these findings, we develop ViRA-Diffusion, a diffusion-based planner trained without auxiliary perception supervision, which achieves 92.3 EPDMS on NAVSIM v2 navtest, outperforming recent methods in our comparison by at least 1.9 points.\n\nThe results motivate jointly considering target selection and planner supervision when integrating VFMs into end-to-end autonomous driving. The results and demo are available at https://github.com/OpenDriveLab/ViRA."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09695"
-      },
-      "title": "Do Better Visual Representations Always Lead to Better End-to-End Autonomous Driving?"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09696"
         },
         "source_channel": "website",
@@ -579,37 +385,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09068"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-20e5e6b817cd85b0c8ddd225a7af08c819e96cb93fba4d778823b463326fb4da",
-      "intro": "arXiv:2610.09068v1 Announce Type: cross Abstract: Reliable robotic disassembly requires part-level representations that distinguish genuine component geometry from scanning and reconstruction artifacts. In point clouds of hard disk drives (HDDs), structured ghost artifacts can resemble valid components locally while remaining inconsistent with the overall geometry, allowing erroneous measurements to receive plausible semantic labels. This creates an engineering information problem: semantic prediction confidence alone does not establish whether the underlying geometry is reliable. We propose \\textbf{GUARD}, a geometric uncertainty-aware",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Reliable robotic disassembly requires part-level representations that distinguish genuine component geometry from scanning and reconstruction artifacts.\n\nIn point clouds of hard disk drives (HDDs), structured ghost artifacts can resemble valid components locally while remaining inconsistent with the overall geometry, allowing erroneous measurements to receive plausible semantic labels.\n\nThis creates an engineering information problem: semantic prediction confidence alone does not establish whether the underlying geometry is reliable. We propose \\textbf{GUARD}, a geometric uncertainty-aware framework that performs point filtering and segmentation within a single forward pass by modeling the reliability of learned geometric representations.\n\nGUARD combines a multi-scale geometric transformer with a multi-bandwidth random Fourier feature Gaussian Process to estimate per-point geometric uncertainty, complemented by predictive entropy to suppress unreliable measurements while preserving informative structures.\n\nEvaluation on 2,745 real HDD point clouds shows that GUARD improves PointNet++ segmentation mean intersection over union from 0.7739 to 0.8318.Additional experiments on ShapeNetPart and ScanNet examine robustness across corruption types, point-cloud domains, and segmentation backbones.\n\nOn manually annotated ScanNet samples, geometric uncertainty achieves a corrupted-point detection F1 score of 0.7931, compared with 0.2212 for predictive entropy. The results demonstrate the value of distinguishing geometric reliability from semantic confidence and reveal a tradeoff between artifact suppression and preservation of informative structures.\n\nGUARD contributes a reliability-aware approach to interpreting imperfect 3D measurements for component identification and subsequent robotic handling. Project website: https://001-wang.github.io/GUARD_Point_denoiser/."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09068"
-      },
-      "title": "GUARD: Geometric Uncertainty-Aware Point Cloud Denoising and Segmentation for Robotic Hard Disk Drive Disassembly"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.10479"
         },
         "source_channel": "website",
@@ -635,41 +410,6 @@
         "url": "https://arxiv.org/abs/2610.10479"
       },
       "title": "Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.08982"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-23c3602807978c8fea4c2ea40a982077c980485121b29d353771cb8a2cca7a68",
-      "intro": "arXiv:2610.08982v1 Announce Type: cross Abstract: Magnetic field-based positioning is a resilient positioning technology that requires no external infrastructure and is hard to jam at scale. To facilitate research on magnetic field-based positioning for aerial platforms operating close to the Earth's surface, an open dataset is presented with measurements collected using an unmanned aerial vehicle carrying two optically pumped magnetometers, a type of quantum magnetometer, and a global navigation satellite system-aided inertial navigation system. The dataset includes measurements for",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Magnetic field-based positioning is a resilient positioning technology that requires no external infrastructure and is hard to jam at scale.\n\nTo facilitate research on magnetic field-based positioning for aerial platforms operating close to the Earth's surface, an open dataset is presented with measurements collected using an unmanned aerial vehicle carrying two optically pumped magnetometers, a type of quantum magnetometer, and a global navigation satellite system-aided inertial navigation system.\n\nThe dataset includes measurements for both magnetic-field map learning and validation. Along with the dataset, a probabilistic framework for magnetic-field map learning and validation is presented and used to illustrate how the dataset may be used. Finally, we outline research directions that may be explored using the dataset."
-          }
-        ],
-        "summary": {
-          "en": "The paper presents an open dataset for research on magnetic-field-based positioning of aerial platforms near the Earth's surface. Measurements were collected by a UAV carrying two optically pumped magnetometers and a GNSS-aided inertial navigation system, and cover both magnetic map learning and validation. The authors also present a probabilistic framework for map learning and validation, use it to illustrate possible dataset use, and outline research directions enabled by the dataset.",
-          "zh": "论文介绍面向近地表飞行平台磁场定位研究的开放数据集，数据由搭载两台光泵磁力仪和卫星导航辅助惯性导航系统的无人机采集，涵盖磁场地图学习与验证测量。作者同时提出概率式地图学习与验证框架，并以此展示数据集的用法，最后概述可利用该数据集探索的研究方向。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.08982"
-      },
-      "title": "FlightMagNav: An Open Dataset and Probabilistic Map Learning and Validation Framework for Outdoor Magnetic Field-Based Positioning"
     },
     {
       "body": "",
@@ -1010,41 +750,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.07515"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-30cdc866ac4c0a220147cbb7d2a2b974875f1ef314e92830fe0a494451a51836",
-      "intro": "arXiv:2610.07515v2 Announce Type: replace Abstract: Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity. In this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking. Our method introduces a",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity.\n\nIn this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking.\n\nOur method introduces a continuous, sigmoid-based formulation to smooth the otherwise discrete event of tissue cutting, making it amenable to gradient-based optimization within a differentiable Position-Based Dynamics (PBD) simulation.\n\nTo account for uncertainty and improve robustness in the presence of noisy visual data, we incorporate Stein Variational Gradient Descent (SVGD) for particle-based probabilistic inference, generating multiple hypotheses for topological state estimation.\n\nBuilding on this foundation, we develop an autonomous dissection algorithm for thin-shell tissues that leverages topological updates to guide closed-loop cutting trajectory control.\n\nWe evaluate our approach in both simulated and real-world electrosurgical environments, demonstrating significant improvements in topological estimation accuracy and dissection precision over existing methods.\n\nOur results highlight the potential of this framework to advance automation in soft-tissue surgical procedures by enabling reliable perception and control in the presence of complex structural changes."
-          }
-        ],
-        "summary": {
-          "en": "The paper presents ProCut, a differentiable framework for estimating and modeling topological changes during deformable tissue tracking. It smooths the discrete event of cutting with a continuous sigmoid formulation for gradient-based optimization in a differentiable Position-Based Dynamics simulation. Stein Variational Gradient Descent supports particle-based probabilistic inference under noisy visual data and generates multiple hypotheses for the topological state. The authors also develop an autonomous dissection algorithm for thin-shell tissue, using topology updates to guide closed-loop cutting. They report improved estimation accuracy and dissection precision in simulated and real-world electrosurgical environments.",
-          "zh": "论文提出ProCut，一种可微框架，用于估计和建模软组织变形跟踪中的拓扑变化。方法以连续的 sigmoid 形式平滑组织切割这一离散事件，并在可微位置基动力学仿真中进行梯度优化；同时采用 Stein 变分梯度下降进行基于粒子的概率推断，以处理视觉噪声并生成多个拓扑状态假设。作者据此开发了面向薄壳组织的自主解剖算法，通过拓扑更新引导闭环切割轨迹控制，并报告其在仿真和真实电外科环境中的评估显示，拓扑估计准确度和解剖精度优于现有方法。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.07515"
-      },
-      "title": "ProCut: Probabilistic Cutting Topology for Autonomous Electrosurgical Tissue Dissection"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.10387"
         },
         "source_channel": "website",
@@ -1101,37 +806,6 @@
         "url": "https://arxiv.org/abs/2610.09455"
       },
       "title": "RLHND: Video Foundation Models as Physically Grounded Hand Trackers for Robot Learning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09690"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-34a51c84940e603661c624d5f3fbddc3b36dcfd3a7bbc6aaf37dd722cc360a7f",
-      "intro": "arXiv:2610.09690v1 Announce Type: new Abstract: Autonomous underwater vehicles (AUVs) commonly rely on inertial navigation systems (INS) aided by Doppler velocity logs (DVLs) for reliable underwater navigation. Accurate DVL velocity estimation is therefore essential for successful operation. Recent learning-based methods have demonstrated improved DVL velocity estimation, particularly under degraded measurement conditions. However, their training objectives typically rely on conventional regression losses that are highly sensitive to large residuals and corrupted observations. Additionally, they do not explicitly account for the",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Autonomous underwater vehicles (AUVs) commonly rely on inertial navigation systems (INS) aided by Doppler velocity logs (DVLs) for reliable underwater navigation. Accurate DVL velocity estimation is therefore essential for successful operation.\n\nRecent learning-based methods have demonstrated improved DVL velocity estimation, particularly under degraded measurement conditions. However, their training objectives typically rely on conventional regression losses that are highly sensitive to large residuals and corrupted observations.\n\nAdditionally, they do not explicitly account for the physical consistency and measurement uncertainty associated with the underlying sensing process. To address these limitations, this paper introduces navigation-aware loss (NAViLoss), a robust and uncertainty-aware objective function for learning-based AUV velocity estimation.\n\nNAViLoss jointly penalizes the velocity-estimation residual in the navigation-state domain and the beam-consistency residual in the DVL measurement domain. Its bounded formulation limits the influence of large residuals, while an adaptive mechanism regulates the uncertainty in beam geometry.\n\nFurthermore, NAViLoss is integrated with a DeepONet architecture to form a novel NAVi-DeepONet model for seamless estimation of an underwater vehicle's velocity. Lastly, our model is evaluated using approximately 10,000m of semi-synthetic AUV experimental data collected during multiple real-world sea trials.\n\nExperimental results demonstrate a 44% improvement in velocity-estimation accuracy compared with conventional and learning-based baselines. These results demonstrate the effectiveness of navigation-aware and uncertainty-adaptive loss design for robust learning-based underwater velocity estimation."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09690"
-      },
-      "title": "NAViLoss: An Underwater Navigation-Aware Dual-Residual Objective for Physics-Consistent Learning"
     },
     {
       "body": "",
@@ -1293,76 +967,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09763"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-4059b2986e74a1e80f94652bb250e9089e3e65cf6ba93374f363004ca5674aa2",
-      "intro": "arXiv:2610.09763v1 Announce Type: cross Abstract: Offline reinforcement learning enables reward-driven policy improvement from fixed datasets without requiring online exploration, making it particularly attractive in safety-critical domains. A central challenge, however, is distribution shift: policy optimization may favor actions that are weakly supported by the offline data, rendering value estimates unreliable. Existing approaches primarily control this shift in the policy's own action space. In interactive environments such as autonomous driving, this can be insufficient: a candidate ego trajectory may",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Offline reinforcement learning enables reward-driven policy improvement from fixed datasets without requiring online exploration, making it particularly attractive in safety-critical domains.\n\nA central challenge, however, is distribution shift: policy optimization may favor actions that are weakly supported by the offline data, rendering value estimates unreliable. Existing approaches primarily control this shift in the policy's own action space.\n\nIn interactive environments such as autonomous driving, this can be insufficient: a candidate ego trajectory may remain well supported under the marginal behavior distribution while being poorly supported jointly with the surrounding-agent behavior observed in the logged interaction.\n\nWe refer to this degradation in interaction support as \\emph{interaction distribution shift} (IDS), and introduce \\emph{Interaction-Constrained Drive Policy} (ICDP), an offline reinforcement learning framework that explicitly controls interaction-level distribution shift.\n\nStarting from the joint data distribution over ego and surrounding-agent futures, we show that joint-support degradation decomposes exactly into an ego-support component and a residual interaction-support component.\n\nWe recover the latter through contrastive density-ratio estimation, isolating interaction compatibility without explicit joint-density modeling, surrounding-agent prediction, or rollouts in reactive simulators or learned world models during policy optimization.\n\nClosed-loop evaluations on nuPlan, Interplan and real-world truck experiments show that ICDP suppresses high-value yet interaction-unsupported trajectory selections and improves performance in interaction-critical driving scenarios. Project webpage: https://mahmoud-selim.github.io/ICDP/"
-          }
-        ],
-        "summary": {
-          "en": "The paper presents ICDP, an offline reinforcement learning framework for controlling interaction distribution shift in autonomous driving. The authors decompose joint-support degradation into ego-support and residual interaction-support components, then estimate the latter contrastively without explicit joint-density modeling, surrounding-agent prediction, or simulator rollouts during policy optimization. Closed-loop evaluations on nuPlan and Interplan, along with real-world truck experiments, show that ICDP suppresses high-value but interaction-unsupported trajectory choices and improves performance in interaction-critical driving scenarios.",
-          "zh": "论文提出交互约束离线强化学习框架 ICDP，关注自动驾驶中自车轨迹与周围车辆行为联合支持不足造成的交互分布偏移。作者证明联合支持退化可分解为自车支持部分与交互支持残差，并以对比式密度比估计恢复后者，无需显式联合密度建模、预测周围车辆或在策略优化中进行仿真器及世界模型滚动。nuPlan、Interplan 闭环评估和真实卡车实验显示，该方法抑制高价值但缺乏交互支持的轨迹选择，并改善交互关键场景表现。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09763"
-      },
-      "title": "Beyond Policy Support: Interaction Constrained Offline Reinforcement Learning for Autonomous Driving"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09520"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-40ce2338759064d1af69a7bb15befa64fbafd309028d01105db624604711f75c",
-      "intro": "arXiv:2610.09520v1 Announce Type: new Abstract: Large vision-language models (VLMs) provide powerful open-world perception and reasoning for autonomous driving, but their high computational cost and inference latency make continuous cloud-side use impractical. This motivates fast--slow collaboration, where efficient onboard modules handle real-time perception and control while cloud models provide high-level reasoning only when needed. The key challenge is deciding when cloud reasoning should influence time-critical driving decisions. Existing methods often rely on perception uncertainty, heuristic triggers, or resource-driven policies",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Large vision-language models (VLMs) provide powerful open-world perception and reasoning for autonomous driving, but their high computational cost and inference latency make continuous cloud-side use impractical.\n\nThis motivates fast--slow collaboration, where efficient onboard modules handle real-time perception and control while cloud models provide high-level reasoning only when needed. The key challenge is deciding when cloud reasoning should influence time-critical driving decisions.\n\nExisting methods often rely on perception uncertainty, heuristic triggers, or resource-driven policies, without assessing whether resolving an uncertainty will improve planning. We propose \\textbf{SIGMA}, a simulation-in-the-loop framework for task-oriented fast--slow collaboration.\n\nSIGMA embeds the planner into uncertainty assessment and evaluates how plausible scene realizations under semantic and geometric uncertainty affect feasible trajectories and planning cost. Based on these outcomes, it estimates the expected reduction in planning cost from resolving uncertainty.\n\nWe further introduce expected planning gain (EPG), a decision-level metric for cloud invocation, cloud-guidance integration, and request prioritization under deadline and resource constraints.\n\nExperiments in CARLA show that SIGMA reduces unnecessary cloud interactions while improving planning, efficiency, and navigation success in static and dynamic obstacle scenarios.\n\nCompared with fixed-period collaboration, SIGMA reduces unnecessary cloud interactions by 50\\%, improves navigation success by more than 6\\%, and cuts finish time by up to 26.2\\% in dynamic scenarios."
-          }
-        ],
-        "summary": {
-          "en": "The paper introduces SIGMA, a simulation-in-the-loop framework for fast-slow collaboration in autonomous driving. It incorporates the planner into uncertainty assessment, testing how plausible scenes under semantic and geometric uncertainty affect feasible trajectories and planning costs. The resulting expected planning gain guides cloud invocation, guidance integration, and request prioritization. CARLA experiments report fewer unnecessary cloud interactions and improvements in planning, efficiency, and navigation success across static and dynamic obstacle scenarios. Against fixed-period collaboration, the authors report 50% fewer unnecessary interactions, over 6% higher navigation success, and up to 26.2% shorter finish time in dynamic scenarios.",
-          "zh": "论文提出 SIGMA，一种用于自动驾驶快慢协同的仿真在环框架，旨在判断云端推理是否会改善时间关键决策。它将规划器纳入不确定性评估，考察语义和几何不确定性下可能场景对可行轨迹及规划成本的影响，并据此估计消除不确定性的预期规划收益，用于云端调用、指导整合和请求排序。CARLA 实验显示，在静态与动态障碍场景中，SIGMA 减少不必要的云交互并改善规划、效率和导航成功率；相较固定周期协同，摘要报告云交互减少50%、导航成功率提高逾6%，动态场景完成时间最多缩短26.2%。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09520"
-      },
-      "title": "Not All Uncertainty Matters: Simulation-in-the-Loop Fast-Slow Reasoning for Decision-Critical Autonomous Driving System"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2609.27314"
         },
         "source_channel": "website",
@@ -1427,37 +1031,6 @@
         "url": "https://arxiv.org/abs/2610.10472"
       },
       "title": "Robotic Boomerang Throwing via Model-Based Release Design"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2605.00556"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-465e48ed9d5e2520c374057e21390b6bc99d3d6b39375f2a5e321882624c5496",
-      "intro": "arXiv:2605.00556v2 Announce Type: replace-cross Abstract: Partial driving automation creates a tension: drivers remain legally responsible while being less active in control. Meaningful human control (MHC), a normative framework that can potentially address this tension, proposes that automated systems are designed to track relevant human reasons and that humans should at all times remain in control and be responsible. However, empirical methods for evaluating whether systems are under MHC remain underdeveloped. In this driving simulator study, we investigated the",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Partial driving automation creates a tension: drivers remain legally responsible while being less active in control.\n\nMeaningful human control (MHC), a normative framework that can potentially address this tension, proposes that automated systems are designed to track relevant human reasons and that humans should at all times remain in control and be responsible. However, empirical methods for evaluating whether systems are under MHC remain underdeveloped.\n\nIn this driving simulator study, we investigated the extent to which 24 drivers experienced MHC when interacting with partially automated driving systems under two modes - haptic shared control and traded control.\n\nDuring overtaking manoeuvres on a two-lane, two-way road with fully automated longitudinal control and partially automated lateral control, drivers' actions were necessary to prevent crashes due to silent automation failures.\n\nStarting from hypotheses derived from the properties of systems under MHC, we used a mixed-methods approach that links behavioural metrics, subjective post-trial ratings, and qualitative feedback to assess drivers' perception of responsibility and control.\n\nA confirmatory analysis indicated a negative correlation between the perception of the automated vehicle understanding the driver and conflict in steering torques.\n\nQualitative feedback revealed that mismatches in intentions between the driver and automation, lack of safety, and resistance to driver inputs reduced perceived MHC, while subtle haptic guidance aligned with driver intent had a positive effect.\n\nThus, future designs should prioritise effortless driver interventions, transparent communication of automation intent through haptic, visual or auditory cues, and clear authority allocation to strengthen meaningful human control in partially automated driving."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2605.00556"
-      },
-      "title": "Linking Behaviour and Perception to Evaluate Meaningful Human Control over Partially Automated Driving"
     },
     {
       "body": "",
@@ -1743,37 +1316,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09427"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-50310b767ae481b1ceaca01ca6499ff627d02bd5aea6b61338a7360b980a9c3a",
-      "intro": "arXiv:2610.09427v1 Announce Type: cross Abstract: World-Action Models (WAMs) utilize future visual prediction as an intermediate reasoning process to guide action generation. However, existing WAMs typically structure visual imagination according to predefined temporal intervals, without explicitly accounting for the different roles of task-critical interactions and connecting transitions. We argue that effective visual foresight should align directly with task-relevant interactions and their corresponding reasoning demands. To this end, we introduce an event-aligned visual action reasoning framework that organizes visual-action prediction",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "World-Action Models (WAMs) utilize future visual prediction as an intermediate reasoning process to guide action generation. However, existing WAMs typically structure visual imagination according to predefined temporal intervals, without explicitly accounting for the different roles of task-critical interactions and connecting transitions.\n\nWe argue that effective visual foresight should align directly with task-relevant interactions and their corresponding reasoning demands. To this end, we introduce an event-aligned visual action reasoning framework that organizes visual-action prediction around interaction events.\n\nThrough event-aligned visual-action supervision, WAM learns to generate event-aligned visual context in each imagined rollout, placing greater emphasis on critical state changes that inform action generation.\n\nThis shapes the visual reasoning granularity according to the underlying interaction dynamics, with detailed reasoning around task-critical events and coarser progression through connecting transitions.\n\nFurthermore, we introduce an execution validity head that identifies the valid portion of each predicted action sequence, avoiding redundant actions during chunked inference. Experiments demonstrate a 10.26 percentage point improvement in DOMINO success rate over baseline and competitive performance on RoboTwin 2.0.\n\nIt also transfers from DOMINO Level 1 to Levels 2 and 3 without target-level adaptation."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09427"
-      },
-      "title": "Event-Aligned Visual Action Reasoning for World Action Models"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.08862"
         },
         "source_channel": "website",
@@ -1991,37 +1533,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.10281"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-5a77ba021fb8581b9b0a0b75158b01c4f683abfe8bb869d095be4c3bb07c1ec5",
-      "intro": "arXiv:2610.10281v1 Announce Type: new Abstract: A task abstraction can specify the intended events while its spatial layout prevents a fixed agent and controller from completing them. Starting from a supplied structured task record, we compile whole-task tracking, clearance, and actuation requirements into auditable affine layout constraints. We repair only declared continuous coordinates, preserving event order, timing, topology, and the controller. A most-violated-row update admits conditional finite-certification and net-displacement bounds; a same-compiler quadratic projection separates the representation from the",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "A task abstraction can specify the intended events while its spatial layout prevents a fixed agent and controller from completing them. Starting from a supplied structured task record, we compile whole-task tracking, clearance, and actuation requirements into auditable affine layout constraints.\n\nWe repair only declared continuous coordinates, preserving event order, timing, topology, and the controller. A most-violated-row update admits conditional finite-certification and net-displacement bounds; a same-compiler quadratic projection separates the representation from the optimizer.\n\nOn three researcher-authored task abstractions, both backends certify all three layouts and complete all 300 fresh paired rollouts per backend. A risk-target sweep also exposes fixed event tests that the chosen certificate cannot satisfy through layout edits alone."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10281"
-      },
-      "title": "Making Task Abstractions Executable: Control-Aware Layout Repair for a Fixed Controller"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09462"
         },
         "source_channel": "website",
@@ -2208,99 +1719,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09280"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-6469cfe7083c2f9600d70101ed5e6e0b901035179a0a086432c8ccc772d5db75",
-      "intro": "arXiv:2610.09280v1 Announce Type: new Abstract: This work examines the transfer of a co-evolved communication mechanism between two robotic agents from a discrete two-dimensional (2D) simulator to a three-dimensional simulator with real physics (3D). The study focuses on whether a communication mechanism co-evolved in a 2D environment retains its functional role after transfer to a 3D physics-based simulator. To support this analysis, the effects of the episode time budget, the social cue, and the asymmetry between the two co-evolved",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "This work examines the transfer of a co-evolved communication mechanism between two robotic agents from a discrete two-dimensional (2D) simulator to a three-dimensional simulator with real physics (3D).\n\nThe study focuses on whether a communication mechanism co-evolved in a 2D environment retains its functional role after transfer to a 3D physics-based simulator. To support this analysis, the effects of the episode time budget, the social cue, and the asymmetry between the two co-evolved roles were examined.\n\nThe results indicate that the success rate increased approximately linearly with the evaluated time budgets, with no evidence of a plateau between 2,000 and 6,000 physics steps, suggesting that evaluations based on shorter episodes may underestimate the performance of the trained controllers.\n\nIn both simulators, the social cue functioned primarily as a jam- assistance mechanism rather than as a navigation guide, although with a more pronounced effect in 2D. Analysis of eight independent evolutionary runs revealed a consistent direction of asymmetry, although its magnitude varied across runs.\n\nControlling the processing order between agents allowed us to rule out an artifact of the physics engine. Finally, the results are discussed in terms of the factors that may contribute to the remaining performance gap observed after transfer."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09280"
-      },
-      "title": "Evaluating the Transfer of Co-Evolved Communication from 2D to 3D Simulation"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10178"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-655aacf1fa52030a8d1464d759547d8eb793088036d23a06e3a6061407c307b9",
-      "intro": "arXiv:2610.10178v1 Announce Type: new Abstract: Vision-Language-Action models are designed to generalise across environments and task descriptions, raising the question of whether their action generation actually depends on the language instruction, or whether they largely rely on visual cues and superficial correlations. Robustness to variance in the visual and linguistic observation space is critical for real-world deployment, yet VLAs lack explicit grounding modules and instead rely on the intrinsic language grounding capabilities of their Vision-Language model backbones. For this",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Vision-Language-Action models are designed to generalise across environments and task descriptions, raising the question of whether their action generation actually depends on the language instruction, or whether they largely rely on visual cues and superficial correlations.\n\nRobustness to variance in the visual and linguistic observation space is critical for real-world deployment, yet VLAs lack explicit grounding modules and instead rely on the intrinsic language grounding capabilities of their Vision-Language model backbones.\n\nFor this reason, we conduct a controlled mechanistic interpretability study on the language grounding capabilities of two state-of-the-art Vision-Language-Action models, $\\pi_{0.5}$ and GR00T N1.7, by applying activation and attribution patching to the residual stream of the action generation modules.\n\nWe systematically corrupt the task instruction of input samples of the LIBERO benchmark following five strategies: synonym replacement, semantic scaling, directional corruption, random object substitution, and empty string.\n\nOur experiments find that both models are comparatively insensitive to abstract rephrasing and to referencing non-existent objects, but react strongly to empty task descriptions and, especially, to directional language.\n\nDuring action generation, this sensitivity is concentrated in different loci for each model: mainly in the early, periodic cross-attention layers for GR00T N1.7, versus distributed across the earliest and selected later layers for $\\pi_{0.5}$.\n\nFor GR00T N1.7, directional perturbations drive some of the largest causal effects while leaving the internal representational geometry comparatively unchanged, a dissociation we do not observe clearly for $\\pi_{0.5}$.\n\nFinally, the reliability of attribution patching is model-dependent: it closely tracks activation patching for GR00T N1.7 but not for $\\pi_{0.5}$."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10178"
-      },
-      "title": "Do Vision-Language-Action Models Understand Instructions? A Mechanistic Interpretability Study on Language Grounding"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10382"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-68c4718ce5c83f3ba2d237494f2ffc91fcd94b234b0d3d1e04e1f854f3237dbb",
-      "intro": "arXiv:2610.10382v1 Announce Type: new Abstract: Predictive mapping can support robotic exploration and navigation by estimating unseen geometric layouts from partial occupancy observations. However, occupancy-only representations may fail to distinguish semantically different structures with similar geometry. This is particularly relevant for indoor doors, which may appear as occupied cells like walls but indicate possible connected rooms or corridors beyond the observed region. This work investigates whether semantic door cues improve predictive geometric occupancy mapping around such ambiguous regions. We",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Predictive mapping can support robotic exploration and navigation by estimating unseen geometric layouts from partial occupancy observations. However, occupancy-only representations may fail to distinguish semantically different structures with similar geometry.\n\nThis is particularly relevant for indoor doors, which may appear as occupied cells like walls but indicate possible connected rooms or corridors beyond the observed region. This work investigates whether semantic door cues improve predictive geometric occupancy mapping around such ambiguous regions.\n\nWe modify a subset of the CogniPlan dataset by inserting door-induced ambiguities into partial occupancy maps while keeping the ground-truth layouts unchanged. We compare a geometry-only control model with a semantic-cued model trained on the same modified dataset, where the semantic-cued model receives an additional door channel.\n\nEvaluation uses L1 error, F1 score, and Intersection over Union (IoU) over both the full map and a 10-pixel door-region mask.\n\nFull-map performance remains broadly similar between models, but localized door-region results show a clear qualitative improvement: L1 decreases from 0.004342 to 0.000025, while F1 and IoU improve from 0.031311 and 0.015905 to 1.000000 and 1.000000, respectively.\n\nThese results suggest that semantic cues can improve predictive occupancy completion in regions where geometric observations alone are ambiguous."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10382"
-      },
-      "title": "Semantic-Aware Predictive Mapping for Exploration and Navigation"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2607.11119"
         },
         "source_channel": "website",
@@ -2332,68 +1750,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2609.18964"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-6a8f59615fd1d34b70f623d247c3408e97578d5c9fa194442f8a99fd22756a13",
-      "intro": "arXiv:2609.18964v3 Announce Type: replace-cross Abstract: Federated Reinforcement Learning (FRL) enables collaborative policy learning across distributed agents with heterogeneous environments. While recent methods based on variance reduction, divergence penalization, and momentum optimization improve FRL under heterogeneous settings, they still primarily synchronize policy or value-network parameters and do not explicitly address distributional mismatch among heterogeneous clients. Therefore, we propose \\textbf{FedGuide}, a FRL framework that uses diffusion priors as behavior models to provide personalized data supported distributions for heterogeneous local",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Federated Reinforcement Learning (FRL) enables collaborative policy learning across distributed agents with heterogeneous environments.\n\nWhile recent methods based on variance reduction, divergence penalization, and momentum optimization improve FRL under heterogeneous settings, they still primarily synchronize policy or value-network parameters and do not explicitly address distributional mismatch among heterogeneous clients.\n\nTherefore, we propose \\textbf{FedGuide}, a FRL framework that uses diffusion priors as behavior models to provide personalized data supported distributions for heterogeneous local policy learning.\n\nInstead of directly averaging local policies, FedGuide aggregates those diffusion priors through Optimal-Transport Mixture-of-Experts (OT-MoE), preserving heterogeneous behavior modes in distribution space.\n\nIt further develops a Distribution Correction Estimation (DICE) value baseline to provide low-variance, return-aware guidance for local policy improvement.\n\nExperiments across heterogeneous environments show that FedGuide outperforms representative FRL methods in client-average returns, final-round performance, and worst-round robustness, while maintaining stable learning under stronger heterogeneity."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2609.18964"
-      },
-      "title": "FedGuide: Diffusion Prior Alignment and Value Baseline Guidance for Heterogeneous Federated Reinforcement Learning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2607.28198"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-6bfd5ace019e23206a1683f48a528a61c4557ae3984a158a57ae25a87cadef9a",
-      "intro": "arXiv:2607.28198v2 Announce Type: replace Abstract: Many dexterous manipulation tasks require the object to remain securely held throughout the interaction. From the perspective of hand-object relational motion, such manipulation comprises four canonical skills: grasping, relocation, in-hand rotation, and in-hand translation. Human hands flexibly compose these skills to accomplish complex tasks. Existing approaches, however, model these skills separately with skill-specific action constraints, objectives, or even dedicated hand morphologies, which breaks the compatibility and continuity required for long-horizon composition. In this",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Many dexterous manipulation tasks require the object to remain securely held throughout the interaction. From the perspective of hand-object relational motion, such manipulation comprises four canonical skills: grasping, relocation, in-hand rotation, and in-hand translation. Human hands flexibly compose these skills to accomplish complex tasks.\n\nExisting approaches, however, model these skills separately with skill-specific action constraints, objectives, or even dedicated hand morphologies, which breaks the compatibility and continuity required for long-horizon composition.\n\nIn this work, we present a unified framework that models all four skills in a single formulation that shares the same state and action spaces and a common objective structure.\n\nThis formulation enables distillation of a single cross-skill policy conditioned on the relational motion objectives, which achieves strong performance across all four skills, generalizes to unseen objects, remains robust to disturbances, and chains skills into long-horizon manipulation without switching policies.\n\nThe framework also transfers effectively across different hand morphologies. Overall, our results suggest that different dexterous manipulation skills can be viewed as instantiations of a shared task formulation, revealing the intrinsic consistency. Project page: https://zdchan.github.io/UniCross/"
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2607.28198"
-      },
-      "title": "UniCross: Unified Cross-Skill Dexterous Manipulation Synthesis"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09309"
         },
         "source_channel": "website",
@@ -2419,68 +1775,6 @@
         "url": "https://arxiv.org/abs/2610.09309"
       },
       "title": "Predicted Futures Are Not Enough: Learning Executable Goals for Robot Manipulation"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09247"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-6d975cb4e2ccfc4761939da8bb341b176e6105330812a52207421ad311cf781b",
-      "intro": "arXiv:2610.09247v1 Announce Type: cross Abstract: The difficulty of learning goal-reaching policies is often attributed to a \"curse of horizon\" that manifests as bias accumulation in temporal-difference backups and noisy advantage estimates. In this work, we identify an additional informational curse of horizon in goal-conditioned policy learning, where increasing the goal relabeling horizon can significantly reduce policy generalization and performance. Through a series of controlled experiments with oracle planners, we decouple the goal horizons sampled during training from those",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "The difficulty of learning goal-reaching policies is often attributed to a \"curse of horizon\" that manifests as bias accumulation in temporal-difference backups and noisy advantage estimates.\n\nIn this work, we identify an additional informational curse of horizon in goal-conditioned policy learning, where increasing the goal relabeling horizon can significantly reduce policy generalization and performance.\n\nThrough a series of controlled experiments with oracle planners, we decouple the goal horizons sampled during training from those that the policy is asked to reach at test time.\n\nEven when evaluated only on a sequence of nearby subgoals, goal-conditioned behavioral cloning (BC) policies suffer from severe, training horizon-dependent performance degradation that is mitigated by reinforcement learning (RL) objectives.\n\nWe explain this phenomenon as a horizon-dependent decrease in the conditional mutual information between actions and hindsight-relabeled goals, and find empirically that both BC and RL policies trained on longer-horizon goals exhibit a shift in sensitivity from goal to state information, as measured by the policy's input Jacobians.\n\nMotivated by this observation, we find that distilling the input Jacobians of short-horizon policies into long-horizon policies yields significant performance gains, especially in combinatorial manipulation tasks. Taken together, our results highlight goal relabeling horizon as an important consideration when learning generalist policies from offline data."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09247"
-      },
-      "title": "An Informational Curse of Horizon in Goal-Conditioned Policy Learning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.05692"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-6e585c05780aa11ed45c5e79ab0f7be26778aff25d1d737bfc7e81f4678a80b8",
-      "intro": "arXiv:2610.05692v2 Announce Type: replace Abstract: Learning from trajectory demonstrations offers a route to active-inference control of complex systems whose dynamics are difficult to model explicitly. We introduce generative active-inference control (GenAIF), in which one generative trajectory model learns from demonstrations and measured action interventions to supply a goal-conditioned policy distribution and a state-to-observation likelihood mapping. From this control design, we derive three model requirements: (i) useful action proposals, (ii) accurate prediction under imposed actions, and (iii) probabilistic observation",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Learning from trajectory demonstrations offers a route to active-inference control of complex systems whose dynamics are difficult to model explicitly.\n\nWe introduce generative active-inference control (GenAIF), in which one generative trajectory model learns from demonstrations and measured action interventions to supply a goal-conditioned policy distribution and a state-to-observation likelihood mapping.\n\nFrom this control design, we derive three model requirements: (i) useful action proposals, (ii) accurate prediction under imposed actions, and (iii) probabilistic observation evidence for belief updating and expected information gain.\n\nWe benchmark diffusion, autoregressive Transformers, conditional variational autoencoders (CVAEs), and flow matching in a MuJoCo manipulation task with multiple physical conditions. Diffusion delivers the strongest control across the tested dynamics, while CVAE combines comparable short-horizon prediction with much faster inference.\n\nCorrect conditioning is decisive, and trajectory reuse offers further computational savings. In replay after an unannounced tilt change, pretrained diffusion updates belief fastest among the original models; fine-tuning on recovery demonstrations further accelerates identification and sustains accurate tracking.\n\nThese findings support the use of shared generative trajectory models to connect action proposal, controlled prediction, and observation evidence within GenAIF."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.05692"
-      },
-      "title": "Benchmarking Generative Trajectory Models for Active-Inference Control"
     },
     {
       "body": "",
@@ -2574,37 +1868,6 @@
         "url": "https://arxiv.org/abs/2609.32806"
       },
       "title": "Towards Kinematic Actionable Infeasibility Detection in Motion Planning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.08989"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-77ddced796d56b1da14323ad1aea442c7547b250fdc3d2758ea6c335eb685a63",
-      "intro": "arXiv:2610.08989v1 Announce Type: cross Abstract: While offline reinforcement learning (RL) enables policy optimization from static datasets without costly online interaction, it remains bottlenecked by the risk of executing out-of-distribution (OOD) actions. Recent approaches mitigate this by learning a behavior-cloning policy through flow matching and then performing RL within its constrained latent space. However, naively optimizing the latent policy can easily cause the policy to collapse into a brittle mode or exploit sharp artifacts of the learned critic. In",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "While offline reinforcement learning (RL) enables policy optimization from static datasets without costly online interaction, it remains bottlenecked by the risk of executing out-of-distribution (OOD) actions. Recent approaches mitigate this by learning a behavior-cloning policy through flow matching and then performing RL within its constrained latent space.\n\nHowever, naively optimizing the latent policy can easily cause the policy to collapse into a brittle mode or exploit sharp artifacts of the learned critic. In this work, we find that entropy regularization is essential in latent-space RL for addressing these challenges.\n\nWe introduce LASER, a novel offline RL algorithm that applies latent-space adjoint matching to achieve entropy-regularized latent-space RL with expressive flow policies while avoiding backpropagation through time.\n\nThrough comprehensive experiments on 40 challenging OGBench tasks with varying dataset qualities, we show that LASER achieves state-of-the-art performance.\n\nNotably, LASER uses fixed method-specific hyperparameters across all tasks and outperforms the evaluated baselines, including those with task- and dataset-specific tuning, which highlights the robust applicability of LASER. Project website: https://mit-realm.github.io/laser/."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.08989"
-      },
-      "title": "LASER: Latent Space Adjoint Matching for Support-Constrained Entropy-Regularized Offline RL"
     },
     {
       "body": "",
@@ -2735,68 +1998,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09291"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-8cf31071100e33179b0440dd25a22c101083ba677003f39426bbbc4e9e026e51",
-      "intro": "arXiv:2610.09291v1 Announce Type: new Abstract: Achieving human-level dexterity in complex, unstructured environments requires the seamless integration of whole-body scene interaction and dexterous object manipulation skills. While existing physics-based controllers generate physically plausible behaviors in each domain, they largely address these two capabilities independently. In this paper, we present Co${}^{2}$Skill that integrates scene interaction and dexterous manipulation through a unified policy formulation. Built on a pretrained motion prior, the policy uses task and phase dependent observation masks",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Achieving human-level dexterity in complex, unstructured environments requires the seamless integration of whole-body scene interaction and dexterous object manipulation skills. While existing physics-based controllers generate physically plausible behaviors in each domain, they largely address these two capabilities independently.\n\nIn this paper, we present Co${}^{2}$Skill that integrates scene interaction and dexterous manipulation through a unified policy formulation. Built on a pretrained motion prior, the policy uses task and phase dependent observation masks to select information relevant to the current interaction goals.\n\nWe introduce a goal-conditioned loco-manipulation curriculum that combines partial reference guidance for precision with exploration from varied initial states while allowing goal-directed execution beyond the demonstrated trajectories.\n\nWe further introduce a cross-task curriculum that jointly trains individual skills and selected task sequences, preserving physical states across task boundaries and maintaining grasps during subsequent scene interactions. Together, these support sequential task execution and simultaneous scene interaction with object manipulation.\n\nWe evaluate sitting, standing, climbing, stair traversal, and goal-directed manipulation, together with sequential execution and with random different conditions. Additionally, we demonstrate skill compositions in indoor environments, illustrating their integration within the same control formulation."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09291"
-      },
-      "title": "Co${}^{2}$Skill: Whole-Body Control via Skill Composition for Long-Horizon Human-Environment Interaction"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10408"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-8d18f22c65fa0b82e37f306147e6a2b660208ceacd30b12d192f4d5462b43e5b",
-      "intro": "arXiv:2610.10408v1 Announce Type: cross Abstract: Procrustes-Wasserstein alignment jointly estimates a matching and rotation without supplied correspondences, but alternating minimization can stop at suboptimal solutions. Rubix solves the equally weighted planar problem globally under squared Euclidean loss. Each matching $\\sigma$ of two centered $n$-point sets defines a complex correlation $z_\\sigma=\\sum_i\\bar x_i y_{\\sigma(i)}$. Their convex hull is the permutation polygon: supporting vertices give optimal matchings at fixed rotations, and the farthest vertex gives the",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Procrustes-Wasserstein alignment jointly estimates a matching and rotation without supplied correspondences, but alternating minimization can stop at suboptimal solutions. Rubix solves the equally weighted planar problem globally under squared Euclidean loss.\n\nEach matching $\\sigma$ of two centered $n$-point sets defines a complex correlation $z_\\sigma=\\sum_i\\bar x_i y_{\\sigma(i)}$.Their convex hull is the permutation polygon: supporting vertices give optimal matchings at fixed rotations, and the farthest vertex gives the global alignment.\n\nWe prove the sharp bound of $n(n-1)$ vertices for $n\\ge2$, answering Rote's rotation-assignment open problem. In exact arithmetic, assignment queries recover the polygon in $\\mathcal O(n^5)$ operations. Assignment-based bounds extend the approach to three-dimensional rotations and partial matching at a supplied translation through branch-and-bound.\n\nOn timed MPEG-7 shape pairs, Rubix attains every numerical reference value in 12 ms on average, 50 times faster than a rotation grid at the same accuracy. Its distances improve gravity-aligned matching of real 3D scans, shape retrieval and noisy crystal classification over alternating minimization."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10408"
-      },
-      "title": "Rubix: Global Correspondence-Free Point Set Alignment through Assignment Geometry"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.10020"
         },
         "source_channel": "website",
@@ -2921,68 +2122,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09350"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-92d5284ec1de89867dab6d225792af31ea697e0a38f5805c7214a5c18c0bbf75",
-      "intro": "arXiv:2610.09350v1 Announce Type: new Abstract: Learning from demonstrations (LfD) provides a framework for inferring unknown constraints from locally optimal, constraint-satisfying expert behavior. Existing approaches largely fall into two paradigms, constrained inverse optimal control (CIOC) and inverse constrained reinforcement learning (ICRL). CIOC exploits optimality conditions such as the Karush--Kuhn--Tucker (KKT) conditions but typically assumes known dynamics and structured constraint representations. Meanwhile, ICRL accommodates complex unknown constraints and unknown transition dynamics but often requires extensive online exploration, during which unsafe",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Learning from demonstrations (LfD) provides a framework for inferring unknown constraints from locally optimal, constraint-satisfying expert behavior. Existing approaches largely fall into two paradigms, constrained inverse optimal control (CIOC) and inverse constrained reinforcement learning (ICRL).\n\nCIOC exploits optimality conditions such as the Karush--Kuhn--Tucker (KKT) conditions but typically assumes known dynamics and structured constraint representations. Meanwhile, ICRL accommodates complex unknown constraints and unknown transition dynamics but often requires extensive online exploration, during which unsafe constraint violations may occur.\n\nIn this work, we introduce Counterfactual KKT (CF-KKT), a constraint learning framework that leverages learned dynamics and locally optimal demonstrations to recover unknown constraints without requiring known dynamics or additional risky exploration, thereby combining the data efficiency and safety advantages of CIOC with the flexibility of ICRL.\n\nFirst, we use a locally learned differentiable dynamics model to impose KKT-inspired optimality conditions directly on the demonstrations.\n\nSecond, we use the learned dynamics to generate reward-improving counterfactual behaviors near the demonstrations, revealing behaviors that would be preferable in the absence of the unknown constraint and thus providing synthetic infeasible data.\n\nWhen the constraint parameterization is known, the same learned-dynamics framework enables direct CIOC-based parameter recovery, and we characterize its sensitivity to dynamics misspecification.\n\nAcross high-dimensional robotic control tasks, our approach learns neural constraint representations with improved safety and data efficiency relative to state-of-the-art offline ICRL baselines."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09350"
-      },
-      "title": "Learning Unknown Constraints without Unsafe Data via Optimality and Counterfactual Regularization"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2505.08088"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-94ead80899abd1df8e19d81a5a553e39da2dfe55c2f5c2af63bdd2345ff5703a",
-      "intro": "arXiv:2505.08088v5 Announce Type: replace-cross Abstract: Indoor positioning systems (IPSs) are increasingly vital for location-based services in complex multi-storey environments. This study proposes a novel graph-based approach for floor separation using Wi-Fi fingerprint trajectories, addressing the challenge of vertical localization in indoor settings. We construct a graph where nodes represent Wi-Fi fingerprints, and edges are weighted by signal similarity and contextual transitions. Node2Vec is employed to generate low-dimensional embeddings, which are subsequently clustered using K-means to identify distinct floors",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Indoor positioning systems (IPSs) are increasingly vital for location-based services in complex multi-storey environments. This study proposes a novel graph-based approach for floor separation using Wi-Fi fingerprint trajectories, addressing the challenge of vertical localization in indoor settings.\n\nWe construct a graph where nodes represent Wi-Fi fingerprints, and edges are weighted by signal similarity and contextual transitions. Node2Vec is employed to generate low-dimensional embeddings, which are subsequently clustered using K-means to identify distinct floors.\n\nEvaluated on the Huawei University Challenge 2021 dataset, our method outperforms traditional community detection algorithms, achieving an accuracy of 68.97%, an F1- score of 61.99%, and an Adjusted Rand Index of 57.19%.By publicly releasing the preprocessed dataset and implementation code, this work contributes to advancing research in indoor positioning.\n\nThe proposed approach demonstrates robustness to signal noise and architectural complexities, offering a scalable solution for floor-level localization."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2505.08088"
-      },
-      "title": "Graph-Based Floor Separation Using Node Embeddings and Clustering of WiFi Trajectories"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09457"
         },
         "source_channel": "website",
@@ -3039,37 +2178,6 @@
         "url": "https://arxiv.org/abs/2610.09590"
       },
       "title": "Learning Situation-Conditioned Thinking Policies for Long-Term LLM Agents"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09207"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-9d54b0c17a0433e2bbee9fa76c7976163127d4a3f9125915d1760f0fbc590a60",
-      "intro": "arXiv:2610.09207v1 Announce Type: new Abstract: Belief-space planners with separately designed or off-the-shelf estimators may have access to state-relevant information the estimator does not observe. Consequently, even an estimator that minimizes mean-squared error under its own information can have a nonzero error mean when conditioned on planner information. When future corrections are intermittent and stochastic, differences between accepted and rejected error means introduce additional uncertainty terms to correction events that zero-mean assumptions ignore. In this paper, we propose a",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Belief-space planners with separately designed or off-the-shelf estimators may have access to state-relevant information the estimator does not observe. Consequently, even an estimator that minimizes mean-squared error under its own information can have a nonzero error mean when conditioned on planner information.\n\nWhen future corrections are intermittent and stochastic, differences between accepted and rejected error means introduce additional uncertainty terms to correction events that zero-mean assumptions ignore.\n\nIn this paper, we propose a belief-space planning approach that predicts, propagates, and penalizes planner-conditioned estimator error along evaluated trajectories. A planner-conditioned estimator-error model combines affine error dynamics with a moment recursion that preserves stochastically-induced correction uncertainty.\n\nWe describe a method by which to predict estimator error dynamics within specified operating regimes and incorporate predicted error moments into a task-weighted quadratic risk objective. We evaluate the approach in simulation for a tilt-rotor VTOL landing on a ship deck using receding-horizon planning.\n\nWe find that conditioning on planner information reduced error-prediction loss for a command-blind EKF by 13.4% relative to a planner-ignorant model, with strongly regime and horizon-dependent forecasting abilities.\n\nIn a small set of 16 paired closed-loop trials, the planner lowered the median terminal task gauge from 1.60 to 0.99, and predicted estimator error beyond 2s within a factor of 1.3, versus a 5.7-fold underprediction by covariance-only planning."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09207"
-      },
-      "title": "Belief-Space Planning with Planner-Conditioned Estimator Error under Intermittent Observations"
     },
     {
       "body": "",
@@ -3163,37 +2271,6 @@
         "url": "https://arxiv.org/abs/2610.10388"
       },
       "title": "RoboQuest: Generalist Physical Agents that Search, Inspect and Test"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10180"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-a09162090f4f8972d24a798a6dd6e4d20059d6a02368c85749e6cb8203e27c02",
-      "intro": "arXiv:2610.10180v1 Announce Type: new Abstract: This paper presents a fully actuated 4-DOF robotic finger using a joint-specific hybrid remote-actuation architecture. The metacarpophalangeal (MCP) joint is driven by two coordinated rigid-link transmission sets, whereas the proximal interphalangeal (PIP) and distal interphalangeal (DIP) joints are independently actuated by closed-loop wire transmissions incorporating circular rolling-contact joints (RCJs). A larger transmission radius is used at the PIP joint than at the DIP joint. The RCJ wire geometry maintains the total wire-loop length",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "This paper presents a fully actuated 4-DOF robotic finger using a joint-specific hybrid remote-actuation architecture.\n\nThe metacarpophalangeal (MCP) joint is driven by two coordinated rigid-link transmission sets, whereas the proximal interphalangeal (PIP) and distal interphalangeal (DIP) joints are independently actuated by closed-loop wire transmissions incorporating circular rolling-contact joints (RCJs).\n\nA larger transmission radius is used at the PIP joint than at the DIP joint. The RCJ wire geometry maintains the total wire-loop length during joint rotation, and the DIP wire routing is designed so that PIP motion does not affect its differential actuation for a fixed MCP configuration.\n\nThe distal wire transmission, MCP linkage, and fingertip kinematics are analytically modeled. In experiments, the transmission behavior was quantitatively evaluated from the ball-screw displacements measured using ArUco-marker tracking.\n\nMCP actuation produced measurable displacements of the PIP and DIP transmission units, whereas isolated PIP and DIP actuation with the MCP fixed supported the intended mechanical decoupling between the distal transmissions. The mean peak fingertip forces under isolated MCP, PIP, and DIP actuation were 21.28 N, 9.22 N, and 5.75 N, respectively.\n\nThe resulting finger postures were also examined using objects of different geometries and sizes."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10180"
-      },
-      "title": "Design of a Fully Actuated 4-DOF Robotic Finger With Joint-Specific Hybrid Remote Actuation"
     },
     {
       "body": "",
@@ -3386,68 +2463,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09536"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-a7694dc9ba8b2a6461c27d593984bd64ef065e03467b1b89c719d788bebe99c8",
-      "intro": "arXiv:2610.09536v1 Announce Type: new Abstract: Robotic grasping and surface exploration benefit from simultaneous measurement of normal and tangential forces and from surface information obtained through contact. Here, we present a compact magnetociliary tactile sensor (MagCilia) that combines a flexible magnetic-cilia structure with a Hall sensor for 3D force sensing. Quasi-static finite element analysis is used to investigate structural deformation and magnetic responses under multidirectional loading. To reconstruct forces from the coupled magnetic channels, we propose causal history fusion",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Robotic grasping and surface exploration benefit from simultaneous measurement of normal and tangential forces and from surface information obtained through contact. Here, we present a compact magnetociliary tactile sensor (MagCilia) that combines a flexible magnetic-cilia structure with a Hall sensor for 3D force sensing.\n\nQuasi-static finite element analysis is used to investigate structural deformation and magnetic responses under multidirectional loading. To reconstruct forces from the coupled magnetic channels, we propose causal history fusion regression (CHFR), which combines current magnetic-field measurements with their recent changes.\n\nFive-fold cross-validation grouped by calibration record yields root-mean-square errors of 0.40, 0.57, and 0.69 N for Fx, Fy, and Fz, respectively, with corresponding coefficients of determination of 0.93, 0.90, and 0.92.Robotic experiments demonstrate tangential-force-guided gripper adjustment and multi-axis load monitoring under external perturbations.\n\nFrequency-domain features of the reconstructed forces distinguish six surface categories with 99.39% accuracy in three-fold cross-validation grouped by acquisition session. An online robotic demonstration additionally identifies all six tested surfaces.\n\nThese results demonstrate 3D force reconstruction, grasping feedback, and surface recognition using a single compact tactile unit."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09536"
-      },
-      "title": "MagCilia: A Compact Magnetociliary Tactile Sensor with 3D Force Sensing for Robotic Contact Perception and Grasping Feedback"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09084"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-a97e851352a3170bd12b766457abd430eb6bcd343a220c05349ea932b73a3efb",
-      "intro": "arXiv:2610.09084v1 Announce Type: cross Abstract: In neutral-atom quantum computers, atoms are moved to target positions along paths of empty positions, and a target position may be reserved for one species of atom. Motivated by this task, we introduce Single-Move Labeled Token Routing: every source and every target vertex of a graph is assigned a set of labels, and tokens occupy the sources. A solution consists of a matching that assigns each source to a compatible target (one whose",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "In neutral-atom quantum computers, atoms are moved to target positions along paths of empty positions, and a target position may be reserved for one species of atom. Motivated by this task, we introduce Single-Move Labeled Token Routing: every source and every target vertex of a graph is assigned a set of labels, and tokens occupy the sources.\n\nA solution consists of a matching that assigns each source to a compatible target (one whose label set intersects its own), a route for each matched pair, and a movement order in which, when a token is moved, its route contains no other token.\n\nThe problem is known to be polynomial-time solvable when every source is compatible with every target, and $\\mathsf{NP}$-complete on grid graphs when each source is compatible with exactly one target.\n\nWe prove that the latter case remains $\\mathsf{NP}$-complete on grids and on planar graphs of maximum degree four even when some solution has pairwise edge-disjoint routes. On trees, the problem is known to be $\\mathsf{NP}$-complete even for maximum degree three.\n\nWe study trees through the solution edge multiplicity, the largest number of routes of a solution sharing an edge, and the candidate edge multiplicity, the largest number of compatible pairs whose paths share an edge.\n\nWe prove that on trees of maximum degree three, the problem is $\\mathsf{W}[1]$-hard parameterized by a bound on the solution edge multiplicity, even when a movement order is given, and that on trees of unbounded degree, it is $\\mathsf{NP}$-complete even when the candidate edge multiplicity is at most eight.\n\nWe show that on trees the problem is fixed-parameter tractable parameterized by the maximum degree together with the candidate edge multiplicity, and also by the candidate vertex multiplicity, the same count at vertices. Unless $\\mathsf{P}=\\mathsf{NP}$, neither the maximum degree nor the candidate edge multiplicity can be omitted."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09084"
-      },
-      "title": "On the complexity of the single-move labeled token routing problem"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.10470"
         },
         "source_channel": "website",
@@ -3504,37 +2519,6 @@
         "url": "https://arxiv.org/abs/2610.09224"
       },
       "title": "Fast Planning for Multi-object Multi-target Throwing"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2605.21138"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-ae72b9dece95d344e3c2e0f862c869f73b780126ec1f6c5ff597d905849e172f",
-      "intro": "arXiv:2605.21138v3 Announce Type: replace Abstract: Smoothed implicit contact dynamics enables gradient-based planning and control for contact-rich tasks without predefined mode sequences. However, safety-critical control remains challenging because implicit contact dynamics makes safety-filter design nontrivial. The smoothing parameter $\\kappa$ relaxes contact complementarity constraints, which makes the dynamics smooth but affects the contact force. This paper provides a safety-filtering framework for smoothed implicit contact dynamics. We first derive a discrete-time control barrier function (CBF) constraint using a first-order Taylor approximation",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Smoothed implicit contact dynamics enables gradient-based planning and control for contact-rich tasks without predefined mode sequences. However, safety-critical control remains challenging because implicit contact dynamics makes safety-filter design nontrivial.\n\nThe smoothing parameter $\\kappa$ relaxes contact complementarity constraints, which makes the dynamics smooth but affects the contact force. This paper provides a safety-filtering framework for smoothed implicit contact dynamics.\n\nWe first derive a discrete-time control barrier function (CBF) constraint using a first-order Taylor approximation of the implicitly defined contact force. We show that, although reducing $\\kappa$ can improve local force-approximation accuracy, the resulting closed-loop force-constraint violations can vary non-monotonically with $\\kappa$.\n\nMotivated by this observation, we introduce boundary-focused rollouts that screen candidate $\\kappa$ values by comparing the predicted safety margin with the observed one-step under-prediction. We then robustly tighten the predicted CBF constraint with a fixed margin to account for residual force under-prediction.\n\nSimulations on four contact-rich systems show that the proposed method eliminates force violations observed under a standard CBF. Project website https://contact-cbf.github.io/"
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2605.21138"
-      },
-      "title": "Safety-Critical Control for Smoothed Implicit Contact Dynamics"
     },
     {
       "body": "",
@@ -3727,37 +2711,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09652"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-beac9690db281a01f33a7d1895bd1d47193a090884605b844c6dd00d6c369a38",
-      "intro": "arXiv:2610.09652v1 Announce Type: cross Abstract: Autonomous navigation in dynamic environments requires computing spatiotemporal trajectories that satisfy non-holonomic motion constraints. When the trajectories of the moving obstacles are predictable or known, a promising approach is to rely on the combination of state lattices constructed from precomputed feasible motion primitives and Safe Interval Path Planning -- a search-based algorithm with strong theoretical guarantees. While this approach yields feasible paths, the rich primitive sets needed for smooth navigation induce a large branching",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Autonomous navigation in dynamic environments requires computing spatiotemporal trajectories that satisfy non-holonomic motion constraints.\n\nWhen the trajectories of the moving obstacles are predictable or known, a promising approach is to rely on the combination of state lattices constructed from precomputed feasible motion primitives and Safe Interval Path Planning -- a search-based algorithm with strong theoretical guarantees.\n\nWhile this approach yields feasible paths, the rich primitive sets needed for smooth navigation induce a large branching factor, which becomes costly when coupled with time-dependent obstacle intervals.\n\nTo this end, we present MeshSIPP, an efficient planner that removes the computational bottleneck by exploiting the fact that many primitives sweep the same regions and can therefore be validated together.\n\nMeshSIPP propagates primitives as spatial bundles, screens them with lightweight bounding-interval checks, and defers the expensive exact departure-time search until a primitive reaches its terminal state. A time-aware pruning rule additionally discards redundant space-time branches early in the search.\n\nWe prove that the resulting search is complete and optimal. Extensive experiments over more than 6,000 benchmark instances and real-time ROS~2 simulations show that MeshSIPP achieves up to a 3$\\times$ speedup over state-of-the-art spatiotemporal planners."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09652"
-      },
-      "title": "MeshSIPP: Efficient Lattice Planning in Dynamic Environment"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09781"
         },
         "source_channel": "website",
@@ -3789,37 +2742,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.10526"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-c2e2ba32a27b6dd235c54ce9d07db1a76e03324acae28e82d931b4e733df7e07",
-      "intro": "arXiv:2610.10526v1 Announce Type: new Abstract: Vision-language-action models (VLAs) are strikingly sensitive to instruction phrasing and do not inherit the language robustness of the vision-language models they are built on. A one-word edit can move success by tens of points: $\\pi_{0.5}$ turns on a LIBERO stove 100% of the time for \"switch on the stove\" and 2% for \"switch on the hot plate\", and a $\\pi_0$ checkpoint finetuned with rephrase augmentation still shows swings of up to",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Vision-language-action models (VLAs) are strikingly sensitive to instruction phrasing and do not inherit the language robustness of the vision-language models they are built on.\n\nA one-word edit can move success by tens of points: $\\pi_{0.5}$ turns on a LIBERO stove 100% of the time for \"switch on the stove\" and 2% for \"switch on the hot plate\", and a $\\pi_0$ checkpoint finetuned with rephrase augmentation still shows swings of up to 61 points.\n\nWe characterize this sensitivity with statistically tested single-edit swings and an oracle phrase search, which shows that phrasing alone nearly closes the 21-point gap between in-distribution and out-of-distribution tasks. We then reduce it without modifying the policy.\n\nBecause the sensitivity is systematic, it can be expressed as explicit rules: we score many phrasings of a few training tasks, have a large language model distill the evidence into ten to twenty rephrasing rules, and at deployment rewrite each incoming instruction once under these rules.\n\nThe rules improve the frozen $\\pi_0$ by 16 to 27% relative on twelve held-out tasks across adversarial, VLM-generated, and human-generated phrasings, with gains concentrated on out-of-distribution tasks. The pipeline replicates on $\\pi_{0.5}$ and LIBERO, lifting in-finetune success from 93.6% to 97.8%.\n\nThe method requires no retraining and no per-step verification, and applies zero-shot to unseen tasks and instructions. Project website: https://sttawm.github.io/rephrase-before-you-act"
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10526"
-      },
-      "title": "Rephrase Before You Act: Characterizing and Mitigating Language Sensitivity in Vision-Language-Action Models"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.10438"
         },
         "source_channel": "website",
@@ -3845,37 +2767,6 @@
         "url": "https://arxiv.org/abs/2610.10438"
       },
       "title": "ECHO: Embodied Camera Observations of Human Object Carrying"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09535"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-c51035730484cdcad80cc6482db58b7278e99ef3904b16a9c11d96a584756598",
-      "intro": "arXiv:2610.09535v1 Announce Type: cross Abstract: Real-world applications require 6D pose estimation to be accurate, fast, and scalable to unseen objects. This paper introduces WAPR, a zero-shot wide-angle pose refinement model that refines candidate poses with rotational deviations up to 90 degrees. With as few as 12 candidate poses per detected object instance, WAPR supports fast inference within 1 s per frame and reaches a pose-estimation throughput of up to 25 detected object instances per second. To support wide-angle",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Real-world applications require 6D pose estimation to be accurate, fast, and scalable to unseen objects. This paper introduces WAPR, a zero-shot wide-angle pose refinement model that refines candidate poses with rotational deviations up to 90 degrees.\n\nWith as few as 12 candidate poses per detected object instance, WAPR supports fast inference within 1 s per frame and reaches a pose-estimation throughput of up to 25 detected object instances per second.\n\nTo support wide-angle training for rotationally symmetric objects, WAPR uses rotational symmetry priors to canonicalize symmetry-equivalent pose targets before loss computation. We further construct SA6D, a large-scale 6D training dataset with such priors.\n\nSA6D obtains KASAL-assisted rotational symmetry priors for 944 GSO scans and expands them through geometry and texture augmentation into about 50K augmented object instances and about 2M rendered RGB-D images. In addition, an angle-balanced loss stabilizes learning across different angular ranges by reducing the influence of uninformative large-error cases.\n\nExperiments on seven BOP core datasets show that WAPR achieves state-of-the-art performance in unseen-object 6D pose localization and detection under both fast and unconstrained inference settings. Project page: https://github.com/WangYuLin-SEU/WAPR."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09535"
-      },
-      "title": "WAPR: A Foundation Model for Wide-Angle Refinement in Unseen Object Pose Estimation"
     },
     {
       "body": "",
@@ -3944,37 +2835,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2602.20119"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-c6e4d1cf84b4808bb945a8d96f37b48da7e6c75f4fc3c688c21aaa2af42ead2f",
-      "intro": "arXiv:2602.20119v2 Announce Type: replace Abstract: Solving complex long-horizon robotic tasks requires joint reasoning over abstract task structure and low-level physical interaction. While combining Vision-Language Models (VLMs) and video generation models offers a promising path for zero-shot planning, their individual tendencies to hallucinate physics or violate geometric consistency often compound over time, preventing reliable real-world execution. We introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans. At the high",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Solving complex long-horizon robotic tasks requires joint reasoning over abstract task structure and low-level physical interaction.\n\nWhile combining Vision-Language Models (VLMs) and video generation models offers a promising path for zero-shot planning, their individual tendencies to hallucinate physics or violate geometric consistency often compound over time, preventing reliable real-world execution.\n\nWe introduce NovaPlan, a hierarchical framework that enables robust, zero-shot long-horizon manipulation by systematically proposing, verifying, and repairing visual plans. At the high level, a VLM planner decomposes tasks and filters out dynamically inconsistent futures by verifying multiple candidate video rollouts.\n\nTo translate these imagined futures into reliable physical actions, NovaPlan utilizes a hybrid geometric representation that adaptively switches between object-centric flow and human hand flow.\n\nFinally, NovaPlan closes the loop by continuously monitoring execution to verify outcomes and synthesize local, non-prehensile corrective behaviors, such as fingertip poking, when failures occur.\n\nAcross diverse multi-stage tasks, NovaPlan substantially outperforms prior zero-shot systems, achieving complex assembly and dexterous error recovery entirely without task-specific training or demonstrations. Please visit our project website for additional results: https://nova-plan.github.io/"
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2602.20119"
-      },
-      "title": "NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09764"
         },
         "source_channel": "website",
@@ -4006,37 +2866,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.09195"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-c78b0a68dd390356bcc55c5045bc33aa7fd01305e27357d11cb1d71c77781288",
-      "intro": "arXiv:2610.09195v1 Announce Type: cross Abstract: Reconstructing a physically stable human grasp from a single RGB image is challenging because physically modeling grasps is itself difficult, and the problem requires estimating not only a visually constrained hand pose but also a control target that stabilizes the grasp. Existing methods either model only visual hand geometry without considering physics, or rely on less plausible physical modeling, which limits the physical validity of the resulting grasps. In this paper, we present",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Reconstructing a physically stable human grasp from a single RGB image is challenging because physically modeling grasps is itself difficult, and the problem requires estimating not only a visually constrained hand pose but also a control target that stabilizes the grasp.\n\nExisting methods either model only visual hand geometry without considering physics, or rely on less plausible physical modeling, which limits the physical validity of the resulting grasps.\n\nIn this paper, we present StableGrasp, a differentiable simulation-based optimization framework that explicitly separates the visual hand pose from the control target that determines the grasping forces.\n\nOur method jointly optimizes hand geometry and control by minimizing the kinetic energy of the grasp in a differentiable simulator, while regularizing the hand geometry to preserve visual consistency and geometric plausibility.\n\nThe reconstructed grasps are substantially more stable under rigorous physical simulation, while remaining visually consistent with the input images and geometrically plausible.\n\nExperiments show that our approach produces far more stable grasps than alternative hand-control strategies, benefiting visual-only grasp reconstruction pipelines by turning their outputs into physically stable grasps."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09195"
-      },
-      "title": "StableGrasp: Reconstructing Physically Stable Human Hand Grasps from Single Images"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09170"
         },
         "source_channel": "website",
@@ -4062,37 +2891,6 @@
         "url": "https://arxiv.org/abs/2610.09170"
       },
       "title": "Beyond Reconstruction: What Matters in Action Tokenization for Robot Policies?"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.09150"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-c8b748e42b29a7eadee8e29a8bd9d9db973d22a254fe08b5d81dbfd45b45e199",
-      "intro": "arXiv:2610.09150v1 Announce Type: new Abstract: Objective: Data-driven models that estimate physiological states, particularly biological joint moments, are widely used in exoskeleton control. However, these estimators are often coupled to device-specific sensor configurations, limiting controller transfer and the use of open-source biomechanics datasets. Methods: We proposed joint kinematics as an intermediate representation that decouples hardware-specific sensing from downstream biological joint moment estimation. A joint-moment estimator using joint angles and angular velocities was trained exclusively on open-source biomechanics data and",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Objective: Data-driven models that estimate physiological states, particularly biological joint moments, are widely used in exoskeleton control. However, these estimators are often coupled to device-specific sensor configurations, limiting controller transfer and the use of open-source biomechanics datasets.\n\nMethods: We proposed joint kinematics as an intermediate representation that decouples hardware-specific sensing from downstream biological joint moment estimation.\n\nA joint-moment estimator using joint angles and angular velocities was trained exclusively on open-source biomechanics data and evaluated using kinematics from a hip exoskeleton, knee exoskeleton, and inertial measurement unit (IMU) sensor suite during level-ground, ramp-ascent, and ramp-descent walking.\n\nResults: The estimator achieved an root mean square error (RMSE) of 0.17 Nm/kg and coefficient of determination (R2) of 0.79 using hip exoskeleton kinematics, 0.19 Nm/kg and 0.62 using knee exoskeleton kinematics, and 0.15 Nm/kg and 0.85 using kinematics derived from IMUs across bilateral hip, knee, and ankle joints.\n\nConclusion: Joint kinematics enabled an estimator trained only on open-source data to operate across distinct wearable platforms. Significance: This framework may reduce target-device data collection and support transferable biological joint moment estimation for exoskeleton control and wearable biomechanics."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.09150"
-      },
-      "title": "A Unified Kinematic Representation Enables Reusable Biological Joint Moment Estimation"
     },
     {
       "body": "",
@@ -4192,68 +2990,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2604.09049"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-cddd5d1a0bd7e4689312c7719fb2e1a2540bd351fea3d241502c43ca229737c9",
-      "intro": "arXiv:2604.09049v3 Announce Type: replace Abstract: Instant delivery, shipping items before critical deadlines, is essential in daily life. While multiple delivery agents, such as couriers, Unmanned Aerial Vehicles (UAVs), and crowdsourced agents, have been widely employed, each of them faces inherent limitations (e.g., low efficiency/labor shortages, flight control, and dynamic capabilities, respectively), preventing them from meeting the surging demands alone. This paper proposes TriDeliver, the first hierarchical cooperative framework, integrating human couriers, UAVs, and crowdsourced ground vehicles",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Instant delivery, shipping items before critical deadlines, is essential in daily life.\n\nWhile multiple delivery agents, such as couriers, Unmanned Aerial Vehicles (UAVs), and crowdsourced agents, have been widely employed, each of them faces inherent limitations (e.g., low efficiency/labor shortages, flight control, and dynamic capabilities, respectively), preventing them from meeting the surging demands alone.\n\nThis paper proposes TriDeliver, the first hierarchical cooperative framework, integrating human couriers, UAVs, and crowdsourced ground vehicles (GVs) for efficient instant delivery.\n\nTo obtain the initial scheduling knowledge for GVs and UAVs as well as improve the cooperative delivery performance, we design a Transfer Learning (TL)-based algorithm to extract delivery knowledge from couriers' behavioral history and transfer their knowledge to UAVs and GVs with fine-tunings, which is then used to dispatch parcels for efficient delivery.\n\nEvaluated on one-month real-world trajectory and delivery datasets, it has been demonstrated that 1) by integrating couriers, UAVs, and crowdsourced GVs, TriDeliver reduces the delivery cost by $65.8\\%$ versus state-of-the-art cooperative delivery by UAVs and couriers; 2) TriDeliver achieves further improvements in terms of delivery time ($-17.7\\%$), delivery cost ($-9.8\\%$), and impacts on original tasks of crowdsourced GVs ($-43.6\\%$), even with the representation of the transferred knowledge by simple neural networks, respectively."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2604.09049"
-      },
-      "title": "TriDeliver: Cooperative Air-Ground Instant Delivery with UAVs, Couriers, and Crowdsourced Ground Vehicles"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2511.19675"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-d03a052a09f2cad705466ae5a50cd963df0c0754c08bd1a8aac94a0a8e43c713",
-      "intro": "arXiv:2511.19675v2 Announce Type: replace-cross Abstract: This paper presents the Safe Sequential Quadratically Constrained Quadratic Programming (SS-QCQP) algorithm, a first-order method for smooth inequality-constrained nonconvex optimization that guarantees feasibility at every iteration. The method is derived from a continuous-time dynamical system whose vector field is obtained by solving a convex QCQP that enforces monotonic descent of the objective and forward invariance of the feasible set. The resulting continuous-time dynamics achieve an $O(1/t)$ ergodic convergence rate for the",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "This paper presents the Safe Sequential Quadratically Constrained Quadratic Programming (SS-QCQP) algorithm, a first-order method for smooth inequality-constrained nonconvex optimization that guarantees feasibility at every iteration.\n\nThe method is derived from a continuous-time dynamical system whose vector field is obtained by solving a convex QCQP that enforces monotonic descent of the objective and forward invariance of the feasible set.\n\nThe resulting continuous-time dynamics achieve an $O(1/t)$ ergodic convergence rate for the stationarity measure under standard constraint qualification conditions. We then propose a safeguarded Euler discretization with adaptive step-size selection that preserves this convergence rate while maintaining both descent and feasibility in discrete time.\n\nTo enhance scalability, we develop an active-set variant (SS-QCQP-AS) that selectively enforces constraints near the boundary, substantially reducing computational cost without compromising theoretical guarantees.\n\nNumerical experiments on a multi-agent nonlinear optimal control problem demonstrate that SS-QCQP and SS-QCQP-AS maintain feasibility, exhibit the predicted convergence behavior, and deliver solution quality comparable to second-order solvers such as SQP and IPOPT."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2511.19675"
-      },
-      "title": "Anytime-Feasible First-Order Optimization via Safe Sequential QCQP"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09130"
         },
         "source_channel": "website",
@@ -4279,37 +3015,6 @@
         "url": "https://arxiv.org/abs/2610.09130"
       },
       "title": "FlashNeRD: Performance-First Contact-Rich Neural Robot Dynamics"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10087"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-d38fbd89d344d2acad544ffa87d6558d0c3fb51634bf41a30ac29d1a51f8ad24",
-      "intro": "arXiv:2610.10087v1 Announce Type: cross Abstract: Offline MARL increasingly relies on generative policies to model multimodal joint behavior, typically by distilling a centralized teacher into decentralized one-step actors under the CTDE. We identify a failure mode at the teacher training stage: standard flow-based teachers pair noise with replay targets independently, so nearby noise samples can be routed toward conflicting coordination modes. The teacher then produces samples between valid modes, and because the distillation loss regresses each local actor onto",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Offline MARL increasingly relies on generative policies to model multimodal joint behavior, typically by distilling a centralized teacher into decentralized one-step actors under the CTDE.\n\nWe identify a failure mode at the teacher training stage: standard flow-based teachers pair noise with replay targets independently, so nearby noise samples can be routed toward conflicting coordination modes.\n\nThe teacher then produces samples between valid modes, and because the distillation loss regresses each local actor onto the conditional mean of the teacher's output given local input, this error is not absorbed but propagated to the student.\n\nTo remove this teacher-side artifact, we propose Mode-Support Semi-Discrete Optimal Transport (MoSDOT), which summarizes multimodal replay into a finite mode support with prescribed capacities and uses conditional semi-discrete optimal transport to assign each noise sample to a single mode before teacher training.\n\nWe additionally study a shared-randomness variant that uses a shared noise component at execution to expose the residual gap intrinsic to strict-product execution. On controlled diagnostics and offline MARL benchmarks, MoSDOT improves endpoint quality and routing consistency, particularly on datasets exhibiting multimodal joint behavior."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10087"
-      },
-      "title": "Multi-Agent Coordination via Support-Preserving Distillation"
     },
     {
       "body": "",
@@ -4378,37 +3083,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2607.13319"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-d629f68128b3dd06401c65739f43c92c341c810b38bceba47a527848cc5ded1e",
-      "intro": "arXiv:2607.13319v2 Announce Type: replace Abstract: High-speed off-road autonomy requires precise closed-loop control for a target vehicle while remaining robust across changing terrains. Recent forward kinodynamic (FKD) prediction foundation models suggest a promising path, starting from a generalist model and specializing it to the target platform. However, effective specialization remains challenging, as it often requires substantial real-world data, and models adapted to one setting can still overfit to specific terrains or driving regimes. We present OptCar (Optimized Car), a",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "High-speed off-road autonomy requires precise closed-loop control for a target vehicle while remaining robust across changing terrains. Recent forward kinodynamic (FKD) prediction foundation models suggest a promising path, starting from a generalist model and specializing it to the target platform.\n\nHowever, effective specialization remains challenging, as it often requires substantial real-world data, and models adapted to one setting can still overfit to specific terrains or driving regimes.\n\nWe present OptCar (Optimized Car), a recipe for bridging the gap from generalist to specialist FKD models that preserves cross-terrain generalization while optimizing performance for a specific vehicle.\n\nOptCar introduces a transformer FKD architecture that uses FiLM to condition multi-step predictions on a single dynamics context token summarizing recent state-action history. It then specializes the generalist model using limited real-world data and targeted synthetic rollouts from environment-specific system identification.\n\nIn closed-loop model predictive control (MPC) experiments across three terrains and an out-of-distribution cart-pulling task, the largest gains appear at 6 m/s, the highest speed evaluated and the regime in which slip dominates tracking error.\n\nOn vegetation + dirt, the most slip-diverse terrain, OptCar reduces 6 m/s trajectory tracking error by roughly 55% relative to AnyCar fine-tuned on real data alone, and remains the most accurate even when an unseen cart payload changes the dynamics.\n\nWith 5 minutes of real data per terrain, OptCar is competitive on road with a specialist trained on 30 minutes of road data and outperforms it when the terrain changes."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2607.13319"
-      },
-      "title": "Adapting Generalist Vehicle Models for High-Speed MPC Across Terrains"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2610.09178"
         },
         "source_channel": "website",
@@ -4440,37 +3114,6 @@
       "catalog": {
         "kind": "paper",
         "paper": {
-          "url": "https://arxiv.org/abs/2610.10510"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-d93bfe44a7b6f49012b32c8bde24363e92fd2b1900b31b838d815f0bcb577ec9",
-      "intro": "arXiv:2610.10510v1 Announce Type: new Abstract: Tactile sim-to-real learning must bridge simulated contact and device-specific sensor responses while preserving information needed for control. We propose a factorized tactile representation and control framework that maps normal force and contact patch to an effective contact response recoverable from sensor readings. The response is separated into contact geometry, force distribution, and temporal contact change, with representation-specific encoding and randomization. A Tactile Gated Policy preserves these representations separately through control and operates over",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Tactile sim-to-real learning must bridge simulated contact and device-specific sensor responses while preserving information needed for control. We propose a factorized tactile representation and control framework that maps normal force and contact patch to an effective contact response recoverable from sensor readings.\n\nThe response is separated into contact geometry, force distribution, and temporal contact change, with representation-specific encoding and randomization. A Tactile Gated Policy preserves these representations separately through control and operates over all mask configurations without retraining.\n\nWe evaluate the approach through response reconstruction, spatial alignment, force regulation, and contact-rich adversarial peg insertion in simulation and the real world, enabling the utility and transfer reliability of different tactile representations to be assessed independently.\n\nThe approach achieves < 1 mm contact localization, 1.69 N force-tracking error on unseen geometries, and a 35% improvement in real-world adversarial peg insertion over the unfactorized response, with different tactile representations benefiting different interactions."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10510"
-      },
-      "title": "Factorized Tactile Representation and Control for Sim-to-Real Manipulation"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
           "url": "https://arxiv.org/abs/2606.15568"
         },
         "source_channel": "website",
@@ -4496,37 +3139,6 @@
         "url": "https://arxiv.org/abs/2606.15568"
       },
       "title": "SAPS: Shared Autonomy for Policy Steering by Blending Teleoperation with a Pretrained VLA"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.10421"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-db60e6957f486bf3c217e8a268b1544fc8b957384bd3f935e1fef7c9765b21e2",
-      "intro": "arXiv:2610.10421v1 Announce Type: new Abstract: Goal-oriented Vision-and-Language Navigation (VLN) requires agents to locate and reach targets described in natural language without prescribed routes. Air--ground collaboration is valuable for tasks requiring both wide-area search and fine-grained localization. However, systematic study of goal-oriented air--ground collaborative VLN remains limited by the lack of large-scale, diverse benchmarks and two core challenges: 1) substantial differences between aerial and ground views, together with useful observations becoming unavailable as navigation proceeds, make it difficult to",
-      "placement": "main",
-      "published_at": "2026-10-08T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Goal-oriented Vision-and-Language Navigation (VLN) requires agents to locate and reach targets described in natural language without prescribed routes. Air--ground collaboration is valuable for tasks requiring both wide-area search and fine-grained localization.\n\nHowever, systematic study of goal-oriented air--ground collaborative VLN remains limited by the lack of large-scale, diverse benchmarks and two core challenges: 1) substantial differences between aerial and ground views, together with useful observations becoming unavailable as navigation proceeds, make it difficult to maintain spatially consistent context across platforms and over time; and 2) asymmetric spatial observability makes ground perception locally detailed but spatially limited and aerial perception broad but locally coarse, limiting the reliability of single-platform planning.\n\nTo address these limitations, we introduce AirGroundVLN, a benchmark containing 10,281 navigation episodes and 955 target instances across 19 Unreal Engine environments, with seen/unseen splits and an aerial-visibility protocol for systematic evaluation.\n\nAlongside the benchmark, we propose AG-CoNAV, a trainable reference framework comprising two key components: Spatiotemporally Anchored Collaborative Memory (SACM) and Aerial-Guided Regional-to-Local Planning (AGRLP).SACM maintains and retrieves spatially consistent historical context across aerial and ground observations.\n\nMeanwhile, AGRLP combines regional aerial guidance with fine-grained ground navigation. Extensive experiments demonstrate the effectiveness of AG-CoNAV and establish AirGroundVLN as a comprehensive benchmark for future exploration."
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.10421"
-      },
-      "title": "AirGroundVLN: A Large-Scale Benchmark for Goal-Oriented Air-Ground Collaborative Vision-and-Language Navigation"
     },
     {
       "body": "",
