@@ -1814,7 +1814,11 @@
             "heading": "",
             "text": "We present Go2-DrivoR, a goal-conditioned adaptation of the end-to-end autonomous driving trajectory planning framework DrivoR for urban navigation with quadrupedal robots.\n\nBy conditioning trajectory generation on a local-frame subgoal through a goal token and adapting the vehicle-centric scoring formulation, the method extends DrivoR to short-horizon goal-conditioned local planning without redesigning its core decoders.\n\nSpecifically, we redefine drivable-area compliance for sidewalk-oriented navigation and reformulate the original ego progress term as goal-conditioned ego progress.\n\nTrained exclusively on TartanGround simulation data, Go2-DrivoR improves waypoint-conditioned planning performance on unseen simulation environments and transfers zero-shot to open-loop real-world trajectory prediction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Go2-DrivoR, a goal-conditioned adaptation of the DrivoR end-to-end trajectory planning framework for urban navigation by quadrupedal robots. It conditions planning on a local-frame subgoal and adapts drivable-area compliance and goal-conditioned ego progress while retaining the core decoders. Trained exclusively on TartanGround simulation data, the method improves waypoint-conditioned planning in unseen simulation environments and transfers zero-shot to open-loop real-world trajectory prediction, according to the authors.",
+          "zh": "本文提出Go2-DrivoR，将目标条件机制融入端到端轨迹规划框架DrivoR，用于四足机器人城市导航。方法通过目标令牌输入局部坐标系子目标，并调整可行驶区域约束和目标条件自我进度评分，保留原有核心解码器。模型仅使用TartanGround仿真数据训练；作者报告其在未见仿真环境中的航点条件规划表现提升，并能零样本迁移至真实世界的开环轨迹预测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
