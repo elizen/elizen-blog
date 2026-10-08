@@ -2130,7 +2130,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models adapted through supervised fine-tuning (SFT) inherit a structural asymmetry: expert demonstrations teach the policy where success behavior lies, but provide no signal about where it ceases to be reliable.\n\nWe argue that robust VLA adaptation should therefore be viewed not as further demonstration fitting, but as Failure-Boundary Learning -- the problem of Discovering, Localizing, and Shaping the boundary between recoverable deviations and task failure.\n\nTo instantiate this view, we propose DLS: built on a real-grounded behavioral prior from few real demonstrations and simulated co-training, DLS discovers failure boundaries at scale through on-policy digital twin rollouts.\n\nRather than reducing each rollout to a binary label, semantic progress localization uses privileged simulator states to assign progress-aware signals that capture where the failure boundary is crossed, not merely whether.\n\nThese signals drive directional boundary shaping in the flow dynamics -- reinforcing success-producing denoising directions and suppressing failure-producing ones, without action likelihoods or auxiliary critics.\n\nAcross real-robot manipulation tasks, DLS improves robustness over SFT and online RL baselines, especially under randomized initial states and unseen visual conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper frames robust adaptation of vision-language-action models as failure-boundary learning: discovering and localizing the boundary between recoverable deviations and task failure. Its DLS method combines a behavioral prior from a few real demonstrations with simulated co-training and on-policy digital-twin rollouts. Privileged simulator states provide progress-aware signals used to shape action-generation directions. Across real-robot manipulation tasks, the authors report improved robustness over supervised fine-tuning and online reinforcement-learning baselines, particularly with randomized initial states and unseen visual conditions.",
+          "zh": "论文提出将视觉语言动作模型的稳健适配视为“失败边界学习”，即发现并定位可恢复偏差与任务失败的边界。方法DLS结合少量真实演示、仿真协同训练和数字孪生在线策略 rollout，并利用特权模拟器状态提供进度信号，以调整生成动作的方向。在真实机器人操作任务中，作者报告DLS优于监督微调和在线强化学习基线，尤其面对随机初始状态和未见视觉条件时；摘要未给出具体量化结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2161,7 +2165,11 @@
             "heading": "",
             "text": "Humanoid robots could transport payloads substantially heavier than themselves by pulling passive wheeled vehicles instead of carrying the load.\n\nThis capability, however, creates a coupled locomotion problem: the robot must maintain persistent upper-body contact while adapting to unknown, configuration-dependent forces arising from the payload, vehicle, and terrain.\n\nWe present a whole-body control framework for humanoid rickshaw pulling that tracks commanded vehicle motion while preserving balance and stable grasps under uncertain load dynamics. During training, a privileged teacher exploits vehicle states, interaction forces, and load properties.\n\nIts actions and latent are distilled into a history-conditioned student that implicitly infers coupled dynamics from proprioceptive responses, followed by reinforcement-learning fine-tuning.\n\nComparisons with \\emph{No History} and \\emph{Only History} baselines show that the resulting policy achieves accurate vehicle tracking while reducing vehicle oscillation, torso tilt, and actuation cost.\n\nBehavioral analysis shows that Unitree G1 propels the rickshaw and generates gait-synchronized whole-body reactions that stabilize its lateral and roll motions. Moreover, pulling redistributes joint effort and yields a lower robot-normalized cost-of-transport proxy than unloaded walking over most tested load--speed conditions.\n\nOn hardware, a single policy performs starting, sustained pulling, turning, and stopping with both rigid payloads and human passengers, handling a loaded rickshaw mass of up to 115~kg without load-specific retuning. These results demonstrate robust heavy-load transportation through coordinated and persistent humanoid--vehicle interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents whole-body control for a humanoid pulling a wheeled vehicle while tracking commanded motion and maintaining balance and stable grasps under uncertain loads. A privileged teacher uses vehicle states, interaction forces, and load properties; its actions and latent are distilled into a history-conditioned student, then fine-tuned with reinforcement learning. Comparisons report accurate tracking with reduced vehicle oscillation, torso tilt, and actuation cost. Hardware demonstrations cover starting, sustained pulling, turning, and stopping with rigid payloads and passengers.",
+          "zh": "论文提出人形机器人牵引人力车的全身控制框架，使机器人在保持平衡和稳定抓握的同时跟踪车辆运动指令。训练中，特权教师利用车辆状态、交互力和载荷属性，其动作及潜变量被蒸馏到依据历史信息推断耦合动力学的学生策略，再以强化学习微调。比较结果显示，该策略可准确跟踪车辆并减少振荡、躯干倾斜和驱动成本。硬件演示涵盖起步、持续牵引、转弯和停止，以及刚性载荷和乘客。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
