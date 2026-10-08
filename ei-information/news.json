@@ -2539,7 +2539,11 @@
             "heading": "",
             "text": "A common assumption to simplify the problem of controlling a multi-UAV slung load system (MUSLS) is that the flexible cables can be modeled as massless rigid rods. In this work, we propose an alternative Euler-Newton derived dynamical model which uses a series of rigid links to model the flexible cables.\n\nThe model is specifically designed to allow efficient simulation using Featherstone's articulated body algorithm. We perform real-world validation of this model on gentle, aggressive, and tension-engagement maneuvers and run a parameter sweep to determine the number of links, joint damping, and joint friction to achieve the greatest model fidelity.\n\nThe model closely matches real-world flight data with mean load translation errors below 132 mm (5.5% of the cable length) and orientation errors below 11.4 degrees. We make the real-world flight data publicly available for the development of future cable models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an Euler–Newton-derived dynamics model for multi-UAV slung-load systems, representing flexible cables as series of rigid links. It is designed for efficient simulation with Featherstone’s articulated body algorithm. The authors validate it against real-world flight data in gentle, aggressive, and tension-engagement maneuvers, and sweep link count, joint damping, and friction parameters. They report close agreement with flight data and make the data publicly available for future cable-model development.",
+          "zh": "本文提出一种基于欧拉—牛顿方法的多无人机吊运系统动力学模型，以一系列刚性连杆表示柔性缆绳，并针对 Featherstone 关节体算法设计以提高仿真效率。作者用真实飞行数据验证模型，涵盖平缓、激进和张力接合机动，并通过参数扫描选择连杆数量、关节阻尼与摩擦。作者报告模型与真实飞行数据较为吻合，并公开了相关飞行数据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2570,7 +2574,11 @@
             "heading": "",
             "text": "Flying a quadrotor through a cluttered environment requires not only planning a collision-free reference trajectory based on perceived obstacles, but the reference also needs to be dynamically feasible and within the actuation limits of the vehicle, so that the controller can track it precisely.\n\nExisting methods either optimize a smooth polynomial inside a convex corridor, which limits agility, or treat obstacles as soft costs traded against tracking performance. We propose a Nonlinear Model Predictive Planning (NMPP) that imposes perceived obstacles as hard geometric constraints and hands a full-state reference to an obstacle-blind SE（3） controller.\n\nOur planner achieves a 58-67 % lower position RMSE than a linear Model Predictive Control trajectory planner and a 41-70 % lower RMSE than a polynomial trajectory planner.\n\nIt also completes all forest flights with up to 9.5 m/s speed without collisions, and achieves 86 % flight success rate under a more aggressive speed profile where a state-of-the-art planner has only 26 % success rate. The real-world deployment showed reliable execution flying up to 5.5 m/s in an unknown cluttered environment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Nonlinear Model Predictive Planning (NMPP) for agile quadrotor flight in cluttered environments. It treats perceived obstacles as hard geometric constraints and provides a full-state reference to an obstacle-blind SE(3) controller. The authors report lower position RMSE than linear MPC and polynomial trajectory planners. In forest flights, the planner completed runs without collisions at speeds up to 9.5 m/s; under a more aggressive profile, its reported success rate exceeded that of a comparison planner. Real-world deployment in an unknown cluttered environment reached 5.5 m/s.",
+          "zh": "本文提出非线性模型预测规划方法 NMPP，用于无人机在拥挤环境中敏捷飞行。规划器将感知到的障碍物作为硬几何约束，并向不感知障碍物的 SE(3) 控制器提供全状态参考轨迹。作者报告，相较线性模型预测控制和多项式轨迹规划器，位置均方根误差更低；森林飞行测试中最高速度达 9.5 m/s 且无碰撞。在更激进速度设定下，成功率高于对比规划器；未知拥挤环境中的实地部署速度最高为 5.5 m/s。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2601,7 +2609,11 @@
             "heading": "",
             "text": "Object-goal navigation (ObjectNav) in multi-floor scenarios presents a challenge due to sparse rewards caused by long-horizon decision-making. In this paper, we propose a diagnostic study based on a modular framework with an effective learnable policy to analyze failure factors in multi-floor scenarios.\n\nTo achieve an effective policy for diagnosis, we design the hierarchical factorization policy that deconstructs a single global policy into an intra-floor exploration policy and an inter-floor switching policy.\n\nTo providing an effective initialization for Reinforcement Learning (RL), the lightweight intra-floor policy is learned by distilling the exploration logic of Visual Language Models (VLMs).Under idealized assumptions, we show that the factorized policy is theoretically equivalent to a single global policy at the policy-representation level.\n\nExperiment results indicate that perception performance and stair climbing stability are the primary bottlenecks in multi-floor navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies failure factors in multi-floor object-goal navigation using a modular, learnable policy framework. Its hierarchical factorization separates a global policy into intra-floor exploration and inter-floor switching policies. To initialize reinforcement learning, a lightweight intra-floor policy distills exploration logic from visual language models. Under idealized assumptions, the authors show equivalence to a single global policy at the policy-representation level. Experiments identify perception performance and stair-climbing stability as the primary bottlenecks in multi-floor navigation.",
+          "zh": "本文研究多楼层物体目标导航中的失败因素，提出用于诊断的模块化可学习策略框架。其层级因子化策略将全局策略拆为楼层内探索策略和楼层间切换策略；为强化学习提供初始化，轻量级楼层内策略通过蒸馏视觉语言模型的探索逻辑获得。作者在理想化假设下证明，该因子化策略在策略表示层面等价于单一全局策略。实验结果指出，感知表现和爬楼梯稳定性是多楼层导航的主要瓶颈。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2632,7 +2644,11 @@
             "heading": "",
             "text": "Indoor 3D Scene Graphs (3DSGs) represent environments as multi-layer hierarchies that connect observed geometric primitives (e.g., planes) to higher-level metric-semantic concepts (e.g., rooms, floors, buildings), enabling incremental spatial reasoning for robotic perception and SLAM.\n\nHowever, classical high-level concept generation approaches rely on hand-crafted rules for specific concept classes, while learning-based methods require separate models for graph structure and spatial node features (e.g., centroids), which limits scalability to novel classes and more complex hierarchies.\n\nWe propose a unified autoregressive diffusion-based graph generative model that jointly learns structure and features, constructing complete 3DSGs bottom-up from observed vertical planes across arbitrary hierarchy depths.\n\nOur method consistently surpasses all learning-based and random baselines across 3DSG datasets spanning synthetic scenes, real architectural floor plans, and robotic sensor data, with varying layout complexity and hierarchy depth, and surpasses a one-shot model with oracle access to the target graph size on the largest hierarchy and on real single-floor data.\n\nFinally, we propose an adaptation of the Fused Gromov--Wasserstein distance for principled graph-level evaluation of generated 3DSGs against ground truth."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a unified autoregressive diffusion model that jointly learns graph structure and spatial node features to generate indoor 3D scene graphs bottom-up from observed vertical planes, across arbitrary hierarchy depths. The authors evaluate it on datasets covering synthetic scenes, real architectural floor plans, and robotic sensor data with varied complexity. They report that it consistently outperforms learning-based and random baselines, and beats a one-shot model with oracle access to target graph size on the largest hierarchy and real single-floor data. They also adapt Fused Gromov–Wasserstein distance for graph-level evaluation.",
+          "zh": "本文提出一种统一的自回归扩散图生成模型，从观测到的垂直平面出发，自底向上构建室内三维场景图，并联合学习图结构与空间节点特征，以支持不同层级深度。作者在包含合成场景、真实建筑平面图和机器人传感器数据的多个数据集上评估，报告该方法持续优于学习型及随机基线；在最大层级和真实单层数据上，也优于可访问目标图规模的单步模型。此外，作者提出用融合 Gromov–Wasserstein 距离评估生成图与真实图。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
