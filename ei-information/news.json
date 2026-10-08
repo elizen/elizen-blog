@@ -1529,7 +1529,7 @@
       },
       "format": "source_excerpt",
       "id": "news-30cdc866ac4c0a220147cbb7d2a2b974875f1ef314e92830fe0a494451a51836",
-      "intro": "arXiv:2610.07515v1 Announce Type: new Abstract: Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity. In this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking. Our method introduces a",
+      "intro": "arXiv:2610.07515v2 Announce Type: new Abstract: Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity. In this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking. Our method introduces a",
       "placement": "main",
       "published_at": "2026-10-07T04:00:00+00:00",
       "reading": {
@@ -1540,11 +1540,7 @@
             "heading": "",
             "text": "Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity.\n\nIn this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking.\n\nOur method introduces a continuous, sigmoid-based formulation to smooth the otherwise discrete event of tissue cutting, making it amenable to gradient-based optimization within a differentiable Position-Based Dynamics (PBD) simulation.\n\nTo account for uncertainty and improve robustness in the presence of noisy visual data, we incorporate Stein Variational Gradient Descent (SVGD) for particle-based probabilistic inference, generating multiple hypotheses for topological state estimation.\n\nBuilding on this foundation, we develop an autonomous dissection algorithm for thin-shell tissues that leverages topological updates to guide closed-loop cutting trajectory control.\n\nWe evaluate our approach in both simulated and real-world electrosurgical environments, demonstrating significant improvements in topological estimation accuracy and dissection precision over existing methods.\n\nOur results highlight the potential of this framework to advance automation in soft-tissue surgical procedures by enabling reliable perception and control in the presence of complex structural changes."
           }
-        ],
-        "summary": {
-          "en": "The paper presents ProCut, a differentiable framework for estimating and modeling topological changes such as cutting during deformable tissue tracking. It uses a continuous sigmoid formulation to smooth the discrete cutting event for gradient-based optimization in a differentiable Position-Based Dynamics simulation. Stein Variational Gradient Descent supports particle-based probabilistic inference and multiple hypotheses under noisy visual data. The authors apply the method to autonomous dissection control for thin-shell tissues and report improved topology estimation accuracy and dissection precision in simulated and real electrosurgical environments.",
-          "zh": "本文提出 ProCut，一种可微框架，用于在软组织变形跟踪中估计和建模切割等拓扑变化。方法以连续的 sigmoid 表述平滑离散切割事件，并在可微位置基动力学仿真中进行梯度优化；还结合 Stein 变分梯度下降进行基于粒子的概率推断，以处理视觉数据噪声并生成多个拓扑状态假设。作者将其用于薄壳组织自主切开控制，并报告仿真与真实电外科环境评估显示，拓扑估计准确度和切开精度优于既有方法。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1704,7 +1700,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3bb2a7e27cafb3c76cd8bb9ea153c3d2b634d04844f19b0ffd84ff1e2becc218",
-      "intro": "arXiv:2610.03797v2 Announce Type: replace-cross Abstract: World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform. To tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools. WAMJET",
+      "intro": "arXiv:2610.03797v3 Announce Type: replace-cross Abstract: World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform. To tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools. WAMJET",
       "placement": "main",
       "published_at": "2026-10-07T04:00:00+00:00",
       "reading": {
@@ -1715,11 +1711,7 @@
             "heading": "",
             "text": "World Action Models (WAMs) leverage pretrained video foundation models for robot manipulation, but their large backbones and video-action co-prediction are expensive. Although existing acceleration techniques offer many ways to reduce this cost, selecting and composing them requires substantial engineering for each model and hardware platform.\n\nTo tackle this bottleneck, we present WAMJET, an agentic harness that accelerates WAM inference by equipping coding agents with reusable optimization guidance and measurement and validation tools.\n\nWAMJET follows a bottleneck-driven workflow where the agent profiles inference, modifies targeted code, validates effects, and iteratively refines the acceleration stack as bottlenecks shift, while preserving action quality. Experiments span six WAMs, three coding agents, and two GPU architectures.\n\nWAMJET achieves up to 9.95x lossless speedup over upstream implementations. Approximation and hardware-aware optimization yield additional latency reductions, with comparable success rates. The results show that WAMJET can produce effective acceleration stacks for WAM deployment."
           }
-        ],
-        "summary": {
-          "en": "The paper presents WAMJET, an agentic harness for accelerating World Action Model (WAM) inference. It equips coding agents with reusable optimization guidance and tools for measurement and validation, following an iterative workflow of profiling bottlenecks, modifying targeted code, and checking effects while seeking to preserve action quality. Experiments cover six WAMs, three coding agents, and two GPU architectures. The authors report up to 9.95× lossless speedup over upstream implementations; approximation and hardware-aware optimizations further reduce latency with comparable success rates.",
-          "zh": "论文提出 WAMJET，一个用于加速世界动作模型（WAM）推理的智能体框架。它为编程智能体提供可复用的优化指导及测量、验证工具，按瓶颈分析、定向修改和效果验证的流程迭代优化，并力求保持动作质量。实验涵盖六种 WAM、三种编程智能体和两种 GPU 架构；作者报告，相比上游实现，最高可实现 9.95 倍无损加速，近似计算与硬件感知优化还能进一步降低延迟，成功率相近。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2143,7 +2135,7 @@
       },
       "format": "source_excerpt",
       "id": "news-52e0d66d573cd788bac687c8bab965672788004b500d41be2f94dc636bf536e7",
-      "intro": "arXiv:2610.07081v1 Announce Type: new Abstract: An electromagnetic (EM) digital twin gives mobile robots wireless situational awareness but depends on material conductivities that change with the environment. Online calibration faces initialization sensitivity and measurement travel costs. We demonstrate a vision-language model (VLM)-guided framework using a Unitree G1 robot and NVIDIA Sionna, with two VLM calls: material classification maps visible materials through ITU-R P.2040 to conductivity priors for Sionna's gradient descent on accumulated received signal strength (RSS) measurements",
+      "intro": "arXiv:2610.07081v2 Announce Type: new Abstract: An electromagnetic (EM) digital twin gives mobile robots wireless situational awareness but depends on material conductivities that change with the environment. Online calibration faces initialization sensitivity and measurement travel costs. We demonstrate a vision-language model (VLM)-guided framework using a Unitree G1 robot and NVIDIA Sionna, with two VLM calls: material classification maps visible materials through ITU-R P.2040 to conductivity priors for Sionna's gradient descent on accumulated received signal strength (RSS) measurements",
       "placement": "main",
       "published_at": "2026-10-07T04:00:00+00:00",
       "reading": {
@@ -2154,11 +2146,7 @@
             "heading": "",
             "text": "An electromagnetic (EM) digital twin gives mobile robots wireless situational awareness but depends on material conductivities that change with the environment. Online calibration faces initialization sensitivity and measurement travel costs.\n\nWe demonstrate a vision-language model (VLM)-guided framework using a Unitree G1 robot and NVIDIA Sionna, with two VLM calls: material classification maps visible materials through ITU-R P.2040 to conductivity priors for Sionna's gradient descent on accumulated received signal strength (RSS) measurements; waypoint planning selects the next measurement location online using residual RSS calibration error and image coverage.\n\nIn a real indoor scenario, the framework achieves a normalized mean absolute conductivity error of $1.74\\times10^{-4}$ within 20 m of travel; random initialization never converges, while random waypoints require over twice the travel."
           }
-        ],
-        "summary": {
-          "en": "The demo presents a vision-language-model-guided framework for online calibration of an electromagnetic digital twin using a Unitree G1 robot and NVIDIA Sionna. The model classifies visible materials and maps them through ITU-R P.2040 to conductivity priors for gradient descent on accumulated received signal strength measurements. It also selects measurement waypoints online using calibration residuals and image coverage. In a real indoor scenario, it achieves the reported normalized mean absolute conductivity error within 20 meters of travel; random initialization does not converge, and random waypoints require over twice the travel.",
-          "zh": "论文演示一种由视觉语言模型引导的电磁数字孪生在线校准框架，使用 Unitree G1 机器人和 NVIDIA Sionna。模型将可见材料分类，并通过 ITU-R P.2040 映射为电导率先验，供基于累计接收信号强度测量的梯度下降使用；同时根据校准误差和图像覆盖在线选择测量航点。在真实室内场景中，机器人行进 20 米内达到所报告的归一化平均绝对电导率误差；随机初始化未收敛，随机航点所需行程超过其两倍。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2773,7 +2761,7 @@
       },
       "format": "source_excerpt",
       "id": "news-6a8f59615fd1d34b70f623d247c3408e97578d5c9fa194442f8a99fd22756a13",
-      "intro": "arXiv:2609.18964v2 Announce Type: replace-cross Abstract: Federated Reinforcement Learning (FRL) enables collaborative policy learning across distributed agents with heterogeneous environments. While recent methods based on variance reduction, divergence penalization, and momentum optimization improve FRL under heterogeneous settings, they still primarily synchronize policy or value-network parameters and do not explicitly address distributional mismatch among heterogeneous clients. Therefore, we propose \\textbf{FedGuide}, a FRL framework that uses diffusion priors as behavior models to provide personalized data supported distributions for heterogeneous local",
+      "intro": "arXiv:2609.18964v3 Announce Type: replace-cross Abstract: Federated Reinforcement Learning (FRL) enables collaborative policy learning across distributed agents with heterogeneous environments. While recent methods based on variance reduction, divergence penalization, and momentum optimization improve FRL under heterogeneous settings, they still primarily synchronize policy or value-network parameters and do not explicitly address distributional mismatch among heterogeneous clients. Therefore, we propose \\textbf{FedGuide}, a FRL framework that uses diffusion priors as behavior models to provide personalized data supported distributions for heterogeneous local",
       "placement": "main",
       "published_at": "2026-10-07T04:00:00+00:00",
       "reading": {
@@ -2784,11 +2772,7 @@
             "heading": "",
             "text": "Federated Reinforcement Learning (FRL) enables collaborative policy learning across distributed agents with heterogeneous environments.\n\nWhile recent methods based on variance reduction, divergence penalization, and momentum optimization improve FRL under heterogeneous settings, they still primarily synchronize policy or value-network parameters and do not explicitly address distributional mismatch among heterogeneous clients.\n\nTherefore, we propose \\textbf{FedGuide}, a FRL framework that uses diffusion priors as behavior models to provide personalized data supported distributions for heterogeneous local policy learning.\n\nInstead of directly averaging local policies, FedGuide aggregates those diffusion priors through Optimal-Transport Mixture-of-Experts (OT-MoE), preserving heterogeneous behavior modes in distribution space.\n\nIt further develops a Distribution Correction Estimation (DICE) value baseline to provide low-variance, return-aware guidance for local policy improvement.\n\nExperiments across heterogeneous environments show that FedGuide outperforms representative FRL methods in client-average returns, final-round performance, and worst-round robustness, while maintaining stable learning under stronger heterogeneity."
           }
-        ],
-        "summary": {
-          "en": "FedGuide is a framework for federated reinforcement learning across heterogeneous environments. It uses diffusion priors as behavior models to provide personalized, data-supported distributions for local policy learning. Rather than directly averaging local policies, it aggregates priors through an Optimal-Transport Mixture-of-Experts to preserve heterogeneous behavior modes. It also introduces a Distribution Correction Estimation value baseline for low-variance, return-aware guidance. Experiments in heterogeneous environments show higher client-average returns, final-round performance, and worst-round robustness than representative FRL methods, with stable learning under stronger heterogeneity.",
-          "zh": "FedGuide 是面向异质环境联邦强化学习的框架，使用扩散先验作为行为模型，为本地策略学习提供个性化、由数据支持的分布。它通过最优传输专家混合聚合扩散先验，以保留不同客户端的行为模式，并提出分布校正估计价值基线，为策略改进提供低方差、考虑回报的指导。作者报告，在异质环境实验中，FedGuide 在客户端平均回报、最终轮表现和最差轮稳健性方面优于代表性联邦强化学习方法，并能在更强异质性下保持稳定学习。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3471,7 +3455,11 @@
             "heading": "",
             "text": "Behavioral cloning (BC), despite its simplicity, exhibits many counterintuitive phenomena in the real world. For example, the performance of BC often keeps increasing as the model overfits more to the dataset, and fully closed-loop policies often completely fail without action chunking.\n\nUnfortunately, properly studying these anecdotal phenomena (\"behavioral cloning mysteries\") is challenging: in the real world, datasets and experiments are costly and not fully controllable; in simulation with synthetic data, these phenomena are often not easily observed partly due to the discrepancy between scripted policies and human demonstrations.\n\nIn this work, we propose OCBench, a robotic manipulation benchmark with controllable scripted policies that have similar properties to human demonstrations. We show that, by mimicking key properties of human demonstrations, OCBench reproduces many anecdotal BC-related phenomena in controlled settings.\n\nWith its GPU-accelerated environments and scripted policies, we demonstrate how OCBench enables scientific studies of previously reported BC-related phenomena by analyzing and refuting various hypotheses. Project page: https://seohong.me/projects/ocbench"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces OCBench, a robotic manipulation benchmark built around controllable scripted policies designed to resemble key properties of human demonstrations. The authors report that it reproduces several anecdotal behavioral cloning phenomena in controlled settings and supports studies of previously reported effects and hypotheses using GPU-accelerated environments. They contrast this setting with costly, difficult-to-control real-world experiments and synthetic simulation data that may not readily show the same phenomena.",
+          "zh": "本文提出 OCBench，一个用于机器人操作研究的基准，采用可控脚本策略，并使其具有与人类演示相似的属性。作者称，该基准能在受控条件下复现多种行为克隆相关的经验现象，并借助 GPU 加速环境研究此前报告的现象、分析和反驳相关假设。论文指出，现实实验成本高且难以完全控制，而合成仿真数据未必能呈现这些现象。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3502,7 +3490,11 @@
             "heading": "",
             "text": "The adoption of humanoid robots in education and research remains limited by high hardware costs, complex sensing systems, and substantial computational requirements. This paper presents PhoneBot, a low-cost, open-source humanoid robot platform that repurposes commodity smartphones as its primary sensing and computing unit.\n\nBy using a smartphone's integrated inertial measurement unit (IMU), camera, wireless connectivity, and onboard processing capabilities, PhoneBot reduces hardware costs and simplifies the system architecture.\n\nThe robot combines a modular lower-body structure driven by 13 low-cost actuators with a torso-mounted smartphone that supports perception, control computation, and user interaction.\n\nWe describe the mechanical design, software architecture, and real-time communication framework that support stable locomotion and capabilities including vision-based human following, conversational interaction, filming, and mobile telepresence.\n\nExperimental evaluations demonstrate reliable walking, perception-driven interaction, and straightforward deployment using off-the-shelf consumer smartphones. With fully open-source hardware and software designs, PhoneBot provides an affordable, reproducible platform for education, research, and rapid prototyping.\n\nMore details are available at https://phonebot.dev."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents PhoneBot, a low-cost, open-source humanoid platform that uses a consumer smartphone for sensing and computation. Its modular lower body uses 13 low-cost actuators, while a torso-mounted phone supports perception, control computation, and interaction. The authors describe its mechanical design, software architecture, and real-time communication framework. Experimental evaluations are reported to demonstrate reliable walking, perception-driven interaction, and deployment with off-the-shelf smartphones. The platform is intended for education, research, and rapid prototyping.",
+          "zh": "本文介绍 PhoneBot，一个将消费级智能手机用作主要感知与计算单元的低成本开源人形机器人平台。机器人采用由 13 个低成本执行器驱动的模块化下身，并通过躯干上的手机支持感知、控制计算和交互。作者描述了机械结构、软件架构及实时通信框架，并称实验评估显示其能够稳定行走、进行感知驱动交互，且可用现成手机部署。平台面向教育、研究和快速原型开发。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3533,7 +3525,11 @@
             "heading": "",
             "text": "Language models provide a plug-and-play interface between humans and robots, but important challenges remain when speech, dialogue, fast interaction, and collaboration are required.\n\nWe propose a benchmark for the community to use as a way to explore common spoken dialogue artifacts between robots and humans, including requests for clarification, interruptions, embodied signals (e.g., head nods or facial cues), and time constraints.\n\nWe also explain our vision to extend the benchmark for other aspects of human-robot interaction that are important to the larger research community. To facilitate the benchmark, we further propose using \\textit{Retico}, a real-time communication framework that fulfills important technical requirements to enable robots to have spoken dialogue capabilities."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an extensible benchmark for spoken dialogue with social robots. It is intended to help researchers explore common interaction phenomena, including clarification requests, interruptions, embodied signals such as nods or facial cues, and time constraints. The authors also outline a vision for extending the benchmark to other aspects of human-robot interaction. They propose using the real-time communication framework Retico to meet technical requirements for enabling spoken dialogue capabilities in robots. The abstract does not report experimental evaluation results.",
+          "zh": "本文提出一个面向社交机器人口语对话的可扩展基准，旨在帮助研究者探索人与机器人对话中的常见现象，包括澄清请求、打断、点头或面部线索等具身信号，以及时间限制。作者还阐述了将基准扩展至其他重要人机交互方面的愿景，并建议采用实时通信框架 Retico，以满足支持机器人口语对话能力的技术要求。摘要未报告该基准的实验评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3564,7 +3560,11 @@
             "heading": "",
             "text": "World models predict future transitions from observations and actions. Existing works predominantly focus on image generation only. Visual feature-based world models, on the other hand, predict future visual features instead of raw video pixels, offering a promising alternative that is more efficient and less prone to hallucination.\n\nHowever, current feature-based approaches rely on direct regression, which leads to blurry or collapsed predictions in complex interactions, while generative modeling in high-dimensional feature spaces still remains challenging.\n\nIn this work, we discover that a new type of latent action representation, which we refer to as Residual Latent Action (RLA), can be easily learned from DINO residuals. We also show that RLA is predictive, generalizable, and encodes temporal progression. Building on RLA, we propose RLA World Model (RLA-WM), which predicts RLA values via flow matching.\n\nRLA-WM outperforms both state-of-the-art feature-based and video-diffusion world models on simulation and real-world datasets, while being orders of magnitude faster than video diffusion. Furthermore, we develop two robot learning techniques that use RLA-WM to improve policy learning.\n\nThe first one is a minimalist world action model with RLA that learns from actionless videos, and improves VLA on LIBERO and real robot. The second one is a visual RL framework trained entirely inside a world model learned from offline videos only, using a video-aligned reward and no online interactions. Project page: https://mlzxy.github.io/rla-wm"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce Residual Latent Action (RLA), learned from DINO residuals, and report that it is predictive, generalizable, and encodes temporal progression. They propose RLA-WM, which predicts RLA values using flow matching. On simulation and real-world datasets, they report that it outperforms feature-based and video-diffusion world models and runs much faster than video diffusion. They also describe two robot-learning methods using RLA-WM: learning from actionless videos and visual reinforcement learning trained entirely within a model learned from offline videos, without online interactions.",
+          "zh": "本文提出残差潜在动作（RLA），称其可从 DINO 残差中学习，并具有预测性、泛化性及编码时间进程的能力。基于此，作者提出通过流匹配预测 RLA 的世界模型 RLA-WM，并报告其在仿真和真实世界数据集上优于特征世界模型及视频扩散世界模型，且速度快得多。作者还介绍两种机器人学习方法：从无动作视频学习世界动作模型，以及仅在离线视频学习的世界模型内训练视觉强化学习框架；后者不进行在线交互。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -5000,5 +5000,5 @@
       "title": "TeleHairing: A Teleoperation Baseline for Robotic Haircutting"
     }
   ],
-  "updated_at": "2026-10-07T18:31:41.849421+00:00"
+  "updated_at": "2026-10-08T02:42:15.734078+00:00"
 }
