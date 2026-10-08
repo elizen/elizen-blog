@@ -2596,7 +2596,11 @@
             "heading": "",
             "text": "Robot demonstration learning requires accurate and temporally complete end-effector localization during close-range manipulation and camera occlusion. Existing SLAM benchmarks emphasize navigation motions, whereas manipulation datasets prioritize policy learning over localization evaluation.\n\nWe introduce MILD, a Manipulation-Interface Localization Dataset with real-world and simulation sequences. The real-world subset provides 86 sensor sequences from Insta360 X5 and Insight9 across 15 repeated tabletop tasks, calibration assets, and a per-execution robot end-effector reference trajectory.\n\nThe simulation subset, MILD-Sim, extends task coverage in Isaac Sim for controlled manipulation-replay studies. Benchmarking visual-inertial and fiducial-aided systems on instrumented real-world recordings reveals large differences in both TCP-relative trajectory error and temporal coverage, even under the same nominal task.\n\nTo support marker-augmented teaching workspaces without a pre-surveyed fiducial map, we present AprilVINS, which combines fisheye visual-inertial estimation with sequence-local AprilTag geometry and separates prior admission from guarded export of the jointly optimized state.\n\nOn Insta360 AprilTag4 recordings, AprilVINS(full) under a unified protocol with sequence-specific profiles reaches millimeter-level SE（3）-aligned TCP-relative APE RMSE with high time completion and lower reported error than the tested routes under their respective protocols, whereas fisheye VIO without tag factors remains at centimeter scale.\n\nAblations separate accuracy from exportability, and a MILD-Sim replay study provides task-specific tolerance references for interpreting those error magnitudes. Together, MILD and AprilVINS provide a diagnostic benchmarking framework for UMI-style demonstration collection. Code, datasets, and evaluation manifests will be released upon acceptance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MILD, a dataset for evaluating end-effector localization during close-range manipulation, with real-world recordings and an Isaac Sim subset. It also introduces AprilVINS, combining fisheye visual-inertial estimation with sequence-local AprilTag geometry. Under a unified protocol with sequence-specific profiles, the authors report millimeter-level TCP-relative error and high temporal coverage on real recordings; fisheye VIO without tag factors remains at centimeter scale. Simulation replays provide task-specific tolerance references.",
+          "zh": "论文介绍了用于评估近距离操作中末端执行器定位的 MILD 数据集，含真实采集序列和 Isaac Sim 仿真子集，并提出 AprilVINS，将鱼眼视觉惯性估计与序列内 AprilTag 几何结合。作者报告，在特定统一评测协议和序列配置下，AprilVINS 在真实记录上达到毫米级 TCP 相对轨迹误差且时间覆盖率较高；不含标签因子的鱼眼 VIO 误差为厘米级。仿真回放研究提供任务容差参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2627,7 +2631,11 @@
             "heading": "",
             "text": "Animal evidence shows that precise voluntary movements arise from rotational neural population dynamics in motor cortex, but their physical effects remain unknown. We developed a robotic analog of biological motor systems with artificial muscles, multimodal sensors, and a neural network controller trained via reinforcement learning.\n\nThe robotic analog exhibited accurate movements, robustness to damage, and neural population dynamics akin to animals. This task-driven, embodied model illuminates the causal link between neural population dynamics and motor outcomes.\n\nWe discovered that neural rotations generate oscillatory maneuvers orthogonal to the reaching direction, optimizing trajectory adjustments, which is confirmed by primate neural data.\n\nThe model also revealed counterintuitive neural energy principles under sensor and motor redundancies, and striking Eureka moments during motor learning, bridging biological and artificial systems.\n\nThese findings provide new perspectives on how neural dynamics contribute to accurate and flexible movement, inspiring future intelligent robots with animal-like mobility."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors built a robotic analog of biological motor systems with artificial muscles, multimodal sensors, and a neural network controller trained through reinforcement learning. They report accurate movement, robustness to damage, and neural population dynamics resembling those observed in animals. In the model, neural rotations generate oscillatory maneuvers orthogonal to the reaching direction for trajectory adjustment, a finding they say is confirmed by primate neural data. The model also reveals energy principles under sensor and motor redundancy.",
+          "zh": "论文构建了一个机器人类比系统，包含人工肌肉、多模态传感器和经强化学习训练的神经网络控制器。作者报告，该系统实现了准确运动、损伤后的鲁棒性，以及类似动物的神经群体动态。模型显示神经旋转会产生垂直于到达方向的振荡动作，用于调整轨迹；这一发现由灵长类神经数据确认。模型还揭示了传感器和运动冗余条件下的神经能量规律，并描述了运动学习中的“顿悟”现象。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2658,7 +2666,11 @@
             "heading": "",
             "text": "Visual world models have shown great potential in learning complex system dynamics. Recent advancements leverage these models as transition functions within Model Predictive Control (MPC) frameworks to solve various control tasks.\n\nWhen applied to robotics, however, they are limited to single-stage tasks such as reaching or grasping, and struggle with multi-stage ones that demand complex sequential planning. In this work, we introduce WorldDP, a world model framework designed for multi-stage robotic manipulation.\n\nOur hierarchical approach utilizes a high-level world model as a transition function to optimize for feasible subgoals during runtime, which are subsequently reached by a low-level Diffusion Policy.\n\nTo further aid in learning dynamics and planning, we incorporate object-centric representations that decouple environmental entities and enable us to plan sequentially with respect to each.\n\nEvaluated across several robotics benchmarks, WorldDP consistently outperforms existing baselines, validating that coupling the world model's physically grounded planning with diffusion policy's efficient execution yields superior multi-stage performance. Project Page: https://raktimgg.github.io/worlddp-website/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WorldDP, a framework for multi-stage robotic manipulation. Its hierarchical design uses a high-level world model to optimize feasible subgoals at runtime, then a low-level diffusion policy to reach them. Object-centric representations separate environmental entities to support sequential planning. Across several robotics benchmarks, the authors report that WorldDP consistently outperforms existing baselines, and attribute the improvement to combining physically grounded planning with efficient policy execution.",
+          "zh": "论文提出 WorldDP，用于多阶段机器人操作任务。其分层框架由高层世界模型在运行时优化可行子目标，再由低层扩散策略执行；物体中心表征则将环境实体分离，以支持逐步规划。作者称，在多个机器人基准测试中，WorldDP 持续优于现有基线，并认为结合世界模型的物理规划与扩散策略的执行效率可提升多阶段任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
