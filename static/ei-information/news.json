@@ -260,7 +260,11 @@
             "heading": "",
             "text": "Deploying robots as Complex Adaptive Systems (CAS) in unknown and dynamic environments necessitates a transition from rigid command libraries toward intention-based autonomy, as natural language represents the only medium capable of articulating complex goals beyond the capacity of finite instruction sets.\n\nWhile Large Language Models (LLMs) offer a path toward natural language goal description, their integration introduces significant challenges: the formalization gap between imprecise intentions and executable actions, the taxonomy gap induced by unpredictable environments, and the challenge of maintaining temporal state and progress awareness.\n\nThis work introduces an architectural framework that enables robotic control by leveraging generative AI.\n\nThe system follows a dual-AI design: an LLM translates high-level intentions into executable program code restricted to a formal robotic library and constrained by verifiable syntax, while a Vision-Language Model (VLM) provides semantic grounding via a distillation process.\n\nTo ensure robustness, the framework incorporates environment-driven replanning triggers based on geometric and semantic thresholds, complemented by continuous runtime monitoring and an adaptive planning loop.\n\nBenchmarked across frontier models, our framework architecture demonstrates that grounding generative AI in a reactive, constrained loop enables robust fulfillment of complex intentions in dynamic and unknown environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents an architecture for controlling robots with generative AI, translating high-level natural language intentions into executable actions. Its dual-AI design uses an LLM to generate code within a restricted robotic library and verifiable syntax, while a VLM provides semantic grounding through distillation. Geometric and semantic thresholds trigger replanning, alongside runtime monitoring and an adaptive planning loop. The authors report robust fulfillment of complex intentions in dynamic, unknown environments in benchmarks across frontier models; evaluation details are not specified in the abstract.",
+          "zh": "本文提出一种利用生成式人工智能控制机器人的架构，旨在将高层自然语言意图转化为可执行动作。系统采用双 AI 设计：大语言模型在受限机器人程序库和可验证语法约束下生成代码，视觉语言模型通过蒸馏提供语义依据。框架还根据几何与语义阈值触发重规划，并结合运行时监控和自适应规划循环。作者报告称，在前沿模型基准评测中，该架构能稳健完成动态、未知环境中的复杂意图；摘要未说明评测细节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -291,7 +295,11 @@
             "heading": "",
             "text": "Robotic minimally invasive surgery has revolutionized surgical practice. However, as the surgeons are mechanically separated from the surgical tools, loss of tactile feedback occurs. We present a compact force sensor with three, millimeter scale sensing elements (taxels) that can be affixed to the grasping face of a robotic surgical tool.\n\nThe sensor features a miniaturized design using Hall effect sensors and magnets embedded in a deformable elastomer contact layer. Sensor calibration is achieved with a 6 degree of freedom (DoF) parallel robot. Each taxel can detect applied normal and shear forces with average RMSE of 2.133 kPa.\n\nThe calibrated sensor was validated on phantom and ex vivo porcine tissue, demonstrating tactile sensing during retraction as well as slip. This work introduces a small-scale Hall effect based tactile sensor, enabling sensing for force-sensitive robotic surgical applications."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents a compact tactile force sensor for robotic minimally invasive surgery, designed to attach to a tool’s grasping face. It has three millimeter-scale sensing elements and uses Hall effect sensors and magnets embedded in a deformable elastomer contact layer to detect normal and shear forces. Calibration used a six-degree-of-freedom parallel robot, with an average RMSE of 2.133 kPa per taxel. Validation on phantom and ex vivo porcine tissue demonstrated tactile sensing during retraction and slip.",
+          "zh": "本文介绍一种用于机器人辅助手术的紧凑型触觉力传感器，可安装在手术工具的夹持面上。传感器包含三个毫米级感测单元，利用嵌入可变形弹性体接触层的霍尔传感器和磁体检测法向力与剪切力；校准使用六自由度并联机器人完成，各单元的平均 RMSE 为 2.133 kPa。研究在仿体和离体猪组织上验证了传感器，展示其在牵拉及滑移过程中的触觉感测能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -322,7 +330,11 @@
             "heading": "",
             "text": "Robot manipulation data collection has been shifting from teleoperation toward robot-free demonstrations, through interfaces such as the Universal Manipulation Interface (UMI) or directly from human hands. Vision-Language-Action (VLA) policies trained on such data inherit the demonstrator's timing.\n\nYet human timing does not directly transfer to robots: compliant hands tolerate fast contact, whereas robots may overshoot due to actuator and tracking limitations; conversely, robots can move faster in free space. This motivates a unified approach that reconciles execution speed with contact safety.\n\nWe present RoboPace, an online retiming layer that preserves the policy's geometric path while adapting its timing, respecting the target robot's kinematic and dynamic constraints. It adapts execution speed based on predicted contact, jointly accounting for contact-dependent speed limits and the robot's motion constraints.\n\nThe method requires no policy retraining and operates in real time. Across three contact-rich tasks on a dual-arm robot, faster uniform execution and physical-limit-only retiming largely fail.\n\nRoboPace instead achieves higher overall success than slow uniform execution while completing four of five commands in approximately half the time, retaining the reliability of slow execution without its time cost."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents RoboPace, an online retiming layer that preserves a policy’s geometric path while adapting execution timing to a robot’s kinematic and dynamic constraints. It adjusts speed based on predicted contact and combines contact-dependent speed limits with motion constraints. The method requires no policy retraining and operates in real time. Across three contact-rich tasks on a dual-arm robot, the authors report that faster uniform execution and retiming based only on physical limits largely failed. RoboPace achieved higher overall success than slow uniform execution, completing four of five commands in approximately half the time.",
+          "zh": "本文提出 RoboPace，一种在线重定时层，在保留动作策略几何路径的同时调整执行速度，并满足目标机器人的运动学和动力学约束。该方法依据预测接触情况调整速度，兼顾接触相关限速与机器人运动约束，无需重新训练策略且可实时运行。在双臂机器人上的三项接触密集型任务中，作者报告称，均匀加速执行和仅依据物理限制的重定时大多失败；RoboPace 的总体成功率高于慢速均匀执行，并以约一半时间完成五条命令中的四条。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
