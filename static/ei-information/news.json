@@ -2935,7 +2935,11 @@
             "heading": "",
             "text": "Operating constrained dynamical systems requires controllers to efficiently solve complex tasks while enforcing recursive feasibility and physical constraints. To address these competing requirements, we present Feasible Action for Optimal Control (FAOC), a novel control framework integrating Reinforcement Learning (RL) and Optimal Control (OC).\n\nThe core contribution is a computationally efficient, optimization-based mapping algorithm that transforms the RL agent's action from a static abstract set into a state-dependent feasible parameter set of the Optimal Control Problem (OCP), guaranteeing instantaneous parameter feasibility.\n\nWhen paired with invariant terminal sets, FAOC guarantees strict recursive feasibility and safe operation, effectively combining the predictable safety of OC with the behavioral flexibility of RL. Unlike prior work, the abstract action space does not require expert tuning, nor is the OCP formulation compromised by the inability of RL to guarantee feasibility.\n\nWe evaluate FAOC on real-time motion planning for robot table tennis, where simulated experiments demonstrate superior sample efficiency and closed-loop performance compared to state-of-the-art baselines.\n\nWe open-source the used implementation of the mapping algorithm and OCP for motion planning https://github.com/SonyResearch/feasible_action_for_optimal_control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Feasible Action for Optimal Control (FAOC), which maps an RL agent’s abstract action to a state-dependent feasible parameter set for an optimal control problem. The authors claim instantaneous parameter feasibility, and strict recursive feasibility and safe operation when invariant terminal sets are used. Simulated experiments on real-time robot table-tennis motion planning report higher sample efficiency and closed-loop performance than state-of-the-art baselines.",
+          "zh": "论文提出可行动作最优控制框架FAOC，将强化学习动作映射为依赖当前状态的可行最优控制参数，并声称该映射可保证即时参数可行性。结合不变终端集时，作者称其能保证严格递归可行和安全运行。机器人乒乓球实时运动规划的仿真实验显示，相较先进基线，FAOC具有更高样本效率和闭环性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2966,7 +2970,11 @@
             "heading": "",
             "text": "This study proposes a multi-objective optimization method for tendon-driven arm design, addressing the inherent trade-off between joint torque and arm thickness through tendon wrapping and shortcut effects. We formulate the problem to simultaneously maximize torque and minimize thickness, solved using NSGA-II.\n\nThe algorithm optimizes tendon routing, pulley configurations, and attachment points. Results reveal Pareto-optimal designs with effective moment arm expansion via strategic shortcuts, providing practical guidelines for compact high-torque arms.\n\nThe optimized configurations demonstrate non-trivial patterns beyond conventional design intuition, offering new insights for engineering efficient robotic systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study proposes a multi-objective optimization method for tendon-driven arm design that considers tendon wrapping and shortcut effects. It seeks to maximize joint torque while minimizing arm thickness, using NSGA-II to optimize tendon routing, pulley configurations, and attachment points. The reported Pareto-optimal designs indicate that strategic shortcuts can expand effective moment arms. The authors say the resulting configurations reveal patterns beyond conventional design intuition and offer guidance for compact, high-torque arms.",
+          "zh": "研究提出一种面向腱驱动机械臂的多目标设计优化方法，考虑腱索缠绕和捷径效应，以同时提高关节扭矩并减小机械臂厚度。方法使用NSGA-II优化腱索路径、滑轮配置和连接点。结果给出帕累托最优设计，并指出策略性捷径可扩大有效力臂；作者称这些配置呈现出超出传统设计直觉的模式，可为紧凑型高扭矩机械臂提供设计参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2997,7 +3005,11 @@
             "heading": "",
             "text": "Turning a CAD design into an assembly plan is still largely done by hand, requiring engineers to reason about geometric feasibility, tool access, stability, and the ergonomics of human assembly. In this work, we encode long-established design for assembly (DfA) principles into a contained, end-to-end approach for generating assembly plans.\n\nOur approach takes only a mesh assembly and produces either a step-by-step assembly manual or a structured failure report, requiring no joint metadata, fastener annotations, or additional information.\n\nFour major components of a manufacturing plan are addressed autonomously: an assembly tool list, the assembly sequence and subassemblies, an assembly manual, and design feedback for improving assemblability. For determining the sequence plan, we systematically disassemble the object in a physics simulator and apply a cost function that encodes DfA principles.\n\nManual generation, tool labelling, and assembly feedback rely primarily on multimodal large language models. Compared with a baseline that always removes the outermost part first from Tian et al., DfA-aware sequence planning reduces simulated assembly time, measured with a robot-arm assembly-time proxy, by 35% on 136 assemblies of 5 to 30 parts.\n\nThe correct tool is selected for 88.6% of assembly steps. A vision-language model judge compares the generated manuals against ablated variants, identifying which page elements carry the information a reader needs.\n\nThe presented approach and open-source code are available for use by engineers or AI agents looking to rapidly accelerate the creation of manufacturing plans for a given product design."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an end-to-end method that takes a mesh assembly and produces either a step-by-step manual or a structured failure report without joint metadata or fastener annotations. It generates tool lists, assembly sequences and subassemblies, manuals, and design feedback. Sequence planning disassembles objects in a physics simulator and applies a cost function encoding design-for-assembly principles. On 136 assemblies of 5–30 parts, the simulated robot-arm assembly-time proxy was 35% lower than the baseline; the correct tool was selected for 88.6% of steps.",
+          "zh": "研究提出端到端装配计划生成方法，输入仅需网格装配体，可输出逐步装配手册或结构化失败报告，无需关节元数据、紧固件标注等额外信息。系统自动生成工具清单、装配顺序与子装配、手册及可装配性反馈；顺序规划通过物理仿真拆解物体，并以编码可装配性原则的代价函数排序。对136个含5至30个零件的装配体，模拟装配时间代理指标较基线降低35%，步骤工具选择正确率为88.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
