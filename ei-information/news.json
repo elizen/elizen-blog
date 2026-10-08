@@ -2943,7 +2943,11 @@
             "heading": "",
             "text": "Autonomous vehicles (AVs) have significantly advanced in real-world deployment in recent years, yet safety continues to be a critical barrier to widespread adoption.\n\nTraditional functional safety approaches, which primarily verify the reliability, robustness, and adequacy of AV hardware and software systems from a vehicle-centric perspective, do not sufficiently address the AV's broader interactions and behavioral impact on the surrounding traffic environment.\n\nTo overcome this limitation, we propose a paradigm shift toward behavioral safety, a comprehensive approach focused on evaluating AV responses and interactions within the traffic environment.\n\nTo systematically assess behavioral safety, we introduce a third-party AV safety assessment framework comprising two complementary evaluation components: the Behavioral Competency Test and the Driving Intelligence Test. The Behavioral Competency Test evaluates the AV's reactive behaviors under controlled scenarios, ensuring basic behavioral competency.\n\nIn contrast, the Driving Intelligence Test assesses the AV's interactive behaviors within naturalistic traffic conditions, quantifying the frequency of safety-critical events to deliver statistically meaningful safety metrics before large-scale deployment.\n\nIn Part II of this study, an open-source Level 4 Automated Driving System (ADS) is tested to demonstrate the effectiveness of the proposed method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that vehicle-centered functional safety checks do not adequately cover an autonomous vehicle’s interactions with, and behavioral effects on, surrounding traffic. It proposes a behavioral-safety paradigm and a third-party assessment framework with two components: a Behavioral Competency Test of reactive behavior in controlled scenarios, and a Driving Intelligence Test of interactive behavior in naturalistic traffic, where safety-critical events are counted to produce statistically meaningful metrics before large-scale deployment. The abstract says Part II will test an open-source Level 4 system to demonstrate the method.",
+          "zh": "论文指出，传统功能安全主要从车辆角度检验自动驾驶系统的可靠性、鲁棒性和充分性，难以覆盖车辆与周边交通的互动及行为影响。作者提出“行为安全”评估范式和第三方评估框架，包含两部分：在受控场景检验反应行为的行为能力测试，以及在自然交通条件下评估互动行为、统计安全关键事件的驾驶智能测试。作者称后者可在大规模部署前提供具有统计意义的安全指标；第二部分研究将测试开源 L4 自动驾驶系统以展示方法效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2974,7 +2978,11 @@
             "heading": "",
             "text": "Robots exhibit a rich variety of symmetries arising from their mechanical structure and the properties of their tasks. Although many robotics problems exhibit several symmetries simultaneously, existing approaches typically treat them in isolation, failing to exploit their combined potential.\n\nThis paper introduces cross-space symmetry compositions, a framework for learning robot policies that are jointly equivariant to multiple symmetries across configuration and task spaces.\n\nLeveraging the differential-geometric structure of the forward kinematics map, we both descend symmetries from configuration to task space and lift symmetries from task to configuration space, enabling their composition within a unified representation space.\n\nWe validate our framework on simulated and real-world experiments on a dual-arm robot, demonstrating that jointly leveraging multiple symmetries yields improved generalization. Video and source code are available at https://sites.google.com/view/cross-space-symmetries."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces cross-space symmetry compositions for learning robot policies that are jointly equivariant to multiple symmetries in configuration and task spaces. Using the differential-geometric structure of the forward-kinematics map, the framework descends symmetries from configuration to task space and lifts them in the reverse direction, allowing composition in a unified representation. The authors report validation in simulated and real-world experiments with a dual-arm robot, where jointly using multiple symmetries improves generalization.",
+          "zh": "论文针对机器人任务中多种对称性常被分开处理的问题，提出跨空间对称性组合框架，用于学习同时满足构型空间与任务空间中多种对称性的策略。方法利用正向运动学映射的微分几何结构，将对称性从构型空间传递到任务空间，也从任务空间提升到构型空间，并在统一表示中组合。作者在双臂机器人仿真和真实世界实验中验证框架，并报告联合利用多种对称性可改善泛化能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3005,7 +3013,11 @@
             "heading": "",
             "text": "Video Action Models (VAMs) couple visual dynamics modeling with action generation for robot manipulation. However, video representations are not naturally suited to action generation, as exposing the action policy to excessive visual detail can impair its generalization ability.\n\nTherefore, we introduce IronMan (Information-constRained videO-actioN learning for robot MANipulation), a robust video-action learning framework built on the information bottleneck principle. The core principle of this framework is to impose information constraints that suppress irrelevant visual information while preserving action-relevant dynamics cues.\n\nIronMan employs a dynamics-aware bottleneck that distills noisy, entangled one-step video features into compact world representations. Extensive simulation and real-world experiments demonstrate strong in-distribution (ID) performance and out-of-distribution (OOD) robustness while maintaining efficient inference.\n\nIronMan achieves success rates of 99.0% on LIBERO and 79.4% on RoboTwin clean2clean, outperforming all the evaluated baselines. Under OOD shifts, IronMan achieves a success rate of 79.1% on LIBERO-Plus, exceeding the strongest baseline by 10.4 percentage points. Project page: https://youngsoul0731.github.io/ironman-project-page/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "IronMan is a video-action learning framework for robot manipulation based on the information bottleneck principle. It constrains information to suppress irrelevant visual detail while retaining action-relevant dynamics, using a dynamics-aware bottleneck to distill noisy, entangled one-step video features into compact world representations. The authors report simulation and real-world experiments showing strong in-distribution performance, out-of-distribution robustness, and efficient inference. They also report success rates on LIBERO, RoboTwin clean2clean, and LIBERO-Plus, claiming results above the evaluated baselines.",
+          "zh": "论文提出 IronMan，一种基于信息瓶颈的视频动作学习框架，旨在抑制无关视觉信息，同时保留与动作相关的动态线索。其动态感知瓶颈将含噪、纠缠的一步视频特征提炼为紧凑的世界表示。作者称，仿真和真实世界实验显示该方法具有较强的分布内表现、分布外鲁棒性和高效推理；在 LIBERO、RoboTwin clean2clean 与 LIBERO-Plus 上报告了具体成功率，并称其超过所评基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3036,7 +3048,11 @@
             "heading": "",
             "text": "Physics-based human motion control can make a simulated character walk, sit, and manipulate objects with high physical realism. Almost always, though, this happens in short, isolated clips that are re-initialized between interactions.\n\nWe instead aim for continuous, reset-free long-horizon motion: a physically simulated humanoid that repeatedly walks to a displaced object, lifts it with a balanced whole-body posture, carries it past obstacles, and places it at a goal, over and over within a single uninterrupted take.\n\nThe hard part is not any individual motion but the transitions between them. Without a reset, each cycle must end in a state that both leaves the object just placed undisturbed and lets the next cycle begin, yet every placement leaves the character off-balance in a non-canonical pose where naive end-to-end reinforcement learning fails.\n\nOur key idea is to treat this handoff as a two-sided problem of recoverability: the character must disengage from the object it just placed so the prior success is preserved, and settle into a state from which a balanced continuation exists.\n\nInstead of engineering a transition by hand, we learn to shape where each cycle ends so that it lands in this recoverable region. We introduce LHM-Humanoid.\n\nOne goal-conditioned controller completes a fetch--carry--place cycle and, through a learned release-and-retreat behavior, steers its terminal state into this region; a second controller then takes over from the resulting state distribution.\n\nBoth are regularized by an adversarial motion prior and distilled into a single goal-conditioned policy that runs the whole sequence as one reset-free rollout.\n\nAcross 350 cluttered layouts spanning four room types, LHM-Humanoid produces far more successful and stable long-horizon motion than end-to-end RL, hierarchical RL, and prior physics-based human-scene-interaction methods, on both seen and unseen scenes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LHM-Humanoid aims to produce continuous, reset-free long-horizon motion in which a simulated humanoid fetches, carries, and places objects in cluttered scenes. The authors frame transitions between cycles as a recoverability problem: the character must disengage without disturbing a placed object and reach a state from which balanced continuation is possible. A learned release-and-retreat behavior shapes cycle endpoints; two goal-conditioned controllers are then distilled into one policy. Across 350 cluttered layouts spanning four room types, the authors report more successful and stable motion than the compared methods on seen and unseen scenes.",
+          "zh": "论文提出 LHM-Humanoid，目标是在拥挤场景中让物理模拟的人形角色连续、无需重置地完成取物、搬运和放置。作者将循环间的交接视为可恢复性问题：角色需在不扰动物品的前提下脱离，并进入能够平衡继续动作的状态。方法通过学习释放与后退行为塑造每轮终止状态，由两个目标条件控制器接续，再将其蒸馏为单一策略。作者报告，在涵盖四类房间的350种杂乱布局中，该方法在已见和未见场景下的长时程动作成功率和稳定性均优于所比较的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
