@@ -659,7 +659,11 @@
             "heading": "",
             "text": "Magnetic field-based positioning is a resilient positioning technology that requires no external infrastructure and is hard to jam at scale.\n\nTo facilitate research on magnetic field-based positioning for aerial platforms operating close to the Earth's surface, an open dataset is presented with measurements collected using an unmanned aerial vehicle carrying two optically pumped magnetometers, a type of quantum magnetometer, and a global navigation satellite system-aided inertial navigation system.\n\nThe dataset includes measurements for both magnetic-field map learning and validation. Along with the dataset, a probabilistic framework for magnetic-field map learning and validation is presented and used to illustrate how the dataset may be used. Finally, we outline research directions that may be explored using the dataset."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an open dataset for research on magnetic-field-based positioning of aerial platforms near the Earth's surface. Measurements were collected by a UAV carrying two optically pumped magnetometers and a GNSS-aided inertial navigation system, and cover both magnetic map learning and validation. The authors also present a probabilistic framework for map learning and validation, use it to illustrate possible dataset use, and outline research directions enabled by the dataset.",
+          "zh": "论文介绍面向近地表飞行平台磁场定位研究的开放数据集，数据由搭载两台光泵磁力仪和卫星导航辅助惯性导航系统的无人机采集，涵盖磁场地图学习与验证测量。作者同时提出概率式地图学习与验证框架，并以此展示数据集的用法，最后概述可利用该数据集探索的研究方向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -690,7 +694,11 @@
             "heading": "",
             "text": "Robotic manipulation videos are increasingly used as visual plans for embodied agents, but optimizing purely for visual plausibility often fails to capture the fragile physical manifold of real-world interactions.\n\nEven minor physics-violating errors at the interaction boundary, such as interpenetration or premature object motion, can completely invalidate the inferred timing and pose needed for downstream execution. Because standard supervised fine-tuning lacks the direct pressure to penalize these localized failures, we introduce AgiBot-PhysPref.\n\nThis rigorously curated 10,000-sample preference dataset isolates condition-matched physics violations, turning the generator's own failure distribution into a foundational signal for physical consistency.\n\nBuilding upon this, we propose RobotAPO, an adversarial physics preference optimization framework operating in the continuous flow-matching denoising space.\n\nTo prevent the policy from merely memorizing static curated failures, RobotAPO employs a lightweight adversarial counterfactual proposer that learns a condition-dependent, physical-failure-biased direction in denoising space.\n\nThis encourages the model to explore and better respect the physical interaction boundary, all while maintaining a pure prompt-and-reference inference interface without requiring external structural conditioning.\n\nComprehensive evaluations demonstrate that explicitly correcting these localized physics violations improves downstream robot execution from generated videos. On held-out AgiBot conditions, RobotAPO outperforms the strongest controlled internal baseline in physical consistency by 6.8% hard score and 10.0% soft score.\n\nCrucially, in real-robot replay, it translates these physical-consistency gains into a 37.4% relative improvement in task success over the strongest controlled internal baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RobotAPO, a framework for robotic manipulation video generation that uses adversarial physics preference optimization to address localized violations at interaction boundaries. It also presents a preference dataset of 10,000 samples and a lightweight counterfactual proposer that guides optimization in continuous flow-matching denoising space. The authors report improved physical consistency on held-out AgiBot conditions, and a 37.4% relative improvement in task success over the strongest controlled internal baseline in real-robot replay.",
+          "zh": "论文提出用于机器人操作视频生成的RobotAPO框架，以对抗式物理偏好优化修正交互边界处的局部物理违规，并介绍含一万条样本的偏好数据集。框架在连续流匹配去噪空间优化，并用轻量对抗反事实提议器生成条件相关的失败方向。作者报告，在留出的AgiBot条件下物理一致性分数提升；真实机器人回放中，相较最强受控内部基线，任务成功率相对提高37.4%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -721,7 +729,11 @@
             "heading": "",
             "text": "Human videos provide rich motion targets for humanoid learning, yet visually plausible references can still produce persistent failures under physics-based execution. These failures reveal where training supervision should change. We present MimicX, a policy-in-the-loop framework that uses execution feedback to refine video-driven humanoid motion tracking.\n\nStarting from reconstructed and retargeted motion, MimicX localizes difficult transitions and affected body regions, then jointly adapts tracking objectives and the reset curriculum for policy continuation. Repeated rollout verification selects execution-priority improvements subject to tracking guards.\n\nAcross four core video tasks, MimicX consistently improves tracking accuracy and Robust Execution Horizon relative to the Fixed Reference baseline. Task-averaged results show a 25.7% reduction in body-tracking error and a 255.6% increase in execution horizon.\n\nAdditional video, motion-reference, and collision-scene studies evaluate the method beyond the core tasks, while MimicX-HLoop accelerates feedback through heterogeneous execution. Overall, MimicX turns policy failure into actionable supervision for deciding what to refine and which refinement to retain."
           }
-        ]
+        ],
+        "summary": {
+          "en": "MimicX is a policy-in-the-loop framework that refines supervision for video-driven humanoid motion tracking using execution feedback. Starting from reconstructed and retargeted motion, it identifies difficult transitions and affected body regions, jointly adapts tracking objectives and the reset curriculum, and uses repeated rollout verification to select refinements subject to tracking guards. Across four core video tasks, the authors report a 25.7% task-averaged reduction in body-tracking error and a 255.6% increase in execution horizon relative to a Fixed Reference baseline. Additional studies cover video, motion references, collision scenes, and heterogeneous execution.",
+          "zh": "MimicX利用策略执行反馈改进视频驱动的人形机器人动作跟踪监督。方法从重建并重定向的动作出发，定位困难转换和受影响身体区域，再联合调整跟踪目标与重置课程，并通过反复执行验证筛选改进，同时设置跟踪约束。作者报告，在四项核心视频任务中，相对固定参考基线，身体跟踪误差平均降低25.7%，执行时长平均提高255.6%；另有视频、动作参考、碰撞场景研究及异构执行评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -752,7 +764,11 @@
             "heading": "",
             "text": "Robot navigation in dynamic, human-centered environments requires socially-compliant decisions grounded in robust scene understanding.\n\nRecent Vision-Language Models (VLMs) exhibit promising capabilities such as object recognition, common-sense reasoning, and contextual understanding, capabilities that align with the nuanced requirements of social robot navigation.\n\nHowever, it remains unclear whether VLMs can accurately understand complex social navigation scenes (e.g., inferring the spatial-temporal relations among agents and human intentions), which is essential for safe and socially compliant robot navigation.\n\nWhile some recent works have explored the use of VLMs in social robot navigation, no existing work systematically evaluates their ability to meet these necessary conditions.\n\nIn this paper, we introduce the Social Navigation Scene Understanding Benchmark (SocialNav-SUB), a Visual Question Answering (VQA) dataset and benchmark designed to evaluate VLMs for scene understanding in real-world social robot navigation scenarios.\n\nSocialNav-SUB provides a unified framework for evaluating VLMs against human and rule-based baselines across VQA tasks requiring spatial, spatiotemporal, and social reasoning in social robot navigation.\n\nThrough experiments with state-of-the-art VLMs, we find that while the best-performing VLM achieves an encouraging probability of agreeing with human answers, it still underperforms simpler rule-based approach and human consensus baselines, indicating critical gaps in social scene understanding of current VLMs.\n\nOur benchmark sets the stage for further research on foundation models for social robot navigation, offering a framework to explore how VLMs can be tailored to meet real-world social robot navigation needs. An overview of this paper along with the code and data can be found at https://larg.github.io/stars."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SocialNav-SUB, a visual question answering dataset and benchmark for evaluating vision-language models on real-world social robot navigation scenes. Its tasks require spatial, spatiotemporal, and social reasoning, and comparisons use human and rule-based baselines. Experiments find that the best-performing model has an encouraging probability of agreeing with human answers, yet still underperforms the simpler rule-based approach and human consensus baselines. The authors describe these results as evidence of gaps in current models' social scene understanding and position the benchmark as a framework for further research.",
+          "zh": "论文介绍SocialNav-SUB，这是用于评估视觉语言模型理解真实社会机器人导航场景的视觉问答数据集与基准，任务涉及空间、时空和社会推理，并与人类及基于规则的基线比较。实验显示，表现最佳的模型与人类答案一致的概率令人鼓舞，但仍逊于较简单的规则方法和人类共识基线。作者认为结果揭示当前模型在社会场景理解方面的不足，并将该基准定位为后续研究框架。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
