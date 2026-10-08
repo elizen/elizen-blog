@@ -3467,7 +3467,11 @@
             "heading": "",
             "text": "Unlike conventional teleoperation, wearable interfaces allow operators to collect dexterous demonstrations through their own hand motions while directly interacting with task objects.\n\nThis direct interaction reduces dependence on the target robot during collection, but it also makes the collection hardware part of the physical process that generates each demonstration. Interface geometry can influence both how a task is performed and what tactile observations are recorded for learning.\n\nWe study two versions of a DexUMI-family exoskeleton that share the same robot command definition, mapping procedure, and tactile module type but differ in hand-side geometry.\n\nThe revised interface reduces reported physical demand, improves selected device ratings, enables tactile access in a precision grasp that is mechanically blocked by the baseline, and produces task-dependent changes in recorded contact.\n\nLid twisting primarily exhibits a change in contact location, whereas egg carton opening primarily exhibits a change in contact occurrence. We then train matched policies using either a binary aggregate input or a spatial-plus-force input.\n\nOn lid twisting and egg carton opening, policies trained on revised-interface demonstrations achieve higher success than those trained on baseline demonstrations, with a significant pooled interface effect.\n\nAcross these and two additional tasks, USB insertion and soldering tool pick and place, the spatial-plus-force input likewise outperforms binary aggregation. These results show that wearable collection hardware is part of the data-generation process for robot learning.\n\nSuch interfaces should therefore be evaluated not only through operator experience, but also through the tactile interactions they make recordable and the policy performance their demonstrations support."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study compares two DexUMI-family wearable interfaces with the same robot command definition, mapping procedure, and tactile module type but different hand-side geometry. The revised interface reduces reported physical demand, improves selected device ratings, and records tactile access during a precision grasp blocked by the baseline design. Contact changes depend on the task. Policies trained on revised-interface demonstrations perform better on lid twisting and egg carton opening, with a significant pooled interface effect. Across four tasks, spatial-plus-force input outperforms binary aggregation.",
+          "zh": "研究比较了两种 DexUMI 系列穿戴式外骨骼接口。两者使用相同的机器人指令定义、映射流程和触觉模块类型，但手部几何结构不同。改版接口降低了报告的体力负担，改善了部分设备评价，并使基线接口因机械限制无法触及的精细抓取触觉得以记录。改版还改变了任务中的接触记录：拧盖主要表现为接触位置变化，打开蛋盒主要表现为接触是否发生的变化。基于改版示范训练的策略在这两项任务上成功率更高，合并分析显示接口影响显著；四项任务中，空间加力输入优于二值聚合输入。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3498,7 +3502,11 @@
             "heading": "",
             "text": "Compact mobile robots must recover scene geometry under changing lighting and surface texture while working within tight payload and cost limits. We present a compact mobile robot that uses origami-inspired wheels for locomotion and active control of its sensing geometry.\n\nAs the wheels move between terrain-adaptive configurations, the changing chassis pitch sweeps a 2D LiDAR through intermediate elevations; held wheel positions provide a chosen viewing angle. An IMU accounts for chassis attitude, and a fusion node projects LiDAR returns into the RGB-D depth stream supplied to RTAB-Map.\n\nThe arrangement uses the wheel actuation already present on a sub-300 USD, sub-2 kg prototype to extend the scanner's viewing geometry. We assess depth fusion in a textureless indoor corridor and an outdoor sunlit area, with three runs per sensor configuration in each setting.\n\nMean full-frame invalid-depth fractions fell from 21% to 11% indoors and from 48% to 18% outdoors. The prototype combines improved depth coverage with a continuously adjustable LiDAR viewpoint using the same actuation that reconfigures its wheels."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a compact mobile robot with origami-inspired wheels that support locomotion and active adjustment of sensing geometry. Changes in chassis pitch sweep a 2D LiDAR across elevations, while holding wheel positions provides a selected viewpoint. An IMU accounts for chassis attitude, and a fusion node projects LiDAR returns into the RGB-D depth stream for RTAB-Map. Tests in a textureless indoor corridor and a sunlit outdoor area found lower mean full-frame invalid-depth fractions with fusion. The prototype reuses wheel actuation to adjust the LiDAR viewpoint.",
+          "zh": "研究介绍了一种紧凑型移动机器人，利用折纸启发式车轮行驶并主动调整传感几何。车轮改变地形适应构型时，底盘俯仰使二维激光雷达扫描不同高度；保持车轮位置可选定视角。系统结合惯性测量单元校正姿态，并将激光雷达回波投影到 RGB-D 深度流供 RTAB-Map 使用。原型在无纹理室内走廊和阳光直射的室外区域进行了深度融合评估，每种传感器配置各运行三次。全帧无效深度比例在室内和室外均有所下降。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3529,7 +3537,11 @@
             "heading": "",
             "text": "General-purpose agents increasingly write code, use tools, and complete complex digital tasks, raising the question of how far these capabilities carry into the physical world.\n\nTo investigate this, we introduce RobotWorld, a challenging simulation testbed for robot use: turning instructions and observations into physical task execution through robot interfaces. Its 84 tasks span manipulation, mobile manipulation, locomotion, driving, and aerial control, with explicit interaction budgets and executable success checks.\n\nBy analysing task outcomes alongside execution traces, we identify both the capabilities that transfer and the gaps that prevent reliable completion. Furthermore, we find that current agents can construct sophisticated perception and control workflows, including image segmentation, camera calibration, spatial estimation, and dynamics-based computation.\n\nThese capabilities, however, do not consistently compose into successful behaviour: agents lose task-relevant object states despite reaching commanded poses, fail to correct ineffective actions, recover too late, or mistake unfinished tasks for completion.\n\nThis uneven transfer also differs across models: Astra succeeds more often on spatial and constrained-contact goals, whereas Opus 5.5 succeeds more often on continuous-balance and timed-interaction goals.\n\nBy linking these outcomes to execution behaviour, RobotWorld provides both a rigorous proving ground and an empirical account of the remaining capability gaps, thereby establishing concrete targets for training and designing more reliable physical-world agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce RobotWorld, a simulation testbed for evaluating multimodal agents that use robot interfaces to perform physical tasks. Its tasks cover manipulation, mobile manipulation, locomotion, driving, and aerial control, with interaction budgets and executable success checks. Analysis of outcomes and traces shows that agents can build workflows involving image segmentation, camera calibration, spatial estimation, and dynamics computation, but these abilities do not reliably combine into successful behavior. Agents may lose relevant object states, fail to correct ineffective actions, recover late, or declare unfinished tasks complete. Models show different strengths across goal types.",
+          "zh": "论文介绍 RobotWorld，这是一个用于评估多模态智能体通过机器人接口执行物理任务的仿真测试平台，包含操作、移动操作、运动、驾驶和空中控制等任务，并设有交互预算和可执行的成功判定。作者分析任务结果及执行轨迹，发现智能体能够构建图像分割、相机标定、空间估计和动力学计算等流程，但这些能力未必能组合成可靠行为：智能体可能丢失关键物体状态、未能纠正无效动作、恢复过晚，或误判任务已完成。不同模型在空间与受限接触目标，以及连续平衡与定时交互目标上的表现各有侧重。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3560,7 +3572,11 @@
             "heading": "",
             "text": "Real-time whole-body controllers for legged robots typically plan through a fixed nominal model and degrade when the deployed dynamics change. Adaptive methods typically require a model structure that contact dynamics do not provide, or they need offline training for each anticipated condition.\n\nWe present Look-back and Look-ahead Adaptive Model Predictive Path Integral control (LLA-MPPI).The method converts whole-body adaptation into selection over a bank of GPU-batched contact simulators with different physical or structural parameters. Windowed prediction errors select the simulator that best explains recent motion.\n\nA whole-body MPPI planner optimizes controls through the selected model. The framework requires no offline training, and its selected hypotheses are physically interpretable. Across four simulated tasks, it achieves 97.5% success while the strongest baseline reaches 74% and an oracle with the true model reaches 98.5%.\n\nHardware validation on a Unitree Go2 shows the robot walking under a payload added mid-run, walking after one leg is disabled, and pushing a box to its goal while increasing its mass on the fly. Code, videos, and project details are available at: https://lla-control.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LLA-MPPI, an adaptive whole-body control method for legged robots. It selects among GPU-batched contact simulators with different physical or structural parameters, using windowed prediction errors from recent motion, then optimizes controls through the selected model. The framework requires no offline training, and its selected hypotheses are physically interpretable. In four simulated tasks, it reports 97.5% success, compared with 74% for the strongest baseline and 98.5% for an oracle using the true model. Unitree Go2 hardware demonstrations cover added payload, a disabled leg, and a box whose mass increases during pushing.",
+          "zh": "论文提出 LLA-MPPI，一种结合回看与前瞻自适应的腿式机器人全身控制方法。它从一组由 GPU 并行运行、物理或结构参数不同的接触模拟器中选择模型，并依据近期运动的分窗预测误差确定最能解释运动的模型，再通过该模型优化控制。该框架无需离线训练，所选假设具有物理可解释性。在四项仿真任务中，成功率为 97.5%，最强基线为 74%，使用真实模型的预言机为 98.5%。Unitree Go2 硬件验证展示了中途加负载、失去一条腿后行走，以及推箱时动态增加箱重等情形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
