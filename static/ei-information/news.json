@@ -23,7 +23,11 @@
             "heading": "",
             "text": "Precise end-effector tracking during humanoid whole-body motion is challenging due to floating-base oscillations, gravity, dynamic coupling, and locomotion-induced disturbances. We propose ResGAC, a whole-body humanoid controller for precise end-effector pose tracking that combines geometric admittance control (GAC) with residual reinforcement learning.\n\nGAC provides structured $\\SE$ task-space feedback and generates nominal arm joint-position targets, while residual RL compensates for unmodeled dynamics and coordinates locomotion and balance in the shared joint-position action space. The left-invariant geometric formulation allows the same GAC law to be used across manipulation reference frames.\n\nThis enables the use of a ground-attached heading frame that preserves planar locomotion while removing pelvis roll, pitch, and heave from the manipulation reference, thereby reducing reference-induced end-effector motion during locomotion. ResGAC is validated on a real Unitree G1 humanoid.\n\nAcross four standing end-effector tracking benchmarks, ResGAC consistently outperforms representative baselines, including SONIC, achieving lower translational and rotational errors. Real-world experiments further demonstrate reduced propagation of pelvis motion to the desired end-effector pose using the proposed ground-attached heading frame.\n\nResGAC achieves $90\\%$ success in a standing peg-in-hole task compared with $50\\%$ for SONIC, and accurate world-frame $\\SE$ end-effector pose tracking during lower-body motion. Experimental videos are included in the supplementary material and are also available on the project website: https://resgac.github.io/ResGAC-website/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ResGAC for end-effector pose tracking during whole-body humanoid motion. It combines geometric admittance control, which supplies task-space feedback and nominal arm joint-position targets, with residual reinforcement learning to compensate for unmodeled dynamics and coordinate locomotion and balance. The method was validated on a real Unitree G1. Across four standing tracking benchmarks, the authors report lower translational and rotational errors than representative baselines, including SONIC. Experiments also report reduced pelvis-motion propagation, 90% success on a standing peg-in-hole task, and world-frame pose tracking during lower-body motion.",
+          "zh": "论文提出 ResGAC，用于人形机器人全身运动中的末端执行器位姿跟踪。该控制器将几何导纳控制与残差强化学习结合：前者生成任务空间反馈和手臂关节位置目标，后者补偿未建模动力学并协调行走与平衡。作者在真实 Unitree G1 上验证该方法；在四项站立跟踪基准中，ResGAC 的平移和旋转误差低于代表性基线，包括 SONIC。实验还报告了更低的骨盆运动传递、站立插销入孔任务中 90% 的成功率，以及下肢运动时的世界坐标系位姿跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -54,7 +58,11 @@
             "heading": "",
             "text": "Teach-and-repeat navigation systems employing advanced visual place recognition techniques for localization exhibit key attributes for long-term mobile robot navigation, such as the ability to operate in unstructured and dynamic environments.\n\nHowever, existing solutions based on deep-learning techniques are computationally demanding, limiting their applicability. This work introduces a novel and efficient teach-and-repeat system built on the modern visual place recognition method MixVPR.\n\nReal-world testing demonstrated its ability to operate both indoors and outdoors, achieving robustness and navigation precision comparable to other state-of-the-art systems. In addition, its lower hardware requirements make it suitable for a wide range of robotic platforms and practical applications."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces an efficient teach-and-repeat navigation system built on MixVPR visual place recognition. The authors identify the computational demands of existing deep-learning approaches as a limit on their applicability, and present their system as requiring less hardware. Real-world tests covered indoor and outdoor environments. The authors report robustness and navigation precision comparable to other state-of-the-art systems, and say the lower hardware requirements make the approach suitable for a range of robotic platforms and practical applications. The abstract gives no specific error values or test scale.",
+          "zh": "论文介绍一种基于 MixVPR 视觉地点识别方法的高效示教与重复导航系统。作者指出，现有基于深度学习的地点识别方案计算开销较大，限制了其应用；所提系统旨在降低计算和硬件需求。真实环境测试覆盖室内和室外场景，作者报告其具备鲁棒性，导航精度可与其他先进系统相比，并认为较低的硬件要求使其适用于多种机器人平台和实际应用。摘要未提供具体误差或测试规模。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
