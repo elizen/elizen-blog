@@ -191,7 +191,11 @@
             "heading": "",
             "text": "Scaling robotic foundation models requires diverse training data and reliable evaluation environments. Simulation offers a scalable solution, yet existing generation pipelines remain constrained by predefined assets and skills, a disconnect between scene generation and task generation, and limited support for complex embodiments and physics.\n\nWe introduce EmbodiedSmith, a framework for scalable embodied data generation through recursive self-improvement (RSI).EmbodiedSmith unifies asset, scene, and task generation in a pipeline that supports autonomous creation and language-driven customization.\n\nIts core is an agentic refinement loop: scene generation anticipates downstream task requirements, while task generation guides targeted scene edits, allowing scenes and tasks to iteratively improve one another. This joint refinement improves task generation success, including for long-horizon tasks.\n\nThe framework further supports mobile manipulators, humanoids, and dexterous hands, as well as interactions involving deformable objects and fluids, broadening the range of behaviors and physical phenomena represented in generated data. Together, these capabilities provide a flexible simulation engine for both robot pretraining and evaluation.\n\nExtensive experiments validate the quality, diversity, and generation efficiency of the resulting data, while downstream policy experiments demonstrate that increased data diversity improves generalization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EmbodiedSmith, a recursive self-improvement framework that jointly generates assets, scenes, and tasks. Scene generation anticipates task needs, while task generation guides scene edits. The framework supports language-driven customization, several robot embodiments, and interactions with deformable objects and fluids. The authors report that simulation experiments validate data quality, diversity, and generation efficiency, and that downstream policy experiments show greater data diversity improves generalization.",
+          "zh": "论文提出 EmbodiedSmith，通过递归自我改进联合生成资产、场景和任务，并让场景生成考虑后续任务需求、任务生成反过来引导场景调整。框架支持语言驱动定制、多类机器人形态，以及可变形物体和流体交互。作者报告称，仿真实验验证了生成数据的质量、多样性和效率，下游策略实验显示数据多样性提升有助于泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -222,7 +226,11 @@
             "heading": "",
             "text": "In this paper, we investigate the synthesis of Micro Neural Policies (MNP) to enable safe and robust real-time robotic control on computationally constrained embedded devices.\n\nWe demonstrate that integrating Evolution Strategy (ES) and Statistical Model Checking (SMC)-based verification for policy search can drastically reduce neural network size without compromising safety and robustness.\n\nWe conduct a large-scale training and evaluation of MNP on Cartpole and Quadrotor control tasks, varying control frequencies and network architectures. After validating these policies in simulation, we evaluate their deployability through zero-shot transfer to physical systems.\n\nOur experiments show that MNP can successfully achieve safe sim-to-real transfer without sacrificing control performance.\n\nWe then show that the policies' memory footprint, ranging from 0.5 to 7.5 kB, allows deployment on microcontrollers, where they achieve real-time inference latency with under 25 ns of jitter while leaving the chip idle for over 97% of the time for additional workloads.\n\nThis makes them a highly practical solution for severely resource-constrained robotic systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies Micro Neural Policies for real-time control on resource-constrained embedded devices. Its policy search combines Evolution Strategy with Statistical Model Checking-based verification to reduce network size. The authors train and evaluate policies on Cartpole and quadrotor tasks, validate them in simulation, and test zero-shot transfer to physical systems. They report safe sim-to-real transfer without loss of control performance, as well as real-time inference on microcontrollers.",
+          "zh": "论文研究面向资源受限嵌入式设备的微型神经策略，将进化策略搜索与基于统计模型检验的验证结合，以缩小网络规模。作者在 Cartpole 和四旋翼任务中训练并评估策略，先进行仿真验证，再测试向物理系统的零样本迁移。实验报告称策略实现安全迁移且不损失控制性能，并可在微控制器上实时推理。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -253,7 +261,11 @@
             "heading": "",
             "text": "Compliant mechanisms provide compact and intrinsic structural compliance for regulating physical interactions between mechanisms and environments.\n\nHowever, different tasks demand distinct stiffness characteristics, often requiring task-specific optimization and redesign due to limited geometric design space and inherent coupling among multiple stiffness components. This paper presents a Lego-like stiffness configuration approach using stackable planar compliant modules.\n\nThree complementary module geometries are introduced, with their stiffness characteristics further regulated through beam width, plate thickness, and module orientation. A unified stiffness model is established for quantitative analysis of individual and composed modules.\n\nFurther, a two-stage optimization method is presented to achieve desired stiffness profiles, combining a genetic algorithm for configuration and sequential quadratic programming for parameter refinement. Experimental verification shows deviations below 6.5% for simulated stiffness.\n\nA flexible wrist is further developed as a representative implementation, exhibiting distinct compliant and dynamic responses under different stiffness characteristics.\n\nAn optimized modular composition realizes prescribed stiffness values and maintains compliant obstacle interaction during high-speed motion at 1 m/s, with a maximum tested angular compliance of approximately $15^\\circ$.The proposed framework provides a systematic approach for constructing flexible interfaces with task-specific stiffness characteristics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a Lego-like stiffness configuration method using stackable planar compliant modules. Three geometries are introduced, with stiffness adjusted through beam width, plate thickness, and module orientation. A unified model supports analysis, and a two-stage optimization combines a genetic algorithm with sequential quadratic programming. Experimental verification reports simulated-stiffness deviations below 6.5%. A flexible wrist demonstrates different compliant and dynamic responses, including compliant obstacle interaction during high-speed motion.",
+          "zh": "论文提出一种类似积木拼装的平面柔顺模块刚度配置方法，介绍三种模块几何，并通过梁宽、板厚和模块方向调节刚度。作者建立统一刚度模型，并以遗传算法确定构型、序列二次规划细化参数。实验验证显示模拟刚度偏差低于 6.5%；柔性腕部演示了不同刚度下的顺应与动态响应，以及高速运动中的柔顺避障。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -284,7 +296,11 @@
             "heading": "",
             "text": "Assistance in collaborative manipulation is often initiated by user instructions, making high-level reasoning request-driven. In fluent human teamwork, however, partners often infer the next helpful step from the observed outcome of an action rather than waiting for instructions.\n\nMotivated by this, we investigate an event-driven formulation of proactive assistance, where human--object interaction outcomes initiate assistive reasoning without user-provided task specifications at inference time.\n\nTo this end, we propose an event-driven framework that monitors workspace state changes with an event monitor and, upon event completion, extracts stabilized pre/post snapshots that characterize the resulting state transition.\n\nA frozen pretrained Vision-Language Model (VLM) then uses its semantic priors to infer the task context, decide whether assistance is appropriate, and, when needed, generate a sequence of assistive actions from the observed transition.\n\nTo make outputs executable and verifiable, we restrict actions to a set of action primitives and reference objects via integer IDs.We evaluate the same framework across three distinct real world tabletop collaboration tasks without task-specific training or fine-tuning.\n\nThe event-driven framework achieves performance comparable to variants given user instructions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates event-driven proactive assistance in collaborative manipulation, where observed human-object interaction outcomes initiate reasoning without task instructions at inference time. An event monitor extracts stabilized before-and-after snapshots, and a frozen pretrained vision-language model infers context, decides whether help is appropriate, and can generate assistive action sequences. Actions use a defined set of primitives and integer object IDs. Evaluation across three real-world tabletop tasks found performance comparable to variants provided with user instructions.",
+          "zh": "论文研究由事件触发的主动机器人协助：系统观察人和物体交互的结果，无需推理时提供任务说明。事件监测器提取稳定的交互前后状态，由冻结的预训练视觉语言模型判断任务情境及是否需要协助，并在需要时生成辅助动作序列。动作被限制为预设原语并以整数 ID 指代物体。作者在三项真实桌面协作任务中评估，报告称其表现可与提供用户指令的方案相比。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
