@@ -2720,7 +2720,11 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EnvDreamer, a platform that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied learning, world models, and robot training and evaluation. It supports diverse, interactive, customizable environments that pass validation across navigation, interaction, and manipulation. The authors illustrate the platform with generated scenes and simple baselines, and report competitive results on several embodied benchmarks for policies trained in these environments without explicit mapping or human task supervision. It also supports image-conditioned reconstruction and introduces a dataset of 20,000 validated environments with task programs, scene graphs, trajectories, and metadata.",
+          "zh": "本文提出EnvDreamer，一个利用大语言模型和视觉语言模型生成虚幻引擎5环境的平台，面向具身学习、世界模型和机器人训练与评估。平台支持生成多样、可交互和可定制并通过验证的环境，覆盖导航、交互和操作任务。作者展示生成场景及简单基线，并报告在其环境中训练、无需显式地图或人工任务监督的策略，在多个具身基准上取得有竞争力的结果。平台还支持图像条件重建，并发布包含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5199,7 +5203,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work characterizes vision-language-action models in batch-one control inference for embodied robots. The authors profile four models on an edge GPU server and two onboard SoCs, using single-inference measurements and closed-loop episodes. They report that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, while GPU frequency scaling creates platform-dependent energy-latency tradeoffs. Overlapping inference with action execution also trades accuracy, speed, and energy, with no configuration dominating across deployment service-level objectives.",
+          "zh": "本文刻画视觉语言动作模型在具身机器人批量为1的控制推理场景中的运行特征。作者在边缘GPU服务器和两种机载SoC上分析四种模型，并进行单次推理剖析及闭环测试。结果显示，动作张量维度和平台配置会影响计算或内存瓶颈，GPU频率调节存在平台相关的能耗与时延权衡；推理与动作执行重叠也带来精度、速度和能耗取舍，没有一种配置在所有部署服务目标下占优。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14227,7 +14235,11 @@
             "heading": "",
             "text": "Generative and embodied AI services exchange token streams within continuing inference and control loops. Their communication requirements depend on each token set's purpose, useful timing, and execution context.\n\nThis article organizes these properties into service, temporal, and stateful semantics and proposes a token service interface (TSI) between applications, radio access networks (RANs), and edge runtimes.\n\nTSI binds delivery requirements, readiness forecasts, and execution-state references to each schedulable token set, specifying field ownership, versioned updates, and admission feedback.\n\nA drone inspection case study over a decoupled RAN illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This article examines communication needs when generative and embodied AI services exchange token streams in ongoing inference and control loops. It groups token-set properties into service, temporal, and stateful semantics, then proposes a token service interface (TSI) connecting applications, radio access networks, and edge runtimes. TSI associates delivery requirements, readiness forecasts, and execution-state references with schedulable token sets, and specifies field ownership, versioned updates, and admission feedback. A drone-inspection case study illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay.",
+          "zh": "本文讨论生成式与具身AI服务在持续推理和控制循环中交换令牌流时的通信需求，并将令牌集合的属性归纳为服务、时间和状态语义。作者提出令牌服务接口TSI，连接应用、无线接入网和边缘运行时，将交付要求、就绪预测及执行状态引用绑定到可调度令牌集合，并规定字段归属、版本更新和准入反馈。无人机巡检案例展示了该接口如何支持重要性驱动的无线资源分配、提前准备及时交付，以及在中断与转发时延间权衡的选择性状态迁移。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14357,7 +14369,11 @@
             "heading": "",
             "text": "Mobile embodied AI networks (MEAN) enable embodied agents to perceive, reason, communicate, and act in wireless environments. In such networks, agent mobility can improve channel conditions, while semantic compression can reduce transmission payloads. However, movement consumes energy, and stronger compression incurs additional computational cost.\n\nThis paper studies joint movement, semantic compression, and transmit power design for an uplink MEAN system. We formulate a max-min energy efficiency (EE) problem by jointly optimizing transmit power, movement distance, and semantic compression ratio under controllable power constraints.\n\nThe problem is non-convex due to the coupled signal-to-interference-plus-noise ratio (SINR), mobility-dependent channel gains, and fractional EE objective.\n\nTo solve it, we propose an alternating optimization (AO)-Dinkelbach algorithm, where the fractional objective is handled by the Dinkelbach transformation, transmit power is updated via successive convex approximation (SCA), and movement distance is updated by coordinate-wise grid search.\n\nSimulation results show that the proposed scheme outperforms no-mobility and no-compression baselines, demonstrating the benefit of jointly exploiting mobility control, semantic compression, and power allocation in MEAN."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies joint movement, semantic compression, and transmit-power design for the uplink of mobile embodied AI networks, targeting max-min energy efficiency under power constraints. The authors describe the problem as non-convex because of coupled signal-to-interference-plus-noise ratios, mobility-dependent channel gains, and a fractional efficiency objective. They propose an alternating optimization–Dinkelbach algorithm, updating transmit power through successive convex approximation and movement distance through coordinate-wise grid search. Simulation results show that the scheme outperforms no-mobility and no-compression baselines, indicating benefits from jointly using mobility control, semantic compression, and power allocation.",
+          "zh": "本文研究移动具身AI网络上行链路中的移动、语义压缩和发射功率联合设计，目标是在功率约束下最大化最小能效。作者指出，该问题因信干噪比、依赖移动的信道增益及分式能效目标相互耦合而呈非凸性，并提出交替优化与Dinkelbach算法：用逐次凸近似更新发射功率，以逐坐标网格搜索更新移动距离。仿真结果显示，所提方案优于无移动和无压缩基线，表明联合利用移动控制、语义压缩与功率分配具有收益。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
