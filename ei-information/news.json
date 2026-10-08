@@ -3257,7 +3257,11 @@
             "heading": "",
             "text": "Humanoid robots still struggle to plan contact-rich whole-body manipulation from egocentric RGB and proprioception. Workhorse learns such manipulation from robot-free human demonstrations. A visual planner predicts five-link targets: the poses of the torso, both wrists, and both feet. A reinforcement-learning whole-body tracker follows them on the robot.\n\nBoth policies train separately on the same recorded human poses, without retargeting. We augment the training data of each policy to imitate the errors that the other makes at deployment. On a real Unitree G1, Workhorse sorts boxes with its hands and a kick, catches a thrown box, and topples and climbs a suitcase.\n\nDuring box sorting, we show recoveries after a person pushes the robot or takes the box away. In a simulated copy of the demonstration room, the system completes box sorting in 77% of episodes, and in 64% under 40 N.s pushes.\n\nWith both policies retrained from the same demonstrations, a simulated second humanoid completes box sorting in 83% of episodes without pushes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Workhorse learns whole-body manipulation from human demonstrations without a robot. A visual planner predicts targets for the torso, wrists, and feet, while a reinforcement-learning tracker executes them; both policies train separately on the same poses, with augmentation to model each other’s deployment errors. On a real Unitree G1, demonstrations include box sorting, catching a thrown box, and climbing a suitcase, with recovery from pushes or a removed box. In simulation, box sorting succeeds in 77% of episodes, or 64% under 40 N·s pushes; a second simulated humanoid reaches 83% without pushes.",
+          "zh": "Workhorse从无需机器人参与的人类示范中学习全身操作：视觉规划器预测躯干、双腕和双足目标，全身强化学习跟踪器负责执行；两种策略在相同姿态数据上分别训练，并通过数据增强模拟彼此部署时的误差。Unitree G1实机展示了分拣箱子、接住抛来箱子、推倒并攀爬行李箱等任务及受推或物品被拿走后的恢复。仿真中，演示房间内分拣成功率为77%，受40 N·s推力时为64%；另一台仿真人形机器人在无推力时为83%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3288,7 +3292,11 @@
             "heading": "",
             "text": "Compared with analytical physics, learned dynamics models promise robot simulation that is faster, inherently differentiable, and easily adaptable to real data. Neural Robot Dynamics (NeRD) pursues this by keeping collision detection analytical and replacing a simulator's numerical dynamics for the robot with a learned model. Three limitations remain.\n\nNeRD offers little speedup over the simulator it learned from, accepts contact only at predefined points, and has no two-way coupling with objects it manipulates.\n\nFlashNeRD removes all three with a parallel streaming architecture that makes each prediction faster and more accurate, an encoder that accepts contacts wherever they occur, and two-way coupling with objects simulated by analytical solvers.\n\nExperiments across five robots show faster and more accurate dynamics, faster policy learning, and faster inference-time planning. Across three robots, FlashNeRD's dynamics model is up to $55\\times$ faster than an optimized NeRD and more accurate over long rollouts.\n\nThis speedup extends to policy learning, where PPO trains an ANYmal locomotion policy in 34 seconds, $3.8\\times$ faster than the analytical simulator and $2.7\\times$ faster than an optimized NeRD.\n\nWith DIAL-MPC, a sampling-based MPC method, the robot climbs all six test platforms where fixed-contact NeRD manages one, at approximately half the analytical simulator's planning time. Cube-reorientation policies trained with FlashNeRD complete within 2% of the simulator-trained policy's target count."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FlashNeRD addresses speed, fixed contact locations, and missing two-way object coupling in learned robot dynamics. It uses a parallel streaming architecture, an encoder for contacts at arbitrary locations, and coupling to objects simulated by analytical solvers. Experiments across five robots report faster, more accurate dynamics and faster policy learning and planning. On three robots, its model is up to 55 times faster than optimized NeRD and more accurate over long rollouts. PPO trains an ANYmal locomotion policy in 34 seconds. In DIAL-MPC tests, the robot climbs all six platforms, versus one for fixed-contact NeRD; cube-reorientation policies finish within 2% of the simulator-trained policy’s target count.",
+          "zh": "FlashNeRD针对神经机器人动力学模型的速度、接触位置限制及缺乏物体双向耦合问题，提出并行流式架构、可编码任意位置接触的编码器，以及与解析求解器仿真物体的双向耦合。五种机器人上的实验报告其动力学预测更快、更准确，并加速策略学习和规划；在三种机器人上，模型相较优化版NeRD最高快55倍，长时滚动预测也更准确。PPO训练ANYmal步行策略用时34秒；DIAL-MPC测试中，机器人可攀爬六个平台，而固定接触NeRD只能攀爬一个。立方体重定向策略的目标完成数与仿真器训练策略相差不超过2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
