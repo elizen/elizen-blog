@@ -923,7 +923,11 @@
             "heading": "",
             "text": "Existing teleoperation systems are often tailored to specific robot hardware and task domains, limiting their scalability and adaptability. We present ModPack, a modular and extensible teleoperation system designed to support diverse robot embodiments and task requirements within a unified framework.\n\nAt the core of ModPack is a self-contained wearable \"backpack\" that integrates onboard computation, power, communication, and data storage. Built on top of this shared interface, the system supports plug-and-play capability modules including joint-level teleoperation with haptic feedback, mobile manipulation, and active perception.\n\nExperiments across two distinct robot platforms and real-world mobile manipulation tasks demonstrate that ModPack provides a flexible and reusable framework for data collection and policy learning and collects higher quality data than a robot-free alternative. To support future research, we open-source the complete hardware design and software stack.\n\nProject website: https://modpack-robotics.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ModPack, a modular teleoperation system intended to support different robot embodiments and tasks. Its wearable backpack integrates computation, power, communication, and storage, while plug-and-play modules provide joint-level teleoperation with haptic feedback, mobile manipulation, and active perception. Experiments on two robot platforms and real-world mobile manipulation tasks are reported to show that the framework supports reusable data collection and policy learning, with higher-quality data than a robot-free alternative. The authors also open-source the hardware design and software stack.",
+          "zh": "论文提出ModPack，一种面向不同机器人形态和任务的模块化遥操作系统。其可穿戴背包集成计算、供电、通信和存储，并支持带触觉反馈的关节级遥操作、移动操作和主动感知等可插拔模块。作者报告称，该系统在两个机器人平台及真实移动操作任务中的实验表明，它适用于可复用的数据采集与策略学习，采集数据质量高于无机器人方案。作者还将硬件设计和软件栈开源。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -954,7 +958,11 @@
             "heading": "",
             "text": "Manipulating fragile objects remains challenging as robots must understand the state of what they grasp, such as slip or fracture, to respond appropriately, especially when material properties are unknown.\n\nIn this paper, we present SAFE: a low-cost, general-purpose sensing approach that detects both slip and fracture in real time using two passive polyvinylidene fluoride (PVDF) acoustic sensors and motor proprioception, without relying on vision or prior material knowledge.\n\nThe sensors are mounted on a compliant Fin Ray gripper, and a unified HistGradientBoosting classifier reports the state (normal, slip, or fracture) from a 79-dimensional feature vector.\n\nUnder leave-one-grasp-out cross-validation, SAFE achieves an Alert-F1 of 0.884 with near-zero slip-fracture confusion, and ablations confirm that acoustic sensing is indispensable.\n\nAn adaptive grasp controller built on this detection layer runs at 104 Hz on a Jetson Orin Nano, achieving 91.3% success across 46 closed-loop robot trials spanning diverse object categories, while each fixed-force strategy drops to 0% on object conditions that mismatch its preset.\n\nIt further reaches 82.4% success on novel objects unseen during training, demonstrating robust, failure-aware grasp control without object-specific calibration."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SAFE, which uses two passive PVDF acoustic sensors and motor proprioception to detect normal, slip, and fracture states during grasping without vision or prior material knowledge. A unified classifier processes 79-dimensional features. Under leave-one-grasp-out cross-validation, the authors report an Alert-F1 of 0.884 and near-zero confusion between slip and fracture; ablations indicate acoustic sensing is indispensable. An adaptive controller achieved 91.3% success across 46 closed-loop robot trials and 82.4% on novel objects, while fixed-force strategies reached 0% on conditions mismatched to their presets.",
+          "zh": "论文提出SAFE，使用两个被动PVDF声学传感器和电机本体感知，在无需视觉或材料先验的情况下实时检测抓取中的正常、滑移和破裂状态。传感器安装于柔顺Fin Ray夹爪，统一分类器根据79维特征进行判断。留一抓取交叉验证中，Alert-F1为0.884，滑移与破裂混淆接近于零；消融实验显示声学感知不可或缺。作者报告，自适应控制器在46次闭环机器人试验中成功率为91.3%，对训练未见物体为82.4%；固定力策略在与预设不匹配的物体条件下成功率降至0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -985,7 +993,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies have demonstrated impressive capabilities in generalizable robotic manipulation, but their deployment in the real world remains challenging due to potential collisions involving different parts of the robot, manipulated objects, and the surrounding environment.\n\nExisting inference-time VLA safety frameworks typically rely on simplified end-effector-centered representations that do not explicitly model the full articulated robot and attached-object geometry. In this paper, we present WBAG, a safety framework that models the robot's whole-body and grasp-dependent attached geometry.\n\nWBAG constructs a grasp-conditioned safe set that adapts the protected geometry as objects are grasped, then converts this evolving geometry into differentiable CBF constraints that minimally modify the VLA's six-dimensional operational-space action for collision avoidance across robot, scene, and attached geometry.\n\nOn the SafeLIBERO benchmark, a variant of LIBERO augmented with obstacles for safety evaluation, WBAG achieves the best overall safety and safe task success among the evaluated methods under a scene-level safety evaluator that monitors all eligible non-task objects, reaching 97.38% aggregate Scene Safety and 59.38% Safe Success.\n\nProject page: https://samuelzhen.com/projects/wbag"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WBAG, an inference-time safety framework for vision-language-action policies that explicitly models the robot's whole body and the geometry of grasped objects. It builds a grasp-conditioned safe set that changes as objects are grasped, then converts this geometry into differentiable control barrier function constraints to minimally adjust six-dimensional operational-space actions for collision avoidance. On SafeLIBERO, a LIBERO variant augmented with obstacles, the authors report the best overall safety and safe task success among evaluated methods, with 97.38% aggregate Scene Safety and 59.38% Safe Success.",
+          "zh": "论文提出WBAG，一种用于视觉语言动作策略的推理时安全框架，显式建模机器人全身及抓取后附着物体的几何形状。它构造随抓取状态变化的安全集合，并将几何约束转为可微控制屏障函数约束，以尽量少地调整策略的六维操作空间动作，规避机器人、场景和附着几何之间的碰撞。在加入障碍物的SafeLIBERO基准上，作者报告该方法在受评估方法中总体安全性和安全任务成功表现最佳，场景安全率为97.38%，安全成功率为59.38%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1016,7 +1028,11 @@
             "heading": "",
             "text": "Accurately modeling and tracking the deformation of soft tissue is critical for a wide range of interventional and surgical procedures. However, current methods struggle in scenarios involving topological changes, such as cutting and dissection, due to the inherent non-linearity and discontinuity introduced by explicit changes in connectivity.\n\nIn this work, we present a novel, fully differentiable framework that enables robust estimation and modeling of topological changes during deformable tracking.\n\nOur method introduces a continuous, sigmoid-based formulation to smooth the otherwise discrete event of tissue cutting, making it amenable to gradient-based optimization within a differentiable Position-Based Dynamics (PBD) simulation.\n\nTo account for uncertainty and improve robustness in the presence of noisy visual data, we incorporate Stein Variational Gradient Descent (SVGD) for particle-based probabilistic inference, generating multiple hypotheses for topological state estimation.\n\nBuilding on this foundation, we develop an autonomous dissection algorithm for thin-shell tissues that leverages topological updates to guide closed-loop cutting trajectory control.\n\nWe evaluate our approach in both simulated and real-world electrosurgical environments, demonstrating significant improvements in topological estimation accuracy and dissection precision over existing methods.\n\nOur results highlight the potential of this framework to advance automation in soft-tissue surgical procedures by enabling reliable perception and control in the presence of complex structural changes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ProCut, a differentiable framework for estimating and modeling topological changes during deformable tissue tracking. It smooths the discrete event of cutting with a continuous sigmoid formulation for gradient-based optimization in a differentiable Position-Based Dynamics simulation. Stein Variational Gradient Descent supports particle-based probabilistic inference under noisy visual data and generates multiple hypotheses for the topological state. The authors also develop an autonomous dissection algorithm for thin-shell tissue, using topology updates to guide closed-loop cutting. They report improved estimation accuracy and dissection precision in simulated and real-world electrosurgical environments.",
+          "zh": "论文提出ProCut，一种可微框架，用于估计和建模软组织变形跟踪中的拓扑变化。方法以连续的 sigmoid 形式平滑组织切割这一离散事件，并在可微位置基动力学仿真中进行梯度优化；同时采用 Stein 变分梯度下降进行基于粒子的概率推断，以处理视觉噪声并生成多个拓扑状态假设。作者据此开发了面向薄壳组织的自主解剖算法，通过拓扑更新引导闭环切割轨迹控制，并报告其在仿真和真实电外科环境中的评估显示，拓扑估计准确度和解剖精度优于现有方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
