@@ -271,7 +271,11 @@
             "heading": "",
             "text": "Automated insertion of board-to-board (BTB) connectors in 3C manufacturing requires both high visual accuracy and strong deployment robustness.\n\nThis problem remains challenging because multi-variant connectors exhibit significant morphological and appearance variations, making stable cross-variant generalization difficult, while the mismatch between training and deployment under fixed-view inspection settings induces background spurious correlation and degrades real-world performance.\n\nTo address these issues, this paper proposes MCFR, a Mask-Guided Coarse-to-Fine Regression framework for multi-variant BTB connector assembly. By introducing an object-aware mask prior and explicit photometric refinement, the proposed method suppresses background interference and improves alignment accuracy and robustness in practical deployment.\n\nExperiments on a self-constructed multi-variant dataset, a BTB batch insertion testbed, and a real smartphone assembly task show that MCFR consistently outperforms representative baselines and achieves an average real-world insertion success rate of 99.25%.\n\nThese results demonstrate the effectiveness and practical potential of MCFR for automated assembly of multi-variant BTB connectors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes MCFR, a mask-guided coarse-to-fine regression framework for assembling multi-variant board-to-board connectors. It combines an object-aware mask prior with explicit photometric refinement to suppress background interference and improve alignment accuracy and deployment robustness. Experiments on a self-constructed dataset, a batch insertion testbed, and a real smartphone assembly task are reported to outperform representative baselines, with an average real-world insertion success rate of 99.25%.",
+          "zh": "论文提出 MCFR，一种用于多变体板对板连接器装配的掩码引导粗到细回归框架。该方法结合目标感知掩码先验与显式光度细化，以抑制背景干扰并提升对准准确性和部署鲁棒性。作者报告，在自建多变体数据集、批量插入测试平台及真实智能手机装配任务上的实验中，MCFR 优于代表性基线，真实环境平均插入成功率为 99.25%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -302,7 +306,11 @@
             "heading": "",
             "text": "Active vision -- where a policy controls its own gaze during manipulation -- has emerged as a key capability for imitation learning, with multiple independent systems demonstrating its benefits in the past year. Yet there is no shared benchmark to compare approaches or quantify what active vision contributes, on which task types, and under what conditions.\n\nWe introduce TAVIS, evaluation infrastructure for active-vision imitation learning, with two complementary task suites -- TAVIS-Head (5 tasks, global search via pan/tilt necks) and TAVIS-Hands (3 tasks, local occlusion via wrist cameras) -- on two humanoid torso embodiments (GR1T2, Reachy2), built on IsaacLab.\n\nTAVIS provides three evaluation primitives: a paired headcam-vs-fixedcam protocol on identical demonstrations; GALT (Gaze-Action Lead Time), a novel metric grounded in cognitive science and HRI that quantifies anticipatory gaze in learned policies; and procedural ID/OOD splits.\n\nBaseline experiments with Diffusion Policy and $\\pi_0$ reveal that (i) active vision generally helps, consistently across training runs, but benefits are task-conditional rather than uniform; (ii) multi-task policies degrade sharply under controlled distribution shifts on both suites; and (iii) imitation alone yields anticipatory gaze that lands on the task-relevant object, with lead times comparable to those of the human demonstrations, although head motion is less smooth than in the demonstrations, an effect of action chunking that success rate does not reveal.\n\nCode and evaluation scripts are released at https://github.com/spiglerg/tavis; demonstrations (LeRobot v3.0; ~2200 episodes) and trained baselines at https://huggingface.co/tavis-benchmark."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TAVIS, an evaluation benchmark for active vision in imitation learning. It includes suites for global search using a movable head camera and local occlusion using wrist cameras, across two humanoid torso embodiments. Its evaluation tools include paired head-camera versus fixed-camera comparisons, the Gaze-Action Lead Time metric, and procedural in-distribution and out-of-distribution splits. Baseline experiments indicate that active vision benefits depend on the task, multi-task policies degrade under distribution shifts, and imitation can produce anticipatory gaze, although head motion is less smooth than in demonstrations.",
+          "zh": "论文介绍 TAVIS，这是用于评估模仿学习中主动视觉的基准设施，包含头部全局搜索和腕部相机局部遮挡两类任务套件，并覆盖两种人形机器人躯干平台。其评估包括头部相机与固定相机的配对协议、衡量注视提前量的 GALT 指标，以及程序化的分布内外划分。基线实验显示主动视觉的收益因任务而异，多任务策略在分布变化下明显退化；模仿学习可产生面向任务物体的预期注视，但头部运动较演示不平滑。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -333,7 +341,11 @@
             "heading": "",
             "text": "For safety-critical software, operational data (e.g. sequences of software successes and failures) can provide strong statistical support for reliability claims. However, insufficient detail about past software failures may leave assessments unable to account for important features of failure behavior.\n\nIn this paper, we extend conservative Bayesian inference (CBI) techniques for reliability assessment to check the robustness of reliability claims based on such data.\n\nWe show how insufficient detail in operational data can undermine software reliability claims in autonomous vehicle (AV) safety assessment scenarios: even when used conservatively, low-fidelity data may yield dangerously optimistic conclusions.\n\nWhile these findings are consistent with previous work on the impact of statistical model fidelity in Bayesian software reliability assessments, our work clarifies why attempts to use low-fidelity data conservatively can be naive. To the best of our knowledge, we give the first conservative estimates of the impact of data fidelity on reliability assessments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper extends conservative Bayesian inference techniques to assess the robustness of software reliability claims based on operational data. In autonomous-vehicle safety assessment scenarios, it shows that insufficient detail about past failures can make low-fidelity data produce dangerously optimistic conclusions, even when used conservatively. The authors explain why conservative use of such data can be naive and state that, to their knowledge, this is the first work to provide conservative estimates of the impact of data fidelity on reliability assessments.",
+          "zh": "论文将保守贝叶斯推断技术扩展用于软件可靠性评估，以检验基于运行数据的可靠性主张是否稳健。作者在自动驾驶安全评估情境中说明，若历史失效数据缺少细节，即使采用保守方法，低保真数据仍可能导致过度乐观且危险的结论。论文澄清了保守使用低保真数据可能产生的局限，并称据其所知，这是首次对数据保真度影响给出保守估计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -364,7 +376,11 @@
             "heading": "",
             "text": "World action models (WAMs) have emerged as an important class of generalist robot policies, aiming to transfer video prediction priors to action learning. However, we find that existing WAMs frequently produce incorrect motion predictions in open-ended environment, leading to erroneous actions.\n\nWe attribute this limitation to two factors: （1） base video models are not optimized for manipulation, and （2） naively incorporating action components into video models can substantially degrade their generalization capabilities.\n\nWe introduce Video Prediction Policy 2 (VPP2), a WAM that enables strong zero-shot generalization in both video prediction and action generation. First, we curate a large-scale, diverse dataset of manipulation videos to continue pretraining the base video foundation model.\n\nWe annotate video clips with detailed captions and perform \\textit{event-level} video pretraining to promote generalization across open-ended manipulation tasks. Second, we post-train and distill the video model into a single-step visual planner with fixed prediction horizon.\n\nFinally, we introduce action module via a mixture-of-transformers (MoT) architecture to learn implicit inverse dynamics model.\n\nExperiments demonstrate three key results: （1） VPP2-14B outperforms Cosmos3-64B by 11.0\\% points in video prediction instruction-following success rate on open-ended tasks; （2） VPP2 surpasses the strongest baseline by 18.5\\% points in success rate on real-world zero-shot ALOHA manipulation tasks; and （3） following benchmark-specific post-training, VPP2 achieves the highest success rates among evaluated methods on the challenging LIBERO-Pro, LIBERO-OOD, and RoboDojo benchmarks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VPP2, a world action model designed to improve video prediction and action generation in open-ended manipulation. It continues pretraining a video foundation model on diverse manipulation videos with detailed captions and event-level training, then post-trains and distills it into a single-step visual planner. A mixture-of-transformers action module learns implicit inverse dynamics. The reported experiments show gains over compared methods in open-task video instruction following, real-world zero-shot ALOHA manipulation, and, after benchmark-specific post-training, several challenging benchmarks.",
+          "zh": "论文提出视频预测策略 VPP2，旨在改善开放式操作环境中的视频预测与动作生成。方法通过多样化操作视频、详细字幕和事件级预训练提升基础视频模型，再将其后训练与蒸馏为单步视觉规划器，并以混合变换器动作模块学习隐式逆动力学。作者报告，VPP2 在开放任务的视频指令跟随、真实 ALOHA 零样本操作，以及经基准特定后训练的多个基准上取得优于所比较方法的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
