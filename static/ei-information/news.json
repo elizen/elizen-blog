@@ -365,7 +365,11 @@
             "heading": "",
             "text": "Imitation learning policies that integrate multiple sensory modalities are prone to overreliance on a dominant modality, such as vision, during training, which can disrupt policy execution when that modality is lost at inference time.\n\nIn this paper, we introduce Targeted Modality Dropout (TMD), in which the dependence on each modality is estimated using attention and the most dominant modality is selectively dropped. This is combined with entropy regularization over the dependence distribution.\n\nThrough real-robot evaluation using a bimanual manipulator, we show that under vision loss the success rate of the baseline policy drops substantially, whereas TMD sustains task execution. In contrast, a conventional dropout that selects the dropped modality at random, without the entropy regularization, fails on many tasks even without vision loss."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Targeted Modality Dropout (TMD), which estimates dependence on each sensory modality using attention, selectively drops the most dominant modality, and applies entropy regularization to the dependence distribution. In real-robot evaluation with a bimanual manipulator, the authors report that the baseline policy’s success rate drops substantially under vision loss, while TMD sustains task execution. Conventional random modality dropout without entropy regularization fails on many tasks even when vision is available.",
+          "zh": "论文提出目标模态丢弃（TMD），通过注意力估计各感觉模态的依赖程度，有选择地丢弃最占主导的模态，并对依赖分布进行熵正则化。作者在双臂机械臂上进行真实机器人评估：视觉丢失时，基线策略成功率大幅下降，而 TMD 能维持任务执行；不含熵正则化、随机选择丢弃模态的常规方法，即使视觉未丢失，也会在许多任务上失败。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -396,7 +400,11 @@
             "heading": "",
             "text": "Latent actions supervise robot policies with action-like codes inferred from visual transitions, and their usefulness hinges on two questions: what a code keeps from a transition, and whether it still means the same thing when reused in a different initial state.\n\nThe first is a tension in time: an endpoint difference discards how motion unfolds, while the full sequence admits nuisance variation. The second is left open by reconstruction, which only ever observes a latent together with the state it came from. We argue that both questions can be answered in the same place.\n\nTERRA (Temporal Effect Representation and Relational Alignment) describes a transition by a compact temporal effect, its net feature change together with a low-order within-window dynamics component, and learns a continuous latent from this effect.\n\nThe same effect space then serves as the reference for reuse: Effect-Anchored Transport (EAT) decodes a latent in other initial states and anchors the resulting effect to the one observed at its source, so that the latent is shaped by what it does across contexts rather than only by the transition it came from.\n\nWith frozen linear readers, TERRA predicts actions more accurately than UniVLA and a LAPA-style baseline, degrades more slowly under visual distractors, and keeps transported transitions faithful to the donor action as the recipient context moves farther away; a same-budget control shows that these gains come largely from EAT.\n\nAt matched pretraining scale, the complete system reaches 93.4% average success on LIBERO, compared with 91.8% for UniVLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "TERRA learns continuous latent actions from compact temporal effects of visual transitions, combining net feature change with a low-order within-window dynamics component. Effect-Anchored Transport decodes a latent in other initial states and anchors the resulting effect to the one observed at its source. The authors report more accurate action prediction than UniVLA and a LAPA-style baseline with frozen linear readers, slower degradation under visual distractors, and faithful transported transitions as recipient contexts move farther away. At matched pretraining scale, it reaches 93.4% average LIBERO success versus UniVLA’s 91.8%.",
+          "zh": "TERRA 从视觉转变中提取紧凑的时间效应表示，包括净特征变化和低阶窗口内动态，并据此学习连续潜在动作。效应锚定传输（EAT）在其他初始状态解码潜变量，并将产生的效应锚定到源状态观测效应。作者报告，冻结线性读取器下，TERRA 的动作预测优于 UniVLA 和类 LAPA 基线，对视觉干扰退化较慢，且传输转变能较好保持捐赠动作；同预算对照显示增益主要来自 EAT。匹配预训练规模时，系统在 LIBERO 上平均成功率为 93.4%，UniVLA 为 91.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -427,7 +435,11 @@
             "heading": "",
             "text": "A simulation of a real robot workspace must preserve task-relevant interactions, while policies developed in it must operate on observations available to the real robot. Yet scene reconstruction and policy development are often treated separately.\n\nWe present Agentic Real-to-Sim-to-Real (Agentic RSR), a framework that links scene reconstruction, policy development, and real-robot execution through the same manipulation task.\n\nGiven a workspace video, a task description, and a known robot model, an agent recovers metric scale, iteratively refines the scene using visual feedback, and checks task-relevant interactions in MuJoCo. A coding agent then develops an executable policy, progressing from privileged object poses to visual observations and randomized simulation.\n\nThe policy can interleave multiple observations and actions within one invocation, while the agent uses execution feedback to continue, retry, or revise its approach. A shared task-level interface carries the policy and accumulated experience to the real robot, where fresh observations and safety checks guide execution.\n\nAcross 18 reconstructed scenes involving two robots, the mean four-view Depth MAE against reference depth estimates is 0.1057 m, the mean Lab $\\Delta E_{76}$ is 11.04, and the mean grayscale SSIM is 0.6990.\n\nIn real-robot experiments, the aggregate task success rate reaches 80% of the simulation task success rate, indicating substantial retention of simulated performance on hardware. Code and reconstructed scene data will be made publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Agentic RSR links scene reconstruction, policy development, and real-robot execution through a shared manipulation task. Given workspace video, a task description, and a known robot model, an agent recovers metric scale, refines the scene using visual feedback, and checks task-relevant interactions in MuJoCo. A coding agent develops a policy from privileged object poses toward visual observations and randomized simulation; execution feedback can prompt continuation, retries, or revision. Across 18 reconstructed scenes involving two robots, the authors report depth, color, and structural similarity metrics. In real-robot experiments, aggregate task success reaches 80% of simulation task success.",
+          "zh": "Agentic RSR 将场景重建、策略开发与真实机器人执行连接到同一操作任务中。输入工作区视频、任务描述和已知机器人模型后，智能体恢复度量尺度、依据视觉反馈迭代细化场景，并在 MuJoCo 中检查任务相关交互；编码智能体再从特权物体位姿逐步开发到视觉观测和随机化仿真策略。策略可在一次调用中交替执行多次观测与动作，真实机器人执行则由新观测和安全检查引导。在涉及两种机器人的 18 个重建场景中，作者报告多项深度、颜色及结构相似度指标；真实机器人任务成功率达到仿真成功率的 80%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
