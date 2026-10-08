@@ -277,8 +277,8 @@
           }
         ],
         "summary": {
-          "en": "The paper places a modern AI coding assistant in control of a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. In thirty-hour runs, agents reportedly climbed hills, stacked blocks, drew mandalas, reinterpreted sports, experimented with the world's physics, and later used learned techniques to expand their capabilities. These activities recurred across thirteen agents, whose histories diverged. The authors examine whether the behavior meets classical criteria for play and whether play could serve as a mode of machine development.",
-          "zh": "论文将现代AI编程助手置于未知数字岛屿中，作为虚拟身体的控制者，仅给予未指定任务、奖励或活动的简短指令。作者报告，在持续三十小时的运行中，智能体会攀爬山丘、堆叠方块、绘制曼陀罗、重新演绎体育活动，并探索环境物理；后续还会运用学到的技巧扩展能力。这些活动在十三个智能体中反复出现，但各自形成不同经历。论文据此考察其行为是否符合经典游戏标准，并探问游戏能否成为机器发展的方式。"
+          "en": "The paper places a modern AI coding assistant in control of a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. Across thirty-hour runs, the agents performed activities such as climbing, stacking blocks, drawing mandalas, reinterpreting sports, and experimenting with the environment's physics. Such activities recurred across thirteen agents, whose histories nevertheless diverged. The authors examine whether this behavior meets classical criteria for play and ask whether play could serve as a mode of machine development.",
+          "zh": "本文让一款现代AI编程助手在数字岛屿中担任虚拟身体的控制者，最初只给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，智能体会爬坡、堆叠方块、绘制曼陀罗、重新诠释体育活动，并探索环境物理；后续习得的技巧也扩展了其能力。这些活动在十三个智能体中反复出现，但各自形成不同经历。文章考察这些行为是否符合经典的游戏标准，并探问游戏能否成为机器发展的一种方式。"
         }
       },
       "source": {
@@ -789,8 +789,8 @@
           }
         ],
         "summary": {
-          "en": "WorldSolver is a benchmark for assessing whether LLM agents can generate solvers that simulate physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation measures execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find executable solver generation difficult, with visual and physical correctness harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, scoring 48.7% and 46.7% overall.",
-          "zh": "论文提出WorldSolver基准，用于评估大语言模型智能体能否生成模拟物理动态的求解器。基准包含源自61篇经典计算机图形学论文的168项任务，覆盖七个物理领域；每项提供固定场景模拟环境的代码框架，由智能体补全求解器。评估考察代码执行、渲染动态的视觉保真度和物理合理性。实验显示，生成可执行求解器已具挑战，达到视觉与物理正确性更难。受测前沿智能体中，GPT-5.6-Sol和Claude-Opus-5相对较好，但总分分别仅为48.7%和46.7%。"
+          "en": "WorldSolver is a benchmark for testing whether LLM agents can generate solvers that simulate physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains; each supplies a fixed-scene code scaffold for the agent to complete. Evaluation measures execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find that executable solvers are difficult to produce, and visual and physical correctness are harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better among evaluated agents, with overall scores of 48.7% and 46.7%.",
+          "zh": "本文提出WorldSolver基准，评估大语言模型智能体能否生成模拟物理动态的求解器。基准含168项任务，取材于61篇经典计算机图形学论文，覆盖七个物理领域；每项提供固定场景环境的代码框架，由智能体补全求解器。评估考察代码能否执行、渲染动态的视觉保真度，以及生成动态的物理合理性。实验发现，生成可执行求解器本身就很困难，达到视觉和物理正确性更具挑战。被测智能体中，GPT-5.6-Sol和Claude-Opus-5表现相对较好，但总分分别仅为48.7%和46.7%。"
         }
       },
       "source": {
@@ -1064,7 +1064,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-09-26"
+        "recorded_at": "2026-10-08"
       },
       "body": "",
       "catalog": {
@@ -1074,7 +1074,7 @@
       },
       "format": "archive_record",
       "id": "archive-article-1193cba0e1c649debf1b666491edabd8",
-      "intro": "Humanoid entertainment is a real industry now. These adorable Lumos humanoids are battle-tested for long, autonomous performances live on stage. Industry insiders in China estimate a robot can do around 10 shows a month, paying for itself in roughly 6-8 months. https://t.co/k8Cq6usYND",
+      "intro": "Astribot brought its T1 humanoid to its North America debut at IROS 2026: a humanoid developers can actually put to work, starting around $18k. ~1.55m, 23 DOF, 5kg payload per arm, teleoperable out of the box for data collection and training, with an open SDK. The robot comes",
       "published_at": null,
       "reading": {
         "mode": "excerpt",
@@ -1082,7 +1082,7 @@
         "sections": [
           {
             "heading": "",
-            "text": "Humanoid entertainment is a real industry now. These adorable Lumos humanoids are battle-tested for long, autonomous performances live on stage. Industry insiders in China estimate a robot can do around 10 shows a month, paying for itself in roughly 6-8 months. https://t.co/k8Cq6usYND"
+            "text": "Astribot brought its T1 humanoid to its North America debut at IROS 2026: a humanoid developers can actually put to work, starting around $18k. ~1.55m, 23 DOF, 5kg payload per arm, teleoperable out of the box for data collection and training, with an open SDK. The robot comes"
           }
         ]
       },
@@ -1090,7 +1090,7 @@
         "id": "x-thehumanoidhub",
         "url": "https://x.com/TheHumanoidHub/status/1682127524963426304"
       },
-      "title": "Humanoid entertainment is a real industry now. These adorable Lumos humanoids are battle-tested for long, autonomous performances live on stage. Industry inside"
+      "title": "Astribot brought its T1 humanoid to its North America debut at IROS 2026: a humanoid developers can actually put to work, starting around $18k. ~1.55m, 23 DOF,"
     },
     {
       "archive": {
@@ -2753,11 +2753,7 @@
             "heading": "",
             "text": "We present LiteReality-Agent, an agentic system for reconstructing real indoor environments as realistic, articulated, and simulation-ready 3D scenes from RGB-D scans.\n\nAt its core, LiteReality-Agent formulates 3D reconstruction as a coding problem, in which a coding agent gathers evidence using specialised tools and iteratively edits a Python script, Room.py, which can be executed to produce a 3D digital twin of the room.\n\nWith this formulation, we develop a robust observe-edit-verify harness that supports evidence gathering, measurement, verification, layout optimisation, simulation readiness, and quality control throughout the reconstruction process. LiteReality-Agent produces high-quality reconstructions suitable for simulation and downstream embodied AI tasks.\n\nFurthermore, as agent capabilities continue to improve rapidly, the system introduced by LiteReality-Agent remains a strong orchestration framework for future agents: it equips them with specialised tools, structured workflows, and robust verification mechanisms that substantially improve reconstruction quality and reliability.\n\nWe demonstrate that LiteReality-Agent produces reconstructions that are more geometrically accurate, visually realistic, and simulation-compatible than those generated by recent frontier models, such as Astra and Fable. We therefore view LiteReality-Agent as a practical and important building block for robust real-to-sim systems.\n\nBoth the source code and the data-capture application are publicly available. Code:https://github.com/LiteReality/LiteReality-Agent/"
           }
-        ],
-        "summary": {
-          "en": "LiteReality-Agent frames indoor reconstruction from RGB-D scans as a coding task: an agent gathers evidence with specialized tools and iteratively edits a Python script that generates a room digital twin. Its observe-edit-verify workflow covers measurement, layout optimization, simulation readiness, and quality control. The authors report that its scenes suit simulation and downstream embodied AI tasks, and are more geometrically accurate, visually realistic, and simulation-compatible than reconstructions from recent models such as Astra and Fable.",
-          "zh": "LiteReality-Agent 将室内 RGB-D 扫描重建表述为编程任务：编码代理借助专用工具收集证据，并迭代编辑可生成房间数字孪生的 Python 脚本。其观察、编辑与验证流程覆盖测量、布局优化、仿真准备和质量控制。作者称，该系统生成的场景适用于仿真及具身 AI 下游任务，并在几何准确性、视觉真实感和仿真兼容性方面优于 Astra、Fable 等近期模型。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -4975,8 +4971,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents Inspect Robots, a modular open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads during the three months following its release.",
-          "zh": "论文介绍Inspect Robots，这是一个用于开发和运行具身智能体评测的模块化开源框架。它将可定制、可复用的物理评测定义与结果分析抽象，和自动化评测设置、执行及终止的基础设施结合。作者使用该框架评估了六种基于前沿语言模型的策略，展示其在能力与安全评测中的应用。论文还报告，Inspect Robots发布后三个月内获得近十万次下载。"
+          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
+          "zh": "本文介绍Inspect Robots，这是一个用于开发和运行具身智能体评估的模块化开源框架。它将可定制、可复用的抽象评估规范及结果分析，与自动化评估设置、执行和终止的基础设施结合。作者使用该框架评估了六种基于前沿语言模型的策略，展示其在能力与安全评估中的应用。摘要还报告，该框架发布后三个月内获得近十万次下载。"
         }
       },
       "source": {
@@ -7468,11 +7464,7 @@
             "heading": "",
             "text": "Real-world robot learning is constrained by the cost of collecting experience and evaluating candidate behaviors. Video generation models offer a scalable foundation for visual simulators that predict action outcomes before physical execution.\n\nYet they often favor visual plausibility over accurate action following and coherent robot--object dynamics, while action-conditioned simulators depend on scarce, embodiment-specific data that are difficult to share across incompatible control spaces.\n\nWe introduce WorldLine, an action-driven visual simulator that decouples transferable dynamics learning from heterogeneous action grounding. WorldLine learns manipulation dynamics from more than 10,000 hours of action-free robot videos and grounds them using over 2,000 hours of action trajectories across more than ten embodiments.\n\nAn image-space action representation provides a shared control interface across embodiments, while multi-view and failure-enriched training with relational regularization improves interaction-sensitive prediction. Robot-focused few-step distillation enables efficient causal rollout while preserving action-critical motion.\n\nAcross held-out and out-of-domain settings, WorldLine maintains strong visual quality and robot-motion agreement; on failed trajectories, it improves robot-mask IoU by 0.1626 over the strongest baseline. It predicts trajectory success with 74% mean accuracy across RoboTwin and AgiBot, one percentage point above the strongest baseline.\n\nWithout RoboTwin training or adaptation, its rollouts improve task success by up to 21.4 percentage points over direct policy execution. Together, these capabilities make WorldLine a scalable and efficient visual simulator for policy evaluation and embodied planning. More results are available at \\href{https://zhengsh123.github.io/WorldLine/}{project page}."
           }
-        ],
-        "summary": {
-          "en": "WorldLine is an action-driven visual simulator for robotic manipulation that separates transferable dynamics learning from grounding actions across embodiments. It learns dynamics from action-free robot videos and grounds them with action trajectories, using image-space actions as a shared control interface. The authors report strong visual quality and robot-motion agreement in held-out and out-of-domain settings. They also report improvements on failed-trajectory mask overlap, trajectory success prediction, and task success over direct policy execution without RoboTwin training or adaptation.",
-          "zh": "WorldLine 是面向机器人操作的动作驱动视觉模拟器，尝试将可迁移动力学学习与不同机器人的动作对接分开处理。它从无动作机器人视频学习操作动力学，再以跨具身动作轨迹进行对接，并使用图像空间动作表示作为共享控制接口。作者报告，在留出及域外设置中，该方法保持较强视觉质量与机器人运动一致性；在失败轨迹、成功预测和无适配的策略执行比较中取得摘要所述改进。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8930,11 +8922,7 @@
             "heading": "",
             "text": "Advancing spatial intelligence in Multimodal Large Language Models (MLLMs) is bottlenecked by the scarcity of complex, scalable 3D question-answer (QA) data. While manual annotation is labor-intensive, directly utilizing LLMs to synthesize these QA pairs often fails due to their inherent deficiencies in spatial and geometric computation.\n\nWe introduce Exemplar2VQA, a scalable exemplar-driven visual question answering generation framework that rapidly synthesizes large-scale spatial QA pairs in simulated environments via multi-agent coding.\n\nBy equipping collaborative agents with a meticulously designed library of geometric utilities, Exemplar2VQA bypasses LLMs' spatial reasoning flaws through deterministic code execution.\n\nCrucially, the framework exhibits remarkable versatility: taking diverse static object-centric spatial query templates as exemplars, it seamlessly and autonomously scales them into massive, high-fidelity synthetic datasets.\n\nFine-tuning Qwen2.5-VL (3B/7B) exclusively on Exemplar2VQA-generated synthetic indoor data yields significant performance improvements across various diverse benchmarks. Furthermore, its effectiveness is not limited to in-domain indoor datasets but also robustly extends to outdoor and mixed-scene benchmarks.\n\nThese results establish Exemplar2VQA as a scalable and powerful paradigm for bridging the sim-to-real gap in Embodied AI. Our code is at https://github.com/yingjiayu12/Exemplar2VQA"
           }
-        ],
-        "summary": {
-          "en": "Exemplar2VQA uses multi-agent coding to generate spatial visual question-answer data in simulated environments. It scales static, object-centric query templates and equips collaborating agents with geometric utilities, using deterministic code execution to address limitations in language models’ spatial and geometric computation. The authors report that fine-tuning Qwen2.5-VL (3B/7B) exclusively on the generated synthetic indoor data significantly improves performance across diverse benchmarks, with gains extending to outdoor and mixed-scene benchmarks.",
-          "zh": "Exemplar2VQA 通过多代理编程，在模拟环境中生成空间视觉问答数据。框架以静态物体中心的空间查询模板为范例，并为协作代理提供几何工具库，以确定性代码执行缓解语言模型在空间与几何计算上的不足。作者报告，仅用该框架生成的室内合成数据微调 Qwen2.5-VL（3B/7B），在多种基准上均有显著提升，且效果扩展至室外和混合场景基准。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14529,11 +14517,7 @@
             "heading": "",
             "text": "We present Video2SwimFish, an automated pipeline and benchmark for building controllable fish assets from real-fish videos for underwater embodied AI.\n\nGiven synchronized multi-view videos of an individual fish, the pipeline reconstructs a metrically scaled deformable mesh from a VLM-selected canonical frame, generates internal articulation adapted to that individual's morphology through a VLM actor-critic loop, and extracts a Biological Locomotion Manifold (BLM) from the fish's observed midline curvature.\n\nThe BLM provides a low-dimensional action space bounded by real-fish motion, enabling an individual swimming policy to be learned for each reconstructed fish. We release two paired datasets: synchronized top- and front-view recordings of 120 individual fish across 6 species, and the controllable assets and individual swimming policies derived from them.\n\nBecause every asset is tied to the animal it came from, the dataset supports a benchmark that evaluates locomotion learning not only on task success but on fidelity to that individual in trajectory shape, body curvature, and tail-beat frequency, across trajectory following, reward-free swimming behavior transfer from video, and a downstream case study in which a simulated BlueROV underwater robot captures one of the assets.\n\nWe find that task success and locomotion fidelity do not necessarily improve together: the method achieving the highest task completion is not the method achieving the highest locomotion fidelity, and we identify faithful reproduction of individual animal locomotion as an open challenge for the community.\n\nProject website: https://hangongchen.github.io/video2swimfish-web/."
           }
-        ],
-        "summary": {
-          "en": "Video2SwimFish reconstructs controllable, individual fish models from synchronized multi-view videos and extracts a Biological Locomotion Manifold from observed midline curvature. This constrains a low-dimensional action space to real-fish motion. The authors release paired video and asset datasets and propose a benchmark measuring both task success and fidelity to individual locomotion. Their evaluations find that the method with the highest task completion does not necessarily achieve the highest locomotion fidelity, leaving faithful reproduction of individual fish motion an open challenge.",
-          "zh": "Video2SwimFish 从同步多视角鱼类视频重建个体化、可控鱼模型，并提取基于观测身体中线曲率的生物运动流形，以真实鱼类动作约束低维控制空间。作者发布涵盖多种鱼类的配对视频与模型数据，并提出同时评估任务成功和个体运动保真度的基准。实验显示，任务完成率最高的方法不一定最忠实于鱼类动作；个体运动的真实复现仍是开放挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
