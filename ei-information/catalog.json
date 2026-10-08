@@ -277,8 +277,8 @@
           }
         ],
         "summary": {
-          "en": "The authors place a modern AI coding assistant in a virtual body on an unknown digital island, giving it only a minimal instruction that specifies no task, reward, or activity. In thirty-hour runs, agents repeatedly climbed, stacked blocks, drew mandalas, reinterpreted sports, explored the world’s physics, and learned techniques that expanded later capabilities. These patterns appeared across thirteen agents, whose histories also diverged. The paper examines whether this behavior meets classical criteria for play and whether play could serve as a mode of machine development.",
-          "zh": "研究将现代 AI 编码助手置于未知数字岛屿中的虚拟身体内，只给出未指定任务、奖励或活动的简短指令。作者报告，智能体在长时间运行中反复爬坡、堆叠方块、绘制曼陀罗、改编体育活动并探索环境物理，还学习了扩展后续行动能力的技巧。十三个智能体出现了部分重复但各自不同的活动历程。论文据此考察这些行为是否符合经典游戏标准，以及游戏能否成为机器发展的方式。"
+          "en": "The paper places a modern AI coding assistant in control of a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. In thirty-hour runs, agents reportedly climbed hills, stacked blocks, drew mandalas, reinterpreted sports, experimented with the world's physics, and later used learned techniques to expand their capabilities. These activities recurred across thirteen agents, whose histories diverged. The authors examine whether the behavior meets classical criteria for play and whether play could serve as a mode of machine development.",
+          "zh": "论文将现代AI编程助手置于未知数字岛屿中，作为虚拟身体的控制者，仅给予未指定任务、奖励或活动的简短指令。作者报告，在持续三十小时的运行中，智能体会攀爬山丘、堆叠方块、绘制曼陀罗、重新演绎体育活动，并探索环境物理；后续还会运用学到的技巧扩展能力。这些活动在十三个智能体中反复出现，但各自形成不同经历。论文据此考察其行为是否符合经典游戏标准，并探问游戏能否成为机器发展的方式。"
         }
       },
       "source": {
@@ -789,8 +789,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents WorldSolver, a benchmark for evaluating whether LLM agents can simulate physical dynamics by generating solver code. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task supplies a fixed-scene code scaffold for the agent to complete. Evaluation measures successful execution, visual fidelity to intended behavior, and physical plausibility. Experiments with frontier agents find that producing executable solvers is difficult, while achieving visual and physical correctness is harder still. The comparatively stronger GPT-5.6-Sol and Claude-Opus-5 receive overall scores of 48.7% and 46.7%, respectively; the authors describe the benchmark as an early step.",
-          "zh": "论文提出 WorldSolver 基准，用于评估大语言模型智能体能否通过生成求解器代码模拟物理动力学。基准包含 168 项任务，源自 61 篇经典计算机图形学论文，覆盖七个物理领域；每项提供固定场景环境的代码框架，由智能体补全求解器。评估考察代码能否执行、渲染结果的视觉保真度以及生成动力学的物理合理性。对前沿智能体的实验显示，生成可执行求解器本身就有难度，达到视觉与物理正确性更困难。作者报告，表现相对较好的 GPT-5.6-Sol 和 Claude-Opus-5 总分分别为 48.7% 和 46.7%，并将该基准定位为早期探索。"
+          "en": "WorldSolver is a benchmark for assessing whether LLM agents can generate solvers that simulate physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation measures execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find executable solver generation difficult, with visual and physical correctness harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, scoring 48.7% and 46.7% overall.",
+          "zh": "论文提出WorldSolver基准，用于评估大语言模型智能体能否生成模拟物理动态的求解器。基准包含源自61篇经典计算机图形学论文的168项任务，覆盖七个物理领域；每项提供固定场景模拟环境的代码框架，由智能体补全求解器。评估考察代码执行、渲染动态的视觉保真度和物理合理性。实验显示，生成可执行求解器已具挑战，达到视觉与物理正确性更难。受测前沿智能体中，GPT-5.6-Sol和Claude-Opus-5相对较好，但总分分别仅为48.7%和46.7%。"
         }
       },
       "source": {
@@ -2720,11 +2720,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. It produces diverse, interactive, customizable environments that pass validation for navigation, interaction, and manipulation tasks. The authors illustrate the platform with generated scenes and simple baselines, and report that policies trained without explicit mapping or human task supervision achieve competitive results on multiple benchmarks spanning navigation, rearrangement, and manipulation. EnvDreamer also supports image-conditioned reconstruction; the authors release a dataset of 20,000 environments with task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文提出 EnvDreamer，一个利用大型语言模型和视觉语言模型生成虚幻引擎 5 环境的框架，面向具身智能与机器人训练。该平台可生成多样、可交互、可定制且通过验证的虚拟环境，用于导航、交互和操作任务。作者展示生成场景与简单基线，并报告在未使用显式建图或人工任务监督的条件下训练的策略，在多个涵盖导航、重排和操作的具身基准上取得有竞争力的结果。框架还支持图像条件重建；作者发布包含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2757,11 +2753,7 @@
             "heading": "",
             "text": "We present LiteReality-Agent, an agentic system for reconstructing real indoor environments as realistic, articulated, and simulation-ready 3D scenes from RGB-D scans.\n\nAt its core, LiteReality-Agent formulates 3D reconstruction as a coding problem, in which a coding agent gathers evidence using specialised tools and iteratively edits a Python script, Room.py, which can be executed to produce a 3D digital twin of the room.\n\nWith this formulation, we develop a robust observe-edit-verify harness that supports evidence gathering, measurement, verification, layout optimisation, simulation readiness, and quality control throughout the reconstruction process. LiteReality-Agent produces high-quality reconstructions suitable for simulation and downstream embodied AI tasks.\n\nFurthermore, as agent capabilities continue to improve rapidly, the system introduced by LiteReality-Agent remains a strong orchestration framework for future agents: it equips them with specialised tools, structured workflows, and robust verification mechanisms that substantially improve reconstruction quality and reliability.\n\nWe demonstrate that LiteReality-Agent produces reconstructions that are more geometrically accurate, visually realistic, and simulation-compatible than those generated by recent frontier models, such as Astra and Fable. We therefore view LiteReality-Agent as a practical and important building block for robust real-to-sim systems.\n\nBoth the source code and the data-capture application are publicly available. Code:https://github.com/LiteReality/LiteReality-Agent/"
           }
-        ],
-        "summary": {
-          "en": "LiteReality-Agent reconstructs indoor environments from RGB-D scans as realistic, articulated, simulation-ready 3D scenes. It frames reconstruction as a coding task: an agent gathers evidence with specialized tools and iteratively edits an executable Python script to create a digital twin. Its observe-edit-verify workflow supports measurement, verification, layout optimization, simulation readiness, and quality control. The authors report better geometric accuracy, visual realism, and simulation compatibility than recent frontier models, and state that the code and data-capture application are publicly available.",
-          "zh": "LiteReality-Agent 将真实室内环境重建表述为编码问题：智能体使用专用工具收集证据，并迭代编辑可执行的 Python 脚本，以从 RGB-D 扫描生成逼真、可活动且适用于仿真的三维场景。其观察、编辑与验证流程支持测量、核验、布局优化、仿真准备和质量控制。作者称，该系统生成的重建在几何精度、视觉真实感和仿真兼容性方面优于近期前沿模型；摘要还称代码和数据采集应用已公开。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -4979,8 +4971,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
-          "zh": "论文介绍 Inspect Robots，这是一个用于开发和运行具身智能体评估的模块化开源框架。它将可定制、可复用的物理评估描述与结果分析抽象结合，并提供自动化评估设置、执行和终止的基础设施。作者用该框架评估了六种基于前沿语言模型的策略，以展示其能力与安全评估用途。摘要还报告，该框架发布后三个月内获得近十万次下载。"
+          "en": "The paper presents Inspect Robots, a modular open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads during the three months following its release.",
+          "zh": "论文介绍Inspect Robots，这是一个用于开发和运行具身智能体评测的模块化开源框架。它将可定制、可复用的物理评测定义与结果分析抽象，和自动化评测设置、执行及终止的基础设施结合。作者使用该框架评估了六种基于前沿语言模型的策略，展示其在能力与安全评测中的应用。论文还报告，Inspect Robots发布后三个月内获得近十万次下载。"
         }
       },
       "source": {
@@ -5207,11 +5199,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ],
-        "summary": {
-          "en": "The paper characterizes vision-language-action models under batch-one inference for robot control, where each control period imposes a deadline and overruns leave robots acting on stale observations. The authors profile four representative models on an edge GPU server and two onboard SoCs, using single-inference measurements and 43,200 closed-loop episodes. They report that action tensor dimensionality and platform balance affect memory or compute bottlenecks, while frequency scaling produces platform-dependent energy-latency tradeoffs. Overlapping inference with action execution creates accuracy, speed, and energy tradeoffs, with no configuration Pareto-dominant across deployment SLOs.",
-          "zh": "论文研究视觉-语言-动作模型在机器人批量为一的控制推理场景中的运行特征。控制周期设定推理时限，超时会使机器人依赖过时观测。作者在一台边缘 GPU 服务器和两种机载 SoC 上分析四种代表性模型，并进行单次推理剖析及 43,200 个闭环回合。结果显示，动作张量维度、平台配置会影响内存或计算瓶颈；频率调节的能耗—延迟折中因平台而异。闭环中推理与动作执行重叠带来准确度、速度和能耗权衡，没有一种配置在所有部署服务目标上占优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14239,11 +14227,7 @@
             "heading": "",
             "text": "Generative and embodied AI services exchange token streams within continuing inference and control loops. Their communication requirements depend on each token set's purpose, useful timing, and execution context.\n\nThis article organizes these properties into service, temporal, and stateful semantics and proposes a token service interface (TSI) between applications, radio access networks (RANs), and edge runtimes.\n\nTSI binds delivery requirements, readiness forecasts, and execution-state references to each schedulable token set, specifying field ownership, versioned updates, and admission feedback.\n\nA drone inspection case study over a decoupled RAN illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay."
           }
-        ],
-        "summary": {
-          "en": "The article categorizes the communication properties of token streams in ongoing generative and embodied AI inference and control loops as service, temporal, and stateful semantics. It proposes a token service interface connecting applications, radio access networks, and edge runtimes. The interface associates schedulable token sets with delivery requirements, readiness forecasts, and execution-state references, and defines field ownership, versioned updates, and admission feedback. A drone-inspection case study over a decoupled RAN illustrates importance-aware allocation, advance preparation, and selective state migration.",
-          "zh": "文章针对生成式和具身 AI 在持续推理与控制循环中交换 token 流的需求，将 token 集的用途、时效和执行上下文归纳为服务、时间和状态语义，并提出连接应用、无线接入网与边缘运行时的 token 服务接口。接口为可调度 token 集关联交付要求、就绪预测和执行状态引用，并规定字段归属、版本更新及准入反馈。解耦式无线接入网中的无人机巡检案例展示了重要性感知的无线资源分配、及时交付的预先准备，以及权衡中断与转发延迟的选择性状态迁移。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14373,11 +14357,7 @@
             "heading": "",
             "text": "Mobile embodied AI networks (MEAN) enable embodied agents to perceive, reason, communicate, and act in wireless environments. In such networks, agent mobility can improve channel conditions, while semantic compression can reduce transmission payloads. However, movement consumes energy, and stronger compression incurs additional computational cost.\n\nThis paper studies joint movement, semantic compression, and transmit power design for an uplink MEAN system. We formulate a max-min energy efficiency (EE) problem by jointly optimizing transmit power, movement distance, and semantic compression ratio under controllable power constraints.\n\nThe problem is non-convex due to the coupled signal-to-interference-plus-noise ratio (SINR), mobility-dependent channel gains, and fractional EE objective.\n\nTo solve it, we propose an alternating optimization (AO)-Dinkelbach algorithm, where the fractional objective is handled by the Dinkelbach transformation, transmit power is updated via successive convex approximation (SCA), and movement distance is updated by coordinate-wise grid search.\n\nSimulation results show that the proposed scheme outperforms no-mobility and no-compression baselines, demonstrating the benefit of jointly exploiting mobility control, semantic compression, and power allocation in MEAN."
           }
-        ],
-        "summary": {
-          "en": "This paper studies joint movement distance, semantic compression ratio, and transmit power design for an uplink mobile embodied AI network, maximizing minimum energy efficiency under controllable power constraints. The authors describe a non-convex problem arising from coupled SINR, mobility-dependent channel gains, and a fractional objective. Their alternating optimization–Dinkelbach algorithm uses a Dinkelbach transformation, successive convex approximation for power updates, and coordinate-wise grid search for movement distance. Simulations show the scheme outperforming baselines without mobility or compression.",
-          "zh": "本文研究移动具身 AI 网络上行系统中移动距离、语义压缩率和发射功率的联合设计，以可控功率约束下的最大最小能效为目标。作者指出，信干噪比、受移动影响的信道增益及分式能效目标相互耦合，使问题非凸；为此提出交替优化与 Dinkelbach 算法，分别通过 Dinkelbach 变换、逐次凸近似和逐坐标网格搜索更新目标、功率与移动距离。仿真结果显示，该方案优于无移动和无压缩基线。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14537,11 +14517,7 @@
             "heading": "",
             "text": "We present Video2SwimFish, an automated pipeline and benchmark for building controllable fish assets from real-fish videos for underwater embodied AI.\n\nGiven synchronized multi-view videos of an individual fish, the pipeline reconstructs a metrically scaled deformable mesh from a VLM-selected canonical frame, generates internal articulation adapted to that individual's morphology through a VLM actor-critic loop, and extracts a Biological Locomotion Manifold (BLM) from the fish's observed midline curvature.\n\nThe BLM provides a low-dimensional action space bounded by real-fish motion, enabling an individual swimming policy to be learned for each reconstructed fish. We release two paired datasets: synchronized top- and front-view recordings of 120 individual fish across 6 species, and the controllable assets and individual swimming policies derived from them.\n\nBecause every asset is tied to the animal it came from, the dataset supports a benchmark that evaluates locomotion learning not only on task success but on fidelity to that individual in trajectory shape, body curvature, and tail-beat frequency, across trajectory following, reward-free swimming behavior transfer from video, and a downstream case study in which a simulated BlueROV underwater robot captures one of the assets.\n\nWe find that task success and locomotion fidelity do not necessarily improve together: the method achieving the highest task completion is not the method achieving the highest locomotion fidelity, and we identify faithful reproduction of individual animal locomotion as an open challenge for the community.\n\nProject website: https://hangongchen.github.io/video2swimfish-web/."
           }
-        ],
-        "summary": {
-          "en": "Video2SwimFish is an automated pipeline and benchmark for creating controllable fish assets from real-fish videos. From synchronized multi-view footage of an individual, it reconstructs a metrically scaled deformable mesh, generates articulation adapted to the fish's morphology, and extracts a low-dimensional locomotion manifold bounded by observed motion. The authors release paired recordings and derived assets and policies for 120 fish across six species. The benchmark evaluates task success and individual locomotion fidelity. They report that these measures do not necessarily improve together and identify faithful reproduction as an open challenge.",
-          "zh": "Video2SwimFish 是从真实鱼类视频构建可控鱼类资产的自动化流程和基准。输入为单条鱼的同步多视角视频；流程重建按尺度度量的可变形网格，为个体形态生成内部关节结构，并从观测到的中线曲率提取受真实运动约束的低维生物运动流形。作者发布了涵盖 6 个物种、120 条鱼的配对数据集及相应资产和游泳策略。基准评估任务成功与个体运动保真度；作者发现二者未必同步提升，并指出复现个体运动仍是开放挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
