@@ -4387,7 +4387,11 @@
             "heading": "",
             "text": "Visual disruptions can arise while a robot is executing a task, leaving a vision-language-action (VLA) policy to respond without knowing the disruption type or timing.\n\nWe introduce Self-supervised Adaptation from Leftover Trajectories (SALT), which uses the leftover trajectory, the unexecuted part of the previous action chunk, as self-supervision for test-time adaptation.\n\nBecause consecutive chunks overlap in time, the leftover provides a temporally aligned target for the current prediction over the same future control interval. At the onset of a visual shift, the leftover can retain a plan formed before the corruption, so updating the policy toward it anchors the adaptation across the shift (Transition Anchoring).\n\nSALT keeps the adapted policy and regenerates the current chunk, whose leftover becomes the target at the next replan, carrying the correction forward along the execution trajectory (Sequential Correction Propagation).\n\nSupervision comes entirely from the policy's own predictions, requiring no disruption annotations, expert actions, or target-domain demonstrations, and a lightweight adaptation gate calibrated only on nominal trajectories decides when updates begin.\n\nOn LIBERO-10, SALT increases average success across five persistent visual corruptions from 43.9% to 53.2% with SmolVLA and from 58.7% to 66.0% with GR00T N1.7, while largely preserving nominal performance. On a real robot, it raises task progress averaged over digital and physical disruptions from 0.49 to 0.61."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SALT, a self-supervised test-time adaptation method that uses the unexecuted remainder of a previous action chunk to supervise the current prediction over an aligned future interval. At a visual shift, this remainder can preserve a pre-corruption plan and anchor adaptation; regenerated chunks then carry corrections forward. SALT relies on the policy’s own predictions and a gate calibrated on nominal trajectories. The authors report improved average success under five persistent visual corruptions on LIBERO-10 with two models, largely preserved nominal performance, and higher average task progress under digital and physical disruptions on a real robot.",
+          "zh": "论文提出自监督测试时适应方法 SALT，利用上一动作块尚未执行的轨迹部分，为当前预测提供时间对齐的监督。视觉变化出现时，这段剩余轨迹可保留变化前的计划，用于锚定适应；后续重新生成的动作块又提供下一轮监督，以沿执行过程传播修正。方法仅依赖策略自身预测，并通过仅在正常轨迹上校准的门控决定何时更新。在 LIBERO-10 的五种持续视觉扰动下，两种模型的平均成功率均提高且基本维持正常表现；真实机器人实验中，数字与物理扰动下的平均任务进度也有所提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4418,7 +4422,11 @@
             "heading": "",
             "text": "Robots that autonomously determine their actions from language instructions and sensory observations could perform new contact-rich manipulation tasks without task-specific training or hand-designed rules. To perform these tasks, robots must infer how objects contact one another and move as a result, then select actions.\n\nFor contact inference and action selection, prior approaches involve designing estimation models and tactile feedback control laws, or learning models for object-motion estimation, action-outcome prediction, and action selection from tactile data.\n\nInstead, we propose TacZero, which uses a pretrained general-purpose vision-language model (VLM) to interpret visual and tactile observations and select robot actions without additional tactile or manipulation training or task-specific rules for contact interpretation or action selection.\n\nTacZero provides the VLM with camera images, robot state, and three-axis tactile responses represented as numerical values or vectors overlaid on the images. From these observations and interaction history, the VLM generates commands specifying target end-effector positions and gripper opening or closing, which a low-level controller executes.\n\nIn real-world cylindrical-peg insertion experiments, TacZero succeeded in 15 of 20 trials with numerical tactile input, compared with 10 of 20 without tactile input. This study provides a concrete starting point for further research on contact-rich manipulation using general-purpose VLMs and highlights challenges in pursuing this direction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TacZero, which uses a pretrained general-purpose vision-language model to interpret camera images, robot state, three-axis tactile responses, and interaction history, then produce end-effector position and gripper commands for a low-level controller. It requires no additional tactile or manipulation training and uses no task-specific rules for contact interpretation or action selection. In real-world cylindrical-peg insertion experiments, it succeeded in 15 of 20 trials with numerical tactile input, versus 10 of 20 without tactile input. The authors describe the study as a starting point and note challenges for this research direction.",
+          "zh": "论文提出 TacZero，使用预训练通用视觉语言模型解释相机图像、机器人状态及三轴触觉信息，并结合交互历史生成末端位置和夹爪开合指令，由低层控制器执行。该方法不需要额外的触觉或操作训练，也不依赖针对任务设计的接触解释或动作选择规则。在真实圆柱销插入实验中，数值形式触觉输入时20次试验成功15次，不提供触觉时成功10次。作者将研究定位为通用视觉语言模型用于接触丰富操作的起点，并指出这一方向仍面临挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4449,7 +4457,11 @@
             "heading": "",
             "text": "World models endow perceptual systems with the ability to predict how scenes evolve under interaction. They are most beneficial when trained on diverse volumes of data, to instill a rich prior into downstream applications.\n\nExisting methods typically require robot action labels to learn action-conditioned 3D dynamics, which excludes web video data from the training pool. We study 3D point track completion as a pre-training objective for learning transferable 3D dynamics without robot data.\n\nGiven a single RGB-D observation and sparse partial 3D trajectories (tracks), we predict future 3D tracks of all observed points. We show this objective produces a rich 3D dynamics prior, without requiring robot action labels.\n\nWe contribute a diverse dataset of 2.9 million synthetic frames spanning deformable, articulated, and rigid objects, and use it to train PointZero. We show that a flexible and expressive transformer, PointZero, outperforms prior methods on the same data.\n\nWe demonstrate the utility of our pre-training objective by post-training PointZero for two downstream applications: （1） action-conditioned 3D dynamics prediction and （2） imitation learning. When fine-tuned to condition on end-effector pose, PointZero outperforms the baselines on the recent PGND 3D dynamics benchmark.\n\nWhen fine-tuned to predict robot actions and 3D tracks, PointZero outperforms or matches the baselines on 6/7 simulated and real-world robot manipulation tasks. We furthermore evaluate training PointZero from scratch to isolate the benefits of our proposed architecture from those of our proposed pre-training objective and dataset.\n\nWe release the dataset, checkpoints, and full training recipe."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies 3D point-track completion as a pretraining objective for transferable 3D dynamics without robot action labels. Given one RGB-D observation and sparse partial tracks, the model predicts future 3D tracks for observed points. The authors create a synthetic dataset spanning deformable, articulated, and rigid objects and train PointZero, which they report outperforms prior methods on the same data. After fine-tuning, it outperforms baselines on the PGND dynamics benchmark and matches or exceeds them on six of seven simulated and real-world manipulation tasks. Training from scratch is also evaluated to isolate architecture and pretraining contributions.",
+          "zh": "论文研究以三维点轨迹补全作为预训练目标，在给定单张 RGB-D 观测和稀疏部分轨迹时，预测所有可见点的未来三维轨迹，从而学习不依赖机器人动作标签的可迁移三维动力学。作者构建了涵盖可变形、可关节运动及刚体物体的合成数据集，并用其训练 PointZero。报告称，该模型在同数据比较中优于先前方法；微调后，在 PGND 动力学基准上优于基线，并在七项模拟及真实机器人操作任务中的六项达到或超过基线。研究还通过从头训练评估架构与预训练目标、数据集的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4480,7 +4492,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) predict visual futures and robot actions, yet they remain susceptible to task-incomplete imagination, where plausible, action-consistent predictions omit the transition needed for task completion.\n\nIn this paper, we show that this failure is not inherent to the world model backbone, but emerges when adapted for short-chunk control, which can repeatedly favor plausible local continuations over task-completing transitions.\n\nTo address this, we introduce Completion Aware Guidance (CAG), a training-free sampling method that guides generation toward task completion. Across representative WAMs, CAG improves success from 64% to 70% on a RoboTwin 2.0 subset and from 69% to 75% in zero-shot simulation, while reducing task-incomplete imagination from 79% to 40%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines task-incomplete imagination in World Action Models: plausible, action-consistent visual futures can omit transitions needed to finish a task. The authors argue that this failure arises from adaptation for short-chunk control rather than being inherent to the world-model backbone. They propose Completion Aware Guidance, a training-free sampling method intended to steer generation toward completion. Across representative models, reported success rises from 64% to 70% on a RoboTwin 2.0 subset and from 69% to 75% in zero-shot simulation, while task-incomplete imagination falls from 79% to 40%.",
+          "zh": "论文讨论世界动作模型在短动作块控制中可能产生任务未完成的想象：预测虽看似合理且与动作一致，却遗漏完成任务所需的状态转变。作者认为，这种失效源于短块控制适配方式，而非世界模型骨干本身，并提出无需训练的采样方法 Completion Aware Guidance，引导生成走向任务完成。在 RoboTwin 2.0 的一个子集和零样本仿真中，报告的成功率分别从64%升至70%、从69%升至75%；任务未完成想象比例从79%降至40%。这些结果限于摘要所述评测场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
