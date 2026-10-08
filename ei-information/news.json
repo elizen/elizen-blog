@@ -2386,7 +2386,11 @@
             "heading": "",
             "text": "Despite rapid progress in robotics, complex or long-horizon tasks remain a fundamental challenge. Most current approaches follow an open-loop paradigm with limited reasoning and no feedback, resulting in poor robustness to environmental changes and severe error accumulation.\n\nWe present RoboPilot, a dual-thinking closed-loop agentic framework for robotic manipulation that supports adaptive reasoning for complex tasks in real-world dynamic environments.\n\nRoboPilot leverages primitive actions for structured task planning and flexible action generation as a agentic system, while introducing feedback to enable replanning from dynamic changes and execution errors. Chain-of-Thought reasoning further enhances high-level task planning and guides low-level action generation.\n\nThe agentic system dynamically switches between fast and slow thinking to balance efficiency and accuracy. To systematically evaluate the robustness of RoboPilot in diverse robot manipulation scenarios, we introduce RoboPilot-Bench, a benchmark spanning 21 tasks across 10 categories, including infeasible-task recognition and dynamic recovery.\n\nExperiments show that RoboPilot outperforms state-of-the-art baselines by 11% in task success rate, and the real-world deployment on an industrial robot further demonstrates its robustness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboPilot, a dual-thinking closed-loop framework for manipulation in dynamic real-world settings. It combines structured primitive-action planning and flexible action generation with feedback-driven replanning, and switches between fast and slow reasoning to balance efficiency and accuracy. The authors introduce RoboPilot-Bench, covering 21 tasks in 10 categories, including infeasible-task recognition and dynamic recovery. Experiments report an 11% task-success-rate improvement over state-of-the-art baselines; deployment on an industrial robot is also reported as evidence of robustness.",
+          "zh": "论文提出 RoboPilot，一种用于动态真实环境机器人操作的双思维闭环框架，结合结构化原始动作规划、灵活动作生成和反馈重规划，并通过快慢思维切换平衡效率与准确性。作者还推出 RoboPilot-Bench，涵盖十类共21项任务，包括不可行任务识别与动态恢复。实验显示，RoboPilot 的任务成功率比所比较的先进基线高11%；工业机器人上的真实部署进一步展示了其鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2417,7 +2421,11 @@
             "heading": "",
             "text": "Interpretability offers a solution to safe autonomy by providing transparency into an agent's underlying decision-making model. Within sequential-decision making tasks, differentiable decision trees (DDTs) are one approach to such interpretability, maintaining automatic-differentiable policies while providing humans with a discrete tree-based visualization.\n\nNonetheless, current implementations of DDTs are not well-suited for sequential-decision making domains, as there exists an inherent mismatch between a tree's single-timestep behavior and a human's multi-timestep planning.\n\nOur work thus introduces time as a new dimension of interpretability, coined as temporal interpretability, and demonstrates how temporal abstractions via action chunking improve it. We achieve this by first introducing two novel policy gradient algorithms that incorporate action chunking.\n\nAdditionally, to maintain parameter-efficient trees, we develop an information-theoretic tree restructuring algorithm that modifies the tree during training.\n\nAcross four simulation environments, we find that warm-starting action chunked DDTs from a distilled action chunked policy is the most effective way to obtain temporally interpretable trees: they match neural network policies in three of the four domains while using up to 80$\\%$ fewer parameters. Our code is available at https://github.com/ei5uke/temp-interp."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses a mismatch between the single-timestep behavior of differentiable decision trees and human multi-step planning in sequential tasks. It introduces temporal interpretability through action chunking, proposes two policy-gradient algorithms that incorporate chunking, and develops an information-theoretic method for restructuring trees during training to preserve parameter efficiency. Across four simulation environments, the authors find that trees warm-started from a distilled action-chunked policy are most effective: they match neural-network policies in three domains while using up to 80% fewer parameters.",
+          "zh": "论文针对可微决策树在序列决策中的单时间步表示与人类多步规划之间的不匹配，提出“时间可解释性”概念，并以动作分块作为时间抽象。作者介绍两种纳入动作分块的策略梯度算法，以及一种训练期间重构决策树的信息论算法，以保持参数效率。在四个仿真环境中，作者发现，从蒸馏后的分块策略暖启动的树效果最好；它们在四个领域中的三个达到与神经网络策略相当的表现，参数最多减少80%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2448,7 +2456,11 @@
             "heading": "",
             "text": "Recent advances in multimodal foundation models have made them capable generalist physical agents for a range of manipulation tasks.\n\nHowever, successful operation in an unfamiliar environment may require an agent to seek task-relevant information through interaction when it is absent from the observations: it may need to determine where a relevant object is, inspect an unobserved property, or discover the effect of an unfamiliar tool.\n\nWe thus introduce RoboQuest, a benchmark for goal-directed embodied exploration, where agents must actively acquire task-relevant information through physical interaction, use the resulting evidence to adapt subsequent actions, and autonomously decide when to commit to task completion.\n\nRoboQuest comprises ten mobile manipulation tasks centered on three forms of uncertainty: search, manipulation-based inspection, and interactive testing. We evaluate five frontier multimodal agents through a common visuomotor interface, as well as a $\\pi_{0.5}$ policy fine-tuned on the full-episode demonstrations we release.\n\nThe best agent succeeds in only 23\\% of the episodes, and the fine-tuned policy almost never succeeds. Isolated tests of the execution skills the tasks are built from, with the hidden information supplied, show that the agents can carry out most of the required actions, and our failure analysis attributes only a minority of the failures to execution.\n\nOur failure analysis further finds that the agents often stop exploring too early as they make decisions before observing the required evidence for task completion. We also find that agents rarely prevent or repair the disturbances caused by their exploration. Moreover, learning by trial and error remains difficult for most models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RoboQuest, a benchmark for goal-directed embodied exploration. Agents must acquire task-relevant information through physical interaction, adapt actions based on evidence, and decide when to finish. Its ten mobile-manipulation tasks involve search, manipulation-based inspection, and interactive testing. The authors evaluate five multimodal agents and a policy fine-tuned on full-episode demonstrations. The best agent succeeds in only 23% of episodes, while the fine-tuned policy almost never succeeds. Failure analysis finds premature exploration stops, limited prevention or repair of disturbances, and ongoing difficulty with trial-and-error learning.",
+          "zh": "论文介绍 RoboQuest，这是一个面向目标导向具身探索的基准，要求智能体通过物理交互主动搜寻信息、依据证据调整行动，并自行决定何时完成任务。基准包含十项移动操作任务，涉及搜索、操作式检查和交互测试三类不确定性。作者评估了五种多模态智能体及一个用完整回合示范微调的策略；最佳智能体仅在23%的回合成功，微调策略几乎从不成功。失败分析指出，智能体常在取得必要证据前停止探索，也很少防止或修复探索造成的干扰。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
