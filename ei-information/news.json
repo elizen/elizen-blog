@@ -1228,7 +1228,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models acquire broad manipulation capabilities via large-scale pretraining, yet eliciting them through language requires fine-grained alignment between instructions and physical interactions.\n\nExisting robot demonstrations typically provide only coarse task descriptions, omitting how actions are executed, including which gripper acts, which object is contacted, and how it is grasped and moved.\n\nWe introduce YUBI-STAG, a framework for Spatio-Temporal Annotation and Grounding that automatically enriches manipulation demonstrations with interaction-rich semantics to align pretrained VLAs with fine-grained manipulation language.\n\nCombining contact-object segmentation with vision-language models, YUBI-STAG annotates object identities, attributes and states, per-gripper actions, bimanual coordination, and spatially grounded interactions. To address YUBI-STAG's reliance on localized sequences and multi-stage VLM inference, we distill it into YUBI-VLM.\n\nYUBI-VLM directly recovers action structure and annotations from raw, unsegmented video in few inference calls and operates from wrist views alone. We evaluate both frameworks on YUBI-STAG-Bench across temporal, semantic, and spatial grounding tasks.\n\nYUBI-VLM retains much of YUBI-STAG's annotation accuracy with fewer inference calls and shorter runtime while generalizing to unseen manipulations. Finally, post-training VLA policies on these annotations aligns them with fine-grained language and contact-aware structure.\n\nBimanual experiments demonstrate improved performance and instruction following, including control over object identity, acting gripper, target location, and spatial relations absent from original labels."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces YUBI-STAG, which combines contact-object segmentation and vision-language models to enrich manipulation demonstrations with object, gripper, coordination, and spatial-interaction annotations. Its distilled model, YUBI-VLM, recovers action structure from raw, unsegmented video using wrist views alone. On the proposed benchmark, it retains much of YUBI-STAG’s annotation accuracy with fewer inference calls and shorter runtime, and generalizes to unseen manipulations. Bimanual experiments report improved fine-grained language alignment and instruction following after VLA policies are post-trained on the annotations.",
+          "zh": "论文提出 YUBI-STAG，通过接触物体分割和视觉语言模型，为操作演示自动补充物体身份、属性与状态、各夹爪动作、双手协调及空间交互标注；并将其蒸馏为 YUBI-VLM，使模型能从未分段视频（仅腕部视角）恢复动作结构。基准评估显示，YUBI-VLM以较少推理调用和较短运行时间保留了 YUBI-STAG 的大部分标注准确率，并能泛化到未见操作。双手实验表明，基于这些标注训练后，VLA 策略的细粒度语言对齐和指令跟随有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1259,7 +1263,11 @@
             "heading": "",
             "text": "Many applications of physical AI run within finite or closed physical worlds with a limited set of physical laws governing object behavior. Examples include robots working in a warehouse and agents moving around in a video game.\n\nIn order to better organize, filter, and curate data for physical AI applications, we propose a new approach centered on the unique settings and physical laws of individual datasets. We train LeCuration, a small world model intended to serve as a data curation tool for a separate, larger downstream model.\n\nTo build this model, we choose LeWorldModel (LeWM)as our latent encoder and predictor, adding a diffusion transformer (DiT) decoder to add visuals to autoregressive gameplay rollout.\n\nWe find that the embeddings of this model can be used as an anomaly detection signal and as a content-based clustering heuristic, and that auto-regressively predicting the game state with this model allows us to qualitatively check for action-state consistency.\n\nThis paper presents a qualitative, proof-of-concept case study on CS:GO gameplay data; we do not yet report quantitative curation metrics or downstream training results, which we identify as the key next step."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes LeCuration, a small world model trained around the physical rules of a particular dataset and intended as a curation tool for a larger downstream model. It uses LeWorldModel as a latent encoder and predictor, with a diffusion transformer decoder to add visuals to autoregressive gameplay rollouts. The authors report that its embeddings can support anomaly detection and content-based clustering, while predicted game states allow qualitative checks of action-state consistency. The work is a proof-of-concept case study on CS:GO data; it reports no quantitative curation metrics or downstream training results.",
+          "zh": "论文提出 LeCuration，将针对特定数据集物理规律训练的小型世界模型作为物理 AI 数据整理工具。模型以 LeWorldModel 作为潜在编码器和预测器，并加入扩散 Transformer 解码器，为自回归游戏状态推演生成视觉内容。作者指出，其嵌入可用于异常检测和基于内容的聚类，也可通过预测游戏状态定性检查动作与状态的一致性。本文仅报告基于 CS:GO 游戏数据的定性概念验证案例，尚未提供定量整理指标或下游训练结果，并将其列为后续关键工作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1290,7 +1298,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models are effective at understanding what task to perform, but provide limited control over how it should be executed, such as moving quickly or slowly.\n\nWe introduce TempoBridge, a lightweight framework that uses frozen VLA representations to modulate actions according to tempo cues in the instruction at each task phase, without additional tempo-conditioned robot demonstrations or tempo-specific base-policy fine-tuning.\n\nTempoBridge extracts tempo cues from contextual VLM representations, aligns them with task progress through a causal phase router, and modulates nominal motion commands during execution. Across LIBERO tasks, TempoBridge improves Tempo Success Rate from 52.6% to 89.7% under canonical tempo instructions while retaining high task success.\n\nIt also preserves near-baseline performance when no tempo cue is present and generalizes to unseen tempo expressions without additional training. Experiments on a physical robot further demonstrate language-conditioned tempo modulation in real-world manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "TempoBridge is a lightweight framework for adjusting VLA actions to tempo cues in language. It uses frozen VLA representations, a causal phase router to align cues with task progress, and modulation of nominal motion commands during execution. The approach requires neither additional tempo-conditioned robot demonstrations nor tempo-specific base-policy fine-tuning. On LIBERO tasks, the reported Tempo Success Rate rises from 52.6% to 89.7% under canonical tempo instructions while task success remains high. The paper also reports near-baseline performance without tempo cues, generalization to unseen expressions, and physical-robot demonstrations.",
+          "zh": "论文提出 TempoBridge，使视觉语言动作策略能够依据语言中的速度提示调节动作节奏。该轻量框架利用冻结的 VLA 表征，通过因果阶段路由器将提示与任务进度对齐，并在执行时调节名义运动指令；无需额外的节奏条件机器人演示或针对节奏微调基础策略。在 LIBERO 任务中，规范节奏指令下的节奏成功率从 52.6% 提升至 89.7%，同时保持较高任务成功率；无节奏提示时接近基线表现，并可泛化到未见表达。实体机器人实验也展示了真实操作中的语言条件节奏调节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1321,7 +1333,11 @@
             "heading": "",
             "text": "Designing or learning robot policies that generalize zero-shot across a range of language instructions and objects is a core problem in robotics. Vision-Language-Action models (VLAs) learn such policies end-to-end by repurposing existing Vision-Language Models (VLMs), but generalization to new instructions and objects remains challenging.\n\nAn alternative is to implement a modular policy by leveraging an explicit VLM-based 3D scene representation and motion planning. While modular policies show strong zero-shot potential, they typically retrieve objects based on semantics without explicit spatial reasoning, severely restricting their overall grounding capabilities.\n\nThey also interact with objects using basic grasping and navigation skills. In this work, we address these limitations by unifying grounding capabilities and robot skills in a single agentic action space through a scene-agent tool interface.\n\nBy leveraging part-level affordances, our skills generalize across diverse objects and enable zero-shot interactions such as unplugging chargers and opening drawers. We name the resulting framework Agentic Scene Policies (ASP).Through extensive real-world experiments, we show how ASP consistently outperforms leading VLAs in the zero-shot setting.\n\nWe also demonstrate the extensibility of our framework by introducing a mobile version of ASP to tackle room-level queries. See our project page (https://montrealrobotics.ca/agentic-scene-policies.github.io/) for more results."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Agentic Scene Policies (ASP), which unify a VLM-based 3D scene representation, grounding, and robot skills through a scene-agent tool interface. The authors identify limited spatial reasoning and reliance on basic grasping and navigation as constraints of existing modular policies. ASP uses part-level affordances to generalize skills across objects, enabling zero-shot interactions such as unplugging chargers and opening drawers. The authors report that extensive real-world experiments show ASP consistently outperforming leading VLAs in the zero-shot setting. They also demonstrate a mobile ASP version for room-level queries.",
+          "zh": "论文提出 Agentic Scene Policies（ASP），通过场景代理工具接口，将基于视觉语言模型的三维场景表示、空间定位与机器人技能统一到一个动作空间。作者指出，现有模块化策略常按语义检索物体，空间推理不足，且依赖基础抓取和导航技能。ASP 利用部件级可供性，使技能能够跨不同物体泛化，并支持拔下充电器、打开抽屉等零样本交互。作者报告，真实环境实验中 ASP 在零样本设置下持续优于领先 VLA，并展示了面向房间级查询的移动版本。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
