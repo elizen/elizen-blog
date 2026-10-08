@@ -575,7 +575,11 @@
             "heading": "",
             "text": "As we move through the world and carry out everyday tasks, we encounter objects that may become relevant only later. We are capable of recalling where we left something or what was inside a container, even without knowing we would need it later.\n\nHere, we study how an embodied assistant can build a similar memory from egocentric videos, by observing a person's day-to-day activities. We present Ledger, a persistent 3D object memory that combines object locations, their histories, and contextual descriptions.\n\nIt associates observations across the recording and retains objects after they leave the view, including those the person never touches. It clusters each object's observations by resting locations and records a move only after repeated evidence, reducing the effect of localization noise.\n\nShort descriptions preserve details such as an object's contents or supporting surface. It saves these records to later answer spatial questions without having to access the original images or video.\n\nOur memory raises HD-EPIC accuracy from 29.7% to 42.6%, UCS-Bench accuracy from 33.8% to 38.5% and localizes Ego4D objects with a 0.99 m median error on returned predictions. Our analyses identify complementary roles for temporal persistence, contextual descriptions, and retrieval.\n\nOur study on 100 stitched streams of multiple scenes each further exposes failures in both retrieval and construction. Per-scene construction partially recovers the performance lost across scene changes compared to that of single scene streams."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Ledger, a persistent 3D object memory built from egocentric video that combines object locations, histories, and contextual descriptions. It links observations over time, retains objects after they leave view, and records moves only when supported by repeated evidence to reduce localization noise. The memory can answer spatial questions without revisiting original media. The authors report evaluations on HD-EPIC, UCS-Bench, and Ego4D, and identify retrieval and construction failures across scenes; per-scene construction partly recovers performance lost at scene changes.",
+          "zh": "论文提出 Ledger，一种从第一人称视频构建的持久化三维物体记忆，整合物体位置、历史和情境描述。系统关联跨时观察，在物体离开视野后仍保留记录，并依据重复证据判断移动，以减轻定位噪声影响；之后可不访问原始影像回答空间问题。作者报告其在 HD-EPIC、UCS-Bench 和 Ego4D 上的评估结果，并指出跨场景检索与记忆构建仍会失败；按场景构建可部分弥补场景切换造成的性能损失。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -606,7 +610,11 @@
             "heading": "",
             "text": "This paper presents an open-sourced MATLAB simulation and analysis platform dedicated to legged climbing robots. This simulator enables the design of any limbed robotic system as an articulated multi-body with a floating base and simulates it walking and climbing in an arbitrary environment.\n\nThe main variable environmental parameters are inclination, gravity, and ground stiffness, and any point cloud can be installed as the terrain map. Furthermore, the simulator employs a rigid body dynamics engine.\n\nThis paper first describes the simulator structure, and the computational flow and next presents the representative simulation examples where quadrupedal robots assumed gripping on the wall or climbing on the steep slope."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ClimbLab, an open-source MATLAB simulation and analysis platform for legged climbing robots. It models a limbed robot as an articulated multibody system with a floating base and simulates walking and climbing in arbitrary environments. Adjustable environmental parameters include inclination, gravity, and ground stiffness, and point clouds can serve as terrain maps. The paper describes the simulator's structure and computational flow, then presents simulation examples of quadrupedal robots assumed to grip walls or climb steep slopes.",
+          "zh": "论文介绍了一个开源 MATLAB 仿真与分析平台 ClimbLab，面向足式攀爬机器人。平台可将任意多肢机器人建模为带浮动基座的多体系统，并模拟其在任意环境中的行走和攀爬；环境参数包括坡度、重力和地面刚度，也可将点云设为地形图。论文说明了仿真器结构与计算流程，并展示四足机器人被假设能够抓附墙面或在陡坡攀爬的仿真示例。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -637,7 +645,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have shown strong generalization in robotic manipulation by leveraging rich representations from pretrained vision-language models. However, their deployment in real-world environments remains limited by recurring unreliable behaviors.\n\nIn this work, we study state hallucination, a recurring failure pattern in which a VLA continues acting as if an unrealized robot-object state had been achieved.\n\nOur analyses find that state hallucination coincides with weakened attention to task-relevant visual regions, and a mechanistic interpretation via sparse autoencoders reveals that hallucination-associated sparse features are activated when these failures occur.\n\nBased on this analysis, we propose SOUL (Sparse feature pOlicy UnLearning), which selectively unlearns policy knowledge associated with state hallucination behaviors, where sparse features identified from hallucination failures and successful behaviors serve as explicit forgetting and retention targets, respectively.\n\nExperiments across VLA architectures in simulated and real-world environments show that our method substantially reduces hallucinated failures and improves task success without substantially compromising the existing manipulation capabilities.\n\nThese results suggest that interpretable feature analysis provides a practical basis for selectively modifying undesirable knowledge in robot policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies state hallucination in vision-language-action models: a policy continues acting as if a robot-object state had been achieved when it has not. The authors find that these failures coincide with weaker attention to task-relevant visual regions and use sparse autoencoders to identify associated features. They propose SOUL, which selectively unlearns policy knowledge tied to hallucination features while retaining features linked to successful behavior. Experiments in simulated and real-world environments show fewer hallucinated failures and improved task success without substantially compromising existing manipulation capabilities.",
+          "zh": "论文研究视觉—语言—动作模型中的状态幻觉，即机器人—物体状态尚未实现，模型却继续按其已实现来行动。作者发现这类失误伴随模型对任务相关视觉区域的关注减弱，并用稀疏自编码器识别与幻觉相关的特征。据此提出 SOUL，通过将失败行为特征作为遗忘目标、成功行为特征作为保留目标，有选择地调整策略知识。仿真和真实环境实验显示，该方法减少了幻觉导致的失败并提升任务成功率，同时未显著损害既有操作能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -668,7 +680,11 @@
             "heading": "",
             "text": "Flow-based policies provide an expressive framework for continuous robot control, but their iterative ODE integration incurs substantial inference cost. Naively reducing the integration budget can severely degrade control, since policies optimized under full-step execution are not explicitly constrained to remain reliable under coarse numerical integration.\n\nWe refer to this mismatch as the few-step discretization gap. To address this problem, we introduce RFPO, a flow-policy optimization framework for reliable few-step execution. Reward-aware online Reflow rectifies student-induced transport paths during on-policy learning, making the resulting policy more robust to coarse integration.\n\nA frozen Gaussian PPO controller supplies complementary action-space supervision at full and intermediate integration budgets, while the deployed policy remains a single flow student executed with one Euler step.\n\nAcross Unitree Go2, Boston Dynamics Spot, Unitree H1, and Unitree G1, RFPO consistently preserves full-step control performance under one-step execution, with one-step returns remaining within 2.4% of their corresponding 64-step values across both zero and random initialization.\n\nOn Unitree Go2, one-step execution retains 98.5% of the 64-step reward while reducing onboard mean inference latency from 4.39 ms to 0.08 ms, yielding a 54.9x speedup. Real-robot experiments further validate stable one-step locomotion. Code: https://github.com/AIGeeksGroup/RFPO. Website: https://aigeeksgroup.github.io/RFPO."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RFPO to address the discretization gap that can arise when flow-based control policies use fewer integration steps. Reward-aware online Reflow rectifies student transport paths during on-policy learning, while a frozen Gaussian PPO controller provides action-space supervision at full and intermediate budgets. Deployment uses a single flow-policy student with one Euler step. Across four robot platforms, the authors report one-step returns close to corresponding 64-step values, and real-robot experiments further demonstrate stable one-step locomotion.",
+          "zh": "论文提出 RFPO，用于缓解流策略以少步数执行时的离散化差距。方法在在线策略学习中通过奖励感知的 Reflow 修正学生策略的传输路径，并以冻结的 Gaussian PPO 控制器提供不同积分预算下的动作监督；部署时使用单个流策略学生执行一步 Euler 积分。作者报告在四种机器人平台上，一步控制性能接近各自的 64 步结果，并称真实机器人实验验证了稳定的一步行走。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
