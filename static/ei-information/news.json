@@ -85,7 +85,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) and world-action models (WAMs) often degrade under out-of-distribution task variations despite retaining partial task capability.\n\nTo recover such capability, we propose RoboIRS, an inference-time internal representation steering method that uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions without updating policy parameters.\n\nOn 15 simulation tasks with a frozen $\\pi 0.5$ policy, RoboIRS improves the average success rate from 44.4% to 66.2%, outperforming alternative inference-time intervention baselines while adding little inference time.\n\nWe further validate RoboIRS on real-robot manipulation using the same $\\pi 0.5$ policy and demonstrate its applicability to a world-action model Cosmos Policy, where the average success rate improves from 35.4% to 55.4%.\n\nThese results show that directly steering internal robot-policy representations can improve the performance of robot policies at inference time. Project website is available at https://rollingoat.github.io/roboirs/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboIRS, an inference-time method that steers internal policy representations without updating policy parameters. It uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions. With a frozen π0.5 policy, it reports an average success-rate increase from 44.4% to 66.2% across 15 simulation tasks, with little added inference time. The authors also report real-robot manipulation validation and an increase from 35.4% to 55.4% with Cosmos Policy.",
+          "zh": "论文提出RoboIRS，一种推理时内部表征引导方法：利用成功与失败的执行轨迹训练线性分类器，选择与结果相关的干预位置，并生成特定任务的引导方向，且不更新策略参数。在冻结的π0.5策略上，15项仿真任务的平均成功率由44.4%升至66.2%，且推理时间只略有增加。作者还报告了真实机器人操作验证，并将方法用于Cosmos Policy；后者平均成功率由35.4%升至55.4%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -116,7 +120,11 @@
             "heading": "",
             "text": "World models can enable autonomous ultrasound scanning by predicting the outcomes of probe motions from local observations. Learning this action--observation relationship typically relies on synchronized video--pose pairs, which are costly to collect at scale and largely unavailable in routine clinical recordings.\n\nReliable action following further requires modeling ultrasound's cross-sectional sampling geometry. We present UltraWorld, a self-distillation recipe that transfers priors from clinical ultrasound videos into interactive world models without real action annotations.\n\nStarting from clinical videos, we adapt a video foundation model into an ultrasound generator conditioned on reference images and anatomical masks. Anatomical masks sampled along programmable trajectories through 3D anatomy provide spatial guidance for synthesizing action--video pairs.\n\nWe then use these synthetic pairs to self-distill the generator into a world model that predicts future observations from local observations and actions, without requiring anatomical masks or other 3D assets at inference time.\n\nTo further improve action following, we introduce the Acoustic Sampling Map (AsMap), which represents probe poses and imaging settings as pixel-wise 3D sampling positions, beam directions, and depths. Experiments demonstrate improved prediction fidelity and action following.\n\nAcross nine simulated closed-loop local planning episodes, UltraWorld reduces the mean final distance to the goal and orientation error by 29\\% and 38\\%, respectively, compared with visual servoing. Project Page: https://ultraworld-project.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UltraWorld learns interactive ultrasound world models from untracked clinical videos without real action annotations. It adapts a video foundation model into an ultrasound generator conditioned on reference images and anatomical masks, synthesizes action-video pairs using masks sampled along 3D anatomical trajectories, and self-distills the generator into a world model. At inference, the model needs neither masks nor other 3D assets. The authors introduce an Acoustic Sampling Map for probe poses and imaging settings. Experiments report improved prediction fidelity and action following; in nine simulated closed-loop planning episodes, goal distance and orientation error fell by 29% and 38% versus visual servoing.",
+          "zh": "论文提出UltraWorld，从未跟踪的临床超声视频学习交互式世界模型，无需真实动作标注。方法先将视频基础模型适配为受参考图像和解剖掩码条件约束的超声生成器，再用沿3D解剖轨迹采样的掩码合成动作—视频对，并通过自蒸馏训练世界模型；推理时无需掩码或其他3D资产。作者引入声学采样图表示探头姿态和成像设置。实验显示预测保真度与动作跟随改善；在九次仿真闭环局部规划中，相较视觉伺服，平均最终目标距离和方向误差分别降低29%和38%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -147,7 +155,11 @@
             "heading": "",
             "text": "Joint-embedding predictive architectures (JEPAs) predict masked or future observations in representation space, offering a natural source of predictive latents for vision-language-action (VLA) models.\n\nYet making these latents useful across pretraining, policy learning, and deployment requires addressing three failures: mismatch with embodiment-specific control, interference with action learning, and teacher miscalibration under distribution shifts.\n\nWe introduce Juno, a unified framework built around one action-conditioned JEPA that serves as a control-aligned representation backbone, a predictive teacher, and an adaptable dynamics model. During pretraining, we train it on embodiment-matched trajectories and use a dynamic CLS loss to transfer motion-weighted patch dynamics to a compact global state.\n\nDuring policy learning, we fuse current-frame JEPA patches into VLA perception and use a decoupled reasoning branch with separate transformation parameters to distill future latent states for action generation.\n\nDuring deployment, we adapt the world model on all observed transitions, including failed rollouts, freeze the adapted teacher, and re-align the policy on verified executions using LoRA adapters and a trainable action head, without expert corrections or task rewards.\n\nOn SimplerEnv, Juno raises average success from $60.9\\%$ to $68.5\\%$ over Qwen3GR00T, the strongest baseline, and test-time adaptation further reaches $72.7\\%$; on a real robot, it retains $70\\%$--$75\\%$ success under background, height, and object shifts where the base policy collapses to $0\\%$."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Juno uses one action-conditioned joint-embedding predictive architecture as a representation backbone, predictive teacher, and adaptable dynamics model for vision-language-action policies. Its training combines embodiment-matched trajectories, current-frame features, and a separate branch that distills future latent states. At deployment, it adapts the model on observed transitions, including failed rollouts, then realigns the policy on verified executions. On SimplerEnv, the authors report average success rising from 60.9% to 68.5% over the strongest baseline, and to 72.7% with test-time adaptation. On a real robot, success remains 70%–75% under specified shifts, while the base policy falls to 0%.",
+          "zh": "论文提出Juno，将一个动作条件化的联合嵌入预测架构用于视觉—语言—动作模型的表征、预测教师和可适配动力学模型。预训练阶段使用具身匹配轨迹和动态CLS损失；策略学习阶段融合当前帧特征并以独立分支蒸馏未来状态；部署阶段利用包括失败轨迹在内的观测转移适配模型，再以验证过的执行重新对齐策略。在SimplerEnv上，平均成功率从基线的60.9%升至68.5%，测试时适配后为72.7%；真实机器人在背景、高度和物体变化下保持70%–75%，而基础策略降至0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
