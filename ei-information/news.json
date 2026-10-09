@@ -2499,7 +2499,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models achieve strong robotic manipulation performance but incur high computational costs from processing long token sequences at every control step, limiting real-time deployment. Visual token pruning offers a direct solution, as visual patches dominate the input sequence and contain considerable redundancy.\n\nExisting approaches, however, either rely on indirect training-free heuristics, such as attention scores and motion thresholds, or require costly fine-tuning of the base VLA model.\n\nWe introduce VLA-ACL (Action Consistency Learning), which learns a lightweight visual token pruning policy through action-level supervision while keeping the base VLA model entirely frozen.\n\nThe training objective encourages actions produced from pruned visual contexts to remain consistent with the full-context teacher, with ground-truth actions as auxiliary supervision. This directly ties token selection to its effect on the downstream control output.\n\nExperiments on LIBERO and real-world manipulation tasks show that VLA-ACL prunes up to 87.5% of visual tokens while retaining competitive performance, reduces computation by up to 75%, and achieves a 1.5x inference speedup.\n\nThese results establish a stronger performance-efficiency trade-off than existing frozen-VLA pruning methods and demonstrate the value of action-level supervision for visual token selection. Code is available at https://github.com/du-owen/VLA-ACL."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VLA-ACL, which learns a lightweight visual token pruning policy with action-level supervision while keeping the base VLA model frozen. Its objective encourages actions from pruned visual contexts to match those of a full-context teacher, with ground-truth actions as auxiliary supervision. Experiments on LIBERO and real-world manipulation tasks report pruning up to 87.5% of visual tokens, reducing computation by up to 75%, and achieving a 1.5x inference speedup while retaining competitive performance.",
+          "zh": "论文提出 VLA-ACL，通过动作级监督学习轻量视觉令牌剪枝策略，同时冻结基础 VLA 模型。训练目标使剪枝视觉上下文产生的动作接近完整上下文教师模型的动作，并以真实动作作为辅助监督。LIBERO 和真实世界操作任务实验显示，该方法最多剪除 87.5% 的视觉令牌，计算量最多降低 75%，推理速度提升 1.5 倍，同时保持有竞争力的性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2530,7 +2534,11 @@
             "heading": "",
             "text": "We study robotic in-context learning (ICL), an emerging paradigm that enables robots to infer and execute tasks from visual demonstrations.\n\nDespite its growing promise, the problem itself remains under-defined: a visual demonstration simultaneously conveys action trajectories, object semantics, manipulation affordances, spatial relations, and task goals, making it unclear what information the robot is actually expected to follow.\n\nIn this work, we first provide a clear problem definition of robot ICL that explicitly defines its learning target and resolves this fundamental prompt ambiguity. Building on this definition, we develop a minimalist and reproducible ICL framework (SimpleICL) with a visual prompt encoder and a low-cost data collection protocol.\n\nWithout massive pre-training or specialized data infrastructure, our framework achieves strong performance in both simulation and real-world environments. Extensive experiments further reveal several key properties of robot ICL, including semantic discrimination and task-relevant disentanglement.\n\nWe will fully open-source our data and training pipeline to facilitate systematic and reproducible research on robot ICL. The project page can be found at https://simpleicl.github.io/simpleicl."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies robotic in-context learning, where robots infer and perform tasks from visual demonstrations. It argues that demonstrations convey several kinds of information, making the intended learning target ambiguous, and provides a definition to clarify it. The authors introduce SimpleICL, a minimalist framework with a visual prompt encoder and low-cost data collection protocol. They report strong performance in simulation and real-world environments without massive pretraining or specialized data infrastructure, and describe findings about semantic discrimination and task-relevant disentanglement.",
+          "zh": "论文研究机器人上下文学习，即机器人根据视觉示范推断并执行任务。作者指出，示范同时传达轨迹、物体语义、操作可能性、空间关系和任务目标，因此提出明确问题定义，以消除提示含义的歧义。基于此，SimpleICL 使用视觉提示编码器和低成本数据采集流程；作者称其无需大规模预训练或专用数据基础设施，在仿真和真实环境中均取得较强表现，实验还显示语义辨别及任务相关解耦等特性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2561,7 +2569,11 @@
             "heading": "",
             "text": "Active robot vision requires controlling the camera to reveal task-relevant information that is hidden from the current viewpoint. For example, determining what is inside a box may require raising the camera and looking down into it.\n\nFor viewpoint-dependent question answering, the challenge is to select camera motions that expose the visual evidence needed to answer the question. Although vision-language models (VLMs) can interpret observed images, selecting such motions requires anticipating the usefulness of unseen views.\n\nWe quantify this usefulness as answerability, a VLM's estimate that a view suffices to answer the question, and present Rendering-Free Lookahead (RFL), a viewpoint-selection policy that ranks candidate camera motions by predicted future answerability. RFL transfers visual lookahead from deployment to offline training.\n\nAt training, a privileged teacher renders candidate future views in 3D Gaussian Splatting (3DGS) scenes and uses a frozen VLM to compute one- and two-step answerability targets. Through two-stage distillation, a student learns to predict these action values from the question, recent visual observations, and a candidate camera motion.\n\nAt deployment, RFL uses these predicted values to select camera motions without rendering future views. On 377 E3VS-Bench test episodes in unseen environments, RFL improves the mean judge score by 43\\% over a direct-action baseline using the same VLM.\n\nThese results support learning camera-control policies from privileged visual lookahead for viewpoint-dependent question answering."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Rendering-Free Lookahead (RFL), a policy for choosing camera motions that reveal evidence needed to answer a question. It defines view usefulness as a VLM's estimate of whether a view is sufficient to answer. During training, a privileged teacher renders future views in 3D Gaussian Splatting scenes and supplies answerability targets; two-stage distillation trains a student to predict candidate action values. At deployment, RFL selects motions without rendering future views. On 377 E3VS-Bench episodes in unseen environments, it improves mean judge score by 43% over a direct-action baseline using the same VLM.",
+          "zh": "论文提出 Rendering-Free Lookahead（RFL），用于根据问题选择能呈现所需视觉证据的相机动作。RFL 将视图的有用性定义为 VLM 对该视图足以回答问题的估计。训练时，特权教师在 3DGS 场景中渲染未来视图并生成可回答性目标，再通过两阶段蒸馏训练学生预测候选动作价值；部署时无需渲染未来视图。在未见环境的 E3VS-Bench 测试中，377 个回合的平均评审分数较同一 VLM 的直接动作基线高 43%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
