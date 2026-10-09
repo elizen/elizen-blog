@@ -2923,7 +2923,11 @@
             "heading": "",
             "text": "An ideal robot grasp is firm enough to securely handle an object, yet gentle enough to avoid damaging it. Achieving this balance requires knowledge of the object's material properties, such as its mass, elasticity, and surface friction. These properties, however, are seldom precisely known a priori.\n\nIn this work, we propose a visuotactile approach to estimating material properties in real time, during the process of grasping. Our method uses these estimated properties to determine the minimum grasp force required to handle the object.\n\nWe contribute a new dataset of real-world objects (fruits and vegetables) with measured physical properties (shape, mass, elasticity, and friction), which we use to construct our force estimation model via simulations. We experimentally validate our approach to grasp force control using a robot with a parallel-jaw gripper.\n\nWe demonstrate our system's ability to gently grasp a wide variety of objects, in each case adapting to their unique physical properties."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a visuotactile method that estimates object material properties in real time during grasping and uses them to determine the minimum force needed for secure handling. The authors introduce a dataset of real fruits and vegetables with measured shape, mass, elasticity, and friction, and use simulations to build a force-estimation model. They experimentally validate force control with a parallel-jaw robot gripper and report gentle grasping of varied objects adapted to their physical properties.",
+          "zh": "本文提出一种视觉触觉方法，在抓取过程中实时估计物体材料属性，并据此确定安全处理物体所需的最小抓取力。作者使用包含水果和蔬菜及其形状、质量、弹性和摩擦力测量值的新真实物体数据集，通过仿真构建力估计模型，并用平行夹爪机器人实验验证抓取力控制。作者称，该系统能根据物体各自的物理属性轻柔地抓取多种物体。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2954,7 +2958,11 @@
             "heading": "",
             "text": "Sampling-based system identification estimates physically meaningful parameters by tuning a simulator to reproduce the target system dynamics, providing an interpretable approach to improving sim-to-real transfer.\n\nYet when the collected trajectories do not distinguish the effects of different parameters, multiple parameter combinations can reproduce those trajectories, leading to unreliable parameter estimates.\n\nTo address this challenge, we introduce an Informationally Decoupled Trajectory Design framework (IDTD), which formulates the objective for the exploration policy built on the Schur complement score derived from the Fisher information matrix.\n\nTo faithfully reflect parameter separability in the exploration objective, IDTD normalizes the score against the per-parameter information, selects the most favorable trajectory segment for each parameter, and aggregates the resulting scores logarithmically.\n\nThe optimized trajectory is therefore composed of complementary intervals, each exposing a distinct subset of parameters whose contribution to the motion over that interval can be attributed unambiguously.\n\nAcross diverse simulation environments, ranging from a linear-dynamics system to the Go2 quadruped, G1 humanoid, and Crazyflie quadrotor, IDTD reduces the parameter identification error by 39.6% on average relative to the strongest prior active-exploration baseline and attains improved downstream policy transfer.\n\nFurthermore, we validate the proposed trajectory design on a real K1 humanoid, demonstrating that the resulting identified parameters accurately capture the real-system dynamics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Informationally Decoupled Trajectory Design (IDTD), an exploration framework using a Schur-complement score derived from the Fisher information matrix. It normalizes the score by per-parameter information, selects favorable trajectory segments for each parameter, and aggregates scores logarithmically so intervals expose distinguishable parameter effects. Across simulation environments, including linear dynamics and several robot platforms, the authors report a 39.6% average reduction in identification error versus the strongest prior active-exploration baseline and improved downstream policy transfer. They also validate the design on a real K1 humanoid.",
+          "zh": "本文提出信息解耦轨迹设计框架 IDTD，通过基于费舍尔信息矩阵的 Schur 补分数优化探索策略，使轨迹区间能够分别揭示不同参数的作用。方法对分数按各参数信息量归一化，为每个参数选择有利区间并以对数方式聚合。在从线性动力学到多种机器人平台的仿真环境中，作者报告其参数识别误差相较最强主动探索基线平均降低39.6%，且下游策略迁移改善；在真实 K1 人形机器人上也验证了识别参数对系统动力学的刻画。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2985,7 +2993,11 @@
             "heading": "",
             "text": "The prevailing approach to improving robot foundation models (RFMs) relies on larger models, more robot demonstrations, and costly training at scale. We show that there exists an effective and efficient complementary approach: the right reasoning recipe can substantially improve the zero-shot task performance of existing state-of-the-art RFMs.\n\nWe refer to this recipe as ARC. It consists of three key ingredients: a reasoning trace, a scalable automatic labeling pipeline, and a strategy for adapting pretrained RFMs to use these traces for control.\n\nFirst, we find that effective reasoning traces should be grounded in the robot's next action and explain its causal structure: why the action is appropriate and what effect it should produce.\n\nSecond, we show that these traces can be generated automatically from existing demonstrations, enabling us to construct ARC-Trace-DROID from DROID without collecting new robot data.\n\nThird, we show how state-of-the-art VLAs such as $\\pi_{0.5}$ and WAMs such as Cosmos3-Nano-Policy can learn to use these traces for control, with fine-tuning and inference tailored to each model's architecture and capabilities.\n\nUsing ARC, we obtain gains in zero-shot RFM performance that, to our knowledge, are unprecedented without additional robot demonstrations or foundation-scale training. The adapted models establish a new state of the art on RoboLab-120 and MolmoSpaces, with gains of up to 50 percentage points on RoboLab-Reasoning-50.\n\nOn real robots, ARC improves $\\pi_{0.5}$'s task success by 82.2 percentage points. Project website: https://arc-robot-reasoning.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ARC, a reasoning recipe intended to improve zero-shot task performance of existing robot foundation models. It combines action-grounded causal reasoning traces, an automated labeling pipeline that generates traces from existing demonstrations, and model-specific adaptation for using the traces in control. The authors say ARC-Trace-DROID is built from DROID without collecting new robot data. Adapted models set reported state-of-the-art results on RoboLab-120 and MolmoSpaces, with gains of up to 50 percentage points on RoboLab-Reasoning-50. In real-robot experiments, ARC improves π₀.₅ task success by 82.2 percentage points.",
+          "zh": "本文提出 ARC 推理方案，旨在提升现有机器人基础模型的零样本任务表现。方案包括与机器人下一动作及其因果结构相联系的推理轨迹、从既有演示自动生成轨迹的标注流程，以及使预训练模型将轨迹用于控制的适配策略。作者称，ARC-Trace-DROID 可由 DROID 构建而无需采集新机器人数据；经适配的模型在 RoboLab-120、MolmoSpaces 和 RoboLab-Reasoning-50 上取得所述表现，其中后者提升最高达50个百分点。真实机器人实验中，作者报告 π₀.₅ 的任务成功率提升82.2个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
