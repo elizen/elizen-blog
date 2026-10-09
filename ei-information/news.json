@@ -3372,7 +3372,11 @@
             "heading": "",
             "text": "Agentic AI based on Large Language Model generalization capabilities offers a wide range of potential applications, including planning for embodied tasks. For example, embodied agents based on Foundation models can generate plausible plans in autonomous robotics scenarios.\n\nDue to limited context windows or hallucinatory phenomena in the next-token prediction formulation, behaviors may be generated without establishing whether the deployed robot and the observed environment actually support the requested operation, in what we call a \"grounding failure\".\n\nThanks to the recent improvements in reasoning capabilities of foundation models, autonomous robot behavior generation problem can be formulated as a code generation problem. We present iAm.md, a Markdown standard and generation framework, that allows anchoring this process in complementary forms of deployment evidence.\n\nThrough open-vocabulary semantic mapping, we combine local vision-language detections and object segmentation and refer them to persistent object records in this intermediate standardized representation, allowing agentic introspection.\n\nWe then study this new technique on a simulated TIAGo, on navigation-and-manipulation tasks, showing how this standardized representation jointly supports skill self-assessment and executable task generalization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces iAm.md, a Markdown standard and generation framework intended to ground robot behavior generation in complementary deployment evidence. It combines local vision-language detections and object segmentation, linking them to persistent object records through open-vocabulary semantic mapping to support agentic introspection. The authors study the technique on a simulated TIAGo robot performing navigation and manipulation tasks. They report that the standardized representation supports both skill self-assessment and executable task generalization in this simulated setting.",
+          "zh": "论文提出 iAm.md，一种 Markdown 标准及生成框架，旨在通过多种部署证据为机器人行为生成提供依据，减少机器人或环境不支持所请求操作时出现的“落地失败”。该方法结合局部视觉语言检测与物体分割，并将结果关联到持久物体记录，以支持开放词汇语义映射和智能体自省。作者在模拟 TIAGo 机器人上的导航与操作任务中研究该技术，并称这种标准化表示共同支持技能自评估和可执行任务泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3403,7 +3407,11 @@
             "heading": "",
             "text": "Existing data generation methods for robot learning suffer from limited exploration, embodiment gaps, low signal-to-noise ratios, and domain shifts, leading to performance degradation during self-iteration and poor generalization to unseen scenes. To address these challenges, we propose Seed2Scale, a self-evolving data engine with parallel worlds expansion.\n\nStarting with as few as four seed demonstrations, Seed2Scale first executes a self-evolution stage driven by a heterogeneous synergy of \"small-model collection, large-model evaluation, and target-model learning\".Specifically, the lightweight Vision-Language-Action (VLA) model, SuperTiny, serves as a dedicated data collector for robust exploration.\n\nConcurrently, a pretrained Vision-Language Model (VLM) functions as a verifier to autonomously score and filter trajectories, supporting stable self-evolution in the evaluated tasks without performance collapse.\n\nFurthermore, Seed2Scale introduces a parallel worlds stage, projecting self-evolved trajectories into different environments of the same task to generate more diverse data and enhance adaptability to unseen scenes, including real-world environments.\n\nExperimental results demonstrate that Seed2Scale exhibits significant scaling potential: as iterations progress, the success rate of the target model shows a consistent upward trend, significantly outperforming the seed baseline.\n\nNotably, Seed2Scale achieves a remarkable 75.38% success rate in zero-shot real-world evaluations, where baseline methods fail completely (0%).Project page: https://terminators2025.github.io/Seed2Scale.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose Seed2Scale, a self-evolving data engine for robot learning that starts with as few as four seed demonstrations. Its first stage combines small-model collection, large-model evaluation, and target-model learning: a lightweight VLA model explores, while a pretrained VLM scores and filters trajectories. A parallel-worlds stage projects evolved trajectories into different environments for the same task. The authors report rising target-model success across iterations and a 75.38% success rate in zero-shot real-world evaluations, compared with 0% for baseline methods.",
+          "zh": "论文提出 Seed2Scale，一种用于机器人学习的自进化数据引擎，从少至四个种子示范开始，结合小模型采集、大模型评估和目标模型学习来扩展数据。轻量级 VLA 模型负责探索，预训练 VLM 对轨迹评分和筛选；并行世界阶段将演化轨迹投射到同一任务的不同环境，以增加数据多样性。作者报告，迭代过程中目标模型成功率持续上升；在零样本真实世界评估中成功率为 75.38%，而基线为 0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3434,7 +3442,11 @@
             "heading": "",
             "text": "Humanoid robots possess the structural capability to traverse complex terrains. However, achieving stable t raversal without relying on perceived information remains challenging, particularly in complex environments.\n\nThis paper introduces DAMP, a reinforcement learning framework aimed at achieving robust and naturalistic humanoid locomotion over challenging terrains, with the assumption that no perceived information is available.\n\nThe framework leverages recurrent neural networks to capture temporal dependencies and implicitly infer privileged and other task-relevant latent information. By aligning the learned representations with the task objective, the method enables robust and goal-consistent policy learning.\n\nThis end-to-end framework achieves transfer learning from simulation to real-world environments, demonstrating the proposed method's robustness and generalization capabilities. The video of the real-world demonstration can be found at the following link: https://youtu.be/AkI7TZB2DDM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DAMP, a reinforcement learning framework for humanoid locomotion over challenging terrain under the assumption that perceived information is unavailable. It uses recurrent neural networks to capture temporal dependencies and implicitly infer privileged and other task-relevant latent information. Aligning learned representations with the task objective is intended to support robust, goal-consistent policy learning. The authors state that the end-to-end framework transfers from simulation to real-world environments and demonstrates robustness and generalization, without giving quantitative results in the abstract.",
+          "zh": "论文提出 DAMP，一种面向复杂地形人形机器人行走的强化学习框架，假设无法获得感知信息。该方法使用循环神经网络捕捉时间依赖，并隐式推断特权信息及其他任务相关潜在信息；通过使学习到的表示与任务目标对齐，支持稳健且目标一致的策略学习。作者称该端到端框架实现了从仿真到真实环境的迁移，并展示了其鲁棒性和泛化能力。摘要未提供量化评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
