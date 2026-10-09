@@ -4007,7 +4007,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have emerged as powerful foundations for robotic manipulation, but their reliance on fixed camera configurations during training makes them brittle to changes in camera count or pose during deployment.\n\nTo overcome these limitations, we propose VersaCamVLA, a camera-configurable framework that decouples camera-set representation from action learning. VersaCamVLA learns a unified scene-token interface that maps an arbitrary, variable set of posed RGB views into fixed-size latent scene tokens.\n\nThis is achieved via multi-signal target-view prediction and Wrist-Augmented Pose Sampling (WAPS), which leverages natural wrist-camera motion for free pose diversity.\n\nAt deployment, a lightweight spatial encoder injects these compact scene tokens into a pretrained base VLA as a supplementary visual condition, requiring no explicit 3D sensing or novel-view rendering.\n\nExperiments on RoboTwin, LIBERO, and a real-robot platform demonstrate that VersaCamVLA consistently outperforms prior VLA methods and direct multi-view baselines, maintaining robust performance across varying camera counts and unseen camera poses."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VersaCamVLA, a camera-configurable vision-language-action framework for robotic manipulation, addressing brittleness to changes in camera count and pose. It maps an arbitrary set of posed RGB views into fixed-size latent scene tokens using multi-signal target-view prediction and Wrist-Augmented Pose Sampling, which exploits wrist-camera motion. At deployment, a lightweight spatial encoder supplies the tokens as an additional visual condition to a pretrained VLA, without explicit 3D sensing or novel-view rendering. The authors report advantages over prior methods and multi-view baselines in RoboTwin, LIBERO, and real-robot experiments.",
+          "zh": "论文提出 VersaCamVLA，一种面向机器人操作、可适配相机配置的视觉语言动作框架，旨在缓解训练与部署时相机数量或姿态变化造成的脆弱性。它将任意数量、带位姿的 RGB 视图映射为固定大小的场景潜在标记，并通过多信号目标视图预测和利用腕部相机运动的 WAPS 获取姿态多样性。部署时，轻量空间编码器将标记作为补充视觉条件输入预训练 VLA，无需显式三维感知或新视角渲染。作者报告其在 RoboTwin、LIBERO 和真实机器人平台实验中优于既有方法及多视角基线，并能适应不同相机数量和未见姿态。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -4038,7 +4042,11 @@
             "heading": "",
             "text": "While learning dexterous manipulation from a single human video offers a promising alternative to costly robot demonstrations, many recent methods predominantly imitate demonstrated motions. Such strict motion matching often limits generalization to initial object poses, goal poses, and grasps not shown in the video.\n\nAlternatively, discovering a policy via reinforcement learning (RL) allows for broad generalization, but without prior guidance, it struggles with high-dimensional exploration in complex, multi-stage tasks.\n\nTo address these coupled generalization and exploration challenges, we present Dex-One2Many, a real-to-sim-to-real framework that learns a generalizable dexterous manipulation policy from a single human video.\n\nOur key insight is to abstract the video into sequential scene graphs that guide RL, enabling efficient exploration while preserving broad generalizability. The graphs serve as generative constraints for sampling diverse reset states and provide dense rewards for each stage.\n\nBecause the graphs constrain relations rather than exact poses, these reset states cover object poses and grasps beyond the video, while initializing each stage from them with dense rewards keeps exploration short and guided. Trained entirely in simulation, Dex-One2Many transfers zero-shot to a real multi-fingered hand.\n\nAcross five tool-use and manipulation tasks, Dex-One2Many exceeds baselines by 6.5% in seen configurations, while its robust generalization widens this gap to 71% in unseen scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Dex-One2Many, a real-to-sim-to-real framework for learning dexterous manipulation from one human video. It converts the video into sequential scene graphs that guide reinforcement learning, constrain relationships rather than exact poses, generate diverse reset states, and provide dense rewards at each stage. The policy is trained entirely in simulation and transfers zero-shot to a real multi-fingered hand. Across five tool-use and manipulation tasks, the authors report gains over baselines of 6.5% in seen configurations and a 71% gap in unseen scenarios.",
+          "zh": "论文提出 Dex-One2Many，一个从单个人类视频学习灵巧操作策略的真实到仿真再到真实框架。方法将视频抽象为连续场景图，用于指导强化学习探索：场景图约束关系而非精确姿态，可生成多样重置状态并提供分阶段密集奖励。策略完全在仿真中训练，并零样本迁移到真实多指手。作者称，在五项工具使用与操作任务中，相较基线，已见配置表现高出 6.5%，未见情境中的差距扩大至 71%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",

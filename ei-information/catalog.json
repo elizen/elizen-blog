@@ -5916,7 +5916,11 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniDex for scaling dexterous-hand grasping in diverse cluttered scenes. The authors curate 3D objects and supporting bases and use a scalable seed-and-filter strategy to build a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. To address grasp multimodality and last-millimeter errors, OmniDex combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking, avoiding post-optimization latency. The authors report state-of-the-art performance and generalization across varied scenes and views, including unseen objects.",
+          "zh": "论文提出 OmniDex，用于在多样、杂乱场景中扩展灵巧手抓取。作者通过筛选高质量三维物体与支撑底座，采用可扩展的种子与过滤策略，构建包含超过 260 万个场景及 0.4 billion 个场景专属抓取真值的基准。OmniDex 针对抓取多模态和末端精度误差，结合 Soft Winner-Takes-All 学习、人类启发的物理约束及基于物理的排序，避免后处理优化延迟。实验结果显示，该模型达到作者所称的最先进表现，并能泛化至多样场景、视角及未见物体。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9046,7 +9050,11 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LIVIN, a benchmark for spatial and embodied intelligence based on digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and everyday belongings. Their construction uses a human-in-the-loop workflow for instance recognition, architectural reconstruction, and object generation and placement, with results checked against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The authors report that current methods struggle with dense arrangements, occlusions, limited free space, and constrained interaction areas in realistic homes.",
+          "zh": "论文介绍 LIVIN，一个基于 30 个真实居住家庭数字孪生的空间与具身智能基准。数字孪生保留观察到的房间布局、家具配置和日常物品；构建流程包含实例识别、建筑重建、物体生成与摆放，并在各阶段由人工对照源观察审核修正。基准评估三维检测、三维重建、导航和移动操作四项任务。评估显示，现有方法仍受真实家庭中的物品密集摆放、遮挡、可用空间有限及交互区域受限等因素挑战。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
