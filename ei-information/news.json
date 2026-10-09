@@ -3121,7 +3121,11 @@
             "heading": "",
             "text": "Despite recent advances in Vision-Language-Action models (VLAs) for robotic manipulation, their performance remains sensitive to changes in camera configuration. The problem becomes more evident in cross-setup deployment, as reproducing the exact camera pose used for training is nearly impossible.\n\nUnlike fixed external views, wrist views are more challenging because the camera moves with the robot, causing even small mounting variations to alter fine-grained geometric cues. To address this, we propose WARP-VLA, a camera-view robust VLA for diverse wrist camera configurations.\n\nWARP-VLA adopts a Mixture-of-Experts (MoE) architecture where individual experts learn view-specific feature transformations, and a router combines them based on implicit view information. This allows the policy to be deployed without requiring camera extrinsic parameters as additional input.\n\nThrough experiments on the LIBERO benchmark, WARP-VLA improves the average success rate of pi-0.5 from 39.2% to 78.3% under wrist-view perturbations. The real-robot experiments further show that the feature-level adaptation learned in simulation successfully transfers to diverse deployment settings.\n\nTo facilitate reproducibility and future research, we release our wrist viewpoint robustness benchmark and a plug-and-play implementation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WARP-VLA, a mixture-of-experts vision-language-action model for adapting to different wrist-camera views. View-specific experts learn feature transformations, and a router combines them using implicit view information, without camera extrinsics as input. On LIBERO under wrist-view perturbations, the authors report that pi-0.5’s average success rate rises from 39.2% to 78.3%. Real-robot experiments indicate that feature adaptation learned in simulation transfers to diverse deployment settings. The authors also report releasing a benchmark and plug-and-play implementation.",
+          "zh": "论文提出 WARP-VLA，以混合专家架构适应不同腕部相机视角：各专家学习特定视角的特征变换，路由器根据隐式视角信息组合结果，无需输入相机外参。作者报告，在 LIBERO 腕部视角扰动下，pi-0.5 的平均成功率从 39.2% 提高到 78.3%；真实机器人实验显示，在仿真中学到的特征适应可迁移到多种部署设置。论文还称发布了基准和即插即用实现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3152,7 +3156,11 @@
             "heading": "",
             "text": "Safe reinforcement learning commonly places safety and task performance in the same policy objective, where they can introduce competing updates.\n\nSafety filters separate them at action execution, but classical designs require an analytic safety function and dynamics model, and standard minimal-intervention filters are myopic to long-horizon task return because they minimize only instantaneous action deviation. Hard projections are also undefined when no safe action exists.\n\nWe present FAITH, a feasibility-aware, model-free framework that approximates the optimal state-action safety value and amortizes minimal-intervention filtering with a feedforward network.\n\nThe task policy optimizes the task return through the filtered dynamics, which recovers the feasible constrained problem without a competing safety term in the task-policy update. When no action satisfies the learned safety condition, the same filter approaches the action with minimum predicted peak harm.\n\nOn a double integrator example and a Safety Gym environment, FAITH achieves the highest return among methods with no feasible-start violations and matches the lowest harm from infeasible starts.\n\nOn a 29-DoF humanoid, it reaches a 99.95% safety rate while retaining 97% of the unfiltered return in Walking-Avoid, and obtains the highest measured safety rate in Push-Avoid by learning to sacrifice balancing and fall away from the protected region. The same policies are also demonstrated on a real-world Unitree G1 humanoid."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FAITH, a model-free framework for safe reinforcement learning in high-dimensional systems. A feedforward network approximates an optimal state-action safety value and amortizes minimal-intervention filtering. The task policy optimizes return through filtered dynamics; if no action satisfies the learned safety condition, the filter approaches the action with the lowest predicted peak harm. The authors report results on a double integrator, Safety Gym, and a 29-DoF humanoid, and demonstrate the policies on a real Unitree G1. Walking-Avoid reaches a reported 99.95% safety rate while retaining 97% of unfiltered return; Push-Avoid’s highest measured safety rate involves sacrificing balance and falling away from the protected region.",
+          "zh": "论文提出 FAITH，一种面向高维系统的无模型安全强化学习框架，用前馈网络近似最优状态—动作安全价值，并摊销最小干预过滤。任务策略通过过滤后的动力学优化回报；若没有动作满足学习到的安全条件，过滤器转而接近预测峰值伤害最小的动作。作者报告，在双积分器、安全 Gym 和 29 自由度人形机器人任务中取得相关安全与回报表现，并称策略还在真实 Unitree G1 上演示。结果包括 Walking-Avoid 中 99.95% 安全率及未过滤回报的 97%；Push-Avoid 中最高测得安全率涉及牺牲平衡并跌离受保护区域。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3183,7 +3191,11 @@
             "heading": "",
             "text": "World action models (WAMs) predict actions and future observations, typically from a reconstruction-based representation that carries noisy, redundant information which can complicate downstream predictions.\n\nWe introduce LeWAM, a bidirectional transformer for forward, backward, inverse dynamics and policy prediction, on a decoder-free JEPA latent trained end-to-end through all four modes.\n\nWe see the following benefits: 1) Alignment: linear probes read robot and object state from LeWAM's latent better than from a regular Le World Model (a forward-only JEPA world model), while the latent ignores visual distractors as well as LeWM does and far better than a reconstruction-based WAM. 2) Acting: Closed-loop evaluations of LeWAM match a regular flow-matching policy trained on the same encoder at matched size, while also providing a world model. 3) Planning: Sampling raw actions when planning with WAMs lets MPC exploit dynamics-model inaccuracies; planning in the noise space of the policy head instead improves the closed-loop performance of these WAMs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LeWAM, a bidirectional transformer trained end-to-end on a decoder-free JEPA latent representation for forward, backward, inverse-dynamics, and policy prediction. The authors report that linear probes recover robot and object state better than from the forward-only LeWM, while the latent ignores visual distractors as well as LeWM and better than a reconstruction-based WAM. In closed-loop evaluations, LeWAM matches a flow-matching policy using the same encoder at matched size. Planning experiments indicate that sampling in the policy head’s noise space improves WAM closed-loop performance compared with sampling raw actions.",
+          "zh": "论文提出 LeWAM，一种在无解码器 JEPA 潜在表示上端到端训练的双向变换器，支持前向、后向、逆动力学和策略预测。作者称，线性探针从其潜在表示读取机器人与物体状态的效果优于仅前向的 LeWM；该表示抑制视觉干扰物的能力与 LeWM 相当，且优于基于重建的 WAM。在闭环评估中，LeWAM 与使用相同编码器、匹配规模的流匹配策略表现相当。规划实验还显示，在策略头的噪声空间中采样规划，相较直接采样原始动作可提升 WAM 的闭环表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3214,7 +3226,11 @@
             "heading": "",
             "text": "Diffusion models can represent complex, multimodal trajectory distributions, but extracting uncertainty from them typically requires costly Monte Carlo sampling. This limits their use in real-time control, where robots must rapidly assess risk and maintain safety margins.\n\nWe introduce Score-Curvature for Online Precision Estimation (SCOPE), a lightweight module that augments diffusion trajectory models with control-ready uncertainty.\n\nSCOPE learns a structured precision matrix around each nominal trajectory by distilling score-curvature information and producing calibrated Gaussian tubes with low overhead and without repeated Monte Carlo sampling.\n\nThese tubes provide per-timestep covariance estimates that can be used both as predicted occupancy for moving agents and as adaptive exploration guides for robot control. We evaluate SCOPE with mode-conditioned multimodal diffusion backbones in pedestrian forecasting, crowd navigation, Maze2D control, and real-world Franka Panda manipulation.\n\nAcross these settings, SCOPE provides fast uncertainty estimation, which leads to better closed-loop performance. Project page: https://zackaxue.github.io/SCOPE-project-page/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SCOPE, a module that adds control-ready uncertainty estimates to diffusion trajectory models. It distills score-curvature information into a structured precision matrix around each nominal trajectory, producing calibrated Gaussian tubes without repeated Monte Carlo sampling. The tubes provide per-timestep covariance estimates for predicting moving-agent occupancy and guiding adaptive exploration. The authors evaluate SCOPE with mode-conditioned multimodal diffusion backbones in pedestrian forecasting, crowd navigation, Maze2D control, and real-world Franka Panda manipulation. They report fast uncertainty estimation and improved closed-loop performance across these settings.",
+          "zh": "论文提出 SCOPE，为扩散轨迹模型提供可用于控制的不确定性估计。该模块从分数曲率信息中蒸馏结构化精度矩阵，为标称轨迹生成经校准的高斯管，旨在无需反复蒙特卡洛采样即可低开销估计不确定性。高斯管提供逐时间步协方差，可用于预测移动智能体占据情况及引导自适应探索。作者在行人预测、人群导航、Maze2D 控制和真实 Franka Panda 操作中评估 SCOPE，并报告其能快速估计不确定性且带来更好的闭环表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
