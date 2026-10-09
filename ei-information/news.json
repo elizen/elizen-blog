@@ -2790,7 +2790,11 @@
             "heading": "",
             "text": "Visual bottlenecks that focus policy inputs on regions of interest (ROIs) can improve data-efficient visuomotor learning by separating where to look from how to act. Many ROI interfaces rely on external spatial labels, such as gaze, object classes, or affordance annotations.\n\nLabel-free alternatives often derive crops from trajectories by detecting gripper or motion events and centering a fixed crop at the projected end-effector. Such action-derived crops are useful spatial priors that require no additional labels, but they encode fixed choices about event timing, proxy points, and crop scale.\n\nWhen the visual evidence needed for control lies away from the end-effector or changes continuously with task progress, these crops can become misaligned. We propose Seeker, a task- and state-conditioned readout that learns attention from action.\n\nStarting from frozen DINOv3 features, Seeker iteratively updates a query with gathered visual evidence, producing progression-aware ROIs solely from action supervision. The learned ROI serves as a spatial interface for RGB cropping, mask-guided background augmentation, and point-cloud filtering.\n\nIn simulation and the real world, Seeker improves data efficiency and robustness over no-crop, augmentation, and action-derived crop baselines. On real robots, Seeker raises average in-domain success from the best baseline's 48.3% to 76.7% and success under lighting/background shifts from 20.0% to 60.0%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Seeker, a task- and state-conditioned visual readout that learns attention from action supervision alone. Starting from frozen DINOv3 features, it iteratively gathers visual evidence to produce regions of interest that adapt to task progress, supporting image cropping, background augmentation, and point-cloud filtering. The authors report improved data efficiency and robustness over several baselines in simulation and the real world. Real-robot experiments show higher in-domain success and better success under lighting and background shifts.",
+          "zh": "论文提出 Seeker，一种仅依靠动作监督、基于任务和状态条件学习注意力的视觉读出方法。它从冻结的 DINOv3 特征出发，迭代汇集视觉证据并生成随任务进程变化的感兴趣区域，用于图像裁剪、背景增强和点云筛选。作者报告称，在仿真和真实环境中，Seeker 相较多种基线提高了数据效率与鲁棒性；真实机器人实验中，域内成功率及光照、背景变化下的成功率均有所提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2821,7 +2825,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) enable generalist robot manipulation by conditioning an action expert on representations from a pretrained video Diffusion Transformer (DiT).In closed-loop control, the video DiT runs at every chunk to encode the current observation into layerwise key-value (KV) pairs that the action expert queries.\n\nThis prefill dominates the per-chunk computational cost, yet existing training-free accelerations leave it fully dense. We present WAM-Cache, a training-free framework that retains layerwise key-value representations across chunks and recomputes only a sparse refresh set of tokens.\n\nCrucially, we find that the intuitive heuristic of refreshing visually drifted tokens plateaus far below the dense baseline, even with an oracle predicting ground-truth KV drift. Downstream action accuracy is instead governed by where the action expert attends, not by what moved.\n\nWAM-Cache therefore selects the refresh set by uniting the action expert's cross-attention with visual latent surprise, complemented by a strict age bound that suppresses compounding error.\n\nOn Fast-WAM, WAM-Cache cuts video DiT prefill FLOPs by 32-42% across RoboTwin 2.0, LIBERO, and real-world experiments, while staying within 0.7-1.8 percentage points of the dense policy in simulation and 2.5 points on a real robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WAM-Cache, a training-free framework that reuses layerwise key-value representations from a video DiT across control chunks and recomputes only selected tokens. The authors find that refreshing visually changed tokens alone is insufficient; action accuracy depends more on where the action expert attends. WAM-Cache combines cross-attention, visual latent surprise, and a strict age bound to select refresh tokens. In Fast-WAM experiments, it reduces video DiT prefill FLOPs by 32–42% while keeping policy performance close to the dense baseline in simulation and on a real robot.",
+          "zh": "论文提出 WAM-Cache，一种无需训练、在控制分块间复用视频 DiT 层级键值表示的框架，仅重新计算稀疏选定的令牌。作者指出，刷新视觉变化令牌的启发式方法效果有限，动作准确性更取决于动作专家关注的位置。该方法结合交叉注意力、视觉潜变量惊异度和严格年龄上限选择刷新集。Fast-WAM 实验中，视频 DiT 预填充 FLOPs 减少 32%–42%，仿真和真实机器人策略表现接近密集基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2852,7 +2860,11 @@
             "heading": "",
             "text": "We study fine-grained execution-constraint following in vision-language-action (VLA) models. Given an invariant task goal, the policy must follow instruction-specified execution constraints, including interaction targets, motion patterns, spatial relations, and terminal configurations.\n\nThis setting exposes a limitation of goal-oriented VLAs: trajectories that complete the same task are not interchangeable when the instruction specifies how the task must be executed.\n\nWe propose ExecVLA, a framework that separates a goal-oriented component from an execution-specific component through a bi-level action representation and supervised bi-level reasoning tokens.\n\nWe further introduce explicit goal-invariance and execution-predictability objectives so that the goal-level representation remains stable across executions of the same goal, while the execution-level representation retains the constraints that distinguish those executions.\n\nWe construct execution-constraint-following datasets in simulation and on a Realman-75 robot, with goal and fine-grained reasoning annotations. Experiments on LIBERO and the real robot show improved goal completion and, more importantly, substantially more reliable adherence to instruction-specified execution constraints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how vision-language-action models can follow fine-grained execution constraints, such as interaction targets, motion patterns, spatial relations, and terminal configurations. It proposes ExecVLA, which separates task goals from execution requirements using a bi-level action representation and supervised reasoning tokens. Goal-invariance and execution-predictability objectives are intended to keep goal representations stable while retaining execution-specific distinctions. The authors build datasets in simulation and on a Realman-75 robot. Experiments on LIBERO and the real robot report improved goal completion and more reliable constraint adherence.",
+          "zh": "论文研究视觉语言动作模型如何遵循细粒度执行约束，例如交互目标、运动方式、空间关系和终止状态。作者提出 ExecVLA，以双层动作表示和监督推理令牌分离任务目标与执行要求，并设置目标不变性和执行可预测性目标，使两层表示分别保留目标稳定性与执行差异。研究构建了仿真和 Realman-75 机器人数据集。LIBERO 与真实机器人实验显示，该方法提升了目标完成表现，并更可靠地遵循指令规定的执行约束。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
