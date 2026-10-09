@@ -1519,7 +1519,11 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniDex for dexterous-hand grasping in diverse cluttered scenes. The authors build a benchmark with more than 2.6 million scenes and 0.4 billion scene-specific grasp ground truths, using a scalable seed-and-filter strategy. The model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking to address grasp multimodality and precision errors. Experiments show what the authors report as state-of-the-art performance and generalization across varied scenes, views, and unseen objects.",
+          "zh": "论文提出OmniDex，用于多样拥挤场景中的灵巧手抓取。作者构建了包含超过260万场景和4亿个场景专属抓取真值的基准，并采用种子生成与筛选策略。模型结合Soft Winner-Takes-All学习、人类启发的物理约束和基于物理的排序，旨在处理抓取多模态及末端精度问题。实验结果显示，该模型达到作者所称的最先进性能，并能泛化至不同场景、视角和未见物体。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1550,7 +1554,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models increasingly rely on diffusion- or flow-matching-based action heads to generate continuous robot actions. These action heads typically process the denoising trajectory in a largely uniform manner.\n\nHowever, we observe that the conditioning focus naturally shifts across denoising stages: early stages combine language instructions and visual observations to establish a coarse action trajectory, whereas later stages place greater emphasis on current visual observations for action alignment.\n\nBased on this insight, we introduce StairVLA, a stage-aware hierarchical action generation framework that uses partially denoised actions as a natural interface between coarse long-horizon action generation and local refinement.\n\nA high-level VLA performs early denoising to produce a reusable long-horizon partially denoised action trajectory, while a lightweight refiner operates at a higher frequency to refine local action chunks using the latest observations. This design amortizes expensive high-level VLA computation while preserving frequent closed-loop correction.\n\nOn LIBERO, our GR00T-style instantiation improves average success from 96.5% to 97.8% while reducing amortized inference latency from 115.0 ms to 44.2 ms per action chunk. More broadly, across two VLA backbones, simulation benchmarks, and real-robot tasks, StairVLA consistently reduces inference cost while maintaining strong task performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "StairVLA uses the changing conditioning focus across action-denoising stages to introduce hierarchical action generation. A high-level vision-language-action model produces a reusable, partially denoised long-horizon trajectory, and a lightweight refiner uses recent observations to update local action chunks at higher frequency. This amortizes high-level computation while retaining closed-loop correction. On LIBERO, a GR00T-style implementation raises average success from 96.5% to 97.8% and lowers amortized inference latency per action chunk from 115.0 ms to 44.2 ms. The authors also report reduced inference cost with strong task performance across simulation benchmarks and real-robot tasks.",
+          "zh": "StairVLA利用动作去噪不同阶段条件重点的变化，提出分层动作生成框架：高层视觉语言动作模型先生成可复用的长时程部分去噪轨迹，轻量级精炼器再依据最新观测高频修正局部动作块，以摊销高层计算并维持闭环调整。在LIBERO上，GR00T风格实现的平均成功率由96.5%升至97.8%，每动作块摊销推理延迟由115.0毫秒降至44.2毫秒。作者还报告，该方法在两种模型骨干、仿真基准和真实机器人任务中降低推理成本并保持较强任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1581,7 +1589,11 @@
             "heading": "",
             "text": "Legged robots offer superior mobility in unstructured environments, but reliable operation in such conditions requires robust state estimation. To address the vulnerability of proprioceptive estimators in rough terrain, recent methods have incorporated radar to provide velocity measurements.\n\nHowever, their limited yaw observability still leads to drift, and failure-aware fusion for adverse environments remains underexplored. In this letter, we present RAGNAROK, the first radar-visual-kinematic-inertial SLAM designed for robust operation in challenging environments.\n\nIt integrates slip- and rolling-contact-aware leg velocity estimation, a kinematics-aware radar factor, and degradation-aware image enhancement. We further incorporate a B-spline-based radar-aided proprioceptive backbone, adaptive weighting, and online extrinsic calibration.\n\nExtensive experiments on public and self-collected datasets demonstrate that RAGNAROK achieves robust performance under challenging conditions and outperforms state-of-the-art baselines. The source code and dataset are available at https://github.com/hanjun815/RAGNAROK."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RAGNAROK is a radar-visual-kinematic-inertial SLAM method intended to improve state estimation for legged robots in challenging environments. It combines leg-velocity estimation aware of slip and rolling contact, a kinematics-aware radar factor, and degradation-aware image enhancement. The system also uses a B-spline-based radar-aided proprioceptive backbone, adaptive weighting, and online extrinsic calibration. The authors target drift associated with limited yaw observability and underexplored failure-aware fusion. Experiments on public and self-collected datasets are reported to show robust performance in challenging conditions and superiority to the evaluated state-of-the-art baselines.",
+          "zh": "RAGNAROK是一种面向复杂环境的雷达、视觉、运动学与惯性SLAM方法，旨在改善腿式机器人状态估计。系统结合感知足部滑移与滚动接触的腿部速度估计、运动学感知雷达因子及退化感知图像增强，并采用基于B样条的雷达辅助本体感知骨干、自适应加权和在线外参标定。作者指出，该方法针对有限偏航可观测性导致的漂移及恶劣环境下融合不足等问题。公开和自采数据集上的实验显示，其在挑战条件下表现稳健，并优于所比较的先进基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
