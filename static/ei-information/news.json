@@ -1379,7 +1379,11 @@
             "heading": "",
             "text": "Accurate and reliable relative localization is crucial for multi-robot applications like exploration, search, and rescue missions. LiDAR-based solutions offer high accuracy in localizing surrounding objects; however, distinguishing homogeneous robots with similar appearances remains challenging due to the lack of distinctive identification features.\n\nIn this paper, we propose a fully distributed relative pose estimation approach by integrating LiDAR, UWB, and odometry measurements, allowing each robot to accurately and continuously localize its teammates without external infrastructure. Specifically, potential anonymous teammate robot clusters from LiDAR scans are tracked by a dynamic tracker.\n\nWe then identify teammate robots from these tracked anonymous clusters using a joint matching strategy, ensuring reliable data association between robots and clusters. Finally, by combining the corresponding LiDAR observations, UWB ranging, and odometry measurements, each robot precisely localizes others while minimizing data exchange.\n\nThe system requires only odometry data exchange through onboard UWB, eliminating the need for additional communication infrastructure like WiFi routers or mesh networks. Extensive simulation and real-world experiments demonstrate the effectiveness and reliability of the proposed relative localization approach."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a fully distributed relative pose estimation method for homogeneous multi-robot systems. It combines LiDAR, UWB ranging, and odometry so robots can continuously localize teammates without external infrastructure. A dynamic tracker follows anonymous clusters in LiDAR scans, and a joint matching strategy associates clusters with robots. The authors report that simulations and real-world experiments demonstrate the approach’s effectiveness and reliability.",
+          "zh": "论文提出一种面向同构多机器人系统的分布式相对位姿估计方法，融合激光雷达、UWB测距和里程计，使机器人无需外部基础设施即可持续定位队友。方法通过动态跟踪激光扫描中的匿名机器人簇，并联合匹配机器人与簇，再结合传感器观测以减少数据交换。作者称，仿真和真实场景实验验证了该方法的有效性与可靠性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1410,7 +1414,11 @@
             "heading": "",
             "text": "Legged robots are promising candidates for future lunar surface missions because they can traverse steep, loose, and obstacle-rich terrain that challenges conventional wheeled rovers.\n\nHowever, readiness for lunar deployment is limited by uncertainties in foot-regolith interaction, dust generation, illumination-driven perception degradation, and operational constraints.\n\nThis paper reports lessons from the 2025 LUNA analogue campaign, where ANYmal-D and Magnecko traversed loose regolith simulant and crater-like terrain and collected long-horizon navigation and visual-inertial data under challenging lighting.\n\nWe show that quadrupedal robots can traverse regolith simulant, but performance is affected by sinkage and slip, dust-generating contacts, and perception failures caused by overexposure, shadows, and low-texture regions.\n\nThese results motivate tighter integration of regolith-aware locomotion policies, illumination-robust perception, repeatable analogue testing, and mission-level operational validation for future lunar legged robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper reports lessons from the 2025 LUNA analogue campaign, where ANYmal-D and Magnecko traversed loose regolith simulant and crater-like terrain while collecting long-horizon navigation and visual-inertial data. The authors report that quadrupeds can traverse the simulant, but sinkage, slip, dust-generating contacts, and perception failures under overexposure, shadows, and low-texture conditions affect performance. They identify locomotion, perception, repeatable testing, and mission-level validation as priorities.",
+          "zh": "论文总结了2025年LUNA类月球场地活动中的腿式机器人部署经验。ANYmal-D和Magnecko在松散月壤模拟物及类陨坑地形中行走，并采集长时导航与视觉惯性数据。结果显示，四足机器人能够穿越模拟月壤，但沉陷、打滑、接触扬尘，以及过曝、阴影和低纹理区域导致的感知故障会影响表现。作者据此提出加强月壤感知运动、抗光照感知、可重复类比测试及任务级验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1441,7 +1449,11 @@
             "heading": "",
             "text": "Long-horizon robotic manipulation is often built by chaining independently trained skills. Although each skill can be reliable in isolation, performance degrades sharply when skills are chained: each downstream skill must start from the state its predecessor leaves behind rather than from its training distribution.\n\nWe study this failure mode, Observation-Space Shift (OSS), and ask what causes these skill-seam failures.\n\nUsing privileged simulator resets, we find that the dominant shift comes from displaced scene state (e.g., an open drawer or secondary objects left behind by earlier skills), not from the robot's joint configuration or the object the downstream skill manipulates.\n\nTo test this diagnosis, we build a fully learned detect-restore-resume system: a task-progress monitor detects the stall, a learned policy restores the displaced scene components, and seam-robust fine-tuning lets the skill resume.\n\nIt recovers the seam where every tested alternative fails, which we treat as evidence for the diagnosis rather than as a general-purpose method.\n\nOn the BOSS-44 benchmark, the system improves full-chain success from 7.6% to 26.5%, a 3.5x improvement over the base policy and 51% of a privileged restoration oracle, whereas best-of-K resampling, a Diffusion Policy, and world-model baselines fail to recover from the evaluated seam states.\n\nOn a real Franka arm running a fine-tuned $\\pi_{0.5}$ policy, the same monitor is limited by exterior-camera observability, yet closing the loop still recovers some otherwise-terminal failures, motivating wrist and gripper sensing.\n\nThese results suggest that some long-horizon composition failures are better addressed by restoring the scene before resuming the policy than by retrying from an off-support state."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies observation-space shift at seams between chained manipulation skills. Privileged simulator resets indicate that displaced scene state, rather than robot joint configuration or the manipulated object, is the dominant shift. A learned detect-restore-resume system raises full-chain success on the BOSS-44 benchmark from 7.6% to 26.5% and recovers evaluated seam states where tested alternatives fail. On a real Franka arm, exterior-camera observability limits the monitor, though closed-loop control recovers some failures.",
+          "zh": "论文研究长时程机器人操作中串联技能的观测空间偏移问题。利用特权模拟器重置，作者发现主要偏移来自场景状态改变，而非机器人关节配置或下游技能操作的物体。提出的学习式检测、恢复与继续系统在BOSS-44仿真基准上将全链成功率从7.6%提升至26.5%；作者称其恢复了其他测试方法未能处理的接缝状态。真实Franka机械臂实验中，外部相机可观测性限制了监控器，但闭环仍挽回部分失败。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1472,7 +1484,11 @@
             "heading": "",
             "text": "Instruction following enables robots to perform diverse tasks specified in natural language, making it a fundamental capability for human-robot interaction. Beyond communicating desired outcomes, users also need to specify constraints on what not to do.\n\nWe investigate how to enable vision-language-action models (VLAs) to follow negated instructions, where robots must accomplish task goals while respecting explicit exclusions. To this end, we propose NegaAlign, a parameter-efficient, plug-and-play framework that extends pretrained VLAs to follow negated instructions through image-language supervision alone.\n\nSpecifically, we introduce Negation Transformation Layers into selected layers of the vision-language backbone to reshape intermediate instruction representations.\n\nMeanwhile, a teacher-guided alignment mechanism is designed to align instruction-relevant visual tokens, transferring action-relevant grounding from instructions that satisfy the negated constraint.\n\nThe training phase uses supervision constructed from existing demonstrations and updates only the inserted layers, keeping all pretrained parameters frozen, including the action generator. We further introduce NegaBench, a simulation benchmark spanning 10 scenarios across five domains for systematically evaluating manipulation under negated constraints.\n\nExperiments across GR00T, $\\pi_0$, and $\\pi_{0.5}$ demonstrate consistent improvements in negated instruction following. With 11.6M trainable parameters, NegaAlign increases the negated-instruction success rate of $\\pi_{0.5}$ from 2.60% to 88.45% on NegaBench and from 12.4% to 88.8% on real-world tasks, while retaining performance on affirmative instructions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents NegaAlign, a parameter-efficient framework for vision-language-action models to follow instructions with explicit exclusions. It adds Negation Transformation Layers and teacher-guided alignment of visual tokens, updating only inserted layers while freezing pretrained parameters. The authors introduce NegaBench, a simulation benchmark with 10 scenarios across five domains. Experiments with GR00T, π₀, and π₀.₅ show improvements; π₀.₅ reaches 88.45% success on NegaBench and 88.8% on real-world tasks, while retaining affirmative-instruction performance.",
+          "zh": "论文提出NegaAlign，使视觉语言动作模型在完成目标时遵守自然语言中的明确排除条件。该参数高效框架在视觉语言骨干网络选定层加入否定变换层，并通过教师引导对齐视觉词元；训练仅更新新增层，预训练参数保持冻结。作者还提出涵盖五个领域、十种场景的仿真基准NegaBench。实验显示，在GR00T、π₀和π₀.₅上否定指令遵循均有提升；π₀.₅在基准和真实任务上的成功率分别升至88.45%和88.8%，且肯定指令表现得以保持。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
