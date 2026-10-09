@@ -1779,7 +1779,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models provide a versatile foundation for general robotic manipulation, yet they exhibit significant brittleness when confronted with novel task distributions.\n\nWhile In-Context Imitation Learning (ICIL) offers a training-free alternative, existing frameworks suffer from an adaptation bottleneck that hinders the effective translation of expert context to executable actions.\n\nThis failure originates from superficial retrieval mechanisms and an inherent behavioral inertia that anchors the policy to its pre-trained priors. To address these limitations, we present RA-VLA, a retrieval-augmented VLA framework that integrates behavior-aligned context retrieval with a grounded execution pipeline.\n\nBy enforcing faithful adherence to functional cues within a scalable architecture, RA-VLA facilitates seamless task adaptation while preserving inference efficiency.\n\nOur empirical evaluations across the LIBERO benchmark and a real-world UR5e environment demonstrate that RA-VLA achieves superior success rates and computational efficiency, establishing a robust framework for training-free robotic adaptation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RA-VLA, a retrieval-augmented vision-language-action framework for adapting to novel task distributions. It targets limitations in in-context imitation learning, including superficial retrieval and difficulty translating expert context into executable actions. The method combines behavior-aligned context retrieval with a grounded execution pipeline intended to follow functional cues while preserving inference efficiency. The authors report higher success rates and computational efficiency in evaluations on the LIBERO benchmark and a real-world UR5e environment.",
+          "zh": "论文提出检索增强视觉语言动作框架 RA-VLA，针对新任务分布下 VLA 模型脆弱，以及上下文模仿学习中专家示例难以转化为可执行动作的问题。方法结合与行为对齐的上下文检索和基于功能线索的执行流程，旨在适配任务并保持推理效率。作者报告，在 LIBERO 基准和真实 UR5e 环境的评估中，该方法取得较高成功率和计算效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1810,7 +1814,11 @@
             "heading": "",
             "text": "Current Vision-Language-Action (VLA) models face a trade-off between efficient action generation and explicit deliberation.\n\nDirectly decoding actions from vision-language backbone representations enables low-latency control, whereas textual reasoning, pixel-level subgoals, or world-model evaluation of decoded actions can improve planning but incur substantial latency and computational cost.\n\nWe propose PearlVLA, a VLA framework that progressively refines a VLM-derived latent plan using feedback from the predicted consequence of each intermediate plan. PearlVLA uses a frozen latent world model (LaWM) pretrained on action-free video.\n\nAt each refinement round, the current plan produces a continuous latent action code, and the LaWM predicts the corresponding latent visual subgoal. A future-guided plan refiner uses this subgoal to update the plan, so each revision reshapes the next LaWM query.\n\nAfter K rounds, the refined plan is passed once to the host policy's action interface to produce an action chunk. We further introduce Causal Refinement-Grouped Process-Reward RL to optimize latent refinement by comparing rewards from the longer-horizon imagined futures of plan edits made at the same refinement state.\n\nExperiments on the LIBERO and RoboCasa benchmarks show that PearlVLA performs competitively against strong existing methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PearlVLA progressively refines a VLM-derived latent plan using predicted consequences from a frozen latent world model pretrained on action-free video. Each round predicts a latent visual subgoal from the current plan’s action code, then updates the plan; after K rounds, the host policy produces an action chunk. The paper also introduces Causal Refinement-Grouped Process-Reward RL to optimize plan refinement. Experiments on LIBERO and RoboCasa show competitive performance against strong existing methods.",
+          "zh": "论文提出 PearlVLA，通过反馈逐步修正 VLM 生成的潜在计划，以兼顾动作生成效率和规划。每轮修正中，计划产生连续潜在动作编码，冻结的潜在世界模型据此预测视觉子目标，未来引导的修正器再更新计划；经过 K 轮后，计划交由策略生成动作块。论文还提出因果式分组过程奖励强化学习来优化修正。作者报告，该方法在 LIBERO 和 RoboCasa 上与有竞争力的现有方法表现相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1841,7 +1849,11 @@
             "heading": "",
             "text": "Microscopic robots require accurate task geometry despite changes in language, parts, and focus. We present a semantic-to-physical framework that maps instructions to constrained geometric operators, reuses frozen open-vocabulary perception, and integrates locally reliable focal-plane trajectories by confidence weighting and dynamic programming.\n\nCalibrated multi-view geometry connects 2-D paths to physical execution. Prompt, unseen-part, and geometry reconfiguration tests yield 6.30-6.59-pixel RMSE. Relative to part-specific U-Net training with 20-100 labels, the proposed zero-new-label configuration takes 15 rather than 72-165 min.\n\nAcross nine part-illumination conditions, trajectory-space integration reduces RMSE from 14.41 to 6.28 pixels (56.4%) and P95 error from 20.07 to 8.13 pixels (59.5%) compared with image-first multi-focus fusion. An ablation isolates the roles of confidence and path-wise selection.\n\nIn representative robot experiments, target-region coverage improves from 83.5% to 92.9%.Dispensing provides a measurable physical trace, not a task-specific limitation of the method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a semantic-to-physical framework for microscopic robots. It maps language instructions to constrained geometric operators, combines locally reliable trajectories across focal planes using confidence weighting and dynamic programming, and connects 2D paths to physical execution through calibrated multi-view geometry. Prompt, unseen-part, and geometry-reconfiguration tests report RMSE of 6.30–6.59 pixels. Across nine part-illumination conditions, trajectory-space integration reduces RMSE and P95 error relative to image-first fusion. Representative robot experiments report improved target-region coverage.",
+          "zh": "论文提出显微机器人语义到物理执行框架，将语言指令映射为受约束几何操作，并通过置信度加权和动态规划整合多个焦平面上局部可靠的轨迹，再以标定多视图几何连接二维路径与实体执行。提示、未见零件和几何重配置测试的 RMSE 为 6.30–6.59 像素；九种零件与照明条件下，轨迹空间融合降低 RMSE 和 P95 误差。代表性机器人实验中，目标区域覆盖率从 83.5% 提升至 92.9%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1872,7 +1884,11 @@
             "heading": "",
             "text": "Modern data-driven decision-making methods, such as imitation learning (IL) and reinforcement learning (RL), have achieved great success in solving many complex tasks.\n\nHowever, these methods often suffer from serious control instability and robustness issues when applied in real-world applications such as robotics and autonomous driving, posing notable challenges for their practical deployment.\n\nWe argue that this instability issue stems largely from their limitations in solely supervising and optimizing zeroth-order actions (i.e., the action labels), failing to account for higher-order action dynamics and temporal consistency.\n\nIn this paper, we show that simultaneously supervising both zeroth- and first-order actions can dramatically enhance policies' performance and control robustness.\n\nTo achieve this, we introduce a novel and elegant loss scheme supported by formal theoretical guarantees that can equip any off-the-shelf policy model (e.g., deterministic, stochastic, or flow policies) with the capability for higher-order action supervision, without requiring any structural modifications.\n\nMoreover, our proposed method can serve as a lightweight plug-and-play module that seamlessly integrates with a broad spectrum of existing offline RL frameworks. Extensive evaluations on OGBench and D4RL demonstrate that our approach yields substantial performance and robustness improvements across a wide range of continuous control environments.\n\nNotably, our method can also enhance policies' out-of-distribution (OOD) generalization capability in the challenging low-data regime, making it an ideal tool in tackling many real-world control problems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that supervising only zeroth-order actions overlooks higher-order dynamics and temporal consistency, contributing to control instability and limited robustness. It proposes a loss scheme that supervises both zeroth- and first-order actions, with stated theoretical guarantees, and can be applied to deterministic, stochastic, or flow policies without structural changes. The method is also presented as a plug-in module for offline RL frameworks. Evaluations on OGBench and D4RL report improvements in performance, robustness, and out-of-distribution generalization in low-data settings.",
+          "zh": "论文认为，仅监督和优化零阶动作会忽略更高阶动作动态与时间一致性，进而导致控制不稳定和鲁棒性不足。作者提出同时监督零阶与一阶动作的损失方案，并称其具有形式化理论保证，可用于确定性、随机或流策略，无需修改模型结构；该方法也可作为模块接入多种离线强化学习框架。在 OGBench 和 D4RL 的连续控制评估中，作者报告性能、鲁棒性及低数据条件下分布外泛化有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
