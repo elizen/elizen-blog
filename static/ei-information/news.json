@@ -1726,7 +1726,11 @@
             "heading": "",
             "text": "Multi-agent path planning (MAPP) in continuous environments often relies on roadmaps to balance safety and search efficiency. However, traditional roadmap generation methods, such as lattice grids or standard sampling-based approaches, frequently face a trade-off between graph density and the likelihood of finding feasible, high-quality solutions.\n\nIn this paper, we propose a scalable heterogeneous Graph Neural Network (GNN) framework for the automated generation and evaluation of shared multi-agent roadmaps.\n\nOur model covers the representation of waypoints, agent locations, and task locations as distinct nodes in a heterogeneous graph, allowing it to reason over global connectivity and inter-agent interactions.\n\nBy training on occupation density maps aggregated and collected from expert solver trajectories, the GNN learns to identify critical points of interest and prune redundant nodes and edges. This process produces a compact, coordination-aware roadmap that is invariant to task permutations and is reusable for multi-agent pick and delivery tasks.\n\nExperimental results demonstrate that our framework can reduce planning effort and can potentially find better solutions, reaching at least 40% reduction in runtime and in graph size for dense roadmaps."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper proposes a scalable heterogeneous graph neural network framework to generate and evaluate shared roadmaps for multi-agent path planning. It represents waypoints, agent locations, and task locations as distinct node types, and uses occupation density maps aggregated from expert solver trajectories to identify important points and prune redundant nodes and edges. The resulting compact roadmap is invariant to task permutations and reusable for multi-agent pick-and-delivery tasks. Experiments report reduced planning effort and the potential for better solutions, with at least 40% reductions in runtime and graph size for dense roadmaps.",
+          "zh": "本文提出一种用于多智能体路径规划的异构图神经网络框架，自动生成并评估共享路标图。模型将路点、智能体位置和任务位置表示为不同类型的节点，并利用专家求解轨迹汇总的占用密度图识别关键点、裁剪冗余节点和边，生成可复用于多智能体取送任务且不受任务排列影响的紧凑路标图。实验结果显示，该方法可减少规划工作量，并可能找到更优解；在稠密路标图中，运行时间和图规模至少减少40%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1757,7 +1761,11 @@
             "heading": "",
             "text": "In tropical regions, their agricultural sectors remain highly dependent on manual labor for fruit harvesting. On large-scale farms, this dependency often results in significant labor cost and logistic complexities.\n\nThis project presents the development and simulation of a voice-controlled Unmanned Aerial Vehicle (UAV) system designed to automate harvesting tasks in extensive plantations. The proposed system integrates speech recognition using Whisper [1] and LLM, computer vision-based ripeness classification, and adaptive path planning within a unified framework.\n\nThe entire system is modeled and validated in a Gazebo simulation environment, allowing performance evaluation under controlled agricultural scenarios"
           }
-        ]
+        ],
+        "summary": {
+          "en": "This project presents a voice-controlled UAV system designed to automate fruit harvesting on large plantations, where manual labor can contribute to labor costs and logistical complexity. The proposed framework combines speech recognition using Whisper and an LLM, computer-vision-based fruit ripeness classification, and adaptive path planning. The system is modeled and validated in a Gazebo simulation environment, where its performance can be evaluated under controlled agricultural scenarios. The abstract does not report specific evaluation results.",
+          "zh": "本文介绍一种面向大规模种植园成熟水果采摘的语音控制无人机系统，旨在应对农业采摘对人工劳动的依赖及其带来的成本和物流复杂性。系统整合语音识别、基于计算机视觉的成熟度分类和自适应路径规划，并在Gazebo仿真环境中建模与验证，以便在受控农业场景下评估性能。摘要未提供仿真评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1788,7 +1796,11 @@
             "heading": "",
             "text": "Real-time robot control demands enough visual history to infer motion and task progress, but processing that history can delay action. We present Long-WAM, a model-system framework for scaling the context of causal world-action models under real-time control constraints.\n\nOur central finding is that access to history is not the same as using it: longer histories pay off far more when the video foundation is pretrained autoregressively (AR).We first learn causal prediction from robot and egocentric videos without action labels, then preserve this history-to-future structure during world-action adaptation.\n\nOn RoboCasa GR-1, increasing context from 0.0 to 19.2 seconds raises success from 63.3% to 78.7%, whereas a bidirectionally pretrained initialization shows no net gain; robot-domain AR pretraining further raises peak success on GR-1 and LIBERO-Long. Long-WAM also achieves the best results among compared methods on LIBERO-Long, RoboTwin 2.0, and DOMINO.\n\nStreaming observation encoding, asynchronous execution, and hardware-specific acceleration enable deployment on RTX 5090, DGX Spark, and Jetson AGX Thor without dropping future prediction; on RTX 5090, each action chunk, including future-video latent prediction, takes 107.4 ms.\n\nReal-time deployment on Unitree G1 and YAM supports dynamic and long-horizon manipulation, including 95% success on dynamic cup stacking, where Pi0.5 and Fast-WAM succeed in none of 20 trials. As a memory-informed executor, Long-WAM also complements higher-level planning in composite tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Long-WAM is a model-system framework for scaling the context of causal world-action models under real-time robot-control constraints. The authors argue that longer histories are more beneficial when the video foundation is pretrained autoregressively. On RoboCasa GR-1, increasing context from 0.0 to 19.2 seconds raises reported success from 63.3% to 78.7%, while a bidirectionally pretrained initialization shows no net gain. The abstract also reports strong results across several benchmarks, real-time deployment on multiple platforms, and 95% success on dynamic cup stacking.",
+          "zh": "Long-WAM是一种面向实时机器人控制的因果世界—动作模型框架，旨在扩展可用视觉历史，同时控制处理延迟。作者指出，较长历史的收益取决于视频基础模型是否经过自回归预训练，并报告在多项基准上的表现及实时部署结果。在RoboCasa GR-1上，输入上下文从0秒增至19.2秒时，成功率由63.3%升至78.7%；双向预训练初始化未带来净提升。作者还报告了动态杯子堆叠任务的95%成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1819,7 +1831,11 @@
             "heading": "",
             "text": "Robot policies inevitably encounter failures when deployed in real environments. Naive retries often repeat the same mistakes, while many existing recovery methods rely on human intervention.\n\nIn this paper, we propose Failure-Aware Retry (FAR), a framework that enables robots to learn from previous failures at test time, adapt their behavior accordingly, and eventually complete the task autonomously.\n\nFAR combines Failure-Contrastive Preference Adaptation, which constructs preference learning data from failures to steer the policy away from previously unsuccessful behaviors, with lightweight action perturbations during retries to encourage local exploration.\n\nWe further incorporate successful recovery trajectories into a training loop for continual policy improvement. Experiments in both simulation and real-world manipulation tasks show that FAR substantially improves success rates and robustness, with average gains of 17.6% over the standard diffusion policy in simulation and 11.7% in the real world.\n\nIn addition, FAR improves data efficiency under both reset and timestep budgets during continual policy improvement by exploiting informative failure cases. Videos and code are available at https://hoar012.github.io/FAR-Project."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Failure-Aware Retry (FAR), a framework that lets robots adapt at test time based on previous failures and attempt to complete tasks autonomously. FAR combines preference adaptation using data constructed from failures with lightweight action perturbations during retries to discourage previously unsuccessful behavior and encourage local exploration. Successful recovery trajectories are incorporated into a continual-improvement loop. Experiments in simulation and real-world manipulation report average success-rate gains of 17.6% and 11.7%, respectively, over a standard diffusion policy. The authors also report improved data efficiency under reset and timestep budgets.",
+          "zh": "本文提出Failure-Aware Retry（FAR），使机器人能在测试时利用失败调整行为，并尝试自主完成任务。该方法结合基于失败构造偏好数据的适应机制，以及重试时的轻量动作扰动，以引导策略避开先前未成功的行为并进行局部探索；成功恢复轨迹还会用于持续改进策略。仿真和真实世界操作实验显示，FAR相较标准扩散策略的平均成功率分别提高17.6%和11.7%。作者还报告，在持续改进中利用失败案例可提高数据效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
