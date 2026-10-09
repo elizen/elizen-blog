@@ -3441,7 +3441,11 @@
             "heading": "",
             "text": "Action tokenization converts continuous robot actions into discrete symbols that can be modeled autoregressively. However, existing tokenizer-based policies typically ignore the tokenizer's learned latent code structure: after tokenization, the policy treats tokens as unrelated class indices and learns a new classifier from scratch.\n\nWe show that this discarded structure is valuable. We introduce Codebook-Aligned Prediction (CAP), a method that directly reuses the tokenizer's code vectors as policy class prototypes while leaving the tokenizer and policy backbone otherwise unchanged.\n\nAcross four quantizer families, three simulation benchmarks, and two real-robot tasks, CAP consistently improves task success over standard token classification heads while holding the tokenizer (and therefore its reconstruction quality) fixed.\n\nOur analysis further shows that these gains are not explained by higher token accuracy or changes in the policy head alone.\n\nInstead, reusing the tokenizer codebook provides the policy with valuable information about the tokenizer's learned latent structure across tokens, making token prediction errors more benign in action space and improving the representations learned by the policy backbone.\n\nThese results suggest that action tokenizers learn useful action-aware latent structure beyond discrete targets that should be preserved when training downstream policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Codebook-Aligned Prediction (CAP), which reuses a tokenizer’s code vectors as policy class prototypes while leaving the tokenizer and policy backbone unchanged. The authors report higher task success than standard token classification heads across four quantizer families, three simulation benchmarks, and two real-robot tasks, with tokenizer reconstruction quality held fixed. Their analysis attributes the gains to preserving learned latent structure, which makes token errors less harmful in action space and improves policy representations.",
+          "zh": "论文提出代码本对齐预测（CAP），将动作标记器学习到的代码向量直接用作策略分类原型，保持标记器和策略骨干网络不变。作者报告，在四类量化器、三个仿真基准和两项真实机器人任务中，CAP 相比标准标记分类头提高任务成功率，同时不改变标记器的重建质量。分析称，收益并非来自更高的标记准确率或单纯改变策略头，而是代码本保留了标记间的潜在结构，使动作空间中的预测错误影响较轻，并改善骨干表征。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3472,7 +3476,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models perform well in generalist robot manipulation but remain brittle to out-of-distribution perturbations, while full human teleoperation is cognitively demanding.\n\nTo bridge this gap, we introduce Shared Autonomy for Policy Steering (SAPS), a lightweight framework that blends real-time human teleoperation commands with pretrained VLA actions. SAPS operates purely at the action level, requiring no policy retraining, auxiliary dynamics models, or architectural modifications.\n\nWe evaluate three arbitration strategies across simulated (LIBERO, CALVIN) and real-world evaluations. In a 14-person user study, SAPS achieved up to 77.4% hardware success, compared with 8.3% for full autonomy and 34.5% for teleoperation.\n\nFurthermore, active human intervention was required only 45% of the time, reducing NASA-TLX workload by 20.8% in simulation and 28.2% on hardware. A case study with an expert user with quadriplegia similarly demonstrated matched or improved success while reducing completion time.\n\nThese results highlight SAPS as a highly effective, model-agnostic approach for reliable real-world deployment and assistive teleoperation. A website with additional details is located at shared-autonomy-policy.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Shared Autonomy for Policy Steering (SAPS), which blends real-time human teleoperation commands with actions from a pretrained vision-language-action model at the action level, without policy retraining, auxiliary dynamics models, or architectural changes. Three arbitration strategies were evaluated in simulation and on hardware. In a 14-person study, hardware success reached up to 77.4%, versus 8.3% for full autonomy and 34.5% for teleoperation. Human intervention was needed 45% of the time, and NASA-TLX workload fell by 20.8% in simulation and 28.2% on hardware. An expert user with quadriplegia had matched or improved success and shorter completion time.",
+          "zh": "论文提出共享自主策略引导（SAPS），在动作层融合实时人工遥操作指令与预训练视觉语言动作模型（VLA）的动作，无需重新训练策略、辅助动力学模型或修改架构。作者在仿真、真实场景及14人用户研究中评估三种仲裁策略；用户研究中硬件成功率最高为77.4%，而全自主和遥操作分别为8.3%和34.5%。人工主动介入仅在45%的时间内需要，NASA-TLX工作负荷在仿真和硬件上分别降低20.8%和28.2%。一项四肢瘫痪专家用户案例显示，成功率持平或提高且完成时间缩短。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
