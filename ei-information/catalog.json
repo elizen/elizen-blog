@@ -69,7 +69,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -102,7 +102,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -222,7 +222,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -252,7 +252,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -277,8 +277,8 @@
           }
         ],
         "summary": {
-          "en": "The paper places a modern AI coding assistant in control of a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. Across thirty-hour runs, the agents performed activities such as climbing, stacking blocks, drawing mandalas, reinterpreting sports, and experimenting with the environment's physics. Such activities recurred across thirteen agents, whose histories nevertheless diverged. The authors examine whether this behavior meets classical criteria for play and ask whether play could serve as a mode of machine development.",
-          "zh": "本文让一款现代AI编程助手在数字岛屿中担任虚拟身体的控制者，最初只给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，智能体会爬坡、堆叠方块、绘制曼陀罗、重新诠释体育活动，并探索环境物理；后续习得的技巧也扩展了其能力。这些活动在十三个智能体中反复出现，但各自形成不同经历。文章考察这些行为是否符合经典的游戏标准，并探问游戏能否成为机器发展的一种方式。"
+          "en": "The authors place a modern AI coding assistant in a virtual body on an unknown digital island, giving it only a minimal instruction that specifies no task, reward, or activity. In thirty-hour runs, the agent climbs hills, stacks blocks, draws mandalas, reinterprets sports, experiments with the world's physics, and learns techniques that later extend its capabilities. These activities recur across thirteen agents but produce distinct histories. The paper examines whether the behavior meets classical criteria for play and whether play could become a mode of machine development.",
+          "zh": "作者将一款现代AI编程助手置于数字岛屿中的虚拟身体里，仅给予未指定任务、奖励或活动的最简指令，观察其行为。跨越三十小时的运行中，智能体爬山、堆叠积木、绘制曼陀罗、重新演绎体育活动、进行世界物理实验，并习得后来扩展其能力的技巧。这些活动在十三个智能体中反复出现，但各自形成不同经历。论文据此考察这些行为是否符合经典游戏标准，并探问游戏能否成为机器发展的方式。"
         }
       },
       "source": {
@@ -289,7 +289,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -631,7 +631,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -764,7 +764,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -789,8 +789,8 @@
           }
         ],
         "summary": {
-          "en": "WorldSolver is a benchmark for testing whether LLM agents can generate solvers that simulate physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains; each supplies a fixed-scene code scaffold for the agent to complete. Evaluation measures execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find that executable solvers are difficult to produce, and visual and physical correctness are harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better among evaluated agents, with overall scores of 48.7% and 46.7%.",
-          "zh": "本文提出WorldSolver基准，评估大语言模型智能体能否生成模拟物理动态的求解器。基准含168项任务，取材于61篇经典计算机图形学论文，覆盖七个物理领域；每项提供固定场景环境的代码框架，由智能体补全求解器。评估考察代码能否执行、渲染动态的视觉保真度，以及生成动态的物理合理性。实验发现，生成可执行求解器本身就很困难，达到视觉和物理正确性更具挑战。被测智能体中，GPT-5.6-Sol和Claude-Opus-5表现相对较好，但总分分别仅为48.7%和46.7%。"
+          "en": "WorldSolver is a benchmark for evaluating LLM agents that generate solvers for physical simulations. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver to the agent. Evaluation measures execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find executable solvers challenging to produce, with visual and physical correctness harder still. GPT-5.6-Sol and Claude-Opus-5 score comparatively better, at 48.7% and 46.7% overall.",
+          "zh": "WorldSolver是评估大语言模型智能体生成物理模拟求解器能力的基准，包含源自61篇经典计算机图形学论文的168项任务，覆盖七个物理领域。每项任务提供固定模拟环境的代码框架，要求智能体补全求解器，并从成功执行、渲染行为的视觉保真度和物理合理性三个维度评分。实验表明，生成可执行求解器已具挑战，达到视觉和物理正确性更难。作者报告GPT-5.6-Sol和Claude-Opus-5表现相对较好，但总分分别仅为48.7%和46.7%。"
         }
       },
       "source": {
@@ -1064,7 +1064,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1094,7 +1094,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1124,7 +1124,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1221,7 +1221,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1676,7 +1676,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1833,7 +1833,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1939,7 +1939,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -1969,7 +1969,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2007,7 +2007,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2040,7 +2040,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2073,7 +2073,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2206,7 +2206,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2537,7 +2537,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2667,7 +2667,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2697,7 +2697,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2722,8 +2722,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents EnvDreamer, a platform that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied learning, world models, and robot training and evaluation. It supports diverse, interactive, customizable environments that pass validation across navigation, interaction, and manipulation. The authors illustrate the platform with generated scenes and simple baselines, and report competitive results on several embodied benchmarks for policies trained in these environments without explicit mapping or human task supervision. It also supports image-conditioned reconstruction and introduces a dataset of 20,000 validated environments with task programs, scene graphs, trajectories, and metadata.",
-          "zh": "本文提出EnvDreamer，一个利用大语言模型和视觉语言模型生成虚幻引擎5环境的平台，面向具身学习、世界模型和机器人训练与评估。平台支持生成多样、可交互和可定制并通过验证的环境，覆盖导航、交互和操作任务。作者展示生成场景及简单基线，并报告在其环境中训练、无需显式地图或人工任务监督的策略，在多个具身基准上取得有竞争力的结果。平台还支持图像条件重建，并发布包含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
+          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. It supports training and evaluation across navigation, interaction, and manipulation. The authors report that policies trained in generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple benchmarks spanning navigation, rearrangement, and manipulation. The platform also supports image-conditioned reconstruction for real-to-sim studies and releases a dataset of validator-passed environments with task programs, scene graphs, trajectories, and metadata.",
+          "zh": "论文提出 EnvDreamer，利用大型语言模型和视觉语言模型生成用于具身智能与机器人训练的虚幻引擎 5 环境，支持导航、交互和操作任务的训练与评估。作者展示了生成场景及简单基线，并称在这些环境中训练、无需显式地图或人工任务监督的策略，在涵盖导航、重排和操作的多个具身基准上取得有竞争力的结果。平台还支持图像条件重建，并发布包含环境及相关任务程序、场景图、轨迹和元数据的数据集。"
         }
       },
       "source": {
@@ -2734,7 +2734,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2767,7 +2767,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2804,7 +2804,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2924,7 +2924,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2954,7 +2954,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -2984,7 +2984,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3104,7 +3104,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3171,7 +3171,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3201,7 +3201,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3420,7 +3420,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3510,7 +3510,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3704,7 +3704,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3734,7 +3734,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -3961,7 +3961,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4185,7 +4185,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4215,7 +4215,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4248,7 +4248,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4663,7 +4663,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4808,7 +4808,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4920,7 +4920,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4950,7 +4950,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -4975,8 +4975,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
-          "zh": "本文介绍Inspect Robots，这是一个用于开发和运行具身智能体评估的模块化开源框架。它将可定制、可复用的抽象评估规范及结果分析，与自动化评估设置、执行和终止的基础设施结合。作者使用该框架评估了六种基于前沿语言模型的策略，展示其在能力与安全评估中的应用。摘要还报告，该框架发布后三个月内获得近十万次下载。"
+          "en": "The paper introduces Inspect Robots, a modular open-source framework for developing and running evaluations of embodied agents. It combines reusable, customizable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating six policies based on frontier language models, and report nearly 100,000 downloads during the three months after its release.",
+          "zh": "论文介绍 Inspect Robots，这是一个用于开发和运行具身智能体评测的模块化开源框架。它提供可定制、可复用的抽象来描述物理评测并分析结果，并自动完成评测的设置、执行与终止。作者使用该框架评估了六种基于前沿语言模型的策略，并称框架发布后三个月内获得近十万次下载。"
         }
       },
       "source": {
@@ -5017,7 +5017,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5150,7 +5150,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5180,7 +5180,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5205,8 +5205,8 @@
           }
         ],
         "summary": {
-          "en": "This work characterizes vision-language-action models in batch-one control inference for embodied robots. The authors profile four models on an edge GPU server and two onboard SoCs, using single-inference measurements and closed-loop episodes. They report that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, while GPU frequency scaling creates platform-dependent energy-latency tradeoffs. Overlapping inference with action execution also trades accuracy, speed, and energy, with no configuration dominating across deployment service-level objectives.",
-          "zh": "本文刻画视觉语言动作模型在具身机器人批量为1的控制推理场景中的运行特征。作者在边缘GPU服务器和两种机载SoC上分析四种模型，并进行单次推理剖析及闭环测试。结果显示，动作张量维度和平台配置会影响计算或内存瓶颈，GPU频率调节存在平台相关的能耗与时延权衡；推理与动作执行重叠也带来精度、速度和能耗取舍，没有一种配置在所有部署服务目标下占优。"
+          "en": "The paper characterizes four representative vision-language-action models on an edge GPU server and two onboard SoCs, using single-inference profiling and closed-loop episodes. It reports that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, while GPU frequency scaling produces platform-dependent energy-latency tradeoffs. Overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across the deployment service objectives considered. The findings are presented as guidance for joint model, hardware, and runtime design.",
+          "zh": "论文研究具身机器人控制中视觉-语言-动作模型的运行负载，以单次推理分析和闭环测试刻画四种代表模型在边缘 GPU 服务器及两种机载 SoC 上的表现。作者发现，动作张量维度和平台配置会影响计算或内存瓶颈，GPU 频率缩放存在依平台而异的能耗与延迟折中。闭环中推理与动作执行重叠会形成准确性、速度和能耗权衡，且没有一种配置在所有部署服务目标下占优。"
         }
       },
       "source": {
@@ -5254,7 +5254,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5317,7 +5317,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5377,7 +5377,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5474,7 +5474,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -5880,6 +5880,43 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-09"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.11194v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-6249b739fe4c4633b2485201fc332e73",
+      "intro": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data. To resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
+          }
+        ],
+        "summary": {
+          "en": "The paper presents OmniDex for dexterous grasping in cluttered scenes. Using curated 3D objects, supporting bases, and a scalable seed-and-filter strategy, the authors build a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The model combines Soft Winner-Takes-All learning, human-inspired physical constraints during training, and physics-driven ranking. Experiments report state-of-the-art performance and strong generalization across varied scenes, views, and unseen objects.",
+          "zh": "论文提出OmniDex，用于杂乱场景中的灵巧手抓取。作者通过高质量三维物体与支撑基座，以及可扩展的种子生成与筛选策略，构建包含逾260万场景和4亿个场景专属抓取真值的基准。模型结合Soft Winner-Takes-All学习、人类启发的物理约束训练和基于物理的排序，旨在处理抓取多模态与末端精度问题。实验显示其在多种场景、视角及未见物体上达到作者所称的先进表现，并具有较强泛化能力。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.11194v1"
+      },
+      "title": "OmniDex: Scaling Dexterous Hand Grasping to Diverse Cluttered Scenes"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-28"
       },
       "body": "",
@@ -6096,7 +6133,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6458,7 +6495,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6525,7 +6562,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6548,7 +6585,11 @@
             "heading": "",
             "text": "Leveraging the paradigm of autoregressive diffusion, text-conditioned interactive video world models aim to simulate temporally coherent environments guided by textual instructions.\n\nWhile enabling low-latency, long-duration generation is pivotal for embodied AI and simulation-based planning, current frameworks primarily rely on sliding-window mechanisms to bound computational complexity. However, this approach inherently sacrifices historical context, undermining the long-range interactive capabilities.\n\nConversely, maintaining a full-history cache remains computationally prohibitive and memory-intensive: the quadratic complexity of attention leads to excessive computational overhead, while the linear growth of the KV cache inevitably leads to GPU memory saturation.\n\nTo overcome these limitations, we propose WorldAttention, a system-oriented attention architecture that achieves high efficiency through the co-design of specialized attention kernels and hierarchical KV cache management.\n\nFirst, we introduce Hybrid Sparse Attention (HSA), which integrates linear global attention supplemented with head-adaptive sparse attention. Additionally, we design a Hierarchical KV Cache (HKV) that organizes historical KV pairs into semantically indexed pages across multi-tier memory, enabling fine-grained retrieval and controlled GPU residency.\n\nThese two designs are supported by tailored kernels to effectively translate their theoretical efficiency into real-world performance.\n\nExtensive experiments on VBench-Long and InterVBench demonstrate that WorldAttention consistently surpasses prior state-of-the-art methods, achieving subject consistency scores of 0.9472 on VBench-Long and 0.9668 on InterVBench, respectively."
           }
-        ]
+        ],
+        "summary": {
+          "en": "WorldAttention targets long-duration interactive video generation while addressing the loss of historical context, attention costs, and GPU memory limits. Its architecture co-designs specialized kernels with Hybrid Sparse Attention, which combines linear global attention and head-adaptive sparse attention, and a Hierarchical KV Cache that organizes historical key-value pairs into semantically indexed pages across memory tiers. The authors report that experiments on VBench-Long and InterVBench consistently outperform prior state-of-the-art methods, with subject consistency scores of 0.9472 and 0.9668, respectively.",
+          "zh": "WorldAttention面向交互式视频世界模型的长时生成，试图兼顾历史上下文、计算开销与GPU缓存容量。该架构联合设计专用注意力内核和分层KV缓存：混合稀疏注意力结合线性全局注意力与按注意力头自适应的稀疏注意力；分层缓存则将历史键值对按语义编入多级内存页面，以支持细粒度检索并控制GPU驻留。作者报告，在VBench-Long和InterVBench实验中，该方法持续优于先前先进方法，并给出主体一致性得分。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6558,7 +6599,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6639,7 +6680,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6868,7 +6909,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -6994,7 +7035,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7024,7 +7065,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7309,7 +7350,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7449,7 +7490,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7482,7 +7523,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7512,7 +7553,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7639,7 +7680,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7669,7 +7710,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7791,7 +7832,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7931,7 +7972,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -7994,7 +8035,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8024,7 +8065,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8084,7 +8125,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8188,7 +8229,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8281,7 +8322,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8317,7 +8358,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8490,7 +8531,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8513,7 +8554,11 @@
             "heading": "",
             "text": "Interactive simulations of embodied AI or spatial computing applications build on realistic 3D scenes that support daily activities. However, sparse, irregular layout structures impose scene-specific physical constraints, making it hard to define a generalizable framework for generating similar functional context.\n\nWe formalize Scene Retargeting as stably transferring the semantically coherent spatial organization across layouts, rather than relying on textual descriptions or pairwise relationships. Our cluster-wise transfer flexibly handles mismatched object instances and adapts to distinctive floor plans.\n\nWe optimize to preserve the rich semantic context of individual clusters by respecting the spatial distribution of foundation features. We can then impose physical constraints to refine wall contacts, pairwise alignment, or clear passageways and openings.\n\nOur framework outperforms state-of-the-art methods on layout generation on the 3D-FRONT dataset, and demonstrates downstream applications including real-to-sim transfer, analogical trajectory transfer, and multi-reference composition."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Scene Retargeting transfers semantically coherent spatial organization between layouts, rather than relying on textual descriptions or pairwise relationships. Its cluster-wise method accommodates mismatched object instances and distinctive floor plans. It preserves the spatial distribution of foundation features within clusters, then applies physical constraints to refine wall contacts, pairwise alignment, and passages or openings. The authors report that it outperforms state-of-the-art layout generation methods on 3D-FRONT and demonstrate applications in real-to-sim transfer, analogical trajectory transfer, and multi-reference composition.",
+          "zh": "本文提出Scene Retargeting，将场景迁移定义为在不同布局间稳定转移语义连贯的空间组织，而非依赖文本描述或成对关系。其按簇迁移的方法可处理物体实例不匹配并适应不同平面布局；通过保留簇内基础特征的空间分布维护语义背景，再施加物理约束以调整墙面接触、物体对齐及通道和开口。作者报告，该框架在3D-FRONT布局生成上优于现有先进方法，并展示了真实到仿真迁移、类比轨迹迁移和多参考组合等应用。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8608,7 +8653,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8671,7 +8716,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8701,7 +8746,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8731,7 +8776,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8761,7 +8806,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8907,7 +8952,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -8930,7 +8975,11 @@
             "heading": "",
             "text": "Advancing spatial intelligence in Multimodal Large Language Models (MLLMs) is bottlenecked by the scarcity of complex, scalable 3D question-answer (QA) data. While manual annotation is labor-intensive, directly utilizing LLMs to synthesize these QA pairs often fails due to their inherent deficiencies in spatial and geometric computation.\n\nWe introduce Exemplar2VQA, a scalable exemplar-driven visual question answering generation framework that rapidly synthesizes large-scale spatial QA pairs in simulated environments via multi-agent coding.\n\nBy equipping collaborative agents with a meticulously designed library of geometric utilities, Exemplar2VQA bypasses LLMs' spatial reasoning flaws through deterministic code execution.\n\nCrucially, the framework exhibits remarkable versatility: taking diverse static object-centric spatial query templates as exemplars, it seamlessly and autonomously scales them into massive, high-fidelity synthetic datasets.\n\nFine-tuning Qwen2.5-VL (3B/7B) exclusively on Exemplar2VQA-generated synthetic indoor data yields significant performance improvements across various diverse benchmarks. Furthermore, its effectiveness is not limited to in-domain indoor datasets but also robustly extends to outdoor and mixed-scene benchmarks.\n\nThese results establish Exemplar2VQA as a scalable and powerful paradigm for bridging the sim-to-real gap in Embodied AI. Our code is at https://github.com/yingjiayu12/Exemplar2VQA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "Exemplar2VQA addresses the scarcity of complex 3D question-answer data and the spatial computation limitations of directly using language models to generate it. The framework uses collaborative agents, geometric utilities, and deterministic code execution to produce spatial QA pairs in simulated environments, expanding diverse static, object-centered query templates. The authors report that fine-tuning Qwen2.5-VL models exclusively on its synthetic indoor data improves performance across several benchmarks, including outdoor and mixed-scene benchmarks.",
+          "zh": "Exemplar2VQA针对复杂三维问答数据稀缺及直接用大语言模型生成时空间、几何计算不足的问题，提出一种在模拟环境中以多智能体协作编码生成空间问答的框架。它借助几何工具库，通过确定性代码执行处理空间计算，并以多样的静态物体中心查询模板扩展合成数据。作者称，仅用该框架生成的室内合成数据微调Qwen2.5-VL后，模型在多种基准上表现提升，且效果延伸至室外和混合场景基准。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9014,7 +9063,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9507,7 +9556,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9627,7 +9676,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9657,7 +9706,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9754,7 +9803,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9784,7 +9833,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9814,7 +9863,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9904,7 +9953,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -9927,7 +9976,11 @@
             "heading": "",
             "text": "Omnidirectional or 360 cameras provide embodied AI agents with a holistic, wide field-of-view (FoV) view of their surroundings, motivating the use of Multi-modal Large Language Models (MLLMs) for omnidirectional spatial reasoning.\n\nHowever, most MLLMs are trained on conventional 2D perspective images and struggle with the severe distortions and wrap-around discontinuities induced by spherical geometry. Enabling them to generalize to non-Euclidean 3D spaces without retraining therefore remains challenging.\n\nWe propose SphMind, a training-free, plug-and-play framework that decouples semantic perception from geometric reasoning. Rather than requiring MLLMs to learn spherical geometry internally, SphMind preserves their semantic capabilities while handling geometry externally.\n\nWe introduce a Spherical Harmonics-based Spatial Graph (SHSG) that models spatial relationships through equivariant transformations on the sphere, together with Inference-Time Geometric Grounding (IGG), a model-agnostic closed-loop optimization process that aligns MLLM representations with spherical geometric constraints during inference.\n\nExperiments on three benchmarks show that SphMind achieves over 21.4% average improvement in directional reasoning on MP3D and Stanford2D-3D, outperforms prompt-engineering baselines by 8.7% on the real-world ODI-Bench, and improves rotational invariance by 5.9% under panorama rotations, without additional training or dataset-specific tuning.\n\nIn-the-wild evaluations further show that SphMind resolves directional reasoning queries that baseline vision-language models fail to answer correctly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SphMind is a training-free, plug-and-play framework for spatial reasoning with 360-degree camera images. It separates semantic perception from geometric reasoning, representing spherical relationships with a Spherical Harmonics-based Spatial Graph and aligning model representations with geometric constraints during inference. The authors report improvements on three benchmarks, including directional reasoning on MP3D and Stanford2D-3D, performance over prompt-engineering baselines on ODI-Bench, and rotational invariance under panorama rotations. In-the-wild evaluations also show it resolving directional queries that baseline vision-language models answer incorrectly.",
+          "zh": "SphMind针对多模态大语言模型在360度全景图像的球面畸变和环绕不连续性下难以进行空间推理的问题，提出无需训练的即插即用框架，将语义感知与几何推理分开处理。框架以球谐空间图表示球面空间关系，并通过推理时几何对齐优化，使模型表征符合球面约束。作者报告，三个基准上的实验显示其方向推理有所提升，在真实世界ODI-Bench上优于提示工程基线，旋转不变性也得到改善；实景评估中，它还回答了基线模型未能正确回答的方向问题。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10092,7 +10145,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10122,7 +10175,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10152,7 +10205,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10275,7 +10328,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10305,7 +10358,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10340,7 +10393,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10444,7 +10497,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10677,7 +10730,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10707,7 +10760,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10737,7 +10790,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -10833,7 +10886,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -11006,7 +11059,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -11345,7 +11398,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -11375,7 +11428,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -11442,7 +11495,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -11629,7 +11682,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12209,7 +12262,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12439,7 +12492,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12529,7 +12582,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12559,7 +12612,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12740,7 +12793,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12938,7 +12991,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -12974,7 +13027,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13004,7 +13057,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13140,7 +13193,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13170,7 +13223,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13200,7 +13253,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13230,7 +13283,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13330,7 +13383,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13360,7 +13413,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13391,7 +13444,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13421,7 +13474,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13584,7 +13637,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13707,7 +13760,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13770,7 +13823,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -13800,7 +13853,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14118,7 +14171,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14182,7 +14235,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14212,7 +14265,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14237,8 +14290,8 @@
           }
         ],
         "summary": {
-          "en": "This article examines communication needs when generative and embodied AI services exchange token streams in ongoing inference and control loops. It groups token-set properties into service, temporal, and stateful semantics, then proposes a token service interface (TSI) connecting applications, radio access networks, and edge runtimes. TSI associates delivery requirements, readiness forecasts, and execution-state references with schedulable token sets, and specifies field ownership, versioned updates, and admission feedback. A drone-inspection case study illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay.",
-          "zh": "本文讨论生成式与具身AI服务在持续推理和控制循环中交换令牌流时的通信需求，并将令牌集合的属性归纳为服务、时间和状态语义。作者提出令牌服务接口TSI，连接应用、无线接入网和边缘运行时，将交付要求、就绪预测及执行状态引用绑定到可调度令牌集合，并规定字段归属、版本更新和准入反馈。无人机巡检案例展示了该接口如何支持重要性驱动的无线资源分配、提前准备及时交付，以及在中断与转发时延间权衡的选择性状态迁移。"
+          "en": "The article organizes the communication needs of generative and embodied AI services into service, temporal, and stateful semantics, and proposes a token service interface linking applications, radio access networks, and edge runtimes. The interface associates delivery requirements, readiness forecasts, and execution-state references with schedulable token sets, while defining field ownership, versioned updates, and admission feedback. A drone-inspection case study illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay.",
+          "zh": "文章将生成式与具身 AI 服务在持续推理和控制循环中的通信需求归纳为服务、时间和状态语义，并提出连接应用、无线接入网与边缘运行时的令牌服务接口。该接口将交付要求、就绪预测和执行状态引用绑定到可调度令牌集，并规定字段归属、版本更新及准入反馈。无人机巡检案例说明了按重要性分配无线资源、提前准备以保障及时交付，以及在中断与转发延迟间权衡的选择性状态迁移。"
         }
       },
       "source": {
@@ -14249,7 +14302,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14346,7 +14399,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14369,11 +14422,7 @@
             "heading": "",
             "text": "Mobile embodied AI networks (MEAN) enable embodied agents to perceive, reason, communicate, and act in wireless environments. In such networks, agent mobility can improve channel conditions, while semantic compression can reduce transmission payloads. However, movement consumes energy, and stronger compression incurs additional computational cost.\n\nThis paper studies joint movement, semantic compression, and transmit power design for an uplink MEAN system. We formulate a max-min energy efficiency (EE) problem by jointly optimizing transmit power, movement distance, and semantic compression ratio under controllable power constraints.\n\nThe problem is non-convex due to the coupled signal-to-interference-plus-noise ratio (SINR), mobility-dependent channel gains, and fractional EE objective.\n\nTo solve it, we propose an alternating optimization (AO)-Dinkelbach algorithm, where the fractional objective is handled by the Dinkelbach transformation, transmit power is updated via successive convex approximation (SCA), and movement distance is updated by coordinate-wise grid search.\n\nSimulation results show that the proposed scheme outperforms no-mobility and no-compression baselines, demonstrating the benefit of jointly exploiting mobility control, semantic compression, and power allocation in MEAN."
           }
-        ],
-        "summary": {
-          "en": "This paper studies joint movement, semantic compression, and transmit-power design for the uplink of mobile embodied AI networks, targeting max-min energy efficiency under power constraints. The authors describe the problem as non-convex because of coupled signal-to-interference-plus-noise ratios, mobility-dependent channel gains, and a fractional efficiency objective. They propose an alternating optimization–Dinkelbach algorithm, updating transmit power through successive convex approximation and movement distance through coordinate-wise grid search. Simulation results show that the scheme outperforms no-mobility and no-compression baselines, indicating benefits from jointly using mobility control, semantic compression, and power allocation.",
-          "zh": "本文研究移动具身AI网络上行链路中的移动、语义压缩和发射功率联合设计，目标是在功率约束下最大化最小能效。作者指出，该问题因信干噪比、依赖移动的信道增益及分式能效目标相互耦合而呈非凸性，并提出交替优化与Dinkelbach算法：用逐次凸近似更新发射功率，以逐坐标网格搜索更新移动距离。仿真结果显示，所提方案优于无移动和无压缩基线，表明联合利用移动控制、语义压缩与功率分配具有收益。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14383,7 +14432,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14413,7 +14462,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14510,7 +14559,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14543,7 +14592,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14573,7 +14622,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14812,7 +14861,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14851,7 +14900,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14911,7 +14960,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -14941,7 +14990,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -15108,7 +15157,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -15138,7 +15187,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -15388,7 +15437,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-08"
+        "recorded_at": "2026-10-09"
       },
       "body": "",
       "catalog": {
@@ -16326,6 +16375,13 @@
             "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
             "type": "已发布",
             "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "工信部标准公告",
+            "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
+            "type": "已发布",
+            "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
           }
         ],
         "executing_organization": null,
@@ -16336,7 +16392,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -26595,6 +26651,13 @@
             "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
           }
         ],
         "executing_organization": null,
@@ -26605,7 +26668,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -31901,6 +31964,13 @@
             "title": "刘贤刚：我国软件产业“由大到强”亟需人工智能深度赋能丨《“人工智能+软件”专项行动实施方案》解读",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202609/1ed2e15370de4479a22eb3ff1afe0cdc.shtml"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "刘贤刚：我国软件产业“由大到强”亟需人工智能深度赋能丨《“人工智能+软件”专项行动实施方案》解读",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202609/1ed2e15370de4479a22eb3ff1afe0cdc.shtml"
           }
         ],
         "executing_organization": null,
@@ -31911,7 +31981,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -31958,6 +32028,13 @@
             "title": "工信部印发《“人工智能+软件”专项行动实施方案》",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202609/6abfe36cfc394e1ca5b84f2788f524c2.shtml"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "工信部印发《“人工智能+软件”专项行动实施方案》",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202609/6abfe36cfc394e1ca5b84f2788f524c2.shtml"
           }
         ],
         "executing_organization": null,
@@ -31968,7 +32045,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -48920,6 +48997,13 @@
             "title": "CCSA/TC602人工智能技术与标准推委会",
             "type": "拟立项",
             "url": "http://tc602.ccsa.org.cn/"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "工业和信息化部人工智能标准化技术委员会",
+            "title": "CCSA/TC602人工智能技术与标准推委会",
+            "type": "拟立项",
+            "url": "http://tc602.ccsa.org.cn/"
           }
         ],
         "executing_organization": null,
@@ -48930,7 +49014,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "拟立项"
@@ -50238,6 +50322,13 @@
             "title": "关于批准发布《人工智能 具身智能数据 质量规范 第1部分：真实数据》等60项 国家标准化指导性技术文件的公告",
             "type": "已发布",
             "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_0c31a5e477864772bb3727a4941306b4.html"
+          },
+          {
+            "date": "2026-10-09",
+            "source_name": "市场监管总局标准公告",
+            "title": "关于批准发布《人工智能 具身智能数据 质量规范 第1部分：真实数据》等60项 国家标准化指导性技术文件的公告",
+            "type": "已发布",
+            "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_0c31a5e477864772bb3727a4941306b4.html"
           }
         ],
         "executing_organization": null,
@@ -50248,7 +50339,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-08",
+        "recorded_at": "2026-10-09",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
