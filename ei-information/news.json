@@ -3610,7 +3610,11 @@
             "heading": "",
             "text": "Growing automation makes collaborative robots work in more variable environments, increasing the need for adaptation. We propose a human-in-the-loop online training framework combining a digital twin (DT), reinforcement learning (RL), and human demonstrations.\n\nUnlike DTs used mainly to generate synthetic data before task execution, our DT is synchronized with the physical system in real time through camera feeds, allowing the virtual robot to update its observations and policy from real-world feedback.\n\nA dual actor framework integrates imitation learning (IL) without adding a direct imitation loss to the RL actor, so demonstrations can guide adaptation instead of manual reprogramming. The proposed framework is demonstrated on the Ufactory Xarm5 collaborative robot, where the robot's end-effector aims to reach the target position while avoiding obstacles.\n\nThe experiments show that the framework can resume training after a change in the physical workspace and that, with a fixed set of non-optimal demonstrations, the dual actor framework achieves a much higher final success rate than two methods that add an imitation loss to the actor.\n\nThe same pattern holds with real human demonstrations collected in virtual reality (VR): with demonstrations that never reach the goal, the dual actor framework reached 83-100% mean deterministic evaluation success, against 0-17% for the two imitation-loss methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an online training framework that combines a digital twin, reinforcement learning, and human demonstrations. Camera feeds synchronize the twin with the physical system, while a dual-actor design uses demonstrations to guide adaptation without adding a direct imitation loss to the RL actor. In an obstacle-avoiding reaching task on a Ufactory Xarm5, the authors report resumed training after workspace changes and higher success than two imitation-loss methods, including with non-goal-reaching VR demonstrations.",
+          "zh": "论文提出一种结合数字孪生、强化学习与人工示范的在线训练框架。数字孪生通过摄像头与实体系统实时同步，双 actor 结构利用示范引导策略适应，且不向强化学习 actor 添加直接模仿损失。框架在 Ufactory Xarm5 机械臂避障到达任务上演示。作者报告，工作空间变化后可恢复训练；在固定的非最优示范及无法到达目标的 VR 人类示范条件下，该结构的成功率高于两种加入模仿损失的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3641,7 +3645,11 @@
             "heading": "",
             "text": "Geometrically faithful and functional articulated 3D assets are essential for real-to-sim robot manipulation, where policies trained in simulation must transfer to physical objects.\n\nRecent mesh-based methods learn to infer articulation from annotated 3D assets, but deployment remains challenging when real-world objects fall outside the training distribution or their meshes are incomplete or corrupted.\n\nTo address these limitations, we formulate articulated asset reconstruction as programmatic modeling grounded in partial geometric evidence and introduce USDCraft, a framework in which a pretrained LLM writes and revises executable programs for simulation-ready articulated assets without task-specific training.\n\nWe propose source geometry analysis, which converts the source mesh into a metric textual description that distinguishes observed surface from unknown space, and iterative geometric rechecking, which re-encodes each candidate in the same representation so that discrepancies point to program edits while unobserved regions remain open to completion.\n\nVisual feedback and physical authoring guidance complete the modeling process, which produces articulated USD assets with explicit physical properties that load into Isaac Sim without manual adjustment. Experiments demonstrate leading articulation recovery on two benchmarks and validate USDCraft's effectiveness for real-to-sim-to-real robot manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces USDCraft, which formulates reconstruction of articulated assets as programmatic modeling from partial geometric evidence. A pretrained language model writes and revises executable programs. Geometry analysis distinguishes observed surfaces from unknown space, and iterative rechecking identifies discrepancies while leaving unseen regions open to completion. The framework produces USD assets with explicit physical properties for Isaac Sim. The authors report leading articulation recovery on two benchmarks and validate its effectiveness for real-to-sim-to-real robot manipulation.",
+          "zh": "论文提出 USDCraft，将关节式资产重建表述为基于部分几何证据的程序化建模。预训练语言模型编写并修订可执行程序；方法通过几何分析区分已观测表面与未知空间，并迭代重查候选模型以指导程序修改，同时允许补全未观测区域。系统生成带显式物理属性、可载入 Isaac Sim 的 USD 资产。作者报告其在两个基准上实现领先的关节恢复表现，并验证了真实到仿真再到真实机器人操作中的效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3672,7 +3680,11 @@
             "heading": "",
             "text": "Humans inherently understand the physical world through an active process. When sensory evidence is insufficient to infer physical properties, we naturally interact with the environment by deciding what information is missing, how to acquire it, and when sufficient evidence has been obtained.\n\nIn stark contrast, existing multi-sensory robot systems mainly integrate sensory inputs rather than actively acquiring missing evidence through interactions. In this work, we introduce ROMA, an LLM-based system for Real-World Object-Centric Multi-Sensory Active Perception.\n\nROMA integrates vision, audio, tactile, and force sensing into a reasoning-interaction-feedback loop. The model identifies missing evidence and determines the target objects, interactions, and modalities, while a physical interface executes the selected interactions and collects the multi-sensory feedback.\n\nTo support this capability, we construct ROMI-2K, a large-scale real-world multi-sensory object interaction dataset covering nearly 2,000 objects and 6 atomic interactions with synchronized sensory feedback.\n\nBuilding on these data, we develop a two-stage training framework that aligns sensory modalities and equips the LLM to assess evidence sufficiency, select informative interactions, and reason over the multi-sensory feedback.\n\nWe further characterize active perception as perception chains, where acquired evidence guides subsequent interactions and reasoning, and establish ROMA Bench to evaluate single-attribute, long-horizon multi-attribute, and intent-driven active perception.\n\nExperiments show that ROMA can actively acquire missing evidence and solve complex, long-chain multi-sensory perception tasks that existing methods struggle to handle, laying a strong perceptual foundation for active multi-sensory embodied agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ROMA, an LLM-based system for real-world, object-centric active perception across vision, audio, touch, and force sensing. It uses a reasoning, interaction, and feedback loop: the model identifies missing evidence and selects objects, interactions, and modalities, which a physical interface then executes. The authors introduce ROMI-2K, a dataset spanning nearly 2,000 objects and six atomic interactions, plus a two-stage training framework and ROMA Bench. Experiments report active evidence acquisition and performance on complex, long-chain tasks.",
+          "zh": "论文提出 ROMA，一种基于大语言模型的真实世界物体中心多感官主动感知系统。它将视觉、音频、触觉和力觉纳入推理、交互与反馈循环，由模型判断缺失证据并选择对象、交互和感知模态，再由物理接口执行并收集反馈。作者构建涵盖近 2,000 个物体和 6 种原子交互的 ROMI-2K 数据集，并提出两阶段训练框架及 ROMA Bench。实验显示，ROMA 能主动获取缺失证据，并完成现有方法难以处理的复杂长链多感官感知任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3703,7 +3715,11 @@
             "heading": "",
             "text": "Robotic manipulation often contains repeated motions whose local observations look similar at different phases. When these phases require different actions, a policy that relies mainly on the current observation may repeat completed motions or switch phases at the wrong time.\n\nTo address this phase ambiguity, we present the Pseudo-Memory Temporal Re-encoding Module (PMTRM), a lightweight plug-in module with only 7.61M parameters that encodes a bounded history of executed states and actions into a latent sequence for existing policies.\n\nTo help distinguish phases, a temporal heterogeneity objective penalizes positive similarity between distant positions in this sequence, while anchor and reconstruction losses preserve information needed for action prediction. The reconstruction decoder is used only during training, leaving the temporal re-encoder to supply history to the policy at inference.\n\nWe train the module progressively on synthetic sequences and robot data, then jointly with the policy, using temporal masking to accommodate partial histories. This integration retains the original action head and action space and adds auxiliary losses to the original policy loss.\n\nExperiments with multiple policy backbones in simulation and on a real robot show improved task success on tasks with phase ambiguity, with little additional computation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PMTRM, a lightweight temporal re-encoding module for embodied policy learning, addressing action ambiguity when observations look similar across task phases. It encodes bounded histories of states and actions into a latent sequence and uses temporal heterogeneity, anchor, and reconstruction losses; the reconstruction decoder is used only in training. The method retains the policy’s action head and action space and uses temporal masking for partial histories. Experiments across policy backbones in simulation and on a real robot report improved success on phase-ambiguous tasks with little extra computation.",
+          "zh": "论文提出 PMTRM，一种为具身策略学习设计的轻量级时序重编码模块，用于缓解不同阶段局部观测相似所造成的动作歧义。模块将有限历史中的状态和动作编码成潜在序列，并以时序异质性、锚点和重建损失训练；重建解码器仅在训练时使用。方法保留原策略的动作头和动作空间，并通过时序遮蔽适配不完整历史。作者报告，在仿真和真实机器人上的多种策略骨干实验中，该模块提升了阶段歧义任务的成功率，额外计算开销较小。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
