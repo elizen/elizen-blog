@@ -3205,7 +3205,11 @@
             "heading": "",
             "text": "Monocular videos of human manipulation provide abundant dexterous demonstrations, yet reconstructing hand-object interaction from a single view and transferring it to robot hands remain difficult, limiting their direct use for robot execution.\n\nPrior methods either require task-specific RL training, limiting scalability, or assume clean motion-capture trajectories and thus cannot operate directly on video. We present OmniHOI, a pipeline that turns an RGB video of hand-object interaction into an interaction-faithful trajectory on dexterous hands.\n\nThe key idea is to enforce physical consistency using the evidence available at each stage: image evidence during reconstruction, contact geometry during retargeting, and dynamics during physics-in-the-loop refinement.\n\nEach stage optimizes the corresponding representation directly, correcting errors before they propagate downstream or must be absorbed by a learned policy. Across 150 motion-capture trajectories transferred to each of five dexterous hands with 6 to 22 DoF, we achieve 39-89% success, compared with at most 31% for prior transfer methods.\n\nOn 60 monocular video clips, we achieve 53% success, compared with 28% for the best prior video-to-robot pipeline. Its trajectories also execute on a real bimanual robot across diverse tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "OmniHOI converts monocular RGB videos of human hand-object interaction into trajectories for dexterous robot hands. Its pipeline uses image evidence during reconstruction, contact geometry during retargeting, and dynamics during physics-in-the-loop refinement. The authors report 39–89% success when transferring motion-capture trajectories to five hands, versus at most 31% for prior transfer methods. On 60 monocular clips, success is 53%, versus 28% for the best prior video-to-robot pipeline. The trajectories also run on a real bimanual robot.",
+          "zh": "OmniHOI 将单目 RGB 人手操作视频转化为灵巧手交互轨迹，分阶段利用图像证据、接触几何和动力学约束修正误差。作者报告，在动捕轨迹向五种灵巧手迁移时成功率为39%–89%，高于既有方法最高31%；在60段单目视频上成功率为53%，高于既有视频到机器人流程的28%。轨迹也在真实双臂机器人上执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3236,7 +3240,11 @@
             "heading": "",
             "text": "Hair stroking is common in daily grooming and personal care, and is also widely used in hair-product evaluation, motivating robots with similar physical interaction capabilities.\n\nExisting robotic hair-care and surface-following methods mainly rely on trajectory planning, compliance, force regulation, or tactile-conditioned policies, but deformable hair can remain in contact while gradually drifting across the end-effector, making local interaction difficult to regulate.\n\nWe propose TacHair, a tactile contact-distribution guided online correction framework that represents high-resolution tactile observations as a spatial hair-contact distribution.\n\nA visuotactile imitation policy generates the nominal stroking motion, while a separately trained residual module corrects local contact deviations, separating task progression from contact recovery. We evaluate TacHair in 525 real-robot trials across five head geometries and three hair conditions.\n\nA successful stroke requires both sufficient task progression and contact maintenance; our method improves success from 42.9% to 62.3% and contact maintenance from 59.4% to 88.0% over the same visuotactile policy without correction.\n\nThese results demonstrate spatial tactile contact distributions as an effective feedback representation for contact-preserving interaction with deformable and visually occluded surfaces. Demos, code, and datasets are available at https://tachair.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "TacHair represents high-resolution tactile observations as spatial hair-contact distributions and uses them to correct local deviations during robotic hair stroking. A visuotactile imitation policy produces nominal motion, while a separately trained residual module handles contact recovery. In 525 real-robot trials across five head geometries and three hair conditions, the authors report that success rose from 42.9% to 62.3%, and contact maintenance from 59.4% to 88.0%, compared with the same policy without correction. A successful stroke requires both task progress and maintained contact.",
+          "zh": "TacHair 将高分辨率触觉观测表示为空间毛发接触分布，用于在线修正机器人梳抚中的局部接触偏差。视觉触觉模仿策略生成名义运动，独立训练的残差模块负责接触恢复。作者在五种头部几何和三种毛发条件下进行了525次真实机器人试验；相较于未加修正的同一策略，成功率从42.9%升至62.3%，接触维持率从59.4%升至88.0%。成功判定同时要求任务进展充分且维持接触。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3267,7 +3275,11 @@
             "heading": "",
             "text": "Robotic manipulation of labware is difficult when transparent or reflective objects must be identified and localized. Coded planar fiducials are a practical retrofit: easy to print, they leave the marked face flat and graspable. Yet a single planar tag is least reliable in near-frontal views, where perspective cues fade.\n\nNon-planar geometries restore those cues but intrude on the flat face that a parallel-jaw gripper must contact. Our idea is to tilt multiple tags within one compact footprint, so that each tag is seen at a non-frontal angle even when the marker faces the camera.\n\nWe propose the quARtet marker, a 3D-printable fiducial embodying this idea: all detected corners of its four tilted AprilTags enter one Perspective-n-Point solve, and a shared configuration defines the fabricated geometry and the detector model. Because tilting consumes flat area, its three layouts trade pose-estimation consistency against graspability.\n\nIn robot-referenced, same-setup fixed-camera experiments, all three layouts reduced the mean frontal orientation error from 2.18 degree for a single planar tag to 0.24-0.47 degree and the root-mean-square position error from 1.50 to 0.17-0.20 mm. A robot-mounted-camera pose-hold test confirmed this separation under closed-loop visual feedback.\n\nIn swing-down trials under identical conditions, the two layouts with flat contact strips retained the object, whereas the layout without flat strips slipped about a hundred times more than a single planar tag.\n\nFor the tested conditions, the results support a rule: the layout without flat strips when pose-estimation consistency dominates, a layout with flat strips when the marked face must remain graspable."
           }
-        ]
+        ],
+        "summary": {
+          "en": "quARtet is a 3D-printable fiducial with four tilted AprilTags in a compact footprint; detected tag corners are combined in one pose solve. Its three layouts trade pose consistency against graspability. In robot-referenced, fixed-camera experiments under the same setup, the layouts reduced mean frontal orientation error to 0.24–0.47 degrees from 2.18 degrees for a single planar tag, and position error RMS to 0.17–0.20 mm from 1.50 mm. In swing-down trials, layouts with flat contact strips retained the object, while the layout without strips slipped more often.",
+          "zh": "quARtet 是一种3D打印多标签标记，将四个倾斜的 AprilTag 置于紧凑区域，并将检测到的角点共同用于位姿求解；三种布局权衡位姿一致性与可抓握性。在同配置、机器人参照的固定相机实验中，三种布局的正面朝向误差均值为0.24–0.47度，低于单平面标签的2.18度；位置误差均方根为0.17–0.20毫米，低于1.50毫米。摆动下压试验中，带平接触条的两种布局能 удерж住物体，无平条布局更易滑脱。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
