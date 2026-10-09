@@ -82,7 +82,7 @@
       },
       "format": "source_excerpt",
       "id": "news-07e2ed98840107cfc15cf70e56a23860d3e729ee635066796e50ed131933e543",
-      "intro": "arXiv:2610.04681v2 Announce Type: replace Abstract: Vision-language-action (VLA) and world-action models (WAMs) often degrade under out-of-distribution task variations despite retaining partial task capability. To recover such capability, we propose RoboIRS, an inference-time internal representation steering method that uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions without updating policy parameters. On 15 simulation tasks with a frozen $\\pi 0.5$ policy, RoboIRS improves the average success rate from 44.4",
+      "intro": "arXiv:2610.04681v3 Announce Type: replace Abstract: Vision-language-action (VLA) and world-action models (WAMs) often degrade under out-of-distribution task variations despite retaining partial task capability. To recover such capability, we propose RoboIRS, an inference-time internal representation steering method that uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions without updating policy parameters. On 15 simulation tasks with a frozen $\\pi 0.5$ policy, RoboIRS improves the average success rate from 44.4",
       "placement": "main",
       "published_at": "2026-10-08T04:00:00+00:00",
       "reading": {
@@ -95,8 +95,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents RoboIRS, an inference-time method that steers internal policy representations without updating policy parameters. It uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions. With a frozen π0.5 policy, it reports an average success-rate increase from 44.4% to 66.2% across 15 simulation tasks, with little added inference time. The authors also report real-robot manipulation validation and an increase from 35.4% to 55.4% with Cosmos Policy.",
-          "zh": "论文提出RoboIRS，一种推理时内部表征引导方法：利用成功与失败的执行轨迹训练线性分类器，选择与结果相关的干预位置，并生成特定任务的引导方向，且不更新策略参数。在冻结的π0.5策略上，15项仿真任务的平均成功率由44.4%升至66.2%，且推理时间只略有增加。作者还报告了真实机器人操作验证，并将方法用于Cosmos Policy；后者平均成功率由35.4%升至55.4%。"
+          "en": "The paper proposes RoboIRS, an inference-time method that steers internal representations without updating policy parameters. It uses successful and failed rollouts to train linear classifiers, select outcome-relevant intervention locations, and derive task-specific steering directions. The authors report improved average success across 15 simulation tasks with a frozen π0.5 policy, relative to alternative inference-time intervention baselines, with little added inference time. They also report validation on real-robot manipulation and applicability to Cosmos Policy; the claims are limited to the described settings.",
+          "zh": "论文提出RoboIRS，一种无需更新策略参数的推理时内部表示引导方法。它利用成功与失败的执行轨迹训练线性分类器，选择与结果相关的干预位置，并生成任务专属引导方向。作者报告，在冻结的π0.5策略上，该方法于15项仿真任务中提升平均成功率，并优于其他推理时干预基线，且额外推理耗时较少。论文还报告了真实机器人操作验证，并将方法应用于世界动作模型Cosmos Policy；这些结果限于文中所述任务与设置。"
         }
       },
       "source": {
@@ -222,7 +222,7 @@
       },
       "format": "source_excerpt",
       "id": "news-13baa4de412e3aaa43ba7ad34b2f44048dece6e81c0955e2966843ff6449d7b0",
-      "intro": "arXiv:2610.10270v1 Announce Type: cross Abstract: World action models (WAMs) have emerged as an important class of generalist robot policies, aiming to transfer video prediction priors to action learning. However, we find that existing WAMs frequently produce incorrect motion predictions in open-ended environment, leading to erroneous actions. We attribute this limitation to two factors: (1) base video models are not optimized for manipulation, and (2) naively incorporating action components into video models can substantially degrade their generalization capabilities. We",
+      "intro": "arXiv:2610.10270v2 Announce Type: cross Abstract: World action models (WAMs) have emerged as an important class of generalist robot policies, aiming to transfer video prediction priors to action learning. However, we find that existing WAMs frequently produce incorrect motion predictions in open-ended environment, leading to erroneous actions. We attribute this limitation to two factors: (1) base video models are not optimized for manipulation, and (2) naively incorporating action components into video models can substantially degrade their generalization capabilities. We",
       "placement": "main",
       "published_at": "2026-10-08T04:00:00+00:00",
       "reading": {
@@ -235,8 +235,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces VPP2, a world action model designed to improve video prediction and action generation in open-ended manipulation. It continues pretraining a video foundation model on diverse manipulation videos with detailed captions and event-level training, then post-trains and distills it into a single-step visual planner. A mixture-of-transformers action module learns implicit inverse dynamics. The reported experiments show gains over compared methods in open-task video instruction following, real-world zero-shot ALOHA manipulation, and, after benchmark-specific post-training, several challenging benchmarks.",
-          "zh": "论文提出视频预测策略 VPP2，旨在改善开放式操作环境中的视频预测与动作生成。方法通过多样化操作视频、详细字幕和事件级预训练提升基础视频模型，再将其后训练与蒸馏为单步视觉规划器，并以混合变换器动作模块学习隐式逆动力学。作者报告，VPP2 在开放任务的视频指令跟随、真实 ALOHA 零样本操作，以及经基准特定后训练的多个基准上取得优于所比较方法的表现。"
+          "en": "The paper introduces Video Prediction Policy 2 (VPP2), a world-action model intended to generalize zero-shot in both video prediction and action generation. The authors attribute limitations in existing approaches to video models not being optimized for manipulation and action components potentially harming generalization. VPP2 continues pretraining on diverse manipulation videos, uses event-level video pretraining, distills the model into a single-step visual planner, and adds a mixture-of-transformers action module for implicit inverse dynamics. The paper reports results on open-ended tasks, real-world ALOHA manipulation, and benchmarks after benchmark-specific post-training.",
+          "zh": "论文提出Video Prediction Policy 2（VPP2），一种旨在兼顾视频预测与动作生成零样本泛化的世界动作模型。作者将现有方法的问题归因于基础视频模型未针对操作优化，以及直接加入动作组件可能损害泛化能力。VPP2通过多样化操作视频继续预训练、事件级视频预训练、将模型蒸馏为单步视觉规划器，并以混合变换器动作模块学习隐式逆动力学。论文报告了开放任务、真实ALOHA操作及经基准专门后训练的多个基准上的结果。"
         }
       },
       "source": {
@@ -2294,7 +2294,7 @@
       },
       "format": "source_excerpt",
       "id": "news-91e90a43c634cd92292e5a03df0e1307ade2bef5a0051a7ce2122146d5f1ef2c",
-      "intro": "arXiv:2610.09488v1 Announce Type: new Abstract: The future of autonomous robots in human-oriented environments depends on their ability to navigate in the absence of prebuilt maps; exploiting navigational aids, such as navigational signs, designed by humans for humans is critical for enabling autonomy. This manuscript introduces a unique dataset collected using a handheld device, at various public spaces across Singapore, representing environments that humans frequent daily, and focusing on sign-centric decision making for mapless navigation. The dataset includes RGB",
+      "intro": "arXiv:2610.09488v2 Announce Type: new Abstract: The future of autonomous robots in human-oriented environments depends on their ability to leverage existing navigational aids embedded in these environments, such as navigational signs, to navigate unfamiliar spaces without prior maps. Yet robots rarely exploit these cues, relying instead on pre-built maps for navigation. To advance sign- based visual navigation, we introduce a unique dataset, SiGNgapore, for benchmarking sign-based decision-making for navigation, collected across diverse public spaces in Singapore commonly encountered in",
       "placement": "main",
       "published_at": "2026-10-08T04:00:00+00:00",
       "reading": {
@@ -2303,12 +2303,12 @@
         "sections": [
           {
             "heading": "",
-            "text": "The future of autonomous robots in human-oriented environments depends on their ability to navigate in the absence of prebuilt maps; exploiting navigational aids, such as navigational signs, designed by humans for humans is critical for enabling autonomy.\n\nThis manuscript introduces a unique dataset collected using a handheld device, at various public spaces across Singapore, representing environments that humans frequent daily, and focusing on sign-centric decision making for mapless navigation.\n\nThe dataset includes RGB, sparse depth, odometry and IMU measurements of scenarios centered around navigational signs and the complex environments where they are placed. Additionally, we provide 56 long-horizon navigation missions and over 450 sign-centric scenarios.\n\nAll data is provided in a human- readable format, as well as utility scripts for conversion to ROS 2.Lastly, we provide venue maps and GPS aligned scene graphs of the test environments. We discuss the potential use cases for this dataset."
+            "text": "The future of autonomous robots in human-oriented environments depends on their ability to leverage existing navigational aids embedded in these environments, such as navigational signs, to navigate unfamiliar spaces without prior maps. Yet robots rarely exploit these cues, relying instead on pre-built maps for navigation.\n\nTo advance sign- based visual navigation, we introduce a unique dataset, SiGNgapore, for benchmarking sign-based decision-making for navigation, collected across diverse public spaces in Singapore commonly encountered in daily life, including hospitals, public transport hubs, and shopping malls.\n\nSiGNgapore comprises 456 scenarios, each capturing a navigational sign and its surrounding environment, which collectively underpin 56 long-horizon navigation missions designed to evaluate sequential decision-making. Each scenario includes RGB, depth, IMU, and odometry data collected using a handheld device.\n\nWe additionally provide venue maps and GPS-aligned scene graphs of the test environments. Beyond benchmarking sign-guided sequential decision-making, SiGNgapore supports research into visual understanding of navigational signs and into navigation approaches that integrate signage cues with prior maps."
           }
         ],
         "summary": {
-          "en": "This manuscript introduces SiGNgapore, an interactive dataset for sign-based visual navigation, focused on decision-making without prebuilt maps. Data were collected with a handheld device in public spaces across Singapore and include RGB, sparse depth, odometry, and IMU measurements from sign-centered scenarios and their complex surroundings. The dataset provides 56 long-horizon navigation missions and more than 450 sign-centric scenarios. It also includes human-readable data, utility scripts for conversion to ROS 2, venue maps, and GPS-aligned scene graphs. The authors discuss potential use cases for the dataset.",
-          "zh": "本文介绍SiGNgapore，这是一个面向基于标志的视觉导航交互式数据集，重点关注无预建地图环境中的标志引导决策。数据由手持设备在新加坡多个公共场所采集，包含RGB、稀疏深度、里程计和IMU测量，场景围绕导航标志及其所在的复杂环境展开。数据集提供56项长时程导航任务和450多个以标志为中心的场景，并提供便于人阅读的数据格式、转换至ROS 2的工具脚本、场地地图及与GPS对齐的场景图。作者还讨论了该数据集的潜在用途。"
+          "en": "The paper presents SiGNgapore, a dataset for benchmarking visual navigation decisions based on signs. It was collected in everyday public spaces in Singapore, including hospitals, transport hubs, and shopping malls. The dataset contains 456 scenarios supporting 56 long-horizon navigation missions. Each scenario captures a sign and its surroundings, with RGB, depth, IMU, and odometry data. The authors also provide venue maps and GPS-aligned scene graphs for test environments. The dataset is intended to support research on sign-guided sequential decisions, sign understanding, and navigation combining signs with prior maps.",
+          "zh": "论文介绍SiGNgapore，一个用于基于导航标识进行视觉导航决策的基准数据集，采集自新加坡日常公共空间，包括医院、公共交通枢纽和购物中心。数据集包含456个场景，涵盖56项长时序导航任务；每个场景记录导航标识及周边环境，并提供RGB、深度、IMU和里程计数据。作者还提供场馆地图及与GPS对齐的测试环境场景图。该数据集支持研究标识引导的序贯决策、导航标识视觉理解，以及结合标识线索与先验地图的导航方法。"
         }
       },
       "source": {
@@ -3675,5 +3675,5 @@
       "title": "Multisensory Continual Learning: Adapting Pretrained Visuomotor Policies to Force"
     }
   ],
-  "updated_at": "2026-10-08T04:53:01.904404+00:00"
+  "updated_at": "2026-10-09T03:02:30.239914+00:00"
 }
