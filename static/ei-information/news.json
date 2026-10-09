@@ -2343,7 +2343,11 @@
             "heading": "",
             "text": "The future of autonomous robots in human-oriented environments depends on their ability to leverage existing navigational aids embedded in these environments, such as navigational signs, to navigate unfamiliar spaces without prior maps. Yet robots rarely exploit these cues, relying instead on pre-built maps for navigation.\n\nTo advance sign- based visual navigation, we introduce a unique dataset, SiGNgapore, for benchmarking sign-based decision-making for navigation, collected across diverse public spaces in Singapore commonly encountered in daily life, including hospitals, public transport hubs, and shopping malls.\n\nSiGNgapore comprises 456 scenarios, each capturing a navigational sign and its surrounding environment, which collectively underpin 56 long-horizon navigation missions designed to evaluate sequential decision-making. Each scenario includes RGB, depth, IMU, and odometry data collected using a handheld device.\n\nWe additionally provide venue maps and GPS-aligned scene graphs of the test environments. Beyond benchmarking sign-guided sequential decision-making, SiGNgapore supports research into visual understanding of navigational signs and into navigation approaches that integrate signage cues with prior maps."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SiGNgapore, a dataset for benchmarking visual navigation decisions guided by signs. It was collected in Singapore public spaces, including hospitals, transit hubs, and shopping malls. The dataset contains 456 scenarios supporting 56 long-horizon missions. Each scenario records a navigational sign and its surroundings, with RGB, depth, IMU, and odometry data. The authors also provide venue maps and GPS-aligned scene graphs for research on sign understanding and navigation with prior maps.",
+          "zh": "论文介绍 SiGNgapore，这是一个用于基于标志进行视觉导航决策的基准数据集，采集自新加坡医院、公共交通枢纽和购物中心等公共空间。数据集包含456个场景，涵盖56项长程导航任务；每个场景记录导航标志及周边环境，并提供RGB、深度、IMU和里程计数据。作者还提供测试场地地图及与GPS对齐的场景图，供标志理解、序列决策以及结合先验地图的导航研究使用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2374,7 +2378,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models leveraging the native autoregressive paradigm of Vision-Language Models (VLMs) have demonstrated superior instruction-following and training efficiency. Central to this paradigm is action tokenization, yet its design has primarily focused on reconstruction fidelity, failing to address its direct impact on VLA optimization.\n\nConsequently, the fundamental question of \\textit{what makes for good action tokenizers} remains unanswered. In this paper, we bridge this gap by establishing design principles specifically from the perspective of VLA optimization.\n\nWe identify a set of best practices based on information-theoretic insights, including maximized temporal token overlap, minimized vocabulary redundancy, enhanced multimodal mutual information, and token independence.\n\nGuided by these principles, we introduce \\textbf{ActionCodec}, a high-performance action tokenizer that significantly enhances both training efficiency and VLA performance across diverse simulation and real-world benchmarks. Notably, on LIBERO, a SmolVLM2-2.2B fine-tuned with ActionCodec achieves a 95.5\\% success rate without any robotics pre-training.\n\nWith advanced architectural enhancements, this reaches 97.4\\%, representing a new SOTA for VLA models without robotics pre-training. We believe our established design principles, alongside the released model, will provide a clear roadmap for the community to develop more effective action tokenizers."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies action tokenization from the perspective of optimizing vision-language-action models. It proposes design principles including maximizing temporal token overlap, minimizing vocabulary redundancy, increasing multimodal mutual information, and promoting token independence, then introduces ActionCodec. The authors report improved training efficiency and performance across simulation and real-world benchmarks. On LIBERO, a SmolVLM2-2.2B model fine-tuned with ActionCodec achieves a 95.5% success rate without robotics pre-training; with architectural enhancements, it reaches 97.4%.",
+          "zh": "论文从视觉—语言—动作模型的优化角度研究动作词元器的设计，提出时间词元重叠最大化、词表冗余最小化、多模态互信息增强和词元独立性等原则，并据此提出 ActionCodec。作者称，该方法在多种仿真和真实世界基准上提升训练效率与模型表现；在 LIBERO 上，使用 ActionCodec 微调的 SmolVLM2-2.2B 在不进行机器人预训练时成功率为95.5%，结合架构改进后达到97.4%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2405,7 +2413,11 @@
             "heading": "",
             "text": "Globally consistent, real-time state estimation in large-scale, perceptually degraded environments is essential for autonomous vehicles and aerial robots, and requires fusing LiDAR, inertial, and GNSS measurements. Existing fusion methods, however, share a scan-to-map front-end with two failure modes.\n\nFirst, each scan is aligned to an incrementally built map that drifts under degeneracy, and once the estimate diverges the error is irrecoverable.\n\nSecond, even without divergence, a registration biased by dynamic objects or wrong correspondences is propagated as a single pose constraint with an over-confident covariance, leaving its correspondences unavailable for GNSS to re-weight or relinearize.\n\nWe propose GLIO2, a tightly-coupled LiDAR-Inertial-GNSS system whose GPU-parallel front-end jointly optimizes scan-to-multiscan LiDAR, IMU pre-integration, and raw GNSS measurements in a single sliding-window factor graph, sustaining real-time operation on edge hardware.\n\nA complementary offline back-end reuses the same cached factors to refine the entire trajectory in batch, completing the 30-min, 4.51-km UrbanNav Whampoa sequence in about 24 s. Across three public benchmarks (UrbanNav, MARS-LVIG, M3DGR) and self-collected UAV and vehicle data, GLIO2 attains the best overall accuracy among evaluated systems.\n\nOn a 5.66-km bridge traversed at up to 96 km/h, where every competing baseline diverges under LiDAR degeneracy, it maintains 1.6 m horizontal accuracy. On an NVIDIA Jetson Orin NX, the full pipeline runs at about 25 Hz (39.60 ms per scan).The source code and datasets will be released."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GLIO2, a tightly coupled LiDAR, inertial, and GNSS system for localization and mapping. Its GPU-parallel front end jointly optimizes multi-scan LiDAR, IMU pre-integration, and raw GNSS measurements in a sliding-window factor graph; an offline back end reuses cached factors for batch trajectory refinement. The authors report the best overall accuracy among evaluated systems across three public benchmarks and self-collected UAV and vehicle data. On a bridge sequence with LiDAR degeneracy, it maintains 1.6 m horizontal accuracy, and runs at about 25 Hz on a Jetson Orin NX.",
+          "zh": "论文提出 GLIO2，一种紧耦合激光雷达、惯性测量与GNSS的定位建图系统。其GPU并行前端在滑动窗口因子图中联合优化多帧激光雷达、IMU预积分和原始GNSS测量，离线后端则复用缓存因子批量优化轨迹。作者报告称，该系统在三个公开基准及自采无人机和车辆数据上总体精度最佳；在一段激光雷达退化的桥梁行驶数据中保持1.6米水平精度，并在Jetson Orin NX上约以25 Hz运行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2436,7 +2448,11 @@
             "heading": "",
             "text": "Human demonstrations are a scalable data source for learning dexterous manipulation, but the embodiment gap prevents human motion from being executed directly on robots. Inverse kinematics (IK) retargets human motion to robots efficiently but ignores dynamics, often producing infeasible motions.\n\nReinforcement learning (RL) and sampling-based model predictive control (MPC) are commonly employed to yield dynamically feasible motions, but both are sample-inefficient and sensitive to hyperparameters.\n\nRL suffers from costly and unstable training and tedious reward engineering; MPC avoids policy optimization, yet retargets each trajectory in isolation, and solving one does not make the next easier. Sampling cost grows rapidly with dataset size and task difficulty.\n\nWe hypothesize that dynamically feasible trajectories concentrate near a low-dimensional manifold shared across demonstrations, so that retargeting can be reduced to sampling from that manifold, conditioned on human motion, rather than solving a fresh optimization problem for every demonstration.\n\nWe propose \\textbf{Generative Neural Retargeting} (GNR), which uses a flow matching model to sample feasible trajectories. GNR outperforms MPC with only $8.5\\%$ of the samples required by MPC, achieving a success rate of $56.20\\%$ compared to $27.20\\%$ for MPC.\n\nGNR can be used for scalable and efficient retargeting of large-scale, long-horizon, and millimeter precision human demonstrations: by applying GNR within a real-to-sim data engine, we produce a dexterous manipulation dataset with dense contact-force labels, spanning $223$k demonstrations and $3.3$k object geometries."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Generative Neural Retargeting (GNR) to address the embodiment gap between human demonstrations and robot motions. It hypothesizes that feasible dynamic trajectories lie near a low-dimensional manifold shared across demonstrations, and uses a flow-matching model to sample trajectories conditioned on human motion. The authors report that GNR uses 8.5% of the samples required by model predictive control (MPC), with a 56.20% success rate versus 27.20% for MPC. In a real-to-simulation data engine, it produces a dataset with dense contact-force labels, spanning 223,000 demonstrations and 3,300 object geometries.",
+          "zh": "论文针对人类动作迁移到机器人时的具身差异，提出生成式神经重定向 GNR。方法假设可行的动态轨迹集中在演示共享的低维流形附近，并使用流匹配模型按人类动作条件采样轨迹。作者报告称，GNR仅使用模型预测控制所需样本量的8.5%，成功率为56.20%，而MPC为27.20%。将其用于真实到仿真的数据流程后，作者生成了含稠密接触力标签的数据集，覆盖22.3万条演示和3300种物体几何形状。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
