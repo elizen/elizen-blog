@@ -1239,7 +1239,11 @@
             "heading": "",
             "text": "VGGT provides a strong foundation for geometry-centric world models by recovering unified 3D scene geometry from visual observations. Although recent extensions enable temporal 3D prediction, their future evolution remains weakly conditioned on driving intentions and actions, limiting their ability to model alternative action-dependent futures.\n\nWe propose VGGTWorld-VLA, an intention-conditioned extension of VGGT-World for controllable 3D world evolution in autonomous driving.\n\nFirst, we introduce an action--semantic conditioning mechanism that injects complementary driving semantics and ego-motion representations into the future-token stream, enabling different future geometry predictions for the same observed scene under alternative ego actions.\n\nSecond, we develop a geometry--language--action bridge that adapts historical geometry, VLA semantic features, and maneuver and trajectory representations for joint conditioning of future geometry prediction. We evaluate future geometry prediction on NAVSIM, while conditioning ablations further examine the contributions of semantic and action information.\n\nCompared with the baseline, our method demonstrates competitive geometry prediction performance. Ablation studies further support the effectiveness of semantic and action conditioning. These results demonstrate the potential of semantic and action conditioning for controllable VGGT-based world prediction in autonomous driving."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VGGTWorld-VLA, an intention-conditioned extension of VGGT-World for predicting future 3D geometry in autonomous driving. It introduces action-semantic conditioning and a geometry-language-action bridge to combine historical geometry, semantic features, maneuvers, and trajectories. The authors evaluate future geometry prediction on NAVSIM and use ablations to examine semantic and action inputs. They report competitive geometry prediction relative to a baseline, while the ablations support the contribution of these conditioning signals within the reported evaluation.",
+          "zh": "本文提出VGGTWorld-VLA，将驾驶意图和自车动作纳入VGGT-World的未来三维场景预测。方法通过动作—语义条件机制及几何—语言—动作桥接模块，联合利用历史几何、语义特征、机动和轨迹表示，为未来几何预测提供条件。作者在NAVSIM上评估预测性能，并通过消融考察语义与动作信息的作用。结果显示，该方法相较基线具有有竞争力的几何预测表现，消融实验支持条件信息的有效性；结论限于所述评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1270,7 +1274,11 @@
             "heading": "",
             "text": "Frontier multimodal foundation models (e.g., GPT-6 Astra) have recently shown strong potential for direct robotic control, yet their performance on fine manipulation remains limited.\n\nWe argue that an important source of failure is not necessarily insufficient policy capability, but insufficient spatial observability, where task-critical spatial relationships may be poorly revealed by the existing physical camera setup.\n\nWe introduce SpatialHarness, a test-time embodied harness that provides test-time spatial scaffolding for fine robotic manipulation without policy fine-tuning or changes to the physical sensing setup.\n\nSpatialHarness maintains an online simulated scene synchronized with real-world execution, identifies task-critical spatial relationships, and renders complementary virtual views that expose them to a frozen multimodal policy.\n\nTo keep the simulated scene aligned during interaction, we develop interaction-aware scene synchronization that distinguishes static, held, and transition modes. We evaluate SpatialHarness on four real-robot manipulation tasks spanning precise geometric alignment, object-relative placement, and articulated-object interaction.\n\nUsing the same frozen GPT-6 Astra policy, SpatialHarness substantially improves task success, including from 26.7% to 66.7% on plug insertion and from 0% to 100% on Tower of Hanoi. These results indicate that improving spatial observability at test time can unlock fine-manipulation capabilities already present in strong multimodal foundation models.\n\nProject website: https://emilia113.github.io/SpatialHarness/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SpatialHarness, a test-time framework for fine robotic manipulation that does not fine-tune the policy or change the physical sensing setup. It synchronizes a simulated scene with real execution, identifies task-critical spatial relationships, and renders complementary virtual views for a frozen multimodal policy. Its synchronization method distinguishes static, held, and transition modes. In four real-robot tasks, the authors report improved success with the same policy, including plug insertion rising from 26.7% to 66.7% and Tower of Hanoi from 0% to 100%.",
+          "zh": "本文提出SpatialHarness，一种无需微调策略或更改实体传感器配置的测试时空间辅助框架。它维护与真实执行同步的模拟场景，识别任务关键空间关系，并生成补充虚拟视角供冻结的多模态策略使用；场景同步机制区分静止、持物和过渡状态。作者在四项真实机器人操作任务上评估，并报告同一策略的成功率提升，包括插头插入从26.7%升至66.7%、汉诺塔从0%升至100%。这些结果属于摘要所述任务与实验设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1301,7 +1309,11 @@
             "heading": "",
             "text": "The diversity of robot embodiments and action spaces makes it challenging to build robot world models that generalize across different embodiments. We introduce the Latent Action-Conditioned Robot World Model (LAC-WM), which operates within a learned unified latent action space shared across diverse embodiments.\n\nThis unified action space improves the world model's performance when adapted to previously unseen robot embodiments. We compare LAC-WM with an Explicit Action-Conditioned World Model (EAC-WM), which conditions on explicit motion labels.\n\nOur results show that explicit action conditioning leads to disjoint action representations across embodiments, limiting downstream performance when adapting to new robots. We evaluate both models on dexterous manipulation tasks and a modified LIBERO benchmark.\n\nLAC-WM improves downstream performance over EAC-WM by up to 46.7% on dexterous manipulation and 11.7% on LIBERO. Crucially, the unified latent action space allows LAC-WM's downstream performance to scale positively with the number of embodiments used during pretraining.\n\nIn contrast, the disjoint action space in EAC-WM leads to decreased performance as the number of pretraining embodiments increases. These results highlight the importance of a unified action space for efficient cross-embodiment learning, addressing a key challenge in robotics. Project website: https://lacwm.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LAC-WM, a robot world model that uses a learned unified latent action space shared across embodiments, and compares it with EAC-WM, which uses explicit motion labels. The authors report that explicit conditioning yields disjoint action representations that limit adaptation to new robots. On dexterous manipulation tasks and a modified LIBERO benchmark, LAC-WM improves downstream performance by up to 46.7% and 11.7%, respectively. Its performance scales positively with the number of pretraining embodiments, while EAC-WM performance decreases, according to the reported evaluations.",
+          "zh": "本文提出LAC-WM，通过学习得到的统一潜在动作空间，为不同机器人本体构建动作条件世界模型，并与使用显式运动标签的EAC-WM比较。作者称，显式动作条件会形成跨本体不连续的动作表示，限制向新机器人适配；在灵巧操作和修改版LIBERO基准上，LAC-WM的下游表现最高分别提升46.7%和11.7%。摘要还报告，其表现随预训练本体数量增加而提升，而EAC-WM表现下降。结论基于所述任务和基准评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1332,7 +1344,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies assume the embodiment on which they were trained and can fail when a joint fault changes how commanded actions are physically executed. Existing fault-recovery methods often require task-specific retraining, fault labels, explicit diagnosis, or privileged embodiment information.\n\nWe introduce CAPABLE, a unified capability-aware adaptation framework for frozen VLAs that integrates self-supervised capability inference with residual reinforcement learning.\n\nCAPABLE infers capability, how much of the commanded motion each joint actually realizes and how that motion contributes to end-effector behavior, online from command-response history and kinematics using a temporal encoder shared across joints, Jacobian grounding, cross-joint attention, and self-supervised physical prediction.\n\nThe resulting representation conditions a residual policy that adds bounded corrections to the VLA arm action without fault labels or faulty-joint identifiers.\n\nAcross 28 LIBERO tasks, CAPABLE raises success on an actuator excluded from fault training from 24.8% to 59.3%, outperforming a parameter-matched global-history baseline by 17.4 points while preserving healthy performance.\n\nLeave-one-actuator-out experiments across six joints show that this transfer is not specific to one actuator, and additional evaluations characterize transfer to unseen fault families and demonstrate recovery on a physical Franka Panda. https://capable-vla.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CAPABLE, which combines self-supervised capability inference with residual reinforcement learning to adapt frozen vision-language-action policies to joint faults. It infers online from command-response history and kinematics how commanded motion is realized and affects the end effector, then uses that representation to condition bounded action corrections. The method requires neither fault labels nor faulty-joint identifiers. Across 28 LIBERO tasks, success on an actuator excluded from fault training rises from 24.8% to 59.3%, with healthy performance preserved. The authors also report leave-one-actuator-out and physical robot evaluations.",
+          "zh": "本文提出CAPABLE，为冻结的视觉—语言—动作策略结合自监督能力推断与残差强化学习，使其适应关节故障。框架根据命令响应历史和运动学在线推断各关节实际实现的运动及其对末端行为的贡献，再以该表示条件化残差策略，对机械臂动作添加有界修正，无需故障标签或故障关节标识。在28项LIBERO任务中，针对训练时未见执行器，成功率从24.8%升至59.3%，并保持健康性能；跨六关节留一执行器实验及实体Franka Panda评估也报告了迁移和恢复表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
