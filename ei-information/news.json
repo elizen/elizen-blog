@@ -2117,7 +2117,11 @@
             "heading": "",
             "text": "Direct visual navigation policies generate trajectories efficiently but do not explicitly evaluate their future consequences. Generative navigation world models provide this foresight through visual rollouts, which are costly when evaluating multiple candidates.\n\nWe present LiteNWM, a latent navigation world model that shares visual encoding across candidates and jointly predicts their action-conditioned future representations at multiple horizons, while a learned scorer uses these predictions to select trajectories.\n\nIn offline evaluations on RECON, SCAND, and SACSoN, LiteNWM reduces macro-averaged trajectory error by 17.56% relative to NoMaD+NWM-XL and achieves a 128.00-fold end-to-end speedup on an RTX 5090.The same evaluator transfers from NoMaD to MBRA without proposer-specific retraining, reducing MBRA's macro-averaged trajectory error by 16.2%.\n\nIn real-robot experiments in unseen indoor and outdoor environments, LiteNWM improves navigation success from 43.3% to 83.3% relative to NoMaD. These results demonstrate that LiteNWM can be deployed for future-aware planning and closed-loop navigation on a physical robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LiteNWM, a latent world model for visual navigation. It shares visual encoding across candidate trajectories, jointly predicts action-conditioned future representations at multiple horizons, and uses a learned scorer to select trajectories. Offline evaluations cover RECON, SCAND, and SACSoN; the authors report lower trajectory error and faster end-to-end evaluation than a comparison system, and transfer of the evaluator from NoMaD to MBRA. Real-robot experiments in unseen indoor and outdoor environments report improved navigation success over NoMaD.",
+          "zh": "论文提出 LiteNWM，一种用于视觉导航的潜在世界模型。它在候选轨迹间共享视觉编码，并联合预测多个时间跨度、受动作条件影响的未来表征，再由学习到的评分器选择轨迹。离线评估涵盖 RECON、SCAND 和 SACSoN；作者报告其轨迹误差低于对比方法且端到端速度更快，并称评估器可从 NoMaD 迁移至 MBRA。在未见室内外环境的真实机器人实验中，导航成功率较 NoMaD 提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2148,7 +2152,11 @@
             "heading": "",
             "text": "Vision-language-action policies map camera images and natural-language instructions to a robot's motor actions. Some of these policies are designed to reason in text before acting, generating a reasoning chain and decoding actions conditioned on that chain.\n\nThe works introducing this design offer the reasoning chain as an oversight interface: text a person can read and edit to correct the policy. What an edited reasoning chain does to the policy's motor actions, whether it repairs them or corrupts them, has so far been measured only in part.\n\nWe measure both directions, repair and corruption, with our deterministic entity swap applied to the instruction the policy receives and to the reasoning chain it generates. A forty-task observed backdrop across all four LIBERO simulation suites reveals that the cost of corrupting the reasoning chain concentrates where language alone determines the goal.\n\nThere, on LIBERO-Goal, we run the counterfactual intervention with DeepThinkVLA, chosen because its reasoning chain is exposed as plain text. The policy receives a corrupted instruction, but its reasoning chain is replaced by the one it generates when that instruction is clean.\n\nThis counterfactually correct reasoning chain recovers 47.8 pp of the lost success, our pre-registered confirmatory test. Had the chain merely restated what the camera image already determines, the replacement could have changed nothing.\n\nInstead, all 10 tasks move in the predicted direction, though success falls short of the clean runs by 38.0 pp, a gap we had predicted at 5-15 pp. The reasoning chain is therefore a working control surface: text written into it moves the robot, repairing behaviour when the text is right and corrupting it when the text is wrong.\n\nWhether to expose such a control surface is a deployment tradeoff, and part of it can now be measured."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines how textual reasoning chains affect the motor actions of vision-language-action policies, measuring both behavioral repair and corruption. In observed tasks across all four LIBERO simulation suites, the authors find that the cost of corrupting the chain concentrates in settings where language determines the goal. They then intervene counterfactually on LIBERO-Goal with DeepThinkVLA, pairing a corrupted instruction with the chain generated for a clean instruction. The replacement recovers part of the lost success, although performance remains below clean runs.",
+          "zh": "论文研究视觉语言动作策略中的文本推理链如何影响机器人动作，分别测量修改推理链带来的修复与破坏效应。作者在四个 LIBERO 仿真套件的任务观察中发现，推理链受扰的代价集中在目标由语言决定的场景；随后在 LIBERO-Goal 上以 DeepThinkVLA 进行反事实干预：向策略提供被扰动的指令，同时换入该策略面对干净指令时生成的推理链。该替换恢复了部分成功率，但结果仍低于干净运行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2179,7 +2187,11 @@
             "heading": "",
             "text": "This paper evaluates the current gaze estimation methods within a human-robot interaction (HRI) context of a shared workspace scenario. We introduce a new, annotated dataset collected with the NICO robotic platform. We evaluate four state-of-the-art gaze estimation models.\n\nThe evaluation shows that the angular errors are close to those reported on general-purpose benchmarks. However, when expressed in terms of distance in the shared workspace the best median error is 14.57~cm, quantifying the practical limitations of current methods.\n\nWe conclude by discussing these limitations and offering recommendations on how to best integrate gaze estimation as a modality in HRI systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates current gaze-estimation methods in a shared-workspace human-robot interaction scenario and introduces a newly annotated dataset collected with the NICO robotic platform. It assesses four state-of-the-art models. Their angular errors are close to those reported on general-purpose benchmarks, but when expressed as distance in the shared workspace, the best model has a median error of 14.57 cm. The authors discuss the practical limitations and offer recommendations for integrating gaze estimation into human-robot interaction systems.",
+          "zh": "论文在共享工作空间的人机交互场景中评估现有注视估计方法，并介绍使用 NICO 机器人平台采集和标注的新数据集。研究评测了四种先进注视估计模型。结果显示，其角度误差接近通用基准报告的水平；换算为共享工作空间中的距离后，表现最佳模型的中位误差为 14.57 厘米。作者讨论了当前方法的局限，并提出将注视估计整合进人机交互系统的建议。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
