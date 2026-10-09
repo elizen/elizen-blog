@@ -1131,7 +1131,11 @@
             "heading": "",
             "text": "Reliable crop-row perception is essential for autonomous agricultural robots, but low-cost deployment is constrained by computation, memory, power, and inference time.\n\nThis paper addresses crop-row detection and navigation-line extraction using UltraLight Luma, a compact encoder-decoder segmentation network with a progressive learning strategy and only 13.1k trainable parameters. The predicted crop-row masks are processed using a post-processing algorithm to estimate row alignment for downstream visual servoing.\n\nUltraLight Luma improves parameter efficiency over U-Net, YOLOv8, and YOLOv26 while maintaining reliable crop-row detection performance. The model required only 25.23 mJ per inference, demonstrating its suitability for resource-constrained agricultural robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents UltraLight Luma, a compact encoder-decoder network with progressive learning for crop-row segmentation in agricultural robots. It post-processes predicted crop-row masks to estimate row alignment for downstream visual servoing. The authors report improved parameter efficiency over U-Net, YOLOv8, and YOLOv26 while maintaining reliable detection performance. The abstract reports 25.23 mJ per inference and argues that the model is suitable for resource-constrained agricultural robots.",
+          "zh": "论文提出 UltraLight Luma，一种面向农业机器人的轻量级作物行分割网络，采用编码器—解码器结构和渐进式学习策略。网络预测作物行掩码，再通过后处理估计行对齐，为视觉伺服提供导航线。作者称，该模型以较少参数实现了相较于 U-Net、YOLOv8 和 YOLOv26 更高的参数效率，同时保持可靠检测表现；摘要报告每次推理能耗为 25.23 mJ，并据此认为其适合计算资源受限的农业机器人。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1162,7 +1166,11 @@
             "heading": "",
             "text": "Robotic systems operating over extended tasks must maintain a world state assembled from observations arriving at different times, with varying confidence and potential revisions. Conventional representations emphasize latest estimates, hindering fact provenance, decision reproduction, or execution auditing.\n\nWe present Traceable World State (TWS), a middleware-neutral semantic representation and reference runtime for provenance-aware robot world state. A TWS snapshot captures entities, relations, observations, confidence, and revision metadata.\n\nValidated update operations transform snapshots immutably, ordered updates support deterministic replay, and a canonical SHA-256 hash chain ensures tamper-evident logs. We evaluate TWS through schema conformance, complete state lifecycles, deterministic replay, and fault injection.\n\nPassing 38 tests across Python 3.10-3.14, the framework detects record corruptions, broken hash links, sequence discontinuities, and world mismatches. Across ten public BEHAVIOR-1K task definitions, TWS imported 153 entities and 146 relations with successful validation.\n\nOn 103 NVIDIA Unitree G1 simulated trajectories containing 78,369 frames, TWS achieved exact terminal-state replay in all episodes and detected 412/412 injected corruptions with a 1.72% storage overhead over Plain JSONL."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Traceable World State (TWS), a middleware-neutral semantic representation and reference runtime for provenance-aware robot world state. Snapshots record entities, relations, observations, confidence, and revision metadata. Validated immutable updates support deterministic replay, while a canonical SHA-256 hash chain provides tamper-evident logs. Evaluations cover schema conformance, state lifecycles, replay, and fault injection. The abstract reports 38 passing tests and, across 103 simulated Unitree G1 trajectories, exact terminal-state replay in every episode and detection of all 412 injected corruptions, with 1.72% storage overhead over Plain JSONL.",
+          "zh": "论文提出 Traceable World State（TWS），一种与中间件无关的语义表示及参考运行时，用于记录机器人世界状态的来源、置信度和修订信息。快照包含实体、关系及观测，经过验证的更新以不可变方式转换快照，并支持有序更新的确定性重放；规范化 SHA-256 哈希链用于形成可检测篡改的日志。作者通过模式符合性、状态生命周期、重放和故障注入评估框架。摘要报告其通过 38 项测试，在 103 条 Unitree G1 仿真轨迹的 78,369 帧中实现所有回合终态精确重放，并检测到全部 412 次注入破坏；相对 Plain JSONL 存储开销为 1.72%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1193,7 +1201,11 @@
             "heading": "",
             "text": "World models in end-to-end autonomous driving predict future scene evolution to provide foresight for trajectory planning. Existing methods mainly study how to predict the future and how to use it, but less often ask which future representation is actually most useful for planning. To this end, we propose PlanWAM, a Planning-Shaped World Action Model.\n\nThe key idea is to let the planning task shape the future-state representation, so that it retains the information most useful for planning. A latent world model then predicts this planning-shaped future latent representation from historical observations and uses it for planning, enabling foresighted planning.\n\nSpecifically, we first use a Temporal Register Pyramid to compress multi-frame historical information in a recency-aware manner, learning a compact history representation oriented toward future reasoning and planning.\n\nWe then introduce a privileged future posterior branch that observes ground-truth future frames, and shape its future latent representation with trajectory-planning objectives to obtain a planning-shaped future latent representation.\n\nHindsight-to-Foresight Distillation trains a prior branch that depends only on history to predict this future latent representation. The predicted future latent representation serves as planning context and guides trajectory generation and selection.\n\nPlanWAM achieves 93.8 PDMS / 90.9 EPDMS on NAVSIM-v1/v2 navtest and reaches 38.7 HD-Score on closed-loop HUGSIM in a zero-shot setting, demonstrating leading planning performance across both open-loop and closed-loop evaluations.\n\nExtensive experiments further demonstrate that planning-shaped future representations provide an effective and deployable form of foresight for world-action models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes PlanWAM, an end-to-end autonomous driving world-action model in which planning objectives shape the future-state representation. A Temporal Register Pyramid compresses multi-frame history with recency awareness. A privileged future-posterior branch uses ground-truth future frames and trajectory-planning objectives to form a planning-shaped latent representation. Hindsight-to-Foresight Distillation trains a history-only prior to predict that representation, which guides trajectory generation and selection. The authors report results on open-loop NAVSIM-v1/v2 and zero-shot closed-loop HUGSIM evaluations, claiming leading planning performance across both settings.",
+          "zh": "论文提出 PlanWAM，一种让规划任务塑造未来状态表示的端到端自动驾驶世界动作模型。其时间寄存器金字塔以近期性为依据压缩多帧历史；特权未来后验分支利用真实未来帧，并通过轨迹规划目标形成面向规划的未来潜在表示。随后，Hindsight-to-Foresight Distillation 训练仅依赖历史的先验分支预测该表示，用作规划上下文以引导轨迹生成和选择。作者报告了 NAVSIM-v1/v2 开环评估及 HUGSIM 零样本闭环评估结果，并称实验显示该方法在两类评估中具有领先规划表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1224,7 +1236,11 @@
             "heading": "",
             "text": "An actuator health estimation algorithm for a soft swimming robot that can perform anguilliform swimming is developed.\n\nDue to harsh operational environments of underwater robots, and the common degradation of soft robot materials and actuators, accurate estimation of actuator functionality is necessary for robots to perform their missions as well as return to base in the event of actuator degradation and failure.\n\nTermed REACH (Real-time Estimator of Actuator Control and Health), the architecture employs a soft robot model, sigma point filter, and a formal statistical hypothesis test to adequately capture the nonlinearities and changes over time.\n\nThe performance of REACH using three sensor types (GPS, IMU, and Bend Sensor) with one sensor on each actuator is compared, demonstrating that both bend sensor and IMU are adequate choices. Sensor quantity and placement are evaluated for IMU and bend sensor, showing two sensors are sufficient for IMU, whereas three sensors are needed for bend sensor.\n\nThree swimming gaits (linear swimming, wide turning, tight turning) are compared, demonstrating that REACH can successfully predict actuator health for all three gaits, with minimal differences in performance. A filter validation method shows the fault estimation algorithm is statistically consistent in finding the correct degradation.\n\nThe approach is experimentally evaluated using bend sensor data collected from a fish robot, demonstrating that REACH can successfully estimate actuator health with noisy data and variations in manufacturing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper develops REACH, a real-time actuator control and health estimator for an eel-inspired soft swimming robot. Its architecture combines a soft-robot model, sigma-point filter, and statistical hypothesis test to account for nonlinearities and temporal changes. Comparisons of GPS, IMU, and bend sensors indicate that IMU and bend sensors are adequate; the reported sensor counts are two for IMU and three for bend sensors. REACH predicts actuator health across linear swimming and two turning gaits. Experiments using bend-sensor data from a fish robot show estimation under noisy data and manufacturing variation; filter validation indicates statistical consistency in identifying degradation.",
+          "zh": "论文提出 REACH，一种用于鳗形游动软体机器人的实时执行器控制与健康估计算法，结合软体机器人模型、sigma 点滤波器和统计假设检验，以处理非线性及随时间变化的情况。作者比较 GPS、IMU 和弯曲传感器，报告 IMU 与弯曲传感器均可胜任，并评估传感器数量和位置：IMU 需要两个传感器，弯曲传感器需要三个。算法在直线游动、宽转弯和急转弯三种步态下均能预测执行器健康。鱼形机器人弯曲传感器数据实验显示，该方法可在噪声和制造差异下估计健康状态；滤波器验证还显示故障估计在统计上与真实退化一致。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
