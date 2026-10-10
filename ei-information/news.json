@@ -2753,7 +2753,11 @@
             "heading": "",
             "text": "Relative localization is crucial for a multi-robot system to collaboratively perform tasks, such as exploration and formation. However, this is highly challenging for homogeneous robots with similar appearance in GPS-denied and communication-limited environments.\n\nIn this paper, we propose a fully distributed relative position estimation approach for a team of robots based on onboard UWB and LiDAR sensors, in which LiDAR is utilized to obtain the position of anonymous objects in Line-of-Sight (LOS), and UWB is used for ranging between robots.\n\nWe construct two graphs, namely UWB connection graph and LiDAR connection graph, to represent the spatial relationship among objects (robots and obstacles) based on UWB and LiDAR measurements. Identification and relative position estimation are formulated as a common subgraph matching problem.\n\nA falsely-matched robot identification approach is designed to recognize the falsely-matched results caused by obstacle blockage in LiDAR field of view. These robots are then localized by leveraging the well-matched robots and the UWB ranging measurements in the UWB connection graph. We conducted experiments to evaluate the performance of our approach.\n\nThe results show that the proposed approach is capable of achieving satisfactory positioning accuracy for a team of robots in a distributed manner with only exchanging limited information."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a distributed relative localization method for multi-robot teams in communication-limited environments, using onboard UWB ranging and LiDAR observations of anonymous objects in line of sight. It builds UWB and LiDAR connection graphs and formulates identification and relative position estimation as common subgraph matching. A method addresses false matches caused by obstacle blockage using correctly matched robots and UWB ranges. Experiments are reported to show satisfactory positioning accuracy while exchanging limited information.",
+          "zh": "论文提出一种面向通信受限多机器人系统的分布式相对定位方法，使用机载UWB测距和LiDAR观测视线范围内的匿名物体。方法构建UWB连接图与LiDAR连接图，并将身份识别和相对位置估计转化为公共子图匹配问题；针对障碍物遮挡视野造成的错误匹配，利用已正确匹配的机器人及UWB测距进行定位。作者报告，实验结果显示该方法仅需交换有限信息，即可在分布式运行中实现其所称的满意定位精度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2784,7 +2788,11 @@
             "heading": "",
             "text": "Reinforcement Learning (RL) has enabled legged robots to perform a range of skills in single-task settings. However, applications such as farm robotics or space exploration require diverse skills such as locomotion, digging, or close-range surveying.\n\nTraining an end-to-end policy to address this problem remains difficult due to challenges such as sample inefficiency and gradient conflict between tasks in multi-task learning. We propose a three-stage method that trains a single policy to perform distinct tasks such as walking, digging, and hopping, and compose them into novel behaviors such as crawling.\n\nFirst, multiple teacher policies are trained using RL on narrowly defined tasks. Then, two additional stages train a student policy with a multi-teacher distillation setup that uses a combined RL and Imitation Learning (IL) objective under an adversarial task selection process that focuses training on the worst-performing task.\n\nWith this method, we train a student policy that performs 22 tasks using 8 teachers. Evaluations show our method preserves motion quality and tracks commands more accurately than PPO and distill-then-finetune baselines, and in some cases generalizes to new tasks without explicit training.\n\nFinally, we demonstrate real-world robustness by deploying the resulting policy on a Unitree B1 quadruped. Video: https://youtu.be/V9yX04EBcFA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a three-stage method combining reinforcement learning and imitation learning to train one quadruped policy for diverse skills and their composition into new behaviors. Multiple teachers first learn narrowly defined tasks; a student is then trained through multi-teacher distillation with a combined RL and IL objective and adversarial selection that emphasizes the worst-performing task. The authors report a student handling 22 tasks with 8 teachers, preserving motion quality and tracking commands more accurately than the stated baselines. They also report some generalization to untrained tasks and deployment on a Unitree B1.",
+          "zh": "论文提出三阶段训练方法，将强化学习与模仿学习结合，通过对抗式任务选择重点训练表现最差的任务，使单一四足机器人策略掌握多种技能并组合出新行为。方法先为窄定义任务训练多个教师策略，再以多教师蒸馏训练学生策略。作者报告，学生策略使用8个教师完成22项任务，评估中保持动作质量、比所列基线更准确地跟踪指令，并在部分未明确训练的新任务上泛化；研究还报告将策略部署到Unitree B1四足机器人以展示真实环境鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2815,7 +2823,11 @@
             "heading": "",
             "text": "World models endow perceptual systems with the ability to predict how scenes evolve under interaction. They are most beneficial when trained on diverse volumes of data, to instill a rich prior into downstream applications.\n\nExisting methods typically require robot action labels to learn action-conditioned 3D dynamics, which excludes web video data from the training pool. We study 3D point track completion as a pre-training objective for learning transferable 3D dynamics without robot data.\n\nGiven a single RGB-D observation and sparse partial 3D trajectories (tracks), we predict future 3D tracks of all observed points. We show this objective produces a rich 3D dynamics prior, without requiring robot action labels.\n\nWe contribute a diverse dataset of 2.9 million synthetic frames spanning deformable, articulated, and rigid objects, and use it to train PointZero. We show that a flexible and expressive transformer, PointZero, outperforms prior methods on the same data.\n\nWe demonstrate the utility of our pre-training objective by post-training PointZero for two downstream applications: （1） action-conditioned 3D dynamics prediction and （2） imitation learning. When fine-tuned to condition on end-effector pose, PointZero outperforms the baselines on the recent PGND 3D dynamics benchmark.\n\nWhen fine-tuned to predict robot actions and 3D tracks, PointZero outperforms or matches the baselines on 6/7 simulated and real-world robot manipulation tasks. We furthermore evaluate training PointZero from scratch to isolate the benefits of our proposed architecture from those of our proposed pre-training objective and dataset.\n\nWe release the dataset, checkpoints, and full training recipe."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies 3D point track completion as a pretraining objective for transferable 3D dynamics without robot action labels. Given one RGB-D observation and sparse partial 3D tracks, PointZero predicts future tracks for all observed points. The authors train it on synthetic data covering deformable, articulated, and rigid objects, and report that it outperforms prior methods on the same data. After fine-tuning, it outperforms baselines on the PGND 3D dynamics benchmark and outperforms or matches them on 6 of 7 simulated and real-world manipulation tasks. Training from scratch is also evaluated to separate architecture effects from pretraining.",
+          "zh": "论文研究将三维点轨迹补全作为预训练目标，以学习无需机器人动作标签、可迁移的三维动力学。给定单张RGB-D观测和稀疏部分三维轨迹，PointZero预测所有已观测点的未来轨迹；作者使用涵盖可变形、关节式和刚体物体的合成数据训练模型，并称其优于相同数据上的既有方法。摘要报告，在PGND三维动力学基准微调后优于基线；在模拟及真实机器人操作任务中，预测动作与三维轨迹的模型在7项任务中6项优于或持平于基线。作者还单独评估从零训练，以区分架构与预训练数据及目标的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
