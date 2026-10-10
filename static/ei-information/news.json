@@ -3056,7 +3056,11 @@
             "heading": "",
             "text": "Decision-time planning with action-conditioned world models has become a popular paradigm for embodied control.\n\nHowever, the standard planning cost judges a candidate solely by how close its predicted terminal state lies to the goal, leaving the realizability of the intermediate transitions unchecked--a predicted trajectory can look convincing while the environment rollout drifts away from it.\n\nIn this paper, we propose ACID, a decision-time planning framework that introduces cycle action consistency: the action inferred backward from a predicted transition by an inverse dynamics model should recover the one that was conditioned on. We fold this per-step residual into the planning cost via a scale-invariant adaptive weight.\n\nAcross four action-conditioned world models and eight tasks encompassing object manipulation and articulated control in simulation, visual navigation, and real-robot manipulation, ACID consistently improves planning and matches the baseline's accuracy with substantially less planning compute."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ACID, a decision-time planning framework that checks whether an inverse dynamics model recovers the action used to condition each predicted transition. It adds the per-step consistency residual to planning costs with a scale-invariant adaptive weight. Across four action-conditioned world models and eight tasks spanning simulation, visual navigation, and real-robot manipulation, the authors report improved planning and baseline-matching accuracy with substantially less planning compute.",
+          "zh": "论文提出 ACID，一种结合逆动力学的决策时规划框架：要求模型从预测状态转移反推出的动作与生成该转移时使用的动作保持一致，并将逐步残差纳入规划代价。作者报告，该方法在四种动作条件世界模型和八项任务中持续改善规划，并以显著更少的规划计算量达到基线准确率；任务涵盖仿真、视觉导航和真实机器人操作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3087,7 +3091,11 @@
             "heading": "",
             "text": "This paper investigates the feasibility of deploying quadruped walking robots for the automation of work in roof environments. While quadrupeds have demonstrated versatility across various domains, their large-scale deployment remains limited, partly due to lack of application-specific designs.\n\nRoof environments represent a novel and unexplored use case, combining high safety risks for human workers with repetitive, strenuous tasks that could benefit from robotic assistance. A dedicated test rig of a roof's surface was designed to evaluate the baseline performance of a commercial quadruped, the \\emph{Unitree Go2}, in this new environment.\n\nExperiments revealed that standard ball feet are inherently inadequate for locomotion on sloped roofs: slippage increased quadratically with incline angle, get-up and lie-down sequences were only possible on small inclines, and critical failures already occurred regularly on moderate inclines of 25{\\deg}.\n\nThis work provides the first systematic assessment of quadruped locomotion in roof environments, highlighting both the potential and the current limitations of this application and establishes a baseline for future research.\n\nEffective solutions will require a combination of task-oriented foot designs, advanced contact mechanics and environment-specific control strategies, such as reinforcement learning for roof-adapted gaits."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines quadruped robots for roof work and evaluates a commercial Unitree Go2 on a dedicated roof-surface test rig. Experiments found that standard ball feet were inadequate on slopes: slippage increased quadratically with incline, while getting up and lying down were possible only at small inclines. Critical failures occurred regularly at a moderate incline of 25 degrees. The authors identify limitations and discuss task-oriented feet, contact mechanics, and roof-specific control as future needs.",
+          "zh": "论文研究四足机器人用于屋顶作业的可行性，并通过专门搭建的屋面测试装置评估商用 Unitree Go2。实验显示，标准球形足在倾斜屋面上容易打滑，打滑程度随坡度角呈二次增长；起身和卧倒动作仅能在小坡度上完成，中等坡度（25°）已频繁出现关键失效。作者据此指出，屋顶应用仍受限制，未来需要任务适配的足部设计、接触力学和环境专用控制策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3118,7 +3126,11 @@
             "heading": "",
             "text": "Learning how actions change scene geometry can provide complementary supervision for goal-directed manipulation. We introduce Spatial Language Modeling, which represents scene contours, goals, action targets, and future states with a shared vocabulary of discrete coordinates and semantic tokens.\n\nA task-specific grammar organizes these elements into spatial sequences, allowing one autoregressive Transformer to learn action generation and action-conditioned state prediction through a common next-token objective. We train the model from scratch using random-play transition pretraining followed by joint action and state training on expert demonstrations.\n\nDuring pretraining, recorded action coordinates condition subsequent state predictions and are excluded from the prediction loss. During control, the model decodes only executable action targets and updates its history with newly observed states. We evaluate the approach on Push-T in simulation and on a real robot.\n\nThe model achieves competitive simulation performance and higher task success and target coverage than the evaluated real-robot policy baselines. Training ablations show improved control with joint action and state sequences, with further gains from random-play pretraining.\n\nGiven supplied action trajectories, the same model also predicts successive scene states, capturing the geometric effects of pushing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Spatial Language Modeling, which represents scene contours, goals, action targets, and future states with discrete coordinates and semantic tokens. A task-specific grammar lets one autoregressive Transformer learn action generation and action-conditioned state prediction. Training combines random-play transition pretraining with joint training on expert demonstrations. Evaluations cover simulated Push-T and a real robot. The authors report competitive simulation performance and higher real-robot task success and target coverage than the evaluated policy baselines.",
+          "zh": "论文提出空间语言建模，以离散坐标和语义标记组成共享词汇，并用任务语法将场景轮廓、目标、动作和未来状态组织为序列，由同一自回归 Transformer 学习动作生成与状态预测。模型先用随机操作转移预训练，再结合专家示范训练；评估包括仿真 Push-T 和真实机器人。作者报告其仿真表现有竞争力，真实机器人任务成功率和目标覆盖率高于所比较基线；给定动作轨迹时，模型也能预测连续场景状态。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
