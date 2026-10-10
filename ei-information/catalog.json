@@ -275,11 +275,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The authors place a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. In thirty-hour runs, thirteen agents repeatedly climb hills, stack blocks, draw mandalas, reinterpret sports, and experiment with the world’s physics, while developing techniques that expand their capabilities. Their histories diverge. The paper examines whether these behaviors meet classical criteria for play and whether play could become a mode of machine development.",
-          "zh": "研究将现代 AI 编程助手置于未知数字岛屿中的虚拟身体里，仅给出未指定任务、奖励或活动的简短指令。作者称，在三十小时运行中，十三个智能体反复出现爬坡、堆叠积木、绘制曼陀罗、改造体育活动及探索世界物理等行为，并逐渐习得新技巧；各智能体经历也有所不同。论文据此考察这些行为是否符合经典游戏标准，并探问游戏能否成为机器发展的方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -789,8 +785,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents WorldSolver, a benchmark for assessing whether LLM agents can simulate physical dynamics by generating solvers. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver to the agent. Evaluation covers execution, visual fidelity, and physical plausibility. Experiments report that generating executable solvers is difficult, while visual and physical correctness are harder; GPT-5.6-Sol and Claude-Opus-5 score 48.7% and 46.7% overall, respectively.",
-          "zh": "论文提出 WorldSolver，用于评估大语言模型智能体能否通过生成求解器模拟物理动态。基准包含168项源自61篇经典计算机图形学论文的任务，覆盖7个物理领域；每项提供固定场景模拟环境的代码框架，由智能体补全求解器。评估维度包括代码执行、渲染动态的视觉保真度及物理合理性。实验显示，生成可执行求解器已具难度，达到视觉和物理正确性更难；在受测智能体中，GPT-5.6-Sol 与 Claude-Opus-5 表现相对较好，总分分别为48.7%和46.7%。"
+          "en": "The paper presents WorldSolver, a benchmark for evaluating whether LLM agents can generate solvers for physical dynamics from code scaffolds. It contains 168 tasks derived from 61 computer graphics papers across seven physical domains. Evaluation measures successful execution, visual fidelity of rendered behavior, and physical plausibility. Experiments indicate that producing executable solvers is difficult, while visual and physical correctness are harder still. The two comparatively better-performing agents reported in the abstract score 48.7% and 46.7% overall.",
+          "zh": "论文提出WorldSolver，用于评估大语言模型智能体根据代码框架生成物理动态求解器的能力。基准包含源自61篇计算机图形学论文的168项任务，覆盖7个物理领域，并从代码执行、渲染动态的视觉保真度和物理合理性三个维度评估。实验显示，生成可执行求解器本身已很困难，达到视觉和物理正确性更具挑战；摘要所列表现较好的两种智能体总分分别为48.7%和46.7%。"
         }
       },
       "source": {
@@ -2723,11 +2719,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. The environments are diverse, interactive, customizable, and validator-passed, supporting training and evaluation in navigation, interaction, and manipulation. The authors show generated scenes and simple baselines, and report that policies trained without explicit mapping or human task supervision achieve competitive results on benchmarks spanning navigation, rearrangement, and manipulation. EnvDreamer also supports image-conditioned reconstruction; the authors release a dataset of 20,000 environments with task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文提出 EnvDreamer，利用大型语言模型和视觉—语言模型生成用于具身智能与机器人训练的虚幻引擎 5 环境。这些环境可采样生成，具有多样性、交互性和可定制性，并通过验证，面向导航、交互和操作任务的训练与评估。作者展示了生成场景和简单基线，并称在这些环境中训练、无需显式地图或人工任务监督的策略，在多个涵盖导航、重排和操作的具身基准上取得有竞争力的结果。框架还支持图像条件重建；作者发布了含两万个环境及任务程序、场景图、轨迹和元数据的数据集。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5036,11 +5028,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Inspect Robots, a modular open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They report that Inspect Robots received nearly 100,000 downloads in the three months following its release.",
-          "zh": "论文介绍 Inspect Robots，这是一个用于开发和运行具身智能体评测的模块化开源框架。它提供可定制、可复用的抽象，用于描述物理评测并分析结果，同时以基础设施自动化评测设置、执行和终止。作者使用该框架评估了六种基于前沿语言模型的策略，以展示其用途；并称框架发布后三个月内获得近十万次下载。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5266,11 +5254,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ],
-        "summary": {
-          "en": "This work characterizes vision-language-action models in batch-1 robot control, where each control period imposes an inference deadline and overruns leave robots using stale observations. The authors profile four representative models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes. They report that action tensor dimensionality and platform balance affect memory or compute bottlenecks, while frequency scaling has platform-dependent energy-latency tradeoffs. Overlapping inference with action execution also trades accuracy, speed, and energy, with no configuration dominant across deployment SLOs.",
-          "zh": "论文研究视觉—语言—动作模型在机器人批量为一的控制场景中的运行特征：每个控制周期都有推理时限，超时会使机器人依赖过时观测。作者在边缘 GPU 服务器和两种机载 SoC 上分析四种代表性模型，并进行单次推理剖析及 43,200 个闭环回合。结果显示，动作张量维度和平台配置会影响计算或内存瓶颈，频率调整的能耗—延迟折中因平台而异；推理与动作执行重叠也带来准确度、速度和能耗权衡，没有一种配置在部署服务目标上全面占优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5968,8 +5952,8 @@
           }
         ],
         "summary": {
-          "en": "The paper addresses the scarcity of training data for dexterous grasping in cluttered scenes. It proposes a scalable seed-and-filter strategy using curated 3D objects and supporting bases, producing a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The authors also introduce OmniDex, combining Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. Experiments report state-of-the-art performance and generalization across diverse scenes, views, and unseen objects.",
-          "zh": "论文针对杂乱场景中灵巧抓取训练数据不足的问题，提出基于精选3D物体与支撑底座的可扩展种子生成和筛选策略，并构建包含逾260万场景及4亿条场景专属抓取真值的基准。作者还提出 OmniDex，通过 Soft Winner-Takes-All 学习、人类启发的物理约束和基于物理的排序，处理抓取多模态与末毫米精度问题。实验结果称，该模型达到最先进表现，并能泛化至多样场景、视角和未见物体；这些结论限于论文所述实验评估。"
+          "en": "The paper addresses the scarcity of grasping data in cluttered scenes with a scalable seed-and-filter strategy. It reports a benchmark of over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The authors also introduce OmniDex, combining Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking to address grasp multimodality and precision errors. Experiments show state-of-the-art performance, as claimed by the authors, and generalization across diverse scenes, views, and unseen objects.",
+          "zh": "论文针对杂乱场景中灵巧抓取训练数据不足，提出由种子生成与筛选构成的可扩展策略，并建立包含超过260万场景和4亿个场景特定抓取真值的基准。作者还提出OmniDex，通过Soft Winner-Takes-All学习、人类启发的物理约束及物理驱动排序，处理抓取多模态和末端精度问题。实验结果显示，该模型达到作者所称的最先进表现，并能泛化至不同场景、视角和未见物体。"
         }
       },
       "source": {
@@ -9132,8 +9116,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents LIVIN, a benchmark based on digital twins of 30 lived-in homes that preserve observed room layouts, furniture, and everyday belongings. Its human-in-the-loop construction workflow covers instance recognition, architectural reconstruction, and object generation and placement, with review against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The reported evaluations find that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
-          "zh": "论文介绍 LIVIN，一个基于真实居住状态住宅数字孪生的空间与具身智能基准，包含30套住宅，保留观察到的房间布局、家具配置和日常物品。其构建流程涵盖实例识别、建筑重建及物体生成与摆放，并在各阶段由人工对照原始观察审核修正。基准评估3D检测、3D重建、导航和移动操作，结果显示，当前方法仍受物品密集、遮挡、可用空间有限及交互区域受限等真实居住环境特征挑战。"
+          "en": "The paper introduces LIVIN, a benchmark for spatial and embodied intelligence based on digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and belongings, using a human-reviewed workflow for recognition, architectural reconstruction, and object placement. LIVIN evaluates 3D detection, reconstruction, navigation, and loco-manipulation. The reported evaluations find that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions in realistic homes.",
+          "zh": "论文提出LIVIN，一个基于30个真实居住家庭数字孪生的空间与具身智能基准。场景保留观察到的房间布局、家具配置和日常物品；构建流程包括实例识别、建筑重建及物体生成与摆放，并由人逐阶段对照源观察审查和修正。基准评估3D检测、3D重建、导航和运动操作，结果显示，现有方法仍受物品密集、遮挡、可用空间有限及交互区域受限等真实住宅特点挑战。"
         }
       },
       "source": {
