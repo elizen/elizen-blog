@@ -275,7 +275,11 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors place a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. In thirty-hour runs, agents climbed hills, stacked blocks, drew mandalas, reinterpreted sports, and explored the world’s physics. Such activities recurred across thirteen agents while producing distinct histories. The paper examines whether the behavior meets classical criteria for play and whether play could serve as a mode of machine development.",
+          "zh": "研究将现代 AI 编程助手置于未知数字岛屿中的虚拟身体内，仅给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，智能体会爬坡、堆叠积木、绘制曼陀罗、重新诠释体育活动并探索世界物理；这些行为在十三个智能体中反复出现，但形成不同历程。研究据此考察这些行为是否符合经典游戏标准，以及游戏能否成为机器发展的一种方式。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2719,7 +2723,11 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. It supports diverse, interactive, customizable environments that pass validation for navigation, interaction, and manipulation. The authors show generated scenes and simple baselines, and report competitive results on multiple embodied benchmarks for policies trained without explicit mapping or human task supervision. EnvDreamer also supports image-conditioned reconstruction, and the authors release a dataset of 20,000 validated environments with task programs, scene graphs, trajectories, and metadata.",
+          "zh": "论文提出 EnvDreamer，利用大型语言模型和视觉—语言模型生成用于具身智能与机器人训练的虚幻引擎 5 环境。该框架支持生成多样、可交互、可定制且通过验证的虚拟环境，用于导航、交互和操作任务。作者展示了生成场景及简单基线，并报告在无需显式地图构建或人工任务监督的条件下，训练策略在多个涵盖导航、重排和操作的具身基准上取得有竞争力的结果。框架还支持图像条件重建；作者发布了包含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5028,7 +5036,11 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report nearly 100,000 downloads in the three months following its release.",
+          "zh": "论文介绍 Inspect Robots，这是一个用于开发和运行具身智能体评估的模块化开源框架。它提供可定制、可复用的物理评估与结果分析抽象，并自动化评估的设置、执行和终止。作者展示了该框架对六种基于前沿语言模型的策略进行能力与安全评估的应用，并报告其发布后三个月获得近十万次下载。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5254,7 +5266,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper characterizes vision-language-action models in embodied control, where each control period imposes an inference deadline and overruns leave robots using stale observations. The authors profile four representative models on an edge GPU server and two onboard SoCs, using single-inference measurements and 43,200 closed-loop episodes. They report that action tensor dimensionality and platform balance affect memory or compute bottlenecks, while GPU frequency scaling has platform-dependent energy-latency tradeoffs. Overlapping inference with action execution also creates accuracy, speed, and energy tradeoffs; no configuration dominates across deployment objectives.",
+          "zh": "论文研究视觉—语言—动作模型在具身控制中的运行特征：控制周期形成推理时限，超时会使机器人依赖过时观测。作者在一台边缘 GPU 服务器和两种板载 SoC 上，对四种代表性模型进行单次推理分析及 43,200 次闭环运行。结果显示，动作张量维度和平台配置会影响内存或计算瓶颈，GPU 调频存在因平台而异的能耗—延迟折中；闭环中推理与动作执行重叠也带来准确度、速度和能耗权衡，没有一种配置在所有部署目标上占优。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
