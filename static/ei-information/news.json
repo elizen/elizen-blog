@@ -3818,7 +3818,11 @@
             "heading": "",
             "text": "Current dexterous grasp planners primarily optimize for physical stability, focusing on whether an object can be grasped rather than how it should be grasped to support downstream functional tasks. However, conditioning grasp synthesis on specific human grasp taxonomies typically requires prohibitively expensive, object-annotated datasets.\n\nTo address these limitations, we propose CoToGrasp, a novel generative framework that synthesizes diverse, stable grasps strictly conditioned on specific contact topologies. To bypass the data collection bottleneck, CoToGrasp is trained entirely in an object-agnostic manner.\n\nWe introduce a feature-based canonical workspace that projects local object features into a unified gripper-centric domain, effectively decoupling the semantic functional intent from the arbitrary object geometry.\n\nBy learning the intrinsic contact manifold of the gripper within this workspace, our model achieves zero-shot generalization to unseen objects at inference. Extensive evaluations on the large-scale DexGraspNet dataset demonstrate that CoToGrasp achieves state-of-the-art performance, outperforming existing taxonomy-guided planners.\n\nFinally, we demonstrate the physical viability and kinematic feasibility of our synthesized contact topologies on a physical robot platform. Code is available on our project website at https://cea-list.github.io/cotograspweb/ ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CoToGrasp generates diverse, stable dexterous grasps conditioned on specified contact topologies, targeting functional intent rather than stability alone. It avoids object-annotated training data by learning in an object-agnostic manner and maps local object features into a gripper-centered canonical workspace. The authors report zero-shot generalization to unseen objects and state-of-the-art results on DexGraspNet, outperforming existing taxonomy-guided planners. A physical robot demonstration addresses the physical viability and kinematic feasibility of the synthesized contact topologies.",
+          "zh": "CoToGrasp 面向功能任务生成由指定接触拓扑严格约束的多样且稳定的灵巧抓取。为避免依赖昂贵的物体标注数据，模型以物体无关方式训练，并通过特征式规范工作空间将局部物体特征映射到以夹爪为中心的统一域，以分离功能意图与物体几何。作者称，该方法可在推理时零样本泛化至未见物体；在 DexGraspNet 上的评估显示其优于现有分类法引导规划器。实体机器人演示用于说明生成拓扑的物理可行性与运动学可行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3849,7 +3853,11 @@
             "heading": "",
             "text": "This paper presents the Kinetics Observer, a novel proprioceptive state estimator for legged robots designed to provide the feedback required for versatile locomotion and physical interaction with the environment, with enhanced robustness to contact slippage.\n\nIts core contribution is a tight coupling between whole-body kinematics and external wrenches through a contact dynamics model, enabling the consistent fusion of leg kinematics, IMU, and wrench sensor measurements for real-time joint estimation of centroidal kinematics, contact rest poses, contact wrenches, and disturbance wrenches.\n\nBy exploiting contact wrench measurements as correction terms, the proposed observer increases sensing redundancy, which provides observability of contact slippage relative to the centroid frame and enhanced robustness to modeling and sensor errors.\n\nThe approach is experimentally evaluated on two humanoid robots across three scenarios totaling thirteen walking sequences, including long-distance walking with repeated contact changes, locomotion over slippery obstacles, and non-coplanar multicontact motion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents the Kinetics Observer, a proprioceptive state estimator for legged robots intended to support versatile locomotion and physical interaction, with greater robustness to contact slippage. It tightly couples whole-body kinematics and external wrenches through a contact dynamics model, fusing leg kinematics, IMU, and wrench sensor measurements to estimate several states in real time. The authors report that wrench measurements improve sensing redundancy and robustness to modeling and sensor errors. Experiments on two humanoid robots covered three scenarios and thirteen walking sequences.",
+          "zh": "论文提出 Kinetics Observer，一种面向足式机器人的本体感知状态估计器，旨在为多样化运动和环境交互提供反馈，并增强对接触滑移的鲁棒性。它通过接触动力学模型紧密耦合全身运动学与外力，将腿部运动学、IMU 和力传感器测量融合，以实时联合估计质心运动学、接触静止位姿、接触力和扰动力。作者称，利用接触力测量作为校正项可提高冗余度，并增强对建模和传感器误差的鲁棒性。该方法在两台人形机器人上的三类场景中进行了实验评估，共涉及十三段行走序列。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3880,7 +3888,11 @@
             "heading": "",
             "text": "Robot co-design couples morphology search with policy learning, yet training every new design from scratch discards acquired control experience. We present LACE-CRAFT, which compares continued learning on the current robot with policy adaptation to new morphology-reward pairs.\n\nLACE resumes the incumbent's full learning state and initializes compatible challengers with its actor parameters and observation statistics. A fixed task metric selects among both branches and the frozen incumbent.\n\nCRAFT coordinates Feedback, Morphology, Reward, and Integration roles through shared experimental records and behavioral replays to generate and cross-review paired proposals. A generative extension converts generated meshes into editable articulated models with configured joints, actuator interfaces, and consistently updated simulation assets.\n\nAcross five locomotion benchmarks, mean scores over three evaluation seeds are 6.4-91.9% higher than D2C. Both methods train 30 new morphology-reward pairs over five rounds; LACE additionally uses four continuation training units. Five-task ablations examine policy inheritance and replay-derived feedback.\n\nA fabricated prototype demonstrates indoor walking and illustrates the geometry-to-hardware workflow."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LACE-CRAFT addresses the loss of learned control experience in robot co-design by comparing continued learning on the current robot with policy adaptation to new morphology-reward pairs. LACE resumes the incumbent’s learning state and initializes compatible challengers with its actor parameters and observation statistics; a fixed task metric selects among candidates and the incumbent. CRAFT coordinates proposal roles through shared experimental records and behavioral replays. The authors report higher mean scores than D2C across five locomotion benchmarks, alongside ablations and a fabricated prototype demonstrating indoor walking.",
+          "zh": "LACE-CRAFT 针对机器人形态与策略联合设计中每次新设计都从头训练、丢失既有控制经验的问题，比较在当前机器人上继续学习与向新形态和奖励组合适配策略。LACE 延续原策略的完整学习状态，并用其演员参数和观测统计初始化兼容挑战者；固定任务指标用于选择方案。CRAFT 通过共享实验记录和行为回放协调多个角色生成并交叉审查成对提案。作者报告，在五项运动基准上，其三种评估种子的均分高于 D2C；另有消融分析及实体原型室内行走演示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3911,7 +3923,11 @@
             "heading": "",
             "text": "Building upon the foundations laid by our previous work, this paper introduces Arena 5.0, the fifth iteration of our framework for robotics social navigation development and benchmarking. Arena 5.0 provides three main contributions: 1) The complete integration of NVIDIA Isaac Gym, enabling photorealistic simulations and more efficient training.\n\nIt seamlessly incorporates Isaac Gym into the Arena platform, allowing the use of existing modules such as randomized environment generation, evaluation tools, ROS2 support, and the integration of planners, robot models, and APIs within Isaac Gym. 2) A comprehensive benchmark of state-of-the-art social navigation strategies, evaluated on a diverse set of generated and customized worlds and scenarios of varying difficulty levels.\n\nThese benchmarks provide a detailed assessment of navigation planners using a wide range of social navigation metrics. 3) Extensive scenario generation and task planning modules for improved and customizable generation of social navigation scenarios, such as emergency and rescue situations.\n\nThe platform's performance was evaluated by generating the aforementioned benchmark and through a comprehensive user study, demonstrating significant improvements in usability and efficiency compared to previous versions. Arena 5.0 is open source and available at https://github.com/Arena-Rosnav."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Arena 5.0, the fifth version of a framework for developing and benchmarking robot social navigation. It integrates NVIDIA Isaac Gym for photorealistic simulation and more efficient training, while incorporating Arena capabilities such as randomized environment generation, evaluation tools, ROS2 support, and planner and robot model integration. The framework includes benchmarks across varied generated and customized worlds and scenario difficulties, plus modules for generating scenarios such as emergency and rescue tasks. The authors report usability and efficiency improvements over previous versions based on benchmark generation and a user study.",
+          "zh": "论文介绍 Arena 5.0，这是用于机器人社会导航开发与基准测试的框架第五版。该版本集成 NVIDIA Isaac Gym，以支持写实仿真和更高效训练，同时保留 Arena 的随机环境生成、评估工具、ROS2 支持，以及规划器、机器人模型和 API 集成。平台还提供在多种生成及定制世界和不同难度场景中评估社会导航策略的基准，并支持应急救援等场景生成与任务规划。作者称，基准评估和用户研究显示其相较早期版本在易用性和效率方面有显著改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
