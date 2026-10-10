@@ -92,11 +92,7 @@
             "heading": "",
             "text": "Vision-language models (VLMs) offer a promising approach to long-tail autonomous driving, but existing driving datasets provide limited supervision for connecting decision-critical visual evidence with reasoning and planning.\n\nWe introduce AnchorReasoning, a visually grounded reasoning dataset built on WOD-E2E, containing 416,119 annotated frames and 395,379 decision-critical elements across four major categories and 19 fine-grained types.\n\nEach frame is organized as a visually grounded chain-of-thought (VG-CoT) that links decision-critical element identification and localization, element attributes and implications, driving-action rationale, and action and trajectory planning.\n\nWe further develop a curriculum supervised fine-tuning strategy that progressively learns these hierarchical capabilities, together with an object-size-aware grounding metric for evaluating localization quality.\n\nExperiments across eight general-purpose, embodied-AI, and AV-specific backbones show that VG-CoT supervision improves grounded reasoning and trajectory prediction. Across models, 5-s ADE and FDE decrease by 7.84 and 11.86, while RFS Frame and Cluster improve by 1.66 and 1.70.\n\nThese gains are achieved with 18.5 fewer reasoning tokens and 0.32 s/frame lower inference latency on average, demonstrating the value of visually grounded, decision-focused supervision for VLM reasoning and planning in long-tail autonomous driving."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces AnchorReasoning, a visual grounding and reasoning dataset based on WOD-E2E that links decision-critical element identification and localization to attributes, implications, driving rationale, and action and trajectory planning. It also presents a curriculum supervised fine-tuning strategy and an object-size-aware grounding metric. Experiments across eight general-purpose, embodied-AI, and autonomous-driving backbones report that VG-CoT supervision improves grounded reasoning and trajectory prediction, while reducing reasoning tokens and average inference latency. These findings are reported for the evaluated models and tasks.",
-          "zh": "论文提出 AnchorReasoning，这是基于 WOD-E2E 构建的自动驾驶视觉定位与因果推理数据集，以视觉依据串联关键元素识别和定位、属性及影响、驾驶决策理由以及动作与轨迹规划。作者还提出分阶段监督微调策略和考虑物体尺寸的定位评估指标。跨八种通用、具身 AI 和自动驾驶专用骨干模型的实验显示，VG-CoT 监督改善了依据视觉定位的推理与轨迹预测，并降低推理词元数和平均推理延迟。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -279,11 +275,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The authors place a modern AI coding assistant in control of a virtual body on an unknown digital island, with only a minimal instruction that specifies no task, reward, or activity. Across thirty-hour runs, they report that agents climbed, stacked blocks, drew mandalas, reinterpreted sports, explored the world's physics, and learned techniques that later expanded their abilities. These activities recurred across thirteen agents but produced distinct histories. The paper examines whether this behavior meets classical criteria for play and whether play could become a mode of machine development.",
-          "zh": "研究将现代 AI 编程助手置于未知数字岛屿中虚拟身体的控制角色，仅给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，智能体会爬坡、堆积木、绘制曼陀罗、重新诠释体育活动、探索世界物理，并学习后续可用的技巧。这些活动在十三个智能体中反复出现，但形成不同经历。论文据此考察其行为是否符合经典游戏标准，并探讨游戏能否成为机器发展的一种方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -793,8 +785,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces WorldSolver, a benchmark for assessing whether LLM agents can simulate physical dynamics by generating solvers. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity, and physical plausibility. Experiments find that producing executable solvers is difficult, while visual and physical correctness are harder still. Among the evaluated agents, GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, with overall scores of 48.7% and 46.7%.",
-          "zh": "论文提出 WorldSolver，用于评估大语言模型智能体能否通过生成求解器来模拟物理动力学。基准包含源自61篇经典计算机图形学论文的168项任务，覆盖七个物理领域；每项提供固定场景仿真环境的代码框架，由智能体补全求解器。评估考察代码能否运行、渲染结果的视觉保真度及生成动力学的物理合理性。实验显示，生成可执行求解器本身就有难度，达到视觉和物理正确性更困难。所测智能体中，GPT-5.6-Sol 和 Claude-Opus-5 表现相对较好，但总分分别仅为48.7%和46.7%。"
+          "en": "WorldSolver benchmarks LLM agents' ability to generate solvers for physical simulations. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity to intended dynamics, and physical plausibility. Experiments show that producing executable solvers is difficult, while visual and physical correctness is harder; the two comparatively stronger evaluated agents score 48.7% and 46.7% overall.",
+          "zh": "WorldSolver 是一个评估大语言模型智能体生成物理模拟求解器能力的基准，含168项源自61篇经典计算机图形学论文的任务，覆盖七个物理领域。每项任务提供固定模拟环境的代码框架，由智能体补全求解器。评估考察代码能否执行、渲染结果能否呈现预期动态行为，以及生成动态是否符合物理规律。实验显示，生成可执行求解器已不容易，达到视觉和物理正确性更难；表现较好的两个智能体总分分别为48.7%和46.7%。"
         }
       },
       "source": {
@@ -2070,11 +2062,7 @@
             "heading": "",
             "text": "Ego-Exo4D is a large-scale dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied AI. However, the dataset ships with only sparse 3D human pose annotations, and reconstructing dense human motion from its multi-view captures is nontrivial.\n\nTo this end, we present Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for Ego-Exo4D's captures, and release the accompanying reconstruction pipeline. The code, dataset, and documentation can be found at https://abhiram824.github.io/egoexo4d_human_meshes."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for Ego-Exo4D captures, along with an accompanying reconstruction pipeline. The authors describe Ego-Exo4D as providing synchronized egocentric and multi-view exocentric video, but only sparse 3D human pose annotations, making dense motion reconstruction nontrivial. The abstract does not report reconstruction-quality measurements or downstream task results.",
-          "zh": "论文介绍 Ego-Exo4D-HM，这是一个针对 Ego-Exo4D 视频采集的大规模四维人体运动重建数据集，并发布配套重建流程。作者指出，原 Ego-Exo4D 提供同步的第一人称与多视角第三人称视频，但只有稀疏的三维人体姿态标注，从多视角素材重建稠密人体运动并不容易。摘要未报告重建质量或下游任务表现。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2731,11 +2719,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. It supports diverse, interactive, customizable environments that pass validation for navigation, interaction, and manipulation tasks. The authors show generated scenes and simple baselines, and report that policies trained in these environments without explicit mapping or human task supervision achieve competitive results on multiple embodied benchmarks. The framework also supports image-conditioned reconstruction, and the authors release a dataset of 20,000 validated environments with associated task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文提出 EnvDreamer，一个利用大型语言模型和视觉—语言模型生成虚幻引擎 5 场景的框架，面向具身智能与机器人训练。它支持生成多样、可交互、可定制且通过验证的虚拟环境，用于导航、交互和操作任务。作者展示生成场景和简单基线，并报告在这些环境中训练、无需显式建图或人工任务监督的策略，在多个涵盖导航、重排和操作的具身基准上取得有竞争力的结果。框架还支持图像条件重建；作者发布包含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5044,11 +5028,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Inspect Robots, an open-source modular framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
-          "zh": "论文介绍 Inspect Robots，这是一个开源模块化框架，用于开发和运行具身智能体评测。框架将可定制、可复用的物理评测规范与结果分析抽象结合，并自动处理评测的设置、执行和终止。作者用该框架评估了六种基于前沿语言模型的策略，展示其能力与安全评测用途。论文还称，框架发布后三个月内获得近十万次下载。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5274,11 +5254,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ],
-        "summary": {
-          "en": "The paper characterizes vision-language-action models under batch-one inference and control deadlines for robot operation. The authors profile four representative models on an edge GPU server and two onboard SoCs, using single-inference analysis and closed-loop episodes. They report that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, and that GPU frequency scaling produces platform-dependent energy-latency tradeoffs. In closed-loop operation, overlapping inference with action execution also trades off accuracy, speed, and energy; no configuration dominates across deployment SLOs.",
-          "zh": "论文研究视觉—语言—动作模型在机器人批量为一推理和控制期限约束下的运行特性。作者在边缘 GPU 服务器和两种机载 SoC 上分析四种代表模型，并开展单次推理分析与闭环测试。结果显示，动作张量维度及平台配置会影响计算或内存瓶颈，GPU 频率调节带来因平台而异的能耗—延迟折中。闭环中，推理与动作执行重叠也形成准确性、速度和能耗权衡；没有一种配置在所有部署服务目标上占优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5976,8 +5952,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents OmniDex, a model and simulated data resource for dexterous grasping in cluttered scenes. The authors curate 3D objects and supporting bases, then use a scalable seed-and-filter strategy to create a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths, paired with semantic and geometric observations. OmniDex combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. The reported experiments show state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects.",
-          "zh": "论文提出 OmniDex，针对杂乱场景中的灵巧手抓取，构建大规模仿真数据并设计相应模型。作者整理三维物体和支撑基座，采用可扩展的种子生成与筛选策略，形成包含超过260万场景和4亿个场景特定抓取真值的基准，并提供语义与几何观测。OmniDex结合 Soft Winner-Takes-All 学习、人类启发的物理约束和基于物理的排序，旨在应对抓取多模态及末端精度误差。实验结果显示，该模型取得作者所称的最先进表现，并在多种场景、视角及未见物体上具有较强泛化能力。"
+          "en": "OmniDex addresses the scarcity of training data for dexterous grasping in cluttered scenes. The authors curate 3D objects and supporting bases, then use a scalable seed-and-filter strategy to build a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. Their model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. Experiments show state-of-the-art performance, as reported by the authors, and generalization across diverse scenes, views, and unseen objects.",
+          "zh": "OmniDex 针对杂乱场景中灵巧手抓取训练数据不足，提出基于高质量三维物体和支撑底座的可扩展种子生成与筛选策略，并构建包含超过260万场景及4亿个场景专属抓取真值的基准。作者还提出 OmniDex 模型，通过 Soft Winner-Takes-All 学习、人类启发的物理约束及基于物理的排序，应对抓取多模态和末端精度问题。实验结果显示，该模型达到作者所称的最先进表现，并能泛化至多种场景、视角和未见物体。"
         }
       },
       "source": {
@@ -6656,11 +6632,7 @@
             "heading": "",
             "text": "Leveraging the paradigm of autoregressive diffusion, text-conditioned interactive video world models aim to simulate temporally coherent environments guided by textual instructions.\n\nWhile enabling low-latency, long-duration generation is pivotal for embodied AI and simulation-based planning, current frameworks primarily rely on sliding-window mechanisms to bound computational complexity. However, this approach inherently sacrifices historical context, undermining the long-range interactive capabilities.\n\nConversely, maintaining a full-history cache remains computationally prohibitive and memory-intensive: the quadratic complexity of attention leads to excessive computational overhead, while the linear growth of the KV cache inevitably leads to GPU memory saturation.\n\nTo overcome these limitations, we propose WorldAttention, a system-oriented attention architecture that achieves high efficiency through the co-design of specialized attention kernels and hierarchical KV cache management.\n\nFirst, we introduce Hybrid Sparse Attention (HSA), which integrates linear global attention supplemented with head-adaptive sparse attention. Additionally, we design a Hierarchical KV Cache (HKV) that organizes historical KV pairs into semantically indexed pages across multi-tier memory, enabling fine-grained retrieval and controlled GPU residency.\n\nThese two designs are supported by tailored kernels to effectively translate their theoretical efficiency into real-world performance.\n\nExtensive experiments on VBench-Long and InterVBench demonstrate that WorldAttention consistently surpasses prior state-of-the-art methods, achieving subject consistency scores of 0.9472 on VBench-Long and 0.9668 on InterVBench, respectively."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces WorldAttention, an attention architecture for interactive video world models intended to retain long-range history while controlling computation and memory use. It combines linear global attention with head-adaptive sparse attention and uses a hierarchical KV cache that organizes historical pairs into semantically indexed pages for fine-grained retrieval and controlled GPU residency. Specialized kernels support the designs. Experiments on VBench-Long and InterVBench reportedly show consistent gains over prior state-of-the-art methods, with subject consistency scores of 0.9472 and 0.9668, respectively.",
-          "zh": "论文提出 WorldAttention，一种用于交互式视频世界模型的注意力架构，旨在保留长程历史信息并控制计算与显存开销。它结合线性全局注意力与按头自适应的稀疏注意力，并以分层 KV 缓存将历史键值对组织为语义索引页面，支持细粒度检索和 GPU 驻留控制；专用内核用于实现这些设计。作者报告，在 VBench-Long 和 InterVBench 实验中，该方法持续优于此前先进方法，主体一致性得分分别为 0.9472 和 0.9668。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7584,11 +7556,7 @@
             "heading": "",
             "text": "Real-world robot learning is constrained by the cost of collecting experience and evaluating candidate behaviors. Video generation models offer a scalable foundation for visual simulators that predict action outcomes before physical execution.\n\nYet they often favor visual plausibility over accurate action following and coherent robot--object dynamics, while action-conditioned simulators depend on scarce, embodiment-specific data that are difficult to share across incompatible control spaces.\n\nWe introduce WorldLine, an action-driven visual simulator that decouples transferable dynamics learning from heterogeneous action grounding. WorldLine learns manipulation dynamics from more than 10,000 hours of action-free robot videos and grounds them using over 2,000 hours of action trajectories across more than ten embodiments.\n\nAn image-space action representation provides a shared control interface across embodiments, while multi-view and failure-enriched training with relational regularization improves interaction-sensitive prediction. Robot-focused few-step distillation enables efficient causal rollout while preserving action-critical motion.\n\nAcross held-out and out-of-domain settings, WorldLine maintains strong visual quality and robot-motion agreement; on failed trajectories, it improves robot-mask IoU by 0.1626 over the strongest baseline. It predicts trajectory success with 74% mean accuracy across RoboTwin and AgiBot, one percentage point above the strongest baseline.\n\nWithout RoboTwin training or adaptation, its rollouts improve task success by up to 21.4 percentage points over direct policy execution. Together, these capabilities make WorldLine a scalable and efficient visual simulator for policy evaluation and embodied planning. More results are available at \\href{https://zhengsh123.github.io/WorldLine/}{project page}."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces WorldLine, an action-driven visual simulator for predicting robot manipulation outcomes for policy evaluation and embodied planning. It learns transferable dynamics from action-free robot videos and grounds actions using trajectories from multiple embodiments, with image-space actions serving as a shared control interface. The authors report improved interaction prediction from multi-view and failure-enriched training. In held-out and out-of-domain settings, they report strong visual quality and motion agreement. Success prediction averages 74% across RoboTwin and AgiBot; without RoboTwin training or adaptation, rollouts improve task success by up to 21.4 percentage points over direct policy execution.",
-          "zh": "论文提出 WorldLine，一种面向机器人操作的动作驱动视觉模拟器，旨在预测动作后果，用于策略评估与具身规划。它从无动作机器人视频中学习可迁移动力学，再用多种具身形态的动作轨迹进行动作 grounding，并以图像空间动作表示统一控制接口。作者称，多视角与失败样本训练及关系正则化改善了交互预测。在留出和域外设置中，论文报告其视觉质量和机器人运动一致性较强；在 RoboTwin 与 AgiBot 上，轨迹成功预测平均准确率为 74%。在未用 RoboTwin 训练或适配时，模拟 rollout 相比直接执行策略使任务成功率最多提高 21.4 个百分点。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8629,11 +8597,7 @@
             "heading": "",
             "text": "Interactive simulations of embodied AI or spatial computing applications build on realistic 3D scenes that support daily activities. However, sparse, irregular layout structures impose scene-specific physical constraints, making it hard to define a generalizable framework for generating similar functional context.\n\nWe formalize Scene Retargeting as stably transferring the semantically coherent spatial organization across layouts, rather than relying on textual descriptions or pairwise relationships. Our cluster-wise transfer flexibly handles mismatched object instances and adapts to distinctive floor plans.\n\nWe optimize to preserve the rich semantic context of individual clusters by respecting the spatial distribution of foundation features. We can then impose physical constraints to refine wall contacts, pairwise alignment, or clear passageways and openings.\n\nOur framework outperforms state-of-the-art methods on layout generation on the 3D-FRONT dataset, and demonstrates downstream applications including real-to-sim transfer, analogical trajectory transfer, and multi-reference composition."
           }
-        ],
-        "summary": {
-          "en": "The paper defines Scene Retargeting as transferring semantically coherent spatial organization across layouts, rather than relying on text descriptions or pairwise relationships. Its cluster-wise transfer accommodates mismatched object instances and distinctive floor plans. The method preserves cluster context and the spatial distribution of foundation features, then applies physical constraints to refine wall contacts, pairwise alignment, and passageways. The authors report better layout generation than state-of-the-art methods on 3D-FRONT and demonstrate downstream applications including real-to-sim transfer, analogical trajectory transfer, and multi-reference composition.",
-          "zh": "论文将 Scene Retargeting 定义为在不同布局之间稳定迁移语义连贯的空间组织，而非依赖文本描述或成对关系。其逐簇迁移方法可处理物体实例不匹配，并适应不同平面布局；优化时保留簇的语义上下文和基础特征的空间分布，再通过物理约束调整墙面接触、物体对齐及通行空间。作者称，该框架在 3D-FRONT 布局生成上优于现有先进方法，并展示了真实到模拟迁移、类比轨迹迁移和多参考组合等下游应用。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9050,11 +9014,7 @@
             "heading": "",
             "text": "Advancing spatial intelligence in Multimodal Large Language Models (MLLMs) is bottlenecked by the scarcity of complex, scalable 3D question-answer (QA) data. While manual annotation is labor-intensive, directly utilizing LLMs to synthesize these QA pairs often fails due to their inherent deficiencies in spatial and geometric computation.\n\nWe introduce Exemplar2VQA, a scalable exemplar-driven visual question answering generation framework that rapidly synthesizes large-scale spatial QA pairs in simulated environments via multi-agent coding.\n\nBy equipping collaborative agents with a meticulously designed library of geometric utilities, Exemplar2VQA bypasses LLMs' spatial reasoning flaws through deterministic code execution.\n\nCrucially, the framework exhibits remarkable versatility: taking diverse static object-centric spatial query templates as exemplars, it seamlessly and autonomously scales them into massive, high-fidelity synthetic datasets.\n\nFine-tuning Qwen2.5-VL (3B/7B) exclusively on Exemplar2VQA-generated synthetic indoor data yields significant performance improvements across various diverse benchmarks. Furthermore, its effectiveness is not limited to in-domain indoor datasets but also robustly extends to outdoor and mixed-scene benchmarks.\n\nThese results establish Exemplar2VQA as a scalable and powerful paradigm for bridging the sim-to-real gap in Embodied AI. Our code is at https://github.com/yingjiayu12/Exemplar2VQA"
           }
-        ],
-        "summary": {
-          "en": "The paper presents Exemplar2VQA, a multi-agent coding framework for generating large-scale spatial visual question-answer data in simulated environments. It equips agents with geometric utilities and uses deterministic code execution to address limitations in language models’ spatial computation. Static, object-centered query templates serve as exemplars for generating synthetic datasets. The authors report that fine-tuning Qwen2.5-VL (3B/7B) exclusively on generated synthetic indoor data improves performance across diverse benchmarks, with reported gains extending to outdoor and mixed-scene benchmarks.",
-          "zh": "论文提出 Exemplar2VQA，通过多智能体编码在模拟环境中生成大规模空间视觉问答数据，以应对复杂 3D 问答数据稀缺及语言模型空间计算不足的问题。该框架为协作智能体提供几何工具库，通过确定性代码执行生成问答，并从静态、以物体为中心的空间查询模板扩展出合成数据。作者报告，仅使用该框架生成的室内合成数据微调 Qwen2.5-VL（3B/7B），可提升多个基准上的表现，且效果延伸至室外及混合场景基准。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9126,8 +9086,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces LIVIN, a benchmark built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture configurations, and everyday belongings, using a human-in-the-loop workflow for instance recognition, architectural reconstruction, and object generation and placement, with human review at each stage. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. Its evaluations find that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
-          "zh": "论文介绍 LIVIN，一个基于30套真实居住家庭数字孪生的空间与具身智能基准。数字孪生保留观察到的房间布局、家具配置和日常物品，并通过包含实例识别、建筑重建及物体生成与摆放的人机协作流程构建，各阶段均由人工对照源观察检查和修正。基准评估三维检测、三维重建、导航和移动操作；评估显示，现有方法仍受物品密集、遮挡、可用空间有限和交互区域受限等真实家庭特征挑战。"
+          "en": "LIVIN is a benchmark for spatial and embodied intelligence based on digital twins of 30 diverse lived-in homes. Its replicas preserve observed room layouts, furniture, and everyday belongings, using a human-in-the-loop workflow with review and correction at each construction stage. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The authors report that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions in realistic homes.",
+          "zh": "LIVIN 是一个基于30个多样化真实居住家庭数字孪生的空间与具身智能基准。其重建保留观察到的房间布局、家具配置和日常物品，并通过人在环流程完成实例识别、建筑重建及物体生成与摆放，各阶段均由人依据源观察复核修正。基准评估3D检测、3D重建、导航和移动操作，结果显示，现有方法仍难应对真实住宅中物品密集、遮挡、可用空间有限及交互区域受限等情况。"
         }
       },
       "source": {
@@ -10088,11 +10048,7 @@
             "heading": "",
             "text": "Omnidirectional or 360 cameras provide embodied AI agents with a holistic, wide field-of-view (FoV) view of their surroundings, motivating the use of Multi-modal Large Language Models (MLLMs) for omnidirectional spatial reasoning.\n\nHowever, most MLLMs are trained on conventional 2D perspective images and struggle with the severe distortions and wrap-around discontinuities induced by spherical geometry. Enabling them to generalize to non-Euclidean 3D spaces without retraining therefore remains challenging.\n\nWe propose SphMind, a training-free, plug-and-play framework that decouples semantic perception from geometric reasoning. Rather than requiring MLLMs to learn spherical geometry internally, SphMind preserves their semantic capabilities while handling geometry externally.\n\nWe introduce a Spherical Harmonics-based Spatial Graph (SHSG) that models spatial relationships through equivariant transformations on the sphere, together with Inference-Time Geometric Grounding (IGG), a model-agnostic closed-loop optimization process that aligns MLLM representations with spherical geometric constraints during inference.\n\nExperiments on three benchmarks show that SphMind achieves over 21.4% average improvement in directional reasoning on MP3D and Stanford2D-3D, outperforms prompt-engineering baselines by 8.7% on the real-world ODI-Bench, and improves rotational invariance by 5.9% under panorama rotations, without additional training or dataset-specific tuning.\n\nIn-the-wild evaluations further show that SphMind resolves directional reasoning queries that baseline vision-language models fail to answer correctly."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces SphMind, a training-free, plug-and-play framework that separates semantic perception from geometric reasoning for 360-degree imagery. It uses a spherical-harmonics spatial graph and inference-time geometric grounding to align model representations with spherical constraints. The authors report improvements in directional reasoning across three benchmarks, performance over prompt-engineering baselines on a real-world benchmark, and rotational invariance under panorama rotations. In-the-wild evaluations also found queries that SphMind answered correctly when baseline vision-language models did not.",
-          "zh": "论文提出 SphMind，一种无需训练、可插入现有模型的框架，将语义感知与几何推理分开处理，并通过球面谐波空间图和推理时几何对齐处理 360 度图像中的空间关系。作者报告，在三个基准上，方向推理、真实场景基准表现及全景旋转下的旋转不变性均有提升；野外评估也显示，该框架能回答基线视觉语言模型未能正确回答的方向问题。这些结果来自论文所述基准和评估。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10632,11 +10588,7 @@
             "heading": "",
             "text": "As embodied agents take on increasingly social and relational roles in VR, visual realism and embodiment alone may be insufficient; users must also perceive these agents as emotionally attuned, supportive, and humanlike. Prior work suggests that verbal attunement and nonverbal mimicry can each improve users' social evaluations of embodied agents.\n\nHowever, behavioral mimicry has largely been studied outside of real-time, conversational AI interactions, leaving limited understanding of how users respond when an agent simultaneously generates contextually responsive dialogue and adapts its nonverbal behavior during an immersive conversation.\n\nTo address this gap, we developed an embodied AI counselor that combines conversational AI with real-time facial-expression and posture mimicry, while producing either verbally attuned or neutral responses. We evaluated the system in a 2 X 2 within-subjects study with 20 participants, manipulating verbal attunement and behavioral mimicry.\n\nResults showed that verbal attunement was the most reliable driver of perceived empathy. Behavioral mimicry showed a marginal relationship with perceived humanness, while greater mimicry exposure showed preliminary, exploratory positive associations with empathy, positivity, and humanness, particularly among female participants.\n\nTogether, these findings show that multimodal synchrony is not a simple additive strategy for designing empathic conversational agents in VR and underscore the need to consider how verbal and nonverbal behaviors are combined during real-time interaction."
           }
-        ],
-        "summary": {
-          "en": "The study examines an embodied AI counselor in VR conversations, varying verbal attunement and real-time facial-expression and posture mimicry in a within-subjects evaluation. Verbal attunement was the most reliable driver of perceived empathy. Behavioral mimicry had a marginal relationship with perceived humanness, while greater mimicry exposure showed preliminary, exploratory positive associations with empathy, positivity, and humanness, particularly among female participants. The authors conclude that multimodal synchrony is not a simple additive strategy for designing empathic conversational agents.",
-          "zh": "论文研究 VR 对话中的具身 AI 咨询者，比较语言回应是否贴合用户与实时面部表情、姿势模仿对社会和共情感知的影响。研究通过一项被试内实验操纵这两个因素。结果显示，语言贴合是感知共情最稳定的影响因素；行为模仿与感知人性仅呈边缘关联。更多模仿暴露与共情、积极感受和人性评价的正向关联属于初步探索性结果，尤其见于女性参与者。作者指出，多模态同步并非简单叠加即可提升共情。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
