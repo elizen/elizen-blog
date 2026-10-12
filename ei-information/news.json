@@ -1878,7 +1878,11 @@
             "heading": "",
             "text": "We presented a program that automates the construction and solution of the cubic spline interpolation problem for a sequence of position-time waypoints, producing trajectories that are continuous in position, velocity, and acceleration and therefore avoid the infinite-acceleration problem inherent to piecewise-linear waypoint following.\n\nBy assembling the interpolation and continuity conditions into a single linear system and solving directly for the spline coefficients, the program removes the need to manually derive per-segment equations for each new waypoint set.\n\nWe illustrated the approach on free-form curve drawing and signature digitization, two tasks that use the same underlying machinery required for smooth robot and drone trajectory generation.\n\nFuture work includes extending the implementation to multi-axis trajectories with explicit velocity and acceleration bounds, adopting the more computationally efficient tridiagonal solution method for larger waypoint sets, and evaluating the approach quantitatively against alternative trajectory generation methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a program that automatically constructs and solves cubic spline interpolation for position-time waypoints. It combines interpolation and continuity conditions into a linear system and solves for spline coefficients, producing trajectories continuous in position, velocity, and acceleration. The authors illustrate the approach with free-form curve drawing and signature digitization. They identify multi-axis trajectories with explicit motion bounds, a more efficient tridiagonal solver for larger waypoint sets, and quantitative comparisons with alternative methods as future work.",
+          "zh": "文章介绍一种自动构造并求解三次样条插值问题的程序，用于连接一系列位置—时间航点。程序将插值条件和连续性条件组成线性系统，直接求出样条系数，使生成轨迹的位置、速度和加速度连续，避免分段直线跟踪航点时固有的无限加速度问题。作者以自由曲线绘制和签名数字化说明该方法。未来计划包括扩展到多轴轨迹及显式速度、加速度约束，采用更高效的三对角求解方法，并与其他轨迹生成方法进行定量比较。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1909,7 +1913,11 @@
             "heading": "",
             "text": "We consider hole closure in a planar multi-agent system whose sensing disks form a time-varying \\v{C}ech complex. We propose a harmonic-covariance feedback that uses harmonic edge signals to locate holes and converts those signals into agent forces. For distributed evaluation, we use a fixed-degree polynomial of the regularized Hodge Laplacian.\n\nThis polynomial is evaluated through local operator applications. The closed loop has a unique global trajectory from every safe initial state. The model data and initial state are supplied with procedures for approximation to any requested accuracy with explicit error bounds.\n\nWe assume that hole area is measurable and bounded, holes evolve continuously without splitting or merging, and only finitely many temporary new holes appear. Under these conditions, offline finite calculations produce rational lower bounds for the cumulative hole area on the time horizon without querying trajectory data.\n\nThese bounds converge to that cumulative area, whether finite or infinite. If it is finite, holes close in the time-averaged sense: the average normalized hole area over every fixed-length time window tends to zero as time tends to infinity. In a 15-second numerical demo, all holes close by 9.9s and remain closed through the end."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies hole closure in planar multi-agent systems whose sensing disks form a time-varying Čech complex. Its proposed harmonic-covariance feedback uses harmonic edge signals to locate holes and translate them into agent forces; distributed evaluation uses a fixed-degree polynomial of the regularized Hodge Laplacian. Under stated assumptions about measurable, bounded hole area and continuous evolution without splitting or merging, the authors derive rational lower bounds for cumulative hole area and a time-averaged closure result. In a 15-second numerical demo, all holes close by 9.9 seconds and remain closed to the end.",
+          "zh": "本文研究平面多智能体系统中的孔洞闭合，其中传感圆盘构成随时间变化的Čech复形。作者提出谐波协方差反馈，利用谐波边信号定位孔洞并转化为智能体受力，并以正则化 Hodge 拉普拉斯的固定次数多项式实现分布式计算。理论分析在孔洞面积可测且有界、孔洞连续演化且不分裂或合并等假设下，给出累计孔洞面积的有理下界及时间平均闭合性质。15 秒数值演示中，所有孔洞在 9.9 秒前闭合并保持至演示结束。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1940,7 +1948,11 @@
             "heading": "",
             "text": "Scaling generalist robotic policies is limited by the high cost of collecting embodied interaction data. Large-scale egocentric human videos offer a rich alternative, but they lack robot action labels, and existing action annotation methods are often noisy under real-world visual complexity and diverse manipulation dynamics.\n\nWe introduce LAPT-Scale, a scalable latent action pre-training paradigm with two components: LAPT-Scale-LAM learns continuous latent actions by explaining frame-to-frame visual transitions in human videos and uses them as human-derived supervision, while LAPT-Scale-Policy trains a VLA policy through human-video latent-action pre-training, target-robot embodiment alignment, and task-specific post-training.\n\nUnlike prior vector-quantized LAMs, LAPT-Scale-LAM uses a continuous latent space to preserve fine-grained motion and interaction dynamics. We further combine perceptual, semantic, and optical-flow alignment signals to improve transition-level supervision beyond pixel reconstruction.\n\nTrained on 23.3K hours of egocentric video, LAPT-Scale-LAM provides implicit action supervision for policy pre-training, yielding consistent scaling gains and improving real-robot success from 63.3% to 85.0% as annotated human video scales from 1K to 5K hours. The learned policy also generalizes to unseen visual conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LAPT-Scale, a latent-action pre-training approach that uses large-scale egocentric human videos to support embodied policies. Its LAM learns continuous latent actions by explaining frame-to-frame visual transitions, providing implicit human-derived supervision. The policy is trained through latent-action pre-training, target-robot embodiment alignment, and task-specific post-training. Perceptual, semantic, and optical-flow alignment signals supplement pixel reconstruction. The authors report consistent scaling gains: real-robot success rises from 63.3% to 85.0% as annotated human video increases from 1,000 to 5,000 hours, with generalization to unseen visual conditions.",
+          "zh": "文章提出 LAPT-Scale，利用大规模第一人称人类视频进行具身策略的潜在动作预训练。其 LAM 模块通过解释视频帧间视觉变化学习连续潜在动作，作为人类视频提供的隐式监督；策略模块依次进行潜在动作预训练、目标机器人本体对齐和任务后训练。该方法结合感知、语义和光流对齐信号，并以连续潜在空间保留细粒度运动信息。作者报告，使用 2.33 万小时视频训练后，随着标注视频从 1000 小时增至 5000 小时，真实机器人成功率从 63.3% 升至 85.0%，并能泛化到未见视觉条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
