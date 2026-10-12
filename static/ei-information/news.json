@@ -1006,7 +1006,11 @@
             "heading": "",
             "text": "People often learn how an unfamiliar object moves through a small exploratory push, using its response to guide their next motion. Inspired by this behavior, we study humanoids pushing carts whose mass and caster stiffness are initially unknown.\n\nOur object-centric framework closes online estimation, flow-based planning, and whole-body control into a loop, creating a tension: replacing the plan whenever the belief shifts disrupts the maneuver under way, while keeping it strands the robot on a path its evidence has ruled out.\n\nBelief-Overlap Partial Inversion (BOPI) scales revision to agreement, inverting the flow under the old belief only as far as the beliefs disagree before reconstructing under the new one.\n\nAcross 18 simulated goals it lowers pooled final position and yaw error by roughly 33% and 47% against fixed-depth replanning, and on hardware it translates and turns a non-holonomic cart."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies humanoids pushing carts with initially unknown mass and caster stiffness. Its object-centric framework closes online estimation, flow-based planning, and whole-body control into a loop. Belief-Overlap Partial Inversion (BOPI) scales plan revision to disagreement between old and new beliefs by partially inverting the flow under the old belief before reconstructing it under the new one. Across 18 simulated goals, it reduces pooled final position and yaw errors by roughly 33% and 47% versus fixed-depth replanning. Hardware results show translation and turning of a non-holonomic cart.",
+          "zh": "论文研究质量和脚轮刚度未知时，人形机器人推动手推车的问题，提出将在线估计、基于流的规划和全身控制闭环结合的物体中心框架。为平衡信念变化引起的反复重规划与沿旧路径继续执行的风险，BOPI依据新旧信念的分歧程度，部分反演旧信念下的流并在新信念下重建。18个仿真目标中，其最终位置误差和偏航误差相较固定深度重规划分别降低约33%和47%；硬件实验展示了对非全向手推车的平移与转向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1037,7 +1041,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models increasingly incorporate intermediate reasoning to improve robotic manipulation, yet existing approaches primarily reason about observed states without explicitly anticipating future scene evolution.\n\nExtending such reasoning to explicit future rollouts at every inference step, however, introduces substantial computational overhead. We propose IG-VLA, a VLA reasoning framework that enables models to imagine the future and internalize the gist.\n\nOur Latent Spatiotemporal Reasoning learns to imagine task-relevant future scene evolution directly in visual representation space, guiding action prediction without costly pixel-level video generation.\n\nTo further reduce inference overhead, we introduce Scene Gist Memory, which internalizes reasoning-derived scene-behavior associations into a compact Scene Gist Token, preserving the benefits of future reasoning while bypassing explicit future imagination at inference.\n\nExtensive experiments on LIBERO, LIBERO-Plus, and VLABench demonstrate the effectiveness and efficiency of IG-VLA. On the LIBERO-Plus Language suite, both the reasoning and gist policies outperform the strongest baseline by nearly 6% in success rate.\n\nThe gist policy also achieves up to 6.38x speedup over baselines, reducing inference latency from 1081ms to 169.5ms per action chunk on a single NVIDIA A6000 GPU. These results demonstrate that future spatiotemporal reasoning can be effectively internalized for efficient VLA deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces IG-VLA, a vision-language-action reasoning framework that anticipates task-relevant future scene evolution in visual representation space to guide action prediction without pixel-level video generation. Scene Gist Memory compresses reasoning-derived scene-behavior associations into a token, avoiding explicit future imagination at inference. Experiments on LIBERO, LIBERO-Plus, and VLABench are reported. On the LIBERO-Plus Language suite, reasoning and gist policies each outperform the strongest baseline by nearly 6% in success rate. The gist policy reaches up to 6.38x speedup, with latency per action chunk falling from 1081ms to 169.5ms on one NVIDIA A6000 GPU.",
+          "zh": "论文提出IG-VLA，使视觉—语言—动作模型能够推想与任务相关的未来场景变化，并将其用于动作预测，而无需生成像素级视频。其潜在时空推理在视觉表征空间中学习未来演变；场景要旨记忆则把推理所得的场景—行为关联压缩为要旨令牌，以减少推理时开销。在LIBERO、LIBERO-Plus和VLABench上的实验显示该方法有效且高效；在LIBERO-Plus Language套件中，推理策略和要旨策略的成功率均比最强基线高近6%。要旨策略相较基线最高加速6.38倍，单块动作推理延迟从1081毫秒降至169.5毫秒，测试使用单张NVIDIA A6000 GPU。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1068,7 +1076,11 @@
             "heading": "",
             "text": "Embodied coding agents construct robot policies from natural-language instructions by generating executable programs and refining them from execution feedback. This refinement assumes that execution feedback reveals whether the task succeeded and, after a failure, provides sufficient evidence to guide program revision.\n\nAerial manipulation violates this assumption in two ways. Payload constraints restrict onboard camera coverage and leave task-critical outcomes outside the robot's view (partial observability), while strong dynamic coupling and limited control margins make physical interactions fragile (limited interaction robustness) and leave failure causes unresolved.\n\nRe-examining the same feedback cannot recover observations that were never collected or separate failure causes that the available evidence does not distinguish. To acquire this missing evidence, we introduce Active Feedback (AF), an active \"View and Probe\" framework.\n\nWhen execution feedback leaves unresolved questions, the agent synthesizes a separate diagnostic program that runs in simulation to inspect unseen outcomes from informative viewpoints (View) or test hypotheses about failure causes through targeted physical interactions (Probe).\n\nAcross six simulated aerial manipulation tasks with 60 trials per condition, AF reduces false completion declarations from 25 to 5 and raises final task success from 31.7% to 75% compared with terminal feedback under the same coding-agent configuration and task-execution limit.\n\nUsing shared robot APIs, task programs refined with AF in simulation run on a physical aerial manipulator without task-program source-code modification and complete multi-stage manipulation tasks in the real world.\n\nThese results show that executable diagnosis fills gaps in execution feedback for embodied coding agents, improving both completion assessment and program refinement in aerial manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Active Feedback (AF) to help embodied coding agents address missing evidence in aerial manipulation. Payload limits can hide task outcomes from onboard cameras, while fragile physical interactions can leave failure causes unclear. AF generates a separate diagnostic program that runs in simulation to inspect unseen outcomes from informative viewpoints or probe failure hypotheses through targeted interactions. Across six simulated tasks with 60 trials per condition, it reduces false completion declarations from 25 to 5 and raises final success from 31.7% to 75%, compared with terminal feedback under the same agent configuration and execution limit. The authors also report that programs refined with AF in simulation ran on a physical aerial manipulator without source-code changes and completed multi-stage tasks.",
+          "zh": "论文提出主动反馈（AF）框架，帮助空中操作中的具身编码智能体弥补执行反馈缺失的证据。载荷限制可能遮挡任务结果，脆弱的物理交互也会使失败原因难以区分；AF因此生成独立诊断程序，在仿真中从有信息量的视角检查不可见结果，或通过定向物理交互探测失败原因。在六项仿真任务、每种条件60次试验中，相较相同编码智能体配置和任务执行限制下的终止反馈，误报完成次数从25降至5，最终任务成功率从31.7%升至75%。作者还报告，仿真中经AF改进的任务程序无需修改源代码即可在实体空中操作机器人上运行，并完成多阶段任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1099,7 +1111,11 @@
             "heading": "",
             "text": "Joint-embedding predictive architectures (JEPAs) learn compact latent world models without pixel reconstruction. Existing JEPA pipelines typically train visual representations and action-conditioned dynamics before adding a control policy or solver.\n\nWe introduce LeWAM, an end-to-end JEPA for control with: （1） a joint training objective over next latent state prediction and action flow matching, and （2） an isotropic Gaussian constraint on the latent state, enabling a single model to support direct policy execution and efficient planning by evaluating sampled actions with its learned latent dynamics.\n\nCompared with prior JEPAs in visual planning, LeWAM improves success rate from 28.6% to 89.7% on contact-rich tasks and from 10.9% to 46.2% on long-horizon tasks, and plans 32.3 times faster. On behavior cloning tasks in simulation and physical robots, LeWAM is also competitive with established methods.\n\nInterpretability analyses show that LeWAM learns control-relevant representations and action distributions effectively guiding test-time planning and control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LeWAM, an end-to-end joint-embedding predictive architecture for control. It jointly trains next-latent-state prediction and action flow matching, with an isotropic Gaussian constraint on latent states. The model supports direct policy execution and planning by evaluating sampled actions with learned latent dynamics. Compared with prior JEPAs in visual planning, reported success rises from 28.6% to 89.7% on contact-rich tasks and from 10.9% to 46.2% on long-horizon tasks, while planning is 32.3 times faster. On behavior-cloning tasks in simulation and on physical robots, it is competitive with established methods. Interpretability analyses indicate control-relevant representations and action distributions that guide test-time planning and control.",
+          "zh": "论文提出LeWAM，一种端到端、用于控制的联合嵌入预测架构。它联合训练下一潜在状态预测与动作流匹配，并对潜在状态施加各向同性高斯约束，使同一模型既能直接执行策略，也能通过其学习到的潜在动力学评估采样动作来进行规划。与既有视觉规划JEPA相比，LeWAM在接触丰富任务和长时程任务上的成功率分别由28.6%升至89.7%、由10.9%升至46.2%，规划速度提高32.3倍。仿真和实体机器人上的行为克隆任务结果与成熟方法相比具有竞争力；可解释性分析显示其表征与动作分布能支持测试时规划和控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
