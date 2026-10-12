@@ -3024,7 +3024,11 @@
             "heading": "",
             "text": "Reactive vision-language-action (VLA) policies suffer from task-state aliasing in long-horizon manipulation, where identical multimodal inputs call for distinct, context-dependent actions.\n\nGiven that pretrained VLAs already possess rich control primitives to express diverse behaviors, we hypothesize that the execution bottleneck lies not in policy capacity, but in input ambiguity. In this paper, we propose TaskAnchor, a lightweight adapter that grounds task state by injecting execution context into the VLA's native input space.\n\nDuring post-training, TaskAnchor learns to represent the semantic execution stage as a milestone-supervised coordinate prepended to the language instruction, while incorporating fine-grained historical evidence via a residual update to the current visual tokens.\n\nThis formulation avoids generating complex subtask instructions and leaves the backbone architecture unchanged. Across long-horizon benchmarks, TaskAnchor delivers substantial gains, achieving approximately 6 times the average success rate of the pi0.5 and X-VLA baselines on RMBench and more than doubling the task success rate of pi0.5 on RoboMemArena.\n\nReal-robot experiments further validate reliable multi-stage execution, with the same policy adapting its subsequent behaviors using earlier human interactions as in-context cues. Our project website is available at https://taskanchor.netlify.app/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TaskAnchor to address task-state aliasing in reactive vision-language-action policies for long-horizon manipulation. It uses a lightweight adapter to prepend a milestone-supervised execution-stage coordinate to the language instruction and adds fine-grained history to visual tokens through a residual update, leaving the backbone unchanged. The authors report roughly six times the average success rate of pi0.5 and X-VLA on RMBench, and more than twice pi0.5's task success rate on RoboMemArena. Real-robot experiments demonstrate multi-stage execution informed by earlier human interactions.",
+          "zh": "论文提出 TaskAnchor，用于缓解长时程操作中反应式视觉语言动作策略的任务状态混淆。该方法假设瓶颈在于输入歧义而非策略能力，并通过轻量适配器将执行阶段作为里程碑监督坐标加入语言指令，同时以残差更新把细粒度历史信息融入视觉令牌。作者报告其在 RMBench 上的平均成功率约为 pi0.5 和 X-VLA 基线的六倍，在 RoboMemArena 上成功率超过 pi0.5 的两倍；真实机器人实验也验证了多阶段执行及利用早先人类交互线索调整后续行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3055,7 +3059,11 @@
             "heading": "",
             "text": "Intelligent robots should not only recover from failures, but also acquire the abstract knowledge needed to avoid them in the future. While reinforcement learning (RL) can learn reactive recovery behaviors, training a separate policy for every distinct failure mode is highly inefficient.\n\nWe introduce Recovery-Driven Synthesis of Relational Concepts (ReSYNC), the first approach that progressively discovers and refines state abstractions (relational predicates) from failure-recovery experience to support abstract planning. Unlike purely reactive methods, ReSYNC jointly learns skills and concepts through an incremental dual-learning process.\n\nIn the skill-learning phase, the robot uses RL to learn to recover from failures seen in training tasks. In the concept-learning phase, the robot discovers new relational predicates and refines its abstract planning model to explain and generalize the learned recovery behaviors.\n\nThis interaction enables ReSYNC to convert local recoveries seen during training into global failure avoidance at test time. Across four simulated domains, we show that ReSYNC's ability to continually expand and refine its abstraction library allows it to solve long-horizon, previously unseen problems, outperforming strong baselines by over 50%.\n\nAdditionally, we demonstrate sim-to-real transfer of ReSYNC, where it performs real-world non-prehensile manipulation skills and generalizes to unseen scenarios through abstract planning. Overall, ReSYNC represents a significant step toward robots that autonomously acquire abstractions for scalable, failure-aware planning in the physical world."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ReSYNC, which progressively discovers and refines relational predicates from failure-recovery experience, jointly learning recovery skills and abstract concepts for planning. Reinforcement learning trains recovery skills for failures in training tasks; concept learning finds predicates and refines an abstract planning model to explain and generalize those behaviors. The authors report that this turns local training recoveries into global failure avoidance at test time. Across four simulated domains, ReSYNC solves long-horizon unseen problems and outperforms strong baselines by over 50%. The paper also demonstrates sim-to-real transfer for non-prehensile manipulation and planning in unseen scenarios.",
+          "zh": "论文提出 ReSYNC，从失败恢复经验中逐步发现和改进关系谓词等状态抽象，并联合学习恢复技能与抽象概念，以支持规划。技能阶段使用强化学习处理训练任务中的失败；概念阶段发现关系谓词并修订抽象规划模型，解释和泛化恢复行为。作者称该方法能将局部恢复转化为测试时的全局失败规避。在四个仿真领域中，ReSYNC 可扩展抽象库并解决长时程、未见问题，表现比强基线高出 50% 以上；论文还报告其向真实环境迁移，执行非抓取操作并通过抽象规划泛化到未见场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3086,7 +3094,11 @@
             "heading": "",
             "text": "Actions specify what a robot should execute, but do not describe what those commands will achieve. Vision-language-action (VLA) policies nevertheless learn primarily by predicting action chunks from images, language, and state.\n\nWe introduce Action--Future Coupled Effect Learning (AFCE), which makes a future-grounded physical Effect the policy's primary prediction target. An offline tokenizer constructs temporally ordered Effect tokens from demonstrated actions, realized robot responses, and sparse visual transitions.\n\nReconstruction objectives encourage the representation to retain executable detail and observed physical change. A flow-matching VLA predicts Effects from current images, instruction, and robot state, while a state-conditioned decoder converts them into action chunks. Embodiment-specific interfaces allow single- and dual-arm tasks to share the Effect model.\n\nOn DexJoCo, AFCE achieves $50.97\\%$ overall success, improving over $\\pi_{0.5}$ and UVT by 11.82 and 15.21 percentage points, respectively. It leads on all five bimanual tasks, highlighting the value of Effect supervision for coordinated dexterous manipulation. The project page is available at https://afceproject.github.io/AFCE-Web/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes AFCE, which makes future physical Effects the primary prediction target for vision-language-action models instead of action chunks alone. An offline tokenizer builds temporally ordered Effect tokens from demonstrated actions, realized robot responses, and sparse visual transitions. Reconstruction objectives preserve executable detail and observed change. A flow-matching VLA predicts Effects from images, instructions, and robot state, and a state-conditioned decoder maps them to action chunks; embodiment-specific interfaces support shared modeling across single- and dual-arm tasks. On DexJoCo, the authors report 50.97% overall success, gains of 11.82 and 15.21 percentage points over π0.5 and UVT, and leading results on five bimanual tasks.",
+          "zh": "论文提出 AFCE，使视觉语言动作模型以未来物理效果为主要预测目标，而非仅预测动作片段。离线分词器根据示范动作、机器人实际响应和稀疏视觉变化构造有时间顺序的效果令牌；重建目标用于保留可执行细节和观测到的物理变化。模型根据当前图像、指令和机器人状态预测效果，再由状态条件解码器转换为动作片段，并通过适配接口支持单臂与双臂任务共享效果模型。在 DexJoCo 上，作者报告总体成功率为 50.97%，比 π0.5 和 UVT 分别高 11.82 和 15.21 个百分点，并在五项双臂任务中领先。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3117,7 +3129,11 @@
             "heading": "",
             "text": "Existing real-world reinforcement learning methods improve robot policies by combining human corrections with autonomous rollouts. However, accumulated experience varies in its value for policy improvement, and even successful trajectories can contain inefficient or redundant behavior, motivating more selective experience reuse.\n\nTo this end, we propose Evo-RL, an iterative reinforcement learning method that combines human interventions with advantage-guided experience selection. Evo-RL uses human corrections and experience with positive estimated advantages from successful trajectories to iteratively refine the policy.\n\nTo support learning from these different experience sources, we introduce RW-RL-Dataset, which spans over 1,000 hours across four robot embodiments. On a real-world high-precision manipulation task, Evo-RL improves attempt success rate over RECAP by 30.46\\%.Our code, model checkpoints, and dataset are publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Evo-RL, an iterative robot reinforcement learning method that combines human interventions with advantage-guided experience selection. It uses human corrections and experiences with positive estimated advantages from successful trajectories to refine a policy, motivated by variation in experience value and redundant behavior even in successful trajectories. The authors introduce RW-RL-Dataset, spanning over 1,000 hours across four robot embodiments to support learning from these sources. On a real-world high-precision manipulation task, they report that Evo-RL improves attempt success rate over RECAP by 30.46%.",
+          "zh": "论文提出 Evo-RL，一种迭代式机器人强化学习方法，针对经验价值不一及成功轨迹中可能存在冗余行为的问题，结合人类干预与优势引导的经验筛选。方法使用人类纠正，以及成功轨迹中估计优势为正的经验，逐步改进策略。为支持不同来源经验的学习，作者介绍 RW-RL-Dataset，涵盖四种机器人构型、超过 1000 小时数据。在一项真实世界高精度操作任务中，作者报告 Evo-RL 的尝试成功率比 RECAP 提高 30.46%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
