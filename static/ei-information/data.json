@@ -330,7 +330,11 @@
             "heading": "",
             "text": "Metric reasoning is a critical and challenging task for Vision Language Models (VLMs), playing a pivotal role in embodied AI tasks such as robotic manipulation and autonomous navigation.\n\nHowever, current spatial reasoning remains bottlenecked by rigid pixel-level supervision; such localized optimization often compromises general multimodal intelligence, triggering performance degradation or catastrophic forgetting of broad reasoning capabilities.\n\nTo address these limitations, we introduce Metric-Bench, a focused benchmark designed to guide metric-spatial reasoning using contextual information. By incorporating in-image reference objects with known physical dimensions, Metric-Bench guides models to implicitly learn the 2D-to-3D mapping without camera intrinsics.\n\nWe further present MetricReasoner, a task-adapted reinforcement fine-tuning recipe for reference-grounded metric reasoning, using structured prompts and verifiable numerical rewards.\n\nExtensive experiments on Metric-Bench demonstrate that our approach significantly enhances spatial metric understanding, outperforming existing and even larger proprietary models by 43.1\\%, while improving downstream embodied performance over a spatial-specialized counterpart by 30.4\\% on RoboSpatial overall accuracy and 9.3\\% on ERQA, and additionally delivering consistent gains on general benchmarks (15.9\\% on V$\\star$Bench, 88.9\\% on BLINK), indicating that the proposed adaptation does not necessarily compromise general VLM capabilities."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Metric-Bench, a benchmark for spatial metric reasoning in indoor scenes. It uses in-image reference objects with known physical dimensions to guide models in learning 2D-to-3D mapping without camera intrinsics. The authors also propose MetricReasoner, a reinforcement fine-tuning recipe using structured prompts and verifiable numerical rewards. In experiments, they report improvements on Metric-Bench and several downstream embodied and general benchmarks.",
+          "zh": "论文提出 Metric-Bench，用于评估视觉语言模型在室内场景中的空间度量推理，并以图中已知尺寸的参照物帮助模型学习二维到三维的映射，无需相机内参。作者还提出 MetricReasoner，通过结构化提示和可验证数值奖励进行强化微调。作者报告称，该方法在基准及若干下游具身和通用基准上取得提升；这些结论来自文中所述实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -359,7 +363,11 @@
             "heading": "",
             "text": "Recent advances in learning-based robot policies have demonstrated promising progress, yet they are predom- inantly evaluated in static or quasi-static environments. In dynamic manipulation, objects and scenes continuously evolve while the robot perceives, reasons, and acts.\n\nHowever, recent dynamic simulation benchmarks largely focus on short-horizon, reactive interactions with simple motion patterns and offer limited support for both systematic evaluation under domain shifts and model-agnostic real-time execution protocols.\n\nTo bridge these gaps, we introduce MotionForge, the first large- scale simulation benchmark and data-generation pipeline tailored to jointly evaluate domain shifts and long-horizon interaction in dynamic manipulation. MotionForge comprises 40 dynamic interaction tasks spanning 11 distinct motion patterns, with dedicated support for 17 long-horizon tasks.\n\nOur benchmark introduces two key novelties: （1） a systematic evaluation protocol for assessing policy robustness under both single-factor (e.g., only backgrounds shift) and joint domain shifts (e.g., simultaneous shifts of objects, backgrounds, lighting, and speed); and （2） a decoupled, latency-aware execution protocol where the environ- ment continuously evolves independently of policy inference time.\n\nExtensive evaluations of representative general-purpose robot policies on our benchmark reveal substantial limitations under joint domain shifts.\n\nThese findings expose a critical gap between current policy capabilities and the requirements of robust long- horizon manipulation of dynamic objects under domain shifts, establishing MotionForge as a comprehensive testbed for future research in embodied AI."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MotionForge, a simulation benchmark and data-generation pipeline for evaluating long-horizon manipulation of dynamic objects under domain shifts. It includes 40 dynamic interaction tasks across 11 motion patterns, with 17 long-horizon tasks. Its protocols cover both single-factor and joint domain shifts, and decouple environment evolution from policy inference time. Evaluations of representative general-purpose robot policies reveal substantial limitations under joint domain shifts.",
+          "zh": "论文提出 MotionForge，这是面向动态物体长时程操作及域偏移评估的仿真基准和数据生成流程。它包含40项动态交互任务、11种运动模式，其中17项支持长时程操作；评估覆盖单因素和联合域偏移，并采用使环境演化独立于策略推理时延的执行协议。对代表性通用机器人策略的评估显示，它们在联合域偏移下存在明显局限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -388,7 +396,11 @@
             "heading": "",
             "text": "Scalable simulation is essential for robot data generation, policy training, evaluation, and safe iteration, yet real-world interaction is costly and conventional simulators require labor-intensive construction. We present Uranus, a data-driven robot simulator built around a joint-trajectory-conditioned autoregressive diffusion model.\n\nUranus offers three key capabilities: （1） streaming, open-ended rollout, which receives future joint-position trajectories online and autoregressively generates one latent frame per step, corresponding to four RGB frames, without a fixed horizon; （2） low-latency generation, achieving 24 FPS after inference optimization; and （3） scalable, extensible robot control, providing a unified interface for synchronized multi-view generation across diverse robot embodiments and camera configurations.\n\nWe conduct comprehensive quantitative and qualitative evaluations on both in-distribution and out-of-distribution data, providing an objective assessment of Uranus and clearly identifying its current limitations. We release the code and model weights to empower the community with practical tools and insights."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Uranus, a data-driven robot simulator built around a joint-trajectory-conditioned autoregressive diffusion model. It supports open-ended streaming rollouts from online future joint-position trajectories, reports 24 FPS after inference optimization, and provides a unified control interface for synchronized multi-view generation across robot embodiments and camera configurations. The authors describe quantitative and qualitative evaluations on in-distribution and out-of-distribution data, and say these evaluations identify current limitations. They also state that code and model weights are released.",
+          "zh": "论文介绍 Uranus，一种以关节轨迹为条件的自回归扩散机器人模拟器，旨在支持数据生成、策略训练、评估和安全迭代。它可在线接收未来关节位置轨迹并持续生成画面，不设固定时域；经推理优化后，作者报告生成速度为24 FPS。系统还提供跨机器人形态和相机配置的同步多视角生成控制接口。作者在分布内外数据上进行了定量和定性评估，并说明了当前局限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
