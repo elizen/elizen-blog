@@ -548,7 +548,11 @@
             "heading": "",
             "text": "Humans effortlessly react to the world; they adeptly return a tennis shot, catch a falling cup, step aside from a passing cart, or pass a box tossed during truck unloading. These everyday actions require anticipating a moving target and reflexively responding with the whole body within about a second.\n\nSuch visual reactive whole-body control remains challenging for humanoids, which must （1） coordinate whole-body control, （2） react to object dynamics in real time, and （3） ground perception in egocentric vision.\n\nWe study catching thrown boxes as a representative task that demands all three capabilities; existing systems cover only part of it, relying on end-effectors, motion capture, or marked objects. We present Reflex, a three-stage framework that learns these capabilities stage by stage while connecting them through a compact representation of object dynamics.\n\nFirst, a state-based policy learns whole-body catching with reinforcement learning. Second, the policy learns to infer the dynamics of a moving box from delayed and incomplete observations. Third, an egocentric RGB-D encoder learns to recover this dynamics representation directly from visual observations while keeping the whole-body controller fixed.\n\nThis decomposition provides each capability with a direct training signal and makes visual learning substantially more scalable. In simulation, Reflex achieves 85.7% catch success from egocentric RGB-D, compared with 87.9% when given privileged box observations.\n\nTemporal visual history is critical: removing it reduces success by 35.6 and 39.8 points on centered and laterally offset throws. On a real Unitree G1, Reflex catches human-thrown boxes with 65% and 40% success at 2.5 and 5 m, reaching 76% and 59% of human catchers' success at the same distances."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Reflex, a staged framework for visually grounded reactive whole-body humanoid control, evaluated on catching thrown boxes. It connects box-dynamics inference and control through a compact representation. In simulation, catch success is 85.7% with egocentric RGB-D and 87.9% with privileged box observations; removing temporal visual history lowers success. On a real Unitree G1, success catching human-thrown boxes is 65% at 2.5 m and 40% at 5 m.",
+          "zh": "论文提出 Reflex，一种分阶段训练的人形机器人视觉反应式全身控制框架，以接住抛来的箱子为任务，并用紧凑表示连接箱体动力学推断与控制。仿真中，使用第一人称 RGB-D 的成功率为 85.7%，使用特权箱体观测时为 87.9%；移除视觉历史会降低成功率。真实 Unitree G1 实验中，机器人接住人抛箱子的成功率在 2.5 米和 5 米处分别为 65% 和 40%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -579,7 +583,11 @@
             "heading": "",
             "text": "Artificial intelligence is beginning to automate scientific discovery, yet physical robot-policy research still relies on scientists and engineers to interpret experimental failures and decide how controllers should be revised.\n\nWe present EndoRSI (Endoscopic Recursive Self-Improvement), a human-governed, self-improving robotic research system in which the embedded EndoForge coding agent iteratively develops and refines endoscopic robot policies using evidence from physical experiments. Physical execution remains isolated within a safety-constrained runtime under human authorisation.\n\nIn motorised endoscopy, validation evidence first caused the agent to reject an initial action representation, while subsequent physical experiments falsified an offline-supported insertion strategy by revealing hazardous closed-loop behaviour absent from the source data.\n\nFailed physical rollouts were then incorporated into policy revision; insertion success subsequently increased from 2/21 in the first generation to 17/21 in the fourth. The frozen final policy retained competence across visual and hardware shifts and was the best performing autonomous policy across six independent ex-vivo porcine specimens.\n\nThese results show that physical robot interaction can serve as experimental evidence for agent-driven robot policy research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EndoRSI, a human-governed system that iteratively revises endoscopic robot policies using evidence from physical experiments. Its coding agent changes policies in response to validation findings and failed physical rollouts, while execution occurs in a safety-constrained runtime requiring human authorization. In the reported experiments, insertion success rose from 2/21 in the first generation to 17/21 in the fourth. The frozen final policy retained competence across visual and hardware shifts and performed best among autonomous policies on six ex-vivo porcine specimens.",
+          "zh": "论文介绍 EndoRSI，一个由人类监督的机器人研究系统，利用实体实验中的证据递归改进内窥镜机器人策略。嵌入式编码代理会根据验证结果和失败的实体运行修订策略，实体执行则在需人类授权的安全运行环境中进行。实验中，插入成功次数从第一代的 2/21 增至第四代的 17/21。冻结的最终策略在视觉和硬件变化下保持能力，并在六个离体猪标本上成为表现最佳的自主策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -610,7 +618,11 @@
             "heading": "",
             "text": "Generalist robot policies are trained with imitation learning and are bounded by the quality and coverage of their demonstrations. Reinforcement learning can improve and extend them, either by fine-tuning the policy weights or by training a small module to steer the input noise of a frozen generative policy.\n\nWhen tasks arrive sequentially, both approaches suffer from catastrophic forgetting. Fine-tuning on a task degrades prior tasks, and steering only shifts forgetting to the shared steering module. We propose Dream to Remember (D2R), which continually steers a frozen generalist policy toward new tasks, while retaining its earlier skills.\n\nAs the steering module learns a new task, a frozen pretrained world model rehearses prior tasks through imagined rollouts, anchoring the module to its earlier behavior without a replay buffer or new data. When the world model is faithful enough, D2R learns the new task entirely in imagination.\n\nOtherwise, it learns the task in the environment while using the world model only to rehearse prior tasks. On CALVIN, D2R improves eight tasks in sequence entirely in imagination, raising average success from 63.7% to 74.8%, while LoRA fine-tuning on the same sequence drops it to 11.7%.\n\nWith a frozen off-the-shelf generalist policy and world model, $\\pi_0$ and A2World, D2R learns unseen LIBERO-90 tasks in the environment while keeping $\\pi_0$'s performance on the LIBERO suites it was fine-tuned on, even though the world model is not accurate enough for policy optimization.\n\nFinally, on a real Franka robot, D2R improves three tasks in sequence entirely in imagination while retaining the earlier improvements."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes D2R, which uses a world model to steer a frozen generalist robot policy toward new tasks while preserving earlier skills. The model rehearses prior tasks through imagined rollouts as the steering module learns; when sufficiently faithful, new tasks can also be learned entirely in imagination. On eight sequential CALVIN tasks, average success rises from 63.7% to 74.8%, while LoRA fine-tuning falls to 11.7%. The paper also reports environment learning on LIBERO-90 and imagined sequential improvements on a real Franka robot.",
+          "zh": "论文提出 D2R，用世界模型持续引导冻结的通用机器人策略学习新任务，同时保留先前技能。学习新任务时，预训练世界模型通过想象轨迹复习旧任务；若模型足够准确，新任务也可完全在想象中学习。在 CALVIN 的八项连续任务中，D2R 将平均成功率从 63.7% 提高到 74.8%，而 LoRA 微调降至 11.7%。论文还报告了 LIBERO-90 环境学习结果，以及 Franka 真实机器人上完全通过想象连续改进三项任务的实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
