@@ -2059,7 +2059,11 @@
             "heading": "",
             "text": "Expressive humanoid interaction requires speech, facial animation, and body gestures to form a coherent response. However, many full-body humanoid robots produce speech and gestures without a visually expressive face, while talking-face animation and robot gesture generation are typically developed separately.\n\nWe present Talk, Render, Act (TRABot), an agent-based framework comprising specialized agents for motion-atom construction, dialogue generation, motion planning, and facial animation.\n\nFirst, to produce natural and semantically meaningful gestures, we construct Robot-Ready Semantic Motion Atoms by segmenting long-form, G1-retargeted BEAT2 motion into units with natural gesture boundaries, human-verified communicative functions, and feasible trajectories.\n\nSecond, to preserve semantic order and coordinate body motion with the spoken response, we introduce a Semantic-Conditioned Compositional Planner.\n\nGiven an ordered semantic function sequence and an estimated response duration, the planner selects approved atoms to realize the longest feasible action sequence while accounting for transitions and neutral recovery.\n\nFinally, we deploy a Streaming Face-Speech-Body Integration system on a physical G1 humanoid, combining streaming dialogue audio, audio-driven facial animation, and semantically planned body motion in a unified real-time interaction loop.\n\nQuantitative and qualitative experiments demonstrate that TRAbot achieves the best overall performance among all compared conditions in terms of naturalness, expressiveness, and multimodal coherence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRABot, a multi-agent framework for dialogue, motion planning, semantic motion-atom construction, and facial animation. It segments retargeted BEAT2 motion into human-verified units, then plans body movement from an ordered semantic sequence and estimated response duration. The system integrates streaming dialogue audio, audio-driven facial animation, and planned motion on a physical G1 humanoid. The authors report that quantitative and qualitative experiments show the best overall performance among compared conditions for naturalness, expressiveness, and multimodal coherence.",
+          "zh": "论文提出 TRABot，一个整合对话生成、动作规划、语义动作单元构建与面部动画的多代理框架。系统从重定向后的 BEAT2 动作中切分并人工核验语义动作单元，再依据语义顺序和预计答复时长规划身体动作，并在实体 G1 人形机器人上同步流式语音、面部动画和身体动作。作者报告，定量与定性实验中，TRABot 在自然度、表现力和多模态连贯性方面优于所有对比条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2090,7 +2094,11 @@
             "heading": "",
             "text": "Diffusion and VLA policies for manipulation are often deployed through downstream impedance controllers. The stiffness and damping gains of these controllers affect task success, yet are commonly inherited from data collection rather than selected for the deployed policy.\n\nAlthough empirical gain sweeps can improve performance, they require repeated evaluation rollouts. We introduce PHRetune, an offline method that derives controller gains for a frozen policy without evaluation rollouts or gain search.\n\nOur approach learns a port-Hamiltonian model from demonstrations to estimate the effort and energy associated with the policy's predicted actions. The policy is applied to recorded demonstration observations, and its predictions are assessed against demonstration-derived effort and energy budgets.\n\nFrom this comparison, we derive a single gain scale in closed form, adjusting the downstream controller while preserving the policy and its action representation. The gains are fixed before evaluation, without requiring a prior manipulator model, task rewards, policy retraining, or additional runtime computation.\n\nAcross LIBERO suites, PHRetune improves Diffusion Policy success by up to 9.4 percentage points, with the derived gains achieving the highest observed success rates in empirical gain sweeps. On all four real-world manipulation tasks, PHRetuned Diffusion Policy outperforms the nominal policy, alternative gain-tuning methods, and a policy-retraining baseline.\n\nThe same procedure improves success with SmolVLA and OpenVLA-OFT on every task, while reducing acceleration and jerk for both VLA backbones."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PHRetune, an offline method for deriving impedance-controller gains for a frozen manipulation policy without evaluation rollouts or gain search. It learns a port-Hamiltonian model from demonstrations, compares predicted actions with demonstration-based effort and energy budgets, and computes a single gain scale in closed form. The authors report up to a 9.4 percentage-point improvement for Diffusion Policy on LIBERO and better results on four real-robot tasks. The procedure also improves task success for SmolVLA and OpenVLA-OFT while reducing acceleration and jerk.",
+          "zh": "论文提出 PHRetune，一种无需评估回合或增益搜索的离线方法，用演示数据学习端口哈密顿模型，估计冻结策略预测动作的努力与能量，并据此闭式计算单一增益缩放，调整下游阻抗控制器。作者报告，在 LIBERO 上扩散策略成功率最高提升 9.4 个百分点；在四项真实机器人操作任务中优于名义策略、其他调参方法和重训练基线。该方法也提升 SmolVLA 与 OpenVLA-OFT 各项任务的成功率，并降低加速度与急动度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2121,7 +2129,11 @@
             "heading": "",
             "text": "Memory-dependent manipulation requires a policy to track execution state and recover visual evidence that is no longer observable. We propose dual-stream memory for vision-language-action policies, assigning these requirements to complementary representations.\n\nA task-agnostic Gated DeltaNet compresses history into one temporal token, supervised by progress prediction and action-conditioned feature reconstruction. A task-conditioned retriever retains frames above a fixed relevance threshold; linear multi-scale fusion encodes each frame into sixteen spatial tokens.\n\nWe then freeze the temporal compressor and jointly optimize retrieval and policy learning. Across sixteen RoboMME tasks, the complete model achieves 49.22% mean success versus 44.51% for the published FrameSamp+Modul reference, improving fourteen tasks and all four suite means.\n\nOn four real-robot tasks, mean success reaches 62.5% versus 37.5%, with the largest gains on repeated actions requiring execution-stage discrimination. These results support combining execution context with selective visual access, while failures under cup swaps expose persistent identity tracking as an unresolved requirement."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes dual-stream memory for vision-language-action policies. A task-agnostic Gated DeltaNet compresses history into a temporal token, while a task-conditioned retriever selects relevant frames and encodes them as spatial tokens. Retrieval and policy learning are jointly optimized after freezing the temporal compressor. The authors report a 49.22% mean success rate across sixteen RoboMME tasks, versus 44.51% for the published reference, and 62.5% versus 37.5% across four real-robot tasks. Failures under cup swaps indicate that persistent identity tracking remains unresolved.",
+          "zh": "论文提出用于视觉语言动作策略的双流记忆：任务无关的 Gated DeltaNet 将历史压缩为时间令牌，任务条件检索器则保留相关画面并编码为空间令牌。研究在冻结时间压缩器后联合优化检索与策略。作者报告，在 16 项 RoboMME 任务中，完整模型平均成功率为 49.22%，高于已发表参考模型的 44.51%，并改善 14 项任务及四个套件均值；四项真实机器人任务的平均成功率为 62.5%，参考为 37.5%。杯子互换时的失败显示持续身份追踪仍未解决。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
