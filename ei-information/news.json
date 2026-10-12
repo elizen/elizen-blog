@@ -1573,7 +1573,11 @@
             "heading": "",
             "text": "Scaling robot manipulation policies requires large amounts of diverse, action-labeled data, yet collecting such data in the real world remains expensive and difficult to scale. Existing methods either depend on human teleoperation, rely on simulation with limited visual realism, or use human videos that lack embodiment-specific annotations.\n\nIn this paper, we introduce Grounded-Dreamer, a framework for synthesizing physically grounded robot manipulation data with video world models while avoiding human teleoperation demonstrations. Grounded-Dreamer combines the visual realism of generative video models with simulator physics engines.\n\nStarting from a small set of real images depicting robot task initial states, our method automatically reconstructs task-relevant objects and camera geometry, aligns them in simulation, and collects physically valid trajectories.\n\nThese trajectories are used to post-train both a video world model and an inverse dynamics model, enabling the generation of visually realistic robot manipulation videos and corresponding robot actions from real images.\n\nTo filter physically implausible rollouts, Grounded-Dreamer replays generated trajectories in the reconstructed simulation and retains only those that successfully complete the tasks. The real-world robot policies are trained solely on the grounded synthetic trajectories without any human demonstrations.\n\nEmpirical results in real-world tasks demonstrate that Grounded-Dreamer can synthesize physically grounded data and substantially facilitate policy learning without requiring human teleoperation effort."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Grounded-Dreamer, which combines generative video models with simulator physics. From a small set of real task-initial images, it reconstructs relevant objects and camera geometry, gathers trajectories in simulation, and trains a video world model and inverse dynamics model to generate videos and actions. Generated trajectories are replayed in the reconstructed simulation, and only task-completing ones are retained. Real-world task experiments are reported to show that policies trained solely on these grounded synthetic trajectories can benefit without human demonstrations.",
+          "zh": "论文提出 Grounded-Dreamer，结合生成视频模型与仿真物理引擎，从少量真实任务初始图像重建相关物体和相机几何，在仿真中收集物理有效轨迹，并据此训练视频世界模型和逆动力学模型，生成视频及对应动作。方法将生成轨迹放回重建仿真中筛选，仅用通过任务的合成轨迹训练真实机器人策略。作者报告，真实世界任务实验显示该方法可合成物理扎根数据并促进策略学习；训练不使用人工示范。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1604,7 +1608,11 @@
             "heading": "",
             "text": "Autoregressive robot policies rely on action tokenizers to convert continuous action chunks into compact sequences of discrete prediction targets. Existing tokenizers can reconstruct action chunks from discrete codes, but often leave implicit what each individual token contributes to the reconstructed action.\n\nWe introduce Residual Action Tokenization (ReAT), which gives each token an explicit role in refining the current action reconstruction. It uses the decoded reconstruction as feedback to construct the next token from the remaining action error.\n\nThis closes the loop between encoding and decoding, making each new token responsive to the errors left by the actual decoded prefix.\n\nAcross 19 manipulation tasks spanning three simulation benchmarks and real-world settings, 8-token ReAT policies outperform the evaluated baselines in task success; on LIBERO, even 4-token ReAT surpasses the evaluated 8-token action-tokenization baselines at half the token budget.\n\nThese results suggest a path toward action tokenization that supports self-corrective policy learning, helping autoregressive policies learn to progressively refine their own action plans."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Residual Action Tokenization (ReAT), giving each token in an autoregressive robot policy an explicit role in refining the reconstructed action. The next token is formed from the remaining error after decoding the current prefix, closing a feedback loop between encoding and decoding. Across 19 manipulation tasks in three simulation benchmarks and real-world settings, the authors report that 8-token ReAT policies outperform the evaluated baselines in task success. On LIBERO, 4-token ReAT also surpasses evaluated 8-token action-tokenization baselines.",
+          "zh": "论文提出残差动作分词 ReAT，为自回归机器人策略中的每个动作令牌赋予逐步修正重建结果的作用。编码时，它依据已解码前缀的实际误差生成下一个令牌，从而让编码与解码形成反馈闭环。作者在涵盖三种仿真基准及真实场景的19项操作任务中报告，8令牌 ReAT 策略的任务成功表现优于所评估基线；在 LIBERO 上，4令牌 ReAT 也超过令牌预算加倍的动作分词基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
