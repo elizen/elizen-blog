@@ -443,7 +443,11 @@
             "heading": "",
             "text": "Humanoid and service robots operating in clut- tered human environments may encounter motion planning problems that are infeasible when all surrounding objects are treated as fixed obstacles.\n\nThe Minimum Constraint Removal problem, which we refer to as MCR, addresses this situation by identifying the minimum number of constraints, such as movable objects, whose removal enables a collision-free path. However, computing an optimal MCR solution is NP-hard.\n\nIn this work, we propose a graph-based heuristic pipeline that combines bidirectional feasible-set generation with fixed- length searches over reduced MCR graphs. We further derive an extended feasible-set generator for instances in which the candidates produced by the first generator do not contain a complete optimal removal set.\n\nAcross six benchmarks, the evaluated pipeline matches the exact solution in three cases and, in the remaining cases, selects at most 31.25% more obstacles than the optimum, while being between 3.4 and 33.7 times faster than exact search.\n\nIn one of the benchmarks, involving a manipulation task amidst clutter, selecting two rather than seven obstructing objects reduces the combined MCR, inverse- kinematics, and motion planning time from 84.72 s to 30.59 s.\n\nThese results indicate that the proposed approach provides a practical compromise between computational efficiency and solution quality for motion planning among movable obstacles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a graph-based heuristic pipeline for finding collision-free robot paths by removing as few obstacle constraints as possible. It combines bidirectional feasible-set generation with fixed-length searches over reduced graphs, and extends the generator for cases where initial candidates omit a complete optimal removal set. Across six benchmarks, it matches the exact solution in three cases; elsewhere, it selects at most 31.25% more obstacles and runs 3.4 to 33.7 times faster than exact search. A cluttered manipulation benchmark also compares task times.",
+          "zh": "论文提出一种用于杂乱环境机器人运动规划的图启发式流程，目标是在移除尽可能少的障碍约束后找到无碰撞路径。该方法结合双向可行集生成与约简图定长搜索，并扩展了可行集生成器，以处理初始候选集不包含完整最优移除集的情况。在六个基准测试中，方法有三例得到精确解，其余案例移除的障碍至多比最优值多31.25%，速度为精确搜索的3.4至33.7倍。文中另报告一项杂乱环境操作任务的耗时对比。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -474,7 +478,11 @@
             "heading": "",
             "text": "Action-chunking policies predict future controls but execute only a prefix before replanning. How should a fixed action-token budget be organized to support execution? We propose LeapBot-JAC, which allocates sparse future-control references and dense execution targets within one shared action expert.\n\nBoth chains are supervised by demonstrated controls and jointly denoised at aligned physical-time positions. Directed attention allows execution tokens to read reference tokens subject to the host's visibility constraints.\n\nJAC adds neither action tokens nor parameters and retains the host's world-modeling process; both chains participate in inference, while only the execution chain drives the robot. On LIBERO, JAC reaches 98.3% success with FastWAM and LeapBot-WA, up from 97.0% and 97.3%.\n\nOn zero-shot LIBERO-Plus, their success rates improve from 53.5% to 70.4% and from 73.1% to 77.3%, respectively. RoboTwin and two real-world tasks provide additional deployment evaluations. Single-training-seed comparisons and FastWAM ablations support action-role organization as a practical design choice under a fixed action-token budget."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LeapBot-JAC, which organizes sparse future-control references and dense execution targets as two chains within a shared action expert under a fixed action-token budget. Both chains are supervised by demonstrated controls and jointly denoised at aligned physical-time positions; execution tokens can attend to reference tokens subject to the host model's visibility constraints. The method adds no action tokens or parameters, and only the execution chain controls the robot. LIBERO and zero-shot LIBERO-Plus evaluations report improved success rates for FastWAM and LeapBot-WA. RoboTwin and two real-world tasks provide additional deployment evaluations. Comparisons use a single training seed.",
+          "zh": "论文提出LeapBot-JAC，在固定动作令牌预算下，将稀疏的未来控制参考与密集的执行目标组织为共享动作专家中的两条链。两链由示范控制共同监督，并在对齐的物理时间位置联合去噪；执行令牌可按宿主模型的可见性约束读取参考令牌。该方法不增加动作令牌或参数，推理时两链均参与，只有执行链控制机器人。LIBERO及零样本LIBERO-Plus评估显示，FastWAM和LeapBot-WA的成功率均有提升；RoboTwin和两项真实世界任务提供了额外部署评估。比较基于单次训练种子，消融实验支持该动作角色组织设计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -505,7 +513,11 @@
             "heading": "",
             "text": "Enabling humanoid robots to perform agile and adaptive interactions has long been a core challenge in robotics. Current approaches are bottlenecked by either the scarcity of realistic interaction data or the need for meticulous, task-specific reward engineering, which limits their scalability.\n\nTo narrow this gap, we present HumanX, a unified framework that compiles human video into generalizable, real-world interaction skills for humanoids, without per-task design.\n\nHumanX integrates two co-designed components: XGen, an anchor-centric data generation pipeline that yields physically plausible robot interaction data from monocular video and augments it to create a diverse, scalable training dataset; and XMimic, an interaction-prioritized learning framework to achieve generalizable interaction skills from seconds of demonstration.\n\nEvaluated across five distinct domains--basketball, football, badminton, cargo pickup, and reactive fighting--HumanX successfully acquires 9 different skills and transfers them zero-shot to a physical Unitree G1 humanoid.\n\nThe learned capabilities include complex maneuvers such as pump-fake turnaround fadeaway jumpshots without any external perception, as well as interactive tasks like sustained human-robot passing sequences over 10 consecutive cycles--learned from a single video demonstration.\n\nOur experiments show that HumanX achieves higher generalization success than prior methods, demonstrating a scalable pathway within a class of anchorable interactions for learning versatile, real-world robot interactive skills."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HumanX, a framework for compiling human video into generalizable humanoid interaction skills without per-task design. XGen generates physically plausible robot interaction data from monocular video and augments it, while XMimic learns interaction skills from seconds of demonstration. Evaluations span basketball, football, badminton, cargo pickup, and reactive fighting; the authors report nine acquired skills transferred zero-shot to a physical Unitree G1. Examples include a maneuver performed without external perception and sustained human-robot passing learned from one video. The authors report higher generalization success than prior methods within a class of anchorable interactions.",
+          "zh": "论文提出HumanX框架，旨在将人类视频转化为可泛化的人形机器人交互技能，无需针对每项任务单独设计。其XGen流程从单目视频生成物理上合理的机器人交互数据并扩充训练集；XMimic则利用数秒示范学习交互技能。作者在篮球、足球、羽毛球、货物拾取和反应式格斗五个领域评估，报告系统学得九种技能，并零样本迁移至实体Unitree G1。摘要举例包括无需外部感知的动作，以及从单段视频学得的连续人机传递任务。作者称实验中其泛化成功率高于既有方法，并将适用范围限定为一类可锚定交互。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
