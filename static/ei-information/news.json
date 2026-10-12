@@ -1951,7 +1951,11 @@
             "heading": "",
             "text": "Autonomous robotic assembly of interlocking bricks demands seamless integration of long-horizon task reasoning, spatial grounding, and fine-grained manipulation. This paper presents BrickCraft, a compositional framework designed for long-horizon and generalizable interlocking brick assembly.\n\nBrickCraft models the assembly process using a relative formulation, where each step is anchored to a reference brick within the partial structure, thereby decomposing complex tasks into a finite set of reusable primitive skills.\n\nBrickCraft bridges the gap between high-level assembly plans and physical execution through situated manuals, which provide explicit spatial guidance for learned visuomotor skills by projecting the assembly intent onto real-time robot observations.\n\nFinally, BrickCraft employs a modular execution pipeline that chains these spatially grounded skills to accomplish long-horizon assembly tasks. Extensive experimental validations demonstrate that BrickCraft acquires proficient assembly skills from a limited set of demonstrations and effectively composes them for diverse long-horizon assembly tasks.\n\nThe project website is available at https://intelligent-control-lab.github.io/BrickCraft."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BrickCraft, a framework for long-horizon, generalizable interlocking-brick assembly. It anchors each step to a reference brick in the partial structure, decomposing tasks into reusable primitive skills. Situated manuals project assembly intent onto real-time robot observations to guide learned visuomotor skills, which a modular pipeline chains together. The authors report experimental validation showing that BrickCraft learns assembly skills from a limited set of demonstrations and composes them across diverse long-horizon tasks.",
+          "zh": "论文提出 BrickCraft，用于长时程、可泛化的互锁积木装配。它以局部结构中的参考积木为锚点描述每个装配步骤，将任务拆成可复用的基础技能；再通过情境化说明，把高层装配意图映射到机器人实时观测，为学习到的视觉运动技能提供空间引导。模块化执行流程串联这些技能。作者报告，系统能用有限演示学习装配技能，并将其组合用于多种长时程任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1982,7 +1986,11 @@
             "heading": "",
             "text": "Agile and reliable navigation is a core capability for embodied robots navigating complex spatial constraints and dynamic interactions. However, a single policy often struggles to accommodate the distinct decision-making demands of diverse scenarios.\n\nWe present TAME-Nav, an asymmetric Teacher-Student navigation framework built around a temporal soft mixture of experts (Soft-MoE).\n\nThe Teacher combines clean observations with causally maintained dynamic-obstacle tracks to construct privileged representations, while the Student learns complementary navigation features from corrupted observation histories through temporal encoding, soft expert routing, and latent distillation.\n\nProcedural scenario generation and parallel task-level simulation broaden training coverage, while deployment-informed asymmetric domain randomization supports sim-to-real transfer.\n\nAcross in-distribution and unseen compositional scenarios, TAME-Nav achieves higher success rates, lower collision rates, and higher navigation scores than representative baselines. On a real quadruped robot, it completes all twenty trials across local-trap escape and narrow-passage navigation with sudden dynamic obstacles, with only one minor contact."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TAME-Nav, an asymmetric teacher-student framework for robot navigation using temporal soft mixture-of-experts distillation. The teacher forms privileged representations from clean observations and causally maintained dynamic-obstacle tracks. The student learns from corrupted observation histories using temporal encoding, expert routing, and latent distillation. Training combines procedural scenarios, parallel task-level simulation, and deployment-informed asymmetric domain randomization. The authors report better results than representative baselines in in-distribution and unseen compositional scenarios; a real quadruped completed all twenty trials across two navigation settings, with one minor contact.",
+          "zh": "论文提出 TAME-Nav，一种用于机器人导航的非对称教师—学生框架，采用时间软混合专家蒸馏。教师结合干净观测与因果维护的动态障碍物轨迹构建特权表征；学生从受扰观测历史中学习导航特征，并进行专家路由与潜变量蒸馏。训练使用程序化场景生成、并行任务级仿真及面向部署的非对称域随机化。作者报告，在分布内及未见组合场景中优于代表性基线；实体四足机器人在两类导航测试的二十次试验中均完成任务，出现一次轻微接触。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2013,7 +2021,11 @@
             "heading": "",
             "text": "Pretrained vision-language-action (VLA) models encode broad manipulation priors, yet adapting them to specific tasks requires balancing limited robot interaction, computational resources, and safety constraints.\n\nNoise space learning (NSL) adapts flow-matching-based VLAs by learning a context-conditioned distribution over noise while keeping the pretrained VLA fixed. Building on prior noise-steering methods, we formulate NSL as an interface for VLA adaptation that accommodates different learning algorithms and instantiate it with PPO, SAC, and AWR.\n\nTheoretically, we provide an information-theoretic analysis of how NSL enables efficient adaptation. Empirically, we study these NSL algorithms on LIBERO, RoboTwin, and four real-robot manipulation tasks under interaction, computation, and execution constraints.\n\nAcross these settings, we develop a suite of effective NSL variants and derive practical recommendations for choosing among them under different resource and deployment regimes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes noise space learning (NSL) for adapting flow-matching vision-language-action models. NSL keeps the pretrained model fixed and learns a context-conditioned noise distribution, providing an adaptation interface that can accommodate different learning algorithms; the authors instantiate it with PPO, SAC, and AWR. They offer an information-theoretic analysis of adaptation efficiency and study the algorithms on LIBERO, RoboTwin, and four real-robot manipulation tasks under interaction, computation, and execution constraints. The paper reports effective variants and practical guidance for selecting among them across resource and deployment regimes.",
+          "zh": "论文提出噪声空间学习（NSL），用于适配基于流匹配的视觉—语言—动作模型。该方法保持预训练模型固定，学习依赖上下文的噪声分布，并将 NSL 设计为可兼容不同学习算法的适配接口，具体结合了 PPO、SAC 和 AWR。作者提供了 NSL 提升适配效率的信息论分析，并在 LIBERO、RoboTwin 及四项真实机器人操作任务中，在交互、计算和执行约束下研究这些算法。论文总结了多种有效变体，并给出按资源与部署条件选择变体的实践建议。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2044,7 +2056,11 @@
             "heading": "",
             "text": "Robots deployed in realistic settings will accumulate experience across many sessions and tasks over their deployment. The robot's tasks may often require it to remember information from multiple sessions ago, making long-context robot memory important for real-world deployments.\n\nHowever, most robot-memory benchmarks today are based on single episodes or a short context. To measure how current robot memory systems perform on longer sessions with more distractions, we introduce RoboMME-Interference, a cross-session benchmark built on RoboMME (Dai et al., 2026).\n\nFor each query episode, we construct a session history using the query's relevant prior demonstration followed by a controlled number of unrelated sessions, which we provide to the VLA as memory and measure accuracy.\n\nRunning RoboMME's released memory-augmented $\\pi_{0.5}$ variants unmodified through this benchmark, we find that while perceptual memory variants improve success when given the history without any distractors, they decay strongly and steadily as unrelated sessions accumulate.\n\nThe subgoal variants, which read the history with a vision-language model and pass written subgoals to the policy, improve less at their best but hold more of that improvement as distractors accumulate.\n\nAdding a retrieval step to the strongest perceptual variant, which selects the section of history most visually similar to the robot's current view and passes only that section to the policy, restores its no-distractor success rate at every interference level.\n\nWith this release, we emphasize the importance of long-context memory and robustness to interference and show that current systems largely fail on such capabilities. The project page, videos, code, and data are at https://robotmemorybench.com."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RoboMME-Interference, a cross-session benchmark for robot memory based on RoboMME. Each query history combines a relevant prior demonstration with a controlled number of unrelated sessions, and the benchmark measures the VLA's accuracy. Testing released memory-augmented π₀.₅ variants without modification, the authors find that perceptual memory improves success without distractors but degrades as unrelated sessions accumulate. Subgoal variants achieve a smaller peak improvement but retain more of it. Retrieving the history segment most visually similar to the current view restores the strongest perceptual variant's no-distractor success rate at every interference level.",
+          "zh": "论文提出 RoboMME-Interference，这是基于 RoboMME 的跨会话机器人记忆基准。每个查询的历史由相关的先前演示和一定数量的无关会话组成，研究者据此测量视觉—语言—动作模型的准确性。对已发布的、带记忆增强的 π₀.₅ 变体进行未修改测试后，作者发现：感知记忆在无干扰时提升成功率，但干扰会话增加时性能持续下降；子目标方法峰值提升较小，却保留更多收益。为最强感知记忆变体加入按当前画面检索历史片段后，其无干扰成功率在各干扰级别得以恢复。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
