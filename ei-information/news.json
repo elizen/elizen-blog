@@ -1671,7 +1671,11 @@
             "heading": "",
             "text": "Multi-agent reinforcement learning (MARL) has become a prominent research direction, particularly within collective robotics, where the ARGoS simulator is widely used to study emergent swarm behavior.\n\nYet despite this growth, systematic support for reuse and reproducibility in MARL-based swarm robotics remains limited and insufficiently standardized: a single experiment is assembled from manually aligned simulator files, training scripts, configuration values, paths, seeds, and environment details, so reuse and reproduction stay fragile even within one research group.\n\nTo address this gap, we introduce MARGoS, a lightweight, configuration-driven platform developed in this project that elevates these experiment-defining inputs to first-class, platform-managed artifacts.\n\nMARGoS enables reproducible experimentation through configuration hashing, end-to-end seed propagation, frozen (immutable) configurations, structured logging, environment fingerprinting, and exportable experiment bundles that facilitate sharing, replay, and verification of results across machines and over time.\n\nA five-dimension evaluation (architecture, efficiency, reproducibility, usability, and collaboration) supports our claim that managing experiment variation as a platform responsibility makes ARGoS+MARL experiments easier to reuse, reproduce, and hand off. Our code is available at https://github.com/tombackert/margos."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MARGoS, a lightweight, configuration-driven platform for multi-agent reinforcement learning experiments in the ARGoS simulator. It manages experiment-defining inputs and provides configuration hashing, end-to-end seed propagation, immutable configurations, structured logging, environment fingerprinting, and exportable experiment bundles. A five-dimension evaluation covering architecture, efficiency, reproducibility, usability, and collaboration supports the authors’ claim that platform-managed experiment variation improves reuse, reproduction, and handoff.",
+          "zh": "本文介绍 MARGoS，一个面向 ARGoS 群体机器人多智能体强化学习实验的轻量级配置驱动平台。平台将实验配置作为可管理对象，提供配置哈希、随机种子端到端传递、不可变配置、结构化日志、环境指纹和可导出的实验包。作者通过涵盖架构、效率、可复现性、易用性与协作的五维评估，支持其关于平台化管理有助于实验复用、复现和交接的主张。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
