@@ -968,7 +968,11 @@
             "heading": "",
             "text": "Robots need to anticipate how their actions will change the world, since manipulation success hinges on the resulting contacts and object motions.\n\nHowever, existing Vision-Language-Action (VLA) policies that predict future observations from shared features leave the forecast decoupled from the actions the policy will actually execute, and impose no physical constraints on how the scene may evolve. We introduce ForeAct3D, a framework for policy-grounded future world modeling within VLA policies.\n\nLearnable geometric queries decode depth, semantic segmentation, and camera pose from the policy representation into current and future semantic 3D scene states, and the future queries are conditioned on the policy-generated action chunk to ground the forecast in the planned interaction.\n\nA physical-consistency closure relates the two states through background staticity and instance-level rigidity, and anchors the wrist-camera pose to end-effector kinematics. These objectives shape the shared representation used for action generation during training, and no future prediction is required at inference.\n\nWithout robot pretraining, ForeAct3D achieves 98.3% average success on LIBERO and an average task length of 3.73 on CALVIN, outperforming its base policy on every suite.\n\nAblations show that semantic 3D supervision, physical consistency, and action conditioning each improve manipulation performance, and that action conditioning substantially improves future object localization.\n\nReal-world experiments on spatial placement, object insertion, and sequential manipulation further raise average success from 6.7% to 37.8% over the base policy. The project page and code are available at https://github.com/anthonytao80-crypto/ForeAct3D."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ForeAct3D, a future world-modeling framework for vision-language-action policies. It predicts future semantic 3D scene states conditioned on policy-generated actions and uses static-background, object-rigidity, and camera-kinematics constraints during training. Future prediction is not required at inference. The authors report improvements over the base policy across LIBERO and CALVIN and in real-world manipulation experiments. Ablations indicate that semantic 3D supervision, physical consistency, and action conditioning each improve manipulation performance.",
+          "zh": "论文提出ForeAct3D，在视觉-语言-动作策略中构建由策略动作条件化的未来世界模型，将深度、语义分割和相机位姿解码为当前及未来的语义三维场景状态，并以背景静态、物体刚性和腕部相机运动学约束物理一致性。未来预测用于训练共享表征，推理时无需预测。作者报告其在LIBERO、CALVIN及真实机器人任务上的表现超过基础策略；消融结果显示各项设计均有帮助。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -999,7 +1003,11 @@
             "heading": "",
             "text": "Recently, soft robotic procedures are being developed aiming at achieving targeted minimally invasive operations or drug administration in specific locations in the human body.\n\nAccordingly, specialized path-planning algorithms need to be investigated for the estimation of efficient paths that would protect the delicate tissue structures and simultaneously satisfy a set of requirements for the efficient navigation of the robot.\n\nIn this context, we propose an image-based 3D pathplanning algorithm, which is an extension of the A* algorithm, for the navigation of a soft-growing robot inside the spinal subarachnoid space (SSS).\n\nThe proposed algorithm is capable of estimating a safe pathway towards the goal location, while ensuring the establishment of anchor points that facilitate the efficient steering of the soft robot. The algorithm is evaluated using a highly detailed model of the SSS with respect to its capacity to satisfy the robot movement requirements and path efficiency."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an image-based 3D path-planning algorithm, extending A*, for a soft-growing robot navigating the spinal subarachnoid space. The method estimates a safe route to a goal while establishing anchor points intended to support steering. The authors evaluate it using a highly detailed model of the space, assessing whether it meets robot movement requirements and its path efficiency. The abstract describes model-based evaluation and does not report experiments in human subjects or with a physical robot.",
+          "zh": "论文提出一种面向脊髓蛛网膜下腔内软体生长机器人导航的图像式三维路径规划算法，是对A*算法的扩展。算法旨在估计通往目标位置的安全路径，同时建立有助于机器人转向的锚定点。作者使用高度详细的蛛网膜下腔模型评估该算法，考察其满足机器人运动要求的能力及路径效率。摘要未提供真实人体或实体机器人实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
