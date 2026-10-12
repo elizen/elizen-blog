@@ -443,7 +443,11 @@
             "heading": "",
             "text": "Humanoid and service robots operating in clut- tered human environments may encounter motion planning problems that are infeasible when all surrounding objects are treated as fixed obstacles.\n\nThe Minimum Constraint Removal problem, which we refer to as MCR, addresses this situation by identifying the minimum number of constraints, such as movable objects, whose removal enables a collision-free path. However, computing an optimal MCR solution is NP-hard.\n\nIn this work, we propose a graph-based heuristic pipeline that combines bidirectional feasible-set generation with fixed- length searches over reduced MCR graphs. We further derive an extended feasible-set generator for instances in which the candidates produced by the first generator do not contain a complete optimal removal set.\n\nAcross six benchmarks, the evaluated pipeline matches the exact solution in three cases and, in the remaining cases, selects at most 31.25% more obstacles than the optimum, while being between 3.4 and 33.7 times faster than exact search.\n\nIn one of the benchmarks, involving a manipulation task amidst clutter, selecting two rather than seven obstructing objects reduces the combined MCR, inverse- kinematics, and motion planning time from 84.72 s to 30.59 s.\n\nThese results indicate that the proposed approach provides a practical compromise between computational efficiency and solution quality for motion planning among movable obstacles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a graph-based heuristic pipeline for finding collision-free robot paths by removing as few obstacle constraints as possible. It combines bidirectional feasible-set generation with fixed-length searches over reduced graphs, and extends the generator for cases where initial candidates omit a complete optimal removal set. Across six benchmarks, it matches the exact solution in three cases; elsewhere, it selects at most 31.25% more obstacles and runs 3.4 to 33.7 times faster than exact search. A cluttered manipulation benchmark also compares task times.",
+          "zh": "论文提出一种用于杂乱环境机器人运动规划的图启发式流程，目标是在移除尽可能少的障碍约束后找到无碰撞路径。该方法结合双向可行集生成与约简图定长搜索，并扩展了可行集生成器，以处理初始候选集不包含完整最优移除集的情况。在六个基准测试中，方法有三例得到精确解，其余案例移除的障碍至多比最优值多31.25%，速度为精确搜索的3.4至33.7倍。文中另报告一项杂乱环境操作任务的耗时对比。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -474,7 +478,11 @@
             "heading": "",
             "text": "Action-chunking policies predict future controls but execute only a prefix before replanning. How should a fixed action-token budget be organized to support execution? We propose LeapBot-JAC, which allocates sparse future-control references and dense execution targets within one shared action expert.\n\nBoth chains are supervised by demonstrated controls and jointly denoised at aligned physical-time positions. Directed attention allows execution tokens to read reference tokens subject to the host's visibility constraints.\n\nJAC adds neither action tokens nor parameters and retains the host's world-modeling process; both chains participate in inference, while only the execution chain drives the robot. On LIBERO, JAC reaches 98.3% success with FastWAM and LeapBot-WA, up from 97.0% and 97.3%.\n\nOn zero-shot LIBERO-Plus, their success rates improve from 53.5% to 70.4% and from 73.1% to 77.3%, respectively. RoboTwin and two real-world tasks provide additional deployment evaluations. Single-training-seed comparisons and FastWAM ablations support action-role organization as a practical design choice under a fixed action-token budget."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LeapBot-JAC, which organizes sparse future-control references and dense execution targets as two chains within a shared action expert under a fixed action-token budget. Both chains are supervised by demonstrated controls and jointly denoised at aligned physical-time positions; execution tokens can attend to reference tokens subject to the host model's visibility constraints. The method adds no action tokens or parameters, and only the execution chain controls the robot. LIBERO and zero-shot LIBERO-Plus evaluations report improved success rates for FastWAM and LeapBot-WA. RoboTwin and two real-world tasks provide additional deployment evaluations. Comparisons use a single training seed.",
+          "zh": "论文提出LeapBot-JAC，在固定动作令牌预算下，将稀疏的未来控制参考与密集的执行目标组织为共享动作专家中的两条链。两链由示范控制共同监督，并在对齐的物理时间位置联合去噪；执行令牌可按宿主模型的可见性约束读取参考令牌。该方法不增加动作令牌或参数，推理时两链均参与，只有执行链控制机器人。LIBERO及零样本LIBERO-Plus评估显示，FastWAM和LeapBot-WA的成功率均有提升；RoboTwin和两项真实世界任务提供了额外部署评估。比较基于单次训练种子，消融实验支持该动作角色组织设计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -505,7 +513,11 @@
             "heading": "",
             "text": "Enabling humanoid robots to perform agile and adaptive interactions has long been a core challenge in robotics. Current approaches are bottlenecked by either the scarcity of realistic interaction data or the need for meticulous, task-specific reward engineering, which limits their scalability.\n\nTo narrow this gap, we present HumanX, a unified framework that compiles human video into generalizable, real-world interaction skills for humanoids, without per-task design.\n\nHumanX integrates two co-designed components: XGen, an anchor-centric data generation pipeline that yields physically plausible robot interaction data from monocular video and augments it to create a diverse, scalable training dataset; and XMimic, an interaction-prioritized learning framework to achieve generalizable interaction skills from seconds of demonstration.\n\nEvaluated across five distinct domains--basketball, football, badminton, cargo pickup, and reactive fighting--HumanX successfully acquires 9 different skills and transfers them zero-shot to a physical Unitree G1 humanoid.\n\nThe learned capabilities include complex maneuvers such as pump-fake turnaround fadeaway jumpshots without any external perception, as well as interactive tasks like sustained human-robot passing sequences over 10 consecutive cycles--learned from a single video demonstration.\n\nOur experiments show that HumanX achieves higher generalization success than prior methods, demonstrating a scalable pathway within a class of anchorable interactions for learning versatile, real-world robot interactive skills."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HumanX, a framework for compiling human video into generalizable humanoid interaction skills without per-task design. XGen generates physically plausible robot interaction data from monocular video and augments it, while XMimic learns interaction skills from seconds of demonstration. Evaluations span basketball, football, badminton, cargo pickup, and reactive fighting; the authors report nine acquired skills transferred zero-shot to a physical Unitree G1. Examples include a maneuver performed without external perception and sustained human-robot passing learned from one video. The authors report higher generalization success than prior methods within a class of anchorable interactions.",
+          "zh": "论文提出HumanX框架，旨在将人类视频转化为可泛化的人形机器人交互技能，无需针对每项任务单独设计。其XGen流程从单目视频生成物理上合理的机器人交互数据并扩充训练集；XMimic则利用数秒示范学习交互技能。作者在篮球、足球、羽毛球、货物拾取和反应式格斗五个领域评估，报告系统学得九种技能，并零样本迁移至实体Unitree G1。摘要举例包括无需外部感知的动作，以及从单段视频学得的连续人机传递任务。作者称实验中其泛化成功率高于既有方法，并将适用范围限定为一类可锚定交互。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2047,7 +2059,11 @@
             "heading": "",
             "text": "Expressive humanoid interaction requires speech, facial animation, and body gestures to form a coherent response. However, many full-body humanoid robots produce speech and gestures without a visually expressive face, while talking-face animation and robot gesture generation are typically developed separately.\n\nWe present Talk, Render, Act (TRABot), an agent-based framework comprising specialized agents for motion-atom construction, dialogue generation, motion planning, and facial animation.\n\nFirst, to produce natural and semantically meaningful gestures, we construct Robot-Ready Semantic Motion Atoms by segmenting long-form, G1-retargeted BEAT2 motion into units with natural gesture boundaries, human-verified communicative functions, and feasible trajectories.\n\nSecond, to preserve semantic order and coordinate body motion with the spoken response, we introduce a Semantic-Conditioned Compositional Planner.\n\nGiven an ordered semantic function sequence and an estimated response duration, the planner selects approved atoms to realize the longest feasible action sequence while accounting for transitions and neutral recovery.\n\nFinally, we deploy a Streaming Face-Speech-Body Integration system on a physical G1 humanoid, combining streaming dialogue audio, audio-driven facial animation, and semantically planned body motion in a unified real-time interaction loop.\n\nQuantitative and qualitative experiments demonstrate that TRAbot achieves the best overall performance among all compared conditions in terms of naturalness, expressiveness, and multimodal coherence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRABot, a multi-agent framework for dialogue, motion planning, semantic motion-atom construction, and facial animation. It segments retargeted BEAT2 motion into human-verified units, then plans body movement from an ordered semantic sequence and estimated response duration. The system integrates streaming dialogue audio, audio-driven facial animation, and planned motion on a physical G1 humanoid. The authors report that quantitative and qualitative experiments show the best overall performance among compared conditions for naturalness, expressiveness, and multimodal coherence.",
+          "zh": "论文提出 TRABot，一个整合对话生成、动作规划、语义动作单元构建与面部动画的多代理框架。系统从重定向后的 BEAT2 动作中切分并人工核验语义动作单元，再依据语义顺序和预计答复时长规划身体动作，并在实体 G1 人形机器人上同步流式语音、面部动画和身体动作。作者报告，定量与定性实验中，TRABot 在自然度、表现力和多模态连贯性方面优于所有对比条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2078,7 +2094,11 @@
             "heading": "",
             "text": "Diffusion and VLA policies for manipulation are often deployed through downstream impedance controllers. The stiffness and damping gains of these controllers affect task success, yet are commonly inherited from data collection rather than selected for the deployed policy.\n\nAlthough empirical gain sweeps can improve performance, they require repeated evaluation rollouts. We introduce PHRetune, an offline method that derives controller gains for a frozen policy without evaluation rollouts or gain search.\n\nOur approach learns a port-Hamiltonian model from demonstrations to estimate the effort and energy associated with the policy's predicted actions. The policy is applied to recorded demonstration observations, and its predictions are assessed against demonstration-derived effort and energy budgets.\n\nFrom this comparison, we derive a single gain scale in closed form, adjusting the downstream controller while preserving the policy and its action representation. The gains are fixed before evaluation, without requiring a prior manipulator model, task rewards, policy retraining, or additional runtime computation.\n\nAcross LIBERO suites, PHRetune improves Diffusion Policy success by up to 9.4 percentage points, with the derived gains achieving the highest observed success rates in empirical gain sweeps. On all four real-world manipulation tasks, PHRetuned Diffusion Policy outperforms the nominal policy, alternative gain-tuning methods, and a policy-retraining baseline.\n\nThe same procedure improves success with SmolVLA and OpenVLA-OFT on every task, while reducing acceleration and jerk for both VLA backbones."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PHRetune, an offline method for deriving impedance-controller gains for a frozen manipulation policy without evaluation rollouts or gain search. It learns a port-Hamiltonian model from demonstrations, compares predicted actions with demonstration-based effort and energy budgets, and computes a single gain scale in closed form. The authors report up to a 9.4 percentage-point improvement for Diffusion Policy on LIBERO and better results on four real-robot tasks. The procedure also improves task success for SmolVLA and OpenVLA-OFT while reducing acceleration and jerk.",
+          "zh": "论文提出 PHRetune，一种无需评估回合或增益搜索的离线方法，用演示数据学习端口哈密顿模型，估计冻结策略预测动作的努力与能量，并据此闭式计算单一增益缩放，调整下游阻抗控制器。作者报告，在 LIBERO 上扩散策略成功率最高提升 9.4 个百分点；在四项真实机器人操作任务中优于名义策略、其他调参方法和重训练基线。该方法也提升 SmolVLA 与 OpenVLA-OFT 各项任务的成功率，并降低加速度与急动度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2109,7 +2129,11 @@
             "heading": "",
             "text": "Memory-dependent manipulation requires a policy to track execution state and recover visual evidence that is no longer observable. We propose dual-stream memory for vision-language-action policies, assigning these requirements to complementary representations.\n\nA task-agnostic Gated DeltaNet compresses history into one temporal token, supervised by progress prediction and action-conditioned feature reconstruction. A task-conditioned retriever retains frames above a fixed relevance threshold; linear multi-scale fusion encodes each frame into sixteen spatial tokens.\n\nWe then freeze the temporal compressor and jointly optimize retrieval and policy learning. Across sixteen RoboMME tasks, the complete model achieves 49.22% mean success versus 44.51% for the published FrameSamp+Modul reference, improving fourteen tasks and all four suite means.\n\nOn four real-robot tasks, mean success reaches 62.5% versus 37.5%, with the largest gains on repeated actions requiring execution-stage discrimination. These results support combining execution context with selective visual access, while failures under cup swaps expose persistent identity tracking as an unresolved requirement."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes dual-stream memory for vision-language-action policies. A task-agnostic Gated DeltaNet compresses history into a temporal token, while a task-conditioned retriever selects relevant frames and encodes them as spatial tokens. Retrieval and policy learning are jointly optimized after freezing the temporal compressor. The authors report a 49.22% mean success rate across sixteen RoboMME tasks, versus 44.51% for the published reference, and 62.5% versus 37.5% across four real-robot tasks. Failures under cup swaps indicate that persistent identity tracking remains unresolved.",
+          "zh": "论文提出用于视觉语言动作策略的双流记忆：任务无关的 Gated DeltaNet 将历史压缩为时间令牌，任务条件检索器则保留相关画面并编码为空间令牌。研究在冻结时间压缩器后联合优化检索与策略。作者报告，在 16 项 RoboMME 任务中，完整模型平均成功率为 49.22%，高于已发表参考模型的 44.51%，并改善 14 项任务及四个套件均值；四项真实机器人任务的平均成功率为 62.5%，参考为 37.5%。杯子互换时的失败显示持续身份追踪仍未解决。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
