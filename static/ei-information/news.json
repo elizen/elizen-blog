@@ -1102,7 +1102,11 @@
             "heading": "",
             "text": "Runtime failure monitors for robot policies are typically evaluated by how accurately they distinguish failed from successful executions. Yet an accurate alarm may arrive too late for recovery, while an unnecessary intervention may disrupt an execution that would otherwise succeed.\n\nWe introduce RESCUE, a counterfactual framework for evaluating whether a monitor's alarms enable useful interventions.\n\nBy restoring simulator and policy states at execution checkpoints, RESCUE compares alternative actions, identifies the latest checkpoint satisfying a specified recovery criterion, and evaluates whether acting on alarms reduces expected task-completion cost.\n\nWe evaluate RESCUE with OpenVLA-OFT and $\\pi_{0.5}$ over LIBERO-Spatial and LIBERO-Plus using 128,340 counterfactual branches.\n\nRecoverability depends on the state--intervention pair rather than on robot state alone: at $\\tau=0.5$, 14 of 66 OpenVLA-OFT/LIBERO-Plus failures contain a recoverable checkpoint under continuation, compared with 34 of 66 under continuation or scripted recovery, while recovery reduces recoverability in other conditions.\n\nOn the primary strong-policy conditions, favourable detection scores do not establish lower intervention cost. Under the evaluated stop-and-reset model, even an idealised detector can afford only a 2.0--3.3% false-alarm rate before unnecessary resets outweigh the savings from stopping failures early.\n\nThese results show that monitor value depends jointly on the intervention available and the workload in which it is deployed."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RESCUE, a counterfactual framework for assessing whether runtime monitor alarms support useful interventions for robot policies. It restores simulator and policy states at execution checkpoints, compares alternative actions, identifies the latest checkpoint meeting a recovery criterion, and evaluates effects on expected task-completion cost. Evaluations with specified models and benchmarks suggest recoverability depends on both state and intervention. In primary strong-policy conditions, favourable detection scores do not imply lower intervention cost; under the evaluated stop-and-reset model, excessive false alarms can outweigh savings from stopping failures early.",
+          "zh": "论文提出 RESCUE，用反事实评估判断机器人策略运行时监视器发出的警报是否支持有效干预。该方法在执行检查点恢复仿真器和策略状态，比较替代动作，确定满足恢复标准的最晚检查点，并评估干预对预期任务完成成本的影响。作者在指定模型和基准上评估后指出，可恢复性取决于状态与干预的组合；在主要强策略条件下，较好的检测分数并不意味着干预成本更低。其停止并重置模型下，误报率过高会使不必要的重置抵消提前停止失败的收益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1133,7 +1137,11 @@
             "heading": "",
             "text": "Learning from Demonstrations (LfD) enables robots to learn object manipulation directly from human demonstrations. In contrast to resource-intensive and labor-intensive teleoperation, egocentric demonstrations are easy to collect, enabling scalable data collection.\n\nManipulated objects are often partially occluded in everyday environments, yet prior egocentric demonstration-based methods that require no robots or specialized teaching devices do not explicitly address occlusions.\n\nTo fill this gap, we propose EgoReveal, a framework that learns viewpoint-repositioning together with manipulation actions from egocentric human demonstrations to reposition the viewpoint and obtain target visibility under partial occlusions.\n\nEgoReveal instantiates this as two imitation policies: one predicts the future camera-arm pose sequence from the current view and camera-arm pose, and the other predicts the future control commands from object keypoints and a history of control commands. EgoReveal switches between the two based on target visibility.\n\nIn experiments where the manipulated object is partially occluded initially, EgoReveal repositions the camera to obtain visibility and completes the task more reliably than fixed-camera baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EgoReveal, a framework that learns viewpoint repositioning and object manipulation from egocentric human demonstrations to address partial occlusions. It uses two imitation policies: one predicts a future camera-arm pose sequence from the current view and pose, while the other predicts control commands from object keypoints and control history. The framework switches between them according to target visibility. In experiments with initially occluded objects, the authors report that EgoReveal moves the camera to reveal the target and completes tasks more reliably than fixed-camera baselines.",
+          "zh": "论文提出 EgoReveal，利用第一人称人类演示学习视角调整与物体操作，以应对目标物体被部分遮挡的情况。框架包含两个模仿策略：一个根据当前视图和相机机械臂姿态预测未来姿态序列，另一个根据物体关键点及控制历史预测后续控制指令，并依据目标可见性在二者间切换。作者报告，在物体初始被部分遮挡的实验中，EgoReveal 会移动相机以获得目标视野，并比固定相机基线更可靠地完成任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1164,7 +1172,11 @@
             "heading": "",
             "text": "Deploying generalist robotic agents in the real world requires transferable skills. Specifically, a policy trained to clone a behavior from object-specific demonstrations must generalize beyond that object, otherwise data collection requirements become intractable.\n\nRecently, fine-tuning of pre-trained billion-parameter Vision-Language Models (VLMs), initially on large-scale robot datasets and then on fewer scenario-specific demonstrations, has emerged as the predominant paradigm for designing Vision-Language-Action (VLA) models.\n\nWhile these policies achieve state-of-the-art manipulation performance in-distribution, they remain brittle to minor spatial, semantic, and task variations.\n\nIn this work, we address the inability of current models to decouple the declarative (i.e., concepts and entity semantics) from the procedural knowledge (i.e., how to do something) encoded in their parameters, which is a fundamental bottleneck for zero-shot skill transfer to novel objects.\n\nTo address this, we propose w$^{2}$VLA, a new VLA model with restructured information flow. Rather than feeding all multimodal tokens from the VLM encoder into a large, opaque transformer-based action expert, our approach modulates the robot state sequence with visual, spatial, and skill information in a compositional and interpretable manner.\n\nUnlike popular, state-of-the-art VLAs, we show that our modular approach successfully decouples knowledge representations, enabling robust behavior cloning and unprecedented zero-shot skill transfer capabilities across dissimilar, unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes w²VLA to address the difficulty of separating declarative knowledge, such as concepts and entity semantics, from procedural knowledge in vision-language-action models. It restructures information flow: instead of sending all multimodal encoder tokens to a large action expert, it modulates robot state sequences compositionally using visual, spatial, and skill information. The authors claim this modular design decouples knowledge representations and enables robust behavior cloning and zero-shot skill transfer across dissimilar, unseen objects. The abstract does not specify the evaluation scope for these claims.",
+          "zh": "论文针对视觉语言动作模型难以将概念与实体语义等陈述性知识，同操作方式等程序性知识分离的问题，提出 w²VLA。该模型重新组织信息流，不再将视觉语言模型编码器的全部多模态令牌输入大型动作专家，而是以组合且可解释的方式，用视觉、空间和技能信息调节机器人状态序列。作者称，该模块化方法实现了知识表征解耦，并在行为克隆和面向不同未见物体的零样本技能迁移方面展现出能力；摘要未说明这些结果所依据的具体实验范围。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1195,7 +1207,11 @@
             "heading": "",
             "text": "Robots must generate trajectories that remain faithful to learned expert behavior while satisfying safety constraints and task-specific objectives specified only at inference time.\n\nWe formulate constrained trajectory generation for pretrained diffusion and flow-matching policies as Bayesian posterior sampling, with the learned demonstration distribution as a prior and an inference-time, cost-derived likelihood tilting it toward feasible, optimal trajectories.\n\nTo sample from this posterior without any retraining of the base policy, we leverage the Feynman--Kac corrector framework, originally formulated for diffusion models, and extend it to deterministic flow-matching policies. The result is a unified, inference-time, retraining-free sampler for diffusion and flow policies.\n\nWe validate the approach on pretrained Diffusion Policy, GR00T-N1.6, and $\\pi_{0.5}$ checkpoints across simulated and real-world manipulation tasks, including planning around non-convex obstacles introduced at inference time, and show improvements over the base $\\pi_{0.5}$ on zero-shot tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper formulates constrained trajectory generation for pretrained diffusion and flow-matching policies as Bayesian posterior sampling. The learned demonstration distribution serves as a prior, while an inference-time, cost-derived likelihood favours feasible and optimal trajectories. The authors use the Feynman–Kac corrector framework and extend it to deterministic flow-matching policies, yielding a sampler that requires no base-policy retraining. They evaluate pretrained checkpoints on simulated and real-world manipulation tasks, including planning around non-convex obstacles introduced at inference time, and report improvements over the base π₀.₅ on zero-shot tasks.",
+          "zh": "论文将预训练扩散策略和流匹配策略的约束轨迹生成表述为贝叶斯后验采样：以学习到的示范分布为先验，并用推理时由成本构造的似然引导采样趋向可行且较优的轨迹。作者借助费曼–卡茨校正框架，并将其扩展到确定性流匹配策略，形成无需重训练的推理时采样方法。论文在模拟和真实操作任务中评估了多个预训练检查点，包括推理时加入非凸障碍的规划；作者报告该方法在零样本任务上优于基础 π₀.₅。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
