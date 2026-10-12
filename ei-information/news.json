@@ -163,7 +163,11 @@
             "heading": "",
             "text": "Autonomous navigation in cluttered and constrained environments typically assumes a fixed environment and searches only for paths within existing free space. However, a route can be blocked by an articulated structure, a movable object, or a pedestrian, and reaching the goal may therefore require appropriate embodied interaction with the environment.\n\nThis paper formulates Path-Creative Navigation (PCN), a navigation paradigm in which the robot recovers free space by coordinating locomotion and embodied interaction, and addresses one class of PCN tasks with a mapless framework.\n\nThe vision-LiDAR-odometry framework integrates local observations, obstacle geometry, and robot-state estimates through a unified navigation system, providing stable semantic and geometric information for navigation and interaction.\n\nThe traversability-aware decision method utilizes visual and LiDAR distance information to determine whether a blockage is actionable and whether it can be safely bypassed, enabling the robot to interact only when necessary while supporting articulated structure pushing, movable object pushing, obstacle avoidance, and pedestrian requests.\n\nWe design simulation scenarios and evaluate different methods in both simulation and two real-world tasks that cannot be completed by conventional navigation alone without embodied interaction.\n\nThese results demonstrate that our framework achieves higher task completion than the baseline methods by coordinating navigation and interaction in cluttered and constrained environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Path-Creative Navigation (PCN), in which robots recover traversable space through locomotion and interaction, and presents a mapless framework for one class of PCN tasks. The system combines vision, LiDAR odometry, obstacle geometry, and robot-state estimates, using visual and LiDAR distance information to assess whether blockages can be acted upon or safely bypassed. Evaluation in simulation and two real-world tasks reports higher task completion than baseline methods in constrained settings requiring embodied interaction.",
+          "zh": "论文提出路径创造导航（PCN），让机器人通过移动和与环境互动来恢复可通行空间，并针对一类任务设计了无地图框架。系统融合视觉、激光雷达里程计、障碍物几何及机器人状态信息，并根据视觉与激光雷达距离判断障碍能否处理或安全绕行。仿真及两项真实世界任务评估显示，该框架在需要实体交互的受限场景中，任务完成率高于基线方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models and world action models (WAMs) have advanced robotic policy learning by building on pretrained vision-language models (VLMs) and video generative models (VGMs), respectively.\n\nYet VLAs learn without explicit supervision from future world states, while WAMs that condition actions on predicted futures incur extra inference cost and let visual prediction errors propagate into actions.\n\nWe present Forward Dynamics Models (FDM), a family of robotic action models that couples action and future world-state prediction through an action-to-future paradigm.\n\nFuture prediction is conditioned on action features, never the reverse: end-to-end training lets ground-truth future states supervise the policy through these features, while prediction errors cannot propagate into actions. At inference, FDM skips future generation entirely, avoiding its computational cost.\n\nThe paradigm is backbone-agnostic, and we instantiate it with both VLM and VGM backbones. Experiments in simulation and on real robots demonstrate the effectiveness of FDM across both backbone families, achieving a state-of-the-art 99.4% average success rate on LIBERO and absolute gains of up to 13% over VLA and WAM methods on real-world tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Forward Dynamics Models (FDM), which predict future world states from action features and use future-state supervision to train the policy, while preventing prediction errors from propagating into actions. Future generation can be skipped at inference to avoid its computational cost. The approach is instantiated with vision-language and video-generative backbones. The authors report simulation and real-robot experiments, including a 99.4% average success rate on LIBERO and gains of up to 13 percentage points over VLA and WAM methods on real-world tasks.",
+          "zh": "论文提出前向动力学模型（FDM），通过动作特征预测未来世界状态，并让未来状态监督策略训练，但不让预测误差传回动作。推理时可跳过未来状态生成，以避免额外计算；该方法可采用视觉语言模型或视频生成模型骨干。作者报告，仿真和真实机器人实验验证了两类骨干上的效果，并在 LIBERO 上取得 99.4% 的平均成功率，在真实任务中相较 VLA 和 WAM 方法最高提升 13 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "Fast whole-body motion planning enables continuous replanning for humanoid robots in dynamic environments while satisfying collision avoidance and kinematic constraints. However, constrained motion planning incurs substantial computational cost due to repeated constraint projection in addition to collision checking and nearest-neighbor search.\n\nRecently, GPU-based massively parallel planners have been proposed to reduce computational cost. Nevertheless, these planners still steer in the ambient configuration space, so projecting candidates that deviate from the manifold remains a significant source of overhead, particularly in highly constrained, high-dimensional problems.\n\nIn this work, we introduce PATACON, a GPU-parallel bidirectional planner that explores tangent space to exploit the local manifold geometry induced by known constraint functions.\n\nExperiments on dual-arm closed-chain and humanoid whole-body constrained planning tasks show that PATACON outperforms the prior work as configuration-space dimension and constraint codimension grow, achieving up to an 11.25 times speedup.\n\nThese results suggest that GPU-parallel tangent-space exploration brings constrained whole-body motion planning closer to real-time performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PATACON, a GPU-parallel bidirectional planner for constrained motion planning that explores tangent space to use local manifold geometry induced by known constraints. The authors identify projection of candidates that deviate from the manifold as a source of overhead in existing GPU planners that steer in ambient configuration space. Experiments on dual-arm closed-chain and humanoid whole-body planning tasks report that PATACON outperforms prior work as configuration dimension and constraint codimension grow, with speedups of up to 11.25 times.",
+          "zh": "论文提出 PATACON，一种 GPU 并行双向规划器，通过探索由已知约束函数诱导的切空间，利用局部流形几何进行受约束运动规划。作者指出，现有 GPU 规划器仍在环境配置空间中转向，投影偏离流形的候选点会产生开销。双臂闭链和人形机器人全身规划任务的实验显示，随着配置空间维数和约束余维增加，PATACON 优于先前方法，最高加速 11.25 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "We propose a safety-critical framework for the cooperative transportation of passive targets in microgravity, where a team of chaser robots acts through unilateral pushing contacts to track a human-provided desired twist while ensuring safe target motion.\n\nThe pushing-only nature of the interaction introduces sparse, configuration-dependent actuation constraints requiring chasers to physically relocate on the target body when the desired pushing allocation changes.\n\nTo address these challenges, we formulate a delay-aware feedback control architecture leveraging Control Lyapunov Function (CLF) and Control Barrier Function (CBF) constraints within a mixed-integer thrust allocation program to enforce stability and safety of the target, respectively.\n\nThe proposed framework enables reference tracking while guaranteeing obstacle avoidance with a circular obstacle despite intermittent control authority, providing a foundation for human-supervised cooperative transportation of free-flyers in space environments. The proposed framework is validated through Gazebo simulations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a safety-critical framework for cooperative transportation of passive targets in microgravity. Chaser robots use unilateral pushing contacts to track a human-provided desired twist; configuration-dependent actuation constraints may require them to relocate on the target. The delay-aware feedback architecture combines Control Lyapunov Function and Control Barrier Function constraints in a mixed-integer thrust allocation program to address stability and safety. Gazebo simulations validate reference tracking and avoidance of a circular obstacle despite intermittent control authority.",
+          "zh": "论文提出用于微重力环境中被动目标协同运输的安全关键框架，由多个追踪机器人通过单向推挤接触，跟踪人提供的目标运动指令。由于可用推力受配置限制，机器人需在目标表面重新定位。控制架构将考虑延迟的反馈控制与控制李雅普诺夫函数、控制障碍函数约束结合，并通过混合整数推力分配程序分别约束稳定性和安全性。Gazebo 仿真验证了参考跟踪及圆形障碍物规避。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
