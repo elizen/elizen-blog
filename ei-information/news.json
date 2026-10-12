@@ -613,7 +613,11 @@
             "heading": "",
             "text": "Depth sensors are widely deployed across robotic platforms, and advances in fast, high-fidelity depth simulation have enabled robotic policies trained on depth observations to achieve robust sim-to-real transfer for a wide range of tasks.\n\nDespite this, representation learning for depth modality remains underexplored compared to RGB, where large-scale foundation models now define the state of the art. To address this gap, we present DeFM, a self-supervised foundation model trained entirely on depth images for robotic applications.\n\nUsing a DINO-style self-distillation objective on a curated dataset of 60M depth images, DeFM learns geometric and semantic representations that generalize to diverse environments, tasks, and sensors. To retain metric awareness across multiple scales, we introduce a novel input normalization strategy.\n\nWe further distill DeFM into compact models suitable for resource-constrained robotic systems. When evaluated on depth-based classification, segmentation, navigation, locomotion, and manipulation benchmarks, DeFM achieves state-of-the-art performance and demonstrates strong generalization from simulation to real-world environments.\n\nWe release all our pretrained models, which can be adopted off-the-shelf for depth-based robotic learning without task-specific fine-tuning. Webpage: https://de-fm.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DeFM, a self-supervised foundation model trained entirely on depth images for robotics. It uses a DINO-style self-distillation objective to learn geometric and semantic representations, and proposes an input normalization strategy to retain metric awareness across scales. The authors also distill compact versions for resource-constrained systems. On depth-based classification, segmentation, navigation, locomotion, and manipulation benchmarks, they report state-of-the-art performance and generalization from simulation to real-world environments. They say the pretrained models can be used without task-specific fine-tuning.",
+          "zh": "论文提出DeFM，一种完全使用深度图训练的自监督机器人基础模型。模型采用DINO式自蒸馏目标，在整理的深度图数据集上学习几何与语义表征，并提出输入归一化策略以保留多尺度度量信息。作者还将模型蒸馏为适用于资源受限系统的紧凑版本。在基于深度的分类、分割、导航、运动和操作基准测试中，作者报告其达到最先进表现，并能从仿真泛化到真实环境；预训练模型可直接用于深度机器人学习，无需针对任务微调。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -644,7 +648,11 @@
             "heading": "",
             "text": "Visual world models predict the consequences of actions from images, but planning with them is typically done by optimizers such as CEM and MPPI. However, these optimizers stall on long-horizon tasks where progress requires motion the objective does not reward, such as moving around a block before pushing it.\n\nThis paper revisits kinodynamic sampling-based motion planning for world models, using the learned model as the propagator of a tree search in latent space.\n\nOur key insight is that the sampling strategies devised for high-dimensional search in configuration space apply directly to the latent space of a world model, where they rapidly expand through intermediate states that myopic optimizers never sample.\n\nWe present two exploration strategies for the high-dimensional latent space, nearest-neighbor-guided RRT and projection-based KPIECE, with GPU-native batched expansion for efficient device utilization. We evaluate with an off-the-shelf DINO-WM on four simulated domains and a real-world block-pushing task.\n\nOur approaches match or exceed the success rate of CEM and MPPI at up to 13.8x lower planning time in simulation, and improve the success rate by 20% on the real robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies sampling-based kinodynamic planning with visual world models. It argues that optimizers such as CEM and MPPI may stall on long-horizon tasks when progress requires intermediate motions that the objective does not reward. The proposed approach uses a learned model to propagate tree search in latent space, with nearest-neighbor-guided RRT and projection-based KPIECE exploration, plus GPU-batched expansion. Evaluations with an off-the-shelf DINO-WM cover four simulated domains and a real block-pushing task. The authors report matching or exceeding optimizer success rates, up to 13.8 times lower simulation planning time, and a 20% real-robot success-rate improvement.",
+          "zh": "论文研究在视觉世界模型中进行基于采样的运动学与动力学规划。作者指出，CEM和MPPI等优化器在长时域任务中可能停滞，因为完成任务有时需要先采取目标函数未奖励的中间动作。该方法将学习到的模型用作潜在空间树搜索的状态传播器，提出最近邻引导的RRT与基于投影的KPIECE探索策略，并使用GPU批量扩展。在四个仿真领域和真实方块推动任务上的评估显示，该方法成功率达到或超过CEM和MPPI，仿真规划时间最高降低13.8倍；真实机器人成功率提升20%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -675,7 +683,11 @@
             "heading": "",
             "text": "World-action models (WAMs) predict a robot's actions together with the observations those actions will produce. However, the strongest models rely on video diffusion transformers that are far too computationally expensive for resource-constrained edge devices.\n\nWe present SmolWAM, a latent WAM that we derive from the 2B-parameter Cosmos Policy by keeping its pretrained trunk and rebuilding its inference interface: single-frame visual latents, cached text features that preserve the trunk's attention sinks, 12 of 28 transformer blocks, and 1,008 tokens from which actions and future visual latents are read out in one rectified-flow step.\n\nTrained in 3.6 GPU-hours, SmolWAM succeeds in 95.5% of 400 LIBERO episodes at 57 ms and 2.3 TFLOP per 16-action chunk with 2.4 GiB of GPU memory, 11x faster than its teacher with 18.5x fewer FLOPs and 3.2x less memory, and its world head still forecasts scene motion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SmolWAM, a latent world-action model for robotic manipulation on edge devices, designed to reduce the computational cost of video diffusion models. It retains the pretrained Cosmos Policy trunk while rebuilding the inference interface, using single-frame visual latents, cached text features, a subset of transformer blocks, and one rectified-flow step to produce actions and future visual latents. Training took 3.6 GPU-hours. On 400 LIBERO episodes, it achieved 95.5% success, with 57 ms per 16-action chunk and 2.4 GiB of GPU memory; the authors report lower latency, FLOPs, and memory use than its teacher, while retaining scene-motion forecasts.",
+          "zh": "论文提出SmolWAM，一种面向边缘设备机器人操作的潜在世界动作模型，旨在降低视频扩散模型的计算开销。它基于预训练的Cosmos Policy主干重建推理接口，使用单帧视觉潜变量、缓存文本特征、部分变换器模块及单步整流流读取动作和未来视觉潜变量。模型训练耗时3.6 GPU小时。在LIBERO的400个回合中成功率为95.5%，每个16动作块推理耗时57毫秒，使用2.4 GiB显存；相较教师模型，速度更快、计算量和显存占用更低，世界预测头仍能预测场景运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
