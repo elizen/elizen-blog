@@ -1718,7 +1718,11 @@
             "heading": "",
             "text": "LiDAR-inertial odometry (LIO) is widely used for real-time localization and mapping, but its reliability can degrade substantially in subterranean environments affected by smoke, dust, and other airborne obscurants, whereas radar remains comparatively robust.\n\nThis article presents a one-class temporal learning framework for LiDAR degradation detection and reliability-aware localization under such conditions. A broad set of degradation-sensitive cues, including spatial, cross-modal, geometric/motion, intensity, and measurement-recency features, is evaluated to characterize changes in LiDAR sensing quality.\n\nTheir temporal evolution is modelled over sliding windows using an LSTM autoencoder trained exclusively on nominal operation, enabling deviations from healthy sensor behaviour to be detected without requiring labelled degradation data.\n\nThe resulting LiDAR reliability estimate governs adaptive selection between LIO and radar inertial odometry (RIO), retaining LIO during reliable sensing and transferring localization authority to RIO when degradation is detected.\n\nThe framework is evaluated using real-world ground robot data collected in GNSS-denied subterranean tunnels under nominal and dense-smoke conditions. Experimental results demonstrate degradation detection, adaptive modality switching, and continued localization output under severe LiDAR degradation.\n\nA feature family ablation study further shows that a reduced feature representation can improve degradation-aware localization performance in the evaluated dense-smoke scenarios, highlighting the importance of feature parsimony in one-class sensor degradation detection. The code will be released as open source to support reproducibility and further research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The article presents a one-class temporal framework that detects LiDAR degradation using features evaluated over sliding windows and an LSTM autoencoder trained on nominal operation. Its reliability estimate controls adaptive selection between LiDAR-inertial and radar-inertial odometry. The authors evaluate the framework on real ground-robot data from subterranean tunnels under nominal and dense-smoke conditions, reporting degradation detection, modality switching, and continued localization during severe degradation. An ablation study finds that reduced features can improve performance in the evaluated dense-smoke scenarios.",
+          "zh": "本文提出一种仅用正常运行数据训练的单类时序学习框架，通过滑动窗口内的多类特征和 LSTM 自编码器检测 LiDAR 退化，并据此在激光雷达惯性里程计与雷达惯性里程计之间自适应切换。作者使用地下隧道中正常及浓烟条件下的真实地面机器人数据评估该方法，报告了退化检测、模态切换以及严重退化时持续定位的实验结果。特征消融显示，在所评估的浓烟场景中，精简特征表示可提升退化感知定位表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1749,7 +1753,11 @@
             "heading": "",
             "text": "The NIST Assembly Task Board #1 remains a challenging benchmark for learning-based methods in robotic manipulation. Over short horizons, it demands precise, contact-rich control of small, tight-fitting parts. Over long horizons, it requires recovery and coordination across extended action sequences.\n\nDemonstrations, task decomposition, and dense progress rewards have enabled research advances by providing guidance on how to assemble. But how much of the strategy must be specified? The progression from AlphaGo to AlphaGo Zero showed that RL at scale can discover superhuman strategies without prescribing how to win.\n\nAlphaNIST asks whether a sparse binary task reward and task diversity admitted by this task-agnostic reward can similarly let a robot discover how to assemble.\n\nIn simulation, we train a single policy from scratch across all 20 assembly tasks on the NIST Assembly Task Board #1, reaching 98.2% overall training success without demonstrations, progress shaping, scripted primitives, or per-task tuning.\n\nThe framework also trains policies to complete ten assembly pairs in a single episode without a prescribed order, with task success rewarded only when all ten pairs are simultaneously complete.\n\nThe learned policies discover dexterous and planning-like behaviors: choosing grasps for later assembly, using surrounding geometry to reorient parts, and preparing one part, assembling another, then returning to finish the first without an explicit planner. For videos, see our website: https://alpha-nist.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "AlphaNIST investigates whether a robot can learn assembly from sparse binary task rewards. In simulation, the authors train a policy from scratch across all 20 tasks on the NIST Assembly Task Board #1 and report 98.2% overall training success, without demonstrations, progress shaping, scripted primitives, or per-task tuning. The framework also trains policies to complete ten assembly pairs in one episode in any order, rewarding success only when all pairs are complete. Learned behaviors include selecting grasps for later assembly and reorienting parts using surrounding geometry.",
+          "zh": "AlphaNIST 研究能否仅凭稀疏二元任务奖励，让机器人学会装配。作者在仿真中从零训练一个策略，覆盖 NIST Assembly Task Board #1 的全部 20 项任务，报告总体训练成功率为 98.2%，且未使用示范、进度奖励塑形、脚本化原语或逐任务调参。框架还训练策略在单个回合中以任意顺序完成十组成对装配，只有十对同时完成才获得成功奖励。学得的策略展现出面向后续装配选择抓取、借助周边几何调整零件方向等行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1780,7 +1788,11 @@
             "heading": "",
             "text": "Accurate detection of drivable area is essential for autonomous driving and advanced driver assistance systems.\n\nWhile state-of-the-art methods focus on general traversability estimation, they prove inadequate for snow-covered roads where following existing wheel tracks offers crucial advantages: improved traction, predictable vehicle dynamics, and verified path stability.\n\nTo address this, we propose a low-cost, self-supervised approach detecting safety-critical wheel tracks using synchronized RGB-I (RGB + Long-Wave Infrared) imagery. Our method automatically generates training labels by projecting future wheel trajectories from recorded GNSS data.\n\nA neural network is designed to identify wheel tracks with the 4-channel RGB-I images from challenging, white-out road surfaces. Experimental results demonstrate the effectiveness of our approach in visually monotonous and featureless adverse environment, offering a robust and cost-effective alternative for winter autonomy.\n\nThe newly introduced ThermalTrack dataset is available at: https://digitalcommons.mtu.edu/thermaltrack/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose a low-cost, self-supervised method for detecting safety-critical wheel tracks on snow-covered roads from synchronized RGB and long-wave infrared imagery. Training labels are generated automatically by projecting future wheel trajectories from recorded GNSS data, and a neural network identifies tracks using four-channel RGB-I images. The abstract reports experimental effectiveness on visually monotonous, featureless adverse environments and presents the method as a robust, cost-effective option for winter autonomy. It also states that the ThermalTrack dataset is available.",
+          "zh": "本文提出一种低成本、自监督的雪地车辙检测方法，使用同步 RGB 与长波红外图像识别安全关键的车轮轨迹。训练标签由记录的 GNSS 数据投影未来车轮轨迹自动生成，神经网络则利用四通道 RGB-I 图像检测白茫茫路面上的车辙。作者称，实验结果表明该方法在视觉单调、缺乏特征的恶劣环境中有效，可作为冬季自动驾驶的一种稳健且经济的方案。摘要提及 ThermalTrack 数据集已发布。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1811,7 +1823,11 @@
             "heading": "",
             "text": "Long, slender instruments are essential for minimally invasive surgery (MIS), but achieving precise distal manipulation becomes increasingly difficult when actuation extends along the entire instrument.\n\nHere, we present an electrothermally actuated fiber-based robot designed for MIS procedures, in which Joule heating is concentrated in the distal active segment. The fiber is fabricated using a thermal drawing process and uses embedded metallic wires for thermal actuation.\n\nThis robotic fiber, 1.9 mm in diameter and 1.2 m in length, can precisely manipulate surgical laser fibers with positional precision below 100 $\\mu$m. The compact size of the fiber robot allows it to pass through the working channel of a flexible endoscope, while keeping both devices mechanically uncoupled to allow independent motion.\n\nA phantom demonstration combining the robotic fiber with a da Vinci instrument conceptually demonstrated its compatibility with existing endoscopic systems for clinical applications. Our robotic fiber enables precise distal motion and holds the potential to improve clinical outcomes by enhancing precision in MIS procedures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The article presents an electrothermally actuated fiber robot for minimally invasive surgery, with Joule heating concentrated in its distal active segment. Made by thermal drawing and incorporating metallic wires, the 1.9 mm diameter, 1.2 m long robot can manipulate surgical laser fibers with positional precision below 100 μm. It fits through a flexible endoscope’s working channel and remains mechanically uncoupled for independent motion. A phantom demonstration with a da Vinci instrument conceptually showed compatibility with existing endoscopic systems; clinical benefit is described as potential.",
+          "zh": "本文介绍一种用于微创手术的电热驱动纤维机器人，通过焦耳热集中驱动远端活动段。机器人采用热拉制工艺制造，并嵌入金属导线；其直径为 1.9 毫米、长度为 1.2 米，可精确操纵手术激光纤维，位置精度低于 100 微米。该装置可通过柔性内窥镜工作通道，且与内窥镜机械解耦以支持独立运动。与达芬奇器械概念结合的仿体演示展示了兼容性，但摘要将临床应用潜力表述为可能性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
