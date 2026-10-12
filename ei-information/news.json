@@ -1347,7 +1347,11 @@
             "heading": "",
             "text": "Long-horizon embodied agents must maintain task-relevant information, coordinate heterogeneous robots, and adapt their decisions as execution unfolds. Existing benchmarks investigate dynamic task execution and embodied multi-agent coordination, but provide limited evaluation of their intersection.\n\nWe introduce MAGMA-Bench, an architecture-agnostic benchmark for persistent task reasoning in dynamic multi-robot environments.\n\nMAGMA-Bench evaluates agents across increasing task horizons and controlled online perturbations, including execution failures, task interruptions, and mission updates, with scenarios requiring coordination across robots with heterogeneous capabilities.\n\nIt uses a structured skill-level interface to separate task-level reasoning from perception and low-level control. We evaluate locally deployable open-weight planners, multi-agent state-tracking strategies, and frontier models.\n\nEven the strongest evaluated models fail on a substantial fraction of clean episodes, and their success rates decrease further under online perturbations. Supervised adaptation greatly improves a small model, but performance remains substantially lower on longer and multi-robot missions.\n\nWe release the benchmark, 261,646 task-level training examples, and an architecture-agnostic expert-trace generation pipeline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MAGMA-Bench, a benchmark for persistent task reasoning in dynamic multi-robot environments. It evaluates agents over increasingly long tasks and online perturbations such as execution failures, interruptions, and mission updates, including coordination among robots with heterogeneous capabilities. A structured skill-level interface separates task reasoning from perception and low-level control. The authors report substantial failures even among the strongest evaluated models, with lower success under perturbations. Supervised adaptation improves a small model, though longer and multi-robot missions remain harder.",
+          "zh": "论文提出 MAGMA-Bench，用于评估智能体在动态多机器人环境中的长期任务推理能力。基准覆盖不同任务时长，以及执行失败、任务中断和任务更新等在线扰动，并要求异构能力机器人协同。评估采用结构化技能级接口，将任务推理与感知、底层控制分开。作者报告，最强受测模型在无扰动任务中也有较多失败，扰动下成功率进一步下降；监督适配能显著改善小模型，但长时程和多机器人任务仍较难。论文发布基准、训练样例及专家轨迹生成流程。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1378,7 +1382,11 @@
             "heading": "",
             "text": "Electromyography (EMG) is a measure of muscular electrical activity and is used in many clinical/biomedical disciplines and modern human computer interaction. Myo-electric prosthetics analyze and classify the electrical signals recorded from the residual limb.\n\nThe classified output is then used to control the position of motors in a robotic hand and a movement is produced. The aim of this project is to develop a low-cost and effective myo-electric prosthetic hand that would meet the needs of amputees in developing countries.\n\nThe proposed prosthetic hand should be able to accurately classify five different patterns (gestures) using EMG recordings from three muscles and control a robotic hand accordingly. The robotic hand is composed of two servo motors allowing for two degrees of freedom.\n\nAfter establishing an efficient signal acquisition and amplification system, EMG signals were thoroughly analyzed in the frequency and time domains. Features were extracted from both domains and a shallow neural network was trained on the two sets of data.\n\nResults yielded an average classification accuracy of 94.8% and 93.2% for the time and frequency domains respectively. Furthermore, results showed a faster computation and response for the time domain analysis; hence, it was adopted for the classification system.\n\nA wrist rotation mechanism was designed and tested to add significant functionality to the prosthetic. The mechanism is controlled by two of the five gestures, one for each direction. Which added a third degree of freedom to the overall design.\n\nFinally, a tactile sensory feedback system which uses force sensors and vibration motors was developed to enable sensation of the force inflicted on the hand for the user."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a low-cost myoelectric prosthetic hand intended to address the needs of amputees in developing countries. It records EMG signals from three muscles, extracts time- and frequency-domain features, and trains a shallow neural network to classify five gestures for a two-degree-of-freedom robotic hand. Reported classification accuracy is 94.8% for time-domain features and 93.2% for frequency-domain features. The authors select time-domain analysis for faster computation and response, and describe a wrist-rotation mechanism and tactile feedback using force sensors and vibration motors.",
+          "zh": "论文介绍一种面向发展中国家截肢者需求的低成本肌电假手。系统采集三块肌肉的肌电信号，提取时域和频域特征，并用浅层神经网络识别五种手势，以控制具有两个自由度的机械手。实验结果显示，时域和频域分类准确率分别为94.8%和93.2%；作者因时域分析计算和响应更快而采用该方案。设计还加入由手势控制的腕部旋转机构，以及利用力传感器和振动马达传递触觉反馈的系统。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1409,7 +1417,11 @@
             "heading": "",
             "text": "Stereo vision is increasingly used for robotic manipulation, with a growing body of work incorporating it into Vision-Language-Action (VLA) models. However, the scarcity of large-scale, real-world stereo datasets remains a fundamental bottleneck for scaling such policies.\n\nRecent generative monocular-to-stereo methods target settings such as VR content and autonomous driving. No prior work produces realistic synthetic stereo data for robotic manipulation, where stereo supervision has come predominantly from simulation.\n\nWe propose StereoEngine, which introduces two complementary methods to synthesize stereo data for robotic manipulation. In the first, we warp a monocular (left) video into the right view using estimated depth and inpaint the disoccluded regions with a video diffusion model, lifting monocular demonstrations into stereo pairs without training on real stereo.\n\nIn the second, we render a stereo pair in simulation and jointly generate both photorealistic views, producing consistent left-right data without any real video as input.\n\nStereoEngine outperforms existing baselines in generated stereo quality, and using its synthetic data for policy mid-training or task-specific fine-tuning substantially improves downstream bimanual manipulation. Project website: https://stereoengine.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "StereoEngine is proposed to synthesize stereo data for robotic manipulation where real stereo datasets are scarce. One method warps a monocular left-view video into a right view using estimated depth and fills disoccluded regions with a video diffusion model. Another starts with a simulated stereo pair and jointly generates photorealistic left and right views. The authors report better generated stereo quality than existing baselines, and improvements in downstream bimanual manipulation when the synthetic data is used for policy mid-training or task-specific fine-tuning.",
+          "zh": "论文提出 StereoEngine，用于在缺少真实立体相机数据时合成机器人双臂操作所需的立体数据。第一种方法根据估计深度将单目左视视频变换为右视图，并用视频扩散模型补全遮挡区域；第二种方法先在仿真中渲染立体图像，再联合生成具有真实感的左右视图。作者称，该方法生成的立体数据质量优于现有基线，并且用于策略中期训练或任务专属微调时，能提升下游双臂操作表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1440,7 +1452,11 @@
             "heading": "",
             "text": "Modern data-driven decision-making methods, such as imitation learning (IL) and reinforcement learning (RL), have achieved great success in solving many complex tasks.\n\nHowever, these methods often suffer from serious control instability and robustness issues when applied in real-world applications such as robotics and autonomous driving, posing notable challenges for their practical deployment.\n\nWe argue that this instability issue stems largely from their limitations in solely supervising and optimizing zeroth-order actions (i.e., the action labels), failing to account for higher-order action dynamics and temporal consistency.\n\nIn this paper, we show that simultaneously supervising both zeroth- and first-order actions can dramatically enhance policies' performance and control robustness.\n\nTo achieve this, we introduce a novel and elegant loss scheme supported by formal theoretical guarantees that can equip any off-the-shelf policy model (e.g., deterministic, stochastic, or flow policies) with the capability for higher-order action supervision, without requiring any structural modifications.\n\nMoreover, our proposed method can serve as a lightweight plug-and-play module that seamlessly integrates with a broad spectrum of existing offline RL frameworks. Extensive evaluations on OGBench and D4RL demonstrate that our approach yields substantial performance and robustness improvements across a wide range of continuous control environments.\n\nNotably, our method can also enhance policies' out-of-distribution (OOD) generalization capability in the challenging low-data regime, making it an ideal tool in tackling many real-world control problems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that supervising only zeroth-order action labels overlooks action dynamics and temporal consistency, contributing to instability and weak robustness in real-world applications. It proposes a loss scheme that supervises both zeroth- and first-order actions, with stated formal theoretical guarantees. The method is designed to work with deterministic, stochastic, or flow policies without changing their structure, and can be integrated into offline reinforcement learning frameworks. Evaluations on OGBench and D4RL continuous-control environments reportedly show performance and robustness gains, as well as improved out-of-distribution generalization in low-data settings.",
+          "zh": "论文认为，只监督零阶动作标签会忽略动作变化及时间一致性，可能导致真实应用中的控制不稳定和鲁棒性不足。作者提出同时监督零阶与一阶动作的损失方案，并称其具有形式化理论保证，可用于确定性、随机或流策略模型，无需修改模型结构。该方法还可作为轻量模块集成到多种离线强化学习框架。作者报告，在 OGBench 和 D4RL 的连续控制环境评估中，方法提升了性能与鲁棒性，并改善了低数据条件下的分布外泛化能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
