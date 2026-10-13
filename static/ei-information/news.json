@@ -2648,7 +2648,11 @@
             "heading": "",
             "text": "Nearly every autonomous or semi-autonomous flipper controller assumes access to an elevation map of the terrain under and in front of the robot. The terrain beneath the chassis is occluded in the sensors, so the map is remembered through odometry integration, whose drift corrupts it.\n\nWe present Stabilizing Anti-Stuck (SAS), a mapless controller that combines a stabilization term for body roll and pitch with an anti-stuck term that frees the robot when it gets stuck. As input, SAS uses the IMU, the flipper joint angles, and a motion cue that only tells whether the robot is moving.\n\nThe cue is computed over a short window and never accumulated, so SAS does not inherit the odometry-integration drift that corrupts the map. We deploy SAS on a tracked robot with four flippers and evaluate it against manual teleoperation and prior flipper controllers in a large comparison, both in simulation and on a real obstacle.\n\nIn simulation and on the real robot, SAS achieves traversal quality comparable to state-of-the-art map-based controllers. On a log hidden in tall grass, invisible to the LiDAR, the best map-based controller gets stuck while SAS traverses the hidden obstacle without a problem."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SAS, a mapless flipper controller combining body-roll and pitch stabilization with an anti-stuck response. It uses an IMU, flipper joint angles, and a short-window cue indicating only whether the robot is moving; the cue is not accumulated, avoiding odometry-integration drift. In simulation and on a real obstacle, traversal quality is comparable to state-of-the-art map-based controllers. In tall grass hiding a LiDAR-invisible log, the best map-based controller gets stuck while SAS traverses it.",
+          "zh": "论文提出无地图的稳定防困翻板控制器SAS，利用IMU、翻板关节角度和仅判断机器人是否运动的短时运动线索，结合机身姿态稳定与脱困控制。该线索不累积，因此不受里程计积分漂移影响。仿真及真实障碍物评估显示，其通过质量可与先进的基于地图控制器相比；在激光雷达看不见的高草隐藏木障碍场景中，地图控制器受困，而SAS成功通过。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2679,7 +2683,11 @@
             "heading": "",
             "text": "Foundation models and large-scale human data provide rich sources of manipulation intent, but translating this intent into multi-fingered robot behavior remains difficult. Dexterous hands still lack a reusable low-level primitive that reliably establishes contact across tasks and embodiments.\n\nWe propose GOTT, a reach-acquire-move framework built around a single cross-embodiment contact-acquisition primitive. Given a robot-agnostic object trajectory and a reach specification, GOTT first brings the hand near a task-relevant contact region.\n\nThe shared closed-loop primitive then establishes stable contact from this approximate initialization, and a pose-conditioned controller tracks the desired object motion. Reach specifications may come from future-aware planning, external models, or human demonstrations, while the primitive and tracking backend remain unchanged.\n\nSimulation and real-world experiments show that GOTT is able to establish robust contact across diverse objects, arm-hand platforms, and seen and unseen hand morphologies. It also consistently improves end-to-end task success over open-loop grasp execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "GOTT is a reach-acquire-move framework for dexterous manipulation built around a reusable, cross-embodiment contact-acquisition primitive. Given a robot-agnostic object trajectory and reach specification, it moves the hand near a relevant contact region, establishes stable contact, and tracks the desired object motion. Simulation and real-world experiments show robust contact across diverse objects, arm-hand platforms, and seen and unseen hand morphologies. The authors also report consistently higher end-to-end task success than with open-loop grasp execution.",
+          "zh": "论文提出GOTT，一种面向灵巧操作的“接近—获取接触—移动”框架，以可跨机器人形态复用的闭环接触获取原语为核心。系统依据与机器人形态无关的物体轨迹和接近要求，将手移至任务相关接触区域，再建立稳定接触并跟踪目标物体运动。仿真与真实实验表明，该方法能在多种物体、臂手平台及已见和未见手部形态上实现稳健接触，并持续提升端到端任务成功率，相较于开环抓取执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2710,7 +2718,11 @@
             "heading": "",
             "text": "Robot policies often convert sensing and control into fixed-rate observation-action sequences, leaving physical time implicit in sequence position. This assumption breaks when observation rates or delays vary, or when inference latency changes.\n\nWe introduce Chronos Policy, which makes physical time explicit by conditioning on observation capture times and desired action execution times.\n\nWe study two ways to incorporate time into a diffusion transformer: adding timestamp embeddings to token features, or encoding physical time in positional encoding through time-aware rotary positional encodings (time-aware RoPE).\n\nWe find that time-aware RoPE is more robust, allowing attention to depend directly on physical time while keeping token content unchanged. During training, we temporally randomize which observations are sampled and when the action chunk begins, exposing the policy to a wider range of sensing and execution schedules that may occur during deployments.\n\nThis also enables learning from asynchronous, multi-rate data without forcing all measurements onto a fixed temporal grid. Across simulation and real-world experiments, Chronos Policy improves performance on dynamic tasks, where observation-to-action timing is critical, and on multisensory tasks, where the relative timing between observations matters.\n\nOn standard quasi-static tasks, it preserves nominal performance while improving robustness to changes in sensing and inference timing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Chronos Policy conditions robot policies on observation capture times and desired action execution times. The paper compares timestamp embeddings with time-aware rotary positional encodings and reports greater robustness for time-aware RoPE. Training randomizes observation sampling and action-chunk start times, enabling learning from asynchronous, multi-rate data without a fixed temporal grid. In simulation and real-world experiments, the policy improves performance on dynamic and multisensory tasks, while preserving nominal performance on standard quasi-static tasks and increasing robustness to sensing and inference timing changes.",
+          "zh": "论文提出Chronos Policy，将观测采集时间和动作执行时间显式输入机器人策略，以适应观测频率、延迟及推理时延变化。作者比较了时间戳嵌入与时间感知RoPE，并报告后者更稳健；训练时还随机化观测采样时刻和动作片段起点，从而支持异步、多频率数据。仿真和真实实验显示，该策略在时序关键的动态任务及多传感器任务上提升表现，在准静态任务保持名义性能，并增强对感知和推理时序变化的鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2741,7 +2753,11 @@
             "heading": "",
             "text": "Learning-based methods have demonstrated strong performance in mapless robot navigation. However, a learned policy remains restricted to the embodiment on which it was trained. Many cross-embodiment navigation methods require time-consuming online training and can still underperform target-specific policies.\n\nIn fact, demonstrations collected on a source embodiment already contain navigation experience that is potentially reusable for deriving a policy for each target embodiment, but the embodiment mismatch prevents these demonstrations from directly serving as valid supervision for the target.\n\nIn this article, we present CeDR-Nav, a cross-embodiment demonstration recasting framework that trains a dedicated navigation policy for each target embodiment from existing source demonstrations without online data collection.\n\nGeometry-consistent scaling with per-demonstration validity assessment converts the source demonstrations into target training data, and a target-specific Gaussian mixture policy generates feasible avoidance maneuvers for each target embodiment.\n\nExtensive quantitative simulations and real-world deployments across multiple robot platforms demonstrate the effectiveness of CeDR-Nav, with an average success-rate gain of 13.8 percentage points over DRL-DCLP in cross-embodiment simulations and target-specific policy training completed within seconds."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CeDR-Nav recasts offline demonstrations from a source robot to train a dedicated mapless navigation policy for each target embodiment, without online data collection. It uses geometry-consistent scaling and per-demonstration validity assessment to create target training data, then applies a target-specific Gaussian mixture policy to generate feasible avoidance maneuvers. Quantitative simulations and real-world deployments across multiple platforms demonstrate effectiveness. The abstract reports an average success-rate gain of 13.8 percentage points over DRL-DCLP in cross-embodiment simulations, with target-specific policy training completed within seconds.",
+          "zh": "论文提出CeDR-Nav，通过离线示范重映射，为不同目标机器人形态分别训练无地图导航策略，无需在线采集数据。方法采用几何一致缩放并逐条评估示范有效性，将源机器人示范转为目标训练数据，再用目标专属高斯混合策略生成可行避障动作。跨多个平台的定量仿真和真实部署显示该框架有效；摘要报告，在跨形态仿真中相较DRL-DCLP平均成功率提高13.8个百分点，目标策略训练在数秒内完成。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
