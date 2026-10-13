@@ -785,8 +785,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces WorldSolver to assess whether LLM agents can generate solvers that simulate physical dynamics. Its benchmark contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold with a fixed simulation environment, leaving the solver for the agent to implement. Evaluation covers successful execution, visual fidelity to intended dynamics, and physical plausibility. Experiments find executable solvers difficult to produce, with visual and physical correctness harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better among evaluated agents, scoring 48.7% and 46.7% overall.",
-          "zh": "论文提出 WorldSolver，用于评估大语言模型智能体能否生成模拟物理动态的求解器。基准包含源自61篇经典计算机图形学论文的168项任务，覆盖7个物理领域；每项任务提供固定场景环境的代码框架，由智能体补全求解器。评估维度包括代码能否执行、渲染动态的视觉保真度及物理合理性。实验显示，生成可执行求解器已具挑战，满足视觉和物理正确性更难。被评估的前沿智能体中，GPT-5.6-Sol和Claude-Opus-5相对较好，但总分分别仅为48.7%和46.7%。"
+          "en": "The paper introduces WorldSolver, a benchmark for assessing whether LLM agents can generate solvers that simulate physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers successful execution, visual fidelity to intended dynamics, and physical plausibility. Experiments find executable solver generation difficult, with visual and physical correctness harder still. Among evaluated agents, GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, scoring 48.7% and 46.7% overall.",
+          "zh": "论文提出 WorldSolver 基准，评估大语言模型智能体能否生成模拟物理动力学的求解器。基准包含源自61篇经典计算机图形学论文的168项任务，覆盖7个物理领域；每项提供固定场景模拟环境的代码框架，要求智能体补全求解器。评估维度为成功执行、渲染动态的视觉保真度和物理合理性。实验显示，生成可执行求解器已具难度，满足视觉和物理正确性更困难。被评估智能体中，GPT-5.6-Sol和Claude-Opus-5表现相对较好，整体得分分别为48.7%和46.7%。"
         }
       },
       "source": {
@@ -1070,7 +1070,7 @@
       },
       "format": "archive_record",
       "id": "archive-article-1193cba0e1c649debf1b666491edabd8",
-      "intro": "Pen spinning is a classic test of human finger dexterity. WUJI just trained a robot hand to do it. Their sim-to-real policy, trained entirely in simulation, spins a pen on a physical WUJI Hand 2. At IROS 2026 they also showed glove-based teleoperation, a human driving the hand's https://t.co/m6X3mKaNqt",
+      "intro": "Nils Pihl (@broodsugar) is keynoting the Humanoid Hub Conference. The web made information addressable. Nothing has done that for physical space. His keynote is about the missing layer: shared context that lets robots, AI and people reason about the same world. https://t.co/bKiXYtoU1Y",
       "published_at": null,
       "reading": {
         "mode": "excerpt",
@@ -1078,7 +1078,7 @@
         "sections": [
           {
             "heading": "",
-            "text": "Pen spinning is a classic test of human finger dexterity. WUJI just trained a robot hand to do it. Their sim-to-real policy, trained entirely in simulation, spins a pen on a physical WUJI Hand 2.At IROS 2026 they also showed glove-based teleoperation, a human driving the hand's https://t.co/m6X3mKaNqt"
+            "text": "Nils Pihl (@broodsugar) is keynoting the Humanoid Hub Conference. The web made information addressable. Nothing has done that for physical space. His keynote is about the missing layer: shared context that lets robots, AI and people reason about the same world. https://t.co/bKiXYtoU1Y"
           }
         ]
       },
@@ -1086,7 +1086,7 @@
         "id": "x-thehumanoidhub",
         "url": "https://x.com/TheHumanoidHub/status/1682127524963426304"
       },
-      "title": "Pen spinning is a classic test of human finger dexterity. WUJI just trained a robot hand to do it. Their sim-to-real policy, trained entirely in simulation, spi"
+      "title": "Nils Pihl (@broodsugar) is keynoting the Humanoid Hub Conference. The web made information addressable. Nothing has done that for physical space. His keynote is"
     },
     {
       "archive": {
@@ -5994,8 +5994,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents OmniDex for dexterous grasping in diverse cluttered scenes. The authors curate 3D objects and supporting bases and use a seed-and-filter strategy to build a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. OmniDex combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking to address grasp multimodality and last-millimeter errors. Experiments report state-of-the-art performance and generalization across diverse scenes, views, and unseen objects.",
-          "zh": "论文提出 OmniDex，用于杂乱多样场景中的灵巧手抓取。作者通过精选3D物体和支撑底座，并采用种子生成与筛选策略，构建了包含超过260万场景及4亿个场景专属抓取真值的基准。OmniDex结合 Soft Winner-Takes-All 学习、人类启发的物理约束和基于物理的排序，旨在应对抓取多模态性及末毫米精度误差。实验结果显示，该模型取得作者所称的最先进性能，并能泛化到多样场景、视角和未见物体。"
+          "en": "The paper presents OmniDex for dexterous grasping in diverse cluttered scenes and a benchmark containing over 2.6 million scenes with 0.4 billion scene-specific grasp ground truths. The authors use a scalable seed-and-filter strategy to construct scenes and introduce a model combining Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. They report that experiments achieve state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects.",
+          "zh": "论文提出 OmniDex，用于杂乱多样场景中的灵巧手抓取，并构建包含超过260万场景及4亿个场景专属抓取真值的基准。作者采用种子生成与筛选策略构造场景，并提出 OmniDex 模型，以软赢家通吃学习、人类启发的物理约束和基于物理的排序处理抓取多模态性及末端精度问题。实验结果显示，该模型取得文中所称的最先进性能，并能泛化至不同场景、视角和未见物体。"
         }
       },
       "source": {
@@ -7453,8 +7453,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces LIVIN, a benchmark built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture configurations, and everyday belongings, using a human-in-the-loop workflow for instance recognition, architectural reconstruction, and object generation and placement. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. Its evaluations find that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions in realistic homes.",
-          "zh": "论文介绍 LIVIN，这是基于30个真实居住家庭数字孪生构建的空间与具身智能基准。数字孪生保留观察到的房间布局、家具配置和日常物品，并通过包含实例识别、建筑重建、物体生成与摆放的人机协作流程制作，各阶段结果均由人依据源观察检查和修正。基准评估3D检测、3D重建、导航和移动操作，评测显示，现有方法仍受真实家庭中的物品密集、遮挡、可用空间有限及交互区域受限等因素挑战。"
+          "en": "The paper introduces LIVIN, a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture configurations, and everyday belongings, using a human-in-the-loop workflow whose intermediate stages are checked and corrected against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The reported evaluations find that current methods remain challenged by dense object arrangements, occlusions, limited free space, and constrained interaction regions.",
+          "zh": "论文介绍 LIVIN，一个基于30个真实有人居住家庭数字孪生的空间与具身智能基准。场景保留观察到的房间布局、家具配置和日常物品，并通过包含实例识别、建筑重建、物体生成与摆放的人机协作流程构建，各阶段结果均由人依据源观察检查和修正。基准评测3D检测、3D重建、导航和移动操作；评测显示，现有方法仍受密集物品、遮挡、有限空地和狭窄交互区域的挑战。"
         }
       },
       "source": {
