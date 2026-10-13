@@ -783,7 +783,11 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WorldSolver, a benchmark for testing whether LLM agents can simulate physical dynamics by generating solvers. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task supplies a code scaffold for a fixed scene environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity to intended dynamics, and physical plausibility. Experiments find that executable solvers are difficult to produce, while visual and physical correctness are harder still. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better among evaluated agents, with overall scores of 48.7% and 46.7%.",
+          "zh": "论文提出 WorldSolver 基准，用于评估大语言模型智能体通过生成求解器模拟物理动力学的能力。基准含168项任务，源自61篇计算机图形学经典论文，覆盖7个物理领域；每项提供固定场景环境的代码框架，由智能体补全求解器。评估维度包括代码执行、渲染动态的视觉保真度和物理合理性。实验显示，生成可执行求解器已具挑战，达到视觉与物理正确性更难。被评估的前沿智能体中，GPT-5.6-Sol和Claude-Opus-5表现相对较好，但总体得分分别为48.7%和46.7%。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -3206,7 +3210,7 @@
       },
       "format": "archive_record",
       "id": "archive-article-3d6e8c4a693a49d2a705f67a863091b8",
-      "intro": "主任：张卫强，电子系研究员 定位： 以 数据和算力为核心，围绕具身智能的感、通、导、数、算、测六大基础能力开展研究 ， 聚焦多模态数据治理、智能算力研发、测试评估体系构建等核心技术，致力建设世界一流的科研与人才培养平台，打造具身智能数据与算力领域的创新高地。",
+      "intro": "定位： 以 数据和算力为核心，围绕具身智能的感、通、导、数、算、测六大基础能力开展研究 ， 聚焦多模态数据治理、智能算力研发、测试评估体系构建等核心技术，致力建设世界一流的科研与人才培养平台，打造具身智能数据与算力领域的创新高地。 目标： 打造全球领先的具身智能数据与算力公共服务高地，实现 “数据标准化、算力国产化、生态一体化”的战略愿景 ， 汇聚培育跨领域的科研人才队伍 ， 全力实现具身智能数据与算力技术的原创性突破。",
       "published_at": null,
       "reading": {
         "mode": "excerpt",
@@ -3214,7 +3218,7 @@
         "sections": [
           {
             "heading": "",
-            "text": "主任：张卫强，电子系研究员 定位： 以 数据和算力为核心，围绕具身智能的感、通、导、数、算、测六大基础能力开展研究 ， 聚焦多模态数据治理、智能算力研发、测试评估体系构建等核心技术，致力建设世界一流的科研与人才培养平台，打造具身智能数据与算力领域的创新高地。目标： 打造全球领先的具身智能数据与算力公共服务高地，实现 “数据标准化、算力国产化、生态一体化”的战略愿景 ， 汇聚培育跨领域的科研人才队伍 ， 全力实现具身智能数据与算力技术的原创性突破。研究内容： 1、 面向具身智能的数据、算力与测试： 研究具身数据采集、标注、管理、仿真方案，设计具身智能训练和推理的计算架构和基础设施的软硬件方案，建设面向具身的数据 -算力一体化平台，建立标准化的测试基准与评估指标。\n\n2、 面向具身智能的多模态感知： 研究高精度、低功耗、多模态传感器融合方案，包括视觉、触觉、听觉等，建设具身智能体的环境感知与交互平台。3 、 面向具身智能的网联与协同通信： 研究具身智能体之间的协同通信机制与协议，以及边缘计算与云端协同的通信架构，建设高效可靠的具身智能通信基础设施。4、 面向具身智能的导航定位与空间智能： 研究复杂环境下的高精度定位技术、同步定位与地图构建、路径规划与动态避障，建设具身智能体的自主导航与定位系统。"
+            "text": "定位： 以 数据和算力为核心，围绕具身智能的感、通、导、数、算、测六大基础能力开展研究 ， 聚焦多模态数据治理、智能算力研发、测试评估体系构建等核心技术，致力建设世界一流的科研与人才培养平台，打造具身智能数据与算力领域的创新高地。目标： 打造全球领先的具身智能数据与算力公共服务高地，实现 “数据标准化、算力国产化、生态一体化”的战略愿景 ， 汇聚培育跨领域的科研人才队伍 ， 全力实现具身智能数据与算力技术的原创性突破。研究内容： 1. 面向具身智能的数据、算力与测试： 研究具身数据采集、标注、管理、仿真方案，设计具身智能训练和推理的计算架构和基础设施的软硬件方案，建设面向具身的数据 -算力一体化平台，建立标准化的测试基准与评估指标。\n\n2. 面向具身智能的多模态感知： 研究高精度、低功耗、多模态传感器融合方案，包括视觉、触觉、听觉等，建设具身智能体的环境感知与交互平台。3. 面向具身智能的网联与协同通信： 研究具身智能体之间的协同通信机制与协议，以及边缘计算与云端协同的通信架构，建设高效可靠的具身智能通信基础设施。4. 面向具身智能的导航定位与空间智能： 研究复杂环境下的高精度定位技术、同步定位与地图构建、路径规划与动态避障，建设具身智能体的自主导航与定位系统。"
           }
         ]
       },
@@ -5988,7 +5992,11 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniDex for scaling dexterous hand grasping in diverse cluttered scenes. The authors curate 3D objects and supporting bases and use a seed-and-filter strategy to build a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. OmniDex combines Soft Winner-Takes-All learning, human-inspired physical constraints during training, and physics-driven ranking. The reported experiments show state-of-the-art performance and generalization across varied scenes, views, and unseen objects.",
+          "zh": "论文提出 OmniDex，用于在多样、杂乱场景中扩展灵巧手抓取研究。作者通过筛选高质量三维物体和支撑底座，并采用种子生成与过滤策略，构建包含超过260万场景及4亿个场景专属抓取真值的基准。OmniDex结合 Soft Winner-Takes-All 学习、人类启发的物理约束训练和基于物理的排序，旨在处理抓取多模态性与末端精度误差。实验结果显示，该模型达到作者所称的最先进性能，并能泛化至不同场景、视角和未见物体。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7443,7 +7451,11 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LIVIN, a benchmark for spatial and embodied intelligence based on digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture configurations, and everyday belongings. Its human-in-the-loop construction workflow covers instance recognition, architectural reconstruction, and object generation and placement, with results reviewed against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The reported evaluations find that dense arrangements, occlusions, limited free space, and constrained interaction areas challenge current methods.",
+          "zh": "论文介绍 LIVIN，这是一个基于30套真实居住住宅数字孪生的空间与具身智能基准。住宅副本保留观察到的房间布局、家具配置和日常物品；构建流程涵盖实例识别、建筑重建、物体生成与摆放，并在各阶段由人工对照源观察检查和修正。基准评估三维检测、三维重建、导航和移动操作，结果显示，密集摆放、遮挡、可用空间有限及交互区域受限，仍给现有方法带来挑战。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
