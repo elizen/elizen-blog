@@ -3313,7 +3313,11 @@
             "heading": "",
             "text": "Deploying language-model agents onboard mobile robots requires task reasoning and responsive execution within limited compute and memory. We propose BT-Agent, an onboard architecture combining LLM-driven task decisions with predefined behavior-tree (BT) skills. These skills enforce execution conditions and return structured failure feedback.\n\nWe demonstrate fully onboard operation with a 9B model on a quadruped across five task categories. Intervention tests show that local checks stop ongoing navigation without waiting for another model decision, while the agent remains active to retry or report constraints.\n\nTo compare agent designs efficiently, we introduce a 161-task multi-fidelity benchmark, evaluated in text on all tasks and in Habitat on 39.Text supports 10.9$\\times$ higher evaluation throughput, while simulation reveals how perception and motion failures change task outcomes.\n\nBT-Agent's largest success gains over the strongest Act/ReAct baseline occur at 4B and 9B: approximately 10 and 5 percentage points. Ablations identify structured tool calls and informative failure feedback as the most useful components."
           }
-        ]
+        ],
+        "summary": {
+          "en": "BT-Agent combines language-model task decisions with predefined behavior-tree skills for onboard mobile robots with limited compute and memory. The authors demonstrate a 9B model operating onboard a quadruped and report intervention tests in which local checks can stop navigation. Their 161-task multi-fidelity benchmark uses text evaluation for all tasks and Habitat simulation for 39. They state that text evaluation has higher throughput, while simulation exposes effects of perception and motion failures; ablations find structured tool calls and informative failure feedback most useful.",
+          "zh": "本文提出BT-Agent，将语言模型任务决策与预定义行为树技能结合，用于算力和内存受限的移动机器人机载运行。作者在四足机器人上展示了9B模型的机载操作，并通过干预测试说明本地检查可中止导航。多保真基准包含161项任务：文本评估覆盖全部任务，Habitat仿真评估覆盖39项。作者报告，文本评估吞吐量更高，而仿真可揭示感知和运动故障对任务结果的影响；消融分析认为结构化工具调用和信息丰富的失败反馈最有用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3344,7 +3348,11 @@
             "heading": "",
             "text": "When an off-the-shelf coding agent is used directly as a robot policy, observing a browser-based 3D interface through screenshots and acting by posing a virtual target gripper through a few tools, the agent's harness, its prompts, tools, and control rules, largely determines success, and until now it has been written by hand.\n\nWe show that this harness can be improved automatically by another coding agent, the optimizer agent, and report two findings about what makes it work.\n\nFirst, the number of rollouts the optimizer agent sees per round governs whether the evolved harness generalizes: with rounds fixed, held-out success rises as the training batch grows from 5 to 100 rollouts, while small batches overfit the training tasks. Second, the optimizer agent must not be given free rein.\n\nAccepting every revision it proposes degrades the harness within a few rounds; a simple Champion-Challenger rule that promotes a revision only if it beats the incumbent on the same fixed cases turns the same loop into one that raises held-out success on LIBERO tasks from 51% to 67% over 30 rounds.\n\nCombining the evolved harness with a pretrained policy, through one tool that hands it control, reaches 71.2% on the RoboCasa365 leaderboard benchmark, 13.1 points above the best published entry.\n\nAutomatic harness evolution for visual-interface robot agents is thus feasible, but its gains hinge on the rollout scale behind each decision and on how the optimizer agent's revisions are selected."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies automatic improvement of the prompts, tools, and control rules used by visual-interface robot agents. The authors report that, with rounds fixed, larger optimizer batches improve held-out generalization, while small batches overfit; accepting every revision degrades the harness. A Champion-Challenger rule using fixed cases raises held-out LIBERO success from 51% to 67% over 30 rounds. Combined with a pretrained policy, the harness scores 71.2% on RoboCasa365, which the authors report is 13.1 points above the best published entry.",
+          "zh": "本文研究通过优化智能体自动改进视觉界面机器人智能体的提示、工具和控制规则。作者报告，每轮优化所见的训练任务规模影响泛化：在固定轮数下，批次从5增至100时，留出任务成功率上升，小批次则会过拟合；无条件接受优化建议会使性能退化。采用固定用例上的冠军挑战者筛选后，LIBERO留出成功率在30轮中从51%升至67%。与预训练策略结合后，RoboCasa365基准成绩为71.2%，作者称高于此前最佳已发表成绩13.1个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3375,7 +3383,11 @@
             "heading": "",
             "text": "Humanoid robots performing lifting and material-handling tasks must maintain balance despite unknown and varying payloads. However, payload uncertainty significantly affects whole-body dynamics and may destabilize conventional controllers.\n\nWe propose an adaptive whole-body control architecture that integrates three components: (i) a centroidal model predictive controller (MPC) that generates dynamically feasible reference motions, (ii) an adaptive fuzzy balance controller that compensates for payload-induced model mismatch by generating corrective torques distributed across the supporting-leg joints, and (iii) a waypoint-based optimal posture planner built on a triple-integrator model that produces smooth sit-to-stand and stand-to-sit trajectories satisfying center-of-mass (CoM) stability constraints, joint limits, and whole-body feasibility requirements.\n\nTogether, these components enable stable lowering, grasping, lifting, carrying, and placing behaviors under significant payload uncertainty.\n\nExtensive simulation and hardware experiments demonstrate that the proposed framework improves balance robustness and reduces tracking degradation during posture transitions and lifting tasks compared to non-adaptive baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an adaptive whole-body control architecture for humanoid robots handling unknown and varying payloads. It combines centroidal model predictive control, an adaptive fuzzy balance controller to compensate for payload-induced model mismatch, and a waypoint-based posture planner using a triple-integrator model. The planner generates smooth sit-to-stand and stand-to-sit motions subject to stability, joint-limit, and feasibility constraints. The authors report that simulation and hardware experiments show improved balance robustness and reduced tracking degradation versus non-adaptive baselines.",
+          "zh": "本文针对人形机器人搬运未知且变化的负载时可能失衡的问题，提出自适应全身控制架构。架构结合质心模型预测控制、用于补偿负载引起模型偏差的自适应模糊平衡控制器，以及基于三重积分器模型的航点式最优姿态规划器。规划器生成平滑的坐站转换轨迹，并满足质心稳定、关节限位和全身可行性约束。作者称，该框架支持负载不确定条件下的多种搬运动作；仿真与硬件实验显示，相比非自适应基线，其平衡鲁棒性更好，姿态转换和搬运任务中的跟踪退化更少。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
