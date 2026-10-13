@@ -785,8 +785,8 @@
           }
         ],
         "summary": {
-          "en": "WorldSolver is a benchmark for evaluating LLM agents’ ability to generate solvers for physical dynamics. It contains 168 tasks derived from 61 classic computer graphics papers across seven physical domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity, and physical plausibility. Experiments find that even producing executable solvers is difficult, while visual and physical correctness are harder; GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, with overall scores of 48.7% and 46.7%.",
-          "zh": "WorldSolver 是评估大语言模型智能体生成物理求解器能力的基准，包含源自61篇经典计算机图形学论文的168项任务，涵盖7个物理领域。每项任务提供固定模拟环境的代码框架，要求智能体补全求解器，并按代码执行、视觉保真度和物理合理性评估。实验显示，生成可执行求解器已具挑战，达到视觉和物理正确性更难；被评估的前沿智能体中，GPT-5.6-Sol 与 Claude-Opus-5 相对较好，但总分分别仅为48.7%和46.7%。"
+          "en": "WorldSolver benchmarks LLM agents’ ability to generate solvers for physical simulations. It includes 168 tasks derived from 61 classic computer graphics papers across seven domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity, and physical plausibility. Experiments report that generating executable solvers is difficult, while visual and physical correctness is harder still. The two comparatively stronger evaluated agents score 48.7% and 46.7% overall.",
+          "zh": "WorldSolver 是一个评估大语言模型智能体生成物理模拟求解器能力的基准，包含源自61篇经典计算机图形学论文的168项任务，覆盖7个物理领域。每项任务提供固定场景模拟环境的代码框架，由智能体补全求解器。评估维度包括能否执行、渲染模拟的视觉保真度，以及生成动力学的物理合理性。实验显示，生成可执行求解器本身就有难度，达到视觉和物理正确性更难；文中两种表现相对较好的智能体总分分别为48.7%和46.7%。"
         }
       },
       "source": {
@@ -6054,8 +6054,8 @@
           }
         ],
         "summary": {
-          "en": "OmniDex targets dexterous hand grasping in cluttered scenes. The authors create a benchmark with over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths, and introduce a model using Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. They report that experiments achieve state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects. The approach is designed to address grasp multimodality and precision errors without the latency of post-optimization.",
-          "zh": "OmniDex 针对杂乱场景中的灵巧手抓取，构建了包含超过260万场景和4亿个场景特定抓取真值的基准，并提出 OmniDex 模型。作者采用种子生成与筛选策略构造场景，通过 Soft Winner-Takes-All 学习、人类启发的物理约束及物理驱动排序处理抓取多模态和精度问题。实验结果显示，该模型取得作者所称的当前最佳性能，并能泛化至不同场景、视角和未见物体。"
+          "en": "OmniDex addresses the scarcity of large-scale grasping data for cluttered scenes with a seed-and-filter strategy using curated 3D objects and supporting bases. The resulting benchmark contains over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The proposed model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. Experiments show, according to the authors, state-of-the-art performance and generalization across diverse scenes, views, and unseen objects.",
+          "zh": "OmniDex 针对杂乱场景中灵巧手抓取训练数据不足的问题，提出基于高质量3D物体和支撑底座的种子生成与筛选策略，以避免缓慢的场景级优化。由此构建的基准包含超过260万场景及4亿个场景专属抓取真值。作者还提出 OmniDex 模型，将 Soft Winner-Takes-All 学习、人类启发的物理约束和基于物理的排序结合起来。实验结果显示，该模型达到作者所称的最先进性能，并能泛化到多种场景、视角和未见物体。"
         }
       },
       "source": {
@@ -7513,8 +7513,8 @@
           }
         ],
         "summary": {
-          "en": "LIVIN is a benchmark for spatial and embodied intelligence based on digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and everyday belongings, using a human-reviewed workflow for recognition, architectural reconstruction, and object placement. The benchmark evaluates 3D detection, reconstruction, navigation, and loco-manipulation. Its evaluations indicate that current methods are challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions in realistic homes.",
-          "zh": "LIVIN 是基于30个真实居住家庭数字孪生的空间与具身智能基准，保留观察到的房间布局、家具配置和日常物品。其构建流程包含实例识别、建筑重建、物体生成与摆放，并在各阶段由人工依据源观察复核修正。基准评估3D检测、3D重建、导航和移动操作；评估显示，现有方法仍受物品密集、遮挡、可用空间有限及交互区域受限等真实家庭特点的挑战。"
+          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. Its replicas preserve observed room layouts, furniture, and everyday belongings through a human-reviewed workflow. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The reported evaluations find that current methods are challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions. The authors hope it will support embodied AI research for real homes.",
+          "zh": "LIVIN 是一个基于30套真实有人居住住宅数字孪生的空间与具身智能基准，保留观察到的房间布局、家具配置和日常物品。其构建流程包含实例识别、建筑重建及物体生成与放置，并在各阶段由人工对照源观察检查和修正。基准评估3D检测、3D重建、导航和运动操作；评估显示，现有方法仍受密集物品、遮挡、有限空地及受限交互区域影响。作者希望该基准推动面向真实家庭的具身智能研究。"
         }
       },
       "source": {
