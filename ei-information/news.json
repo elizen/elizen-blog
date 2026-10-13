@@ -3192,7 +3192,11 @@
             "heading": "",
             "text": "As robots are deployed across diverse environments, manipulation tasks require robot hands with different morphologies to satisfy varying task requirements, hardware capabilities, and cost constraints.\n\nHowever, transferring grasping policies learned on one robot hand to another with a different morphology remains a fundamental challenge due to variations in kinematic structures and degrees of freedom across embodiments.\n\nTo address these limitations, we propose DiffMorphGrasp, the first diffusion-based framework that incorporates hand morphology information into the generative process for cross-embodiment dexterous grasping. The proposed approach maps grasps from diverse robotic hands into a reference hand pose, providing a common space for learning.\n\nGrasp generation is then continuously conditioned on structured representations of hand kinematics, encoded as graphs derived from hand configurations, together with object geometry. In addition, we introduce a loss function that computes joint-level errors over the hand kinematic structure to constrain the generated grasps during training.\n\nTo evaluate DiffMorphGrasp, we construct a new benchmark for assessing grasp generation performance across robot hands with different morphologies. Extensive experiments demonstrate that DiffMorphGrasp achieves strong zero-shot generalization to unseen hand morphologies, enabling scalable cross-embodiment grasp deployment.\n\nProject page: https://georgewuzy.github.io/DiffMorphGrasp-website"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DiffMorphGrasp, a diffusion framework for cross-embodiment dexterous grasp generation that incorporates hand morphology into the generative process. It maps grasps from different robotic hands to a reference-hand pose and conditions generation on graph-based hand kinematics and object geometry. Its training loss measures joint-level errors over the kinematic structure. The authors introduce a cross-morphology benchmark and report strong zero-shot generalization to unseen hand morphologies in their experiments.",
+          "zh": "论文提出 DiffMorphGrasp，一种将手部形态纳入生成过程的扩散框架，用于跨形态灵巧抓取生成。方法将不同机械手的抓取映射到参考手姿态，并以手部运动学图和物体几何持续条件化生成过程；训练损失还按运动学结构计算关节级误差。作者构建跨形态抓取基准，并报告实验显示该方法对未见手部形态具有较强的零样本泛化能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3223,7 +3227,11 @@
             "heading": "",
             "text": "Robot co-design couples morphology search with policy learning, yet training every new design from scratch discards acquired control experience. We present LACE-CRAFT, which compares continued learning on the current robot with policy adaptation to new morphology-reward pairs.\n\nLACE resumes the incumbent's full learning state and initializes compatible challengers with its actor parameters and observation statistics. A fixed task metric selects among both branches and the frozen incumbent.\n\nCRAFT coordinates Feedback, Morphology, Reward, and Integration roles through shared experimental records and behavioral replays to generate and cross-review paired proposals. A generative extension converts generated meshes into editable articulated models with configured joints, actuator interfaces, and consistently updated simulation assets.\n\nAcross five locomotion benchmarks, mean scores over three evaluation seeds are 6.4-91.9% higher than D2C. Both methods train 30 new morphology-reward pairs over five rounds; LACE additionally uses four continuation training units. Five-task ablations examine policy inheritance and replay-derived feedback.\n\nA fabricated prototype demonstrates indoor walking and illustrates the geometry-to-hardware workflow."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LACE-CRAFT for robot co-design, combining morphology search with policy learning. LACE resumes the incumbent robot’s learning state and initializes compatible challengers with its actor parameters and observation statistics; a fixed task metric selects between both branches and the frozen incumbent. CRAFT coordinates four roles through shared experimental records and behavioral replays to generate and review paired proposals. Across five locomotion benchmarks, mean scores over three evaluation seeds are reported as 6.4–91.9% higher than D2C. A fabricated prototype demonstrates indoor walking and the geometry-to-hardware workflow.",
+          "zh": "论文提出 LACE-CRAFT，用于结合机器人形态搜索与策略学习的协同设计。LACE 延续当前机器人的学习状态，并用其策略参数和观测统计初始化兼容的新设计，再按固定任务指标比较两条学习分支与冻结的 incumbent。CRAFT 通过共享实验记录和行为回放协调反馈、形态、奖励与集成角色，生成并交叉审查成对方案。五项运动基准中，三次评估种子的平均分比 D2C 高 6.4%–91.9%；实体原型展示了室内行走及从几何模型到硬件的流程。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3254,7 +3262,11 @@
             "heading": "",
             "text": "Building interactive simulators from real-world observations is a promising way to scale embodied data, but current pipelines still rely heavily on manual environment construction and calibration. We study whether frontier foundation models and coding agents can automate this process end to end.\n\nWe formulate \\emph{autonomous video-to-simulation} as a software engineering task in which an agent observes an embodied video, constructs the corresponding simulated environment and robot behavior, and iteratively refines the result through execution feedback.\n\nTo evaluate this capability, we introduce \\textbf{Video2World}, a benchmark comprising 222 reconstruction instances derived from 189 robot and human demonstration videos.\n\nVideo2World measures reconstructed worlds along geometric fidelity, dynamic fidelity, and functional correctness, capturing spatial perception, physical reasoning, and executable interaction.\n\nEvaluating 9 frontier coding-agent systems reveals a sharp improvement in Task success beginning with Claude Opus 5, rising from below 5\\% to over 15\\%, while substantial gaps to human-assisted reconstruction remain. We further find that worlds that look better could work worse: better visual fidelity does not always lead to higher task success.\n\nThis echoes the broader gap between perceptual realism and factual correctness observed in generative models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether foundation models and coding agents can build interactive simulations from embodied videos and refine them through execution feedback. It introduces Video2World, a benchmark with 222 reconstruction instances drawn from 189 robot and human demonstration videos. The benchmark evaluates geometric fidelity, dynamic fidelity, and functional correctness. Evaluation of nine frontier coding-agent systems shows task success rising from below 5% to above 15% beginning with Claude Opus 5, while a substantial gap to human-assisted reconstruction remains. Better visual fidelity does not always correspond to higher task success.",
+          "zh": "论文研究基础模型与编码代理能否根据具身视频自动构建交互式仿真环境，并通过执行反馈迭代改进。作者提出 Video2World 基准，包含从 189 段机器人及人类演示视频得到的 222 个重建实例，以几何保真度、动态保真度和功能正确性评估重建结果。对九种前沿编码代理系统的评估显示，从 Claude Opus 5 开始任务成功率明显提升，由低于 5%升至高于 15%，但与人工辅助重建仍有较大差距；视觉效果更好也不必然意味着任务成功率更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
