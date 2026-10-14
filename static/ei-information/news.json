@@ -3122,7 +3122,11 @@
             "heading": "",
             "text": "Physical AI is commonly formulated around an explicitly specified task: given a goal or instruction, a system perceives, reasons, and acts. In many real-world settings, however, important tasks emerge from continuously changing world states before a person explicitly formulates them.\n\nWe study this complementary problem as Proactive Physical AI, where an AI system continuously observes the physical world, identifies situations that warrant intervention, and initiates appropriate actions at the right time.\n\nWe develop ProAgent, an end-to-end system built around two components: a Jev-style proactive timing model (dubbed StreamingJev) that determines whether and when intervention is needed, and a Response Model that generates responses for people or invokes available device capabilities for physical execution.\n\nTo support learning at scale, we develop an automated data pipeline that converts videos into supervision for proactive timing. Experiments demonstrate strong proactive performance under both explicit objectives and standing roles, combining more accurate intervention timing with fewer false triggers than the source-backbone baseline.\n\nReal-robot evaluations further demonstrate ProAgent's ability to identify emerging needs and translate them into appropriate physical actions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies Proactive Physical AI, in which a system continuously observes the physical world, detects situations requiring intervention, and acts at an appropriate time. It presents ProAgent, combining a timing model that decides whether and when to intervene with a response model that communicates with people or invokes device capabilities. An automated video-to-supervision pipeline supports timing training. Experiments report more accurate timing and fewer false triggers than the source-backbone baseline under explicit objectives and standing roles; real-robot evaluations demonstrate actions responding to emerging needs.",
+          "zh": "论文研究主动式具身智能：系统持续观察物理世界，在人明确提出任务前识别需要干预的情形并适时行动。作者提出端到端系统 ProAgent，由判断是否及何时干预的 StreamingJev 模型，以及面向人员生成回应或调用设备能力的响应模型组成，并构建从视频生成时机监督数据的自动流程。实验显示，在明确目标和持续角色两类设定下，其干预时机更准确、误触发更少；真实机器人评估还展示了识别新兴需求并转化为相应物理行动的能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3153,7 +3157,11 @@
             "heading": "",
             "text": "Egocentric human data offers scalable supervision for robot manipulation. However, behavior cloning entangles transferable content like objects, scenes, and task semantics, with non-transferable factors like human morphology, head motion, and behavioral style.\n\nWe study whether World Action Models (WAMs) provide a better training signal by requiring policies to predict not only actions, but also how the scene evolves. The central question is what world representation best enables human-to-robot transfer.\n\nWe hypothesize that an effective world target should abstract appearance, capture agent-invariant physical effects, and separate camera motion from environment change.\n\nWe introduce EgoWAM, a controlled human-robot co-training framework that fixes the policy backbone, action head, and data mixture while varying only the world prediction target, comparing Pixel, DINO, and 3D motion flow.\n\nAcross three real-world bimanual tasks, WAM co-training scales more effectively with in-the-wild egocentric human data than behavior cloning.\n\nPixel-based prediction transfers weakly, while DINO and 3D flow yield substantial gains: DINO improves out-of-distribution object and scene generalization by up to 4x, and 3D flow improves in-domain performance by 20-30%.More details: https://gatech-rl2.github.io/egowam.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "EgoWAM investigates whether World Action Models can improve human-to-robot manipulation transfer by predicting scene evolution alongside actions. Its controlled co-training setup varies only the world prediction target, comparing pixels, DINO features, and 3D motion flow while holding other training components fixed. Across three real-world bimanual tasks, WAM co-training scales more effectively with in-the-wild egocentric data than behavior cloning. Pixel prediction transfers weakly, while DINO and 3D flow provide gains in out-of-distribution generalization and in-domain performance, respectively.",
+          "zh": "论文提出 EgoWAM，研究世界动作模型能否通过预测场景变化改善人类到机器人的操作迁移。作者指出，第一人称人类数据包含可迁移的物体、场景和任务信息，也包含人体形态、头部运动和行为风格等难迁移因素。该框架固定策略骨干、动作头和数据混合，仅改变世界预测目标，对比像素、DINO 表征和三维运动流。在三项真实世界双手任务中，联合训练比行为克隆更能利用野外第一人称数据；像素预测迁移较弱，DINO 和三维运动流则分别在分布外泛化和域内表现上带来摘要所述提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3184,7 +3192,11 @@
             "heading": "",
             "text": "Self-driving laboratories (SDLs) aim to automate the full experimental loop, from scientific decision-making to physical execution.\n\nIdeally, AI-generated plans could be carried out directly by robotic systems, but reliable automation remains difficult in complex, open-world laboratory environments, where experiments often involve fine-grained manipulation, long-horizon procedures, and substantial variation across tasks and setups.\n\nHumans therefore remain an important execution interface between AI-generated plans and physical experiments, creating a need for clear and effective human-facing experimental guidance.\n\nBecause laboratory procedures are inherently visual, spatial, and dynamic, video is particularly well suited to communicating apparatus configurations, manipulation actions, temporal dependencies, and state changes.\n\nRecent advances in video generation now make it possible to synthesize experimental demonstrations directly from an initial workspace image and a natural-language instruction. However, whether such models can reliably communicate real laboratory procedures has not been systematically studied.\n\nWe introduce LabInstruct, a benchmark for situated instructional video generation in real laboratories. LabInstruct contains 204 tasks across 5 scientific disciplines, with real reference executions and structured annotations of objects, actions, contacts, and state transitions.\n\nEvaluating 8 frontier image-to-video models, we find that visually plausible generations frequently remain procedurally incorrect, revealing a substantial gap between visual realism and the reliability required for experimental instruction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LabInstruct is a benchmark for generating situated instructional videos for real laboratory procedures. The paper notes that complex laboratory automation remains difficult, so humans often execute AI-generated plans and need clear guidance. Video can convey apparatus, manipulation, timing, and state changes, but its reliability for communicating real procedures had not been systematically studied. The benchmark includes tasks from five scientific disciplines, real reference executions, and structured annotations. Evaluation of eight image-to-video models finds that visually plausible outputs are often procedurally incorrect, exposing a gap between realism and instructional reliability.",
+          "zh": "论文介绍 LabInstruct，这是面向真实实验室情境化操作指导视频生成的基准。研究背景是：复杂、开放环境中的实验自动化仍面临精细操作、长流程及任务和设备差异等困难，因此人类仍需执行 AI 生成的计划。视频生成可从初始工作区图像和自然语言指令合成实验演示，但其能否可靠传达真实流程尚未得到系统研究。基准包含五个科学领域的 204 项任务、真实参考执行，以及对物体、动作、接触和状态变化的结构化标注。对八种图像转视频模型的评估发现，视觉上可信的生成常在程序步骤上出错，显示视觉真实感与实验指导所需可靠性之间存在差距。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
