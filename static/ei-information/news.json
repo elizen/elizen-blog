@@ -1632,7 +1632,11 @@
             "heading": "",
             "text": "A simulation of a real robot workspace must preserve task-relevant interactions, while policies developed in it must operate on observations available to the real robot. Yet scene reconstruction and policy development are often treated separately.\n\nWe present Agentic Real-to-Sim-to-Real (Agentic RSR), a framework that links scene reconstruction, policy development, and real-robot execution through the same manipulation task.\n\nGiven a workspace video, a task description, and a known robot model, an agent recovers metric scale, iteratively refines the scene using visual feedback, and checks task-relevant interactions in MuJoCo. A coding agent then develops an executable policy, progressing from privileged object poses to visual observations and randomized simulation.\n\nThe policy can interleave multiple observations and actions within one invocation, while the agent uses execution feedback to continue, retry, or revise its approach. A shared task-level interface carries the policy and accumulated experience to the real robot, where fresh observations and safety checks guide execution.\n\nUsing Claude Opus 5.5 through DeepSeek Harness (DSH), all 18 scenes across two robots pass the joint visual check; mean four-view Depth MAE against reference depth estimates is 0.0808 m, mean Lab $\\Delta E_{76}$ is 8.01, and mean grayscale SSIM is 0.7338.\n\nIn real-robot experiments, the aggregate task success rate reaches 80% of the simulation task success rate, indicating substantial retention of simulated performance on hardware. Code and reconstructed scene data will be made publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Agentic RSR, linking scene reconstruction, policy development, and real-robot execution around the same manipulation task. From workspace video, a task description, and a known robot model, the framework recovers scale, refines the scene, and checks task-relevant interactions in MuJoCo. A coding agent develops policies using progressively less privileged observations and execution feedback. The authors report that all 18 scenes across two robots pass a joint visual check, and real-robot task success reaches 80% of simulation task success.",
+          "zh": "论文提出 Agentic RSR，将场景重建、策略开发和真实机器人执行连接到同一操作任务中。框架从工作区视频、任务描述和已知机器人模型出发，恢复尺度并迭代细化场景，在 MuJoCo 中检查任务相关交互；编码代理逐步开发策略，并利用执行反馈调整方案。策略及累积经验通过共享任务接口转移到真实机器人，由新观测和安全检查指导执行。作者报告，两个机器人涉及的18个场景均通过联合视觉检查；真实机器人实验的任务成功率达到仿真任务成功率的80%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1663,7 +1667,11 @@
             "heading": "",
             "text": "Foundation-model (FM) based task and motion planning (TAMP) methods typically assume that the full scene is known before planning. In long-horizon manipulation, however, relevant objects may initially be hidden and only become observable as the robot interacts with the environment.\n\nWe introduce Robust-TAMP, a task and motion planning framework that first decides whether a discovery needs a replan. If replanning is needed, the robot executes unaffected actions while the FM synthesizes corrective actions.\n\nThese actions are inserted into the existing plan based on urgency, either executed immediately or deferred while preserving the remaining plan. We evaluate Robust-TAMP on 14 MuJoCo environments with hidden objects, blocked placements, articulated containers, and multi-step tasks, and on five real-world settings.\n\nOur proposed method completes 92.1% of simulated tasks, outperforming four baseline comparison architectures by 47.1 percentage points under the same settings. Ablations show that each component either raises success or lowers planner calls, planning time, and robot idle time.\n\nAn extensive study across model sizes, text and vision inputs, reasoning modes, and prompting further shows that in-context examples help the planner follow multi-step procedures that zero-shot prompting struggles with. Our implementation code and project details are available at https://narendhiranv04.github.io/ROBUST-TAMP/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Robust-TAMP for deciding whether and how to replan during long-horizon manipulation when relevant objects are initially hidden. If replanning is needed, the robot can continue unaffected actions while a foundation model generates corrective actions, which are inserted immediately or deferred according to urgency. The authors evaluate the method in 14 MuJoCo environments and five real-world settings. They report 92.1% simulated task completion, 47.1 percentage points above four baselines under the same settings; ablations indicate components improve success or reduce planning costs and idle time.",
+          "zh": "论文提出 Robust-TAMP，用于在物体初始隐藏、交互后才可见的长时程操作中决定是否以及如何重新规划。若需重规划，机器人可先执行不受影响的动作，同时由基础模型生成纠正动作；新动作按紧迫程度插入现有计划，可立即执行或延后。作者在14个 MuJoCo 环境和五种真实场景中评估，报告仿真任务完成率为92.1%，比相同设置下四种基线高47.1个百分点。消融研究显示，各组成部分可提升成功率或降低规划开销与机器人等待时间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
