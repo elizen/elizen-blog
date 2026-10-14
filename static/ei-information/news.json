@@ -1282,7 +1282,11 @@
             "heading": "",
             "text": "Robust proprioceptive state estimation is crucial for legged robots, particularly in challenging environments where exteroceptive sensors are unreliable.\n\nWhile traditional leg odometry typically relies on a single body-mounted inertial measurement unit (IMU) fused with leg kinematics via an extended Kalman filter (EKF), such methods are vulnerable to linearization errors and hard-contact assumptions, leading to severe drift during slippage or dynamic locomotion.In this paper, we propose LAG-IO, a factor graph-based multi-IMU state estimation framework that tightly couples measurements from a main body IMU, multiple leg-mounted IMUs, and joint encoders within a sliding-window optimization.\n\nTo handle non-stationary foot-ground interactions, we introduce a continuous probabilistic contact detection module based on kernel density estimation (KDE), which adaptively scales the covariance of zero-velocity update (ZUPT) factors.\n\nFurthermore, kinematic relative position factors are formulated to structurally anchor the independent leg inertial states to the robot's main body.\n\nExperimental results on a quadruped robot across various unstructured terrains demonstrate that, compared to existing baselines, LAG-IO achieves higher planar trajectory accuracy, reduces unobservable vertical divergence, and provides smoother trajectory transitions during unstable contacts, while maintaining competitive attitude observability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LAG-IO, a factor graph framework for legged-robot state estimation that combines body and leg IMUs with joint encoders in a sliding window. It uses kernel density estimation for continuous probabilistic contact detection and adapts zero-velocity factor covariance, while kinematic relative-position factors anchor leg inertial states to the body. Experiments on a quadruped across unstructured terrains report improved planar trajectory accuracy, less vertical divergence, and smoother transitions during unstable contacts than existing baselines.",
+          "zh": "论文提出用于足式机器人的LAG-IO多IMU状态估计框架，在滑动窗口因子图中融合机身与腿部IMU及关节编码器。方法以核密度估计进行连续概率接触检测，并据此调整零速度更新因子的协方差；运动学相对位置因子则将腿部惯性状态锚定到机身。四足机器人在多种非结构化地形上的实验显示，相较基线，该方法提高平面轨迹精度、减少不可观测方向的垂直发散，并在接触不稳定时提供更平滑的轨迹转换，同时保持有竞争力的姿态可观测性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1313,7 +1317,11 @@
             "heading": "",
             "text": "Odometry estimation using light detection and ranging (LiDAR) and an inertial measurement unit (IMU), known as LiDAR-inertial odometry (LIO), often suffers from performance degradation in degenerate environments, such as long corridors or single-wall scenarios with narrow field-of-view LiDAR.\n\nTo address this limitation, we propose ALIVE-LIO, a degeneracy-aware LiDAR-inertial odometry framework that explicitly enhances state estimation in degenerate directions. The key contribution of ALIVE-LIO is the strategic integration of a deep neural network into a classical error-state Kalman filter (ESKF) to compensate for the loss of LiDAR observability.\n\nSpecifically, ALIVE-LIO employs a neural network to predict the body-frame velocity and selectively fuses this prediction into the ESKF only when degeneracy is detected, providing effective state updates along degenerate directions.\n\nThis design enables ALIVE-LIO to utilize the probabilistic structure and consistency of the ESKF while benefiting from learning-based motion estimation. The proposed method was evaluated on publicly available datasets exhibiting degeneracy, as well as on our own collected data.\n\nExperimental results demonstrate that ALIVE-LIO substantially reduces pose drift in degenerate environments, yielding the top-ranked result in 22 out of 32 sequences. Our code is available at https://github.com/cocel-postech/alive-lio."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ALIVE-LIO, a LiDAR-inertial odometry framework for degenerate settings such as long corridors and single-wall scenes. A neural network predicts body-frame velocity, which is selectively fused into an error-state Kalman filter when degeneracy is detected, to compensate along poorly observable directions. The authors report that experiments on public datasets exhibiting degeneracy and their own collected data show reduced pose drift, with top-ranked results in 22 of 32 sequences.",
+          "zh": "论文提出ALIVE-LIO，用于缓解长走廊或单墙等退化环境中的激光雷达惯性里程计性能下降。该方法将深度神经网络集成到误差状态卡尔曼滤波器中，预测机身坐标系速度，并仅在检测到退化时将预测速度融入滤波器，以补偿退化方向上的可观测性损失。作者称，这一设计结合了滤波器的概率结构与一致性，以及学习式运动估计。基于公开退化场景数据集和自采数据的实验显示，该方法减少了退化环境中的位姿漂移，并在32个序列中的22个取得排名第一。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
