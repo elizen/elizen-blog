@@ -730,7 +730,11 @@
             "heading": "",
             "text": "Learning humanoid loco-manipulation from human demonstrations rests on observing how locomotion, posture, and object interaction evolve together as tasks unfold. Scaling collection across diverse environments, in turn, favors lightweight, portable capture systems. Yet, existing datasets provide only partial views of this coordination.\n\nThus, we introduce EgoExplorer, a 100-hour vision-motion-touch observatory of human loco-manipulation built with a wearable system.\n\nWith an emphasis on professional activities, its continuous recordings align egocentric video with reconstructed whole-body motion, fine-grained finger articulation, and tactile observations, accompanied by step-level descriptions. To achieve this coverage with sparse body sensing, we develop the Calibrate-Complete-Constrain pipeline.\n\nConcretely, reusable calibration fixes participant geometry and sensor attachments before motion inference to disentangle mounting offsets from articulation.\n\nA temporal prior then completes unobserved joint motion, while layered constraints promote measurement agreement, temporal continuity, and geometric consistency, properties that motion plausibility alone does not guarantee.\n\nAgainst tracker-fitted references, the method reduces body-point error by 71.9% relative to the strongest baseline; matched evaluations also show gains in hand stability and contact estimation. Preliminary studies explore multimodal generation and conditioning alongside humanoid retargeting with whole-body control in simulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EgoExplorer, a wearable observatory for human loco-manipulation that aligns egocentric video with reconstructed whole-body motion, finger articulation, tactile observations, and step-level descriptions. Its Calibrate-Complete-Constrain pipeline calibrates participant geometry and sensor attachments, completes unobserved joint motion, and applies measurement, temporal, and geometric constraints. The authors report reduced body-point error against tracker-fitted references, alongside gains in hand stability and contact estimation. Preliminary studies explore multimodal generation and conditioning, and humanoid retargeting with whole-body control in simulation.",
+          "zh": "论文介绍 EgoExplorer，这是一个通过可穿戴系统采集的人类移动与操作数据集，持续记录第一人称视频、重建的全身动作、手指关节和触觉信息，并配有步骤级描述。作者提出 Calibrate-Complete-Constrain 流程，用于校准传感器与参与者几何关系、补全未观测关节动作，并施加测量、时间和几何约束。与跟踪器拟合参考相比，作者报告身体点误差降低；初步研究还探索了多模态生成、条件控制及仿真中的人形机器人动作重定向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -761,7 +765,11 @@
             "heading": "",
             "text": "Joint-embedding predictive architectures (JEPAs) predict masked or future observations in representation space, offering a natural source of predictive latents for vision-language-action (VLA) models.\n\nYet making these latents useful across pretraining, policy learning, and deployment requires addressing three failures: mismatch with embodiment-specific control, interference with action learning, and teacher miscalibration under distribution shifts.\n\nWe introduce Juno, a unified framework built around one action-conditioned JEPA that serves as a control-aligned representation backbone, a predictive teacher, and an adaptable dynamics model. During pretraining, we train it on embodiment-matched trajectories and use a dynamic CLS loss to transfer motion-weighted patch dynamics to a compact global state.\n\nDuring policy learning, we fuse current-frame JEPA patches into VLA perception and use a decoupled reasoning branch with separate transformation parameters to distill future latent states for action generation.\n\nDuring deployment, we adapt the world model on all observed transitions, including failed rollouts, freeze the adapted teacher, and re-align the policy on verified executions using LoRA adapters and a trainable action head, without expert corrections or task rewards.\n\nOn SimplerEnv, Juno raises average success from $60.9\\%$ to $68.5\\%$ over Qwen3GR00T, the strongest baseline, and test-time adaptation further reaches $72.7\\%$; on a real robot, it retains $70\\%$--$75\\%$ success under background, height, and object shifts where the base policy collapses to $0\\%$."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Juno, a framework that uses one action-conditioned joint-embedding predictive architecture as a representation backbone, predictive teacher, and adaptable dynamics model for vision-language-action policies. It trains on embodiment-matched trajectories, distills future latent states through a decoupled reasoning branch, and adapts at deployment using observed transitions before re-aligning the policy on verified executions. The authors report higher average success than the strongest baseline on SimplerEnv, with further gains from test-time adaptation. On a real robot, they report retained success under background, height, and object shifts where the base policy collapses.",
+          "zh": "论文提出 Juno，将一个动作条件化的联合嵌入预测架构用于视觉语言动作模型的表示、预测教师和动力学模型。预训练阶段使用与具身匹配的轨迹和动态 CLS 损失；策略学习阶段融合当前帧特征，并通过独立推理分支蒸馏未来状态；部署阶段则利用观察到的转移适配模型，再以已验证执行重新对齐策略。作者报告，在 SimplerEnv 上成功率高于 Qwen3GR00T 基线，测试时适配后进一步提高；真实机器人测试中，在背景、高度和物体变化下仍保持一定成功率，而基础策略失效。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -792,7 +800,11 @@
             "heading": "",
             "text": "We present CoPlanVLM, which uses a Vision Language Model (VLM) to translate a single natural-language instruction and image into coordinated paths for a team of two robots. While VLMs offer a flexible, natural-language interface for commanding robot teams, their weak spatial reasoning has greatly limited VLM-based path planning.\n\nCoPlanVLM improves the VLM's spatial reasoning and path planning abilities through three components: （1） an image overlay marking both free space and obstacles, （2） task classification that selects the most appropriate low-level planner and reasoning prompt for each instruction, and （3） task-specific chain-of-thought reasoning that prompts the VLM to identify key objects, allocate roles, and verify routes are collision-free before committing to a plan.\n\nTogether, these components enable the team to complete complex coordinated maneuvers requiring both robots and divide large tasks between robots to increase efficiency. CoPlanVLM also supports detailed maneuvers involving specific routes, loops, and coverage of large areas, as well as tasks requiring directional reasoning such as north/south or left/right.\n\nWe validate CoPlanVLM in both Gazebo simulation and on physical Turtlebot 4 hardware. CoPlanVLM attains an average success rate of 84.4% compared to 50.0% for the closest baseline. On trials where both methods succeed, CoPlanVLM's paths are 27% shorter on average. Project code is available at https://github.com/AICPS/CoPlanVLM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CoPlanVLM, which converts a natural-language instruction and an image into coordinated paths for two robots. It improves spatial planning through an image overlay of free space and obstacles, task-based selection of a low-level planner and prompt, and task-specific reasoning to identify objects, assign roles, and check routes for collisions. The authors evaluate the system in Gazebo simulation and on physical Turtlebot 4 hardware. They report an average success rate of 84.4%, compared with 50.0% for the closest baseline; when both methods succeed, CoPlanVLM paths are 27% shorter on average.",
+          "zh": "论文介绍 CoPlanVLM，根据一条自然语言指令和一张图像，为两台机器人生成协同路径。方法通过标注空闲区域与障碍物的图像叠加层、按任务选择低层规划器及提示，以及引导模型识别关键物体、分配角色并检查路线是否无碰撞，来改进空间推理。作者在 Gazebo 仿真和实体 Turtlebot 4 上验证，报告平均成功率为 84.4%，对比基线为 50.0%；在两种方法均成功的试验中，CoPlanVLM 路径平均短 27%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -823,7 +835,11 @@
             "heading": "",
             "text": "Despite rapid progress, generalist robot policies remain brittle during execution. Reliable deployment therefore requires runtime monitoring that provides timely warnings of failure. Existing monitors commonly estimate risk from current observations or policy signals without explicitly predicting the future consequences of proposed actions.\n\nTo anticipate such risks before action execution, we introduce ReAP, a future-aware runtime monitoring framework that combines visual failure recognition with action-conditioned failure prediction. Specifically, ReAP first trains a visual detector on successful and failed rollouts to learn a failure-relevant representation space and estimate current risk.\n\nAn action-conditioned predictor then forecasts the resulting future representation in this space to estimate future failure risk. At runtime, the detector and predictor provide complementary signals for current-state failure recognition and future-aware risk assessment.\n\nExperiments across diverse robot policies in simulation and the real world demonstrate that ReAP effectively balances failure-detection accuracy and warning timeliness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ReAP, a runtime monitoring framework that combines visual failure recognition with action-conditioned prediction to warn of robot policy failures. A detector trained on successful and failed rollouts learns a failure-relevant representation and estimates current risk. A predictor then forecasts the future representation conditioned on a proposed action to estimate future failure risk. At runtime, the two components provide complementary signals for recognizing current failures and assessing upcoming risks. Experiments across diverse robot policies in simulation and the real world are reported to balance detection accuracy with warning timeliness.",
+          "zh": "论文提出 ReAP，一种面向机器人运行时监控的未来风险预测框架，结合视觉失败识别与动作条件化预测。系统先用成功和失败轨迹训练视觉检测器，以学习与失败相关的表示并估计当前风险；随后预测器根据拟执行动作预测未来表示，从而估计未来失败风险。运行时，检测器和预测器分别提供当前状态失败识别与前瞻风险评估信号。作者称，在仿真和真实世界的多种机器人策略实验中，ReAP 能兼顾失败检测准确性与预警及时性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
