@@ -1546,7 +1546,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Goal-Conditioned Vision-Predictor-Action (VPA), which replaces token-by-token autoregressive action decoding with a latent control loop. It encodes observations, goal images, and instructions, selects a discrete skill, predicts the next latent state, and uses flow matching to generate an action chunk. The authors say sequential network evaluations per decision step do not grow with action horizon. In an initial LIBERO-10 proof of concept, trained from that suite’s demonstrations in a single run, a two-camera policy succeeded in 40.0% of 200 evaluation episodes; the authors describe the evidence as preliminary.",
+          "zh": "论文提出目标条件化的 Vision-Predictor-Action（VPA），以轻量潜在控制循环替代逐词生成动作的自回归解码器。系统编码观测、目标图像和指令，选择离散技能，预测下一潜在状态，并用流匹配生成动作片段；作者称每步网络评估次数不随动作时域增长。初步概念验证在 LIBERO-10 上进行：模型仅用该套件演示训练，单次训练运行中，双摄像头策略在 200 个评估回合中成功率为 40.0%。这些结果被作者限定为初步证据，称方法可行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1577,7 +1581,11 @@
             "heading": "",
             "text": "B-Human won multiple competitions in the Middle Division of the new Humanoid Soccer League in 2026.In addition to regular matches with three or five players per team, we ventured into uncharted territory by playing demo matches with eleven humanoid robots, highlighting the tactical flexibility of our behavior and the overall robustness of our system.\n\nAs B-Human formerly competed in the Standard Platform League with robots half the size and less than a third the weight, we begin by outlining the adjustments needed for this transition. The central section of this paper details our behavior architecture, drawing on concepts from RoboCup leagues that have used 11 players for much longer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes B-Human’s participation in the Middle Division of the Humanoid Soccer League in 2026, where the team won multiple competitions. Alongside regular matches with three or five players per team, it played demonstration matches with eleven humanoid robots per team. The paper says these matches highlighted the tactical flexibility of its behavior and the system’s robustness. It outlines adjustments made when moving from smaller, lighter Standard Platform League robots, then details the behavior architecture and concepts drawn from RoboCup leagues with longer experience of eleven-player teams.",
+          "zh": "论文介绍 B-Human 团队在 2026 年新设人形机器人足球联赛中级组的参赛经历。团队在常规三人或五人制比赛之外，参加了每队十一台人形机器人的演示赛，展示其行为系统的战术灵活性和整体稳健性。论文先说明团队从体型较小、重量更轻的标准平台联赛机器人转向当前平台所需的调整，随后重点介绍行为架构，并借鉴长期采用十一人制的 RoboCup 联赛概念。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
