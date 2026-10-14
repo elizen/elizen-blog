@@ -1352,7 +1352,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models map observations to actions with no objective that accounts for how the world responds, so their robustness is bounded primarily by data coverage.\n\nWorld models carry precisely that missing objective and are better grounded for it, yet rolling the future forward costs seconds per decision and rules them out of the control loop. We show the two can be separated.\n\nWhat a world model knows about physical scenes lives in its internal features; generating the future is merely the objective that produced them, so the grounding can be inherited while the generative machinery is left behind.\n\nWe add one feature-alignment term to ordinary VLA training: a frozen world model is run over the training frames once and cached, and the student learns to agree with that cache.\n\nNo teacher is loaded during training, the projector is discarded after it, and the deployed policy is identical to the undistilled baseline, running in 32ms and 1.86GB on a consumer RTX5090, so every gain is attributable to the representation rather than to added capacity or test-time compute.\n\nA 0.8B student reaches 97.9% on LIBERO, improves from 48.2% to 50.5% on RoboCasa-GR1 humanoid manipulation, and the same objective carries over to real hardware, on both a single-arm and a bimanual platform.\n\nThe gain survives changes of student scale, backbone, alignment layer, and teacher, indicating a broad representational prior rather than a fragile alignment between two particular networks. Project page: https://thaw-vla.trung-dt.com/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes distilling world-model representations into vision-language-action policies through a feature-alignment term. A frozen world model processes training frames once, and its cached features guide the student; the teacher and projector are absent at deployment. The authors say this transfers grounding without adding policy capacity or test-time compute. They report that a 0.8B student reaches 97.9% on LIBERO and improves from 48.2% to 50.5% on RoboCasa-GR1 manipulation. The abstract also says the objective carries over to real single-arm and bimanual hardware.",
+          "zh": "论文提出将世界模型表征蒸馏到视觉语言动作策略：训练时冻结世界模型，对训练帧提取并缓存特征，再通过特征对齐项训练策略；部署时不使用教师模型或额外投影器。作者称该方法将物理场景表征迁移到紧凑策略，而不增加部署容量或推理计算。摘要报告，0.8B 学生模型在 LIBERO 达到 97.9%，在 RoboCasa-GR1 操作任务由 48.2% 提升至 50.5%，并称该目标也适用于单臂和双臂真实硬件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1383,7 +1387,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models are often pretrained via imitation learning, making reinforcement learning (RL) post-training important when deployment moves beyond demonstration coverage.\n\nExisting refinement paradigms expose a reliability--efficiency tension: model-free refinement avoids simulator bias but is interaction-intensive, whereas model-based refinement can exploit unreliable imagination even as its simulator adapts.\n\nWe propose Model-Evolving Reinforcement Learning (MERL), a trust-calibrated framework that couples policy optimization with an online-updated simulator comprising a world model and a reward proxy head.\n\nAcross stages, simulator reliability controls the imagined-data ratio and rollout horizon; within rollouts, chunk-level trust controls replay selection and optimization weight. For recursive imagination without exact grounded continuations, a residual predictor estimates trust without querying future ground truth.\n\nOn perturbed LIBERO-PRO tasks, MERL reaches 79.7% average success, improves high-threshold learning speed by 10.9% over the matched model-free control, and outperforms same-protocol external baselines across three training seeds. Fixed-data adaptation from 50 demonstrations per task achieves 80.0% average success on two physical-robot tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Model-Evolving Reinforcement Learning (MERL) for post-training vision-language-action policies. It jointly optimizes a policy and an online-updated simulator with a world model and reward proxy. Simulator reliability sets the imagined-data ratio and rollout horizon, while chunk-level trust affects replay selection and optimization weights. A residual predictor estimates trust during recursive imagination without querying future ground truth. On perturbed LIBERO-PRO tasks, the authors report 79.7% average success and 10.9% faster high-threshold learning than a matched model-free control. Fixed-data adaptation with 50 demonstrations per task reaches 80.0% average success on two physical-robot tasks.",
+          "zh": "论文提出模型演化强化学习 MERL，用于视觉语言动作策略的后训练。该框架联合优化策略并在线更新由世界模型和奖励代理头组成的模拟器；模拟器可靠性决定想象数据比例与 rollout 时域，片段级信任度影响回放选择和优化权重。递归想象中，残差预测器在不查询未来真实状态的情况下估计信任度。作者报告，在受扰动 LIBERO-PRO 任务上平均成功率为 79.7%，相对匹配的无模型对照，高阈值学习速度提升 10.9%；使用每项任务 50 次演示进行固定数据适配时，两个实体机器人任务平均成功率为 80.0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
