@@ -357,7 +357,11 @@
             "heading": "",
             "text": "Task planning for robots in off-site construction prefabrication is primarily manual, leading to planning inefficiencies and reluctance to adopt robotic solutions. Existing approaches provide limited support for scalable, modular automated task planning and localized runtime replanning.\n\nThis paper proposes APTree, a model-driven framework that integrates automated task planning with modular task execution using behavior trees as the execution model. APTree repeatedly applies and coordinates heterogeneous symbolic planners to automatically generate and compose modular task plans at runtime.\n\nTo support this approach, we develop a domain-specific language for the formal specification and validation of task plans, together with a compatible execution engine.\n\nWe evaluate APTree on the real-world livMatS Biomimetic Shell pavilion, where it models the construction robotic fabrication domain, detects injected specification and planning errors at design time and runtime, and automatically generates large-scale task plans by coordinating three symbolic planners across numerous planning modules.\n\nA machine-checked formal analysis further shows that composed execution and local replanning are safe under explicitly stated assumptions, including planner soundness and non-interference of generated plans, providing practitioners with explicit conditions for dependable plan composition.\n\nAPTree thus enables construction practitioners to leverage automated task planning without requiring detailed knowledge of symbolic planning techniques or APTree's internal implementation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents APTree, a model-driven framework for construction robot task planning. It uses behavior trees for modular execution and coordinates heterogeneous symbolic planners to generate and compose plans at runtime. The framework includes a domain-specific language for specifying and validating plans and a compatible execution engine. Evaluation on the real-world livMatS Biomimetic Shell pavilion reports error detection and large-scale plan generation. A machine-checked analysis establishes safety of composed execution and local replanning under stated assumptions, including planner soundness and plan non-interference.",
+          "zh": "论文提出APTree，一种面向施工机器人任务规划的模型驱动框架，使用行为树执行模块化计划，并在运行时协调多种符号规划器生成和组合计划。框架包含用于任务计划形式化描述与验证的领域专用语言及配套执行引擎。作者在livMatS仿生壳亭的真实建造场景中评估系统，报告其可检测设计时和运行时错误，并生成大规模计划。机器检查的形式分析表明，在规划器可靠、计划互不干扰等明确假设下，组合执行和局部重规划是安全的。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -388,7 +392,11 @@
             "heading": "",
             "text": "Assistance in collaborative manipulation is often initiated by user instructions, making high-level reasoning request-driven. In fluent human teamwork, however, partners often infer the next helpful step from the observed outcome of an action rather than waiting for instructions.\n\nMotivated by this, we investigate an event-driven formulation of proactive assistance, where human--object interaction outcomes initiate assistive reasoning without user-provided task specifications at inference time.\n\nTo this end, we propose an event-driven framework that monitors workspace state changes with an event monitor and, upon event completion, extracts stabilized pre/post snapshots that characterize the resulting state transition.\n\nA frozen pretrained Vision-Language Model (VLM) then uses its semantic priors to infer the task context, decide whether assistance is appropriate, and, when needed, generate a sequence of assistive actions from the observed transition.\n\nTo make outputs executable and verifiable, we restrict actions to a set of action primitives and reference objects via integer IDs. We evaluate the same framework across three distinct real world tabletop collaboration tasks without task-specific training or fine-tuning.\n\nThe event-driven framework achieves performance comparable to variants given user instructions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates event-driven proactive robot assistance, in which changes resulting from human-object interactions trigger reasoning without user-provided task specifications at inference time. An event monitor extracts stabilized before-and-after workspace snapshots. A frozen pretrained vision-language model infers task context, decides whether assistance is appropriate, and generates assistive action sequences. Actions are restricted to primitives and objects are referenced by integer IDs. Across three distinct real-world tabletop collaboration tasks, without task-specific training or fine-tuning, the framework performs comparably to variants given user instructions.",
+          "zh": "论文研究一种由事件驱动的主动机器人辅助方法：人机物体交互产生的状态变化触发推理，无需在推理时提供用户任务说明。事件监视器检测工作区变化，并提取稳定的前后状态快照；冻结的预训练视觉语言模型据此推断任务情境、判断是否需要帮助，并生成辅助动作序列。为使输出可执行和可验证，动作限定为预设原语，物体以整数编号引用。该框架在三种不同的真实桌面协作任务中评估，无需针对任务训练或微调，表现与提供用户指令的变体相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -419,7 +427,11 @@
             "heading": "",
             "text": "Humanoids increasingly demand lightweight leg mechanisms for agile, dynamic, and energy-efficient locomotion. Reducing distal inertia through proximal actuation has thus become a common design goal. Yet, compact transmissions that preserve torque capability and efficient force transmission remain hard to achieve.\n\nThis paper presents a novel series-parallel leg design combining a knee parallel mechanism, an ankle parallel mechanism, and a nonlinear knee-ankle coupling where all actuators placed closer to the hip.\n\nAs the knee flexes, the coupling passively assists ankle dorsiflexion for foot clearance and, as it extends it assists plantarflexion for push-off, redistributing ankle load through the knee transmission. We derive the coupling's nonlinear transmission models and validate them in simulation and on hardware.\n\nThe design shows that the shared transmission lets both joints draw on each other's actuator capacity by easing the knee's peak torque demand under load and the ankle's peak speed demand during fast motion. %Together With the leg's proximal actuator placement, the leg achieves an effective reflected mass of 0.37kg at the foot for a 6kg leg, demonstrating very low distal leg inertia for dynamic humanoid robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a series-parallel leg mechanism for humanoids, combining knee and ankle parallel mechanisms with a nonlinear knee-ankle coupling and actuators placed near the hip. During knee flexion, the coupling assists ankle dorsiflexion for foot clearance; during extension, it assists plantarflexion for push-off and redistributes ankle load through the knee transmission. The authors derive nonlinear transmission models and validate them in simulation and on hardware. They report that the shared transmission lets the joints draw on each other's actuator capacity, easing peak knee torque demand under load and peak ankle speed demand during fast motion.",
+          "zh": "论文提出一种用于人形机器人腿部的串并联机构设计，结合膝部和踝部并联机构及非线性膝踝耦合，执行器布置在靠近髋部的位置。膝关节屈曲时，耦合机构辅助踝背屈以利于抬脚；膝关节伸展时，则辅助跖屈以推动蹬地，并通过膝部传动分担踝部负载。作者推导了非线性传动模型，并通过仿真和硬件验证。论文报告，共享传动可使关节利用彼此的执行器能力，降低负载下膝关节的峰值扭矩需求及快速运动时踝关节的峰值速度需求。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -450,7 +462,11 @@
             "heading": "",
             "text": "Semantic scene understanding has enabled robots to reason and perform affordance-driven object interaction. Despite this, real-world manipulation remains fundamentally limited by the inability to predict how objects move and are articulated. Long-horizon mobile manipulation requires closing the gap between semantics, geometry, and kinematics.\n\nIn this work, we present MoMa-SG, a novel framework for building semantic-kinematic 3D scene graphs of articulated scenes containing a myriad of interactable objects. Given RGB-D sequences containing multiple object articulations, we temporally segment object interactions and infer object motion using occlusion-robust point tracking.\n\nWe lift point trajectories to 3D and estimate articulation models using a novel unified twist estimation formulation that robustly estimates revolute and prismatic joint parameters in a single optimization pass. Next, we associate objects with articulations and detect contained objects by reasoning over parent-child relations at identified opening states.\n\nWe also introduce the Arti4D-Semantic dataset, which provides parent-child relation annotations between container and contained objects together with object axis annotations across 62 in-the-wild RGB-D sequences containing 600 object interactions and three distinct observation paradigms.\n\nWe extensively evaluate the performance of MoMa-SG on two datasets and ablate key design choices of our approach. In addition, real-world experiments on both a quadruped and a mobile manipulator demonstrate robust manipulation of articulated objects in everyday home environments. We provide code and data at: https://momasg.cs.uni-freiburg.de."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MoMa-SG, a framework for building semantic-kinematic 3D scene graphs of articulated scenes with interactable objects. From RGB-D sequences, it segments interactions, infers motion with occlusion-robust point tracking, lifts trajectories to 3D, and estimates revolute and prismatic joints using a unified twist formulation. It associates objects with articulations and identifies contained objects from parent-child relations at opening states. The authors introduce the Arti4D-Semantic dataset with annotations from in-the-wild sequences. They evaluate MoMa-SG on two datasets and report real-world articulated-object manipulation experiments with a quadruped and a mobile manipulator.",
+          "zh": "论文提出MoMa-SG，用于构建含多种可交互物体的语义—运动学三维场景图。系统从RGB-D序列中分割物体交互，通过抗遮挡点跟踪推断运动，将轨迹提升至三维，并以统一扭量估计方法拟合转动和移动关节参数；随后关联物体与关节，并依据开启状态下的父子关系识别容器内物体。作者还介绍Arti4D-Semantic数据集，含野外序列中的容器关系及物体轴标注。论文在两个数据集上评估并消融设计选择，且报告四足机器人和移动操作机器人在真实家庭环境中操作关节物体的实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
