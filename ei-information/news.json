@@ -163,7 +163,11 @@
             "heading": "",
             "text": "Bilateral teleoperation with force feedback is becoming increasingly important, and the quality of external-torque estimation is critical to this process. However, manufacturer-provided disturbance-torque estimates on commercial robotic arms are often inaccurate, while the use of end-effector force/torque sensors adds cost and payload.\n\nWe propose LETS, a physics-guided learning approach that assigns rigid-body dynamics to recursive Newton-Euler inverse dynamics and reserves learning for only the robot-specific residual.\n\nLETS uses only the robot's URDF model and joint feedback, deliberately excluding control commands and thereby decoupling external-torque estimation from control-command inputs. It trains on 12 minutes of free-motion data in under one minute, without requiring a dedicated end-effector six-axis force/torque sensor.\n\nIn bilateral teleoperation, LETS achieves real-time external-torque estimation that enables stable force feedback. Its free-space error is 69% lower than the manufacturer-provided estimate, substantially reducing coupled oscillations between leader and follower; its contact error is 28% lower, yielding more accurate haptic feedback."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LETS, a physics-guided learning method for external-torque estimation in bilateral teleoperation. It assigns rigid-body dynamics to recursive Newton–Euler inverse dynamics and learns only a robot-specific residual. LETS uses the robot’s URDF model and joint feedback, excluding control commands and requiring no end-effector six-axis force/torque sensor. It trains on 12 minutes of free-motion data in under a minute. The authors report real-time estimates enabling stable force feedback, with 69% lower free-space error and 28% lower contact error than the manufacturer estimate, as well as reduced coupled oscillations.",
+          "zh": "论文提出 LETS，一种用于双边遥操作外部力矩估计的物理引导学习方法：用递归牛顿—欧拉逆动力学表示刚体动力学，仅学习机器人特定残差。方法仅使用 URDF 模型和关节反馈，不依赖控制指令或末端六维力/力矩传感器，并以 12 分钟自由运动数据在不到一分钟内训练。作者称其可实时估计力矩并支持稳定力反馈；在双边遥操作中，自由空间误差较厂商估计低 69%，接触误差低 28%，并减少主从端耦合振荡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "Model-based reinforcement learning has shown superior sample efficiency by leveraging the learned latent dynamics either in the form of derivative-free planning/imagined rollout training or dynamics gradient-based policy updates.\n\nWhile these approaches achieve comparatively fast learning, they all suffer, to varying degrees, from issues of recurrent compounding errors, high inference-time latency, and instability in backward propagation through time (BPTT).\n\nIn this work, we propose a model-based RL approach that uses the chunk world model as a differentiable training-time evaluator to optimize the chunk actor without recurrent model invocation.\n\nThrough the collaborative chunk-wise prediction of the world model and policy, we can generate H-step hypothetical rollouts in a single forward pass and directly optimize value expansion, avoiding the costly and unstable BPTT.\n\nWe evaluate our method on 19 challenging high-dimensional humanoid tasks from HumanoidBench and deploy our method to the real-world for quadruped bipedal walking. Project Website: https://song-wx.github.io/cmpo.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a model-based reinforcement learning approach that uses a chunk world model as a differentiable training-time evaluator for optimizing a chunk actor, without recurrent model invocation. The authors state that collaborative chunk-wise prediction by the model and policy generates H-step hypothetical rollouts in one forward pass and directly optimizes value expansion, avoiding costly and unstable backpropagation through time. They evaluate the method on 19 high-dimensional humanoid tasks in HumanoidBench and deploy it for real-world quadruped bipedal walking. The abstract does not specify the evaluation results.",
+          "zh": "论文提出一种基于分块世界模型的模型式强化学习方法，将该模型用作可微的训练时评估器，以优化分块策略，避免循环调用模型。作者称，世界模型与策略协同分块预测，可在一次前向计算中生成 H 步假设轨迹并直接优化价值扩展，从而避免代价高且不稳定的时间反向传播。论文在 HumanoidBench 的 19 项高维人形机器人任务上评估，并将方法部署到现实世界的四足机器人双足行走任务；摘要未说明具体评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "We completely characterize the solvability profiles of tasks for two autonomous mobile robots in the plane under variable disorientation, chirality, and rigid movements. The four standard capability models and the schedulers considered here have a known quotient order Q of thirteen computational classes.\n\nA task's solvability profile is the set of classes in which it is solvable, and is necessarily an upset of Q. We prove that every upset is realizable and construct a minimum exact disjunctive basis of thirteen concrete tasks. The basis contains one task for each principal upset.\n\nFor every antichain of Q, the disjunction of the corresponding tasks has profile exactly equal to the union of their profiles. This exactness is not implied by the individual profiles: an algorithm may satisfy different disjuncts in different executions.\n\nWe establish it by constructing, for every algorithm in each maximal class outside the target union, a single admissible fair execution violating all selected predicates simultaneously.\n\nConsequently, the realizable profiles form the entire finite distributive lattice Up(Q): there are exactly 54 profiles, counted by the antichain polynomial 1 + 13z + 24z^2 + 16z^3, and each has a canonical disjunctive representation using at most three principal tasks.\n\nWe also identify six tasks whose solvability signatures recover every inclusion and incomparability in Q, and prove that six is minimum even among arbitrary separating tasks. Their profiles are precisely the principal upsets generated by the join-irreducible elements of Q.\n\nIn contrast, any task family generating every profile by exact disjunctions must contain all thirteen principal profiles. Thus our exact disjunctive basis has minimum size and is unique at the profile level."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper characterizes task solvability profiles for two autonomous mobile robots in the plane under varying disorientation, chirality, and rigid-movement capabilities. The authors describe a quotient order Q with 13 computational classes; each task profile is an upset of Q, and they prove every upset is realizable using a minimum exact disjunctive basis of 13 concrete tasks. The realizable profiles form the finite distributive lattice Up(Q), with 54 profiles, each representable using at most three principal-upset tasks. They also show that six tasks are necessary and sufficient to distinguish all inclusions and incomparabilities in Q, while exact disjunctive generation of every profile requires all 13 principal profiles.",
+          "zh": "论文研究平面内两台自主移动机器人在方向感知、手性和刚体运动能力不同条件下的任务可解性。作者称，相关计算类别构成含 13 类的偏序 Q，每项任务的可解性轮廓是 Q 的上闭集；所有上闭集均可实现，并由 13 个具体任务构成最小精确析取基。由此，可实现轮廓组成有限分配格 Up(Q)，共有 54 种，每种都可用至多三个主上集任务表示。论文还称，六项任务足以且为最少，用于区分 Q 中所有包含与不可比关系；精确析取生成全部轮廓则必须包含全部 13 个主轮廓。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HelpMeOut, an embodied AI benchmark for monitoring errors during household task execution. It addresses the assumption in many existing benchmarks that people perform tasks correctly, and operationalizes everyday action errors in 20,000 paired activity episodes across nine neuropsychologically motivated categories. Agents observe streaming human activity trajectories and must detect whether execution is going wrong and diagnose structured errors as early as possible. The study evaluates learned-monitor, symbolic, change-point, and frontier LLM-prompting baselines. The authors report that these methods perform poorly as error monitors and often miss execution errors, indicating a gap in standard goal-inference and task-completion benchmarks.",
+          "zh": "论文介绍 HelpMeOut，这是一个面向家庭任务执行错误监测的具身人工智能基准。它针对现有基准通常假定任务执行正确的问题，整理了 20000 组配对活动片段，涵盖九类受神经心理学研究启发的错误。智能体观察连续的人类活动轨迹，需要尽早判断执行是否出错并诊断结构化错误。研究评估了学习式监测器、符号方法、变化点方法和前沿大语言模型提示基线；作者报告这些方法作为错误监测器表现较差，常会漏掉执行偏差，并据此指出现有目标推断和任务完成基准存在覆盖缺口。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
