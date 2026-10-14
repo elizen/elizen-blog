@@ -1912,7 +1912,11 @@
             "heading": "",
             "text": "The central challenge in reusing human actions across robots is the need to realize shared intent through incompatible kinematics, dynamics, and control interfaces.\n\nWe present SHARE, which decomposes action sharing into two connected stages---reference generation and feedback execution---and uses native robot references as their interface to achieve shared structure, native realization.\n\nIn the reference-generation stage, AdaMorph extracts human-motion intent with a shared temporal backbone and generates embodiment-compatible references through robot-conditioned decoding.\n\nIn the feedback-execution stage, AdaTrack combines these references with proprioception, action history, and morphology, then uses variable-length dynamic representations, morphology-conditioned attention, expert distillation, and closed-loop reinforcement learning to emit native actions from one shared Actor.\n\nOn G1, HI, AD, and T1, AdaMorph attains seen/unseen root-speed Pearson correlation coefficients (PCCs) of 0.951/0.894; AdaTrack reaches 94.00%/91.96% closed-loop Success Rate with 21.15% of the total parameters in four specialist Actors, while cross-embodiment pretraining improves seen/unseen adaptation by 9.67/13.62 points with only 1% target data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SHARE, a framework that divides cross-robot action sharing into reference generation and feedback execution, using native robot references as the interface. AdaMorph extracts human-motion intent and generates embodiment-compatible references; AdaTrack combines them with proprioception, action history, and morphology to produce native actions from a shared Actor. The abstract reports correlation, closed-loop success, and adaptation results on G1, HI, AD, and T1, but does not specify whether these reported results are from simulation or physical experiments.",
+          "zh": "论文提出 SHARE 框架，将跨机器人动作共享分为参考生成与反馈执行，并以原生机器人参考作为接口。AdaMorph 提取人类动作意图并生成适配不同机器人的参考；AdaTrack结合参考、本体感知、动作历史和形态信息，由共享 Actor 输出原生动作。摘要报告了 G1、HI、AD 和 T1 上的相关系数、闭环成功率及少量目标数据下的迁移适应结果，但未说明这些结果来自实机还是仿真。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1943,7 +1947,11 @@
             "heading": "",
             "text": "Quadruped robots deployed for inspection and field missions must cross heterogeneous terrain, from stairs, slopes, and gaps to high platforms, stepping stones, and balance beams, where safe support is sparse or see-through. Existing methods interpose a terrain map or a depth image between sensing and control.\n\nMaps are costly to maintain, corrupted by odometry drift and outliers, and misled by see-through gratings, while depth cameras degrade with lighting and surface material.\n\nIn this paper, we present PointWalker, a mapless framework whose single reinforcement learning policy directly consumes raw point clouds from four light detection and ranging (LiDAR) sensors.\n\nVoxelized points are encoded by linear self-attention and fused with proprioception through cross-attention, so terrain geometry reaches the policy without maps or foothold estimation.\n\nOne proximal policy optimization (PPO) run, with terrain-aware rewards and dual-channel simulation of see-through gratings, yields one policy for all seven terrain classes with a 90.1% mean success rate in simulation.\n\nDeployed zero-shot on a Deep Robotics X30 at 50 Hz onboard, it crosses 0.8-m gaps, climbs 0.8-m platforms and 45{\\deg} steel-grating stairs, carries a 50-kg payload, and completes a 2.5-km mountain route."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PointWalker, a mapless quadruped locomotion framework that takes raw point clouds from four LiDAR sensors directly, without terrain maps or foothold estimation. Its reinforcement learning policy encodes voxelized points and fuses them with proprioception. A single PPO training run produces a policy for seven terrain classes, with a 90.1% mean success rate in simulation. The abstract also reports zero-shot deployment on a Deep Robotics X30 and describes performance on gaps, platforms, steel-grating stairs, payload carrying, and a mountain route.",
+          "zh": "论文提出 PointWalker，一种直接以四个激光雷达传感器的原始点云为输入、无需地形地图或落足点估计的四足运动框架。强化学习策略通过体素化点云编码和本体感知融合处理地形信息。一次 PPO 训练得到的策略覆盖七类地形，在仿真中的平均成功率为 90.1%。摘要还称，该策略在 Deep Robotics X30 上零样本部署，并报告其跨越沟隙、攀爬平台和钢格楼梯、负载行进及山路任务的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1974,7 +1982,11 @@
             "heading": "",
             "text": "Multi-robot systems (MRS) offer significant advantages over single-robot platforms by enabling information sharing and coordination for different tasks in complex environments.\n\nHowever, reliable cooperation critically depends on inferring trust over both information sources and their reported hypotheses, particularly under partial observability and potential adversarial interference.\n\nExisting approaches frequently depend on pre-established trust relationships or side-channel information, which may not be available or reliable in realistic MRS deployments.\n\nThis work introduces NeST-Bayes, a neural-symbolic framework that jointly infers robot and hypothesis trust using only inter-robot observation consistency, without requiring preassigned robot trust, reputation information, or side-channel identity signals.\n\nNeST-Bayes infers instantaneous trust evidence scores for robots and object hypotheses by reasoning over ego-centric relational graphs constructed from cross-robot observation consistency. These evidence scores are accumulated over time through Bayesian updates of Beta-distributed trust beliefs to maintain temporally consistent trust estimates.\n\nExtensive evaluations show that NeST-Bayes achieves the highest mean object precision and robot recall across all benchmark settings, and the highest robot precision and object recall in most settings, compared to trust-based methods.\n\nUnder aggressive optimized attacks, it achieves 98.8\\% robot precision with 93.8\\% recall and 98.3\\% object precision with 95.4\\% recall. In an occlusion-rich Webots warehouse, it maintains 92.5\\% robot precision with 92.0\\% recall and 97.3\\% object precision with 85.0\\% recall.\n\nThese results demonstrate joint improvements in the reliability and coverage of retained information."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents NeST-Bayes for jointly inferring trust in robots and their reported object hypotheses in multi-robot systems. It uses inter-robot observation consistency to construct relational graphs, infer instantaneous trust evidence, and update trust beliefs over time with Bayesian updates. According to the abstract, it requires no preassigned trust, reputation data, or identity side channels. The authors report leading precision and recall on several benchmark measures, as well as results under optimized attacks and in an occlusion-rich Webots warehouse simulation.",
+          "zh": "论文提出 NeST-Bayes，用于多机器人系统中机器人及其报告的物体假设的联合信任推断。该方法仅依据机器人间观测一致性构建关系图，推断即时信任证据，再通过贝叶斯更新累积信念；摘要称其无需预设信任关系、声誉信息或身份侧信道。作者报告，该方法在基准测试中多项精确率和召回率指标领先，并在优化攻击场景及 Webots 仓库仿真中取得相应表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2005,7 +2017,11 @@
             "heading": "",
             "text": "In Nonlinear Model Predictive Control (NMPC), the control law is implicitly determined by the solution of an Optimal Control Problem (OCP).Consequently, OCP design is often tailored to specific platforms and tasks, demanding extensive expert knowledge and tuning effort.\n\nTo address this, we propose a unified NMPC framework that directly plans and controls the robot joints subject to task-space motion and force requirements and is capable of seamlessly generalizing across multiple robotic platforms and diverse tasks.\n\nFurthermore, optimization-based methods often treat interactions as rigid contacts, making the torque solution sensitive to the modeling errors of the robot dynamics and the environment.\n\nWe study the intrinsic task-space impedance of our proposed controller, its partial contraction for differential stability and differential passivity under unmodeled interactions.\n\nAs a result, our framework enables closing the force-feedback loop in the high-level planning layer to achieve precise motion-force tracking performance, addressing the long-standing challenge of force-feedback NMPC.\n\nFinally, we validate our framework on physical hardware, demonstrating hybrid motion-force control on a redundant manipulator and compliant locomotion on a quadruped, while preserving core NMPC advantages such as hard constraint satisfaction, optimal redundancy exploitation, and real-time planning under unforeseen interactions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a unified nonlinear model predictive control framework that directly plans and controls robot joints subject to task-space motion and force requirements. It studies the controller’s task-space impedance and stability properties under unmodeled interactions. The authors say the framework closes the force-feedback loop at the high-level planning layer for precise motion-force tracking. The abstract reports physical hardware validation: hybrid motion-force control on a redundant manipulator and compliant locomotion on a quadruped, while retaining hard-constraint satisfaction, redundancy exploitation, and real-time planning.",
+          "zh": "论文提出统一的非线性模型预测控制框架，直接规划和控制机器人关节，同时满足任务空间运动与力要求，并研究控制器的任务空间阻抗及其在未建模交互下的稳定性性质。作者称，该框架可在高层规划中闭合力反馈回路，以支持运动与力的精确跟踪。摘要报告了实体硬件验证：冗余机械臂上的运动力混合控制，以及四足机器人上的柔顺运动，并称保留了硬约束满足、冗余利用和实时规划等特性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
