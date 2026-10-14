@@ -3017,7 +3017,11 @@
             "heading": "",
             "text": "Evaluating robot policies before deployment typically requires producing new trajectories through real-world execution, simulators, or learned world models. These rollout-based approaches impose infrastructure requirements; simulator and world-model evaluators additionally face prediction errors that can compound over the evaluation horizon.\n\nIn this paper, we study off-policy evaluation as an alternative to rollout-based robot-policy evaluation methods.\n\nSpecifically, we introduce RoboFQE, an evaluator that estimates the discounted expected return of a target policy from offline robot trajectories without estimating a behavior-policy density, combining fitted Q-evaluation with a pretrained vision foundation model and learned terminal success annotation to bridge the gap between standard OPE benchmarks and continuous-control visual manipulation.\n\nControlled experiments across simulated and real-world manipulation tasks show that RoboFQE produces accurate discounted-return estimates and preserves policy rankings even on long-horizon manipulation tasks where video world-model evaluators are degraded by autoregressive prediction errors.\n\nAblation experiments show that pretrained vision encoders substantially outperform from-scratch alternatives, particularly on long-horizon tasks, and that learned terminal success annotation enables evaluation without ground-truth reward labels with only slight reduction of accuracy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes RoboFQE, an off-policy evaluator that estimates a target robot policy’s discounted expected return from offline trajectories without estimating behavior-policy density. It combines fitted Q-evaluation, a pretrained vision foundation model, and learned terminal-success annotation. Controlled experiments on simulated and real-world manipulation tasks reportedly yield accurate return estimates and preserve policy rankings; video world-model evaluators degrade on long horizons due to autoregressive prediction errors. Ablations find pretrained visual encoders outperform training from scratch, especially on long tasks, while learned terminal annotations allow evaluation without ground-truth rewards with a slight accuracy reduction.",
+          "zh": "论文研究以离线策略评估替代机器人策略部署前的滚动评估，并提出 RoboFQE，从离线机器人轨迹估计目标策略的折扣期望回报。该方法结合拟合 Q 评估、预训练视觉基础模型和学习得到的终止成功标注，无需估计行为策略密度。模拟与真实操作任务的受控实验显示，RoboFQE 能较准确估计回报并保持策略排序；在长时域任务上，视频世界模型评估器会受到自回归预测误差影响。消融实验显示，预训练视觉编码器优于从头训练的替代方案，尤其在长时域任务中；学习终止成功标注可在没有真实奖励标签时进行评估，准确度略有下降。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3048,7 +3052,11 @@
             "heading": "",
             "text": "A deterministic method for the problem of distributed area coverage path planning subject to the inclusion of a headland path is presented.\n\nGiven a, in general, non-convex area to be covered that may, in general, include obstacle areas, multiple robots, at least one robot depot, and constraints on each machinery such as a working width, work capacity limits, travel capacity limits, nonholonomic dynamical constraints and, possibly, a robot start and end depot assignment, distributed paths for each machinery are calculated that collectively enable full area coverage.\n\nVariations are discussed, in particular, a scenario where unconstrained depots assignment can attain a global optimal solution to the problem. The importance of inclusion of a headland path for area coverage, as well as the benefits in comparison to an alternative Boustrophedon-pattern based approach are highlighted."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a deterministic method for distributed area-coverage path planning that includes a headland path. The problem can involve a generally non-convex area with obstacles, multiple robots, at least one depot, and constraints such as working width, work and travel capacity, nonholonomic dynamics, and possible start and end depot assignments. The method computes paths that collectively cover the area. The authors discuss variations, including a setting where unconstrained depot assignment can attain a global optimum, and highlight the headland path’s importance and benefits over a Boustrophedon-pattern approach.",
+          "zh": "论文提出一种确定性方法，用于包含田埂路径约束的分布式区域覆盖路径规划。问题设定允许待覆盖区域通常为非凸且可能含障碍，并考虑多台机器人、至少一个机器人基地，以及作业宽度、作业能力、行程能力、非完整动力学约束和可能存在的起终基地分配约束。方法计算各机器人的分布式路径，使其共同覆盖整个区域。论文还讨论不同设定，尤其是基地分配不受约束时可获得全局最优解的情形，并强调纳入田埂路径的重要性及相较于往复式覆盖模式的优势。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3079,7 +3087,11 @@
             "heading": "",
             "text": "Frontier language-model agents can now improve robots on their own: they write control code, test it, and keep what works as skills and memories for the next task. We introduce SEAR (Self-Evolving Agentic Robotics), a framework and benchmark built around two questions. Is the agent really learning, or just trying more often?\n\nAnd does what it learns still help on new tasks, in a new simulator, and on a real robot? The framework runs an agent in three modes: it writes code that becomes the policy (code-as-policy), acts live in the control loop (agent-as-policy), or works as a researcher that fine-tunes a vision-language-action model (auto-research).\n\nThe benchmark adds controls that separate retained experience from repeated attempts, familiar tasks, privileged simulator state, larger budgets, and luck. Across seven frontier language models, 330 simulated and five physical tasks, and over four years of agent runtime, we highlight three findings.\n\nFirst, the learning curve of a robotic agent depends both on the overall time budget and the task difficulty relative to model capability. Harder tasks make longer sessions worthwhile; on easier tasks, re-rolling short attempts does just as well.\n\nSecond, control code and shared routines transfer across tasks and simulators, while task-specific solutions do not. On a real robot, we observe a performance gap between agent-designed practice and novel human-designed scenes. Third, different models evolve more effectively in different ways. Some do best acting live, others writing code first.\n\nAnd a text-only model keeps pace with a comparable multimodal one: perception helps with error assessment, but agentic reasoning and tool use can matter more. We release the benchmark and codebase to support future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SEAR, a framework and benchmark for studying whether language-model agents can improve robots by writing control code, acting in the control loop, or fine-tuning a vision-language-action model. Controls distinguish retained experience from repeated attempts and other factors. Across seven frontier models, simulated tasks, and physical tasks, the authors report that learning depends on time budget and task difficulty; code and shared routines transfer across tasks and simulators, while task-specific solutions do not. They also report a gap between agent-designed practice and novel human-designed real-robot scenes, and varying effective modes across models.",
+          "zh": "论文提出 SEAR 框架与基准，研究语言模型智能体能否通过编写控制代码、实时控制或自动研究来积累机器人技能，并将经验迁移到新任务、模拟器和真实机器人。基准设置了多项控制条件，以区分保留经验与重复尝试等因素。作者报告了跨七种前沿语言模型、330 项模拟任务和五项实体任务的结果：学习曲线受时间预算与任务难度影响；控制代码和共享流程可跨任务及模拟器迁移，任务专用解法则不能；真实机器人上，智能体设计的练习场景与新的人类设计场景表现存在差距。不同模型的有效进化方式不同，文本模型也能与相近的多模态模型相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
