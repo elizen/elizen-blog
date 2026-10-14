@@ -301,7 +301,11 @@
             "heading": "",
             "text": "Ego-Exo4D is a large-scale dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied AI. However, the dataset ships with only sparse 3D human pose annotations, and reconstructing dense human motion from its multi-view captures is nontrivial.\n\nTo this end, we present Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for Ego-Exo4D's captures, and release the accompanying reconstruction pipeline. The code, dataset, and documentation can be found at https://abhiram824.github.io/egoexo4d_human_meshes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for the video captures in Ego-Exo4D, along with an accompanying reconstruction pipeline. Ego-Exo4D contains synchronized egocentric and multi-view exocentric video, but provides only sparse 3D human pose annotations, making dense motion reconstruction from its captures challenging. The abstract describes the dataset and pipeline release; it does not report an evaluation of reconstruction quality.",
+          "zh": "论文介绍 Ego-Exo4D-HM，这是一个针对 Ego-Exo4D 视频采集的大规模四维人体运动重建数据集，并发布配套重建流程。Ego-Exo4D 提供同步的第一人称与多视角第三人称视频，但原数据集仅包含稀疏的三维人体姿态标注，难以直接获得稠密运动重建。本文摘要说明了新数据集及流程的发布，未报告重建效果评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",

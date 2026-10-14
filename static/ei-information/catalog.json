@@ -92,7 +92,11 @@
             "heading": "",
             "text": "Vision-language models (VLMs) offer a promising approach to long-tail autonomous driving, but existing driving datasets provide limited supervision for connecting decision-critical visual evidence with reasoning and planning.\n\nWe introduce AnchorReasoning, a visually grounded reasoning dataset built on WOD-E2E, containing 416,119 annotated frames and 395,379 decision-critical elements across four major categories and 19 fine-grained types.\n\nEach frame is organized as a visually grounded chain-of-thought (VG-CoT) that links decision-critical element identification and localization, element attributes and implications, driving-action rationale, and action and trajectory planning.\n\nWe further develop a curriculum supervised fine-tuning strategy that progressively learns these hierarchical capabilities, together with an object-size-aware grounding metric for evaluating localization quality.\n\nExperiments across eight general-purpose, embodied-AI, and AV-specific backbones show that VG-CoT supervision improves grounded reasoning and trajectory prediction. Across models, 5-s ADE and FDE decrease by 7.84 and 11.86, while RFS Frame and Cluster improve by 1.66 and 1.70.\n\nThese gains are achieved with 18.5 fewer reasoning tokens and 0.32 s/frame lower inference latency on average, demonstrating the value of visually grounded, decision-focused supervision for VLM reasoning and planning in long-tail autonomous driving."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AnchorReasoning, a visually grounded reasoning dataset for long-tail autonomous driving, built on WOD-E2E. Its annotations link decision-critical element identification and localization to attributes, driving rationale, and action and trajectory planning. The authors also propose curriculum supervised fine-tuning and an object-size-aware localization metric. Experiments across eight model backbones show improvements in grounded reasoning and trajectory prediction, alongside reductions in reasoning tokens and average inference latency per frame.",
+          "zh": "论文提出 AnchorReasoning，这是面向长尾自动驾驶场景的视觉依据与因果推理数据集，基于 WOD-E2E，包含标注帧及决策关键元素，并将元素识别定位、属性影响、驾驶理由与行动轨迹规划组织成视觉依据链。作者还提出课程式监督微调策略和考虑目标尺寸的定位指标。跨八种模型的实验显示，该监督改善了依据支撑的推理与轨迹预测，并降低推理词元数及每帧延迟。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2122,7 +2126,11 @@
             "heading": "",
             "text": "Ego-Exo4D is a large-scale dataset providing synchronized egocentric and multi-view exocentric video, a rich resource for skill learning and assessment, procedural activity understanding, and embodied AI. However, the dataset ships with only sparse 3D human pose annotations, and reconstructing dense human motion from its multi-view captures is nontrivial.\n\nTo this end, we present Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for Ego-Exo4D's captures, and release the accompanying reconstruction pipeline. The code, dataset, and documentation can be found at https://abhiram824.github.io/egoexo4d_human_meshes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Ego-Exo4D-HM, a large-scale dataset of 4D human motion reconstructions for the video captures in Ego-Exo4D, along with an accompanying reconstruction pipeline. Ego-Exo4D contains synchronized egocentric and multi-view exocentric video, but provides only sparse 3D human pose annotations, making dense motion reconstruction from its captures challenging. The abstract describes the dataset and pipeline release; it does not report an evaluation of reconstruction quality.",
+          "zh": "论文介绍 Ego-Exo4D-HM，这是一个针对 Ego-Exo4D 视频采集的大规模四维人体运动重建数据集，并发布配套重建流程。Ego-Exo4D 提供同步的第一人称与多视角第三人称视频，但原数据集仅包含稀疏的三维人体姿态标注，难以直接获得稠密运动重建。本文摘要说明了新数据集及流程的发布，未报告重建效果评估。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10221,7 +10229,11 @@
             "heading": "",
             "text": "Omnidirectional or 360 cameras provide embodied AI agents with a holistic, wide field-of-view (FoV) view of their surroundings, motivating the use of Multi-modal Large Language Models (MLLMs) for omnidirectional spatial reasoning.\n\nHowever, most MLLMs are trained on conventional 2D perspective images and struggle with the severe distortions and wrap-around discontinuities induced by spherical geometry. Enabling them to generalize to non-Euclidean 3D spaces without retraining therefore remains challenging.\n\nWe propose SphMind, a training-free, plug-and-play framework that decouples semantic perception from geometric reasoning. Rather than requiring MLLMs to learn spherical geometry internally, SphMind preserves their semantic capabilities while handling geometry externally.\n\nWe introduce a Spherical Harmonics-based Spatial Graph (SHSG) that models spatial relationships through equivariant transformations on the sphere, together with Inference-Time Geometric Grounding (IGG), a model-agnostic closed-loop optimization process that aligns MLLM representations with spherical geometric constraints during inference.\n\nExperiments on three benchmarks show that SphMind achieves over 21.4% average improvement in directional reasoning on MP3D and Stanford2D-3D, outperforms prompt-engineering baselines by 8.7% on the real-world ODI-Bench, and improves rotational invariance by 5.9% under panorama rotations, without additional training or dataset-specific tuning.\n\nIn-the-wild evaluations further show that SphMind resolves directional reasoning queries that baseline vision-language models fail to answer correctly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SphMind, a training-free, plug-and-play framework for spatial reasoning over 360-degree camera imagery. It separates semantic perception from geometric reasoning, using a spherical-harmonics spatial graph and inference-time geometric grounding to align model representations with spherical constraints. The authors report improved directional reasoning and rotational invariance across three benchmarks. In-the-wild evaluations also indicate that SphMind answers some directional queries that baseline vision-language models fail to answer correctly.",
+          "zh": "论文提出 SphMind，一个无需训练、可插拔的框架，用于提升视觉语言模型在 360 度相机图像上的空间推理。它将语义感知与几何推理分开，以球面谐波空间图表示球面空间关系，并在推理时通过几何约束对齐模型表示。作者报告，三项基准实验中该方法改善了方向推理和旋转不变性；真实场景评估也显示，它能回答基线模型未能答对的方向问题。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10761,7 +10773,11 @@
             "heading": "",
             "text": "As embodied agents take on increasingly social and relational roles in VR, visual realism and embodiment alone may be insufficient; users must also perceive these agents as emotionally attuned, supportive, and humanlike. Prior work suggests that verbal attunement and nonverbal mimicry can each improve users' social evaluations of embodied agents.\n\nHowever, behavioral mimicry has largely been studied outside of real-time, conversational AI interactions, leaving limited understanding of how users respond when an agent simultaneously generates contextually responsive dialogue and adapts its nonverbal behavior during an immersive conversation.\n\nTo address this gap, we developed an embodied AI counselor that combines conversational AI with real-time facial-expression and posture mimicry, while producing either verbally attuned or neutral responses. We evaluated the system in a 2 X 2 within-subjects study with 20 participants, manipulating verbal attunement and behavioral mimicry.\n\nResults showed that verbal attunement was the most reliable driver of perceived empathy. Behavioral mimicry showed a marginal relationship with perceived humanness, while greater mimicry exposure showed preliminary, exploratory positive associations with empathy, positivity, and humanness, particularly among female participants.\n\nTogether, these findings show that multimodal synchrony is not a simple additive strategy for designing empathic conversational agents in VR and underscore the need to consider how verbal and nonverbal behaviors are combined during real-time interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how verbal attunement and behavioral mimicry shape perceptions of an embodied AI counselor during immersive VR conversations. The system combines conversational AI with real-time facial-expression and posture mimicry, and a within-subjects study with 20 participants varied verbal attunement and mimicry. Results identify verbal attunement as the most reliable driver of perceived empathy. Mimicry had a marginal relationship with perceived humanness; exploratory analyses found preliminary positive associations with several perceptions, particularly among female participants.",
+          "zh": "论文研究沉浸式 VR 对话中，语言回应的情绪贴合度与行为模仿如何影响用户对具身 AI 咨询者的感知。系统结合对话 AI、实时面部表情和姿态模仿，并在 20 名参与者的组内研究中操纵语言贴合度与行为模仿。结果显示，语言贴合度是感知共情最稳定的影响因素；行为模仿与感知人性化仅呈边缘关联。对模仿暴露的更多探索性分析发现若干初步正相关，尤其在女性参与者中。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
