@@ -287,7 +287,11 @@
             "heading": "",
             "text": "Reliable robot autonomy requires reasoning about the world from partial and noisy observations. However, many perception systems model only visible scene regions, rely on fixed semantic categories, and assume reliable sensor measurements. These assumptions break under occlusion, novel object encounters, and sensor degradation.\n\nIn this paper, I present a research vision for incompleteness-aware scene understanding. I organize this vision around three fundamental challenges: incomplete evidence, incomplete knowledge, and incomplete sensor reliability.\n\nI discuss my research contributions toward addressing these challenges through amodal perception, semantic occupancy forecasting, open-world scene understanding, label-efficient learning, and uncertainty-guided multi-modal fusion. Building on these contributions, I outline future research directions toward belief-centric 4D scene representations.\n\nThese representations aim to jointly model geometry, semantics, motion, and uncertainty. I also discuss active sensing and safe adaptation strategies that allow robots to reduce uncertainty through interaction. The goal is to develop calibrated and actionable scene representations that support reliable autonomy in dynamic, open-world environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This research vision organizes incomplete scene understanding for robot autonomy around incomplete evidence, incomplete knowledge, and uncertain sensor reliability. The author discusses contributions in amodal perception, semantic occupancy forecasting, open-world scene understanding, label-efficient learning, and uncertainty-guided multimodal fusion. Future directions include belief-centric 4D scene representations that jointly model geometry, semantics, motion, and uncertainty, along with active sensing and safe adaptation. The stated goal is calibrated, actionable representations that support reliable autonomy in dynamic, open-world environments.",
+          "zh": "这篇研究愿景文章将机器人场景理解中的不完整性归纳为证据、知识和传感器可靠性三方面，并讨论作者在非模态感知、语义占据预测、开放世界场景理解、标签高效学习及不确定性引导的多模态融合方面的研究贡献。作者提出未来发展以信念为中心的四维场景表示，联合建模几何、语义、运动与不确定性，并讨论主动感知和安全适应策略。其目标是形成经过校准且可用于行动的表示，支持动态开放环境中的可靠自主运行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -318,7 +322,11 @@
             "heading": "",
             "text": "Vision-language model (VLM) agents can control robots through visual feedback and action primitives, but repeated LLM calls and redundant observations incur substantial token overhead.\n\nWe introduce PyRUA-Lean, an interactive code-execution framework in which the agent composes robot primitives, including vision-language-action (VLA) policies, into Python cells that check and retry locally and return only the images and state they request.\n\nAcross 700 simulated task instances from LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, it raises success from 63.1% to 71.7% over tool calling with the same GPT-6 Astra planner and primitives, using 49% fewer LLM calls and 65% fewer input tokens on jointly solved instances.\n\nOn RoboDojo, without any VLA policy or privileged information, it reaches 51.6% average success rate (Score 58.2), 19.4 points above the top entry of the public leaderboard.\n\nBased on the PyRUA-Lean framework, we train PyRUA-Lean Coder v0.1-4B, an open 4B model, with GRPO on 45 LIBERO-PRO instances; it improves from 18.8% to 44.1% on unseen task instances, surpassing the Qwen3.5-27B base model."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PyRUA-Lean, an interactive code-execution framework where an agent composes robot primitives, including VLA policies, into Python cells that check and retry locally and return requested images and state. Across 700 simulated instances from LIBERO-PRO, RoboTwin 2.0, and RoboCasa365, the abstract reports higher success than tool calling with the same planner and primitives, alongside fewer calls and input tokens. On RoboDojo, the reported result uses no VLA policy or privileged information. A trained open 4B model also improves on unseen task instances.",
+          "zh": "论文提出 PyRUA-Lean，让机器人智能体将视觉语言动作策略等原语组合成 Python 单元，在本地检查和重试，并只返回所请求的图像与状态。摘要报告，在 LIBERO-PRO、RoboTwin 2.0 和 RoboCasa365 的 700 个模拟任务实例中，相较使用相同规划器和原语的工具调用，成功率由 63.1% 升至 71.7%，输入令牌减少 65%。在 RoboDojo 的结果不使用 VLA 策略或特权信息。作者还报告，基于该框架训练的开放 4B 模型在未见任务实例上成绩提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
