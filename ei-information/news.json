@@ -2737,7 +2737,11 @@
             "heading": "",
             "text": "Autonomous Surface Vehicles (ASVs) have been increasingly deployed to perform different kinds of maritime tasks in recent years, which motivates the need for a reliable task allocation policy that can adapt to heterogeneous tasks and maritime disturbances.\n\nIn this work, we formulate a multi-robot task allocation problem in which a team of ASVs with heterogeneous capabilities needs to complete tasks of different types and appearance times under unknown stochastic spatio-temporal uncertainties from maritime disturbances.\n\nWe propose a decentralized Reinforcement Learning (RL) based policy network that is trained to be robust towards uncertainty-induced observation deviations, and is able to perform individual decision making that leads to efficient execution behaviors toward heterogeneous task requirements.\n\nWe evaluate the proposed policy and four baseline methods in simulated experiments with varied proportions of different tasks types, numbers of tasks, robot species and robots per species. Experiment results show that our proposed policy achieves the lowest makespan and can be deployed to address scenarios with 100 robots and 400 tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies heterogeneous task allocation for teams of autonomous surface vehicles facing unknown stochastic spatio-temporal maritime disturbances. Robots with different capabilities must complete tasks of different types and arrival times. The authors propose a decentralized reinforcement-learning policy trained for robustness to uncertainty-induced observation deviations, with individual decisions by each robot. In simulation, they vary task-type proportions, task counts, robot species, and robots per species. The proposed policy achieves the lowest makespan among the evaluated methods and is reported to address scenarios with 100 robots and 400 tasks.",
+          "zh": "本文研究多机器人团队在海上时空扰动不确定性下的异质任务分配：不同能力的自主水面艇需完成类型不同、出现时间不同的任务。作者提出一种分散式强化学习策略网络，训练其抵抗不确定性造成的观测偏差，并由各艇独立决策以执行异质任务。仿真实验改变任务类型比例、任务数量、机器人种类及各类机器人数量；结果显示，所提策略的完工时间最短，并可用于包含100台机器人和400项任务的场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2768,7 +2772,11 @@
             "heading": "",
             "text": "World models (WMs) and world-action models (WAMs) focus on future world prediction and executable action generation, respectively. Although these models learn shared physical dynamics and interaction semantics from embodied trajectories, they are typically trained in isolation, which restricts knowledge reuse between prediction and control.\n\nThe central challenge is therefore to develop a unified learning framework that shares these dynamics while preserving the distinct modeling capabilities required by each paradigm. We propose UniW(A)M, a mixture-of-experts world-(action) model built upon diffusion Transformers that unifies action-conditioned world modeling and diverse WAM variants.\n\nShared experts capture common dynamics, while atomic capability experts are reused across interfaces so that each interface keeps its own conditional pathway.\n\nAt deployment, a plug-in adaptive interface router (PAIR) learns from a small subset of target-task chunk scenarios to select a suitable WAM interface for each execution chunk, balancing task success and execution efficiency while keeping the backbone frozen.\n\nWe evaluate UniW(A)M on LIBERO, RoboTwin 2.0, and three real-world manipulation tasks, where it achieves 88.3% average real-world success versus 76.7% for the strongest baseline. On WorldArena, it leads action-conditioned world modeling on all three tasks.\n\nAC-WM co-training contributes to action generation on every action interface and PAIR raises OOD success from 63.3% to 76.7%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniW(A)M is a diffusion Transformer mixture-of-experts framework that unifies world models and world-action models while retaining distinct conditional pathways for their interfaces. Shared experts represent common dynamics, and atomic capability experts can be reused across interfaces. At deployment, a plug-in adaptive interface router uses a small subset of target-task chunk scenarios to choose an interface for each execution chunk while the backbone remains frozen. Evaluations cover LIBERO, RoboTwin 2.0, three real-world manipulation tasks, and WorldArena. The authors report 88.3% average real-world success versus 76.7% for the strongest baseline.",
+          "zh": "本文提出 UniW(A)M，以基于扩散 Transformer 的混合专家框架统一世界模型与世界—动作模型，共享物理动态知识，同时保留不同接口的条件路径。共享专家建模共同动态，原子能力专家可跨接口复用；部署时，插件式自适应接口路由器利用少量目标任务片段场景，为每个执行片段选择接口，且骨干网络保持冻结。作者在 LIBERO、RoboTwin 2.0、三项真实操作任务及 WorldArena 上评估；报告真实任务平均成功率为88.3%，强基线为76.7%，并称其在 WorldArena 三项任务的动作条件世界建模领先。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2799,7 +2807,11 @@
             "heading": "",
             "text": "Recent Vision-Language-Action (VLA) models, such as $\\pi_{0.5}$, have demonstrated impressive generalization capabilities by scaling behavior cloning across massive datasets.\n\nHowever, these models frequently suffer from distributional convergence, a phenomenon where the policy regresses to \"safe\" but suboptimal mean behaviors due to mode averaging in the training data. This often results in generic grasp strategies, Convergent Defaults, that fail in constrained or long-tail scenarios.\n\nIn this work, we propose a novel framework to identify and correct these behaviors without parameter updates.\n\nWe introduce a three-stage methodology: （1） Probing for Defaults, identifying task-specific mode collapse; （2） Diagnostic Root Cause Analysis, utilizing the VLA's latent reasoning capabilities to verbalize the logic behind suboptimal actions; and （3） Structured Guidance Injection, where concrete, distinct alternatives are encoded into reusable \"Lens Prompts\" that shift the sampling distribution.\n\nWe validate this approach using $\\pi_{0.5}$ in ManiSkill3 simulation environments. We hypothesize that our method outperforms vanilla $\\pi_{0.5}$ and standard Chain-of-Thought prompting by effectively breaking convergent defaults in complex manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper addresses vision-language-action models that regress toward safe but suboptimal mean behaviors through mode averaging, producing generic grasp strategies that can fail in constrained or long-tail scenarios. The authors propose a three-stage method without parameter updates: probe for task-specific defaults, use latent reasoning to verbalize their causes, and encode distinct alternatives as reusable “Lens Prompts” to shift the sampling distribution. The approach is evaluated with π₀.₅ in ManiSkill3 simulation. The abstract hypothesizes that it outperforms the base model and standard chain-of-thought prompting; it does not report a confirmed comparative result.",
+          "zh": "本文关注视觉—语言—动作模型因训练数据中的模式平均而趋向“安全”但次优的平均行为，导致受限或长尾操作场景中的通用抓取策略失效。作者提出无需更新模型参数的三阶段方法：探测任务特定的收敛默认行为；利用模型的潜在推理能力描述次优动作的原因；再将具体且不同的替代方案写成可复用的“Lens Prompts”，以改变采样分布。该方法使用 π₀.₅ 在 ManiSkill3 仿真环境中验证；摘要仅提出其可能优于原模型和标准思维链提示，未报告确定的比较结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
