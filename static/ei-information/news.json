@@ -886,7 +886,11 @@
             "heading": "",
             "text": "An LLM-directed excavator can execute mechanically feasible motion whose destination or authority no longer matches the operator's approval. We propose execution-bound authorization for the approval--dispatch--execution interval.\n\nA one-use lease binds the action, generated motion, mission contract and admission tolerance; atomic dispatch rechecks current authority and measured joint drift. Periodic supervision detects revocation and requests a quintic stop with a carry-pitch endpoint, selected through sampled joint, stroke, flow and reference-acceleration checks.\n\nThe framework connects exact motion identity to dispatch integrity and load-aware interruption. Evaluation combines a 672-case interface suite, four loaded digging cases in synchronous simulation, unloaded MuJoCo/Pinocchio transfers and two command-level LLM planners.\n\nThe gateway admitted all 120 benign interface cases and produced zero unauthorized dispatches in the attack suite. Loaded dispatch-window tests produced zero unauthorized deposition. During simulated dump-phase revocation, maximum closed-site deposition decreased from 1.23 to 0.33\\,m$^3$; loaded-slew stops used less than 75\\% of nominal swing torque.\n\nThese results demonstrate motion-bound authorization and quantify the retention and stopping behavior of supervised excavation skills."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes execution-bound authorization for excavators, using a one-use lease to bind an approved action, generated motion, mission contract, and admission tolerance. Dispatch rechecks authority and joint drift, while supervision detects revocation and requests a sampled-check stop. Evaluation covers interface tests, loaded digging in synchronous simulation, unloaded simulation transfers, and two command-level LLM planners. The authors report no unauthorized dispatches in the attack suite and reduced closed-site deposition during simulated revocation.",
+          "zh": "论文提出面向挖掘机执行过程的授权框架，以一次性租约绑定获批动作、生成运动、任务约定和准入容差，并在派发时重新核验权限与关节漂移；运行中监督撤销并请求经采样检查的停止动作。评估包括接口测试、同步仿真中的载荷挖掘、无载荷仿真迁移和两种命令级大语言模型规划器。作者报告，接口套件中的良性请求全部获准，攻击套件未发生未授权派发；仿真撤销测试降低了封闭区域沉积量，载荷摆转停止使用的摆转力矩低于额定值的75%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -917,7 +921,11 @@
             "heading": "",
             "text": "State-of-the-art perceptive humanoid locomotion is mostly built on retargeted motion capture, a generative motion prior, and a distillation stage. We report a complete system that does not require this pipeline for a humanoid to cross varied terrain.\n\nIn its place, we provide a five-expert mixture routed by a terrain classifier over a sensed elevation grid, and target every foothold with a model-based planner, refined by six closed-form-gradient steps on an interpolated terrain-cost field instead of picked from a fixed grid.\n\nDriven through the same perception-to-actuation software a robot would run, inside a second, deployment-fidelity simulator, it crosses an $85$\\,m five-segment waypoint course $18$ of $20$ times end-to-end ($90\\%$, Wilson $95\\%$ CI $70$--$97$) and succeeds $20/20$ on four of five segments scored alone, where an ablated configuration without the mixture and without refinement reaches $0\\%$ on both the stair and the hurdle segment.\n\nThe continuous refinement moves $72.4\\%$ of foot placements across at least one grid-cell boundary, which produces real sub-grid correction.\n\nWe also ran matched component studies to report what does not account for it: one expert equals five on the training distribution, four label-free routers collapse to near-uniform activation, and a self-supervised terrain embedding loses to the privileged label."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper reports a humanoid terrain-traversal system that does not require retargeted motion capture, a generative motion prior, or distillation. A terrain classifier routes a five-expert mixture, and a model-based planner selects footholds that are refined with closed-form gradient steps on a terrain-cost field. In a deployment-fidelity simulator, the system completed an 85-meter, five-segment course 18 of 20 times; four segments scored alone achieved 20 of 20. Ablations and component studies are also reported.",
+          "zh": "论文报告了一套不依赖运动捕捉重定向、生成式运动先验或蒸馏流程的人形机器人越野系统。系统使用由地形分类器路由的五专家混合模型，并通过模型规划器选择落脚点，再以地形代价场上的闭式梯度步骤细化。在部署保真度仿真器中，系统在五段路线中端到端成功18/20次；单独评分时，五段中的四段达到20/20。去除专家混合与细化的消融配置在楼梯和跨栏段成功率为零。作者还报告了组件对照研究及落脚位置发生跨网格单元变化的比例。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -948,7 +956,11 @@
             "heading": "",
             "text": "We present a learning-based framework that enables a full-scale bipedal humanoid to sprint at over 7 m/s with motion-prior-guided gait and perform aggressive cornering at high speed with a pronounced trunk lean of up to $25^\\circ$.\n\nAchieving this combination is challenging: above approximately 4 m/s, periodic foot impacts induce severe, high-frequency yaw-rate oscillations intrinsic to high-speed gaits.\n\nThis high-frequency temporal structure corrupts the history of proprioceptive feedback that flat-MLP policies rely on, while rendering conventional yaw-rate tracking rewards counterproductive, as they fight against the robot's natural oscillatory dynamics.\n\nMoreover, a single style prior shared across skills cannot tell which skill is commanded and inherently compromises the low-speed skill fidelity. To overcome these limitations, we adopt a causal multi-head attention (MHA) module to explicitly model the high-frequency temporal feedback.\n\nIn place of the oscillatory yaw rate, we design a heading-direction reward that supervises only the low-frequency velocity direction, allowing agile turning at high speed without suppressing natural gait oscillations.\n\nWe further introduce skill-conditioned multi-adversarial-motion-prior (MAMP) discriminators that condition the style reward on the commanded skill.\n\nAblation experiments confirm that each mechanism is essential: replacing structured temporal encoding with a flat-history MLP caps the top speed; reverting to yaw-rate tracking prevents high-speed turning; and a single shared discriminator makes in-place turning collapse into a quasi-static stance.\n\nOur framework bridges the gap between raw sprinting speed and reference-motion fidelity, demonstrating stable high-speed sprinting and aggressive cornering in both simulation and real-robot deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a learning framework for a full-scale bipedal humanoid, reporting sprint speeds above 7 m/s and aggressive high-speed cornering in simulation and real-robot deployment. It uses causal multi-head attention to model high-frequency proprioceptive feedback, a heading-direction reward instead of yaw-rate tracking, and skill-conditioned motion-prior discriminators. Ablation experiments report that removing these mechanisms limits top speed, prevents high-speed turning, or causes in-place turning to collapse into a quasi-static stance.",
+          "zh": "论文提出一种学习框架，使全尺寸双足人形机器人在仿真和真实机器人部署中实现超过7米/秒的冲刺，并在高速转弯时保持明显躯干倾斜。方法使用因果多头注意力建模高频本体感觉反馈，以航向方向奖励替代偏航角速度跟踪，并让多对抗运动先验判别器依据所命令技能调整风格奖励。消融实验显示，移除这些机制会限制最高速度、妨碍高速转弯，或使原地转向退化为近乎静止姿态。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -979,7 +991,11 @@
             "heading": "",
             "text": "Evaluating robot manipulation policies through repeated physical trials is costly. We study whether an action-conditioned world model can serve as a closed-loop test environment whose policy success rates track those on real robots.\n\nBeyond realistic video, the model must return the camera views and proprioceptive state needed for the policy's next action and preserve failed-action outcomes to avoid overestimating policy capability. We introduce ProWorld, a world model that jointly predicts multi-view video and robot state, then feeds both back to a frozen policy for repeated interaction.\n\nProWorld comprises a shared transformer for joint video-state flow prediction and Shared-Time View Encoding to distinguish cameras while preserving temporal synchronization.\n\nTo reduce interaction hallucinations that turn missed grasps into successful lifts, we augment training with failed interactions collected in high-fidelity simulation, reducing inflated success rates in the generated environment. ProWorld achieves the highest overall TriWorldBench score among the compared methods.\n\nAcross three policies and four local manipulation tasks, it attains a Pearson correlation of 0.95 and a Spearman correlation of 0.94 between generated and real success rates. These results support joint visual-proprioceptive feedback and failure-aware training as a basis for world-model-based policy evaluation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether an action-conditioned world model can evaluate manipulation policies in a closed loop, with simulated success rates tracking real-robot results. ProWorld jointly predicts multi-view video and robot state and feeds both to a frozen policy for repeated interaction. Training includes failed interactions collected in high-fidelity simulation to reduce hallucinated successful lifts after missed grasps. The authors report the highest overall TriWorldBench score among compared methods and correlations of 0.95 (Pearson) and 0.94 (Spearman) across three policies and four tasks.",
+          "zh": "论文研究动作条件世界模型能否作为闭环测试环境，使机器人操作策略在模型中的成功率与真实机器人表现相符。ProWorld联合预测多视角视频和机器人状态，并将二者反馈给冻结策略以支持重复交互；训练中还加入高保真仿真收集的失败交互，旨在减少把失败抓取误生成成功抬起的情况。作者报告，ProWorld在所比较方法中获得最高的TriWorldBench总分；在三种策略和四项本地操作任务上，生成环境与真实成功率的皮尔逊和斯皮尔曼相关系数分别为0.95和0.94。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
