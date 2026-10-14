@@ -69,7 +69,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -102,7 +102,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -222,7 +222,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -252,7 +252,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -275,11 +275,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The study places a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction that specifies no task, reward, or activity. The authors report that during thirty-hour runs, agents climbed hills, stacked blocks, drew mandalas, reinterpreted sports, and explored the world's physics. Such activities recurred across thirteen agents but produced distinct histories. The work examines whether this behavior meets classical criteria for play and whether play could be a mode of machine development.",
-          "zh": "研究将现代 AI 编码助手置于未知数字岛屿中的虚拟身体内，仅给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，具身智能体会爬坡、堆叠积木、绘制曼陀罗、重新诠释体育活动并探索世界物理；这些活动在十三个智能体中反复出现，但形成不同经历。研究据此考察其行为是否符合经典游戏标准，并讨论游戏能否成为机器发展的一种方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -289,7 +285,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -631,7 +627,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -764,7 +760,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -787,11 +783,7 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ],
-        "summary": {
-          "en": "WorldSolver benchmarks LLM agents’ ability to generate solvers for physical simulations. It includes 168 tasks derived from 61 classic computer graphics papers across seven domains. Each task provides a code scaffold for a fixed simulation environment, leaving the solver implementation to the agent. Evaluation covers execution, visual fidelity, and physical plausibility. Experiments report that generating executable solvers is difficult, while visual and physical correctness is harder still. The two comparatively stronger evaluated agents score 48.7% and 46.7% overall.",
-          "zh": "WorldSolver 是一个评估大语言模型智能体生成物理模拟求解器能力的基准，包含源自61篇经典计算机图形学论文的168项任务，覆盖7个物理领域。每项任务提供固定场景模拟环境的代码框架，由智能体补全求解器。评估维度包括能否执行、渲染模拟的视觉保真度，以及生成动力学的物理合理性。实验显示，生成可执行求解器本身就有难度，达到视觉和物理正确性更难；文中两种表现相对较好的智能体总分分别为48.7%和46.7%。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -1064,7 +1056,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1094,7 +1086,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1124,7 +1116,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1221,7 +1213,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1399,7 +1391,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1676,7 +1668,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1706,7 +1698,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -1935,7 +1927,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2002,7 +1994,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2032,7 +2024,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2070,7 +2062,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2103,7 +2095,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2136,7 +2128,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2269,7 +2261,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2604,7 +2596,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2734,7 +2726,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2764,7 +2756,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2787,11 +2779,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a platform that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied learning, world models, and robot training. It supports diverse, interactive, customizable virtual environments for training and evaluating navigation, interaction, and manipulation. The authors show generated scenes and simple baselines, and report that policies trained in these environments without explicit mapping or human task supervision achieve competitive results on multiple embodied benchmarks. The platform also supports image-conditioned reconstruction and releases a dataset of 20,000 validated environments with task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文提出 EnvDreamer，一个利用大型语言模型和视觉—语言模型生成虚幻引擎 5 环境的平台，面向具身学习、世界模型和机器人训练。它支持生成多样、可交互和可定制的虚拟环境，用于导航、交互与操作任务的训练和评估。作者展示了生成场景及简单基线，并报告在 EnvDreamer 环境中训练、无需显式地图或人工任务监督的策略，在多个具身基准上取得有竞争力的结果。平台还支持图像条件重建；作者发布包含两万个通过验证环境的数据集及相关任务程序、场景图、轨迹和元数据。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2801,7 +2789,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2824,11 +2812,7 @@
             "heading": "",
             "text": "We present LiteReality-Agent, an agentic system for reconstructing real indoor environments as realistic, articulated, and simulation-ready 3D scenes from RGB-D scans.\n\nAt its core, LiteReality-Agent formulates 3D reconstruction as a coding problem, in which a coding agent gathers evidence using specialised tools and iteratively edits a Python script, Room.py, which can be executed to produce a 3D digital twin of the room.\n\nWith this formulation, we develop a robust observe-edit-verify harness that supports evidence gathering, measurement, verification, layout optimisation, simulation readiness, and quality control throughout the reconstruction process. LiteReality-Agent produces high-quality reconstructions suitable for simulation and downstream embodied AI tasks.\n\nFurthermore, as agent capabilities continue to improve rapidly, the system introduced by LiteReality-Agent remains a strong orchestration framework for future agents: it equips them with specialised tools, structured workflows, and robust verification mechanisms that substantially improve reconstruction quality and reliability.\n\nWe demonstrate that LiteReality-Agent produces reconstructions that are more geometrically accurate, visually realistic, and simulation-compatible than those generated by recent frontier models, such as Astra and Fable. We therefore view LiteReality-Agent as a practical and important building block for robust real-to-sim systems.\n\nBoth the source code and the data-capture application are publicly available. Code:https://github.com/LiteReality/LiteReality-Agent/"
           }
-        ],
-        "summary": {
-          "en": "LiteReality-Agent frames reconstruction of indoor environments from RGB-D scans as a coding task. An agent gathers evidence with specialized tools and iteratively edits an executable Python script to produce a room digital twin. Its observe-edit-verify workflow supports measurement, layout optimization, simulation readiness, and quality control. The authors report that its scenes suit simulation and downstream embodied AI tasks, and that reconstructions surpass recent frontier models in geometric accuracy, visual realism, and simulation compatibility.",
-          "zh": "LiteReality-Agent 将室内 RGB-D 扫描重建表述为编码问题：编码代理借助专用工具收集证据，并迭代编辑可执行的 Python 脚本以生成房间数字孪生。系统提供观察、编辑、验证流程，支持测量、布局优化、仿真准备和质量控制。作者称，该系统生成的场景适用于仿真及后续具身 AI 任务，并展示其重建在几何准确性、视觉真实感和仿真兼容性方面优于近期前沿模型；这是论文报告的比较结果。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2838,7 +2822,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2875,7 +2859,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -2995,7 +2979,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3025,7 +3009,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3055,7 +3039,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3175,7 +3159,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3242,7 +3226,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3272,7 +3256,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3491,7 +3475,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3581,7 +3565,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3775,7 +3759,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -3805,7 +3789,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4032,7 +4016,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4189,7 +4173,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4256,7 +4240,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4323,7 +4307,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4522,7 +4506,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4772,7 +4756,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4802,7 +4786,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -4947,7 +4931,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5059,7 +5043,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5089,7 +5073,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5119,7 +5103,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5142,11 +5126,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines customizable, reusable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months following its release.",
-          "zh": "论文介绍 Inspect Robots，这是一个用于开发和运行具身智能体评估的模块化开源框架。它将可定制、可复用的物理评估规范与结果分析抽象结合，并提供自动设置、执行和终止评估的基础设施。作者用该框架评估了六种基于前沿语言模型的策略，以展示其能力与安全评估用途。论文还报告，框架发布后三个月内获得近十万次下载。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5319,7 +5299,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5349,7 +5329,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5372,11 +5352,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ],
-        "summary": {
-          "en": "This work characterizes batch-one inference workloads for vision-language-action models in embodied AI. Control-period deadlines motivate on-device or nearby edge execution, since overruns leave robots acting on stale observations. The authors profile four representative models on an edge GPU server and two onboard SoCs, including single-inference profiling and closed-loop episodes. They report that action tensor dimensionality and platform balance affect memory or compute bottlenecks, while frequency scaling has platform-dependent energy-latency tradeoffs. Overlapping inference and action execution also trades accuracy, speed, and energy, with no configuration dominant across deployment SLOs.",
-          "zh": "论文分析视觉—语言—动作模型在具身 AI 中的批量为一推理负载。控制周期的推理期限促使部署靠近机器人，超时则会使机器人依据过时观测行动。作者在边缘 GPU 服务器和两种板载 SoC 上分析四种代表模型，并进行单次推理剖析和闭环评估。结果显示，动作张量维度、平台配置会影响内存或计算瓶颈；频率调整存在依平台而异的能耗—延迟折中。闭环中推理与动作执行重叠也带来准确度、速度和能耗权衡，未有配置在所有部署服务目标上占优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5423,7 +5399,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5486,7 +5462,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5546,7 +5522,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -5643,7 +5619,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6049,7 +6025,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6072,11 +6048,7 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ],
-        "summary": {
-          "en": "OmniDex addresses the scarcity of large-scale grasping data for cluttered scenes with a seed-and-filter strategy using curated 3D objects and supporting bases. The resulting benchmark contains over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The proposed model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. Experiments show, according to the authors, state-of-the-art performance and generalization across diverse scenes, views, and unseen objects.",
-          "zh": "OmniDex 针对杂乱场景中灵巧手抓取训练数据不足的问题，提出基于高质量3D物体和支撑底座的种子生成与筛选策略，以避免缓慢的场景级优化。由此构建的基准包含超过260万场景及4亿个场景专属抓取真值。作者还提出 OmniDex 模型，将 Soft Winner-Takes-All 学习、人类启发的物理约束和基于物理的排序结合起来。实验结果显示，该模型达到作者所称的最先进性能，并能泛化到多种场景、视角和未见物体。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6272,7 +6244,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6302,7 +6274,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6369,7 +6341,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6664,7 +6636,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6731,7 +6703,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6764,7 +6736,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6845,7 +6817,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -6945,7 +6917,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7074,7 +7046,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7230,7 +7202,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7397,7 +7369,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7508,7 +7480,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7531,11 +7503,7 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ],
-        "summary": {
-          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. Its replicas preserve observed room layouts, furniture, and everyday belongings through a human-reviewed workflow. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The reported evaluations find that current methods are challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions. The authors hope it will support embodied AI research for real homes.",
-          "zh": "LIVIN 是一个基于30套真实有人居住住宅数字孪生的空间与具身智能基准，保留观察到的房间布局、家具配置和日常物品。其构建流程包含实例识别、建筑重建及物体生成与放置，并在各阶段由人工对照源观察检查和修正。基准评估3D检测、3D重建、导航和运动操作；评估显示，现有方法仍受密集物品、遮挡、有限空地及受限交互区域影响。作者希望该基准推动面向真实家庭的具身智能研究。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7582,7 +7550,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7722,7 +7690,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7755,7 +7723,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7785,7 +7753,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7912,7 +7880,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -7942,7 +7910,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8064,7 +8032,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8204,7 +8172,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8267,7 +8235,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8297,7 +8265,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8357,7 +8325,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8461,7 +8429,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8554,7 +8522,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8590,7 +8558,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8763,7 +8731,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8881,7 +8849,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8944,7 +8912,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -8974,7 +8942,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9004,7 +8972,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9034,7 +9002,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9180,7 +9148,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9324,7 +9292,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9657,7 +9625,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9817,7 +9785,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9937,7 +9905,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -9967,7 +9935,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10064,7 +10032,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10094,7 +10062,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10124,7 +10092,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10214,7 +10182,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10402,7 +10370,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10432,7 +10400,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10462,7 +10430,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10585,7 +10553,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10615,7 +10583,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10650,7 +10618,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10754,7 +10722,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -10987,7 +10955,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11017,7 +10985,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11147,7 +11115,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11320,7 +11288,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11659,7 +11627,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11689,7 +11657,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11756,7 +11724,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -11943,7 +11911,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -12229,7 +12197,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -12396,7 +12364,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -12523,7 +12491,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -12753,7 +12721,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -12873,7 +12841,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13054,7 +13022,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13252,7 +13220,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13288,7 +13256,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13318,7 +13286,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13454,7 +13422,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13484,7 +13452,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13514,7 +13482,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13544,7 +13512,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13644,7 +13612,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13674,7 +13642,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13705,7 +13673,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -13898,7 +13866,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14021,7 +13989,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14084,7 +14052,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14114,7 +14082,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14144,7 +14112,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14526,7 +14494,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14556,7 +14524,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14579,11 +14547,7 @@
             "heading": "",
             "text": "Generative and embodied AI services exchange token streams within continuing inference and control loops. Their communication requirements depend on each token set's purpose, useful timing, and execution context.\n\nThis article organizes these properties into service, temporal, and stateful semantics and proposes a token service interface (TSI) between applications, radio access networks (RANs), and edge runtimes.\n\nTSI binds delivery requirements, readiness forecasts, and execution-state references to each schedulable token set, specifying field ownership, versioned updates, and admission feedback.\n\nA drone inspection case study over a decoupled RAN illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay."
           }
-        ],
-        "summary": {
-          "en": "The article groups token-set semantics in generative and embodied AI services into service, temporal, and stateful categories, then proposes a token service interface (TSI) connecting applications, radio access networks (RANs), and edge runtimes. TSI attaches delivery requirements, readiness forecasts, and execution-state references to schedulable token sets, with defined field ownership, versioned updates, and admission feedback. A drone-inspection case study over a decoupled RAN illustrates importance-aware allocation, advance preparation, and selective state migration balancing interruption and forwarding delay.",
-          "zh": "文章将生成式与具身 AI 服务中令牌集合的语义归纳为服务、时间和状态三类，并提出连接应用、无线接入网（RAN）与边缘运行时的令牌服务接口（TSI）。该接口为可调度令牌集合绑定交付要求、就绪预测和执行状态引用，并规定字段归属、版本更新及准入反馈。作者通过解耦 RAN 上的无人机巡检案例，展示了重视重要性的无线资源分配、为及时交付提前准备，以及权衡中断与转发延迟的选择性状态迁移。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14593,7 +14557,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14690,7 +14654,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14713,11 +14677,7 @@
             "heading": "",
             "text": "Mobile embodied AI networks (MEAN) enable embodied agents to perceive, reason, communicate, and act in wireless environments. In such networks, agent mobility can improve channel conditions, while semantic compression can reduce transmission payloads. However, movement consumes energy, and stronger compression incurs additional computational cost.\n\nThis paper studies joint movement, semantic compression, and transmit power design for an uplink MEAN system. We formulate a max-min energy efficiency (EE) problem by jointly optimizing transmit power, movement distance, and semantic compression ratio under controllable power constraints.\n\nThe problem is non-convex due to the coupled signal-to-interference-plus-noise ratio (SINR), mobility-dependent channel gains, and fractional EE objective.\n\nTo solve it, we propose an alternating optimization (AO)-Dinkelbach algorithm, where the fractional objective is handled by the Dinkelbach transformation, transmit power is updated via successive convex approximation (SCA), and movement distance is updated by coordinate-wise grid search.\n\nSimulation results show that the proposed scheme outperforms no-mobility and no-compression baselines, demonstrating the benefit of jointly exploiting mobility control, semantic compression, and power allocation in MEAN."
           }
-        ],
-        "summary": {
-          "en": "This paper studies joint movement, semantic compression, and transmit-power design for an uplink mobile embodied AI network (MEAN), maximizing minimum energy efficiency under controllable power constraints. The coupled SINR, mobility-dependent channel gains, and fractional objective make the problem non-convex. The proposed alternating optimization–Dinkelbach algorithm uses successive convex approximation for power updates and coordinate-wise grid search for movement distance. In simulations, the scheme outperforms baselines without mobility and without compression.",
-          "zh": "本文研究移动具身 AI 网络（MEAN）上行系统中移动距离、语义压缩率与发射功率的联合设计，目标是在可控功率约束下最大化最小能效。作者指出，信干噪比、移动相关信道增益和分式能效目标的耦合使问题非凸，并提出交替优化与 Dinkelbach 算法：用连续凸近似更新功率，以逐坐标网格搜索更新移动距离。仿真结果显示，该方案优于无移动和无压缩基线；这些结果来自仿真比较。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14757,7 +14717,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14854,7 +14814,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14877,11 +14837,7 @@
             "heading": "",
             "text": "We present Video2SwimFish, an automated pipeline and benchmark for building controllable fish assets from real-fish videos for underwater embodied AI.\n\nGiven synchronized multi-view videos of an individual fish, the pipeline reconstructs a metrically scaled deformable mesh from a VLM-selected canonical frame, generates internal articulation adapted to that individual's morphology through a VLM actor-critic loop, and extracts a Biological Locomotion Manifold (BLM) from the fish's observed midline curvature.\n\nThe BLM provides a low-dimensional action space bounded by real-fish motion, enabling an individual swimming policy to be learned for each reconstructed fish. We release two paired datasets: synchronized top- and front-view recordings of 120 individual fish across 6 species, and the controllable assets and individual swimming policies derived from them.\n\nBecause every asset is tied to the animal it came from, the dataset supports a benchmark that evaluates locomotion learning not only on task success but on fidelity to that individual in trajectory shape, body curvature, and tail-beat frequency, across trajectory following, reward-free swimming behavior transfer from video, and a downstream case study in which a simulated BlueROV underwater robot captures one of the assets.\n\nWe find that task success and locomotion fidelity do not necessarily improve together: the method achieving the highest task completion is not the method achieving the highest locomotion fidelity, and we identify faithful reproduction of individual animal locomotion as an open challenge for the community.\n\nProject website: https://hangongchen.github.io/video2swimfish-web/."
           }
-        ],
-        "summary": {
-          "en": "Video2SwimFish is a pipeline and benchmark for creating controllable fish models from real-fish videos. It reconstructs metrically scaled deformable meshes from synchronized multi-view footage, adapts articulation to each fish, and extracts a low-dimensional action space bounded by observed motion. The authors provide recordings, assets, and individual swimming policies, and evaluate both task success and fidelity to each animal’s trajectories, body curvature, and tail-beat frequency. They report that task completion and locomotion fidelity do not necessarily improve together, identifying faithful individual-motion reproduction as an open challenge.",
-          "zh": "Video2SwimFish 是从真实鱼类视频构建可控鱼模型的流程与基准。它利用同步多视角视频重建按实际尺度计量的可变形网格，为个体形态生成内部关节结构，并从观测到的中线曲率提取受真实游动范围约束的低维动作空间。作者提供鱼类录像数据及配套资产和游动策略，并以任务完成度和个体运动轨迹、身体曲率、尾摆频率的保真度评测。作者发现，任务成功与运动保真度不一定同步提升，并指出忠实复现个体游动仍是开放挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14891,7 +14847,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -14921,7 +14877,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15160,7 +15116,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15199,7 +15155,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15259,7 +15215,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15289,7 +15245,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15426,7 +15382,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15456,7 +15412,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15486,7 +15442,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15546,7 +15502,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -15736,7 +15692,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-13"
+        "recorded_at": "2026-10-14"
       },
       "body": "",
       "catalog": {
@@ -16709,6 +16665,13 @@
             "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
             "type": "已发布",
             "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "工信部标准公告",
+            "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
+            "type": "已发布",
+            "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
           }
         ],
         "executing_organization": null,
@@ -16719,7 +16682,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -27027,6 +26990,13 @@
             "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
           }
         ],
         "executing_organization": null,
@@ -27037,7 +27007,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -29423,6 +29393,13 @@
             "title": "《人工智能 政务大模型系统技术要求》等35项信标委归口推荐性国家标准获批发布",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202610/3a1d63f6998e4eb0a8d639cfca98d7df.shtml"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "《人工智能 政务大模型系统技术要求》等35项信标委归口推荐性国家标准获批发布",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202610/3a1d63f6998e4eb0a8d639cfca98d7df.shtml"
           }
         ],
         "executing_organization": null,
@@ -29433,7 +29410,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -32446,6 +32423,13 @@
             "title": "刘贤刚：我国软件产业“由大到强”亟需人工智能深度赋能丨《“人工智能+软件”专项行动实施方案》解读",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202609/1ed2e15370de4479a22eb3ff1afe0cdc.shtml"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "刘贤刚：我国软件产业“由大到强”亟需人工智能深度赋能丨《“人工智能+软件”专项行动实施方案》解读",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202609/1ed2e15370de4479a22eb3ff1afe0cdc.shtml"
           }
         ],
         "executing_organization": null,
@@ -32456,7 +32440,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -49514,6 +49498,13 @@
             "title": "CCSA/TC602人工智能技术与标准推委会",
             "type": "拟立项",
             "url": "http://tc602.ccsa.org.cn/"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "工业和信息化部人工智能标准化技术委员会",
+            "title": "CCSA/TC602人工智能技术与标准推委会",
+            "type": "拟立项",
+            "url": "http://tc602.ccsa.org.cn/"
           }
         ],
         "executing_organization": null,
@@ -49524,7 +49515,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "拟立项"
@@ -50867,6 +50858,13 @@
             "title": "关于批准发布《人工智能 具身智能数据 质量规范 第1部分：真实数据》等60项 国家标准化指导性技术文件的公告",
             "type": "已发布",
             "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_0c31a5e477864772bb3727a4941306b4.html"
+          },
+          {
+            "date": "2026-10-14",
+            "source_name": "市场监管总局标准公告",
+            "title": "关于批准发布《人工智能 具身智能数据 质量规范 第1部分：真实数据》等60项 国家标准化指导性技术文件的公告",
+            "type": "已发布",
+            "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_0c31a5e477864772bb3727a4941306b4.html"
           }
         ],
         "executing_organization": null,
@@ -50877,7 +50875,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-10-13",
+        "recorded_at": "2026-10-14",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
