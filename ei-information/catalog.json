@@ -110,6 +110,39 @@
       },
       "body": "",
       "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.05062v2"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-0138a777e7d9414ab155e7fa73f17291",
+      "intro": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success. Meeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.05062v2"
+      },
+      "title": "Beyond LLM Serving: Characterizing Vision-Language-Action Workloads for Embodied AI System Design"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
         "kind": "article",
         "source_channel": "website",
         "source_name": "联想控股元昊动力融资公告"
@@ -279,11 +312,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The study places a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction and no specified task, reward, or activity. The authors report that, during thirty-hour runs, agents climbed hills, stacked blocks, drew mandalas, reinterpreted sports, and explored the world’s physics. Such activities recurred across thirteen agents but produced distinct histories. The paper examines whether this behavior meets classical criteria for play and whether play could become a mode of machine development.",
-          "zh": "研究将现代 AI 编程助手置于数字岛屿中，赋予其虚拟身体，仅提供未指定任务、奖励或活动的最简指令。作者报告，在三十小时运行中，智能体会爬坡、堆叠积木、绘制曼陀罗、重新诠释体育活动并探索世界物理；这些行为在十三个智能体间反复出现，但形成不同历程。论文据此考察这些行为是否符合经典游戏标准，以及游戏能否成为机器发展的一种方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -1078,7 +1107,7 @@
       },
       "format": "archive_record",
       "id": "archive-article-1193cba0e1c649debf1b666491edabd8",
-      "intro": "\"Experiments in building products at Physical Intelligence\" -- Quan Vuong's (@QuanVng) keynote at the Humanoid Hub Conference. He co-founded @physical_int, and before that helped build the foundational RT-2 and OpenVLA models at Google DeepMind. He'll take us behind the https://t.co/5jApMM1FiZ",
+      "intro": "\"Super Human Humanoids\" That's Jan Liphardt's keynote at the Humanoid Hub Conference. The long-term goal of robotics is machines that decisively outperform humans on speed, safety, reliability, versatility and efficiency. That means changing how we design, train and build https://t.co/qTAL9eg96j",
       "published_at": null,
       "reading": {
         "mode": "excerpt",
@@ -1086,7 +1115,7 @@
         "sections": [
           {
             "heading": "",
-            "text": "\"Experiments in building products at Physical Intelligence\" -- Quan Vuong's (@QuanVng) keynote at the Humanoid Hub Conference. He co-founded @physical_int, and before that helped build the foundational RT-2 and OpenVLA models at Google DeepMind. He'll take us behind the https://t.co/5jApMM1FiZ"
+            "text": "\"Super Human Humanoids\" That's Jan Liphardt's keynote at the Humanoid Hub Conference. The long-term goal of robotics is machines that decisively outperform humans on speed, safety, reliability, versatility and efficiency. That means changing how we design, train and build https://t.co/qTAL9eg96j"
           }
         ]
       },
@@ -1094,7 +1123,7 @@
         "id": "x-thehumanoidhub",
         "url": "https://x.com/TheHumanoidHub/status/1682127524963426304"
       },
-      "title": "\"Experiments in building products at Physical Intelligence\" -- Quan Vuong's (@QuanVng) keynote at the Humanoid Hub Conference. He co-founded @physical_int, and"
+      "title": "\"Super Human Humanoids\" That's Jan Liphardt's keynote at the Humanoid Hub Conference. The long-term goal of robotics is machines that decisively outperform huma"
     },
     {
       "archive": {
@@ -2616,6 +2645,39 @@
       },
       "body": "",
       "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.15556v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-30e46e43e21840a4a18f7bf73023e7b7",
+      "intro": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency. We present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop. A shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.15556v1"
+      },
+      "title": "Vision-Predictor-Action: Towards Efficient Embodied AI via Neuro-Symbolic JEPA Predictors"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
         "kind": "policy",
         "region": "全国",
         "source_channel": "website",
@@ -2799,11 +2861,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. It supports sampling diverse, interactive, customizable, validator-passed virtual environments for navigation, interaction, and manipulation. The authors show generated scenes and simple baselines, and report that policies trained in these environments without explicit mapping or human task supervision achieve competitive results on multiple embodied benchmarks. The framework also supports image-conditioned reconstruction and releases a dataset of 20,000 environments with associated task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文介绍 EnvDreamer，一个利用大型语言模型和视觉—语言模型生成虚幻引擎 5 环境的框架，面向具身智能与机器人训练。它支持采样多样、可交互、可定制且通过验证的虚拟环境，用于导航、交互和操作任务。作者展示生成场景及简单基线，并称在这些环境中训练、无需显式地图或人工任务监督的策略，在多个涵盖导航、重排和操作的具身基准上取得有竞争力的结果。框架还支持图像条件重建，并发布含两万个环境及相关任务程序、场景图、轨迹和元数据的数据集。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5154,11 +5212,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. It combines reusable, customizable abstractions for specifying physical evaluations and analyzing results with infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They also report that Inspect Robots received nearly 100,000 downloads in the three months following its release.",
-          "zh": "论文提出 Inspect Robots，这是一个用于开发和运行具身智能体评测的模块化开源框架。它将可定制、可复用的物理评测规范与结果分析抽象结合，并提供自动设置、执行和终止评测的基础设施。作者以该框架评估了六种基于前沿语言模型的策略，展示其能力与安全性评测用途；摘要还称，该框架发布后三个月获得近十万次下载。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5891,6 +5945,39 @@
         "url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/art/2025/art_356873e1bc68464aafe1e02fdebdf9d0.html"
       },
       "title": "工业和信息化部关于印发《产业技术基础公共服务平台管理办法》的通知"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.15362v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-5e9d86f65b1844d89cd0270952fbe5c2",
+      "intro": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts. While recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint. A robot must also recognize stalled progress, escape unproductive behaviors, and revisit…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts.\n\nWhile recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint.\n\nA robot must also recognize stalled progress, escape unproductive behaviors, and revisit overlooked target cues. Addressing these challenges requires both specialized navigation strategies and a high-level policy that coordinates their execution.\n\nMotivated by the analysis of failed navigation episodes, we propose LERR-Nav, an object navigation framework that coordinates exploration, recovery, and reminiscing through a learned high-level policy.\n\nThe framework comprises four complementary navigation strategies: value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing.\n\nTo support history-aware coordination, we maintain the execution memory that preserves textual summaries of all strategy executions alongside a sliding window of map sequences. To learn the coordination policy, we initialize a high-level vision-language agent from Qwen2.5-VL-7B-Instruct and train it through a two-stage curriculum.\n\nThe first stage uses map-centric supervised fine-tuning (SFT) to establish spatial grounding. The second stage performs SFT on variable-length navigation segments to learn which navigation strategy to invoke next based on current maps and the hybrid execution memory.\n\nExperiments on HM3D and MP3D demonstrate state-of-the-art navigation performance, while ablation studies validate the contributions of individual components."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.15362v1"
+      },
+      "title": "LERR-Nav: Learning to Coordinate Exploration, Recovery, and Reminiscing for Object Navigation"
     },
     {
       "archive": {
@@ -8143,6 +8230,39 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.14018v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-7d1be64a1cc54d82ad2823af8e694ea3",
+      "intro": "The rise of large language models (LLMs) has opened a path toward generalist embodied AI, raising the question of how LLMs can act in the physical world. One straightforward approach is training the model to generate actions: collect robot-action data and video demonstration, refine LLM architecture with an action head, and train a vision-language-action (VLA) model at scale. However, we argue that coding agents have the potential to realize generalist…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "The rise of large language models (LLMs) has opened a path toward generalist embodied AI, raising the question of how LLMs can act in the physical world.\n\nOne straightforward approach is training the model to generate actions: collect robot-action data and video demonstration, refine LLM architecture with an action head, and train a vision-language-action (VLA) model at scale. However, we argue that coding agents have the potential to realize generalist embodied manipulation.\n\nAll they need is a simple yet effective robot harness. We present RoboHarness: a robotic harness that gives LLM agents a visual-geometric control panel so that they can directly understand and invoke embodied tasks. With RoboHarness, Qwen3.8-Flash-Next outperforms state-of-the-art VLA models on BEHAVIOR Challenge 2025 tasks.\n\nThe implementation will be released as open source."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.14018v1"
+      },
+      "title": "RoboHarness: A Simple Harness Outperforms VLA and World Actions Models"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-21"
       },
       "body": "",
@@ -8177,6 +8297,39 @@
         "url": "http://arxiv.org/abs/2609.06326v1"
       },
       "title": "Rethinking Safety for Generalist Robots"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.17694v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-7f915ceb9bf748aeb09ac72c0b7a42ca",
+      "intro": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors. To address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories. In each episode,…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.17694v1"
+      },
+      "title": "HelpMeOut: A Neuropsychology-Grounded Benchmark for Error-Aware Monitoring of Household Task Execution"
     },
     {
       "archive": {
@@ -10036,6 +10189,39 @@
         "url": "https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/"
       },
       "title": "Inside NVIDIA Halos for Robotics: A Full-Stack Functional Safety System for Physical AI"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.18447v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-9bebd823b46c4c2496659140b54a80d5",
+      "intro": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.18447v1"
+      },
+      "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence"
     },
     {
       "archive": {
@@ -12556,6 +12742,39 @@
         "url": "https://x.com/TheHumanoidHub/status/2095208025678315937"
       },
       "title": "Sam Altman on the Sources Podcast: OpenAI 'will definitely do humanoids.' It lines up with OpenAI's actual moves: • It's been building an in-house robotics team"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.14038v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-c91875cbc8a248b0904ef08bfa031c6a",
+      "intro": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm. This survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack. It traces the evolution of safety paradigms and examines how faults and…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.14038v1"
+      },
+      "title": "From bits to atoms: A survey of cross-layer safety in Embodied AI"
     },
     {
       "archive": {
