@@ -1450,7 +1450,11 @@
             "heading": "",
             "text": "Leg odometry relies on the assumption that the velocity of a foot in stance is zero with respect to the world, which makes accurate contact detection a critical subproblem.\n\nMany approaches classify contact using ground reaction force (GRF) sensors at the foot tip, yet these sensors are not available on all legged robots and remain unresponsive to disturbances such as slippage while the foot is still in contact.\n\nApproaches without GRF sensing instead rely on heuristic pseudo-labels, model-based foot-velocity assumptions, or supervised contact learning.\n\nIn this study, we propose a self-supervised representation learning framework for contact detection that uses only standard proprioceptive sensing (joint encoders and IMU) and requires neither force sensors nor contact labels.\n\nA denoising autoencoder is trained on kinematic features, a two-component Gaussian Mixture Model is fitted in the learned latent space, and its posterior is used as a continuous stance belief that scales the zero-velocity measurement covariance of an error-state Kalman filter.\n\nExperiments in simulation and on real-world terrain show that our framework yields the lowest odometry error among supervised and probabilistic baselines, and that higher pseudo-label classification accuracy does not translate into better downstream odometry. Our code and dataset are publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a self-supervised contact-detection representation framework using joint encoders and an IMU, without force sensors or contact labels. A denoising autoencoder learns from kinematic features, and a two-component Gaussian mixture model in latent space provides a continuous stance belief used to scale the zero-velocity measurement covariance in an error-state Kalman filter. The authors report the lowest odometry error among supervised and probabilistic baselines in simulation and real-world terrain experiments. They also report that better pseudo-label classification does not necessarily improve downstream odometry.",
+          "zh": "论文提出一种仅使用关节编码器和惯性测量单元的自监督接触检测表示学习框架，不需要足端力传感器或接触标签。方法以运动学特征训练去噪自编码器，在潜在空间拟合双成分高斯混合模型，并用其后验概率形成连续支撑置信度，调节误差状态卡尔曼滤波器的零速度测量协方差。作者报告，该方法在仿真和真实地形实验中比所比较的监督及概率基线获得更低里程计误差；较高的伪标签分类准确率并未带来更好的下游里程计表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1481,7 +1485,11 @@
             "heading": "",
             "text": "Video-to-robot pipelines for quadrupedal imitation insert a learned lifting stage, either a monocular depth model or a per-clip 3D reconstruction, to recover the one axis a side-view camera cannot see. We present CopyQuad, which omits that stage and pins the missing axis to the robot's own stance width instead.\n\nThe setting is side-view footage of sagittally dominated motion, where limb motion is almost entirely in the image plane. A frozen 2D keypoint detector and a fixed analytic retargeting then turn a single uncalibrated clip into a robot reference whose foot targets are reachable by construction, so no per-clip trajectory optimization is needed.\n\nOne phase-indexed reward structure, whose only per-behavior freedom is three scalars from a shared sweep, learns a dog walk, a horse walk, a horse trot and two non-periodic gestures, all deployed zero-shot on hardware. We then measure what omitting the axis costs.\n\nIn a training-free rigidity test, a video depth model varies the distance between the animal's hips by $40$ to $107\\%$ of its own mean and a single-image metric model by $22$ to $58\\%$, though that distance cannot move.\n\nMotion capture puts the true lateral paw travel of a dog walk at $4.5$ cm peak to peak, a mean deviation near $1.4$ cm against the $3.5$ cm of lateral foot error our policies already leave, so the discarded axis sits below the pipeline's resolution.\n\nDepth repaired to feasibility never beats the constant, and the unrepaired estimates put the robot on the ground."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CopyQuad converts a single uncalibrated side-view clip into quadruped robot references without a depth model or per-clip 3D reconstruction. It fixes the unseen lateral axis to the robot's stance width, then uses frozen 2D keypoints and analytic retargeting to produce reachable foot targets. The authors report learning dog and horse gaits and two non-periodic gestures with a shared phase-indexed reward structure, followed by zero-shot hardware deployment. Their rigidity test finds substantial variation in estimated hip distance, while measured lateral paw travel is small relative to existing policy foot error. Feasibility-repaired depth does not outperform the constant, and unrepaired estimates put the robot on the ground.",
+          "zh": "CopyQuad从单段未校准侧视视频生成四足机器人参考动作，不使用深度模型或逐片段三维重建，而是将不可见的横向轴固定为机器人自身站立宽度，并以二维关键点检测和解析重定向生成可达的足端目标。作者称，同一阶段索引奖励结构经共享参数搜索，学会狗步、马步、马小跑及两种非周期动作，并在硬件上零样本部署。测试显示，深度估计的髋部距离偏差较大；实测横向爪部移动低于策略已有横向足误差。修正深度未优于常数设定，未修正估计会使机器人落地。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1512,7 +1520,11 @@
             "heading": "",
             "text": "This paper presents a geometry-aware predictive control framework for bipedal obstacle crossing across walking and running regimes. The proposed approach integrates a phase-structured trajectory generator with a constrained model predictive control (MPC) tracking layer to generate coordinated pelvis and swing-foot motions during obstacle traversal.\n\nThe crossing process is represented through five interpretable phases: pre-crossing, leading-leg clearance, straddle, trailing-leg clearance, and recovery.\n\nWithin this structure, swing-foot elevation is adapted as a function of obstacle height, while lateral stance widening and pelvis repositioning are introduced as functions of obstacle depth to improve transverse clearance and body alignment. A continuous gait-parameter evolution enables smooth walk-to-run transition without discrete controller switching.\n\nThe generated references are tracked using MPC to regulate motion smoothness, clearance feasibility, touchdown behavior, and lateral admissibility. The framework is evaluated in reduced-order simulation over five progressively difficult obstacles under walking and running conditions.\n\nThe robot successfully crosses the first four obstacles, achieving minimum body-obstacle clearances of 0.036, 0.036, 0.059, and 0.017 m, respectively. The fifth and most demanding obstacle leads to collision, identifying the current operating boundary of the proposed reduced-order formulation.\n\nOverall, the method provides a compact, interpretable, and computationally efficient basis for intelligent obstacle-aware bipedal locomotion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a geometry-aware predictive control framework for bipedal obstacle crossing while walking or running. A five-phase trajectory generator is paired with constrained model predictive control: swing-foot elevation varies with obstacle height, while stance widening and pelvis repositioning depend on obstacle depth. Continuous gait-parameter evolution supports smooth walk-to-run transitions. In reduced-order simulation across five progressively harder obstacles, the robot crosses the first four and collides with the fifth, which the authors identify as the current operating boundary of the formulation.",
+          "zh": "论文提出用于双足机器人步行与跑步跨越障碍的几何感知预测控制框架，将分阶段轨迹生成器与约束模型预测控制跟踪层结合。跨越分为接近、前导腿抬越、跨立、后随腿抬越和恢复五个阶段；摆动足抬升随障碍高度调整，站立宽度及骨盆位置随障碍深度调整，并通过连续步态参数实现步跑平滑过渡。该方法在简化仿真中测试五种逐渐困难的障碍，前四种成功跨越，第五种发生碰撞，表明当前简化模型的适用边界。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1543,7 +1555,11 @@
             "heading": "",
             "text": "Textual reasoning before acting has improved vision-language-action (VLA) models, but at the cost of latency: every action conditioned on the reasoning text must wait for autoregressive decoding.\n\nWe show that actions do not need to wait for or condition on the generated reasoning to benefit from it, because the reasoning supervision already improves the backbone representation. We introduce TacitVLA, a reasoning VLA whose action expert never attends to the reasoning it generates for the current call.\n\nOn long-horizon tasks where the reasoning text also serves as episodic memory, it can generate each entry during action execution rather than before acting. We evaluate it in a controlled study on four benchmarks spanning manipulation and autonomous driving, memory and non-memory tasks: RoboMME, RMBench, LIBERO, and PhysicalAI-AV.\n\nOn all four, TacitVLA matches the performance of its explicit-reasoning counterpart at up to 3.4x lower latency, and matches the latency of the same architecture trained without reasoning at up to +17.1% success.\n\nIn absolute terms, it surpasses the best previously published results on the RoboMME Counting suite (82.7% vs. 66.8%) and RMBench (77.5% vs. 56.5%), and reaches 72.9% on LIBERO-Plus and a 52.5% scene score on the public split of the PhysicalAI-AV closed-loop driving challenge. Project page: https://tacitvla.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "TacitVLA is a vision-language-action model whose action expert does not attend to reasoning text generated during the current call. The authors argue that reasoning supervision improves the backbone representation, allowing actions to proceed without waiting for autoregressive reasoning. For long-horizon tasks, reasoning entries can be generated during execution as episodic memory. In a controlled evaluation across four manipulation and driving benchmarks, the authors report matching explicit-reasoning performance at up to 3.4 times lower latency, and matching the latency of a model trained without reasoning while improving success by up to 17.1%. The abstract also reports benchmark scores.",
+          "zh": "TacitVLA是一种视觉-语言-动作模型，其动作专家不读取当前调用生成的推理文本。作者认为，推理监督可改善模型表示，因此动作无需等待自回归推理解码；在长时程任务中，推理文本还可在动作执行期间生成并充当情景记忆。受控评估涵盖操作与自动驾驶的四个基准。作者报告，TacitVLA在四项任务上匹配显式推理版本的表现，延迟最高降低3.4倍；相较不使用推理训练的同架构模型，延迟相当且成功率最高提高17.1%。摘要还报告了各基准成绩。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
