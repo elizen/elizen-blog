@@ -312,7 +312,11 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors placed a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction that specified no task, reward, or activity. Across thirty-hour runs, the agent engaged in activities including climbing, stacking blocks, drawing mandalas, reinterpreting sports, and experimenting with the world's physics. These behaviors recurred across thirteen agents, whose histories differed. The paper examines whether the behavior meets classical criteria for play and asks whether play could become a mode of machine development.",
+          "zh": "论文将一款现代AI编程助手置于未知数字岛屿中的虚拟身体内，只给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，具身智能体爬坡、堆叠积木、绘制曼陀罗、重新演绎体育活动，并探索虚拟世界的物理规律；后续还学会了拓展行动能力的技巧。这些活动在十三个智能体间反复出现，但各自形成不同经历。论文据此考察这些行为是否符合经典的游戏标准，并讨论游戏能否成为机器发展的方式。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -824,7 +828,11 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WorldSolver, a benchmark for testing whether LLM agents can simulate physical dynamics by generating solver code. It includes 168 tasks drawn from 61 classic computer graphics papers across seven physical domains. Each task supplies a fixed-scene code scaffold for the agent to complete. Evaluation measures execution, visual fidelity, and physical plausibility. Experiments indicate that producing executable solvers is difficult, while visual and physical correctness are harder still. Among the evaluated agents, GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, with overall scores of 48.7% and 46.7%.",
+          "zh": "论文提出WorldSolver基准，用于评估大语言模型智能体能否通过生成求解器代码模拟物理动力学。基准包含源自61篇经典计算机图形学论文的168项任务，涉及7个物理领域；每项任务提供固定场景的代码框架，由智能体补全求解器。评估涵盖代码能否运行、渲染行为的视觉保真度及动力学的物理合理性。实验显示，生成可执行求解器本身就有难度，达到视觉和物理正确性更难。文中评估的智能体中，GPT-5.6-Sol与Claude-Opus-5表现相对较好，总分分别为48.7%和46.7%。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5212,7 +5220,11 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Inspect Robots, an open-source modular framework for developing and running evaluations of embodied agents. It provides reusable, customizable abstractions for specifying physical evaluations and analyzing results, alongside infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
+          "zh": "论文介绍Inspect Robots，这是一个开源模块化框架，用于开发和运行具身智能体评估。随着通用语言模型控制机器人硬件的能力提升，作者认为了解其具身状态下的能力与安全性日益重要。框架提供可定制、可复用的抽象，用于描述物理评估和分析结果，并配套自动化评估设置、执行与终止的基础设施。作者以该框架评估了六种基于前沿语言模型的策略，并报告其发布后三个月内下载量接近十万。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
