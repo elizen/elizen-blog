@@ -312,11 +312,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The authors placed a modern AI coding assistant in a virtual body on an unknown digital island, with only a minimal instruction that specified no task, reward, or activity. Across thirty-hour runs, the agent engaged in activities including climbing, stacking blocks, drawing mandalas, reinterpreting sports, and experimenting with the world's physics. These behaviors recurred across thirteen agents, whose histories differed. The paper examines whether the behavior meets classical criteria for play and asks whether play could become a mode of machine development.",
-          "zh": "论文将一款现代AI编程助手置于未知数字岛屿中的虚拟身体内，只给出未指定任务、奖励或活动的简短指令。作者报告，在三十小时运行中，具身智能体爬坡、堆叠积木、绘制曼陀罗、重新演绎体育活动，并探索虚拟世界的物理规律；后续还学会了拓展行动能力的技巧。这些活动在十三个智能体间反复出现，但各自形成不同经历。论文据此考察这些行为是否符合经典的游戏标准，并讨论游戏能否成为机器发展的方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -828,11 +824,7 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces WorldSolver, a benchmark for testing whether LLM agents can simulate physical dynamics by generating solver code. It includes 168 tasks drawn from 61 classic computer graphics papers across seven physical domains. Each task supplies a fixed-scene code scaffold for the agent to complete. Evaluation measures execution, visual fidelity, and physical plausibility. Experiments indicate that producing executable solvers is difficult, while visual and physical correctness are harder still. Among the evaluated agents, GPT-5.6-Sol and Claude-Opus-5 perform comparatively better, with overall scores of 48.7% and 46.7%.",
-          "zh": "论文提出WorldSolver基准，用于评估大语言模型智能体能否通过生成求解器代码模拟物理动力学。基准包含源自61篇经典计算机图形学论文的168项任务，涉及7个物理领域；每项任务提供固定场景的代码框架，由智能体补全求解器。评估涵盖代码能否运行、渲染行为的视觉保真度及动力学的物理合理性。实验显示，生成可执行求解器本身就有难度，达到视觉和物理正确性更难。文中评估的智能体中，GPT-5.6-Sol与Claude-Opus-5表现相对较好，总分分别为48.7%和46.7%。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -1102,6 +1094,43 @@
         "url": "https://www.agilityrobotics.com/content/agility-robotics-expands-relationship-with-nvidia"
       },
       "title": "Agility Robotics Expands Relationship with NVIDIA"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-14"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.18836v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-1188ac70693f4321bdbe75c9121a1b33",
+      "intro": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI. However, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution. We introduce Plan-Bench, a benchmark for evaluating…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
+          }
+        ],
+        "summary": {
+          "en": "The paper introduces Plan-Bench, a benchmark for assessing VLMs’ high-level reasoning and multi-step planning in embodied settings while isolating action execution. It covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 VLMs finds substantial room for improvement: the strongest model reaches 75.0% accuracy. The authors report that scaling generally improves these capabilities, and ablations indicate that larger models may have increasing potential as high-level planners.",
+          "zh": "论文提出 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并尽量排除动作执行的影响。基准覆盖三个维度、16个子类和699个样本。对28个模型的评估显示，最强模型准确率为75.0%，整体仍有提升空间；模型规模增大通常有助于改善能力。消融研究也显示，大模型作为高层规划器的潜力有所增加。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.18836v1"
+      },
+      "title": "Plan-Bench: Can Existing VLMs Go Well Beyond Perception to Reason and Plan in Embodied Worlds?"
     },
     {
       "archive": {
@@ -2672,7 +2701,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents goal-conditioned Vision-Predictor-Action (VPA), replacing autoregressive action decoding with a lightweight latent control loop. It selects a discrete skill, predicts the next latent state, and generates an action chunk; the authors state that sequential network evaluations per decision do not grow with the action horizon. As an initial proof of concept, VPA was evaluated on LIBERO-10. A two-camera policy with a trainable model under 20 million parameters, trained in a single run, succeeded in 40.0% of 200 evaluation episodes. The authors characterize these preliminary results as suggesting the approach is workable.",
+          "zh": "论文提出目标条件 Vision-Predictor-Action（VPA），以轻量潜在控制循环取代逐 token 生成动作的自回归解码器。系统选择离散技能，预测下一潜在状态，并生成整段动作；作者称每步决策的顺序网络评估次数不随动作时域增长。作为初步验证，VPA 在 LIBERO-10 上以低于20M参数的可训练模型进行测试；单次训练的双摄像头策略在200个评估回合中成功率为40.0%。作者将结果定位为初步概念验证，表明方法可行。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5220,11 +5253,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Inspect Robots, an open-source modular framework for developing and running evaluations of embodied agents. It provides reusable, customizable abstractions for specifying physical evaluations and analyzing results, alongside infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They report that Inspect Robots received nearly 100,000 downloads in the three months after its release.",
-          "zh": "论文介绍Inspect Robots，这是一个开源模块化框架，用于开发和运行具身智能体评估。随着通用语言模型控制机器人硬件的能力提升，作者认为了解其具身状态下的能力与安全性日益重要。框架提供可定制、可复用的抽象，用于描述物理评估和分析结果，并配套自动化评估设置、执行与终止的基础设施。作者以该框架评估了六种基于前沿语言模型的策略，并报告其发布后三个月内下载量接近十万。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6187,11 +6216,7 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ],
-        "summary": {
-          "en": "OmniDex addresses the scarcity of grasping data in cluttered scenes with a seed-and-filter strategy based on curated 3D objects and supporting bases, avoiding slow scene-level optimization. The resulting benchmark contains over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The authors introduce a model combining Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. They report state-of-the-art experimental performance and generalization across diverse scenes, views, and unseen objects.",
-          "zh": "OmniDex 针对杂乱场景中灵巧抓取训练数据不足，提出基于高质量三维物体与支撑底座的种子生成和筛选策略，以避免缓慢的场景级优化。由此构建的基准包含超过260万场景及4亿条场景专属抓取真值。作者还提出 OmniDex 模型，结合 Soft Winner-Takes-All 学习、人类启发的物理约束和物理驱动排序，旨在处理抓取多模态性及末端精度误差。实验结果显示，该模型取得最先进表现，并能泛化至多样场景、视角和未见物体。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7650,11 +7675,7 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ],
-        "summary": {
-          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and everyday belongings. Its human-in-the-loop construction workflow covers instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The authors report that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
-          "zh": "LIVIN 是一个基于30套真实居住住宅数字孪生的空间与具身智能基准，保留观察到的房间布局、家具配置和日常物品。其构建流程包含实例识别、建筑重建及物体生成与摆放，并在各阶段由人工依据源观察审查和修正。基准评估3D检测、3D重建、导航和移动操作四项任务。作者报告，当前方法仍受真实住宅中密集物品、遮挡、可用空间有限及交互区域受限等因素挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8347,7 +8368,11 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HelpMeOut is an embodied AI benchmark for monitoring errors during household task execution. It contains 20,000 paired activity episodes across nine neuropsychologically motivated error categories. Agents observe streaming human activity and must determine whether execution is proceeding correctly, diagnosing structured errors as early as possible. The paper evaluates learned-monitor, symbolic, change-point, and frontier-LLM-prompting baselines. The authors report that these methods perform poorly as error monitors and often miss when execution goes wrong, positioning the benchmark as a testbed for error-aware assistive agents.",
+          "zh": "论文提出 HelpMeOut，这是一个面向家庭任务执行错误监测的具身人工智能基准。它将日常行动错误研究转化为20,000组配对活动片段，涵盖九类神经心理学启发的错误。智能体需观察连续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。对学习型监测器、符号方法、变化点方法和前沿大语言模型提示基线的评估显示，这些方法作为错误监测器表现不佳，常会漏掉执行偏差。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10239,7 +10264,11 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Thinker-WM is a unified multimodal world model that jointly represents and generates RGB, metric depth, and robot actions through a shared dynamics transformer, while preserving modality-specific outputs. The same parameterization supports functions including video-action generation, world prediction, policy inference, and inverse dynamics. A motion probe indicates that recoverable motion information is present in its frozen visual representation. The authors report strong results on embodied world-model evaluations and first-place rankings on EWMBench, WorldOlympiad, and WorldArena; controlled studies indicate benefits from action conditioning, geometric interaction, and multi-function training.",
+          "zh": "论文提出 Thinker-WM，以共享的 Unified Dynamics Transformer 联合建模和生成 RGB、度量深度与机器人动作，同时保留各模态不同的输出结构。同一参数化支持视频与动作生成、世界预测、策略推断等多种功能。作者用运动探针显示冻结视觉表征中可恢复运动信息，并报告模型在具身世界模型评测中表现强劲，在 EWMBench、WorldOlympiad 和 WorldArena 排名第一。受控研究支持动作条件、几何交互和多功能训练的益处。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12792,11 +12821,7 @@
             "heading": "",
             "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
           }
-        ],
-        "summary": {
-          "en": "This survey organizes embodied AI safety around a four-layer reference architecture covering physical interaction, systems and middleware, algorithms and decisions, and cloud-edge and data. It connects vulnerabilities, propagation paths, and safeguards across the system stack, and examines how faults and attacks cross architectural boundaries to cause physical consequences. The authors systematize composite attack chains, review representative safety benchmarks, outline multilayer defenses, and advocate combining software alignment with rigorous hardware constraints.",
-          "zh": "这篇综述将具身人工智能安全组织为四层参考架构，涵盖物理交互、系统与中间件、算法与决策、云边与数据层，用以关联系统各层的漏洞、传播路径和防护措施。作者梳理安全范式演变，讨论故障与攻击如何跨越架构边界并造成物理后果，归纳复合攻击链、多层防御策略及代表性安全基准，并倡议结合软件对齐与严格硬件约束，构建能在人本环境中安全运行的可信系统。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
