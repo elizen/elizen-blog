@@ -6175,7 +6175,11 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "OmniDex addresses the scarcity of grasping data in cluttered scenes with a seed-and-filter strategy based on curated 3D objects and supporting bases, avoiding slow scene-level optimization. The resulting benchmark contains over 2.6 million scenes and 0.4 billion scene-specific grasp ground truths. The authors introduce a model combining Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking. They report state-of-the-art experimental performance and generalization across diverse scenes, views, and unseen objects.",
+          "zh": "OmniDex 针对杂乱场景中灵巧抓取训练数据不足，提出基于高质量三维物体与支撑底座的种子生成和筛选策略，以避免缓慢的场景级优化。由此构建的基准包含超过260万场景及4亿条场景专属抓取真值。作者还提出 OmniDex 模型，结合 Soft Winner-Takes-All 学习、人类启发的物理约束和物理驱动排序，旨在处理抓取多模态性及末端精度误差。实验结果显示，该模型取得最先进表现，并能泛化至多样场景、视角和未见物体。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7634,7 +7638,11 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and everyday belongings. Its human-in-the-loop construction workflow covers instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed against source observations. LIVIN evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The authors report that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
+          "zh": "LIVIN 是一个基于30套真实居住住宅数字孪生的空间与具身智能基准，保留观察到的房间布局、家具配置和日常物品。其构建流程包含实例识别、建筑重建及物体生成与摆放，并在各阶段由人工依据源观察审查和修正。基准评估3D检测、3D重建、导航和移动操作四项任务。作者报告，当前方法仍受真实住宅中密集物品、遮挡、可用空间有限及交互区域受限等因素挑战。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8253,7 +8261,11 @@
             "heading": "",
             "text": "The rise of large language models (LLMs) has opened a path toward generalist embodied AI, raising the question of how LLMs can act in the physical world.\n\nOne straightforward approach is training the model to generate actions: collect robot-action data and video demonstration, refine LLM architecture with an action head, and train a vision-language-action (VLA) model at scale. However, we argue that coding agents have the potential to realize generalist embodied manipulation.\n\nAll they need is a simple yet effective robot harness. We present RoboHarness: a robotic harness that gives LLM agents a visual-geometric control panel so that they can directly understand and invoke embodied tasks. With RoboHarness, Qwen3.8-Flash-Next outperforms state-of-the-art VLA models on BEHAVIOR Challenge 2025 tasks.\n\nThe implementation will be released as open source."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors argue that coding agents could enable generalist embodied manipulation and present RoboHarness, a robotic harness that gives LLM agents a visual-geometric control panel for understanding and invoking embodied tasks. They report that Qwen3.8-Flash-Next with RoboHarness outperforms state-of-the-art vision-language-action models on BEHAVIOR Challenge 2025 tasks. The abstract does not provide quantitative results or detailed evaluation conditions, and says the implementation will be released as open source.",
+          "zh": "作者提出，编码智能体有潜力实现通用具身操作，并介绍 RoboHarness：一种为大语言模型智能体提供视觉几何控制面板的机器人 harness，使其能够理解并调用具身任务。摘要称，在 BEHAVIOR Challenge 2025 任务上，配合 RoboHarness 的 Qwen3.8-Flash-Next 表现超过当时最先进的视觉语言动作模型。作者表示实现代码将以开源形式发布；摘要未说明具体实验设置或量化结果。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12768,7 +12780,11 @@
             "heading": "",
             "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey organizes embodied AI safety around a four-layer reference architecture covering physical interaction, systems and middleware, algorithms and decisions, and cloud-edge and data. It connects vulnerabilities, propagation paths, and safeguards across the system stack, and examines how faults and attacks cross architectural boundaries to cause physical consequences. The authors systematize composite attack chains, review representative safety benchmarks, outline multilayer defenses, and advocate combining software alignment with rigorous hardware constraints.",
+          "zh": "这篇综述将具身人工智能安全组织为四层参考架构，涵盖物理交互、系统与中间件、算法与决策、云边与数据层，用以关联系统各层的漏洞、传播路径和防护措施。作者梳理安全范式演变，讨论故障与攻击如何跨越架构边界并造成物理后果，归纳复合攻击链、多层防御策略及代表性安全基准，并倡议结合软件对齐与严格硬件约束，构建能在人本环境中安全运行的可信系统。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
