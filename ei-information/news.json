@@ -1702,7 +1702,11 @@
             "heading": "",
             "text": "While expert demonstrations on real robots are difficult to collect, human ego-centric videos are easy to collect and abundant on the internet.\n\nHowever, learning dexterous manipulation policies from human videos remains challenging---one of the most important challenges being the difficulty of reconstructing physically grounded robot trajectories due to the large embodiment gap.\n\nIn this paper, we propose EgoCPT, a novel paradigm for learning high-quality retargeted dexterous hand trajectories directly from an ego-centric video, which can then be deployed directly on real robots.\n\nThe only inputs to our method are an ego-centric RGB video and a reference hand pose trajectory, which can be easily obtained through off-the-shelf software or specialized cameras during recording.\n\nOur method is particularly robust to noisy hand poses attributed to our novel contact-aware optimization framework, which iteratively optimizes the contact points between the robot hands and objects.\n\nAcross five manipulation tasks, our method achieves overall success rates of 67.3% on noisy EgoDex hand-pose reconstructions and 92.0% on high-quality TACO reconstructions collected using motion-capture hardware, outperforming multiple baselines on both benchmarks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "EgoCPT aims to produce robot dexterous-hand trajectories from a single egocentric video and a reference hand-pose trajectory, addressing the embodiment gap between human hands and robots. Its contact-aware optimization iteratively adjusts hand-object contact points to improve robustness to noisy poses. Across five manipulation tasks, the authors report overall success rates of 67.3% with noisy EgoDex reconstructions and 92.0% with high-quality TACO reconstructions collected using motion-capture hardware. These figures describe the reported benchmark evaluations.",
+          "zh": "EgoCPT旨在从单段第一视角视频和参考手部姿态轨迹中，重建可用于真实机器人的灵巧手操作轨迹，以应对人手与机器人之间的具身差异。方法通过迭代优化机器人手与物体的接触点，提高对噪声姿态的鲁棒性。作者报告，在五项操作任务中，使用噪声EgoDex姿态重建时总体成功率为67.3%，使用动作捕捉设备采集的高质量TACO重建时为92.0%；这些结果来自相应基准测试。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1733,7 +1737,11 @@
             "heading": "",
             "text": "Diffusion models and Flow Matching can represent flexible distributions over robot actions, but many reinforcement learning algorithms also require the probability of each action. We introduce PrT-Flow (Probability-Tractable Flow Matching), which computes probability density while retaining multimodal, multi-step action generation.\n\nIts Jacobian-Tractable Transformer (JTT) makes each sampling step invertible and enables efficient computation of its Jacobian determinant. We train these finite steps with Conditional Euler-step Training (CET), which supervises their displacement over one step during sampling rather than their instantaneous velocity.\n\nWe prove that, under certain assumptions, CET has the same minimizers as fitting the Euler-solver updates of Flow Matching. PrT-Flow achieves 96% success on Robomimic Lift after 300 epochs of imitation learning, matching the diffusion policy reference, and 96% success on OGBench Cube-Triple after 600k online steps.\n\nThese results demonstrate that invertible networks with tractable probability densities can learn effective robot policies and support SAC-style actor-critic training. Our code is available at https://github.com/Sunlight-zero/PrT-Flow ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PrT-Flow is a flow-matching method for robot action policies that computes action probability densities while supporting multimodal, multi-step generation. Its Jacobian-Tractable Transformer makes sampling steps invertible, and Conditional Euler-step Training supervises their displacements. The authors prove that, under certain assumptions, this training objective has the same minimizers as fitting Flow Matching Euler-solver updates. They report 96% success on Robomimic Lift after 300 imitation-learning epochs and 96% on OGBench Cube-Triple after 600,000 online steps.",
+          "zh": "PrT-Flow为强化学习中的机器人动作策略提供可计算概率密度的流匹配方法，同时支持多模态、多步动作生成。其雅可比可计算变换器使采样步骤可逆，并便于计算雅可比行列式；条件Euler步训练监督采样步的位移。作者证明，在特定假设下，该训练目标与拟合流匹配Euler求解更新具有相同极小值。报告结果包括Robomimic Lift模仿学习成功率96%，以及OGBench Cube-Triple在线训练成功率96%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1764,7 +1772,11 @@
             "heading": "",
             "text": "Likelihood-based policy gradient methods are the dominant approach for training robot control policies from rewards. These methods rely on differentiable action likelihoods, which constrain policy outputs to simple distributions like Gaussians.\n\nIn this work, we show how flow matching policy gradients, a recent framework that bypasses likelihood computation, can be made effective for training and finetuning more expressive policies in challenging robot control settings.\n\nWe introduce an improved objective that enables success in legged locomotion, humanoid motion tracking, and manipulation tasks, as well as robust sim-to-real transfer on two humanoid robots. We then present ablations and analysis on training dynamics.\n\nResults show how policies can exploit the flow representation for exploration when training from scratch, as well as improved finetuning robustness over baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work adapts flow-matching policy gradients, which bypass likelihood computation, to train and fine-tune expressive robot-control policies. The authors introduce an improved objective and report success in legged locomotion, humanoid motion tracking, and manipulation, as well as robust sim-to-real transfer on two humanoid robots. Their ablations and training-dynamics analysis indicate that policies can use the flow representation for exploration when trained from scratch, and that fine-tuning is more robust than the baselines. The abstract gives no specific success rates or experimental setup details.",
+          "zh": "本文研究如何将流匹配策略梯度用于机器人控制策略训练与微调，以避免似然梯度方法对简单动作分布的依赖。作者提出改进目标，并报告其在腿式运动、人形动作跟踪和操作任务中取得成功，也在两台人形机器人上实现了稳健的仿真到现实迁移。消融与训练动态分析显示，从零开始训练时策略可利用流表示进行探索；与基线相比，微调的鲁棒性也有所提升。摘要未给出具体成功率或实验设置细节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
