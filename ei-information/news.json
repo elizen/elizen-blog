@@ -2562,7 +2562,11 @@
             "heading": "",
             "text": "Nearest-neighbor (NN) search underlies countless robotics algorithms, but many state spaces are not Euclidean: orientations live on $SO（2）$ or $SO（3）$ and poses on $SE（2）$ or $SE（3）$, and a Euclidean KD-tree on their raw coordinates returns wrong neighbors.\n\nWe present a header-only, dependency-free C++ KD-tree library for exact NN search on user-defined product manifolds declared at compile time: the space is composed from base manifolds ($\\mathbb{R}^n$, $SO（2）$, $SO（3）$, $S^n$; products $SE（2）$, $SE（3）$, tori) with a single type alias, and the library synthesizes a metric whose pruning is provably admissible, wrap-aware for circular coordinates and double-cover-aware for unit quaternions.\n\nExperiments confirm exactness (recall $1.0$ vs an exhaustive scan under the same product metric), where the Euclidean-on-raw shortcut collapses to recall $\\approx 0.5^{m}$ for $m$ rotation blocks, with up to three orders of magnitude speedup over brute force.\n\nWe further contribute an incremental, self-balancing single-tree index for points under heavy churn (e.g. sliding-window LiDAR maps) or $SE（3）$ trajectories: bounded memory and faster updates than prior work, with an optional asynchronous tail-latency-bounding mode. The implementation is open source: https://github.com/jlblancoc/nanoflann"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces nanoflann, a dependency-free, header-only C++ KD-tree library for exact nearest-neighbor search on compile-time product manifolds. Spaces can combine Euclidean, circular, and spherical components; the library synthesizes a metric with admissible pruning and handles circular wraparound and the double cover of unit quaternions. In experiments, it achieves recall of 1.0 against exhaustive search using the same product metric, and the authors report speedups of up to three orders of magnitude over brute force. The paper also presents an incremental, self-balancing single-tree index for frequently changing point sets.",
+          "zh": "论文介绍 nanoflann，一个无依赖、仅头文件的 C++ KD 树库，用于编译期声明的乘积流形上的精确最近邻搜索。空间可由欧氏空间、圆周、球面及其乘积构成；库会生成可证明剪枝有效的度量，并处理圆周坐标环绕和单位四元数双覆盖。实验中，相同乘积度量下其召回率为1.0，作者报告相较穷举扫描最高有三个数量级的加速。论文还提出适用于频繁增删点集的增量式自平衡单树索引。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2593,7 +2597,11 @@
             "heading": "",
             "text": "Humanoid Behavior Foundation Models (BFMs) can execute impressive motions, but downstream applications such as loco-manipulation demand high whole-body positional accuracy. Existing BFMs suffer from a systematic command-execution gap, where executed motions deviate from desired ones.\n\nWe show that additional test-time compute can improve execution without retraining the BFM. First, we introduce Test-Time Command Optimization (TTCO), which adapts the input command to the specific BFM to produce an executed trajectory closer to the desired motion.\n\nTTCO finds such commands by sampling-based optimization through closed-loop simulations of the BFM and robot dynamics. Across three BFMs on the AMASS dataset, TTCO reduces mean global body-position error by 79-84% in simulation.\n\nSecond, we analyze test-time compute scaling and derive an approximate compute-optimal strategy that can sustain performance gains as the compute budget increases. Third, TTCO can generate BFM-specific action labels from recorded robot trajectories without requiring the original teleoperation body-motion commands.\n\nSimulation and real-robot experiments show that these labels are effective for training high-level loco-manipulation policies. This method also supports reusing existing demonstrations across BFMs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses the gap between commands and executed trajectories in humanoid behavior foundation models. It introduces Test-Time Command Optimization (TTCO), which adapts commands without retraining by sampling through closed-loop simulations of the model and robot dynamics. In simulation on AMASS across three models, the authors report a 79–84% reduction in mean global body-position error. The paper also analyzes test-time compute scaling and derives an approximate compute-optimal strategy. It shows that model-specific action labels can be generated from recorded robot trajectories; simulation and real-robot experiments indicate these labels can train high-level loco-manipulation policies.",
+          "zh": "论文研究人形行为基础模型的指令与执行轨迹之间的差距，并提出无需重新训练基础模型的测试时指令优化 TTCO。该方法通过基础模型及机器人动力学的闭环仿真进行采样优化，寻找更接近目标动作的输入指令。在 AMASS 数据集上的仿真中，针对三个模型，作者报告全局身体位置误差降低79%至84%。论文还分析测试时计算扩展，推导近似计算最优策略，并展示可从机器人记录轨迹生成模型专属动作标签；仿真与真实机器人实验表明，这些标签可用于训练高层移动操作策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
