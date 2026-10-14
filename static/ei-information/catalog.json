@@ -5476,7 +5476,11 @@
             "heading": "",
             "text": "Long-term embodied AI will undergo learning, model updates, memory compression, hardware repair, and migration across embodiments.\n\nFor users who have formed sustained relationships with such systems, these changes raise not only a problem of product consistency but also one of identity continuity: whether the changed system is still experienced as the same particular agent.\n\nExisting research suggests that human-AI relationships may develop relational particularity, that robotics and artificial-identity research has identified identity and migration signals across embodiments, and that major updates or platform disruptions can be accompanied by relational loss and restoration desire.\n\nThis article proposes a user-side framework in which long-term embodied AI is represented through an agent-specific identity representation organized by at least three open identity-content domains: embodied-perceptual, psychological-behavioral, and relational-autobiographical.\n\nInformation from these domains is not equally weighted; shared history, relational roles, and contingent responsiveness may make some information more identity-diagnostic than others.\n\nAfter system change, users may integrate continuity and discontinuity evidence in a weighted manner, yielding judgments along a continuum from relatively strong identity continuity through ambiguity or partial continuity to clear identity discontinuity.\n\nCausal-historical provenance and user participation are treated as contextual evidence rather than a fourth identity-content domain. The framework also proposes identity continuity as a psychological objective for lifecycle design, including memory selection, model updating, and migration across embodiments, under constraints of privacy and user control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The article proposes a user-side framework for identity continuity in long-term embodied AI, asking whether users experience a system as the same particular agent after learning, updates, memory compression, repairs, or migration. It represents agent-specific identity through three open domains: embodied-perceptual, psychological-behavioral, and relational-autobiographical. Information such as shared history, relational roles, and contingent responsiveness may carry different diagnostic weight. After change, users may weigh continuity and discontinuity evidence, producing judgments ranging from strong continuity to ambiguity, partial continuity, or clear discontinuity.",
+          "zh": "文章提出一个面向用户的长期具身 AI 身份连续性框架，用于理解学习、模型更新、记忆压缩、硬件维修及具身迁移后，用户是否仍将系统体验为同一个体。框架以具身感知、心理行为和关系自传三个开放领域构成特定智能体的身份表征，并认为共享历史、关系角色和情境响应等信息可能具有不同的身份诊断权重。系统变化后，用户可综合连续与不连续证据，形成从较强连续性到模糊、部分连续或明确不连续的判断。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7279,7 +7283,11 @@
             "heading": "",
             "text": "Poor clinical communication can delay care, contribute to errors, and harm patients, yet opportunities for repeated practice with feedback remain limited.\n\nOur prior randomized trial showed that practice with the SOPHIE AI patient platform improved serious illness communication, but the system addressed a single clinical context and required human effort for delivery and assessment.\n\nWe developed SOPHIE 2.0, a browser-based, self-service platform integrating embodied AI-patient interactions, personalized feedback, and automated assessment across 24 clinical scenarios.\n\nAn automated large language model assessor evaluated three communication skills---Empower, Be Explicit, and Empathize---with agreement comparable to individual human raters ($r=0.759$; ICC$=0.746$).\n\nIn a study of 59 clinicians and students, participants completed two AI-patient encounters with personalized feedback; 92% found the platform engaging, 86% easy to use, and 83% clinically relevant. Scores were higher in the second encounter, though the uncontrolled design precludes attributing this change specifically to training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study presents SOPHIE 2.0, a browser-based self-service platform combining embodied AI-patient interactions, personalized feedback, and automated assessment across 24 clinical scenarios. Its automated language-model assessor evaluated Empower, Be Explicit, and Empathize with agreement comparable to individual human raters (r=0.759; ICC=0.746). In a study of 59 clinicians and students who completed two encounters with feedback, 92% found the platform engaging, 86% easy to use, and 83% clinically relevant. Scores were higher in the second encounter, but the uncontrolled design does not establish that training caused the change.",
+          "zh": "研究介绍 SOPHIE 2.0，这是一个浏览器自助平台，结合具身 AI 患者互动、个性化反馈和自动评估，覆盖 24 个临床情景。自动语言模型评估器对 Empower、Be Explicit 和 Empathize 三项沟通技能的评分，与单个人类评分者的一致性相当（r=0.759；ICC=0.746）。在 59 名临床人员及学生参与的研究中，参与者完成两次 AI 患者对话并获得反馈；92% 认为平台有吸引力，86% 认为易用，83% 认为与临床相关。第二次对话得分较高，但无对照设计无法将变化归因于训练。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -11107,7 +11115,11 @@
             "heading": "",
             "text": "Embodied AI systems are often organized into System 1 and System 2.System 1 is typically a pretrained policy that generates actions at high frequency, whereas System 2 is often instantiated as a vision-enabled language model for high-level planning.\n\nWe ask whether a large language model (LLM) can act as the policy for robot manipulation without task-specific finetuning. We call this setting LLM as policy. We evaluate three LLMs on all 42 RoboDojo tasks and compare their scores with 40 public policies.\n\nAstra and GPT-5.5 use the official 50-episode-per-task protocol; DeepSeek-Flash uses 10 episodes per task. GPT-6 Astra achieves 22.48% average success rate and 28.97 Score over 2,100 trials, ranking above every public entry. Yet GPT-5.5 and DeepSeek-Flash reach only 0.88% and 1.92% average success rate with the same post-processing.\n\nWe find that Astra exhibits a sharply polarized capability profile. It generalizes well to tasks that require semantic understanding but not high-precision control. In contrast, it performs poorly on tasks that require precision, dynamic control, or complex bimanual coordination.\n\nIn-context experiments show no aggregate benefit from one-shot demonstrations, while selected interaction traces show within-episode corrections under perturbations. Overall, the evaluated LLMs vary substantially in manipulation performance.\n\nAstra stands out and provides initial evidence for the potential of a general-purpose manipulation model, although reliable precision and dynamic control remain limitations in the evaluated setting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates three large language models on 42 RoboDojo robot manipulation tasks and compares them with 40 public policies. Under the reported protocols, GPT-6 Astra achieves a 22.48% average success rate and a score of 28.97 over 2,100 trials, ranking above every public entry; GPT-5.5 and DeepSeek-Flash achieve 0.88% and 1.92% average success rates. The authors describe Astra as stronger on tasks requiring semantic understanding than on precision, dynamic control, or complex bimanual coordination. One-shot demonstrations provide no aggregate benefit.",
+          "zh": "论文评估三种大语言模型在 RoboDojo 的 42 项机器人操作任务上的表现，并与 40 个公开策略比较。按各自所述测试轮次，GPT-6 Astra 在 2,100 次试验中平均成功率为 22.48%、得分为 28.97，高于所有公开参赛项；GPT-5.5 和 DeepSeek-Flash 的平均成功率分别为 0.88% 和 1.92%。作者称 Astra 擅长需要语义理解但不要求高精度控制的任务，在精密、动态控制及复杂双手协调任务上表现较差；单次示范未带来总体收益。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -15647,7 +15659,11 @@
             "heading": "",
             "text": "Embodied AI systems, particularly humanoid robots deployed in real world scenarios require whole-body control policies that are both task-responsive and physically smooth. However, smoothness is not uniform across the body: lower body must remain sufficiently reactive, while the upper body must be tightly regulated to preserve stability.\n\nExisting reinforcement learning approaches typically impose smoothness through auxiliary terms in the reward function, which compete with task objectives, treating the body as uniform and provide no direct control over the physical quantities responsible for smooth behavior.\n\nWe introduce DeCap (Decoupled Constraint-aware policy), a constrained reinforcement learning algorithm that decouples whole-body smoothness into separate upper- and lower-body constraint groups, each formulates smoothness as explicit constraints on physical motion limits.\n\nTo improve constraint satisfaction near feasibility boundaries, DeCap incorporates a bounded barrier penalty that activates proactively as limits are approached and remains bounded at the constraint limit.\n\nOn real-world humanoid whole-body control task, DeCap reduces upper-body action rate by 2.50x and acceleration by 2.18x relative to reward-based smoothness policies, while also improving lower-body smoothness and reducing transient motion.\n\nWe demonstrate that a fixed set of smoothness constraints transfers across diverse terrains, alleviating the need of extensive reward tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DeCap, a constrained reinforcement learning algorithm that separates humanoid whole-body smoothness into upper- and lower-body constraint groups. A bounded barrier penalty activates as motion limits are approached. In a real-world whole-body control task, the authors report a 2.50-fold reduction in upper-body action rate and a 2.18-fold reduction in acceleration relative to reward-based smoothness policies, alongside improved lower-body smoothness and reduced transient motion. They also report that fixed constraints transfer across diverse terrains.",
+          "zh": "论文提出 DeCap，一种将人形机器人全身运动平滑性拆分为上、下身约束组的约束强化学习算法，并用有界屏障惩罚在接近运动限制时主动起作用。作者报告，在真实世界全身控制任务中，相较基于奖励的平滑策略，上身动作变化率降低 2.50 倍、加速度降低 2.18 倍，同时改善下身平滑性并减少瞬态运动。作者还称，一组固定约束可迁移至不同地形，减少广泛调节奖励的需要。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",

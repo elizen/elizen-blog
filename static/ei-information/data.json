@@ -433,7 +433,11 @@
             "heading": "",
             "text": "Embodied AI systems, particularly humanoid robots deployed in real world scenarios require whole-body control policies that are both task-responsive and physically smooth. However, smoothness is not uniform across the body: lower body must remain sufficiently reactive, while the upper body must be tightly regulated to preserve stability.\n\nExisting reinforcement learning approaches typically impose smoothness through auxiliary terms in the reward function, which compete with task objectives, treating the body as uniform and provide no direct control over the physical quantities responsible for smooth behavior.\n\nWe introduce DeCap (Decoupled Constraint-aware policy), a constrained reinforcement learning algorithm that decouples whole-body smoothness into separate upper- and lower-body constraint groups, each formulates smoothness as explicit constraints on physical motion limits.\n\nTo improve constraint satisfaction near feasibility boundaries, DeCap incorporates a bounded barrier penalty that activates proactively as limits are approached and remains bounded at the constraint limit.\n\nOn real-world humanoid whole-body control task, DeCap reduces upper-body action rate by 2.50x and acceleration by 2.18x relative to reward-based smoothness policies, while also improving lower-body smoothness and reducing transient motion.\n\nWe demonstrate that a fixed set of smoothness constraints transfers across diverse terrains, alleviating the need of extensive reward tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DeCap, a constrained reinforcement learning algorithm that separates humanoid whole-body smoothness into upper- and lower-body constraint groups. A bounded barrier penalty activates as motion limits are approached. In a real-world whole-body control task, the authors report a 2.50-fold reduction in upper-body action rate and a 2.18-fold reduction in acceleration relative to reward-based smoothness policies, alongside improved lower-body smoothness and reduced transient motion. They also report that fixed constraints transfer across diverse terrains.",
+          "zh": "论文提出 DeCap，一种将人形机器人全身运动平滑性拆分为上、下身约束组的约束强化学习算法，并用有界屏障惩罚在接近运动限制时主动起作用。作者报告，在真实世界全身控制任务中，相较基于奖励的平滑策略，上身动作变化率降低 2.50 倍、加速度降低 2.18 倍，同时改善下身平滑性并减少瞬态运动。作者还称，一组固定约束可迁移至不同地形，减少广泛调节奖励的需要。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
