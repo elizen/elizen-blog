@@ -2842,7 +2842,11 @@
             "heading": "",
             "text": "Robotic manipulation systems commonly learn object affordances from human-annotated datasets, which reflect interaction possibilities for a human hand rather than the physical constraints of a specific robot.\n\nFor example, a surface region of an object identified as graspable by a human annotator may be geometrically unreachable or mechanically infeasible for a robot, yet this mismatch is rarely addressed explicitly.\n\nTo tackle this challenge, we proposed a framework that translates human affordance annotations into robot-executable affordance predictions conditioned on the physical properties of the robot.\n\nThe network predicts which surface regions of an object are physically executable by the robot, given a 3D point cloud of an object and a descriptor encoding the robot's geometry and constraints.\n\nThe model was trained using human-annotated affordances together with robotic execution outcomes from multiple sampled approach trials in simulation, where execution outcomes determined which regions are executable for the robot. The evaluation was performed on a household objects dataset using two parallel-jaw gripper configurations on a UR5e robot arm.\n\nThe framework outperformed a model that does not receive information about the robot. The experimental results demonstrated that affordance prediction must be conditioned on the robot and that human annotations alone are insufficient for learning robot-executable affordance representations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a framework that translates human-annotated object affordances into predictions of regions a robot can physically use. Given an object point cloud and a descriptor of the robot’s geometry and constraints, the model predicts executable surface regions. Training combines human annotations with robotic execution outcomes from simulated approach trials. Evaluation uses a household-object dataset, a UR5e arm, and two parallel-jaw gripper configurations. The authors report that the framework outperforms a model without robot information, and argue that human annotations alone are insufficient for learning robot-executable affordances.",
+          "zh": "论文提出一种将人类标注的物体可供性转化为机器人可执行预测的框架。模型以物体三维点云和描述机器人几何形状及约束的编码为输入，预测机器人能够执行操作的物体表面区域。训练结合人类标注和仿真中的机器人执行结果；评估使用家居物体数据集、UR5e 机械臂及两种平行夹爪配置。作者报告，该框架优于不接收机器人信息的模型，并据此指出预测应以机器人为条件，人类标注本身不足以学习可执行表示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2873,7 +2877,11 @@
             "heading": "",
             "text": "Reinforcement learning for robot manipulation is often bottlenecked by reward design, especially in long-horizon tasks: sparse success rewards provide weak supervision, while hand-crafted dense rewards are tedious to design and generalize poorly across tasks.\n\nProgress-based reward models offer a promising alternative by estimating how far an observation has advanced toward task completion, but existing approaches often require task-specific demonstrations or progress labels, and can assign high rewards to visually plausible but physically incorrect states.\n\nWe introduce the Reference-Anchored Reward Model (RARM), a lightweight visual comparator that converts a single successful demonstration into a dense, progress-aware reward. RARM is trained once on general-purpose videos with a contrastive temporal objective, requiring no robot-specific data, task-specific reward labels, or per-task reward engineering.\n\nAt deployment, RARM matches rollout clips to reference clips and rewards only confident forward progress, suppressing uncertain matches that may otherwise produce false-positive rewards.\n\nAcross 9 simulated manipulation tasks from LIBERO and MetaWorld and 4 real-world tasks, RARM achieves the best overall success rates in subsequent RL training, with particularly large gains on long-horizon tasks such as cloth folding, where unreliable progress estimates are especially harmful."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RARM, a visual comparator that turns one successful demonstration into a dense, progress-aware reward. It is trained on general-purpose videos with a contrastive temporal objective, without robot-specific data, task-specific reward labels, or per-task reward engineering. During deployment, it matches rollout clips to reference clips and rewards only confident forward progress to suppress false positives from uncertain matches. Across nine simulated LIBERO and MetaWorld tasks and four real-world tasks, the authors report the best overall success rates in subsequent reinforcement learning, with especially large gains on long-horizon tasks.",
+          "zh": "论文提出参考锚定奖励模型 RARM：一种视觉比较器，可将单次成功演示转化为密集、感知进度的奖励。模型先用通用视频和对比式时间目标训练，不需要机器人专用数据、任务奖励标签或逐任务奖励设计；部署时将执行片段与参考片段匹配，只奖励有把握的前向进展，以压制不确定匹配造成的虚假奖励。作者报告，在 LIBERO 和 MetaWorld 的九项仿真操作任务及四项真实任务的后续强化学习中，RARM 总体成功率最高，长时程任务收益尤为明显。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2904,7 +2912,11 @@
             "heading": "",
             "text": "SE（3）-equivariance provides a useful geometric inductive bias for visuomotor policies, encoding that actions covary with rigid transformations of the observation.\n\nHowever, existing SE（3）-equivariant visuomotor policies build this bias on a global equivariance assumption that treats the entire observation as governed by a single rigid transformation, which breaks down in real-world manipulation tasks where the task-relevant region changes across different objects.\n\nWe address this by learning a phase-conditioned affordance field (PAF) over the observed point cloud, a per-point score that the SE（3）-equivariant policy uses in two complementary ways.\n\nIts score-weighted centroid serves as a learned, phase-conditioned anchor that canonicalizes the observation and the action around the active region, replacing the fixed gripper-frame reference, and the score itself is appended as a per-point feature. This introduces a local geometric inductive bias, while preserving the policy's global SE（3） equivariance.\n\nWe validate on multiple MimicGen tasks under varying spatial randomization, and PAF consistently improves the success rate of the underlying policy. On multi-object real-robot tasks, PAF outperforms baselines and keeps its lead under lighting variations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a phase-conditioned affordance field (PAF) for SE(3)-equivariant visuomotor policies, addressing the limitation of assuming one global rigid transformation across an observation. PAF assigns scores to point-cloud points. Their weighted centroid acts as a phase-dependent anchor for canonicalizing observations and actions around the active region, while the scores are also added as point features. The authors report consistent success-rate improvements across MimicGen tasks with varying spatial randomization, and performance above baselines on multi-object real-robot tasks, including under lighting variations.",
+          "zh": "论文针对现有 SE(3) 等变视觉运动策略的全局刚体变换假设，提出相位条件可供性场 PAF。PAF 为点云各点预测分数，其加权质心用作随任务阶段变化的锚点，以围绕当前活动区域规范化观测和动作；分数本身也作为逐点特征输入策略，从而引入局部几何归纳偏置，同时保留全局等变性。作者在空间随机化条件不同的多项 MimicGen 任务中验证，并报告 PAF 持续提高基础策略成功率；在多物体真实机器人任务及光照变化下，PAF 也优于基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
