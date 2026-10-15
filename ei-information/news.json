@@ -3736,7 +3736,11 @@
             "heading": "",
             "text": "Generative policies such as diffusion models provide expressive data-driven priors for robot behavior, yet the situations a robot faces at execution time rarely match its training data and impose constraints and objectives the policy never learned.\n\nExisting inference-time guidance methods either rely on gradients that can push samples away from the learned prior, or on sampling procedures that can be inefficient, collapse modes, or average them into out-of-distribution predictions.\n\nWe introduce MOSAIC, a mode- and support-aware framework for gradient-free inference-time control of robotic diffusion models.\n\nMOSAIC treats the initial noise and all stochastic reverse-step perturbations as a joint input to the pretrained denoising process and adapts a distribution over this input using importance weights computed from fully denoised outputs.\n\nPhysical feasibility and consistency with the learned support are balanced using adaptive penalties, while mode-wise importance-weighted updates preserve modes and avoid destructive averaging.\n\nThe same formulation can jointly steer multiple independently trained diffusion models through shared coupling costs, enabling coordinated behavior without requiring a joint model. We evaluate MOSAIC on navigation, dexterous grasping, motion planning with unseen geometry, and collaborative box manipulation with independently trained robot priors.\n\nAcross these settings, MOSAIC adapts and composes frozen diffusion priors under new deployment constraints without retraining."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MOSAIC, a gradient-free inference-time control framework for robotic diffusion models. It treats initial noise and stochastic reverse-step perturbations as a joint input, adapts its distribution using importance weights from fully denoised outputs, and balances physical feasibility with consistency with learned support through adaptive penalties. Mode-wise updates are intended to preserve modes. The authors evaluate it on navigation, dexterous grasping, motion planning with unseen geometry, and collaborative box manipulation, reporting adaptation and composition of frozen priors without retraining.",
+          "zh": "论文提出 MOSAIC，一种用于机器人扩散模型的无梯度推理时控制框架。它将初始噪声及反向采样中的随机扰动视为联合输入，根据完整去噪输出计算重要性权重，并调整该输入的分布。框架通过自适应惩罚平衡物理可行性与对训练支持范围的一致性，并以分模式加权更新保留不同模式。它还可借助共享耦合代价协调多个独立训练的模型。作者在导航、灵巧抓取、含未见几何的运动规划和协作搬箱任务中进行评估，称该方法能在新部署约束下调整并组合冻结的扩散先验，无需重新训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3767,7 +3771,11 @@
             "heading": "",
             "text": "Embodied Audio-Visual Navigation (AVN) requires an agent to locate sound targets by jointly leveraging visual and auditory cues. While prior work has achieved notable success with static sound sources, real-world scenarios often involve moving targets, giving rise to the more challenging problem of \\textbf{Dynamic Audio-Visual Navigation (D-AVN)}.\n\nExisting approaches largely rely on semantic auditory features, which limits generalization to unheard sound categories and hinders fine-grained spatial reasoning. To address these challenges, we propose a novel \\textbf{Two-Stage Multi-modal Learning} framework for D-AVN.\n\nIn the Physical Alignment stage, the proposed \\textbf{Intensity-Calibrated Geometry Encoder (ICGE)} performs physics-informed alignment of sound intensity with visual geometry to capture category-agnostic spatial correspondence.\n\nIn the Scene Aggregation stage, a Transformer-based \\textbf{Cross-Modal Scene Aggregator (CMSA)} dynamically integrates multi-modal features to construct a robust state representation for policy learning.\n\nExtensive experiments on Replica and Matterport3D demonstrate that our method achieves state-of-the-art success rates, while significantly improving generalization and navigation efficiency in complex environments and under unheard sound scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses Dynamic Audio-Visual Navigation, in which an agent uses visual and auditory cues to locate moving sound targets. Its two-stage framework first uses an Intensity-Calibrated Geometry Encoder to align sound intensity with visual geometry and capture category-agnostic spatial correspondence. A Transformer-based Cross-Modal Scene Aggregator then integrates multimodal features into a state representation for policy learning. The authors report experiments on Replica and Matterport3D, claiming state-of-the-art success rates and improved generalization and navigation efficiency in complex environments and with unheard sound scenarios.",
+          "zh": "论文关注动态音视频导航，即智能体利用视觉和听觉线索寻找移动声源。作者提出两阶段多模态学习框架：物理对齐阶段的强度校准几何编码器，将声音强度与视觉几何对齐，以捕捉不依赖类别的空间对应关系；场景聚合阶段的跨模态场景聚合器则动态整合多模态特征，为策略学习构建状态表示。作者称，在 Replica 和 Matterport3D 上的实验表明，该方法取得了最先进的成功率，并提升了复杂环境及未听过声音类别情境下的泛化能力和导航效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
