@@ -874,7 +874,11 @@
             "heading": "",
             "text": "Transferring human demonstrations to dexterous robots remains challenging because differences in hand morphology and contact dynamics often cause retargeted motions to fail at producing the intended object behavior. We present \\textbf{FoLD}, a framework for learning dexterous manipulation of articulated objects through explicit force guidance.\n\nFoLD compute compensatory force fields from human demonstrations together with the robot's current interaction state, yielding a force prior that promotes the demonstrated object motion. This force prior informs a residual policy that adapts retargeted hand motions to the contact requirements of the task.\n\nWe evaluate FoLD on a public benchmark for articulated object manipulation, where it consistently outperforms state-of-the-art baselines across tasks and embodiments. We further validate FoLD on real dexterous robot platforms, demonstrating successful transfer of human manipulation skills to robot execution.\n\nHere is the link of our project page: https://gghgghgghgg.github.io/FoLD-project-page/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FoLD, a framework for dexterous robot manipulation of articulated objects using explicit force guidance. It computes compensatory force fields from human demonstrations and the robot’s current interaction state, then uses the resulting force prior to guide a residual policy that adapts retargeted hand motions. The authors report consistent improvements over state-of-the-art baselines across tasks and embodiments on a public benchmark, and successful transfer on real dexterous robot platforms.",
+          "zh": "本文提出 FoLD，一种利用显式力引导学习灵巧机器人操作铰接物体的框架。它结合人类示范与机器人当前交互状态计算补偿力场，形成促进目标物体运动的力先验，并用该先验引导残差策略调整重定向的手部动作。作者称，FoLD 在公开基准的多项任务和不同具身上持续优于先进基线，并在真实灵巧机器人平台上验证了人类操作技能向机器人的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -905,7 +909,11 @@
             "heading": "",
             "text": "Navigation for humanoid robots is critical, yet large-scale evaluation on physical hardware is often impractical due to cost and safety concerns, making simulation benchmarks essential.\n\nExisting VLN benchmarks achieve physically executable navigation, but still assume （1） all hazards are observable from elevation maps; （2） realized motions closely match desired motions.\n\nIn real environments, however, fallen bottles may be ambiguous in elevation maps, while phones and water spills may be difficult to differentiate; hazard avoidance by the locomotion policy can cause the robot's actual trajectory to deviate from the path intended by the VLN policy.\n\nSuch command-execution mismatch can accumulate and lead the robot toward unintended locations. To expose these failure modes, we introduce a benchmark that models both elevation-subtle hazards and execution deviations, together with a closed-loop VLN + locomotion control framework that continuously realigns high-level navigation with the robot's actual state.\n\nWe evaluate navigation in simulation and further validate the locomotion policy on a physical Unitree G1 humanoid robot. Results show that semantic input reduces contact with hazards poorly represented in elevation maps, while anti-deviation improves navigation success.\n\nThese findings highlight the need to evaluate humanoid navigation jointly in terms of route completion and hazard avoidance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper identifies two humanoid navigation challenges: hazards that are difficult to detect in elevation maps and deviations between commanded and realized motion. It introduces a benchmark modeling both issues and a closed-loop vision-language navigation and locomotion framework that realigns navigation with the robot’s actual state. In simulation, semantic input reduces contact with hazards poorly represented by elevation maps, and anti-deviation improves navigation success. The locomotion policy is also validated on a physical Unitree G1 humanoid.",
+          "zh": "本文指出，仿真人形机器人导航基准可能忽略高程图难以呈现的语义风险，以及实际运动偏离导航指令的问题。作者提出同时建模这两类问题的基准，以及持续依据机器人实际状态校正高层导航的闭环视觉语言导航与运动控制框架。仿真评估显示，语义输入减少了机器人与高程图难以表示的风险物接触，抗偏离机制提高了导航成功率；运动策略还在实体 Unitree G1 上进行了验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -936,7 +944,11 @@
             "heading": "",
             "text": "Contact-rich manipulation requires robots to coordinate not only where to move, but also how contact and force should evolve throughout an interaction.\n\nYet most robot policies represent actions primarily as motion trajectories, using tactile signals as inputs or auxiliary prediction targets without explicitly encoding contact dynamics in the action representation.\n\nWe propose ILA (Interaction Latents as Actions), which uses decodable interaction latents that jointly capture the evolution of motion, contact, and force application as policy action units, providing a shared representation for action generation, evaluation, and offline improvement.\n\nWe learn these latents through visually conditioned joint action-tactile reconstruction with a time-conditioned implicit decoder. Using them as flow-matching generation targets supports post-training of pretrained vision-language-action models (VLAs) and world action models (WAMs), as well as training flow-matching policies from scratch.\n\nA shared decoder maps generated latents to executable actions. For offline improvement, we learn a tactile-conditioned expert reference model from interaction latents encoded from expert demonstrations.\n\nThe resulting expert-consistency rewards guide weighted learning from successful rollouts, while observation-compatible expert references guide correction of low-reward predictions from failed rollouts.\n\nAcross three policy families, ILA improves success rates averaged over four real-world tasks by 21.0-36.5 percentage points relative to tactile-conditioned direct-action baselines. Ablations highlight the benefit of encoding contact evolution in action targets beyond tactile conditioning, while the same latent space supports expert-guided offline improvement.\n\nProject website: https://mrsecant.github.io/ILA/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes ILA, using decodable interaction latents as policy action units that jointly represent motion, contact, and force application. The latents are learned through visually conditioned joint action-tactile reconstruction and can support training policies from scratch or post-training pretrained models; a shared decoder converts them into executable actions. An expert reference model guides weighted learning from successful rollouts and correction of low-reward predictions. Across four real-world tasks, three policy families show average success-rate gains of 21.0–36.5 percentage points over tactile-conditioned direct-action baselines.",
+          "zh": "本文提出 ILA，将可解码的交互潜变量作为策略动作单元，共同表示运动、接触和施力过程。潜变量通过视觉条件下的动作与触觉联合重建学习，可用于训练策略或对预训练模型进行后训练；共享解码器将其转为可执行动作。作者还以专家示范构建触觉条件参考模型，指导成功轨迹加权学习及失败预测校正。三类策略在四项真实任务上的平均成功率较触觉条件直接动作基线高 21.0–36.5 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -967,7 +979,11 @@
             "heading": "",
             "text": "Large-scale robot learning increasingly relies on diverse human demonstrations, yet tactile manipulation data remain difficult to scale, and existing multimodal datasets often lack consistent quality control and structured supervision.\n\nWe present TacClaw-Infinity, a large-scale structured Vision-Tactile-Language-Action (VTLA) dataset for contact-rich manipulation, collected with TacClaw, a tactile-enabled UMI-style handheld interface that records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without requiring a target robot during data collection.\n\nTacClaw-Infinity is built through a distributed worldwide collection across homes, laboratories, industrial workplaces, retail stores, and outdoor environments including tasks contributed by academic and industrial collaborators. Together, these efforts yield over 10,000 hours, 1 million episodes, and 1 billion frames spanning more than 1,000 task types.\n\nWe develop a scalable pipeline for trajectory reconstruction, multimodal quality control, embodiment-aware filtering, and structured annotation, covering contact-centric segmentation, subtask description, and spatial grounding.\n\nWe validate TacClaw-Infinity at both the data and model levels: At the data level, we assess the collection interface, the action-space compatibility of the curated demonstrations, and the structured annotations, while for the model level, we demonstrate cross-embodiment transfer across three heterogeneous robots without robot-specific demonstrations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TacClaw-Infinity, a structured vision-tactile-language-action dataset for contact-rich manipulation. A tactile-enabled handheld interface records synchronized visual observations, fingertip tactile signals, and end-effector trajectories without requiring a target robot during collection. Worldwide contributions span homes, laboratories, industrial and retail workplaces, and outdoor settings, totaling over 10,000 hours, 1 million episodes, 1 billion frames, and more than 1,000 task types. The authors describe reconstruction, quality-control, filtering, and annotation pipelines, and report data-level assessments and cross-embodiment transfer across three heterogeneous robots.",
+          "zh": "本文介绍 TacClaw-Infinity，这是一个用于接触丰富型操作的大规模结构化视觉、触觉、语言与动作数据集，由 TacClaw 手持接口采集同步视觉观测、指尖触觉信号和末端轨迹。数据来自全球多个家庭、实验室、工业和零售场所及户外环境，涵盖逾 1 万小时、100 万个片段、10 亿帧和 1000 多类任务。作者建立轨迹重建、多模态质控、具身感知筛选与结构化标注流程，并报告数据评估及三种异构机器人上的跨具身迁移验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
