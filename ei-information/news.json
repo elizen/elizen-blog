@@ -147,7 +147,11 @@
             "heading": "",
             "text": "Pretrained vision-language-action models (VLAs) often fail midway through unseen long-horizon tasks.\n\nRecursive self-improvement (RSI) offers a remedy, but embodied RSI methods either refine the harness around a frozen executor and so cannot add a missing motion, or train the executor on persistent failures without asking whether a failure lies in how the executor is called or in what it can do.\n\nWe ask when a self-improving embodied system should change the weights of its executor, and propose AdaRSI, an on-demand RSI framework for embodied agents.\n\nA coding agent first improves its skills and harness, then attributes persistent failures by retrying failing sub-steps from saved states, and fine-tunes only the sub-steps that remain unreliable, with demonstrations it collects itself and experience carried over from earlier tasks.\n\nOn all 50 target tasks of RoboCasa365, with GR00T N1.5 as the executor and no human demonstrations, AdaRSI improves the VLA on all three suites and raises its success on unseen composite tasks from 4.6% to 13.8%.\n\nCompared with fine-tuning every sub-step, it reaches slightly higher success while using only 28% of the GPU time and 22% of the self-collected demonstrations, and fine-tuning without a harness trains more yet gains far less."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes AdaRSI, an on-demand recursive self-improvement framework for embodied agents. A coding agent first improves skills and the harness, then retries failing sub-steps from saved states to diagnose persistent failures. It fine-tunes only sub-steps that remain unreliable, using self-collected demonstrations and experience from earlier tasks. On 50 RoboCasa365 target tasks with GR00T N1.5 and no human demonstrations, the authors report improvements across all three suites and an increase in success on unseen composite tasks from 4.6% to 13.8%.",
+          "zh": "论文提出 AdaRSI，用于具身智能体的按需递归自我改进。编码智能体先改进技能和执行框架，再从保存状态重试失败子步骤，以区分调用方式问题与执行器能力不足；仅对仍不可靠的子步骤进行微调，使用自行收集的示范和先前任务经验。作者报告，在 RoboCasa365 的 50 个目标任务上、以 GR00T N1.5 为执行器且不使用人工示范时，该方法提升了三个套件的表现，并将未见组合任务成功率从 4.6% 提高到 13.8%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -178,7 +182,11 @@
             "heading": "",
             "text": "Learning a collective policy for state-based Cartesian manipulation across diverse robotic embodiments presents a fundamental challenge due to embodiment-dependent transition dynamics.\n\nCollective learning aggregates multi-robot experience to discover shared task structure, yet naive aggregation can average incompatible action modes when different embodiments realize the same Cartesian command through different transition behavior. This leads to strategy ambiguity and performance collapse on dynamically outlying embodiments.\n\nTo address this, we propose PACE, a two-stage collective learning framework that separates shared task-space intent from embodiment-dependent transition dynamics. The first stage employs a representation layer pre-trained on offline trajectories to extract task-level context from collective data.\n\nThe second stage introduces a decision layer equipped with a predictive dynamics adapter. By forcing the latent state to predict future transitions, this adapter acts as a latent regularizer that grounds the policy in the transition behavior of the executing robot while preserving real-time inference without online planning.\n\nEvaluations across simulated embodiments demonstrate that our method prevents performance collapse on distinct robots. It achieves over 93\\% overall success and 89\\% on dynamically out-of-distribution zero-shot simulated robots, outperforming the Transformer behavior cloning (82\\%) and diffusion policy baselines (66\\%).\n\nPhysical KUKA deployment further validates the feasibility of the full state-based pipeline under zero-shot sim-to-real transfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes PACE, a two-stage collective learning framework for state-based Cartesian manipulation across robotic embodiments. Its representation layer extracts task-level context from offline trajectories; a decision layer uses a predictive dynamics adapter to predict future transitions and ground the policy in the executing robot’s dynamics, without online planning. In simulated evaluations, the authors report avoiding performance collapse on dynamically distinct robots, with over 93% overall success and 89% on zero-shot simulated robots outside the training dynamics distribution. Physical KUKA deployment is reported as demonstrating feasibility under zero-shot sim-to-real transfer.",
+          "zh": "论文提出 PACE，两阶段集体学习框架，用于跨不同机器人本体的状态型笛卡尔操作策略。第一阶段从离线轨迹预训练表示层，以提取任务级上下文；第二阶段加入预测动力学适配器，使潜在状态预测未来转移，以适应执行机器人的动力学，同时保持实时推理且不进行在线规划。作者报告，模拟评估中该方法在动力学分布外机器人上避免性能崩溃；并称实体 KUKA 部署验证了完整状态型流程在零样本仿真到现实迁移下的可行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
