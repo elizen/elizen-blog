@@ -7751,6 +7751,39 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-15"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.18836v2"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-752c7adccd6549088aaceac938f9c738",
+      "intro": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI. However, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution. We introduce Plan-Bench, a benchmark for evaluating…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.18836v2"
+      },
+      "title": "Plan-Bench: Can Existing VLMs Go Well Beyond Perception to Reason and Plan in Embodied Worlds?"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-04"
       },
       "body": "",
@@ -13700,6 +13733,39 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-15"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.18447v2"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-d3f61478ea4b4cb8977e4f96c11e86ac",
+      "intro": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.18447v2"
+      },
+      "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-23"
       },
       "body": "",
@@ -15228,6 +15294,41 @@
         "url": "https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work"
       },
       "title": "Welcome to Robot Park: Where Apptronik’s Apollo Goes to Work Training the Next Generation of Humanoid Robot Intelligence"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-15"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "policy",
+        "region": "全国",
+        "source_channel": "website",
+        "source_name": "工信部标准公告"
+      },
+      "format": "archive_record",
+      "id": "archive-article-ee76529a8e354381a111e2587bed76b0",
+      "intro": "根据《工业和信息化部办公厅 农业农村部办公厅关于开展农业领域机器人典型应用场景遴选工作的通知》（工信厅联通装函〔2026〕269号），现将拟入选的农业领域机器人典型应用场景进行公示，请社会各界监督。",
+      "published_at": "2026-10-14",
+      "reading": {
+        "mode": "official",
+        "points": [
+          "根据《工业和信息化部办公厅 农业农村部办公厅关于开展农业领域机器人典型应用场景遴选工作的通知》（工信厅联通装函〔2026〕269号），现将拟入选的农业领域机器人典型应用场景进行公示，请社会各界监督。",
+          "如有异议，请在公示期内将书面意见反馈至工业和信息化部装备工业一司（智能制造处）。",
+          "公示时间：2026年10月15日至2026年10月21日"
+        ],
+        "sections": [
+          {
+            "heading": "",
+            "text": "根据《工业和信息化部办公厅 农业农村部办公厅关于开展农业领域机器人典型应用场景遴选工作的通知》（工信厅联通装函〔2026〕269号），现将拟入选的农业领域机器人典型应用场景进行公示，请社会各界监督。如有异议，请在公示期内将书面意见反馈至工业和信息化部装备工业一司（智能制造处）。公示时间：2026年10月15日至2026年10月21日"
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-2617e2218e618c88f850",
+        "url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_34d83176aedd4c29a096b5ff7e181962.html"
+      },
+      "title": "关于农业领域机器人典型应用场景名单的公示"
     },
     {
       "archive": {
