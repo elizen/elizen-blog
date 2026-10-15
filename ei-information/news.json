@@ -2597,7 +2597,11 @@
             "heading": "",
             "text": "As the Arctic transitions toward a seasonally ice-free state, capturing the complex morphology of submerged sea ice is crucial for advancing models of ocean-ice-atmosphere heat exchange and monitoring under-ice habitats. Currently, sub-surface ice mapping is predominantly achieved through acoustic sensors such as multibeam sonar.\n\nWhile sonar provides robust large-scale geometry, it lacks spectral and high-resolution textural information required to record fine morphological features - a critical limitation in under-ice environments, where sparse visual features and degraded sensing conditions challenge the capture of detailed structural and optical surface properties.\n\nWe present a benchmark for vision-based under-ice 3D reconstruction using real-world data from the MOSAiC expedition and synthetic data generated in an Unreal Engine-based underwater robotics simulator.\n\nThe benchmark evaluates Structure-From-Motion (SfM) and monocular depth estimation, with quantitative comparison enabled through cross-modal registration to upward-looking multibeam sonar."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a benchmark for vision-based 3D reconstruction beneath sea ice, using real-world data from the MOSAiC expedition and synthetic data from an Unreal Engine-based underwater robotics simulator. It evaluates Structure-From-Motion and monocular depth estimation. Cross-modal registration with upward-looking multibeam sonar enables quantitative comparison. The abstract notes that sonar captures large-scale geometry but lacks the spectral and high-resolution textural information needed to record fine morphological features.",
+          "zh": "论文提出一项面向冰下机器人感知的视觉三维重建基准，使用 MOSAiC 探险的真实数据，以及由基于 Unreal Engine 的水下机器人模拟器生成的合成数据。基准评估运动恢复结构（SfM）和单目深度估计，并通过与向上观测的多波束声呐进行跨模态配准，支持定量比较。摘要指出，声呐可提供大尺度几何信息，但缺少记录细微形态所需的光谱和高分辨率纹理信息。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2628,7 +2632,11 @@
             "heading": "",
             "text": "Robot-free collection with handheld interfaces enables scalable acquisition of human demonstrations for policy learning. However, existing handheld interfaces often provide limited intuitive force feedback, making contact-rich demonstration collection challenging for human operators.\n\nTo address this, we present FOMI, a force-feedback manipulation interface with a scissor-shaped mechanism, which transmits object interaction forces directly to the operator's hands through actuation links without force sensors. This intuitive force feedback supports real-time action adjustment during robot-free collection of contact-rich demonstrations.\n\nAround FOMI, we build a demonstration collection system that integrates sensor calibration, data acquisition, and synchronization for robot-free collection. By further mapping pose changes and gripper opening of FOMI to robot end-effector poses and gripper commands, the system also supports teleoperation.\n\nAcross four contact-rich tasks, FOMI improves collection efficiency by approximately 29% and 18% over the best baselines in robot-free collection and teleoperation, respectively. Demonstrations collected with FOMI in both modes enable policies to perform challenging contact-rich manipulation tasks with high success rates."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FOMI, a force-feedback interface for teaching contact-rich manipulation. Its scissor-shaped mechanism transmits object interaction forces to the operator’s hands through actuation links without force sensors. The accompanying system supports robot-free demonstration collection and teleoperation. Across four contact-rich tasks, the authors report collection-efficiency improvements of approximately 29% and 18% over the best baselines for robot-free collection and teleoperation, respectively. Policies trained on demonstrations from both modes reportedly achieve high success rates.",
+          "zh": "论文介绍 FOMI，一种用于教授接触丰富操作的力反馈接口，采用剪刀形机构，通过驱动连杆将物体交互力传递到操作者手部，无需力传感器。配套系统支持免机器人演示采集和遥操作。作者报告，在四项接触丰富任务中，相较最佳基线，FOMI 的采集效率在免机器人采集和遥操作中分别提高约29%和18%；两种模式采集的演示也能支持策略执行相关任务并取得较高成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2659,7 +2667,11 @@
             "heading": "",
             "text": "Reliable recognition of accessibility-critical objects (e.g., audible pedestrian signals, door-activation buttons, and handrails) is essential for assistive navigation technologies that support safe, independent mobility for blind and low-vision (BLV) users.\n\nYet these categories are underrepresented in existing large-scale vision datasets, and the few datasets that include them suffer from limited class coverage, inconsistent annotations, and poor diversity.\n\nWe introduce NavAble, a large-scale dataset spanning 11 accessibility-critical object classes, combining 41K curated open-source images with 8K newly collected, densely annotated real-world images.\n\nTo extend scale and diversity, we develop a synthetic data generation pipeline that renders high-fidelity 3D assets across 37 environments under diverse styles and viewpoints, yielding 452K frames with rich ground-truth annotations from 565 assets.\n\nThe pipeline minimizes manual effort by combining automated web image crawling, VLM-based filtering, SAM 3D-based asset generation, and convenient camera trajectory configuration, enabling large-scale data generation at a diversity unattainable through manual collection.\n\nExperiments show that fine-tuning existing segmentation models on the NavAble Dataset achieves reliable accessibility-object segmentation (>80% mIoU on our held-out test set).We also demonstrate the effectiveness of synthetic data augmentation, which yields up to +3.5 mIoU over real-world-only fine-tuning.\n\nBeyond benchmark evaluation, validation on egocentric data from two mobility-assistive robots demonstrates improved perception reliability in real-world navigation scenarios. Together, NavAble establishes a scalable foundation for BLV navigation perception, directly addressing the data scarcity and embodiment gaps.\n\nThe dataset and pipeline are publicly available at https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NavAble, a dataset and synthetic-data pipeline for perceiving accessibility-critical objects used in navigation by blind and low-vision people. The dataset covers 11 object classes and combines curated open-source images with newly collected, densely annotated real-world images. Its pipeline renders 3D assets across varied environments, styles, and viewpoints to generate annotated frames. Experiments report over 80% mIoU on a held-out test set after fine-tuning segmentation models, and up to 3.5 mIoU improvement from synthetic augmentation over real-world-only fine-tuning. Egocentric data from two assistive robots is also used for validation.",
+          "zh": "论文提出 NavAble 数据集及合成数据生成流程，面向盲人和低视力用户导航所需的无障碍关键物体感知。数据集包含11类物体，结合精选的开放来源图像与新采集的密集标注真实图像；合成流程在多种环境、风格和视角下渲染三维资产并生成带标注帧。实验中，在该数据集上微调的分割模型在留出测试集上达到超过80%的 mIoU，合成数据增强相较仅用真实数据微调最高提升3.5 mIoU；两台助行机器人的第一视角数据验证也显示感知可靠性改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
