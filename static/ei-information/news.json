@@ -2865,7 +2865,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models are a promising paradigm for field robotics, but their deployment is bottlenecked by strict edge SWaP-C constraints. Compression techniques such as quantization, distillation, and pruning are well-established for LLMs and VLMs. Pruning, however, remains particularly underexplored for VLA models.\n\nWe surprisingly find that pruning VLA models yields drastic performance degradation and increased safety violations. Through spectral analysis, we identify structural properties of VLA weights that help explain this fragility.\n\nBased on this insight, we introduce GLUESTICK, a post-pruning recovery method that restores much of the original model's capability while preserving sparsity benefits. GLUESTICK computes a one-time corrective term by interpolating between the dense and pruned models in weight space.\n\nAt inference, each pruned layer applies this correction to recover lost performance with minimal overhead. Our approach requires no additional training and is agnostic to the pruning algorithm.\n\nAcross diverse VLA architectures and domains, GLUESTICK recovers up to 100% of the success rate and restores safety to near-dense levels, while saving up to 5 GB of memory and achieving up to 1.75x speedup. Additional material can be found at: https://gluestick-vla.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper reports that pruning vision-language-action models can sharply reduce performance and increase safety violations, and uses spectral analysis to examine structural factors behind this fragility. It introduces GLUESTICK, which computes a one-time correction by interpolating between dense and pruned weights and applies it during inference. The authors say it needs no additional training and is pruning-algorithm agnostic. Across evaluated architectures and domains, they report recovering up to 100% of success rate, near-dense safety, memory savings up to 5 GB, and speedups up to 1.75x.",
+          "zh": "论文研究视觉-语言-动作（VLA）模型剪枝，称剪枝会显著降低性能并增加安全违规，并通过权重谱分析探讨模型脆弱性的结构原因。作者提出 GLUESTICK：在稠密模型与剪枝模型的权重间插值，计算一次性校正项，在推理时用于恢复性能；该方法无需额外训练，且不依赖特定剪枝算法。作者报告，在多种架构和领域中，该方法可恢复最高100%的成功率、使安全表现接近稠密模型，并节省最高5 GB内存、实现最高1.75倍加速。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2896,7 +2900,11 @@
             "heading": "",
             "text": "Differentiable reinforcement learning shows strong promise for robot policy learning, but its application to legged locomotion has remained limited to blind walking or simulated 2D tasks.\n\nExtending it to end-to-end visual obstacle avoidance is challenging because hard collision constraints and early termination upon contact corrupt first-order gradients, trapping optimizers in local minima.\n\nWe present E2DRL, which addresses this with a soft differentiable obstacle-interaction formulation: penetration penalties across multiple body keypoints with velocity-conditioned stop-gradient shaping to provide the first-order training signals for 3D obstacle avoidance.\n\nTo realize a deployable perception-control system, a privileged teacher trained via Soft Analytic Policy Optimization (SAPO) in a differentiable simulator is distilled into a recurrent depth-based student via DAgger, then blended with a base locomotion policy using a terrain-aware gating module for deployment.\n\nIn simulation, E2DRL achieves higher sample efficiency than PPO and demonstrates superior velocity-tracking performance and 3D obstacle-avoidance capability compared with both PPO and Duality-based DCBF NMPC.\n\nWe present the first sim-to-real validation of end-to-end differentiable RL for 3D obstacle avoidance on a Unitree Go2 in static and dynamic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents E2DRL for end-to-end visual 3D obstacle avoidance in quadruped robots. Its differentiable obstacle interaction uses penetration penalties over multiple body keypoints and velocity-conditioned stop-gradient shaping to provide first-order training signals. A privileged teacher trained in a differentiable simulator is distilled through DAgger into a recurrent depth-based student, then combined with a base locomotion policy for deployment. In simulation, the authors report better sample efficiency than PPO and stronger velocity tracking and 3D avoidance than PPO and Duality-based DCBF NMPC. They also report sim-to-real validation on a Unitree Go2 in static and dynamic environments.",
+          "zh": "论文提出 E2DRL，用于四足机器人在三维环境中进行端到端视觉避障。方法以可微的障碍物交互形式处理碰撞约束，通过多个身体关键点的穿透惩罚和依赖速度的停止梯度塑形提供一阶训练信号。系统先在可微仿真器中训练特权教师，再通过 DAgger 将其蒸馏为基于深度信息的循环学生策略，并与基础运动策略结合部署。仿真结果显示其样本效率高于 PPO，速度跟踪和三维避障表现优于 PPO 与基于对偶性的 DCBF NMPC。作者还报告了在 Unitree Go2 静态和动态环境中的仿真到真实验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2927,7 +2935,11 @@
             "heading": "",
             "text": "Humanoid policies trained in simulation can transfer qualitatively to hardware while failing to transfer the force interactions learned during training, compromising torque efficiency, load regulation, and robustness to impacts. This failure can arise from actuator sim-to-real gaps because forces depend on actuator torques.\n\nWe introduce Contact-UAN, a residual world model that preserves a simulator's physics priors while correcting actuator dynamics to align simulated rollouts with recorded hardware rollouts.\n\nFor humanoid motion with contact, this requires contact-consistent replay: if hardware playback in simulation begins with misaligned contact wrenches, the residual model learns to correct reset artifacts rather than actuator discrepancies.\n\nUsing only onboard proprioception, Contact-UAN infers the simulator-side stance-foot pose needed to initialize replay with consistent contact forces.\n\nWe show that a UAN trained on 6.5 minutes of real-world walking data generalizes to tasks that benefit from accurate force and impulse regulation and produces policies that transfer seamlessly to the real world, yielding 20% lower running torque, 43% lower force-tracking error, extreme compliance, accurate impedance control, and dynamic, robust jumps."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Contact-UAN, a residual world model that adjusts actuator dynamics so simulated rollouts align with hardware recordings while retaining the simulator's physics priors. The authors note that contact playback with mismatched initial contact forces can make the model learn reset artifacts instead of actuator differences. Contact-UAN uses onboard proprioception to infer the simulator-side stance-foot pose for contact-consistent replay. They report that a UAN trained on 6.5 minutes of real walking data generalizes to tasks requiring force and impulse regulation, and describe real-world policy transfer with lower running torque and force-tracking error, compliance, impedance control, and dynamic jumps.",
+          "zh": "论文提出 Contact-UAN，一种残差世界模型，用于修正仿真中的执行器动力学，使仿真轨迹与真实硬件记录对齐，同时保留仿真器的物理先验。作者指出，接触动作回放若从不一致的接触力开始，模型可能学到重置误差而非执行器差异；因此该方法仅用机载本体感知估计仿真侧支撑脚姿态，以初始化接触力一致的回放。作者报告，使用6.5分钟真实步行数据训练的 UAN 可泛化到需要力与冲量调节的任务，并称策略能迁移到真实世界，呈现更低运行扭矩和力跟踪误差、柔顺性、阻抗控制及动态跳跃表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2958,7 +2970,11 @@
             "heading": "",
             "text": "Surface navigation on the Moon is subject to extreme illumination contrast and deployment-time perceptual disturbances. While modular navigation pipelines have long supported planetary rover navigation, robustness is compromised by measurement errors that propagate through hand-engineered components.\n\nEnd-to-end learned policies are an alternative approach to navigation, which maps observations directly to control actions without intermediate components. Vision-language-action models, in particular, have driven significant breakthroughs in robotics and autonomous vehicle research.\n\nBy leveraging internet-scale vision-language pretraining, these models can be exploited for their commonsense reasoning and visual understanding to provide robust generalization with limited task-specific data. However, their applicability and performance have yet to be characterized for lunar surface operations.\n\nIn this study, we design a vision-language-action policy for autonomous lunar rover docking and characterize its performance relative to a modular navigation pipeline. We develop a scalable training framework that generates safety-aware expert demonstrations in a high-fidelity lunar simulation environment.\n\nIn closed-loop evaluations, our policy performs competitively relative to the modular baseline under perceptual disturbances unseen during training. To address the tradeoff between compute consumption and closed-loop safety, the policy adapts its execution horizon by determining how far the rover may safely travel in open loop.\n\nAdaptive-horizon execution reduces inference frequency while limiting hazard-contact rates relative to fixed horizons in the evaluated scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper develops an end-to-end vision-language-action policy for autonomous lunar rover docking and compares it with a modular navigation pipeline. Its scalable training framework generates safety-aware expert demonstrations in a high-fidelity lunar simulation. In closed-loop evaluations, the policy performs competitively against the modular baseline under perceptual disturbances absent from training. To balance compute use and closed-loop safety, it adapts its execution horizon by estimating how far the rover can safely travel open loop. The authors report that, in evaluated scenarios, adaptive horizons reduce inference frequency while limiting hazard-contact rates relative to fixed horizons.",
+          "zh": "论文设计用于月球巡视器自主对接的端到端视觉-语言-动作策略，并与模块化导航流程比较。训练框架在高保真月面仿真环境中生成考虑安全的专家示范。闭环评估显示，在训练期间未见的感知扰动下，该策略相较模块化基线表现有竞争力。为权衡计算消耗与闭环安全，策略会调整执行时域，判断巡视器可安全开环行驶的距离。作者报告，在所评估场景中，自适应时域执行降低了推理频率，同时相较固定时域限制了接触危险的发生率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
