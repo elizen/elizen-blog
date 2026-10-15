@@ -2586,7 +2586,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3aebaaa16ed4dd9a16dbb2c68840c794104e082a290b207e170528dd1bda12d4",
-      "intro": "arXiv:2610.14896v1 Announce Type: new Abstract: Humanoid Behavior Foundation Models (BFMs) can execute impressive motions, but downstream applications such as loco-manipulation demand high whole-body positional accuracy. Existing BFMs suffer from a systematic command-execution gap, where executed motions deviate from desired ones. We show that additional test-time compute can improve execution without retraining the BFM. First, we introduce Test-Time Command Optimization (TTCO), which adapts the input command to the specific BFM to produce an executed trajectory closer to the desired",
+      "intro": "arXiv:2610.14896v2 Announce Type: new Abstract: Humanoid Behavior Foundation Models (BFMs) can execute impressive motions, but downstream applications such as loco-manipulation demand high whole-body positional accuracy. Existing BFMs suffer from a systematic command-execution gap, where executed motions deviate from desired ones. We show that additional test-time compute can improve execution without retraining the BFM. First, we introduce Test-Time Command Optimization (TTCO), which adapts the input command to the specific BFM to produce an executed trajectory closer to the desired",
       "placement": "main",
       "published_at": "2026-10-14T04:00:00+00:00",
       "reading": {
@@ -2597,11 +2597,7 @@
             "heading": "",
             "text": "Humanoid Behavior Foundation Models (BFMs) can execute impressive motions, but downstream applications such as loco-manipulation demand high whole-body positional accuracy. Existing BFMs suffer from a systematic command-execution gap, where executed motions deviate from desired ones.\n\nWe show that additional test-time compute can improve execution without retraining the BFM. First, we introduce Test-Time Command Optimization (TTCO), which adapts the input command to the specific BFM to produce an executed trajectory closer to the desired motion.\n\nTTCO finds such commands by sampling-based optimization through closed-loop simulations of the BFM and robot dynamics. Across three BFMs on the AMASS dataset, TTCO reduces mean global body-position error by 79-84% in simulation.\n\nSecond, we analyze test-time compute scaling and derive an approximate compute-optimal strategy that can sustain performance gains as the compute budget increases. Third, TTCO can generate BFM-specific action labels from recorded robot trajectories without requiring the original teleoperation body-motion commands.\n\nSimulation and real-robot experiments show that these labels are effective for training high-level loco-manipulation policies. This method also supports reusing existing demonstrations across BFMs."
           }
-        ],
-        "summary": {
-          "en": "The paper addresses the gap between commands and executed trajectories in humanoid behavior foundation models. It introduces Test-Time Command Optimization (TTCO), which adapts commands without retraining by sampling through closed-loop simulations of the model and robot dynamics. In simulation on AMASS across three models, the authors report a 79–84% reduction in mean global body-position error. The paper also analyzes test-time compute scaling and derives an approximate compute-optimal strategy. It shows that model-specific action labels can be generated from recorded robot trajectories; simulation and real-robot experiments indicate these labels can train high-level loco-manipulation policies.",
-          "zh": "论文研究人形行为基础模型的指令与执行轨迹之间的差距，并提出无需重新训练基础模型的测试时指令优化 TTCO。该方法通过基础模型及机器人动力学的闭环仿真进行采样优化，寻找更接近目标动作的输入指令。在 AMASS 数据集上的仿真中，针对三个模型，作者报告全局身体位置误差降低79%至84%。论文还分析测试时计算扩展，推导近似计算最优策略，并展示可从机器人记录轨迹生成模型专属动作标签；仿真与真实机器人实验表明，这些标签可用于训练高层移动操作策略。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3488,7 +3484,7 @@
       },
       "format": "source_excerpt",
       "id": "news-47d41800cd7f474cfe75b6bbaceb5370eb42c8300d910c108305a32ff2b4102b",
-      "intro": "arXiv:2610.18855v1 Announce Type: new Abstract: Contact-rich manipulation requires robots to coordinate not only where to move, but also how contact and force should evolve throughout an interaction. Yet most robot policies represent actions primarily as motion trajectories, using tactile signals as inputs or auxiliary prediction targets without explicitly encoding contact dynamics in the action representation. We propose ILA (Interaction Latents as Actions), which uses decodable interaction latents that jointly capture the evolution of motion, contact, and force application",
+      "intro": "arXiv:2610.18855v2 Announce Type: new Abstract: Contact-rich manipulation requires robots to coordinate not only where to move, but also how contact and force should evolve throughout an interaction. Yet most robot policies represent actions primarily as motion trajectories, using tactile signals as inputs or auxiliary prediction targets without explicitly encoding contact dynamics in the action representation. We propose ILA (Interaction Latents as Actions), which uses decodable interaction latents that jointly capture the evolution of motion, contact, and force application",
       "placement": "main",
       "published_at": "2026-10-14T04:00:00+00:00",
       "reading": {
@@ -3499,11 +3495,7 @@
             "heading": "",
             "text": "Contact-rich manipulation requires robots to coordinate not only where to move, but also how contact and force should evolve throughout an interaction.\n\nYet most robot policies represent actions primarily as motion trajectories, using tactile signals as inputs or auxiliary prediction targets without explicitly encoding contact dynamics in the action representation.\n\nWe propose ILA (Interaction Latents as Actions), which uses decodable interaction latents that jointly capture the evolution of motion, contact, and force application as policy action units, providing a shared representation for action generation, evaluation, and offline improvement.\n\nWe learn these latents through visually conditioned joint action-tactile reconstruction with a time-conditioned implicit decoder. Using them as flow-matching generation targets supports post-training of pretrained vision-language-action models (VLAs) and world action models (WAMs), as well as training flow-matching policies from scratch.\n\nA shared decoder maps generated latents to executable actions. For offline improvement, we learn a tactile-conditioned expert reference model from interaction latents encoded from expert demonstrations.\n\nThe resulting expert-consistency rewards guide weighted learning from successful rollouts, while observation-compatible expert references guide correction of low-reward predictions from failed rollouts.\n\nAcross three policy families, ILA improves success rates averaged over four real-world tasks by 21.0-36.5 percentage points relative to tactile-conditioned direct-action baselines. Ablations highlight the benefit of encoding contact evolution in action targets beyond tactile conditioning, while the same latent space supports expert-guided offline improvement.\n\nProject website: https://mrsecant.github.io/ILA/."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces ILA, which represents motion, contact, and force evolution together in decodable interaction latents used as policy action units. The latents are learned through visually conditioned joint action and tactile reconstruction, and a shared decoder maps them to executable actions. For offline improvement, expert-derived references and rewards guide weighted learning from successful rollouts and correction of low-reward predictions from failed rollouts. Across three policy families and four real-world tasks, ILA improves average success rates by 21.0–36.5 percentage points over tactile-conditioned direct-action baselines. Ablations indicate a benefit from encoding contact evolution in action targets.",
-          "zh": "论文提出 ILA（Interaction Latents as Actions），以可解码的交互潜变量作为动作单元，共同表示运动、接触和施力变化。模型通过视觉条件下的动作与触觉联合重建学习潜变量，并用共享解码器将生成结果映射为可执行动作；离线改进则利用专家示范形成的参考和奖励，引导成功轨迹加权学习并修正失败轨迹预测。在四项真实世界任务上，三类策略的平均成功率较触觉条件直接动作基线提高 21.0–36.5 个百分点。消融实验支持在动作目标中编码接触变化的作用。"
-        }
+        ]
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3768,5 +3760,5 @@
       "title": "Two-Stage Multi-modal Learning for Dynamic Audio-Visual Navigation: From Physical Alignment to Scene Aggregation"
     }
   ],
-  "updated_at": "2026-10-14T06:42:26.225187+00:00"
+  "updated_at": "2026-10-15T02:50:45.563659+00:00"
 }
