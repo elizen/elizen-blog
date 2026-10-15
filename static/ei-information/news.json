@@ -1983,7 +1983,11 @@
             "heading": "",
             "text": "Whole-body control plays a crucial role in enabling humanoid robots to execute expressive motions. Faithful execution requires preserving both the intended action and its expressive characteristics.\n\nExisting whole-body trackers typically balance joint and keypoint tracking with physical stability across diverse motions, but these objectives do not necessarily prioritize the expressive characteristics of each action.\n\nOur analysis shows that lower average positional tracking error does not guarantee better preservation of dynamic and postural motion characteristics. To address this gap, we propose a residual learning framework with compensation objectives targeting amplitude, energy, body expansion, body lean, and pelvis height.\n\nTo concentrate compensation while limiting interference with the underlying tracking behavior, motion-aware gating allocates correction capacity according to body-part activity, preserving larger correction ranges in more active parts and restricting them elsewhere.\n\nFor each frozen tracker, we train motion-specific residual policies and distill them into a unified policy shared across motion categories. Simulation and physical experiments on the Unitree G1 across eight motion categories demonstrate superior preservation of dynamic and postural motion characteristics compared with the corresponding baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a residual-learning framework for humanoid whole-body control that aims to preserve the dynamic and postural characteristics of expressive motions. Its compensation objectives cover amplitude, energy, body expansion, body lean, and pelvis height. Motion-aware gating allocates correction capacity by body-part activity to limit interference with the underlying tracker. The authors train motion-specific residual policies for frozen trackers and distill them into one policy shared across motion categories. Simulation and physical experiments on Unitree G1 cover eight categories; the authors report better preservation than corresponding baselines.",
+          "zh": "论文提出一种残差学习框架，旨在让人形机器人全身控制在跟踪动作时保留动作的动态和姿态表达特征。补偿目标包括动作幅度、能量、身体舒展度、躯干倾斜和骨盆高度；运动感知门控按身体部位活动程度分配修正能力，以减少对原跟踪行为的干扰。作者为冻结的跟踪器训练动作专用残差策略，再将其蒸馏为跨动作类别的统一策略。仿真和 Unitree G1 实物实验覆盖八类动作，作者称该方法比相应基线更能保留这些特征。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2014,7 +2018,11 @@
             "heading": "",
             "text": "Robots following persistent language instructions must decide which cached room judgments remain valid as their environment changes. We present MIND (Maintenance via INstruction-conditioned Dependencies), a framework for maintaining target-room decisions without re-evaluating every room after each event.\n\nA language model compiles each instruction into dependencies for semantic qualification and target selection. The controller intersects semantic dependencies with event footprints, refreshes affected judgments, and updates reachability and selection separately.\n\nFor fixed deterministic evaluation, planning, and selection, conservative dependency and footprint coverage preserves the decisions of full recomputation. On 240 five-event ProcTHOR sequences with an exact benchmark predicate, MIND reduces mean semantic evaluations from 30.6 to 11.2 while preserving all 1,200 post-event decisions.\n\nFrozen-evaluator experiments with Phi-4 and Qwen3-14B also preserve all 1,200 decisions, without improving the evaluators' underlying task accuracy. In 32 closed-loop AI2-THOR episodes using exact-predicate qualification and metadata-derived footprints, MIND matches the final target decision of full recomputation in every episode.\n\nUnitree G1 experiments demonstrate target reuse and reselection across room transitions without additional semantic evaluations under MIND, and abstention after a barrier and an object removal at 4 evaluations against 15 to 18.Additional materials are available at https://mind-icra27.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MIND, a framework for maintaining target-room judgments under persistent language instructions as environments change, without reassessing every room after each event. A language model compiles instructions into dependencies for semantic qualification and target selection; the controller refreshes affected judgments based on event footprints and updates reachability and selection separately. Under fixed deterministic evaluation, planning, and selection, the authors say conservative coverage preserves full-recomputation decisions. They report preserved decisions in ProcTHOR sequences, frozen-evaluator tests, and closed-loop AI2-THOR episodes. Unitree G1 experiments demonstrate target reuse, reselection, and abstention after environmental changes.",
+          "zh": "论文提出 MIND，用于在环境变化后维护持续语言指令对应的目标房间判断，避免每次事件后重新评估所有房间。语言模型将指令编译为语义资格判断和目标选择所需的依赖项，控制器依据事件影响范围刷新相关判断，并分别更新可达性与选择。在固定且确定的评估、规划和选择条件下，作者称保守覆盖可保持完整重算的决策。ProcTHOR 序列、冻结评估器实验和闭环 AI2-THOR 评估均报告决策保持；实体 Unitree G1 实验展示房间转换中的目标复用、重选及障碍变化后的弃答。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2045,7 +2053,11 @@
             "heading": "",
             "text": "Reinforcement learning has enabled robust locomotion for legged robots, but learned policies are typically tied to a specific robot morphology and require additional engineering when the number of legs, actuators, or mechanical properties change.\n\nWe present PolyMorph, a morphology-conditioned framework that learns a single locomotion policy for heterogeneous legged robots. PolyMorph converts each robot's URDF into joint-link modules and combines a recurrent encoder, graph-based Transformer, and per-joint decoder to generate actions across variable leg counts and joint configurations.\n\nTo improve training stability, PolyMorph uses morphology-normalized rewards, adaptive robot sampling, and URDF-derived PD-gain initialization.\n\nWe evaluate PolyMorph in simulation across bipedal, tripedal, and quadrupedal robots, including unseen morphology variants and platforms, and deploy the policy on real quadruped platforms operated in multiple configurations. The results show that a single PolyMorph policy generalizes across diverse robot morphologies without per-robot policy retraining."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PolyMorph, a morphology-conditioned framework for learning one locomotion policy across heterogeneous legged robots. It converts each robot's URDF into joint-link modules and combines a recurrent encoder, graph-based Transformer, and per-joint decoder to handle varying leg counts and joint configurations. Training uses morphology-normalized rewards, adaptive robot sampling, and URDF-derived PD-gain initialization. Simulation evaluations cover bipedal, tripedal, and quadrupedal robots, including unseen variants and platforms. The authors also deploy the policy on real quadruped platforms in multiple configurations and report generalization across morphologies without per-robot policy retraining.",
+          "zh": "论文提出 PolyMorph，一种形态条件化框架，目标是让异构足式机器人共用一个运动策略。系统将机器人的 URDF 转换为关节—连杆模块，并结合循环编码器、基于图的 Transformer 和逐关节解码器，以适配不同腿数和关节配置。为提高训练稳定性，方法采用形态归一化奖励、自适应机器人采样及基于 URDF 的 PD 增益初始化。仿真评估涵盖双足、三足和四足机器人及未见形态变体与平台；作者还在多种配置的真实四足平台上部署策略，并报告无需按机器人重新训练即可跨形态泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2076,7 +2088,11 @@
             "heading": "",
             "text": "It has been difficult to accurately model the physics of the interaction between a robot and the objects it manipulates, including contact mechanics, coupled contact dynamics, deformations, stiffness and friction.\n\nWe present RoboSimStudio (RSS), an interactive toolkit that makes choices of solver, contact model, and physical parameters explicit and editable, allowing both humans and coding agents to quickly create and iteratively refine simulations based on observed physical behavior.\n\nWe implement RSS with the open Newton physics simulation system and describe experiments with human-guided real2sim using （1） visual evaluation, （2） force-feedback and （3） agentic Real2Sim2Real. Code, video and additional information can be found on the project website: https://robosimstudio.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RoboSimStudio (RSS), an interactive toolkit for rapidly creating and refining simulations of robot manipulation tasks. It addresses challenges in modeling contact mechanics, coupled contact dynamics, deformation, stiffness, and friction. RSS makes the choice of solver, contact model, and physical parameters explicit and editable, enabling humans and coding agents to iteratively build simulations based on observed physical behavior. The toolkit is implemented with the open Newton physics simulation system. The authors describe human-guided real2sim experiments involving visual evaluation, force feedback, and agentic Real2Sim2Real; the abstract does not state their results.",
+          "zh": "论文介绍 RoboSimStudio（RSS），一个用于快速构建和迭代机器人操作任务仿真的交互式工具包，针对接触力学、耦合接触动力学、形变、刚度和摩擦等物理建模难点。RSS 将求解器、接触模型和物理参数设为明确且可编辑的选项，支持人类和编程智能体依据观察到的物理行为创建并改进仿真。工具基于 open Newton 物理仿真系统实现。论文描述了由人类引导的 real2sim 实验，包括视觉评估、力反馈和 agentic Real2Sim2Real；摘要未报告这些实验的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
