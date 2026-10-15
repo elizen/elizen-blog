@@ -3324,7 +3324,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper characterizes vision-language-action (VLA) inference for batch-1 robot control. The authors profile four representative models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes. They report that action tensor dimensionality and platform balance affect whether stages are memory- or compute-bound, while the energy-latency benefit of GPU frequency scaling depends on the platform. Overlapping inference with action execution introduces an accuracy-speed-energy tradeoff, with no configuration dominating across deployment SLOs.",
+          "zh": "本文分析视觉—语言—动作（VLA）模型在机器人批量为1的控制推理场景中的运行特征。研究在一台边缘GPU服务器和两种机载SoC上，对四种代表性模型进行单次推理剖析，并开展43,200个闭环回合。结果显示，动作张量维度和平台配置会影响计算或内存瓶颈，GPU调频的能耗—延迟平衡点因平台而异。闭环中，推理与动作执行重叠带来准确性、速度和能耗之间的权衡；在不同部署服务目标下，没有一种配置始终占优。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3355,7 +3359,11 @@
             "heading": "",
             "text": "In legged locomotion, divergent components of motion (DCMs) have emerged as characteristic states for balance control. They isolate the unstable mode of the dynamics but, in existing formulations, apply only to reduced models such as the linear inverted pendulum. In this study, we show how DCMs can be more generally formulated as Koopman eigenfunctions.\n\nWhereas Koopman analysis typically targets eigenvalues near zero, which capture conserved or slowly varying quantities, our investigation leads us to deliberately search for unstable eigenpairs with large eigenvalues. The resulting Koopman DCMs are data-driven observables trained using only real-robot data.\n\nOn a real biped, DCMs learned from one hour of robot data improve tracking of reference walking patterns. We further show how learned DCMs provide state-based viability constraints when combined with model predictive control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study formulates divergent components of motion (DCMs) as Koopman eigenfunctions for legged balance control. Unlike typical Koopman analyses focused on eigenvalues near zero, the authors search for unstable eigenpairs with large eigenvalues. The resulting Koopman DCMs are data-driven observables trained only on real-robot data. On a real biped, DCMs learned from one hour of robot data improve tracking of reference walking patterns. Combined with model predictive control, the learned DCMs also provide state-based viability constraints.",
+          "zh": "本文将腿式机器人平衡控制中的发散运动分量（DCM）推广为Koopman特征函数，重点寻找具有较大特征值的不稳定特征对，而非通常关注的近零特征值。由此得到的Koopman DCM是仅用真实机器人数据训练的数据驱动观测量。在双足机器人上，研究发现，使用一小时机器人数据学习的DCM可改善对参考行走模式的跟踪；与模型预测控制结合时，学习得到的DCM还可提供基于状态的可行性约束。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3386,7 +3394,11 @@
             "heading": "",
             "text": "Robots that assist people must respond promptly and appropriately to human activity, which requires low-latency processing, accurate perception, and anticipation of human motion.\n\nThese requirements are especially difficult to meet in living environments, where perception must cover wide areas, remain robust to occlusion, and capture natural behavior without wearable devices. We present OmniRobotHome, a testbed that addresses these challenges in a fully furnished home that supports natural everyday activity.\n\nIts 48 hardware-synchronized cameras provide room-wide coverage, enabling accurate markerless perception under occlusion. A distributed perception pipeline processes these streams in parallel and delivers persistent human and object states to robot controllers with low latency.\n\nWe demonstrate OmniRobotHome through two human-robot interaction studies: proactive yielding for safety and nonverbal intent recognition for assistance. Through these studies, we analyze how camera coverage, state latency, multi-view pose, hand, and gaze estimation, and behavior-memory-based forecasting affect overall task performance.\n\nOur results highlight the value of OmniRobotHome as a testbed for studying human-robot assistance in real living environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniRobotHome, a multi-camera testbed for real-time human-robot interaction in a furnished home designed for natural everyday activity. Its 48 hardware-synchronized cameras provide room-wide coverage, while a distributed pipeline processes streams in parallel and supplies persistent human and object states to robot controllers with low latency. The authors demonstrate the platform in studies of proactive yielding for safety and nonverbal intent recognition for assistance. They analyze how coverage, latency, multi-view pose, hand and gaze estimation, and behavior-memory-based forecasting affect task performance.",
+          "zh": "本文介绍OmniRobotHome，这是一个用于实时人机交互研究的多摄像头家庭测试平台，设于配备家具、支持日常自然活动的居住环境中。平台使用48台硬件同步摄像机覆盖房间，并通过分布式感知流水线并行处理视频流，向机器人控制器提供低延迟、持续的人体与物体状态。作者以主动让行保障安全、识别非语言协助意图两项研究展示平台，并分析摄像头覆盖、状态延迟、多视角姿态、手部和注视估计及行为记忆预测对任务表现的影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3417,7 +3429,11 @@
             "heading": "",
             "text": "Behavior Foundation Models (BFMs) are emerging as a paradigm for translating human intentions into executable humanoid behaviors. As these models evolve beyond behavior generation toward general-purpose behavioral systems, a fundamental question arises: can they be reliably steered according to user intentions?\n\nIn this paper, we introduce the concept of behavioral steerability, defined as the ability of BFMs to faithfully generate behaviors that satisfy user-specified intentions. To study this capability, we present RoboSteer, the first benchmark for behavioral steerability in BFMs.\n\nRoboSteer organizes behavioral steerability into a three-level hierarchy-Conditional Steering, Constraint Steering, and Compositional Steering-and establishes a unified evaluation framework supported by a large-scale multimodal motion corpus. Using RoboSteer, we conduct the first large-scale empirical study of behavioral steerability across 9 existing BFMs.\n\nWe view behavioral steerability as more than a capability for controlling motion: it concerns how embodied systems translate human intentions into purposeful actions. We hope RoboSteer will advance research on intention realization as a foundation for general-purpose embodied intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors define behavioral steerability as the ability of Behavior Foundation Models (BFMs) to generate behaviors that faithfully satisfy user-specified intentions, and introduce RoboSteer to evaluate it. The benchmark organizes steerability into three levels: Conditional Steering, Constraint Steering, and Compositional Steering. It provides a unified evaluation framework supported by a large-scale multimodal motion corpus. Using RoboSteer, the authors conduct a large-scale empirical study across nine existing BFMs and frame steerability as part of how embodied systems translate human intentions into purposeful actions.",
+          "zh": "本文提出行为可引导性概念，指行为基础模型（BFM）能否忠实生成符合用户指定意图的行为，并介绍用于评估该能力的基准RoboSteer。基准将可引导性划分为条件引导、约束引导和组合引导三个层级，建立由大规模多模态动作语料支持的统一评估框架。作者使用RoboSteer对9种现有BFM开展大规模实证研究，并将行为可引导性视为具身系统把人类意图转化为有目的行动的能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
