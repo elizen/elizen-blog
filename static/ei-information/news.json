@@ -349,7 +349,11 @@
             "heading": "",
             "text": "Ensuring safety of learning-enabled robotic manipulation across diverse embodiments and tasks still requires significant manual engineering. For collision avoidance, existing approaches typically rely on embodiment-specific learned safety approximations or simplified robot models together with stopping-based fallback controllers that compromise performance.\n\nIn this paper, we propose an embodiment-agnostic safeguarding approach, X-Safe, which provides formal probabilistic guarantees for collision avoidance without model simplifications or learned safety functions. By operating in the configuration space, our safeguarding method works with different types of robot policies.\n\nX-Safe reasons locally around the current configuration to establish safe regions and uses action masking to restrict the policy's support to these safe regions. We demonstrate X-Safe on two embodiments and three policies, both in simulation and on hardware.\n\nWe observe less than half of the performance degradation compared to state-of-the-art safeguarding, and empirically corroborate our formal collision avoidance guarantees."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes X-Safe, a collision safeguarding method intended to work across robot embodiments and policies. It reasons about safe regions near the current configuration and masks actions so that a policy can select only actions within those regions, aiming to provide probabilistic collision-avoidance guarantees without simplified models or learned safety functions. The authors demonstrate the method in simulation and on hardware with two embodiments and three policies. They report less than half the performance degradation of state-of-the-art safeguarding and empirically corroborate the formal guarantees.",
+          "zh": "论文提出 X-Safe，一种面向不同机器人本体与操作策略的碰撞防护方法。它在构型空间围绕当前构型建立安全区域，并通过动作屏蔽将策略可选动作限制在这些区域内，旨在提供概率形式的碰撞避免保证，无需简化模型或学习安全函数。作者在两种机器人本体、三种策略的仿真和硬件实验中展示该方法，报告其性能下降不到现有最先进防护方法的一半，并以实验结果支持其形式化保证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -380,7 +384,11 @@
             "heading": "",
             "text": "Scaling embodied robot learning requires large and diverse manipulation datasets, but collecting real-world demonstrations remains expensive in human effort and robot time.\n\nSimulation provides a scalable alternative, yet converting a real workspace into a robot-learning-ready environment still requires substantial manual effort for object extraction, asset processing, coordinate calibration, and trajectory specification.\n\nWe present AutoRSR, a highly automated real-to-sim-to real framework that converts scanned real-world workspaces into reusable embodied simulation assets and scalable manipulation data.\n\nGiven multi-view observations, robot states, and open-vocabulary semantic queries, AutoRSR reconstructs the workspace, extracts individual object assets, and automatically registers the reconstructed scene to the robot base frame at metric scale.\n\nStarting from a small number of reference motions, AutoRSR then generates executable manipulation trajectories and scales them through trajectory interpolation and domain randomization. After workspace scanning and semantic queries, the remaining pipeline requires no manual object annotation, scene-to-robot calibration, or robot teleoperation.\n\nAcross three real-world manipulation tasks, policies trained on 1K automatically generated episodes per task achieve 73.3--86.7% real-world success rates, comparable to pi 0.5 trained from 150 human teleoperated demonstrations, while reducing the human time required for data generation by an order of magnitude.\n\nThese results demonstrate that real-world observations can be converted into metrically aligned, executable, and scalable simulation data with substantially reduced human effort."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AutoRSR converts scanned real workspaces into reusable simulation assets and manipulation data. Using multiview observations, robot states, and open-vocabulary semantic queries, it reconstructs scenes, extracts object assets, and registers scenes to the robot base frame. From a small set of reference motions, it generates executable trajectories and scales them through interpolation and domain randomization. The authors report that, after scanning and querying, the pipeline needs no manual object annotation, scene calibration, or teleoperation. Across three real-world tasks, policies trained on 1,000 generated episodes per task reached 73.3–86.7% success, comparable to pi 0.5 trained on 150 human demonstrations, with an order-of-magnitude reduction in human data-generation time.",
+          "zh": "论文提出 AutoRSR，将真实工作空间扫描结果转为可复用的仿真资产和操作数据。系统利用多视角观测、机器人状态及开放词汇语义查询重建场景、提取物体资产，并将场景注册到机器人基座坐标系；从少量参考动作出发生成并扩展可执行轨迹。作者称，除扫描和语义查询外，后续流程无需人工标注物体、场景校准或机器人遥操作。在三项真实操作任务中，每项用自动生成的1000条 episode 训练的策略成功率为73.3%至86.7%，与使用150次人工遥操作示范训练的 pi 0.5 相当，数据生成所需人工时间减少一个数量级。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -411,7 +419,11 @@
             "heading": "",
             "text": "Progress toward general intelligence in the physical world requires scaling robot learning across diverse environments and interactions. However, existing robot policies use shared parameters that remain fixed across interaction contexts.\n\nWhen different operations favor competing parameter adjustments, fitting their mixture can leave individual operations insufficiently adapted. Our atomic-task diagnostics reveal competing update directions in both vision-language and action parameters, with source-improving updates increasing loss on other tasks.\n\nThis motivates MorphAct, a contextual parameterization framework that dynamically adjusts robot policy parameters as interaction contexts change. Two coupled generators produce context-dependent low-rank updates for the vision-language and action modules.\n\nTheir coupling follows the policy's computational dependency: vision-language updates shape the representations that condition action-side parameter generation. Both generators are trained jointly through the native action objective, without operation labels or expert-adapter targets.\n\nMorphAct improves performance across three VLA backbones on LIBERO and Meta-World, with gains of up to 16.30%.In real-world evaluation, it achieves gains of up to 14% over $\\pi_{0.5}$.Ablations support the benefits of contextual parameter generation and representation coupling."
           }
-        ]
+        ],
+        "summary": {
+          "en": "MorphAct dynamically adjusts robot-policy parameters as interaction contexts change. Two coupled generators produce context-dependent low-rank updates for vision-language and action modules, with the coupling following the policy’s computational dependency. They are jointly trained using the native action objective, without operation labels or expert-adapter targets. The authors report improvements across three vision-language-action backbones on LIBERO and Meta-World, with gains of up to 16.30%. In real-world evaluation, MorphAct achieved gains of up to 14% over π₀.₅. Ablations support the reported benefits of contextual parameter generation and representation coupling.",
+          "zh": "论文提出 MorphAct，通过上下文动态调整机器人策略参数，以适应交互情境变化。两个耦合生成器分别为视觉语言模块和动作模块生成低秩更新，并依据策略计算依赖关系耦合；两者通过原生动作目标联合训练，不需要操作标签或专家适配器目标。作者指出，不同任务的参数更新方向可能相互冲突。实验显示，MorphAct 在 LIBERO 和 Meta-World 的三种视觉语言动作骨干网络上均提升表现，最高提升16.30%；真实世界评估中，相对 π₀.₅ 的提升最高为14%。消融实验支持上下文参数生成和表征耦合的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
