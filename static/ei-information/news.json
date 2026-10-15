@@ -1484,7 +1484,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models provide a promising paradigm for scalable robotic manipulation, yet their reliance on success-only behavioral cloning leaves them brittle; lacking corrective training signals, minor execution errors rapidly compound into unrecoverable, out-of-distribution failures.\n\nTo address this limitation, we propose Adaptive Failure-Informed Learning (AFIL), an end-to-end framework that leverages failure trajectories as adaptive negative guidance for diffusion- and flow-based VLA policies.\n\nAFIL uses a pretrained VLA to generate failure rollouts online, avoiding the need for handcrafted failure-mode design or human-in-the-loop recovery.\n\nIt then jointly trains Dual Action Generators (DAGs) for successful and failed behaviors while sharing a common vision-language backbone, enabling efficient failure-aware policy learning with limited parameter overhead.\n\nDuring sampling, the failure generator adaptively steers action generation away from failure-prone regions and toward more reliable success modes, with guidance strength determined by the per-diffusion-step distance between success and failure distributions.\n\nExperiments across in-domain and out-of-domain robotic manipulation tasks, covering both short- and long-horizon settings, show that AFIL consistently improves task success rates and robustness over existing VLA baselines, demonstrating its effectiveness, efficiency, and generality."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Adaptive Failure-Informed Learning (AFIL) for vision-language-action policies in robotic manipulation. A pretrained model generates failure rollouts online, which serve as adaptive negative guidance. AFIL jointly trains success and failure action generators that share a vision-language backbone. During sampling, failure guidance steers actions away from failure-prone regions, with strength based on the distance between success and failure distributions at each diffusion step. Experiments across in-domain and out-of-domain, short- and long-horizon tasks report improved success rates and robustness over existing baselines.",
+          "zh": "本文提出自适应失败信息学习框架AFIL，面向视觉—语言—动作模型的机器人操作策略。该方法在线生成失败轨迹，将其作为负向引导，并联合训练成功与失败动作生成器，共享视觉—语言骨干网络。采样时，失败生成器依据每个扩散步骤中成功与失败分布的距离，引导动作远离易失败区域。作者报告，在涵盖域内与域外、短期与长期任务的操作实验中，AFIL相较现有基线持续提升任务成功率和鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1515,7 +1519,11 @@
             "heading": "",
             "text": "We present VGM-VS, a visual servoing method built on a pretrained feed-forward visual geometry model. Given the current view and a reference image captured at the target configuration, we estimate the relative camera pose with a visual geometry model and apply it iteratively as the pose increment of a closed-loop pose-based visual servoing (PBVS) scheme.\n\nThe geometry-aware representation acquired from large-scale pretraining keeps this estimate reliable when the target is occluded, weakly textured, or covers only a small part of the image.\n\nHowever, the scale ambiguity inherent to these models leaves the predicted translation defined up to an unknown scale, while the pose increment must be metric for robot control.\n\nWe close this gap with a scene-specific metric adaptation: the robot autonomously records image--pose pairs along a predefined motion starting from the target pose, and we fine-tune the camera head on these data, jointly learning the hand--eye transform and thus removing the need for a dedicated calibration process.\n\nWe evaluate our method on three real-world assembly tasks with demanding tolerances: USB-C cable picking, cable insertion, and RAM insertion. Running in real time at 30Hz, VGM-VS converges to submillimeter terminal accuracy on the cable tasks, and reaches success rates of 90--100\\% when the target is moved during servoing.\n\nIt converges in all trials under initial displacements of up to 30cm from the reference pose and with 50\\% of the target object occluded, outperforming the compared visual servoing baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "VGM-VS uses a pretrained feed-forward visual geometry model to estimate relative camera pose between the current view and a target reference image, applying the estimate iteratively in closed-loop pose-based visual servoing. To address translation scale ambiguity, the robot collects image-pose pairs along a predefined motion and fine-tunes the camera head while learning the hand-eye transform. In three real-world assembly tasks, the authors report submillimeter terminal accuracy on cable tasks, 90–100% success when targets move, and convergence in all trials with displacements up to 30 cm and 50% target occlusion.",
+          "zh": "本文提出VGM-VS视觉伺服方法，利用预训练视觉几何模型估计当前视图与目标参考图像之间的相机相对位姿，并在闭环位姿伺服中迭代应用。针对平移尺度不确定性，机器人沿预设运动自主采集图像—位姿数据，并据此微调相机头，同时学习手眼变换。作者在三项真实装配任务中评估该方法：线缆任务达到亚毫米终端精度；目标移动时成功率为90%至100%；初始偏移最高30厘米且目标遮挡50%时，所有试验均收敛。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1546,7 +1554,11 @@
             "heading": "",
             "text": "Differential-algebraic equations (DAEs) arise in power networks, chemical processes, and multibody systems, where algebraic constraints encode physical conservation laws. The safety of such systems is critical, yet safe control is challenging because algebraic constraints restrict allowable state trajectories.\n\nControl barrier functions (CBFs) provide computationally efficient safety filters for ordinary differential equation (ODE) systems. However, existing CBF methods are not directly applicable to DAEs due to potential conflicts between the CBF condition and the constraint manifold.\n\nThis paper introduces DAE-aware CBFs that incorporate the differential-algebraic structure through projected vector fields. We derive conditions that ensure forward invariance of safe sets while preserving algebraic constraints and extend the framework to higher-index DAEs.\n\nA systematic verification framework is developed, establishing necessary and sufficient conditions for geometric correctness and feasibility of DAE-aware CBFs. For polynomial systems, sum-of-squares certificates are provided, while for nonpolynomial and neural network candidates, satisfiability modulo theories are used for falsification.\n\nThe approach is validated on wind turbine and flexible-link manipulator systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DAE-aware control barrier functions that incorporate projected vector fields to address safety control under algebraic constraints. It derives conditions for forward invariance of safe sets while preserving those constraints and extends the framework to higher-index differential-algebraic equations. A verification framework establishes necessary and sufficient conditions for geometric correctness and feasibility. The authors use sum-of-squares certificates for polynomial systems and satisfiability modulo theories to falsify nonpolynomial and neural-network candidates. They validate the approach on wind turbine and flexible-link manipulator systems.",
+          "zh": "本文针对微分—代数系统（DAE）提出纳入投影向量场的控制障碍函数（CBF），以处理代数约束对安全控制的影响。作者推导了在保持代数约束的同时保证安全集正向不变的条件，并将框架扩展至高指数DAE。论文还建立系统化验证框架，为几何正确性和可行性给出充要条件；多项式系统使用平方和证书，非多项式及神经网络候选则通过可满足性模理论进行证伪。该方法在风力涡轮机和柔性连杆机械臂系统上验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
