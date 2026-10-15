@@ -804,7 +804,11 @@
             "heading": "",
             "text": "Robot policies map observations to actions, typically using multilayer perceptrons (MLPs).Yet robot dynamics and control objectives involve multiplicative interactions among observable physical variables. MLPs can approximate these interactions but must learn them implicitly, at a representational cost.\n\nWe introduce PRISM (Polynomial Representations for Interaction-Structured Motor Control), a physics-motivated yet data-driven representation that learns multiplicative interactions by recursively adding scaled bilinear features, without enumerating all polynomial terms.\n\nReplacing only the MLP's first affine layer, PRISM is plug-and-play for reinforcement and imitation learning, requiring no changes to training objectives, sensing, or controllers. Across humanoid locomotion and contact-rich manipulation, PRISM improves survival from 51.0\\% to 92.5\\%, outperforming even larger MLPs.\n\nMore strikingly, its performance advantage persists under out-of-distribution changes in friction, robot mass, and payload, without retraining.\n\nPRISM also exhibits sensorless compliance-like behavior, increases failure-recovery success from 40.9\\% to 52.3\\% without explicit admittance control, improves real-robot manipulation, and learns features that better predict physical quantities. These results make PRISM a compelling alternative to standard MLPs for robot policy learning.\n\nThe project page is available at https://lsh3163.github.io/prism/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PRISM, a physics-motivated, data-driven representation that learns multiplicative interactions by recursively adding scaled bilinear features without enumerating all polynomial terms. It replaces only an MLP’s first affine layer and is presented for reinforcement and imitation learning. The authors report gains in humanoid locomotion, contact-rich manipulation, and real-robot manipulation, as well as advantages under changes in friction, robot mass, and payload without retraining. These claims are limited to the tasks and evaluations described in the abstract.",
+          "zh": "论文提出 PRISM，一种受物理启发、由数据驱动的机器人策略表示，通过递归添加缩放双线性特征学习变量间的乘性交互，无需枚举全部多项式项。它仅替换 MLP 的首个仿射层，可用于强化学习和模仿学习。作者报告其在仿人运动、接触丰富的操作及真实机器人操作中改善表现，并称在摩擦、机器人质量和负载变化时无需重新训练仍有优势；这些结论限于摘要所述任务与评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -835,7 +839,11 @@
             "heading": "",
             "text": "Human demonstrations provide strong priors for robot manipulation, yet it is non-trivial to transfer them to execute on real robots due to the kinematic gap.\n\nIn dexterous manipulation, it remains challenging to track long-horizon, contact-rich sequences even in simulators: a reference-tracking policy must keep objects on their target trajectories while preserving demonstrated joint motion and contact timing.\n\nExisting approaches often rely on hand-crafted reward tuning that require per-sequence tuning and break under limited interaction budgets. We introduce ConTrack, a reinforcement learning (RL) framework that scales with tracking data.\n\nConTrack treats object tracking as a constraint and allocates remaining control authority to motion fidelity, which allows it to adapt task--style trade-offs online using a dual-variable update. In addition, ConTrack also stabilizes long-horizon learning with an adaptive mid-trajectory reset library that reuses policy-reachable simulator states.\n\nOur qualitative and quantitative results in simulation tracking and real robot demonstrate that ConTrack improves success and object pose accuracy significantly over prior arts while preserving joint and contact fidelity. Website: https://www.lyt0112.com/projects/ConTrack."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ConTrack, a reinforcement learning framework for transferring human demonstrations to dexterous robot manipulation and tracking long-horizon, contact-rich motions. It treats object trajectory tracking as a constraint and allocates remaining control authority to motion fidelity, adapting the task-style trade-off online with a dual-variable update. An adaptive mid-trajectory reset library reuses policy-reachable simulator states. The authors report improved success and object-pose accuracy over prior methods in simulation tracking and real-robot evaluations, while preserving joint-motion and contact fidelity.",
+          "zh": "论文提出 ConTrack，一种面向灵巧操作的强化学习框架，旨在将人类演示迁移到机器人并处理长时程、接触丰富的动作跟踪。该方法把物体轨迹跟踪作为约束，将剩余控制能力用于保持动作风格，并通过对偶变量在线调整任务与风格的权衡；还用自适应中途重置库复用模拟器中策略可达的状态。作者报告称，仿真跟踪和真实机器人评估中，ConTrack 相比既有方法提升成功率与物体位姿精度，同时保持关节运动和接触时序的保真度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
