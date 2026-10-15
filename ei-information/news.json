@@ -1092,7 +1092,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models increasingly incorporate intermediate reasoning to improve robotic manipulation, yet existing approaches primarily reason about observed states without explicitly anticipating future scene evolution.\n\nExtending such reasoning to explicit future rollouts at every inference step, however, introduces substantial computational overhead. We propose IG-VLA, a VLA reasoning framework that enables models to imagine the future and internalize the gist.\n\nOur Latent Spatiotemporal Reasoning learns to imagine task-relevant future scene evolution directly in visual representation space, guiding action prediction without costly pixel-level video generation.\n\nTo further reduce inference overhead, we introduce Scene Gist Memory, which internalizes reasoning-derived scene-behavior associations into a compact Scene Gist Token, preserving the benefits of future reasoning while bypassing explicit future imagination at inference.\n\nExtensive experiments on LIBERO, LIBERO-Plus, and VLABench demonstrate the effectiveness and efficiency of IG-VLA. On the LIBERO-Plus Language suite, both the reasoning and gist policies outperform the strongest baseline by nearly 6% in success rate.\n\nThe gist policy also achieves up to 6.38x speedup over baselines, reducing inference latency from 1081ms to 169.5ms per action chunk on a single NVIDIA A6000 GPU. These results demonstrate that future spatiotemporal reasoning can be effectively internalized for efficient VLA deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes IG-VLA, which predicts task-relevant future scene evolution in visual representation space and stores reasoning-derived scene-behavior associations in a compact Scene Gist Token to reduce inference overhead. Experiments on LIBERO, LIBERO-Plus, and VLABench report that its reasoning and gist policies exceed the strongest baseline by nearly 6% in success rate on the LIBERO-Plus Language suite. The gist policy reaches up to 6.38× speedup, with latency falling from 1081 ms to 169.5 ms per action chunk on one NVIDIA A6000 GPU.",
+          "zh": "论文提出 IG-VLA，使视觉—语言—动作模型在视觉表征空间预测与任务相关的未来场景变化，并通过场景概要记忆将推理得到的场景—行为关联压缩为概要令牌，以降低推理开销。在 LIBERO、LIBERO-Plus 和 VLABench 的实验中，推理策略和概要策略在 LIBERO-Plus Language 套件上的成功率均比最强基线高近 6%；概要策略在单张 NVIDIA A6000 GPU 上将每个动作块的延迟从 1081 毫秒降至 169.5 毫秒，最高加速 6.38 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1123,7 +1127,11 @@
             "heading": "",
             "text": "We present FoveaVLA, a Vision-Language-Action (VLA) model that replaces the wrist camera with learned foveation actions. Wrist cameras provide close-up detail but restrict the view to the end-effector's surroundings. External cameras see the whole scene, but the policy receives them at low resolution, so the fine detail needed for manipulation is lost.\n\nFoveaVLA recovers this detail by predicting, alongside each action chunk, the interaction region to observe at the next policy query. The policy then receives crops of these regions, taken from the original-resolution images, together with the full views.\n\nWe build FoveaVLA on $\\pi_{0.5}$ in two configurations, Single and Dual, using one or two external stereo cameras with full and foveal RGB and depth inputs, and post-train both on DROID with RoboInter interaction annotations.\n\nAcross four real-world task suites, FoveaVLA-Single achieves 70.8% success with one external RGB-D view, and FoveaVLA-Dual achieves 77.1%, versus 52.1% for the wrist-equipped $\\pi_{0.5}$.Both match the baseline on plain pick-and-place and improve success with distractors, cloth manipulation, and far-away objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FoveaVLA replaces a wrist camera with learned foveation actions. Alongside each action chunk, it predicts the interaction region to observe at the next policy query, then supplies a crop from the original-resolution image together with the full views. Built on π0.5 in single- and dual-external-camera configurations, it is post-trained using DROID interaction annotations. Across four real-world task suites, the single-camera model reports 70.8% success and the dual-camera model 77.1%, compared with 52.1% for the wrist-equipped baseline. Both match it on plain pick-and-place and improve results with distractors, cloth, and distant objects.",
+          "zh": "论文提出 FoveaVLA，以学习得到的注视区域动作取代腕部相机：模型在预测每个动作块时，同时指定下一次查询应观察的交互区域，并从原始分辨率图像裁剪该区域，与全景视图一并输入。研究基于 π0.5 构建单外部相机和双外部相机配置，并使用 DROID 交互标注进行后训练。在四组真实世界任务中，单相机版成功率为 70.8%，双相机版为 77.1%，腕部相机基线为 52.1%；两种版本在普通抓取放置任务上与基线相当，并在干扰物、布料操作和远处物体任务上表现更好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1154,7 +1162,11 @@
             "heading": "",
             "text": "Digital twins are increasingly used in robotics to simulate interactions, predict action outcomes, and support planning. However, constructing accurate digital twins requires precise estimates of physical properties such as mass, friction, and center of mass, which are often difficult to obtain in real-world environments.\n\nWe propose probabilistic digital twins, which represent uncertain physical properties as probability distributions rather than fixed values. By simulating actions across these distributions, the twin predicts a range of possible outcomes and their likelihoods.\n\nThese probabilistic simulations can guide both human and robot actions by identifying actions that are effective despite physical uncertainty. We demonstrate this framework through human-robot interaction scenarios, including interfaces that communicate simulated outcomes to users and robot planning strategies that explicitly account for uncertainty."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes probabilistic physics digital twins for human-robot interaction. Rather than assigning fixed values to uncertain physical properties such as mass, friction, and center of mass, the twins represent them as probability distributions. Simulating actions across those distributions yields possible outcomes and their likelihoods, which can help identify actions that remain effective under physical uncertainty. The authors demonstrate the framework in human-robot interaction scenarios, including interfaces that communicate simulated outcomes to users and robot planning strategies that explicitly account for uncertainty. The abstract reports no quantitative performance results.",
+          "zh": "论文提出用于人机交互的概率物理数字孪生，将质量、摩擦和质心等不确定物理属性表示为概率分布，而非固定数值。数字孪生在这些分布上模拟动作，预测多种可能结果及其发生概率，从而帮助识别在物理属性不确定时仍有效的行动。作者通过人机交互场景展示该框架，包括向用户传达模拟结果的界面，以及明确考虑不确定性的机器人规划策略。摘要未报告量化性能结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
