@@ -1014,7 +1014,11 @@
             "heading": "",
             "text": "Offline navigation demonstrations are multimodal, because one observation often allows several valid actions, such as passing an obstacle on either side. Behavior cloning averages these actions, potentially leading to unsafe routes.\n\nMultimodal policies must discover the alternatives from the data, but similar states can lead to different routes whose current actions overlap. In navigation, the alternatives have a geometric cause and can be computed from one observation.\n\nWe propose a hierarchical neural-network policy that computes candidate modes from local geometry and learns from demonstrations which mode to follow and how. A high-level policy selects a mode using the goal and its previous choice among a set of candidate modes, and a low-level policy turns it into an action.\n\nIn simulation, the policy succeeds in over 95\\% of seen and unseen test cases, compared with at most 43\\% and 20\\% for four offline learning baselines and 79\\% and 67\\% for a heuristic that uses the same modes without learning. The simulation-trained policy also transfers to a LimX Tron 1 bipedal robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper observes that navigation demonstrations can contain several valid actions, while behavior cloning may average them into unsafe routes. It proposes a hierarchical neural policy that derives candidate modes from local geometry. A high-level policy selects a mode based on the goal and its previous choice; a low-level policy converts it into an action. In simulation, success exceeded 95% on seen and unseen test cases, outperforming four offline-learning baselines and a heuristic using the same modes. The authors also report transfer to a LimX Tron 1 bipedal robot.",
+          "zh": "论文指出，导航示范通常包含多种有效动作，行为克隆对动作取平均可能产生不安全路线。作者提出分层神经网络策略，从局部几何计算候选模式；高层策略结合目标和先前选择决定跟随哪种模式，低层策略将其转化为动作。在仿真中，该方法在已见和未见测试案例上的成功率均超过 95%，高于四种离线学习基线及使用相同模式的启发式方法。作者还报告，仿真训练的策略迁移到了 LimX Tron 1 双足机器人。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1045,7 +1049,11 @@
             "heading": "",
             "text": "While multi-fingered dexterous robot hands have the potential to provide human-level dexterity, using them for functional manipulation remains difficult because task success depends on precise contact, coordinated arm-hand motion, and reactive recovery from execution errors.\n\nPrecise contact depends on complex contact dynamics that are difficult to model accurately in simulation, motivating real-world learning. However, real-world demonstrations in the full arm-hand control space are costly and noisy because each trajectory must coordinate arm motion with high-DoF multi-finger contact.\n\nSmall execution deviations can further cause slipped contact or premature force application, making recovery from off-nominal contact states important for robust execution. To deal with these challenges, we propose HiFun, a hierarchical real-world RL framework for functional dexterous manipulation tasks.\n\nOur key insight is to decouple the control complexity into a functional hand skill for precise contact execution and an arm-hand coordination policy for arm control and hand-skill activation.\n\nThis design enables effective real-time human intervention for reactive recovery learning and efficient data collection with Dynamic Movement Primitive (DMP) augmentation. Across six real-world tasks on two dexterous hands, HiFun achieves 98.3% average success within one hour of online training and remains robust to dynamic disturbances.\n\nThe project page is available at https://hly-123.github.io/HiFun/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HiFun, a hierarchical real-world reinforcement learning framework for dexterous manipulation. It separates control into a functional hand skill for precise contact and an arm-hand coordination policy for arm control and skill activation. The authors say this design supports real-time human intervention for reactive recovery learning and uses Dynamic Movement Primitive augmentation for data collection. Across six real-world tasks on two dexterous hands, HiFun achieved 98.3% average success within one hour of online training and remained robust to dynamic disturbances.",
+          "zh": "论文提出 HiFun，一种用于灵巧操作任务的分层真实环境强化学习框架。其设计将控制分为负责精确接触执行的功能性手部技能，以及负责手臂控制和技能激活的协同策略。作者表示，该设计支持实时人工干预以学习反应式恢复，并通过动态运动基元增强提高数据收集效率。在两种灵巧手的六项真实任务中，HiFun 在一小时在线训练内达到 98.3% 的平均成功率，并能应对动态扰动；这些结果来自所述真实环境实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
