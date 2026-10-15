@@ -2771,7 +2771,11 @@
             "heading": "",
             "text": "Whole-body mobile manipulation suffers from two fundamental challenges: inherent motion heterogeneity across locomotion, arm, and hand modules, and progressive error accumulation over long-horizon multi-stage tasks. Existing teleoperation platforms also lack integrated dexterous tactile sensing to support coordinated whole-body decision-making.\n\nThis paper presents RoboSpan, a high-DoF whole-body teleoperation and demonstration platform, and the Hierarchical Modular Framework (HMF) for learning modular coordination policies.\n\nHMF functionally decouples the 29-DoF action space into fine hand manipulation, arm pose adjustment, and mobile-base spatial configuration branches, and introduces the Coordinated Modular Embodied Transformer (COMET) with inter-modular cross-attention to enable dynamic information exchange and action coordination.\n\nVision-language model driven hierarchical task decomposition structurally suppresses temporal error propagation, while a full-palm 2D tactile representation encodes distributed contact signals for cross-module tactile empowerment.\n\nExperiments on a physical 29-DoF robot demonstrate that the proposed method achieves over 20\\% higher task success rate than mainstream baselines across a range of long-horizon whole-body tasks, markedly improving stability and robustness in contact-rich manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboSpan, a whole-body teleoperation and demonstration platform, and HMF, a hierarchical framework for learning modular coordination policies. HMF divides the 29-degree-of-freedom action space into hand, arm, and mobile-base branches, coordinating them with COMET cross-attention. It also uses vision-language-model-driven task decomposition and a full-palm 2D tactile representation. Experiments on a physical 29-DoF robot report task success rates over 20% higher than mainstream baselines across long-horizon tasks, with improved stability and robustness in contact-rich manipulation.",
+          "zh": "本文提出 RoboSpan 遥操作与示范平台，以及用于学习全身协调策略的分层模块框架 HMF。HMF 将 29 自由度动作划分为手部操作、手臂姿态和移动底盘分支，并以 COMET 的跨模块注意力协调动作；框架还采用视觉语言模型进行分层任务分解，并使用全掌二维触觉表示。作者在实体 29 自由度机器人上的实验显示，该方法在多种长时程全身任务中的成功率比主流基线高出 20% 以上，并改善接触丰富操作的稳定性与鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2802,7 +2806,11 @@
             "heading": "",
             "text": "Existing robot policy memories typically evolve with observation sequences, implicitly treating each update as the same amount of physical time. Yet identical observation histories can span different durations and require different actions, exposing physical time as a missing dimension of policy memory.\n\nWe introduce Temporal Flow Policy (TFP), which learns memory dynamics to retain past events and evolve the memory state over measured time intervals. Observations and prior memory determine the content and time scales of each transition; elapsed time determines how far the state advances.\n\nTFP conditions diffusion and flow-matching policies through this memory state and is trained with their native imitation objectives. We evaluate TFP with Diffusion Policy and $\\pi_{0.5}$ through controlled comparisons of memory designs. These experiments show that successful timing depends on both measured intervals and retained history.\n\nTFP achieves higher average success than the recurrent and state-space memories we equip with the same intervals and than a variant that feeds the interval to a learned gate. Memory readouts recover the time since an event and motion information after occlusion.\n\nChanging the supplied intervals systematically delays or advances actions, linking time inputs to behavior. Real-robot tasks requiring timing or memory, together with LIBERO evaluations, demonstrate benefits in physical and general manipulation.\n\nThese results suggest viewing robot memory not as stored observation history, but as a state that retains past events and evolves with physical time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Temporal Flow Policy (TFP), which evolves robot policy memory according to measured time intervals while retaining past events. The memory conditions diffusion and flow-matching policies, trained with their native imitation objectives. Comparisons with Diffusion Policy and π0.5, including real-robot tasks and LIBERO evaluations, report higher average success than recurrent and state-space memories given the same intervals, and than a learned-gate variant. Memory readouts recover event timing and motion after occlusion, while changing supplied intervals systematically advances or delays actions.",
+          "zh": "本文提出时间流策略 TFP，使机器人策略记忆根据测得的时间间隔演化，同时保留过去事件。该记忆用于条件化扩散策略和流匹配策略，并通过各自的模仿学习目标训练。作者在 Diffusion Policy、π0.5、真实机器人任务及 LIBERO 评估中进行比较，报告 TFP 的平均成功率高于使用相同时间间隔的循环与状态空间记忆，以及将间隔输入学习门控的变体。记忆读出可恢复事件发生时间和遮挡后的运动信息；改变输入间隔会系统性地提前或延后动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
