@@ -2387,7 +2387,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions.\n\nHowever, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness.\n\nExisting VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals.\n\nWe propose SafeDriveVLA, the first driving VLA that （1） explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and （2） uses navigation-conditioned world model dreaming to inform this prediction.\n\nUnlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe.\n\nSafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SafeDriveVLA for evaluating and handling navigation following and scene conflicts in autonomous-driving VLAs. It predicts a three-level navigation-compliance mode and uses world-model rollouts that assume strict adherence to the navigation signal to help assess safety. The authors report a score of 88.16 and a 68.64% success rate on Bench2Drive. Compared with the best SimLingo variant, closed-loop language following improves by 49.3%, while collisions under unsafe instructions fall from 60 to 38.",
+          "zh": "论文提出 SafeDriveVLA，用于评估并处理自动驾驶 VLA 的导航指令跟随与场景冲突。该方法预测三级导航遵从模式，并通过假设严格执行导航信号的世界模型想象来辅助判断其是否安全。作者报告，该模型在 Bench2Drive 上取得 88.16 驾驶分和 68.64% 成功率；相较最佳 SimLingo 变体，闭环语言指令跟随提升 49.3%，不安全指令下碰撞次数从 60 降至 38。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2418,7 +2422,11 @@
             "heading": "",
             "text": "Coding agents can construct executable programs and revise them through feedback, offering a foundation for embodied control without target-task fine-tuning. Through a programmatic robot interface, the agent observes the scene, executes control programs, and adapts them to the resulting physical state, serving as the closed-loop policy.\n\nHowever, this within-episode adaptation does not automatically preserve experience across scenes. Our trajectory analysis shows that agents spend interaction and inference budgets establishing effective operations and identifying their preconditions, while fresh agents cannot reuse these discoveries.\n\nThis motivates EmbodiedEvo, a self-evolving coding agent that distills physical feedback into reusable code Skills and diagnostic Lessons. Experience is acquired on one Playground scene per task, then frozen for independent agents in unseen scenes, without updating model weights.\n\nOn RoboDojo-Sim, EmbodiedEvo achieves an average score of 44.48 and a success rate of 37.82\\%, surpassing all officially verified results. Paired tests show the largest gains on memory-dependent tasks and successful reuse of coordinated procedures, while fine contact control remains difficult.\n\nExperience from stronger models also improves weaker executors: Astra's experience raises Sol and Luna's success rates by 8.86 and 5.50 percentage points over no experience. Compared with raw interaction history, Skills and Lessons achieve comparable task performance at 53.0\\% lower execution cost."
           }
-        ]
+        ],
+        "summary": {
+          "en": "EmbodiedEvo turns physical feedback from robot interactions into reusable code Skills and diagnostic Lessons for independent agents in unseen scenes, without changing model weights. On RoboDojo-Sim, the authors report an average score of 44.48 and a 37.82% success rate. Paired tests show the largest gains on memory-dependent tasks, while fine contact control remains difficult. Experience from Astra raises Sol’s and Luna’s success rates by 8.86 and 5.50 percentage points. Skills and Lessons achieve comparable task performance to raw interaction history at 53.0% lower execution cost.",
+          "zh": "论文提出 EmbodiedEvo，使编码智能体把机器人交互中的物理反馈整理为可复用的代码技能和诊断经验，并供未见场景中的独立智能体使用；模型权重保持不变。在 RoboDojo-Sim 上，作者报告平均得分 44.48、成功率 37.82%，并称配对测试中记忆依赖任务提升最大，但精细接触控制仍困难。较强模型 Astra 的经验使 Sol 和 Luna 的成功率分别提高 8.86 和 5.50 个百分点；技能与经验在任务表现相近时，比原始交互历史降低 53.0% 执行成本。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2449,7 +2457,11 @@
             "heading": "",
             "text": "Robots navigating open-world, human-centered environments must look beyond prebuilt high-fidelity maps and leverage navigational aids embedded in their surroundings, particularly, signs.\n\nTo advance sign-guided visual navigation, we introduce SiGNgapore, an interactive, multimodal dataset designed to benchmark sign-guided multi-step navigational decision-making.\n\nSiGNgapore covers diverse public spaces in Singapore, including shopping malls, public transportation hubs, and hospitals, featuring multi-floor, multi-building layouts and indoor-outdoor transitions. It consists of 56 long-horizon navigation missions and 456 scenes, each containing a navigational sign and its surrounding environment.\n\nWe provide synchronized RGB, depth, IMU, and odometry data for each scene. We additionally provide the layout map and the GPS-aligned scene graph for selected mission sites.\n\nBeyond navigational decision-making, SiGNgapore supports a variety of spatial-semantic reasoning tasks, including navigational sign parsing and visual sign grounding, with the ultimate aim of driving progress in mapless robot navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SiGNgapore, an interactive multimodal dataset for benchmarking multi-step navigation decisions guided by signs. It covers public spaces in Singapore, including malls, transit hubs, and hospitals, with multi-floor and multi-building layouts and indoor-outdoor transitions. The dataset contains 56 long-horizon missions and 456 scenes, each with a navigational sign and its surroundings. It provides synchronized RGB, depth, IMU, and odometry data, plus layout maps and GPS-aligned scene graphs for selected sites. Supported tasks include sign parsing and visual sign grounding.",
+          "zh": "论文介绍 SiGNgapore，这是用于评测依靠环境标志进行多步导航决策的交互式多模态数据集。数据覆盖新加坡商场、交通枢纽和医院等公共空间，包含多楼层、多建筑布局及室内外转换，共有 56 项长时程导航任务和 456 个场景，每个场景包含导航标志及周边环境。数据提供同步 RGB、深度、IMU 和里程计信息，部分任务地点另有布局地图及 GPS 对齐的场景图，可支持标志解析、视觉标志定位等空间语义任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
