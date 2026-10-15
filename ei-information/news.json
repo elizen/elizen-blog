@@ -2464,7 +2464,11 @@
             "heading": "",
             "text": "Recent advances in 3D hand-object interaction (HOI) perception have opened new opportunities for learning dexterous robotic skills from human videos. However, existing dexterous imitation learning methods often rely on costly and manually teleoperated robot demonstrations, requiring substantial human effort.\n\nTherefore, we build DEXCAST, a framework that learns dexterous robotic hand control directly from monocular RGB-D videos by leveraging joint HOI reconstructions, without requiring any teleoperation. Furthermore, how to model high-dimensional robotic hand motion and extract temporal context to inform future action generation remains a key challenge.\n\nTo this end, we propose a DexHand Motion Perception Module (DMPM) to capture inter-joint coordination and temporal dependencies in compact latent representations that condition our diffusion policy. Extensive real-world experiments demonstrate that DEXCAST achieves exceptional performance across diverse dexterous manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DEXCAST, a framework for learning dexterous robotic hand control directly from monocular RGB-D human videos using joint hand-object interaction reconstructions, without teleoperation. It proposes a DexHand Motion Perception Module (DMPM) that encodes inter-joint coordination and temporal dependencies in compact latent representations, which condition a diffusion policy. The abstract states that extensive real-world experiments show what the authors describe as exceptional performance across diverse dexterous manipulation tasks, but provides no task-level or quantitative results.",
+          "zh": "论文提出 DEXCAST，从单目 RGB-D 人类视频中直接学习灵巧机器人手控制，无需遥操作示范；其方法利用联合手—物交互重建。为处理高维手部运动及时间信息，作者设计灵巧手运动感知模块（DMPM），以紧凑潜在表示捕捉关节协调和时间依赖，并用于条件扩散策略。摘要称，广泛的真实世界实验显示，DEXCAST 在多种灵巧操作任务中取得了作者所称的出色表现；摘要未给出具体任务或量化结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2495,7 +2499,11 @@
             "heading": "",
             "text": "Achieving human-like dexterous manipulation remains a central challenge in robotics. Learning from human hand-object interaction (HOI) datasets offers a promising pathway to diverse dexterous skills, yet existing physics-based approaches train specialist policies for individual trajectories, thereby limiting skill reuse at scale.\n\nWe introduce DexMimic, a generalist dexterous hand-object tracking policy jointly trained across diverse HOI trajectories. Efficient joint training requires allocating each rollout to both an undertrained phase and a starting state that supports continued tracking.\n\nDexMimic realizes this insight through Value-Guided Reset Allocation, which adapts the initialization distribution online to prioritize difficult phases and select reset states with higher expected tracking returns. We further introduce a benchmark spanning training, fine-tuning, and generalization.\n\nExperiments show improved tracking success and training efficiency, faster fine-tuning, and the potential for zero-shot generalization to unseen trajectories and objects; larger training sets further improve efficiency and generalization. Finally, we validate DexMimic on a real-world dexterous manipulation platform."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DexMimic is a generalist dexterous hand-object tracking policy jointly trained on diverse human interaction trajectories. Its Value-Guided Reset Allocation method adjusts the initialization distribution online, prioritizing difficult phases and reset states with higher expected tracking returns. The paper also presents a benchmark for training, fine-tuning, and generalization. Experiments are reported to improve tracking success and training efficiency, speed up fine-tuning, and show potential for zero-shot generalization to unseen trajectories and objects. The authors also report validation on a real-world dexterous manipulation platform.",
+          "zh": "论文提出 DexMimic，一种跨多条人手—物体交互轨迹联合训练的通用灵巧手追踪策略。其价值引导重置分配方法在线调整初始化分布，优先训练困难阶段，并选择预期追踪回报较高的重置状态；论文还介绍覆盖训练、微调和泛化的基准。实验显示，作者报告该方法提升追踪成功率与训练效率、加快微调，并具有对未见轨迹和物体零样本泛化的潜力；更大的训练集进一步改善效率和泛化。论文最后报告在真实世界灵巧操作平台上进行了验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2526,7 +2534,11 @@
             "heading": "",
             "text": "Robotic vacuum cleaners must extend their functionality within tight limits on size, cost, and durability. Deployable linkages with few actuators meet these limits, but their backdrivability makes it difficult to hold a load-bearing posture without continuous motor torque.\n\nWe introduce a two-stage deployable linkage that is self-locking, in the sense used for toggle and singularity-based linkages, through its own geometry: at full deployment an internal three-link subchain approaches a collinear, near-singular configuration where the input--output transmission ratio approaches zero, so that plate loads produce a small residual back-driving torque, absorbed by drive-train friction and a lightweight magnetic detent.\n\nA single actuator performs deployment and locking, a passive chassis-mounted trigger releases the lock for retraction, and a second actuator adjusts only the deployment height.\n\nWe integrate the mechanism into a commercial robotic vacuum cleaner and validate it through a 100-cycle repeatability test, a quasi-static load test in which the locked plate held 50\\,N with the motor de-energized, and 140 pushing-type tidying trials on seven household objects against a commercial arm-equipped vacuum robot under a documented protocol.\n\nWe derive the analytical holding condition and discuss its limits as an intermediate design point between passive compliance and articulated manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a two-stage deployable linkage for robotic vacuum cleaners that uses a near-singular geometry for self-locking. At full deployment, an internal three-link chain approaches collinearity, driving the transmission ratio toward zero and reducing load-induced back-driving torque, which is absorbed by drivetrain friction and a lightweight magnetic detent. One actuator deploys and locks the linkage; a passive trigger releases it for retraction, while another actuator adjusts deployment height. The authors report integration into a commercial vacuum cleaner, repeatability and quasi-static load tests, and pushing trials on household objects, alongside an analytical holding condition and discussion of design limits.",
+          "zh": "论文提出一种用于机器人吸尘器的两阶段可展开连杆机构，利用几何近奇异构型实现自锁：完全展开时，内部三连杆接近共线，使传动比趋近于零，从而降低负载引起的回驱扭矩，并由传动摩擦和轻型磁性定位件承受。单一执行器负责展开与锁定，被动触发器释放锁定以便收回，另一执行器只调节展开高度。作者将机构集成到商用吸尘器，并报告了100次重复性测试、断电状态下锁定板承受50 N的准静态载荷测试，以及针对七种家居物品的140次推移整理试验；同时给出解析保持条件并讨论设计局限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
