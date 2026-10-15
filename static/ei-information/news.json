@@ -664,7 +664,11 @@
             "heading": "",
             "text": "Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence.\n\nWe propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS.\n\nA nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence, providing non-conservative intervention when the nominal controller violates necessary constraints.\n\nExperimental results include simulations and real robot deployment with various 2D and 3D datasets, including handwriting datasets, validating the effectiveness of our approach in providing formal guarantees with learned motion even in complex, dynamic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a symbolic supervisory control architecture that generates a fail-safe backup plan for motions learned from demonstrations. Based directly on robot dynamics and independently of the learned dynamical system, it certifies safety, reachability, and actuator feasibility. A nominal controller tracks the learned motion, while a supervisor monitors safety and target convergence and intervenes when necessary constraints are violated. The authors report simulations and real-robot deployment across 2D and 3D datasets, including handwriting, as evidence of effectiveness in complex, dynamic environments.",
+          "zh": "论文提出一种符号监督控制架构，为基于动力系统的示范学习运动自动生成安全备用方案。该方案直接依据机器人动力学，对安全性、可达性和执行器可行性提供形式化认证，不依赖学习得到的动力系统。名义控制器跟踪学习运动，监督控制器监测安全与目标收敛，并在必要约束遭违反时介入。作者报告了涵盖二维和三维数据集（包括手写数据集）的仿真与真实机器人部署实验，称结果验证了该方法在复杂动态环境中提供形式化保证的效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -695,7 +699,11 @@
             "heading": "",
             "text": "Technologies, such as co-simulation, in particular, digital twins (DTs) are used for comprehensive and reliable prototyping, verification and validation (V&V) of control systems. There, the combination of feedback loops across multiple realities (e.g., simulations, physical setups) enables various forms of experimentation with robots and autonomous systems.\n\nHowever, the handling of multiple realities requires a more specific support by the modelling techniques used in control engineering.\n\nTo streamline the latter in the system life cycle, we propose a framework for mixing (i.e., fusing, defusing) control input and feedback signals (i.e., stimuli, responses) in simultaneously operated plants for multiple realities."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper discusses co-simulation and digital twins for prototyping, verification, and validation of control systems. Feedback loops spanning simulations and physical setups allow different forms of experimentation with robots and autonomous systems, but handling multiple realities calls for more specific support from control-engineering modeling techniques. The authors propose a framework for mixing or separating control inputs and feedback signals, including stimuli and responses, across plants operated simultaneously in multiple realities. The abstract does not report experimental results.",
+          "zh": "论文讨论了控制系统验证与确认中协同仿真和数字孪生的作用：通过跨仿真环境与物理装置的反馈回路，可对机器人和自主系统开展多种实验。作者指出，同时处理多种现实环境需要控制工程建模技术提供更有针对性的支持，并提出一个框架，用于在同时运行的多现实环境对象之间混合或拆分控制输入及反馈信号，包括刺激与响应。摘要未报告实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -726,7 +734,11 @@
             "heading": "",
             "text": "Many robotic tasks, such as inverse kinematics, motion planning, and contact-rich manipulation, can be formulated as optimization problems.\n\nSolving these problems requires addressing inherent nonlinear kinematics, complex contact dynamics, long-horizon correlations, and multi-modal optimization landscapes, each posing distinct challenges for state-of-the-art optimizers.\n\nWhile existing methods tackle these issues through problem-specific strategies, such specialization inherently limits cross-task generalization, requires heavy engineering effort in problem reformulation, and hinders multi-task autonomy.\n\nMonte Carlo Tree Search (MCTS) offers a compelling framework that generalizes across diverse robotic tasks via strategic exploration of the solution space. However, it typically suffers from combinatorial complexity when applied naively, resulting in slow convergence and excessive storage space in high-dimensional domains.\n\nTo address this limitation, we propose Tensor Train Tree Search (TTTS), which leverages tensor factorization to exploit implicit correlations among different branches within the decision tree.\n\nBy utilizing the resulting compact, linear-complexity representation, TTTS significantly reduces both computation and storage overhead, thereby enabling highly efficient global decision making.\n\nExperimental results across inverse kinematics, motion planning around obstacles, legged robot manipulation, multi-stage motion planning, and bimanual whole-body manipulation demonstrate the efficiency of TTTS for generalized robot optimization over a diverse set of tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Tensor Train Tree Search (TTTS), which applies tensor factorization to Monte Carlo Tree Search to capture implicit correlations among decision-tree branches. The authors say its compact, linear-complexity representation reduces computation and storage overhead for global decision making. They report experiments on inverse kinematics, obstacle-avoiding motion planning, legged robot manipulation, multi-stage planning, and bimanual whole-body manipulation, describing the results as demonstrating efficiency across diverse robot optimization tasks.",
+          "zh": "论文提出张量列车树搜索（TTTS），将张量分解用于蒙特卡洛树搜索，以利用决策树不同分支间的隐式相关性。作者称，这种紧凑表示具有线性复杂度，可降低计算与存储开销，支持高效全局决策。摘要指出，机器人优化任务涉及非线性运动学、复杂接触动力学、长时程相关性和多模态优化等挑战，并称跨逆运动学、避障运动规划、腿式机器人操作、多阶段规划及双臂全身操作的实验展示了该方法的效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -757,7 +769,11 @@
             "heading": "",
             "text": "Humanoid Behavior Foundation Models (BFMs) can execute impressive motions, but downstream applications such as loco-manipulation demand high whole-body positional accuracy. Existing BFMs suffer from a systematic command-execution gap, where executed motions deviate from desired ones.\n\nWe show that additional test-time compute can improve execution without retraining the BFM. First, we introduce Test-Time Command Optimization (TTCO), which adapts the input command to the specific BFM to produce an executed trajectory closer to the desired motion.\n\nTTCO finds such commands by sampling-based optimization through closed-loop simulations of the BFM and robot dynamics. Across three BFMs on the AMASS dataset, TTCO reduces mean global body-position error by 79-84% in simulation.\n\nSecond, we analyze test-time compute scaling and derive an approximate compute-optimal strategy that can sustain performance gains as the compute budget increases. Third, TTCO can generate BFM-specific action labels from recorded robot trajectories without requiring the original teleoperation body-motion commands.\n\nSimulation and real-robot experiments show that these labels are effective for training high-level loco-manipulation policies. This method also supports reusing existing demonstrations across BFMs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses the gap between desired and executed motions in humanoid Behavior Foundation Models (BFMs), proposing test-time compute to improve accuracy without retraining. Test-Time Command Optimization (TTCO) adapts commands through sampling-based optimization in closed-loop simulations of the BFM and robot dynamics. In simulation across three BFMs on AMASS, the authors report a 79–84% reduction in mean global body-position error. They also analyze compute scaling and report that labels derived from recorded robot trajectories work for training high-level loco-manipulation policies in simulation and real-robot experiments.",
+          "zh": "论文研究在人形行为基础模型（BFM）不重新训练的情况下，利用测试时计算缩小指令与执行动作之间的差距。作者提出测试时指令优化（TTCO），通过对BFM及机器人动力学进行闭环仿真和采样优化来调整输入指令；在AMASS数据集上的三个BFM仿真中，报告称全局身体位置平均误差降低79%至84%。论文还分析计算量扩展并推导近似最优策略，并称可从机器人轨迹生成模型专属动作标签。仿真与真实机器人实验显示，这些标签可用于训练高层运动操作策略，并支持跨模型复用示范。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
