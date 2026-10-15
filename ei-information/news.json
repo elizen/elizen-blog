@@ -1589,7 +1589,11 @@
             "heading": "",
             "text": "Perceptive bipedal locomotion over sparse terrain remains a difficult challenge: model-based methods are precise but brittle to uncertainty, while model-free methods are robust but struggle to discover the precise, constrained motions required for safety-critical locomotion where small errors can cause catastrophic failures.\n\nWe propose a model-assisted reinforcement learning (RL) framework that combines both perspectives in three steps: （1） generate a safe reference trajectory using simplified models; （2） train a privileged teacher policy guided by a control Lyapunov function (CLF) reward built around the safe reference trajectory; and （3） distill the teacher into a vision-based student policy.\n\nWe show that this model-assistance procedure produces physically grounded locomotion, improving sample efficiency, reducing the need for a complex learning curriculum, and achieving smoother locomotion behavior alongside stepping stone performance comparable to model-free baselines.\n\nWe validate our approach in simulation and demonstrate successful deployment on a Unitree G1 humanoid robot navigating sparse footholds with lateral constraints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "MARCH is a model-assisted reinforcement learning framework for perceptive bipedal locomotion over sparse footholds. It generates a safe reference with simplified models, trains a privileged teacher using a control Lyapunov function reward tied to that reference, and distills the teacher into a vision-based student. The authors report improved sample efficiency, less need for a complex curriculum, smoother locomotion, and stepping-stone performance comparable to model-free baselines. They validate the approach in simulation and demonstrate deployment on a Unitree G1 navigating laterally constrained sparse footholds.",
+          "zh": "MARCH提出一种模型辅助强化学习框架，用于双足机器人在稀疏落脚点上的感知运动控制。方法先用简化模型生成安全参考轨迹，再以围绕该轨迹构建的控制李雅普诺夫函数奖励训练特权教师策略，最后将其蒸馏为视觉学生策略。作者称该方法提升样本效率、减少复杂课程训练需求，并使运动更平滑，踏石表现与无模型基线相当。验证包括仿真，以及Unitree G1机器人在带横向约束的稀疏落脚点上成功部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1620,7 +1624,11 @@
             "heading": "",
             "text": "Tiny robots have limited computation and memory, yet visual navigation systems often maintain more state than a task requires. We ask whether persistent memory can instead be shaped by the task. We present \\textbf{RingNav}, a \\(10.6\\)k--parameter visual heading estimator that constrains its memory to the circular manifold \\(S^1\\).\n\nRingNav learns only the turn between consecutive images, while heading is composed directly on the circle. On the TartanAir Visual SLAM Challenge, RingNav reduces mean absolute turn error by \\(27\\%\\) and accumulated heading error over $4$ sec by \\(15\\%\\) relative to a similarly sized learned-memory model.\n\nThe structured update also gives exactly zero turn for identical frames and exact cancellation under sequence reversal. Without fine-tuning, RingNav transfers to real-world drone experiments and continues estimating heading under severe visual degradation.\n\nRingNav runs at $27.3$Hz on Raspberry Pi Zero 2W and can be deployed on an ultra-low power GAP8 processor at $33.4$Hz."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RingNav is a visual heading estimator for tiny robots with 10.6k parameters and persistent memory constrained to the circular manifold S¹. It learns only the turn between consecutive images and composes heading directly on the circle. On the TartanAir Visual SLAM Challenge, it reduces mean absolute turn error by 27% and accumulated heading error over four seconds by 15% relative to a similarly sized learned-memory model. Its update yields zero turn for identical frames and exact cancellation under sequence reversal. The authors report transfer to real-world drone experiments without fine-tuning and continued estimation under severe visual degradation.",
+          "zh": "RingNav是一种面向小型机器人的视觉航向估计器，参数量为10.6千，并将持久记忆限制在圆周流形S¹上。它只学习连续图像之间的转角，再直接在圆周上组合航向。在TartanAir Visual SLAM Challenge上，相比规模相近的学习记忆模型，平均绝对转角误差降低27%，4秒累计航向误差降低15%。其结构更新对相同帧给出零转角，并在序列反转时精确抵消。作者称无需微调即可迁移到真实无人机实验，并在严重视觉退化下继续估计航向；同时报告了在树莓派Zero 2W和GAP8上的运行频率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1651,7 +1659,11 @@
             "heading": "",
             "text": "Reduced-order models (ROMs) make model predictive control (MPC) of high-dimensional nonlinear systems tractable, but the resulting modeling error can lead to constraint violations on the real system.\n\nWe introduce CoRE-MPC, a robust MPC formulation that plans with a nonlinear ROM and guarantees recursive feasibility and constraint satisfaction for the full-order system.\n\nIt can be applied with a broad class of nonlinear model reduction techniques and the resulting MPC does not require evaluating the full-order model online, thus ensuring computational efficiency. The key insight is in how the ROM affects the dynamics of the prediction error.\n\nWe account for this with two error radii that are propagated alongside the ROM and provide a guaranteed bound on the prediction error.\n\nThe approach is validated in simulation on an 80-state oscillator chain, a Burgers equation, and a 9,768-state finite-element soft robot, where a two-state ROM with data-driven bounds keeps all 1,628 nodes clear of a wall at a median solve time below 1 ms for a 20 ms control period.\n\nAcross these examples, CoRE-MPC is 13 to 61 times faster than full-order robust MPC at only 27 to 35% higher closed-loop cost, whereas existing certified schemes are either infeasible or at least twice as conservative. Code: [released upon publication]."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CoRE-MPC is a robust model predictive control formulation that plans with a nonlinear reduced-order model while guaranteeing recursive feasibility and constraint satisfaction for the full-order system. It propagates two error radii alongside the reduced model to bound prediction error, without requiring online evaluation of the full-order model. The authors validate it in simulation on an oscillator chain, a Burgers equation, and a finite-element soft robot. In the robot example, a two-state reduction with data-driven bounds keeps all 1,628 nodes clear of a wall. Across examples, they report 13–61 times faster computation than full-order robust MPC, with 27–35% higher closed-loop cost.",
+          "zh": "CoRE-MPC是一种鲁棒模型预测控制方法，使用非线性降阶模型规划，同时为全阶系统保证递归可行性和约束满足。方法通过随降阶模型传播的两个误差半径界定预测误差，无需在线评估全阶模型。作者在仿真中测试了80状态振子链、Burgers方程和9,768状态有限元软体机器人；其中软体机器人采用二状态降阶模型及数据驱动误差界，报告所有1,628个节点避开墙面，中位求解时间低于1毫秒，控制周期为20毫秒。各例中该方法比全阶鲁棒MPC快13至61倍，闭环成本高27%至35%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
