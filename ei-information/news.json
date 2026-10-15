@@ -1694,7 +1694,11 @@
             "heading": "",
             "text": "Human listeners can often identify the intended object several words before an instruction ends. Robots, however, are typically designed to wait until the speaker has finished before deciding how to act. We present EarlyCommit, an open-source tool that lets a robot commit to the intended object while the instruction is being spoken.\n\nAfter every recognized word, a fine-tuned text encoder scores each object in the scene. The robot acts when the calibrated probability of the best object reaches a threshold tau set by the user, so 1 - tau is the accepted risk of choosing the wrong object. Otherwise, it waits or asks.\n\nThe tool includes a streaming speech front end, a scene and instruction generator with exact word-by-word ground truth, and scripts to train, calibrate, and evaluate.\n\nOn instructions containing words never seen in training, EarlyCommit commits correctly 1.6 to 2 times as often as keyword matching, is right at least 92 percent of the time when it commits at tau = 0.9, and needs 31 to 35 ms per word on consumer GPUs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EarlyCommit, which scores scene objects after each recognized word and lets a robot act when the calibrated probability of the best object reaches a user-set threshold; otherwise, it waits or asks. The tool includes streaming speech, data generation, training, calibration, and evaluation components. The authors report that on instructions containing unseen training words, it commits correctly 1.6 to 2 times as often as keyword matching. At a threshold of 0.9, committed choices are at least 92% correct, with 31 to 35 ms processing per word on consumer GPUs.",
+          "zh": "论文介绍 EarlyCommit，使机器人能在用户逐词说出指令时判断目标物体，并在校准后的最佳目标概率达到用户设定阈值时执行，否则等待或询问。系统包含流式语音前端、场景与指令生成器，以及训练、校准和评估脚本。作者报告，在含训练中未见词语的指令上，该方法正确提交的次数是关键词匹配的1.6至2倍；阈值为0.9时，提交判断的正确率至少为92%，消费级 GPU 上每词处理需31至35毫秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1725,7 +1729,11 @@
             "heading": "",
             "text": "Virtual reality training for robot-assisted vascular intervention requires accurate robotic control and effective feedback on guidewire--vessel interactions. This paper presents a VR training system combining asynchronous dual-mode command mapping with sensorless interaction estimation.\n\nThe system supports velocity-controlled navigation and position-driven incremental manipulation. Guidewire deformation and a Hunt--Crossley-type contact response are combined and temporally filtered to estimate interaction intensity, while trajectory-based visualization supports post-procedure review.\n\nTests confirmed distinct command-dispatch patterns across three velocity gears and the position mode. During hybrid-scene navigation, the estimated response remained low during straight insertion and increased as the guidewire bent within the vascular model.\n\nTrajectory analysis yielded a model-derived cumulative trauma work (CTW) value of 15.166 in normalized units and localized regions of elevated interaction. In a preliminary study with 15 novices, physical-phantom task success increased from 53.3% to 93.3% after VR training, while mean completion time decreased from 132.4 s to 96.7 s.\n\nThese results demonstrate the system's dual-mode operation, deformation-sensitive feedback, and potential to improve subsequent physical-phantom task performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a virtual reality training system for robot-assisted vascular intervention. It combines asynchronous dual-mode control with sensorless estimates of guidewire interaction, using deformation, a contact response model, and temporal filtering. Tests showed distinct command patterns for velocity gears and position control, and estimated interaction rose when the guidewire bent in a hybrid scene. In a preliminary study of 15 novices, physical-phantom task success increased after VR training while mean completion time decreased. The authors describe the results as evidence of system operation and potential to improve subsequent phantom performance.",
+          "zh": "论文提出用于机器人辅助血管介入的虚拟现实训练系统，结合异步双模式控制和无传感器交互估计，支持速度控制导航及位置驱动的增量操作。系统通过导丝形变、接触响应和时间滤波估计交互强度，并以轨迹可视化辅助术后回顾。测试显示，不同速度档和位置模式具有不同指令分发模式；混合场景中，直线插入时估计响应较低，导丝弯曲时响应上升。15名新手的初步研究中，虚拟训练后实体模型任务成功率上升，平均完成时间下降。作者称这些结果显示系统功能及改善后续实体模型任务表现的潜力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1756,7 +1764,11 @@
             "heading": "",
             "text": "Training vision-language-action (VLA) policies for humanoid loco-manipulation is constrained by the high cost and complexity of collecting human teleoperation demonstrations. VLA policies fine-tuned in simulators have so far transferred poorly to humanoid loco-manipulation tasks.\n\nWe present LEGS (Loco-manipulation via Embodied Gaussian Splatting), a hybrid simulator that composites a mesh foreground (robot, objects, props) over a photorealistic 3D Gaussian Splatting (3DGS) background reconstructed from a handheld scene capture.\n\nLEGS uses a procedural motion-primitive generator to synthesize labeled demonstrations at scale without human teleoperation, and a two-stage color calibration that aligns renders to the deployment camera.\n\nOn a Unitree G1 humanoid robot, across three pick-and-place tasks of increasing whole-body difficulty and three VLA backbones ($\\psi_0$, $\\pi_{0.5}$, GR00T N1.6), a policy trained purely on LEGS data matches or exceeds one trained on human teleoperation demos on every experiment.\n\nIt also outperforms a mesh-only baseline trained on the same motions without the calibrated 3DGS frontend. Because motion is recorded independently of appearance, the same demonstrations can be re-rendered for a target scene and objects at over 15x lower cost than teleoperation.\n\nWhen both the objects and the scene change, a policy trained on LEGS-AUG data re-rendered for that target maintains task success, while the teleop baseline fails entirely. Code and videos are available at https://hojjunekim.github.io/legs/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LEGS is a hybrid simulator that combines a mesh foreground containing the robot and objects with a photorealistic 3D Gaussian Splatting background reconstructed from handheld scene capture. It generates labeled demonstrations through procedural motion primitives without human teleoperation and calibrates colors to the deployment camera. On a Unitree G1 across three pick-and-place tasks and three VLA backbones, the authors report that policies trained only on LEGS data matched or exceeded human-teleoperation policies in every experiment and outperformed a mesh-only baseline. With both scene and objects changed, LEGS-AUG maintained task success while the teleoperation baseline failed.",
+          "zh": "论文介绍 LEGS，一种将机器人、物体和道具的网格前景与由手持场景采集重建的高真实感 3D 高斯泼溅背景组合的混合模拟器。它通过程序化运动原语生成无需人工遥操作的标注示范，并进行两阶段颜色校准以匹配部署相机。在 Unitree G1 上针对三项难度递增的取放任务和三种 VLA 骨干网络，作者报告仅用 LEGS 数据训练的策略在每项实验中达到或超过人工遥操作示范训练策略，也优于未校准 3DGS 前端的网格基线。场景和物体同时变化时，LEGS-AUG 策略保持任务成功，而遥操作基线完全失败。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1787,7 +1799,11 @@
             "heading": "",
             "text": "Robot actions vary in both extent and mode: how much change they produce and what kind of change they produce. A latent action space that reflects this structure may make it easier for downstream policies to map latent actions to robot actions.\n\nHowever, existing latent action methods typically rely on visual reconstruction from observation pairs without explicitly encouraging such structure.\n\nWe introduce Polar Latent Actions with Radial structure (PoLAR), which imposes a radial-direction structure on latent actions, encouraging radius to encode transition extent and direction to retain transition mode.\n\nPoLAR uses temporal offsets between observations as a weak proxy for transition extent, encouraging transitions with larger offsets to occupy larger radii. We instantiate this structure in hyperbolic space, whose expanding volume with radius offers a natural fit for more diverse transition modes at larger extents.\n\nAcross in-task and large-scale pretraining settings, PoLAR improves downstream policy performance in simulation and real-world robot experiments, outperforming latent action baselines and strong pretrained VLAs. These results suggest that structuring latent actions by extent and mode helps transfer visual pretraining to robot policy learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PoLAR, a latent action representation that associates transition extent with radius and transition mode with direction. It uses temporal offsets between observations as a weak proxy for extent, encouraging larger-offset transitions to occupy larger radii, and instantiates the structure in hyperbolic space. The authors report improved downstream policy performance in both in-task and large-scale pretraining settings, in simulation and real-world robot experiments, compared with latent action baselines and strong pretrained VLAs. They conclude that organizing latent actions by extent and mode helps transfer visual pretraining to robot policy learning.",
+          "zh": "论文提出 PoLAR，一种为机器人策略学习设计的潜在动作表示，将动作变化幅度与变化模式分别关联到潜在空间的半径和方向。该方法利用观测之间的时间偏移作为变化幅度的弱代理，鼓励偏移较大的转移具有更大的半径，并在双曲空间中实现这种结构，以容纳较大幅度下更多样的模式。作者报告，在任务内和大规模预训练设置中，PoLAR 在仿真及真实机器人实验的下游策略表现优于潜在动作基线和强预训练 VLA。结果表明，按幅度和模式组织潜在动作有助于视觉预训练向机器人策略学习迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
