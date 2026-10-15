@@ -3101,7 +3101,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies fine-tuned on LIBERO are trained and evaluated on the same ten instruction strings, and rewording the instruction changes base OpenVLA's success by -38.0 points. Test-time prompt ensembling, which improves language models, does not recover this loss in any setting we ran.\n\nParaphrase consensus (the medoid action over K paraphrases) costs base OpenVLA 16.8 points when the training instruction is a member. Without it, the medoid of the paraphrases scores -32.4 points relative to the training instruction, and confidence-based selection scores -28.0.\n\nThe same medoid over samples of one paraphrase improves on greedy decoding but stays -27.6 points below the training instruction, consistent with aggregation reducing variance without removing the bias the paraphrases share. A wrong-instruction probe measures how much of a policy's success depends on the instruction.\n\nAcross three policies and four suites, paraphrases cost a policy only where this share is high, and the stronger policies lose a much smaller fraction of it than base OpenVLA.\n\nLoRA post-training on paraphrased instructions reduces the one-paraphrase effect to +2.0 points, against -32.0 for a matched control, reproduces across two seeds and on OpenVLA-OFT, transfers to withheld phrasings, and leaves the policy's reliance on the instruction unchanged."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies instruction reliance and robustness to paraphrasing in vision-language-action policies. On LIBERO, rewording instructions reduced base OpenVLA’s success, and test-time prompt ensembling did not recover the loss. Aggregating actions across paraphrases or selecting by confidence also remained below performance with the training instruction. Across policies and suites, paraphrase effects were associated with instruction reliance. LoRA post-training on paraphrased instructions reduced the reported one-paraphrase effect across two seeds and on OpenVLA-OFT, transferred to withheld phrasings, and left instruction reliance unchanged.",
+          "zh": "论文研究视觉语言动作策略对指令改写的依赖与鲁棒性。作者报告，在 LIBERO 上微调并使用相同十条指令训练和评估时，改写指令会降低基础 OpenVLA 的成功表现，测试时提示集成未能恢复损失。对多个释义动作取 medoid 或按置信度选择也未消除与训练指令之间的差距；跨策略和测试套件的结果显示，释义影响与策略对指令的依赖程度相关。对释义指令进行 LoRA 后训练，在两种随机种子及 OpenVLA-OFT 上复现了改善，并迁移到未见措辞，但未改变策略对指令的依赖。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3132,7 +3136,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models have shown strong potential for general-purpose robotic manipulation, but extending them to bimanual dexterous manipulation introduces a high-dimensional and structured action space.\n\nExisting bimanual VLA policies commonly concatenate right- and left-side arm--hand actions at each control timestep, leaving cross-hand interactions implicit within a single action vector. We introduce Coordi-$\\pi$, a structured action representation for bimanual dexterous manipulation.\n\nCoordi-$\\pi$ represents the right- and left-side arm--hand actions as individual action tokens and organizes them into an interleaved sequence, explicitly exposing the two sides within the action sequence.\n\nTo explicitly encode hand identity and temporal synchronization in this interleaved representation, a learnable hand-identity embedding distinguishes the two sides, while sequence--control-timestep factorized rotary positional encoding (RoPE) separates sequence position from control timestep, allowing actions at the same control timestep to share a temporal coordinate while retaining distinct sequence positions.\n\nAcross all five bimanual dexterous manipulation tasks in DexJoCo, Coordi-$\\pi$ achieves state-of-the-art performance under both \\textit{rand-obj} and \\textit{rand-full}, improving the average success rate over $\\pi_{0.5}$ from 31.9\\% to 51.3\\% and from 18.3\\% to 32.3\\%, respectively.\n\nCoordi-$\\pi$ also consistently outperforms $\\pi_{0.5}$ across four real-world bimanual dexterous manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Coordi-π, a structured action representation for bimanual dexterous manipulation. It encodes right- and left-side arm-hand actions as separate tokens in an interleaved sequence, with a learnable hand-identity embedding and factorized rotary positional encoding for sequence position and control-timestep synchronization. Across five DexJoCo tasks, the authors report better performance than π0.5 under both rand-obj and rand-full settings, with higher average success rates. They also report consistent outperformance of π0.5 across four real-world bimanual dexterous manipulation tasks.",
+          "zh": "论文提出 Coordi-π，用于双手灵巧操作的结构化动作表示。该方法将左右侧臂手动作分别表示为动作 token，并交错排列；可学习的手身份嵌入区分两侧，按序列与控制时间步分解的 RoPE 则编码位置和时间同步。在 DexJoCo 的五项任务中，作者报告其在 rand-obj 和 rand-full 设置下均优于 π0.5，平均成功率分别从 31.9% 提高到 51.3%、从 18.3% 提高到 32.3%。作者还报告，该方法在四项真实世界双手灵巧操作任务中持续优于 π0.5。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3163,7 +3171,11 @@
             "heading": "",
             "text": "A wearable assistive robot must continuously estimate terrain, locomotion mode, gait phase, and walking speed. These quantities are commonly addressed by separate, terrain-specific models, with datasets rarely collected under a common protocol.\n\nThis paper presents a visuo-inertial framework that connects these estimates through a causal pipeline using a chest-mounted camera and four lower-limb inertial measurement units (IMUs).Anticipatory Terrain Perception (ATP) classifies incoming terrain with 96.3% accuracy and anticipates terrain transitions by 1.46 s on average.\n\nTerrain-Aware Locomotion Mode Identification (TALMI) achieves 93.7% and 98.8% accuracy for its level-ground and stairs experts respectively, with mean transition latencies being below 200 ms.\n\nThe relevant TALMI posterior is retained as a Probabilistic Locomotion Context (PLC) vector and provided to a shared Gait Kinematic Encoder (GKE), which supports 50-Hz bilateral gait-phase estimation and 2-Hz walking-speed estimation.\n\nLeave-one-subject-out evaluation yields gait-phase RMSEs of 1.75%, 2.97%, and 4.55% for level walking, stair ascent, and stair descent respectively while estimating speed over 3.5-5.5 km/h with a RMSE of 0.218 km/h.\n\nAll inertial sensing based models use sensor-fused Euler angles as input rather than raw accelerometer and gyroscope signals, reducing dependence on sensor mounting variation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Tread, a visuo-inertial framework for estimating terrain, locomotion mode, gait phase, and walking speed for wearable robotics. It uses a chest-mounted camera and four lower-limb inertial measurement units in a causal pipeline: terrain and locomotion context estimates are passed to a shared gait encoder. In leave-one-subject-out evaluation, the authors report gait-phase errors for level walking, stair ascent, and stair descent, and walking-speed error over a specified speed range. The inertial models use sensor-fused Euler angles rather than raw accelerometer and gyroscope signals to reduce sensitivity to sensor mounting variation.",
+          "zh": "论文提出 Tread，一种结合胸前摄像头与四个下肢惯性测量单元的可穿戴机器人视觉惯性框架，以因果流程估计地形、运动模式、步态相位和行走速度。框架先识别前方地形和运动模式，再将概率运动情境提供给共享步态编码器。留一受试者评估报告了平地行走、上楼和下楼的步态相位误差，以及特定速度范围内的速度估计误差。惯性模型使用传感器融合的欧拉角，而非原始加速度计和陀螺仪信号，以降低对传感器安装差异的依赖。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3194,7 +3206,11 @@
             "heading": "",
             "text": "Monocular videos of human manipulation provide abundant dexterous demonstrations, yet reconstructing hand-object interaction from a single view and transferring it to robot hands remain difficult, limiting their direct use for robot execution.\n\nPrior methods either require task-specific RL training, limiting scalability, or assume clean motion-capture trajectories and thus cannot operate directly on video. We present OmniHOI, a pipeline that turns an RGB video of hand-object interaction into an interaction-faithful trajectory on dexterous hands.\n\nThe key idea is to enforce physical consistency using the evidence available at each stage: image evidence during reconstruction, contact geometry during retargeting, and dynamics during physics-in-the-loop refinement.\n\nEach stage optimizes the corresponding representation directly, correcting errors before they propagate downstream or must be absorbed by a learned policy. Across 150 motion-capture trajectories transferred to each of five dexterous hands with 6 to 22 DoF, we achieve 39-89% success, compared with at most 31% for prior transfer methods.\n\nOn 60 monocular video clips, we achieve 53% success, compared with 28% for the best prior video-to-robot pipeline. Its trajectories also execute on a real bimanual robot across diverse tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniHOI, a pipeline that converts monocular RGB videos of human hand-object interaction into trajectories for dexterous hands. It applies image evidence during reconstruction, contact geometry during retargeting, and dynamics during physics-in-the-loop refinement, correcting representations stage by stage. The authors report higher success than prior transfer methods when transferring motion-capture trajectories to five dexterous hands, and higher success than the best prior video-to-robot pipeline on monocular video clips. They also report that the resulting trajectories execute on a real bimanual robot across diverse tasks.",
+          "zh": "论文提出 OmniHOI，将单目 RGB 人手物体交互视频转换为适用于灵巧手的交互轨迹。方法在重建阶段利用图像证据，在重定向阶段利用接触几何，并在物理仿真闭环优化阶段考虑动力学，以逐阶段修正误差。作者报告，在动作捕捉轨迹迁移至五种灵巧手的评估中，成功率高于既有迁移方法；在单目视频片段上也高于既有视频到机器人的流程。论文还报告，这些轨迹可在真实双手机器人上执行多种任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
