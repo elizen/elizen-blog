@@ -3592,7 +3592,11 @@
             "heading": "",
             "text": "Certifiable optimization provides global optimality guarantees for non-convex state estimation in robotics. However, under severe physical sensing degeneracy, convex Semidefinite Programming relaxations solved via Interior-Point Methods suffer from rank expansion, rendering direct semidefinite solving and spectral rounding algebraically invalid.\n\nIn this paper, we establish a universal candidate-driven dual certification framework that resolves this challenge without incurring rank expansion.\n\nFirst, from an epigraph perspective, we prove that while sensing degeneracy expands the primal optimal set into a flat equi-cost face, cost tightness and multiplier recovery remain strictly intact, enabling global verification without direct semidefinite solving.\n\nSecond, we propose an observability-aware local search using solution remapping, coupled with a closed-form dual multiplier recovery scheme that executes in sub-microsecond latency.\n\nThird, we derive a model-specific adaptive dual safety threshold parameterized by the minimum non-zero eigenvalue of the observable Hessian and uneradicated residual leakage, preventing false rejections of optimal candidates under weak observability. We validate our universal framework with robust registration under degenerate measurements."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses global optimality certification for robotic state estimation under severe sensing degeneracy, where semidefinite relaxations may undergo rank expansion. The authors propose a candidate-driven dual certification framework. They state that degeneracy can flatten the primal optimal set while preserving cost tightness and multiplier recovery, enabling verification without direct semidefinite solving. The method combines observability-aware local search, solution remapping, closed-form multiplier recovery, and an adaptive safety threshold. It is validated on robust registration with degenerate measurements.",
+          "zh": "论文研究严重观测退化下机器人状态估计的全局最优性认证问题，指出半正定松弛可能出现秩扩张，使直接求解和谱舍入失效。作者提出候选驱动的对偶认证框架，称退化虽会使原问题最优解形成等代价平面，但代价紧性与乘子恢复仍可用于全局验证。方法结合观测性感知局部搜索、解映射、闭式乘子恢复及自适应安全阈值，并以退化测量下的鲁棒配准验证框架。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3623,7 +3627,11 @@
             "heading": "",
             "text": "Robot task planning in real-world environments requires mapping abstract natural language instructions to executable action sequences under long horizons and complex constraints. While large language models (LLMs) provide strong commonsense reasoning, they often fail to generate reliable and feasible plans.\n\nIn contrast, symbolic planners ensure feasibility and optimality but require well-specified goals and cannot directly interpret high-level human intent.We formulate robot task planning as learning to generate verifiable subgoals in the Planning Domain Definition Language (PDDL), bridging language understanding and symbolic planning.\n\nTo address the challenges of sparse and noisy supervision, we propose Trace-Guided Policy Optimization (TGPO), a reinforcement learning framework that improves structured subgoal generation through (i) verifier-grounded rewards, (ii) external correction of intermediate reasoning traces, and (iii) constrained policy updates that incorporate corrected traces into training.We evaluate TGPO on large-scale household planning tasks with long horizons, abstract instructions, and complex constraints.\n\nTGPO significantly outperforms prompting-based and reinforcement learning baselines, with the largest gains on abstract tasks. Furthermore, TGPO integrates naturally with symbolic planners and language-conditioned executors, enabling robust long-horizon planning and combinatorial generalization in realistic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper formulates robot task planning as generating verifiable PDDL subgoals, connecting natural language understanding with symbolic planning. To address sparse and noisy supervision, it introduces TGPO, a reinforcement learning framework using verifier-grounded rewards, external correction of intermediate reasoning traces, and constrained policy updates that incorporate corrected traces. On large-scale household planning tasks, the authors report that TGPO outperforms prompting-based and reinforcement learning baselines, with the largest gains on abstract tasks. They also describe integration with symbolic planners and language-conditioned executors.",
+          "zh": "论文将机器人任务规划表述为生成可验证的PDDL子目标，以衔接自然语言理解与符号规划。针对监督信号稀疏且有噪声的问题，作者提出强化学习框架TGPO，利用验证器奖励、中间推理轨迹的外部修正，以及纳入修正轨迹的受约束策略更新。在长时程家庭规划任务评估中，作者报告TGPO优于基于提示和强化学习的基线，抽象任务上的提升最大。论文还称该方法可与符号规划器及语言条件执行器结合，并支持长时程规划与组合泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
