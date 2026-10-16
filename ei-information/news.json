@@ -2123,7 +2123,11 @@
             "heading": "",
             "text": "Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology.\n\nWe introduce \\method, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations and paths.\n\nPanoramic depth supplies conservative clearance for milestone validation and adaptive coverage, while edge-aligned orthographic rendering tests the robot's swept volume. We establish conditional soundness and sufficient conditions for deterministic query completeness and probabilistic construction completeness of GS-PRM.\n\nTo validate the performance of GS-PRM, we conduct experiments in both simulated and real-world environments, demonstrating long-horizon navigation using goal-conditioned policies guided by GS-PRM.\n\nCompared with a state-of-the-art 3DGS-based navigation system, our GS-PRM-based navigation system achieves up to a twice higher average success rate and reduces travel time by up to 57.2% when both systems complete the navigation task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GS-PRM, a Gaussian visual roadmap built directly through 3D Gaussian Splatting renderings, without first deriving an occupancy grid or signed distance field. Panoramic depth supports milestone validation and conservative clearance estimates, while edge-aligned orthographic renderings test the robot’s swept volume. The authors establish conditional soundness and sufficient conditions for deterministic query and probabilistic construction completeness. Simulated and real-world experiments demonstrate long-horizon navigation guided by goal-conditioned policies. Against a state-of-the-art 3DGS navigation system, the authors report up to twice the average success rate and up to 57.2% less travel time when both systems complete the task.",
+          "zh": "论文提出 GS-PRM，一种直接利用三维高斯泼溅渲染构建的高斯视觉路线图，无需先生成占据栅格或有符号距离场。该方法以全景深度验证路标并估计保守间隙，以边缘对齐的正交渲染检测机器人扫掠体积；作者给出条件安全性及确定性查询完备性、概率构建完备性的充分条件。仿真和真实环境实验展示了其引导目标条件策略进行长时程导航的能力。与一种先进的三维高斯导航系统相比，作者报告称，在两系统均完成任务时，平均成功率最高提高一倍，行程时间最多减少57.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2154,7 +2158,11 @@
             "heading": "",
             "text": "Recent advances in reinforcement learning (RL) have demonstrated impressive whole-body agility for humanoid robots, yet ensuring safety and satisfying constraints -- particularly those specified after training -- remains a challenge.\n\nTowards this goal, we present ConstrainedMimic, a control framework that leverages whole-body kinematics and dynamics for real-time constraint enforcement within RL tracking policies.\n\nBy integrating principles from operational space control and control barrier functions, we enable the satisfaction of arbitrary runtime constraints on both the kinematic reference motion and the underlying dynamics, with efficient computation at frequencies above 1 kHz.\n\nIn whole-body motion-tracking experiments in simulation and hardware, we demonstrate collision avoidance (both with the robot body and external obstacles), joint limits, and center of mass stability constraints.\n\nBy remaining consistent with the current contact mode and tracking objectives, we minimally restrict the capabilities of the policy when constraints are active. Project page: https://stanfordasl.github.io/constrainedmimic."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ConstrainedMimic, a framework for enforcing constraints in real time within reinforcement-learning tracking policies for humanoid robots. It combines whole-body kinematics and dynamics with operational-space control and control barrier functions to impose runtime constraints on reference motions and underlying dynamics, with computation above 1 kHz. Whole-body tracking experiments in simulation and on hardware demonstrate collision avoidance involving the robot body and external obstacles, joint limits, and center-of-mass stability constraints. The authors state that the method remains consistent with the current contact mode and tracking objectives, minimally restricting policy capabilities when constraints are active.",
+          "zh": "论文提出 ConstrainedMimic，用于在人形机器人强化学习运动跟踪策略中实时执行约束。该框架结合全身运动学与动力学、操作空间控制和控制障碍函数，可对运动学参考动作及底层动力学施加运行时约束，并以高于1 kHz的频率计算。仿真和硬件上的全身动作跟踪实验展示了对机器人自身及外部障碍物的碰撞规避、关节限位和质心稳定约束。作者称，该方法与当前接触模式和跟踪目标保持一致，在约束生效时对策略能力的限制较小。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2185,7 +2193,11 @@
             "heading": "",
             "text": "Unlike singles, humanoid table tennis doubles requires teammates to strike in strict alternation while sharing a confined workspace. Rapid repositioning can compromise striking accuracy, while uncoordinated teammate movements introduce collision risks. We present PingpongDuo, a hierarchical framework for agile humanoid doubles with safe team coordination.\n\nAt the team level, a planner jointly selects positioning targets and uses learned risk estimates to filter risky proposals, preferentially preserving the current striker's target. At the individual level, separate footwork and striking skills combine agile movement with precise racket control.\n\nThe skills are guided by human motion references, including footwork collected from human doubles play, and trained from states produced by one another to support rapid transitions. A racket-arm residual further refines strikes after movement using return feedback from a simulator calibrated with real ball-flight and contact measurements.\n\nIn simulation, PingpongDuo improves the ball-return success rate by 13.2% over the state-of-the-art baseline, while achieving approximately 2 cm positioning error during clearance.\n\nIn real-world experiments, a robot completes a 2.15 m clearance-and-recovery cycle in 2.4 s with a peak speed of 2.23 m/s, while two robots sustain more than 10 consecutive strikes in strict alternation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PingpongDuo, a hierarchical framework for humanoid table-tennis doubles that supports rapid movement and safe coordination in a confined space. A team planner jointly selects positioning targets and filters risky proposals using learned risk estimates, preferentially preserving the current striker’s target. Individual footwork and striking skills are trained with human motion references. In simulation, the system improves ball-return success by 13.2% over a state-of-the-art baseline and achieves about 2 cm positioning error during clearance. In real-world experiments, a robot completes a 2.15 m clearance-and-recovery cycle in 2.4 s at a peak speed of 2.23 m/s, while two robots sustain over 10 alternating strikes.",
+          "zh": "论文提出 PingpongDuo，一种用于人形机器人乒乓球双打的分层框架，目标是在狭小场地中实现快速移动与安全协作。团队规划器共同选择站位目标，并利用学习得到的风险估计筛除高风险方案，优先保留当前击球者的目标；个体层将步法与击球技能结合，并以人类动作参考训练。仿真中，相较先进基线，回球成功率提高13.2%，避让时站位误差约2厘米。真实实验中，机器人以峰值2.23米/秒完成2.15米避让与恢复周期，用时2.4秒；两台机器人连续交替击球超过10次。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2216,7 +2228,11 @@
             "heading": "",
             "text": "This paper presents $S^3$-Nav, a structured spatial-semantic decision-making framework for language-guided robot navigation under partial observability.\n\nRather than assuming a complete environment representation in advance, $S^3$-Nav incrementally constructs persistent spatial-semantic state while exposing only a capacity-controlled, task-conditioned view to the high-level policy.\n\nThis separation decouples what the robot must retain from what the policy needs to inspect, allowing decision complexity to be controlled without discarding grounded evidence required for subsequent reasoning and validation.\n\nHigh-level navigation outputs remain provisional and are independently grounded and validated against persistent semantic evidence and current geometric observations before physical execution or task termination.\n\nEvaluations across multiple environments and object- and relation-goal tasks demonstrate that separating persistent state, decision-facing evidence, and execution authority improves closed-loop navigation reliability while reducing policy reasoning cost."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents S³-Nav, a structured spatial-semantic decision framework for language-guided robot navigation under partial observability. Instead of assuming a complete environment representation, it incrementally builds persistent spatial-semantic state and exposes a capacity-controlled, task-conditioned view to the high-level policy. This separates information the robot must retain from evidence the policy needs to inspect. Navigation outputs remain provisional until independently grounded and validated against persistent semantic evidence and current geometric observations, before execution or task termination. Evaluations across multiple environments and object- and relation-goal tasks show that this separation improves closed-loop navigation reliability while reducing policy reasoning cost.",
+          "zh": "论文提出 S³-Nav，一种面向部分可观测环境中语言引导机器人导航的结构化空间语义决策框架。它不预设完整环境表示，而是逐步建立持久的空间语义状态，同时向高层策略提供受容量控制、与任务相关的视图，以区分需要保留的信息和策略需要查看的证据。导航输出在执行或结束任务前，须依据持久语义证据和当前几何观测独立完成落地核验。作者在多个环境以及物体目标、关系目标任务上的评估显示，分离持久状态、决策证据和执行权限可提高闭环导航可靠性并降低策略推理成本。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
