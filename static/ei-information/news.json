@@ -1881,7 +1881,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies commonly place a multi-billion-parameter model inside the feedback loop, repeatedly recomputing task context whenever they predict a new action chunk. Yet task understanding changes far more slowly than the robot state.\n\nWe introduce Fast-VLA, which invokes a frozen 4B VLM once per episode to contextualize the instruction and initial views as fixed, multi-layer key-value task memory. During execution, a lightweight online actor fuses learned time- and arm-indexed queries with current visual and proprioceptive feedback to form action queries.\n\nThese queries retrieve task context from the fixed memory and predict action chunks without re-running the foundation model. Fast-VLA achieves 92.46% and 92.40% success on RoboTwin 2.0 Clean and Randomized, and 95.95% and 79.11% on LIBERO and LIBERO-Plus evaluation.\n\nAgainst three continually conditioned baselines on the same hardware, it reduces RoboTwin amortized policy inference time by 10.9-17.1x and requires 1.22 GiB of post-prefill online resident memory. Task-memory swaps further show that the actor relies on episode-matched task memory.\n\nThese results show that task context can be established once while closed-loop control remains responsive throughout execution. Project page: https://garfield-kh.github.io/FastVLA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "Fast-VLA calls a frozen 4B vision-language model once per episode to encode instructions and initial views as fixed, multilayer task memory. During execution, a lightweight actor combines current visual and proprioceptive feedback with retrieved context to predict action chunks without rerunning the foundation model. The authors report success rates on RoboTwin 2.0, LIBERO, and LIBERO-Plus, and a 10.9–17.1× reduction in amortized RoboTwin inference time against three baselines on the same hardware. Task-memory swaps indicate reliance on episode-matched memory.",
+          "zh": "Fast-VLA 每个执行回合仅调用一次冻结的4B视觉语言模型，将指令和初始视图编码为固定的多层任务记忆。执行时，轻量在线 actor 结合当前视觉与本体感觉反馈，从该记忆检索上下文并预测动作块，无需再次运行基础模型。作者报告其在 RoboTwin 2.0、LIBERO 和 LIBERO-Plus 上取得不同成功率，并在同硬件比较中将 RoboTwin 摊销推理时间降低10.9至17.1倍；任务记忆交换实验显示策略依赖与回合匹配的记忆。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1912,7 +1916,11 @@
             "heading": "",
             "text": "We introduce REKI, a 2.4B vision-language-action model (VLA) pretrained exclusively on public data that sets a new Pareto frontier between performance and model size: on LIBERO-Plus, RoboTwin Clean2Rand and RoboCasa365, it is outperformed only by models about twice its size.\n\nREKI consists of a vision-language model (VLM) followed by a flow-matching action expert, and is pretrained on a curated mixture of public robot, egocentric human and vision-language data.\n\nAdditionally, we endow it with a memory that gives the policy access to its recent past at negligible cost: a few register tokens in the action expert summarise the output of the VLM at each frame and persist in the expert's cache. This memory improves success in simulation and on real robots, and makes oscillations between poses about four times rarer.\n\nREKI uses a simple model design and training paradigm, and is optimised to be efficient at training and inference. We release the full code across data curation, training, inference and evaluation, deployment, and all pretrained and finetuned model weights: https://github.com/kyutai-labs/reki."
           }
-        ]
+        ],
+        "summary": {
+          "en": "REKI is a 2.4B vision-language-action model pretrained on a curated mixture of public robot, egocentric human, and vision-language data. It combines a vision-language model with a flow-matching action expert, whose register tokens summarize each frame's VLM output and persist in the expert cache. The authors report that this memory improves success in simulation and on real robots, and makes oscillations between poses about four times rarer. They also claim a new performance–size Pareto frontier on the listed benchmarks.",
+          "zh": "REKI 是一个2.4B参数的视觉语言动作模型，使用精选的公开机器人、人类第一视角和视觉语言数据预训练，由视觉语言模型与流匹配动作专家组成。模型在动作专家中加入寄存器 token，将每帧视觉语言模型输出摘要保存在缓存中，供策略利用近期历史。作者称，该记忆在仿真和真实机器人上提升成功率，并使姿态间振荡约减少至四分之一。论文还报告其在所列基准上的性能与模型规模构成新的帕累托前沿。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
