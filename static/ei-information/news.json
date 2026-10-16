@@ -12,7 +12,7 @@
       },
       "format": "source_excerpt",
       "id": "news-014b49f34b5d0fa5685393a4c905ad61128fef74817d00961956221540849857",
-      "intro": "arXiv:2610.19656v1 Announce Type: new Abstract: Action-chunking vision-language-action (VLA) models predict sequences of future robot actions. Under fixed-horizon execution, the robot executes a fixedlength prefix of each predicted chunk before invoking the policy again, leaving the remaining predictions unused. For a given number of executed actions, short execution horizons require more policy calls. Extending the execution horizon amortizes policy inference cost over more actions. However, uniformly applying long horizons across episodes can limit opportunities for precise corrections. To address",
+      "intro": "arXiv:2610.19656v2 Announce Type: new Abstract: Action-chunking vision-language-action (VLA) models predict sequences of future robot actions. Under fixed-horizon execution, the robot executes a fixedlength prefix of each predicted chunk before invoking the policy again, leaving the remaining predictions unused. For a given number of executed actions, short execution horizons require more policy calls. Extending the execution horizon amortizes policy inference cost over more actions. However, uniformly applying long horizons across episodes can limit opportunities for precise corrections. To address",
       "placement": "main",
       "published_at": "2026-10-15T04:00:00+00:00",
       "reading": {
@@ -25,8 +25,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes PICES, a training-free method that jointly selects an action chunk and how many actions to execute before the next policy call. In one call, it generates chunks from multiple initial noise samples and locally perturbed counterparts, then uses differences between corresponding actions to set candidate execution horizons and choose a chunk. Experiments on simulation benchmarks and real-world manipulation tasks report up to 2.3× faster wall-clock policy inference on Jetson Orin and Thor than fixed-horizon baselines, alongside improved success rates.",
-          "zh": "论文提出无需训练的 PICES 方法，联合选择动作块及下一次策略调用前的执行步数。方法在一次策略调用中，利用多个初始噪声样本及其局部扰动生成动作块，并根据对应动作间的差异确定候选执行时域和待执行动作块。仿真基准与真实操作任务实验显示，相较固定时域基线，该方法在 Jetson Orin 和 Thor 上的策略推理墙钟时间最高加速 2.3 倍，同时提高成功率。"
+          "en": "The paper proposes PICES, a training-free method that jointly selects an action chunk and how many actions to execute before the next policy call. In one call, it generates chunks from multiple noise samples and locally perturbed counterparts, then uses differences between corresponding actions to set candidate horizons and select a nominal chunk. Simulation benchmarks and real-world manipulation experiments report up to 2.3× faster wall-clock policy inference on Jetson Orin and Thor than fixed-horizon baselines, alongside improved success rates.",
+          "zh": "论文提出免训练方法 PICES，联合选择动作块及下一次策略调用前的执行步数。它在一次策略调用中，基于多个初始噪声样本及其局部扰动版本生成动作块，并利用对应动作差异确定候选执行时长和名义动作块。仿真基准与真实操作任务实验显示，相较固定时域基线，该方法在 Jetson Orin 和 Thor 上的策略推理墙钟时间最高加速 2.3 倍，同时提高成功率。"
         }
       },
       "source": {
@@ -677,7 +677,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3618c26f16d2b5b69161274af56aa997f8fc01a44fcf540077d74c95a1ee6954",
-      "intro": "arXiv:2610.19815v1 Announce Type: new Abstract: Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence. We propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS. A nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence",
+      "intro": "arXiv:2610.19815v2 Announce Type: new Abstract: Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence. We propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS. A nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence",
       "placement": "main",
       "published_at": "2026-10-15T04:00:00+00:00",
       "reading": {
@@ -690,8 +690,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes a symbolic supervisory control architecture that generates a fail-safe backup plan for motions learned from demonstrations. Based directly on robot dynamics and independently of the learned dynamical system, it certifies safety, reachability, and actuator feasibility. A nominal controller tracks the learned motion, while a supervisor monitors safety and target convergence and intervenes when necessary constraints are violated. The authors report simulations and real-robot deployment across 2D and 3D datasets, including handwriting, as evidence of effectiveness in complex, dynamic environments.",
-          "zh": "论文提出一种符号监督控制架构，为基于动力系统的示范学习运动自动生成安全备用方案。该方案直接依据机器人动力学，对安全性、可达性和执行器可行性提供形式化认证，不依赖学习得到的动力系统。名义控制器跟踪学习运动，监督控制器监测安全与目标收敛，并在必要约束遭违反时介入。作者报告了涵盖二维和三维数据集（包括手写数据集）的仿真与真实机器人部署实验，称结果验证了该方法在复杂动态环境中提供形式化保证的效果。"
+          "en": "The paper proposes a symbolic supervisory control architecture that generates a fail-safe backup plan for motions learned from demonstrations. It certifies safety, reachability, and actuator feasibility directly from robot dynamics, independently of the learned dynamical system. A nominal controller tracks the learned motion, while a supervisor monitors safety and target convergence and intervenes when necessary constraints are violated. The reported evaluation includes simulations and real robot deployment with varied 2D and 3D datasets, including handwriting, and the authors describe formal guarantees in complex, dynamic environments.",
+          "zh": "论文提出一种符号监督控制架构，为基于动力系统的示范学习运动生成失效安全备份计划。该计划直接依据机器人动力学认证安全性、可达性和执行器可行性，不依赖学习到的动力系统。名义控制器跟踪学习运动，监督控制器监控安全与目标收敛，并在必要约束被违反时介入。作者报告的验证包括仿真和真实机器人部署，使用多种二维、三维数据集，包括手写数据集；摘要称其在复杂动态环境中为学习运动提供形式化保证。"
         }
       },
       "source": {
@@ -2112,7 +2112,7 @@
       },
       "format": "source_excerpt",
       "id": "news-7febe8776b020a92609543147da1a99d499fd8b22e81b748d969313ebc85726a",
-      "intro": "arXiv:2610.19541v1 Announce Type: new Abstract: Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology. We introduce \\method, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations",
+      "intro": "arXiv:2610.19541v2 Announce Type: new Abstract: Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology. We introduce GS-PRM, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations",
       "placement": "main",
       "published_at": "2026-10-15T04:00:00+00:00",
       "reading": {
@@ -2121,12 +2121,12 @@
         "sections": [
           {
             "heading": "",
-            "text": "Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology.\n\nWe introduce \\method, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations and paths.\n\nPanoramic depth supplies conservative clearance for milestone validation and adaptive coverage, while edge-aligned orthographic rendering tests the robot's swept volume. We establish conditional soundness and sufficient conditions for deterministic query completeness and probabilistic construction completeness of GS-PRM.\n\nTo validate the performance of GS-PRM, we conduct experiments in both simulated and real-world environments, demonstrating long-horizon navigation using goal-conditioned policies guided by GS-PRM.\n\nCompared with a state-of-the-art 3DGS-based navigation system, our GS-PRM-based navigation system achieves up to a twice higher average success rate and reduces travel time by up to 57.2% when both systems complete the navigation task."
+            "text": "Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology.\n\nWe introduce GS-PRM, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations and paths.\n\nPanoramic depth supplies conservative clearance for milestone validation and adaptive coverage, while edge-aligned orthographic rendering tests the robot's swept volume. We establish conditional soundness and sufficient conditions for deterministic query completeness and probabilistic construction completeness of GS-PRM.\n\nTo validate the performance of GS-PRM, we conduct experiments in both simulated and real-world environments, demonstrating long-horizon navigation using goal-conditioned policies guided by GS-PRM.\n\nCompared with a state-of-the-art 3DGS-based navigation system, our GS-PRM-based navigation system achieves up to a twice higher average success rate and reduces travel time by up to 57.2% when both systems complete the navigation task."
           }
         ],
         "summary": {
-          "en": "The paper introduces GS-PRM, a Gaussian visual roadmap built directly through 3D Gaussian Splatting renderings, without first deriving an occupancy grid or signed distance field. Panoramic depth supports milestone validation and conservative clearance estimates, while edge-aligned orthographic renderings test the robot’s swept volume. The authors establish conditional soundness and sufficient conditions for deterministic query and probabilistic construction completeness. Simulated and real-world experiments demonstrate long-horizon navigation guided by goal-conditioned policies. Against a state-of-the-art 3DGS navigation system, the authors report up to twice the average success rate and up to 57.2% less travel time when both systems complete the task.",
-          "zh": "论文提出 GS-PRM，一种直接利用三维高斯泼溅渲染构建的高斯视觉路线图，无需先生成占据栅格或有符号距离场。该方法以全景深度验证路标并估计保守间隙，以边缘对齐的正交渲染检测机器人扫掠体积；作者给出条件安全性及确定性查询完备性、概率构建完备性的充分条件。仿真和真实环境实验展示了其引导目标条件策略进行长时程导航的能力。与一种先进的三维高斯导航系统相比，作者报告称，在两系统均完成任务时，平均成功率最高提高一倍，行程时间最多减少57.2%。"
+          "en": "The paper introduces GS-PRM, an image-goal navigation roadmap built directly through 3D Gaussian Splatting renderings, without deriving an occupancy grid or signed distance field. Panoramic depth supports milestone clearance checks and adaptive coverage, while edge-aligned orthographic rendering tests swept volume. The authors establish conditional soundness and sufficient completeness conditions. Simulated and real-world experiments demonstrate long-horizon navigation guided by the roadmap. Against a state-of-the-art 3DGS navigation system, the authors report up to twice the average success rate and up to 57.2% less travel time when both systems complete the task.",
+          "zh": "论文提出 GS-PRM，一种直接通过三维高斯泼溅渲染构建的图像目标导航视觉路网，无需生成占据栅格或有符号距离场。方法利用全景深度验证路标间隙并自适应覆盖，通过边缘对齐的正交渲染检测机器人扫掠体积；作者给出了有条件的可靠性及查询和构建完备性条件。仿真与真实环境实验展示了由 GS-PRM 引导的长程导航。相较一种先进的 3DGS 导航系统，在两系统均完成任务时，其平均成功率最高为两倍，行程时间最多减少 57.2%。"
         }
       },
       "source": {
@@ -2532,7 +2532,7 @@
       },
       "format": "source_excerpt",
       "id": "news-98975a0d17feb36db74a7a4e0f7fac1c9f06f90c3642366229beb34482bbedac",
-      "intro": "arXiv:2610.19089v1 Announce Type: new Abstract: Achieving human-like dexterous manipulation remains a central challenge in robotics. Learning from human hand-object interaction (HOI) datasets offers a promising pathway to diverse dexterous skills, yet existing physics-based approaches train specialist policies for individual trajectories, thereby limiting skill reuse at scale. We introduce DexMimic, a generalist dexterous hand-object tracking policy jointly trained across diverse HOI trajectories. Efficient joint training requires allocating each rollout to both an undertrained phase and a starting state that",
+      "intro": "arXiv:2610.19089v2 Announce Type: new Abstract: Achieving human-like dexterous manipulation remains a central challenge in robotics. Learning from human hand-object interaction (HOI) datasets offers a promising pathway to diverse dexterous skills, yet existing physics-based approaches train specialist policies for individual trajectories, thereby limiting skill reuse at scale. We introduce DexMimic, a generalist dexterous hand-object tracking policy jointly trained across diverse HOI trajectories. Efficient joint training requires allocating each rollout to both an undertrained phase and a starting state that",
       "placement": "main",
       "published_at": "2026-10-15T04:00:00+00:00",
       "reading": {
@@ -2545,8 +2545,8 @@
           }
         ],
         "summary": {
-          "en": "DexMimic is a generalist dexterous hand-object tracking policy jointly trained on diverse human interaction trajectories. Its Value-Guided Reset Allocation method adjusts the initialization distribution online, prioritizing difficult phases and reset states with higher expected tracking returns. The paper also presents a benchmark for training, fine-tuning, and generalization. Experiments are reported to improve tracking success and training efficiency, speed up fine-tuning, and show potential for zero-shot generalization to unseen trajectories and objects. The authors also report validation on a real-world dexterous manipulation platform.",
-          "zh": "论文提出 DexMimic，一种跨多条人手—物体交互轨迹联合训练的通用灵巧手追踪策略。其价值引导重置分配方法在线调整初始化分布，优先训练困难阶段，并选择预期追踪回报较高的重置状态；论文还介绍覆盖训练、微调和泛化的基准。实验显示，作者报告该方法提升追踪成功率与训练效率、加快微调，并具有对未见轨迹和物体零样本泛化的潜力；更大的训练集进一步改善效率和泛化。论文最后报告在真实世界灵巧操作平台上进行了验证。"
+          "en": "The paper presents DexMimic, a generalist dexterous hand tracking policy jointly trained on diverse human hand-object interaction trajectories. Its Value-Guided Reset Allocation adapts initialization online, prioritizing undertrained phases and reset states expected to support continued tracking. The paper also introduces a benchmark covering training, fine-tuning, and generalization. Experiments report improved tracking success and training efficiency, faster fine-tuning, and potential zero-shot generalization to unseen trajectories and objects. The authors say larger training sets further improve efficiency and generalization, and report validation on a real-world dexterous manipulation platform.",
+          "zh": "论文提出 DexMimic，一种跨多条人手与物体交互轨迹联合训练的灵巧手通用跟踪策略。其价值引导重置分配方法在线调整初始化分布，优先处理训练不足的阶段，并选择预期跟踪回报较高的重置状态；论文还介绍了涵盖训练、微调和泛化的基准。实验显示，该方法提升跟踪成功率与训练效率，并加快微调；作者报告其对未见轨迹和物体具有零样本泛化潜力，较大的训练集进一步改善效率和泛化。论文还在真实灵巧操作平台上进行了验证。"
         }
       },
       "source": {
@@ -4091,5 +4091,5 @@
       "title": "Safe Reinforcement Learning with Receding-Horizon Safety Critic and Differentiable Action Shields"
     }
   ],
-  "updated_at": "2026-10-15T04:13:50.385884+00:00"
+  "updated_at": "2026-10-16T03:05:57.081547+00:00"
 }
