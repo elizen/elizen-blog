@@ -408,7 +408,11 @@
             "heading": "",
             "text": "Dual-system vision-language-action (VLA) models pair a high-frequency fast policy with a slow, expensive module, and published trigger mechanisms for invoking it lack a shared objective, measured costs, and any standard separating schedule quality from module quality.\n\nWe provide the missing account: invocation is formalized as a calibrated decision problem whose fixed-ratio, fixed-budget, and history-gated schedules are degenerate cases of one quantity, the Value of Intervention (VoI); a renewal baseline proves the optimal schedule periodic under state-independent collapse, with adaptive gains governed by the cost ratio $\\rho$ and the dispersion of collapse.\n\nMeasured systems span three orders of magnitude in $\\rho$ (FiS-VLA $0.95$; RoboICL about $10^3$), and a direct test confirms the low-$\\rho$ prediction: calibrated gains vanish under homogeneous collapse and grow with heterogeneity.\n\nFourteen closed-loop arms on LIBERO test the contested middle of the continuum ($\\rho=1.53$): the adaptive trigger allocates its queries exactly as the threshold rule predicts, yet the language-rewrite channel cannot convert them into success on either suite, and a revert actuator that undoes a failed rewrite is the only intervention with zero net downside on both LIBERO-Spatial and LIBERO-Goal, where the rewrite deficit deepens from thirteen to forty-two points.\n\nA four-measure leak-free protocol cuts apparent early-warning AUC from $0.93$ to $0.62$ on $929$ deployment traces, a detection-limited frontier theorem converts detection quality into a schedulability statement, and a compilation loop turns measured value functions into per-task refresh periods within $2.4\\%$ of the closed-loop oracle.\n\nTogether these results turn slow-module invocation from a design opinion into a measured decision."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper models invoking a slow module in dual-system vision-language-action models as a calibrated decision problem, unifying fixed-ratio, fixed-budget, and history-gated schedules through Value of Intervention. It gives a periodic scheduling baseline for state-independent collapse. The authors report that calibrated gains increase with collapse heterogeneity. In closed-loop LIBERO experiments, an adaptive trigger allocates queries as the threshold rule predicts, but language rewriting does not improve success on either suite; a revert actuator has no net downside on both. The paper also presents a leak-free measurement protocol, a schedulability bound, and a method for compiling value functions into task-specific refresh periods.",
+          "zh": "论文将双系统视觉语言动作模型中慢模块的调用建模为经校准的决策问题，以干预价值统一固定比例、固定预算和历史门控调度，并提出状态无关崩溃条件下的周期性最优调度基线。作者报告，校准收益随崩溃异质性增加；在 LIBERO 闭环实验中，自适应触发器按阈值规则分配查询，但语言重写未能提升两个测试套件的成功率，撤销失败重写的执行器则在两套任务上没有净负面影响。论文还提出无泄漏测量流程、可调度性界限及将价值函数编译为任务刷新周期的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -439,7 +443,11 @@
             "heading": "",
             "text": "Current humanoid dexterous manipulation remains largely confined to end-effectors and simple grasps, falling short of humans' ability to engage the entire body by bracing and sliding bulky objects against the arms and torso.\n\nWe introduce Whole-Body Dexterity (WBD), a general framework that uses the robot's body and appendages as contact surfaces to grasp and manipulate objects.\n\nOur sim-to-real pipeline first generates a dataset of feasible whole-body grasps, then trains reinforcement-learning experts on a general any-to-any repositioning objective by sampling initial and goal grasps from the dataset, and distills these experts into a single policy that uses proprioception and object geometry.\n\nWe show that the distilled policy transfers zero-shot to a real Unitree G1, where it repositions a basketball and a cardboard box to regions around the torso and completes a long-horizon task that stows a box under one arm, carries it from a shelf to a table, and places it.\n\nThe controller operates interactively, steered by coarse motion references from a human teleoperator. Across real-world whole-body manipulation tasks, the distilled controller completes 90% of trials, compared with 18% for direct retargeting and 4% for a generalist whole-body controller."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Whole-Body Dexterity, a framework for using a humanoid robot’s body and appendages as contact surfaces to grasp and manipulate objects. Its sim-to-real pipeline generates feasible whole-body grasp data, trains reinforcement-learning experts for repositioning between grasps, and distills them into a policy using proprioception and object geometry. The authors report zero-shot transfer to a real Unitree G1, including repositioning a basketball and box near the torso and completing a long-horizon box-stowing and carrying task. A human teleoperator steers the controller with coarse motion references; across real-world tasks, it completes 90% of trials.",
+          "zh": "论文提出 Whole-Body Dexterity 框架，让人形机器人以身体和附肢作为接触面抓取、搬运和调整物体。其仿真到现实流程先生成可行的全身抓取数据，再训练通用重定位强化学习专家，并蒸馏为使用本体感觉与物体几何信息的单一策略。作者报告，该策略零样本迁移到真实 Unitree G1，可将篮球和纸箱移至躯干周边区域，并完成将箱子夹在手臂下、搬运至桌面再放置的长程任务。控制器由人类远程操作员提供粗略动作参考；真实全身操作任务中完成率为90%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -470,7 +478,11 @@
             "heading": "",
             "text": "Task-Oriented Grasping (TOG) has emerged as an important skill for purposeful robotic manipulation. Given the task of using a knife to \"slice bread,\" a robot must choose to grasp from the handle, whereas for \"hand[ing] the knife over,\" it is preferable for the handle to remain unobstructed for safe handoff.\n\nCurrent approaches for TOG either focus on 2D planar grasping, remain limited by their reliance on task-agnostic grasp generators, or are constrained by reliance on finite, manually-annotated, task-specific grasp datasets that cannot cover all possible grasp-task pairs.\n\nTo that end, we present TGrasp6D, a vision-language based approach for generating task-oriented 6DoF grasps in a zero-shot manner. Given a task and a single RGB-D image of an associated object, TGrasp6D reasons about the appropriate semantic affordance for the given task and object geometry to produce an initial task- informed prior.\n\nThis generated prior is further refined via 6DoF pose optimization for collision avoidance while preserving task consistency. Our approach achieves state-of-the-art success rate of 94% on the TaskGrasp dataset, with the best baseline at 74%.We also deploy our approach on a Franka Research 3 robot to demonstrate zero-shot generalization to real world objects"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TGrasp6D, a method for generating task-oriented six-degree-of-freedom grasps from a task description and a single RGB-D image. Vision-language reasoning combines task semantics with object geometry to produce an initial grasp prior, which is refined through pose optimization for collision avoidance while preserving task consistency. The authors report a 94% success rate on the TaskGrasp dataset, compared with 74% for the best baseline. They also describe deployment on a Franka Research 3 robot to demonstrate zero-shot generalization to real-world objects.",
+          "zh": "论文提出 TGrasp6D，一种根据任务与单张 RGB-D 图像生成任务导向六自由度抓取姿态的方法。系统利用视觉语言推理结合任务语义与物体几何生成初始抓取先验，再通过六自由度位姿优化避开碰撞，同时保持任务一致性。作者报告，该方法在 TaskGrasp 数据集上的成功率为94%，高于最佳基线的74%。论文还称，研究团队将方法部署到 Franka Research 3 机器人上，以展示其对真实物体的零样本泛化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
