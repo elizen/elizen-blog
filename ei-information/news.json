@@ -2068,7 +2068,11 @@
             "heading": "",
             "text": "Sound-Triggered Mobile Manipulation (STMM) requires robots to respond to sound events by navigating to the associated objects and performing appropriate physical interactions. Existing STMM evaluations primarily vary object layouts within limited architectural structures, leaving challenges to unseen scenes insufficiently explored.\n\nWe introduce Multi-scene Sound-Triggered Mobile Manipulation (MuSTMM), a dataset that combines spatial audio rendering and physical interaction across 31 scenes with diverse architectures and object layouts.\n\nMuSTMM contains 14.36 million precomputed binaural Room Impulse Responses (RIRs) and a scene-disjoint split for evaluating single-event and multi-event settings in unseen scenes. We further augment the Navigation Policy Model with explicit spatial memory that complements acoustic cues with observed geometry.\n\nSpecifically, we accumulate pose-aligned depth observations in a shared coordinate frame and project this memory into an egocentric Bird's-Eye View (BEV) occupancy map.\n\nFusing map features with sound context produces a goal descriptor that provides both target-location and scene-structure priors, guiding navigation to the target region required for subsequent physical interaction.\n\nThis policy achieves a 2.60% success rate boost over existing methods, while component ablations further support the effectiveness of spatial memory. MuSTMM and the navigation policy provide a testbed for the new challenge of studying sound-triggered mobile manipulation in unseen scenes. The code and dataset will be released upon acceptance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MuSTMM, a dataset for studying sound-triggered mobile manipulation in unseen scenes. It combines spatial audio rendering and physical interaction across varied architectures and object layouts, with scene-disjoint evaluations for single- and multi-event settings. The authors also add spatial memory to a navigation policy, projecting aligned depth observations into an egocentric occupancy map and fusing its features with sound context. They report a 2.60% success-rate boost over existing methods, and ablations support the contribution of spatial memory.",
+          "zh": "论文提出 MuSTMM 数据集，用于研究机器人在未见场景中根据声音事件导航至相关物体并执行交互。数据集结合空间音频渲染与物理交互，涵盖不同建筑结构和物体布局，并提供按场景划分的单事件及多事件评测。作者还在导航策略中加入空间记忆，将对齐的深度观测投影为自我中心占用图，并与声音信息融合。作者报告该策略较既有方法成功率提升 2.60%，消融实验支持空间记忆的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2099,7 +2103,11 @@
             "heading": "",
             "text": "Reliable contact-rich manipulation requires detecting execution deviations early enough for corrective action. Yet most monitoring methods are reactive, identifying anomalies only after they become observable.\n\nAnticipating such anomalies is challenging because visual observations only partially reveal physical interaction, while planned actions describe intended motion rather than their actual physical consequences. We address this problem with MAIA, a multimodal framework for anomaly anticipation.\n\nIts vision-action-force world model learns nominal interaction dynamics and predicts the visual and force responses of planned actions, while a lightweight anomaly head predicts impending interaction anomalies.\n\nTo enable systematic evaluation, we introduce CRIA, a real-world multimodal dataset of 2,852 trajectories spanning 18 contact-rich manipulation tasks, with frame-level annotations of anomaly onset and evolution.\n\nExperiments on both seen and novel tasks show that MAIA achieves more accurate anomaly discrimination than representative baselines while providing earlier warnings, with bACC scores of 0.765 and 0.710 and median anticipation lead times of 28.0 and 25.1 steps, respectively.\n\nMoreover, using these predictions for anomaly-aware action selection improves end-to-end task success from 52.6% to 61.5% without retraining the underlying manipulation policy. These results highlight the value of modeling future physical consequences for proactive anomaly anticipation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MAIA, a framework for anticipating interaction anomalies during contact-rich manipulation. Its vision-action-force world model learns nominal dynamics and predicts visual and force responses to planned actions, while an anomaly head predicts impending deviations. The authors introduce CRIA, a real-world multimodal dataset with trajectories across contact-rich tasks and frame-level annotations of anomaly onset and evolution. Experiments on seen and novel tasks report more accurate discrimination and earlier warnings than representative baselines. Using predictions for anomaly-aware action selection also improves end-to-end task success.",
+          "zh": "论文提出 MAIA，用于在接触丰富的操作中提前预测交互异常。其视觉—动作—力世界模型学习正常交互动态，并预测计划动作可能产生的视觉和力响应；轻量异常预测头估计即将发生的异常。作者还介绍真实世界多模态数据集 CRIA，包含多项任务轨迹及异常起始和演化的逐帧标注。在已见和新任务实验中，作者报告 MAIA 比代表性基线异常辨别更准确、预警更早；利用预测进行异常感知动作选择后，端到端任务成功率有所提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2130,7 +2138,11 @@
             "heading": "",
             "text": "Scaling expert demonstrations alone does not enable generalist robot policies to improve from deployment. Real-world rollouts contain successes, suboptimal behavior, and failures: imitating every recorded action can reinforce poor behavior, while filtering out failures discards evidence of physical interactions and their consequences.\n\nWe introduce LoopWAM, a closed-loop world-action model that learns directly from this full quality spectrum, using rollouts from both itself and other deployed policies.\n\nSource-dependent noise sampling unifies behavior learning and action-conditioned world modeling, while quality steering and quality-weighted supervision retain full video supervision across qualities and regulate action imitation.\n\nVideo and action tokens interact throughout parallel denoising, allowing learned consequences to inform action generation directly. On RoboChallenge Table30-V2, three deployment-and-training rounds raise success from 23.67% to 43.33%, a 19.7-percentage-point gain, with a final score of 56.80.\n\nLoopWAM also achieves 94.5% average success on RoboTwin 2.0 and 49.5% overall success on RoboCasa365 without additional embodied pretraining, obtaining the best overall results among the compared methods across all three benchmarks.\n\nOn challenging shirt folding task, two rounds of deployment-driven improvement after single-task post-training raise success from 13.20% to 55.56%.These results demonstrate closed-loop improvement from mixed-quality experience under both multi-task learning and single-task post-training. Project page: https://loop-wam.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LoopWAM, a closed-loop world-action model that improves robot policies from mixed-quality rollouts collected from itself and other deployed policies. Source-dependent noise sampling unifies behavior learning with action-conditioned world modeling; quality steering and weighted supervision regulate action imitation while retaining video supervision. The authors report gains over deployment rounds on RoboChallenge Table30-V2, as well as results on RoboTwin 2.0, RoboCasa365, and a shirt-folding task. They state that LoopWAM has the best overall results among compared methods across three benchmarks and demonstrates improvement in both multi-task learning and single-task post-training.",
+          "zh": "论文提出 LoopWAM，一种闭环世界—动作模型，利用自身及其他已部署策略产生的不同质量轨迹改进机器人策略。方法通过来源相关的噪声采样统一行为学习与动作条件世界建模，并以质量引导和加权监督调节动作模仿，同时保留视频监督。作者报告，在 RoboChallenge Table30-V2 的多轮部署训练中成功率上升；在 RoboTwin 2.0、RoboCasa365 及衬衫折叠任务上也取得所述结果。作者称其在三个基准上的总体结果优于对比方法，并展示多任务学习和单任务后训练中的闭环改进。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2161,7 +2173,11 @@
             "heading": "",
             "text": "Safe navigation often relies on well-defined conditions based on the shape of robots and obstacles, and can be challenging when they have irregular geometries.\n\nWhile Control Barrier Functions (CBFs) offer an efficient mechanism to enforce safe set forward invariance, common shape surrogates (e.g., spheres or super-ellipsoids) are either overly conservative in unstructured scenes or require many local primitives, which inflates constraint counts and degrades real-time performance.\n\nIn this paper, we introduce a novel geometry-aware Control Barrier Function (CBF) based on Bernstein-Polynomial Signed Distance Fields (BP-SDFs).It provides a unified way to represent the obstacles and robots, so as to represent the barrier function with a unified minimum distance.\n\nBenefiting from the differentiability of the Bernstein polynomials, one can easily enforce the control constraints in a closed loop. We validate the method's efficiency and performance to guarantee safety in single-robot navigation and heterogeneous multi-robot collision avoidance via simulations under different environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a geometry-aware control barrier function based on Bernstein-polynomial signed distance fields for safe navigation and collision avoidance with irregular robot and obstacle shapes. The authors note that common shape approximations can be overly conservative or require many local primitives, increasing constraints and affecting real-time performance. Their method represents robots and obstacles through a unified minimum distance and uses the differentiability of Bernstein polynomials to enforce control constraints in closed loop. Simulations in different environments evaluate its efficiency and safety for single-robot navigation and heterogeneous multi-robot collision avoidance.",
+          "zh": "论文提出一种基于 Bernstein 多项式有符号距离场的几何感知控制屏障函数，用于处理机器人和障碍物形状不规则时的安全导航与避碰。作者指出，常见形状近似可能在非结构化场景中过于保守，或需要大量局部基元，增加约束数量并影响实时性能。该方法以统一的最小距离表示障碍物和机器人，并利用 Bernstein 多项式的可微性在闭环中施加控制约束。作者通过不同环境下的仿真，验证单机器人导航及异构多机器人避碰中的效率与安全性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
