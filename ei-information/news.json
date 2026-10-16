@@ -1628,7 +1628,11 @@
             "heading": "",
             "text": "Reliable fall recovery is critical for humanoids operating in cluttered environments. Unlike quadrupeds or wheeled robots, humanoids undergo high-energy impacts, complex whole-body contact, and large viewpoint changes during falls, making recovery essential.\n\nPrior work treats fall safety as separate problems (avoidance, impact mitigation, stand-up) or learns end-to-end policies without vision, typically on flat terrain. More fundamentally, it couples pose, dynamics, and terrain into a single data space, requiring exhaustive coverage and limiting generalization.\n\nWe present a unified visually grounded fall-safety approach spanning all phases of recovery. It builds on two insights: （1） human fall-recovery poses are structured and transferable across terrains via alignment, and （2） effective recovery depends on interpreting the recovery goal in relation to the surrounding terrain.\n\nWe train a privileged teacher using sparse human demonstrations and simulated terrains, and distill it into a deployable student that relies on egocentric depth and proprioception. The student predicts a goal-in-context latent representing the recovery target in relation to its surroundings, guiding coordinated whole-body reactions.\n\nExperiments in simulation and on a Unitree G1 demonstrate robust zero-shot fall safety across diverse terrains. Project page: https://vigor2026.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a visually grounded fall-safety approach for humanoids spanning all phases of recovery. It uses transferable structure in human recovery poses and interprets recovery goals in relation to surrounding terrain. A privileged teacher is trained with sparse human demonstrations and simulated terrains, then distilled into a student using egocentric depth and proprioception. The authors report robust zero-shot fall safety across diverse terrains in simulation and experiments on a Unitree G1.",
+          "zh": "本文提出面向人形机器人的视觉引导跌倒安全方法，覆盖跌倒恢复各阶段。方法利用人类恢复姿态在不同地形间的可迁移结构，并结合恢复目标与周围地形的关系；通过稀疏的人类示范和模拟地形训练特权教师，再将其蒸馏为使用自我中心深度信息和本体感觉的学生模型。作者报告，仿真及 Unitree G1 实验显示，该方法在多种地形上实现了零样本跌倒安全。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1659,7 +1663,11 @@
             "heading": "",
             "text": "Recent 3D world models increasingly use features from geometry foundation models (GFMs) as predictive world states, benefiting from their rich geometric priors. However, the view dependence of these features entangles scene dynamics with camera-induced variation, making the resulting state evolution harder to predict.\n\nWe propose GeoState, a view-decoupled geometry representation for predictive 3D world modeling that separates scene-state evolution from camera-dependent observation. Specifically, a scene tokenizer aggregates multi-view GFM features into a view-decoupled scene state, which a geometry decoder queries using camera rays.\n\nAn autoregressive world model then predicts future scene states, while camera motion is modeled separately. The predicted states can therefore be decoded under either predicted or externally specified cameras, while retaining a single context-derived scale throughout the rollout without per-frame scale alignment.\n\nExperiments show that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes. Project page: https://hongchang-liu.github.io/GeoState-project-page/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GeoState, a view-decoupled geometry representation for predictive 3D world modeling. A scene tokenizer aggregates multi-view geometry foundation model features into a scene state, which a geometry decoder queries using camera rays. An autoregressive model predicts future scene states while camera motion is modeled separately. The authors report that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes.",
+          "zh": "本文提出 GeoState，一种用于预测式三维世界建模的视角解耦几何表示，旨在分离场景状态演化与相机相关观测。场景标记器将多视角几何基础模型特征聚合为场景状态，几何解码器再通过相机射线查询；自回归世界模型预测未来场景状态，并单独建模相机运动。作者报告，GeoState 在 Waymo 上优于先前三维世界模型，支持几何一致的跨视角查询，并零样本泛化至 KITTI 和 nuScenes。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1690,7 +1698,11 @@
             "heading": "",
             "text": "Robotic manipulation often requires remembering interactions that are no longer visible. We introduce Latent Transition Memory (LTM), which stores history as compact latent transitions between consecutive observations.\n\nInstantiated on $\\pi_{0.5}$ as LTM-$\\pi$, our method uses a frozen latent action encoder, a lightweight adapter, and causal KV caching for incremental inference without memory-specific semantic annotations or external reasoning-model calls.\n\nWith DreamDojo transitions, LTM-$\\pi$ achieves 58.54% success on RoboMME and 80.5% on LIBERO-Mem, performing best among baselines without external reasoning models or memory-specific annotations. Ablations support the contribution of transition content beyond temporal cues and the efficiency of delayed memory admission.\n\nScaling RoboMME demonstrations tenfold improves success from 57.67% to 87.50%, while a Cup Swap diagnostic highlights the role of process supervision in temporal composition. Under a 200-token memory budget, success remains 84.00%, versus 87.50% without compression. Finally, real-robot counting success improves from 11.25% to 82.50%.\n\nTogether, these results demonstrate the effectiveness, scalability, and efficiency of latent transition memory, highlighting its capacity for complex temporal information, bounded-context operation, and real-world robotic control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Latent Transition Memory (LTM), which stores interaction history as compact latent transitions between consecutive observations, and instantiates it on π₀.₅ as LTM-π. The method uses a frozen latent action encoder, a lightweight adapter, and causal KV caching for incremental inference without memory-specific semantic annotations or external reasoning-model calls. The authors report results on RoboMME, LIBERO-Mem, and real-robot counting, as well as ablations and evaluations with more demonstrations and a 200-token memory budget.",
+          "zh": "本文提出潜在转移记忆 LTM，将连续观测之间的交互历史存为紧凑的潜在转移，并在 π₀.₅ 上实现为 LTM-π。该方法使用冻结的潜在动作编码器、轻量适配器和因果 KV 缓存，支持增量推理，无需记忆专用语义标注或外部推理模型调用。作者报告了 RoboMME、LIBERO-Mem 和真实机器人计数任务的成功率，并称消融实验支持转移内容及延迟记忆纳入的作用；另报告演示数据扩展和 200-token 记忆预算下的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
