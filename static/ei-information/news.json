@@ -1185,7 +1185,11 @@
             "heading": "",
             "text": "Learning from demonstration is an effective strategy for endowing robots with manipulation capabilities but requires training on datasets comprised of massive amounts of demonstrations. Existing demonstration collection approaches either require constant human involvement, for example, via teleoperation or are specialized for a single task.\n\nTask and Motion Planning (TAMP) systems are able to autonomously solve and therefore generate demonstrations for general-purpose tasks; however, learning from their demonstrations has proven difficult due to multi-modality in their solutions.\n\nIn this work, we build on recent work leveraging GPU acceleration for TAMP and propose DemoStream, a TAMP system that optimizes demonstration quality in order to improve behavior cloning success rates.\n\nFirst, we introduce batched TAMP sampling operations along with a new TAMP algorithm that correspondingly performs batched constraint satisfaction in order to explore many solutions in parallel.\n\nWe conduct simulation experiments ablating different action spaces, cost functions, and batch sizes to analyze the effect of these choices on downstream policy success rates. Finally, we show that we can leverage the safety guarantees of TAMP to directly collect real-world demonstrations at an average rate of 66 demos per hour.\n\nSee our website for policy rollout videos: demostream.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DemoStream, a task-and-motion planning system designed to optimize demonstration quality and improve behavior-cloning success. It introduces batched TAMP sampling and a corresponding constraint-satisfaction algorithm to explore solutions in parallel. Simulation experiments examine how action spaces, cost functions, and batch sizes affect downstream policy success. The authors also report collecting real-world demonstrations at an average rate of 66 per hour, using TAMP safety guarantees.",
+          "zh": "论文提出 DemoStream，一种利用 GPU 加速任务与运动规划（TAMP）的系统，旨在优化演示质量并提升行为克隆成功率。方法包括批量 TAMP 采样和相应的批量约束满足算法，以并行探索多种解。仿真实验比较不同动作空间、代价函数和批量大小对下游策略成功率的影响；作者还报告利用 TAMP 的安全保证，在真实世界以平均每小时 66 条的速率收集演示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1216,7 +1220,11 @@
             "heading": "",
             "text": "This paper presents a comprehensive framework for robot manipulation failure analysis that includes binary failure detection, failure categorization, explanation generation, and the additional capability of failure onset localization, which aims to identify the earliest moment at which a robot execution deviates from a valid task-completion trajectory and is ultimately followed by task failure.\n\nTo address these tasks, we propose ProTracer, a training-free framework that leverages existing Vision-Language Models (VLMs) together with proprioceptive signals for failure analysis.\n\nOur method uses proprioceptive dynamics to identify temporally informative action boundaries and converts richer robot-state signals into structured natural-language descriptions that can be jointly analyzed together with visual observations by the VLM.\n\nThis design combines the temporal precision of proprioceptive signals with the multimodal reasoning capabilities of modern VLMs without requiring additional model training.\n\nWe further introduce FailTime, a benchmark with synchronized visual and proprioceptive observations for evaluating conventional failure diagnosis tasks as well as failure onset localization.\n\nExperiments demonstrate that ProTracer achieves strong performance across both conventional failure diagnosis tasks and the newly introduced failure onset localization task, highlighting the importance of proprioceptive reasoning for fine-grained temporal failure analysis."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ProTracer, a training-free framework for detecting, categorizing, and explaining robot manipulation failures, as well as locating when a failure begins. It combines existing vision-language models with proprioceptive signals, using proprioceptive dynamics to identify informative action boundaries and converting robot states into structured language for joint analysis with visual observations. The authors introduce FailTime, a benchmark with synchronized visual and proprioceptive observations. Experiments show strong performance on conventional failure diagnosis and failure-onset localization tasks.",
+          "zh": "论文提出无需训练的 ProTracer，用于机器人操作失败检测、分类、解释生成及失败起始时刻定位。该框架结合现有视觉语言模型与本体感知信号，利用本体感知动态识别具有时间信息的动作边界，并将机器人状态转成结构化自然语言，与视觉观测共同分析。作者还介绍 FailTime 基准，包含同步的视觉和本体感知观测。实验显示，ProTracer 在常规失败诊断和失败起始定位任务上均取得较强表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1247,7 +1255,11 @@
             "heading": "",
             "text": "Can better feature discovery improve control over robot behavior through internal interventions and training data? Recent work in vision and language models reveals multidimensional features, motivating block-sparse featurizers (BSFs), which represent each feature in a low-dimensional subspace.\n\nWe investigate whether recovering this structure provides an interpretable interface for steering vision-language-action models and shaping the data from which they learn.\n\nWe show that BSFs recover several multi-dimensional task-relevant features underlying the model's computation (e.g., perception, language, proprioceptive state, episode phase, and control variables).\n\nWe causally validate these features through fine-grained steering: targeted changes in visual perception, semantic representation, and spatial localization produce predictable changes in downstream action prediction.\n\nFinally, we use feature-based data attribution to isolate where a specific behavior (failure recovery) arises in the training dataset, identifying fewer than $1.4\\%$ of training tokens whose masking is sufficient to remove the targeted behavior.\n\nOverall, our results show how matching featurizers to representation geometry can provide more effective tools for understanding and changing robot behavior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether block-sparse featurizers can provide an interpretable interface for steering vision-language-action models and shaping their training data. The authors report recovering multidimensional, task-relevant features related to perception, language, proprioceptive state, episode phase, and control variables. Targeted interventions in visual perception, semantic representation, and spatial localization produce predictable changes in action predictions. Feature-based data attribution identifies training tokens associated with failure recovery; masking fewer than 1.4% of tokens is reported to remove that behavior.",
+          "zh": "论文研究块稀疏特征器能否为视觉语言动作模型提供可解释的行为调控和训练数据塑形接口。作者称，该方法恢复了模型计算中的多维任务相关特征，涉及感知、语言、本体状态、任务阶段和控制变量；定向改变视觉感知、语义表示与空间定位，会以可预测方式改变下游动作预测。研究还通过基于特征的数据归因定位失败恢复行为的训练数据来源，并报告屏蔽不到 1.4% 的训练词元就足以移除该行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
