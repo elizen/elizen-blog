@@ -3662,7 +3662,11 @@
             "heading": "",
             "text": "Robotic disassembly of end-of-life (EoL) products requires robots to accommodate product variation, follow prerequisite sequences, and approach components precisely for contact-rich manipulation.\n\nSupervised fine-tuning (SFT) provides a practical path for adaptation, but limited and costly disassembly data cannot capture the distribution shifts arising from changing environments and product uncertainties.\n\nThe policy's own rollouts record its approach attempts, and human corrections demonstrate recovery from its errors, but turning these experiences into better policy performance remains challenging.\n\nWe introduce PACER, a Process-Aware Correction and Evidence Reweighting framework that learns from these experiences through SFT, using progress toward the target and each trace's source and outcome to weight valid action chunks in the native supervised action loss.\n\nPACER trains one policy per weighting setting and selects one of the resulting policies through held-out validation. We evaluate PACER on UR5e motherboard disassembly across five component classes, where it achieves 87/100 successful approach-and-handoff trials on the held-out benchmark, compared with 54/100 for vanilla post-SFT."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PACER, a supervised fine-tuning framework that uses a policy’s own rollout attempts and human corrections to improve robotic disassembly. It weights valid action chunks according to progress, trace source, and outcome, then selects among policies using held-out validation. On UR5e motherboard disassembly across five component classes, the authors report 87 successful approach-and-handoff trials out of 100 on a held-out benchmark, compared with 54 for vanilla post-SFT.",
+          "zh": "论文提出 PACER，一种利用机器人策略自身执行轨迹和人类纠正来改进拆解操作的监督微调框架。它依据任务进展、轨迹来源和结果，对有效动作片段加权，并通过留出验证选择策略。作者在 UR5e 主板拆解的五类组件任务上评估，留出基准中 100 次接近并交接试验有 87 次成功；作为比较，普通监督微调后策略为 54 次。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3693,7 +3697,11 @@
             "heading": "",
             "text": "Tactile sensing is becoming central to robust, adaptive, and dexterous robotic manipulation. Beyond its traditional role in contact detection and reactive control, touch is increasingly used to learn transferable representations, condition manipulation policies, and support embodied physical reasoning.\n\nYet existing surveys largely emphasize tactile hardware and perception, leaving the rapid shift toward learning-based tactile manipulation insufficiently synthesized. This paper reviews tactile-guided skill learning from a learning-centric perspective, organized by the functional role of touch across the learning and control pipeline.\n\nWe examine tactile representation and policy learning, tactile foundation models, predictive and adaptive control, and generalization across objects, tasks, sensors, embodiments, and simulation-to-real transfer.\n\nAcross these directions, we identify common design principles and remaining challenges in learning transferable physical representations, integrating semantic reasoning with contact-level control, and scaling tactile learning across heterogeneous data and hardware.\n\nFinally, we outline emerging directions toward tactile foundation and world models that can predict, reason about, and adapt physical interactions. Together, this review characterizes the transition of touch from a task-specific feedback signal toward a core modality for general-purpose embodied intelligence.\n\nAn accompanying database of the reviewed literature and associated resources is available at https://sites.google.com/view/touch-in-robot-learning-review."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This review surveys tactile-guided robotic skill learning from a learning-centered perspective. It covers tactile representations and policies, foundation models, predictive and adaptive control, and generalization across objects, tasks, sensors, embodiments, and simulation-to-real transfer. The authors identify challenges in learning transferable physical representations, combining semantic reasoning with contact-level control, and scaling across varied data and hardware. They also discuss tactile foundation and world models, describing touch as an emerging core modality for embodied intelligence.",
+          "zh": "这篇综述从学习角度梳理触觉引导的机器人技能学习，关注触觉表征与策略学习、触觉基础模型、预测与自适应控制，以及跨物体、任务、传感器、机器人形态和仿真到现实的泛化。作者总结了学习可迁移物理表征、结合语义推理与接触控制、扩展异构数据和硬件等挑战，并讨论触觉基础模型与世界模型的发展方向，认为触觉正从特定任务的反馈信号转向通用具身智能的核心模态。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3724,7 +3732,11 @@
             "heading": "",
             "text": "World action models (WAMs) built on pretrained video generation models adapt quickly to new robotic tasks, but they forget previously learned tasks under sequential fine-tuning.\n\nExperience replay (ER) mitigates such forgetting by rehearsing data of previous tasks, yet this data is often unavailable in robotics, where a policy is deployed as weights only and its training data is not shared along with it. In this work, we ask whether a WAM can achieve data-free continual learning by regenerating its own past.\n\nOur key observation is that a WAM can indeed autoregressively regenerate complete rollouts of previously learned tasks and replay them to mitigate forgetting. However, replaying such raw rollouts still lags far behind replaying real data, which we attribute to two issues.\n\nFirst, the WAM is unable to recognize task completion and keeps generating purposeless motion after the task is done. Second, under open-loop generation, the generated actions gradually drift away from the generated observations.\n\nTo address both issues, we present rectified generative replay (R$^2$-WAM), which truncates generated rollouts at task completion with an agentic evaluator and filters out rollouts whose actions are physically inconsistent with the observations.\n\nOn the four LIBERO suites and five real-world tasks, R$^2$-WAM reduces forgetting by over 90% relative to sequential fine-tuning and nearly matches ER without accessing any data from previous tasks.\n\nOur analysis further reveals that forgetting in WAMs concentrates in inverse dynamics modeling: a forgotten WAM still produces visually plausible observations of previous tasks while its generated actions fail. Project page: https://kaipengfang.github.io/r2-wam/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses forgetting in world action models during sequential fine-tuning and presents R²-WAM, a data-free generative replay method. It truncates generated rollouts at task completion using an evaluator and filters rollouts with actions inconsistent with observations. On four LIBERO suites and five real-world tasks, the authors report over 90% less forgetting than sequential fine-tuning and performance close to experience replay, without accessing previous-task data. Their analysis locates forgetting mainly in inverse dynamics: observations can remain visually plausible while generated actions fail.",
+          "zh": "论文研究世界动作模型在连续微调中遗忘旧任务的问题，并提出无需访问旧任务数据的整流生成回放方法 R²-WAM。该方法用评估器在任务完成时截断生成轨迹，并过滤动作与观察不一致的轨迹。作者报告，在四个 LIBERO 套件和五项真实世界任务上，该方法相较顺序微调将遗忘减少超过 90%，且表现接近经验回放。分析还指出，遗忘集中在逆动力学建模：旧任务观察仍可能视觉合理，但生成动作会失效。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
