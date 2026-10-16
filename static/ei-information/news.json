@@ -606,7 +606,11 @@
             "heading": "",
             "text": "Actively tilting aerial robots can generate six-dimensional wrenches, but slow servo response can make a desired wrench infeasible during reconfiguration. This paper develops a control barrier function (CBF) allocator that preserves wrench feasibility under bounded servo-configuration mismatch.\n\nAn exact equivalent-wrench identity connects the thrust required at nominal and actual configurations. For a nonsingular six-channel allocation map, inverse allocation reduces robust wrench containment to twelve thrust margins tightened by an ellipsoidal reserve.\n\nTheir complete derivatives yield a six-variable servo-rate quadratic program, followed by differential thrust allocation for tracking. A conditional forward-invariance result establishes actual-configuration feasibility under reserve coverage, feasible initialization, and admissible CBF inputs.\n\nA complementary MuJoCo study evaluates a measured-angle implementation against geometric, augmented differential, and normalized differential allocation in circular and cartwheel maneuvers, with and without disturbances. The proposed implementation achieves lower position error in all four recorded scenarios, with an attitude tradeoff in circular tracking.\n\nDuring the disturbed cartwheel, the desired wrench is feasible at all 1751 stored samples of continuous rotation; baseline violation rates range from 60.8% to 100%.These comparisons evaluate sampled feasibility; validation of the nominal-trajectory certificate requires nominal-state and reserve-coverage records."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a control barrier function allocator for maintaining desired wrench feasibility in tilting aerial robots under bounded servo-configuration mismatch. It reduces robust containment to thrust-margin constraints and a servo-rate optimization, and gives a conditional forward-invariance result. In MuJoCo studies of circular and cartwheel maneuvers, the method had lower position error in all four recorded scenarios, with an attitude tradeoff in circular tracking. During disturbed cartwheel rotation, the desired wrench was feasible at 1,751 stored samples; validating the nominal-trajectory certificate still requires nominal-state and reserve-coverage records.",
+          "zh": "论文提出一种基于控制屏障函数的控制分配器，在舵机配置偏差有界时维持倾转飞行机器人的期望力矩可行性，并将鲁棒约束转化为推力裕度约束和舵机速率优化问题。作者给出有条件的前向不变性结论。MuJoCo仿真比较了圆周和侧手翻机动下的多种分配方法；所提方法在四种记录场景中位置误差较低，但圆周跟踪存在姿态权衡。受扰侧手翻中，期望力矩在连续旋转的1751个存储样本上均可行；作者指出，验证名义轨迹证书仍需名义状态与裕度覆盖记录。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -637,7 +641,11 @@
             "heading": "",
             "text": "Recent Vision-Language Models (VLMs) enable automated preference labeling for robotic manipulation, yet their deployment remains impractical since each query incurs substantial inference cost, while VLMs frequently abstain on visually challenging comparisons.\n\nWe propose SPEAR, a framework that transforms VLMs into efficient preference oracles via two synergistic mechanisms. First, we design distinguishability-aware query selection to reduce abstention rates by targeting only informative and distinguishable comparisons.\n\nSecond, we deploy an adaptive reward transition that bootstraps exploration with VLM-synthesized guidance before preference-based refinement.\n\nExperiments on the manipulation benchmarks demonstrate that SPEAR achieves 88.9% average success, outperforming baselines by 23.3 percentage points, while significantly reducing abstention and wall-clock training time on contact-rich tasks.\n\nSPEAR learns three Mobile ALOHA manipulation tasks fully online on real hardware, demonstrating end-to-end real-world applicability. By addressing query efficiency and exploration challenges, SPEAR establishes VLMs as practical preference oracles for scalable robot learning without manual reward engineering."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SPEAR is a framework for using vision-language models as preference oracles in robotic manipulation. It selects informative, distinguishable comparisons to reduce abstention, then uses an adaptive reward transition that begins with model-synthesized guidance before preference refinement. On manipulation benchmarks, the authors report 88.9% average success, 23.3 percentage points above baselines, with reduced abstention and wall-clock training time on contact-rich tasks. They also report fully online learning of three Mobile ALOHA tasks on real hardware.",
+          "zh": "论文提出SPEAR，通过区分度感知的查询选择减少视觉语言模型在困难偏好比较中的弃答，并以自适应奖励过渡先用模型合成指导探索，再进行偏好优化。作者报告，在操作基准上平均成功率为88.9%，比基线高23.3个百分点，同时在接触密集任务中降低弃答和训练耗时。SPEAR还在真实硬件上全程在线学习了三项Mobile ALOHA操作任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -668,7 +676,11 @@
             "heading": "",
             "text": "Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence.\n\nWe propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS.\n\nA nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence, providing non-conservative intervention when the nominal controller violates necessary constraints.\n\nExperimental results include simulations and real robot deployment with various 2D and 3D datasets, including handwriting datasets, validating the effectiveness of our approach in providing formal guarantees with learned motion even in complex, dynamic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a symbolic supervisory control architecture for motion learned from demonstrations. It automatically generates a fail-safe backup plan and certifies safety, reachability, and actuator feasibility from robot dynamics, independently of the learned dynamical system. A nominal controller tracks the learned motion while a supervisor monitors safety and goal convergence and intervenes when needed. The authors report simulations and real-robot deployments across varied two- and three-dimensional datasets, including handwriting, as evidence of effectiveness in providing formal guarantees in complex, dynamic environments.",
+          "zh": "论文提出一种符号监督控制架构，为基于动力系统的示范学习运动自动生成安全备份方案。该方案依据机器人动力学认证安全性、可达性和执行器可行性，不依赖学习得到的动力系统；名义控制器跟踪学习运动，监督控制器监测安全与目标收敛，并在必要时介入。作者报告了涵盖二维、三维及书写数据集的仿真和真实机器人实验，称其验证了方法在复杂动态环境中提供形式化保证的有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -699,7 +711,11 @@
             "heading": "",
             "text": "Multi-fingered robots promise the speed and dexterity of human hands, yet challenging problems such as precise assembly have remained out of reach. These tasks are contact-rich, making data collection for imitation learning difficult, and sparse-reward, making direct exploration with reinforcement learning (RL) intractable.\n\nConsequently, prior work has made progress by structuring the problem with specialized grippers, tool attachments, and environment fixtures. In this work, we argue that before a robot can perfect precise assembly, it must first learn to play. We further ask the question: what factors in the process of learning to play matter for precise assembly?\n\nWe propose Play2Perfect, an RL framework for task-agnostic pretraining through play on diverse objects and goals, which is then perfected on precise assembly. The goal of play is to acquire reusable manipulation priors, such as grasping, in-hand reorientation and pose reaching.\n\nFinetuning then adapts this general prior to assembly, focusing exploration on the final contact-rich, high-precision interactions needed for success. We systematically study key design choices in play pretraining, including object diversity, training objective, trajectory diversity, and goal precision.\n\nWe show that our prior is 33x more sample-efficient than RL training from scratch, even when provided with dense, multi-stage rewards. We demonstrate zero-shot sim-to-real transfer, achieving 60% success on tight insertions with only 0.5 mm contact clearance, and over 50% success on long-horizon multi-part assembly and screwing."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Play2Perfect is an RL framework that pretrains multi-fingered robots through task-agnostic play with diverse objects and goals, then fine-tunes the resulting manipulation priors for precise assembly. The authors study object diversity, training objectives, trajectory diversity, and goal precision. They report that the learned prior is 33 times more sample-efficient than training RL from scratch, even with dense multi-stage rewards. In zero-shot sim-to-real transfer, it achieves 60% success on tight insertions with 0.5 mm contact clearance and over 50% on long-horizon multipart assembly and screwing.",
+          "zh": "论文提出Play2Perfect，先让多指机器人通过多样物体和目标上的任务无关强化学习“玩耍”，学习抓取、手内重定向和姿态到达等可复用操作先验，再针对精密装配微调。研究系统考察物体多样性、训练目标、轨迹多样性和目标精度等设计因素。作者称，该先验比从零开始的强化学习样本效率高33倍；仿真到现实零样本迁移在接触间隙0.5毫米的紧配插入任务中成功率为60%，在长时程多零件装配和拧螺丝任务中超过50%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
