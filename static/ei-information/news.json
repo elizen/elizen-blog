@@ -1551,7 +1551,11 @@
             "heading": "",
             "text": "Continuous physical human-robot interaction requires robots to rapidly adapt their control behaviour without interrupting task execution. However, existing ROS 2 control architectures rely on stop-to-switch mechanisms that introduce substantial delays and interrupt execution.\n\nWe present an open-source, sub-millisecond reflex engine based on an enhanced ROS 2-compatible multimode controller that enables deterministic switching between control modalities and integrates reflex behaviours for mitigating contact hazards and kinematic limit violations.\n\nExperiments on a Franka Robotics manipulator demonstrate switching delays below 0.1 ms, more than four orders of magnitude faster than conventional ros2_control, while maintaining continuous operation during safety-critical events.\n\nIn a multi-stage manipulation task, the proposed framework reduced execution time by 3.5% and peak trajectory jerk by more than threefold. By eliminating runtime middleware overhead, controller transitions are implemented as lock-free pointer operations, enabling reflex-level responsiveness within an open-source robotics framework."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an open-source reflex engine built around a ROS 2-compatible multimode controller. It enables deterministic switching between control modes and integrates reflexes for contact hazards and kinematic limit violations. Experiments on a Franka Robotics manipulator show switching delays below 0.1 ms and continuous operation during safety-critical events. In a multi-stage manipulation task, the framework reduced execution time by 3.5% and peak trajectory jerk by more than threefold. The authors attribute its responsiveness to lock-free pointer operations that eliminate runtime middleware overhead.",
+          "zh": "论文提出一种兼容 ROS 2 的多模态控制器和开源反射引擎，支持确定性切换控制模式，并整合用于缓解接触风险和运动学限位违规的反射行为。Franka Robotics 机械臂实验显示，切换延迟低于 0.1 毫秒，且安全关键事件期间可连续运行。多阶段操作任务中，框架将执行时间降低 3.5%，峰值轨迹急动度降低三倍以上。作者称通过无锁指针操作消除运行时中间件开销，实现亚毫秒级响应。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1582,7 +1586,11 @@
             "heading": "",
             "text": "A mesh of interceptors defending a fixed site must spread over the predicted arrival point of an approaching object. This is a recurring task in multi-agent robotics: N agents, each covering a disc of radius r, spread over a probability density so that a point drawn from it falls within some agent's disc.\n\nWe give closed forms for the quantities that bound performance before any policy is chosen, and validate each by Monte Carlo. The uncertainty of a point predicted by extrapolating a noisy linear track follows from least-squares variance propagation plus a delta-method term for the uncertain arrival time, agreeing with simulation to within 1.8%.\n\nThe coverage probability of a packed mesh admits a closed form accurate to 0.007 absolute, with a volumetric analogue. A naive area ratio misses a ceiling: while agents stay at least 2r apart, no mesh exceeds 90.69% coverage in the plane or 74.05% in a volume.\n\nThis ceiling belongs to the separation constraint, not to the problem - permitting overlap substitutes Kershner's thinnest-covering density and removes it, the better regime above a crossover at p=0.80.\n\nHexagonal packing is optimal among five arrangements; the centroidal-Voronoi configuration coverage control supplies reaches only half its coverage at small budgets. The Gaussian assumption is conservative under heavy tails and anisotropy but fragile under bias: a one-sigma aim-point offset costs 14 points of coverage.\n\nA repositioning team must also choose a commit time, and the admissible window can be empty. Against the applicable ceiling, analytic placement attains 85% of what the configuration permits while centralised PPO averages 15% over three trainer seeds, with a paired bootstrap against a null policy containing zero at every seed.\n\nWe argue such ceilings should be computed before any learning experiment and quoted alongside every result."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper derives closed-form bounds for a mesh of agents covering a predicted arrival point and validates them with Monte Carlo simulations. Under a minimum-separation constraint, it reports coverage ceilings of 90.69% in the plane and 74.05% in a volume; permitting overlap removes this ceiling. Hexagonal packing is optimal among five arrangements. Analytic placement reaches 85% of the applicable ceiling, while centralized PPO averages 15% across three trainer seeds. The authors argue that such bounds should be computed and reported before learning experiments.",
+          "zh": "论文研究多无人机拦截网覆盖预测到达点的问题，给出策略选择前用于界定性能的闭式公式，并以蒙特卡洛验证。作者报告，在最小间距约束下，平面覆盖率上限为 90.69%，体积覆盖率上限为 74.05%；允许重叠则可移除该上限。五种布局中六边形排列最优。解析布置达到配置允许覆盖率的 85%，而集中式 PPO 在三个训练随机种子上平均达到 15%。作者主张学习实验前应先计算并报告此类上限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1613,7 +1621,11 @@
             "heading": "",
             "text": "World-model planners evaluate candidate trajectories by predicting their future consequences, implicitly relying on the plan-to-motion relationship learned during training.\n\nAt deployment, a different downstream controller may execute the same planned trajectory differently, creating a planning-execution gap between the frozen model's imagined future and actual execution. A natural remedy is to replace the planned trajectory with its predicted or observed execution.\n\nHowever, we find that better execution fidelity does not necessarily yield better decisions: directly substituting predicted execution trajectories yields only a 0.048 PDMS improvement across 10 unseen controller configurations, far smaller than the gain from our proposed adaptation.\n\nThis suggests a semantic mismatch between a planned trajectory, which serves as a reference for downstream control, and an executed trajectory, which already describes the resulting post-controller motion.\n\nWe introduce ExecutionBridge, which infers controller-specific execution characteristics from planned-executed trajectory pairs and uses them to adapt the native ego latent rollout while keeping the original planned trajectory unchanged. The planner, world model, and reward head remain frozen.\n\nOn NAVSIM, ExecutionBridge consistently improves planning across unseen controller configurations and multiple frozen world-model planners, with substantially larger gains in challenging driving scenes where execution mismatch more strongly affects candidate evaluation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines the gap between a frozen world model’s imagined outcomes and actual motion when deployment uses a different downstream controller. Directly substituting predicted execution trajectories yields only a 0.048 PDMS improvement across 10 unseen controller configurations. The authors propose ExecutionBridge, which infers controller-specific characteristics from planned and executed trajectory pairs and adapts the ego latent rollout while leaving the original plan unchanged. The planner, world model, and reward head remain frozen. On NAVSIM, the method consistently improves planning across unseen controllers and multiple frozen planners.",
+          "zh": "论文指出，部署时更换下游控制器会造成规划轨迹与实际运动之间的偏差，使冻结世界模型想象的未来与执行结果不一致。作者发现，直接用预测的执行轨迹替代规划轨迹，在 10 种未见控制器配置上的 PDMS 仅提升 0.048。为此提出 ExecutionBridge，从规划与执行轨迹对中推断控制器特征，并据此调整自车潜在状态展开，同时保留原规划轨迹，冻结规划器、世界模型和奖励头。在 NAVSIM 上，该方法在未见控制器配置及多个冻结世界模型规划器上持续改善规划表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
