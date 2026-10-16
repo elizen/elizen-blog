@@ -58,7 +58,11 @@
             "heading": "",
             "text": "Executing heavy-duty physical manipulation in unpredictable environments remains a major challenge for quadrupedal robots lacking dedicated manipulators. This paper presents SOMA, a hierarchical reinforcement learning framework for whole-body non-prehensile manipulation of multi-object stacks using a quadruped robot.\n\nUnlike traditional methods restricted to two-dimensional planar pushing, SOMA integrates explicit robot base-height control, unlocking full three-dimensional pushing strategies. This capability enables the quadruped to manipulate complex payload stacks as a unified system while preventing relative sliding or tipping of upper layers.\n\nThe architecture factorizes control into a high-level manipulation policy using a Simplified Structured State Space Sequence (S5) encoder to reason over long-horizon temporal history and predict bounded target tracking commands via Beta distributions, and a low-level locomotion policy that dynamically adapts leg stance configurations.\n\nIn extensive simulation benchmarks, SOMA achieves a $90.3\\%$ success rate for single-object reposing and up to $90.1\\%$ for dynamic two-box stacks under stringent error margins ($0.05\\text{ m}$ position error, $1^\\circ$ orientation error).\n\nFinally, we validate zero-shot sim-to-real transfer on a Unitree Go1 quadruped robot across diverse payload masses and geometries, demonstrating active base-height adjustments to maintain traction and balance during heavy pushing tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SOMA, a hierarchical reinforcement learning framework for a quadruped robot manipulating stacks of objects. Explicit base-height control enables three-dimensional pushing, with a high-level manipulation policy and a low-level locomotion policy. In simulation benchmarks, the authors report 90.3% success for single-object reposing and up to 90.1% for dynamic two-box stacks under strict position and orientation error limits. They also report zero-shot sim-to-real transfer on a Unitree Go1 across payload masses and geometries.",
+          "zh": "论文提出 SOMA，一种用于四足机器人操控多物体堆叠物的分层强化学习框架。它通过显式控制机器人底座高度实现三维推推，并将控制分为高层操控策略与低层运动策略。在仿真基准中，作者报告单物体重摆成功率为 90.3%，动态双箱堆叠最高为 90.1%，评估采用严格的位置和朝向误差界限。论文还报告，该方法在 Unitree Go1 上实现零样本仿真到现实迁移，并在不同载荷质量和几何形状下展示推挤过程中的底座高度调整。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -89,7 +93,11 @@
             "heading": "",
             "text": "Smartphones have become integral to modern life due to their diverse applications.\n\nHowever, the development of applications for these devices faces significant challenges, primarily due to two factors: (i) the diverse hardware and operating system versions that require testing across multiple configurations; and (ii) the imperative activity of testing the smartphone in a non-invasive way (similar to an end-user interaction), which is expensive, tedious and error-prone as it is usually carried out manually.\n\nIn this context, robotic automation has emerged as an effective solution for addressing the diversity of smartphone systems and versions, and in performing some testing tasks non-invasively.\n\nIn addition, automated robots facilitate quick, accurate, and repetitive testing, thus enabling developers to validate their applications across various configurations effectively. This results in a less invasive verification and in a significant reduction in time spent on manual testing, thus accelerating the development cycle.\n\nOur work proposes R-DLD (Robotic-supported Data Loss Detection), a robot-assisted infrastructure for data loss detection in Android applications, offeringless invasive and more realistic tests by interacting directly with smartphone sensors. The robot is constructed using cost-effective materials, facilitating its adoption in testing environments.\n\nIn our empirical evaluation R-DLD successfully identified 341 data loss issues in 77 randomly selected apps from an Android store. All reported bugs received responses from the developer, with 89.55% confirming the data loss problems, while 35.82% have being subsequently fixed."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes R-DLD, a robot-assisted infrastructure for detecting data loss in Android applications. It interacts directly with smartphone sensors to provide less invasive tests intended to resemble end-user interactions, and the robot is built from low-cost materials. In an empirical evaluation of 77 randomly selected apps from an Android store, R-DLD identified 341 data loss issues. Developers responded to all reported bugs; 89.55% confirmed the data loss, and 35.82% were subsequently fixed.",
+          "zh": "论文提出 R-DLD，一种通过机器人直接与智能手机传感器交互、检测 Android 应用数据丢失的测试基础设施，旨在提供较少侵入且更贴近真实使用的测试。作者称该机器人采用低成本材料。在对应用商店随机选取的 77 款应用进行实证评估时，R-DLD 识别出 341 个数据丢失问题；所有报告的问题都收到开发者回应，其中 89.55% 获确认存在数据丢失，35.82% 随后得到修复。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -120,7 +128,11 @@
             "heading": "",
             "text": "Reward learning typically assumes the human's input covers everything that matters for the task. In practice, humans can only attend to so much at once, so their teaching naturally captures some features---or aspects of the task---better than others.\n\nPrior work has shown how the robot can identify which features were poorly supervised directly from its teaching data. But the current solution is to ask the human to try again, putting the burden on someone who already struggled to convey those features. We propose shifting this burden to the robot.\n\nOur key insight is that the same information that tells the robot what it doesn't know can help it ask better questions. Preference queries offer a low-effort channel for resolving this uncertainty, but only if the robot knows where to direct them and the human knows what to attend to when answering.\n\nWe act on this insight in two ways: we build an informed prior that targets preference queries at the features that need resolving, and we accompany each query with an explanation that focuses the human's attention on exactly those features.\n\nIn simulation, the informed prior beats the standard active preference learning baseline by up to $30.8\\%$ in the low-query regime, where reducing human effort matters most. In a user study, the informed prior and explanations each significantly improve reward recovery and amplify each other."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses reward learning when human teaching underspecifies some task features. It shifts clarification work to the robot by using an informed prior to direct preference queries toward poorly supervised features and providing explanations to focus the human's attention. In simulation, the prior outperforms a standard active preference learning baseline by up to 30.8% in the low-query regime. A user study finds that the prior and explanations each significantly improve reward recovery and amplify one another.",
+          "zh": "论文关注奖励学习中人类示教未能充分覆盖任务特征的问题，并提出由机器人承担后续澄清工作。方法利用示教数据识别监督不足的特征，以知情先验将偏好查询指向这些特征，并为每个查询附上引导人类注意相关特征的解释。在仿真中，该先验在低查询量条件下比标准主动偏好学习基线最高提升 30.8%。用户研究显示，知情先验和解释分别显著改善奖励恢复，二者结合时效果相互增强。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
