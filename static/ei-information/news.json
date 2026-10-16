@@ -163,7 +163,11 @@
             "heading": "",
             "text": "Egocentric human videos offer a scalable alternative to costly robot demonstra- tions, yet transferring their manipulation priors to robot control remains chal- lenging. The commonly adopted retargeting-based approaches convert human wrist and finger poses into embodiment-specific action commands through hand- crafted geometric mappings.\n\nHowever, such mappings require meticulous recal- ibration across different embodiments and risk propagating hand-tracking errors into downstream robot control pipelines.\n\nTo this end, we propose EgoJEPA, a three-stage framework that learns embodiment-agnostic representations from ego- centric human videos without rule-based human-to-robot retargeting: 1) Human- action pre-training learns effect-aware latent actions through JEPA-style visual prediction conditioned on hand-motion differences; 2) Latent-action-based world modeling jointly predicts future visual dynamics and latent actions, which decou- ples human prior pre-training from robot-specific control parameterizations; 3) Embodiment-specific tuning adapts the pretrained model to diverse robots through lightweight action adapters.\n\nExperiments on five real-world manipulation tasks across three robot embodiments demonstrate the effectiveness and efficiency of EgoJEPA. It achieves a 74% average success rate under the out-of-domain evalu- ation, compared with 65% for the retargeting baseline, while reducing cumulative cross-embodiment wall-clock cost by 47.2%, from 743.2 to 392.7 hours."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EgoJEPA, a three-stage framework that learns dexterous manipulation priors from egocentric human videos without rule-based human-to-robot retargeting. It learns effect-aware latent actions, models latent actions jointly with future visual dynamics, and adapts the model to robot embodiments through lightweight action adapters. In five real-world tasks across three embodiments, the authors report a 74% average success rate in out-of-domain evaluation versus 65% for a retargeting baseline, and a 47.2% reduction in cumulative cross-embodiment wall-clock cost.",
+          "zh": "论文提出 EgoJEPA，一种从第一人称人类视频学习灵巧操作先验的三阶段框架，旨在避免依赖手工的人到机器人动作重定向。框架先学习效果感知的潜在动作，再联合建模潜在动作与未来视觉动态，最后通过轻量动作适配器适配不同机器人。作者报告其在三种机器人本体的五项真实操作任务中，域外评估平均成功率为74%，重定向基线为65%；跨本体累计耗时降低47.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "Vision-Language Navigation (VLN) systems are fundamentally constrained by partial observability, as an agent can only accumulate knowledge from locations it has personally visited. As multiple robots increasingly coexist in shared environments, a natural question arises: can agents navigating the same space benefit from each other's observations?\n\nIn this work, we introduce Co-VLN, a minimalist, model-agnostic framework for systematically investigating whether and how peer observations from concurrently navigating agents can benefit VLN.\n\nWhen independently navigating agents identify common traversed locations, they exchange structured perceptual memory, effectively expanding each agent's receptive field at no additional exploration cost.\n\nWe validate our framework on the R2R benchmark under two representative paradigms (the learning-based DUET and the zero-shot MapGPT), and conduct extensive analytical experiments to systematically reveal the underlying dynamics of peer observation sharing in VLN.\n\nResults demonstrate that vision-sharing enabled model yields substantial performance improvements across both paradigms, establishing a strong foundation for future research in collaborative embodied navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Co-VLN, a model-agnostic framework for studying whether agents performing vision-language navigation can benefit from peer observations. When agents identify locations they have both traversed, they exchange structured perceptual memory, expanding each agent’s receptive field without additional exploration. The authors evaluate the approach on the R2R benchmark with the learning-based DUET and zero-shot MapGPT paradigms. They report substantial performance improvements with vision sharing across both paradigms, but the abstract gives no specific metrics or improvement sizes.",
+          "zh": "论文研究在视觉语言导航中共享同一环境内其他导航智能体的观察是否有益，并提出模型无关框架 Co-VLN。智能体发现共同经过的位置后交换结构化感知记忆，以扩展彼此的感知范围，而不增加探索成本。作者在 R2R 基准上测试学习式 DUET 和零样本 MapGPT 两种范式，并报告视觉共享带来了显著性能提升。摘要未提供提升幅度或具体指标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "Language-conditioned humanoid motion generation enables users to create and refine robot movements through natural language. The central challenge is to connect an underspecified request to concrete motion structure that can subsequently be revised relative to an accepted reference.\n\nWe present TRACE, a generation and editing framework for the Unitree G1 humanoid robot built around typed, measurable kinematic quantities. Our insight is to ground generation conditions in paired training motions and editing goals in the current motion.\n\nA language model learns to predict support, root, and hand events from motion-derived supervision; their time-aligned encodings complement the original text in a diffusion generator. Gravity-referenced states and trajectory--contact objectives improve kinematic consistency. For editing, typed requests define body--time scopes and source-relative goals.\n\nA separate reference-conditioned diffusion editor uses these goals and revised events to realize changes, while sampling-time projection preserves protected state coordinates. Quantitative evaluation and human assessment show improved semantic alignment and motion quality over the compared methods.\n\nControlled ablations support the value of motion-grounded conditioning and kinematic consistency, while multi-turn editing evaluations demonstrate more reliable execution of successive relative requests under shared preservation constraints.\n\nTogether, these results support typed kinematic structure as a common basis for motion generation and reference-aware revision."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRACE, a language-conditioned motion generation and editing framework for the Unitree G1 humanoid. It grounds generation in typed support, root, and hand events derived from motion supervision, and uses gravity-referenced states and trajectory-contact objectives to improve kinematic consistency. For editing, typed requests specify body-time scopes and goals relative to a reference motion; a separate diffusion editor applies changes while preserving protected state coordinates. The authors report better semantic alignment and motion quality than compared methods, and more reliable successive edits in multi-turn evaluations.",
+          "zh": "论文提出 TRACE，用于 Unitree G1 人形机器人的语言条件动作生成与参考动作编辑。框架以可测量的支撑、根部和手部运动事件为条件，并利用动作监督、重力参考状态及轨迹接触目标改善运动一致性；编辑时，类型化请求指定身体部位、时间范围和相对当前动作的目标，参考条件扩散编辑器据此修改，同时保护指定状态。作者报告定量评估和人工评估优于对比方法，多轮编辑也更可靠；摘要未说明评估是否基于真实机器人实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models are expected to follow instructions like their language backbones, yet prior work has focused on What-level instructions that specify the task rather than How-level instructions that specify how to carry it out. Through our diagnoses, we find that How-level instructions do not help current VLAs and lower task success.\n\nWe hypothesize that pairing each training episode with a single instruction limits How-level instruction following, and show that training with segment-level enriched instructions makes actions respond to such instructions without consistently raising task success.\n\nTo measure How-level instruction following beyond standard benchmarks, we introduce SIMPLER-IN, where success requires conditions given only in the instruction. It shows that the gained responsiveness does not extend to demanding or out-of-distribution How-level instructions. How-level instruction following thus remains an open challenge."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines whether vision-language-action models follow How-level instructions that specify how to perform a task, rather than only what task to perform. The authors find that such instructions do not help current models and reduce task success. Enriching training with segment-level instructions makes actions responsive to them, but does not consistently increase success. The paper introduces SIMPLER-IN, which requires success conditions to be specified only in the instruction. Results indicate that responsiveness does not extend to demanding or out-of-distribution How-level instructions, leaving this an open challenge.",
+          "zh": "论文考察视觉语言动作模型能否遵循说明执行任务的具体方式（How-level 指令），而不只是理解任务目标。作者发现，现有模型中的此类指令未带来帮助，反而降低任务成功率；按片段提供丰富指令可使动作对指令作出响应，但不能稳定提高成功率。论文提出 SIMPLER-IN，要求成功条件仅由指令给出。该评测显示，响应能力未能延伸至要求较高或分布外的指令，因此这类指令遵循仍是开放挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
