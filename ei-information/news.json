@@ -2325,7 +2325,11 @@
             "heading": "",
             "text": "Efficient synthesis of contact-rich manipulation trajectories is essential for downstream robot learning. Gradient-based planning offers a promising approach, but jointly optimizing motion and contact decisions remains challenging. Meanwhile, many existing planners run on CPUs with limited throughput.\n\nWe present CQDC-Warp, a GPU-accelerated differentiable quasi-dynamic simulator for batched model predictive control (MPC).\n\nWe use it to study contact-guided trajectory optimization, in which intended robot--object contacts are specified before planning and encouraged through soft costs, while the simulated dynamics determine contact geometry and frictional response without a prescribed contact-mode schedule.\n\nAcross $17{,}408$ trials on the $17$-object Allegro in-hand rotation benchmark, our framework achieves $79.8\\%$ success, compared with $73.7\\%$ for CFree and $65.2\\%$ for IMPACT, and reduces mean trajectory-generation time by factors of $27.0$ and $50.2$, respectively.\n\nOn a single NVIDIA RTX 4090 with $2{,}048$ parallel worlds, forward and backward throughput reach $2.06\\times10^5$ and $2.25\\times10^5$ world-steps per second, respectively.\n\nFurther experiments cover manipulation with LEAP and Shadow hands, environmental contact exploitation, bimanual manipulation, whole-body control, and real-world trajectory replay on a Sharpa hand."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CQDC-Warp, a GPU-accelerated differentiable quasi-dynamic simulator for batched model predictive control. It studies trajectory optimization with intended robot-object contacts specified and encouraged through soft costs, while simulated dynamics determine contact geometry and friction without a prescribed contact-mode schedule. In 17,408 Allegro in-hand rotation trials, the authors report higher success than CFree and IMPACT and shorter trajectory-generation times. Further experiments cover other hands, environmental contacts, bimanual manipulation, whole-body control, and real-world trajectory replay on a Sharpa hand.",
+          "zh": "论文提出 CQDC-Warp，一种用于批量模型预测控制的 GPU 加速可微准动态模拟器，并研究预先指定期望机器人—物体接触、再以软代价加以鼓励的轨迹优化方法；接触几何与摩擦响应由模拟动力学决定，无需预设接触模式。在 Allegro 手内旋转基准的 17,408 次试验中，作者报告其成功率高于 CFree 和 IMPACT，轨迹生成时间也更短。其他仿真涵盖多种机械手、环境接触、双手操作和全身控制；另报告 Sharpa 手上的真实轨迹回放。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2356,7 +2360,11 @@
             "heading": "",
             "text": "This paper challenges the understanding capabilities of existing AI paradigms and emerging world models by asking a fundamental question: How quickly can reality change before an intelligent system can no longer reliably perceive, reason, and act?\n\nWe formulate this as a theory- and model-agnostic challenge in which systems must infer reliable actions for increasingly distant future states across a growing observation--reality gap.\n\nWe operationalize this challenge through the effective Speed of Coherent Cognition (\\(S_C^{\\mathrm{eff}}\\)), defined as the highest tested Speed of Reality (\\(S_R\\)) through which a system continuously satisfies a predefined behavioural reliability criterion from baseline.\n\nAs a proof of concept, reinforcement-learning agents are trained at the baseline \\(S_R\\) and evaluated, without retraining, as \\(S_R\\) is increased by up to \\(50\\times\\) while computational resources remain fixed.\n\nWe compare Transformer and gated-MLP baselines with \\(Co^4\\), an architecture inspired by cellular mechanisms implicated in conscious processing and awake thought.\n\nAcross the tested scenarios, \\(Co^4\\) achieves substantially higher \\(S_C^{\\mathrm{eff}}\\) than the baselines, motivating \\(S_C^{\\mathrm{eff}}\\) as a new benchmark and the scaling of coherent cognition as a principle for reliable AI."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper frames reliable intelligence in terms of how quickly reality can change while a system continues to perceive, reason, and act reliably. It defines effective Speed of Coherent Cognition as the highest tested reality speed at which a system continuously meets a predefined behavioral reliability criterion. In a proof of concept, reinforcement-learning agents trained at baseline speed are evaluated without retraining as speed rises, with computational resources fixed. The authors report that Co⁴ exceeds Transformer and gated-MLP baselines across tested scenarios, and propose the measure as a benchmark.",
+          "zh": "论文提出以现实变化速度衡量智能系统可靠性的挑战，并定义有效连贯认知速度，即系统在连续满足预设行为可靠性标准时所能应对的最高已测试现实速度。作为概念验证，强化学习智能体在基准速度训练后，在计算资源固定且不重新训练的条件下接受逐步加快的评估。作者比较 Transformer、门控 MLP 与受细胞机制启发的 Co⁴ 架构，并报告 Co⁴ 在所测场景中的有效连贯认知速度明显更高，据此提出该指标作为基准及连贯认知扩展原则。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2387,7 +2395,11 @@
             "heading": "",
             "text": "Safe multi-agent coordination typically assumes what real-world, deployed, resource-constrained robots cannot provide: continuous, perfect state sharing. Robust control strategies must be complemented with robust communication strategies to deliver resilient deployments.\n\nIn this work, we propose a unified control/communication strategy that provides safe control to guarantee inter-agent safety under intermittent communication and demonstrate its effectiveness in a pursuit-evasion scenario.\n\nEach agent computes the reachable set of neighboring agents based on the last state information received, then solves for a safe control input based on control barrier functions to ensure agents avoid collision. We prove that inter-agent collision avoidance is guaranteed provided communication staleness remains bounded.\n\nAs the reachable set inflates between state transmissions, each agent reasons about when to preemptively transmit its state information to neighboring agents based on novel metrics characterizing uncertainty risk and kinematic risk.\n\nWe implement and simulate a variety of pursuit-evasion scenarios and show that preemptive communication reduces messages by 77.5% compared to periodic and event-triggered baselines with zero collisions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a joint control and communication strategy for multi-agent pursuit-evasion under intermittent state sharing. Each agent estimates neighbors’ reachable sets from their latest received states, then uses control barrier functions to choose collision-avoiding inputs. The authors prove inter-agent collision avoidance when communication staleness is bounded. Agents use uncertainty-risk and kinematic-risk metrics to decide when to transmit state information preemptively as reachable sets expand. In simulated pursuit-evasion scenarios, the approach reportedly reduces messages by 77.5% relative to periodic and event-triggered baselines, with zero collisions.",
+          "zh": "论文提出面向多智能体追逃任务的控制与通信联合策略，以应对状态信息间歇更新。各智能体根据最近收到的邻居状态计算其可达集，再利用控制障碍函数求取安全控制输入。作者证明，在通信信息过时程度有界的条件下，该方法可保证智能体之间避免碰撞。随着可达集在传输间隔内扩大，智能体依据不确定性风险和运动学风险指标决定是否提前发送状态。仿真的多种追逃场景中，作者报告该策略在零碰撞情况下，相比周期式和事件触发基线减少77.5%的消息。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2418,7 +2430,11 @@
             "heading": "",
             "text": "Advances in robotics and autonomous navigation systems hinge on the ability to predict terrain traversability accurately. Traditional methods for generating datasets to train these prediction models often involve putting robots into potentially hazardous environments, posing risks to equipment and safety.\n\nTo solve this problem, we present ZeST, a novel approach that treats repeated VLM outputs as stochastic measurements and fuses them into an uncertainty-aware posterior.\n\nOur approach not only performs zero-shot traversability and mitigates the risks associated with real-world data collection but also accelerates the development of advanced navigation systems, offering a cost-effective and scalable solution. To support our findings, we present navigation results, in both controlled indoor and unstructured outdoor environments.\n\nAs shown in the experiments, ZeST provides safer navigation with a 90-100% success rate while no baseline exceeds 60%, and keeps complete success under query latencies up to 3.6s."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ZeST, a zero-shot method for estimating terrain traversability in unknown environments. It treats repeated vision-language model outputs as stochastic measurements and fuses them into an uncertainty-aware posterior. The authors describe the method as a way to reduce risks from collecting training data in potentially hazardous environments, and report navigation results in controlled indoor and unstructured outdoor settings. In their experiments, ZeST achieves a reported 90–100% success rate, while no baseline exceeds 60%; complete success is retained at query latencies up to 3.6 seconds.",
+          "zh": "论文提出 ZeST，通过将视觉语言模型的重复输出视为随机测量并融合为考虑不确定性的后验分布，实现未知环境中的零样本地形可通行性判断。作者将该方法定位为降低危险环境中实地采集训练数据风险的方案，并展示受控室内和非结构化室外环境中的导航结果。实验中，作者报告 ZeST 的导航成功率为90%至100%，而各基线均未超过60%；即使查询延迟达到3.6秒，系统仍保持完全成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
