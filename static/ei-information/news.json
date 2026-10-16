@@ -1430,7 +1430,11 @@
             "heading": "",
             "text": "Training humanoid whole-body vision-language-action (VLA) policies requires costly robot demonstrations with aligned robot-view observations and controller-compatible whole-body state-action labels. Egocentric human demonstrations offer scalable supervision but have misaligned views and sparse motion cues.\n\nExisting approaches either pretrain policies that still require robot data for adaptation or generate controller-specific commands that limit reuse. Conversion also requires robot-view observations aligned with the generated whole-body motion.\n\nWe present KODA (Kinematics-Observation Data Alignment), which converts egocentric RGB demonstrations into whole-body VLA training data using a reusable canonical trajectory to guide robot-view synthesis and generate controller-specific whole-body state-action supervision.\n\nKODA first generates a simulator-checked whole-body trajectory using a sparse tracker with sampling-based command optimization. This generated trajectory directly determines the onboard camera poses used to synthesize corresponding robot-view observations. The motion, observations, and task instruction form a canonical record.\n\nFor each deployment controller, KODA optimizes commands to track the stored motion and records the corresponding action labels and proprioceptive states. When switching controllers, KODA retains this canonical record and regenerates whole-body state-action supervision for co-training with matching robot demonstrations.\n\nWe evaluate KODA on four Unitree G1 loco-manipulation tasks using two whole-body controllers, SONIC and HEFT. With robot data held fixed, macro-average success on conditions covered by human demonstrations but absent from robot data improves by 45.0 and 46.25 percentage points, respectively.\n\nUnder both controllers, this metric shows an upward trend across the evaluated human-data budgets, suggesting potential for further scaling."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents KODA, a method for converting egocentric human RGB demonstrations into whole-body VLA training data for humanoid robots. A simulator-checked trajectory guides robot-view observation synthesis, while controller-specific commands produce aligned state and action labels. The authors evaluate KODA on four Unitree G1 loco-manipulation tasks with SONIC and HEFT. With robot data held fixed, macro-average success on conditions covered by human demonstrations but absent from robot data improves by 45.0 and 46.25 percentage points, respectively.",
+          "zh": "论文提出 KODA，将人类第一视角 RGB 示范转为人形机器人全身 VLA 训练数据。方法以经仿真检查的全身轨迹为基础，合成与运动对齐的机器人视角观测，并针对不同控制器生成相应状态、动作标签及本体感知状态。作者在 Unitree G1 的四项移动操作任务和 SONIC、HEFT 两种控制器上评估；在机器人数据固定时，对人类示范覆盖而机器人数据缺失的条件，宏平均成功率分别提升45.0和46.25个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1461,7 +1465,11 @@
             "heading": "",
             "text": "We consider the benchmarking problem of gathering in an $(N,f)$-fault system consisting of $N$ robots, of which at most $f$ may fail at any execution. The {\\em traditional} version asks $N-f$ non-faulty robots to gather at a point not known a priori.\n\nThe recently studied {\\em indulgent} version asks $N-f$ non-faulty robots to gather at the location of a faulty one. Indulgent gathering is impossible in a $(2,1)$-crash system in the $LUMI$ model under semi-synchrony, even when infinitely many colors and coordinate axis agreement are available.\n\nIn this paper, we establish four results for indulgent gathering under asynchrony in $LUMI$, considering a {\\em mobility fault} model in which a robot crash only impacts its mobility but not the operation of the light.\n\nWe first show that indulgent gathering is impossible in a $(2,1)$-mobility system using 2-colored lights, and then give an optimal solution w.r.t. the number of colors using 3-colored lights. We then give two deterministic algorithms for an $(N,f)$-mobility system, $f"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies indulgent gathering of opaque robots asynchronously in the LUMI model, under a mobility-fault model where a crash affects movement but not the robot’s light. It reports that gathering in a (2,1)-mobility system is impossible with two-colored lights and presents an optimal solution using three-colored lights. The abstract also begins to describe two deterministic algorithms for an (N,f)-mobility system, but ends before stating their properties or conclusions.",
+          "zh": "本文研究异步 LUMI 模型下不透明机器人的宽容式聚集问题，考虑最多有 f 台机器人发生故障，且故障仅影响移动能力、不影响灯光运行的移动故障模型。摘要称，作者证明在（2,1）系统中使用两色灯无法实现聚集，并给出使用三色灯的最优解；随后还提出了针对（N,f）移动故障系统的两种确定性算法。不过摘要在算法结果描述处截断，未提供其具体性质或结论。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1492,7 +1500,11 @@
             "heading": "",
             "text": "Image-goal navigation requires a global planner that connects visually specified endpoints while providing observations that a local policy can follow. Three-dimensional Gaussian Splatting (3DGS) provides map-registered RGB, opacity, and depth renderings, but does not explicitly encode navigable topology.\n\nWe introduce GS-PRM, a Gaussian visual roadmap whose milestones, local connections, and visual references are constructed directly through 3DGS rendering without deriving an occupancy grid or signed distance field. We define render-based collision-free (RC-free) configurations and paths.\n\nPanoramic depth supplies conservative clearance for milestone validation and adaptive coverage, while edge-aligned orthographic rendering tests the robot's swept volume. We establish conditional soundness and sufficient conditions for deterministic query completeness and probabilistic construction completeness of GS-PRM.\n\nTo validate the performance of GS-PRM, we conduct experiments in both simulated and real-world environments, demonstrating long-horizon navigation using goal-conditioned policies guided by GS-PRM.\n\nCompared with a state-of-the-art 3DGS-based navigation system, our GS-PRM-based navigation system achieves up to a twice higher average success rate and reduces travel time by up to 57.2% when both systems complete the navigation task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GS-PRM, a visual roadmap for image-goal navigation built directly from 3D Gaussian Splatting renderings without an occupancy grid or signed distance field. Panoramic depth supports milestone clearance and coverage, while edge-aligned orthographic rendering checks the robot’s swept volume. The authors state conditional soundness and sufficient conditions for query and construction completeness. Simulated and real-world experiments demonstrate long-horizon navigation; compared with a state-of-the-art 3DGS-based system, success rate is up to twice as high and travel time is reduced by up to 57.2% when tasks are completed.",
+          "zh": "论文提出 GS-PRM，一种直接利用三维高斯泼溅渲染构建的视觉路标图，用于图像目标导航，无需生成占据栅格或有符号距离场。方法利用全景深度评估路标间隙与覆盖，并通过边缘对齐的正交渲染检查机器人扫掠体积；作者还给出条件安全性及查询和构建完备性的充分条件。仿真与真实环境实验展示了长程导航；与一种先进的 3DGS 导航系统相比，成功率最高约为两倍，完成任务时行程时间最多减少57.2%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
