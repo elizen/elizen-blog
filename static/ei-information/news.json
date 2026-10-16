@@ -1951,7 +1951,11 @@
             "heading": "",
             "text": "Predicting how the world responds to an action requires more than what can be seen: robots must account for environmental factors that are neither directly observable nor explicitly specified, from physical properties such as friction and mass to human-defined environmental rules.\n\nWe introduce T2-Z for test-time optimization of environment latents, which augments a robotic world model with a learnable environment latent to condition world predictions. This compact latent captures underlying environmental variation without supervision of what environmental factors exist or what values they take.\n\nDuring training, T2-Z alternates between two stages: a world-model optimization stage that fixes the latents and learns general action-conditioned dynamics across environments; and an environment-latent optimization stage that freezes the world model and optimizes the conditioning latents, allowing latent structure to emerge purely through world prediction.\n\nAt test time, the world model remains frozen and a newly initialized environment latent is optimized from one or more test-time interactions, adapting the model to previously unseen environmental configurations.\n\nAcross 7 simulated settings and 4 real-world robotic tasks, T2-Z reduces object prediction error metric from 15.20 to 7.00 and raises action success from 33.73% to 72.96%.Its emergent latents capture structured representations of individual and compounded factors across diverse visual scenes.\n\nAblations further show that T2-Z can efficiently infer environment latents from as little as a single test-time interaction trajectory."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents T2-Z, which adds a learnable environment latent to a robotic world model to represent environmental variation that is not directly observed or labeled. Training alternates between optimizing the world model and the latents. At test time, the model is frozen while a newly initialized latent is optimized using one or more interactions. Across seven simulated settings and four real-world robotic tasks, the authors report lower object prediction error and higher action success; an ablation finds that one test-time interaction trajectory can suffice to infer a latent.",
+          "zh": "论文提出 T2-Z，在机器人世界模型中加入可学习的环境潜变量，用于表示未直接观测或明确标注的环境差异。训练时交替优化世界模型和潜变量；测试时冻结模型，并根据一次或多次交互优化新初始化的潜变量。在7种仿真设置和4项真实机器人任务中，作者报告物体预测误差指标从15.20降至7.00，动作成功率从33.73%升至72.96%。消融结果显示，单条测试交互轨迹也可用于推断潜变量。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1982,7 +1986,11 @@
             "heading": "",
             "text": "We propose Compliant GMT (C-GMT), a modular framework for full-body compliant responses in general motion tracking. As humanoid robots move into real world deployment, they not only need to perform any motion but also respond safely and robustly to interaction forces.\n\nExisting general motion tracking policies can imitate diverse motions but are trained to be stiff, leading to unexpected and unsafe behaviors under disturbance. Prior work in compliant humanoid control trades off compliance and generality. There exist examples of full-body compliant responses, but these are heavily curated to single-reference policies.\n\nOn the other hand, general motion trackers (GMT) are trained to rigidly imitate massive motion capture datasets. Our key insight is to leverage the generality of pretrained GMTs for motion tracking while introducing compliance from a residual adapter that conditions on a history of proprioception.\n\nThis enables our approach, C-GMT, to achieve both general motion tracking and whole-body compliant responses. Compared to state-of-the-art general motion trackers and single-motion compliant policies, C-GMT demonstrates competitive performance in both motion tracking accuracy and compliance adherence.\n\nWe further demonstrate improved safety, robustness, and error tolerance in simulation and real-world G1 experiments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Compliant GMT (C-GMT), a modular approach that adds whole-body compliant responses to general motion tracking through a residual adapter conditioned on proprioceptive history. The method is intended to retain the motion generality of a pretrained tracker while helping the robot respond to interaction forces. The authors report competitive motion-tracking accuracy and compliance adherence relative to general trackers and single-motion compliant policies, along with improved safety, robustness, and error tolerance in simulation and real-world G1 experiments. The abstract gives no numerical results.",
+          "zh": "论文提出 Compliant GMT（C-GMT），以残差适配器为通用运动跟踪策略增加全身柔顺响应。适配器根据本体感知历史进行条件调节，旨在保留预训练跟踪器对多种动作的泛化能力，同时应对交互力。作者报告，该方法在运动跟踪精度和柔顺性方面表现具有竞争力，并在仿真和真实 G1 机器人实验中展示了安全性、鲁棒性及误差容忍度的改善。摘要未提供具体量化结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2013,7 +2021,11 @@
             "heading": "",
             "text": "Real-world post-training of generalist robot policies faces two challenges: partial observability makes action selection ambiguous, while offline post-training methods delay feedback from deployment experience. We present Value as Memory (VaM), a framework that addresses these challenges through value caching and online real-world reinforcement learning (RL).\n\nValue caching conditions actions on recent value predictions as task-progress memory, while online updates enable timely policy improvement by combining offline demonstrations, off-policy interventions, and on-policy rollouts for sample-efficient adaptation. As a result, VaM transitions from offline RL warmup to online autonomous learning with sparse rewards.\n\nAcross long-horizon tasks involving deformable objects and contact-rich manipulation, VaM yields a mean absolute success-rate gain of $29.4\\%$ with value caching, while achieving a $32.8\\%$ gain with online autonomous learning over matched offline training.\n\nThe evaluated online schedule performs $8\\times$ as many policy iterations under the same gradient-step budget, with more than $2\\times$ lower recorded time per gradient step with concurrent data collection and training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Value as Memory (VaM) for real-world post-training of general robot policies, combining value caching with online reinforcement learning. Cached recent value predictions condition actions as task-progress memory, while updates combine offline demonstrations, off-policy interventions, and on-policy rollouts for learning with sparse rewards. On long-horizon tasks involving deformable objects and contact-rich manipulation, the authors report a mean absolute success-rate gain of 29.4% with value caching and 32.8% with online autonomous learning over matched offline training. The evaluated online schedule performs eight times as many policy iterations under the same gradient-step budget, with more than twice lower recorded time per step.",
+          "zh": "论文提出 Value as Memory（VaM），面向通用机器人策略的真实世界后训练，结合价值缓存与在线强化学习。价值缓存让动作参考近期价值预测，以此作为任务进度记忆；在线更新则结合离线示范、离策略干预和在策略轨迹，以稀疏奖励进行自主学习。在涉及可变形物体和密集接触操作的长时程任务中，作者报告，加入价值缓存后平均成功率提高29.4%，在线自主学习相对匹配的离线训练提高32.8%。所评估的在线安排在相同梯度步数预算下执行的策略迭代次数为8倍，记录的每步耗时降低超过一半。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
