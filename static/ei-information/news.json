@@ -2675,7 +2675,11 @@
             "heading": "",
             "text": "Flow-based Vision-Language-Action (VLA) policies are inherently stochastic: different noise seeds can produce action chunks of varying quality from the same observation. At test time, however, the policy typically commits to a single sample without an explicit estimate of its quality.\n\nIn fine-grained manipulation, executing a suboptimal action can irreversibly disrupt task progress and lead to failure. To exploit policy stochasticity, we introduce a training-free two-axis trigger that uses two initial samples to measure within-chunk temporal variation and cross-sample variance, detecting the critical states.\n\nOnce triggered, a JEPA-based latent world model ranks candidate action chunks by predicting action-conditioned future latent states and the corresponding changes in task progress. By operating in latent space, the verifier avoids pixel reconstruction and enables efficient and more accurate ranking.\n\nAcross three real-world tasks, $\\textit{i.e.,}$ pen insertion, pipetting, and apple placement), our method raises the average completion score from 50.8% to 65.5%, while adding 326 ms for sampling and verification per triggered decision on a single RTX 4090.\n\nConsistent gains are also observed in simulation, where the average success rate rises from 66.4% to 73.6% in the clean setting of RoboTwin 2.0, from 62.8% to 69.6% in its randomized setting, and from 96.9% to 97.6% on LIBERO."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a training-free test-time verifier for flow-based vision-language-action policies, which can produce action chunks of varying quality from the same observation. Two initial samples measure temporal variation within a chunk and variance across samples to identify critical states. When triggered, a JEPA-based latent world model ranks candidate chunks by predicting future latent states and task-progress changes. The authors report improved completion scores across three real-world manipulation tasks and higher success rates in RoboTwin 2.0 and LIBERO simulations, with added sampling and verification time per triggered decision.",
+          "zh": "论文提出无需训练的测试时验证方法，用于处理流式视觉语言动作策略从同一观测生成质量不一动作片段的问题。方法先以两个初始样本衡量片段内时间变化和样本间差异，触发后由基于 JEPA 的潜在世界模型预测未来潜在状态及任务进展变化，并据此排序候选动作。在三项真实操作任务中，作者报告平均完成分数由50.8%升至65.5%，每次触发增加326毫秒；仿真中，RoboTwin 2.0两种设置及LIBERO的平均成功率也有所提高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2706,7 +2710,11 @@
             "heading": "",
             "text": "Robust adaptive control is vital for keeping robots safe while actively reducing uncertainty in unfamiliar settings. However, traditional methods are often conservative since they fail to account for guaranteed future parameter learning during planning and struggle to scale to high-dimensional systems.\n\nIn this work, we present A-SLS, a learning-aware robust adaptive model predictive control (RAMPC) framework based on system-level synthesis.\n\nA-SLS forecasts future parameter uncertainty and preserves correlations between process disturbances, parameter error, and estimate updates to construct tight, guaranteed reachable sets that account for future information gain. We also develop a GPU-accelerated A-SLS solver to enable real-time performance.\n\nAcross nonlinear robotic systems, A-SLS reduces reachable-tube conservativeness, maintains real-time performance, and scales to whole-body control for a quadruped with 61 states, 8 uncertain parameters, and 12 control inputs.\n\nWe further demonstrate the approach on hardware, where a physical Crazyflie drone learns an uncertain dynamics parameter online to stabilize on the fly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces A-SLS, a learning-aware robust adaptive model predictive control framework based on system-level synthesis. It forecasts parameter uncertainty and preserves correlations among process disturbances, parameter error, and estimate updates to form reachable sets that account for expected future information gain. A GPU-accelerated solver is developed for real-time use. Across nonlinear robotic systems, the authors report less conservative reachable tubes and scalability to quadruped whole-body control. A hardware demonstration uses a physical Crazyflie drone that learns an uncertain dynamics parameter online while stabilizing its flight.",
+          "zh": "论文提出A-SLS，一种基于系统级综合、考虑学习过程的鲁棒自适应模型预测控制框架。它预测未来参数不确定性，并保留过程扰动、参数误差与估计更新之间的相关性，以构造考虑未来信息增益的可达集合；作者还开发了GPU加速求解器。作者报告，在非线性机器人系统中，该方法降低了可达管的保守性并保持实时性能，且可扩展至具有61个状态的四足机器人全身控制。硬件演示中，实体Crazyflie无人机在线学习不确定动力学参数以稳定飞行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2737,7 +2745,11 @@
             "heading": "",
             "text": "We present RoboAtlas, a contextual Active SLAM framework that adaptively balances geometric exploration and semantic reasoning using a scalable 3D semantic mapping system, OpenRoboVox.\n\nRoboAtlas integrates frontier exploration, global semantic-map reasoning, and egocentric VLM-based reasoning through a contextual multi-armed bandit that transitions from exploration to semantically guided navigation as scene understanding improves.\n\nWe evaluate the system in simulation and on a Unitree Go2 robot in large-scale real-world environments exceeding 1800 m2 with approx. 30k mapped semantic instances, achieving a 100% task success rate.\n\nOn the GOAT-Bench \"Val Unseen\" benchmark, RoboAtlas achieves state-of-the-art performance with highest reported success rate (SR) of 90.6%, using GPT-4o, improving over the strongest prior baseline by 17.8 percentage points in SR.\n\nUsing the much smaller Qwen2.5-VL-7B model, it still achieves 88.8% SR, outperforming all baselines using GPT-4o in SR, and revealing the importance of the information gained by our semantic mapping framework over simply replacing the underlying foundation model.\n\nThe results demonstrate that grounding foundation models with large-scale 3D semantic maps enables robust and efficient contextual Active SLAM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboAtlas is an active SLAM framework that balances geometric exploration with semantic reasoning using a scalable 3D semantic mapping system. A contextual multi-armed bandit combines frontier exploration, global semantic-map reasoning, and egocentric vision-language-model reasoning, shifting toward semantically guided navigation as scene understanding improves. The authors report evaluation in simulation and large real-world environments with a Unitree Go2. On GOAT-Bench “Val Unseen,” they report a 90.6% success rate with GPT-4o and 88.8% with Qwen2.5-VL-7B, attributing performance to grounding in semantic maps.",
+          "zh": "论文提出RoboAtlas，一种结合几何探索与语义推理的主动SLAM框架，使用可扩展的三维语义地图系统，并通过上下文多臂老虎机在探索和语义导航间调整。系统融合前沿探索、全局语义地图推理及基于视觉语言模型的自我中心推理。作者报告其在仿真和Unitree Go2真实环境评估中取得任务成功，并在GOAT-Bench“Val Unseen”上以GPT-4o达到90.6%成功率；使用较小的Qwen2.5-VL-7B时达到88.8%。论文认为，大规模三维语义地图能为基础模型提供有效场景依据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2768,7 +2780,11 @@
             "heading": "",
             "text": "Growing interest in in-space servicing, manufacturing, and assembly has renewed attention on reliable metal joining for modular construction and on-orbit repair. Robotic welding is promising, but reduced-gravity and low-pressure operation remains poorly characterised and flight-like tests are limited.\n\nThe UK Space Agency-supported ISPARK project is developing a physics-grounded digital twin for structured process de-risking. This paper evaluates a model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator.\n\nThe reduced model includes solid-liquid phase change, effective thermocapillary transport, and a local-pressure parameter. Gravity is assessed separately through a hydrostatic-to-capillary pressure ratio and does not enter the thermal energy equation.\n\nAcross repeated five-fold cross-validation, the GP has lower normalised mean absolute error than the neural network for all eight outputs. In 10 held-out boundary cases, 74 of 80 solver responses fall within nominal 90% GP predictive intervals. A three-output GP query takes 249 microseconds, including scaling and predictive variance.\n\nIn a simulated UR5 L-shaped-seam study, a proportional controller adjusts the synergic power-source setting as travel speed falls near the corner. Finite-volume re-evaluation finds all 12 closed-loop operating points and 9 of 12 open-loop points within an illustrative 1.0-3.0 mm root-side-width band.\n\nThese simulation results support using the framework to screen welding conditions and control strategies before experimental tests. Thermal-vacuum, targeted reduced-gravity, and robotic hardware-in-the-loop studies are needed to assess the model and controller."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates a prototype physics-grounded digital twin for screening robotic welding conditions for in-space metal joining. It combines a finite-volume weld-pool thermal model, Gaussian-process and neural-network surrogates, and a simulated six-axis manipulator. Gravity is assessed separately from the thermal equation. In repeated five-fold cross-validation, the Gaussian process has lower normalized mean absolute error across all eight outputs; held-out cases and a simulated UR5 seam study provide further results. The authors say these simulations support pre-test screening, while thermal-vacuum, reduced-gravity, and hardware-in-the-loop studies remain necessary.",
+          "zh": "论文评估一种用于在轨金属焊接风险筛查的物理模型数字孪生原型，结合有限体积焊池热模型、高斯过程与神经网络代理模型，以及模拟六轴机械臂。模型纳入固液相变、有效热毛细输运和局部压力参数，重力则通过独立的静水与毛细压力比评估。重复五折交叉验证中，高斯过程在八项输出上的归一化平均绝对误差均低于神经网络；另有边界案例预测区间覆盖及模拟UR5焊缝闭环研究结果。作者称仿真支持用该框架筛选条件与控制策略，同时指出仍需热真空、减重力及硬件在环研究验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
