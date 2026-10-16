@@ -1325,7 +1325,11 @@
             "heading": "",
             "text": "Satisfying safety constraints for systems with second-order dynamics is challenging because a position constraint may require infeasible deceleration. Higher-order control barrier functions (CBFs) provide an approach for expressing safety conditions for such systems but feasibility depends on the system dynamics and available control authority.\n\nWe develop a constructive approach for designing feasible safety constraints for second-order control-affine systems. Starting from a signed distance function (SDF), we construct collision-free spheres, i.e., bubbles, in position space, and use their quadratic geometry and overlap to construct a velocity-dependent safety constraint.\n\nThe associated safe set is represented as a union of intersections and enforced through a quadratic-program safety filter. Under mild assumptions on the dynamics, bubble overlap, and design parameters, we prove that the quadratic-program-based controller is well defined, continuous in the system state, and renders the set forward invariant.\n\nWe also derive sufficient conditions for feasibility under bounded inputs. We demonstrate that our BubbleCBF, applied to a differential-drive robot, achieves safe autonomous navigation in unknown environments. Videos and results are available at: https://existentialrobotics.org/bubblecbf/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents BubbleCBF, a constructive method for designing feasible safety constraints for second-order control-affine systems. It builds collision-free position-space spheres from a signed distance function, then uses their geometry and overlap to form a velocity-dependent constraint enforced by a quadratic-program safety filter. Under stated assumptions, the authors prove well-definedness, state continuity, and forward invariance, and derive sufficient feasibility conditions for bounded inputs. They report safe autonomous navigation by a differential-drive robot in unknown environments.",
+          "zh": "论文提出 BubbleCBF，用于为具有二阶动力学的控制仿射系统构造可行安全约束。方法从有符号距离函数构造位置空间中的无碰撞球体，并利用球体几何和重叠关系形成与速度有关的安全约束，再通过二次规划安全滤波器执行。作者在给定假设下证明控制器定义良好、状态连续且使安全集前向不变，并推导有界输入下的充分可行条件。作者报告，将该方法用于差速机器人后，可在未知环境中实现安全自主导航。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1356,7 +1360,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies generate action sequences that reduce repeated inference, but deciding how much of each sequence to execute is critical to task success.\n\nExisting adaptive methods make this decision using generation stability or prediction agreement, yet these signals do not establish whether executing a candidate prefix preserves the ability to complete the task.\n\nWe introduce a policy-aligned predictive verifier (PAV) that anticipates the consequences of candidate action prefixes and evaluates their compatibility with successful continuation before execution. Rather than using future prediction to generate actions, our method evaluates existing proposals in the VLA's internal task-conditioned representation space.\n\nTo learn local judgments from terminal task outcomes, we combine trajectory-level survival supervision with a localization prior that preserves useful behavior within failed rollouts. The resulting validity scores guide execution-horizon selection.\n\nEvaluations with pi_0 and pi_0.5 across LIBERO, RoboTwin 2.0, and real-world manipulation show improved success-query trade-offs. These findings point toward a different role for future prediction in robotics, using it to assess how far to trust a policy's proposed actions rather than to generate new ones."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a policy-aligned predictive verifier (PAV) that evaluates whether candidate prefixes from vision-language-action policies remain compatible with successful task completion, then uses validity scores to select an execution horizon. It assesses existing proposals in the policy’s task-conditioned representation rather than generating actions. Training combines trajectory-level survival supervision with a localization prior. Evaluations using pi_0 and pi_0.5 across LIBERO, RoboTwin 2.0, and real-world manipulation show improved success-query trade-offs, according to the authors.",
+          "zh": "论文提出策略对齐预测验证器 PAV，用于评估视觉-语言-动作策略生成的候选动作前缀是否仍有助于完成任务，并据此选择执行时长。该方法不以未来预测生成动作，而是在策略的任务条件表征空间中评价既有提案；训练时结合轨迹级生存监督和局部化先验，以保留失败轨迹中仍有用的行为。作者报告，在 pi_0 和 pi_0.5、LIBERO、RoboTwin 2.0 及真实操作任务上的评估中，PAV改善了成功率与查询次数之间的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1387,7 +1395,11 @@
             "heading": "",
             "text": "Planning under uncertainty is an essential capability for autonomous robots. The Partially Observable Markov Decision Process (POMDP) provides a powerful framework for such a capability. Although POMDP-based planning has advanced significantly, its application to real-world problems is often limited by the difficulty of obtaining faithful POMDP models.\n\nWe present Vectorized Online planning wIth Learned diffusion model for POMDP Agents (VOiLA), a framework that learns task-agnostic POMDP world models for online planning under uncertainty. Specifically, VOiLA learns transition and observation samplers using conditional diffusion models and observation-likelihood models for particle-based belief updates.\n\nTo enable efficient online planning, the diffusion samplers are distilled into compact feedforward generators and integrated with Vectorized Online POMDP Planner (VOPP), an online POMDP planner designed to leverage GPU parallelization.\n\nExperimental results indicate the distillation strategy reduces sampling cost by up to nearly three orders of magnitude, making learned generative POMDP models practical for online planning.\n\nEvaluation of VOiLA on three benchmark problems indicates that VOiLA achieves equal or better performance than current reinforcement learning (RL) methods for POMDPs, such as Recurrent Soft Actor Critic and DreamerV3, while using less than 10% of the training data, and generalizes much better to unseen environment configurations.\n\nIn a physical robot experiment, VOiLA accomplishes the task in 10 of 10 runs while using models learned purely from simulated data for online planning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VOiLA, a POMDP framework for online planning under uncertainty using learned world models. Conditional diffusion models learn transition and observation samplers, alongside observation-likelihood models for particle-based belief updates. The samplers are distilled into compact generators and integrated with the GPU-parallelized VOPP planner. The authors report sampling-cost reductions approaching three orders of magnitude. On three benchmarks, VOiLA matches or exceeds the compared POMDP reinforcement-learning methods with under 10% of their training data and generalizes better to unseen configurations. In a physical-robot experiment, simulation-trained models completed the task in all 10 runs.",
+          "zh": "论文提出 VOiLA，一种通过学习世界模型进行不确定环境在线规划的 POMDP 框架。它用条件扩散模型学习状态转移和观测采样器，并学习用于粒子信念更新的观测似然模型；随后将扩散采样器蒸馏为紧凑生成器，并与可利用 GPU 并行计算的在线规划器 VOPP 集成。作者报告，蒸馏使采样成本最高降低近三个数量级。在三个基准问题上，VOiLA以少于10%的训练数据达到不低于所比较强化学习方法的表现，并更好地泛化至未见环境配置。实体机器人实验中，模型仅由仿真数据学习，10次运行均完成任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
