@@ -2767,7 +2767,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive action decoding with a latent control loop that selects a discrete skill, predicts a next latent state, and generates an action chunk. As an initial proof of concept, the authors evaluated it on LIBERO-10. A two-camera policy trained in a single run succeeded in 40.0% of 200 evaluation episodes. The authors describe these preliminary results as suggesting the approach is workable.",
+          "zh": "论文提出目标条件视觉预测行动框架 VPA，以轻量潜在控制循环替代自回归动作解码：模型选择离散技能，预测下一潜在状态，并生成整段动作。作者在 LIBERO-10 上进行了初步概念验证；单次训练的双摄像头策略在200个评估回合中成功率为40.0%。作者称这些初步结果表明方法可行，结论来自一次训练运行。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6134,7 +6138,11 @@
             "heading": "",
             "text": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts.\n\nWhile recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint.\n\nA robot must also recognize stalled progress, escape unproductive behaviors, and revisit overlooked target cues. Addressing these challenges requires both specialized navigation strategies and a high-level policy that coordinates their execution.\n\nMotivated by the analysis of failed navigation episodes, we propose LERR-Nav, an object navigation framework that coordinates exploration, recovery, and reminiscing through a learned high-level policy.\n\nThe framework comprises four complementary navigation strategies: value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing.\n\nTo support history-aware coordination, we maintain the execution memory that preserves textual summaries of all strategy executions alongside a sliding window of map sequences. To learn the coordination policy, we initialize a high-level vision-language agent from Qwen2.5-VL-7B-Instruct and train it through a two-stage curriculum.\n\nThe first stage uses map-centric supervised fine-tuning (SFT) to establish spatial grounding. The second stage performs SFT on variable-length navigation segments to learn which navigation strategy to invoke next based on current maps and the hybrid execution memory.\n\nExperiments on HM3D and MP3D demonstrate state-of-the-art navigation performance, while ablation studies validate the contributions of individual components."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LERR-Nav is an object-navigation framework that uses a learned high-level policy to coordinate exploration, recovery, and reminiscing. Its strategies include value-function-guided and LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided revisiting. Execution memory stores textual summaries of strategy runs alongside map sequences. Initialized from Qwen2.5-VL-7B-Instruct, the policy is trained in two stages using map-centric and variable-length navigation segments. The authors report state-of-the-art results in experiments on HM3D and MP3D.",
+          "zh": "论文提出 LERR-Nav，通过学习到的高层策略协调物体导航中的探索、恢复和回忆。框架包含价值函数引导探索、LLM 引导探索、 stalled 或重复行为后的恢复，以及记忆引导回访；执行记忆保存策略摘要和地图序列。高层视觉语言智能体以 Qwen2.5-VL-7B-Instruct 初始化，并经过地图中心的监督微调及可变长度导航片段微调。作者报告其在 HM3D 和 MP3D 实验中达到最先进导航表现。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7797,7 +7805,11 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture configurations, and everyday belongings. A human-in-the-loop workflow covers instance recognition, architectural reconstruction, and object generation and placement, with results reviewed against source observations at each stage. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. Its evaluations find that current methods remain challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
+          "zh": "论文介绍 LIVIN，这是基于30个真实有人居住家庭数字孪生的空间与具身智能基准。数字孪生保留观察到的房间布局、家具配置和日常物品；构建流程由人工参与，包含实例识别、建筑重建、物体生成与摆放，并在各阶段对照源观察检查修正。基准评估3D检测、3D重建、导航和运动操作。评估显示，现有方法仍难应对真实家庭中的密集物品、遮挡、有限空地及受限交互区域。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -13099,7 +13111,11 @@
             "heading": "",
             "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey organizes embodied AI safety around a four-layer reference architecture: physical interaction, system and middleware, algorithm and decision, and cloud-edge and data. It connects vulnerabilities, propagation paths, and safeguards across the system stack, and examines how faults and attacks can cross architectural boundaries to cause physical consequences. The paper systematizes composite attack chains, outlines multilayer defense strategies, and reviews representative safety benchmarks. It advocates combining software alignment with rigorous hardware constraints for safe operation in human-centric environments.",
+          "zh": "这篇综述以四层参考架构梳理具身人工智能安全，涵盖物理交互、系统与中间件、算法与决策、云边与数据层。文章联系系统各层的漏洞、传播路径和防护措施，讨论安全范式演变，以及故障和攻击如何跨越架构边界造成物理后果。综述还归纳复合攻击链、多层防御策略和代表性安全基准，并主张结合软件对齐与严格硬件约束，以支持系统在人本环境中安全运行。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
