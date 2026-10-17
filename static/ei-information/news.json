@@ -3060,7 +3060,11 @@
             "heading": "",
             "text": "While Assist-as-Needed (AAN) control aims to maximize user participation in robot-assisted training, existing methods relying solely on physical metrics cannot distinguish muscular inability from mental disengagement, leading to suboptimal interventions.\n\nTo address this ambiguity, a Flow-theoretic multimodal AAN framework is proposed, fusing EEG-based mental engagement and sEMG-based physical engagement into an adaptive impedance control strategy. A four-quadrant fuzzy decision engine translates these dual physiological metrics into continuous control policies.\n\nThis enables the upper-limb exoskeleton to inject feedforward assistance during intent-execution mismatch (e.g., motor output attenuation despite mental focus) and escalate guiding stiffness to penalize mental distraction. The framework was validated with healthy participants against a state-of-practice sEMG-only AAN baseline.\n\nKinematically and mechanically, the proposed framework reduced robotic energy expenditure by 71.9\\% while maintaining precise trajectory tracking, confirming it elicited greater voluntary human effort. Physiologically, the system increased the time spent in the neuroplasticity zone (Flow State Ratio) from 4.6% to 42.8%.\n\nThese results validate that decoupling and jointly regulating mental and physical states enhances the selectivity of robotic assistance, mitigating user passivity and sustaining the engagement crucial for motor learning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a multimodal assist-as-needed control framework for upper-limb rehabilitation that combines EEG-based mental engagement with sEMG-based physical engagement. A four-quadrant fuzzy decision engine adjusts impedance control. In a study with healthy participants, the framework was compared with an sEMG-only baseline. The authors report lower robotic energy use while maintaining trajectory tracking, and more time in the neuroplasticity zone. They interpret these findings as evidence that jointly regulating mental and physical states can make assistance more selective and sustain engagement.",
+          "zh": "论文提出一种用于上肢康复的多模态按需辅助控制框架，将脑电信号反映的心理投入与表面肌电信号反映的身体投入结合，通过四象限模糊决策调节阻抗控制。研究在健康参与者中将该方法与仅使用肌电的基线比较。作者报告，框架在保持轨迹跟踪的同时降低机器人能耗，并提高处于神经可塑性区间的时间比例；这些结果支持联合调节心理与身体状态有助于选择辅助并维持参与度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3091,7 +3095,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models are a promising approach to general purpose robot manipulation. While the internal computation of vision-language models, which compose the backbone of VLAs, has been studied extensively, less is known about how their perceptual and semantic representations are transformed into action in VLA models.\n\nWe study this question mechanistically in three frontier VLA models ($\\pi_{0.5}$, MolmoAct2, and MolmoBot) by analyzing the causal pathways through which the input image and the instruction shape actions.\n\nAcross the three models, activation patching shows that causally relevant information influences the action expert (AE) through a narrow band of mid-to-late cross-attention layers, which we term the action-conditioning interface. The content of this information changes with token and layer within the model.\n\nEarly-to-mid layer representations of the target noun token determine which object is selected, whereas mid-to-late layers carry the spatial information in text tokens that redirects the movement when patched. Where spatial information is stored in prompt tokens various based on the architecture.\n\nIn MolmoAct2 the model forms task-conditioned representations at the text positions that follow the instruction, whereas $\\pi_{0.5}$ additionally stores this information at image token positions. We show that these findings can be translated directly into improving model efficiency.\n\nWe find that restricting MolmoBot's action expert conditioning to only 3 out of 36 layers reduces inference FLOPs by up to $33\\%$ while maintaining comparable task success with the default model across 3,000 evaluation episodes ($46.7\\%$ vs. $46.9\\%$), and the same principle carries over to real-robot deployment of $\\pi_{0.5}$."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper mechanistically examines how images and instructions shape actions in three vision-language-action robot models. Activation patching indicates that causally relevant information reaches the action expert through a narrow band of mid-to-late cross-attention layers. Earlier target-noun representations affect object selection, while later text representations carry spatial information; where this information is stored varies by architecture. The authors also report that conditioning MolmoBot's action expert on three of its 36 layers reduces inference FLOPs by up to 33%, with comparable task success in 3,000 evaluation episodes, and that the principle carries over to real-robot deployment of π0.5.",
+          "zh": "论文通过机制分析研究三种视觉—语言—动作机器人模型中，图像和指令如何影响动作。激活补丁实验显示，因果相关信息主要经由中后段交叉注意力层传递给动作专家；目标名词较早的表示影响物体选择，较晚的文本表示携带空间信息，且不同架构存储信息的位置有所不同。作者还报告，将MolmoBot动作专家的条件输入限制到36层中的3层，可使推理计算量最多降低33%，在3000次评估中任务成功率与默认模型相近，并称类似原则也适用于π0.5的真实机器人部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3122,7 +3130,11 @@
             "heading": "",
             "text": "Tendon drives paired with soft muscle actuation enable faster and safer robots while potentially accelerating skill acquisition. Still, these systems are rarely used in practice due to inherent nonlinearities, friction, and hysteresis, which complicate modeling and control.\n\nSo far, these challenges have hindered policy transfer from simulation to real systems. To bridge this gap, we propose a sim-to-real pipeline that learns a neural network model of this complex actuation and leverages established rigid body simulation for the arm dynamics and interactions with the environment.\n\nOur method, called Generalized Actuator Network (GenAN), enables actuation model identification across a wide range of robots by learning directly from joint position trajectories rather than requiring torque sensors.\n\nUsing GenAN on PAMY2, a tendon-driven robot powered by pneumatic artificial muscles, we successfully deploy dynamic but precise goal-reaching, ball-in-a-cup, and table tennis policies, trained entirely in simulation.\n\nTo the best of our knowledge, this result constitutes the first successful sim-to-real transfer for a four-degrees-of-freedom muscle-actuated robot arm."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Generalized Actuator Network (GenAN), a sim-to-real pipeline for tendon-driven robots with pneumatic artificial muscles, whose actuation involves nonlinearities, friction, and hysteresis. GenAN learns an actuation model directly from joint-position trajectories, without torque sensors, and combines it with rigid-body simulation of arm dynamics and environmental interaction. On the four-degree-of-freedom PAMY2 robot, the authors deployed policies trained entirely in simulation for dynamic goal reaching, ball-in-a-cup, and table tennis. They describe this as the first successful sim-to-real transfer for a four-degree-of-freedom muscle-actuated robot arm.",
+          "zh": "论文提出广义执行器网络GenAN及仿真到现实迁移流程，用于处理腱驱动与气动人工肌肉系统中的非线性、摩擦和迟滞。该方法直接从关节位置轨迹学习执行器模型，不依赖扭矩传感器，并将其与刚体仿真中的机械臂动力学及环境交互结合。在PAMY2四自由度机器人上，作者将完全在仿真中训练的动态目标到达、杯中球和乒乓球策略部署到实体机器人。作者称这是四自由度肌肉驱动机械臂首次成功实现此类仿真到现实迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
