@@ -1843,7 +1843,11 @@
             "heading": "",
             "text": "Achieving human-like dexterous manipulation remains a central challenge in robotics. Learning from human hand-object interaction (HOI) datasets offers a promising pathway to diverse dexterous skills, yet existing physics-based approaches train specialist policies for individual trajectories, thereby limiting skill reuse at scale.\n\nWe introduce DexMimic, a generalist dexterous hand-object tracking policy jointly trained across diverse HOI trajectories. Efficient joint training requires allocating each rollout to both an undertrained phase and a starting state that supports continued tracking.\n\nDexMimic realizes this insight through Value-Guided Reset Allocation, which adapts the initialization distribution online to prioritize difficult phases and select reset states with higher expected tracking returns. We further introduce a benchmark spanning training, fine-tuning, and generalization.\n\nExperiments show improved tracking success and training efficiency, faster fine-tuning, and the potential for zero-shot generalization to unseen trajectories and objects; larger training sets further improve efficiency and generalization. Finally, we validate DexMimic on a real-world dexterous manipulation platform."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DexMimic jointly trains a generalist dexterous hand-object tracking policy across diverse human interaction trajectories. Its Value-Guided Reset Allocation updates the initialization distribution online, prioritizing undertrained phases and reset states with higher expected tracking returns. The authors introduce a benchmark covering training, fine-tuning, and generalization. Experiments show improved tracking success and training efficiency, faster fine-tuning, and potential zero-shot generalization to unseen trajectories and objects; larger training sets further improve efficiency and generalization. The policy is also validated on a real-world dexterous manipulation platform.",
+          "zh": "DexMimic 是一个联合训练多种人手与物体交互轨迹的灵巧手追踪策略。其价值引导重置分配方法在线调整初始化分布，优先训练不足的阶段，并选择预期追踪回报较高的重置状态。作者还提出涵盖训练、微调和泛化的基准。实验显示，该方法提升追踪成功率和训练效率、加快微调，并具有对未见轨迹和物体零样本泛化的潜力；更大的训练集进一步改善效率和泛化。作者还在真实灵巧操作平台上进行了验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1874,7 +1878,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) improve robotic manipulation by jointly predicting future visual states and actions, yet most existing methods make decisions primarily from the current observation. This limits their reliability in long-horizon tasks, where visually similar states may correspond to different interaction histories and task stages.\n\nMoreover, directly incorporating historical observations can introduce stale, stage-mismatched, or error-contaminated information, leading to inaccurate world prediction and accumulated closed-loop errors.\n\nWe propose RM-WAM, a reliable memory-augmented World Action Model that treats memory as a context-dependent predictive resource rather than universally useful historical context.\n\nRM-WAM represents history using complementary short-term visual state memory and latent event memory, which respectively capture recent interaction dynamics and longer-term state transitions.\n\nA counterfactual memory learning scheme varies the accessible history while keeping the current inputs and prediction targets fixed, enabling the model to learn a context-dependent utility estimate for historical memory. Based on this estimate, a utility-aware gating mechanism adaptively controls memory injection into the world-action backbone.\n\nExperiments demonstrate that RM-WAM highlights the importance of reliable and selective memory utilization in long-horizon tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RM-WAM is a memory-augmented World Action Model for long-horizon robot manipulation. It represents history with short-term visual state memory and latent event memory, capturing recent interaction dynamics and longer-term transitions. Counterfactual memory learning varies accessible history while holding current inputs and prediction targets fixed, allowing the model to estimate memory utility. A utility-aware gate then controls memory injection. The reported experiments demonstrate the importance of reliable and selective memory use in long-horizon tasks.",
+          "zh": "RM-WAM 是一种面向长时程机器人操作的记忆增强世界动作模型，将历史信息视为依赖上下文的预测资源。它以短期视觉状态记忆和潜在事件记忆分别表示近期交互动态与较长期状态转变。反事实记忆学习在保持当前输入和预测目标不变时改变可访问历史，使模型估计记忆效用；效用感知门控据此调节记忆注入。作者报告的实验表明，该方法凸显了在长时程任务中可靠、选择性使用记忆的重要性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
