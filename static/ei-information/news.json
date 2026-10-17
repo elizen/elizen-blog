@@ -2920,7 +2920,11 @@
             "heading": "",
             "text": "Imitation learning enables robots to perform complex tasks by leveraging human-collected demonstrations. However, most existing approaches require labor-intensive data collection with additional teleoperation systems, which hinders scalability. Human videos represent a natural source of data that implicitly contain knowledge of manipulation behaviors.\n\nHowever, transferring them to robots remains challenging due to the visual domain gap and the absence of explicit action labels. In this work, we introduce TDV, a trajectory-based framework that leverages data generation to enable generalizable manipulation.\n\nTDV focuses on task-relevant objects by leveraging plug-and-play 6D pose estimation techniques to extract object trajectories from human videos, thereby mitigating the impact of irrelevant backgrounds and varying viewpoints.\n\nAs a modality-agnostic intermediate representation, trajectories are inherently independent of the visual domains and different embodiments, enabling efficient data generation. Our method outperforms previous approaches on RLBench simulation tasks, achieving near 100\\% success rates across seven tasks.\n\nIn real-world experiments, TDV enables cross-embodiment generalization manipulation from one-shot human demonstrations by leveraging efficient trajectory generation techniques."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TDV, a trajectory-based framework for robot manipulation using human videos. It extracts task-relevant object trajectories with plug-and-play 6D pose estimation, aiming to reduce the effects of irrelevant backgrounds and viewpoint changes. The authors describe trajectories as an intermediate representation independent of visual domains and embodiments. In RLBench simulation, TDV outperforms prior approaches across seven tasks, with success rates near 100%. Real-world experiments demonstrate cross-embodiment manipulation from one-shot human demonstrations.",
+          "zh": "论文提出 TDV，一种从人类视频生成轨迹、用于机器人操作的框架。方法借助可插拔的六维位姿估计提取与任务相关物体的运动轨迹，以减轻背景和视角变化的影响；轨迹作为中间表示，不依赖视觉域和机器人形态。作者报告，TDV 在 RLBench 仿真中的七项任务上优于既有方法，成功率接近百分之百；真实世界实验展示了从单次人类示范实现跨形态泛化操作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2951,7 +2955,11 @@
             "heading": "",
             "text": "Many vision-language-action policies rely on action-labeled robot demonstrations and lack an explicit mechanism for predicting future visual states. These limitations hinder learning from action-free videos and can encourage overfitting to demonstration conditions, weakening generalization and robustness.\n\nWe present TS-WAM, a lightweight Teacher-Student World-Action Model that addresses these challenges through self-supervised temporal learning and explicit future prediction.\n\nIts vlm-jepa framework learns from heterogeneous data, including robot demonstrations and action-free human videos, using an EMA target branch without requiring a separately trained external teacher.\n\nBy coupling vlm-jepa with delta-lwm, TS-WAM learns to predict latent actions from the current observation and instruction and uses them to predict future visual features that guide action generation at inference.\n\nA unified end-to-end training architecture jointly optimizes temporal representation learning, visual dynamics, and robot control without a separate latent-action or world-model pretraining stage. The EMA target branch is removed at inference, keeping the deployed policy lightweight.\n\nExperiments on LIBERO, LIBERO-Plus, and SimplerEnv, together with real-world manipulation experiments on Franka Research 3 and RevoTron, demonstrate that TS-WAM achieves strong manipulation performance, generalization, and robustness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TS-WAM, a Teacher-Student World-Action Model for vision-language robot control. Its self-supervised temporal learning uses robot demonstrations and action-free human videos, predicts future visual features, and jointly trains temporal representations, visual dynamics, and robot control. The EMA target branch is removed at inference. Experiments on LIBERO, LIBERO-Plus, and SimplerEnv, along with real-world manipulation experiments using Franka Research 3 and RevoTron, are reported to demonstrate strong performance, generalization, and robustness.",
+          "zh": "论文提出 TS-WAM，通过自监督时间学习和未来视觉状态预测，支持机器人从带动作标注的示范及无动作标注的人类视频中学习。其架构联合训练时间表征、视觉动态和机器人控制，并在推理时移除 EMA 目标分支。作者报告，TS-WAM 在 LIBERO、LIBERO-Plus、SimplerEnv 的实验及 Franka Research 3 和 RevoTron 上的真实操作实验中表现出较强的操作性能、泛化能力与鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2982,7 +2990,11 @@
             "heading": "",
             "text": "Retrieval tasks are a form of search task where a robot must explore, find an object, and return with it as quickly as possible. Recent work in ergodic control has demonstrated time-optimal path planning for search tasks where visitation is proportionally matched, within some tolerance, to a given target distribution.\n\nHowever, these planners minimize the duration of a full deterministic search, while retrieval missions end their search at an unknown point in the trajectory and must return to a given base.\n\nIn this work, we propose a new formulation of the time-optimal ergodic search problem that models detection as a Poisson process and minimizes total mission time by including the return phase in the objective.\n\nExperimental results show that time-optimal ergodic retrieval (TOER) achieves up to $19\\%$ shorter mission durations relative to ergodic baselines and that this advantage grows as the return phase becomes more costly.\n\nSimulation and hardware implementations validate TOER's compatibility with environments of non-convex geometry as well as both 2D and 3D search domains."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes time-optimal ergodic retrieval (TOER), a method for robot missions that search for an object and return it to a base. It models detection as a Poisson process and includes the return phase in the mission-time objective. The authors report mission durations up to 19% shorter than ergodic baselines, with a larger advantage when returning is more costly. Simulation and hardware implementations validate compatibility with non-convex environments and 2D and 3D search domains.",
+          "zh": "论文提出时间最优遍历式检索方法 TOER，针对机器人寻找物体并返回基地的任务，将搜索中的物体检测建模为泊松过程，并在目标函数中纳入返程时间。作者报告，与遍历式基线相比，TOER 的任务时长最多缩短百分之十九，且返程成本越高，优势越明显。仿真和硬件实现验证了该方法对非凸几何环境以及二维、三维搜索空间的适用性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3013,7 +3025,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models perform well in generalist robot manipulation but remain brittle to out-of-distribution perturbations, while full human teleoperation is cognitively demanding.\n\nTo bridge this gap, we introduce Shared Autonomy for Policy Steering (SAPS), a lightweight framework that blends real-time human teleoperation commands with pretrained VLA actions. SAPS operates purely at the action level, requiring no policy retraining, auxiliary dynamics models, or architectural modifications.\n\nWe evaluate three arbitration strategies across simulated (LIBERO, CALVIN) and real-world evaluations. In a 14-person user study, SAPS achieved up to 77.4% hardware success, compared with 8.3% for full autonomy and 34.5% for teleoperation.\n\nFurthermore, active human intervention was required only 45% of the time, reducing NASA-TLX workload by 20.8% in simulation and 28.2% on hardware. A case study with an expert user with quadriplegia similarly demonstrated matched or improved success while reducing completion time.\n\nThese results highlight SAPS as a highly effective, model-agnostic approach for reliable real-world deployment and assistive teleoperation. A website with additional details is located at shared-autonomy-policy.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SAPS, a shared-autonomy framework that blends real-time teleoperation commands with actions from a pretrained vision-language-action model. It operates at the action level without policy retraining, auxiliary dynamics models, or architectural changes. Across simulated and real-world evaluations of three arbitration strategies, a 14-person user study reported up to 77.4% hardware success. Active intervention was needed 45% of the time, and NASA-TLX workload fell by 20.8% in simulation and 28.2% on hardware. An expert user with quadriplegia showed matched or improved success and shorter completion time.",
+          "zh": "论文提出共享自主框架 SAPS，将实时人工遥操作指令与预训练视觉语言动作模型的动作进行融合，无需重新训练策略、辅助动力学模型或修改架构。研究评估了三种仲裁策略，并在模拟和真实环境中测试。在一项有 14 人参与的用户研究中，作者报告硬件任务成功率最高为百分之七十七点四；人工主动介入时间占百分之四十五，模拟和硬件上的 NASA-TLX 负荷分别降低百分之二十点八和二十八点二。四肢瘫痪专家用户案例也显示成功率持平或提高、完成时间缩短。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
