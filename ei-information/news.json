@@ -3437,7 +3437,11 @@
             "heading": "",
             "text": "Sustainably powered mobile robots enable long-duration observational missions by harvesting energy from the environment. However, effective autonomy requires the robots to make decisions as to how to allocate this energy to maximize information quality over time.\n\nIn this paper, we study a persistent (infinite-horizon) speed trajectory optimization problem that is posed as a periodic optimal control problem in which a robot repeatedly traverses a fixed closed path, coupling a super-linear propulsion cost with dynamic information gain and decay.\n\nUsing the information-theoretic quantity of clarity as an information metric, we first derive the necessary conditions for optimal control.\n\nWe then derive a number of specialized follow-on properties, which characterize (i) the nature of the optimal control when points on the path are of varying importance and when they are of equal importance, along with (ii) a high-speed information limit that is approached when energy reserves approach infinity.\n\nWe illustrate the information-optimal speed trajectories on a simple example in order to showcase key trends that are followed under the optimized speed profile. This is followed by a simulation study based on the persistent characterization of salinity in the Chesapeake Bay, illustrating the practical merit of applying the results from this work."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how a sustainably powered mobile robot can optimize its speed while repeatedly traversing a fixed closed path, balancing propulsion cost against information quality. It formulates the problem as periodic optimal control and uses clarity as an information metric to derive necessary conditions and properties for paths with points of equal or varying importance, as well as a high-speed information limit as energy reserves approach infinity. A simple example and a simulation of persistent salinity characterization in Chesapeake Bay illustrate the results.",
+          "zh": "论文研究可持续供能移动机器人沿固定闭合路径重复巡行时，如何优化速度轨迹，以平衡推进能耗与信息质量。作者将问题建模为周期最优控制，并以清晰度作为信息度量，推导最优控制的必要条件及若干特性，包括路径点重要性不同或相同情况下的控制性质，以及能量储备趋于无穷时的信息上限。论文通过简单示例展示速度轨迹趋势，并以切萨皮克湾盐度持续表征的仿真研究说明方法的实际价值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
