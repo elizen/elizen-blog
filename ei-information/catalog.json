@@ -462,8 +462,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context into spatial, social, and semantic dimensions, and describes agent design through embeddedness and awareness. The authors present Cobot as a design probe, with features including gaze cues, spatial sound, and task-aware behavior. They reflect on its design and identify implications for future context-aware embodied agents.",
-          "zh": "论文提出一个面向沉浸式分析中具身智能体的初步情境感知设计框架，包含空间、社会和语义三个维度，并以嵌入性和感知性描述智能体如何处于情境中、感知并回应情境。作者介绍了作为设计探针的 Cobot，展示凝视提示、空间声音和任务感知行为等交互特征，并据此讨论未来情境感知具身智能体的设计启示。"
+          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context into spatial, social, and semantic dimensions, and distinguishes how agents are situated in contexts from how they perceive and respond to them. Cobot serves as a design probe, using gaze cues, spatial sound, and task-aware behavior to explore context-sensitive interaction. The authors reflect on its design and identify implications for future agents.",
+          "zh": "论文提出一个面向沉浸式分析中具身智能体的初步情境感知设计框架，按空间、社会和语义三个维度组织，并区分智能体在情境中的嵌入方式及其感知、响应情境的意识能力。作者以 Cobot 作为设计探针，通过注视线索、空间声音和任务感知行为探索情境敏感交互，并据此讨论未来智能体设计的启示。"
         }
       },
       "source": {
@@ -2767,11 +2767,7 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Goal-Conditioned Vision-Predictor-Action (VPA), replacing autoregressive action decoding with a latent control loop that selects a discrete skill, predicts the next latent state, and generates an action chunk with flow matching. The authors analyze inference complexity, regularization against representation collapse, and latent sub-goal thresholding. In an initial proof of concept, a policy trained on LIBERO-10 demonstrations achieved 40.0% success across 200 evaluation episodes. The authors describe these single-run results as preliminary evidence of workability.",
-          "zh": "论文提出目标条件视觉预测行动框架 VPA，以轻量潜在控制循环取代逐词生成动作的自回归解码器：选择离散技能、预测下一潜在状态，并用流匹配生成动作块。作者分析了推理复杂度、表征坍塌正则化及潜在子目标阈值对误差累积的影响。作为初步验证，VPA 在 LIBERO-10 上进行单次训练；两相机策略在200个评估回合中成功率为40.0%。作者称结果表明方法可行。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6138,11 +6134,7 @@
             "heading": "",
             "text": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts.\n\nWhile recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint.\n\nA robot must also recognize stalled progress, escape unproductive behaviors, and revisit overlooked target cues. Addressing these challenges requires both specialized navigation strategies and a high-level policy that coordinates their execution.\n\nMotivated by the analysis of failed navigation episodes, we propose LERR-Nav, an object navigation framework that coordinates exploration, recovery, and reminiscing through a learned high-level policy.\n\nThe framework comprises four complementary navigation strategies: value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing.\n\nTo support history-aware coordination, we maintain the execution memory that preserves textual summaries of all strategy executions alongside a sliding window of map sequences. To learn the coordination policy, we initialize a high-level vision-language agent from Qwen2.5-VL-7B-Instruct and train it through a two-stage curriculum.\n\nThe first stage uses map-centric supervised fine-tuning (SFT) to establish spatial grounding. The second stage performs SFT on variable-length navigation segments to learn which navigation strategy to invoke next based on current maps and the hybrid execution memory.\n\nExperiments on HM3D and MP3D demonstrate state-of-the-art navigation performance, while ablation studies validate the contributions of individual components."
           }
-        ],
-        "summary": {
-          "en": "LERR-Nav is an object-navigation framework that uses a learned high-level policy to coordinate exploration, recovery, and revisiting remembered cues. Its strategies include value-function-guided and LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing. Execution memory stores textual summaries and a sliding window of map sequences. A vision-language agent initialized from Qwen2.5-VL-7B-Instruct is trained in two supervised fine-tuning stages. The authors report state-of-the-art performance on HM3D and MP3D, with ablations supporting the contributions of individual components.",
-          "zh": "论文提出 LERR-Nav，通过学习的高层策略协调探索、恢复和回忆，以应对未见环境中的物体导航。框架结合价值函数引导探索、LLM 引导探索、停滞或重复行为恢复，以及记忆引导回访；执行记忆保存策略摘要和地图序列。高层视觉语言智能体以 Qwen2.5-VL-7B-Instruct 初始化，并经两阶段监督微调学习空间定位和策略选择。作者报告，在 HM3D 和 MP3D 实验中，该方法取得当前最佳导航表现，消融研究也验证了各组件的贡献。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7805,11 +7797,7 @@
             "heading": "",
             "text": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction.\n\nExisting resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes.\n\nThese replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage.\n\nWe evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes.\n\nWe hope LIVIN will help advance embodied AI in real-world homes, from spatial understanding to robotic interaction, and ultimately bring embodied intelligence into everyday home environments."
           }
-        ],
-        "summary": {
-          "en": "LIVIN is a benchmark for spatial and embodied intelligence built from digital twins of 30 lived-in homes. The replicas preserve observed room layouts, furniture, and everyday belongings. A human-in-the-loop workflow covers instance recognition, architectural reconstruction, and object generation and placement, with people reviewing intermediate results against source observations. The benchmark evaluates 3D detection, 3D reconstruction, navigation, and loco-manipulation. The authors report that current methods are challenged by dense arrangements, occlusions, limited free space, and constrained interaction regions.",
-          "zh": "论文介绍 LIVIN，一个基于30个真实居住家庭数字孪生的空间与具身智能基准。这些重建保留观察到的房间布局、家具配置和日常物品；构建流程包含实例识别、建筑重建及物体生成与摆放，并由人工对照源观察审核修正。基准评估三维检测、三维重建、导航和运动操作四项任务。评估显示，现有方法仍受到物品密集、遮挡、可通行空间有限及交互区域受限等现实家居条件的挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7918,8 +7906,8 @@
           }
         ],
         "summary": {
-          "en": "Plan-Bench evaluates vision-language models' high-level reasoning and multi-step planning for embodied worlds while isolating action execution. It covers three dimensions, 16 subclasses, and 699 curated samples. In evaluations of 28 models, the authors report room for improvement: the strongest model reaches 75.0% accuracy, and scaling generally improves capabilities. Ablation studies indicate that larger models show increasing potential as high-level planners. The benchmark probes planning relevant to physical tasks.",
-          "zh": "论文介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并将动作执行的影响单独隔离。基准覆盖三个维度、16个子类和699个样本。作者对28个模型进行评估，称表现仍有提升空间，最强模型准确率为75.0%，且模型规模扩大通常会改善能力。消融研究显示，大模型作为高层规划器的潜力有所增加。"
+          "en": "The paper introduces Plan-Bench to evaluate vision-language models’ high-level reasoning and multi-step planning for embodied worlds while isolating action execution. The benchmark covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 models finds room for improvement: even the strongest model reaches 75.0% accuracy. The authors also report that scaling models generally improves these capabilities, and that ablations suggest larger models have increasing potential as high-level planners.",
+          "zh": "论文提出 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并将动作执行的影响与评估隔离。基准涵盖三个维度、16个子类和699个样本。对28个模型的评估显示，即使表现最强的模型准确率也为75.0%，整体仍有提升空间；作者还发现，模型规模扩大通常有助于提升这些能力。"
         }
       },
       "source": {
@@ -8541,8 +8529,8 @@
           }
         ],
         "summary": {
-          "en": "HelpMeOut is a benchmark for monitoring errors during household task execution, addressing the assumption in existing benchmarks that people perform tasks correctly. It operationalizes research on everyday action errors in 20,000 paired activity episodes across nine neuropsychologically motivated categories. Agents observe streaming human activity and must detect whether execution is proceeding correctly and diagnose structured errors as early as possible. The evaluated learned-monitor, symbolic, change-point, and frontier LLM-prompting baselines often miss errors, according to the authors.",
-          "zh": "论文提出 HelpMeOut，这是一个用于监测家庭任务执行错误的具身智能基准，旨在弥补现有基准通常假定人类能正确完成任务的不足。它将日常行动错误研究转化为20,000组成对活动片段，涵盖九类基于神经心理学的错误。智能体需观察持续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。作者评估多类基线，结果显示它们常漏报执行错误。"
+          "en": "HelpMeOut is a benchmark for monitoring errors during household task execution. It operationalizes research on everyday action errors in paired activity episodes across nine neuropsychologically motivated categories. Agents observe streaming human activity and must determine whether execution is proceeding correctly, diagnosing structured errors as early as possible. Evaluations of learned-monitor, symbolic, change-point, and frontier LLM-prompting baselines find that these methods perform poorly as error monitors and often miss when execution goes wrong.",
+          "zh": "论文介绍 HelpMeOut，这是一个用于监测家务任务执行错误的具身智能基准。它将日常行动错误研究转化为成对活动片段，覆盖九类神经心理学动机错误；智能体需观察连续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。对学习式监测器、符号方法、变点方法及前沿大语言模型提示基线的评估显示，这些方法作为错误监测器表现较差，常会漏掉执行偏差。"
         }
       },
       "source": {
@@ -13111,11 +13099,7 @@
             "heading": "",
             "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
           }
-        ],
-        "summary": {
-          "en": "This survey organizes embodied AI safety using a four-layer reference architecture: physical interaction; system and middleware; algorithm and decision; and cloud-edge and data. It examines how vulnerabilities, faults, and attacks propagate across architectural boundaries and can lead to physical consequences. The survey systematizes composite attack chains, outlines layered defense strategies, and reviews representative embodied safety benchmarks. The authors advocate combining software alignment with rigorous hardware constraints to support trustworthy systems operating safely in human-centered environments.",
-          "zh": "这篇综述将具身人工智能安全组织为四层参考架构：物理交互、系统与中间件、算法与决策、云边与数据层。它梳理安全范式演进，分析故障和攻击如何跨越架构边界并造成物理后果，并归纳复合攻击链、多层防御策略及代表性安全基准。作者主张结合软件对齐与严格硬件约束，以构建能在人本环境中安全运行的可信系统。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14035,8 +14019,8 @@
           }
         ],
         "summary": {
-          "en": "Thinker-WM is a multimodal world model that jointly models and generates RGB, metric depth, and robot actions through a shared representation. The same parameterization supports world prediction, policy inference, several forms of conditioned generation, and inverse dynamics. A motion probe indicates that motion information is recoverable from its frozen visual representation. Trained on heterogeneous egocentric video, real-robot, and simulation data, it performs strongly in embodied world-model evaluations and ranks first on the three benchmarks named by the authors.",
-          "zh": "论文提出 Thinker-WM，一种通过共享中间表示联合建模和生成 RGB、度量深度与机器人动作的多模态世界模型，并支持世界预测、策略推断及多种条件生成和逆动力学功能。作者称，冻结的视觉表示中可恢复运动信息。模型在包含第一人称视频、真实机器人及仿真数据的异质语料上训练；实验显示其在具身世界模型评测中表现强劲，并在摘要列出的三个基准上排名第一。"
+          "en": "Thinker-WM is a unified multimodal world model that represents and generates RGB images, metric depth, and robot actions through shared dynamics. The same parameterization supports functions including video-action generation, world prediction, policy inference, and inverse dynamics. It is trained on a heterogeneous corpus of egocentric video, real-robot data, and simulation data. The authors report strong results across embodied world-model evaluations, first-place rankings on EWMBench, WorldOlympiad, and WorldArena, and benefits from action conditioning, geometric interaction, and multi-function training.",
+          "zh": "论文提出 Thinker-WM，将 RGB 图像、度量深度和机器人动作纳入共享的多模态动态表征，并以统一模型支持联合视频与动作生成、世界预测、策略推断等功能。模型使用由第一人称视频、真实机器人数据和仿真数据组成的异质语料训练。作者称实验显示其在具身世界模型评测中表现强劲，并在 EWMBench、WorldOlympiad 和 WorldArena 排名第一；受控研究还显示动作条件、几何交互及多功能训练具有益处。"
         }
       },
       "source": {
