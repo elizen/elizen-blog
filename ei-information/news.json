@@ -3208,7 +3208,11 @@
             "heading": "",
             "text": "A wind-derived heading can guide a robot towards an odour source even after the wind reverses, but its reliability depends on the plume's transport history. On a quadruped initially facing the source, holding the initial heading reached it in every reversing-wind trial, whereas comparison controllers never settled there.\n\nAn exact geometric condition links heading correctness to net odour transport, and simulations separate sensing error from departures from nominal flow. Where the alternating wind directions are too close for reversal alone to produce wrong-side headings, the wrong-side rate rises from 1.0% under uniform transport to 4.7% in a stochastic flow.\n\nRe-acquiring headings from new odour contact improves simulated search when contact is intermittent. These results identify distinct requirements for wind-guided search: a heading supported by the transport geometry and sufficient intermittent contact to replace it."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines whether a robot can keep using a wind-derived heading to find an odour source when wind reverses. A quadruped initially facing the source reached it in every reversing-wind trial when it held its initial heading, while comparison controllers did not settle there. The authors give a geometric condition relating heading correctness to net odour transport and use simulations to distinguish sensing error from departures from nominal flow. Simulations also indicate that reacquiring headings after intermittent odour contact can improve search.",
+          "zh": "论文研究风向反转时，机器人能否继续依据风导向寻找气味源。四足机器人初始朝向气味源时，在所有反转风试验中保持初始方向均能到达气味源，而对照控制器均未能停留在目标处。作者给出方向正确与气味净输运之间的几何条件，并通过仿真区分感知误差和偏离名义流场的影响。模拟还显示，间歇性接触气味后重新获取方向，可改善搜索表现；方法依赖输运几何支持的方向和足够的间歇接触。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3239,7 +3243,11 @@
             "heading": "",
             "text": "Zero-order optimization techniques are becoming increasingly popular in robotics due to their ability to handle non-differentiable functions and escape local minima. These advantages make them particularly useful for trajectory optimization and policy optimization. In this work, we propose a mathematical tutorial on random search.\n\nIt offers a simple and unifying perspective for understanding a wide range of algorithms commonly used in robotics. Leveraging this viewpoint, we classify many trajectory optimization methods under a common framework and derive novel competitive RL algorithms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work presents a mathematical tutorial on random search as a zero-order optimization technique for robotics. The authors note that such techniques can handle non-differentiable functions and escape local minima, making them useful for trajectory and policy optimization. The tutorial offers a unifying perspective on algorithms used in robotics, classifies many trajectory optimization methods within a common framework, and derives novel competitive reinforcement learning algorithms. The abstract does not report experimental or simulation validation.",
+          "zh": "本文提出一篇关于随机搜索的数学教程，介绍零阶优化在机器人领域的用途。作者指出，这类方法可处理不可微函数并逃离局部极小值，因此适用于轨迹优化和策略优化。教程以统一视角理解机器人中常用的多种算法，并据此将许多轨迹优化方法归入共同框架，同时推导新的竞争性强化学习算法。摘要未提供这些算法的实验或仿真验证结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3270,7 +3278,11 @@
             "heading": "",
             "text": "This paper presents a planning pipeline framework for locomotion in rope-assisted robots climbing vertical surfaces.\n\nThe proposed framework is formulated as a bi-level optimization scheme that addresses a mixed-integer problem: selecting feasible terrain regions for landing while simultaneously optimizing the control inputs, namely rope tensions and leg forces, and landing location.\n\nThe outer level of the optimization is solved using the Cross-Entropy Method, while the inner level relies on gradient-based nonlinear optimization to compute dynamically feasible motions. The approach is validated on a novel climbing robot platform, ALPINE, across a variety of challenging terrain configurations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a planning framework for rope-assisted robots climbing vertical surfaces. It formulates the problem as bi-level optimization for selecting feasible terrain regions for landing while optimizing rope tensions, leg forces, and landing location. The outer optimization level uses the Cross-Entropy Method; the inner level uses gradient-based nonlinear optimization to compute dynamically feasible motions. The authors report validation on the novel ALPINE climbing robot platform across a variety of challenging terrain configurations, without specifying the validation outcomes in the abstract.",
+          "zh": "本文提出用于绳索辅助机器人攀爬垂直表面的运动规划框架，并将其表述为双层优化，以处理混合整数问题：选择可行的着陆地形区域，同时优化绳索张力、腿部作用力和着陆位置。外层采用交叉熵方法求解，内层采用基于梯度的非线性优化，以计算动态可行运动。作者在新型攀爬机器人平台 ALPINE 上，针对多种具有挑战性的地形配置验证了该方法。摘要未说明验证的具体结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3301,7 +3313,11 @@
             "heading": "",
             "text": "Damage-recovery algorithms often rank gaits from short trials, yet a gait that performs well briefly may not remain effective during continued execution. In reset-free recovery, each trial also changes the physical state inherited by the next.\n\nWe introduce persistent profile-guided reset-free recovery (PGRR), which predicts multiple outcomes over repeated gait execution and uses conservative uncertainty-aware estimates to guide short online probes without resetting the robot.\n\nAcross 108 matched MuJoCo tasks spanning leg amputation, distal fracture, and joint lock, PGRR improves final quality by 0.106 and slot-averaged recovery quality (SRQ) by 0.044 relative to an IT&E-inspired Gaussian-process baseline, while reducing low-quality failures by 27.8 percentage points. Final-quality gains occur in all three damage classes.\n\nAgainst no adaptation, PGRR also improves final quality and reduces low-quality failures, whereas the aggregate SRQ difference is inconclusive. Development ablations identify conservative uncertainty handling as the clearest supported contributor to the observed gains.\n\nThese results show that PGRR can identify stronger post-damage gaits under continuous physical state and that final-gait quality and recovery-summary performance provide complementary evidence for evaluating reset-free recovery."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces persistent profile-guided reset-free recovery (PGRR), addressing the concern that short gait trials may not predict sustained performance and that each trial changes the robot's state. PGRR predicts multiple outcomes over repeated gait execution and uses conservative, uncertainty-aware estimates to guide short online probes. Across 108 matched MuJoCo tasks involving leg amputation, distal fracture, and joint lock, it improves final quality and slot-averaged recovery quality and reduces low-quality failures relative to an IT&E-inspired Gaussian-process baseline. Against no adaptation, the aggregate recovery-quality difference is inconclusive.",
+          "zh": "本文提出持续轮廓引导的无重置损伤恢复方法 PGRR，针对短期表现未必代表持续执行效果、且每次试验会改变机器人状态的问题。该方法预测重复执行步态的多种结果，并以保守、考虑不确定性的估计指导在线短探测。在覆盖截肢、远端骨折和关节锁定的 108 项匹配 MuJoCo 任务中，相较受 IT&E 启发的高斯过程基线，PGRR 提高最终质量和平均恢复质量，并减少低质量失败；三类损伤的最终质量均有提升。与不适应方法相比，平均恢复质量差异则不确定。消融分析指出，保守处理不确定性是有明确支持的贡献因素。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
