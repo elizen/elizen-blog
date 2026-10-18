@@ -460,7 +460,11 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context around spatial, social, and semantic dimensions, and distinguishes how agents are embedded in contexts from how they perceive and respond to them. The authors present Cobot as a design probe, with gaze cues, spatial sound, and task-aware behavior, and reflect on implications for future context-aware agents.",
+          "zh": "文章提出一个面向沉浸式分析中具身智能体的初步情境感知设计框架，围绕空间、社会和语义三个维度，并区分智能体如何嵌入情境，以及如何感知和回应情境。作者以 Cobot 作为设计探针，展示凝视提示、空间音频和任务感知行为等交互特征，并据此讨论未来情境感知型具身智能体的设计启示。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7900,7 +7904,11 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Plan-Bench to evaluate VLMs’ high-level reasoning and multi-step planning for embodied settings while isolating action execution. The benchmark covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 VLMs found room for improvement: the strongest model reached 75.0% accuracy. The authors also report that scaling generally improves these capabilities, while ablation studies indicate growing potential for larger models as high-level planners.",
+          "zh": "文章介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并隔离动作执行的影响。基准覆盖三个维度、16 个子类和 699 个样本。对 28 个模型的评估显示仍有改进空间，最强模型准确率为 75.0%；作者还报告模型规模增大通常伴随能力提升，并指出消融研究显示大模型作为高层规划器的潜力有所增加。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8519,7 +8527,11 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HelpMeOut, a benchmark for monitoring errors during household task execution, with attention to structured errors that may occur in everyday activities of cognitively impaired people or older adults. It contains 20,000 paired activity episodes across nine neuropsychologically motivated error categories. Agents observe streaming human activity and must detect whether execution is correct and diagnose errors early. Evaluations of learned, symbolic, change-point, and frontier LLM-prompting baselines found that they often miss execution errors.",
+          "zh": "文章介绍 HelpMeOut，一个用于监测家务任务执行错误的具身智能基准，关注认知障碍者或老年人日常活动中可能出现的结构化错误。基准包含 20,000 组成对活动片段，涵盖九类受神经心理学研究启发的错误。智能体需观察连续的人类活动轨迹，判断执行是否正确，并尽早诊断错误。对学习型监测器、符号方法、变化点方法和前沿大语言模型提示的评估显示，这些方法作为错误监测器表现较差，常会漏判。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14005,7 +14017,11 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Thinker-WM, a multimodal world model that jointly models and generates RGB, metric depth, and robot actions through a shared dynamics transformer while preserving modality-specific outputs. The same parameterization supports several generation, prediction, inference, and inverse-dynamics functions. A motion probe found recoverable motion information in frozen visual representations. The authors report strong embodied world-model results, first-place rankings on EWMBench, WorldOlympiad, and WorldArena, and controlled-study benefits from action conditioning, geometric interaction, and multi-function training.",
+          "zh": "文章提出 Thinker-WM，一个统一的多模态世界模型，通过共享动态 Transformer 联合建模和生成 RGB、度量深度与机器人动作，同时保留各自不同的输出结构。同一参数化支持视频与动作生成、世界预测、策略推断及多种动作条件任务。作者报告，冻结视觉表征中可恢复运动信息；模型在具身世界模型评测中表现强劲，并在 EWMBench、WorldOlympiad 和 WorldArena 排名第一。实验还显示动作条件、几何交互和多功能训练具有益处。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
