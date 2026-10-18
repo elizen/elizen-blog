@@ -462,8 +462,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context around spatial, social, and semantic dimensions, and distinguishes how agents are situated in contexts from how they perceive and respond to them. The authors explore the framework through Cobot, a design probe featuring gaze cues, spatial sound, and task-aware behavior, and reflect on implications for future context-aware embodied agents.",
-          "zh": "论文提出一个用于沉浸式分析中具身智能体的初步情境感知设计框架，围绕空间、社会和语义三个维度，并区分智能体嵌入情境的方式及其感知、响应情境的能力。作者以设计探针 Cobot 探索该框架，展示凝视提示、空间声音和任务感知行为等交互特征，并据此讨论未来情境感知型具身智能体的设计启示。"
+          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context into spatial, social, and semantic dimensions, and distinguishes agents’ embeddedness in those contexts from their awareness of them. Cobot serves as a design probe, using features such as gaze cues, spatial sound, and task-aware behavior to support context-sensitive interaction. The authors reflect on its design and discuss implications for future agents.",
+          "zh": "论文提出一个面向沉浸式分析中具身智能体的初步情境感知设计框架，按空间、社会和语义三个维度组织，并区分智能体嵌入情境的方式与感知、回应情境的能力。作者以 Cobot 作为设计探针，展示凝视提示、空间声音和任务感知行为等情境敏感交互，并据此讨论未来具身智能体设计的启示。"
         }
       },
       "source": {
@@ -7906,8 +7906,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces Plan-Bench to evaluate vision-language models’ high-level reasoning and multi-step planning for embodied worlds while isolating action execution. The benchmark covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 models finds room for improvement; the authors report that the strongest model reaches 75.0% accuracy and that scaling generally improves these capabilities. Ablations also indicate increasing potential for larger models to serve as high-level planners.",
-          "zh": "论文提出 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并将动作执行的影响单独隔离。基准涵盖三个维度、16个子类和699个样本。对28个模型的评估显示，作者报告最强模型准确率为75.0%，整体仍有提升空间，模型规模增大通常有助于这些能力。作者还通过消融研究考察大模型作为高层规划器的潜力。"
+          "en": "The paper introduces Plan-Bench, a benchmark for assessing vision-language models’ high-level reasoning and multi-step planning for embodied settings while isolating the effects of action execution. It covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 models indicates room for improvement: the strongest model reaches 75.0% accuracy, and scaling generally improves capabilities. Ablation studies suggest larger models have increasing potential as high-level planners.",
+          "zh": "论文介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理与多步规划能力，并将动作执行的影响单独隔离。基准涵盖三个维度、16 个子类和 699 个样本。对 28 个模型的评估显示仍有提升空间，最强模型准确率为 75.0%；模型规模扩大通常有助于提升表现。消融研究也显示，大模型作为高层规划器的潜力有所增加。"
         }
       },
       "source": {
@@ -8529,8 +8529,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents HelpMeOut, a benchmark for monitoring errors during household task execution. It addresses the possibility of structured errors in everyday activities by cognitively impaired people or older adults, and operationalizes this research in 20,000 paired activity episodes across nine error categories. Agents observe streaming human activity and must detect and diagnose errors early. Evaluations of learned-monitor, symbolic, change-point, and frontier LLM-prompting baselines find that these methods often miss execution errors.",
-          "zh": "论文提出 HelpMeOut，这是一个面向家务任务执行错误监测的具身智能基准。它针对认知受损者或老年人的日常活动可能出现结构化错误这一情境，将日常动作错误研究转化为20,000组成对活动片段，覆盖九类错误。智能体需观察连续的人类活动轨迹，尽早判断执行是否正确并诊断错误。对学习式监测器、符号方法、变化点方法及前沿大语言模型提示的评估显示，这些方法作为错误监测器表现较差，常会漏掉执行偏差。"
+          "en": "HelpMeOut is a benchmark for monitoring errors during household task execution, addressing the assumption in many existing benchmarks that people perform tasks correctly. It comprises 20,000 paired activity episodes across nine neuropsychologically motivated error categories. Agents observe streaming human activity and must detect whether execution is proceeding correctly and diagnose structured errors as early as possible. Evaluations of learned-monitor, symbolic, change-point, and frontier LLM prompting baselines show that they often miss execution errors.",
+          "zh": "论文提出 HelpMeOut，一个面向家务任务执行错误监测的具身智能基准，针对现有基准通常假设人类正确完成任务这一局限。它将日常行动错误研究转化为 20,000 组配对活动片段，覆盖九类神经心理学启发的错误。智能体需观察连续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。对多类基线的评估显示，它们常会漏掉执行偏差。"
         }
       },
       "source": {
@@ -14019,8 +14019,8 @@
           }
         ],
         "summary": {
-          "en": "Thinker-WM is a unified multimodal world model that represents RGB images, metric depth, and robot actions through a shared dynamics representation. The same model supports functions including joint video-action generation, world prediction, policy inference, and inverse dynamics. The authors report that a frozen visual representation retains recoverable motion information. Trained on egocentric video, real-robot, and simulation data, the model performs strongly on embodied world-model evaluations and ranks first on EWMBench, WorldOlympiad, and WorldArena. Controlled studies report benefits from action conditioning, geometric interaction, and multi-function training.",
-          "zh": "论文提出 Thinker-WM，将 RGB 图像、度量深度和机器人动作纳入共享的多模态动力学表示，并以统一模型支持视频与动作联合生成、世界预测、策略推断及逆动力学等功能。作者称，冻结的视觉表示中可恢复出运动信息；模型使用人类第一视角视频、真实机器人数据和仿真数据训练。作者报告其在具身世界模型评测中表现强劲，并在 EWMBench、WorldOlympiad 和 WorldArena 排名第一；受控研究显示动作条件、几何交互和多功能训练具有益处。"
+          "en": "Thinker-WM is a unified multimodal world model that jointly models and generates RGB images, metric depth, and robot actions through a shared intermediate representation, while preserving modality-specific output structures. The same parameterization supports video-action generation, world prediction, policy inference, and other functions. A motion probe is used to examine action-related information in frozen visual representations. The authors report strong results across embodied world-model evaluations and controlled studies of action conditioning, geometry, and multi-function training.",
+          "zh": "论文提出 Thinker-WM，一个共享多模态表示的世界模型，联合建模并生成 RGB 图像、度量深度和机器人动作。其统一动态变换器将外观、几何与动作映射到共同表示，同时保留各自输出结构；同一参数化支持多种生成、预测和推断功能。作者以运动探针考察冻结视觉表示中的动作信息，并报告模型在具身世界模型评测中的表现及受控研究结果。"
         }
       },
       "source": {
