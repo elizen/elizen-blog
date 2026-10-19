@@ -2515,7 +2515,11 @@
             "heading": "",
             "text": "Legged robots equipped with manipulators offer promising capabilities for loco-manipulation tasks in unstructured environments.\n\nHowever, achieving task-consistent end-effector behavior during locomotion remains challenging due to terrain-induced disturbances and the strong coupling between locomotion and manipulation, particularly for small-scale quadruped platforms.\n\nA reinforcement-learning based whole-body control framework is proposed for quadruped loco-manipulation on complex terrain. The proposed framework combines a hybrid task representation with task-prioritized whole-body learning to coordinate locomotion and manipulation while preserving task-consistent end-effector behavior.\n\nA lightweight quadruped manipulator platform is further developed to validate the proposed framework on a small-scale quadruped system. Real-world experiments demonstrate successful deployment on complex terrains such as slopes up to 30 degrees, stairs, and deformable terrain.\n\nThese results demonstrate the feasibility of deploying learned whole-body control policy for quadruped loco-manipulation in real-world environments and highlight the importance of task-consistent whole-body coordination for terrain-adaptive loco-manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose a reinforcement-learning whole-body control framework for quadruped loco-manipulation on complex terrain. It combines a hybrid task representation with task-prioritized learning to coordinate locomotion and manipulation while maintaining task-consistent end-effector behavior. They develop a lightweight quadruped manipulator and report real-world experiments on slopes, stairs, and deformable terrain. The authors present these experiments as evidence of the framework’s feasibility for real-world quadruped loco-manipulation.",
+          "zh": "本文提出面向复杂地形四足机器人操作的强化学习全身控制框架，结合混合任务表征与任务优先级学习，以协调行走和操作并保持末端执行器行为符合任务要求。作者开发了轻量级四足操作平台，并通过真实机器人实验展示其在复杂地形上的部署，包括坡道、楼梯和可变形地面。结果支持该方法用于真实环境四足移动操作的可行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2546,7 +2550,11 @@
             "heading": "",
             "text": "Automating biological laboratories requires robots to perform dexterous tool interactions under realistic visual conditions while handling dynamic experimental phenomena, presenting significant challenges for robotic manipulation.\n\nTo enable systematic evaluation under these conditions, we introduce DexBioLab, a simulation benchmark and framework for dexterous manipulation in realistic biological laboratory environments.\n\nDexBioLab comprises 14 tasks across 4 robot embodiments, spanning functional tool use, precision manipulation, language-conditioned visual grounding, and instrument operation. We introduce controllable dynamic experimental phenomena, including flames, vapor, and bubbles, to capture the evolving visual conditions of laboratory procedures.\n\nTo further enhance environmental realism, we develop a hybrid rendering pipeline that integrates interactive simulated foreground objects with Gaussian-splatting backgrounds reconstructed from 6 real laboratory scenes.\n\nFor efficient large-scale data generation and evaluation, we further build a parallel simulation framework on top of mjlab, proposing Parallel Finite-State Machine (PFSM) and integrating batched rendering with decoupled trajectory replay for demonstration generation and model-independent closed-loop policy evaluation.\n\nOur evaluation reveals substantial variation in policy performance across tasks, exposing distinct strengths and weaknesses of current manipulation policies. Real-world experiments further demonstrate a reduced sim-to-real gap, supporting the validity of AutoBio+ for realistic manipulation evaluation.\n\nSupplementary materials are available at https://cumulusalpha.github.io/DexBioLabWebPage."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce DexBioLab, a simulation benchmark for dexterous manipulation in realistic biological laboratories. It covers tasks and robot embodiments, adds controllable phenomena such as flames, vapor, and bubbles, and combines interactive simulated objects with backgrounds reconstructed from real laboratory scenes. A parallel simulation and evaluation framework supports data generation and policy assessment. Evaluations show substantial variation in policy performance across tasks. The authors also report real-world experiments indicating a reduced sim-to-real gap and supporting the validity of AutoBio+ for realistic manipulation evaluation.",
+          "zh": "本文提出 DexBioLab，一个用于评估机器人在逼真生物实验室环境中进行灵巧操作的仿真基准。它涵盖多种机器人形态和操作任务，并加入火焰、蒸汽、气泡等可控动态现象；渲染管线结合交互式模拟物体与真实实验室场景重建背景。作者还构建并行仿真与评估框架。评估显示不同策略在任务间表现差异明显；作者报告真实实验显示仿真到现实的差距有所缩小，并称其支持 AutoBio+ 评估的有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
