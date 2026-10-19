@@ -43,6 +43,12 @@ jobs:
           format: csv
           dir: ./data/douban
 
+      # doumark-action runs in a container and may leave its generated files
+      # owned by root. Only repair the generated data directory before the
+      # host-side post-processing step; do not broaden repository permissions.
+      - name: Take ownership of generated Douban data
+        run: sudo chown -R "$(id -u):$(id -g)" ./data/douban
+
       - name: Restore official Douban poster URLs
         run: python3 .github/update-douban-posters.py
 
