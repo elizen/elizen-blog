@@ -583,7 +583,11 @@
             "heading": "",
             "text": "Precise grounding matters. It specifies which object is the target and where that object is, even in clutter and for tiny objects, and it has to be fast enough for closed-loop control.\n\nYet vision-language-action (VLA) and world-action models (WAMs) take perception from general-purpose vision-language and video-generation backbones, which still fail in these settings. We introduce GroundingPI, a 4B grounding foundation model that generates points and boxes as quantized coordinates in a shared vocabulary.\n\nTraining combines multimodal and spatial pretraining, supervised fine-tuning, and reinforcement learning with GRPO, using supervision from public datasets and dedicated data engines.\n\nAgainst 44 baselines across 34 grounding benchmarks spanning 11 perceptual capabilities, GroundingPI establishes a new state of the art, averaging 73.68%, above the larger GPT-6 Astra (71.54%).As a downstream visual backbone, GroundingPI improves performance on robotic manipulation and autonomous driving.\n\nOn RoboTwin 2.0, it outperforms every mainstream backbone we evaluate in all four out-of-distribution settings, by up to 24.8% relative to the strongest backbone. On RoboCasa-GR1, GroundingPI trained with 50% of the demonstrations outperforms those baselines trained with 75%.\n\nOn nuScenes, used as the visual backbone, GroundingPI attains an average open-loop L2 error of 0.296 m. We systematically analyze GroundingPI's pretraining in scale and data composition. Downstream autonomous driving and robotic manipulation improve as the pretraining is scaled.\n\nAnalyzing the data recipe across these 11 perceptual capabilities shows dense grounding's substantial benefits for both, and OCR's potential as a catalyst for perceptual learning. These results support grounding as a perceptual foundation, and dedicated perceptual pretraining as a promising direction for foundation models of physical intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GroundingPI, a 4B grounding foundation model that generates points and boxes as quantized coordinates in a shared vocabulary. Training combines multimodal and spatial pretraining, supervised fine-tuning, and GRPO reinforcement learning. The authors report a 73.68% average across 34 grounding benchmarks, surpassing 44 baselines, and describe gains when using the model as a visual backbone for manipulation and driving. Evaluations include RoboTwin 2.0, RoboCasa-GR1, and nuScenes; the abstract does not claim real-world deployment.",
+          "zh": "论文提出 GroundingPI，一种以量化坐标在共享词表中生成点和框的 4B grounding 基础模型，训练结合多模态与空间预训练、监督微调和 GRPO 强化学习。作者报告其在 34 项 grounding 基准上超过 44 个基线，平均成绩为 73.68%，并称其作为视觉骨干可改善机器人操作和自动驾驶表现。在 RoboTwin 2.0、RoboCasa-GR1 和 nuScenes 的评测结果，以及预训练规模与数据配方分析，均支持作者关于 grounding 可作为物理智能感知基础的主张；摘要未说明这些结果来自真实部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -614,7 +618,11 @@
             "heading": "",
             "text": "Quadruped parkour policies handle canonical obstacles well, but their training curricula often miss the irregular, compound geometry of industrial and disaster-response sites, where agile locomotion matters most.\n\nSuch environments pose a hard generalization problem: even training directly on reconstructed geometry from the target site does not reliably yield policies that traverse it. Hand-designed curricula span only a few terrain families, and recent LLM-generated curricula offer little control over which policy weaknesses they target.\n\nWe propose FCTS, a failure-conditioned terrain curriculum framework that uses localized traversal failures to automatically generate the terrains a policy should train on next.\n\nEach failure's location, termination mode, robot state, and surrounding terrain geometry condition this generation, and Monte Carlo Tree Search explores alternative curriculum trajectories under a fixed training budget.\n\nOn terrains built from scanned real-world construction sites, FCTS raises success rate from 28.4% to 85.8% on a medium-difficulty course and from 14.9% to 44.7% on a hard course relative to the strongest parkour or LLM-curriculum baselines, and maintains higher progress on extreme terrains where full traversal is rare.\n\nHardware experiments on a quadruped robot confirm that the learned FCTS policies transfer to the real world."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FCTS is a curriculum framework that generates future training terrains from localized traversal failures. Generation is conditioned on failure location, termination mode, robot state, and nearby terrain; Monte Carlo Tree Search explores curriculum trajectories under a fixed training budget. On terrains built from scanned construction sites, the authors report higher success rates than the strongest parkour or LLM-curriculum baselines on medium and hard courses, and greater progress on extreme terrain. Quadruped hardware experiments indicate that the learned policies transfer to the real world.",
+          "zh": "论文提出 FCTS，一种依据局部行走失败自动生成后续训练地形的课程框架。系统利用失败位置、终止模式、机器人状态及周边地形条件生成，并通过蒙特卡洛树搜索探索课程路线。在由真实施工场地扫描数据构建的地形上，相较最强跑酷或语言模型课程基线，中等难度课程成功率从 28.4% 提升至 85.8%，高难度课程从 14.9% 提升至 44.7%；极端地形上的前进进度也更高。四足机器人硬件实验显示，学习到的策略可迁移至现实环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -645,7 +653,11 @@
             "heading": "",
             "text": "We present OrbiSim, a novel robotic simulation paradigm that redefines world models as a fully differentiable physics engine for embodied intelligence.\n\nUnlike prior world models that focus on unconstrained imagination in latent or visual domains, OrbiSim establishes a unified, physically-grounded pathway that bridges structured scene assets, neural dynamics, and downstream reinforcement learning.\n\nBy enabling end-to-end differentiability throughout the entire simulation loop -- spanning from explicit state transitions to visual observation generation -- OrbiSim supports tasks traditionally intractable for classical simulators, such as differentiable contact modeling, gradient-based policy optimization under sparse rewards, and intuitive physical inference.\n\nEmpirical results demonstrate that OrbiSim significantly outperforms state-of-the-art world models in both predictive fidelity and control performance. Furthermore, its consistent responsiveness to asset configurations and physical parameters suggests its potential as a differentiable tool for enhancing robot simulation and policy training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "OrbiSim is presented as a fully differentiable physics-engine paradigm for embodied intelligence, connecting structured scene assets, neural dynamics, and downstream reinforcement learning. Differentiability spans state transitions and visual observation generation, with intended applications including contact modeling, gradient-based policy optimization under sparse rewards, and physical inference. The authors state that empirical results show better predictive fidelity and control performance than state-of-the-art world models. They also report responsiveness to asset configurations and physical parameters, suggesting potential use in robot simulation and policy training; specific experimental details are not given.",
+          "zh": "论文提出 OrbiSim，将世界模型构建为面向具身智能的全可微物理引擎，连接结构化场景资产、神经动力学与下游强化学习。其可微过程覆盖状态转移和视觉观测生成，旨在支持可微接触建模、稀疏奖励下的基于梯度策略优化及物理推断等任务。作者称，实证结果显示 OrbiSim 在预测保真度和控制表现上优于现有先进世界模型；其对资产配置和物理参数变化的响应，也显示出用于机器人仿真与策略训练的潜力。摘要未提供具体实验设置或数值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -676,7 +688,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models enable language-guided robot manipulation, but remain vulnerable to visual attacks that undermine user control over robot behavior. Prior studies optimize visual perturbations using fixed target supervision. However, the perturbation can change earlier actions and, in turn, the physical states reached later.\n\nAs the attacked trajectory evolves, this supervision may no longer match the behavior needed at the states actually reached. Accurately matching these targets can therefore fail to advance the attacker-specified task. Even with suitable supervision, reducing average matching error does not ensure sustained task progress.\n\nThe robot may still fail at a critical stage, and further updates can disrupt previously successful behavior. To address these limitations, we propose TRACO, a framework that enhances existing targeted visual attacks through closed-loop optimization.\n\nIts Execution-Driven Supervision rebuilds supervision for the states reached under attack to guide subsequent updates. Within this framework, Progress-Guided Selection focuses updates where progress stalls while maintaining supervision on the earlier behavior needed to reach that point.\n\nExperiments across VLA models and simulation environments show improved task-redirection success with TRACO, highlighting the security implications of closed-loop attack optimization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRACO, a closed-loop optimization framework for improving targeted visual attacks on vision-language-action models. Execution-Driven Supervision rebuilds guidance based on states actually reached under attack, while Progress-Guided Selection directs updates to stalled progress and preserves supervision for earlier behavior needed to reach that point. The authors argue that fixed target supervision can become mismatched as trajectories change, and that lower average matching error does not ensure task progress. Experiments across VLA models and simulation environments show improved task-redirection success and highlight security implications.",
+          "zh": "论文研究视觉语言动作模型中的视觉任务重定向攻击，并提出 TRACO，通过闭环优化改进已有的定向视觉攻击。其执行驱动监督会依据攻击轨迹实际到达的状态重建监督信号；进度引导选择则把更新集中在进展停滞处，同时维持到达该处所需的先前行为监督。作者指出，固定目标监督可能与后续状态不匹配，降低平均误差也不保证持续推进。跨 VLA 模型和仿真环境的实验显示，TRACO 提高了任务重定向成功率，并揭示闭环攻击优化的安全影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
