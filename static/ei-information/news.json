@@ -2686,7 +2686,11 @@
             "heading": "",
             "text": "Robots performing long-horizon visual manipulation observe high-dimensional images, but successful plans depend on action-relevant facts: what can be done now and what changes afterward. A useful planning representation should discard irrelevant visual details while preserving action applicability and effects.\n\nClassical task planners exploit this structure through symbolic operators with preconditions and effects, but obtaining such representations from raw visual experience remains challenging. We study a visual task-planning setting in which a robot receives only image transitions: the current image, executed high-level action, and the resulting image.\n\nAt test time, given a start image and a goal image, the robot must produce a sequence of high-level actions that reaches the goal. To address this problem, we introduce STRIPS-WM, a framework for learning image-grounded STRIPS-style world models directly from visual transitions.\n\nSTRIPS-WM first induces a finite abstract transition graph from images, then learns latent binary predicates and one grounded propositional operator per action label. The learned operators form a symbolic action model with sparse preconditions and add/delete effects.\n\nFinally, the learned predicates are distilled into a visual encoder, enabling classical planning directly from novel start and goal images. Experiments on visual rearrangement tasks show that STRIPS-WM improves image-to-plan success over the tested visual rollout, latent graph-search and latent-symbolic baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce STRIPS-WM, which learns image-grounded STRIPS-style world models from image transitions paired with high-level actions. It first builds a finite abstract transition graph, then learns latent binary predicates and a grounded propositional operator for each action label, representing actions with sparse preconditions and add/delete effects. The predicates are distilled into a visual encoder for planning from new start and goal images. In visual rearrangement experiments, STRIPS-WM improves image-to-plan success over the tested visual rollout, latent graph-search, and latent-symbolic baselines.",
+          "zh": "本文提出 STRIPS-WM，从机器人执行高层动作前后的图像转变中学习以图像为基础的 STRIPS 风格世界模型。方法先构建有限抽象转移图，再学习潜在二元谓词和每个动作标签对应的命题算子，以稀疏前提及添加、删除效果表示动作。随后将谓词提炼为视觉编码器，使系统能依据新的起始与目标图像进行经典规划。在视觉重排任务实验中，作者报告其图像到计划成功率高于所测试的视觉滚动、潜在图搜索和潜在符号基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2717,7 +2721,11 @@
             "heading": "",
             "text": "Embodied heuristic learning must balance strategic adaptation with the preservation of previously successful behavior. Local repairs may leave structural failures unresolved, whereas broader revisions can introduce regressions that are costly to detect through repeated environment interaction.\n\nWe introduce SCOPE (Selective Certification Of Program Edits), which uses failed and successful executions as complementary evidence for program revision. Frontier-guided program search annotates a shared diagnostic graph with execution evidence to distinguish supported progress from unresolved checks.\n\nSelective behavioral certification uses stateful API replay to restore recorded responses and mutations, checking whether edits preserve selected historical successes. Diagnosis and certification feedback, supplemented by sparse environment diagnostics, guide consecutive repairs across configurations.\n\nSCOPE outperforms the strongest baseline in both simulation and real-world tasks. On LIBERO-PRO and Robosuite, it achieves mean success rates of 80.66% and 84.48%, with respective gains of 6.51 and 3.48 percentage points. Our code is available at https://github.com/VDIGPKU/SCOPE."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SCOPE uses failed and successful executions as complementary evidence to guide program revisions for embodied heuristic learning. Frontier-guided search records execution evidence in a shared diagnostic graph, while stateful API replay restores recorded responses and mutations to check whether edits preserve selected past successes. Diagnostic and certification feedback, along with sparse environment diagnostics, guide repairs across configurations. The authors report that SCOPE outperforms the strongest baseline in both simulation and real-world tasks, and provide success rates and gains for LIBERO-PRO and Robosuite.",
+          "zh": "本文提出 SCOPE，通过结合失败与成功执行证据来指导具身启发式学习中的程序修改。前沿引导的程序搜索在共享诊断图中标注执行证据，以区分已有支持的进展和未解决的检查；选择性行为认证则通过有状态 API 重放恢复记录的响应与状态变化，检查修改是否保留选定的历史成功。诊断、认证反馈及稀疏环境诊断用于指导跨配置的连续修复。作者报告，SCOPE 在仿真和真实世界任务中均优于最强基线，并给出 LIBERO-PRO 与 Robosuite 上的成功率及提升幅度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2748,7 +2756,11 @@
             "heading": "",
             "text": "How can pretrained Vision-Language-Action (VLA) models retain long-horizon visual histories with high-frequency updates without sacrificing efficiency? Existing approaches rely on external memory management, which restrains either the memory horizon or the reactiveness of pretrained policies.\n\nTo this end, we present NativeMEM, a VLA policy that features long-term and real-time updated memory. At its core is an efficient memory encoding scheme, Native Memory Compression, which repurposes the VLA's own vision encoder to compress each historical frame from each camera view into a single token.\n\nAppended to the input sequence, these memory tokens enable the pretrained VLA to attend over long-term history with negligible latency overhead, requiring neither an external planner nor a freshly initialized memory module.\n\nTo align the memory tokens with the pretrained policy, we first develop a generic memory tokenizer under the supervision of a frozen VLA on memory-demanding data, and then unfreeze the VLA for task-specific fine-tuning.\n\nNativeMEM consistently outperforms prior methods, boosting success rates from 32.4% to 84.0% in simulation and up to 98.7% on real robots, while maintaining low inference latency and GPU memory usage. Notably, NativeMEM exhibits high data efficiency by achieving competitive results with prior arts using only 20% of the training data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "NativeMEM is a vision-language-action policy with long-term, real-time updated memory. Its Native Memory Compression reuses the policy's vision encoder to compress each historical frame from each camera view into one token, which is appended to the input so the pretrained policy can attend to history. The authors report negligible latency overhead and no need for an external planner or newly initialized memory module. A generic memory tokenizer is trained before task-specific fine-tuning. The paper reports improved success rates in simulation and on real robots, and competitive results using 20% of the training data.",
+          "zh": "本文提出 NativeMEM，一种具有长期且实时更新记忆的视觉—语言—动作策略。其 Native Memory Compression 复用策略自身的视觉编码器，将各摄像头视角中的每个历史帧压缩为单个 token，并将这些记忆 token 加入输入序列，使预训练策略关注长期历史；作者称其延迟开销可忽略，且无需外部规划器或新初始化的记忆模块。方法先在需要记忆的数据上训练通用记忆 tokenizer，再解冻策略进行任务微调。作者报告其在仿真和真实机器人上的成功率提升，并称其以 20%训练数据可达到与先前方法有竞争力的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
