@@ -2585,7 +2585,11 @@
             "heading": "",
             "text": "The physical world has continuous state and action spaces, yet robot planning often benefits from hybrid discrete-continuous formulations that explicitly expose combinatorial structure, such as contact modes or discrete primitive actions.\n\nExisting methods typically rely on human-defined symbol sets or symbols derived from language supervision, without asking what makes a symbol computationally useful. In this paper, we take an inference-algorithm--centric view to define usefulness: a good symbol should expose the discrete commitments that simplify solving the original planning problem.\n\nWe first introduce the concept of solver-sufficient symbolization by studying finite-horizon piecewise-affine systems, for which solver sufficiency can be precisely characterized, and develop a counterexample-guided algorithm for symbol invention.\n\nWe then extend this principle to invent symbols for optimization objectives parameterized by general neural networks as energy functions, showing that solver-sufficient symbols can nevertheless be induced from their continuous optimization landscapes.\n\nExperiments on simulated and real-robot tasks show that the resulting symbols reduce solving cost while preserving solution quality, while also improving interpretability and steerability. Furthermore, our theoretical and algorithmic insights help explain why certain human-defined symbols are computationally useful."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies symbols for hybrid discrete-continuous planning from the perspective of inference algorithms. It argues that useful symbols expose discrete commitments that simplify solving the original problem. For finite-horizon piecewise-affine systems, the authors define solver-sufficient symbolization and develop a counterexample-guided invention algorithm, then extend the principle to objectives parameterized by neural-network energy functions. Experiments on simulated and real-robot tasks report reduced solving cost while preserving solution quality, alongside improved interpretability and steerability.",
+          "zh": "论文从推理算法角度研究混合离散—连续规划中的符号用途，提出好符号应揭示能简化原规划求解的离散承诺。作者针对有限时域分段仿射系统定义求解器充分符号化，并开发反例引导的符号发明算法；随后将该原则扩展到由一般神经网络能量函数参数化的优化目标。仿真和真实机器人任务实验显示，所得符号在保持解质量的同时降低求解成本，并提升可解释性和可引导性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2616,7 +2620,11 @@
             "heading": "",
             "text": "Spatial memory enables robots to reuse past observations for localization, navigation, and question answering. Designing such memory involves jointly deciding what to retain and how to retrieve it for diverse semantic, metric, and temporal needs.\n\nWe investigate whether coding agents can automate this design process through iterative implementation and evaluation. Under a fixed development budget, a Designer Agent writes and revises code for memory construction and retrieval using feedback from a fixed Query Agent.\n\nThe resulting implementations are frozen before building memories from held-out observation histories, without access to downstream questions, and evaluated across five complementary task tracks using the same Query Agent.\n\nAcross three independent design searches, Codex / GPT-6 Astra averages 44.23 on the equally weighted five-track score, versus 29.32 for ReMEmbR, the strongest evaluated baseline supporting all five tracks, a 50.9% relative improvement.\n\nQualitative analysis relates performance differences to evidence retention and retrieval, while identifying grounding and evidence-use failures. These results demonstrate the potential of coding agents to automate spatial memory design, while revealing task-dependent trade-offs in performance and computational cost.\n\nProject page: https://ba-fa-3344.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether coding agents can automate spatial-memory design through iterative implementation and evaluation. Within a fixed development budget, a Designer Agent revises memory construction and retrieval code using feedback from a fixed Query Agent. Implementations are frozen before evaluation on held-out observation histories across five task tracks. Across three independent searches, Codex / GPT-6 Astra outperforms the strongest evaluated baseline supporting all tracks on the equally weighted score. The authors also report task-dependent trade-offs in performance and computational cost.",
+          "zh": "论文研究编码智能体能否通过迭代实现和评估，自动设计供机器人使用的空间记忆。在固定开发预算下，设计智能体根据固定查询智能体的反馈修改记忆构建与检索代码；实现冻结后，再用留出的观测历史构建记忆，并在五类任务上评估。三次独立搜索中，Codex / GPT-6 Astra 的五项等权平均分高于支持全部任务的最强评估基线 ReMEmbR。作者将结果视为编码智能体自动设计空间记忆的潜力证据，同时指出性能和计算成本存在任务相关的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
