@@ -1423,7 +1423,11 @@
             "heading": "",
             "text": "Space robots must interpret tasks and act despite unfamiliar dynamics, difficult sensing conditions, and limited opportunities for human intervention. Foundation models offer reusable perceptual and behavioral knowledge, but their value depends on how that knowledge reaches physical execution.\n\nThis critical review follows space-specific requirements through perception, prediction, planning, and action to deployment and validation, emphasizing orbital manipulation and proximity operations.\n\nTerrestrial comparisons establish benefits of particular pretraining stages and model interfaces; their transfer to space dynamics and constrained onboard operation remains insufficiently tested.\n\nEvent cameras offer timely motion observations across strong illumination contrasts, while spiking neural networks provide possible routes to sparse local computation. We examine how sensor degradation, state estimation and computing choices affect feedback and recovery.\n\nHigher action throughput need not yield fresher feedback; lower processor power can also coexist with higher energy per inference. We organize validation as an iterative sim-to-ground-to-space pathway, connecting physical tests with telemetry-based diagnosis and closed-loop revalidation.\n\nA satellite-capture example links observations to approach, contact and recovery, while a corresponding protocol separates generalization from adaptation with limited target-domain interaction. These comparisons identify what models already contribute and the physical evidence needed to support autonomous space operation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This critical review examines foundation models for autonomous space robotics, focusing on perception, prediction, planning, action, deployment, and validation in orbital manipulation and proximity operations. The authors say transfer from terrestrial pretraining and model interfaces to space dynamics and constrained onboard computing remains insufficiently tested. They discuss event cameras, spiking neural networks, sensing degradation, state estimation, and feedback, and organize validation as an iterative sim-to-ground-to-space pathway. A satellite-capture example and protocol distinguish generalization from adaptation with limited target-domain interaction.",
+          "zh": "本文综述基础模型用于自主空间机器人的要求、架构与验证，重点讨论轨道操作和近距离运行中的感知、预测、规划、动作及部署。作者指出，陆地预训练和模型接口的优势能否迁移到空间动力学及受限星载计算，仍缺乏充分测试。文章考察事件相机、脉冲神经网络、传感器退化、状态估计和算力选择对反馈与恢复的影响，并提出从仿真到地面再到空间的迭代验证路径。卫星捕获示例及协议用于区分泛化与有限目标域交互下的适应。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1454,7 +1458,11 @@
             "heading": "",
             "text": "Autonomously navigating off-road terrain at high speed demands accurate control, which often relies on dynamics models that capture complex interactions between the robot and terrain. In off-road regimes, terrain interaction is a major component of the vehicle's dynamics.\n\nPrior work attempts to capture this effect by training learned models of the vehicle's dynamics, conditioned on its perception of the local environment. However, said conditioning is often overly simplistic, ignoring the spatial structure of the dynamics problem. Our approach, SpatialBEV, exploits this spatial structure.\n\nAt each step, we query the bird's-eye-view (BEV) features around the predicted state, conditioning the next prediction on current geometric and semantic cues. We additionally present a benchmarking approach that mines a dataset's most difficult scenarios.\n\nOn datasets collected across seasons, SpatialBEV reduces prediction error by 17.1%, compared to physics-based and learned baselines. We further evaluate on hardware on high-speed ($\\geq$10 m/s) and geometrically challenging courses with a 25.3% reduction in maximum cross-track error. More details can be found at https://theairlab.org/spatial-bev-dynamics ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SpatialBEV addresses limited spatial structure in learned off-road vehicle dynamics by querying bird’s-eye-view features around the predicted state at each step and conditioning the next prediction on geometric and semantic cues. The authors also propose a benchmark approach that mines difficult dataset scenarios. Across datasets collected in different seasons, SpatialBEV reduces prediction error by 17.1% relative to physics-based and learned baselines. In hardware evaluations on high-speed, geometrically challenging courses, it reduces maximum cross-track error by 25.3%.",
+          "zh": "SpatialBEV针对越野车辆动力学学习中对局部环境空间结构刻画不足的问题，在每一步根据预测状态查询鸟瞰图特征，并以几何和语义线索条件化下一步预测。作者还提出一种挖掘数据集中困难场景的基准测试方法。在跨季节采集的数据集上，该方法相较物理模型和学习基线将预测误差降低17.1%；硬件评估中，在高速且几何复杂的赛道上，最大横向轨迹误差降低25.3%。这些结果分别来自数据集评估和硬件测试。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1485,7 +1493,11 @@
             "heading": "",
             "text": "Self-driving laboratories (SDLs) accelerate scientific discovery by automating experimental execution and optimization. AI agents can increasingly propose new experiments, but existing SDLs can only run the procedures they were built for.\n\nAdapting them to a new experiment still takes extensive manual engineering, which makes laboratory flexibility the bottleneck for scaling discovery. We introduce the self-building laboratory (SBL), which designs, configures, and operates its own laboratory setup given a high-level scientific goal.\n\nSBL starts from whatever already exists, from an empty room to a working SDL, and builds the missing capabilities: the lab layout, its digital twin, robot skills, and experimental workflows. We demonstrate the system working across different robots and setups, scaling from a single workstation to laboratories with several robots working together.\n\nWe validate SBL's end-to-end capabilities through a real-world quantum-dot synthesis experiment. By shifting the role of human researchers from manually configuring and programming device automation to specifying scientific objectives, SBL makes scientific automation more accessible, flexible, and scalable.\n\nProject website: https://self-building-labs.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces the self-building laboratory (SBL), which designs, configures, and operates a laboratory setup from a high-level scientific goal. Starting with anything from an empty room to an existing self-driving lab, it builds missing capabilities such as layout, a digital twin, robot skills, and workflows. The authors demonstrate SBL across different robots and setups, from one workstation to laboratories with multiple collaborating robots. They validate its end-to-end capabilities in a real-world quantum-dot synthesis experiment, with researchers specifying objectives.",
+          "zh": "本文提出自构建实验室（SBL），旨在根据高层科学目标设计、配置并运行实验室，以减少将自驾驶实验室改用于新实验所需的人工工程工作。SBL可从空房间或现有实验室起步，构建所需的实验室布局、数字孪生、机器人技能和实验流程。作者展示了该系统在不同机器人和配置中的运行，覆盖单工作站及多机器人协作实验室，并通过真实世界的量子点合成实验验证端到端能力。研究将人类研究者的角色转向提出科学目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1516,7 +1528,11 @@
             "heading": "",
             "text": "Tactile sensing can improve performance in contact-rich robot manipulation. However, learning policies that use real tactile feedback typically requires demonstrations collected with tactile-equipped hardware.\n\nWe present Feature-Extracted Latent Tactile (FELT), a framework that uses existing paired visuo-tactile data to learn contact-aware representations from RGB observations. FELT provides these representations to downstream policies through two interfaces: generated tactile images and contact-aware features.\n\nFELT combines a frozen visual encoder with separate query decoders for the left and right finger, reflecting the spatial organization of dual-finger tactile arrays. The two branches exchange information through gated connections, and a convolutional readout produces spatial contact representations for the downstream interfaces.\n\nFor downstream manipulation, the image interface decodes these spatial representations into tactile images, allowing policies trained with either real or generated tactile observations to use generated images at deployment.\n\nAlternatively, the feature interface feeds these representations directly to the policy during both training and deployment, without real tactile observations. Experiments on four contact-rich real-robot tasks show that both interfaces achieve higher success rates than vision-only policies.\n\nDirectly incorporating learned contact-aware features into the policy improves success by 15-22.5 percentage points across the four tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FELT learns contact-aware representations from RGB observations using existing paired visuo-tactile data, then provides them to manipulation policies as generated tactile images or direct features. Its architecture uses a frozen visual encoder, separate query decoders for the two fingers, and gated connections. The image interface lets policies use generated tactile images at deployment; the feature interface supplies representations during both training and deployment without real tactile observations. In experiments on four real-robot contact-rich tasks, both interfaces outperform vision-only policies, while the feature interface improves success by 15–22.5 percentage points.",
+          "zh": "FELT利用已有的视觉—触觉配对数据，从RGB观测中学习感知接触的表示，并通过生成触觉图像或直接提供接触感知特征两种接口供下游操作策略使用。其架构采用冻结视觉编码器、左右手指的独立查询解码器及门控连接。图像接口可让策略在部署时使用生成的触觉图像；特征接口则在训练和部署期间直接输入特征，无需真实触觉观测。四项真实机器人接触操作任务的实验显示，两种接口均优于仅视觉策略；特征接口使成功率提高15至22.5个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
