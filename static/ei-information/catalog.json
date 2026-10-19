@@ -312,7 +312,11 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes placing a modern AI coding assistant in an unintended role: directing a virtual body on an unknown digital island. Given minimal instructions with no specified task, reward, or activity, the machine began animating its body. Across thirty-hour runs, agents engaged in activities including climbing, stacking blocks, drawing, experimenting with physics, and learning techniques that later expanded their capabilities. These behaviors recurred across thirteen agents but produced distinct histories. The authors examine whether the behavior meets classical criteria for play and whether play could be a mode of machine development.",
+          "zh": "论文描述将现代 AI 编程助手置于一个意外角色：作为身体的思维，在未知数字岛屿上行动。初始指令没有指定任务、奖励或活动，但机器开始操控虚拟身体。作者报告，在多次持续三十小时的运行中，智能体会爬坡、堆叠积木、绘制曼陀罗、重新演绎体育活动、探索世界物理，并习得后来拓展能力的技巧。这些活动在十三个智能体中重复出现，但各自形成不同经历。论文据此考察这些行为是否符合经典游戏标准，以及游戏能否成为机器发展的一种方式。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -861,7 +865,11 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ]
+        ],
+        "summary": {
+          "en": "WorldSolver is a benchmark for evaluating whether LLM agents can generate solvers that simulate physical dynamics. Its tasks, derived from computer graphics papers, span seven physical domains and provide a fixed simulation scaffold for agents to complete. Evaluation measures successful execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find that generating executable solvers is difficult, while achieving visual and physical correctness is harder still. The authors report that the comparatively stronger evaluated agents remain below half of the overall score.",
+          "zh": "论文提出 WorldSolver 基准，用于评估大语言模型智能体能否根据物理现象生成模拟动态系统的求解器。基准任务来自计算机图形学论文，覆盖七个物理领域；每项任务提供固定场景环境的代码框架，由智能体补全求解器。评估考察代码能否运行、渲染动态的视觉保真度及物理合理性。实验显示，生成可执行求解器已具挑战，达到视觉与物理正确性更难；作者报告表现较好的两个智能体总分仍未过半。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6338,7 +6346,11 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OmniDex for dexterous grasping in diverse cluttered scenes. Using curated 3D objects and supporting bases, the authors build a large benchmark through a scalable seed-and-filter strategy. The model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking to address grasp multimodality and precision errors. Experiments show the authors’ reported state-of-the-art performance and generalization across scenes, views, and unseen objects. The abstract does not establish results beyond the simulation setting.",
+          "zh": "论文提出 OmniDex，用于在多样、拥挤的场景中进行灵巧手抓取。作者通过高质量三维物体与支撑底座，以及种子生成与筛选策略，构建了大规模场景基准和场景专属抓取真值。模型结合 Soft Winner-Takes-All 学习、人类启发的物理约束及物理驱动排序，旨在处理抓取多模态和末端精度问题。实验结果显示，作者报告其模型达到当前最佳表现，并能泛化到不同场景、视角和未见物体；摘要未说明这些结果超出仿真范围。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
