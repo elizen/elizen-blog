@@ -909,7 +909,11 @@
             "heading": "",
             "text": "The rise of large language models (LLMs) has opened a path toward generalist embodied AI, raising the question of how LLMs can act in the physical world.\n\nOne straightforward approach is training the model to generate actions: collect robot-action data and video demonstration, refine LLM architecture with an action head, and train a vision-language-action (VLA) model at scale. However, we argue that coding agents have the potential to realize generalist embodied manipulation.\n\nAll they need is a simple yet effective robot harness. We present RoboHarness: a robotic harness that gives LLM agents a visual-geometric control panel so that they can directly understand and invoke embodied tasks. With RoboHarness, Qwen3.8-Flash-Next outperforms state-of-the-art VLA models on BEHAVIOR Challenge 2025 tasks. The implementation is open source."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RoboHarness, a robotic harness that provides LLM agents with a visual-geometric control panel for understanding and invoking embodied tasks. The authors argue that coding agents, given a simple and effective robot harness, can support generalist embodied manipulation. They report that Qwen3.8-Flash-Next with RoboHarness outperforms state-of-the-art VLA models on BEHAVIOR Challenge 2025 tasks. The abstract also states that the implementation is open source.",
+          "zh": "论文提出 RoboHarness，一种为大语言模型智能体提供视觉几何控制面板的机器人执行框架，使其直接理解并调用具身任务。作者认为，编码智能体配合简单有效的机器人框架可用于通用具身操作。摘要称，使用 RoboHarness 的 Qwen3.8-Flash-Next 在 BEHAVIOR Challenge 2025 任务上超过当时的先进视觉语言动作模型，并说明实现已开源；摘要未提供其他实验边界或结果细节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -940,7 +944,11 @@
             "heading": "",
             "text": "World-action models jointly predict actions and future world states, but long-horizon manipulation further requires language reasoning to plan subtask objectives, assess execution progress, and guide action selection.\n\nWe present LAW, a closed-loop VLM--WAM framework that unifies language reasoning, action generation, and world modeling through semantic subtask progress.\n\nWithin the LAW agent, a hybrid-expert vision-language model plans the remaining subtasks, estimates the values of and fuses actions proposed by a world-action model, and asynchronously assesses execution status to support continued execution and subtask transitions.\n\nWithin the world-action model, Mixture-of-Transformer Experts integrates modality-specific and shared computation for joint video--action modeling.\n\nDual-stream hierarchical visual memory maintains temporal context for both models, while subtask-local value learning aligns action evaluation with semantic objectives and preserves supervision from successful prefixes of failed trajectories. LAW achieves 94.21% average success across 50 RoboTwin tasks.\n\nReplacing the WAM backbone with OpenWAM-$alpha$ further raises the average success rate to 95.56%, establishing a new open-source state of the art on RoboTwin. Despite having only 2B parameters, our VLM also outperforms variants using Embodied-R1.5 and GPT-5.5 High.\n\nOn three long-horizon real-robot tasks, LAW achieves 65% average success, compared with 28.33% for $pi_{0.5}$ and 25% for Fast-WAM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LAW, a closed-loop VLM–WAM framework that combines language reasoning, action generation, and world modeling through semantic subtask progress. Its agent plans remaining subtasks, evaluates and fuses proposed actions, and asynchronously assesses execution. The WAM uses a mixture-of-transformer-experts design for joint video-action modeling; hierarchical visual memory and subtask-local value learning provide additional support. The authors report 94.21% average success across 50 RoboTwin tasks, 95.56% with an OpenWAM-α backbone, and 65% average success on three long-horizon real-robot tasks.",
+          "zh": "论文提出 LAW，一个闭环视觉语言模型与世界动作模型框架，借助语义子任务进度统一语言推理、动作生成和世界建模。智能体规划剩余子任务、评估并融合候选动作，并异步判断执行状态；世界动作模型使用混合专家结构联合建模视频与动作，分层视觉记忆维护时间信息，子任务局部价值学习对齐语义目标。作者报告其在 50 项 RoboTwin 任务上的平均成功率为 94.21%；替换为 OpenWAM-α 后为 95.56%。三项长时程真实机器人任务上的平均成功率为 65%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -971,7 +979,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models and world-action models (WAMs) have emerged as promising approaches to robot learning and control. These models integrate multimodal perception and action generation, but differ in their architectures, output representations, and learning objectives.\n\nIn this paper, we present a unified, architecture-agnostic probabilistic formulation for embodied foundation models based on stochastic kernels.\n\nOur formulation has two key components: (i) we characterize embodied foundation models through conditional output distributions and action-realization kernels, which together induce task-conditioned robot policies; and (ii) we connect pretraining and post-training to policy deployment, accommodating model-specific pretraining objectives and offline or online post-training strategies.\n\nWe instantiate the formulation for OpenVLA and DreamZero, covering autoregressive action-token prediction and joint video-action generation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes an architecture-agnostic probabilistic formulation for embodied foundation models based on stochastic kernels. It characterizes models using conditional output distributions and action-realization kernels, which together induce task-conditioned robot policies. It also connects pretraining and post-training to policy deployment, allowing for model-specific pretraining objectives and offline or online post-training strategies. The authors instantiate the formulation for OpenVLA and DreamZero, covering autoregressive action-token prediction and joint video-action generation. The abstract does not report comparative experiments or performance results.",
+          "zh": "论文提出一种与具体架构无关的具身基础模型概率表述，基于随机核描述模型如何形成任务条件化机器人策略。该表述包含两个部分：用条件输出分布和动作实现核刻画模型；将预训练及后训练与策略部署联系起来，并容纳不同预训练目标及离线或在线后训练策略。作者将框架用于 OpenVLA 和 DreamZero，涵盖自回归动作词元预测及视频与动作联合生成。摘要未报告比较实验或性能结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1002,7 +1014,11 @@
             "heading": "",
             "text": "Large language models (LLMs) enable embodied agents to plan from naturallanguage instructions, yet their actions may be physically infeasible or hazardous. Existing neuro-symbolic learners primarily refine execution models, while formal safety methods acquire or enforce safety constraints.\n\nThis separation limits the reuse of both execution corrections and safety knowledge across tasks. We present NEXUS, a modular neuro-symbolic framework that jointly maintains a PDDL domain model and an LTL safety specification.\n\nExecution failures are used to repair action schemas, whereas detected hazards are converted into reusable LTL constraints through hierarchical semantic and translation sampling with equivalence consensus.\n\nAccumulated constraints are enforced through LTL progression during symbolic search; comparing constrained and unconstrained search outcomes distinguishes physical unreachability from safety-induced refusal.\n\nExperiments on SafeAgentBench evaluation set show that NEXUS achieves the best overall trade-off between safetask completion and unsafe-task refusal, while maintaining low violation rates under jailbreak attacks. Ablations confirm the complementary benefits of PDDLdomain refinement and LTL-constraint accumulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents NEXUS, a modular neuro-symbolic framework that jointly maintains a PDDL domain model and an LTL safety specification. Execution failures repair action schemas, while detected hazards are translated into reusable LTL constraints through hierarchical semantic and translation sampling with equivalence consensus. LTL progression enforces constraints during symbolic search; comparing constrained and unconstrained results distinguishes physical unreachability from safety-induced refusal. In experiments on the SafeAgentBench evaluation set, the authors report the best overall trade-off between safe-task completion and unsafe-task refusal, with low violation rates under jailbreak attacks.",
+          "zh": "论文提出 NEXUS，一个同时维护 PDDL 领域模型与 LTL 安全规范的模块化神经符号框架。执行失败用于修复动作模式，检测到的危险则经分层语义与翻译采样及等价共识转化为可复用的 LTL 约束；符号搜索通过 LTL 推进实施这些约束，并比较受约束与不受约束的搜索结果，以区分物理上不可达和因安全限制而拒绝。作者报告，SafeAgentBench 评估集实验中，该方法在安全任务完成与危险任务拒绝之间取得最佳总体平衡，并在越狱攻击下保持较低违规率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1033,7 +1049,11 @@
             "heading": "",
             "text": "High-level humanoid planners often output sparse task-space, low-rate trajectories, whereas whole-body controllers run at high frequency. This creates temporal asynchrony between the planning and execution, and structural incompleteness for full-body control. We propose an asynchronous upper body task-space tracking framework for humanoids.\n\nA student policy is initialized by teacher-student distillation, conditioned on the full cached future trajectory and an execution-time index, and trained with a sliding-window global reward to reduce frame drift without explicit frame estimation.\n\nFor task-specific post-training, an MPC module completes sparse references into floating-base and upper-body guidance, while action- and FK level self-guidance constrain policy drift.\n\nSimulation and Unitree G1 hardware experiments show improved tracking under low update rates, stronger performance than synchronous and decoupled baselines, and safer adaptation to out-of-distribution motions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents an asynchronous upper-body task-space tracking framework for humanoid robots, addressing timing differences between low-rate planning and high-frequency whole-body control. A distilled student policy uses cached future trajectories and an execution-time index, with a sliding-window global reward to reduce frame drift. Task-specific post-training uses MPC to complete sparse references and applies action- and forward-kinematics-level self-guidance. Simulation and Unitree G1 hardware experiments show improved low-rate tracking, stronger results than synchronous and decoupled baselines, and safer adaptation to out-of-distribution motions.",
+          "zh": "本文提出一种人形机器人的异步上半身任务空间轨迹跟踪框架，以应对规划器低频输出与全身控制器高频执行之间的时间不同步和全身信息不完整问题。学生策略通过师生蒸馏初始化，利用缓存的未来轨迹和执行时间索引，并以滑动窗口全局奖励减少帧漂移；任务后训练结合MPC补全稀疏参考，以及动作层和正向运动学层自引导。仿真与Unitree G1硬件实验显示，该方法在低更新率下跟踪效果提升，优于同步及解耦基线，并能更安全地适应分布外动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1064,7 +1084,11 @@
             "heading": "",
             "text": "To advance the development of embodied intelligence, Open-Environment Active 3D Mapping has attracted increasing attention, aiming to perform a long-horizon and shortest trajectory exploration for reconstructing unseen scenarios.\n\nSince only limited information about unseen environments is available, methods built on the closed-set assumption, i.e., assuming that the test environments are similar to those seen during training, cannot generalize satisfactorily.\n\nIn existing active mapping methods, long-horizon exploration is often guided by predicting a coarse long-range goal and then converting it into an executable path. However, this stage is usually formulated as single-point prediction.\n\nUnder partial observability, the same local observation may correspond to multiple plausible exploration directions, making such deterministic prediction prone to brittle decisions and degraded performance in unseen scenarios. Our experiments further verify that this is a key factor underlying their weak generalization.\n\nTo address this issue, we reformulate long-horizon target prediction as conditional multimodal anchor generation using Conditional Flow Matching. Instead of predicting a single goal, our method learns a conditional distribution over coarse exploration anchors from the current mapping state.\n\nThese anchors are first converted into executable candidate paths through obstacle-aware planning. We then apply exploration-mode clustering to compress geometrically similar trajectories and reduce candidate redundancy.\n\nFinally, a hierarchical selection module selects the most promising mode and reranks paths within it to produce the final executable trajectory. Experiments show that our method improves generalization and reconstruction efficiency in open environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work addresses generalization in open-environment active 3D mapping, where single-point long-range goal prediction can be brittle under partial observability and multiple plausible exploration directions. It replaces that prediction with conditional multimodal anchor generation using Conditional Flow Matching. Anchors from the current mapping state are converted into obstacle-aware candidate paths, clustered into exploration modes to reduce redundancy, and ranked by a hierarchical selection module. Experiments reported by the authors show improved generalization and reconstruction efficiency in open environments.",
+          "zh": "本文关注开放环境主动三维建图中的长时程探索与泛化问题，指出单点远程目标预测在部分可观测条件下容易因多种可能方向而产生脆弱决策。作者将目标预测改为基于条件流匹配的多模态探索锚点生成，从当前建图状态学习锚点分布，再通过避障规划生成候选路径，并以探索模式聚类压缩相似轨迹。分层选择模块先选模式，再对其中路径重排序。实验显示，该方法提升了开放环境中的泛化能力和重建效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1095,7 +1119,11 @@
             "heading": "",
             "text": "Reliable 3D person detection is important for rescue robotics to give first responders situational awareness. Yet most multimodal 3D detection research targets automotive scenarios in which pedestrians mostly appear in a narrow range of upright, near-road poses.\n\nIt is therefore unclear how much of the reported performance transfers to rescue settings, as a person may be lying, partially occluded, or in unstructured indoor and outdoor environments.\n\nTo investigate this gap, we introduce TriSAR-3D, a multimodal person detection dataset recorded with a high-resolution 128-channel LiDAR, an RGB camera, and a thermal camera. It captures varied poses in indoor as well as outdoor locations at different times of day to study their influence on 3D object detector performance.\n\nFurthermore, we propose a novel trimodal 3D detection pipeline, PaintFusion, that fuses PointPainting-based evidence using a simple MLP. We show that the derived method reaches 65.4 AP@50 and thereby outperforms strong LiDAR-only (CenterPoint, 53.4), RGB+LiDAR (BEVFusion, 60.5), and adapted trimodal (Tri-BEVFusion, 60.7) baselines on the dataset.\n\nAt the same time, it is substantially faster than other fusion-based methods such as BEVFusion, with a per-frame latency of 51.6 ms compared to 101 ms. Additionally, we test how the performance of different 3D object detectors generalizes to unseen pose categories.\n\nRemoving lying instances from training data collapses the lying-pose AP@50 to near zero across all evaluated detectors. The results indicate that dataset diversity exerts a large effect on 3D object detection performance. The dataset and code are available at https://github.com/MarkusKramer1/3D-Trimodal-People-Detection."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper presents TriSAR-3D, a LiDAR, RGB, and thermal dataset for 3D person detection in search-and-rescue settings, and PaintFusion, a trimodal detection pipeline that fuses PointPainting-based evidence with an MLP. The dataset includes varied poses in indoor and outdoor locations. PaintFusion reaches 65.4 AP@50 on the dataset, outperforming the listed LiDAR-only, RGB-plus-LiDAR, and adapted trimodal baselines, with 51.6 ms per-frame latency. Removing lying instances from training brings lying-pose AP@50 near zero across evaluated detectors, indicating the reported influence of dataset diversity.",
+          "zh": "本文介绍TriSAR-3D数据集和PaintFusion方法，研究搜救场景中姿态多样、可能躺卧或被遮挡的人员三维检测。数据集由高分辨率激光雷达、RGB和热成像相机采集，覆盖室内外及不同时段。PaintFusion以简单MLP融合基于PointPainting的多模态证据，在该数据集上达到65.4 AP@50，高于所列激光雷达、RGB加激光雷达及适配三模态基线，且每帧延迟为51.6毫秒。移除躺卧姿态训练样本后，各评估检测器对该姿态的AP@50接近零，作者据此指出数据集多样性影响显著。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1126,7 +1154,11 @@
             "heading": "",
             "text": "Echolocating bats navigate dense forests using sonar alone, and in-air 3D imaging sonars now capture the entire frontal hemisphere with every pulse.\n\nSonar SLAM, however, has so far been planar: current systems estimate a 2D trajectory and discard the elevation information in the sonar images, an assumption that does not hold on rough and sloped terrain such as a forest floor.\n\nIn this paper, we introduce RTISSLAM-3D, a novel 6-DoF SLAM system for a wheeled robot that carries an in-air 3D imaging sonar, an IMU and wheel encoders.\n\nA CFAR detector on the sphere reduces every sonar image to a sparse set of 3D detections, which we use for a 3D acoustic odometry that models the shape of the sonar beam, for place recognition with polar submap descriptors, and for the verification of loop closures by 3D registration, all combined in a 6-DoF pose graph with attitude factors.\n\nWe evaluated RTISSLAM-3D on a 545m drive through a forest, with a 3D lidar SLAM as reference. The loop closures reduced the horizontal error of the acoustic odometry from 1.74m to 0.28m, with a height error of 0.12m, and 94.6% of the resulting 3D sonar map lies within 0.3 m of the lidar map."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RTISSLAM-3D, a six-degree-of-freedom SLAM system for a wheeled robot equipped with an in-air 3D imaging sonar, an IMU, and wheel encoders. It converts sonar images into sparse 3D detections for acoustic odometry, place recognition, and loop-closure verification, combining them in a pose graph with attitude factors. In a 545 m forest drive evaluated against 3D lidar SLAM, loop closures reduced horizontal odometry error from 1.74 m to 0.28 m; height error was 0.12 m, and the authors report that 94.6% of the sonar map lies within 0.3 m of the lidar map.",
+          "zh": "论文提出 RTISSLAM-3D，一种面向搭载空中三维成像声呐、惯性测量单元和轮式编码器的移动机器人的六自由度 SLAM 系统。系统将声呐图像转为稀疏三维检测点，用于声学里程计、地点识别和回环验证，并融合到含姿态因子的位姿图中。在一次 545 米森林行驶评估中，以三维激光雷达 SLAM 为参照，回环将声学里程计水平误差从 1.74 米降至 0.28 米，高度误差为 0.12 米；作者报告，声呐地图中 94.6% 的部分距激光雷达地图不超过 0.3 米。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1157,7 +1189,11 @@
             "heading": "",
             "text": "Long-horizon, multi-stage Vision-Language-Action (VLA) policies often require visual information that is no longer present in the current observation. Retaining the complete observation history is computationally expensive and highly redundant, motivating selective visual memory.\n\nWe introduce RePlanMem-VLA (Replanning-Guided Keyframe Memory for VLA), which turns a policy's own plan revisions into an online memory-write signal. Under receding-horizon execution, consecutive action chunks predict some of the same future actions.\n\nRePlanMem-VLA treats unusually large disagreement between these temporally aligned predictions as evidence of a task-relevant event.\n\nWe first compare 35 disagreement measures across single-task autoregressive decoder-only and Flow-Matching Transformers trained from scratch, then validate the selected signals on pretrained OpenVLA-OFT and $\\pi_{0.5}$ policies over MIKASA-Robo-VLA tasks. The resulting detectors achieve ROC-AUC of 0.981-0.997.\n\nWe then use the selected signals in RePlanMem-VLA to trigger updates to a bounded visual memory, with a robot-masked write filter suppressing redundant frames. In the evaluated memory-retention experiments, RePlanMem-VLA preserves task-relevant observations until the later decision point in 100% of episodes.\n\nReal-robot replay data further show that event selection and redundancy suppression extend beyond simulation. These results establish plan revision as a policy-internal signal for controlling what a VLA remembers. Website: https://vika787.github.io/RePlanMem/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RePlanMem-VLA, which uses large disagreements between overlapping action predictions during receding-horizon execution as signals of task-relevant events. These signals trigger updates to bounded visual memory, while a robot-masked write filter suppresses redundant frames. The authors compare 35 disagreement measures, then validate selected signals on pretrained policies and robot tasks; the detectors achieve ROC-AUC values of 0.981–0.997. In evaluated memory-retention experiments, relevant observations remained available until a later decision point in 100% of episodes. Real-robot replay data also show event selection and redundancy suppression beyond simulation.",
+          "zh": "论文提出 RePlanMem-VLA，利用视觉语言动作策略在滚动时域执行中对重叠动作预测的显著分歧，作为任务相关事件的信号，触发有界视觉记忆更新，并用机器人遮罩写入过滤器抑制冗余帧。作者先比较 35 种分歧度量，再在预训练策略和相关机器人任务上验证所选信号，检测器 ROC-AUC 为 0.981–0.997。在记忆保留实验中，系统在 100% 的回合中将任务相关观察保留至后续决策点。真实机器人回放数据也显示事件选择和冗余抑制可超出仿真环境；这些结果支持将计划修订用作策略内部记忆控制信号。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1188,7 +1224,11 @@
             "heading": "",
             "text": "General robot skill adaptation requires expressive representations robust to varying task configurations. While recent learning-based skill adaptation methods refined via Reinforcement Learning (RL), have shown success, existing skill models often lack sufficient representational capacity for anything beyond minor environmental changes.\n\nIn contrast, Gaussian Process (GP)-based skill modelling provides an expressive representation with useful analytical properties; however, adaptation of GP-based skills remains underexplored. This paper proposes a novel, robust skill adaptation framework that utilises GPs with sparse via-points for compact and expressive modelling.\n\nThe model considers the trajectory's poses and leverages its first and second analytical derivatives to preserve the skill's kinematic profile. We present three adaptation methods to cater for the variability between initial and observed configurations.\n\nFirstly, an optimisation agent that adjusts the path's via-points while preserving the demonstration velocity. Second, a behaviour cloning agent trained to replicate output trajectories from the optimisation agent. Lastly, an RL agent that has learnt to modify via-points whilst maintaining the kinematic profile and enabling online capabilities.\n\nEvaluated across three tasks (drawer opening, cube-pushing and bar manipulation) in both simulation and hardware, our proposed methods outperform every benchmark in success rates.\n\nFurthermore, the results demonstrate that the GP-based representation enables all three methods to attain high cosine similarity and low velocity magnitude errors, indicating strong preservation of the kinematic profile. Overall, our formulation provides a compact representation capable of adapting to large deviations from a single demonstrated skill."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a Gaussian-process-based framework for adapting robot skills, using sparse via-points to represent trajectory poses and analytical first and second derivatives to preserve kinematic profiles. It presents three adaptation methods: an optimizer that adjusts via-points while preserving demonstrated velocity, a behavior-cloning agent that imitates the optimizer's trajectories, and an RL agent that modifies via-points online while maintaining the profile. In simulation and hardware evaluations across drawer opening, cube pushing, and bar manipulation, the authors report higher success rates than all benchmarks. Results also show high cosine similarity and low velocity-magnitude errors.",
+          "zh": "论文提出一种基于高斯过程的机器人技能适应框架，以稀疏路径中间点紧凑表示轨迹姿态，并利用一阶、二阶解析导数保持运动学特征。框架包括三种适应方法：优化代理调整中间点并保持示范速度；行为克隆代理学习复现优化代理轨迹；强化学习代理在线修改中间点并维持运动学特征。作者在抽屉开启、推方块和操作杆三项任务的仿真及硬件评估中报告，所提方法成功率均优于各基准；结果还显示较高余弦相似度和较低速度幅值误差，表明运动学特征得到较好保留。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
