@@ -1531,7 +1531,11 @@
             "heading": "",
             "text": "Contact locations and interaction forces are critical for contact-rich robot manipulation but are often ambiguous from vision alone. Measuring them on robots requires specialized tactile hardware and platform-specific data collection, which keeps robot tactile data scarce. Human egocentric video is far easier to scale but lacks touch.\n\nRecent predictors trained on egocentric recordings paired with tactile-glove measurements can predict this missing signal from video alone. These predictors, however, remain confined to human hands, which differ from robot hands in appearance and tactile layout.\n\nWe present Ego2Contact, which learns a visual-tactile prior from human interactions and transfers it to robot hands. Its predictor fuses temporal scene context with hand-local visual features to infer bimanual tactile fields from the RGB video.\n\nAnatomical region correspondences align varying robot tactile layouts with the predictor's canonical grid, turning robot measurements into fine-tuning targets and predictions into policy inputs. Ego2Contact outperforms prior tactile predictors on human data, including unseen objects, and on robot data after adaptation.\n\nThe adapted predictor provides tactile inputs for both simulated reinforcement learning and real-robot policy post-training. In simulation, policies using predicted touch outperform non-tactile baselines and recover part of the benefit of ground-truth tactile sensing.\n\nThese results show that human-learned tactile priors can supply touch when direct tactile sensing is limited."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Ego2Contact learns a visual-tactile prior from human egocentric interactions and transfers it to robot hands. It combines temporal scene context with hand-local visual features to predict bimanual tactile fields from RGB video, using anatomical correspondences to align different robot sensor layouts and robot measurements for fine-tuning. The authors report better performance than prior predictors on human data and adapted robot data. In simulation, policies using predicted touch outperform non-tactile baselines and recover part of the benefit of ground-truth touch; the predictor is also used for real-robot policy post-training.",
+          "zh": "论文提出 Ego2Contact，从人类第一人称交互视频学习视觉触觉先验，并将其迁移到机器人手部。模型融合时序场景信息与手部局部视觉特征，从 RGB 视频预测双手触觉场；解剖区域对应关系用于适配不同机器人触觉布局，并将机器人测量用于微调。作者称，该方法在适配后的人类与机器人数据上优于先前预测器。仿真中，使用预测触觉的策略优于无触觉基线，并获得部分真实触觉带来的收益；论文也报告了真实机器人策略后训练应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1562,7 +1566,11 @@
             "heading": "",
             "text": "Vision-and-Language Navigation (VLN) requires embodied agents to ground language in visual observations and make long-horizon decisions. Existing methods often address these demands through task-specific architectures.\n\nAs multimodal large language models (MLLMs) become increasingly capable, an important question remains: Have we truly unlocked the potential of native MLLMs for VLN before introducing task-specific architecture? We present SimpleVLN, an architecture-preserving framework developed through studies of navigation formulation, data construction, and optimization.\n\nAt the formulation level, SimpleVLN combines single-turn decision inputs with fixed-budget global-local memory to efficiently use navigation history without unbounded context growth, while action chunks enable efficient output of multiple primitive actions per model invocation.\n\nFor data construction, we combine expert demonstrations with policy-dependent DAgger experience and develop a scalable synthesis pipeline that generates large-scale tasks for reinforcement learning. At the optimization level, a progressive IL-DAgger-RL pipeline advances from action imitation to task-level outcome optimization.\n\nComprehensive experiments validate the effectiveness of these three aspects. We instantiate SimpleVLN across multiple MLLM backbones and model sizes, demonstrating its generality. SimpleVLN achieves 76.7% and 80.1% success rates on the R2R-CE and RxR-CE splits, respectively, substantially outperforming existing methods.\n\nThese results show that the navigation capabilities of native MLLMs can be effectively unlocked without task-specific architectural designs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SimpleVLN is a vision-language navigation framework that preserves native multimodal language model architectures. Its design combines single-turn decisions, fixed-budget global-local memory, and action chunks with expert demonstrations, policy-dependent DAgger experience, and synthesized tasks. Training progresses from imitation learning through DAgger to reinforcement learning focused on task outcomes. The authors report that it generalizes across multiple model backbones and sizes, achieving success rates of 76.7% on R2R-CE and 80.1% on RxR-CE, outperforming existing methods on those splits.",
+          "zh": "论文提出 SimpleVLN，一种保留多模态大语言模型架构的视觉语言导航框架，并从任务表述、数据构建和优化三方面进行设计。它以单轮决策输入和固定预算的全局—局部记忆利用导航历史，以动作块一次输出多个基本动作；训练数据结合专家示范、依赖策略的 DAgger 经验和合成任务，优化流程则由动作模仿逐步推进至任务结果优化。作者报告，该方法适用于多个模型骨干和规模，并在 R2R-CE、RxR-CE 划分上分别取得 76.7% 和 80.1% 成功率，超过既有方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1593,7 +1601,11 @@
             "heading": "",
             "text": "Enabling embodied agents to imagine future states is essential for robust and generalizable visual navigation. Yet, state-of-the-art systems typically rely on modular designs that decouple navigation planning from visual world modeling, which often induces state-action misalignment and weak adaptability in novel or dynamic scenarios.\n\nWe propose UniWM, a unified, memory-augmented world model that integrates egocentric visual foresight and planning within a single multimodal autoregressive backbone. UniWM explicitly grounds action selection in visually imagined outcomes, tightly aligning prediction with control.\n\nMeanwhile, a hierarchical memory mechanism fuses short-term perceptual cues with longer-term trajectory context, supporting stable and coherent reasoning over extended horizons.\n\nExtensive experiments on four challenging benchmarks (Go Stanford, ReCon, SCAND, HuRoN) and the 1X Humanoid Dataset show that UniWM improves navigation success rates by up to 30%, substantially reduces trajectory errors against strong baselines, generalizes zero-shot to the unseen TartanDrive dataset, and scales naturally to high-dimensional humanoid navigation.\n\nThese results position UniWM as a principled step toward unified, imagination-driven embodied navigation. The code and models are available at https://github.com/UWMILab/UniWM."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniWM is a unified, memory-augmented world model that integrates egocentric visual foresight and navigation planning in one multimodal autoregressive backbone. It grounds action choices in imagined visual outcomes and combines short-term perceptual cues with longer-term trajectory context. Across four benchmarks and the 1X Humanoid Dataset, the authors report navigation success improvements of up to 30%, reduced trajectory errors against strong baselines, zero-shot generalization to the unseen TartanDrive dataset, and scaling to high-dimensional humanoid navigation.",
+          "zh": "论文提出 UniWM，将第一人称视觉预见与导航规划整合进单一多模态自回归世界模型，使动作选择依据想象的视觉结果。其分层记忆结合短期感知线索和长期轨迹信息，以支持长时程推理。作者在四个基准和 1X Humanoid Dataset 上报告，UniWM 的导航成功率最高提升 30%，相较强基线减少轨迹误差，并能零样本泛化至未见的 TartanDrive 数据集；论文还称其可扩展至高维人形机器人导航。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
