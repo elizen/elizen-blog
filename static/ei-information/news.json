@@ -2243,7 +2243,11 @@
             "heading": "",
             "text": "Learning from Observation (LfO) is a fundamental robotic capability that replicates how humans and animals socially learn from each other. Beyond its biological parallels, this modality provides a practical solution for data scaling in sample-inefficient and data-starved domains like robotics.\n\nRecent work has demonstrated promising results in learning manipulation skills from human videos, yet progress in this area remains difficult to assess. Existing methods vary widely in assumptions, hardware choices, and environment setups making it difficult to draw meaningful comparisons and identify advances in the field.\n\nTo address these challenges, we introduce RoboReel: a unified benchmark for evaluating models that learn policies from human videos. RoboReel consists of bundled real-world human demonstration videos, simulated robot trajectories, and evaluation environments on ten manipulation tasks.\n\nWe develop four test suites to evaluate the models' performance on multiple axes, including the robustness to visual distractors and the ability to complete long-horizon tasks. We further validate RoboReel by recreating a subset of its tasks in the real world, showing that relative performance trends observed in simulation are preserved in the real world.\n\nOur benchmark covers learning-from-observation models from different categories, and studies the effectiveness of multiple representation choices in our benchmark evaluation that covers over seven state-of-the-art algorithms (including our VLA based variants) in the field of LfO.\n\nFinally, we present an analysis of the different types of algorithms showing that long-horizon tasks and tasks with low tolerances are still challenging for current models. Webpage: https://roboreel.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RoboReel, a unified benchmark for evaluating policies learned from human videos. It includes real-world human demonstrations, simulated robot trajectories, and evaluation environments for ten manipulation tasks. Four test suites assess capabilities such as robustness to visual distractors and long-horizon completion. The authors recreate some tasks in the real world and report that relative performance trends seen in simulation are preserved. The evaluation covers multiple model categories, representation choices, and more than seven algorithms; long-horizon and low-tolerance tasks remain challenging.",
+          "zh": "论文提出 RoboReel，一个评估从人类视频学习机器人操作策略的统一基准，包含真实人类演示视频、模拟机器人轨迹，以及十项操作任务的评估环境。四类测试套件考察视觉干扰鲁棒性、长时程任务等能力。作者在真实环境复现部分任务，并报告仿真中观察到的相对性能趋势在真实环境中保持。基准评测涵盖多种学习类别、表征选择及七种以上算法；分析指出，长时程和容差较低的任务对现有模型仍具挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2274,7 +2278,11 @@
             "heading": "",
             "text": "Precise pedicel-targeted grasping in strawberry harvesting remains a critical bottleneck due to the pedicel's small diameter (1.3-3 mm), color similarity with surrounding foliage, and precise force control required for clean abscission zone detachment.\n\nAs a market-grade crop, strawberry aesthetic value makes bruise-free pedicel detachment essential over direct fruit grasping. Classical approaches struggle to unify vision models, motion planning, and contact manipulation into a robust framework, particularly in occluded canopy environments.\n\nTherefore, this work presents a visuomotor imitation learning pipeline for pedicel-targeted strawberry harvesting that unifies perception, motion planning, and contact manipulation from collecting human teleoperation demonstrations, training an Action Chunking with Transformers (ACT) policy with a ResNet-50 visual backbone, and deploying the learned policy autonomously on a Jetson AGX Orin edge platform at 15 Hz.\n\nThe trained policy achieved consistent loss convergence from 2.84 to 0.091 over 100K gradient steps on 130 demonstrations. We have also established a reproducible open-source pipeline with publicly released dataset and model weights for the agricultural robotics community.\n\nFull dataset is available at, https://huggingface.co/datasets/nitindominicrai/strawberry_pedicel_grasp_teleoperation and trained policy at, https://huggingface.co/nitindominicrai/act_strawberry_pedicel.\n\nTo replicate this work, all code, configurations, and deployment instructions are publicly available at, https://github.com/nitin-dominic/autonomous_strawberry_pedicel_harvesting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a visuomotor imitation-learning pipeline for strawberry harvesting that targets the pedicel for bruise-free detachment. It combines human teleoperation demonstrations with an Action Chunking with Transformers policy using a ResNet-50 visual backbone, deployed on a Jetson AGX Orin. The authors report that training on 130 demonstrations reduced loss from 2.84 to 0.091 over 100,000 gradient steps. They also describe a reproducible pipeline and publicly released data, weights, and deployment materials; the abstract does not report harvest success rates or field validation.",
+          "zh": "论文提出一种面向草莓采摘的视觉运动模仿学习流程，目标是抓取花梗并实现无损脱离。流程结合人工遥操作示范、采用 ResNet-50 视觉骨干的 ACT 策略，并部署于 Jetson AGX Orin 平台。作者报告，该策略在 130 条示范数据上经过 100K 次梯度更新，损失由 2.84 降至 0.091。论文还称已公开可复现流程、数据集、模型权重及部署资料；摘要未报告实际采摘成功率或田间验证结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2305,7 +2313,11 @@
             "heading": "",
             "text": "Manipulating deformable objects toward desired 3D configurations is a fundamental capability for robots operating in unstructured physical environments.\n\nHowever, as the range of possible initial and target configurations grows, goal-conditioned deformable manipulation requires a robot to infer increasingly diverse manipulation behaviors in addition to precise continuous actions. We introduce DefFlow, a framework for goal-conditioned manipulation of deformable objects toward a broad range of 3D configurations.\n\nDefFlow learns from demonstrations by jointly predicting the goal-conditioned 3D point flow of the robot and deformable object.\n\nWe show that this formulation better captures both the manipulation decisions, such as when and where to grasp, release, or re-grasp, and the precise continuous motions required for goal reaching, rather than predicting only the robot flow.\n\nAcross rope, granular-media, and cloth manipulation settings with diverse initial and target configurations, DefFlow substantially outperforms goal-conditioned action-prediction and robot-flow-only baselines on success rates and goal-distance metrics.\n\nWe further demonstrate deployment of our framework on a real robot using real point-cloud observations and unseen goal configurations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DefFlow for manipulating deformable objects toward target 3D configurations. From demonstrations, it jointly predicts goal-conditioned 3D point flows for the robot and object, aiming to represent both decisions such as grasping, releasing, or re-grasping and the continuous motions needed to reach a goal. Across rope, granular-media, and cloth settings with varied initial and target configurations, the authors report higher success rates and better goal-distance metrics than goal-conditioned action-prediction and robot-flow-only baselines. They also demonstrate deployment on a real robot with real point-cloud observations and unseen goals.",
+          "zh": "论文提出 DefFlow，用于根据目标三维构型操作可变形物体。该框架从示范中联合预测机器人与物体的目标条件三维点流，旨在同时表示抓取、释放或重新抓取等操作决策，以及实现目标所需的连续运动。作者报告，在绳索、颗粒介质和布料操作设置中，面对多样初始状态与目标构型时，DefFlow 在成功率和目标距离指标上优于目标条件动作预测及仅预测机器人流的基线。论文还展示了使用真实点云观测、面向未见目标配置的真实机器人部署。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2336,7 +2348,11 @@
             "heading": "",
             "text": "Learning effective action representations is critical for robotic manipulation, where raw control trajectories are often noisy, redundant, and difficult to model directly. Existing methods mainly encode the structure of the action stream itself, treating the role of actions in the environment as implicit.\n\nYet manipulation is about changing the world: the same action segment can induce different outcomes under different scene contexts, making action semantics inherently environment-dependent. We propose EDAR, an Environment-Dependent Action Representation that grounds action tokens in both executable control structure and expected visual consequences.\n\nBy coupling motor commands with their environment-conditioned effects, EDAR encourages the learned action space to capture interaction semantics rather than merely command-level patterns. Experiments on simulated and real-robot manipulation benchmarks demonstrate that EDAR improves downstream policy learning, especially in long-horizon manipulation.\n\nThese results highlight the importance of grounding action representations in executable control structure and environment-conditioned visual change."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes EDAR, an action representation method that grounds action tokens in executable control structure and expected visual consequences. It is designed to capture how actions affect the world in a particular scene, rather than encoding command patterns alone. Experiments on simulated and real-robot manipulation benchmarks show improved downstream policy learning, especially for long-horizon manipulation. The authors emphasize grounding representations in control structure and environment-conditioned visual change; the abstract provides no specific magnitude for the reported improvements.",
+          "zh": "论文提出 EDAR，一种将动作表示与环境联系起来的方法。它把可执行的控制结构与预期视觉后果结合，使动作表征反映动作在特定场景中的交互效果，而不只编码控制指令本身。作者在仿真和真实机器人操作基准上的实验显示，EDAR 可改善下游策略学习，尤其是在长时程操作任务中。摘要将结果归因于动作表征对控制结构及环境条件下视觉变化的锚定；未提供具体提升幅度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
