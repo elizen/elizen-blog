@@ -1741,7 +1741,11 @@
             "heading": "",
             "text": "We use a frozen frontier vision-language model, GPT-6-Astra, directly as the robot policy on RoboMME, a benchmark of 16 memory-dependent manipulation tasks spanning temporal, spatial, object, and procedural memory. The model keeps the whole episode in context and outputs every end-effector waypoint and gripper command, with no RoboMME-specific training.\n\nOn the 800 test episodes it succeeds in 92.1%, above the previously reported human score of 90.5%, which was obtained with an oracle skill interface, and far ahead of the best leaderboard entry (60.8%) and of a hierarchical system that pairs the same model with a RoboMME-trained policy (79.1%).It matches or exceeds the human score on 13 of the 16 tasks.\n\nIts 63 failures concentrate in two tasks and are mostly premature completions and mistimed or unintended button presses. These results blur the usual division between long-horizon planning, memory and end-effector control, and raise the question of how much of this stack a single general-purpose model can take over in embodied systems.\n\nProject website: https://embodied-astra.github.io. Code, prompts and all episode logs: https://github.com/jackbjed/embodied-astra-robomme."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates a frozen frontier vision-language model as a robot policy on RoboMME’s 16 memory-dependent manipulation tasks, without benchmark-specific training. The model retains the episode context and outputs end-effector waypoints and gripper commands. The authors report a 92.1% success rate over 800 test episodes, above a previously reported 90.5% human score obtained with an oracle skill interface. The model matches or exceeds that human score on 13 tasks; its failures are concentrated in two tasks.",
+          "zh": "论文在RoboMME的16项依赖记忆的操作任务上，将冻结的前沿视觉语言模型直接用作机器人策略，不进行该基准专门训练。模型在完整任务过程中保留上下文，并输出末端执行器航点和夹爪指令。作者报告其在800个测试回合中成功率为92.1%，高于此前报告的90.5%人类成绩；该人类成绩使用了预言式技能接口。模型在16项任务中的13项达到或超过该人类成绩，失败主要集中于两项任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
