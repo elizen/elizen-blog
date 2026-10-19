@@ -2103,7 +2103,11 @@
             "heading": "",
             "text": "Long-horizon robotic tasks expose a fundamental limitation of current Vision-Language-Action (VLA) models because their restricted temporal context pre-vents effective accumulation and reuse of past experiences. As a result, memory has become a fundamental component for enabling embodied agents to perform long-horizon reasoning and adaptive decision-making.\n\nThis survey presents a systematic taxonomy of VLA memory mechanisms based on memory scope and persistence, categorizing existing approaches into five representative paradigms and one emerging frontier.\n\nBased on this taxonomy, we compare representative VLA memory systems in terms of memory characteristics, architectural com-plexity, and open-source maturity, revealing a clear trade-off in which increasing architectural complexity is generally accompanied by decreasing open-source ma-turity.\n\nFinally, we discuss the key challenges in building full-lifecycle memory systems, including efficient memory management and lifelong knowledge evolu-tion. Overall, this survey provides a unified perspective on memory architectures for VLA agents and offers insights into the development of lifelong embodied in-telligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey examines memory mechanisms for long-horizon robotic vision-language-action (VLA) models. It organizes existing approaches by memory scope and persistence into five representative paradigms and one emerging frontier. The authors compare systems in memory characteristics, architectural complexity, and open-source maturity, reporting a general trade-off: greater architectural complexity tends to accompany lower open-source maturity. They also discuss challenges in efficient memory management and lifelong knowledge evolution.",
+          "zh": "本文综述长时程机器人视觉—语言—动作（VLA）模型的记忆机制，按记忆范围与持久性将其归纳为五种代表性范式和一个新兴方向。作者比较了不同系统的记忆特征、架构复杂度和开源成熟度，并指出复杂度提高通常伴随开源成熟度下降。文章还讨论了高效记忆管理与终身知识演化等挑战，旨在为VLA智能体记忆架构提供统一视角。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2134,7 +2138,11 @@
             "heading": "",
             "text": "A robot swarm covers a building faster with more robots, but the map is only as complete as the space the robots have physically visited. We target the amount of an unknown building a decentralized swarm knows at each instant, ahead of physical coverage.\n\nSenseSwarm serves a lightweight learned map predictor on the swarm's shared occupancy map and folds the predicted structure back into a stigmergic guidance field. Its 709K-parameter predictor is fine-tuned on the swarm's own multi-front observations, which we show is necessary: a single-robot predictor collapses on such views.\n\nWe build a benchmark of twelve real building floors from HouseExpo, HKUST, and KTH, up to 24,000 square meters, and run 1,620 simulations across nine coordination methods, swarm sizes 32 to 512, and three seeds. On physical coverage the swarm is near parity with a greedy frontier planner, as expected.\n\nOn map reconstruction, every non-predictive baseline needs 1.3 to 1.9 times longer to reach an 80 percent known map, and SenseSwarm holds an equal-time area lead of about 670 square meters, up to 1,359.\n\nFolding the prediction into the shared field matters: the same predictor applied per robot matches our speed but suffers a 6.9 times higher inter-robot contact rate at 512 robots. The prediction is computed once per shared map, so its cost stayed flat from 32 to 512 robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SenseSwarm applies a lightweight learned map predictor to a swarm's shared occupancy map and incorporates predicted structure into a guidance field. The authors report a benchmark using twelve building floors from three sources and 1,620 simulations across nine coordination methods, swarm sizes, and seeds. In simulation, physical coverage is near parity with a greedy frontier planner, while map reconstruction reaches the stated known-map threshold faster than non-predictive baselines. Applying prediction per robot has a higher inter-robot contact rate at the largest tested swarm size.",
+          "zh": "SenseSwarm将轻量级学习式地图预测器用于群体共享占据地图，并把预测结构融入引导场，以估计机器人尚未实地覆盖的建筑空间。作者在来自三个数据集的12个真实建筑楼层上开展了1620次仿真，比较九种协调方法及不同群体规模。仿真中，实体覆盖表现接近贪心前沿规划器；地图重建更快达到已知地图比例目标。逐机器人使用预测器时，512台机器人规模下的接触率更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2165,7 +2173,11 @@
             "heading": "",
             "text": "We introduce Accelerating Dexterity via Pre-Training (ADEPT), a large-scale reinforcement learning (RL) framework for learning sim-to-real transferable dexterity across high degree-of-freedom (DoF) robot embodiments that can solve long-horizon tasks directly from raw visuo-tactile perception.\n\nADEPT pretrains a dexterous policy on a generic object reposing task, then post-trains downstream policies with this pretrained behavior as a prior. ADEPT enables learning new behaviors that are otherwise difficult to discover from scratch on multi-fingered robots and avoids learning the same set of skills over again for every new downstream task.\n\nThe pretrained policy zero-shots the reposing phase of downstream tasks, but na\\\"ive RL fine-tuning rapidly degrades this capability during transfer. We address this with a stable post-training recipe combining behavior-cloning distillation, critic warm-up, and conservative on-policy updates.\n\nTo safely exploit the full kinematic dexterity, we introduce a joint-space Geometric Fabric that mediates between the RL policy and the robot.\n\nWe distill post-trained teachers into perceptive students that zero-shot sim-to-real transfer on two embodiments: a 23 DoF Kuka-Allegro with two RGB cameras, and a 29 DoF Flexiv-Sharpa with two RGB cameras and five vision-based tactile sensors, and can solve long-horizon tasks from challenging initial states with dexterity at human-level speed."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ADEPT is a reinforcement-learning framework that pretrains dexterous policies on a generic object-reposing task, then uses the learned behavior as a prior for downstream post-training. The authors say this can support behaviors that are difficult to discover from scratch. To limit capability loss during transfer, their post-training recipe combines behavior-cloning distillation, critic warm-up, and conservative on-policy updates. A joint-space Geometric Fabric mediates between policy and robot. Distilled perceptive students are reported to transfer zero-shot from simulation to two robot embodiments for long-horizon tasks.",
+          "zh": "ADEPT是一种强化学习框架，先在通用物体重新摆放任务上预训练灵巧操作策略，再将其作为先验用于下游任务后训练。作者称该方法有助于学习从零开始难以发现的行为，并通过行为克隆蒸馏、评论家预热和保守的在线策略更新，减少迁移时预训练能力退化。框架还使用关节空间Geometric Fabric协调策略与机器人。经蒸馏的感知学生策略在两种机器人构型上实现仿真到现实零样本迁移，并处理长时程任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2196,7 +2208,11 @@
             "heading": "",
             "text": "Vision--Language--Action (VLA) models promise generalist robotic agents, yet consolidating skills learned across heterogeneous tasks and environments remains difficult: training data is fragmented across platforms, joint multi-task training suffers from interference, and model merging tends to introduce parameter conflicts or require architectural changes.\n\nWe instead advocate a paradigm in which skills are first learned independently and then consolidated post hoc. To this end, we propose NestedVLA, which replaces parameter aggregation with parameter generation: a nested hypernetwork, conditioned on the target task, synthesizes task-adaptive action-expert parameters that compose with a frozen base VLA.\n\nTask-specific compressed VLM residuals are retained separately. This formulation enables flexible task-conditioned skill reuse while mitigating interference.\n\nAcross three RL benchmarks (MetaWorld, ManiSkill, CALVIN), NestedVLA outperforms the strongest model-merging baseline by 41 pp on average, matches per-task fine-tuning within 1 pp on ManiSkill, and substantially closes the gap on CALVIN, pointing toward a storage-efficient route to skill consolidation.\n\nCode is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "NestedVLA addresses the difficulty of consolidating skills learned across tasks and environments by proposing independent skill learning followed by post hoc consolidation. A task-conditioned nested hypernetwork generates adaptive action-expert parameters that compose with a frozen base VLA, while compressed task-specific VLM residuals are stored separately. Across three reinforcement-learning benchmarks—MetaWorld, ManiSkill, and CALVIN—the authors report an average 41 percentage-point gain over the strongest model-merging baseline, performance within one point of per-task fine-tuning on ManiSkill, and a substantially reduced gap on CALVIN.",
+          "zh": "NestedVLA针对不同任务与环境中学习的技能难以整合的问题，提出先独立学习、再事后巩固的方案。它使用以目标任务为条件的嵌套超网络生成适配任务的动作专家参数，并与冻结的基础VLA组合；任务专属的压缩视觉语言模型残差则单独保留。作者报告，在MetaWorld、ManiSkill和CALVIN三个强化学习基准上，该方法平均超过最强模型合并基线41个百分点，在ManiSkill上与逐任务微调相差不超过1个百分点，并缩小了在CALVIN上的差距。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
