@@ -1636,7 +1636,11 @@
             "heading": "",
             "text": "Loop closure is essential to reduce drift and build globally consistent maps in large-scale environments. However, reliable loop closure with only geometric information from, e.g., a LiDAR sensor, remains challenging due to the difficulty of constructing discriminative geometric features.\n\nWe present PinNet, a neural network that produces local geometric descriptors from point clouds for place recognition and scanto-scan registration.\n\nPinNet incorporates a neural network that generates keypoints and their corresponding descriptors, together with a plane-based geometric self-attention module that models inter-keypoint spatial relationships to enhance descriptor discriminability for loop-closure detection and point-cloud registration.\n\nThe approach is comprehensively evaluated on multiple datasets collected with different LiDAR sensors. Experimental results demonstrate strong place-recognition performance, precise relative pose estimation, and successful single-shot localization in different environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PinNet, a neural network that produces local geometric descriptors from point clouds for place recognition and scan-to-scan registration in LiDAR SLAM. It generates keypoints and descriptors, then uses plane-based geometric self-attention to model spatial relationships among keypoints and improve descriptor discriminability. The authors report evaluation on multiple datasets collected with different LiDAR sensors, with strong place-recognition performance, precise relative pose estimation, and successful single-shot localization across different environments.",
+          "zh": "论文提出 PinNet，一种从点云生成局部几何描述子的神经网络，用于激光雷达 SLAM 中的地点识别和扫描间配准。网络生成关键点及对应描述子，并用基于平面的几何自注意力模块建模关键点间的空间关系，以提高描述子的区分能力。作者称，该方法在使用不同激光雷达采集的多个数据集上进行了评估，并表现出较强的地点识别能力、精确的相对位姿估计，以及在不同环境中的单次定位能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1667,7 +1671,11 @@
             "heading": "",
             "text": "Achieving precise terminal position and heading alignment remains a significant challenge for learning-based mobile robot control.\n\nRecent vision-based learning methods have shown promise for precise target-relative control and generalization to unseen environments with pretrained visual encoders, but general-purpose visual representations are not specifically designed to capture the fine-grained spatial differences between current and goal views required for precise control, and real-world demonstrations combining millimeter-scale terminal accuracy with zero-shot transfer across environments remain limited.\n\nTo address these challenges, we propose Geometric Representation Conditioning for Precise Visuomotor Policy (GR-VIP), a goal-conditioned visuomotor policy that leverages a visual encoder pretrained for relative camera pose estimation.\n\nRather than using the final relative-pose estimate, GR-VIP conditions action prediction on the dense relational features produced before pose regression, preserving fine-grained cross-view information for learning corrective actions from demonstrations.\n\nWe evaluate GR-VIP on a real-world docking task and demonstrate high docking success rates and millimeter-scale terminal accuracy in both the training and unseen environments, without additional training for transfer.\n\nFurthermore, supplementary experiments illustrate the policy's ability to align with non-docking targets and complete docking under a tested low-light condition."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GR-VIP, a goal-conditioned visuomotor policy intended to improve terminal position and heading alignment for mobile robots. It uses a visual encoder pretrained for relative camera pose estimation and conditions action prediction on dense relational features produced before pose regression, learning corrective actions from demonstrations. The authors report high success rates and millimeter-scale terminal accuracy on a real-world docking task in both training and unseen environments, without additional transfer training. Supplementary experiments show alignment with non-docking targets and docking under a tested low-light condition.",
+          "zh": "论文提出 GR-VIP，一种目标条件视觉运动策略，旨在提高移动机器人终端位置和朝向对准的精度。该方法使用经相对相机位姿估计预训练的视觉编码器，并以位姿回归前生成的稠密关系特征作为动作预测条件，从演示中学习修正动作。作者报告，该方法在真实世界对接任务的训练环境及未见环境中取得较高成功率和毫米级终端精度，迁移时无需额外训练。补充实验还展示了对非对接目标的对准能力，以及在所测试低光条件下完成对接的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1698,7 +1706,11 @@
             "heading": "",
             "text": "Sequential robot manipulation requires policies to execute novel combinations of familiar instruction components. However, collecting demonstrations for all possible instruction tuples is combinatorially expensive, while sparsely covered datasets often fail under out-of-distribution recombination.\n\nThis paper studies compositional generalization through the lens of instruction-space coverage. We decompose the generalization gap into three sources: \\textit{marginal instruction shift}, \\textit{instruction-compositional shift}, and \\textit{context--action shift}.\n\nThis decomposition allows us to diagnose when sparse training coverage is sufficient, and what structure the training set must preserve for reliable action prediction. Our results show that exhaustive tuple enumeration is unnecessary: a structured subset can recover strong out-of-distribution performance when it covers action-relevant dependencies.\n\nWe further find that sparse training often fails due to instruction steering rather than missing low-level skills; finetuning with only one demonstration per task improves OOD success from \\(0.4\\%\\) to \\(54.7\\%\\).For semantically dependent tasks, effective coverage must capture relational structure rather than only factor diversity.\n\nThese findings suggest that efficient robot data collection should prioritize dependency coverage in instruction space over exhaustive task expansion. Additional results, code, and dataset are available on the \\href{https://yixiaowang7.github.io/Diagnosing_Compositional_Generalization_Robot_Page/}{project website}."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies compositional generalization in sequential robot manipulation and decomposes the generalization gap into marginal instruction shift, instruction-compositional shift, and context-action shift. The authors argue that exhaustive enumeration of instruction tuples is unnecessary: a structured training subset can yield strong out-of-distribution performance when it covers action-relevant dependencies. They also report that sparse training often fails through instruction steering, and that fine-tuning with one demonstration per task raises OOD success from 0.4% to 54.7%. Semantically dependent tasks require coverage of relational structure.",
+          "zh": "论文研究连续机器人操作任务中的组合泛化，将泛化差距分解为边际指令偏移、指令组合偏移和上下文—动作偏移，以分析指令空间覆盖如何影响行动预测。作者称，无需穷举所有指令组合；覆盖与动作相关的依赖关系的结构化训练子集，也能取得较强的分布外表现。论文还报告，稀疏训练常因指令引导而失败，而每项任务仅用一个示范微调，可将分布外成功率从 0.4% 提高至 54.7%；语义依赖任务需要覆盖关系结构。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
