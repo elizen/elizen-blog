@@ -129,11 +129,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models translate multimodal observations into low-level robot actions. During robot operation, each control period sets an inference deadline, and overruns leave the robot acting on stale observations, reducing task success.\n\nMeeting this deadline motivates on-device or nearby edge execution, where a single robot requires batch-1 inference outside the design point of LLM serving systems. Although VLA architectures combine familiar vision-language, autoregressive, and diffusion-style components, their runtime behavior in this batch-1 control setting remains uncharacterized.\n\nWe characterize four representative VLA models on an edge GPU server and two onboard SoCs, using single-inference profiling and 43,200 closed-loop episodes.\n\nAction tensor dimensionality determines whether a stage is memory- or compute-bound, platform balance can shift that bottleneck, and GPU frequency scaling yields a platform-dependent energy-latency sweet spot.\n\nIn closed-loop operation, overlapping inference with action execution creates an accuracy-speed-energy tradeoff, and no configuration is Pareto-dominant across deployment SLOs. These results guide joint design of VLA model architectures, hardware, and runtime policies."
           }
-        ],
-        "summary": {
-          "en": "The paper characterizes vision-language-action workloads for robot control, where inference must meet each control period's deadline to avoid acting on stale observations. The authors profile four representative models on an edge GPU server and two onboard SoCs, and run 43,200 closed-loop episodes. They report that action tensor dimensionality, platform balance, and GPU frequency affect bottlenecks and energy-latency tradeoffs. Overlapping inference with action execution also trades accuracy, speed, and energy; no configuration dominates across deployment SLOs.",
-          "zh": "论文研究视觉—语言—动作模型在具身机器人控制中的运行特征，指出每个控制周期都有推理时限，超时会使机器人依据过时观测行动。作者在边缘 GPU 服务器和两种机载 SoC 上，对四种代表性模型进行单次推理分析，并开展 43,200 个闭环回合。结果显示，动作张量维度、平台配置和 GPU 频率会影响计算瓶颈及能耗—延迟权衡；推理与动作执行重叠也带来准确度、速度和能耗取舍，没有一种配置在不同部署服务目标下全面占优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -316,11 +312,7 @@
             "heading": "",
             "text": "We placed a modern AI coding assistant in an unintended role: as the mind of a body on an unknown digital island. With only a minimal instruction mentioning no specific task, reward, or activity, the machine started animating its virtual body.\n\nAcross thirty-hour runs, the embodied AI agent climbed hills, stacked blocks into towers, drew mandalas, reinterpreted sports, ran experiments on the physics of its world, and learned techniques that later expanded what it could accomplish. These activities recurred across thirteen agents but diverged into distinct histories.\n\nWe examine whether this behavior satisfies classical criteria for play and ask whether play can become a mode of machine development."
           }
-        ],
-        "summary": {
-          "en": "The paper describes placing a modern AI coding assistant in an unintended role: directing a virtual body on an unknown digital island. Given minimal instructions with no specified task, reward, or activity, the machine began animating its body. Across thirty-hour runs, agents engaged in activities including climbing, stacking blocks, drawing, experimenting with physics, and learning techniques that later expanded their capabilities. These behaviors recurred across thirteen agents but produced distinct histories. The authors examine whether the behavior meets classical criteria for play and whether play could be a mode of machine development.",
-          "zh": "论文描述将现代 AI 编程助手置于一个意外角色：作为身体的思维，在未知数字岛屿上行动。初始指令没有指定任务、奖励或活动，但机器开始操控虚拟身体。作者报告，在多次持续三十小时的运行中，智能体会爬坡、堆叠积木、绘制曼陀罗、重新演绎体育活动、探索世界物理，并习得后来拓展能力的技巧。这些活动在十三个智能体中重复出现，但各自形成不同经历。论文据此考察这些行为是否符合经典游戏标准，以及游戏能否成为机器发展的一种方式。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -468,11 +460,7 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It organizes context into spatial, social, and semantic dimensions, and distinguishes how agents are situated within contexts from how they perceive and respond to them. Cobot serves as a design probe, using gaze cues, spatial sound, and task-aware behavior. The authors reflect on its design and identify implications for future context-aware embodied agents.",
-          "zh": "本文提出面向沉浸式分析中具身智能体的初步情境感知设计框架，涵盖空间、社会和语义三个维度，并区分智能体如何嵌入情境及如何感知和响应情境。作者以设计探针 Cobot 探索该框架；其功能包括注视提示、空间音效和任务感知行为。文章总结了设计思考，并提出对未来情境感知型具身智能体的启示。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -869,11 +857,7 @@
             "heading": "",
             "text": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time.\n\nBuilding such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored.\n\nTo this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete.\n\nSpecifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded verification of the generated dynamics.\n\nExperiments on frontier agents reveal that producing executable solvers is difficult itself, and satisfying visual and physical correctness is even harder. GPT-5.6-Sol and Claude-Opus-5 perform comparatively better than the other evaluated agents, yet achieve overall scores of only 48.7% and 46.7%, respectively.\n\nWorldSolver is an early step toward agentic solver generation, and we hope it helps drive progress toward agents that can faithfully simulate the dynamic physical world. Code is available at https://github.com/sirujiang/WorldSolver."
           }
-        ],
-        "summary": {
-          "en": "WorldSolver is a benchmark for evaluating whether LLM agents can generate solvers that simulate physical dynamics. Its tasks, derived from computer graphics papers, span seven physical domains and provide a fixed simulation scaffold for agents to complete. Evaluation measures successful execution, visual fidelity of rendered behavior, and physical plausibility. Experiments find that generating executable solvers is difficult, while achieving visual and physical correctness is harder still. The authors report that the comparatively stronger evaluated agents remain below half of the overall score.",
-          "zh": "论文提出 WorldSolver 基准，用于评估大语言模型智能体能否根据物理现象生成模拟动态系统的求解器。基准任务来自计算机图形学论文，覆盖七个物理领域；每项任务提供固定场景环境的代码框架，由智能体补全求解器。评估考察代码能否运行、渲染动态的视觉保真度及物理合理性。实验显示，生成可执行求解器已具挑战，达到视觉与物理正确性更难；作者报告表现较好的两个智能体总分仍未过半。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2976,11 +2960,7 @@
             "heading": "",
             "text": "Large datasets and high capacity models have accelerated progress in vision and language. This work introduces a platform aimed at bringing comparable gains to embodied learning, world models, and robotics.\n\nWe present EnvDreamer, a framework that uses large language and vision language models to generate Unreal Engine 5 environments for embodied AI and robot training. EnvDreamer enables sampling of large, diverse, interactive, customizable, and validator passed virtual environments for training and evaluation across navigation, interaction, and manipulation.\n\nWe illustrate the platform with a large set of generated scenes and simple baselines. Policies trained on EnvDreamer generated environments, without explicit mapping or human task supervision, achieve competitive results on multiple embodied benchmarks spanning navigation, rearrangement, and manipulation.\n\nEnvDreamer also supports image-conditioned reconstruction for real-to-sim studies. Finally, we release EnvDreamer-20k, a dataset of 20,000 validator passed environments with task programs, scene graphs, trajectories, and metadata to support reproducible benchmarking."
           }
-        ],
-        "summary": {
-          "en": "The paper presents EnvDreamer, a framework that uses large language and vision-language models to generate Unreal Engine 5 environments for embodied AI and robot training. The customizable, interactive environments pass validators and support navigation, interaction, and manipulation. The authors show generated scenes and simple baselines, and report that policies trained without explicit mapping or human task supervision achieve competitive results on multiple benchmarks spanning navigation, rearrangement, and manipulation. The framework also supports image-conditioned reconstruction and includes a dataset of 20,000 environments with task programs, scene graphs, trajectories, and metadata.",
-          "zh": "论文提出 EnvDreamer 框架，利用大型语言模型和视觉—语言模型生成用于具身智能与机器人训练的虚拟环境。环境基于 Unreal Engine 5，可定制、交互，并经验证器检查，覆盖导航、交互和操作任务。作者展示了生成场景及简单基线，并称在这些环境中训练、无需显式建图或人工任务监督的策略，在多个导航、重排和操作基准上取得有竞争力的结果。框架还支持图像条件重建；作者发布包含两万个环境及任务程序、场景图、轨迹和元数据的数据集。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -5391,11 +5371,7 @@
             "heading": "",
             "text": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks.\n\nTo this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination.\n\nWe demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Inspect Robots, an open-source modular framework for developing and running evaluations of embodied agents. It provides customizable, reusable abstractions for specifying physical evaluations and analyzing results, alongside infrastructure that automates setup, execution, and termination. The authors demonstrate the framework by evaluating the capabilities and safety of six policies based on frontier language models. They report nearly 100,000 downloads in the three months after release.",
-          "zh": "论文介绍 Inspect Robots，这是一个开源模块化框架，用于开发和运行具身智能体评测。它提供可定制、可复用的工具来描述物理评测并分析结果，同时自动化评测的设置、执行和终止。作者用该框架评估了六种基于前沿语言模型的策略的能力与安全性，并称框架发布后三个月内获得近十万次下载。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6358,11 +6334,7 @@
             "heading": "",
             "text": "Dexterous grasping is the foundational primitive in embodied AI, demanding massive data to train robust models. As real-world data collection is expensive, simulation has become the mainstream paradigm. Yet, while cluttered scenes best reflect real-world applications, learning to grasp within them is bottlenecked by a critical scarcity of large-scale data.\n\nTo resolve this, we curate high-quality 3D objects and supporting bases, proposing a scalable seed-and-filter strategy that bypasses sluggish scene-level optimization.\n\nThis yields an unprecedented benchmark comprising over 2.6 million scenes and 0.4B scene-specific grasp ground truths, featuring diverse realistic layouts paired with rich semantic and geometric observations. Furthermore, we introduce the OmniDex model to overcome the grasp multimodality and last-millimeter precision errors plaguing current generative models.\n\nBy coupling Soft Winner-Takes-All learning with human-inspired physical constraints during training, and utilizing physics-driven ranking, our approach achieves robust dexterous grasping without the latency of post-optimization.\n\nExperimental results show that OmniDex model achieves state-of-the-art performance and strong generalization across diverse scenes, views, and unseen objects."
           }
-        ],
-        "summary": {
-          "en": "The paper presents OmniDex for dexterous grasping in diverse cluttered scenes. Using curated 3D objects and supporting bases, the authors build a large benchmark through a scalable seed-and-filter strategy. The model combines Soft Winner-Takes-All learning, human-inspired physical constraints, and physics-driven ranking to address grasp multimodality and precision errors. Experiments show the authors’ reported state-of-the-art performance and generalization across scenes, views, and unseen objects. The abstract does not establish results beyond the simulation setting.",
-          "zh": "论文提出 OmniDex，用于在多样、拥挤的场景中进行灵巧手抓取。作者通过高质量三维物体与支撑底座，以及种子生成与筛选策略，构建了大规模场景基准和场景专属抓取真值。模型结合 Soft Winner-Takes-All 学习、人类启发的物理约束及物理驱动排序，旨在处理抓取多模态和末端精度问题。实验结果显示，作者报告其模型达到当前最佳表现，并能泛化到不同场景、视角和未见物体；摘要未说明这些结果超出仿真范围。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7928,11 +7900,7 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Plan-Bench, a benchmark for evaluating VLMs’ high-level reasoning and multi-step planning for embodied environments while isolating action execution. It covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 VLMs finds room for improvement; the strongest model reaches 75.0% accuracy. The authors also report that scaling generally improves these capabilities, and ablations suggest larger models have growing potential as high-level planners.",
-          "zh": "本文介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理与多步规划能力，并尽量隔离动作执行的影响。基准覆盖三个维度、16个子类和699个样本。对28个模型的评估显示，表现最强的模型准确率为75.0%，整体仍有提升空间；作者还发现模型规模扩大通常有助于提升这些能力。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8551,11 +8519,7 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ],
-        "summary": {
-          "en": "HelpMeOut is a benchmark for monitoring errors during household task execution. It addresses the assumption in many existing benchmarks that people perform tasks correctly, using 20,000 paired activity episodes across nine neuropsychologically motivated error categories. Agents observe streaming human activity and must determine whether execution is correct and diagnose structured errors early. Evaluations of learned, symbolic, change-point, and LLM-prompting baselines show that these methods often miss errors and perform poorly as monitors.",
-          "zh": "本文提出 HelpMeOut，一个用于监测家庭任务执行错误的具身智能基准。它针对现有基准通常假设任务执行正确这一局限，将日常行动错误研究转化为20,000组活动片段，涵盖九类神经心理学导向的错误。智能体需观察连续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。对多种监测基线的评估显示，它们常会漏掉执行偏差，表现较差。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14041,11 +14005,7 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ],
-        "summary": {
-          "en": "Thinker-WM is a multimodal world model that jointly represents RGB, metric depth, and robot action through a shared dynamics representation while retaining modality-specific outputs. The same model supports functions including video-action generation, world prediction, and policy inference. A motion probe indicates that its frozen visual representation contains recoverable motion information. Trained on heterogeneous egocentric video, real-robot, and simulation data, it performs strongly on embodied world-model evaluations and ranks first on three named benchmarks, according to the authors.",
-          "zh": "本文提出 Thinker-WM，将 RGB 图像、度量深度和机器人动作通过共享的中间动态表征联合建模，同时保留各自不同的输出结构。该模型支持联合视频与动作生成、世界预测、策略推断等多种功能。作者以运动探针发现，冻结的视觉表征中可恢复运动信息。模型使用包含第一视角视频、真实机器人和仿真数据的异质语料训练；作者报告其在具身世界模型评测中表现强劲，并在三个基准上排名第一。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -15286,11 +15246,7 @@
             "heading": "",
             "text": "Generative and embodied AI services exchange token streams within continuing inference and control loops. Their communication requirements depend on each token set's purpose, useful timing, and execution context.\n\nThis article organizes these properties into service, temporal, and stateful semantics and proposes a token service interface (TSI) between applications, radio access networks (RANs), and edge runtimes.\n\nTSI binds delivery requirements, readiness forecasts, and execution-state references to each schedulable token set, specifying field ownership, versioned updates, and admission feedback.\n\nA drone inspection case study over a decoupled RAN illustrates importance-aware radio allocation, advance preparation for timely delivery, and selective state migration that balances interruption against forwarding delay."
           }
-        ],
-        "summary": {
-          "en": "The article examines communication needs when generative and embodied AI services exchange token streams in ongoing inference and control loops. It groups token properties into service, temporal, and stateful semantics, then proposes a token service interface (TSI) connecting applications, radio access networks, and edge runtimes. TSI associates delivery requirements, readiness forecasts, and execution-state references with schedulable token sets, while defining field ownership, versioned updates, and admission feedback. A drone inspection case study over a decoupled RAN illustrates importance-aware radio allocation, advance delivery preparation, and selective state migration balancing interruption against forwarding delay.",
-          "zh": "文章讨论生成式与具身智能服务在持续推理和控制循环中交换令牌流时的通信需求，并按服务、时间和状态语义进行归纳。作者提出令牌服务接口（TSI），连接应用、无线接入网和边缘运行时，将交付要求、就绪预测及执行状态引用绑定到可调度的令牌集合，并规定字段归属、版本更新和准入反馈。无人机巡检案例展示了该接口在解耦式无线接入网中的应用，包括按重要性分配无线资源、提前准备及时交付，以及选择性迁移状态以权衡中断与转发延迟。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
