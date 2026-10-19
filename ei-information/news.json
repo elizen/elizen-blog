@@ -190,7 +190,11 @@
             "heading": "",
             "text": "We demonstrate high-precision global localization using natural ground texture viewed through microscope optics, achieving localization in the tens-of-micrometers regime. For the planar ground texture localization problem considered here, we relate optical magnification and image-space localization uncertainty to physical localization precision.\n\nLeveraging this relationship, we then develop a microscope-based localization system that addresses the calibration, camera-modeling, and focus challenges introduced by high-magnification imaging. We evaluate this system across several surface textures using a calibrated precision gantry.\n\nAcross 1,007 held-out queries per surface, the system localizes every query and achieves translation RMSEs of 28$-$73 $\\mu$m. Independent photometric registration agrees with the feature-based localization estimates to within approximately 9 $\\mu$m RMSE.\n\nWe further demonstrate localization on a low-cost mobile robot using the gantry-collected maps, and also show that the system can resolve micrometer-scale displacement caused by thermal expansion.\n\nThese results show that microscopic natural surface texture can bring mobile localization into a precision regime typically associated with fixed positioning systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies global mobile robot localization from natural ground texture imaged through microscope optics and relates magnification and image-space uncertainty to planar localization precision. The authors build a system addressing calibration, camera modeling, and focus at high magnification, then evaluate it on several surfaces using a precision gantry. All 1,007 held-out queries per surface are localized, with translation RMSEs of 28–73 micrometers. Independent photometric registration agrees within about 9 micrometers RMSE. The authors also demonstrate localization on a low-cost robot and detection of micrometer-scale thermal expansion displacement.",
+          "zh": "论文研究利用显微光学观察天然地面纹理进行移动机器人全局定位，并分析光学放大率、图像定位不确定性与平面定位精度的关系。作者开发了处理高倍率成像标定、相机建模和对焦问题的系统，并用精密龙门架评估多种表面纹理。每种表面上的1,007个留出查询均成功定位，平移均方根误差为28–73微米；独立光度配准结果与特征定位结果的均方根差约为9微米。作者还展示了低成本移动机器人定位和热膨胀导致的微米级位移检测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -221,7 +225,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models provide a natural language interface to robot control, but the mapping from language to behavior is often brittle and unintuitive: semantically similar instructions can induce drastically different behaviors, while some capabilities may not be elicitable through prompting alone.\n\nAs a result, both human instructions and zero-shot language models can fail to reliably steer VLAs toward successful task execution.\n\nIn this work, we propose a framework that interactively searches for language sequences that improve closed-loop VLA task performance, distills these sequences into a test-time language feedback policy (LFP), and learns an improvement head that predicts when language steering will improve performance.\n\nWe conformalize this improvement head to prevent harmful steering interventions, where the LFP decreases task performance relative to the original instruction on out-of-distribution scenarios.\n\nCrucially, our approach operates on arbitrary frozen pre-trained VLAs, requiring neither access to the original training distribution nor fine-tuning of the underlying model. On seen environments, our conformalized LFP improves base VLA performance by 24.7% in simulation and 65.0% in hardware.\n\nOn visual and semantic perturbations with calibration samples, our conformalized LFP has strong harmlessness guarantees, and produces recovery behaviors not observed with open-loop prompting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes interactively searching for language sequences that improve closed-loop task performance of vision-language-action models, distilling them into a test-time language feedback policy, and training a head to predict when steering will help. Conformalization is used to reduce harmful interventions on out-of-distribution scenarios. The method is designed for arbitrary frozen pretrained VLAs without access to their original training distribution or model fine-tuning. In seen environments, the authors report improvements of 24.7% in simulation and 65.0% in hardware. With calibration samples, they report strong harmlessness guarantees under visual and semantic perturbations and recovery behaviors absent from open-loop prompting.",
+          "zh": "论文提出一种为视觉—语言—动作模型寻找有效语言序列的方法，并将其提炼为测试时语言反馈策略，同时训练改进预测头判断何时进行语言引导。该方法通过保形化降低分布外场景中引导反而损害任务表现的风险，可用于任意冻结的预训练模型，无需原始训练分布或微调底层模型。在已见环境中，作者报告策略使基础模型表现于仿真提升24.7%、硬件提升65.0%。对于带校准样本的视觉和语义扰动，作者称其具有较强的无害性保证，并能产生开放环提示未观察到的恢复行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
