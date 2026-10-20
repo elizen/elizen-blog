@@ -443,7 +443,11 @@
             "heading": "",
             "text": "Humanoid loco-manipulation is particularly challenging because it requires coordinating locomotion, balance, and object interaction, making it difficult to learn from limited demonstrations or from scratch through Reinforcement Learning (RL).\n\nWe introduce DiPLO (self-distilled Diffusion Planning for Loco-manipulation), a framework that combines a self-distilled diffusion planner with a low-level whole-body tracking policy. Our planner is pretrained via supervised learning on motions derived from human-to-humanoid retargeting, while the tracker is trained via RL to execute them.\n\nDiPLO centers around two complementary post-training stages. First, we introduce Self-Distillation Diffusion Policy Optimisation (SD:DPO) to remove the planner's dependence on strong task conditioning, which we identify as a crucial ingredient for effective pretraining, as downstream fine-tuning does not recover comparable performance when it is omitted..\n\nWe then fine-tune this distilled model with Diffusion-Augmented Proximal Policy Optimization (DA:PPO), a maximum-entropy RL method for diffusion models, to improve task success and align generated plans with the frozen tracker's execution capabilities.\n\nTogether, these stages enable motion generation through state-history and goal conditioning alone, enabling 99% task success in pick-carry-place tasks, compared to just 45% for the pretrained model. The resulting planner also generates motions for unseen object goals, with further evaluations on kicking and pushing/pulling tasks.\n\nFinally, we deploy our pipeline on the hardware, using our DA:PPO planner-tracker on a Unitree G1, achieving repeated successful executions without any real-world fine-tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DiPLO, combining a self-distilled diffusion planner with a low-level whole-body tracking policy. The planner is pretrained through supervised learning on retargeted human motions, and the tracker through reinforcement learning. SD:DPO reduces reliance on strong task conditioning; DA:PPO then fine-tunes plans to improve success and match the frozen tracker’s capabilities. The authors report 99% success on pick-carry-place tasks, versus 45% for the pretrained model, and motion generation for unseen object goals. They also evaluate kicking and pushing/pulling. Hardware deployment on a Unitree G1 reportedly achieved repeated successful executions without real-world fine-tuning.",
+          "zh": "论文提出 DiPLO，将自蒸馏扩散规划器与低层全身跟踪策略结合：规划器通过监督学习拟合人形动作重定向数据，跟踪器通过强化学习训练。方法先用 SD:DPO 减少规划器对强任务条件的依赖，再用 DA:PPO 微调计划，以提升任务成功率并贴合冻结跟踪器的执行能力。作者报告，在抓取、搬运和放置任务中，成功率从预训练模型的45%升至99%；规划器也能生成面向未见物体目标的动作，并评估了踢、推和拉任务。硬件部署使用 Unitree G1，报告称无需真实世界微调即可重复成功执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -474,7 +478,11 @@
             "heading": "",
             "text": "Large-scale action pretraining equips Embodied Foundation Models (EFMs) with strong manipulation capabilities, with particular strengths in generalization and closed-loop robustness, but reproducing such pretraining requires substantial robot data and computation.\n\nTo transfer these capabilities from pretrained EFMs to policies without action pretraining, we introduce TILDE (Teacher-In-the-Loop Distillation from EFMs), which synergizes on-policy distillation at student-induced states with learning from teacher-executed recovery trajectories.\n\nWe further propose AutoDAgger, an autonomous data aggregation pipeline in which a robotic reward model is utilized to monitor task progress and trigger teacher intervention, thereby collecting recovery experience without human monitoring or manual control.\n\nAutoDAgger accelerates recovery-trajectory collection by more than $2\\times$ compared with the human-in-the-loop method.\n\nBy unifying learning from demonstrations, on-policy teacher supervision, and teacher's corrective behavior, TILDE improves task performance by up to $4.1\\times$ over behavior cloning across three real-world tasks and supports effective cross-architecture distillation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TILDE, a way to transfer capabilities from pretrained embodied foundation models to policies without action pretraining. It combines on-policy distillation at states induced by the student with learning from recovery trajectories executed by the teacher. Its AutoDAgger pipeline uses a robotic reward model to monitor progress and trigger teacher intervention, collecting recovery experience without human monitoring or manual control. The authors report that AutoDAgger collects recovery trajectories more than twice as quickly as a human-in-the-loop method. Across three real-world tasks, TILDE improves performance by up to 4.1 times over behavior cloning and supports cross-architecture distillation.",
+          "zh": "论文提出 TILDE，将具身基础模型的能力蒸馏给未经动作预训练的策略。方法结合学生策略诱导状态上的在线蒸馏，以及从教师执行的恢复轨迹中学习；配套的 AutoDAgger 使用机器人奖励模型监测任务进展，并触发教师干预，从而在无需人工监控或手动控制的情况下收集恢复经验。作者称，AutoDAgger 收集恢复轨迹的速度比人在环方法快两倍以上。在三个真实世界任务中，TILDE 将任务表现较行为克隆最高提升4.1倍，并支持不同架构之间的蒸馏。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -505,7 +513,11 @@
             "heading": "",
             "text": "Off-road navigation is critical for a wide range of field robotics applications from planetary exploration to disaster response. However, it remains a longstanding challenge due to unstructured environments and the inherently complex terrain-vehicle interactions.\n\nTraditional physics-based methods struggle to accurately capture the nonlinear dynamics underlying these interactions, while purely data-driven approaches often overfit to specific motion patterns, vehicle geometries, or platforms, limiting their generalization in diverse, real-world scenarios.\n\nTo address these limitations, we introduce AnyNav, a vision-based friction estimation and navigation framework grounded in neuro-symbolic principles. Our approach integrates neural networks for visual perception with symbolic physical models for reasoning about terrain-vehicle dynamics.\n\nTo enable self-supervised learning in real-world settings, we adopt the imperative learning paradigm, employing bilevel optimization to train the friction network through physics-based optimization. This explicit incorporation of physical reasoning substantially enhances generalization across terrains, vehicle types, and operational conditions.\n\nLeveraging the predicted friction coefficients, we further develop a physics-informed navigation system capable of generating physically feasible, time-efficient paths together with corresponding speed profiles.\n\nWe demonstrate that AnyNav seamlessly transfers from simulation to real-world robotic platforms, exhibiting strong robustness across different four-wheeled vehicles and diverse off-road environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents AnyNav, a vision-based framework for estimating off-road friction and navigation. It combines neural visual perception with symbolic physical models to reason about terrain-vehicle dynamics. For self-supervised learning in real-world settings, bilevel optimization trains the friction network through physics-based optimization. The system uses predicted friction coefficients to produce physically feasible, time-efficient paths and speed profiles. The authors report transfer from simulation to real robotic platforms and robustness across different four-wheeled vehicles and diverse off-road environments; the abstract gives no specific numerical metrics.",
+          "zh": "论文提出 AnyNav，一种基于视觉的越野摩擦估计与导航框架，将神经网络感知与符号物理模型结合，用于推理地形与车辆动力学。为支持真实场景中的自监督学习，方法采用双层优化，通过基于物理的优化训练摩擦网络。系统利用预测的摩擦系数生成物理可行且时间高效的路径及速度曲线。作者报告称，该方法可从仿真迁移到真实机器人平台，并在不同四轮车辆和多种越野环境中表现出较强鲁棒性；摘要未提供具体数值或实验指标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -536,7 +548,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have shown strong potential for general-purpose robotic manipulation, yet they still struggle to generalize to unseen tasks that necessitate transferring relevant experience across objects, scenes, and action patterns.\n\nThis paper proposes VLA-Pro, a plug-and-play framework designed to enhance cross-task generalization by storing task-relevant procedural memories at training time and transferring these memories during inference. Specifically, VLA-Pro stores task-specific LoRA adapters as parameterized procedural memories during training.\n\nAt inference time, VLA-Pro retrieves relevant procedural memories based on the current multi-modal context and dynamically fuses these memories for generating the current action chunk.\n\nExperiments on RoboTwin, RLBench, and real-world manipulation tasks show that VLA-Pro consistently improves cross-task generalization across multiple backbones, achieving up to a 207% relative improvement in simulation and increasing real-world success rate from 5.8% to 65.0%.\n\nThese results suggest that procedural memory retrieval and adaptation provide an effective mechanism for transferring manipulation experience to novel tasks while preserving modularity and execution stability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes VLA-Pro to improve cross-task generalization in vision-language-action models by storing task-relevant procedural memories during training and transferring them at inference. Memories are task-specific LoRA adapters. Given the current multimodal context, the system retrieves relevant memories and dynamically fuses them to generate an action chunk. Experiments on RoboTwin, RLBench, and real-world manipulation tasks reportedly show consistent gains across multiple backbones, with up to a 207% relative improvement in simulation and an increase in real-world success rate from 5.8% to 65.0%.",
+          "zh": "论文提出 VLA-Pro，通过训练时存储任务相关的程序记忆、推理时检索并迁移这些记忆，增强视觉语言动作模型的跨任务泛化。程序记忆以任务专属 LoRA 适配器形式保存；执行时，系统依据当前多模态上下文检索相关记忆并动态融合，以生成当前动作片段。在 RoboTwin、RLBench 和真实世界操作任务上的实验显示，该方法在多个骨干模型上提升跨任务泛化；作者报告仿真相对提升最高达207%，真实世界成功率由5.8%升至65.0%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
