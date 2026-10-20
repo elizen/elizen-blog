@@ -1138,7 +1138,11 @@
             "heading": "",
             "text": "3D manipulation policies derive actions from explicit scene geometry rather than color images alone, enabling them to reason over metric distances, object relations, and robot-scene reachability.\n\nThis geometric interface is also a vulnerability: commodity RGB-D sensors return missing measurements, boundary artifacts, and plausible but wrong surfaces around transparent, reflective, thin, or textureless objects.\n\nWe study this failure under realistic depth corruption and observe a sharp depth-noise cliff across modern 3D policies, even when they are trained with matched noisy depth. This residual gap motivates a spatial-encoding approach: corrupted depth becomes entangled with the token coordinates and geometry features consumed by the action expert.\n\nWe propose Noise-Invariant Spatial Encoding (NISE), a 3D policy architecture that learns trustworthy geometry features even facing imperfect depth.\n\nNISE uses Geometric Cross-View Self-Supervision to shape shared policy features with calibrated multi-view depth, and Gaussian Marginalized 3D Attention to carry position uncertainty into deployed attention rather than treating every lifted token as exact.\n\nAcross simulated benchmarks with sensor-realistic corruption and real-robot tasks involving transparent and reflective materials, NISE improves depth-noise robustness while preserving clean-depth performance, supporting 3D policies designed for commodity RGB-D deployment rather than clean-depth benchmarks alone."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how depth corruption affects 3D manipulation policies and reports a substantial performance gap even when policies are trained with matched noisy depth. The authors propose Noise-Invariant Spatial Encoding (NISE), combining multi-view geometric self-supervision with Gaussian-marginalized 3D attention to represent position uncertainty. In simulated benchmarks with sensor-realistic corruption and real-robot tasks involving transparent and reflective materials, they report improved robustness while preserving performance with clean depth.",
+          "zh": "论文研究深度传感器噪声对三维操作策略的影响，指出即使使用匹配噪声训练，现代策略仍会出现明显性能下降。作者提出噪声不变空间编码 NISE，通过多视角几何自监督学习几何特征，并以高斯边缘化三维注意力表达位置不确定性。在含传感器真实噪声的仿真基准和涉及透明、反光材料的真实机器人任务中，作者报告其方法提升了噪声鲁棒性，同时保持干净深度下的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1169,7 +1173,11 @@
             "heading": "",
             "text": "Vision-and-language navigation (VLN) relies on retaining and using relevant observations. Yet growing histories introduce redundancy, and retained information may remain underused. We introduce ReInsBench, a diagnostic benchmark that examines history utilization through controlled continuation trials.\n\nIts results show that history-review reinstruction can recover navigation failures using the existing task context. Motivated by this finding, we propose ReInsVLN, a training-free framework supporting memory construction and utilization in frozen navigators.\n\nCoverage- and Instruction-Aware Compression constructs compact visual context through temporal redundancy reduction, coverage-aware protection, and instruction-guided token selection. Forgetting-Inspired History Reminders guide navigators to revisit retained observations according to a predefined schedule, without additional model calls.\n\nOn R2R Val-Unseen, ReInsVLN improves success rates by 8.48 and 3.37 percentage points over the native StreamVLN and InternVLA-N1, reaching 64.27% and 64.44%, respectively. Visual compression largely preserves navigation performance while reducing prefill latency and KV cache memory by up to 21.77% and 32.25%, respectively, on matched observation workloads.\n\nReal-world trials on humanoid and quadruped robots further support the applicability of ReInsVLN to sequential instruction following and ordinal navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ReInsBench to diagnose how vision-and-language navigation systems use observation history through controlled continuation trials. Its findings motivate ReInsVLN, a training-free framework that compresses visual context and schedules reminders to revisit retained observations. On R2R Val-Unseen, the authors report higher success rates than two native baselines. For matched observation workloads, visual compression also reduces prefill latency and KV-cache memory. Trials on humanoid and quadruped robots provide further evidence of applicability to sequential instruction following and ordinal navigation.",
+          "zh": "论文提出 ReInsBench，用受控的导航续行试验诊断视觉语言导航系统对历史观测的利用，并发现基于现有任务上下文的历史回顾指令可挽回导航失败。基于此，作者提出无需训练的 ReInsVLN，通过压缩视觉历史及按预设时间表提醒导航器回看保留观测。在 R2R Val-Unseen 上，论文报告其成功率高于两种基线；匹配观测负载下，视觉压缩还可降低预填充延迟和 KV 缓存内存。人形与四足机器人的现实试验支持其在序列指令跟随和序数导航中的适用性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1200,7 +1208,11 @@
             "heading": "",
             "text": "Walking over disconnected footholds requires selecting landing regions while adapting step timing to the robot's motion. We present a perceptive model predictive planner that combines discrete region selection, foot placement, and current-step duration in a mixed-integer quadratic program using step-to-step Divergent Component of Motion (DCM) dynamics.\n\nOnboard depth data are fused into a probabilistic heightmap in the stance foot frame. Convex steppable regions are extracted and shrunk by margins that increase with estimated height uncertainty. Linear constraints impose capturability-based bounds on DCM evolution and limit swing-foot retargeting using the remaining commanded swing time.\n\nWithin-step replanning updates the initial DCM from measurements to respond to model mismatch and disturbances. We evaluate the framework on Digit in simulation over randomized footholds and on hardware over separated plates, with mean planner solve times of 11.4~ms and 4.0~ms, respectively."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a perceptive model predictive planner for walking across disconnected footholds. A mixed-integer quadratic program jointly selects landing regions, foot placement, and the duration of the current step using step-to-step DCM dynamics. Onboard depth data form a probabilistic heightmap from which convex steppable regions are extracted, with margins adjusted for height uncertainty. Within-step replanning updates the initial DCM from measurements to address model mismatch and disturbances. The framework is evaluated on Digit in simulation and on hardware over separated plates.",
+          "zh": "论文提出一种感知式模型预测规划器，用混合整数二次规划联合选择落脚区域、脚步位置和当前步时长，以应对不连续落脚点上的行走。规划器将机载深度数据融合为概率高度图，提取凸形可踏区域，并根据高度不确定性调整安全边界；约束还考虑可捕获性和摆动脚重定向。步内重规划利用测量更新初始发散分量运动状态，以应对模型误差和扰动。框架在 Digit 仿真随机落脚点以及硬件分隔板场景中进行了评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1231,7 +1243,11 @@
             "heading": "",
             "text": "Autonomous driving fundamentally demands dense understanding of visual, semantic, and geometric information, yet existing Vision-Language-Action (VLA) models are typically trained with sparse supervision such as language instructions or trajectory signals.\n\nThis direct mapping from dense visual observations to sparse representations forces the model to compress or even discard critical scene information essential for safe driving.\n\nWe argue that this limitation does not stem from insufficient model capacity, but from the lack of explicit mechanisms that encourage the formation of dense world representations in the latent space.\n\nIn this spirit, we propose a novel paradigm for driving intelligence, Think Densely, Act Sparsely, and instantiate it with an efficient and interpretable framework, LECDrive (Latent Expert Cognitive Chains for Vision-Language-Action autonomous Driving).\n\nThe core idea is to mimic the hierarchical perception process of humans by embedding a progressive chain of latent expert cognition within the VLA model.\n\nConcretely, we inject a compact set of task-specific latent tokens as carriers, enabling the model to internalize dense knowledge from foundational vision models, including visual representations (DINOv3), semantic structures (SAM3), and spatial geometry (DepthAnything3), while maintaining efficient inference.\n\nThis interdependent cognitive chain follows a curriculum learning principle, where supervision is progressively structured from representation to semantics and geometry.\n\nExtensive experiments demonstrate that LECDrive consistently improves the performance of base VLMs across multiple autonomous driving benchmarks, covering key tasks such as object perception, state prediction, and trajectory planning.\n\nThese findings suggest that constructing dense world models through structured latent expert chains is a promising direction for VLA-based autonomous driving."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that vision-language-action models for autonomous driving often receive sparse supervision, which can cause them to compress or discard scene information relevant to safe driving. It proposes the “Think Densely, Act Sparsely” paradigm and implements it as LECDrive, using task-specific latent tokens in a progressive cognitive chain to incorporate visual, semantic, and geometric knowledge. The authors report consistent improvements over base vision-language models across multiple driving benchmarks, including object perception, state prediction, and trajectory planning.",
+          "zh": "论文认为，自动驾驶视觉语言动作模型通常接受语言指令或轨迹等稀疏监督，可能压缩或丢弃对安全驾驶重要的场景信息。作者提出“密集思考、稀疏行动”范式，并以 LECDrive 实现：通过任务专用潜在令牌构成渐进认知链，将视觉、语义和空间几何知识引入模型，并按表征、语义、几何逐步组织监督。作者报告，广泛实验中该方法在多个自动驾驶基准的物体感知、状态预测和轨迹规划任务上持续提升基础视觉语言模型表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
