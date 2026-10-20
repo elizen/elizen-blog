@@ -1795,7 +1795,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies must ground language instructions in the right objects, contact points, and target locations for reliable manipulation. Human gaze provides a natural signal for this grounding, but existing robot datasets rarely pair real human gaze with the multi-camera observations used by modern policies.\n\nWe introduce GazeAct, a gaze-equipped real-robot manipulation dataset and training framework for multi-view VLA policies.\n\nUsing screen-based teleoperation, we record gaze directly on the robot camera feed viewed by the operator, yielding 12000 demonstrations across 40 tasks and five domains with 300 Hz gaze synchronized with images, proprioception, and actions.\n\nWe transfer gaze from the operator-selected view to the remaining synchronized cameras, producing spatially consistent targets across the policy's visual inputs. We then use these gaze-derived targets to regularize language-conditioned visual attention during training while keeping inference gaze-free.\n\nAcross 18 real-world tasks, our method improves average success from 48.1% to 58.6%, with gains up to 25 percentage points. Ablations show that gaze works best as soft supervision and that real human gaze provides stronger attention targets than generic attention-shaping priors.\n\nThe gains transfer to LIBERO-Spatial (57.9% to 69.6%) and different VLA backbones.These results show that gaze collected in the robot observation space can provide effective training-time targets for improving visual grounding in VLA manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GazeAct, a real-robot manipulation dataset and training framework for multi-view vision-language-action policies. Operators’ gaze is recorded on robot camera feeds during screen-based teleoperation and transferred to synchronized views. The resulting targets provide soft supervision for language-conditioned visual attention during training, while inference remains gaze-free. The authors report improved success rates across 18 real-world tasks and on LIBERO-Spatial, with gains also transferring across different policy backbones.",
+          "zh": "论文介绍 GazeAct，一个面向多视角视觉—语言—动作策略的真实机器人操作数据集与训练框架。研究通过屏幕遥操作记录操作员在机器人相机画面上的注视，并将注视目标迁移至同步的其他视角，用作训练时语言条件视觉注意力的软监督，推理时无需注视输入。作者报告，该方法在18项真实任务及LIBERO-Spatial上提升成功率，并适用于不同策略骨干。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1826,7 +1830,11 @@
             "heading": "",
             "text": "Reference-image-conditioned video generators are increasingly used as neural simulators for embodied planning and policy learning, yet their ability to anticipate physical hazards is rarely evaluated.\n\nWe introduce ICAT, which grounds test construction in incident reports and safety guidance through structured risk memories, constrained case generation, and human verification. The resulting benchmark contains 909 evaluation units with explicit initial conditions, triggering actions, and documented consequences.\n\nAcross six generation systems, severe outcomes are frequently missing or attenuated even when the initial state is preserved and the risky action is executed: the strongest system achieves 23.5% conditional strict success under best-of-eight selection.\n\nExpert auditing, image-generator sensitivity analysis, matched safe-risky pairs, and alternative-outcome scoring provide complementary checks on this system-level finding. ICAT exposes a gap between reproducing risky actions and generating their documented consequences."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ICAT, a method for testing physical-risk prediction in embodied world models using incident reports and safety guidance. It constructs evaluation cases through structured risk memories, constrained generation, and human verification. Across six video-generation systems, severe consequences were often missing or weakened even when the initial state and risky action were preserved. The strongest system reached 23.5% conditional strict success under best-of-eight selection. Additional audits and analyses provide complementary checks on this system-level finding.",
+          "zh": "论文提出 ICAT，一种以事故报告和安全指南为依据的具身世界模型物理风险预测测试方法，通过结构化风险记忆、受约束案例生成和人工核验构建评测单元。对六种视频生成系统的评估显示，即使初始状态保留且执行了风险动作，严重后果也常被遗漏或弱化；最强系统在 best-of-eight 选择下的条件严格成功率为23.5%。专家审查等分析为这一系统层面的发现提供补充检验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1857,7 +1865,11 @@
             "heading": "",
             "text": "Translating language into humanoid motion requires coordinating body parts, determining motion duration, and producing references suitable for robot execution. We introduce PartiGen, a part-aware latent diffusion framework that incorporates anatomical structure into a shared whole-body motion representation.\n\nPart-specific attention processes anatomically masked frame features, and its outputs are fused to combine local limb information with whole-body context. Conditioned on text and motion history, the model generates motion primitives autoregressively.\n\nForward-kinematics supervision encourages kinematic consistency, while a learned end-of-sequence predictor selects a frame-level endpoint after generation. On HumanML3D retargeted to the Unitree G1, PartiGen achieves a segment-level FID of 3.165, a 16.8% reduction over TextOp, and improves R@1 by 1.4 percentage points.\n\nIn the duration study with 16-frame primitives, endpoint prediction reduces mean absolute duration error from 12.471 to 3.080 frames compared with a fixed-length cutoff. We further evaluate robot execution using a pretrained, frozen GRIT tracker: 409 of 500 generated references (81.8%) pass the posture-based stability screen in MuJoCo.\n\nFollowing simulation screening and manual selection, 26 of 27 attempted motions are judged successful on the real G1."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PartiGen, a part-aware latent diffusion framework for language-conditioned humanoid motion generation. It combines limb-level features with whole-body context and autoregressively generates motion primitives from text and motion history. Forward-kinematics supervision supports kinematic consistency, and a learned predictor selects the endpoint. On HumanML3D retargeted to the Unitree G1, the authors report better segment-level FID than TextOp. Endpoint prediction reduced duration error in a study using 16-frame primitives. Simulation screening and real-robot attempts were also evaluated.",
+          "zh": "论文提出 PartiGen，一种用于语言条件人形机器人动作生成的部位感知潜在扩散框架，将局部身体部位信息与全身上下文结合，并依据文本和动作历史自回归生成动作片段。模型采用正向运动学监督，并预测生成终点以确定动作时长。在 HumanML3D 转换至 Unitree G1 的评估中，作者报告其片段级 FID 优于 TextOp；时长研究中，终点预测降低了平均绝对时长误差。MuJoCo稳定性筛查及真实机器人尝试结果也有报告。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
