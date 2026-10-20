@@ -3021,7 +3021,11 @@
             "heading": "",
             "text": "Embodied AI agents increasingly require parallel execution of multiple tasks, such as manipulation, conversation, and memory construction, from shared observations under distinct time constraints.\n\nRecent Mixture-of-Transformers (MoT) Vision-Language-Action Models (VLAs) support such heterogeneous outputs, yet existing inference systems incur redundant computation and resource contention when serving concurrent tasks on-device. We identify isolated KV cache management as the root cause.\n\nTo address this, we propose unified KV cache management, an inference design that treats the KV cache as a first-class shared resource across tasks and control cycles.\n\nThis abstraction enables two key optimizations: cross-task KV sharing eliminates redundant prefill of shared observations, while cross-frame continuous batching batches unfinished language requests from different frames and advances them within a per-frame decoding budget.\n\nWe implement this design in OxyGen and evaluate $\\pi_{0.5}$ on NVIDIA GeForce RTX 4090 and Jetson AGX Thor. OxyGen achieves up to 3.7$\\times$ speedup over isolated execution, delivering over 200 tokens/s language throughput and 70 Hz action frequency simultaneously on RTX 4090.\n\nWe also validate the design on Xiaomi-Robotics-0 and StarVLA across different backbones and expert configurations. We further demonstrate the inference gains on a humanoid robot with on-board Jetson AGX Thor."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OxyGen, a unified KV-cache management design for parallel VLA inference that treats the cache as a shared resource across tasks and control cycles. Cross-task sharing avoids repeated prefill of shared observations, while cross-frame continuous batching groups unfinished language requests within per-frame decoding budgets. Evaluations of π₀.₅ on RTX 4090 and Jetson AGX Thor report up to 3.7× speedup over isolated execution. The authors also report validation across other model configurations and on a humanoid robot with onboard Jetson.",
+          "zh": "论文提出 OxyGen，一种面向多任务并行 VLA 推理的统一 KV 缓存管理设计，将缓存作为任务与控制周期间共享资源。其跨任务共享可避免对共同观测重复预填充，跨帧连续批处理则合并不同帧尚未完成的语言请求，并在每帧解码预算内推进。作者在 RTX 4090 和 Jetson AGX Thor 上评估 π₀.₅，报告相较隔离执行最高 3.7 倍加速，并展示语言吞吐与动作频率同时提升；还在其他模型配置及搭载 Jetson 的人形机器人上验证推理收益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",

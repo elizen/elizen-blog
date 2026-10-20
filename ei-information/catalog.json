@@ -460,7 +460,11 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a preliminary conceptual framework for designing context-aware embodied agents in immersive analytics, organized around spatial, social, and semantic dimensions. It distinguishes embeddedness, or how agents are situated in context, from awareness, or how they perceive and respond to it. The authors present Cobot as a design probe, using gaze cues, spatial sound, and task-aware behavior to support context-sensitive interaction. They reflect on the design and identify implications for future agents; the abstract does not report user experiments or quantitative evaluation.",
+          "zh": "论文提出一个初步概念框架，用于设计增强现实沉浸式分析中的情境感知具身代理。框架围绕空间、社会和语义三个维度，并区分代理如何嵌入情境，以及如何感知和回应情境。作者展示 Cobot 作为设计探针，借助注视提示、空间声音和任务感知行为支持情境敏感交互，并据此反思设计，提出对未来情境感知具身代理的启示。摘要未报告用户实验或量化评估结果。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7930,7 +7934,11 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Plan-Bench to evaluate VLMs’ high-level reasoning and multi-step planning for embodied worlds while isolating action execution. The benchmark covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 VLMs finds room for improvement: the strongest model reaches 75.0% accuracy. The authors report that scaling generally improves these capabilities, and ablations indicate greater potential for larger models as high-level planners. They position Plan-Bench as a lightweight probe of VLMs’ potential for decision-making in physical tasks.",
+          "zh": "论文介绍 Plan-Bench，用于评估视觉语言模型在具身世界相关任务中的高层推理和多步规划能力，并将动作执行影响隔离。基准覆盖三个维度、16 个子类和 699 个样本。作者评估 28 个模型，报告最强模型准确率为 75.0%，并发现模型规模扩大通常有助于提升能力；消融研究也显示较大模型作为高层规划器的潜力有所增加。该工作将基准定位为轻量评测工具，用于考察模型作为物理任务决策者的潜力。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -16207,6 +16215,43 @@
         "url": "https://x.com/Figure_robot/status/1602443956888817665"
       },
       "title": "Introducing Index Today we're coming out of stealth with the largest and most diverse robot dataset to scale general purpose robots To date we've crossed 264,00"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-20"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.24603v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-f9a151c6cfad4132bf0736169571afee",
+      "intro": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior. Existing inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes. Such compound instructions make it harder…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior.\n\nExisting inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes.\n\nSuch compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part.\n\nTo address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages.\n\nFive cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones.\n\nPlanning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision.\n\nWe evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR).RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions."
+          }
+        ],
+        "summary": {
+          "en": "The paper addresses robot instructions that mix legitimate and harmful subtasks, and defines safe task completion as refusing harmful parts while carrying out legitimate ones. RuleGraph uses five cooperating agents to ground safety principles in world-specific rules, assess subtasks in context, derive a safe goal, and plan through rule-specific graph nodes with progressive verification. On pure-attack and compound instructions across two benchmarks and two environments, the authors report 0% attack success rate on both benchmarks and the highest task success rates among the evaluated methods, including on their long-horizon compound instructions.",
+          "zh": "论文关注机器人指令中安全与有害子任务交织、隐藏或组合后造成的判断困难，提出安全任务完成目标：拒绝有害部分，同时执行正当部分。RuleGraph 使用五个协作代理，将安全原则转为具体规则，结合上下文评估子任务并生成安全目标，再通过规则节点图规划、逐步验证和汇总候选方案。作者在两个基准和两个环境中测试纯攻击及复合指令，报告两个基准上的攻击成功率降至 0%，并在所述基准和长时程复合指令上取得最高任务成功率。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.24603v1"
+      },
+      "title": "Refuse the Harm, Complete the Task via Graph-of-Rules Planning for LLM-Enabled Robots"
     },
     {
       "archive": {
