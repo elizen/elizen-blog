@@ -583,7 +583,11 @@
             "heading": "",
             "text": "Visual navigation policies built on large pretrained models increasingly rely on large cross-embodiment datasets and expressive action-generation mechanisms. In this paper, we ask whether a pretrained Multimodal Large Language Model (MLLM) can be adapted efficiently for robot navigation by rethinking the representation and construction of navigation actions.\n\nWe introduce GemNav, a visual navigation policy that represents each robot-local waypoint coordinate as a categorical distribution over discrete metric value bins and soft-decodes it into a continuous coordinate for execution.\n\nThis probabilistic representation retains likelihood information over alternative coordinate values while providing a compact action space suitable for robot navigation.\n\nWe further construct training trajectories using metric-distance goal sampling rather than fixed future frame offsets, exposing the policy to varying physical navigation horizons independent of dataset frame rate and robot speed.\n\nGemNav is trained on a single 8.7-hour public SCAND dataset, roughly three orders of magnitude smaller than competing cross-embodiment datasets. Extensive offline and closed-loop experiments show improved out-of-distribution generalization over frame-based sampling and substantially more reliable obstacle navigation than a matched continuous regression head.\n\nThe same policy transfers without per-platform retraining across unseen environments and three physically distinct robot platforms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "GemNav represents robot-local waypoint coordinates as categorical distributions over discrete metric bins and soft-decodes them into continuous coordinates. Its training trajectories sample goals by metric distance, making navigation horizons independent of frame rate and robot speed. The authors report that, using a single public SCAND dataset, offline and closed-loop experiments show better out-of-distribution generalization than frame-based sampling and more reliable obstacle navigation than a matched continuous regression head. They also report transfer without per-platform retraining to unseen environments and three distinct physical robot platforms.",
+          "zh": "论文提出 GemNav，一种基于多模态大语言模型的视觉导航策略，将机器人局部航点坐标表示为离散度量值区间上的类别分布，再软解码为连续坐标。训练轨迹通过按度量距离采样目标构造，使导航跨度不依赖数据集帧率或机器人速度。作者称，该方法仅用公开 SCAND 数据集训练，在离线和闭环实验中比基于帧采样的方法有更好的分布外泛化，避障也比匹配的连续回归头更可靠；同一策略无需按平台重训，迁移到未见环境和三种实体机器人平台。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -614,7 +618,11 @@
             "heading": "",
             "text": "Action-conditioned world models have become an important foundation for embodied prediction, planning, and synthetic data generation, but their errors under new task and scene distributions are often concentrated in localized spatiotemporal regions such as robot arms, manipulated objects, contact areas, and occluded objects.\n\nThis paper presents ConfAL-WM, a confidence-guided active learning framework for post-training embodied world models. Building upon EnerVerse-AC (EVAC), we attach a lightweight confidence probe to UNet decoder features and predict dense confidence maps in the latent space.\n\nThese maps are aggregated into task-, frame-, and patch-level scores, enabling data-budget allocation and localized training enhancement. Our pipeline trains the probe and warms up EVAC on a small target-domain subset.\n\nEVAC-v1 then supplies task-level acquisition and optional frame/patch weighting signals; all selected-data models are initialized from the original pretrained EVAC checkpoint for retraining.\n\nExperiments on RoboTwin2.0 at the default 40% data budget show that confidence-guided selection improves post-training quality, while dense frame and patch weighting offers complementary reconstruction and semantic gains compared with scalar reward, progress, and judge-based scoring baselines.\n\nA quick visual overview of this work is available at https://ConfAL-WM.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ConfAL-WM is a confidence-guided active learning framework for post-training action-conditioned world models. It adds a lightweight probe to EVAC’s UNet decoder features to predict dense latent-space confidence maps, aggregated into task-, frame-, and patch-level scores for data selection and localized weighting. The probe and EVAC are warmed up on a small target-domain subset, while selected-data models start from the original pretrained EVAC checkpoint. In RoboTwin2.0 experiments at the default 40% data budget, the authors report improved post-training quality and complementary reconstruction and semantic gains from dense frame and patch weighting over scalar scoring baselines.",
+          "zh": "论文提出 ConfAL-WM，用于动作条件世界模型后训练的置信度引导主动学习框架。该方法在 EVAC 的 UNet 解码器特征上加入轻量置信度探针，预测潜在空间的稠密置信图，并汇总为任务、帧和图块级分数，用于数据选择及局部训练加权。探针训练和 EVAC 预热使用少量目标域数据，后续选择模型从原始预训练 EVAC 检查点初始化。作者报告，在 RoboTwin2.0 默认 40% 数据预算的实验中，置信度引导选择提升了后训练质量，帧与图块加权相较标量评分基线带来互补的重建和语义收益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -645,7 +653,11 @@
             "heading": "",
             "text": "Pedestrians differ in whether they respond to a robot, yet many RL policies assume all are non-reactive to prioritize safety. Policies trained without conditioning on local pedestrians' reactivity may therefore be unnecessarily conservative or rely on cooperation that does not occur.\n\nWe propose RCRA, an online adaptation framework that modulates a learned residual around a frozen conservative navigation policy according to estimated pedestrian reactivity.\n\nA Transformer-based estimator infers latent pedestrian reactivity from motion histories and robot context, providing a more accurate signal for navigation adaptation and improving scenario-averaged simulation accuracy by $12.62$ percentage points over the Bayesian baseline, which assumes known pedestrian goals.\n\nThese estimates are spatially aggregated into an adaptation scale that gates LoRA modules, enabling cooperative behavior near reactive pedestrians and conservative behavior near non-reactive pedestrians.\n\nAmong baselines achieving SR above $90\\%$ in every scenario, RCRA reduces scenario-averaged path length by $16.7\\%$ relative to the conservative backbone and by $7.3\\%$ relative to randomized-training baselines. It improves mean SR by $14.88$ percentage points over the reactive-trained policy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RCRA is an online adaptation framework that adjusts a learned residual around a frozen conservative navigation policy according to estimated pedestrian reactivity. A Transformer estimator uses motion histories and robot context; spatially aggregated estimates gate LoRA modules to enable cooperative behavior near reactive pedestrians and conservative behavior near non-reactive ones. In simulation, the authors report a 12.62 percentage-point improvement in scenario-averaged estimation accuracy over a Bayesian baseline that assumes known pedestrian goals. Among baselines with success rates above 90% in every scenario, RCRA reduces average path length and improves mean success rate.",
+          "zh": "论文提出 RCRA，一种根据估计的行人反应性调节保守导航策略残差的在线适应框架。基于 Transformer 的估计器利用运动历史和机器人上下文推断行人反应性，再将估计汇总为空间适应尺度，以门控 LoRA 模块，使机器人在反应性行人附近采取合作行为，在非反应性行人附近保持保守。作者报告，在仿真中，该估计器相较假设已知行人目标的贝叶斯基线，场景平均准确率提高 12.62 个百分点；在各场景成功率均高于 90% 的基线中，RCRA 缩短了平均路径长度，并提升平均成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -676,7 +688,11 @@
             "heading": "",
             "text": "Humanoid robots hold great promise as general-purpose agents in human-centered environments, yet adapting generalist vision-language-action (VLA) policies to real-world humanoid loco-manipulation remains challenging.\n\nUnlike fixed-base or wheeled manipulators, humanoids must coordinate locomotion, posture, gaze, and dual-arm manipulation over a high-dimensional whole-body action space, where inaccurate base or waist motions can easily induce unstable and aggressive upper-body compensation. We propose HAF-VLA, a hierarchical action-flow framework for humanoid VLA control.\n\nBuilt upon a pretrained flow-matching VLA, HAF-VLA inherits the vision-language prefix encoder and action expert weights, and adapts them to humanoid whole-body loco-manipulation with learnable stage embeddings and cross-stage KV-cache conditioning.\n\nInstead of generating the full action chunk in a single pass, HAF-VLA progressively denoises a shared whole-body action space: first locomotion and head commands, then waist refinement, and finally full-body manipulation.\n\nTo preserve structural dependencies across stages, we introduce a cross-stage KV cache conditioning mechanism, enabling subsequent action generation stages to refine and augment their outputs based on the action representations from preceding stages.\n\nExperimental results across six real-world tasks demonstrate that our framework significantly enhances the performance of existing models in humanoid loco-manipulation tasks, demonstrating an effective pathway for adapting strong mobile-manipulation VLAs to humanoid whole-body loco-manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HAF-VLA is a hierarchical action-flow framework for humanoid vision-language-action control. Built on a pretrained flow-matching VLA, it retains the vision-language prefix encoder and action-expert weights, adapting them with stage embeddings and cross-stage KV-cache conditioning. It progressively denoises a shared whole-body action space: locomotion and head commands first, waist refinement next, and full-body manipulation last. Later stages refine outputs using earlier action representations. The authors report that experiments across six real-world tasks show significant performance improvements for existing models on humanoid loco-manipulation tasks.",
+          "zh": "论文提出 HAF-VLA，用分层动作流控制人形机器人的视觉、语言与全身动作。该框架基于预训练的流匹配 VLA，保留视觉语言前缀编码器和动作专家权重，并通过阶段嵌入及跨阶段 KV 缓存适配全身运动与操作。它分步去噪共享动作空间：先生成行走和头部指令，再细化腰部，最后生成全身操作动作；后续阶段可依据前序动作表征修正输出。作者称，在六项真实世界任务中，该方法显著提升了现有模型在人形机器人运动与操作任务中的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
