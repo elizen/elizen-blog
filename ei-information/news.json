@@ -1476,7 +1476,11 @@
             "heading": "",
             "text": "We introduce DexOAK, a learning-based object-aware kinematic retargeting framework for generating contact-consistent robot hand references from human motion-capture data.\n\nDexOAK first minimizes an interaction-graph Laplacian objective over a joint hand-object graph, so the robot reproduces the demonstrated object-relative interaction geometry rather than the human hand pose alone.\n\nThese per-frame solutions form seed retargeted references, from which a feed-forward network conditioned on human keypoints and object point clouds learns the retargeting function.\n\nObject-aware finetuning then refines the network under contact, non-penetration, and self-collision losses that position the fingers on the demonstrated contacts and reduce artifacts destabilizing physics-based refinement. Once trained, the network transfers to unseen data by inference alone, without per-frame optimization.\n\nDexOAK references improve dynamic retargeting over the state-of-the-art across bimanual tasks with rigid and articulated objects. On the Inspire hand, success rises from 39.5% to 48.4% on OakInk-v2, and ADD-AUC rises from 62.7% to 77.9% on ARCTIC.\n\nAblations trace the gains to object-aware kinematic retargeting and the amortized network refined with contact losses. Trained on OakInk-v2, it transfers to ARCTIC zero-shot and nears in-domain performance after fine-tuning. On hardware, 46/56 open-loop replays succeed across five tasks, enabling dexterous robot data generation from human data.\n\nVisualizations and interactive results are at: https://fspinola.github.io/dexoak/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DexOAK is a learning-based, object-aware kinematic retargeting framework that generates contact-consistent robot hand references from human motion-capture data. It optimizes per-frame solutions on a hand-object interaction graph, trains a feed-forward network conditioned on human keypoints and object point clouds, and fine-tunes it with contact, non-penetration, and self-collision losses. The authors report improvements over prior dynamic retargeting methods across bimanual tasks, with gains on OakInk-v2 and ARCTIC using the Inspire hand. On hardware, 46 of 56 open-loop replays succeeded across five tasks.",
+          "zh": "DexOAK是一种面向物体的学习式运动学重定向框架，用于从人体动作捕捉数据生成接触一致的机器人手部参考。它先在手部与物体的交互图上优化逐帧解，再训练以人体关键点和物体点云为条件的前馈网络，并通过接触、非穿透和自碰撞损失微调。作者报告，在多种双手任务上优于现有动态重定向方法；在指定数据集和Inspire手上指标有所提升。硬件测试中，五项任务的56次开环回放有46次成功。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1507,7 +1511,11 @@
             "heading": "",
             "text": "Data-driven learning for general-purpose robotic manipulation presents a fundamental trade-off between data-collection cost and adaptability to real-world environments. Imitation learning (IL) requires costly human demonstrations, whereas simulation-based learning is vulnerable to sim-to-real gaps in dynamics and sensor observations.\n\nWe propose ReDOA (Real-World Distillation via Observation Alignment), a framework that decouples control learning from perception learning to learn image-based policies in the real world.\n\nA state-based teacher policy trained in simulation is executed on a real robot, and its control knowledge is distilled into an image-based student policy using the collected trajectories. Observation Alignment resolves observation mismatches between data collection and deployment.\n\nThis framework collects successful, efficiently executed trajectories paired with real-world visual observations, without requiring demonstrations from human experts.\n\nIn real-robot experiments on three non-prehensile manipulation tasks, including bimanual manipulation, our method achieves better overall performance when jointly considering task success and execution efficiency than both IL based on human demonstrations and policy distillation in simulation. https://isri-aist.github.io/redoa-project-page/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReDOA aims to learn image-based manipulation policies in real-world settings while addressing data-collection costs and observation mismatch. A state-based teacher trained in simulation runs on a real robot, and its control knowledge is distilled into an image-based student using collected trajectories. Observation Alignment addresses differences between observations during collection and deployment. The authors say this approach gathers successful, efficiently executed trajectories without human expert demonstrations. In real-robot experiments on three non-prehensile tasks, including bimanual manipulation, it performs better overall than human-demonstration imitation learning and simulation-based policy distillation when success and execution efficiency are considered together.",
+          "zh": "ReDOA旨在降低通用机器人操作学习的数据采集成本并适应真实环境。该框架将控制学习与感知学习分开：在仿真中训练的状态策略由真实机器人执行，再利用采集到的轨迹将控制知识蒸馏到基于图像的学生策略，并通过观测对齐处理采集与部署间的观测差异。作者称，该方法无需人类专家示范即可收集成功且执行高效的轨迹。在三项真实机器人非抓取操作任务（含双手操作）中，联合考量任务成功率与执行效率时，表现优于基于人工示范的模仿学习和仿真策略蒸馏。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1538,7 +1546,11 @@
             "heading": "",
             "text": "Robotic rearrangement tasks require planning sequences of actions that fulfill high-level specifications while also being geometrically feasible. Symbolic abstractions make the combinatorial structure of rearrangement tasks tractable, but they usually do not fully capture the geometric constraints that determine which actions a robot can actually realize.\n\nThese constraints are hard to express in the symbolic model. We propose REAP (Rearrangement with Elicited Action Preconditions), a framework in which a relational graph neural network heuristic is learned over a simple symbolic abstraction. A motion planner serves as a supervisor that elicits the hidden geometric preconditions of the problem during training.\n\nDeployed with greedy best-first search, the learned heuristic generalizes out-of-distribution along object count, plan length, and object arrangement, and can be trained jointly on several domains.\n\nCompared to classical heuristic search and learning-based baselines, REAP solves more problems, requires roughly an order of magnitude fewer motion-planner queries than comparable methods, and the action it ranks first is geometrically feasible in 94% of sampled states, against 22% for a random choice."
           }
-        ]
+        ],
+        "summary": {
+          "en": "REAP learns rearrangement heuristics from motion-planner feedback to address geometric feasibility constraints that simple symbolic models do not capture. A relational graph neural network operates over a symbolic abstraction, while a motion planner supervises training by eliciting hidden action preconditions. The learned heuristic is deployed with greedy best-first search. The authors report out-of-distribution generalization across object count, plan length, and arrangement, as well as joint training across domains. Compared with classical heuristic search and learning-based baselines, REAP solves more problems, uses roughly an order of magnitude fewer planner queries than comparable methods, and ranks a feasible action first in 94% of sampled states.",
+          "zh": "REAP针对符号规划难以表达机器人动作几何可行性约束的问题，从运动规划器反馈中学习重排任务启发式。它在简单符号抽象上使用关系图神经网络，训练时由运动规划器提供监督，以揭示隐藏的几何前提，并通过贪心最佳优先搜索部署。作者报告，该方法可在物体数量、计划长度和排列分布上实现分布外泛化，也可联合训练多个领域。与经典启发式搜索和学习基线相比，REAP解决的问题更多、所需规划器查询约少一个数量级；其首选动作在94%的抽样状态中几何可行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
