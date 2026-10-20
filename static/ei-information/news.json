@@ -1912,7 +1912,11 @@
             "heading": "",
             "text": "Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence.\n\nWe propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS.\n\nA nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence, providing non-conservative intervention when the nominal controller violates necessary constraints.\n\nExperimental results include simulations and real robot deployment with various 2D and 3D datasets, including handwriting datasets, validating the effectiveness of our approach in providing formal guarantees with learned motion even in complex, dynamic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a symbolic supervisory control architecture for formally certifying robot motions learned from demonstrations. It generates a fail-safe backup plan directly from robot dynamics and certifies safety, reachability, and actuator feasibility independently of the learned dynamical system. A nominal controller tracks the learned motion, while a supervisor monitors safety and goal convergence and intervenes when required constraints are violated. The authors report simulations and real robot deployments using varied 2D and 3D datasets, including handwriting, as evidence of effectiveness in complex dynamic environments.",
+          "zh": "本文提出一种符号监督控制架构，用于为示范学习得到的机器人运动提供形式化认证。该架构直接依据机器人动力学自动生成故障安全备份计划，认证安全性、可达性和执行器可行性，且不依赖学习得到的动力学系统。名义控制器跟踪学习系统，监督控制器监测安全与目标收敛，并在必要约束被违反时介入。作者通过包含二维和三维数据集（包括手写数据）的仿真及真实机器人部署实验，报告该方法在复杂动态环境中提供形式化保证的有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1943,7 +1947,11 @@
             "heading": "",
             "text": "Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base.\n\nWe present Dec-MARVEL, a decentralized, communication-free exploration policy that jointly selects waypoints and sensing headings from each robot's local map, remaining budget, and opportunistic observations of teammates.\n\nAcross 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, and 1024 m) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration and success rates and the shortest reported travel to 99% merged coverage among successful trials in all nine budget--team configurations.\n\nUnder our tightest 720 m budget, it reaches 46%, 84%, and 94% success for 2, 4, and 8 robots, versus 17%, 57%, and 85% for the strongest baseline in each case. Physical-robot experiments show that the resulting waypoint-heading plans are executable and remain budget-feasible."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Dec-MARVEL, a decentralized, communication-free multi-UAV exploration policy. Each robot selects waypoints and sensing headings using its local map, remaining travel budget, and opportunistic observations of teammates, while reserving enough budget to return to base. Across 900 held-out trials covering nine combinations of team size and travel budget, the authors report the highest or tied-highest exploration and success rates, and the shortest reported travel to 99% merged coverage among successful trials. Physical-robot experiments show the plans are executable and budget-feasible.",
+          "zh": "本文提出 Dec-MARVEL，一种无需通信的多无人机分布式探索策略，根据各机器人的局部地图、剩余行程预算及对队友的机会性观察，联合选择航点与感知朝向，并为返航预留预算。作者在三种队伍规模、三种行程预算组成的九种配置中，对 900 次留出试验与四种基线进行比较；报告称该方法的探索率和成功率最高或并列最高，且成功试验中达到 99% 合并覆盖所需行程最短。实物机器人实验显示规划可执行且符合预算。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1974,7 +1982,11 @@
             "heading": "",
             "text": "For natural human-robot interaction, a robot must understand human intent expressed not only through language but also through nonverbal signals such as gestures and gaze. However, current robot policies rely on language instructions as the sole interface for conveying intent, leaving nonverbal signals unused and placing the full burden of communication.\n\nIn this work, we present EDITH, a robot framework that captures the human's nonverbal signals through continuous streams of first-person view and gaze from smart glasses, and uses them alongside language instructions as inputs to the robot policy.\n\nOur hardware system streams the human's first-person view, gaze, and speech to the robot in real time, transcribing the speech into language instructions.\n\nTo handle these rich but noisy signals, we design a hierarchical policy in which a high-level policy infers the human's intent and produces a sequence of subtasks, where each subtask is represented as a fine-grained instruction paired with a keyframe that grounds the intent in the scene (e.g., the frame where the human points at the target object).\n\nA low-level policy then executes these subtasks. In our experiments on human-robot interactive tasks, EDITH enables the robot to act on the human's nonverbal signals even when intent is expressed only briefly, and significantly reduces user effort to convey intent compared to using language instructions alone.\n\nVisit our project page for source code and real-robot demo videos."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EDITH, a robot framework that combines language instructions with first-person vision and gaze captured by smart glasses. The system streams the human’s view, gaze, and speech to the robot and transcribes speech into instructions. Its hierarchical policy infers intent at a high level and produces subtasks, each represented by a fine-grained instruction and a scene-grounding keyframe; a low-level policy executes them. In human-robot interaction experiments, the authors report that EDITH responds to briefly expressed nonverbal signals and reduces user effort compared with language-only instructions.",
+          "zh": "本文提出 EDITH，让机器人结合智能眼镜采集的第一人称视角、注视方向与语言指令理解人的意图。系统实时传送视野、注视和语音，并将语音转成指令；分层策略由高层推断意图并生成子任务，每项子任务以细粒度指令和场景关键帧表示，低层负责执行。作者在人机交互任务实验中报告，EDITH 能响应短暂表达的非语言信号，并相较仅用语言指令显著降低用户表达意图所需的努力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
