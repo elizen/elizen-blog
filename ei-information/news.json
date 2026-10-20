@@ -303,7 +303,11 @@
             "heading": "",
             "text": "The limited onboard computing resources of robots make the inference demands of vision-language-action (VLA) models costly to accommodate. Reducing these demands through aggressive compression, however, can degrade manipulation performance beyond what supervised fine-tuning alone recovers.\n\nWe present SPAR (Structural Pruning and Action Recovery), which simultaneously prunes the hidden and feed-forward intermediate dimensions of the large language model (LLM) backbone through pruning-aware tuning, then applies reinforcement learning (RL) to recover policy performance.\n\nApplied to $\\pi_{0.5}$, SPAR reduces the language backbone from 2.34B to 0.09B parameters and the full model from 3.37B to 1.12B, removing approximately 96% and 67% of their parameters, respectively. At this compression level, RL raises average success across the four LIBERO suites from 84.55% to 93.45%, an 8.90-percentage-point gain.\n\nThe compressed policy achieves a $1.98\\times$ full-policy inference speedup over the unpruned model. These results identify substantial intermediate-dimension redundancy and show that post-pruning RL can recover manipulation performance in compact policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SPAR, which prunes hidden and feed-forward intermediate dimensions in a vision-language-action model’s language backbone through pruning-aware tuning, then uses reinforcement learning to recover policy performance. Applied to π₀.₅, it reduces the backbone from 2.34B to 0.09B parameters and the full model from 3.37B to 1.12B. Across four LIBERO suites, RL raises average success from 84.55% to 93.45%. The compressed policy runs 1.98 times faster than the unpruned model.",
+          "zh": "论文提出 SPAR，通过剪枝感知调优同时压缩视觉-语言-动作模型语言骨干的隐藏维度和前馈中间维度，再用强化学习恢复策略表现。应用于 π₀.₅ 后，语言骨干参数量从 23.4 亿降至 0.9 亿，完整模型从 33.7 亿降至 11.2 亿。在 LIBERO 四个套件上，强化学习使平均成功率从 84.55%升至 93.45%；压缩策略的推理速度为未剪枝模型的 1.98 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -334,7 +338,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models for autonomous driving receive navigation commands and hazard notices as disconnected text fragments, forcing the model to discover on its own which environmental constraints are relevant to the current maneuver.\n\nWe introduce Causal Scene Narration (CSN), which restructures VLA text inputs through intent-constraint alignment, quantitative grounding, and structured separation at inference time with zero GPU cost.\n\nTo test CSN across different model states and safety layers, we evaluate it alongside training-time preference alignment (PL-DPO-NLL) and runtime supervision as experimental conditions.\n\nA multi-town CARLA evaluation (16 routes, 8 towns, N=5, 95% bootstrap CIs) shows that CSN yields relative improvements in CARLA Driving Score (DS, route completion weighted by infraction penalty) of +31.1% on original LMDrive and +24.5% on the PL-DPO-NLL variant.\n\nA controlled ablation separating information content from text organization reveals that information content carries most of CSN's gain across both model weights (+6.17 DS on original LMDrive; +6.88 DS on PL-DPO-NLL).\n\nWhile causal structure accounts for an estimated 39.1% (95% CI [6.6%, 71.4%]) of the gain on original LMDrive versus 13.5% on PL-DPO-NLL, the structural share on the aligned model and the cross-configuration asymmetry remain statistically inconclusive at N=5 due to wide bootstrap intervals.\n\nA perception noise ablation further confirms that CSN's benefit survives distance errors up to +/-5 m, speed noise up to +/-30%, and 20% actor miss rates.\n\nFinally, we report a negative result on combining CSN with runtime supervision: a naive direction-conflict monitor never fires on this benchmark and, when paired with CSN, degrades DS via passive control clamping that truncates CSN-guided evasive maneuvers. Code is available at https://github.com/LiYun0607/CausalSceneNarration."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Causal Scene Narration (CSN), an inference-time restructuring of text inputs for vision-language-action driving models, aligning intent with constraints and adding quantitative grounding at zero GPU cost. In a multi-town CARLA evaluation, it reports relative Driving Score gains of 31.1% on original LMDrive and 24.5% on PL-DPO-NLL. Ablations attribute most gains to information content; the structural contribution and cross-configuration difference remain inconclusive with N=5 and wide intervals. Benefits persist under tested perception noise. Combining CSN with runtime supervision lowers scores through passive control clamping.",
+          "zh": "论文提出因果场景叙述（CSN），在推理时重组自动驾驶 VLA 模型的文本输入，以对齐意图与约束、提供定量依据并分离结构，且不增加 GPU 计算。多城 CARLA 评估显示，相对驾驶得分在原始 LMDrive 上提高 31.1%，在 PL-DPO-NLL 变体上提高 24.5%。消融分析认为信息内容贡献了大部分增益；结构贡献比例及配置间差异因样本数为 5、区间较宽而无法确定。收益在设定的感知噪声下仍存在；与运行时监督结合则因被动控制限制而降低得分。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -365,7 +373,11 @@
             "heading": "",
             "text": "Learning highly dynamic motions from video provides a scalable alternative to expensive data collection for humanoid robots, yet it is challenged by height floating, missing kinematic and force information, and limited robustness. We present KungfuAthleteBot (KAB), a unified framework that systematically addresses these issues.\n\nWe first build a high-dynamic motion dataset in collaboration with professional martial artists, alleviating data scarcity while improving motion quality. To eliminate height drift and global jitter during both aerial and landing phases, we introduce a physics-guided parabolic trajectory correction that enforces physical plausibility.\n\nTo bridge the discrepancy between human and robot actuation in highly dynamic behaviors, we design a three-stage curriculum that progressively enables stable acquisition of such motions. In addition, we propose a direct, teacher-free training paradigm that jointly learns disturbance rejection and fall recovery within a single policy.\n\nTo the best of our knowledge, KAB achieves the fastest recovery time reported for a unified policy ($\\approx 0.7$s).Experiments on a real humanoid robot demonstrate successful learning of highly dynamic motions from video and strong robustness, including rapid recovery under severe disturbances."
           }
-        ]
+        ],
+        "summary": {
+          "en": "KungfuAthleteBot (KAB) is a framework for learning highly dynamic humanoid motions from video. It builds a motion dataset with professional martial artists, applies physics-guided parabolic trajectory correction to address height drift and global jitter, and uses a three-stage curriculum to acquire dynamic behaviors. A teacher-free policy jointly learns disturbance rejection and fall recovery. The authors report a recovery time of approximately 0.7 seconds, which they describe as the fastest reported for a unified policy to their knowledge. Real humanoid robot experiments demonstrate motion learning and robustness, including rapid recovery from severe disturbances.",
+          "zh": "论文提出 KungfuAthleteBot（KAB），从视频学习人形机器人的高动态动作。框架与专业武术家合作建立动作数据集，并用物理引导的抛物线轨迹校正减少腾空和落地阶段的高度漂移与全局抖动；三阶段课程逐步训练动作，另以无需教师的单一策略共同学习抗扰和跌倒恢复。作者称其统一策略恢复时间约为 0.7 秒，是据其所知报告过的最快结果。真实人形机器人实验展示了从视频学习高动态动作及强鲁棒性，包括严重扰动后的快速恢复。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -396,7 +408,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models offer a promising paradigm for autonomous driving. However, the massive parameter scale of VLAs strains onboard computational resources during real-time inference.\n\nThis directly increases energy consumption and limits vehicle battery range, making it critical to minimize computational overhead without compromising driving capability and explainability.\n\nCurrent research on efficient VLA-based driving focuses on sequential adaptation (\\textit{e.g.}, Chain-of-Thought and token adjustment), leaving structural adaptation underexplored despite parameter redundancy across dynamic driving scenes.\n\nTo address this gap, we propose Scene-Adaptive VLA, an efficient framework leveraging dynamic layer routing to adjust active parameters based on real-time scenes.\n\nInspired by the temporal continuity of scenes and model predictive uncertainty, our approach characterizes model-perceived scene complexity via frame-level temporal scene variations and decision deviations. To uncover latent scene-to-parameter correspondences, we encode this characterization into scene-aware tokens, alongside two specialized queries.\n\nA budget-conditioned layer routing mechanism evaluates these refined queries to allocate a budget that determines the active parameter ratio and subsequently selects appropriate layer combinations. The entire framework is optimized end-to-end.\n\nExtensive evaluations on the Bench2Drive benchmark show that when adapted to a state-of-the-art VLA model, our approach significantly reduces inference-time computational overhead by 53.5\\% with negligible degradation in driving and language capabilities. Code is available at https:github.com/yang-luvu/Scene-Adaptive-VLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Scene-Adaptive VLA uses dynamic layer routing to adjust the active parameters of an autonomous-driving model according to real-time scenes. It characterizes scene complexity through temporal scene variation and decision deviation, encodes this information into scene-aware tokens and specialized queries, then uses budget-conditioned routing to select layer combinations. The framework is optimized end to end. On the Bench2Drive benchmark, applying it to a state-of-the-art VLA model reduces inference-time computational overhead by 53.5%, with negligible degradation in driving and language capabilities.",
+          "zh": "论文提出 Scene-Adaptive VLA，通过动态层路由按实时场景调整自动驾驶模型的激活参数。方法依据帧间场景变化和决策偏差刻画场景复杂度，将其编码为场景感知令牌与专用查询，再由预算条件路由机制分配计算预算并选择层组合，整体端到端优化。在 Bench2Drive 基准上，将该方法适配到一个先进 VLA 模型后，推理计算开销降低 53.5%，驾驶与语言能力仅有轻微下降。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
