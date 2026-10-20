@@ -25,11 +25,7 @@
             "heading": "",
             "text": "Embodied AI lacks the data-rich pretraining that gave language models their agents and skills, so new manipulation capability costs demonstrations per task or a frontier model in every episode.\n\nWe study a third route: a strong general model acts only as an offline author that writes, runs, diagnoses and repairs a manipulation skill in simulation until it passes an exam on layouts drawn after freezing; the frozen skill then runs as code alone or under a cheap caller that reads only its description.\n\nWe call this skill-level recursive self-improvement Skill-RSI and specify a compile protocol (isolated, audited author; hidden validation layouts; no-feedback and inherit-only controls; tamper-evident ledger) and a reuse protocol that runs the identical files with executors from another model family.\n\nOn 7 RoboTwin 2.0 tasks with cluttered tables, Claude Code compiled 4 tasks into 7 frozen skills, 5 from a first draft needing only qualification, at USD 4.29-8.22 of author cost each (USD 55 per skill counting the 13 failed campaigns).\n\nThe other three tasks did not compile in 18 campaigns, including five with GPT-6 and a pre-registered 150-layout run: on the hardest task every campaign scored 78-95 of 100 but had 3-16 safety aborts, failing the gate of 95% success with zero aborts; a 100-episode exam bounds an abort rate only to 3.6%.\n\nOn hidden layouts, repair that inherits the previous version beat from-scratch rewriting in 8 of 8 controlled campaigns (sign test p = 0.004); an inherit-only lineage attributes most of the gap to inheritance, with development feedback adding a little (3 of 3, p = 0.125).\n\nWrite-once campaigns found no detectable first-draft effect of practice (minimum detectable effect 14 points).The frozen skills kept 148/150 successes on new layouts with no model and 147/150 with a DeepSeek-flash caller at USD 0.00028-0.00054 per episode; no direct-control baseline was run."
           }
-        ],
-        "summary": {
-          "en": "The paper studies an offline route for building frozen manipulation skills: a general model writes, diagnoses, and repairs skills in simulation, which are then tested on layouts drawn after freezing and run alone or with a low-cost caller. Across seven RoboTwin 2.0 tasks, the authors compiled skills for four; three did not pass the safety gate. In controlled campaigns, repair that inherited a previous version outperformed rewriting from scratch. Frozen skills achieved 148/150 successes without a model and 147/150 with a low-cost caller on new layouts. No direct-control baseline was run.",
-          "zh": "论文研究一种为具身操作任务离线编写并冻结技能的路线：通用模型在仿真中生成、诊断和修复技能，通过冻结后的布局考试后，技能可独立运行或由低成本模型调用。作者在 RoboTwin 2.0 的七项任务中编译出四项技能；其余三项未通过安全门槛。受控实验中，继承旧版本修复优于从头改写。冻结技能在新布局上取得148/150次成功（无模型）和147/150次成功（低成本调用模型）；作者未运行直接控制基线。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -497,11 +493,7 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes a preliminary conceptual framework for designing embodied agents in immersive analytics. It organizes context around spatial, social, and semantic dimensions, further distinguishing how agents are embedded in contexts from how they perceive and respond to them. The authors present Cobot as a design probe, with features such as gaze cues, spatial sound, and task-aware behavior to support context-sensitive interaction. They reflect on its design and identify implications for future context-aware embodied agents.",
-          "zh": "论文提出一个面向沉浸式分析中具身智能体设计的初步概念框架，按空间、社会和语义三个维度组织，并区分智能体在情境中的嵌入方式及其感知、回应情境的意识能力。作者以 Cobot 作为设计探针，展示通过注视线索、空间声音和任务感知行为支持情境相关交互，并据此讨论未来情境感知型具身智能体的设计启示。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2804,11 +2796,7 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive action decoding with a latent control loop. The system selects a discrete skill, predicts the next latent state, and generates an action chunk. The authors analyze inference complexity, regularization against representation collapse, and latent sub-goal thresholding as a way to limit error accumulation. As an initial proof of concept, VPA was evaluated on LIBERO-10. In a single training run, a two-camera policy succeeded in 40.0% of 200 evaluation episodes; the authors describe the results as preliminary.",
-          "zh": "论文提出目标条件化 Vision-Predictor-Action（VPA），以轻量潜在控制循环替代自回归动作解码器：模型选择离散技能，预测下一潜在状态，并生成一段动作。作者分析推理复杂度、表示坍塌正则化及潜在子目标阈值对误差累积的影响。作为初步概念验证，VPA 在 LIBERO-10 上评估；单次训练运行中，双摄像头策略在 200 个评测回合中成功率为 40.0%。作者称这些初步结果表明方法可行。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6205,11 +6193,7 @@
             "heading": "",
             "text": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts.\n\nWhile recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint.\n\nA robot must also recognize stalled progress, escape unproductive behaviors, and revisit overlooked target cues. Addressing these challenges requires both specialized navigation strategies and a high-level policy that coordinates their execution.\n\nMotivated by the analysis of failed navigation episodes, we propose LERR-Nav, an object navigation framework that coordinates exploration, recovery, and reminiscing through a learned high-level policy.\n\nThe framework comprises four complementary navigation strategies: value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing.\n\nTo support history-aware coordination, we maintain the execution memory that preserves textual summaries of all strategy executions alongside a sliding window of map sequences. To learn the coordination policy, we initialize a high-level vision-language agent from Qwen2.5-VL-7B-Instruct and train it through a two-stage curriculum.\n\nThe first stage uses map-centric supervised fine-tuning (SFT) to establish spatial grounding. The second stage performs SFT on variable-length navigation segments to learn which navigation strategy to invoke next based on current maps and the hybrid execution memory.\n\nExperiments on HM3D and MP3D demonstrate state-of-the-art navigation performance, while ablation studies validate the contributions of individual components."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes LERR-Nav, an object-navigation framework that coordinates value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided revisiting. It stores textual summaries of strategy executions alongside a sliding window of map sequences. A high-level vision-language policy is trained in two stages to choose the next strategy based on current maps and execution memory. The authors report state-of-the-art navigation performance in experiments on HM3D and MP3D, with ablation studies assessing the contributions of individual components.",
-          "zh": "论文提出 LERR-Nav，用于协调未知环境中的物体导航策略，包括价值函数引导探索、大语言模型引导探索、停滞或重复行为恢复，以及基于记忆的回访。框架保存各策略执行的文本摘要和地图序列，并通过两阶段课程训练高层视觉语言策略，使其依据当前地图与执行记忆选择下一策略。作者报告，在 HM3D 和 MP3D 上的实验显示导航表现达到当前最佳水平，消融研究则用于评估各组件的贡献。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7979,11 +7963,7 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Plan-Bench, a benchmark for evaluating vision-language models’ high-level reasoning and multi-step planning for embodied settings while isolating the effects of action execution. It covers three dimensions, 16 subclasses, and 699 curated samples. Evaluation of 28 models found room for improvement: the strongest model reached 75.0% accuracy. The authors report that scaling generally improves these capabilities, and ablations indicate that larger models show increasing potential as high-level planners.",
-          "zh": "论文介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并将动作执行影响隔离。基准覆盖三个维度、16个子类和699个样本。作者对28个模型进行评估，报告最强模型准确率为75.0%，整体上模型规模增大通常带来能力提升；消融研究也显示较大模型作为高层规划器的潜力增加。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8602,11 +8582,7 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces HelpMeOut, an embodied AI benchmark for monitoring errors during household activities. It contains paired activity episodes covering nine error categories motivated by neuropsychological research. Agents observe streaming human activity and must determine whether execution is proceeding correctly, diagnosing structured errors as early as possible. The authors evaluate learned-monitor, symbolic, change-point, and frontier LLM-prompting baselines. They report that these methods perform poorly as error monitors and often miss execution errors, suggesting a gap in standard goal-inference and task-completion benchmarks.",
-          "zh": "论文介绍 HelpMeOut，这是一个面向家务任务执行错误监测的具身 AI 基准。它将日常行动错误研究转化为配对活动片段，涵盖九类神经心理学动机的错误。智能体需观察持续的人类活动轨迹，判断执行是否正确，并尽早诊断结构化错误。作者评估了学习式监测器、符号方法、变点方法和前沿大语言模型提示基线；结果显示，这些方法作为错误监测器表现不佳，常会漏掉执行偏差。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -11648,6 +11624,39 @@
       },
       "body": "",
       "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.26395v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-b3d6e5935e2a4760859d8b37625b9691",
+      "intro": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces. In contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces.\n\nIn contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.\n\nDeveloping architectures that could learn to build and use map-like representations as flexibly as animals is, however, difficult because few embodied AI benchmarks actually require map-based reasoning.\n\nTo address this, we present ForagerSim --- an interdisciplinary research platform and simulation environment focused on embodied tasks that require map-based reasoning, with scenarios ranging from mobile-robot search and rescue to animal foraging in both complex mazes and vast, potentially infinite open areas.\n\nForagerSim is highly modular and allows modifying independent axes of difficulty related to perception (abstract 2D sensing to full RGB or LiDAR), scale (room-scale to multi-km scale), topology (open-fields to complex mazes), dynamics (smoke, debris, sensorimotor failures and others) and tasks (from simple 2D coverage to foraging-inspired well-alternation tasks).\n\nWe compare reinforcement learning baselines with a simple engineered robotics stack and a human player on 8 example worlds which show how different difficulty axes affect existing methods.\n\nOur results show that, when sensing is simplified to 2D, learned policies can perform multi-object search and well-alternation tasks surprisingly well in simple topologies, but they fall short of human performance in larger or more complex-topology environments where map-based baselines perform well, suggesting that map-based reasoning is the bottleneck in these scenarios."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.26395v1"
+      },
+      "title": "ForagerSim: Evaluating Embodied Map-Based Reasoning in Large-Scale Dynamic Worlds"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-20"
+      },
+      "body": "",
+      "catalog": {
         "kind": "standard",
         "source_channel": "website",
         "source_name": "全国信息技术标准化技术委员会",
@@ -14092,11 +14101,7 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Thinker-WM, a multimodal world model that jointly represents RGB, metric depth, and robot actions through a shared dynamics transformer, while preserving modality-specific outputs. A single parameterization supports functions including video-action generation, world prediction, and policy inference. The authors report that a motion probe can recover motion information from frozen visual representations and that Thinker-WM ranks first on EWMBench, WorldOlympiad, and WorldArena. Ablations examine action conditioning, geometric interaction, and multi-function training.",
-          "zh": "论文提出 Thinker-WM，一种以共享动态表示联合建模 RGB、度量深度和机器人动作的多模态世界模型，并通过同一参数化支持视频与动作生成、世界预测、策略推断等功能。作者称，冻结的视觉表示中可恢复出运动信息；在其具身世界模型评测中，模型在 EWMBench、WorldOlympiad 和 WorldArena 排名第一。消融研究还显示，动作条件、几何交互和多功能训练具有益处。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -16294,11 +16299,7 @@
             "heading": "",
             "text": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior.\n\nExisting inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes.\n\nSuch compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part.\n\nTo address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages.\n\nFive cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones.\n\nPlanning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision.\n\nWe evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR).RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces RuleGraph, a framework intended to let embodied robots refuse harmful parts of compound instructions while completing legitimate subtasks. Five cooperating agents translate general safety principles into world-specific rules, assess subtasks in context, and plan and verify candidate solutions against those rules. The authors evaluate pure attacks and compound instructions across two benchmarks and two environments. They report a 0% attack success rate on both benchmarks and task success rates of 98.57% on RoboGuard and 84.54% on their long-horizon compound instructions.",
-          "zh": "论文提出 RuleGraph，用于让具身机器人拒绝复合指令中的有害部分，同时完成合法子任务。该框架由五个协作代理将一般安全原则转化为具体规则，按上下文评估子任务，并据此规划和逐步验证候选方案。作者在两个基准、两个环境中评估纯攻击和复合指令，报告 RuleGraph 在两个基准上将攻击成功率降至0%，并在 RoboGuard 和长时程复合指令任务上分别达到98.57%和84.54%的任务成功率。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
