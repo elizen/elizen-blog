@@ -1674,7 +1674,11 @@
             "heading": "",
             "text": "Reinforcement learning enables learning high-performance control policies, but its reliance on extensive interaction limits deployment on physical systems where data collection is costly, and failures are unsafe.\n\nWe introduce Prior-Informed Adaptation (PIA), an offline-to-online model-based RL framework that uses structured simulation priors for rapid adaptation. PIA pretrains a world model on heterogeneous low- and high-fidelity simulated trajectories, then adapts it with limited target-domain interaction using uncertainty-regularized planning.\n\nRather than requiring an accurate simulator for policy transfer, PIA treats simulated trajectories as biased priors whose residual mismatch is corrected during online adaptation. We evaluate PIA in autonomous racing using high-fidelity simulation and on a real full-size autonomous race car.\n\nIn simulation, PIA adapts faster across track and surface shifts than strong baselines, achieving lower lap times and fewer failures. On hardware, PIA achieves reliable few-shot adaptation with less than one hour of on-vehicle interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Prior-Informed Adaptation (PIA), an offline-to-online model-based reinforcement learning framework. It pretrains a world model on simulated trajectories of varying fidelity, then adapts through limited target-domain interaction and uncertainty-regularized planning. The authors treat simulated data as potentially biased priors whose mismatch is corrected online. In autonomous-racing simulation, PIA adapts faster than strong baselines across track and surface shifts, with lower lap times and fewer failures. On a real full-size race car, they report reliable few-shot adaptation using less than one hour of vehicle interaction.",
+          "zh": "论文提出先验信息适应（PIA），一种离线到在线的基于模型强化学习框架：先用不同保真度的模拟轨迹预训练世界模型，再通过不确定性正则化规划，利用有限目标域交互进行适应。作者将模拟轨迹视为可能有偏的先验，并在在线适应中修正残差差异。在自主赛车仿真中，PIA面对赛道和路面变化时比强基线适应更快，圈速更低、失败更少；在真实全尺寸赛车上，作者报告其用少于一小时车载交互实现了可靠的少样本适应。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1705,7 +1709,11 @@
             "heading": "",
             "text": "Experience generated during deployment offers an opportunity for robots to improve policy reliability through learning from their own executions. However, learning through human corrections requires teleoperators to monitor execution and intervene when policies fail, a demand that is difficult to meet as robot fleets grow.\n\nWe introduce collective experience learning (CEL), a learning paradigm in which deployed robots share their execution experience to improve a common policy.\n\nWe realize CEL through failure-guided experience retrieval fine-tuning (FERT), which uses failure contexts from robot executions to retrieve relevant trajectory segments from the fleet's shared successful experience and uses their actions as supervision for policy updates, without collecting additional expert demonstrations or corrective actions.\n\nA fault-tolerant asynchronous training system (FATS) coordinates experience collection, policy optimization and policy distribution despite local interruptions within the robot fleet.\n\nAcross five real-world manipulation tasks, the resulting policies achieve success rates of 93.3-99.2%, evaluated over 120 trials per task on robots excluded from training data collection. With collection time per robot held fixed, larger fleets provide more experience and FERT generally achieves higher success rates across the evaluated sizes.\n\nOn multi-stage phone packaging, learning with 96 robots increases success from 79.2% to 98.3%.These results support collective experience as a practical basis for scalable robot learning and a path towards improving policy reliability during deployment without collecting additional expert corrective actions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces collective experience learning (CEL), in which deployed robots share execution experience to improve a common policy. Its implementation, failure-guided experience retrieval fine-tuning (FERT), retrieves relevant successful fleet trajectories from failure contexts and uses their actions to supervise policy updates, without additional expert demonstrations or corrections. A fault-tolerant asynchronous system coordinates collection, training, and distribution. Across five real-world manipulation tasks, the authors report success rates of 93.3–99.2% on robots excluded from training data collection. Larger fleets generally perform better when collection time per robot is fixed; in phone packaging, 96 robots raise success from 79.2% to 98.3%.",
+          "zh": "论文提出集体经验学习（CEL），让部署中的机器人共享执行经验以改进共同策略，并以失败引导的经验检索微调（FERT）实现：根据失败情境从共享成功轨迹中检索相关片段，用其动作监督策略更新，无需额外专家示范或纠正动作。容错异步训练系统负责协调经验收集、优化与策略分发。作者在五项真实操作任务中报告，未参与训练数据收集的机器人上的成功率为93.3%至99.2%。在每台机器人收集时间固定时，较大机群通常带来更高成功率；多阶段手机包装任务中，96台机器人将成功率从79.2%提高到98.3%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1736,7 +1744,11 @@
             "heading": "",
             "text": "Contact-rich manipulation is essential to everyday activities, yet evaluating robots' ability to perform these activities remains challenging because of their diverse contact behaviors and the difficulty of reproducing tasks across laboratories.\n\nDrawing on observations of everyday human manipulation, we identify eight recurring skill categories that provide a practical framework for studying these capabilities. We introduce ContactBench 1.0, an extensible benchmark that instantiates these skills through 36 reference tasks and more than 40 object assets.\n\nThe assets capture task-relevant geometry and contact behavior, support reproducible fabrication using consumer-grade 3D printers, and are paired with simulation models with tunable resistance loads. Controlled task variations enable evaluation of policy generalization.\n\nWe evaluate recent vision-based and vision-tactile policy learning methods on six benchmark tasks. The results reveal that the evaluated vision-only policies struggle to perceive or react to contact events, while the evaluated visual-tactile policies do not meaningfully improve performance.\n\nBy providing shared tasks and physical and simulated assets, ContactBench 1.0 establishes a foundation for reproducible evaluation of contact-rich manipulation research. The benchmark is open-sourced at https://jingyi-xiang.github.io/contactbench"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ContactBench 1.0 for evaluating contact-rich robotic manipulation in everyday activities. Based on observations of human manipulation, it defines eight skill categories and provides 36 reference tasks and more than 40 object assets. The assets capture task-relevant geometry and contact behavior, support fabrication with consumer-grade 3D printers, and pair with simulation models whose resistance loads can be tuned. Evaluation on six tasks finds that the tested vision-only policies struggle with contact events, while the tested vision-tactile policies do not meaningfully improve performance.",
+          "zh": "论文提出ContactBench 1.0，用于评估日常接触丰富型机器人操作。基准从人类日常操作中归纳八类技能，提供36项参考任务和40多种物体资产；资产保留任务相关几何与接触特性，可用消费级3D打印机复现，并配有阻力可调的仿真模型。受控任务变化可用于评估策略泛化。作者在六项任务上评估近期视觉和视觉触觉策略学习方法，发现受测纯视觉策略难以感知或响应接触事件，而受测视觉触觉策略并未显著提升表现。论文称该基准为可复现研究奠定基础。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
