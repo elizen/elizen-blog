@@ -723,7 +723,11 @@
             "heading": "",
             "text": "Improving pretrained robot action models at test time from only a few rollouts remains challenging. Activation steering offers a lightweight approach by modifying feature activations while keeping model weights fixed. However, effective steering requires identifying which features to modify and determining the timing and strength of modification.\n\nWe introduce SteerAct, a few-shot temporal steering framework that uses a shared temporal descriptor of sparse-feature dynamics for offline feature selection and online control.\n\nA pretrained sparse autoencoder provides candidate features, and our temporal descriptor summarizes the distribution of local activation-order patterns for each feature, enabling comparisons across rollouts without requiring timestep alignment.\n\nBefore steering begins (offline), we use successful and failed reference rollouts to select a single task-specific feature whose temporal descriptors best distinguish the two outcomes and construct its reference banks.\n\nDuring each new execution (online), we compare the feature's evolving temporal descriptor with these references to determine when to intervene and how strongly to increase or decrease its activation via a steering coefficient.\n\nUsing only 24 outcome-labeled rollouts per task, SteerAct improves task success by approximately 10% relative to unsteered models in evaluations spanning $\\pi_{0.5}$, Fast-WAM, RoboTwin 2.0, DexJoCo, and real-world manipulation, without updating action-model weights. Code and demos are available at: https://steeract.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SteerAct is a few-shot temporal activation-steering framework that keeps action-model weights fixed. It uses a pretrained sparse autoencoder to provide candidate features and describes each feature’s dynamics through distributions of local activation-order patterns. Successful and failed rollouts guide offline selection of one task-specific feature; online comparisons with reference descriptors determine when and how strongly to steer it. The authors report about a 10% task-success improvement over unsteered models using 24 labeled rollouts per task, across model, simulation, and real-world manipulation evaluations.",
+          "zh": "论文提出 SteerAct，一种无需更新模型权重的少样本时序激活引导框架。它利用稀疏自编码器提供候选特征，并以局部激活顺序模式的分布描述特征动态，从成功和失败轨迹中离线选出任务特定特征，再在执行时比较其动态与参考描述，以决定干预时机及激活增减幅度。作者称，每项任务仅用24条带结果标签的轨迹，在涵盖多种模型、模拟平台和真实操作的评估中，成功率较未引导模型约提高10%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -754,7 +758,11 @@
             "heading": "",
             "text": "World models enable embodied agents to anticipate action consequences, yet jointly modeling locomotion and manipulation across diverse embodiments remains challenging due to heterogeneous action spaces and limited multimodal supervision.\n\nWe present Ropedia W0, the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. We curate Xp-Data, comprising 10k hours of egocentric human data and 3k hours of robot data with unified multimodal annotations and systematic quality control.\n\nA unified kinematic representation encodes locomotion through camera poses and manipulation through projected skeletons, with robot skeletons combining embodiment-specific forward kinematics with extensive manual keypoint annotation and correction.\n\nWe also introduce Xp-Teleop, a long-horizon loco-manipulation benchmark based on high-quality dexterous humanoid teleoperation data.\n\nEvaluations demonstrate state-of-the-art performance across five cross-embodiment benchmarks (DreamDojo, $\\Psi_0$, $\\omega$-HOME, Xp-Teleop, and AgiBot) and on held-out human egocentric video, from zero-shot inference to few-shot and full-data post-training. Scaling human pre-training data improves performance on both human and robot evaluations.\n\nAfter distillation, our model supports real-time, minute-long rollouts, enabling live VR interaction. Applications in policy evaluation, model-based planning, and world-action modeling further demonstrate the model's utility for embodied decision-making."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Ropedia W0 is presented as an egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. The work introduces Xp-Data, with human and robot data, a unified kinematic representation, and the Xp-Teleop benchmark based on dexterous humanoid teleoperation. The authors report evaluations on five cross-embodiment benchmarks and held-out human egocentric video, and say that more human pretraining data improves both human and robot results. After distillation, the model supports real-time, minute-long rollouts and live VR interaction.",
+          "zh": "论文提出 Ropedia W0，面向人类和不同形态机器人的第一人称移动与操作世界基础模型，并构建含人类与机器人数据的 Xp-Data，以及基于灵巧人形机器人遥操作数据的长时程基准 Xp-Teleop。模型用统一运动学表示编码移动和操作。作者报告，评估覆盖五个跨形态基准及留出的人类第一人称视频，并显示增加人类预训练数据可提升人类与机器人评估表现。蒸馏后模型支持实时、持续数分钟的推演及实时 VR 交互；论文还展示其在策略评估、基于模型的规划和世界动作建模中的用途。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -785,7 +793,11 @@
             "heading": "",
             "text": "Robots that follow natural-language instructions unlock a wide range of autonomous applications in households, warehouses, and labs. Real-world environments are diverse and often heavily cluttered, requiring robots to plan over multiple steps, act, and replan as they work toward a goal.\n\nWe present CLARO (CLutter-Aware Robot Orchestrator), a VLM agent that orchestrates a set of perception and manipulation skills: open-vocabulary object detection, segmentation, 6-DoF grasping, and non-prehensile pushing to locate and retrieve a language-specified target in clutter.\n\nCLARO maintains a memory of its past actions to support long-horizon execution, and emits manipulation targets (grasp poses/3D waypoints) allowing transfer across robot arms without task-specific training.\n\nWe evaluate CLARO against a range of methods on a dynamic simulation environment and standard image-based benchmarks, demonstrating strong generalization across object classes, lighting, and clutter levels. CLARO attains an average success rate of 89.1%, a relative improvement of over 16% on the strongest competing method in high cluttered scenes.\n\nWe further analyze performance along grounding and grasping axes to characterize where each method succeeds and fails. Finally, we deploy CLARO on a robot arm across diverse cluttered scenes, achieving a success rate of 88.8%, and demonstrating strong sim2real generalizability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CLARO is a vision-language-model agent that coordinates perception and manipulation skills to locate and retrieve language-specified objects in clutter. It combines open-vocabulary detection, segmentation, six-degree-of-freedom grasping, and non-prehensile pushing, while retaining action memory for long-horizon execution. Its grasp poses and 3D waypoints are intended to transfer across robot arms without task-specific training. The authors report generalization across object classes, lighting, and clutter in dynamic simulation and image-based benchmarks, plus results from deployment on a robot arm.",
+          "zh": "论文提出 CLARO，一种利用视觉语言模型智能体协调感知与操作技能的系统，用于在杂乱环境中按自然语言指令定位并取回目标物体。它组合开放词汇检测、分割、六自由度抓取和非抓取式推推，并通过记忆过往动作支持长时程执行；输出抓取姿态或三维路径点，以便迁移到不同机械臂。作者在动态仿真和图像基准评估中报告其能适应物体类别、光照和杂乱程度变化，且在高杂乱场景表现优于最强对比方法；机械臂部署实验也报告了成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
