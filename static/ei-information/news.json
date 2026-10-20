@@ -2391,7 +2391,11 @@
             "heading": "",
             "text": "Multi-robot authoring can reduce completion time by distributing drawing work, but the resulting speedup depends on task structure and the allocation-routing pipeline.\n\nWe investigate these relationships by representing drawings as geometric stroke graphs and comparing component-level (single-token) allocation with shared-token (decomposed) allocation, which permits multiple robots to work within a connected component.\n\nA simulation study of 385 drawings and teams of one to eight robots shows diminishing speedup gains under single-token allocation and larger mean speedups under the shared-token pipeline, each normalized by its own single-robot completion time.\n\nShared-token execution also exhibits lower idle-time shares at larger team sizes, although it does not reduce completion time for every drawing. Comparisons across structural attribute groups reveal associations between structural descriptors and differences in scaling behavior, with greater separation between several attribute groups at larger team sizes.\n\nThese findings characterize empirical scaling in the evaluated pipelines and highlight the importance of considering within-component workload and graph structure alongside component count. Additional materials are available at https://sites.google.com/view/multirobotauthoring/home."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This simulation study examines how drawing structure and team size affect multi-robot authoring. It models drawings as geometric stroke graphs and compares component-level single-token allocation with a shared-token pipeline that lets multiple robots work within one component. Across 385 drawings and teams of one to eight robots, single-token speedup gains diminish, while shared-token execution has larger mean speedups and lower idle-time shares for larger teams. It does not shorten completion time for every drawing. Structural attribute groups are associated with differences in scaling behavior.",
+          "zh": "本文通过仿真研究多机器人绘图任务的结构与团队规模如何影响执行效率。研究将图形表示为几何笔画图，并比较按连通分量分配单个任务令牌与允许多个机器人协作处理同一分量的共享令牌流程。对385幅图形和1至8台机器人的仿真显示，单令牌分配的加速收益递减，共享令牌流程平均加速更大，且大团队规模下闲置时间占比更低；但共享令牌并非对每幅图都能缩短完成时间。结构属性组与扩展表现存在关联，团队规模较大时部分组间差异更明显。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2422,7 +2426,11 @@
             "heading": "",
             "text": "Geometric and Semantic Foundation models are becoming increasingly popular tools for generating spatial maps for robots. Recent work (e.g., FOUND-IT) has leveraged these tools to construct real-time, task-driven, and open-set 3D scene graphs from a single uncalibrated camera.\n\nHowever, while classical robot mapping techniques have undergone extensive system demonstrations, limited work has been done to develop both the fundamental and the systems wide advancements needed to integrate these new types of robot spatial memory into a full, useable autonomy pipeline.\n\nIn this paper, we bridge this gap, and in doing so we also evaluate the effectiveness and limitations of this type of 3D memory.\n\nTowards this end, we integrate FOUND-IT into a mobile manipulator platform and demonstrate it is well-suited to support multiple objectives such as object change detection, support for multiple mapping sessions, determination of navigable paths, and directly support object grasping for the task of scene re-arrangement.\n\nFurthermore, we provide nuanced insights into the effectiveness and limitations of a monocular, foundation-model-driven 3D scene graph construction system using observations from rigorous on-robot experiments. Code is available at https://github. com/MIT-SPARK/FOUND-IT."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper integrates FOUND-IT, a monocular-camera and foundation-model-driven 3D scene graph system, into a mobile manipulator and evaluates its role as spatial memory through on-robot experiments. The authors demonstrate support for object change detection, multiple mapping sessions, navigable-path determination, and object grasping for scene rearrangement. They present the work as addressing the integration of newer robot spatial memory into a full autonomy pipeline, and report observations on the effectiveness and limitations of monocular, foundation-model-driven scene graph construction.",
+          "zh": "本文将FOUND-IT这一基于单目相机和基础模型的3D场景图系统集成到移动操作平台，并通过真实机器人实验评估其作为空间记忆的用途与局限。作者展示，该系统可支持物体变化检测、多次建图会话、可通行路径判定，并直接支持场景重排任务中的物体抓取。研究旨在弥补新型机器人空间记忆与完整自主系统集成方面的不足，并依据机器人实验观察分析单目、基础模型驱动的场景图构建系统的效果和限制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2453,7 +2461,11 @@
             "heading": "",
             "text": "Trustworthy robot behavior requires not only high levels of task success but also that the robot can reliably quantify how likely it is to succeed.\n\nTo this end, we present a first-of-its-kind study of confidence calibration in vision-language-action (VLA) foundation models, which map visual observations and natural language instructions to low-level robot motor commands.\n\nWe establish a confidence estimation baseline for VLAs, examine how task success relates to calibration error and how calibration evolves over time, and introduce two lightweight techniques to remedy the miscalibration we observe: prompt ensembles and action-wise Platt scaling.\n\nOur aim in this study is to begin to develop the tools and conceptual understanding necessary to render VLAs trustworthy via reliable uncertainty quantification."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study investigates confidence calibration in vision-language-action foundation models, which map visual observations and natural-language instructions to low-level robot commands. The authors argue that trustworthy behavior requires robots to estimate their likelihood of success as well as achieve tasks. They establish a confidence-estimation baseline, examine the relationship between task success and calibration error and how calibration changes over time, and introduce prompt ensembles and action-wise Platt scaling as lightweight responses to observed miscalibration. They frame the work as an initial step toward reliable uncertainty quantification for VLAs.",
+          "zh": "本文研究视觉语言动作（VLA）基础模型的置信度校准。作者指出，可信机器人除了需要较高任务成功率，还应能可靠估计成功可能性。研究建立VLA置信度估计基线，考察任务成功与校准误差的关系及校准随时间的变化，并提出提示集成和逐动作Platt缩放两种轻量方法，以应对观察到的失准。作者将此研究定位为发展可靠不确定性量化工具与概念理解的起点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2484,7 +2496,11 @@
             "heading": "",
             "text": "Traditional methods plan feasible paths for multiple agents in the stochastic environment. However, the methods' iterations with the changes in the environment result in computation complexities, especially for the decentralized agents without a centralized planner.\n\nAlthough reinforcement learning provides a plausible solution because of the generalization for different environments, it struggles with enormous agent-environment interactions in training.\n\nHere, we propose a novel centralized training with decentralized execution method based on multi-agent reinforcement learning, which is improved based on the idea of model predictive control. In our approach, agents communicate only with the centralized planner to make decentralized decisions online in the stochastic environment.\n\nFurthermore, considering the communication constraint with the centralized planner, each agent plans feasible paths through the extended observation, which combines information on neighboring agents based on the distance-weighted mean field approach.\n\nInspired by the rolling optimization approach of model predictive control, we conduct multi-step value convergence in multi-agent reinforcement learning to enhance the training efficiency, which reduces the expensive interactions in convergence.\n\nExperiment results in both comparison, ablation, and real-robot studies validate the effectiveness and generalization performance of our method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a multi-agent reinforcement learning approach for multi-UAV obstacle-avoidance pathfinding in stochastic environments, using centralized training with decentralized execution and ideas from model predictive control. Online, agents communicate only with a centralized planner. Each plans using an extended observation that summarizes neighboring-agent information through a distance-weighted mean-field approach, addressing communication constraints. Multi-step value convergence is used during training; the authors say it reduces costly interactions needed for convergence. Comparison, ablation, and real-robot studies are reported as validating the method’s effectiveness and generalization performance.",
+          "zh": "本文提出一种用于随机环境中多无人机避障路径规划的多智能体强化学习方法，采用集中训练、分散执行，并结合模型预测控制思路。在线决策时，各无人机仅与中央规划器通信；每个智能体利用扩展观测，其中邻机信息按距离加权的均场方法汇总，以应对通信约束。训练中采用多步价值收敛，作者称其可减少收敛所需的昂贵交互。对比、消融和真实机器人实验结果支持作者关于方法有效性与泛化表现的主张。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
