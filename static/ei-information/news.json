@@ -959,7 +959,11 @@
             "heading": "",
             "text": "Mobile legged robots offer unique advantages for on-site construction, including the ability to traverse unstructured terrain, climb stairs, and operate independently between spatially separated work zones.\n\nThis paper presents a proof-of-concept system for autonomous brick stacking using a Boston Dynamics Spot quadrupedal robot equipped with a manipulator arm. The system operates between a supply area and an assembly area, using AprilTag fiducials for localization and autowalk missions for navigation.\n\nTarget brick positions and orientations are specified in CAD software and exported directly for robotic execution. We evaluate placement accuracy through ten repeated assemblies of a curved four-layer wall comprising 14 wooden bricks.\n\nResults show mean translation errors below 10 mm and mean yaw errors below 1.5 degrees, while the overall RMSE across all runs is 27.72 mm (translation) and 2.06 degrees (rotation).The system was also tested outdoors with stairs between the two areas. The workflow is modular and easily extendable to different wall geometries."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a proof-of-concept system in which a Boston Dynamics Spot quadruped with a manipulator autonomously moves between supply and assembly areas to stack bricks. It uses AprilTags for localization, autowalk missions for navigation, and CAD-exported target poses. Accuracy was evaluated over ten assemblies of a curved, four-layer wall made from wooden bricks. The authors report mean translation errors below 10 mm and mean yaw errors below 1.5 degrees, and also provide overall RMSE values. Outdoor testing included stairs between the areas.",
+          "zh": "论文介绍一种概念验证系统：Boston Dynamics Spot 四足机器人搭载机械臂，在供料区与装配区之间自主搬运并堆放砖块。系统利用 AprilTag 定位、自动行走任务导航，并从 CAD 导出目标位置和朝向。研究以木砖搭建弯曲四层墙，重复装配十次评估精度；报告称平均平移误差低于 10 毫米、平均偏航误差低于 1.5 度，并另给出所有运行的整体均方根误差。系统还在两区之间有楼梯的室外环境中测试，工作流程可扩展至不同墙体几何形状。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -990,7 +994,11 @@
             "heading": "",
             "text": "Differences in hand geometry, joint parameterization, and kinematic topology pose challenges for cross-embodiment dexterous grasp generation. However, spatial relations among links alone are insufficient to fully capture the hand's kinematic topology.\n\nWe propose DexGraspFlow, a conditional link-level $\\mathrm{SE}（3）$ flow-matching framework integrating geometric relations and kinematic topology. The framework encodes local object geometry, link geometry, and current poses.\n\nA dual-stream DiT models link--link coordination and link--object interaction, while attention biases derived from kinematic-tree distances provide explicit structural information for modeling evolving geometric interactions.\n\nThe model jointly learns translational and rotational velocity fields, integrates them to generate link poses, and recovers joint configurations through inverse kinematics. Additionally, inference-time palm-orientation guidance enables controllable grasp generation without retraining.\n\nAcross three robotic hands and 30 object--hand pairs, DexGraspFlow achieves a 95.33\\% average simulation success rate, with an average generation latency, including inverse kinematics, approximately 49\\% lower than that of a state-of-the-art baseline.\n\nFurther experiments demonstrate zero-shot adaptability to seven finger-removal variants and palm-orientation control. A model trained on demonstrations for the deployed hand achieves a 91\\% success rate over 100 real-robot grasping trials, supporting the framework's applicability to physical grasp execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes DexGraspFlow, a conditional SE(3) flow-matching framework for generating dexterous grasps across different robotic hands. It combines object and link geometry, current poses, and kinematic topology. A dual-stream DiT models link coordination and link-object interaction, with attention biases based on kinematic-tree distances. The model generates link poses and recovers joint configurations through inverse kinematics; palm orientation can be guided at inference. The authors report simulation results across three hands and 30 object-hand pairs, as well as zero-shot, orientation-control, and real-robot trial results.",
+          "zh": "论文提出 DexGraspFlow，一种面向不同机器人手的条件式 SE(3) 流匹配框架，将局部物体与连杆几何、当前姿态及运动学拓扑结合建模。双流 DiT 处理连杆间协调和连杆与物体的交互，并利用运动学树距离提供注意力偏置；模型生成连杆姿态，再通过逆运动学恢复关节配置。推理时可引导掌心朝向。作者报告其在三种机械手、30 组物体与手组合上的仿真成功率，以及相对基线的生成延迟；另报告零样本适应、朝向控制和真实机器人抓取试验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1021,7 +1029,11 @@
             "heading": "",
             "text": "We present Kamino, a GPU-based physics solver for massively parallel simulations of heterogeneous highly-coupled mechanical systems.\n\nImplemented in Python using NVIDIA Warp and integrated into the Newton framework, it enables the application of data-driven methods, such as large-scale reinforcement learning, to complex robotic systems that exhibit strongly coupled kinematic and dynamic constraints such as kinematic loops.\n\nThe latter are often circumvented by approximating the system's topology as a kinematic tree, and incorporating explicit loop-closure constraints or so-called mimic joints. Kamino aims at alleviating this burden by natively supporting these types of couplings.\n\nMoreover, Kamino supports heterogeneous worlds, allowing for batched simulation of structurally diverse robots on a single GPU. At its core lies a state-of-the-art constrained optimization algorithm based on ADMM, which computes constraint forces by solving the constrained rigid multi-body forward dynamics transcribed as a nonlinear complementarity problem.\n\nThis leads to high-fidelity simulations that resolve contact dynamics without resorting to approximate models that simplify or convexify the problem. We demonstrate RL policy training on a biped with six nested kinematic loops, generating a feasible walking policy while simulating $4{,}096$ parallel environments on a single GPU."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Kamino, a GPU-based solver for massively parallel simulation of heterogeneous, strongly coupled mechanical systems. Implemented in Python with NVIDIA Warp and integrated into Newton, it natively supports couplings such as kinematic loops and batches structurally diverse robots on one GPU. Its core is an ADMM-based constrained optimization algorithm that computes constraint forces by formulating rigid-body forward dynamics as a nonlinear complementarity problem. The authors describe contact dynamics simulation and demonstrate reinforcement-learning training of a biped with six nested kinematic loops across 4,096 parallel environments on one GPU.",
+          "zh": "论文介绍 Kamino，一种基于 GPU 的刚体多体物理求解器，面向大规模并行、异构且强耦合的机械系统仿真。它以 Python、NVIDIA Warp 实现并集成至 Newton 框架，原生支持运动学环等约束，也允许在单个 GPU 上批量模拟结构不同的机器人。其核心采用基于 ADMM 的约束优化算法，将刚体前向动力学表述为非线性互补问题以计算约束力。作者称该方法可解析接触动力学，并展示了在单 GPU 的 4,096 个并行环境中，为具有六个嵌套运动学环的双足机器人训练强化学习行走策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
