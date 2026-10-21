@@ -128,7 +128,11 @@
             "heading": "",
             "text": "We study multi-robot motion planning in a polygonal environment with polygonal robots. The setting of the problem consists of a polygonal domain $\\mathcal{W}$ with $n$ vertices and $k$ robots $R_1,\\dots,R_k$ translating in $\\mathcal{W}$ each of which is represented by a polygon of constant complexity.\n\nGiven a source configuration $\\mathbf{s}$ and a target configuration $\\mathbf{t}$ of the robots in $\\mathcal{W}$, the goal of the problem is to find a collision-free motion plan from $\\mathbf{s}$ to $\\mathbf{t}$ that is shortest with respect to some cost function.\n\nWe present the first fully polynomial-time approximation schemes (FPTAS) for motion planning with any fixed number $k$ of robots, under the min-sum objective, the min-max objective, and the min-makespan objective.\n\nHere, the min-sum variant aims to minimize the total traveling distance of all robots, the min-max variant aims to minimize the maximum traveling distance of a single robot, and the min-makespan variant aims to minimize the total time cost under the assumption that all robots move with a maximum speed $1$.\n\nThe algorithm directly generalizes to the problem in any fixed dimension $d$, with a polytope environment and polytope robots.\n\nOur result settles an open question of Agarwal, Halperin, Sharir, Steiger [SODA'24] and Agarwal, Holmgren, Steiger [SODA'26], who gave an FPTAS for $k=2$ unit-square robots and a bicriteria-approximation algorithm for a fixed number $k$ of unit-square or unit-disk robots, respectively. Compared to the previous results, our algorithm is substantially simpler."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies collision-free motion planning for a fixed number of polygonal robots in polygonal environments. It presents fully polynomial-time approximation schemes for minimizing total travel distance, the maximum distance traveled by any one robot, and total time assuming a maximum speed of one. The authors state that the algorithm extends to fixed-dimensional settings with polytope environments and robots, settles an open question raised by prior work, and is substantially simpler than previous results.",
+          "zh": "论文研究多边形环境中固定数量多边形机器人的无碰撞路径规划，提出适用于任意固定机器人数量的全多项式时间近似方案，分别优化总行驶距离、单个机器人最大行驶距离及最大速度为1时的总时间成本。作者称，算法可推广到固定维度的多面体环境与机器人，并解决了先前工作提出的开放问题；相较既有结果，算法更简单。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -159,7 +163,11 @@
             "heading": "",
             "text": "Collaborative perception enables agents to retrieve the scene semantics and geometry beyond the field of view of any individual agent. This broader scene understanding enhances transportation safety and improves efficiency in multi-robot systems.\n\nHowever, existing collaborative semantic occupancy methods rely on dense 3D voxel annotations and are limited to recognizing objects within a predefined set of semantic classes. To overcome these limitations, we present CoGaussian, an open-vocabulary Gaussian-based collaborative semantic occupancy prediction framework.\n\nCoGaussian represents a scene as a set of foundation model-aligned sparse 3D Gaussians, which serve as a compact representation for communicating and fusing geometric and semantic information across multiple agents.\n\nOn the Semantic-OPV2V benchmark, our method outperforms existing open-vocabulary single-agent approaches, highlighting the effectiveness of open-vocabulary collaborative scene understanding."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CoGaussian, an open-vocabulary Gaussian-based framework for collaborative semantic occupancy prediction. It is intended to address the reliance of existing methods on dense 3D voxel annotations and predefined semantic classes. CoGaussian represents scenes as sparse 3D Gaussians aligned with foundation models, providing a compact representation for communicating and fusing geometry and semantics across agents. On the Semantic-OPV2V benchmark, the authors report that their method outperforms existing open-vocabulary single-agent approaches.",
+          "zh": "论文提出 CoGaussian，一种开放词汇的高斯表示协同语义占用预测框架，旨在缓解现有方法依赖稠密三维体素标注、只能识别预设语义类别的限制。该方法以与基础模型对齐的稀疏三维高斯表示场景，用于多个智能体间几何与语义信息的通信和融合。作者报告，在 Semantic-OPV2V 基准上，该方法优于现有开放词汇单智能体方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
