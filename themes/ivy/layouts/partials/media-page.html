@@ -48,10 +48,12 @@
       {{ $rating := index . 6 }}
       {{ $markedAt := index . 11 }}
       {{ $year := replaceRE "^([0-9]{4}).*" "$1" $markedAt }}
+      {{ $cover := printf "images/douban/%s/%s.jpg" $assetKind $subjectID }}
+      {{ $hasCover := fileExists (printf "static/%s" $cover) }}
       <article class="media-card">
         <a class="media-cover-link" href="{{ $link }}" target="_blank" rel="noreferrer">
-          <img class="media-cover" data-src="{{ printf "images/douban/%s/%s.jpg" $assetKind $subjectID | relURL }}" loading="lazy" decoding="async" alt="{{ $title }}" width="150" height="220">
-          <span class="media-cover media-cover-fallback" hidden aria-label="{{ $title }}">
+          {{ if $hasCover }}<img class="media-cover" data-src="{{ $cover | relURL }}" loading="lazy" decoding="async" alt="{{ $title }}" width="150" height="220">{{ end }}
+          <span class="media-cover media-cover-fallback" {{ if $hasCover }}hidden{{ end }} aria-label="{{ $title }}">
             <span class="media-cover-fallback-kicker">{{ if eq $kind "阅读" }}READING{{ else }}WATCHING{{ end }}</span>
             <strong>{{ $title }}</strong>
             <span class="media-cover-fallback-line"></span>

@@ -45,6 +45,9 @@ jobs:
           hugo-version: 0.119.0
           # extended: true
 
+      - name: Test Douban cover handling
+        run: python3 -m unittest discover -s .github/tests -v
+
       - name: Build
         run: |
           python3 .github/cache-douban-posters.py
