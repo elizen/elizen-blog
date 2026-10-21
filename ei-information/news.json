@@ -1201,7 +1201,11 @@
             "heading": "",
             "text": "History-dependent robotic manipulation requires task context and interaction history, as the current observation alone is insufficient to determine the next action. Hierarchical frameworks use task memory for high-level subgoal reasoning and low-level policies for execution.\n\nHowever, memory updates require accurate completion assessment: similar observations may correspond to different execution phases, and prematurely recording completion can mislead subsequent subgoal reasoning. We present EventSync, a hierarchical framework that coordinates task reasoning and action execution through event-driven memory updates.\n\nA vision-language model generates subgoals from task plans and interaction history, while a vision-language-action model executes them. A lightweight Event Monitor combines visual observations with end-effector trajectories to determine whether the current subgoal is complete.\n\nThe framework records the current subgoal in its completed-subgoal history and triggers subsequent reasoning only after obtaining completion evidence. With visual history in the executor, EventSync achieves 64.5% overall success on RoboMME, exceeding the best baseline reported in the benchmark by 20.0 percentage points.\n\nFurther analysis shows that this update mechanism helps build a reliable completed-subgoal history. Experiments on four real-robot tasks with different memory requirements validate the framework's effectiveness in real-world robotic manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EventSync for history-dependent robotic manipulation, where the current observation alone may not determine the next action. A vision-language model proposes subgoals from plans and interaction history, a vision-language-action model executes them, and an event monitor uses visual observations and end-effector trajectories to assess completion. Memory is updated only after completion evidence. With visual history in the executor, the framework reports 64.5% overall success on RoboMME, 20.0 percentage points above the benchmark’s best reported baseline. Experiments on four real-robot tasks are also reported.",
+          "zh": "文章提出 EventSync，用于处理仅凭当前观察无法确定下一步动作的历史依赖型机器人操作。框架由视觉语言模型根据任务计划和交互历史生成子目标，视觉语言动作模型执行，并由轻量事件监视器结合视觉观察与末端执行器轨迹判断子目标是否完成；只有取得完成证据后才更新已完成子目标历史并触发后续推理。在 RoboMME 上，加入视觉历史的执行器取得 64.5% 总体成功率，比该基准报告的最佳基线高 20.0 个百分点；四项真实机器人任务实验也用于验证其实际操作效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1232,7 +1236,11 @@
             "heading": "",
             "text": "Humanoid face robots can now move their lips in sync with speech and show detailed facial expressions. Give such a robot the face of a real person and drive it with generated speech, and you get a new kind of presentation attack: a face that talks and reacts in front of the camera, recorded as a real object with no edited pixel.\n\nWe call this a RoboFake and ask whether current defenses are ready for it. We test three public face presentation attack detection (PAD) models and six public deepfake detectors on video of a physical lip-syncing face robot, on a synthesized video of the same robot, and on rendered robot faces.\n\nThresholds are fixed on human data (BPCER 5% on FaceForensics++), and every result is compared with real human faces processed the same way as the robot videos and turned to the same head angle.\n\nA small mobile PAD model detects every physical robot frame (APCER 0%) and is not affected by compression, but its BPCER on processed human video rises to 14%; the two PAD models trained on CelebA-Spoof miss the robot in the direct capture, and one of them also misses most panel frames.\n\nAmong the deepfake detectors, three flag almost every robot frame and two fewer than 7%; masking shows that the response comes from the face but does not track synthesis, and JPEG compression pushes most robot frames below the threshold for some detectors.\n\nOur results suggest that current models catch today's robots because their faces do not look human, not because they recognize the attack. We state three testable hypotheses about realistic, interactive RoboFakes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper calls a humanoid face robot driven by a real person’s likeness a “RoboFake” and evaluates three public face presentation attack detectors and six deepfake detectors. Tests cover physical robot video, synthesized video, and rendered faces, with thresholds fixed on human data and comparisons to similarly processed human faces at matching head angles. Some detectors flag most robot frames but show higher error on human video, while others miss robots; compression also changes some results. The authors suggest current models may detect nonhuman appearance rather than the attack itself and offer testable hypotheses about more realistic, interactive RoboFakes.",
+          "zh": "文章将由真实人物面孔驱动、能在镜头前说话和反应的人形面部机器人称为 RoboFake，并评测三种公开人脸呈现攻击检测模型和六种深伪检测器。评测涵盖实体机器人视频、合成视频及渲染面孔，阈值依据人类数据固定，并与相同处理和头部角度的人脸比较。结果显示，部分检测器能标记多数机器人画面，但对人类视频误报较高，另一些会漏检；压缩也会改变部分检测器的结果。作者认为现有模型可能是在识别机器人面孔不像人类，而非识别攻击本身，并提出关于更逼真、可交互 RoboFake 的可检验假设。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1263,7 +1271,11 @@
             "heading": "",
             "text": "A planner using a learned world model can improve its predicted outcome while choosing a worse action. We study when expected free energy (EFE) can help decide how much computation to spend on a plan. An EFE-inspired objective combines goal distance with disagreement among stochastic predictions.\n\nWe test candidate scoring, stopping, and online predictor updates separately. Stopping when elite cost stalls reduces refinement on tasks whose success plateaus with depth, with mean success close to fixed-depth references. At the larger tested weights, rewarding disagreement lowers success with a frozen model.\n\nPenalizing it helps at some task and weight settings but harms others. When training data omit a region needed to reach the goal, online updates recover part of the resulting loss. The tested cost-stall rule can fail when further optimization exploits model errors, because predicted cost keeps falling after task success peaks.\n\nCost progress can guide computation on a plateau, but protecting performance after a peak requires information about the consequences of the chosen actions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether expected free energy (EFE) can control test-time computation for planning with a learned latent world model. It separately evaluates candidate scoring, stopping, and online predictor updates. Stopping refinement when elite cost stalls reduces computation on tasks whose success plateaus with depth, with mean success near fixed-depth references. With a frozen model, rewarding prediction disagreement at larger tested weights lowers success; penalizing disagreement helps in some settings and harms others. Online updates recover part of the loss when training data omit a region needed to reach the goal. The authors note that cost-stall stopping can fail when optimization exploits model errors.",
+          "zh": "文章研究期望自由能（EFE）能否决定潜在世界模型规划应投入多少测试时计算，并分别测试候选方案评分、停止规则和在线预测器更新。实验中，当精英方案代价停滞时停止细化，可减少成功率随规划深度趋于平台任务上的计算，平均成功率接近固定深度参考。冻结模型时，在较大测试权重下奖励预测分歧会降低成功率；惩罚分歧对部分任务和权重有帮助，对另一些则有害。训练数据缺少通往目标所需区域时，在线更新能挽回部分损失。作者指出，若优化持续利用模型误差，代价停滞规则可能失效。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
