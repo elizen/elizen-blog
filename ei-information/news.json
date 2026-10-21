@@ -322,7 +322,11 @@
             "heading": "",
             "text": "Reasoning-augmented vision-language-action (VLA) driving models can perceive and reason about safety-critical hazards yet fail to translate that evidence into safe actions. We characterize this failure as a perception-action binding gap: hazard information is available inside the model but exerts insufficient control over trajectory generation.\n\nUsing matched simulated counterfactuals and logged driving replay, we show that in-path hazards are actually encoded in the visual representation, but longitudinal plans are dominated by ego-speed history and respond only weakly to hazard proximity or the model's own reasoning trace.\n\nFurther analysis shows that the trajectory generator is capable of braking but sometimes fails to do so due to the perception-action binding gap. Without retraining or modifying any weights, we inject a hazard-conditioned energy into the frozen flow-matching sampler of Alpamayo-1.5, restoring the missing coupling at generation time.\n\nWith exact obstacle geometry, guidance cuts footprint intrusion from 58.1% to 14.5% and recovers safe braking whenever sufficient stopping distance remains, eliminating collisions entirely in our braking-relevant closed-loop battery. It also reverses the diagnosed dependence of the plan, from tracking ego speed to responding to obstacle range.\n\nThese results separate hazard perception from hazard control in driving VLAs, show that unsafe behavior can arise even when the model has both the evidence and the ability to act on it, and propose a simple fix for bridging this binding gap."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a perception-action binding gap in reasoning-augmented vision-language-action driving models: hazards may be represented and reasoned about without sufficiently affecting trajectory generation. In simulated counterfactuals and logged driving replay, the authors report that longitudinal plans respond more to ego-speed history than to hazard proximity or reasoning traces. They inject hazard-conditioned guidance into the frozen Alpamayo-1.5 sampler without changing weights. With exact obstacle geometry, they report reduced footprint intrusion and safe braking when stopping distance permits; collision elimination is limited to their braking-relevant closed-loop battery.",
+          "zh": "论文指出，推理增强型视觉语言动作驾驶模型可能识别并推理安全隐患，却未将其充分用于轨迹控制。作者将此称为感知—动作绑定缺口，并报告在仿真反事实和记录驾驶回放中，纵向规划更受自车速度历史影响。作者在冻结的 Alpamayo-1.5 采样器中注入风险条件引导，无需改权重；在精确障碍物几何信息下，报告侵入率下降，并在制动距离充足时恢复安全制动。闭环结果限于文中所述的制动相关测试。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -353,7 +357,11 @@
             "heading": "",
             "text": "Pluralistic alignment requires AI systems to learn from diverse populations whose preferences may reflect heterogeneous or even conflicting objectives, and to personalize their behavior to individual users.\n\nExisting approaches in pluralistic alignment often assume access to annotator identities and rely on powerful pretrained representations to model individual preference variations.\n\nWe propose Preference-PCA Pluralistic Learning (P3L), a novel framework for pluralistic alignment that jointly learns trajectory embeddings and the shared basis of preference directions via PCA decomposition from heterogeneous crowd feedback without requiring annotator identities.\n\nAt test time, our approach enables rapid and accurate personalized reward learning and downstream policy optimization.\n\nExperiments across multiple embodied control tasks demonstrate that P3L enables steerable personal alignment that generalizes beyond the offline dataset to out-of-distribution new users and attains competitive RL and test performance, while substantially reducing computational cost and supporting variable adaptation query budgets."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes P3L, a pluralistic alignment framework that learns trajectory embeddings and a shared basis of preference directions from heterogeneous crowd feedback without annotator identities. The authors say it supports rapid personalized reward learning and downstream policy optimization at test time. Experiments across multiple embodied control tasks reportedly show generalization beyond the offline dataset to out-of-distribution new users, competitive RL and test performance, lower computational cost, and support for variable adaptation query budgets. The abstract gives no specific task results or real-world deployment evidence.",
+          "zh": "论文提出 P3L，一种从异质群体反馈中学习偏好方向共享基底与轨迹嵌入的多元对齐框架，不需要标注者身份信息。作者称，该方法可在测试时快速学习个性化奖励并优化下游策略。多个具身控制任务的实验显示，P3L 的个性化对齐可推广至离线数据之外的新用户，并取得有竞争力的强化学习和测试表现，同时降低计算成本，支持不同的适应查询预算。摘要未给出具体任务、数值或真实部署结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -384,7 +392,11 @@
             "heading": "",
             "text": "Generalizing manipulation policies across robot embodiments remains difficult because standard policies tie the interactions needed for a task to the actions of a particular robot.\n\nWe study zero-shot cross-embodiment manipulation, where a policy trained on source embodiments must be deployed on a structurally different target embodiment without additional task demonstrations.\n\nWe introduce Kinematic Interaction Transfer across Embodiments (KITE), which decouples manipulation into embodiment-agnostic interaction prediction and embodiment-specific kinematic decoding, connected through a learned representation of interaction intent based on contact patterns.\n\nAn interaction policy is trained to predict the intent using demonstration data only collected on a source robot, and shared across morphologically different target robots. A kinematic decoder realizes these intents by learning from synthetic data generated from each embodiment's kinematic model.\n\nThrough such decoupling, KITE can robustly transfer learned skills to a new embodiment given only its kinematic model, without recollecting any task-specific demonstration data. We evaluate KITE on four manipulation tasks in simulation and the real world spanning transfer between parallel grippers, dexterous hands, and composite embodiments.\n\nKITE successfully achieves zero-shot transfer to structurally different target embodiments, and consistently outperforms state-of-the-art baselines. Project website: https://kite-manip.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces KITE for zero-shot transfer of manipulation skills to structurally different robot embodiments. It separates embodiment-agnostic interaction-intent prediction from embodiment-specific kinematic decoding. The interaction policy is trained only on demonstrations from a source robot, while decoders learn from synthetic data generated using each embodiment's kinematic model. The authors report that transfer requires only the target's kinematic model, without task-specific demonstrations. Across four manipulation tasks in simulation and the real world, KITE reportedly transfers among parallel grippers, dexterous hands, and composite embodiments, outperforming evaluated baselines.",
+          "zh": "论文提出 KITE，用于将操作技能零样本迁移到结构不同的机器人。方法把与具体形态无关的交互意图预测，与依赖机器人形态的运动学解码分开：交互策略仅用源机器人的示范训练，解码器则用各机器人运动学模型生成的合成数据学习。作者称，目标机器人只需提供运动学模型，无需额外任务示范即可迁移技能。在四项仿真及真实世界操作任务中，KITE 实现了跨夹爪、灵巧手和复合形态迁移，并持续优于所比较的基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -415,7 +427,11 @@
             "heading": "",
             "text": "Loco-manipulation has recently shown promising capabilities; however, achieving high-precision control, managing the high-dimensional action space induced by many degrees of freedom (DoFs), and fully exploiting the inherent redundancy of whole-body systems remain challenging.\n\nIn this paper, we propose a novel whole-body control framework that effectively addresses these challenges by decomposing the complex loco-manipulation problem into partial reference motion generation and low-level imitation control.\n\nWe introduce a new Kinematic Normalizing Flow (KNF) model, trained on a large-scale kinematic dataset, that generates diverse partial kinematic references. A high-level controller is then trained to navigate the KNF's latent space to exploit redundant solutions, while a low-level controller learns dynamically consistent motion execution.\n\nWe validate our approach on the quadrupedal robot equipped with a six-DoF robotic arm. In simulation, PAKE outperforms the evaluated baselines in tracking accuracy and feasible workspace coverage on the 4,000-target benchmark. For hardware deployment, we evaluate the system over 24 episodes across 8 different mobile loco-manipulation tasks.\n\nThe system achieves end-effector pose-tracking errors of 4.5 cm and 0.14 rad, while maintaining accurate locomotion tracking with linear and angular velocity errors of 0.1 m/s and 0.01 rad/s, respectively.\n\nOur method represents a practical and powerful solution for accurate and generalized whole-body loco-manipulation in high-DoF robotic systems, with promising potential for diverse downstream robotic tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes PAKE, a whole-body control framework that divides loco-manipulation into partial reference-motion generation and low-level imitation control. Its Kinematic Normalizing Flow model generates varied partial references from a large kinematic dataset; a high-level controller explores redundant solutions in latent space, while a low-level controller learns dynamically consistent execution. The authors evaluate it on a quadruped with a six-DoF arm. In simulation, PAKE outperforms evaluated baselines on tracking accuracy and feasible workspace coverage for a 4,000-target benchmark. Hardware evaluation covers 24 episodes across eight tasks, with reported end-effector and locomotion tracking errors.",
+          "zh": "论文提出 PAKE 全身控制框架，将移动操作分为部分参考动作生成和低层模仿控制。其运动学正规化流模型从大规模运动学数据中生成多样的部分运动学参考，高层控制器在潜在空间中搜索冗余解，低层控制器学习动态一致的动作执行。作者在配备六自由度机械臂的四足机器人上验证方法：仿真中，PAKE 在 4,000 目标基准的跟踪精度和可行工作空间覆盖方面优于所测基线；硬件评估覆盖 8 项任务的 24 个回合，并报告末端位姿及行走跟踪误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
