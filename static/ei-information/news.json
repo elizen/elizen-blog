@@ -2869,7 +2869,11 @@
             "heading": "",
             "text": "Long-horizon robot manipulation requires policies to coordinate multiple intermediate subgoals and determine when to advance between them. However, most imitation learning methods are trained solely on task-level demonstrations, without explicitly modeling the active subgoal or its execution progress.\n\nThis limitation is further exacerbated by the scarcity of subgoal-level supervision in standard robot learning datasets, which makes explicit subgoal-conditioned control and online transition modeling difficult to learn.\n\nTo address this issue, this paper proposes Subgoal-Aware Diffusion Policy (SADP), a framework that leverages foundation models to autonomously generate subgoal-annotated demonstrations and trains diffusion policies on these datasets.\n\nSADP structures policy execution around explicit natural-language subgoals by conditioning action generation on both task-level and subgoal-level descriptions. A lightweight auxiliary head further predicts a continuation score that drives online subgoal switching and supports stage-level progress monitoring.\n\nExperiments in RLBench simulations and real-world evaluations on a UR5e robot demonstrate that SADP maintains competitive task performance while exposing temporally aligned subgoal-level execution signals for progress monitoring.\n\nThese results show that explicit subgoal progression can be incorporated into a diffusion policy without degrading task-level performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Subgoal-Aware Diffusion Policy (SADP), using foundation models to generate subgoal-annotated demonstrations and conditioning action generation on task-level and subgoal-level language descriptions. An auxiliary head predicts a continuation score for online subgoal switching and stage-level progress monitoring. The authors report evaluations in RLBench simulations and on a real UR5e robot, where SADP maintains competitive task performance while exposing temporally aligned subgoal signals. They claim explicit subgoal progression can be incorporated without degrading task-level performance.",
+          "zh": "论文提出子目标感知扩散策略 SADP，利用基础模型自动生成带子目标标注的示范数据，并以任务级和子目标级自然语言描述共同条件化动作生成。辅助预测头估计继续执行分数，用于在线切换子目标和监测阶段进度。作者报告，在 RLBench 仿真及 UR5e 真实机器人评估中，该方法保持有竞争力的任务表现，并提供与时间对齐的子目标执行信号；结果表明加入显式子目标推进未降低任务级性能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2900,7 +2904,11 @@
             "heading": "",
             "text": "Digital twins are increasingly used in robotics to simulate interactions, predict action outcomes, and support planning. However, constructing accurate digital twins requires precise estimates of physical properties such as mass, friction, and center of mass, which are often difficult to obtain in real-world environments.\n\nWe propose probabilistic digital twins, which represent uncertain physical properties as probability distributions rather than fixed values. By simulating actions across these distributions, the twin predicts a range of possible outcomes and their likelihoods.\n\nThese probabilistic simulations can guide both human and robot actions by identifying actions that are effective despite physical uncertainty. We demonstrate this framework through human-robot interaction scenarios, including interfaces that communicate simulated outcomes to users and robot planning strategies that explicitly account for uncertainty."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes probabilistic digital twins that represent uncertain physical properties, such as mass, friction, and center of mass, as probability distributions rather than fixed values. By simulating actions across those distributions, the twin predicts possible outcomes and their likelihoods. The framework is intended to guide human and robot actions toward options that remain effective under physical uncertainty. The authors demonstrate it in human-robot interaction scenarios, including interfaces that communicate simulated outcomes and robot planning strategies that explicitly account for uncertainty; the abstract reports no quantitative evaluation.",
+          "zh": "论文提出概率物理数字孪生，将质量、摩擦和质心等不确定物理属性表示为概率分布，而非固定值。通过在这些分布上模拟动作，系统预测多种可能结果及其可能性，并据此识别在物理属性不确定时仍有效的行动。作者以人机交互场景展示该框架，包括向用户传达模拟结果的界面，以及明确考虑不确定性的机器人规划策略；摘要未给出量化评估结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2931,7 +2939,11 @@
             "heading": "",
             "text": "Collision detection for complex non-convex objects is a bottleneck in physics simulation, virtual reality, and robotics. Inner sphere trees (ISTs) answer proximity and penetration queries efficiently, but their greedy leaf-sphere construction is sequential and computationally expensive, which limits both large-scale preprocessing and runtime use.\n\nIn this work, we present ML-IST, a machine-learning-based method that reformulates leaf-sphere generation as a single-shot set-prediction problem: a network predicts a fixed set of inscribed sphere candidates from multichannel voxel geometry, differentiable coverage feedback corrects the coarse prediction and fills residual gaps at finer scales, and a lightweight geometric projection enforces validity.\n\nAveraged over the test set, a single-GPU implementation of ML-IST reduces mean leaf-generation time by a factor of $2.0$--$2.6$ over single-core CPU construction across target capacities of 64--512 spheres, and qualitative results on complex models show multiscale sphere distributions that follow principal volumes and slender features.\n\nWe further integrate ML-IST into the Jolt Physics and Bullet engines; in an alpha-puzzle benchmark it reaches 55.89~FPS, the highest among the compared representations (conventional IST, GImpact, and convex decomposition).\n\nThese results support learned leaf generation as a practical component for fast, runtime construction of detailed collision representations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ML-IST, a machine-learning method for generating leaves of inner sphere trees. A network predicts a fixed set of candidate spheres from multichannel voxel geometry; differentiable coverage feedback fills remaining gaps at finer scales, and geometric projection enforces validity. Averaged over the test set, the authors report a single-GPU implementation reduces mean generation time by a factor of 2.0–2.6 compared with single-core CPU construction. Integrated into Jolt Physics and Bullet, it reaches 55.89 FPS in an alpha-puzzle benchmark, the highest among the compared representations.",
+          "zh": "论文提出 ML-IST，以机器学习加速内切球树叶球生成：网络从多通道体素几何一次预测固定数量的候选球，再以可微覆盖反馈补足细尺度空缺，并通过几何投影保证有效性。作者报告，在测试集上，单 GPU 实现相较单核 CPU 的平均生成时间减少至原来的约二分之一至五分之二；在 Jolt Physics 和 Bullet 的 alpha 拼图基准中达到 55.89 FPS，为所比较表示中最高。结果支持其用于快速构建碰撞表示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2962,7 +2974,11 @@
             "heading": "",
             "text": "Pedipulating a freestanding articulated object requires controlling its pose and internal configuration while maintaining balance. We demonstrate this capability by autonomously solving a giant Rubik's Cube with a quadruped using only its feet. The task demands repeated precise interactions, since unintended layer motion can invalidate subsequent operations.\n\nWe develop an onboard RGB-D perception pipeline that estimates the cube's metric pose and its full color state from partial views acquired through locomotion and flipping. A planner converts the computed solve into robot-executable skill sequences.\n\nLearned whole-body skills reorient the cube while preserving its layer configuration and turn its layers with one foot pinning the cube as the other pushes. We train these skills using reinforcement learning with privileged observations and distill them into policies that map onboard depth and proprioception to joint targets.\n\nThe deployed policies tolerate variations in relative robot-cube placement and recover from external disturbances. The system completes three autonomous hardware solves, each about 30 steps over 8-9 minutes. These results show that combining onboard perception with coordinated pedipulation enables a quadruped to complete extended multi-step physical tasks.\n\nAdditional material can be found at: https://leggedrobotics.github.io/rubik-skills/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper demonstrates a quadruped autonomously solving a giant Rubik’s Cube using only its feet. An onboard RGB-D pipeline estimates the cube’s pose and full color state from partial views gathered during locomotion and flipping; a planner turns the solution into executable skill sequences. Reinforcement learning trains whole-body skills to reorient the cube without changing its layer configuration and to turn layers using one foot to pin and the other to push. The deployed policies tolerate placement variation and disturbances. The authors report three autonomous hardware solves, each about 30 steps and lasting 8–9 minutes.",
+          "zh": "论文展示四足机器人仅用足部自主解开巨型魔方。机载 RGB-D 感知从运动和翻转过程中取得的局部视角估计魔方位姿与完整颜色状态，规划器将解法转换为机器人技能序列。强化学习训练的全身技能包括保持层状态地重定位魔方，以及一足固定、另一足推动转层；技能经蒸馏后由深度和本体感知驱动。作者报告系统完成三次真实硬件自主求解，每次约 30 步、耗时 8 至 9 分钟，并能适应位置变化及外部扰动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
