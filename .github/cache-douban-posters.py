@@ -10,9 +10,11 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 
@@ -40,6 +42,8 @@ def download(job: tuple[str, Path]) -> str:
     url, target = job
     if target.exists() and target.stat().st_size > 1024:
         return "cached"
+    # Do not let Hugo mistake an incomplete cached file for a usable cover.
+    target.unlink(missing_ok=True)
 
     target.parent.mkdir(parents=True, exist_ok=True)
     request = Request(
@@ -62,8 +66,9 @@ def download(job: tuple[str, Path]) -> str:
             temporary.write_bytes(image)
             temporary.replace(target)
             return "downloaded"
-        except Exception:
-            if attempt == 2:
+        except Exception as error:
+            if attempt == 2 or (isinstance(error, HTTPError) and error.code not in (408, 429) and error.code < 500):
+                print(f"Cover failed: {target.parent.name}/{target.stem} URL={url}: {type(error).__name__}: {error}", file=sys.stderr)
                 return "failed"
             time.sleep(0.5 * (attempt + 1))
     return "failed"
@@ -92,7 +97,7 @@ def main() -> None:
         f"{counts['cached']} cached, {counts['failed']} failed"
     )
     if counts["failed"]:
-        raise SystemExit(1)
+        print("Unavailable covers will use the text fallback; continuing site build.", file=sys.stderr)
 
 
 if __name__ == "__main__":

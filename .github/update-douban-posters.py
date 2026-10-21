@@ -9,11 +9,12 @@ Douban image URL while leaving every other CSV field untouched.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import time
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
 
@@ -72,7 +73,12 @@ def official_posters(kind: str) -> dict[str, str]:
     return posters
 
 
-def update_csv(kind: str) -> None:
+def is_official_poster(url: str) -> bool:
+    parsed = urlparse(url)
+    return parsed.scheme == "https" and (parsed.hostname or "").endswith(".doubanio.com")
+
+
+def update_csv(kind: str, previous: Path) -> None:
     csv_path = REPO_ROOT / "data" / "douban" / f"{kind}.csv"
     with csv_path.open(newline="", encoding="utf-8") as source:
         reader = csv.DictReader(source)
@@ -82,18 +88,24 @@ def update_csv(kind: str) -> None:
     if not fieldnames or "id" not in fieldnames or "poster" not in fieldnames:
         raise RuntimeError(f"Unexpected CSV format: {csv_path}")
 
+    previous_path = previous / f"{kind}.csv"
+    previous_posters = {}
+    if previous_path.exists():
+        with previous_path.open(newline="", encoding="utf-8") as source:
+            previous_posters = {row["id"]: row["poster"] for row in csv.DictReader(source)}
+
     posters = official_posters(kind)
     updated = 0
     missing: set[str] = set()
     for row in rows:
         subject_id = row["id"]
-        poster = posters.get(subject_id)
-        if poster:
-            if row["poster"] != poster:
-                row["poster"] = poster
-                updated += 1
-        else:
+        candidates = (posters.get(subject_id, ""), previous_posters.get(subject_id, ""), row["poster"])
+        poster = next((url for url in candidates if is_official_poster(url)), "")
+        if not is_official_poster(posters.get(subject_id, "")):
             missing.add(subject_id)
+        if row["poster"] != poster:
+            row["poster"] = poster
+            updated += 1
 
     with csv_path.open("w", newline="", encoding="utf-8") as target:
         writer = csv.DictWriter(target, fieldnames=fieldnames, lineterminator="\n")
@@ -107,5 +119,9 @@ def update_csv(kind: str) -> None:
 
 
 if __name__ == "__main__":
-    update_csv("movie")
-    update_csv("book")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--previous", type=Path, required=True,
+                        help="Snapshot of the last committed Douban CSV directory")
+    args = parser.parse_args()
+    update_csv("movie", args.previous)
+    update_csv("book", args.previous)

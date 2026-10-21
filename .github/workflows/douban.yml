@@ -24,8 +24,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Delete old Douban files
-        run: rm -rf ./data/douban
+      - name: Preserve previous poster URLs before regenerating data
+        run: |
+          cp -R ./data/douban "${RUNNER_TEMP}/douban-previous"
+          rm -rf ./data/douban
 
       - name: movie
         uses: lizheming/doumark-action@master
@@ -50,7 +52,7 @@ jobs:
         run: sudo chown -R "$(id -u):$(id -g)" ./data/douban
 
       - name: Restore official Douban poster URLs
-        run: python3 .github/update-douban-posters.py
+        run: python3 .github/update-douban-posters.py --previous "${RUNNER_TEMP}/douban-previous"
 
       # 关键一步：提交前先把远端拉平。别人（ei-radar、人工）刚推过也能干净落上去，
       # 不再整条 run 报 non-fast-forward 失败。
