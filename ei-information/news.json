@@ -462,7 +462,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies are commonly deployed with asynchronous inference in real-world settings, where the next action chunk is generated while the robot is still executing the previous one.\n\nBy the time the new chunk is committed, the robot and scene have changed, so the chunk is conditioned on a stale observation and task success drops sharply as this inference delay grows.\n\nGenerating multiple candidate chunks could let newer observations inform the final choice, but existing multi-candidate methods either rank candidates with the stale inference-start observation or repeatedly switch between candidates during execution, which can make the executed action sequence discontinuous.\n\nOur key insight is that inference delay can be used as decision time. While candidate generation is still underway, candidate selection can reuse the VLA itself to choose the complete action chunk that best fits a later observation.\n\nWe propose PACT-VLA, a training-free framework that generates candidates from the inference-start observation and selects one using this pre-commit observation.\n\nIts scoring function, FlowRes, measures the residual between each candidate's implied flow direction and the velocity predicted by the frozen policy under the pre-commit observation, requiring no separate verifier.\n\nA pipelined implementation overlaps observation processing with candidate generation and batches scoring, so selection adds no control-step delay on the evaluated hardware.\n\nAt a four-step delay, PACT-VLA improves average success by 15.0 percentage points over RTC on Kinetix and by 5.2 points over single-candidate asynchronous execution with GR00T N1.7 on LIBERO, and it further improves existing delay-robust methods.\n\nOn three real-robot tasks, it raises average success from 60% to 82% over naive asynchronous execution with the same frozen $\\pi_{0.5}$ checkpoint."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PACT-VLA is a training-free framework for asynchronous robot policies, where action chunks may be based on stale observations. It generates candidates from the inference-start observation, then uses a later pre-commit observation and the frozen policy to select a complete chunk. The authors report higher success on evaluated benchmarks and three real-robot tasks. On the evaluated hardware, the pipelined selection process adds no control-step delay.",
+          "zh": "论文提出无训练框架 PACT-VLA，应对机器人异步推理造成的动作块基于过时观测的问题。它在候选动作生成期间获取较新的提交前观测，并用冻结策略评估候选块，选择更匹配当前状态的一整块动作。作者报告，该方法在所评估的仿真基准和三项真实机器人任务中提高了成功率；选择过程在所测硬件上未增加控制步延迟。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -493,7 +497,11 @@
             "heading": "",
             "text": "Developing coordination policies for complex multi-agent systems relies on either labor-intensive algorithm design or opaque task-specific reinforcement learning.\n\nWith recent advances in autonomous coding agents, we show that policy search directly in code space offers a compelling third path that combines automated optimization with explicit interpretability.\n\nWe investigate a human-directed workflow in which coding agents iteratively propose, implement, evaluate, diagnose, and eventually refine algorithms guided by simulation feedback and explicit correctness verification. We conducted two case studies and found that this workflow robustly outperformed any manually engineered solutions.\n\nOn a challenging map in the 2024 League of Robot Runners competition, a two-day search discovered a policy that exceeds the stronger locally reproduced competition entry by 35.0% on the densest instance and generalizes to unseen map instances.\n\nIn simulated real-world warehouses with irregular lanes, continuous robot geometry, and asynchronous motion, a week-long search discovered an entirely new class of multi-agent pathfinding algorithm that outperforms a calibrated proprietary solution in throughput by 58.9%.\n\nUnder stated assumptions, we further prove that the new algorithm is collision-free and completes, in finite time, every accepted goal that is not withdrawn or replaced.\n\nTogether, the studies show that policy search in code space powered by state-of-the-art coding agents offers a highly competitive path to building real engineering solutions that are both effective and analytically tractable."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates searching for multi-agent pathfinding policies directly in code space, using coding agents to propose, implement, evaluate, diagnose, and refine algorithms under human direction and explicit correctness checks. In two case studies, the authors report that this workflow outperformed manually engineered solutions, including on a competition map and in simulated warehouses. Under stated assumptions, they prove the warehouse algorithm is collision-free and completes accepted goals that are not withdrawn or replaced in finite time.",
+          "zh": "论文考察由编码智能体直接在代码空间搜索多智能体路径规划策略的工作流：智能体提出、实现、评估和改进算法，并由人类指导及明确验证正确性。作者报告，两项案例研究中，该工作流优于人工设计方案；其中包括竞赛地图上的策略搜索和模拟仓库中的新算法。作者还在所述假设下证明，该新算法无碰撞，并能有限时间完成未撤回或替换的已接受目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -524,7 +532,11 @@
             "heading": "",
             "text": "Handheld demonstration devices decouple data collection from the robot, but conventional designs burden the hand with a wrist camera, cables and a pose tracker (SLAM, an IMU, a VR controller, or a fixed external camera that the collector's body occludes), and burden the pipeline with as many data streams to timestamp, synchronise and cross-calibrate.\n\nWe show that a single egocentric camera (USD 122) worn on the collector's head replaces the wrist camera, the pose tracker and their separate streams with one.\n\nIt reads printed fiducials on an electronics-free glove (USD 22) against paper tiles taped around the workspace, giving the 6-DoF gripper pose and the jaw width from the same frames the policy will see; at deployment the same camera rides a low-cost (USD 120) arm beside the robot that mimics the collector's head from the robot's joint state.\n\nAgainst the robot's encoders the labels are accurate to 6.5 mm and 1.6 degrees median with 93-100% frame coverage, and a policy trained on them instead of encoders pays 3% in validation loss.\n\nAdding 194 glove demonstrations to 48 teleoperated episodes lifts rollout success from 10/25 to 17/25, level with 172 teleoperated episodes alone (18/25), and the full co-trained head-camera policy succeeds in 20/25 against 15/25 for the wrist-camera recipe, whose policies drop the object when the goal leaves their view, and 12/25 for a fixed camera."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a demonstration setup in which one head-mounted egocentric camera reads fiducials on an electronics-free glove and paper tiles in the workspace. The same frames provide gripper pose and jaw-width labels, while a camera beside the robot recreates the collector’s viewpoint at deployment. The authors report label accuracy and frame coverage relative to robot encoders, as well as validation loss and task success results for policies trained with glove demonstrations in their experimental setup.",
+          "zh": "论文介绍一种由单个头戴式第一人称相机读取无电子元件手套和工作区纸质标记的示范采集方案。相机画面同时用于估计夹爪位姿和开口宽度，并在部署时由机器人旁的相机复现采集者视角。作者报告了相对于机器人编码器的标注误差、帧覆盖率，以及加入手套示范后的验证损失和任务成功率；这些结果来自论文所述的实验设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
