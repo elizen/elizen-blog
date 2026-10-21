@@ -1262,7 +1262,11 @@
             "heading": "",
             "text": "We introduce flow control of vision-language-action (VLA) models, a simple and effective way to steer VLA actions in real time through generic inputs, such as a keyboard. This method can be used out-of-the-box and does not require retraining or fine-tuning VLAs. It enables relatively crude user inputs to steer a VLA to align with user intent.\n\nFlow control writes the user input into the initial condition of the VLA's flow matching action expert.\n\nBecause the flow is deterministic, integration retains information about the user input while moving it toward the action distribution learned during training, so that the generated actions reflect the user's intent (high fidelity) and stay close to the VLA's own unsteered actions (high conformity).\n\nWe demonstrate that flow control has many desirable properties: （1） flow control accurately and responsively steers robot actions with user inputs, （2） it is robust to suboptimal user inputs, （3） it enables users to steer VLAs to achieve significantly higher success rates and faster task completion, and （4） fine-tuning a VLA on flow control trajectories improves the autonomous policy.\n\nTogether, these results provide a simple and intuitive way for users to help steer VLA actions, increasing task performance. Project page and videos: https://jcykao.github.io/flowcontrol/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces flow control for vision-language-action models: generic inputs such as keyboard commands are written into the initial condition of the flow-matching action expert to steer actions in real time, without retraining or fine-tuning. The authors say the method preserves user intent while keeping actions close to the model’s unsteered outputs. Their demonstrations report robustness to suboptimal inputs, higher task success rates, faster completion, and improved autonomous policies after fine-tuning on flow-control trajectories.",
+          "zh": "论文提出 VLA 模型的 flow control 方法：将键盘等通用用户输入写入流匹配动作专家的初始条件，以便实时引导动作，无需重新训练或微调。作者称，该方法能保留用户意图，同时使动作贴近模型原有输出；演示还显示它可应对次优输入、提升任务成功率并缩短完成时间。作者也报告，用 flow control 轨迹微调可改善自主策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1293,7 +1297,11 @@
             "heading": "",
             "text": "Latent world models let an agent plan in latent space. The planner searches for an action sequence that minimizes a cost, and that cost is often the $\\ell_2$ distance between the predicted terminal latent and the goal latent.\n\nThe latent, however, is partly noise: the regularizer that prevents collapse during world model training promotes variance in the directions carrying no signal. We show that the same regularizer also supplies the structure to prune that noise in the latent.\n\nSIGReg drives the latent marginal to a standard Gaussian at every step, and assuming further that the latent sequence is a Gauss-Markov process, the transition is linear with its covariance pinned by the map itself, $z' \\mid z \\sim \\mathcal{N}(Az,\\, I - AA^\\top)$.\n\nFitting the state dynamics $A$ therefore yields the covariance at no additional cost, and in its eigenbasis each latent direction carries its own uncertainty.\n\nFurthermore, constraining $A$ to be a normal matrix fixes that basis across timesteps, so one eigenbasis measures the uncertainty over an arbitrary number of steps and serves as a stable basis to compute the planning cost on. We then restrict the $\\ell_2$ cost to the $k$-dimensional subspace the state dynamics carry forward with the least uncertainty.\n\nThe correction is post hoc: the encoder, the predictor, the rollout, and the planner are all left untouched, and only a single constrained matrix, $A$, is fit.\n\nWe evaluate across six environments and show large gains on the 2D navigation tasks, TwoRoom and PointMaze, raising success rate over the plain $\\ell_2$ cost by up to $+54.7$ points under a harder planning setting. Code is available at https://github.com/yjang43/lp2."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses noise in latent-space planning, arguing that the regularizer used to prevent representation collapse can also help identify and suppress latent noise. Assuming a Gauss-Markov latent sequence, the authors fit a constrained state-dynamics matrix to estimate uncertainty in each direction, then restrict the planning cost to a lower-uncertainty subspace. This post-hoc correction leaves the encoder, predictor, rollout, and planner unchanged. Across six environments, evaluation reports substantial gains on two-dimensional navigation tasks, with success rates up to 54.7 points higher than the plain ℓ₂ cost in a harder setting.",
+          "zh": "论文研究潜在空间规划中的噪声问题，指出训练世界模型时防止表征坍塌的正则项也可用于识别并削弱潜变量中的噪声。作者假设潜变量序列满足高斯马尔可夫过程，并拟合受约束的状态动力学矩阵，以估计各方向的不确定性；随后将规划代价限制在不确定性较低的子空间。该后处理不改变编码器、预测器、展开过程或规划器。六个环境的评估中，作者报告二维导航任务取得明显提升；在较难设置下，相比普通 ℓ₂ 代价，成功率最高提高54.7个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1324,7 +1332,11 @@
             "heading": "",
             "text": "General-purpose multimodal models, including GPT-6 Astra and Claude Opus 5.5, demonstrate broad capabilities in embodied manipulation. Our analysis indicates that this generality is accompanied by strong spatial perception, as Astra can determine where to interact with task-relevant entities amid visual distractors.\n\nBecause spatial perception connects high-level reasoning to the physical scene, we investigate scaling visual grounding to strengthen the perceptual foundation of general embodied operation. We develop a unified data pipeline that combines robot manipulation recordings with complementary visual data from diverse sources.\n\nAfter automatically annotating the robot recordings, the pipeline converts the collected data into verifiable grounding supervision. Fine-tuning Qwen3.5-9B on approximately 1.5 million samples produced by this pipeline yields ACE-Brain-0.6.\n\nThe model outperforms GPT-6 Astra on four of seven public grounding benchmarks, with an overall average score of 75.41 compared with Astra's 73.68.Under a fixed Qwen3.5-9B fine-tuning setup, aggregate grounding performance improves steadily as successive data releases expand the training collection to cover a broader range of grounding scenarios.\n\nThese results show that scaling verifiable grounding supervision from diverse sources can strengthen the spatial perception of an open 9B model for general embodied operation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ACE-Brain-0.6, created by combining robot manipulation recordings with visual data from diverse sources, converting them into verifiable grounding supervision, and fine-tuning Qwen3.5-9B. The authors report that the model exceeds GPT-6 Astra on four of seven public grounding benchmarks, with overall average scores of 75.41 and 73.68, respectively. Under a fixed fine-tuning setup, aggregate grounding performance improves as successive data releases broaden the training set’s scenario coverage. The authors conclude that diverse, verifiable grounding supervision can strengthen spatial perception in an open 9B model.",
+          "zh": "论文提出 ACE-Brain-0.6，通过整合机器人操作记录与多来源视觉数据，构建可验证的视觉定位监督数据，并据此微调 Qwen3.5-9B。作者报告，模型在七项公开定位基准中的四项超过 GPT-6 Astra，总平均分为75.41，对方为73.68。在固定微调设置下，随着后续数据发布扩大训练集覆盖的定位场景，整体定位表现持续提升。论文据此认为，多来源、可验证的定位监督有助于增强开放 9B 模型的空间感知能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1355,7 +1367,11 @@
             "heading": "",
             "text": "Reach-avoid sets, defining the states from which a task can be completed while avoiding unsafe regions, are fundamental tools for deploying robots in environments subject to disturbances and uncertainty, as well as for runtime task-feasibility monitoring, allowing prediction of whether a state is safe and will lead to successful task completion.\n\nClassical Hamilton-Jacobi Reachability (HJR) and its recent neural extensions (e.g., Lipschitz Continuous Reachability Learning, DeepReach) treat disturbances adversarially, computing the reach-avoid set under worst-case disturbances from a bounded set.\n\nThis guarantees safety but can yield overly conservative sets when disturbances are stochastic rather than adversarial, and additionally requires the disturbance set to be known or specified in advance.\n\nWe propose Probabilistic reach-avoid Value Function (PVF), a self-supervised method, applicable to black-box systems, for computing reach-avoid sets as the states with a certain reach-avoid probability under stochastic, potentially unbounded disturbances.\n\nWe evaluate our approach against HJR-based baselines on systems of increasing complexity, up to a Hopper locomotion task, and show that our probabilistic sets are less conservative and more accurate than adversarial HJR sets when disturbances are non-adversarial."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes the Probabilistic Reach-Avoid Value Function (PVF), a self-supervised method for computing reach-avoid sets under stochastic, potentially unbounded disturbances. Such sets represent states from which a task can be completed while avoiding unsafe regions with a specified probability. The authors note that classical Hamilton-Jacobi reachability methods consider worst-case bounded adversarial disturbances, which can be overly conservative for stochastic disturbances and require a known disturbance set. Evaluations on systems of increasing complexity, including a Hopper locomotion task, report that PVF produces less conservative and more accurate sets when disturbances are non-adversarial.",
+          "zh": "论文提出概率可达—避障价值函数（PVF），一种自监督方法，用于在随机且可能无界的扰动下计算可达—避障集合，即以特定概率完成任务并避开不安全区域的状态集合。作者指出，传统哈密顿—雅可比可达性方法按有界对抗扰动的最坏情形计算，虽提供安全保证，但面对随机扰动可能过于保守，且需预先指定扰动集合。论文在复杂度递增的系统上与相关基线比较，评估包括 Hopper 运动任务；作者报告，在扰动非对抗时，PVF 得到的集合较不保守且更准确。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
