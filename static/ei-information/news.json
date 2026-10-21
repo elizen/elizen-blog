@@ -2391,7 +2391,11 @@
             "heading": "",
             "text": "Tracking large human-motion datasets has become the dominant route to general, expressive humanoid whole-body control, but scaling across many motions is expensive. Current pipelines use model-free reinforcement learning, either merging per-motion specialists through lossy distillation, or brute-forcing a single policy with cluster-scale compute.\n\nSuperMimic amortizes learning across all motions with one differentiable world model of their shared dynamics, fit from logged transitions of a standard rigid-body simulator. The world model and the tracking policy train together in one loop, and backpropagation-through-time over short imagined rollouts gives the policy analytic gradients.\n\nFast imagined rollouts and analytic gradients make policy learning efficient. In 3 hours on a single GPU, SuperMimic surpasses the return of a state-of-the-art motion tracker baseline trained for 7 days on 128 GPUs. It reduces GPU-hours by more than $1000\\times$ and fails on only 25 of 129,514 benchmark motions, versus 179 failures for the baseline.\n\nAfter 9.8 hours on two GPUs, SuperMimic achieves zero failures. From 1 to 264 hours of motion, the world model's prediction error stays stable, and GPU-hours to a target return grow slowly. Our policy transfers to a physical Unitree G1 across diverse and acrobatic motions.\n\nSuperMimic removes compute as the bottleneck to scaling humanoid whole-body control, making it practical to measure motion-tracking scaling laws."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SuperMimic uses one differentiable world model to learn dynamics shared across human motions and trains it jointly with a motion-tracking policy. The model is fit from logged transitions in a rigid-body simulator, and short imagined rollouts provide analytic policy gradients through backpropagation through time. The authors report that three hours on one GPU surpasses the return of a baseline trained for seven days on 128 GPUs, with fewer benchmark failures. After 9.8 hours on two GPUs, it reports zero failures; the policy also transfers to a physical Unitree G1.",
+          "zh": "论文提出 SuperMimic，利用一个可微世界模型学习多种人类动作的共同动力学，并与动作跟踪策略联合训练。该模型从刚体模拟器记录的状态转移中拟合，通过短时想象 rollout 的时间反向传播为策略提供解析梯度。作者报告，单 GPU 训练 3 小时后，其回报超过一个使用 128 块 GPU 训练 7 天的基线，且基准动作失败数更少；在两块 GPU 上训练 9.8 小时后，失败数为零。作者还报告策略可迁移到实体 Unitree G1，并覆盖多种动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2422,7 +2426,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models can learn a wide range of robotic skills, but combining separately trained skills remains challenging. The original training data may be unavailable for joint retraining, while directly merging model weights can cause interference.\n\nWe propose NestedVLA, which consolidates independently fine-tuned VLA policies without access to their original training data. Instead of merging all updates into one checkpoint, a hypernetwork embedded in the VLA generates action-expert weight updates for a selected task.\n\nEach task's compressed vision-language model update is stored separately, and both updates are added to a frozen base VLA to instantiate the corresponding policy. We evaluate NestedVLA by consolidating three policies fine-tuned with reinforcement learning on MetaWorld, ManiSkill, and CALVIN.\n\nIt achieves 66.7% average success, improving on the strongest model-merging baseline by 41.1 percentage points. It performs within 1 percentage point of per-task fine-tuning on ManiSkill and substantially narrows the gap on CALVIN. In this three-policy setting, total storage is 1.5x that of a single full checkpoint.\n\nCode is available at https://github.com/WanyuGroup/NeurIPS2026-NestedVLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "NestedVLA consolidates separately fine-tuned vision-language-action policies without access to their original training data. Rather than merging weights directly, a hypernetwork inside the VLA generates task-specific action-expert updates. Compressed vision-language updates are stored separately and combined with a frozen base model to instantiate each policy. In evaluations consolidating three reinforcement-learning policies on MetaWorld, ManiSkill, and CALVIN, the authors report 66.7% average success, 41.1 percentage points above the strongest model-merging baseline. Storage is 1.5 times that of one full checkpoint.",
+          "zh": "论文提出 NestedVLA，用于在无法访问原始训练数据时整合分别微调的视觉—语言—动作策略。它不直接合并模型权重，而是在 VLA 中嵌入超网络，为选定任务生成动作专家权重更新；各任务压缩后的视觉语言模型更新分别保存，并与冻结的基础 VLA 组合成对应策略。作者在 MetaWorld、ManiSkill 和 CALVIN 上评估三个强化学习微调策略，报告平均成功率为 66.7%，比最强模型合并基线高 41.1 个百分点；总存储量为单个完整检查点的 1.5 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
