@@ -723,7 +723,11 @@
             "heading": "",
             "text": "Improving pretrained robot action models at test time from only a few rollouts remains challenging. Activation steering offers a lightweight approach by modifying feature activations while keeping model weights fixed. However, effective steering requires identifying which features to modify and determining the timing and strength of modification.\n\nWe introduce SteerAct, a few-shot temporal steering framework that uses a shared temporal descriptor of sparse-feature dynamics for offline feature selection and online control.\n\nA pretrained sparse autoencoder provides candidate features, and our temporal descriptor summarizes the distribution of local activation-order patterns for each feature, enabling comparisons across rollouts without requiring timestep alignment.\n\nBefore steering begins (offline), we use successful and failed reference rollouts to select a single task-specific feature whose temporal descriptors best distinguish the two outcomes and construct its reference banks.\n\nDuring each new execution (online), we compare the feature's evolving temporal descriptor with these references to determine when to intervene and how strongly to increase or decrease its activation via a steering coefficient.\n\nUsing only 24 outcome-labeled rollouts per task, SteerAct improves task success by approximately 10% relative to unsteered models in evaluations spanning $\\pi_{0.5}$, Fast-WAM, RoboTwin 2.0, DexJoCo, and real-world manipulation, without updating action-model weights. Code and demos are available at: https://steeract.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SteerAct is a few-shot temporal activation-steering framework that keeps action-model weights fixed. It uses a pretrained sparse autoencoder to provide candidate features and describes each feature’s dynamics through distributions of local activation-order patterns. Successful and failed rollouts guide offline selection of one task-specific feature; online comparisons with reference descriptors determine when and how strongly to steer it. The authors report about a 10% task-success improvement over unsteered models using 24 labeled rollouts per task, across model, simulation, and real-world manipulation evaluations.",
+          "zh": "论文提出 SteerAct，一种无需更新模型权重的少样本时序激活引导框架。它利用稀疏自编码器提供候选特征，并以局部激活顺序模式的分布描述特征动态，从成功和失败轨迹中离线选出任务特定特征，再在执行时比较其动态与参考描述，以决定干预时机及激活增减幅度。作者称，每项任务仅用24条带结果标签的轨迹，在涵盖多种模型、模拟平台和真实操作的评估中，成功率较未引导模型约提高10%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -754,7 +758,11 @@
             "heading": "",
             "text": "World models enable embodied agents to anticipate action consequences, yet jointly modeling locomotion and manipulation across diverse embodiments remains challenging due to heterogeneous action spaces and limited multimodal supervision.\n\nWe present Ropedia W0, the first egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. We curate Xp-Data, comprising 10k hours of egocentric human data and 3k hours of robot data with unified multimodal annotations and systematic quality control.\n\nA unified kinematic representation encodes locomotion through camera poses and manipulation through projected skeletons, with robot skeletons combining embodiment-specific forward kinematics with extensive manual keypoint annotation and correction.\n\nWe also introduce Xp-Teleop, a long-horizon loco-manipulation benchmark based on high-quality dexterous humanoid teleoperation data.\n\nEvaluations demonstrate state-of-the-art performance across five cross-embodiment benchmarks (DreamDojo, $\\Psi_0$, $\\omega$-HOME, Xp-Teleop, and AgiBot) and on held-out human egocentric video, from zero-shot inference to few-shot and full-data post-training. Scaling human pre-training data improves performance on both human and robot evaluations.\n\nAfter distillation, our model supports real-time, minute-long rollouts, enabling live VR interaction. Applications in policy evaluation, model-based planning, and world-action modeling further demonstrate the model's utility for embodied decision-making."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Ropedia W0 is presented as an egocentric loco-manipulation world foundation model spanning humans and robots with diverse embodiments. The work introduces Xp-Data, with human and robot data, a unified kinematic representation, and the Xp-Teleop benchmark based on dexterous humanoid teleoperation. The authors report evaluations on five cross-embodiment benchmarks and held-out human egocentric video, and say that more human pretraining data improves both human and robot results. After distillation, the model supports real-time, minute-long rollouts and live VR interaction.",
+          "zh": "论文提出 Ropedia W0，面向人类和不同形态机器人的第一人称移动与操作世界基础模型，并构建含人类与机器人数据的 Xp-Data，以及基于灵巧人形机器人遥操作数据的长时程基准 Xp-Teleop。模型用统一运动学表示编码移动和操作。作者报告，评估覆盖五个跨形态基准及留出的人类第一人称视频，并显示增加人类预训练数据可提升人类与机器人评估表现。蒸馏后模型支持实时、持续数分钟的推演及实时 VR 交互；论文还展示其在策略评估、基于模型的规划和世界动作建模中的用途。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -785,7 +793,11 @@
             "heading": "",
             "text": "Robots that follow natural-language instructions unlock a wide range of autonomous applications in households, warehouses, and labs. Real-world environments are diverse and often heavily cluttered, requiring robots to plan over multiple steps, act, and replan as they work toward a goal.\n\nWe present CLARO (CLutter-Aware Robot Orchestrator), a VLM agent that orchestrates a set of perception and manipulation skills: open-vocabulary object detection, segmentation, 6-DoF grasping, and non-prehensile pushing to locate and retrieve a language-specified target in clutter.\n\nCLARO maintains a memory of its past actions to support long-horizon execution, and emits manipulation targets (grasp poses/3D waypoints) allowing transfer across robot arms without task-specific training.\n\nWe evaluate CLARO against a range of methods on a dynamic simulation environment and standard image-based benchmarks, demonstrating strong generalization across object classes, lighting, and clutter levels. CLARO attains an average success rate of 89.1%, a relative improvement of over 16% on the strongest competing method in high cluttered scenes.\n\nWe further analyze performance along grounding and grasping axes to characterize where each method succeeds and fails. Finally, we deploy CLARO on a robot arm across diverse cluttered scenes, achieving a success rate of 88.8%, and demonstrating strong sim2real generalizability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CLARO is a vision-language-model agent that coordinates perception and manipulation skills to locate and retrieve language-specified objects in clutter. It combines open-vocabulary detection, segmentation, six-degree-of-freedom grasping, and non-prehensile pushing, while retaining action memory for long-horizon execution. Its grasp poses and 3D waypoints are intended to transfer across robot arms without task-specific training. The authors report generalization across object classes, lighting, and clutter in dynamic simulation and image-based benchmarks, plus results from deployment on a robot arm.",
+          "zh": "论文提出 CLARO，一种利用视觉语言模型智能体协调感知与操作技能的系统，用于在杂乱环境中按自然语言指令定位并取回目标物体。它组合开放词汇检测、分割、六自由度抓取和非抓取式推推，并通过记忆过往动作支持长时程执行；输出抓取姿态或三维路径点，以便迁移到不同机械臂。作者在动态仿真和图像基准评估中报告其能适应物体类别、光照和杂乱程度变化，且在高杂乱场景表现优于最强对比方法；机械臂部署实验也报告了成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1399,7 +1411,11 @@
             "heading": "",
             "text": "Universal Manipulation Interface (UMI) pairs wrist-camera videos with camera trajectories and gripper openings, providing scalable, robot-free data for learning how bimanual actions change a shared scene.\n\nExisting interactive world models, however, typically rely on text or single-camera control and struggle to follow each arm's actions while maintaining consistency between the two wrist views.\n\nWe introduce UMI-WM, an action-conditioned bimanual world model that jointly generates both wrist views from observation history, per-arm relative camera poses, and gripper widths, with cross-view consistency, action following, and visual fidelity.\n\nUMI-WM injects each arm's actions into its own wrist stream, while sparse hub tokens exchange scene information between the two streams. Camera-aware geometry conditioning and camera-guided noise further support per-view motion control and cross-view geometric exchange.\n\nWe adapt the model for block-causal generation and distill the 30-step Teacher into a Student with four denoising steps. We train UMI-WM on self-collected open-world and in-studio UMI recordings combined with public manipulation data.\n\nTo evaluate action following, we use an inverse dynamics model (IDM) to recover relative camera poses and gripper widths from generated videos, and introduce Bimanual Action Fidelity (BAF) to measure how closely these recovered actions match the conditioning actions.\n\nUMI-WM achieves the best results on all five reference-video fidelity metrics and the best or competitive performance on VBench and WorldArena. The Teacher and Student outperform all compared baselines in action following, while the four-step Student generates paired wrist videos 6.9 times faster than the Teacher."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces UMI-WM, a bimanual world model that generates paired wrist-camera views conditioned on observation history, per-arm relative camera poses, and gripper widths. It injects actions into each arm’s stream and exchanges scene information across streams to support action following and view consistency. The authors distill a 30-step Teacher into a four-step Student and train on collected and public manipulation data. Evaluations report top performance on five reference-video fidelity metrics and best or competitive VBench and WorldArena results; both models outperform compared baselines in action following, and the Student generates paired videos 6.9 times faster.",
+          "zh": "论文提出UMI-WM，一种根据观测历史、双臂相对相机位姿和夹爪开合宽度，同时生成两路腕部相机画面的双臂世界模型。模型通过分流注入动作、稀疏枢纽令牌交换场景信息及相机感知条件，支持动作跟随和跨视角一致性。作者将30步教师模型蒸馏为4步学生模型，并在自采及公开操作数据上训练。评测显示，模型在五项参考视频保真指标上最佳，VBench和WorldArena上表现最佳或有竞争力；师生模型的动作跟随优于对比基线，学生生成速度为教师的6.9倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1430,7 +1446,11 @@
             "heading": "",
             "text": "Tethered mobile robots can sustain long-duration operation through continuous power supply and stable communication via their cables. However, cable-environment interaction causes unintended obstacle displacement, cable snagging or entanglement, and even cable damage, leading to mission failure.\n\nTo assess the risk of individual cable-obstacle contacts, this study investigates cable tension as a sensing modality for estimating whether a contacted obstacle is movable or non-movable.\n\nWe conducted experiments with a tethered mobile robot and collected tension data while varying robot velocity, contact angle between the obstacle and cable, obstacle mass, and obstacle side-surface material.\n\nThe results show that obstacle movability is characterized by the initial tension rise and, more importantly, by whether the tension relaxes or remains high after its peak. Based on these observations, we select six features from the tension profiles and train a logistic-regression classifier using 117 labeled trials.\n\nThe proposed method distinguishes movable and non-movable cases with a balanced accuracy of 95.5% after 30 cm of post-contact travel. These results demonstrate the potential of cable tension for risk assessment of cable-obstacle interactions and provide a step toward online, cable-aware autonomous navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study examines whether cable tension can indicate if an obstacle contacted by a tethered mobile robot is movable, helping assess risks such as snagging, displacement, or cable damage. Experiments varied robot speed, contact angle, obstacle mass, and side-surface material. The authors report that tension behavior after its peak, especially whether it relaxes or remains high, characterizes obstacle movability. They selected six features from tension profiles and trained a logistic-regression classifier on 117 labeled trials. After 30 cm of post-contact travel, it distinguished movable from non-movable cases with 95.5% balanced accuracy.",
+          "zh": "该研究考察系留移动机器人能否利用缆绳张力判断缆绳接触的障碍物是否可移动，以评估缆绳缠绕、障碍物移位或损坏风险。研究者在机器人实验中改变速度、接触角、障碍物质量及侧面材料并采集张力数据。结果显示，峰值后的张力是重要线索：张力回落或持续偏高可区分障碍物可移动性。研究从张力曲线选取六项特征，用117次标注试验训练逻辑回归分类器；机器人在接触后行进30厘米时，区分两类情况的平衡准确率为95.5%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1461,7 +1481,11 @@
             "heading": "",
             "text": "Developing coordination policies for complex multi-agent systems relies on either labor-intensive algorithm design or opaque task-specific reinforcement learning.\n\nWith recent advances in autonomous coding agents, we show that policy search directly in code space offers a compelling third path that combines automated optimization with explicit interpretability.\n\nWe investigate a human-directed workflow in which coding agents iteratively propose, implement, evaluate, diagnose, and eventually refine algorithms guided by simulation feedback and explicit correctness verification. We conducted two case studies and found that this workflow robustly outperformed any manually engineered solutions.\n\nOn a challenging map in the 2024 League of Robot Runners competition, a two-day search discovered a policy that exceeds the stronger locally reproduced competition entry by 35.0% on the densest instance and generalizes to unseen map instances.\n\nIn simulated real-world warehouses with irregular lanes, continuous robot geometry, and asynchronous motion, a week-long search discovered an entirely new class of multi-agent pathfinding algorithm that outperforms a calibrated proprietary solution in throughput by 58.9%.\n\nUnder stated assumptions, we further prove that the new algorithm is collision-free and completes, in finite time, every accepted goal that is not withdrawn or replaced.\n\nTogether, the studies show that policy search in code space powered by state-of-the-art coding agents offers a highly competitive path to building real engineering solutions that are both effective and analytically tractable."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies human-directed policy search in code space, where coding agents iteratively propose, implement, evaluate, diagnose, and refine multi-agent pathfinding algorithms using simulation feedback and explicit correctness checks. In two case studies, the workflow outperformed manually engineered solutions. A two-day search produced a policy that exceeded a stronger locally reproduced 2024 competition entry by 35.0% on the densest instance and generalized to unseen maps. In simulated warehouses, a week-long search found a new algorithm class with 58.9% higher throughput than a calibrated proprietary solution. Under stated assumptions, the authors prove collision freedom and finite-time completion of accepted goals that are not withdrawn or replaced.",
+          "zh": "论文研究由人类指导的代码空间策略搜索：编码智能体依据仿真反馈和显式正确性验证，反复提出、实现、评估、诊断和改进多智能体路径规划算法。两个案例研究中，该流程表现优于人工设计方案。在2024年League of Robot Runners竞赛的一张高难地图上，两天搜索得到的策略在最密集实例上超过较强的本地复现参赛方案35.0%，并能泛化到未见地图。在模拟仓库中，一周搜索发现的新算法类别相较校准后的专有方案提升吞吐量58.9%；在给定假设下，作者还证明其无碰撞且能有限时间完成未撤回或替换的可接受目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1597,7 +1621,11 @@
             "heading": "",
             "text": "Tactile perception is crucial for precise robotic manipulation, providing an important foundation for dexterous, closed-loop force control. Among various tactile sensing techniques, magnetic tactile sensors stand out thanks to their fine-grained, three-dimensional force perception capability and strong robustness against visual occlusion.\n\nIn this study, we discover a physical loophole called PhantomTac in magnetic tactile sensors. The attacker can alter the magnetic field, thus spoofing the force interpreted by magnetic tactile sensors.\n\nThe attacker can stealthily deploy such an attack by simply attaching a thin (the thickness is around 0.5 mm), battery-free magnetic tag to the surface of an object. Hence, the attack tag can be easily concealed by a barcode sticker. Such an attack scheme is \"deploy-and-forget\" -- the attacker can deploy the tag and leave.\n\nWhen a robotic hand is picking up an object, it may severely damage the object. Specifically, spoofing the normal force can crush the object, whereas spoofing the shear force can lead to a loose grip, thus dropping the object.\n\nCompared with directly sabotaging the robotic hand, PhantomTac is much more concealed as the attacker does not need access to the device. We performed extensive reverse-engineering efforts to characterize the sensing mechanism of commercial-off-the-shelf tactile sensors and proposed a practical tag design.\n\nEnd-to-end evaluations conducted on real robots and robotic arms demonstrate that our attack can bypass existing anti-interference mechanisms and effectively hijack their closed-loop control processes, achieving an attack success rate exceeding 95% when the grasping-position offset is bounded within 8 mm.\n\nFinally, based on the limitations of existing anti-magnetic interference mechanisms, we propose a multimodal-consistency defense mechanism to mitigate such physical-layer security threats."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents PhantomTac, a physical vulnerability in magnetic tactile sensors that lets an attacker spoof perceived force by altering the magnetic field. A thin, battery-free tag attached to an object can be concealed under a barcode sticker and left in place. During grasping, spoofed normal force may crush an object, while spoofed shear force may loosen the grip. Reverse engineering and end-to-end evaluations on real robots and robotic arms are reported; the authors state that success exceeds 95% when grasp-position offset is within 8 mm and that the attack bypasses existing interference defenses. They propose multimodal-consistency defense.",
+          "zh": "论文提出 PhantomTac，指出磁性触觉传感器存在可被外部磁场操纵的物理漏洞。攻击者可将约0.5毫米厚、无电池的磁性标签贴在物体表面，并用条码贴纸隐藏；标签无需持续操作。机器人抓取时，伪造法向力可能压坏物体，伪造剪切力则可能使抓持松脱。作者通过逆向分析商用传感器并设计标签，在真实机器人和机械臂上进行端到端评估，报告攻击成功率在抓取位置偏差不超过8毫米时超过95%，且可绕过现有抗干扰机制。作者还提出多模态一致性防御。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1628,7 +1656,11 @@
             "heading": "",
             "text": "Changes in a robot's observations do not automatically imply changes in the task it is solving, but language-conditioned manipulation systems often fail to separate the two. If an object moves, for example, the locations at which actions should be executed may change while the underlying manipulation plan remains valid.\n\nWe introduce Sequential Planning via Anchored Robotic Keypoints (SPARK), which separates a task's symbolic plan from its execution-time perceptual grounding, and we experimentally isolate whether a fixed symbolic plan can survive substantial changes to the scene through execution-time re-grounding.\n\nSPARK represents the task as a symbolic behavior tree whose object references are grounded to current 3D observations during execution, allowing the robot to update where actions are performed while preserving the plan. Runtime verification then enables local recovery and renewed grounding, only resorting to a new plan if necessary.\n\nTo test the separation between plan and perceptual-grounding, we perform a set of manipulation experiments with a fixed plan while moving objects during execution. Under a 10 cm displacement, verification and adaptation maintain $66.7\\%$ task success, compared with $2.2\\%$ when disabled, demonstrating the importance of the underlying principle.\n\nWithout task-specific model training and with an open-weight planner, SPARK also achieves $66.8\\%$ mean success across six LIBERO-PRO settings, and $68\\%$ across eleven physical task-embodiment settings on three robot platforms.\n\nTogether, these results show that robustness does not require re-planning the task and for an important class of failures, it is sufficient to preserve the plan and update the system's perception of a changing world. Code and videos can be found at \\url{https://cwru-aism.github.io/spark-page/}"
           }
-        ]
+        ],
+        "summary": {
+          "en": "SPARK separates a task’s symbolic plan from its execution-time perceptual grounding. It represents tasks as symbolic behavior trees and grounds object references in current 3D observations, with runtime verification supporting local recovery and renewed grounding before replanning is considered. In manipulation experiments that move objects during execution, a fixed plan with verification and adaptation achieves 66.7% task success under a 10 cm displacement, compared with 2.2% when these mechanisms are disabled. The authors also report mean success of 66.8% across six LIBERO-PRO settings and 68% across eleven physical task-embodiment settings on three robot platforms.",
+          "zh": "论文提出 SPARK，将任务的符号计划与执行时的感知定位分开。系统用符号行为树表示任务，并在执行中依据当前三维观测重新定位物体；运行时验证支持局部恢复和再次定位，必要时才重新规划。实验在执行期间移动物体，测试固定计划能否继续执行：位移10厘米时，启用验证与适应的任务成功率为66.7%，禁用时为2.2%。作者还报告，SPARK 在六种 LIBERO-PRO 设置上的平均成功率为66.8%，在三种机器人平台的十一种实体任务与具身设置上为68%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1659,7 +1691,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models show promising knowledge accumulation ability through pretraining, yet continual learning remains challenging. Existing continual imitation learning (CIL) methods often require additional parameters or modules, limiting scalability for large VLA models.\n\nWe propose Stellar VLA, a knowledge-driven CIL framework without parameter growth, featuring two variants: T-Stellar for task-centric modeling and TS-Stellar for hierarchical modeling of reusable skills across tasks.\n\nStellar VLA jointly optimizes task representations and a self-evolving knowledge space, with knowledge-posterior-guided expert routing using knowledge relations and Top-K semantic embeddings for task specialization. Experiments on LIBERO demonstrate strong performance against VLA and CIL baselines with only 1% replay.\n\nDual-arm real-world experiments validate knowledge transfer across embodiments and scenes. TS-Stellar excels in hierarchical manipulation, while visualizations demonstrate knowledge retention and task discovery. Project Website: https://stellarvla.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Stellar VLA, a continual imitation learning framework for vision-language-action models that aims to accumulate skills without increasing parameter count. It includes T-Stellar for task-centric modeling and TS-Stellar for hierarchical modeling of reusable skills across tasks. The framework jointly optimizes task representations and a self-evolving knowledge space, using knowledge relations and semantic embeddings to guide expert routing. In LIBERO experiments, the authors report strong performance against VLA and continual-learning baselines with 1% replay. Dual-arm real-world experiments evaluate knowledge transfer across embodiments and scenes; TS-Stellar is reported to excel at hierarchical manipulation.",
+          "zh": "论文提出 Stellar VLA，一个面向视觉语言动作模型的持续模仿学习框架，旨在不增加参数量地累积技能知识。框架包含任务中心的 T-Stellar，以及跨任务分层建模可复用技能的 TS-Stellar；它联合优化任务表示与自演化知识空间，并依据知识关系和语义嵌入引导专家路由。作者报告，在 LIBERO 实验中，仅使用1%的回放数据，Stellar VLA 相比 VLA 与持续学习基线表现较强。双臂真实世界实验用于验证跨具身和场景的知识迁移；作者还报告 TS-Stellar 擅长分层操作，并通过可视化展示知识保留和任务发现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1795,7 +1831,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies must ground language instructions in the right objects, contact points, and target locations for reliable manipulation. Human gaze provides a natural signal for this grounding, but existing robot datasets rarely pair real human gaze with the multi-camera observations used by modern policies.\n\nWe introduce GazeAct, a gaze-equipped real-robot manipulation dataset and training framework for multi-view VLA policies.\n\nUsing screen-based teleoperation, we record gaze directly on the robot camera feed viewed by the operator, yielding 12000 demonstrations across 40 tasks and five domains with 300 Hz gaze synchronized with images, proprioception, and actions.\n\nWe transfer gaze from the operator-selected view to the remaining synchronized cameras, producing spatially consistent targets across the policy's visual inputs. We then use these gaze-derived targets to regularize language-conditioned visual attention during training while keeping inference gaze-free.\n\nAcross 18 real-world tasks, our method improves average success from 48.1% to 58.6%, with gains up to 25 percentage points. Ablations show that gaze works best as soft supervision and that real human gaze provides stronger attention targets than generic attention-shaping priors.\n\nThe gains transfer to LIBERO-Spatial (57.9% to 69.6%) and different VLA backbones.These results show that gaze collected in the robot observation space can provide effective training-time targets for improving visual grounding in VLA manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GazeAct, a real-robot manipulation dataset and training framework for multi-view vision-language-action policies. Operators’ gaze is recorded on robot camera feeds during screen-based teleoperation and transferred to synchronized views. The resulting targets provide soft supervision for language-conditioned visual attention during training, while inference remains gaze-free. The authors report improved success rates across 18 real-world tasks and on LIBERO-Spatial, with gains also transferring across different policy backbones.",
+          "zh": "论文介绍 GazeAct，一个面向多视角视觉—语言—动作策略的真实机器人操作数据集与训练框架。研究通过屏幕遥操作记录操作员在机器人相机画面上的注视，并将注视目标迁移至同步的其他视角，用作训练时语言条件视觉注意力的软监督，推理时无需注视输入。作者报告，该方法在18项真实任务及LIBERO-Spatial上提升成功率，并适用于不同策略骨干。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1826,7 +1866,11 @@
             "heading": "",
             "text": "Reference-image-conditioned video generators are increasingly used as neural simulators for embodied planning and policy learning, yet their ability to anticipate physical hazards is rarely evaluated.\n\nWe introduce ICAT, which grounds test construction in incident reports and safety guidance through structured risk memories, constrained case generation, and human verification. The resulting benchmark contains 909 evaluation units with explicit initial conditions, triggering actions, and documented consequences.\n\nAcross six generation systems, severe outcomes are frequently missing or attenuated even when the initial state is preserved and the risky action is executed: the strongest system achieves 23.5% conditional strict success under best-of-eight selection.\n\nExpert auditing, image-generator sensitivity analysis, matched safe-risky pairs, and alternative-outcome scoring provide complementary checks on this system-level finding. ICAT exposes a gap between reproducing risky actions and generating their documented consequences."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ICAT, a method for testing physical-risk prediction in embodied world models using incident reports and safety guidance. It constructs evaluation cases through structured risk memories, constrained generation, and human verification. Across six video-generation systems, severe consequences were often missing or weakened even when the initial state and risky action were preserved. The strongest system reached 23.5% conditional strict success under best-of-eight selection. Additional audits and analyses provide complementary checks on this system-level finding.",
+          "zh": "论文提出 ICAT，一种以事故报告和安全指南为依据的具身世界模型物理风险预测测试方法，通过结构化风险记忆、受约束案例生成和人工核验构建评测单元。对六种视频生成系统的评估显示，即使初始状态保留且执行了风险动作，严重后果也常被遗漏或弱化；最强系统在 best-of-eight 选择下的条件严格成功率为23.5%。专家审查等分析为这一系统层面的发现提供补充检验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1857,7 +1901,11 @@
             "heading": "",
             "text": "Translating language into humanoid motion requires coordinating body parts, determining motion duration, and producing references suitable for robot execution. We introduce PartiGen, a part-aware latent diffusion framework that incorporates anatomical structure into a shared whole-body motion representation.\n\nPart-specific attention processes anatomically masked frame features, and its outputs are fused to combine local limb information with whole-body context. Conditioned on text and motion history, the model generates motion primitives autoregressively.\n\nForward-kinematics supervision encourages kinematic consistency, while a learned end-of-sequence predictor selects a frame-level endpoint after generation. On HumanML3D retargeted to the Unitree G1, PartiGen achieves a segment-level FID of 3.165, a 16.8% reduction over TextOp, and improves R@1 by 1.4 percentage points.\n\nIn the duration study with 16-frame primitives, endpoint prediction reduces mean absolute duration error from 12.471 to 3.080 frames compared with a fixed-length cutoff. We further evaluate robot execution using a pretrained, frozen GRIT tracker: 409 of 500 generated references (81.8%) pass the posture-based stability screen in MuJoCo.\n\nFollowing simulation screening and manual selection, 26 of 27 attempted motions are judged successful on the real G1."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PartiGen, a part-aware latent diffusion framework for language-conditioned humanoid motion generation. It combines limb-level features with whole-body context and autoregressively generates motion primitives from text and motion history. Forward-kinematics supervision supports kinematic consistency, and a learned predictor selects the endpoint. On HumanML3D retargeted to the Unitree G1, the authors report better segment-level FID than TextOp. Endpoint prediction reduced duration error in a study using 16-frame primitives. Simulation screening and real-robot attempts were also evaluated.",
+          "zh": "论文提出 PartiGen，一种用于语言条件人形机器人动作生成的部位感知潜在扩散框架，将局部身体部位信息与全身上下文结合，并依据文本和动作历史自回归生成动作片段。模型采用正向运动学监督，并预测生成终点以确定动作时长。在 HumanML3D 转换至 Unitree G1 的评估中，作者报告其片段级 FID 优于 TextOp；时长研究中，终点预测降低了平均绝对时长误差。MuJoCo稳定性筛查及真实机器人尝试结果也有报告。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1888,7 +1936,11 @@
             "heading": "",
             "text": "Dynamical system (DS)-based learning from demonstration generates flexible robot motions, but existing guarantees rely on certificate generation to obtain formal guarantees of safety and goal convergence.\n\nWe propose a symbolic supervisory control architecture that automatically generates a fail-safe backup plan, certifying safety, reachability, and actuator feasibility directly from the robot's dynamics, independent of the learned DS.\n\nA nominal controller tracks the learned DS, while the supervisory controller monitors safety and target convergence, providing non-conservative intervention when the nominal controller violates necessary constraints.\n\nExperimental results include simulations and real robot deployment with various 2D and 3D datasets, including handwriting datasets, validating the effectiveness of our approach in providing formal guarantees with learned motion even in complex, dynamic environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a symbolic supervisory control architecture for formally certifying robot motions learned from demonstrations. It generates a fail-safe backup plan directly from robot dynamics and certifies safety, reachability, and actuator feasibility independently of the learned dynamical system. A nominal controller tracks the learned motion, while a supervisor monitors safety and goal convergence and intervenes when required constraints are violated. The authors report simulations and real robot deployments using varied 2D and 3D datasets, including handwriting, as evidence of effectiveness in complex dynamic environments.",
+          "zh": "本文提出一种符号监督控制架构，用于为示范学习得到的机器人运动提供形式化认证。该架构直接依据机器人动力学自动生成故障安全备份计划，认证安全性、可达性和执行器可行性，且不依赖学习得到的动力学系统。名义控制器跟踪学习系统，监督控制器监测安全与目标收敛，并在必要约束被违反时介入。作者通过包含二维和三维数据集（包括手写数据）的仿真及真实机器人部署实验，报告该方法在复杂动态环境中提供形式化保证的有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1919,7 +1971,11 @@
             "heading": "",
             "text": "Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base.\n\nWe present Dec-MARVEL, a decentralized, communication-free exploration policy that jointly selects waypoints and sensing headings from each robot's local map, remaining budget, and opportunistic observations of teammates.\n\nAcross 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, and 1024 m) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration and success rates and the shortest reported travel to 99% merged coverage among successful trials in all nine budget--team configurations.\n\nUnder our tightest 720 m budget, it reaches 46%, 84%, and 94% success for 2, 4, and 8 robots, versus 17%, 57%, and 85% for the strongest baseline in each case. Physical-robot experiments show that the resulting waypoint-heading plans are executable and remain budget-feasible."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Dec-MARVEL, a decentralized, communication-free multi-UAV exploration policy. Each robot selects waypoints and sensing headings using its local map, remaining travel budget, and opportunistic observations of teammates, while reserving enough budget to return to base. Across 900 held-out trials covering nine combinations of team size and travel budget, the authors report the highest or tied-highest exploration and success rates, and the shortest reported travel to 99% merged coverage among successful trials. Physical-robot experiments show the plans are executable and budget-feasible.",
+          "zh": "本文提出 Dec-MARVEL，一种无需通信的多无人机分布式探索策略，根据各机器人的局部地图、剩余行程预算及对队友的机会性观察，联合选择航点与感知朝向，并为返航预留预算。作者在三种队伍规模、三种行程预算组成的九种配置中，对 900 次留出试验与四种基线进行比较；报告称该方法的探索率和成功率最高或并列最高，且成功试验中达到 99% 合并覆盖所需行程最短。实物机器人实验显示规划可执行且符合预算。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1950,7 +2006,11 @@
             "heading": "",
             "text": "For natural human-robot interaction, a robot must understand human intent expressed not only through language but also through nonverbal signals such as gestures and gaze. However, current robot policies rely on language instructions as the sole interface for conveying intent, leaving nonverbal signals unused and placing the full burden of communication.\n\nIn this work, we present EDITH, a robot framework that captures the human's nonverbal signals through continuous streams of first-person view and gaze from smart glasses, and uses them alongside language instructions as inputs to the robot policy.\n\nOur hardware system streams the human's first-person view, gaze, and speech to the robot in real time, transcribing the speech into language instructions.\n\nTo handle these rich but noisy signals, we design a hierarchical policy in which a high-level policy infers the human's intent and produces a sequence of subtasks, where each subtask is represented as a fine-grained instruction paired with a keyframe that grounds the intent in the scene (e.g., the frame where the human points at the target object).\n\nA low-level policy then executes these subtasks. In our experiments on human-robot interactive tasks, EDITH enables the robot to act on the human's nonverbal signals even when intent is expressed only briefly, and significantly reduces user effort to convey intent compared to using language instructions alone.\n\nVisit our project page for source code and real-robot demo videos."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EDITH, a robot framework that combines language instructions with first-person vision and gaze captured by smart glasses. The system streams the human’s view, gaze, and speech to the robot and transcribes speech into instructions. Its hierarchical policy infers intent at a high level and produces subtasks, each represented by a fine-grained instruction and a scene-grounding keyframe; a low-level policy executes them. In human-robot interaction experiments, the authors report that EDITH responds to briefly expressed nonverbal signals and reduces user effort compared with language-only instructions.",
+          "zh": "本文提出 EDITH，让机器人结合智能眼镜采集的第一人称视角、注视方向与语言指令理解人的意图。系统实时传送视野、注视和语音，并将语音转成指令；分层策略由高层推断意图并生成子任务，每项子任务以细粒度指令和场景关键帧表示，低层负责执行。作者在人机交互任务实验中报告，EDITH 能响应短暂表达的非语言信号，并相较仅用语言指令显著降低用户表达意图所需的努力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1981,7 +2041,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) jointly predict robot actions and future observations. However, their visual prediction objectives do not explicitly distinguish task-relevant transitions from incidental scene changes. For whole-body policies, this distinction matters because task progress depends on coordinated changes in body pose, contact, and object state.\n\nWe introduce LANGUAGE-FORCING, a training strategy that uses language to emphasize task-relevant changes in the future visual representations of a whole-body WAM. Given paired current and ground- truth short-horizon future frames, a frozen vision-language model assesses task progress and predicts plausible subsequent state changes.\n\nWe encode these descriptions with a frozen text encoder and align their embeddings with intermediate, action-conditioned future-visual features, complementing the original visual and action prediction objectives. All auxiliary components are used only during training, introducing no additional inference overhead.\n\nOn HumanoidArena, LANGUAGE-FORCING achieves an average success rate of 79.17%, exceeding the strongest competing policy by 9.46 percentage points and the same WAM without language alignment by 10.77 percentage points. Across five real-world tasks, language alignment raises average success from 53.33% to 71.33% over the same WAM baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes LANGUAGE-FORCING, which uses language signals to guide a whole-body world action model toward future visual changes relevant to task progress. Frozen vision-language and text encoders provide auxiliary alignment during training, with no added inference overhead. The authors report a 79.17% average success rate in HumanoidArena, above the strongest competing policy and the same model without language alignment. Across five real-world tasks, average success also rises over that model’s baseline.",
+          "zh": "论文提出 LANGUAGE-FORCING，用语言信号引导全身世界动作模型关注与任务进展相关的未来视觉变化，并将冻结视觉语言模型和文本编码器用于训练阶段的特征对齐；这些辅助组件不会增加推理开销。作者报告，在 HumanoidArena 仿真中，方法平均成功率为 79.17%，高于最强对比策略及未对齐语言的同一模型；五项真实世界任务的平均成功率也高于该模型基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2012,7 +2076,11 @@
             "heading": "",
             "text": "Classical robot control, Finite State Machines and Behavior Trees (BTs), is deterministic and inspectable but fixed at design time: it fails on situations its designers did not anticipate. Foundation models can synthesize new control logic at runtime, at a cost in latency and non-determinism hard to accept in safety-critical aerial systems.\n\nExisting LLM-driven approaches keep the model in the loop permanently and discard what it produces. We propose Self-Crystallizing Behavior Trees (SCBT), in which the foundation model is a compiler rather than a runtime.\n\nWhen a BT node fails, an LLM proposes a minimal, mission-agnostic subtree patch; CMA-ES tunes its parameters in simulation; a contextual bandit decides whether a stored patch or a new LLM call is worth its cost; and a three-stage admission pipeline (static check, invariant-monitored replays, an empirical margin over the unpatched tree) admits only patches that demonstrably recover.\n\nAdmitted patches are stored in a fleet library and, once the LLM call rate decays, crystallized into a deterministic BT that no human wrote. We implement SCBT on Microsoft Project AirSim with a schema-constrained LLM pipeline (Gemini 3.1 Pro) and a lockstep simulator.\n\nOver three seeds of a 20-episode learning phase with wind-gust and battery failures, SCBT used $11\\pm1.4$ LLM calls against 26 for whole-tree regeneration and 22 without a library, with 0.33 calls per episode in the second half.\n\nThe crystallized trees, 28 and 33 nodes with two patches each, reached $97\\pm2\\%$ mission success with no learning running, against 12\\% for the unpatched tree and 98\\% for a hand-coded expert tree, and reproduce decision traces exactly when re-ticked offline.\n\nTwo negative results: replay admission rejected useful wind recoveries by attributing wind-induced geofence excursions to the patch, and a static-only ablation generalized better to held-out failures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Self-Crystallizing Behavior Trees (SCBT), where a foundation model proposes mission-agnostic subtree patches after node failures. Simulation tunes patch parameters, and a contextual bandit plus a three-stage admission process filters them. Accepted patches enter a fleet library and can form deterministic trees that run without the model. In Project AirSim simulations with wind and battery failures, the authors report fewer learning-phase model calls than two baselines and 97±2% mission success for crystallized trees without ongoing learning, near a hand-coded expert tree. They also report rejected useful patches and better held-out generalization in a static-only ablation.",
+          "zh": "论文提出自结晶行为树 SCBT：基础模型在行为树节点失败时提出任务无关的子树补丁，参数经仿真优化，再由上下文赌博机和三级准入流程筛选；通过的补丁存入机队库，最终形成无需运行基础模型的确定性行为树。作者在 Project AirSim 的风扰和电池故障仿真中报告，学习阶段调用量低于两种对照方案，结晶树在不继续学习时达到 97±2% 任务成功率，接近手写专家树。研究也报告了有用补丁被误拒及静态检查消融泛化更好的负面结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2136,7 +2204,11 @@
             "heading": "",
             "text": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces.\n\nIn contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.\n\nDeveloping architectures that could learn to build and use map-like representations as flexibly as animals is, however, difficult because few embodied AI benchmarks actually require map-based reasoning.\n\nTo address this, we present ForagerSim --- an interdisciplinary research platform and simulation environment focused on embodied tasks that require map-based reasoning, with scenarios ranging from mobile-robot search and rescue to animal foraging in both complex mazes and vast, potentially infinite open areas.\n\nForagerSim is highly modular and allows modifying independent axes of difficulty related to perception (abstract 2D sensing to full RGB or LiDAR), scale (room-scale to multi-km scale), topology (open-fields to complex mazes), dynamics (smoke, debris, sensorimotor failures and others) and tasks (from simple 2D coverage to foraging-inspired well-alternation tasks).\n\nWe compare reinforcement learning baselines with a simple engineered robotics stack and a human player on 8 example worlds which show how different difficulty axes affect existing methods.\n\nOur results show that, when sensing is simplified to 2D, learned policies can perform multi-object search and well-alternation tasks surprisingly well in simple topologies, but they fall short of human performance in larger or more complex-topology environments where map-based baselines perform well, suggesting that map-based reasoning is the bottleneck in these scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ForagerSim, a modular simulation platform for embodied tasks requiring map-based reasoning, including robot search and rescue and animal foraging. Its difficulty can vary across perception, scale, topology, dynamics, and task type. In eight example worlds, the authors compare reinforcement-learning baselines, an engineered robotics stack, and a human player. With simplified 2D sensing, learned policies perform well in simple topologies but trail humans in larger or more complex environments.",
+          "zh": "论文提出 ForagerSim，这是一个面向具身地图推理任务的模块化仿真平台，场景涵盖机器人搜救与动物觅食，并可调整感知、规模、拓扑、动态因素和任务类型。作者在八个示例世界中比较强化学习基线、工程机器人方案和人类玩家。结果显示，在简化为二维感知且拓扑简单时，学习策略能完成多目标搜索和交替觅食；在更大或拓扑更复杂的环境中，其表现低于人类，而地图推理基线表现良好。作者据此认为这些场景的瓶颈是地图推理。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2167,7 +2239,11 @@
             "heading": "",
             "text": "Flow-matching vision-language-action (VLA) models generate an action chunk by iteratively denoising Gaussian noise, but typically execute only a short prefix before replanning with updated observations. Under this receding-horizon paradigm, the unexecuted remainder---the action tail---is discarded, and the next chunk is regenerated from fresh noise.\n\nWe show that this discarded tail retains transferable denoising progress: action-tail initialization can match or outperform a native 10-step Gaussian baseline using fewer denoising steps. However, the optimal denoising budget varies substantially across samples, indicating that tail reuse should be adapted to the updated environment.\n\nBased on this observation, we introduce VLA-Rolling, a lightweight inference framework that reuses action tails through three stages: action-tail inheritance, per-action confidence estimation, and confidence-guided refinement through renoising and denoising budget allocation, while the underlying VLA remains frozen.\n\nAcross $\\pi_{0.5}$, SmolVLA, X-VLA, and MolmoAct2 on LIBERO, MetaWorld, LIBERO-Plus, and RoboTwin 2.0, VLA-Rolling reduces action-chunk inference cost in all 16 model--benchmark pairs, achieving up to a $1.48\\times$ speedup, while improving success rate in 14 pairs by up to $15.08$ percentage points.\n\nThese results show that action tails are not merely discarded predictions, but reusable intermediate states that enable more efficient and accurate VLA inference. These results demonstrate that the action tail can support the generation of better actions with fewer denoising steps. Our project is available at https://chenbao123ww.github.io/VLA-Rolling/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "VLA-Rolling is a lightweight inference framework that reuses the unexecuted action tail of a vision-language-action model. It inherits the tail, estimates confidence per action, and guides refinement through renoising and denoising-budget allocation while keeping the underlying model frozen. Across 16 model-benchmark pairs, the authors report reduced inference cost in every pair, with speedups up to 1.48×, and higher success rates in 14 pairs.",
+          "zh": "论文提出 VLA-Rolling，一种在视觉语言动作模型推理中复用未执行动作尾部的轻量框架。它继承动作尾部、估计各动作的置信度，并据此通过重新加噪和分配去噪步数进行调整，同时保持底层模型冻结。作者在四种模型和四个基准上的16组组合中评估，报告推理成本均下降，最高加速1.48倍；14组成功率提高，最高增加15.08个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2198,7 +2274,11 @@
             "heading": "",
             "text": "Learning inertial odometry for a new platform usually requires ground-truth trajectories.\n\nWe show that an inertial odometry model can instead be trained from scratch by a myopic teacher that integrates the IMU over each short window independently, a scheme we call integration self-supervision.Interestingly, although supervised only by short-window velocity changes, the student learns to directly predict velocity, and does so more accurately than its integration teacher.\n\nPose graph distillation then refines the model with sequence-consistent targets from a pose graph over many windows. Training on a new platform therefore no longer requires collecting ground-truth trajectories, but only calibrating the IMU and recording data during normal operation.\n\nAcross six datasets spanning pedestrians, drones, quadrupeds, and a humanoid, the same recipe with no velocity or position labels trains models that come within $0.07$~m/s average velocity error of a same-architecture supervised baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an inertial-odometry training method that uses no velocity or position labels. A teacher integrates IMU data independently over short windows to provide self-supervision, followed by pose-graph distillation for sequence-consistent targets. The authors report that the student directly predicts velocity more accurately than its integration teacher. Across six datasets covering pedestrians, drones, quadrupeds, and a humanoid, its average velocity error comes within 0.07 m/s of a same-architecture supervised baseline.",
+          "zh": "论文介绍一种无需速度或位置标签训练惯性里程计的方法。模型先由仅整合短时 IMU 窗口的教师进行自监督训练，再通过位姿图蒸馏获得跨窗口一致的目标。作者报告，学生模型虽只接受短窗口速度变化监督，却能直接预测速度，且比积分教师更准确。在涵盖行人、无人机、四足机器人和人形机器人的六个数据集上，该方法的平均速度误差与同架构监督基线相差不超过0.07米/秒；新平台训练仍需校准 IMU 并记录日常运行数据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2229,7 +2309,11 @@
             "heading": "",
             "text": "Robotic manipulation in agricultural environments remains challenging due to variations in plant geometry, occlusion, and camera viewpoints. Pretrained vision-language-action (VLA) and generalist robot policies offer a promising approach to addressing these challenges by learning manipulation behaviors from multimodal observations and language instructions.\n\nHowever, adapting these policies to agricultural tasks requires domain-specific demonstrations, which are costly and time-consuming to collect on physical robots. In this work, we develop a simulation-to-real robot-learning framework for agricultural reaching and grasping that integrates task-specific demonstration collection and pretrained policy adaptation.\n\nA MuJoCo-based agricultural environment is developed with diverse tomato plant structures to support demonstration collection and controlled evaluation. Expert demonstrations are collected through joystick teleoperation, with a low-level controller used to execute robot actions.\n\nTwo pretrained generalist robot policies, Octo and $\\pi_{0.5}$, are adapted using simulated demonstrations, followed by further fine-tuning on a physical Franka Research 3 manipulator using real-robot demonstrations.\n\nThe adapted policies are evaluated under in-distribution, viewpoint/spatial-shift, and out-of-distribution conditions in simulation, followed by physical-robot experiments. The influence of proprioceptive information on policy performance is also investigated.\n\nResults show that $\\pi_{0.5}$ achieves higher task-performance scores than Octo and exhibits less degradation under distribution shifts. These findings demonstrate the potential of integrating pretrained generalist policies with task-specific demonstration learning for agricultural manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies adapting pretrained generalist robot policies to agricultural reaching and grasping. The authors build a MuJoCo tomato-plant environment, collect expert demonstrations through joystick teleoperation, adapt Octo and π0.5 with simulated demonstrations, and further fine-tune them using demonstrations from a physical Franka Research 3. Evaluation covers simulated in-distribution, viewpoint or spatial-shift, and out-of-distribution conditions, followed by physical-robot experiments. The reported results give π0.5 higher task-performance scores and less degradation under distribution shifts than Octo.",
+          "zh": "论文研究将预训练通用机器人策略适配到农业操作任务，重点是番茄环境中的伸手与抓取。作者构建 MuJoCo 仿真环境，通过摇杆遥操作收集专家示范，并用仿真示范适配 Octo 和 π0.5，再以 Franka Research 3 实机示范微调。评估涵盖仿真中的分布内、视角或空间变化及分布外条件，并包括实机实验。结果显示，π0.5 的任务表现评分高于 Octo，且在分布变化下退化较少。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2260,7 +2344,11 @@
             "heading": "",
             "text": "Achieving autonomous and versatile whole-body loco-manipulation remains a central barrier to making humanoids practically useful.\n\nYet existing approaches are fundamentally constrained: retargeted data are often scarce or low-quality; methods struggle to scale to large skill repertoires; and, most importantly, they rely on tracking predefined motion references rather than generating behavior from perception and high-level task specifications.\n\nTo address these limitations, we propose ULTRA, a unified framework with two key components. First, we introduce a physics-driven neural retargeting algorithm that translates large-scale motion capture to humanoid embodiments while preserving physical plausibility for contact-rich interactions.\n\nSecond, we learn a unified multimodal controller that supports both dense references and sparse task specifications, under sensing ranging from accurate motion-capture state to noisy egocentric visual inputs.\n\nWe distill a universal tracking policy into this controller, compress motor skills into a compact latent space, and apply reinforcement learning finetuning to expand coverage and improve robustness under out-of-distribution scenarios. This enables coordinated whole-body behavior from sparse intent without test-time reference motions.\n\nWe evaluate ULTRA in simulation and on a real Unitree G1 humanoid. Results show that ULTRA generalizes to autonomous, goal-conditioned whole-body loco-manipulation from egocentric perception, consistently outperforming tracking-only baselines with limited skills."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ULTRA, a unified multimodal framework for humanoid whole-body loco-manipulation. It uses physics-driven neural retargeting for motion-capture data, distills a universal tracking policy into a controller, compresses skills into a latent space, and applies reinforcement-learning fine-tuning. The controller accepts dense references or sparse task specifications and supports sensing from motion-capture state to noisy egocentric vision. In simulation and on a Unitree G1, the authors report autonomous goal-conditioned behavior from perception and consistent gains over tracking-only baselines with limited skills.",
+          "zh": "论文提出 ULTRA，一个面向人形机器人全身移动操作的统一多模态控制框架。方法以物理驱动的神经重定向处理动捕数据，并将通用跟踪策略蒸馏到控制器中，结合紧凑运动技能潜在空间和强化学习微调。控制器可使用稠密参考或稀疏任务指令，并适应从动捕状态到带噪第一人称视觉的输入。仿真及 Unitree G1 实机评估显示，作者报告该方法能依据视觉自主完成目标条件任务，并优于技能有限的纯跟踪基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2291,7 +2379,11 @@
             "heading": "",
             "text": "Lifelong robot learning requires acquiring new tasks sequentially without forgetting earlier ones. With large pre-trained vision-language-action (VLA) backbones, adapter-based methods effectively mitigate this challenge.\n\nHowever, their task-specific adapters and selection modules accumulate with the task stream, creating a scalability challenge in on-disk storage and deployment cost under fixed onboard resource budgets.\n\nWe propose SARAM, a lifelong learning framework that limits storage growth while keeping GPU memory and per-step inference cost independent of the task stream length.\n\nFor each new task, SARAM reuses frozen adapters from previous tasks and introduces new adapters only at sparsely selected layers, with a duplication penalty encouraging them to capture information not already represented by the adapter library.\n\nAt deployment, a compact signature derived from backbone activation statistics identifies the task once per episode, and the corresponding task update is merged into the backbone, leaving only the backbone in the control loop. Across four LIBERO suites, SARAM matches or exceeds adapter-based baselines while adding up to 4.5x less on-disk state per task.\n\nGPU memory usage and control frequency remain comparable to those of the backbone as the task stream grows. Experiments on a real UR5 arm with a different backbone further demonstrate retention throughout a sequential task stream."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SARAM to limit adapter storage growth in lifelong robot learning with vision-language-action backbones, while keeping GPU memory and per-step inference cost independent of task-stream length. For each new task, it reuses frozen adapters and adds new ones only at sparsely selected layers, with a penalty encouraging novel information. At deployment, a signature from backbone activation statistics identifies the task once per episode, and its update is merged into the backbone. Across four LIBERO suites, SARAM matches or exceeds adapter baselines with up to 4.5 times less on-disk state per task. A real UR5 experiment reports retention across sequential tasks.",
+          "zh": "论文提出 SARAM，用于降低视觉语言动作模型在终身机器人学习中的适配器存储增长，同时让 GPU 内存和单步推理成本不随任务序列增长。每个新任务复用先前冻结的适配器，只在少量选定层新增适配器，并通过惩罚项鼓励其学习库中尚未表示的信息。部署时，系统每个回合依据骨干激活统计得到的签名识别任务，并将对应更新合并进骨干。在四个 LIBERO 套件中，SARAM 匹配或超过适配器基线，每任务磁盘状态最多减少4.5倍；UR5 实机实验报告了顺序任务流中的保持效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2322,7 +2414,11 @@
             "heading": "",
             "text": "Visual navigation requires goal directed planning informed by predictions of environment dynamics. Representative navigation world model methods propose complete action candidates before predicting consequences for selection or search updates. For each candidate, predictions primarily evaluate proposed actions rather than guide its stepwise construction.\n\nTo this end, we propose InJepa, an intention first planning paradigm centered on latent states. A goal conditioned JEPA proposes latent intentions, and an action conditioned JEPA continually predicts future latent states. Both operate in a shared latent space to align their predictive representations.\n\nWithin each candidate, predicted consequences feed into the next intention proposal and action inference, forming a closed loop of intention, action, and consequence. This extends the world model's role beyond evaluation to leading candidate construction through latent intentions. We evaluate InJepa through closed loop image goal navigation in Habitat MP3D.\n\nThe results show effective multistep navigation through intention guided action generation and consequence feedback. Experiments across encoders further support applicability across visual representations.\n\nThese findings support latent intentions as the central planning object and show that world models can directly guide plan construction through coordinated reasoning about intentions and consequences. Code is available at https://github.com/zhuxun132/InJepa."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents InJePA, a visual navigation planning method centered on latent intentions. A goal-conditioned JEPA proposes intentions, while an action-conditioned JEPA predicts future latent states; both operate in a shared latent space. Within each candidate plan, predicted consequences feed into subsequent intention proposals and action inference, creating a loop that uses the world model to construct plans step by step. Closed-loop image-goal navigation evaluation in Habitat MP3D reports effective multistep navigation through intention-guided action generation and consequence feedback. Experiments across encoders support applicability across visual representations.",
+          "zh": "论文提出 InJePA，一种以潜在意图为中心的视觉导航规划方法。目标条件 JEPA 提出潜在意图，动作条件 JEPA 则持续预测未来潜在状态，两者在共享潜在空间中协同。在每个候选计划内部，预测结果反馈给下一步意图提议和动作推断，形成意图、动作与后果的闭环，使世界模型参与逐步构造候选计划。作者在 Habitat MP3D 中进行闭环图像目标导航评估，报告方法能通过意图引导的动作生成和后果反馈实现多步导航；跨编码器实验也支持其适用于不同视觉表征。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2353,7 +2449,11 @@
             "heading": "",
             "text": "Passive-wheel quadrupedal robots offer energy-efficient locomotion through leg-driven propulsion and momentum-driven gliding. However, navigation requires coordinating steering with intermittent propulsion and adapting push-glide timing to task demands.\n\nVelocity-tracking objectives may suppress the speed variations inherent in skating, discouraging efficient gliding. To address these challenges, we propose SkateNav, a unified skating-navigation framework based on reinforcement learning.\n\nA time-budgeted goal-reaching objective allows the policy to jointly learn steering, propulsion, and their temporal allocation. An adaptive skating cycle structures gliding, pushing, and recovery, while frequency modulation at every control step adjusts phase durations to navigation demands.\n\nSimulation experiments demonstrate higher average success rates and lower cost of transport than the evaluated planner-controller baselines, with ablations confirming the contributions of cycle structure and frequency adaptation.\n\nReal-world experiments demonstrate zero-shot transfer from simulation to a passive-wheel Mini Cheetah across cluttered indoor spaces, slopes, and paved outdoor surfaces. Supplementary videos are available on the project page: https://ktw1404.github.io/SkateNav/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SkateNav, a reinforcement-learning framework for skating navigation on passive-wheel quadrupedal robots. It jointly learns steering, propulsion, and their timing, using an adaptive skating cycle and stepwise frequency modulation. In simulation, it achieves higher average success rates and lower cost of transport than the evaluated planner-controller baselines; ablations support the roles of cycle structure and frequency adaptation. Real-world experiments show zero-shot transfer to a passive-wheel Mini Cheetah tested in cluttered indoor spaces, on slopes, and on paved outdoor surfaces.",
+          "zh": "论文提出 SkateNav，一种面向被动轮四足机器人的强化学习滑行导航框架，联合学习转向、推进及其时间分配，并通过自适应滑行周期和逐控制步频率调节来适应导航需求。仿真显示，相较所评估的规划器与控制器基线，其平均成功率更高、运输成本更低；消融实验支持周期结构和频率自适应的作用。真实机器人实验显示，该方法可从仿真零样本迁移至 Mini Cheetah，并在室内杂乱环境、斜坡和铺装户外地面进行测试。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2384,7 +2484,11 @@
             "heading": "",
             "text": "Long-range throwing on unstructured terrain is a key capability for mobile robots in delivery and retrieval tasks, but it requires high release velocity, coordinated whole-body motion, and robustness to terrain-induced disturbances.\n\nWe present a whole-body kinetic-coordination framework for a wheeled-quadruped manipulator that combines kinetic-chain arm modeling with SQP-based trajectory optimization and a reference-guided reinforcement learning policy for coordinated base motion.\n\nThe manipulator is first reduced to a kinetic-chain model and optimized under kinematic and dynamic constraints to produce a high-speed throwing reference. On a stationary base, the optimized arm trajectory reaches a release speed of 12.75 m/s and a throwing distance of 16.68 m.\n\nWhen whole-body coordination is enabled, the system further increases the release speed to 16.64 m/s and the throwing distance to 28.25 m. We then integrate the mobility of the wheeled-quadruped platform and validate the complete policy through hardware experiments on flat ground, grass, slopes, and rough roads.\n\nThe results show that kinetic-chain optimization and whole-body coordination together enable robust long-range throwing across diverse unstructured terrains."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a whole-body kinetic-coordination framework for long-range throwing with a wheeled-quadruped manipulator. It combines kinetic-chain arm modeling, SQP-based trajectory optimization, and a reference-guided reinforcement-learning policy for base motion. On a stationary base, the optimized arm trajectory reaches a release speed of 12.75 m/s and a distance of 16.68 m; with whole-body coordination, these rise to 16.64 m/s and 28.25 m. Hardware experiments cover flat ground, grass, slopes, and rough roads, and the authors report robust throwing across these terrains.",
+          "zh": "论文提出轮式四足机器人长距离投掷的全身动能协调框架，结合动能链机械臂建模、基于 SQP 的轨迹优化，以及参考引导的强化学习底盘运动策略。固定底座时，优化轨迹达到 12.75 m/s 的释放速度和 16.68 m 的投掷距离；启用全身协调后，数值分别增至 16.64 m/s 和 28.25 m。作者还在平地、草地、斜坡和崎岖道路上开展硬件实验，并称该方法能在多种非结构化地形上实现稳健长距离投掷。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2415,7 +2519,11 @@
             "heading": "",
             "text": "GPT-6-Astra demonstrates a level of competence in robotic manipulation and navigation that challenges the conventional paradigm of building specialized models for individual tasks and embodiments. In this report, we ask not only how capable GPT-6-Astra is, but what its capabilities imply for the field. First, we probe the limits of standalone GPT-6-Astra.\n\nWe conduct a large-scale evaluation across 12 representative benchmarks spanning tabletop manipulation, humanoids, mobile platforms, and dexterous hands.\n\nUnder a unified protocol that allows in-context learning (ICL) from training-set demonstrations and substantially increases the number of execution steps, GPT-6-Astra achieves unprecedented performance (Fig. 1).\n\nFuture research may focus on improving 1) the generality of ICL 2) cost and execution time, 3) physical-state verification, 4) recovery from irreversible failures, and 5) long-horizon preservation of progress. Second, we study the agentic harness for embodied control.\n\nWe identify that close-loop coordination between a high-level \"System 2\" reasoner (i.e., GPT-6-Astra) and a low-level \"System 1\" controller (e.g., {\\pi}0.5) is costly but effective. Third, we examine GPT-6-Astra on real-world deployment.\n\nOur experiments on 8 robot configurations reveal substantial gaps: 1) robot demonstrations required for ICL are expensive to collect, and 2) it is implausible to trade longer execution for higher success rates with physical constraints. Fourth, we envision the next generation of embodied benchmarks.\n\nWe develop a prototype that 1) derives tasks from real-world needs, 2) provides no in-domain demonstrations, and 3) judges agents on a world clock that keeps running while they deliberate. Taken together, our results suggest that GPT-6-Astra has largely crossed the threshold of embodied competence, but not yet that of practical embodied intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The report evaluates GPT-6-Astra on 12 benchmarks spanning tabletop manipulation, humanoids, mobile platforms, and dexterous hands. Under a unified protocol permitting in-context learning from training-set demonstrations and more execution steps, the authors report unprecedented performance. They find that coordination between a high-level reasoner and low-level controller is effective but costly. Real-world experiments across eight robot configurations reveal expensive demonstration collection and physical limits on using longer execution to improve success. The authors conclude that GPT-6-Astra has crossed a threshold of embodied competence, but not practical embodied intelligence.",
+          "zh": "报告评估 GPT-6-Astra 在桌面操作、人形机器人、移动平台和灵巧手等 12 项基准上的表现；在允许从训练集示范进行上下文学习并增加执行步数的统一协议下，作者称其取得前所未有的成绩。报告指出，高层推理器与低层控制器闭环协作虽有效但成本较高；在 8 种机器人配置的真实部署中，示范采集成本高，且受物理限制，难以单靠延长执行时间提高成功率。作者认为其已达到具身能力门槛，但尚未实现实用的具身智能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
