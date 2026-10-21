@@ -2449,7 +2449,11 @@
             "heading": "",
             "text": "Passive-wheel quadrupedal robots offer energy-efficient locomotion through leg-driven propulsion and momentum-driven gliding. However, navigation requires coordinating steering with intermittent propulsion and adapting push-glide timing to task demands.\n\nVelocity-tracking objectives may suppress the speed variations inherent in skating, discouraging efficient gliding. To address these challenges, we propose SkateNav, a unified skating-navigation framework based on reinforcement learning.\n\nA time-budgeted goal-reaching objective allows the policy to jointly learn steering, propulsion, and their temporal allocation. An adaptive skating cycle structures gliding, pushing, and recovery, while frequency modulation at every control step adjusts phase durations to navigation demands.\n\nSimulation experiments demonstrate higher average success rates and lower cost of transport than the evaluated planner-controller baselines, with ablations confirming the contributions of cycle structure and frequency adaptation.\n\nReal-world experiments demonstrate zero-shot transfer from simulation to a passive-wheel Mini Cheetah across cluttered indoor spaces, slopes, and paved outdoor surfaces. Supplementary videos are available on the project page: https://ktw1404.github.io/SkateNav/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SkateNav, a reinforcement-learning framework for skating navigation on passive-wheel quadrupedal robots. It jointly learns steering, propulsion, and their timing, using an adaptive skating cycle and stepwise frequency modulation. In simulation, it achieves higher average success rates and lower cost of transport than the evaluated planner-controller baselines; ablations support the roles of cycle structure and frequency adaptation. Real-world experiments show zero-shot transfer to a passive-wheel Mini Cheetah tested in cluttered indoor spaces, on slopes, and on paved outdoor surfaces.",
+          "zh": "论文提出 SkateNav，一种面向被动轮四足机器人的强化学习滑行导航框架，联合学习转向、推进及其时间分配，并通过自适应滑行周期和逐控制步频率调节来适应导航需求。仿真显示，相较所评估的规划器与控制器基线，其平均成功率更高、运输成本更低；消融实验支持周期结构和频率自适应的作用。真实机器人实验显示，该方法可从仿真零样本迁移至 Mini Cheetah，并在室内杂乱环境、斜坡和铺装户外地面进行测试。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2480,7 +2484,11 @@
             "heading": "",
             "text": "Long-range throwing on unstructured terrain is a key capability for mobile robots in delivery and retrieval tasks, but it requires high release velocity, coordinated whole-body motion, and robustness to terrain-induced disturbances.\n\nWe present a whole-body kinetic-coordination framework for a wheeled-quadruped manipulator that combines kinetic-chain arm modeling with SQP-based trajectory optimization and a reference-guided reinforcement learning policy for coordinated base motion.\n\nThe manipulator is first reduced to a kinetic-chain model and optimized under kinematic and dynamic constraints to produce a high-speed throwing reference. On a stationary base, the optimized arm trajectory reaches a release speed of 12.75 m/s and a throwing distance of 16.68 m.\n\nWhen whole-body coordination is enabled, the system further increases the release speed to 16.64 m/s and the throwing distance to 28.25 m. We then integrate the mobility of the wheeled-quadruped platform and validate the complete policy through hardware experiments on flat ground, grass, slopes, and rough roads.\n\nThe results show that kinetic-chain optimization and whole-body coordination together enable robust long-range throwing across diverse unstructured terrains."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a whole-body kinetic-coordination framework for long-range throwing with a wheeled-quadruped manipulator. It combines kinetic-chain arm modeling, SQP-based trajectory optimization, and a reference-guided reinforcement-learning policy for base motion. On a stationary base, the optimized arm trajectory reaches a release speed of 12.75 m/s and a distance of 16.68 m; with whole-body coordination, these rise to 16.64 m/s and 28.25 m. Hardware experiments cover flat ground, grass, slopes, and rough roads, and the authors report robust throwing across these terrains.",
+          "zh": "论文提出轮式四足机器人长距离投掷的全身动能协调框架，结合动能链机械臂建模、基于 SQP 的轨迹优化，以及参考引导的强化学习底盘运动策略。固定底座时，优化轨迹达到 12.75 m/s 的释放速度和 16.68 m 的投掷距离；启用全身协调后，数值分别增至 16.64 m/s 和 28.25 m。作者还在平地、草地、斜坡和崎岖道路上开展硬件实验，并称该方法能在多种非结构化地形上实现稳健长距离投掷。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2511,7 +2519,11 @@
             "heading": "",
             "text": "GPT-6-Astra demonstrates a level of competence in robotic manipulation and navigation that challenges the conventional paradigm of building specialized models for individual tasks and embodiments. In this report, we ask not only how capable GPT-6-Astra is, but what its capabilities imply for the field. First, we probe the limits of standalone GPT-6-Astra.\n\nWe conduct a large-scale evaluation across 12 representative benchmarks spanning tabletop manipulation, humanoids, mobile platforms, and dexterous hands.\n\nUnder a unified protocol that allows in-context learning (ICL) from training-set demonstrations and substantially increases the number of execution steps, GPT-6-Astra achieves unprecedented performance (Fig. 1).\n\nFuture research may focus on improving 1) the generality of ICL 2) cost and execution time, 3) physical-state verification, 4) recovery from irreversible failures, and 5) long-horizon preservation of progress. Second, we study the agentic harness for embodied control.\n\nWe identify that close-loop coordination between a high-level \"System 2\" reasoner (i.e., GPT-6-Astra) and a low-level \"System 1\" controller (e.g., {\\pi}0.5) is costly but effective. Third, we examine GPT-6-Astra on real-world deployment.\n\nOur experiments on 8 robot configurations reveal substantial gaps: 1) robot demonstrations required for ICL are expensive to collect, and 2) it is implausible to trade longer execution for higher success rates with physical constraints. Fourth, we envision the next generation of embodied benchmarks.\n\nWe develop a prototype that 1) derives tasks from real-world needs, 2) provides no in-domain demonstrations, and 3) judges agents on a world clock that keeps running while they deliberate. Taken together, our results suggest that GPT-6-Astra has largely crossed the threshold of embodied competence, but not yet that of practical embodied intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The report evaluates GPT-6-Astra on 12 benchmarks spanning tabletop manipulation, humanoids, mobile platforms, and dexterous hands. Under a unified protocol permitting in-context learning from training-set demonstrations and more execution steps, the authors report unprecedented performance. They find that coordination between a high-level reasoner and low-level controller is effective but costly. Real-world experiments across eight robot configurations reveal expensive demonstration collection and physical limits on using longer execution to improve success. The authors conclude that GPT-6-Astra has crossed a threshold of embodied competence, but not practical embodied intelligence.",
+          "zh": "报告评估 GPT-6-Astra 在桌面操作、人形机器人、移动平台和灵巧手等 12 项基准上的表现；在允许从训练集示范进行上下文学习并增加执行步数的统一协议下，作者称其取得前所未有的成绩。报告指出，高层推理器与低层控制器闭环协作虽有效但成本较高；在 8 种机器人配置的真实部署中，示范采集成本高，且受物理限制，难以单靠延长执行时间提高成功率。作者认为其已达到具身能力门槛，但尚未实现实用的具身智能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
