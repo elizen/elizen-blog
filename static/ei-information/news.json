@@ -567,7 +567,11 @@
             "heading": "",
             "text": "Most minimally invasive surgery is still performed with hand-held laparoscopic instruments, and the surgeon's instrument kinematics are lost when the operation ends; only the endoscope video is kept.\n\nThis paper presents an end-to-end pipeline that captures this motion in the operating room and uses it to train a surgical robot policy, validated on live animals.\n\nWe introduce a surgical instrument-state logger that mounts on the shaft of a standard laparoscopic instrument and recovers its pose and jaw state from an inertial sensor, a time-of-flight sensor and a Hall sensor, with no external camera or tracker.\n\nA data pipeline measures the latency of every sensor channel against a robot ground truth and aligns the channels before forming observation-action pairs.\n\nOn these demonstrations we train a diffusion policy with a fine-tuned DINOv3 backbone, selecting its design by closed-loop rollouts in a physics simulator reconstructed from depth maps of an ex-vivo rabbit appendix.\n\nThe policy is then retrained on 849 in-vivo demonstrations from four live rabbits and deployed on four additional live rabbits with electrosurgery armed. With the surgeon selecting the surgical phase, the policy completed the appendectomy in three of the four animals.\n\nThe results show that demonstrations recorded from a surgeon's own instruments are sufficient to train, select and deploy a bimanual surgical policy in vivo. The robot serves only as the timing reference for sensor calibration and as the executor, and collects no demonstrations.\n\nBoth demonstration corpora are released to support future surgical robot learning research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a pipeline for learning a bimanual surgical robot policy from demonstrations recorded with hand-held laparoscopic instruments. A shaft-mounted logger estimates instrument pose and jaw state using inertial, time-of-flight, and Hall sensors; robot ground truth is used to calibrate timing, while the robot collects no demonstrations. The authors select a diffusion policy in a physics simulator reconstructed from ex-vivo rabbit appendix depth maps, then retrain it on 849 demonstrations from four live rabbits. With a surgeon choosing the surgical phase, it completes appendectomy in three of four additional live rabbits.",
+          "zh": "论文提出一套从手持腹腔镜器械演示学习双手术机器人策略的流程。安装在器械轴上的传感器记录器利用惯性、飞行时间和霍尔传感器恢复器械位姿与钳口状态，并通过机器人真值校准传感器时序；机器人不采集演示。作者先在由离体兔阑尾深度图重建的物理仿真器中选择扩散策略，再用四只活兔的849条术中演示重新训练。在外科医生选择手术阶段的条件下，策略在另外四只活兔中完成了三例阑尾切除。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -598,7 +602,11 @@
             "heading": "",
             "text": "Simulation is a powerful tool for robotics, but building diverse, simulation-ready scenes at scale remains difficult. Reconstructing scenes from single images is a promising alternative, but visual similarity alone is insufficient: objects must also be recovered, accurately placed, and physically grounded.\n\nExisting methods that rely on post-hoc physics settling often misplace objects, producing scenes that look correct but behave poorly under manipulation. We present SceneRig, an agentic system that turns a single image into an editable, simulation-ready scene. SceneRig combines geometric, visual, and physical tools to reconstruct a faithful 3D scene.\n\nAn agent then performs edit-and-validate loops inside a physics simulator to achieve physical stability. Across diverse inputs, SceneRig improves instance segmentation, object-centric appearance, and 3D placement while keeping the reconstructed scenes physically stable.\n\nFurthermore, SceneRig is effective for downstream robotics: its scenes predict real-robot policy outcomes more accurately than the baseline method and more reliably support replay of recorded manipulations without trajectory adaptation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SceneRig is an agentic system that converts a single image into an editable, simulation-ready 3D scene. It combines geometric, visual, and physical tools, then uses edit-and-validate loops in a physics simulator to achieve stability. Across diverse inputs, the authors report improvements in instance segmentation, object-centric appearance, and 3D placement while maintaining physical stability. For downstream robotics, SceneRig scenes predict real-robot policy outcomes more accurately than the baseline and support more reliable replay of recorded manipulations without trajectory adaptation.",
+          "zh": "论文提出SceneRig，将单张图像转换为可编辑、适用于仿真的三维场景。系统结合几何、视觉和物理工具重建场景，并由智能体在物理模拟器中反复编辑和验证，以达到物理稳定。作者报告，在多种输入上，SceneRig改善了实例分割、以物体为中心的外观重建和三维摆放，同时保持场景稳定。在下游机器人任务中，其场景比基线方法更准确地预测真实机器人策略结果，也更可靠地支持已记录操作的回放，无需调整轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
