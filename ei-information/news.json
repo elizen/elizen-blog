@@ -2087,7 +2087,11 @@
             "heading": "",
             "text": "Accurate head immobilization is critical for medical procedures such as neuroimaging and intracranial radiation therapy, where even minor motion can compromise precision. Traditional methods, such as rigid stereotactic frames and thermoplastic face masks, are invasive, uncomfortable for patients, and require a time-consuming setup.\n\nTo overcome these limitations, a novel approach employs a 6-degree-of-freedom (6DoF) robotic head holder that is integrated with real-time optical motion tracking, enabling dynamic compensation for head movements without physical restraint.\n\nHowever, implementing this system requires a detailed biomechanical understanding of skull-cervical spine interactions to define safe and effective motion limits.\n\nIn this study, we conduct a human volunteer investigation using a 6DoF Stewart platform robot to characterize biokinematic workspace of the head-neck system and establish foundational data for human-robot interaction in precision head stabilization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study addresses the need to immobilize the head during procedures such as neuroimaging and intracranial radiation therapy, noting drawbacks of traditional frames and masks. The authors describe a six-degree-of-freedom robotic head holder integrated with real-time optical tracking to compensate for head motion. To characterize safe and effective movement limits, they conducted a human-volunteer investigation using a six-degree-of-freedom Stewart platform to map the head-neck system’s biokinematic workspace and establish foundational data for human-robot interaction.",
+          "zh": "研究针对神经影像和颅内放射治疗等医疗操作中的头部稳定需求，指出传统立体定向框架和热塑面罩具有侵入性、令患者不适且准备耗时。作者提出结合实时光学运动追踪的六自由度机器人头部支撑方案，以动态补偿头部运动。为确定安全有效的运动范围，研究通过人体志愿者试验，使用六自由度 Stewart 平台机器人刻画头颈系统的生物运动空间，为精准头部稳定中的人机交互提供基础数据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2118,7 +2122,11 @@
             "heading": "",
             "text": "Multimodal reasoning provides robotic foundation models with predictive context needed for reliable action generation.\n\nHowever, language-based reasoning captures task semantics but struggles to express fine-grained physical dynamics, while latent reasoning models future state evolution but offers limited structure for organizing these dynamics into reusable reasoning primitives.\n\nTo bridge this gap, we introduce PhysWord, a reasoning-before-acting foundation model built on Physical Words, which use atomic action verbs as shared semantic anchors for continuous representations of physical dynamics.\n\nSpecifically, PhysWord predicts upcoming atomic action words and directly aligns their contextual hidden states with latent targets derived from the corresponding future observations. Building on these primitives, we construct a temporally structured PhysWord space with visual and optional tactile variants of each action word.\n\nAutoregressively predicting Physical Words across future timesteps captures transitions between execution stages, providing structured multimodal context for action generation.\n\nPhysWord achieves state-of-the-art success rates of 90.3\\% on visuotactile UniVTAC and 99.6\\% on vision-based LIBERO-Long, and outperforms competing methods on real-world tasks using bimanual grippers and dexterous hands.\n\nFurther evaluations demonstrate that our structured latent reasoning framework generalizes to unseen scenarios and enables long-horizon manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce PhysWord, a reasoning-before-acting foundation model that uses atomic action verbs, called Physical Words, to link action semantics with continuous representations of physical dynamics. It predicts upcoming action words and aligns their contextual hidden states with latent targets from future observations. Predicting these words across time creates structured multimodal context, with visual and optional tactile variants. The authors report benchmark success rates, improvements over competing methods on real-world tasks with bimanual grippers and dexterous hands, and evaluations indicating generalization to unseen scenarios and long-horizon manipulation.",
+          "zh": "作者提出 PhysWord，一种在行动前进行推理的机器人基础模型，以“物理词”作为原子动作动词，将动作语义与连续物理动态表征相联系。模型预测后续原子动作词，并将其上下文隐状态与未来观测得到的潜在目标对齐；再通过跨未来时间步预测，形成具有时间结构、包含视觉及可选触觉变体的推理空间。作者报告，该方法在 UniVTAC 和 LIBERO-Long 上取得所述成功率，在使用双臂夹爪和灵巧手的真实任务中超过对比方法，并在评估中展现对未见场景的泛化及长时程操作能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2149,7 +2157,11 @@
             "heading": "",
             "text": "In object goal navigation (ObjectNav), an embodied agent must find a target object (e.g., \"find a bed\") in a previously unseen environment, relying on spatial commonsense such as object co-occurrence.\n\nLarge Language Models (LLMs) encode this commonsense, but deploying them on robots exposes a trade-off between reasoning quality and efficiency: cloud-based models incur latency and privacy risks, whereas small on-device LLMs are fast but prone to hallucinated spatial judgments.\n\nHybrid reasoning LLMs offer both a fast non-thinking mode and a slow thinking mode, which raises a key question for embodied agents: when is slow thinking worth its cost?\n\nWe propose CovNav, a training-free framework that answers this question with Conformal Prediction (CP), turning dual-process (System 1 / System 2) inference into an uncertainty-aware decision.\n\nMuch like recent decision models such as Jev, CovNav casts each spatial query as a structured binary decision rather than free-form generation: a local LLM in fast mode judges whether the target is likely near an observed object, CP converts its token probabilities into a prediction set, and only ambiguous queries are escalated to slow chain-of-thought reasoning.\n\nThe object-pair formulation keeps calibration tractable and supports open-set objects through off-the-shelf detectors.\n\nExperiments on Gibson and HM3D show that CovNav surpasses the strongest zero-shot baseline by 0.8 and 1.7 percentage points in success rate on HM3D v1 and v2, while invoking slow reasoning for only 12.4% of queries and retaining most of the gain of always-on thinking at a fraction of its latency.\n\nReal-robot experiments on a TurtleBot 4 further validate the approach. CovNav shows how calibrated uncertainty can decide when an embodied agent should think slowly, offering a principled form of adaptive test-time reasoning for LLM-based robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CovNav is a training-free framework that uses conformal prediction to decide when an object-goal navigation query needs slower reasoning. A local language model first makes a fast judgment about whether a target is likely near an observed object; conformal prediction forms a prediction set from token probabilities, and ambiguous queries are escalated to slow chain-of-thought reasoning. The authors report results on Gibson and HM3D, including higher success rates than a zero-shot baseline on HM3D v1 and v2, with slow reasoning used for 12.4% of queries. TurtleBot 4 experiments further validate the approach.",
+          "zh": "CovNav 是一种无需训练的框架，用共形预测判断物体目标导航中的空间查询是否存在歧义：本地语言模型先以快速模式判断目标是否可能靠近观察到的物体，共形预测据其词元概率生成预测集，只有含糊查询才升级为较慢的思维链推理。作者称，物体对形式便于校准，并可借助现成检测器支持开放集物体。在 Gibson 和 HM3D 实验中，CovNav 在 HM3D v1、v2 的成功率分别比最强零样本基线高 0.8 和 1.7 个百分点，慢推理用于 12.4% 的查询；TurtleBot 4 真实机器人实验也进一步验证了该方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2180,7 +2192,11 @@
             "heading": "",
             "text": "Deep Reinforcement Learning (DRL) enables robots to learn complex behaviors through interaction with the environment. However, due to the unrestricted nature of the learning algorithms, the resulting solutions are often brittle and appear unnatural.\n\nThis is especially true for learning direct joint-level torque control, as inductive biases are difficult to integrate into the learning process. We propose an inductive bias for learning locomotion that is especially useful for torque control: latent actions learned from a small dataset of expert demonstrations.\n\nThis prior allows the policy to directly leverage knowledge contained in the expert's actions and facilitates more efficient exploration. We observe that the agent is not restricted to the reward levels of the demonstration, and performance in transfer tasks is improved significantly.\n\nLatent action priors combined with style rewards for imitation lead to a closer replication of the expert's behavior. Videos are available at https://sites.google.com/view/latent-action-priors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper notes that deep reinforcement learning can produce brittle or unnatural legged locomotion, particularly in direct joint-level torque control, where inductive biases are difficult to incorporate. The authors propose learning latent actions from a small set of expert demonstrations and using them as a prior to guide policy learning and exploration. They report that the agent can exceed the demonstrations’ reward levels and that transfer-task performance improves. Combining latent action priors with style rewards for imitation yields behavior closer to the expert. The abstract does not specify whether these results come from simulation or physical-robot experiments.",
+          "zh": "论文讨论深度强化学习用于腿式机器人运动学习时，因学习过程约束较少，所得行为可能脆弱且显得不自然，尤其是直接关节力矩控制难以融入归纳偏置。作者提出从少量专家示范中学习潜在动作，并将其作为先验供策略利用，以促进探索。作者称，智能体不受示范奖励水平限制，迁移任务表现显著改善；潜在动作先验与模仿风格奖励结合后，行为也更接近专家示范。摘要未说明相关结果来自仿真还是实体机器人实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
