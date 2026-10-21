@@ -2286,7 +2286,11 @@
             "heading": "",
             "text": "Reliable contact establishment remains a critical challenge for autonomous on-orbit servicing (OOS), particularly when interacting with non-cooperative targets.\n\nGecko-inspired dry adhesives provide a lightweight, passive, and residue-free solution for robotic capture in space, yet current systems operate in open loop, without the ability to estimate their own contact or adhesion state during interaction.\n\nThis paper presents a real-time interaction-awareness framework that enables sensorized gecko-inspired adhesive interfaces to estimate their contact state throughout the adhesion lifecycle using embedded capacitive sensing.\n\nFive discrete interaction states (idle, proximity, contact, engaged, and disengaged) are classified using experimentally collected and augmented sensor data, enabling a comparative evaluation of six lightweight machine learning models suitable for embedded deployment.\n\nAmong the evaluated models, Random Forest achieved the highest offline classification accuracy of 95.65%.For online deployment, combining Random Forest with a rule-based state machine improved accuracy from 78.02% to 93.14%, achieving a macro F1-score of 0.9343 while maintaining a 53 ms inference cycle.\n\nThese results demonstrate that incorporating physics-consistent state constraints significantly improves robustness during realtime inference, representing a step toward interaction-aware capture in future autonomous orbital servicing missions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a real-time framework for estimating interaction states in sensorized gecko-inspired adhesive interfaces for orbital servicing, using embedded capacitive sensing. It classifies five states from experimentally collected and augmented sensor data and compares six lightweight models. Random Forest achieves the best offline accuracy at 95.65%. For online deployment, combining it with a rule-based state machine raises accuracy from 78.02% to 93.14%, with a macro F1-score of 0.9343 and a 53 ms inference cycle. The authors report improved robustness from physics-consistent state constraints.",
+          "zh": "论文提出一种用于轨道服务机器人壁虎仿生干式黏附界面的实时交互状态识别框架，通过嵌入式电容传感估计黏附生命周期中的状态。研究使用实验采集并增强的传感数据，将空闲、接近、接触、结合和脱离五种状态分类，并比较六种轻量机器学习模型。离线评估中，随机森林准确率最高，为95.65%；在线部署时，随机森林结合基于规则的状态机，将准确率从78.02%提高到93.14%，宏平均F1为0.9343，推理周期为53毫秒。作者称，符合物理规律的状态约束可提升实时推理的鲁棒性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2317,7 +2321,11 @@
             "heading": "",
             "text": "Robot swarms coordinate through directed, time-varying local communication links, some of which may be compromised to allow the transmission of arbitrary malicious data.\n\nWe provide an algorithm that acts as a wrapper around robot communication---when a robot seeks to update its state using data from some incoming links, our wrapper provides a subset of trusted links whose data can be safely incorporated.\n\nIt selects these links by testing a stream of trust values---data collected from an anomaly detector on each robot---using Safe Anytime-Valid Inference. We require only that the detector be better than chance.\n\nThis wrapper ensures safe and performant autonomy by providing two powerful statistical guarantees: it uniformly excludes all compromised links for all time with high user-chosen probability, but nevertheless quickly learns to trust legitimate links.\n\nBoth guarantees are vital to secure generic tasks, but no previous work provides them simultaneously without restrictive assumptions on connectivity structure or the number of compromised links that are not guaranteed in practice.\n\nWe study our Safe Wrapper's performance in hardware for two contrasting tasks---neural implicit mapping and heading consensus---deploying on 3 LoCoBots and 8 GoPiGos, respectively. We provide simulations using trust values sampled from hardware to validate that our approach scales well to swarms of hundreds of robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a wrapper that selects trusted incoming communication links for multi-robot state updates. It tests streams of trust values from each robot’s anomaly detector using Safe Anytime-Valid Inference; the detector is required only to perform better than chance. The authors claim the method can uniformly exclude compromised links over time with high user-chosen probability while learning to trust legitimate links. Hardware studies cover neural implicit mapping and heading consensus on 3 LoCoBots and 8 GoPiGos, respectively. Simulations using hardware-sampled trust values examine scaling to swarms of hundreds.",
+          "zh": "论文提出一个用于多机器人协作的安全通信包装器，为机器人从传入通信链路中筛选可纳入状态更新的可信子集。它利用各机器人异常检测器产生的信任值流，并通过安全 anytime-valid 推断选择链路；作者要求检测器优于随机猜测。该方法声称能以用户设定的高概率、在所有时间排除受攻击链路，同时逐步信任合法链路。研究在硬件上评估神经隐式建图和航向一致性任务，分别部署于3台LoCoBot和8台GoPiGo；另以硬件采样的信任值进行仿真，检验其扩展至数百台机器人的表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2348,7 +2356,11 @@
             "heading": "",
             "text": "Embodied VLMs can execute increasingly complex manipulation tasks, yet execution errors can leave the environment in states that require replanning for recovery. Existing recovery methods either rely on inference-time mechanisms with fixed policies or learn from failure examples and reference corrections rather than verified action outcomes.\n\nTo enable recovery learning through verifiable interaction, we introduce the Embodied Replanning for Recovery Environment (ERR-Env), which provides feedback on task progress and execution errors.\n\nWe further construct ERR-Bench, a benchmark with held-out tasks spanning nominal, intermediate, and error states for evaluating recovery capability and execution reliability.\n\nWe then propose Action-Grouped Turn-GSPO (AGT-GSPO), an online reinforcement learning method combining turn-level rewards for task progress and error states with action-grouped advantage estimation, and use it to train ERR-VLM, a compact 2B embodied VLM.\n\nEvaluation on ERR-Bench reveals a mismatch between task progress and execution reliability across diverse VLMs. AGT-GSPO improves ERR-VLM by 10.25 percentage points in Strict Success Rate for error-free completion and 22.95 percentage points in Recovery Rate, while ablations and zero-shot transfer further validate the effectiveness of our method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses replanning for recovery when embodied vision-language models encounter execution errors during manipulation. ERR-Env provides feedback on task progress and errors for verifiable interaction learning, while ERR-Bench contains held-out tasks across nominal, intermediate, and error states. The authors propose AGT-GSPO, an online reinforcement learning method that combines turn-level rewards with action-grouped advantage estimation, and train a compact 2B ERR-VLM. On ERR-Bench, AGT-GSPO improves error-free Strict Success Rate by 10.25 percentage points and Recovery Rate by 22.95 points. Ablations and zero-shot transfer are also reported.",
+          "zh": "论文关注具身视觉语言模型在操作任务执行出错后如何重新规划以恢复。作者提出ERR-Env，通过任务进展和执行错误反馈支持可验证交互学习，并构建ERR-Bench，涵盖正常、中间及错误状态下的留出任务。研究还提出在线强化学习方法AGT-GSPO，将任务进展与错误状态的回合级奖励结合动作组优势估计，并据此训练参数量为20亿的ERR-VLM。在ERR-Bench评估中，AGT-GSPO使ERR-VLM的无错误严格成功率提升10.25个百分点，恢复率提升22.95个百分点；消融实验和零样本迁移进一步用于检验方法效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
