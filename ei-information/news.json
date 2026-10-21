@@ -637,7 +637,11 @@
             "heading": "",
             "text": "The integration of dynamic legged locomotion and aerial mobility offers versatility that is deterred by challenges in payload distribution, actuation, and the contrasting requirements of both domains. In this paper, we present the design and operation of a multimodal quadrupedal aerial-legged robot.\n\nThe presence of legged aerial systems also allows for thruster-assisted legged locomotion, which we make possible with a unified control framework using Control Contraction Metrics (CCM).\n\nWe search for separate domain-specific contraction metrics for walking and flight independently offline and unify them using an online energy-based Control Lyapunov Function Quadratic Program (CLF QP).This enables optimal, cross-domain control allocation, which we show using simulations.\n\nWe also show experimental results that validate the mechanical viability of our hardware and the paradigm of thruster-assisted trotting. The stability of said experiments motivates the deployment of the control framework for multimodal operations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents the design and operation of a multimodal quadrupedal aerial-legged robot, including thruster-assisted legged locomotion. Its unified control framework searches offline for separate Control Contraction Metrics for walking and flight, then uses an online energy-based Control Lyapunov Function quadratic program to combine them for cross-domain control allocation. Simulations demonstrate the control approach. Experiments validate the hardware’s mechanical viability and the thruster-assisted trotting paradigm; their stability motivates deploying the framework for multimodal operations.",
+          "zh": "论文介绍了一种多模态四足空地机器人及其控制方法。作者分别离线搜索适用于行走和飞行的控制收缩度量，再通过在线、基于能量的控制李雅普诺夫函数二次规划统一两种模式，以进行跨域控制分配。仿真展示了该控制方法；实验则验证了硬件的机械可行性和推力辅助小跑范式，实验稳定性为将该框架用于多模态操作提供了依据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -668,7 +672,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models have achieved strong performance on standard robotic manipulation benchmarks. However, their reliability can degrade substantially when task conditions deviate from the nominal setting. Perturbations in object positions and task instructions may lead to complete task failure.\n\nExisting VLA policies generally lack an explicit runtime mechanism for distinguishing these failure modes and selecting an appropriate recovery strategy. To systematically mitigate this issue, we propose FIT-MAC, a failure-aware, closed-loop multi-agent control framework for improving the robustness of VLA policies at inference time.\n\nFIT-MAC augments a VLA policy with an inference-time control layer. First, the Planner Agent parses the language instruction into a structured task specification that captures the manipulation goal and spatial constraints, and the Grounder Agent resolves each instruction-level reference to a visual target.\n\nNext, the Verifier Agent tracks phase-specific execution progress, distinguishes target-binding errors from local execution failures, and determines whether intervention is warranted. The Correction Agent then routes permitted interventions to target rebinding or bounded grasping or placement recovery, depending on the failure type.\n\nWhen no intervention is required, the pretrained VLA remains the default action generator. Extensive experiments on LIBERO-PRO demonstrate that FIT-MAC improves robustness across multiple VLA backbones, consistently increasing success rates and achieving state-of-the-art performance under diverse perturbations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes FIT-MAC, a closed-loop multi-agent control framework intended to improve vision-language-action policy robustness at inference time. Planner, Grounder, and Verifier agents structure instructions, resolve visual targets, track progress, and distinguish target-binding errors from local execution failures. When needed, a Correction Agent selects target rebinding or bounded grasping or placement recovery; otherwise, the pretrained policy remains the action generator. Experiments on LIBERO-PRO report higher success rates across multiple VLA backbones under diverse perturbations and state-of-the-art performance.",
+          "zh": "论文提出 FIT-MAC，一种在推理时增强视觉语言动作策略稳健性的闭环多智能体控制框架。规划、定位和验证智能体分别处理指令、匹配视觉目标并跟踪执行进度，以区分目标绑定错误与局部执行失败；需要干预时，纠正智能体按失败类型选择目标重新绑定或有界抓取、放置恢复，否则仍由预训练策略生成动作。作者报告，LIBERO-PRO 实验显示该方法提升了多种策略骨干在多类扰动下的成功率，并达到最先进表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -699,7 +707,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) robustness is commonly summarized by aggregate task success, which obscures how individual executions change under distribution shifts and where failures emerge in long-horizon tasks.\n\nWe introduce \\textbf{RoboCasa-Shift}, a diagnostic robustness benchmark built on RoboCasa365 that combines controlled single-factor shifts, matched clean-perturbed rollouts in which each pair shares the same underlying settings and differs only in the target shift, and simulator-grounded stage-aware diagnostics.\n\nWe evaluate GR00T N1.5 on four long-horizon tasks that pass a predefined clean-performance gate under four perturbation factors and three calibrated severity levels, including conditions that drive the evaluated policy to complete task failure, totaling 1,040 formal rollouts.\n\nRobustness responses vary substantially across factors and tasks, and increasing severity does not always produce monotonic degradation. For example, one camera condition yields $\\Delta\\mathrm{SR}=0$ despite 8 of 80 matched episodes changing outcome.\n\nStage-aware analysis further shows that the same end-to-end degradation can correspond to different execution-depth profiles. Camera $L_2$ and Gaussian blur $L_1$ both yield $\\Delta\\mathrm{SR}=0.188$, yet their first-stage failure rates are 19.0\\% and 36.4\\%, respectively.\n\nOur findings suggest that VLA robustness should be viewed as a multi-dimensional property of execution rather than a single end-to-end performance measure, motivating evaluation protocols that jointly capture outcome degradation, paired outcome sensitivity, and failure progression.\n\nThe code is publicly available at https://github.com/HaochengWang23/RoboCasa-Shift."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RoboCasa-Shift, a benchmark for diagnosing VLA policy robustness in long-horizon household manipulation under distribution shifts. It combines controlled single-factor perturbations, matched clean and perturbed rollouts, and simulator-grounded stage diagnostics. The authors evaluate GR00T N1.5 on four tasks that pass a clean-performance gate. Responses vary by task and perturbation, and greater severity does not always cause monotonic degradation. Stage analysis shows that equal end-to-end degradation can accompany different failure-depth profiles, motivating evaluation of outcome changes, paired sensitivity, and failure progression.",
+          "zh": "论文提出 RoboCasa-Shift，用于诊断长时程家庭操作中视觉语言动作策略在分布变化下的稳健性。基准结合单因素扰动、设置匹配且仅目标变化的成对运行，以及基于模拟器的阶段诊断。作者在四项通过干净条件性能门槛的任务上评估 GR00T N1.5；结果显示，不同扰动和任务的稳健性反应差异明显，严重度增加也不总带来单调退化。阶段分析表明，相同的总体成功率变化可能对应不同失败深度，支持同时考察结果退化、配对结果敏感性和失败进程。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
