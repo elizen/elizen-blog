@@ -385,6 +385,39 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-21"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.27045v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-057a7c3ae99e45d586ce078f43c3b529",
+      "intro": "In recent years, physical artificial intelligence (physical AI) has experienced rapid development, capturing significant attention in academia and industry. However, the field has yet to reach consensus on its definition, technical landscape, and core challenges. To address this gap, this monograph seeks to define physical AI, present its technical landscape, and examine each key technical subfield in depth. In doing so, it establishes a unified framework for Physical AI: artificial…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "In recent years, physical artificial intelligence (physical AI) has experienced rapid development, capturing significant attention in academia and industry. However, the field has yet to reach consensus on its definition, technical landscape, and core challenges.\n\nTo address this gap, this monograph seeks to define physical AI, present its technical landscape, and examine each key technical subfield in depth. In doing so, it establishes a unified framework for Physical AI: artificial systems that perceive, model, and act upon the physical world through continuous feedback under real-world constraints.\n\nFurther, this monograph distinguishes physical AI from conventional digital AI, embodied AI, cyber-physical systems, and digital twins. It develops the foundations of physical AI across physics, control, cognition, learning, and reasoning.\n\nIt reviews key methodologies, including multimodal perception, physical data and simulation, world models, embodied foundation models, motor-control systems, multi-agent coordination, and hardware-software co-design. Furthermore, it examines applications spanning robotics, manufacturing, infrastructure, scientific experimentation, and autonomous services.\n\nParticular attention is given to sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment.\n\nBy connecting perception, prediction, decision-making, action, and adaptation in a closed loop, this monograph identifies the technical challenges and research directions required to advance from narrow automation toward more generalizable physical AI and, ultimately, physical artificial general intelligence (Physical AGI)."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.27045v1"
+      },
+      "title": "Physical AI: Concepts, Techniques, and Challenges"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-08-24"
       },
       "body": "",
@@ -10487,6 +10520,39 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-21"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.27725v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-9aab8380b41a409d982081120d3587c3",
+      "intro": "Long-horizon human-object-scene interaction (HOSI) is central to embodied AI, animation, and game development. Existing human-object interaction (HOI) and human-scene interaction (HSI) models excel in their respective domains, but none alone covers tasks requiring multiple interaction skills. Training unified HOSI models is hindered by scarce and costly data. We introduce World2HOSI, a multi-expert orchestration harness that generates continuous HOSI data from 3D Gaussian Splatting (3DGS) scenes and natural language instructions. Our…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Long-horizon human-object-scene interaction (HOSI) is central to embodied AI, animation, and game development. Existing human-object interaction (HOI) and human-scene interaction (HSI) models excel in their respective domains, but none alone covers tasks requiring multiple interaction skills. Training unified HOSI models is hindered by scarce and costly data.\n\nWe introduce World2HOSI, a multi-expert orchestration harness that generates continuous HOSI data from 3D Gaussian Splatting (3DGS) scenes and natural language instructions. Our key insight is that long-horizon HOSI hinges not on a stronger single model but on orchestration.\n\nGiven a shared, structured scene state and an orchestration harness grounded in it, existing experts can jointly accomplish tasks beyond the reach of any of them alone. World2HOSI realizes this insight as a closed loop around a persistent scene state built from decoupled background and object assets.\n\nA harness plans action stages over this state, invokes experts via their native conditioning interfaces, and writes each action's effects back, so that every invocation is grounded in the evolving world.\n\nTo reduce physical artifacts, bounded residual optimization and contact-driven physics simulation further ensure the physical plausibility of human motion and object manipulation, respectively, while preserving interaction intent.\n\nExperiments and a perceptual user study show that World2HOSI achieves the best task completion and interaction quality on the evaluated HOSI tasks, while generating more diverse data."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.27725v1"
+      },
+      "title": "World2HOSI: A Multi-Expert Harness for Long-Horizon Human-Object-Scene Interaction Generation"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-10-07"
       },
       "body": "",
@@ -15415,6 +15481,39 @@
         "url": "http://arxiv.org/abs/2610.02618v1"
       },
       "title": "A Token Service Interface for AI-Native RANs"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-21"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.18447v3"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-e966d9da6163440aa554c1509d730022",
+      "intro": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.18447v3"
+      },
+      "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence"
     },
     {
       "archive": {

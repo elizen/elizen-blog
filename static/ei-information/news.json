@@ -2111,7 +2111,11 @@
             "heading": "",
             "text": "World models (WMs) and world-action models (WAMs) focus on future world prediction and executable action generation, respectively. Although these models learn shared physical dynamics and interaction semantics from embodied trajectories, they are typically trained in isolation, which restricts knowledge reuse between prediction and control.\n\nThe central challenge is therefore to develop a unified learning framework that shares these dynamics while preserving the distinct modeling capabilities required by each paradigm. We propose UniW(A)M, a mixture-of-experts world-(action) model built upon diffusion Transformers that unifies action-conditioned world modeling and diverse WAM variants.\n\nShared experts capture common dynamics, while atomic capability experts are reused across interfaces so that each interface keeps its own conditional pathway.\n\nAt deployment, a plug-in adaptive interface router (PAIR) learns from a small subset of target-task chunk scenarios to select a suitable WAM interface for each execution chunk, balancing task success and execution efficiency while keeping the backbone frozen.\n\nWe evaluate UniW(A)M on LIBERO, RoboTwin 2.0, and three real-world manipulation tasks, where it achieves 88.3% average real-world success versus 76.7% for the strongest baseline. On WorldArena, it leads action-conditioned world modeling on all three tasks.\n\nAC-WM co-training contributes to action generation on every action interface and PAIR raises OOD success from 63.3% to 76.7%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes UniW(A)M, a diffusion Transformer mixture-of-experts framework that unifies action-conditioned world modeling with several world-action model variants. Shared experts represent common dynamics, while reusable capability experts preserve distinct interface pathways. At deployment, PAIR selects a WAM interface for each execution chunk using a small set of target-task scenarios, with the backbone frozen. The authors report results on LIBERO, RoboTwin 2.0, real-world manipulation tasks, and WorldArena, as well as gains attributed to co-training and PAIR.",
+          "zh": "论文提出 UniW(A)M，一个基于扩散 Transformer 的混合专家框架，旨在统一动作条件世界建模与多种世界—动作模型。共享专家表征共同动力学，原子能力专家跨接口复用，同时保留各接口的条件路径。部署时，PAIR 根据少量目标任务片段场景为每个执行片段选择 WAM 接口，并保持骨干网络冻结。作者报告其在 LIBERO、RoboTwin 2.0 和三项真实操作任务上的平均成功率高于最强基线，在 WorldArena 的三项任务上领先；摘要还称联合训练和 PAIR 带来动作生成与分布外成功率方面的提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2142,7 +2146,11 @@
             "heading": "",
             "text": "Reducing actuator count simplifies robot hardware but also removes independent inputs for maneuvering. The original Rollbot steered by modulating a quasi-stable helical orbit, but moved slowly and relied on external motion capture.\n\nRollbot 2 preserves the single-actuator design while its redesigned mass distribution enables near-straight rolling and more direct travel toward commanded paths and beacon targets. Onboard inertial and ultra-wideband sensing support learned steering, beacon seeking, and waypoint following through one motor-velocity command.\n\nRollbot 2 autonomously approaches UWB beacons without motion capture and completes a 468~m manually commanded indoor route at 0.87~m/s. On the shared 4.8~m ``N'' waypoint benchmark, all 16 trials complete the path with a mean traversal time of 10.8~s and mean time-averaged deviation of 7~cm.\n\nIts fastest traversal takes 8.0~s, over 70 times faster than the original Rollbot's 564~s run despite minor protocol differences. These results show how mechanical redesign, onboard sensing, and learning-based control improve the agility and autonomy of a single-actuator spherical robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Rollbot 2, a spherical robot that retains a single actuator. A redesigned mass distribution supports nearly straight rolling, while onboard inertial and ultra-wideband sensing enable learned steering, beacon seeking, and waypoint following through one motor-velocity command. The abstract reports autonomous beacon approach without motion capture, completion of a manually commanded indoor route, and results on a shared waypoint benchmark. The authors attribute improvements in agility and autonomy to mechanical redesign, onboard sensing, and learning-based control.",
+          "zh": "论文介绍 Rollbot 2，一种保留单执行器设计的球形机器人。重新设计的质量分布使其能够近似直线滚动，并利用机载惯性与超宽带传感器，通过单一电机速度指令实现学习式转向、信标搜寻和路径点跟随。摘要称，该机器人无需外部运动捕捉即可自主接近超宽带信标，并完成室内路线及共享路径点基准测试。作者据此认为，机械设计、机载感知和学习控制提升了单执行器球形机器人的灵活性与自主性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2173,7 +2181,11 @@
             "heading": "",
             "text": "Robotic systems with revolute joints evolve on circular state spaces, yet most control architectures represent these states using Euclidean variables that ignore this underlying geometry.\n\nWe propose a fully spiking neural control architecture in which ring attractors encode joint states, enforcing representations consistent with the topology of revolute systems.\n\nHomeostatic regulation computes goal-state mismatch directly over these distributed representations, and opponent gain-modulated populations convert this mismatch into controlled phase shifts of the activity bump, implementing set-point regulation as motion on the ring.\n\nWe show that the bump dynamics follow an SO（2） geometry, and that gain asymmetries induce a signed phase velocity on the ring. To interface distributed activity with scalar regulation signals, we derive an analytic Fourier phase decoder and implement its signed components using push-pull spiking populations.\n\nFor multi-joint systems, we demonstrate that local ring-based Fourier features compose into product representations that linearly decode SO（3） orientations through forward kinematics. Experiments in NEST validate the full SO（2） regulation mechanism and the spiking product-feature decoder for lift, pitch, and yaw.\n\nRobot experiments on a Tiago arm show that decoded ring dynamics generate joint velocity commands, producing directed motion with joint-dependent accuracy.\n\nTogether, these results establish a neuromorphic control framework in which representation, regulation, and action are unified within a ring-attractor substrate aligned with the geometry of revolute systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a fully spiking neural architecture for revolute-joint robot control, using ring attractors to encode joint states in a way aligned with their circular topology. Homeostatic regulation computes goal mismatch over distributed representations, while gain-modulated populations shift the activity bump’s phase. The authors derive an analytic Fourier phase decoder and describe how multi-joint features compose into representations that linearly decode SO(3) orientations. NEST experiments validate the SO(2) regulation mechanism and decoder; Tiago arm experiments show directed motion from decoded joint-velocity commands, with accuracy varying by joint.",
+          "zh": "论文提出一种用于旋转关节机器人控制的全脉冲神经架构，以环吸引子编码关节状态，使表示符合圆形状态空间的拓扑。稳态调节机制直接计算目标状态与分布式表示之间的差异，并通过增益调制群体控制活动峰的相位移动。作者推导解析傅里叶相位解码器，并展示多关节特征如何组成可线性解码 SO(3) 姿态的乘积表示。NEST 实验验证了 SO(2) 调节机制与解码器；Tiago 机械臂实验显示，解码动态可生成关节速度指令并产生方向性运动，准确度因关节而异。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
