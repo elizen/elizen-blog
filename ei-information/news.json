@@ -2001,7 +2001,11 @@
             "heading": "",
             "text": "Visual navigation in cluttered environments requires robots to recover previously observed structure and infer obstacles and free space that remain occluded. We present a framework that combines temporal aggregation and occupancy completion in an evidential bird's-eye-view (BEV) representation predicted from short RGB sequences.\n\nA decoder adapts frozen VGGT-Omega features and combines historical residual proposals using cellwise weights and a learned no-update option. The BEV predictor produces a local map in the latest ego frame without depth or camera-pose inputs or explicit geometric warping.\n\nThe evidential model treats observed free space separately and predicts occupancy with associated confidence across the remaining supported region. We train the predictor on simulated RGB sequences paired with complete and visibility-masked occupancy annotations.\n\nOur experiments evaluate navigation in simulation and on a wheeled robot, with additional demonstrations on quadruped and humanoid robots. In simulated sequential two-goal navigation, our system achieves 89.6% success, outperforming the strongest evaluated baseline by 32.5 percentage points.\n\nAcross 60 wheeled-robot trials in 20 scenes, it achieves 73.3% success, compared with 33.3% for the strongest evaluated baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EchoNav, which predicts an evidential bird’s-eye-view local occupancy map from short RGB sequences by aggregating historical observations and completing occluded regions. It does not use depth, camera poses, or explicit geometric warping, and is trained with simulated sequences and visibility-masked occupancy annotations. The authors report improved success over evaluated baselines in simulated navigation and wheeled-robot trials; quadruped and humanoid results are demonstrations.",
+          "zh": "论文提出 EchoNav，从短 RGB 序列生成具有证据置信度的鸟瞰局部占据图，通过历史信息聚合与占据补全推断遮挡区域；模型不使用深度、相机位姿或显式几何变换，并在模拟序列及可见性遮挡标注上训练。作者报告其在模拟导航和轮式机器人试验中的成功率优于所评估基线；四足和人形机器人仅展示了额外应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2032,7 +2036,11 @@
             "heading": "",
             "text": "Learning loco-manipulation policies requires demonstrations that capture coordinated base and arm motion on the target embodiment. Robot-free interfaces allow demonstrations to be collected independently of the target robot, increasing flexibility but without directly capturing platform-specific commands, proprioception, and body-mounted observations.\n\nOn-robot teleoperation allows to capture these signals directly, but requires an interface capable of commanding the complete system concurrently.\n\nThis paper presents LocoPilot, a single-operator bilateral teleoperation and data-collection framework implemented on a 12-DoF Unitree Go2 quadruped equipped with a 6-DoF AgileX Piper L manipulator, an Intel RealSense D435 wrist camera, and an Intel RealSense D405 head camera.\n\nA second 6-DoF Piper L arm, used as the leader and two handheld controllers provide simultaneous control of the base, body posture, manipulator, and gripper. The follower arm interaction forces are estimated without a dedicated force/torque sensor and rendered to the operator through a passivity-constrained haptic channel.\n\nA ROS~2 pipeline records synchronized multimodal observations together with a unified 11D action shared by teleoperation and policy deployment. Compared to prior work, LocoPilot uniquely unifies robot-in-the-loop legged data collection, force feedback without motion-capture instrumentation, and the same action interface at deployment.\n\nWe evaluate the interface across multiple loco-manipulation tasks and validate the complete collection-to-deployment pipeline by fine-tuning MolmoAct2 \\cite{MOLMO} on pick-and-place demonstrations and deploying on the physical robot without action retargeting or additional inverse kinematics. Code available at: https://github.com/iit-DLSLab/LocoPilot"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces LocoPilot, a single-operator bilateral teleoperation and data-collection framework for learning quadruped loco-manipulation policies. It enables simultaneous control of the base, posture, arm, and gripper, with passivity-constrained haptic feedback based on interaction forces estimated without a dedicated force sensor. The system records synchronized multimodal observations and a unified action. The authors evaluate multiple tasks and demonstrate the collection-to-deployment pipeline on a physical robot using pick-and-place demonstrations, without action retargeting or additional inverse kinematics.",
+          "zh": "论文提出 LocoPilot，这是用于四足机器人移动操作策略学习的单人双边遥操作与数据采集框架，可同时控制底盘、身体姿态、机械臂和夹爪，并通过无专用力传感器估计的交互力提供受被动性约束的触觉反馈。系统记录同步多模态观测和统一动作。作者在多项任务中评估接口，并以实体机器人上的抓取放置演示验证从数据采集到部署的流程，无需动作重定向或额外逆运动学。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
