@@ -1470,7 +1470,7 @@
       },
       "format": "source_excerpt",
       "id": "news-28d4a5244c82375bcd15fac45b10169f10e3cd818e6931b4746c5352088880d7",
-      "intro": "arXiv:2610.25946v1 Announce Type: new Abstract: Developing coordination policies for complex multi-agent systems relies on either labor-intensive algorithm design or opaque task-specific reinforcement learning. With recent advances in autonomous coding agents, we show that policy search directly in code space offers a compelling third path that combines automated optimization with explicit interpretability. We investigate a human-directed workflow in which coding agents iteratively propose, implement, evaluate, diagnose, and eventually refine algorithms guided by simulation feedback and explicit correctness verification. We",
+      "intro": "arXiv:2610.25946v2 Announce Type: new Abstract: Developing coordination policies for complex multi-agent systems relies on either labor-intensive algorithm design or opaque task-specific reinforcement learning. With recent advances in autonomous coding agents, we show that policy search directly in code space offers a compelling third path that combines automated optimization with explicit interpretability. We investigate a human-directed workflow in which coding agents iteratively propose, implement, evaluate, diagnose, and eventually refine algorithms guided by simulation feedback and explicit correctness verification. We",
       "placement": "main",
       "published_at": "2026-10-20T04:00:00+00:00",
       "reading": {
@@ -1483,8 +1483,8 @@
           }
         ],
         "summary": {
-          "en": "The paper studies human-directed policy search in code space, where coding agents iteratively propose, implement, evaluate, diagnose, and refine multi-agent pathfinding algorithms using simulation feedback and explicit correctness checks. In two case studies, the workflow outperformed manually engineered solutions. A two-day search produced a policy that exceeded a stronger locally reproduced 2024 competition entry by 35.0% on the densest instance and generalized to unseen maps. In simulated warehouses, a week-long search found a new algorithm class with 58.9% higher throughput than a calibrated proprietary solution. Under stated assumptions, the authors prove collision freedom and finite-time completion of accepted goals that are not withdrawn or replaced.",
-          "zh": "论文研究由人类指导的代码空间策略搜索：编码智能体依据仿真反馈和显式正确性验证，反复提出、实现、评估、诊断和改进多智能体路径规划算法。两个案例研究中，该流程表现优于人工设计方案。在2024年League of Robot Runners竞赛的一张高难地图上，两天搜索得到的策略在最密集实例上超过较强的本地复现参赛方案35.0%，并能泛化到未见地图。在模拟仓库中，一周搜索发现的新算法类别相较校准后的专有方案提升吞吐量58.9%；在给定假设下，作者还证明其无碰撞且能有限时间完成未撤回或替换的可接受目标。"
+          "en": "The paper studies a human-directed workflow in which coding agents iteratively propose, implement, evaluate, diagnose, and refine multi-agent pathfinding algorithms using simulation feedback and explicit correctness checks. In two case studies, the authors report that the workflow outperformed manually engineered solutions. A competition-map policy generalized to unseen maps, while a warehouse simulation produced a new algorithm with higher throughput than a calibrated proprietary solution. Under stated assumptions, the authors prove the algorithm is collision-free and completes accepted goals that are not withdrawn or replaced in finite time.",
+          "zh": "论文研究由编码代理在代码空间中搜索多智能体路径规划策略的工作流：代理依据仿真反馈和正确性验证，迭代提出、实现、评估、诊断并改进算法。两项案例研究中，该流程优于人工设计方案；比赛地图案例报告了对本地复现参赛方案的性能提升，并能推广到未见地图；仓库仿真案例发现一类新算法，其吞吐量优于经校准的专有方案。作者还证明，在给定假设下，该算法无碰撞，并能在有限时间内完成未撤回或替换的已接受目标。"
         }
       },
       "source": {
@@ -2240,7 +2240,7 @@
       },
       "format": "source_excerpt",
       "id": "news-3fff44d3a528fd07113b2812c45554250ee58fda05abcef3eee6c1fd526687fd",
-      "intro": "arXiv:2610.25043v1 Announce Type: cross Abstract: Flow-matching vision-language-action (VLA) models generate an action chunk by iteratively denoising Gaussian noise, but typically execute only a short prefix before replanning with updated observations. Under this receding-horizon paradigm, the unexecuted remainder---the action tail---is discarded, and the next chunk is regenerated from fresh noise. We show that this discarded tail retains transferable denoising progress: action-tail initialization can match or outperform a native 10-step Gaussian baseline using fewer denoising steps. However, the optimal denoising",
+      "intro": "arXiv:2610.25043v2 Announce Type: cross Abstract: Flow-matching vision-language-action (VLA) models generate an action chunk by iteratively denoising Gaussian noise, but typically execute only a short prefix before replanning with updated observations. Under this receding-horizon paradigm, the unexecuted remainder---the action tail---is discarded, and the next chunk is regenerated from fresh noise. We show that this discarded tail retains transferable denoising progress: action-tail initialization can match or outperform a native 10-step Gaussian baseline using fewer denoising steps. However, the optimal denoising",
       "placement": "main",
       "published_at": "2026-10-20T04:00:00+00:00",
       "reading": {
@@ -2253,8 +2253,8 @@
           }
         ],
         "summary": {
-          "en": "VLA-Rolling is a lightweight inference framework that reuses the unexecuted action tail of a vision-language-action model. It inherits the tail, estimates confidence per action, and guides refinement through renoising and denoising-budget allocation while keeping the underlying model frozen. Across 16 model-benchmark pairs, the authors report reduced inference cost in every pair, with speedups up to 1.48×, and higher success rates in 14 pairs.",
-          "zh": "论文提出 VLA-Rolling，一种在视觉语言动作模型推理中复用未执行动作尾部的轻量框架。它继承动作尾部、估计各动作的置信度，并据此通过重新加噪和分配去噪步数进行调整，同时保持底层模型冻结。作者在四种模型和四个基准上的16组组合中评估，报告推理成本均下降，最高加速1.48倍；14组成功率提高，最高增加15.08个百分点。"
+          "en": "The paper introduces VLA-Rolling, an inference framework that reuses unexecuted action tails from vision-language-action models. It performs action-tail inheritance, per-action confidence estimation, and confidence-guided renoising and denoising-budget allocation while keeping the underlying model frozen. Evaluations across four models and four benchmarks report lower action-chunk inference cost in all 16 model-benchmark pairs and higher success rates in 14 pairs. The authors conclude that action tails can serve as reusable intermediate states, supporting more efficient inference and improved task performance in the reported evaluations.",
+          "zh": "论文提出 VLA-Rolling，一种在视觉语言动作模型推理时复用未执行动作尾部的框架。它依次进行动作尾部继承、逐动作置信度估计，以及依据置信度重新加噪并分配去噪步数；底层模型保持冻结。作者在四种模型和四类基准上评估，报告全部16组模型与基准组合的动作块推理成本降低，14组成功率提高。结果表明，复用动作尾部可减少去噪步骤，同时改善推理效率和任务表现；摘要报告的是这些基准上的实验结果。"
         }
       },
       "source": {
@@ -2799,7 +2799,11 @@
             "heading": "",
             "text": "Octopuses exhibit a powerful form of embodied intelligence from a highly adaptable soft body. One key mechanism is the ability to instantiate bending points at any location along the arm, which enables performant and dexterous behaviours.\n\nTaking inspiration from the octopus for its dexterity, this study focuses on changing the curvature of a tendon-actuated arm by adaptively changing the anchoring end-point along the arm.\n\nAn array of inflatable shells is integrated into the arm, where inflating a shell causes an increase in friction at the location, jamming the tendon and creating a temporary new anchoring point. The novel soft actuator does not break the continuity of the arm between the actuated segment and the loose segment.\n\nExperiments show that the actuated segment has a non-constant bell-shaped curvature which is comparable to that of a real octopus arm during a reaching motion.\n\nCompared to conventional single-tendon continuum manipulators, the proposed design offers an expanded workspace and enhanced dexterity through the ability to independently shape different regions of the arm through selective curvature tuning. At the same time, it avoids the mechanical complexity typically associated with multi-segment, multi-actuator systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study presents an octopus-inspired soft continuum arm that changes its curvature by adaptively relocating tendon anchoring points. Inflatable shells increase friction locally, temporarily jamming the tendon to create a new anchor while maintaining continuity between actuated and loose segments. Experiments show a non-constant, bell-shaped curvature in the actuated segment, comparable to that of a real octopus arm during reaching. The authors say the design expands workspace and dexterity relative to conventional single-tendon continuum manipulators, without the mechanical complexity typically associated with systems using multiple segments and actuators.",
+          "zh": "论文提出一种受章鱼启发的软体连续臂，通过沿臂选择性改变腱索锚定点来调节曲率。臂内集成可充气壳体，充气后能增加局部摩擦，使腱索暂时卡止并形成新的锚点，同时保持已驱动段与松弛段之间的连续性。实验显示，驱动段形成非恒定的钟形曲率，与真实章鱼臂伸手运动时的曲率相近。作者称，相比单腱连续体机械臂，该设计扩大工作空间并增强灵巧性，且无需多段、多执行器系统通常具有的机械复杂度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2830,7 +2834,11 @@
             "heading": "",
             "text": "Resource-constrained robots and autonomous vehicles need scene memories that localize a camera and render nearby views without a desktop GPU.\n\nScene-coordinate regression (SCR) and 3D Gaussian splatting (3DGS) fit because they avoid an SfM stage, but ACEsplat-style pipelines are GPU-centered, and moving them to an edge FPGA is hard because SCR is pose-sensitive and 3DGS rendering is irregular and capacity-sensitive.\n\nWe present LENS, an edge scene-memory acceleration system on the AMD KR260 that brings an ACEsplat-style workload to a low-power FPGA/ARM platform.\n\nRather than proposing a new scene model, LENS co-designs the two dominant kernels with the board data path: an INT16 SCR accelerator that preserves pose accuracy, and a bit-exact fixed-point ordered 3DGS renderer that rewrites alpha transmittance as a log-sum-exp recurrence and removes provably useless streamed Gaussians.\n\nAll LENS latency, power, and quality results are board-measured. The SCR engine preserves DSAC* localization accuracy at 25.42 ms, the on-board renderer reaches 34.11 dB on Cambridge against ACEsplat's 33.20, novel-view synthesis on RealEstate10K reaches 27.84 dB against 26.11, and all ten Wayspots scenes reach the ACEsplat rendering target.\n\nLENS wins performance per watt over a Jetson Orin NX on every deployment task, by 1.9x to 5.7x at about a quarter of the power, and is faster in absolute latency on localization and Wayspots rendering. On-device training reaches ACEsplat-level quality but not the GPU's time or energy, marking the remaining boundary for a future training accelerator."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LENS, an edge scene-memory acceleration system running on an AMD KR260 FPGA/ARM platform for camera localization and nearby-view rendering. It does not introduce a new scene model; instead, it co-designs scene-coordinate regression and ordered 3D Gaussian splatting kernels with the board data path. The reported latency, power, and quality results are board-measured. The authors report preserved DSAC* localization accuracy and rendering results meeting or exceeding ACEsplat targets on listed tasks. LENS improves performance per watt over a Jetson Orin NX, while on-device training remains slower and more energy-intensive than GPU training.",
+          "zh": "论文介绍 LENS，一套在 AMD KR260 FPGA/ARM 平台上运行的边缘场景记忆加速系统，用于相机定位和附近视图渲染。它不提出新的场景模型，而是协同设计场景坐标回归与有序3D高斯泼溅渲染内核。定位、功耗和质量结果均为板上实测；作者报告其保持 DSAC* 定位精度，并在列出的渲染任务中达到或超过 ACEsplat 的目标表现。与 Jetson Orin NX 相比，LENS 在各部署任务上的每瓦性能更高，但板上训练虽达到 ACEsplat 级质量，时间和能耗仍不及 GPU。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3656,7 +3664,7 @@
       },
       "format": "source_excerpt",
       "id": "news-764424358b7e282749da6c04bf9f2e7e11e96278cc3bf429ff416b4976d603f1",
-      "intro": "arXiv:2610.25397v1 Announce Type: new Abstract: Visual-inertial odometry systems are often constrained by the assumption that sensors are rigidly mounted, which limits their adaptability in practical scenarios involving structural motion. To address this limitation, this paper investigates time-varying camera-IMU extrinsic calibration. First, a dynamic camera-IMU extrinsic calibration method based on the Denavit-Hartenberg convention is proposed by incorporating the robot kinematic model. Second, a two-step initialization strategy is developed to efficiently estimate the initial joint angles, providing a reliable starting",
+      "intro": "arXiv:2610.25397v2 Announce Type: new Abstract: Visual-inertial odometry systems are often constrained by the assumption that sensors are rigidly mounted, which limits their adaptability in practical scenarios involving structural motion. To address this limitation, this paper investigates time-varying camera-IMU extrinsic calibration. First, a dynamic camera-IMU extrinsic calibration method based on the Denavit-Hartenberg convention is proposed by incorporating the robot kinematic model. Second, a two-step initialization strategy is developed to efficiently estimate the initial joint angles, providing a reliable starting",
       "placement": "main",
       "published_at": "2026-10-20T04:00:00+00:00",
       "reading": {
@@ -3935,7 +3943,7 @@
       },
       "format": "source_excerpt",
       "id": "news-87d9f51eb14332bae391313107c4708a202e34d1aca876bef66fd44eff0a1879",
-      "intro": "arXiv:2610.25649v1 Announce Type: new Abstract: Long-horizon human-scene interaction requires coordinated spatial reasoning, physical feasibility, and the ability to recover from compounding execution errors. Text-driven motion models are largely scene-agnostic and lack closed-loop correction, while geometry-conditioned approaches depend on paired scene-motion training or explicit 3D preprocessing that limits generalization to novel layouts and open-vocabulary goals. We present InteractAgent, an agentic multimodal LLM system for long-horizon human-scene interaction that plans, executes, observes, and reflects in a closed loop, using a",
+      "intro": "arXiv:2610.25649v2 Announce Type: new Abstract: Long-horizon human-scene interaction requires coordinated spatial reasoning, physical feasibility, and the ability to recover from compounding execution errors. Text-driven motion models are largely scene-agnostic and lack closed-loop correction, while geometry-conditioned approaches depend on paired scene-motion training or explicit 3D preprocessing that limits generalization to novel layouts and open-vocabulary goals. We present InteractAgent, an agentic multimodal LLM system for long-horizon human-scene interaction that plans, executes, observes, and reflects in a closed loop, using a",
       "placement": "main",
       "published_at": "2026-10-20T04:00:00+00:00",
       "reading": {
@@ -4028,7 +4036,7 @@
       },
       "format": "source_excerpt",
       "id": "news-88bb3ca3a992f5144c4399d71c223e0e27daa16b45d3b015717ae4c6af9c4272",
-      "intro": "arXiv:2610.25927v1 Announce Type: cross Abstract: Robot manipulation often depends on short-term cues - such as brief contacts, temporary occlusions, and intermediate object states - that are ambiguous in a single frame and can only be resolved by integrating observations over time. However, injecting historical information solely by enlarging the history window is computationally costly and frequently yields limited gains due to substantial redundancy and task-agnostic, inflexible sampling of observations. We propose CondenseVLA, a multi-frame VLA policy with a learnable decoder-side",
+      "intro": "arXiv:2610.25927v2 Announce Type: cross Abstract: Robot manipulation often depends on short-term cues - such as brief contacts, temporary occlusions, and intermediate object states - that are ambiguous in a single frame and can only be resolved by integrating observations over time. However, injecting historical information solely by enlarging the history window is computationally costly and frequently yields limited gains due to substantial redundancy and task-agnostic, inflexible sampling of observations. We propose CondenseVLA, a multi-frame VLA policy with a learnable decoder-side",
       "placement": "main",
       "published_at": "2026-10-20T04:00:00+00:00",
       "reading": {
@@ -4079,5 +4087,5 @@
       "title": "ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction"
     }
   ],
-  "updated_at": "2026-10-20T04:21:42.474345+00:00"
+  "updated_at": "2026-10-21T03:30:48.707260+00:00"
 }
