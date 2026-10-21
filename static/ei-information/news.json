@@ -742,7 +742,11 @@
             "heading": "",
             "text": "Flow-matching vision-language-action (VLA) models generate an action chunk by iteratively denoising Gaussian noise, but typically execute only a short prefix before replanning with updated observations. Under this receding-horizon paradigm, the unexecuted remainder---the action tail---is discarded, and the next chunk is regenerated from fresh noise.\n\nWe show that this discarded tail retains transferable denoising progress: action-tail initialization can match or outperform a native 10-step Gaussian baseline using fewer denoising steps. However, the optimal denoising budget varies substantially across samples, indicating that tail reuse should be adapted to the updated environment.\n\nBased on this observation, we introduce VLA-Rolling, a lightweight inference framework that reuses action tails through three stages: action-tail inheritance, per-action confidence estimation, and confidence-guided refinement through renoising and denoising budget allocation, while the underlying VLA remains frozen.\n\nAcross $\\pi_{0.5}$, SmolVLA, X-VLA, and MolmoAct2 on LIBERO, MetaWorld, LIBERO-Plus, and RoboTwin 2.0, VLA-Rolling reduces action-chunk inference cost in all 16 model--benchmark pairs, achieving up to a $1.48\\times$ speedup, while improving success rate in 14 pairs by up to $15.08$ percentage points.\n\nThese results show that action tails are not merely discarded predictions, but reusable intermediate states that enable more efficient and accurate VLA inference. These results demonstrate that the action tail can support the generation of better actions with fewer denoising steps. Our project is available at https://chenbao123ww.github.io/VLA-Rolling/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VLA-Rolling, which reuses denoising progress in unexecuted action tails during receding-horizon planning. It estimates confidence for each action and uses renoising and denoising-budget allocation to refine the tail, while keeping the underlying VLA frozen. The authors report reduced inference cost in all 16 model-benchmark pairs across LIBERO, MetaWorld, LIBERO-Plus, and RoboTwin 2.0, with up to 1.48× speedup. Success rates improve in 14 pairs, by up to 15.08 percentage points.",
+          "zh": "论文提出 VLA-Rolling，针对视觉语言动作模型滚动规划时未执行动作尾部被丢弃的问题，复用尾部已有的去噪进展，并通过逐动作置信度估计及重新加噪、分配去噪步数进行自适应优化；底层模型保持冻结。作者报告，在 LIBERO、MetaWorld、LIBERO-Plus 和 RoboTwin 2.0 的 16 组模型与基准组合中，推理成本均降低，最高加速 1.48 倍；14 组成功率提高，最高增加 15.08 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -773,7 +777,11 @@
             "heading": "",
             "text": "Heterogeneous multi-robot task allocation depends on estimates of how suitable individual robots are for candidate tasks, yet suitability can be defined in substantially different ways. We compare ten deterministic methods and two LLM-based variants spanning rule-based, similarity-based, requirement-oriented, fuzzy, and semantic approaches.\n\nUsing common robot and task profiles, we compare how the methods score and rank candidate robots, identify feasibility, and select a top robot, while examining how these outcomes change with team composition, scale, spatial context, capability uncertainty, and task representation. The methods frequently disagree despite operating on identical scenarios.\n\nGeneric similarity measures can violate properties expected under a one-sided requirement-satisfaction interpretation of suitability, while LLM-based scoring introduces additional stochastic and linguistic sensitivity.\n\nThese results show that robot--task suitability should be treated as an explicit modeling choice whose assumptions, robustness, and decision-level consequences should be considered before allocation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study compares ten deterministic and two LLM-based methods for assessing robot-task suitability in heterogeneous multi-robot allocation. Using common robot and task profiles, it examines scores, rankings, feasibility judgments, and top-robot selections, as well as changes with team composition, scale, spatial context, capability uncertainty, and task representation. The methods often disagree. The authors report that generic similarity measures can conflict with a one-sided requirement-satisfaction interpretation, while LLM-based scores add stochastic and linguistic sensitivity.",
+          "zh": "研究比较了异构多机器人任务分配中的十种确定性适配度评估方法和两种基于大语言模型的变体，涵盖规则、相似度、需求、模糊和语义方法。研究使用共同的机器人与任务档案，考察方法对候选机器人评分与排序、可行性判断及首选机器人的选择，并分析团队构成、规模、空间、能力不确定性和任务表示的影响。作者发现，各方法常有分歧；通用相似度可能违背单向需求满足的适配度解释，语言模型评分还会受到随机性和语言表达影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -804,7 +812,11 @@
             "heading": "",
             "text": "Classical robot navigation stacks are reliable but often require re-engineering for each new robot type and site. Learning-based navigation shifts this effort from hand-tuned parameters to data generation and training, where a policy adapts to each new embodiment or facility by fine-tuning in simulation.\n\nWhether policies adapted this way stay reliable on real industrial robots has seen little systematic testing. We study this for NVIDIA's X-Mobility and COMPASS workflow for training learned navigation policies on Idealworks robots.\n\nIn simulation, we extend the COMPASS benchmark with two embodiments, the differential-drive iw.hub and an omnidirectional Humanoid Mobile Platform (HMP), and with a digital twin of the Idealworks R&D center.\n\nFor the real world, we fine-tune X-Mobility on data from this digital twin, with and without sim-to-real variants generated by NVIDIA Cosmos, train COMPASS on top of it from scratch in the digital twin, deploy the resulting policies on the iw.hub's onboard Jetson AGX Xavier, and benchmark them in the Idealworks R&D center against COMPASS trained only on NVIDIA's environments and the existing Idealworks navigation stack on task success, efficiency, safety, smoothness and onboard compute.\n\nRunning every static scenario both in a digital-twin replica and in the real facility measures the sim-to-real gap and how far Cosmos-augmented data closes it.\n\nTraining in the digital twin with Cosmos sim-to-real augmentation raises the real-world success rate of learned navigation from 65.3% to 91.7% across four scenarios and nearly halves its weighted travel time compared with simulation-only training, bringing it within 8.3 points of the production navigation stack, fully onboard; with an integrated global planner, it also reaches far, occluded goals in every trial."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study evaluates NVIDIA's X-Mobility and COMPASS navigation workflow on Idealworks industrial mobile robots. Its simulation benchmark includes the differential-drive iw.hub, an omnidirectional HMP, and a digital twin of the Idealworks R&D center. Policies are deployed on the iw.hub's onboard Jetson AGX Xavier and compared with COMPASS trained only in NVIDIA environments and the existing navigation stack. The authors report that digital-twin training with NVIDIA Cosmos sim-to-real augmentation raises real-world success from 65.3% to 91.7% across four scenarios and nearly halves weighted travel time. Success is within 8.3 percentage points of the production stack; with a global planner, occluded distant goals are reached in every trial.",
+          "zh": "研究评估 NVIDIA X-Mobility 与 COMPASS 工作流在 Idealworks 工业移动机器人上的仿真到现实导航表现。仿真基准扩展了 iw.hub 差速平台、全向 HMP 和研发中心数字孪生；真实部署在 iw.hub 机载 Jetson AGX Xavier 上进行，并与仅用 NVIDIA 环境训练的 COMPASS 及现有导航栈比较。作者报告，数字孪生训练结合 NVIDIA Cosmos 仿真到现实增强后，四个场景的真实成功率由 65.3% 升至 91.7%，加权行驶时间近乎减半；成功率距生产导航栈低 8.3 个百分点。结合全局规划器时，遮挡远目标在每次试验中均可到达。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -835,7 +847,11 @@
             "heading": "",
             "text": "Diffusion policies with linearly composed scores have emerged as a promising approach to multitask robotic learning by combining separate factors to enable modular, task-wise adaptation, compositional generalization, and interpretable functional decomposition.\n\nHowever, current training objectives do not encourage factor specialization, often resulting in uninterpretable denoisers whose composed prediction is an average over identical copies, undermining their architectural premise. To address this, we propose a drop-in score-decorrelation auxiliary loss, motivated by projective composition theory.\n\nOur approach encourages specialization by penalizing overlap directly between component noise predictions, with little architectural change or computational overhead.\n\nWe demonstrate across multiple benchmarks that our decorrelation loss consistently reduces measurable double-counting between components, improves task decomposition, and produces behaviorally meaningful specialization without compromising multitask performance. Website: https://al3cl1.github.io/robotics-score-decorrelation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a drop-in score-decorrelation auxiliary loss for diffusion policies that combine scores linearly. The authors argue that existing objectives do not encourage factor specialization, which can produce hard-to-interpret denoisers whose composed prediction averages identical copies. The proposed loss directly penalizes overlap between component noise predictions, with little architectural change or computational overhead. Across multiple benchmarks, the authors report reduced measurable double-counting between components, improved task decomposition, and behaviorally meaningful specialization without compromising multitask performance.",
+          "zh": "研究针对线性组合分数的扩散策略提出一种可直接加入训练的分数去相关辅助损失。作者指出，现有训练目标不鼓励各组成因子专门化，可能使去噪器变得难以解释，并让组合预测成为相同副本的平均。新损失直接惩罚不同组件噪声预测之间的重叠，旨在以较少架构改动和计算开销促进专门化。作者报告，在多个基准上，该方法持续减少组件间可测量的重复计数，改善任务分解并产生具有行为意义的专门化，同时未损害多任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1402,7 +1418,11 @@
             "heading": "",
             "text": "Robots exploring unknown indoor environments must decide where to move while much of the environment remains unseen. Predicting the occupancy of unseen space beyond the current sensor range can improve these decisions, but recent approaches commonly rely on learned models that require offline training and repeated inference during exploration.\n\nWe introduce the Mondrian-Anchored Prior for Learning-free Indoor Exploration (MAPLE), a training-free predictive approach that adapts the Mondrian process into an online generative prior conditioned on observed geometric cues in the current partial map.\n\nMAPLE generates multiple plausible map hypotheses and evaluates visibility separately within each to estimate frontier gain, preserving differences in predicted visibility across hypotheses.\n\nAcross KTH floor-plans and real-SLAM environments at multiple sensor ranges, MAPLE consistently improves over non-predictive exploration and remains competitive with learned predictive approaches. Its lightweight procedural construction enables predictive exploration with limited computational resources.\n\nExperimental results further show that more accurate map prediction does not necessarily produce better exploration, highlighting the importance of how predictions are represented and used in exploration decisions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MAPLE, a training-free approach to predictive indoor exploration. It adapts the Mondrian process into an online generative prior conditioned on geometric cues in the observed partial map. MAPLE creates multiple plausible map hypotheses and estimates frontier gain by evaluating visibility separately in each. The authors report improvements over non-predictive exploration on KTH floor-plans and real-SLAM environments at multiple sensor ranges, with performance competitive with learned predictive approaches. Experiments also indicate that more accurate map prediction does not necessarily improve exploration.",
+          "zh": "论文提出 MAPLE，一种无需训练的室内探索预测方法，将 Mondrian 过程改造为在线生成先验，并依据当前局部地图中的几何线索生成多种可能地图假设。方法在各假设中分别评估可见性，以估算探索前沿收益。作者报告，在 KTH 平面图和多个传感器量程下的真实 SLAM 环境中，MAPLE 持续优于非预测式探索，并与学习式预测方法保持竞争力。实验还显示，地图预测更准确并不必然带来更好的探索效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1433,7 +1453,11 @@
             "heading": "",
             "text": "Bipedal humanoids can change their effective footprint by adjusting body yaw, enabling both narrow-passage traversal and socially aware yielding. This paper presents a posture-aware navigation framework centered on \\emph{Adaptive Traversal Tubes} (ATT), \\emph{Interval Velocity--Heading} (IVH) control, and a sidestep-enhanced AMP locomotion prior.\n\nATT represents a behavior-feasible corridor width field along a reference path, unifying geometric clearance and social comfort into a continuous signal. IVH maps this width to a continuous frontal-to-sidestep posture schedule and omnidirectional velocity commands.\n\nA velocity-conditioned AMP policy, trained with GVHMR-retargeted frontal/sidestep motions and coupled \\((v_x,v_y)\\) tracking rewards, is designed to improve transition stability over a generic locomotion controller while remaining interchangeable with the default onboard policy.\n\nThis preprint presents the full method; a planned evaluation protocol on a Unitree G1 is outlined, with quantitative results to follow. Demo videos of MuJoCo simulation and real-robot deployment are available at: github.com/lborogzj997/Humanoid-Navigation-in-Crowds-and-Narrow-Spaces."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The preprint presents a posture-aware navigation framework for bipedal humanoids, combining Adaptive Traversal Tubes, Interval Velocity–Heading control, and an AMP locomotion prior enhanced for sidestepping. The tubes encode behavior-feasible corridor width along a reference path, combining geometric clearance and social comfort. The controller maps this signal to posture schedules and omnidirectional velocity commands. The authors describe a velocity-conditioned AMP policy intended to improve transition stability. The paper outlines a planned Unitree G1 evaluation; quantitative results are not yet provided.",
+          "zh": "论文提出双足人形机器人的姿态感知导航框架，包含自适应穿行管道、区间速度—航向控制，以及加入侧步能力的 AMP 步态先验。穿行管道沿参考路径表示可行行为的通道宽度，兼顾几何间隙与社交舒适度；控制器据此安排正面行走到侧步的姿态变化并输出全向速度。作者称其速度条件 AMP 策略旨在提升过渡稳定性，并可替换默认机载策略。本文给出完整方法和 Unitree G1 评估计划，定量结果尚待提供。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1464,7 +1488,11 @@
             "heading": "",
             "text": "Visual manuals communicate procedural knowledge through stepwise diagrams, but translating these instructions into reliable long-horizon robotic execution remains challenging. We introduce JARVIS, a method-agnostic benchmark for autonomous visual-manual-guided execution without additional language instructions.\n\nJARVIS comprises 236,679 LEGO assembly tasks across 8,987 scenes, with a carefully curated JARVIS-v1 suite of 50 tasks for interactive robotic evaluation. Tasks span varying initial structural complexities and assembly horizons, requiring agents to interpret manuals, ground actions in an evolving workspace, and execute the intended procedure.\n\nA structure-aware evaluation protocol captures geometric accuracy, structural relations, construction order, partial progress, and completion.\n\nWe further introduce JARVIS-agentic, a tool-grounded embodied agent that composes robot primitives into executable programs and uses execution feedback for verification and recovery, without task-specific action trajectories or model parameter updates. Across nine multimodal and reasoning models, task-oriented primitives increase the average assembly score.\n\nPerformance nevertheless declines sharply with assembly horizon, and execution errors remain difficult to correct. Prior-task experience improves initial performance, while repeated reflection provides inconsistent benefits, highlighting persistent limitations in connecting visual procedural reasoning with reliable physical execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces JARVIS, a benchmark for autonomous robotic assembly guided by visual manuals without additional language instructions. It includes 236,679 tasks across 8,987 scenes and a 50-task suite for interactive robotic evaluation. A structure-aware protocol assesses geometric accuracy, structural relations, order, partial progress, and completion. The authors also present JARVIS-agentic, which composes robot primitives into programs and uses execution feedback for verification and recovery. Across nine multimodal and reasoning models, task-oriented primitives raise average assembly scores, but performance drops sharply with longer assembly horizons and errors remain difficult to correct.",
+          "zh": "论文提出 JARVIS 基准，用于评估机器人仅依据图示手册自主完成长流程装配的能力，并介绍包含 236,679 项任务和 8,987 个场景的数据集，以及供交互式机器人评测的 50 项任务套件。其结构感知评估考察几何精度、结构关系、装配顺序、部分进度和完成情况。作者还提出 JARVIS-agentic，通过机器人原语组成程序，并利用执行反馈验证和恢复。对九种多模态及推理模型的评估显示，任务导向原语提高平均装配分数，但表现随装配流程变长而明显下降，错误仍难纠正。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1495,7 +1523,11 @@
             "heading": "",
             "text": "Online LiDAR-camera calibration remains a fundamental yet challenging task in the field of robotics. Recently, deep learning-based data-driven approaches have emerged, offering high-precision, targetless calibration capabilities.\n\nHowever, existing methods often suffer from a critical dataset shortcut phenomenon due to the lack of extrinsic diversity in their training data. Networks tend to overfit to fixed nominal extrinsic configurations, leading to severe performance degradation and poor generalization in real-world deployments.\n\nTo address this limitation, we propose a highly generalizable data generation framework tailored for training LiDAR-camera calibration networks. Our framework leverages existing omnidirectional image datasets annotated with depth ground truth to synthesize multi-modal calibration data under rigorous extrinsic constraints.\n\nExtensive experiments demonstrate that the data generated by our pipeline significantly enhances the generalization and robustness of typical learning-based calibration networks.\n\nFurthermore, we conduct comprehensive real-world evaluations across various camera-LiDAR configurations, validating the zero-shot transfer capability of models trained exclusively on our synthetic data.\n\nTo facilitate future research and community use, the code for data generation, the pre-trained models, and online benchmark datasets will be made publicly available."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SynCalib, a data-generation framework for training LiDAR-camera calibration networks. The authors argue that limited extrinsic diversity in training data encourages networks to rely on nominal configurations and weakens real-world generalization. Their framework uses omnidirectional image datasets with depth ground truth to synthesize multimodal calibration data under extrinsic constraints. Reported experiments show improved generalization and robustness for typical learning-based calibration networks, and real-world evaluations across camera-LiDAR configurations assess zero-shot transfer for models trained exclusively on synthetic data.",
+          "zh": "本文提出 SynCalib，一种用于训练激光雷达与相机标定网络的数据生成框架。作者指出，训练数据中外参多样性不足会使网络依赖固定的标称外参，削弱真实部署中的泛化能力。该框架利用带有深度真值的全向图像数据集，在外参约束下合成多模态标定数据。作者报告，实验中合成数据提升了典型学习式标定网络的泛化性和鲁棒性，并通过多种相机与激光雷达配置的真实场景评估验证了仅用合成数据训练模型的零样本迁移能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1526,7 +1558,11 @@
             "heading": "",
             "text": "Visual-inertial odometry systems are often constrained by the assumption that sensors are rigidly mounted, which limits their adaptability in practical scenarios involving structural motion. To address this limitation, this paper investigates time-varying camera-IMU extrinsic calibration.\n\nFirst, a dynamic camera-IMU extrinsic calibration method based on the Denavit-Hartenberg convention is proposed by incorporating the robot kinematic model.\n\nSecond, a two-step initialization strategy is developed to efficiently estimate the initial joint angles, providing a reliable starting point for subsequent extrinsic parameter optimization and enabling online estimation of timevarying camera-IMU extrinsic parameters.\n\nSimulation experiments demonstrate that the proposed framework can effectively accommodate variations in camera-IMU extrinsic parameters while maintaining competitive localization accuracy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper studies time-varying camera-IMU extrinsic calibration for ground-robot visual-inertial odometry, addressing the limits of assuming rigid sensor mounting when the structure moves. The proposed dynamic calibration method uses the Denavit-Hartenberg convention and the robot kinematic model. A two-step initialization strategy estimates initial joint angles to support subsequent extrinsic optimization and online estimation of changing parameters. Simulation experiments indicate that the framework accommodates extrinsic variation while maintaining competitive localization accuracy; the abstract reports no real-robot experiments.",
+          "zh": "本文研究地面机器人视觉惯性里程计中的时变相机—IMU外参标定，以应对传感器结构运动时刚性安装假设的限制。作者提出一种基于 Denavit–Hartenberg 约定并结合机器人运动学模型的动态标定方法，并设计两步初始化策略来估计初始关节角，为后续外参优化提供起点。该方法支持在线估计时变外参。仿真实验表明，该框架能够适应相机—IMU外参变化，同时保持有竞争力的定位精度；摘要未报告真实机器人实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1557,7 +1593,11 @@
             "heading": "",
             "text": "Effective manipulation requires a policy to capture not only about the current scene geometry, but also about how that geometry will evolve under interaction.\n\nExisting approaches either augment policies with geometric information from current observations or introduce future prediction as auxiliary supervision, leaving open how predictive geometry should be represented for action generation.\n\nTherefore, we propose a two-stage framework, which learns complementary predictive representations from multi-view video clips. During pretraining, a frozen 3D foundation model provides dense geometric features that are compressed into predictive geometric representations and optimized to preserve scene structure and its temporal evolution.\n\nAction supervision is then applied to geometric transitions to extract a complementary motor representation that emphasizes action-relevant transitions. During downstream post-training, predictive geometry is transferred through geometry queries, while the motor representation guides intermediate features along the action-generation pathway.\n\nFuture observations are used only as privileged supervision during training and are not required at inference time. Across LIBERO, LIBERO-Plus, SimplerEnv, and real-world bimanual and single-arm tasks, our approach consistently improves downstream policies, including an absolute gain of 10.4 percentage points on the WidowX evaluation.\n\nWe further demonstrate transfer across multiple VLA architectures and WAMs, with improvements in both future-world and action prediction. The code will be available at https://github.com/xuxiaoxxxx/CPR."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a two-stage framework that learns complementary predictive representations from multiview video for embodied manipulation. In pretraining, a frozen 3D foundation model supplies dense geometric features, compressed into representations that preserve scene structure and temporal evolution. Action supervision then extracts a motor representation focused on action-relevant transitions. During downstream training, geometry queries transfer predictive geometry, while the motor representation guides intermediate features in the action-generation pathway. Future observations serve only as privileged training supervision. The authors report improvements across simulation benchmarks and real-world bimanual and single-arm tasks, including a 10.4 percentage-point absolute gain on the WidowX evaluation.",
+          "zh": "本文提出两阶段框架，从多视角视频中学习互补的预测表示，用于具身操作策略。预训练阶段利用冻结的三维基础模型提供稠密几何特征，将其压缩为保留场景结构及时间演变的预测几何表示；随后以动作监督提取强调动作相关变化的运动表示。下游训练通过几何查询迁移预测几何，并让运动表示引导动作生成路径中的中间特征。未来观测仅作训练时的特权监督，推理时无需使用。作者报告在多种模拟基准及真实双臂、单臂任务上取得改进，并称 WidowX 评测绝对提升10.4个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1588,7 +1628,11 @@
             "heading": "",
             "text": "Object-goal navigation (ObjectNav) requires an embodied agent to find an instance of a specified category in an unseen environment and stop near it. The agent typically relies on an object detector but must judge online from a limited egocentric video stream, sometimes a single frame, whether a detected candidate is the target.\n\nDetectors often confidently mistake similar objects, such as a sofa for a bed, and stopping at a false positive fails the episode. Prevailing systems also approach candidates greedily, leaving them occluded or partially observed.\n\nWe present CLOSER, an evidence-aware active verification framework that treats stopping as closed-loop evidence acquisition, coupling vision-language model (VLM) verification with active perception.\n\nCLOSER fine-tunes an open-source VLM to label each view of a candidate tracked across frames as target, non-target, or uncertain, selects complementary views with an embedding-based diversity gate, and fuses their per-view probabilities with a lightweight network.\n\nIf the fused judgment remains uncertain, a diffusion policy drives the agent toward the candidate using only the tracked mask and depth until the decision becomes decisive. CLOSER runs locally and plugs into existing ObjectNav systems without retraining them.\n\nOn Gibson and Habitat-Matterport 3D, it raises average success rate by 3.6 points and success weighted by path length by 2.0 points, showing that verifying evidence before committing improves embodied navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CLOSER, an active visual verification framework for embodied object-goal navigation. It treats stopping as closed-loop evidence acquisition: a fine-tuned vision-language model labels views of a tracked candidate as target, non-target, or uncertain, and a diversity gate selects complementary views before a lightweight network fuses probabilities. If the result remains uncertain, a diffusion policy guides the agent toward the candidate using only its tracked mask and depth. The authors report that CLOSER runs locally and integrates with existing systems without retraining them. On Gibson and Habitat-Matterport 3D, it raises average success rate by 3.6 points and path-length-weighted success by 2.0 points.",
+          "zh": "本文提出 CLOSER，用于具身目标物导航中的主动视觉核验。该框架将停止决策视为闭环证据获取：对跨帧跟踪候选目标的各个视角，微调后的视觉语言模型分别标记为目标、非目标或不确定，再通过视角多样性筛选和轻量网络融合概率。若判断仍不确定，扩散策略仅依据跟踪掩码和深度引导智能体靠近候选目标，直至结论明确。作者称该方法可本地运行并接入现有系统，无需重新训练；在 Gibson 和 Habitat-Matterport 3D 上，平均成功率提高3.6点，路径长度加权成功率提高2.0点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1712,7 +1756,11 @@
             "heading": "",
             "text": "Long-horizon human-scene interaction requires coordinated spatial reasoning, physical feasibility, and the ability to recover from compounding execution errors.\n\nText-driven motion models are largely scene-agnostic and lack closed-loop correction, while geometry-conditioned approaches depend on paired scene-motion training or explicit 3D preprocessing that limits generalization to novel layouts and open-vocabulary goals.\n\nWe present InteractAgent, an agentic multimodal LLM system for long-horizon human-scene interaction that plans, executes, observes, and reflects in a closed loop, using a single MLLM as both planner and evaluator and a frozen MotionLLM as the executor.\n\nInteractAgent integrates Online Observation for step-wise recovery decisions (continue/redo/replan) and Memory-Augmented Reflection for multi-round plan refinement with adaptive stopping. On UniHSI, InteractAgent improves task success and reduces penetration compared with training-free baselines. Code: https://github.com/AIGeeksGroup/InteractAgent."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents InteractAgent for long-horizon human-scene interaction. A multimodal LLM serves as both planner and evaluator, while a frozen MotionLLM executes actions in a loop of planning, execution, observation, and reflection. Online Observation supports continue, redo, or replan decisions, and Memory-Augmented Reflection refines plans across rounds with adaptive stopping. On UniHSI, the authors report higher task success and less penetration than training-free baselines.",
+          "zh": "论文提出 InteractAgent，用于长时程的人与场景交互。系统以多模态大语言模型同时担任规划器和评估器，并由冻结的 MotionLLM 执行；它通过闭环规划、执行、观察与反思，结合在线观察进行继续、重做或重新规划的决策，并用记忆增强反思逐轮改进计划及自适应停止。作者报告，在 UniHSI 上，与免训练基线相比，该方法提高了任务成功率并减少穿透。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1743,7 +1791,11 @@
             "heading": "",
             "text": "Robot manipulation often depends on short-term cues - such as brief contacts, temporary occlusions, and intermediate object states - that are ambiguous in a single frame and can only be resolved by integrating observations over time.\n\nHowever, injecting historical information solely by enlarging the history window is computationally costly and frequently yields limited gains due to substantial redundancy and task-agnostic, inflexible sampling of observations.\n\nWe propose CondenseVLA, a multi-frame VLA policy with a learnable decoder-side history condensation module for using short-term visual context in action decoding. Given a sequence of cached per-frame features from the VLM backbone, CondenseVLA distills observation history into a fixed set of slot tokens using learnable queries and multi-head cross-attention.\n\nSimple auxiliary regularization penalizes overlap among slot attention maps and decorrelates slot embeddings, encouraging complementary attention and reducing slot redundancy. Across the evaluated tasks, CondenseVLA improves Simpler-WidowX success from 58.7% to 69.8% (+11.1 percentage points), achieves 97.2% on LIBERO, and reaches 52.8% on real-world tasks.\n\nIt achieves 21.6% success on memory-dependent RMBench tasks. These results support selective condensation of bounded recent visual evidence for action decoding, while harder multi-observation tasks expose the limits of a finite history window. Project page: https://github.com/FeiyangHong/CondenseVLA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "CondenseVLA is a multi-frame vision-language-action policy that condenses recent visual history in a learnable decoder-side module. Learnable queries and multi-head cross-attention summarize cached per-frame features into a fixed set of slot tokens; auxiliary regularization encourages complementary attention and less redundancy. Across evaluated tasks, the authors report improved Simpler-WidowX success, results on LIBERO and real-world tasks, and lower success on memory-dependent RMBench tasks. They state that harder multi-observation tasks reveal limits of a finite history window.",
+          "zh": "论文提出 CondenseVLA，一种多帧视觉语言动作策略，通过可学习的解码器端模块压缩短期视觉历史。该模块利用可学习查询和多头交叉注意力，将缓存的逐帧特征汇总为固定数量的槽位 token，并以辅助正则化鼓励注意力互补、减少冗余。作者报告，在所评估任务中，该方法提升了 Simpler-WidowX 成功率，在 LIBERO、真实世界任务和依赖记忆的 RMBench 任务上也取得相应结果；摘要指出，较难的多观察任务仍显示有限历史窗口的局限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1774,7 +1826,11 @@
             "heading": "",
             "text": "Animals' body morphology shapes the gait patterns they can perform, where mechanical resonance reduces the need for active control. By tuning posture and muscle stiffness, they leverage their embodied intelligence to achieve effective gaits for different speeds.\n\nIn contrast, most quadruped robots are not specifically designed to exploit mechanical resonance due to the complexity of nonlinear dynamics and require dedicated locomotion controllers.\n\nTo provide an alternative, we present a proof of concept framework making the nonlinear dynamics of a robot predictable in the design process and show how this knowledge can be leveraged such that multi-gait locomotion can emerge from nonlinear resonances, shaped by gravity, inertia, and elasticity.\n\nWe present the highly compliant quadruped robot eBert, on which we identify six nonlinear normal modes (NNMs) using our new theoretical tools and validate their existence in simulation and hardware.\n\nWith black-box optimization to determine step length, simulations show how each NNM naturally develops into a distinct gait, manifesting different speeds, which also largely transfers to the robotic hardware.\n\nOur experiments show that eBert can exploit its mechanics to generate task-specific movements which may serve as foundation for designing a new generation of agile and efficient robots leveraging embodied intelligence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a proof-of-concept framework for predicting a robot’s nonlinear dynamics during design and using mechanical resonances to produce multiple gaits. On the highly compliant quadruped eBert, the authors identify six nonlinear normal modes and validate their existence in simulation and hardware. After black-box optimization determines step length, simulations show each mode developing into a distinct gait with a different speed; these gaits largely transfer to the hardware. Experiments show task-specific movement enabled by the robot’s mechanics.",
+          "zh": "论文提出一种概念验证框架，探索如何在机器人设计中预测非线性动力学，并利用机械共振形成多种步态。研究对象是高柔顺四足机器人 eBert；作者用新理论工具识别六种非线性正规模态，并在仿真和硬件上验证其存在。通过黑箱优化确定步长后，仿真中每种模态自然形成速度不同的步态，这些步态也大体迁移到硬件。实验显示，eBert 能利用自身力学特性产生适合特定任务的运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1805,7 +1861,11 @@
             "heading": "",
             "text": "While large-scale human motion capture datasets provide a rich source of demonstrations for humanoid robot learning, retargeting the diverse motions to different humanoid robots remains a nontrivial challenge. Existing kinodynamic trajectory optimization pipelines are computationally expensive and often require manual adjustments per motion.\n\nWe present FRDV (Fast Retargeting with Dynamics Validation), a scalable framework consisting of rapid constrained kinematic retargeting and an additional dynamics validation pipeline.\n\nIts kinematic stage integrates a custom Sequential Quadratic Programming solver, Real-Time Iteration, and parallel chunk-based processing, achieving up to 9,156 frames per second, approximately up to 136 times faster than GMR and ProtoMotions, while robot-specific constraints are incorporated into the optimization to reduce common retargeting artifacts, such as ground penetration and self-collision.\n\nFor motions requiring additional verification, a contact implicit iLQR controller is utilized to test the retargeted reference under full rigid body dynamics. This dynamics-based validation identifies dynamically infeasible motions and refines contact-related artifacts such as foot floating and foot skating.\n\nWe evaluate retargeting quality by training motion tracking reinforcement learning policies using several state-of-the-art pipelines and comparing their tracking fidelity and success rates. Furthermore, sim-to-real transfer is demonstrated on a Unitree G1 humanoid. Videos and code are available at: https://daroslab.github.io/frdv/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FRDV, a framework for rapidly retargeting human motion capture data to different humanoid robots. Its kinematic stage combines a custom sequential quadratic programming solver, real-time iteration, and parallel chunk processing, with robot-specific constraints intended to reduce artifacts such as ground penetration and self-collision. For motions needing further checks, a contact-implicit iLQR controller validates references under rigid-body dynamics and refines contact artifacts. Evaluation compares reinforcement-learning motion-tracking policies, and the authors also demonstrate sim-to-real transfer on a Unitree G1.",
+          "zh": "论文提出FRDV框架，用于将人类动作捕捉数据快速重定向到不同人形机器人。其运动学阶段结合定制序列二次规划、实时迭代和分块并行处理，并加入机器人约束以减少穿地和自碰撞等伪影；作者报告其速度最高可达每秒9156帧。对需进一步核验的动作，框架使用接触隐式iLQR在完整刚体动力学下验证并修正接触问题。评估包括训练运动跟踪强化学习策略并比较效果，另展示了Unitree G1上的仿真到现实迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1836,7 +1896,11 @@
             "heading": "",
             "text": "General-purpose multimodal models have shown promise as direct robot action policies, yet whether they grasp the physics underlying real-world interactions and can apply that understanding to guide action remains underexplored.\n\nWe investigate this question using contact-rich manipulation as a representative testbed, examining tactile understanding as a concrete instance of this broader capability. Contact-rich manipulation requires interpreting tactile feedback and adjusting actions after obstruction.\n\nExisting learned tactile policies acquire these capabilities through specialized pretraining and per-task optimization, with substantial data and training costs. We present GPT-as-Tactile-Policy, which summarizes expert demonstrations into task guidance and tactile references for contact assessment and corrective action.\n\nGPT-6-Astra combines this context with multimodal observations and interaction history to generate control commands and adjust actions through contact feedback. Without additional robotics-specific pretraining or per-task policy fine-tuning, our method achieves 93.8\\% mean success across five UniVTAC tasks.\n\nOverall performance is comparable to state-of-the-art policies, with higher success on selected tasks. On Insert Hole, tactile feedback improves success from 31\\% to 99\\%.Execution analysis further demonstrates contact-guided probing and correction, supporting manipulation progress through explicit expert experience and online feedback."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines whether general-purpose multimodal models can use tactile feedback to adjust actions during contact-rich manipulation. It introduces GPT-as-Tactile-Policy, which turns expert demonstrations into task guidance and tactile references, then combines them with multimodal observations and interaction history to produce control commands. The authors report a mean success rate of 93.8% across five UniVTAC tasks without additional robotics-specific pretraining or per-task policy fine-tuning. Performance is comparable overall to leading policies, with higher results on selected tasks; tactile feedback raises reported Insert Hole success from 31% to 99%.",
+          "zh": "论文研究通用多模态模型能否理解接触操作中的触觉反馈并据此调整动作，提出GPT-as-Tactile-Policy。方法将专家示范整理为任务指导和触觉参考，结合多模态观察及交互历史生成控制指令，无需额外机器人预训练或逐任务策略微调。作者报告该方法在五项UniVTAC任务上的平均成功率为93.8%，整体表现与先进策略相当，部分任务更高；在Insert Hole任务中，加入触觉反馈后成功率由31%升至99%。分析展示了接触引导的探测与纠正。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1867,7 +1931,11 @@
             "heading": "",
             "text": "Frontier models can control robots through agent harnesses that loop on one question: what motion comes next toward the user's goal? We show that this default loop carries out harmful instructions.\n\nWith GPT-6 Astra controlling a low-cost SO-101 arm through the Inspect Robots harness on three household tasks whose hazard is common knowledge, such as \"put the knife in the toy basket\", the policy refused 0% of 15 trials, attempted the harm every time, and completed it in 27%.\n\nIts one exit, give_up, is meant for goals that cannot be achieved, and it never cited the hazard. We add an optional runtime safety check to the loop: before the first motion, the model is asked whether it would carry out the instruction, given the same camera frames.\n\nThe check would have stopped all 15 hazardous instructions, including the 4 that completed the harm, and flagged none of the 15 harmless controls. Code and data: https://github.com/Arnav-Gr0ver/Refuses-When-Asked-Complies-When-Acting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether a robot control loop may carry out harmful instructions. In 15 trials across three household tasks, GPT-6 Astra controlling an SO-101 arm through the Inspect Robots harness reportedly refused none, attempted the harmful action every time, and completed it in 27% of trials. The model’s give_up exit did not cite hazards. The authors add an optional runtime check before the first motion, asking about the instruction using the same camera frames. In their evaluation, it would have stopped all 15 hazardous instructions, including the four completed harms, while flagging none of 15 harmless controls.",
+          "zh": "论文考察机器人控制循环是否会执行有害指令，并报告GPT-6 Astra通过Inspect Robots控制SO-101机械臂时，在三类家庭任务的15次危险试验中未拒绝任何一次，始终尝试执行，且27%完成了有害操作。模型的give_up退出方式未提及危险。作者在首次运动前增加运行时安全检查：使用相同相机画面询问模型是否会执行指令。按其测试，该检查可拦截全部15条危险指令，包括4次已完成的伤害，同时未误报15项无害控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1898,7 +1966,11 @@
             "heading": "",
             "text": "In robot-assisted education, a robot must understand how to complete a task in order to effectively guide a student through it. We present a novel method that enables a semi-autonomous, camera-equipped robot to recognise the task goal and plan actions to achieve it.\n\nOur work focuses on Shoebox Tasks, an activity commonly used in the education of individuals with Autism Spectrum Disorder (ASD).These tasks are designed so that the goal can be inferred directly from their visual structure.\n\nWe have developed a solver that uses a vision-based Large Language Model to convert photos of a Shoebox Task into a Planning Domain Definition Language (PDDL) representation and generate action plans for solving it.\n\nWe have also implemented a robotic interface that enables a Nao robot to autonomously execute various Shoebox Tasks and assist a student by suggesting next steps or signalling detected failures through action demonstrations, voice commands, or gestures. With an adapted robotic interface, the solver can be integrated into a variety of educational robots.\n\nNo programming expertise is required from teachers, and the solver operates exclusively on captured images as input.\n\nResearch in special educational needs indicates that students with ASD can benefit substantially from robot-assisted teaching, and our system aims to strengthen these learning opportunities while also fostering interest in robotics among individuals with ASD."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a vision-based task modeling and planning method for Shoebox Tasks used in education for individuals with Autism Spectrum Disorder. A vision-based large language model converts task photographs into PDDL representations and generates action plans. A robotic interface enables a Nao robot to perform tasks and support a student by suggesting next steps or signaling detected failures through demonstrations, voice, or gestures. The system uses captured images as its only input and requires no programming expertise from teachers. The authors frame it as a way to strengthen robot-assisted learning opportunities and interest in robotics.",
+          "zh": "论文提出一种面向自闭症谱系障碍教育中Shoebox Tasks的视觉任务建模与规划方法。求解器使用视觉大语言模型，将任务照片转换为PDDL表示并生成动作计划；配套接口使Nao机器人能够执行任务，并通过动作示范、语音或手势提示学生下一步或指出检测到的失败。系统仅以拍摄图像为输入，无需教师具备编程技能。作者认为，结合机器人辅助教学有望支持相关学习机会，并提升学生对机器人技术的兴趣。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
