@@ -2659,7 +2659,11 @@
             "heading": "",
             "text": "Human video demonstrations provide rich manipulation strategies for dexterous manipulation learning. We study a setting in which a fully specified simulated scene is used to generate videos that specify the demonstrated manipulation behavior.\n\nThis setup provides access to scene information such as object geometry, articulation, and camera parameters, while allowing direct control over task and scene configuration.\n\nHowever, generated videos may contain geometric distortions, inaccurate contacts, and other physical inconsistencies, making the recovered motion difficult to execute directly on a robot. We present an end-to-end framework for converting such simulation-grounded videos into physically executable dexterous robot demonstrations.\n\nOur perception pipeline leverages the known scene through model-based object tracking with dense foundation-model features and depth-based hand-object alignment.\n\nThe recovered human motion is then retargeted and physically grounded using residual reinforcement learning, where a backward curriculum and a cache of physically valid reset states enable the policy to correct imperfect video-derived references while preserving the demonstrated manipulation strategy.\n\nOn clean ARCTIC demonstrations, our method achieves competitive performance with prior dexterous retargeting approaches and shows greater robustness when applied to references extracted from generated videos.\n\nWe further demonstrate diverse rigid and articulated manipulation tasks in simulation and successful open-loop transfer of the optimized trajectories to a real dexterous robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an end-to-end framework for turning simulation-generated manipulation videos into executable dexterous robot demonstrations. It uses known scene information for object tracking and hand-object alignment, then applies residual reinforcement learning to correct imperfect video-derived motion while retaining the demonstrated strategy. On clean ARCTIC demonstrations, performance is competitive with prior dexterous retargeting methods, and the approach is more robust to references extracted from generated videos. Diverse tasks are demonstrated in simulation, with successful open-loop transfer of optimized trajectories to a real dexterous robot.",
+          "zh": "研究从仿真生成视频中恢复灵巧操作动作，并将其转化为可在机器人上执行的示范。方法利用已知场景信息进行物体跟踪和手物对齐，再通过残差强化学习校正视频动作，同时保留示范策略。在干净的 ARCTIC 示范上，性能与既有灵巧动作重定向方法相当；面对生成视频提取的参考动作时更稳健。作者还在仿真中展示多种刚体和关节操作任务，并报告优化轨迹成功开环迁移至真实灵巧机器人。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2690,7 +2694,11 @@
             "heading": "",
             "text": "Due to their low accuracy, industrial robots commonly require online teaching after the offline development of a robot program in simulation. The accuracy is limited by compliance and transmission errors in the robot joints. Transmission errors are defined as errors between the load-side angles of the gearboxes and the motor encoder angles.\n\nAn approach to identify the transmission errors based on laser tracker measurements is presented. The developed velocity-dependent Fourier series model is integrated in a virtual commissioning software as a co-simulated functional mock-up unit.\n\nAdditionally, it is used to compensate the transmission errors by correcting the setpoint from the computerized numerical control (CNC).The model identification and the compensation are experimentally evaluated with a St\\\"aubli TX2-40 industrial robot.\n\nThe model has a mean absolute error of 0.114 mrad, and the compensation improves the accuracy by 83.26 % for axis 2 and 49.21 % for axis 3."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a method for identifying industrial robot transmission errors from laser tracker measurements and models them with a velocity-dependent Fourier series. The model is integrated as a co-simulated functional mock-up unit in virtual commissioning software and is also used to compensate errors by correcting CNC setpoints. Identification and compensation are experimentally evaluated on a Stäubli TX2-40 industrial robot. The authors report a mean absolute model error of 0.114 mrad and accuracy improvements of 83.26% for axis 2 and 49.21% for axis 3.",
+          "zh": "本文提出一种基于激光跟踪仪测量识别工业机器人传动误差的方法，并用速度相关的傅里叶级数建模。该模型集成到虚拟调试软件的协同仿真功能模型中，也用于修正数控系统的设定值以补偿误差。作者使用 Stäubli TX2-40 工业机器人开展实验评估，报告模型平均绝对误差为 0.114 mrad；补偿使轴 2 和轴 3 的精度分别提升 83.26% 和 49.21%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2721,7 +2729,11 @@
             "heading": "",
             "text": "Electromyography (EMG)-driven control enables wearable robots to assist users based on their neuromuscular activity. Upper-limb exoskeletons typically rely on proportional myoelectric control (PMC), which amplifies user effort but may compromise stability at high assistance levels.\n\nEMG-driven adaptive gravity compensation (AGC) offers a promising alternative, counterbalancing gravitational torques while continuously adapting to neuromuscular activity. However, these approaches have not been systematically compared in a human-in-the-loop setting.\n\nThis study evaluates five control algorithms: two PMC strategies at different assistance levels, a purely integral AGC (AGC-PI), a kinematics- and acceleration-aware model-based (MB) AGC (AGC-AW), and a novel MB AGC approach based on Recursive Least Squares (AGC-RLS) for online payload estimation.\n\nFourteen healthy participants performed target-reaching tasks using an active elbow exoskeleton under 0 kg and 2 kg loading conditions. Performance metrics included muscular activity, movement accuracy, task efficiency, and subjective workload.\n\nPMC exhibited a trade-off between physical effort and task performance: low assistance levels required greater physical effort under load, whereas high gains impaired task execution. AGC-PI reduced agonist activity but induced antagonist activation.\n\nIn contrast, both model-based AGC approaches effectively compensated for external payloads, reducing physical and cognitive demands while improving movement accuracy and completion time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This human-in-the-loop study compares five control algorithms for an EMG-driven elbow exoskeleton: proportional myoelectric control at two assistance levels, integral adaptive gravity compensation, and two model-based adaptive approaches. Fourteen healthy participants performed target-reaching tasks with 0 kg and 2 kg loads. Proportional control involved a trade-off between effort and task performance, while integral compensation reduced agonist activity but induced antagonist activation. Both model-based approaches compensated for external payloads and reduced physical and cognitive demands while improving movement accuracy and completion time.",
+          "zh": "该研究在人机闭环实验中比较肘部肌电驱动外骨骼的五种控制算法，涉及不同辅助水平的比例肌电控制，以及纯积分和两种基于模型的自适应重力补偿。14 名健康参与者在 0 kg 与 2 kg 负载下完成目标到达任务。比例控制呈现体力消耗与任务表现之间的权衡；纯积分补偿降低主动肌活动，却引发拮抗肌活动。两种基于模型的方法能补偿外部负载，并降低体力与认知需求，同时提高运动准确性、缩短完成时间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2752,7 +2764,11 @@
             "heading": "",
             "text": "Vision-language navigation is moving into photorealistic, physically simulated scenes, where the leading zero-shot agents put a vision-language model in the control loop to choose every move and stop.\n\nRobots favour small models, whose abilities are uneven: Qwen3-VL-4B can judge whether a single view looks like the goal, but its route reasoning is at chance, its distance estimates nearly constant, its stop votes unreliable.\n\nOur agent therefore asks it two perceptual questions per step, which direction looks like the goal and whether the view justifies stopping, plus one gated frontier query on route-bearing instructions, and treats the answers as evidence, not actions: a route-blind semantic field over a bird's-eye map accumulates the directional scores through a tempered update, a skeleton graph supplies frontiers and geodesic distances, and a two-stage terminator turns stop votes into termini through a trail-consistency gate and a budget-forced return.\n\nWith every baseline re-run in one installation at one budget, the agent exceeds all four zero-shot baselines of the VLNVerse subset in mean success on both granularities, though the paired interval against the strongest coarse-grained baseline includes zero.\n\nTermination is the dominant lever in ablation, thirteen attempts to give the model more of the navigation establish no reliable gain, and the agent runs on a Unitree Go2 quadruped with off-board inference. Code, per-episode logs and a robot video will be released at https://anonymous.4open.science/r/structure-over-reasoning-PAGE."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a zero-shot vision-language navigation agent that uses a small model for structured perceptual judgments rather than direct route reasoning. At each step, the model scores goal direction and whether to stop, with a gated frontier query for route-bearing instructions; map and graph components turn these judgments into navigation behavior. Under a shared installation and budget, the authors report higher mean success than four zero-shot baselines on both granularities of the VLNVerse subset, although the paired interval against the strongest coarse-grained baseline includes zero. Ablations identify termination as the dominant factor, and additional attempts to use the model for navigation show no reliable gain. The agent also runs on a quadruped with off-board inference.",
+          "zh": "本文提出一种以结构化感知而非逐步路线推理为核心的零样本视觉语言导航智能体。小型视觉语言模型每步判断目标方向和是否应停止，并在特定指令下查询前沿；地图语义场、骨架图和停止门控将这些判断整合为导航过程。在统一安装和预算下，作者报告该方法在 VLNVerse 子集的两种粒度上平均成功率超过四个零样本基线，但与最强粗粒度基线的配对区间包含零。消融显示终止机制影响最大；更多模型导航尝试未带来可靠收益。智能体还运行于四足机器人，采用机载外推理。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
