@@ -1189,7 +1189,11 @@
             "heading": "",
             "text": "We present FoveaVLA, a Vision-Language-Action (VLA) model that replaces the wrist camera with learned foveation actions. Wrist cameras provide close-up detail but restrict the view to the end-effector's surroundings. External cameras see the whole scene, but the policy receives them at low resolution, so the fine detail needed for manipulation is lost.\n\nFoveaVLA recovers this detail by predicting, alongside each action chunk, the interaction region to observe at the next policy query. The policy then receives crops of these regions, taken from the original-resolution images, together with the full views.\n\nWe build FoveaVLA on $\\pi_{0.5}$ in two configurations, Single and Dual, using one or two external stereo cameras with full and foveal RGB and depth inputs, and post-train both on DROID with RoboInter interaction annotations.\n\nAcross four real-world task suites, FoveaVLA-Single achieves 70.8% success with one external RGB-D view, and FoveaVLA-Dual achieves 77.1%, versus 52.1% for the wrist-equipped $\\pi_{0.5}$.Both match the baseline on plain pick-and-place and improve success with distractors, cloth manipulation, and far-away objects."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FoveaVLA, which replaces the wrist camera with learned foveation actions. Alongside each action chunk, the model predicts an interaction region for the next policy query, then receives crops from original-resolution images together with full views. The authors build Single and Dual configurations on π0.5 and post-train them on DROID with interaction annotations. Across four real-world task suites, the Single configuration with one external RGB-D view achieves 70.8% success and Dual achieves 77.1%, compared with 52.1% for the wrist-equipped baseline. Both match the baseline on plain pick-and-place and improve results on distractors, cloth manipulation, and distant objects.",
+          "zh": "论文提出 FoveaVLA，以学习得到的注视动作取代腕部相机。模型在每个动作块预测下一次查询时要观察的交互区域，并将原始分辨率图像中的局部裁剪与全景视图一同输入。作者基于 π0.5 构建单相机和双相机配置，并使用带交互区域标注的 DROID 数据进行后训练。在四类真实世界任务套件中，单外部 RGB-D 视图配置成功率为 70.8%，双相机配置为 77.1%，腕部相机基线为 52.1%。两种配置在普通抓放任务上与基线相当，在干扰物、布料操作和远处物体任务上成功率更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1220,7 +1224,11 @@
             "heading": "",
             "text": "First-person humanoid teleoperation ties access to side and rear targets to operator rotation. We present coupled visual--motor remapping, pairing a panoramic azimuth warp with its inverse upper-limb yaw transform. A working prototype implements Global Zoom (GZ) and Focus+Context (F+C).\n\nIn a within-subject study (N=8); 72 trials), GZ had the largest completion count (23/24; Fixed: 20/24; F+C: 21/24), whereas F+C was preferred by 6/8 participants. Therefore, completion and preference favored different mappings in this sample."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies first-person humanoid teleoperation, where reaching side and rear targets otherwise requires operator rotation. It presents coupled visual and motor remapping, combining a panoramic azimuth warp with an inverse upper-limb yaw transform. A prototype implements Global Zoom and Focus+Context. In a within-subject study with eight participants and 72 trials, Global Zoom had the highest completion count at 23 of 24, compared with 20 of 24 for Fixed and 21 of 24 for Focus+Context. Yet six of eight participants preferred Focus+Context. The authors report that completion and preference favored different mappings in this sample.",
+          "zh": "论文研究人形机器人的第一人称遥操作，提出耦合视觉与运动重映射：通过全景方位扭曲扩大视觉访问范围，并配合反向的上肢偏航变换。原型实现了全局缩放和焦点加上下文两种映射。研究在 8 名参与者中进行被试内比较，共有 72 次试验。全局缩放完成任务最多，为 23/24；固定映射为 20/24，焦点加上下文为 21/24。另一方面，8 人中有 6 人偏好焦点加上下文。作者据此指出，在该样本中，任务完成数和参与者偏好倾向于不同映射。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1251,7 +1259,11 @@
             "heading": "",
             "text": "Modern robotic agents are increasingly expected to support steerable control, where a single policy can adjust its behavioral style at runtime under changing user preferences.\n\nPreference-conditioned reinforcement learning provides this interface, but conditioning alone does not ensure that a requested behavior change is strong, does not leak into unrelated behaviors, and does not compromise task performance. Our evaluation combines Preference Reward Responsiveness (PRR) with coverage and utility metrics.\n\nWe use these measures to compare reward-level, advantage-level, loss-level, and PCGrad-based aggregation across two humanoid-control frameworks. No aggregation level performs best across all environments and criteria.\n\nExperiments show that aggregating objectives early produces a wider range of behavioral responses but greater unintended changes in other objectives, while aggregating them later improves control precision at some cost to responsiveness."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper compares where to aggregate objectives in preference-conditioned reinforcement learning for steerable humanoid control. It evaluates whether policies can respond strongly to requested behavior changes, avoid spillover into unrelated behaviors, and maintain task performance. The authors combine Preference Reward Responsiveness with coverage and utility metrics to compare reward-level, advantage-level, loss-level, and PCGrad aggregation across two humanoid-control frameworks. Experiments indicate that no aggregation level performs best across all environments and criteria. Earlier aggregation yields a wider range of behavioral responses but more unintended changes in other objectives; later aggregation improves control precision at some cost to responsiveness.",
+          "zh": "论文评估偏好条件强化学习中不同的目标聚合位置，关注人形机器人策略能否按用户偏好调整行为，同时保持任务表现并避免对无关行为造成变化。作者结合偏好奖励响应度、覆盖度和效用指标，在两种人形控制框架中比较奖励级、优势级、损失级及 PCGrad 聚合。实验显示，没有一种聚合层级在所有环境和指标上都占优。较早聚合目标能产生更广泛的行为响应，但会带来更多对其他目标的非预期影响；较晚聚合提升控制精度，但响应性有所降低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
