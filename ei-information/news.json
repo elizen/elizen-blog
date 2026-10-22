@@ -1484,7 +1484,11 @@
             "heading": "",
             "text": "During steady pouring, images and robot pose may remain nearly unchanged while transferred mass accumulates, making the return decision ambiguous for a whole-task vision-language-action (VLA) policy. We present FlowVLA, which separates motor generation from physical-completion estimation.\n\nA shared $\\pi_{0.5}$ action expert learns approach, pour, and return with boundary-aware supervision. A target-independent estimator fuses visual, joint, wrist-wrench, and recurrent force-belief histories to maintain an estimate of transferred mass. The controller initiates return when this estimate plus predicted residual outflow reaches the requested mass.\n\nIn coffee-pot/water experiments, FlowVLA achieves 13.1 g goal-balanced mean absolute error (MacroMAE), lower than all tested VLA baselines. Across all attempts, 53.7% both complete the task and finish within +/-10% of the requested mass. The same model interpolates to held-out 150/250-g targets without retraining.\n\nIndependently trained models further evaluate the formulation in three additional container-fluid settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FlowVLA separates action generation from estimating physical task completion. A shared action expert learns approach, pouring, and return, while an estimator combines visual, joint, wrist-wrench, and recurrent force-belief histories to estimate transferred mass. The controller returns when estimated mass plus predicted residual outflow reaches the requested amount. In coffee-pot and water experiments, the authors report lower goal-balanced mean absolute error than all tested VLA baselines; 53.7% of attempts both completed the task and ended within ±10% of the requested mass. The model interpolated to held-out targets without retraining, and independently trained models were evaluated in three additional container-fluid settings.",
+          "zh": "论文提出 FlowVLA，将动作生成与物理完成度估计分开：共享动作专家学习接近、倾倒和返回，估计器融合视觉、关节、腕部力觉及历史力信念来估算转移质量，并结合预测的残余流量决定何时返回。在咖啡壶向水实验中，作者报告其目标均衡平均绝对误差低于测试的 VLA 基线；53.7% 的尝试既完成任务又达到请求质量的 ±10% 范围。模型还可在不重新训练的情况下插值到留出的 150 克和 250 克目标。另以独立训练模型在三种容器与流体设置中评估该方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1515,7 +1519,11 @@
             "heading": "",
             "text": "LEGO walkers are walking automata constructed from modular LEGO Technic bricks. They exhibit intriguing locomotion and are also highly reconfigurable through the modular Technic bricks, making them widely applicable in education, recreation, and robotics research.\n\nHowever, existing LEGO walkers are designed mostly by reusing existing single-actuator walking mechanisms. Although the locomotion is stable, their fixed walking gaits limit their adaptability and versatility.\n\nThis paper presents the first computational solution capable of designing LEGO walkers that not only walk stably, but also support a variety of walking gaits. Our idea is twofold.\n\nFirst, we control the foot motion trajectory of each leg mechanically via a specifically-designed gear-linkage mechanism, in which we incorporate a pair of 3D-printed non-circular gears to work with a LEGO Technic mechanism.\n\nSecond, we drive each leg by an independent motor and synchronize the timings of multiple leg motions via a simple yet adaptable control algorithm, enabling stable and versatile locomotion. Importantly, we take this modeling as a foundation to co-design the morphology and control of the LEGO walkers to meet the target locomotion and appearance.\n\nLeveraging our approach, we created a variety of LEGO walkers, demonstrating various walking gaits and appearances, and fabricated some of them to show their locomotion capability in the real world."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a computational method for designing LEGO walkers with stable, varied gaits. A gear-linkage mechanism, incorporating 3D-printed non-circular gears with LEGO Technic components, mechanically controls each leg’s foot trajectory. Independent motors drive the legs, and an adaptable algorithm synchronizes their motion. The authors also co-design morphology and control to meet target locomotion and appearance. They created walkers with different gaits and looks, and fabricated some to demonstrate locomotion in the real world.",
+          "zh": "论文提出一种用于计算设计 LEGO 步行机器人的方法，目标是实现稳定且多样的步态。每条腿的足部轨迹由专门设计的齿轮连杆机构控制，其中非圆齿轮与 LEGO Technic 机构配合；各腿由独立电机驱动，并通过控制算法同步运动时序。作者进一步将形态与控制共同设计，以满足目标运动和外观。研究制作了多种步态与外观的机器人，并实际制造其中一些，以展示其现实环境中的运动能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1546,7 +1554,11 @@
             "heading": "",
             "text": "Real-time whole-body humanoid teleoperation remains challenging due to the computational latency introduced by optimization-based retargeting pipelines and future-frame conditioning.\n\nExisting motion tracking policies typically require dense reference targets including full joint positions, body-part transformations, and even future frames, which tightly couples the controller to expensive upstream modules.\n\nIn this work, we present HuMiT, a whole-body teleoperation system built on a unified tracking policy that requires only a compact reference target, consisting of root height, root velocity, and the SE（3） poses of four sparse keypoints at the current frame, yet achieves competitive tracking fidelity compared to methods relying on more diverse reference states including complete joint positions, dense body-part transformations, and even future frames.\n\nExperiments show that our policy achieves a communication-to-inference latency of $\\sim$20 ms measured between headset streaming and policy output and a video-based optical flow latency of 65 ms (median) across different motion types.\n\nWe validate the system on a Unitree G1 humanoid, showcasing split-second reactive responses such as catching a tossed ball, as well as coordinated loco-manipulation capabilities. Project page: https://xiaohu-art.github.io/Track/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HuMiT is a whole-body humanoid teleoperation system built around a unified tracking policy. It uses a compact current-frame reference: root height, root velocity, and the SE(3) poses of four sparse keypoints. The authors report tracking fidelity competitive with methods that use richer reference states. Experiments measured about 20 ms communication-to-inference latency from headset streaming to policy output and a median video-based optical-flow latency of 65 ms. Validation on a Unitree G1 humanoid demonstrated rapid reactions, including catching a tossed ball, and coordinated loco-manipulation.",
+          "zh": "论文提出 HuMiT，一种基于统一跟踪策略的全身人形机器人遥操作系统。它只需当前帧的紧凑参考目标，包括根部高度、根部速度和四个稀疏关键点的 SE（3）位姿；作者称其跟踪效果可与使用更丰富参考状态的方法相比。实验报告头显数据流至策略输出的通信到推理延迟约为 20 毫秒，基于视频的光流延迟中位数为 65 毫秒。系统在 Unitree G1 人形机器人上验证，展示了接抛球的快速反应及协调的移动操作能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
