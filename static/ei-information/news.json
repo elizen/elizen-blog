@@ -2029,7 +2029,11 @@
             "heading": "",
             "text": "Blind and visually impaired individuals face uncertainty when navigating unfamiliar areas. Whether a cane or a guide dog is used for navigation, this may prove to be challenging.\n\nTo mitigate this challenge, we present the Context-Aware Navigation Explanation framework that explains guide dog movements for obstacle avoidance and navigation using a large language model. This system integrates perceptual context with planned future trajectories to generate natural-language explanations of robot movement.\n\nWe deploy the system on a Unitree Go2 platform in indoor navigation scenarios and evaluate how different explanation context configurations affect user trust and explanation satisfaction.\n\nResults show a strong positive relationship between explanation satisfaction and trust, and suggest that combining obstacle information with future trajectory leads to the most effective explanations. These findings highlight the potential of context-aware language explanations to improve transparency and trust in assistive robot navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a context-aware framework that uses a large language model to explain assistive robot movements for obstacle avoidance and navigation. It combines perceptual context with planned future trajectories and is deployed on a Unitree Go2 in indoor navigation scenarios. The evaluation examines how explanation context affects user trust and satisfaction. The reported results show a strong positive relationship between satisfaction and trust, and suggest that explanations combining obstacle information with future trajectories are most effective.",
+          "zh": "论文提出面向辅助机器人的情境感知导航解释框架，利用大型语言模型，结合感知情境与规划的未来轨迹，以自然语言解释机器人避障和导航动作。研究将系统部署在 Unitree Go2 平台，并在室内导航场景中评估不同解释情境配置对用户信任和满意度的影响。结果显示满意度与信任呈强正相关；作者指出，同时提供障碍物信息和未来轨迹的解释效果最好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2060,7 +2064,11 @@
             "heading": "",
             "text": "Force-aware manipulation typically relies on specialized force or tactile sensors. We show that force-aware manipulation can instead be achieved through visual force prediction from the deformation of a compliant Fin Ray gripper. Our approach trains two models.\n\nFirst, we train a visual force estimator on calibration data and use it to annotate task demonstrations with force estimates. Second, we train an action--force proposal policy on these force-augmented demonstrations to jointly generate candidate robot actions and their associated forces.\n\nAt test time, we sample candidate actions and the forces they are expected to produce, then execute the action whose predicted force is closest to a target from the demonstrations. We evaluate our approach on berry picking, empty-can grasping, in-hand reorientation, and plug insertion.\n\nOur results show that visual force prediction can guide inference-time action selection for contact-rich manipulation without requiring force or tactile sensors at deployment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes predicting force visually from deformation of a compliant Fin Ray gripper to support contact-rich manipulation without force or tactile sensors at deployment. A visual force estimator annotates task demonstrations, which then train an action-force proposal policy. At test time, the system selects the candidate action whose predicted force is closest to a target from the demonstrations. The approach is evaluated on berry picking, empty-can grasping, in-hand reorientation, and plug insertion; the authors report that visual force prediction can guide inference-time action selection.",
+          "zh": "论文提出利用柔性 Fin Ray 夹爪形变进行视觉力预测，以支持无需部署力觉或触觉传感器的接触丰富型操作。方法先用校准数据训练视觉力估计器，为任务示范标注力估计；再以增强后的示范训练动作—力提议策略，联合生成候选动作及其相关力。测试时，系统执行预测力最接近示范目标力的候选动作。作者在采摘浆果、抓取空罐、手内重定向和插头插入任务上进行评估，并报告视觉力预测可用于推理时的动作选择。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2091,7 +2099,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models achieve strong performance across embodied manipulation tasks by unifying visual understanding, language conditioning, and action generation.\n\nHowever, long-horizon tasks can involve non-Markovian dependencies: successful decisions may require retaining task progress and past interaction outcomes, while partial observability and execution errors compound over time.\n\nExisting work has begun to address these challenges by augmenting foundation-model policies with memory and by introducing hierarchical architectures that separate high-level planning from low-level execution.\n\nWe organize the high-level VLM as a robotic agent through an editable harness to maintain task context and improve planning through execution experience. We instantiate this approach as SERA (Self-Evolving Robotic Agent), with a fixed VLA executor providing low-level control.\n\nThe harness maintains and updates task context using observations and execution feedback to guide subsequent planning. Self-evolution uses environment rollouts to propose and evaluate harness revisions, with the selected configuration fixed before held-out testing.\n\nOn RoboMME, SERA achieves 51.38% overall success with autonomous selection, compared with 44.38% without self-evolution. Our exploration suggests that agentic planning is a promising direction for history-dependent robotic manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses history-dependent manipulation, where task progress, partial observability, and execution errors affect long-horizon decisions. SERA organizes a high-level vision-language model as a robotic agent through an editable harness, while a fixed VLA executor handles low-level control. The harness updates task context from observations and execution feedback. Environment rollouts propose and evaluate revisions, with the selected configuration fixed before held-out testing. On RoboMME, SERA reports 51.38% overall success with autonomous selection, compared with 44.38% without self-evolution.",
+          "zh": "论文关注长时程操作中的历史依赖、部分可观测和执行误差累积问题，提出通过可编辑的 harness 组织高层视觉语言模型作为机器人智能体，并以固定的 VLA 执行器负责低层控制。SERA 会依据观测和执行反馈维护任务情境，并通过环境 rollout 提议和评估 harness 修订；所选配置在留出测试前固定。在 RoboMME 上，自主选择配置的整体成功率为 51.38%，未进行自进化时为 44.38%。作者认为智能体式规划是有前景的方向。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2122,7 +2134,11 @@
             "heading": "",
             "text": "Recent advances in frontier AI models have demonstrated remarkable capabilities in visual understanding, reasoning, planning, and tool use, raising the possibility of using general-purpose AI models for robot manipulation without task-specific training.\n\nHowever, their manipulation capabilities have not been systematically evaluated on standardized robotics benchmarks. In this report, we present a unified closed-loop manipulation framework for evaluating frontier AI models on the LIBERO-10 benchmark.\n\nOur framework enables models to control a robot directly through visual observations, robot proprioception, and structured tool calls, primarily by specifying target end-effector poses and gripper commands, without task-specific fine-tuning or pretrained manipulation skills.\n\nWe evaluate six frontier AI models, including GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna, Claude Opus 5, Claude Opus 5.5, and Gemini-4 Argon, across three reasoning effort levels, resulting in 18 configurations and 1,800 evaluation episodes. Our results show that GPT-6 Astra achieves the highest success rate of 44%, followed by Gemini-4 Argon at 43%.\n\nIncreasing reasoning effort generally improves manipulation performance, but the benefits vary across models and come at additional inference cost. We also observe substantial differences across tasks, with models performing relatively well on object placement tasks but struggling with precise spatial arrangements and complex multi-step interactions.\n\nThese findings demonstrate both the potential and limitations of frontier AI models for robot manipulation, highlighting the challenges of translating reasoning capabilities into reliable physical actions.\n\nWe release our evaluation framework and experimental results to support reproducible benchmarking and future research on reasoning-based robot manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The report introduces a unified closed-loop framework for evaluating general-purpose AI models on LIBERO-10. Models control a robot using visual observations, proprioception, and structured tool calls, without task-specific fine-tuning or pretrained manipulation skills. Six models are assessed at three reasoning effort levels, covering 18 configurations and 1,800 episodes. GPT-6 Astra reports the highest success rate at 44%, followed by Gemini-4 Argon at 43%. Greater reasoning effort generally helps, with model-dependent benefits and added inference cost; performance varies by task.",
+          "zh": "报告提出一个用于 LIBERO-10 的闭环操作评估框架，让通用 AI 模型依据视觉观察、机器人本体感知和结构化工具调用控制机器人，主要指定末端执行器目标位姿与夹爪指令，无需任务专用微调或预训练操作技能。研究评估六种前沿模型的三档推理强度，共 18 种配置和 1,800 个评估回合。GPT-6 Astra 成功率最高，为 44%，其次为 Gemini-4 Argon 的 43%。报告称增加推理强度通常有帮助，但收益因模型而异且增加推理成本；模型在物体放置上相对较好，在精确空间排列及复杂多步交互上较弱。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
