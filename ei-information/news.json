@@ -2461,7 +2461,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models present a promising paradigm for general-purpose robot manipulation, but closed-loop deployment is often limited by inference efficiency: at each timestep, high-resolution, often multi-view images are encoded into hundreds of visual tokens that dominate transformer computation and latency.\n\nToken compression via attention is a natural solution but is challenging for VLA control because （1） decision-critical tokens are determined by the task, not generic visual saliency, and （2） the token budget varies substantially across steps, so static metrics and budgets waste computation or discard control-critical tokens.\n\nWe introduce FastVLA, a training-free, task-aware, and temporally adaptive visual token compression framework. At each step, FastVLA scores token importance via task-to-vision attention and adaptively sets the compression rate from the importance-distribution uniformity, measured by an inverse-Simpson metric with online sliding-window calibration.\n\nWe evaluate FastVLA on OpenVLA, OpenVLA-OFT, and CogACT across LIBERO and SIMPLER, and on a physical Franka Research 3 robot.\n\nIn simulation, it reduces LLM-backbone FLOPs by 35-59\\% and action latency by 9-32\\% (a 1.09$\\times$-1.46$\\times$ speedup) while maintaining task success, achieving a comparable or better efficiency-performance trade-off than existing plug-and-play token compression/pruning/reuse baselines.\n\nOn the real robot, it cuts action-prediction latency by 20\\% (1.25$\\times$ speedup) at comparable success. Code is available at https://github.com/jiuyixu25/FastVLA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces FastVLA, a training-free visual token compression framework that scores token importance using task-to-vision attention and adjusts the compression rate according to the importance distribution. The authors evaluate it with OpenVLA, OpenVLA-OFT, and CogACT in simulation, and test it on a physical Franka Research 3 robot. In simulation, it reduces backbone FLOPs and action latency while maintaining task success. On the physical robot, action-prediction latency falls at comparable success.",
+          "zh": "论文提出 FastVLA，一种无需训练的视觉 token 压缩框架，按任务相关注意力评估 token 重要性，并依据重要性分布自适应调整压缩率。作者在 OpenVLA、OpenVLA-OFT 和 CogACT 上进行仿真评估，并在 Franka Research 3 实体机器人上测试。仿真中，方法降低骨干网络 FLOPs 和动作延迟，同时保持任务成功率；实体机器人测试中，动作预测延迟降低，成功率相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2492,7 +2496,11 @@
             "heading": "",
             "text": "Capability claims in robot manipulation are unverifiable, and existing leaderboards are each closed, simulated, or gameable. We propose HATCH, a robot escape room: an openly specified, physically replicable, sensor-scored, and unrehearsable benchmark.\n\nTasks span five skill categories at three difficulty levels and are chained so that the sensor confirming one task's completion unlocks the next, turning a room into a single long-horizon evaluation. Success is confirmed by instrumentation rather than human judgment, scoring is embodiment-agnostic, and object placements are randomized by a run-day seed.\n\nEntrants submit attested self-runs (uncut video, sensor logs, and the seed), with occasional organized events for calibration. Task specifications, build guide, bill of materials, and scoring rubrics are released under an open license."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes HATCH, a physical benchmark for evaluating robot manipulation capabilities, designed as an openly specified, replicable, sensor-scored, and unrehearsable “escape room.” Its tasks cover five skill categories at three difficulty levels and are chained into a long-horizon evaluation: sensor confirmation of one task unlocks the next. Instrumentation determines success, and scoring is embodiment-agnostic. Object placements are randomized by a run-day seed. Entrants submit attested self-run videos, sensor logs, and the seed; specifications and build materials are openly licensed.",
+          "zh": "论文提出 HATCH，一个面向机器人操作能力评估的实体基准，设计为开放规范、可复现、由传感器评分且难以预演的“逃生室”。任务覆盖五类技能和三个难度级别，并串联成长时程评估：传感器确认当前任务完成后才解锁下一项。评分依据仪器测量且不依赖机器人形态；物体摆放按运行日种子随机化。参赛者提交带认证的自测视频、传感器日志和种子，相关任务规范、构建指南、物料清单及评分规则以开放许可发布。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2523,7 +2531,11 @@
             "heading": "",
             "text": "The generalization of vision-language-action (VLA) models heavily relies on diverse training data. However, acquiring large-scale robot manipulation data across varied object appearances is costly and labor-intensive.\n\nTo address this, we introduce Embodied Manipulation Media Adaptation (EMMA), a framework for augmenting VLA policies that combines a generative data engine with an effective training pipeline. We introduce DreamTransfer, a diffusion Transformer-based architecture for generating multi-view consistent and geometrically plausible embodied manipulation videos.\n\nIt supports text-driven video editing on foreground, background and lighting while preserving 3D structure and geometric fidelity. We also utilize a hybrid training set of real and generated data and propose AdaMix to enhance the training process.\n\nAdaMix is a training strategy that adaptively weights samples according to policy performance to emphasize challenging samples. Evaluations show DreamTransfer outperforms previous video generation models in multi-view consistency, geometric fidelity, and text-conditioning precision.\n\nIn real-world robotic tasks with zero-shot visual settings, our framework achieves a relative performance increase of over 92% compared to training with real data alone, and improves by an additional 17% with AdaMix."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents EMMA, a framework for augmenting vision-language-action policy training with generated data. Its DreamTransfer model generates multi-view-consistent, geometrically plausible manipulation videos and supports editing foreground, background, and lighting while preserving 3D structure. The training pipeline combines real and generated data and uses AdaMix to adapt sample weights based on policy performance. The authors report DreamTransfer outperforms earlier video-generation models on several measures, and that EMMA improves real-world zero-shot visual task performance over real-data-only training, with a further gain from AdaMix.",
+          "zh": "论文提出 EMMA，用生成数据扩增视觉—语言—动作策略的训练。其 DreamTransfer 模型生成多视角一致、几何合理的操作视频，并支持在保留三维结构的条件下编辑前景、背景和光照；训练流程结合真实与生成数据，并用 AdaMix 按策略表现自适应加权样本。作者称，DreamTransfer 在多视角一致性、几何保真度和文本条件精度上优于此前视频生成模型；在真实机器人零样本视觉任务中，框架相较仅用真实数据训练提升超过92%，加入 AdaMix 后再提高17%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2554,7 +2566,11 @@
             "heading": "",
             "text": "General-purpose manipulators can position ophthalmic instruments under a software Remote Centre of Motion (RCM).However, at some reachable configurations that are nonsingular for the tip task alone, the RCM and tip-tracking objectives conflict and the servo oscillates.\n\nWe formalise this failure as a constraint-induced task singularity: the RCM-projected tip Jacobian loses rank while the unprojected tip Jacobian stays well conditioned. Thus, the effective tip authority collapses although the target remains reachable.\n\nWe present a high-precision RCM servo architecture with built-in singularity recovery: for each commanded target, an authority-guided planner selects a well-conditioned arm configuration that reaches it and plans an RCM-consistent route, executed by a fixed hierarchical-QP controller.\n\nOn a 200-scenario kinematic benchmark, the complete nominal-and-recovery protocol reaches 128/128 near-singular targets and 71/72 near-joint-limit targets (100% and 99%, respectively), with the software-RCM residual below 0.142 mm.\n\nOn a physical 6-DOF arm it executes across four RCM entry points, with a worst-case kinematically reconstructed RCM residual of 178 {\\mu}m and a median tip-regulation error of 32{\\mu}m, within the 200{\\mu}m control requirement adopted for the ophthalmic task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies servo oscillation in ophthalmic robotics when remote-center-of-motion (RCM) and instrument-tip tracking objectives conflict. It formalizes this as a constraint-induced task singularity, where the projected tip Jacobian loses rank although the unprojected Jacobian remains well conditioned. The authors propose hierarchical quadratic-program control with authority-guided recovery planning to select a well-conditioned arm configuration and an RCM-consistent route. A kinematic benchmark and tests on a physical six-degree-of-freedom arm report target reachability and RCM residual and tip-regulation errors.",
+          "zh": "论文研究眼科机器人软件远程运动中心（RCM）控制中，RCM 与器械尖端跟踪目标冲突导致的伺服振荡，并将其形式化为约束诱发的任务奇异：投影后的尖端雅可比矩阵降秩，而未投影矩阵仍条件良好。作者提出分层二次规划控制器及基于控制权限的恢复规划，为目标选择条件良好的机械臂构型和符合 RCM 的路径。运动学基准测试报告其可到达多数近奇异及近关节限位目标；实体六自由度机械臂测试覆盖四个 RCM 入口点，并报告残差和尖端调节误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
