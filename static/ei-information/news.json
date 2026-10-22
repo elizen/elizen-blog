@@ -163,7 +163,11 @@
             "heading": "",
             "text": "A central challenge in deploying learned robot policies is inference-time behavior steering: redirecting a policy at test time to satisfy user preferences not anticipated during training, without retraining.\n\nExisting methods fail in two modes: end-to-end methods require fine-tuning or expert-level guidance, while neuro-symbolic methods rely on predefined symbols whose edits can result in logically reasonable but physically infeasible plans.\n\nTo address this challenge, we propose ReStruct, which builds upon a neural automaton policy that decomposes a visuomotor policy into a high-level state-machine skeleton capturing task structure and a low-level continuous controller represented as a residual policy.\n\nSpecifically, ReStruct adopts the automaton to represent the preference and incorporates it into the skeleton through a synchronous product, thereby reconfiguring the task structure. With the controller kept frozen, the action priors provided by the skeleton are updated accordingly to enable physically-aware control under a modified task structure.\n\nExtensive experiments from simulation and real-world show that ReStruct steers a wide range of preferences, from object-centric specifications to temporal-logic constraints, and after steering surpasses existing methods, exceeding VLA models in both task success and preference-following by up to 25%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ReStruct for steering learned robot policies at inference time to meet user preferences without retraining. It represents preferences with an automaton and uses a synchronous product to reconfigure a task-structure skeleton, while keeping the low-level continuous controller frozen. The authors report simulation and real-world experiments covering preferences from object-centric specifications to temporal-logic constraints. After steering, ReStruct surpasses existing methods and exceeds VLA models in task success and preference following by up to 25%.",
+          "zh": "论文提出 ReStruct，用于在不重新训练的情况下，于推理阶段按用户偏好调整已学习的机器人策略。方法以神经自动机表示偏好，并通过同步积修改任务结构骨架，同时冻结低层连续控制器，使骨架更新动作先验以支持物理可行的控制。作者报告，仿真和真实世界实验涵盖从对象中心规范到时序逻辑约束的多种偏好；调整后，ReStruct 超过现有方法，并在任务成功和偏好遵循方面较 VLA 模型最高提升 25%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -194,7 +198,11 @@
             "heading": "",
             "text": "Legged robots can extend planetary exploration to rugged and discontinuous terrain that is inaccessible to conventional rovers. In lunar gravity, jumping further expands this mobility by enabling robots to cross obstacles and gaps that cannot be traversed by walking alone.\n\nWe present a multistage reinforcement-learning approach that produces a single end-to-end control policy for commanded point-to-point jumping under lunar gravity. The resulting policy has a simple architecture and relies exclusively on mission-compatible onboard sensing, making its deployment on a real lunar mission plausible.\n\nIn simulation, the learned policy performs accurate point-to-point jumps with landing errors smaller than the robot's body size. We analyze the torque and power demands of lunar jumping and characterize performance degradation under extreme outlier events, including control-update freezes of up to \\SI{1}{s} during flight.\n\nHardware transfer demonstrates that the policy can successfully execute a vertical jump under lunar-gravity offloading. Furthermore, the measured torque and power profiles are consistent with the simulation results and remain within the robot's hardware limits."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a multistage reinforcement-learning method for a single end-to-end policy controlling quadrupedal point-to-point jumps in lunar gravity. The policy has a simple architecture and uses only mission-compatible onboard sensing. In simulation, landing errors are smaller than the robot's body size; the study also analyzes torque and power demands and degradation under extreme events, including flight-time control-update freezes of up to one second. Hardware transfer demonstrates a vertical jump under lunar-gravity offloading, with measured torque and power profiles consistent with simulation and within hardware limits.",
+          "zh": "论文提出一种多阶段强化学习方法，在月球重力条件下训练用于四足机器人点到点跳跃的端到端控制策略。该策略采用简单架构，仅依赖适用于任务的机载传感。仿真中，落点误差小于机器人机身尺寸；研究还分析了跳跃的力矩和功率需求，以及飞行期间最长 1 秒控制更新冻结等极端情况造成的性能下降。硬件迁移实验展示了月球重力卸载下的垂直跳跃，测得的力矩与功率曲线符合仿真结果且在硬件限制内。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -225,7 +233,11 @@
             "heading": "",
             "text": "Learning-based path planners based on diffusion and flow matching can generate diverse trajectories from demonstrations but typically lack mechanisms for constraint satisfaction and collision avoidance during deployment.\n\nThis work proposes a framework that combines flow-matching-based path planning with model predictive path-following control to integrate data-driven path generation with real-time, constraint-aware execution.\n\nThe flow-matching model captures multimodal path distributions, while the predictive controller adapts motion online to satisfy state and input constraints and avoid obstacles using updated local sensor information.\n\nAn event-triggered re-planning scheme incorporates predictive control solutions into subsequent path generation, promoting collision-free navigation in environments with previously unseen obstacles. Simulation results for mobile robot navigation demonstrate robust performance across cluttered environments.\n\nThe framework provides a systematic approach to combining flow matching with predictive control for adaptive, data-driven navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a robot navigation framework that combines flow-matching path planning with model-predictive path-following control. The flow-matching model represents multimodal path distributions, while the predictive controller adjusts motion online using updated local sensor information to meet state and input constraints and avoid obstacles. Event-triggered replanning feeds control solutions into subsequent path generation to handle previously unseen obstacles. Mobile-robot simulation results demonstrate robust performance in cluttered environments; the authors describe the framework as a systematic approach to adaptive, data-driven navigation.",
+          "zh": "论文提出一种将流匹配路径规划与模型预测路径跟踪控制结合的机器人导航框架。流匹配模型根据示范捕捉多模态路径分布；预测控制器则利用更新的局部传感信息在线调整运动，以满足状态和输入约束并避开障碍。事件触发式重规划把预测控制的解纳入后续路径生成，旨在应对环境中先前未见的障碍。移动机器人仿真结果显示，该方法在拥挤环境中表现稳健；摘要将其描述为结合数据驱动路径生成与自适应控制的系统方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +268,11 @@
             "heading": "",
             "text": "World action models (WAMs) are shown to substantially diverge under generalization performance based on their generative backbones. We investigate this gap through the representational geometry that WAMs inherit from their backbones and how policy training reorganizes it.\n\nOur central hypothesis is that a useful representational prior would structure geometry that separates nuisance information from the in-distribution manifold in advance of training as a policy. We quantify this with nuisance orthogonality; orthogonality of the feature under visual variation outside the empirical in-distribution manifold.\n\nAcross various image and video backbones, we show that a higher orthogonality from the representational prior is associated with stronger robustness to visual variations after WAM training, enabling policy generalization measurable prospectively for world models.\n\nIn addition, analyzing the resulting robust WAMs reveals nuisance suppression; relative suppression of feature displacement caused by such variations and robust action generation of the policy. Together, these findings provide a geometric perspective on how the representational prior of the world model shapes the generalization performance of WAMs."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how representational geometry inherited from generative backbones, and its reorganization during policy training, relate to generalization in world action models (WAMs). The authors hypothesize that a useful prior separates nuisance information from the in-distribution manifold before policy training, and quantify this using nuisance orthogonality under visual variation outside that manifold. Across image and video backbones, higher prior orthogonality is associated with stronger robustness after WAM training. Analysis of robust models also reveals nuisance suppression and robust action generation, motivating a geometric account of how priors shape generalization.",
+          "zh": "论文研究生成骨干网络所赋予的表征几何如何影响世界动作模型（WAM）的泛化，并考察策略训练对几何的重组。作者假设，有用的表征先验能在策略训练前，将干扰信息与分布内流形区分开，并以“干扰正交性”量化视觉变化超出经验分布内流形时特征的正交程度。跨多种图像和视频骨干网络的分析显示，先验中的较高正交性与 WAM 训练后的视觉变化鲁棒性更强相关。对鲁棒模型的进一步分析还发现干扰抑制及稳健动作生成，作者据此提出表征先验影响泛化的几何视角。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
