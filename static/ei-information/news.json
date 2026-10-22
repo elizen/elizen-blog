@@ -2367,7 +2367,11 @@
             "heading": "",
             "text": "This paper presents a novel framework integrating a robust wrench observer with a hybrid pose and force controller for physical Human-Robot Interaction (pHRI).In pHRI tasks, robots are expected to perform task-space motions robustly while remaining compliance with human disturbance, which proposes distinct control objectives.\n\nMost existing approaches focus mainly on either robustness or compliance and rely on force sensors for real-time tracking. To address these limitations, we propose a novel framework with the following key contributions. Firstly, a neural network (NN) is trained to improve the observer performance by compensating for system friction and unmodeled dynamics.\n\nSecondly, a task-null-space decomposition is applied to separate the joint velocity and reduce the effect of the human disturbance on the observer. Finally, a hybrid pose and force controller is introduced to achieve the end-effector pose and force tracking.\n\nExperimental results demonstrate that the proposed framework provides robust and accurate wrench estimation while maintaining reliable pose and force tracking performance.\n\nThe proposed approach offers an effective solution and framework for pHRI without the need of force/torque sensor measurements which can be applied to many robotic manipulator platforms which do not have force/torque sensors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a framework for physical human-robot interaction that combines a robust wrench observer with a hybrid pose-and-force controller, without force/torque sensor measurements. A neural network compensates for friction and unmodeled dynamics, while task-null-space decomposition is used to reduce the effect of human disturbance on the observer. The authors report experimental results showing robust wrench estimation and reliable pose and force tracking. These claims are based on the reported experiments.",
+          "zh": "本文提出一种面向物理人机交互的无力/力矩传感器控制框架，将鲁棒力/力矩观测器与混合位姿和力控制器结合。神经网络用于补偿系统摩擦和未建模动力学，以改善观测器性能；任务空间与零空间分解用于减小人体扰动对观测的影响。作者报告的实验结果显示，该框架能够进行鲁棒、准确的力/力矩估计，并保持位姿和力跟踪。摘要所述结论限于其报告的实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2398,7 +2402,11 @@
             "heading": "",
             "text": "Industries employ robots for repetitive tasks due to their high precision and performance, typically achieved through feedforward control actions based on an accurate robot description. However, an exact dynamic model can be difficult to obtain, especially for robots with elastic elements or when the payload changes.\n\nLearning-based feedforward approaches are promising for trajectory tracking under model uncertainties, but typically face generalization issues when task parameters vary. This paper proposes a novel method to generalize the feedforward control action with respect to payload parameters, independently of the underlying controller.\n\nFirstly, the minimal number of example objects needed for payload generalization is derived. Then, an algorithm is proposed to execute the same trajectory with a new payload, given only its parameters, without knowledge of the robot's dynamic model and even in the presence of elastic joints.\n\nThe effectiveness of the proposed algorithm is validated in simulations and experiments on tracking tasks with different robots and controllers. Two sets of experiments are performed: on a standard Franka Emika Panda robot, and on a Franka Emika Panda robot equipped with an elastic wrist."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper proposes a learning-based method for generalizing feedforward control actions across payload parameters, independently of the underlying controller. The authors derive the minimum number of example objects needed for payload generalization and present an algorithm for executing the same trajectory with a new payload using only its parameters. The method does not require knowledge of the robot’s dynamic model and is intended to cover robots with elastic joints. Its effectiveness is evaluated in simulations and tracking experiments with different robots and controllers, including two Panda configurations.",
+          "zh": "本文提出一种针对负载参数进行泛化的学习型前馈控制方法，用于机器人轨迹跟踪，且不依赖具体底层控制器。作者推导负载泛化所需的最少示例物体数量，并提出仅凭新负载参数执行相同轨迹的算法，无需了解机器人动力学模型，也适用于带弹性关节的机器人。该方法在不同机器人和控制器上的跟踪任务中通过仿真与实验验证；实验涉及标准版 Franka Emika Panda，以及装有弹性腕部的该机器人。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2429,7 +2437,11 @@
             "heading": "",
             "text": "Automated progress monitoring on construction sites is an active area of research and development. Robot and human-carried mapping systems have been developed to build 3D maps of building and infrastructure projects. While LiDAR-based mapping systems achieve high accuracy, the cost of LiDAR can be prohibitive.\n\nConsumer-grade cameras with wide field of view (\"360 cameras\") combined with embedded inertial measurement units (IMUs) provide a cost-effective alternative. To support change detection and progress monitoring, highly accurate visual simultaneous localization and mapping (SLAM) and floor plan localization systems are required.\n\nIn this paper, we present a high-quality dataset collected at an active construction site, which captures realistic challenges such as variable lighting conditions, moving workers, fast motions, and repetitive structures. The dataset offers thirty visual-inertial sequences recorded across ten floors over an eight-month period of the construction project.\n\nGround truth trajectories are collected using a high quality LiDAR-inertial SLAM system rigidly attached to the 360 camera. Additionally, we report the results of an open research challenge evaluating the best visual SLAM and localization systems from around the world.\n\nThe Challenge attracted substantially higher participation in SLAM, with 62 teams compared to 22 in floor plan localization, which suggests that this task receives less attention from researchers and motivates further exploration through proposed dataset and challenge, available at: https://hilti-trimble-challenge.com/dataset-2026."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a visual-inertial dataset collected at an active construction site to support research on SLAM and floor plan localization using 360-degree cameras and IMUs. It includes thirty sequences across ten floors, recorded over an eight-month project period, with conditions such as variable lighting, moving workers, fast motion, and repetitive structures. Ground-truth trajectories were collected using a LiDAR-inertial SLAM system attached to the camera. The authors also report challenge participation, noting more teams for SLAM than for floor plan localization.",
+          "zh": "本文介绍一个在施工现场采集的视觉惯性数据集，用于支持基于360度相机和惯性测量单元的SLAM与平面图定位研究。数据记录了不同光照、工人移动、快速运动和重复结构等现场情况，包含项目八个月期间、十层楼上的三十段序列；真值轨迹由刚性连接到相机的激光雷达惯性SLAM系统采集。作者还报告了一项研究挑战的结果，并指出SLAM参赛团队多于平面图定位团队，认为后者值得进一步研究。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
