@@ -287,7 +287,11 @@
             "heading": "",
             "text": "In this article, we propose ContactFlowFilter, a novel approach for contact estimation that determines the number of active contacts, their locations, and the associated force vectors.\n\nWe consider a robot manipulator equipped with joint torque sensors and a base force/torque sensor; such a proprioceptive-only setup presents a challenging inverse problem characterized by (i) multi-modality from non-unique solutions, (ii) temporal dependencies in state evolution, and (iii) discrete contact events involving contact addition/removal.\n\nExisting approaches, such as particle filters (PFs) and learning-based methods, often struggle to address these challenges simultaneously. To overcome this, ContactFlowFilter integrates a generative model into the PF framework.\n\nThe recursive structure of the PF captures temporal dependencies, while the flow matching model serves as an auxiliary proposal distribution to track multi-modal beliefs and detect contact events. Extensive validation in both simulation and real-world experiments confirms the effectiveness of the proposed method.\n\nIn real-world settings, ContactFlowFilter achieves the lowest dissimilarity from the target distribution, with errors of only 0.36 cm and 0.88 cm for single- and dual-contact scenarios, respectively, while operating at 0.69 ms and 2.69 ms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ContactFlowFilter for online estimation of the number, locations, and force vectors of contacts using only joint torque and base force/torque sensors. It integrates a flow-matching generative model as an auxiliary proposal distribution within a particle filter to address multimodal solutions, temporal dependencies, and contact events. The authors report validation in simulation and real-world experiments. In real-world single- and dual-contact scenarios, they report target-distribution dissimilarities of 0.36 cm and 0.88 cm, with runtimes of 0.69 ms and 2.69 ms, respectively.",
+          "zh": "论文提出 ContactFlowFilter，用于仅依靠关节力矩传感器和基座力/力矩传感器，在线估计接触数量、位置及力向量。方法将流匹配生成模型作为粒子滤波器的辅助提议分布，以处理多模态解、状态随时间演化及接触事件。在仿真和真实实验中，作者报告了方法的有效性；真实场景单接触和双接触的目标分布差异分别为0.36厘米和0.88厘米，运行时间分别为0.69毫秒和2.69毫秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -318,7 +322,11 @@
             "heading": "",
             "text": "Humans typically rely on vision, touch, hearing, and proprioception to perceive contact and adapt their actions during manipulation. Providing robots with comparable responsiveness therefore requires hardware that can retain and use these complementary sensory signals.\n\nMost imitation-learning systems, however, observe demonstrations primarily through vision and proprioception, limiting access to contact information that is difficult to infer visually. We present PolyUMI, an open-source platform for scalable visual--tactile--audio demonstration collection and robot deployment.\n\nIts lightweight, wireless handheld gripper records synchronized wrist-camera, optical tactile, contact-audio, and proprioceptive observations without requiring a tethered workstation. The same sensing finger can be transferred to the robot end effector, preserving the sensing geometry between demonstration collection and policy execution.\n\nTo effectively use these heterogeneous observations, we further introduce VisTA, a token-level multimodal policy that integrates information across sensors and time to predict contact-aware robot actions.\n\nExperiments spanning object inference, slip control, and contact-rich manipulation show that touch and audio reveal task-relevant information beyond vision and that VisTA is competitive with or outperforms existing multimodal policies.\n\nTogether, PolyUMI and VisTA provide an accessible pipeline for collecting multimodal demonstrations and learning policies that perceive physical interaction beyond vision. Project Page: https://polyumi-vista.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PolyUMI, an open-source platform for collecting visual, tactile, and audio demonstrations and deploying robots. Its wireless handheld gripper synchronously records wrist-camera, optical tactile, contact-audio, and proprioceptive data; the same sensing finger can be transferred to a robot end effector to preserve sensing geometry. The authors also present VisTA, a multimodal policy that combines sensor and temporal information to predict contact-aware actions. Experiments in object inference, slip control, and contact-rich manipulation show that touch and audio provide task-relevant information beyond vision, and that VisTA is competitive with or outperforms existing multimodal policies.",
+          "zh": "论文介绍 PolyUMI，一个用于收集视觉、触觉和音频示范并部署机器人的开源平台。无线手持夹爪同步记录腕部相机、光学触觉、接触音频和本体感觉数据；同一传感手指可转移到机器人末端执行器，以保持感知几何一致。作者还提出 VisTA 多模态策略，融合传感器与时间信息来预测感知接触的动作。物体推断、防滑控制和接触丰富操作实验显示，触觉与音频能提供视觉之外的任务信息，VisTA 与既有策略相比具有竞争力或表现更好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -349,7 +357,11 @@
             "heading": "",
             "text": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards.\n\nWhile panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation.\n\nWe present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images.\n\nWe pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning.\n\nIn simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively.\n\nZero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RangeNav, a compact LiDAR range-image encoder pretrained entirely on synthetic data for robot navigation. Anisotropic convolutions and circular padding address range images' aspect ratio and azimuthal seam. Its pretraining objective combines range reconstruction, semantic segmentation, and bird's-eye-view prediction; the encoder is then frozen for policy learning. In simulation, semantic and BEV supervision raise success rates over a reconstruction-only baseline by average margins of 32.03 and 23.73 percentage points in procedural training and out-of-distribution realistic test environments, respectively. The authors also report zero-shot quadruped deployments navigating dense crowds, low-light settings, and construction zones.",
+          "zh": "论文提出 RangeNav，一种在合成数据上预训练的紧凑激光雷达距离图编码器，用于机器人导航。其各向异性卷积和循环填充适配距离图的长宽比及方位接缝；预训练目标结合距离重建、语义分割和鸟瞰图预测，随后冻结编码器进行策略学习。仿真中，相较仅重建基线，语义与鸟瞰监督使程序化训练环境和分布外真实感测试环境的成功率分别平均提高32.03和23.73个百分点。作者还报告四足机器人零样本真实部署可在拥挤人群、低光照和施工区域导航。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
