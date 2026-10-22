@@ -1282,7 +1282,11 @@
             "heading": "",
             "text": "Robots deployed in human-centered environments need maps that support both geometric navigation and open-vocabulary semantic queries beyond a fixed label set. A key challenge is enriching such maps with semantic information without relying on manually annotated segmentation masks or closed-set semantic categories.\n\nExisting geometry-driven active mapping maximizes coverage but treats semantics as a passive by-product of the collected trajectory, whereas active semantic mapping typically depends on supervised semantic segmentation. We present AOV-GS, an active 3D Gaussian mapping system that guides exploration using frozen foundation models.\n\nDuring coarse exploration, AOV-GS re-ranks geometrically promising candidate views according to CLIP mask-embedding novelty computed from SAM instance segmentation, biasing exploration toward semantically informative regions.\n\nFrozen SAM and CLIP provide instance masks and language-aligned embeddings throughout mapping, while a lightweight scene-specific language field is fitted offline directly to the collected CLIP embeddings rather than manually annotated masks, enabling open-vocabulary text-query segmentation on novel views.\n\nIn a controlled comparison using the same SAM-CLIP perception stack, AOV-GS improves average language-field mIoU over geometry-only active planning by 1.3 percentage points on Replica (34.6% on eight scenes) and by 1.8 points on Matterport3D (23.1% on five scenes).\n\nWith CorrCLIP, AOV-GS reaches 35.6% on Replica, 2.0 points above the matched Geometry-based + CorrCLIP baseline. Novel-view PSNR remains comparable to the geometry-only baseline on both datasets while depth L1 improves on Replica. Code is available at https://github.com/OptimusFaber/AOV-GS."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AOV-GS, an active open-vocabulary semantic mapping system using 3D Gaussian mapping with frozen SAM and CLIP models. During coarse exploration, it reranks candidate views using the novelty of CLIP mask embeddings derived from SAM instance segmentation. It fits a scene-specific language field offline from collected CLIP embeddings to support text-query segmentation on novel views. In controlled dataset comparisons, the authors report higher average language-field mIoU than geometry-only planning, comparable novel-view PSNR, and improved depth L1 on Replica.",
+          "zh": "本文提出 AOV-GS，一种结合 3D Gaussian 映射与冻结的 SAM、CLIP 模型的主动开放词汇语义建图系统。粗略探索时，它依据 SAM 实例分割得到的 CLIP 掩码嵌入新颖度，对候选视点重新排序；之后直接用收集的 CLIP 嵌入离线拟合场景语言场，以支持新视点上的开放词汇文本查询分割。受控对比显示，在 Replica 和 Matterport3D 数据集上，其语言场平均 mIoU 高于几何规划基线；作者还报告新视点 PSNR 相近，Replica 上深度 L1 有改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1313,7 +1317,11 @@
             "heading": "",
             "text": "This paper proposes a refinement to existing vision-based portable pipelines for the recognition of graspable object parts. Such pipelines can effectively support automatic grasp selection and preshaping in upper-limb prosthetic devices. However, realistic scenarios in which multiple objects are present still represent a challenge.\n\nThe proposed method exploits a minor modification to the conventional hardware setup and a custom training approach to extend the applicability of vision-based pipelines. A laser pointer is introduced in the setup as an effective mechanism for object disambiguation.\n\nAccordingly, a suitable retraining of the deep convolutional neural networks supporting recognition of graspable parts is implemented. A mixed reality strategy allows the reuse of available high-quality segmentation masks to generate realistic images procedurally, extending the range of scenarios supported by the final device.\n\nExperimental results confirm that the proposed pipeline improves target disambiguation accuracy by up to 9% compared with existing solutions, while preserving the computational cost."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a refinement to vision-based recognition of graspable parts for wearable robots in scenes containing multiple objects, supporting automatic grasp selection and preshaping in upper-limb prostheses. It adds a laser pointer for object disambiguation and retrains the deep convolutional networks used to recognize graspable parts. A mixed-reality strategy reuses existing segmentation masks to generate realistic images procedurally. Experiments report up to a 9% improvement in target disambiguation accuracy over existing solutions while preserving computational cost.",
+          "zh": "论文提出一种面向多物体场景的可穿戴机器人抓取部位识别流程改进，用于支持上肢假肢的自动抓取选择与预成形。方法在硬件设置中加入激光指示器以区分目标物体，并重新训练识别可抓取部位的深度卷积网络；混合现实策略则利用已有分割掩码程序化生成图像，扩展设备支持的场景。实验结果显示，相较现有方案，目标区分准确率最高提升9%，同时保持计算成本。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1344,7 +1352,11 @@
             "heading": "",
             "text": "Predictive representations for robot manipulation should connect scene geometry with the state changes induced by actions. Our intuition is that understanding what an action will change starts with understanding where things are: complementary RGB and depth observations ground a common scene representation from which to infer those changes.\n\nGuided by this intuition, we introduce \\textbf{DepState-JEPA}, a dual-stream RGB--Depth joint-embedding predictive architecture that connects spatial understanding with action-conditioned prediction through a shared latent state, \\textbf{DepState}.\n\nBuilt on V-JEPA~2.1, the framework uses depth both as a complementary observation stream and to ground both modalities in metric 3D space, aggregating shared information into DepState while retaining modality-private features for decoding.\n\nRay-conditioned readouts predict local features without target depth; after an action-conditioned transition, the same decoders predict future RGB and depth features using the predicted state and fixed initial private features.\n\nRobot-state readouts provide recursive proprioceptive inputs; object-trajectory supervision and calibrated forward kinematics shape state learning through motion targets and joint--TCP consistency. Comparisons show stronger RGB-encoder transfer after RGB-D adaptation, feature completion, conditioned visual forecasting, and manipulation success.\n\nWithin-model ablations identify contributions from depth content, metric coordinates, and future-state matching, with additional control gains from FK regularization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DepState-JEPA, a dual-stream RGB and depth joint-embedding predictive architecture that links spatial understanding and action-conditioned prediction through a shared latent state. Built on V-JEPA 2.1, it uses depth to ground both modalities in metric 3D space while retaining modality-specific features for decoding. Its readouts predict local features and future RGB and depth features after actions. Comparisons report stronger results in RGB-encoder transfer, feature completion, conditioned visual forecasting, and manipulation success. Within-model ablations examine depth content, metric coordinates, future-state matching, and forward-kinematics regularization.",
+          "zh": "论文提出DepState-JEPA，一种双流RGB与深度联合嵌入预测架构，以共享潜在状态DepState连接空间理解和动作条件预测。该框架基于V-JEPA 2.1，利用深度观测将两种模态置于度量三维空间，并保留模态专属特征用于解码；读出模块预测局部特征及动作后的未来RGB和深度特征。比较结果显示其在RGB编码器迁移、特征补全、条件视觉预测和操作成功方面表现更强。模型内消融分析了深度内容、度量坐标和未来状态匹配的作用，额外控制收益来自正向运动学正则化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1375,7 +1387,11 @@
             "heading": "",
             "text": "Teleoperation enables intuitive control of remote engineering robots for precision tasks. Existing direct joint-mapping methods have two limitations: independent motor saturation disrupts pitch-roll coordination in differential wrists, while fixed mappings struggle with abrupt tracking changes caused by gravitational loads and actuation constraints.\n\nWe propose an actuator-constraint-aware leader-follower teleoperation method that jointly models leader gravity compensation, leader-follower joint mapping, and follower differential-wrist control.\n\nSpecifically, we perform coordinated saturation in motor space according to the available gravity margin and integrate continuous angle unwrapping, feedback-state monitoring, and feasible-reference updates.\n\nThis preserves the operator's motion direction, reduces coordination distortion, and suppresses recovery transients during saturation or brief communication failures. Real-robot experiments demonstrate smoother wrist trajectories and more continuous recovery than direct mapping."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes actuator-constraint-aware leader-follower teleoperation for manipulators with coupled transmissions. It addresses how independent motor saturation can disrupt pitch-roll coordination in differential wrists and how fixed mappings can struggle with tracking changes caused by gravity and actuation limits. The method jointly models leader gravity compensation, leader-follower joint mapping, and follower wrist control. It coordinates motor-space saturation using available gravity margin and incorporates angle unwrapping, feedback monitoring, and feasible-reference updates. Real-robot experiments report smoother wrist trajectories and more continuous recovery than direct mapping.",
+          "zh": "论文提出一种考虑执行器约束的主从式遥操作方法，面向具有耦合传动的机械臂。针对独立电机饱和会破坏差动腕部俯仰与横滚协调、固定映射难以应对重力负载及执行器约束引起的跟踪突变等问题，方法联合建模主端重力补偿、主从关节映射和从端差动腕控制。它依据可用重力裕度在电机空间协调饱和，并结合连续角度展开、反馈状态监测和可行参考值更新。实机实验显示，相较直接映射，腕部轨迹更平滑，饱和或短暂通信故障后的恢复更连续。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
