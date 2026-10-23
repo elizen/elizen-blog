@@ -703,7 +703,11 @@
             "heading": "",
             "text": "The assessment of planktonic standing stocks and microorganism structures is critical for understanding upper ocean biological processes.\n\nCurrently, autonomous underwater vehicles (AUVs) equipped with in-situ optical imaging and artificial intelligence (AI) methods offer a promising solution for persistent surveillance, mapping and monitoring of planktonic life.\n\nHowever, current AI methods often lack robustness in dynamic, unstructured environments, where environmental noise and non-biological artifacts lead to frequent misclassifications.\n\nStandard convolutional neural network (CNN) classifiers often struggle with such conditions, leading to misclassifications that require time-consuming manual validation by marine biologists. To address this issue, we propose a novel robustness verification framework for in-situ plankton classifiers based on reachability analysis.\n\nWe also introduce a continuous-time neural ordinary differential equation (neural ODE) classification model leveraging the high-resolution imaging capabilities of the SilCam particle imager.\n\nIn this paper, we demonstrate the effectiveness of the proposed framework by formally verifying the robustness of the neural ODE model against environmental perturbations.\n\nWe demonstrate that our verification framework acts as an automated filter providing formal guarantees of model stability against ambiguous data, thereby improving the reliability of autonomous sampling and reducing the post-processing workload."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a reachability-analysis framework for verifying the robustness of plankton classifiers used on autonomous underwater vehicles, alongside a continuous-time neural ODE classifier that uses SilCam imaging. The authors report formally verifying the model against environmental perturbations. They describe the framework as an automated filter that provides formal guarantees of model stability for ambiguous data, with the stated aim of improving autonomous sampling reliability and reducing post-processing work.",
+          "zh": "论文提出一种基于可达性分析的鲁棒性验证框架，用于评估搭载于自主水下航行器的浮游生物分类器，并介绍了利用 SilCam 成像能力的连续时间神经常微分方程分类模型。作者称，该框架可形式化验证模型面对环境扰动时的鲁棒性，并作为自动筛选器，为含糊数据下的模型稳定性提供形式化保证，从而提高自主采样可靠性、减少后处理工作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -734,7 +738,11 @@
             "heading": "",
             "text": "Tactile sensing provides robots with contact information difficult to obtain from vision alone. Shear force is particularly important for understanding tangential contact, guiding corrective motions, and maintaining grasp stability, yet flexible and low-cost tactile arrays often measure only normal force.\n\nWe introduce VecTile, a low-cost, 6 mm thin, flexible tactile array capable of three-axis force sensing. VecTile combines a piezoresistive layer with passive silicone nubs that convert normal and shear forces into distinguishable pressure patterns. The sensor can be fabricated in-house without specialized equipment.\n\nThe complete system costs less than 35 USD for a 4x4 array. We validate the sensing mechanism through finite element analysis and hardware experiments. In controlled single-taxel tests over 1-5 N normal force and up to 1.5 N shear force, VecTile achieves root-mean-square errors of 0.39 N and 0.16 N for normal and shear forces.\n\nA VecTile calibrated while flat retains accuracy when curved, while a five-minute manual calibration is sufficient for practical use. Two applications demonstrate its utility. First, shear readings are sensitive enough to stop a sharp scalpel from puncturing a balloon after contact.\n\nSecond, the sensor substantially improves Diffusion Policy-guided power-plug insertion. All designs and code will be released upon paper acceptance. Project website: https://jiannnh.github.io/VecTile/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VecTile, a thin, flexible tactile array that uses a piezoresistive layer and silicone nubs to turn normal and shear forces into distinguishable pressure patterns for three-axis force sensing. It can be fabricated without specialized equipment. The authors validate the sensing mechanism with finite element analysis and hardware experiments, and describe tests of curved use, brief manual calibration, scalpel contact with a balloon, and power-plug insertion.",
+          "zh": "论文介绍 VecTile，一种薄型柔性触觉阵列，通过压阻层和硅胶凸点将法向力与剪切力转化为可区分的压力模式，实现三轴力感知，并可在无需专用设备的条件下制作。作者通过有限元分析和硬件实验验证传感机制；在单个触觉单元的受控测试中报告了法向力与剪切力误差。论文还描述了曲面使用、短时手动校准，以及防止手术刀刺破气球和辅助电源插头插入的应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -765,7 +773,11 @@
             "heading": "",
             "text": "We present OpenTac, a novel sensor and a full-stack ecosystem for tactile skins that are highly customizable, scalable, and readily deployed in downstream robot control and learning applications. Our core contribution is twofold.\n\nFirst, we develop a scalable resistive tactile skin with a structured deformable overlay that converts tangential loading into spatially varying pressure. Differential responses across neighboring \"taxels\" support decoding of local shear vectors, and the common-mode response encodes normal force.\n\nSecond, we provide a highly customizable sensor design tool that is able to automatically generate fabrication files for these tactile skins from 2D outlines and developable 3D surfaces, including from abstract descriptions such as text (e.g., \"design a sensor for a size 9 shoe insole\").\n\nWe develop an ecosystem around the OpenTac sensor, including the CAD design tool, a sensor simulator, cross-sensor transfer, and fast/adaptive data acquisition. We demonstrate the broad applicability of the OpenTac-CAD sensor design tool by designing and fabricating more than 30 sensors across a variety of robot embodiments.\n\nWe characterize the three-dimensional tactile fields produced by OpenTac with a commercial, high-precision force/torque sensor. We demonstrate the broad applicability of 3D tactile sensing across contact-rich feedback control and manipulation policy learning on four real-world robot embodiments.\n\nAdditionally, adaptive acquisition enables kilohertz-rate partial readouts, exceeding full-array raster scanning on the same sensor by 19.2X at 16 sampled taxels per update for a 1024-taxel skin. We provide all hardware, software, and result videos are at opentac.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents OpenTac, a customizable tactile skin and supporting ecosystem. A structured deformable overlay converts tangential loading into spatial pressure variation; differences between neighboring taxels encode local shear vectors, while common-mode response encodes normal force. The ecosystem includes a design tool that generates fabrication files from 2D outlines or developable 3D surfaces, plus simulation, cross-sensor transfer, and adaptive acquisition. The authors report sensor characterization and applications on real-world robot embodiments.",
+          "zh": "论文提出 OpenTac，这是一套可定制、可扩展的触觉皮肤及其生态系统。传感皮肤通过结构化可变形覆盖层将切向载荷转化为空间压力差异，以邻近触觉单元的差分响应解码剪切方向，并用共模响应编码法向力。系统还包括可由二维轮廓或可展开三维表面生成制造文件的设计工具、传感器模拟、跨传感器迁移和自适应采集。作者报告了多种机器人应用与实测表征。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -796,7 +808,11 @@
             "heading": "",
             "text": "Swarm robotics relies on robots with minimal sensing and computation that achieve self-organization at the level of the collective to address a variety of tasks.\n\nYet swarm robotics still struggles with global tasks that require understanding the broader spatial context in which robots operate, such as identifying the shape of the arena in which they are embedded.\n\nHere, we introduce spectral swarm robotics, a framework in which robots recover global spectral descriptors of the swarm's geometric structure through strictly local interactions. To do so, robots emulate diffusion to locally estimate Laplacian spectral invariants, quantities normally obtained only through centralized computation.\n\nThese spectral values serve as compact descriptors of the environment. In the present proof of concept, robots estimated the second Laplacian eigenvalue and used it to classify arenas from a predefined set of shapes with distinct spectral signatures.\n\nWe show that estimating a single eigenvalue is sufficient for one-shot classification among selected confined environments with distinct spectral signatures. We uncovered a scaling law linking swarm size (a global parameter) and interaction radius (a local parameter) that ensures robust estimation.\n\nWe validated the approach experimentally on two distinct hardware platforms, Kilobots and Pogobots, achieving reliable classification of arena shapes under realistic noise and sparse-connectivity conditions.\n\nLast, we discuss how locally recovering Laplacian spectral invariants opens avenues for swarm robotics in settings where producing efficient collective behaviors strongly depends on the global structure of the swarm."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces spectral swarm robotics, in which robots use local interactions to emulate diffusion and estimate Laplacian spectral invariants of the swarm’s geometry. In a proof of concept, robots estimate the second Laplacian eigenvalue to classify arena shapes from a predefined set with distinct spectral signatures. The authors report a scaling law relating swarm size and interaction radius, and experiments on Kilobots and Pogobots showing reliable classification under noise and sparse connectivity.",
+          "zh": "论文提出“谱群体机器人”框架，使机器人通过严格的局部交互模拟扩散，估计群体几何结构的拉普拉斯谱不变量。在概念验证中，机器人估计第二拉普拉斯特征值，并据此区分具有不同谱特征的预设场地形状。作者指出，单一特征值足以在所选受限环境中进行一次分类，并发现群体规模与交互半径之间的尺度关系。Kilobots 和 Pogobots 平台实验显示，该方法在噪声和稀疏连接条件下可可靠分类场地形状。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
