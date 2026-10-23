@@ -1551,7 +1551,11 @@
             "heading": "",
             "text": "Robotic foundation models are typically evaluated through costly closed-loop rollouts, which motivates cheap offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, different modalities such as vision and language converge toward a shared statistical model of reality.\n\nWe ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion?\n\nTo examine this, we propose Sensorimotor Alignment ($S^2$), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion.\n\nWe find that $S^2$ correlates positively with downstream robot task success across embodied model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. $S^2$ can also identify promising vision-language model (VLM) backbones even before costly fine-tuning into vision-language-action models (VLAs).\n\nBeyond this correlation, $S^2$ offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs).With $S^2$, we extend PRH to embodied models and make sensorimotor alignment empirically measurable, offering insight into why an embodied model succeeds beyond its closed-loop success rate."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Sensorimotor Alignment (S²), a training-free offline metric for measuring how closely an embodied model’s sensory representation matches the geometry of physical motion. The authors report a positive correlation with downstream robot task success across embodied model families and suggest using it to prioritize models before closed-loop evaluation. They also say it can identify promising vision-language backbones before fine-tuning into vision-language-action models. The claims are based on reported correlations and representation analyses, not a replacement for closed-loop evaluation.",
+          "zh": "本文提出无需训练的离线指标 Sensorimotor Alignment（S²），用于衡量具身模型的感知表征与物理运动几何之间的对齐程度。作者报告，S² 在不同具身模型系列中与下游机器人任务成功率呈正相关，可作为闭环评估前筛选模型的低成本代理，也能在微调为视觉语言动作模型前识别有潜力的视觉语言模型骨干。作者还用该指标分析模型表征，并据此将柏拉图表征假说扩展到具身模型；这些结论来自相关性与表征分析，并不替代闭环任务评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1582,7 +1586,11 @@
             "heading": "",
             "text": "Reflections of active markers in the environment are a common source of ambiguity in onboard visual relative localization.\n\nThis work presents a novel approach that exploits these typically unwanted reflections for onboard relative localization in heterogeneous multi-UAV teams operating over specular, near-planar surfaces such as calm water and flat indoor floors.\n\nUsing only a camera, active markers, and a single-beam rangefinder, the method requires no prior knowledge of robot size, marker configuration, or surface reflectance properties, and propagates the uncertainty introduced by surface irregularities, including those of dynamic water surfaces.\n\nWe further characterize, analytically and experimentally, how surface tilt biases the estimate, and identify the slope range over which the level-surface assumption holds.\n\nIndoor multi-UAV and outdoor experiments validate the localization accuracy, demonstrating reliable operation across varying lighting conditions and greater effective range than state-of-the-art vision-based active-marker methods, with higher accuracy beyond 30 m.\n\nThe project website with the video is available under the following link: https://timlakemann.github.io/reflection-based-relative-localization/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an onboard relative-localization method for heterogeneous multi-UAV teams that uses reflections of active markers from specular, nearly planar surfaces. It requires a camera, active markers, and a single-beam rangefinder, without prior knowledge of robot size, marker layout, or surface reflectance. The authors analyze and experimentally characterize bias from surface tilt and the range where a level-surface assumption holds. Indoor and outdoor experiments are reported to validate accuracy across lighting conditions; the authors report greater effective range and higher accuracy beyond 30 m than state-of-the-art vision-based active-marker methods.",
+          "zh": "本文提出一种面向异构多无人机团队的机载相对定位方法，利用镜面、近似平坦表面上的主动标记反射。方法仅使用相机、主动标记和单束测距仪，不要求预先知道机器人尺寸、标记布局或表面反射率，并传播表面不规则性带来的不确定性。作者通过分析与实验研究表面倾斜造成的偏差及水平面假设适用的坡度范围。室内多无人机和室外实验显示，该方法在不同光照下可工作；作者报告其有效距离优于现有视觉主动标记方法，且在30米以外精度更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1613,7 +1621,11 @@
             "heading": "",
             "text": "Tactile sensing provides robots with direct access to physical interactions at the contact interface, making it a critical modality for robust and dexterous manipulation.\n\nOver the past several decades, tactile-based manipulation research has evolved from mechanics-driven approaches, which explicitly interpret tactile signals through contact mechanics and task-specific reasoning, to data-driven approaches that learn tactile representations and manipulation policies directly from data.\n\nThis paper reviews the development of tactile-based manipulation from these two complementary perspectives. We first introduce the fundamentals of tactile sensing, and then review, from a mechanics-driven perspective, how those signals form manipulation-relevant state representations and subsequently influence the robot action.\n\nWe then examine the recent advances in data-driven tactile manipulation, covering imitation learning, reinforcement learning, vision-language-action models, and predictive models. Finally, we discuss open challenges and future opportunities toward scalable, generalizable, and robust tactile-enabled robotic systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This review surveys tactile-based robotic manipulation through two complementary perspectives: mechanics-driven and data-driven approaches. It introduces tactile-sensing fundamentals, then discusses how mechanics-driven methods interpret tactile signals as manipulation-relevant state representations that influence robot actions. The review also covers recent data-driven work, including imitation learning, reinforcement learning, vision-language-action models, and predictive models. It concludes by discussing open challenges and future opportunities for tactile-enabled robotic systems that are scalable, generalizable, and robust.",
+          "zh": "本文综述触觉机器人操作研究，按力学驱动与数据驱动两种互补视角梳理其发展。文章先介绍触觉传感基础，再讨论力学驱动方法如何将触觉信号转化为与操作相关的状态表征，并影响机器人动作。随后回顾数据驱动触觉操作的进展，涵盖模仿学习、强化学习、视觉语言动作模型和预测模型。最后，作者讨论实现可扩展、可泛化且稳健的触觉机器人系统仍面临的开放挑战与未来机会。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1644,7 +1656,11 @@
             "heading": "",
             "text": "Legged locomotion on flowing ground ({\\em e.g.} granular media) is unlike locomotion on hard ground because feet experience both solid- and fluid-like forces during surface penetration.\n\nRecent bio-inspired legged robots display speed relative to body size on hard ground comparable to high performing organisms like cockroaches but suffer significant performance loss on flowing materials like sand.\n\nIn laboratory experiments we study the performance (speed) of a small (2.3 kg) six-legged robot, SandBot, as it runs on a bed of granular media (1 mm poppy seeds).\n\nFor an alternating tripod gait on the granular bed, standard gait control parameters achieve speeds at best two orders of magnitude smaller than the 2 body lengths/s ($\\approx 60$ cm/s) for motion on hard ground.\n\nHowever, empirical adjustment of these control parameters away from the hard ground settings, restores good performance, yielding top speeds of 30 cm/s.\n\nRobot speed depends sensitively on the packing fraction $\\phi$ and the limb frequency $\\omega$, and a dramatic transition from rotary walking to slow swimming occurs when $\\phi$ becomes small enough and/or $\\omega$ large enough.\n\nWe propose a kinematic model of the rotary walking mode based on generic features of penetration and slip of a curved limb in granular media. The model captures the dependence of robot speed on limb frequency and the transition between walking and swimming modes but highlights the need for a deeper understanding of the physics of granular media."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper reports laboratory experiments on SandBot, a small six-legged robot running on a bed of 1 mm poppy seeds. With an alternating tripod gait, hard-ground control settings produced speeds up to two orders of magnitude below the robot’s reported hard-ground speed of about two body lengths per second. Empirically adjusting the parameters restored performance, with top speeds of 30 cm/s. Speed depended sensitively on packing fraction and limb frequency, and the robot shifted from rotary walking to slow swimming. A kinematic model captures frequency effects and this transition, while highlighting limits in understanding granular physics.",
+          "zh": "本文通过实验研究六足机器人 SandBot 在颗粒介质上的运动表现。机器人在1毫米罂粟籽床上采用交替三脚步态时，使用硬地控制参数所得速度最多比硬地上的约每秒2个体长低两个数量级；经验调整参数后，最高速度达到每秒30厘米。速度对颗粒堆积率和腿部频率敏感，参数变化可使运动从旋转行走转为缓慢游动。作者提出基于弯曲肢体穿透与滑移特征的运动学模型，模型描述了速度随频率的变化及步态转变，同时指出仍需深入理解颗粒介质物理。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
