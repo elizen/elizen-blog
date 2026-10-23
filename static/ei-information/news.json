@@ -976,7 +976,11 @@
             "heading": "",
             "text": "Open-vocabulary 3D semantic maps have emerged as a key spatial memory representation for long-horizon robot autonomy, enabling robots to reason about objects, their spatial relationships, and past observations across time.\n\nHowever, existing object-centric semantic maps are primarily designed for static environments and rely on an append-only point integration strategy, where newly observed points are accumulated but previously integrated points are rarely reevaluated.\n\nConsequently, perception errors accumulate over time, and outdated points persist after objects move or disappear. Although recent dynamic mapping methods update object-level representations in changing scenes, they do not explicitly revise noisy or obsolete points within each object.\n\nWe propose an online refinable semantic mapping framework that continuously refines object representations through probabilistic point-level confidence updating.\n\nEach object point maintains a confidence score that is updated online using multi-view temporal evidence: consistent observations reinforce reliable points, while inconsistent segmentation masks, depth measurements, and visibility cues suppress spurious and outdated points.\n\nCombined with object tracking and re-identification to preserve instance identities under motion and relocation, our framework enables object-centric semantic maps to be continuously refined rather than monotonically accumulated.\n\nExperiments demonstrate improved mapping accuracy over the previous method by 3.46% on Replica and 2.55% on ScanNet, show robustness in dynamic environments and under perception noise, and provide an effective spatial memory for object navigation and embodied question-answering with success rates of 82.4% and 76.7%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose an online refinable semantic mapping framework that updates confidence for individual object points using multi-view temporal evidence. Consistent observations reinforce points, while inconsistent segmentation, depth, and visibility cues reduce confidence in noisy or obsolete points. Object tracking and re-identification help preserve identities through motion and relocation. Experiments report better mapping accuracy than a previous method on Replica and ScanNet, robustness to dynamic scenes and perception noise, and success rates for object navigation and embodied question answering.",
+          "zh": "本文提出一种在线可精炼语义映射框架，通过多视角时序证据更新对象点的置信度，以强化可靠点并抑制由分割、深度或可见性误差造成的噪声和过时点；结合跟踪与重识别维持物体移动或重定位后的实例身份。作者报告，该方法在Replica和ScanNet上的映射准确率优于先前方法，并在动态环境和感知噪声下表现稳健；导航和具身问答成功率分别为82.4%和76.7%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1007,7 +1011,11 @@
             "heading": "",
             "text": "Agentic robot systems combine language-model reasoning with robot policies to monitor execution and recover from failures. However, reviewing every action chunk incurs substantial overhead, even in familiar situations. We introduce FastHarness, an experience-driven execution harness that adaptively schedules GPT-6 Astra supervision of a {\\pi}0.5 policy.\n\nA fast path uses stage memory and reviewed outcomes to reduce review frequency as experience accumulates, while a complementary recovery path focuses supervision on correcting errors. Once recovery is verified, routine execution resumes, with failure experience retained to guide future interventions.\n\nThe policy remains frozen and generates fresh actions from current observations. Across four simulated manipulation tasks, reviewer token use decreases by an average of 57.2% per task from the first evaluated episode to the mean of the final five episodes. Mean episode time decreases from 85.5 to 52.0 minutes over the same interval.\n\nOn the same tasks, mean success increases from 80% for GPT-as-Policy ({\\pi}0.5 + GPT-6 Astra) to 97.19% with FastHarness. These results highlight adaptive supervision as a practical route to more efficient agentic robotics without additional model training."
           }
-        ]
+        ],
+        "summary": {
+          "en": "FastHarness is an experience-driven execution harness that adaptively schedules GPT-6 Astra supervision for a frozen π0.5 policy. A fast path reduces review frequency as experience accumulates, while a recovery path directs supervision toward errors and returns to routine execution after recovery is verified. In four simulated manipulation tasks, reviewer token use per task fell by an average of 57.2% from the first evaluated episode to the final-five-episode mean, and mean episode time decreased from 85.5 to 52.0 minutes. Mean success rose from 80% to 97.19%.",
+          "zh": "本文提出FastHarness，一种基于经验调度监督的机器人执行框架，针对冻结的π0.5策略自适应安排GPT-6 Astra审查。快速路径随经验积累减少审查频率，恢复路径集中纠正错误；确认恢复后回到常规执行，并保留失败经验。作者在四项模拟操作任务中报告，相较首个评估回合，后五回合平均每任务审查器令牌使用量下降57.2%，平均回合时间从85.5分钟降至52.0分钟；平均成功率从GPT作为策略的80%提高至97.19%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1038,7 +1046,11 @@
             "heading": "",
             "text": "Motion planning is central to robotics, and it is increasingly used to correct the motions proposed by learned planners and policies. In both uses, constraints must hold at every instant of the motion, not only at sampled times.\n\nTo our knowledge, no algorithm provably converges to a globally optimal motion once a smoothness cost is combined with such constraints. We cast planning and steering as a single continuous-time program: robots avoid one another and static or moving obstacles, and a learned proposal is steered by keeping the motion close to it.\n\nThe program is elementary to state, yet nonconvex. We propose GlobMP (Global Motion Planning), a gradient projection method over piecewise-polynomial curves, on which each constraint is one polynomial per piece that must stay nonnegative over the whole motion; it alternates cost reduction with feasibility restoration.\n\nUnder mild assumptions, we show that, from a fine grid start, its cost approaches the global optimum as the number of polynomial pieces grows, with every constraint met to any chosen tolerance, or exactly on stable instances.\n\nWe demonstrate its superior performance over strong baselines in real and synthetic experiments, including teams of up to $200$ robots, multi-robot planning on the Robotarium testbed and an extended benchmark, maze navigation, and steering tactile-reactive policies on a bimanual humanoid."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper formulates motion planning and steering as a continuous-time program, enforcing obstacle avoidance throughout the motion and keeping steered trajectories close to learned proposals. GlobMP applies gradient projection to piecewise-polynomial curves, alternating cost reduction with feasibility restoration. Under mild assumptions and from a sufficiently fine-grid start, the authors show that cost approaches the global optimum as the number of pieces grows, while constraints meet a chosen tolerance or are exact on stable instances. Real and synthetic experiments include multi-robot planning, maze navigation, and policy steering.",
+          "zh": "本文将运动规划与转向表述为连续时间优化问题，要求机器人在整个运动过程中避开彼此及静态或移动障碍，并使转向后的运动接近学习型规划器提出的轨迹。作者提出GlobMP，在分段多项式曲线上使用梯度投影，交替降低代价与恢复可行性。理论结果表明，在温和假设下，从足够细的网格初始化时，随着多项式片段数增加，代价趋近全局最优，约束可达到任意指定容差，稳定情形下可精确满足。实验涵盖真实与合成场景及多机器人任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
