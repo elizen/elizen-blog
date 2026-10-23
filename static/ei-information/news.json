@@ -1181,7 +1181,11 @@
             "heading": "",
             "text": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions.\n\nHowever, learning and integrating these signals can require fine-grained supervision, external monitoring models, or complex architectural designs. Moreover, the potential of task status signals to directly guide action generation remains underexplored.\n\nWe present Echo, a framework that combines task status signal learning without frame-level progress annotations with a compact design for status prediction and action generation within a single VLA. Specifically, Echo represents task status with stop and failure signals, added as two dimensions of each action chunk and denoised together with robot actions.\n\nTheir combination distinguishes ongoing execution, successful completion, and failure. To learn these signals without fine-grained progress annotations, Echo constructs successful, failed, and recovery trajectories with complementary supervision properties.\n\nTo enable status signal-guided action generation, Echo controls interactions between the signals and actions and denoises the signals faster than the actions. These allow later action denoising steps to condition on cleaner status estimates while preserving accurate signal prediction.\n\nExtensive real-world manipulation experiments show that Echo accurately predicts task status and consistently improves policy performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Echo is a framework for learning task status and generating actions within a single vision-language-action model. It represents status with stop and failure signals added as two dimensions of each action chunk, and denoises them together with robot actions to distinguish ongoing execution, success, and failure. The method uses successful, failed, and recovery trajectories without frame-level progress annotations. The authors report that real-world manipulation experiments show accurate status prediction and consistent policy performance improvements.",
+          "zh": "Echo 面向视觉语言动作模型中的任务状态识别与动作生成。它将停止和失败信号作为动作块的两个维度，与机器人动作一起去噪，以区分任务进行中、成功完成和失败。框架通过成功、失败及恢复轨迹学习状态信号，不依赖逐帧进度标注；并控制信号与动作的交互，使信号比动作更快去噪。作者报告，真实世界操作实验显示 Echo 能准确预测任务状态，并持续提升策略表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1212,7 +1216,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) navigation models translate visual observations and instructions into actions. Navigation success assesses whether an agent reaches the goal. However, reaching the goal successfully does not establish whether the model genuinely follows the instructions or relies on visual cues or navigation history.\n\nWe introduce NavBind to diagnose instruction-action binding: whether changing the instruction influences the probabilistic distribution of the actions, with the navigation context fixed. We construct 3,252 route-fork contexts by recombining route-aligned instruction segments from R2R-CE and RxR-CE.\n\nEach context pairs full instructions that share the description of the route already traveled but specify different branches. Both are evaluated under the same agent state and navigation history.\n\nWe compare generated local action sequences, the likelihoods of fixed reference action sequences under both instructions, and changes in visual attention and attribution. Across the evaluated models, higher reported navigation success does not imply that the model more faithfully follows the instructions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "NavBind diagnoses whether navigation vision-language-action models bind instructions to actions. It holds the navigation context fixed, changes instructions at route forks, and compares generated local action sequences, the likelihood of fixed reference sequences under each instruction, and changes in visual attention and attribution. The study constructs 3,252 route-fork contexts by recombining route-aligned instruction segments from R2R-CE and RxR-CE. Across evaluated models, the authors report that higher navigation success does not imply more faithful instruction following.",
+          "zh": "NavBind 用于诊断导航视觉语言动作模型是否真正依据指令选择动作。它固定导航情境，改变路线分叉处的指令，并比较生成的局部动作序列、参考动作序列在不同指令下的似然，以及视觉注意和归因变化。研究构建了 3,252 个路线分叉情境，使用来自 R2R-CE 和 RxR-CE 的路线对齐指令片段。作者报告，在所评估模型中，较高的导航成功率并不意味着模型更忠实地遵循指令。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1243,7 +1251,11 @@
             "heading": "",
             "text": "Deformable granular terrains introduce significant locomotion and immobilization risks in planetary exploration and are difficult to detect via remote sensing (e.g., vision).Legged robots can sense terrain properties through leg-terrain interactions during locomotion, offering a direct means to assess traversability in deformable environments.\n\nHow to systematically exploit this interaction-derived information for navigation planning, however, remains underexplored. We address this gap by presenting PSANE, a Proprioceptive Safe Active Navigation and Exploration framework that leverages leg-terrain interaction measurements for safe navigation and exploration in unknown deformable environments.\n\nPSANE learns a traversability model via Gaussian Process regression to estimate and certify safe regions and identify exploration frontiers online, and integrates these estimates with a reactive controller for real-time navigation.\n\nFrontier selection is formulated as a multi-objective optimization that balances safe-set expansion probability and goal-directed cost, with subgoals selected via scalarization over the Pareto-optimal frontier set.\n\nPSANE safely explores unknown granular terrain and reaches specified goals using only proprioceptively estimated traversability, while achieving performance improvements over baseline methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PSANE is a safe active navigation and exploration framework for unknown deformable terrain. It uses measurements from leg-terrain interactions to estimate traversability, learning a model with Gaussian Process regression to identify and certify safe regions and discover exploration frontiers online. A reactive controller uses these estimates for real-time navigation. Frontier selection balances the probability of expanding the safe set against goal-directed cost. The authors report that PSANE safely explores unknown granular terrain and reaches specified goals using proprioceptively estimated traversability, with performance improvements over baseline methods.",
+          "zh": "PSANE 是面向未知可变形地形的安全主动导航与探索框架，利用腿足与地形交互测量估计可通行性。它通过高斯过程回归学习可通行性模型，在线估计并认证安全区域、识别探索前沿，再将这些估计用于实时反应式控制。前沿选择采用多目标优化，权衡安全区域扩展概率和目标导向代价，并从帕累托最优前沿集合中选取子目标。作者报告，PSANE 仅凭本体感知估计的可通行性即可安全探索未知颗粒地形并到达指定目标，且表现优于基线方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
