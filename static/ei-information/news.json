@@ -1761,7 +1761,11 @@
             "heading": "",
             "text": "Humanoid mobility over complex terrain requires accurate foot placement and coordinated whole-body motion capable of robust adaptation. Reinforcement learning (RL) policies trained without motion references generalize well across terrains, yet eliciting effective whole-body coordination through reward design and exploration alone remains challenging.\n\nIn contrast, reference-based methods yield natural motions but struggle to adapt beyond the predefined trajectories in their training data. We introduce a learning framework that bridges these two approaches by using motion data strictly as a training prior.\n\nAn explicit, self-supervised, attention-based contact planner predicts future body-environment contacts, while a contact-conditioned tracker translates these plans into coordinated whole-body motion. Together, they establish contact as an interface between sensory observations and control actions.\n\nThis abstraction allows the policy to internalize the contact-aware structure of locomotion rather than directly replicating kinematics. Consequently, a single policy can exploit data-driven motion priors for natural whole-body coordination while retaining the flexibility to discover environment-dependent behaviors through reinforcement learning.\n\nBuilding on the learned contact planner and tracker, a subsequent fine-tuning stage bootstraps their acquired capabilities to explore environment variations beyond those covered by the original motion data.\n\nOperating entirely from onboard observations without any reference inputs at deployment, this framework enables versatile humanoid mobility in challenging environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a framework for humanoid mobility over complex terrain that uses motion data only as a training prior. A self-supervised, attention-based planner predicts future body-environment contacts, and a contact-conditioned tracker turns those plans into coordinated whole-body motion. The authors describe contact as an interface between observations and control. A later fine-tuning stage explores environmental variations beyond the motion data. At deployment, the framework relies on onboard observations and uses no reference inputs.",
+          "zh": "论文提出一种人形机器人复杂地形移动框架，将运动数据仅作为训练先验。框架使用自监督注意力接触规划器预测未来身体与环境的接触，再由接触条件跟踪器将计划转化为协调的全身动作。作者称，接触构成感知与控制之间的接口，使策略学习步态的接触结构，同时结合自然协调与强化学习适应环境的能力。后续微调用于探索原始运动数据未覆盖的环境变化。部署时仅依赖机载观测，不使用参考输入。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1792,7 +1796,11 @@
             "heading": "",
             "text": "Embodied VLMs can execute increasingly complex manipulation tasks, yet execution errors can leave the environment in states that require replanning for recovery. Existing recovery methods either rely on inference-time mechanisms with fixed policies or learn from failure examples and reference corrections rather than verified action outcomes.\n\nTo enable recovery learning through verifiable interaction, we introduce the Embodied Replanning for Recovery Environment (ERR-Env), which provides feedback on task progress and execution errors.\n\nWe further construct ERR-Bench, a benchmark with held-out tasks spanning nominal, intermediate, and error states for evaluating recovery capability and execution reliability.\n\nWe then propose Action-Grouped Turn-GSPO (AGT-GSPO), an online reinforcement learning method combining turn-level rewards for task progress and error states with action-grouped advantage estimation, and use it to train ERR-VLM, a compact 2B embodied VLM.\n\nEvaluation on ERR-Bench reveals a mismatch between task progress and execution reliability across diverse VLMs. AGT-GSPO improves ERR-VLM by 10.25 percentage points in Strict Success Rate for error-free completion and 22.95 percentage points in Recovery Rate, while ablations and zero-shot transfer further validate the effectiveness of our method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses replanning after execution errors in embodied vision-language models. It introduces ERR-Env, which provides feedback on task progress and errors, and ERR-Bench, with held-out tasks covering nominal, intermediate, and error states. The authors propose AGT-GSPO, an online reinforcement learning method using turn-level rewards and action-grouped advantage estimation, to train the compact 2B ERR-VLM. On ERR-Bench, they report increases of 10.25 percentage points in strict error-free success rate and 22.95 points in recovery rate. Ablations and zero-shot transfer are also reported as evidence.",
+          "zh": "论文针对具身视觉语言模型执行操作任务时发生错误后需要重新规划的问题，提出可提供任务进度与执行错误反馈的 ERR-Env，并构建包含留出任务及正常、中间和错误状态的 ERR-Bench。作者提出在线强化学习方法 AGT-GSPO，以回合级奖励和动作分组优势估计训练紧凑型 2B 具身模型 ERR-VLM。评测显示，不同模型的任务进度与执行可靠性存在不匹配；AGT-GSPO 使 ERR-VLM 的无错误严格成功率提高 10.25 个百分点，恢复率提高 22.95 个百分点。消融与零样本迁移进一步支持其方法有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1823,7 +1831,11 @@
             "heading": "",
             "text": "General-purpose robots must handle tasks, objects and environments they were never trained on, yet zero-shot generalization remains one of the least solved problems in physical AI. In digital AI, zero-shot capability grew with the volume and, above all, the diversity of training data, much of it sourced from the crowd.\n\nRobotics instead relies on paid collection by a few well-funded teams, which yields volume without diversity. We formulate zero-shot generalization in physical AI as coverage of the deployment distribution, and show that more samples from the same collectors shrink the unseen region only slowly, while each new contributor can extend it.\n\nBuilding on this and on zero-shot learning, we propose a shared latent space for robot actions that combines multi-modal alignment, generative augmentation, and noisy-label learning. As a scalable source of diverse data, we propose a community of developers building applications on one standard, approachable robot, Origami.\n\nWe close with a testable hypothesis and an evaluation protocol relating real-robot zero-shot success to the diversity of contributed data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper frames zero-shot generalization in physical AI as coverage of the deployment distribution. It argues that robot data collection by a small number of funded teams can increase volume without comparable diversity: more samples from the same collectors shrink the unseen region slowly, while new contributors can extend coverage. The authors propose a shared latent space for robot actions combining multimodal alignment, generative augmentation, and noisy-label learning. They suggest a developer community contributing data through applications on the standard, approachable Origami robot, and provide a testable hypothesis and protocol relating data diversity to real-robot zero-shot success.",
+          "zh": "论文将实体智能中的零样本泛化表述为对部署分布的覆盖，并指出机器人数据通常由少数团队付费采集，可能带来数量增长而多样性不足。作者称，来自相同采集者的更多样本只能缓慢缩小未覆盖区域，而新增贡献者可以扩展覆盖。论文提出结合多模态对齐、生成式增强和噪声标签学习的机器人动作共享潜在空间，并建议通过开发者社区在标准化、易用的 Origami 机器人上贡献多样数据。最后提出关于真实机器人零样本成功率与数据多样性关系的可检验假设及评估方案。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1854,7 +1866,11 @@
             "heading": "",
             "text": "Humans achieve complex manipulation through coordinated whole-body control, whereas most Vision-Language-Action (VLA) models treat robot body parts largely independently, making high-DoF humanoid control challenging and often unstable. We present HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots.\n\nHEX introduces a humanoid-aligned universal state representation for scalable learning across heterogeneous embodiments, and incorporates a Mixture-of-Experts Unified Proprioceptive Predictor to model whole-body coordination and temporal motion dynamics from large-scale multi-embodiment trajectory data.\n\nTo efficiently capture temporal visual context, HEX uses lightweight history tokens to summarize past observations, avoiding repeated encoding of historical images during inference.\n\nIt further employs a residual-gated fusion mechanism with a flow-matching action head to adaptively integrate visual-language cues with proprioceptive dynamics for action generation.\n\nExperiments on real-world humanoid manipulation tasks show that HEX achieves state-of-the-art performance in task success rate and generalization, particularly in fast-reaction and long-horizon scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots. It uses a universal state representation for learning across embodiments, a unified proprioceptive predictor trained on multi-embodiment trajectories, and lightweight history tokens to summarize past observations. A residual-gated fusion mechanism and flow-matching action head combine visual-language cues with proprioceptive dynamics for action generation. In real-world humanoid manipulation experiments, the authors report state-of-the-art task success and generalization, particularly in fast-reaction and long-horizon scenarios.",
+          "zh": "论文提出 HEX，一种面向全尺寸双足人形机器人的状态中心框架，用于协调全身操作。其方法包括支持异构实体学习的通用状态表示、从多实体轨迹数据建模全身协调与时间动态的统一本体感觉预测器，以及概括历史观测的轻量历史令牌。框架还使用残差门控融合机制和流匹配动作头，结合视觉语言线索与本体感觉动态生成动作。作者报告，真实世界人形操作实验中，HEX 在任务成功率和泛化方面达到领先表现，尤其是在快速反应和长时程场景。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
