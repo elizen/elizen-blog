@@ -466,7 +466,11 @@
             "heading": "",
             "text": "Human manipulation videos provide rich motion and interaction cues for acquiring robot skills without robot demonstrations. Video generation models synthesize such demonstrations from an initial scene image and task instruction, avoiding the need to record demonstrations for each task.\n\nHowever, the recovered motion captures only one scene-specific realization, leaving task structure, geometric relations, and constraints implicit. We present V2-STRep, a zero-shot framework that converts generated video motion into reusable robot skills through VLM-grounded structured task representations.\n\nThe representation specifies motion phases, references, and task-relevant constraints, with targets described by minimal geometric structures: points, point-normals, axes, planes, and full 6D poses. VLM-provided 2D image-space cues are lifted into 3D using RGB-D observations to reconstruct task geometry and candidate grasp poses.\n\nGeometry-specific rules transfer motion to new scenes, while task-constrained trajectory optimization couples grasp selection with complete robot motion planning. It preserves task requirements while using remaining rotational freedom to accommodate joint limits.\n\nUpdating deployment grounding and constraints enables reuse under new compatible instructions without generating another video. Experiments on six real-world manipulation tasks demonstrate improved execution success over baselines, reliable cross-scene transfer of successfully acquired skills, and adaptation to changed deployment instructions.\n\nDetails are available on the project website: https://tuwien-asl.github.io/V2-STRep/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents V2-STRep, a zero-shot framework for turning motion in generated videos into reusable robot skills. It combines vision-language-model image cues with RGB-D observations to reconstruct task geometry, candidate grasps, motion phases, and constraints. Geometry-specific rules and trajectory optimization support transfer to new scenes and instructions. Experiments on six real-world manipulation tasks reportedly show higher execution success than baselines, as well as cross-scene transfer and adaptation to changed deployment instructions.",
+          "zh": "论文提出 V2-STRep，一种将生成视频中的机器人操作动作转化为可复用技能的零样本框架。它用视觉语言模型提供的图像线索结合 RGB-D 观测重建任务几何、抓取姿态、动作阶段及约束，并通过几何规则和轨迹优化适配新场景与新指令。作者报告，在六项真实世界操作任务中，该方法比基线执行成功率更高，并展示了跨场景迁移及指令变化适应能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -497,7 +501,11 @@
             "heading": "",
             "text": "Real robot data, rich across tasks and morphologies, is often treated as the bottleneck for training robot learning models, including embodied foundation models that aim for zero-shot physical transfer. In this paper, we investigate the degree to which such models can acquire necessary structure using data from systems without embodiment.\n\nTo this end, we test if inexpensive, procedurally generated synthetic data can yield useful priors before a model observes any real-world behavior. We study this through robot action prediction, a natural pretraining objective and a direct test of whether structure learned from arbitrary synthetic tasks transfers to embodied settings.\n\nWe introduce three data generation pipelines that model mathematical abstractions of robotic control, and use them as pretraining priors for a Transformer.\n\nWe demonstrate that a model trained purely on this non-robotic data attains non-trivial zero-shot prediction performance on unseen physical robot tasks via an in-context learning mechanism, and that our specialized control priors notably improve upon generic causal priors.\n\nWe also compare against a compute-matched baseline trained on real robot data, and find that it outperforms our model but only on the datasets it was trained on. These findings suggest that procedurally generated, mathematical abstractions can yield useful robotic priors, offering a potential complement to expensive embodied data collection."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether synthetic data from systems without embodiment can provide useful priors for robot learning. It introduces three pipelines that generate data from mathematical abstractions of robotic control and uses them to pretrain a Transformer. A model trained only on this data achieves non-trivial zero-shot prediction on unseen physical robot tasks through in-context learning; specialized control priors outperform generic causal priors. A compute-matched model trained on real robot data performs better, but only on datasets included in its training.",
+          "zh": "论文研究不具身系统生成的合成数据能否为机器人学习提供先验。作者提出三种模拟机器人控制数学抽象的数据生成流程，并将其用于 Transformer 预训练。模型仅使用这类数据训练后，在未见过的真实机器人任务上通过上下文学习取得非零样本预测表现，专用控制先验优于通用因果先验。与之相比，使用匹配计算量的真实机器人数据训练的基线表现更好，但优势仅出现在其训练过的数据集上。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -528,7 +536,11 @@
             "heading": "",
             "text": "Natural-language interfaces allow users to command robotic systems without interacting directly with mission planners or robotics middleware. Their reliable use depends on robot tool routing, defined here as the selection of the smallest complete subset of predefined executable capabilities required to satisfy a request.\n\nThis task is particularly difficult for compound instructions, where incomplete selection may omit necessary sensing or monitoring capabilities, while excessive selection may expose irrelevant tools.\n\nWe compare four routing strategies: three progressively refined ChromaDB-based methods - fixed-threshold retrieval, relative-distance retrieval, and clause-aware aggregated retrieval - and a cloud-hosted 120-billion-parameter language-model baseline.\n\nThe methods are evaluated on 164 manually annotated prompts organised into three complexity levels, from direct single-tool requests to compound requests requiring at least three tools.\n\nUsing exact-match accuracy, completeness, precision, a completeness-weighted composite score, and routing latency, CDB-v3 achieves the best macro-average score among the retrieval-only methods, with 0.7822, compared with 0.8869 for the large-model baseline.\n\nAlthough the LLM provides higher routing quality, CDB-v3 exhibits substantially lower latency and can be deployed locally without requiring cloud connectivity.\n\nThese results identify a quality-latency trade-off between direct large-model selection and clause-aware semantic retrieval for privacy-sensitive, connectivity-constrained, and resource-constrained robotic systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper compares four strategies for routing natural-language robot requests to executable tools: three progressively refined ChromaDB retrieval methods and a cloud-hosted large language model. Evaluation uses 164 manually annotated prompts of varying complexity and measures exact-match accuracy, completeness, precision, a composite score, and latency. CDB-v3 has the best macro-average score among retrieval methods at 0.7822, while the model scores 0.8869 and provides higher routing quality. CDB-v3 has substantially lower latency and supports local deployment without cloud connectivity.",
+          "zh": "论文比较机器人自然语言指令的四种工具路由策略：三种逐步改进的 ChromaDB 检索方法，以及云端大语言模型基线。评测使用 164 条人工标注提示，涵盖不同复杂度，并考察精确匹配、完整性、精度、综合得分和延迟。检索方法中，CDB-v3 的宏平均得分最高，为 0.7822；大模型为 0.8869，路由质量更高。作者指出，CDB-v3 延迟更低，可本地部署且无需云连接，体现质量与延迟之间的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
