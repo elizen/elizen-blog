@@ -843,7 +843,11 @@
             "heading": "",
             "text": "Humanoid robots must coordinate locomotion and manipulation in everyday environments, yet progress is difficult to assess across differing policies, controllers, and task settings. LocoManiLab provides an integrated testbed spanning data collection and generation, policy training, evaluation, and physical deployment.\n\nIts task suite covers 234 atomic and compositional tasks across five household scene categories, supported by 51.5 hours of simulated teleoperation.\n\nThe evaluation covers twelve policies with a shared controller across task and scene splits and perturbation levels, two policies across five controllers, and studies of demonstration scale and data-source mixtures.\n\nSuccess rates fall on unseen tasks and scenes and generally decline as visual perturbations increase, with differences in generalization and robustness across policies.\n\nFor data generation, a humanoid motion generation model is fine-tuned for loco-manipulation to study the alignment of its outputs with task execution requirements and its integration into the data generation pipeline. Three simulated loco-manipulation tasks closely match real-world setups, enabling evaluation of three policies in both domains.\n\nSimilar policy rankings support the reliability of simulation-based evaluation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LocoManiLab, an integrated testbed for humanoid loco-manipulation covering data collection and generation, policy training, evaluation, and physical deployment. Its task suite spans household scenes and includes simulated teleoperation data. Evaluations compare policies and controllers across task and scene splits, visual perturbations, demonstration scales, and data-source mixtures. Success rates decline on unseen tasks and scenes and generally decrease with stronger visual perturbations. The authors also study motion-model fine-tuning and report similar policy rankings in simulation and real-world setups as evidence for simulation-based evaluation.",
+          "zh": "论文提出 LocoManiLab，这是用于人形机器人移动操作的综合测试平台，覆盖数据采集与生成、策略训练、评估和实体部署。任务集包含五类家庭场景中的原子及组合任务，并使用模拟遥操作数据。评估比较了多种策略和控制器，考察任务与场景迁移、视觉扰动、演示规模及数据来源混合。结果显示，未见任务和场景上的成功率下降，视觉扰动增强时成功率通常也下降。研究还将运动生成模型微调用于移动操作，并比较模拟与现实设置中的策略表现；相近的策略排名被作者视为支持模拟评估可靠性的证据。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -874,7 +878,11 @@
             "heading": "",
             "text": "Multi-robot coordination of nonlinear systems is naturally formulated as joint-space optimal control subject to constraints over groups of robots.\n\nExisting methods that approach joint optimality remain largely centralized, offline, and confined to collision-free motion planning, while decentralized, real-time counterparts target safe navigation without pursuing the joint optimum. This paper develops a decentralized, real-time planner that approaches the joint optimum as an anytime process.\n\nWe extend a recent single-robot framework that searches dispersive trees of forward-propagated commands for differentially flat systems to coordinate a multi-robot team near-optimally. We first show that the inter-robot coupling can be effectively replaced by some local constraints, under which locally grown dispersive trees contain a near-optimal agreement.\n\nIt is this structure that the robots pursue by decentralized column generation, negotiating rents on the shared space that guide the search of each robot's tree. The negotiation settles on an agreement whose near-optimality is certified at quiescence.\n\nOur protocol, WarpWeaver, implements this negotiation as an asynchronous real-time loop over a receding horizon, and demonstrates effective closure to quiesced agreements even when real-time deadlines cut the negotiation short.\n\nIn simulation, WarpWeaver reduces total travel time by up to 22% against centralized offline planners on the Dynobench suite and by up to 37% against a decentralized real-time baseline, and nearly doubles the success rate of a task-specific planner on graph connectivity.\n\nHardware experiments on six robots planning onboard demonstrate real-world implementability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WarpWeaver, a decentralized real-time planner for coordinating nonlinear multi-robot systems toward a joint optimum over a receding horizon. It extends a single-robot dispersive-tree framework and coordinates search through asynchronous negotiation over shared-space constraints. The authors state that near-optimality can be certified when negotiation reaches quiescence. In simulation, WarpWeaver reduces total travel time relative to centralized offline planners and a decentralized real-time baseline, and improves success on a graph-connectivity task. Onboard planning experiments with six robots demonstrate implementability in hardware.",
+          "zh": "论文提出 WarpWeaver，一种面向非线性多机器人系统的分散式实时规划器，目标是在滚动时域中逐步接近联合最优。方法扩展了基于前向传播命令离散树的单机器人框架，并通过异步协商共享空间约束来协调各机器人的搜索；协商静止时可认证协议所得方案的近优性。作者报告，仿真中该方法相较集中式离线规划器和分散式实时基线降低总行程时间，并提高图连通任务的成功率。六台机器人机载规划的硬件实验展示了现实环境中的可实施性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -905,7 +913,11 @@
             "heading": "",
             "text": "We consider the offline generation of coordinated paths for N interchangeable robots and N goals in planar environments with polygonal obstacles.\n\nAfter a conformal map to a circular domain, starts and goals become the poles and zeros of a rational function R, and the paths are the branches of its Generalized Root Locus (GRL), i.e. the streamlines of the logarithmic potential -log R.\n\nWe show that, for every phase outside a finite set of critical phases and a set of boundary phases, the induced gradient motion drives each robot to a distinct goal along pairwise disjoint paths that never reach the obstacles; the robot-goal assignment is produced by the construction, and with the gain used as a clock all robots move as the closed-loop roots of the GRL and arrive together at a prescribed time.\n\nObstacles become streamlines through successive Milne-Thomson reflections, and for a finite number of reflections a finite test certifies safety for the potential that is actually computed. Reciprocal root-locus planning is recovered as a special case.\n\nThe method is illustrated on two polygonal workspaces, 100 random instances compared with independent harmonic planning and artificial potentials, and a scene with ten robots and ten obstacles."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies offline coordinated path generation for interchangeable robots and goals in planar environments with polygonal obstacles. After mapping the environment to a circular domain, it represents starts and goals as poles and zeros of a rational function and generates paths using its Generalized Root Locus. The authors show that, for phases outside specified finite exceptional sets, robots reach distinct goals along disjoint paths that avoid obstacles and can arrive together at a prescribed time. Obstacles are handled through successive Milne-Thomson reflections, with a finite safety test for the computed potential when reflections are finite. Examples include polygonal workspaces and random instances.",
+          "zh": "论文研究平面多边形障碍环境中，为数量相同且可互换的机器人和目标离线生成协调路径。方法将环境共形映射到圆域，把起点和目标表示为有理函数的极点与零点，并以广义根轨迹生成路径。作者证明，对除有限临界相位及边界相位外的相位，梯度运动会使机器人沿互不相交且不触及障碍物的路径抵达不同目标，并可按预定时间同时到达。障碍物通过连续 Milne-Thomson 反射处理；有限次反射时，可用有限测试认证实际计算势场的安全性。论文展示了多种工作空间和随机实例。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
