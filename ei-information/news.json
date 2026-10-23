@@ -362,7 +362,7 @@
       },
       "format": "source_excerpt",
       "id": "news-1cc0dd5b27a0b407c7e7367ed0053db9eed4e4ccc78cbbeed3ee2d7c8bf3d70c",
-      "intro": "arXiv:2610.29845v1 Announce Type: new Abstract: Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to",
+      "intro": "arXiv:2610.29845v2 Announce Type: new Abstract: Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to",
       "placement": "main",
       "published_at": "2026-10-22T04:00:00+00:00",
       "reading": {
@@ -371,12 +371,12 @@
         "sections": [
           {
             "heading": "",
-            "text": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards.\n\nWhile panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation.\n\nWe present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images.\n\nWe pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning.\n\nIn simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively.\n\nZero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced."
+            "text": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards.\n\nWhile panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation.\n\nWe present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images.\n\nWe pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning.\n\nIn simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively.\n\nZero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced. Project website: https://rangenav.github.io/."
           }
         ],
         "summary": {
-          "en": "The paper presents RangeNav, a compact LiDAR range-image encoder pretrained entirely on synthetic data for robot navigation. Anisotropic convolutions and circular padding address range images' aspect ratio and azimuthal seam. Its pretraining objective combines range reconstruction, semantic segmentation, and bird's-eye-view prediction; the encoder is then frozen for policy learning. In simulation, semantic and BEV supervision raise success rates over a reconstruction-only baseline by average margins of 32.03 and 23.73 percentage points in procedural training and out-of-distribution realistic test environments, respectively. The authors also report zero-shot quadruped deployments navigating dense crowds, low-light settings, and construction zones.",
-          "zh": "论文提出 RangeNav，一种在合成数据上预训练的紧凑激光雷达距离图编码器，用于机器人导航。其各向异性卷积和循环填充适配距离图的长宽比及方位接缝；预训练目标结合距离重建、语义分割和鸟瞰图预测，随后冻结编码器进行策略学习。仿真中，相较仅重建基线，语义与鸟瞰监督使程序化训练环境和分布外真实感测试环境的成功率分别平均提高32.03和23.73个百分点。作者还报告四足机器人零样本真实部署可在拥挤人群、低光照和施工区域导航。"
+          "en": "The paper presents RangeNav, a compact LiDAR range-image encoder pretrained entirely on synthetic data with anisotropic convolutions and circular padding. Its navigation-aligned pretraining combines range reconstruction, semantic segmentation, and bird’s-eye-view prediction; the encoder is then frozen for policy learning. In simulation, semantic and bird’s-eye-view supervision improved success rates over reconstruction-only training by average margins of 32.03 and 23.73 percentage points in generated training and out-of-distribution realistic test environments. The authors also report zero-shot real-world deployments on a Unitree B2-W quadruped.",
+          "zh": "论文提出RangeNav，一种完全使用合成数据预训练的紧凑型激光雷达距离图编码器，采用各向异性卷积和循环填充处理距离图的长宽比及方位接缝。预训练目标结合距离重建、语义分割和鸟瞰图预测，之后冻结编码器进行策略学习。仿真中，相较仅重建基线，加入语义与鸟瞰图监督使训练环境和分布外真实感测试环境的成功率平均分别提高32.03和23.73个百分点。作者还报告了Unitree B2-W四足机器人零样本实地部署表现。"
         }
       },
       "source": {
@@ -1680,7 +1680,7 @@
       },
       "format": "source_excerpt",
       "id": "news-7f0497ce5f37f915b301236a748b0904d52e0222e4080609cfb8750de7df00d4",
-      "intro": "arXiv:2610.29203v1 Announce Type: new Abstract: Vision-language-action (VLA) navigation models translate visual observations and instructions into actions. Navigation success assesses whether an agent reaches the goal. However, reaching the goal successfully does not establish whether the model genuinely follows the instructions or relies on visual cues or navigation history. We introduce NavBind to diagnose instruction-action binding: whether changing the instruction influences the probabilistic distribution of the actions, with the navigation context fixed. We construct 3,252 route-fork contexts by",
+      "intro": "arXiv:2610.29203v2 Announce Type: new Abstract: Vision-language-action (VLA) navigation models translate visual observations and instructions into actions. Navigation success assesses whether an agent reaches the goal. However, reaching the goal successfully does not establish whether the model genuinely follows the instructions or relies on visual cues or navigation history. We introduce NavBind to diagnose instruction-action binding: whether changing the instruction influences the probabilistic distribution of the actions, with the navigation context fixed. We construct 3,252 route-fork contexts by",
       "placement": "main",
       "published_at": "2026-10-22T04:00:00+00:00",
       "reading": {
@@ -1693,8 +1693,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces NavBind to assess whether navigation vision-language-action models change their action distributions when instructions change while context remains fixed. It constructs 3,252 route-fork contexts from R2R-CE and RxR-CE, pairing instructions that describe the traveled route but specify different branches. Both instructions are evaluated with the same agent state and history. The study compares generated local actions, likelihoods of reference action sequences, and changes in visual attention and attribution. The authors report that higher navigation success among evaluated models does not imply more faithful instruction following.",
-          "zh": "论文提出 NavBind，用于诊断导航视觉语言动作模型是否会在导航上下文固定时，因指令改变而调整动作分布。作者从 R2R-CE 和 RxR-CE 重组出 3,252 个路线分岔情境，每组指令共享已走路线描述、但指定不同分支，并在相同状态和历史下评估。研究比较生成的局部动作序列、参考动作序列的似然，以及视觉注意力和归因变化。作者报告，在所评估模型中，导航成功率较高并不意味着更忠实地遵循指令。"
+          "en": "The paper introduces NavBind to diagnose whether changing an instruction changes a vision-language-action navigation model’s action distribution while navigation context is held fixed. It constructs route-fork contexts by recombining route-aligned instruction segments from R2R-CE and RxR-CE. Each context pairs instructions that describe the same traveled route but specify different branches. The evaluation compares generated local action sequences, likelihoods of fixed reference sequences, and changes in visual attention and attribution. Across evaluated models, higher reported navigation success did not imply more faithful instruction following.",
+          "zh": "论文提出NavBind，用于诊断视觉语言动作导航模型是否会在导航状态和历史固定时，因指令变化而改变动作概率分布。作者通过重组R2R-CE和RxR-CE中的路线对齐指令片段，构建路线分岔情境；每个情境中的两条完整指令描述相同的已行路线，但指定不同分支。评估比较生成的局部动作序列、固定参考动作序列的似然，以及视觉注意力和归因变化。结果显示，在所评估模型中，较高的导航成功率并不意味着更忠实地遵循指令。"
         }
       },
       "source": {
@@ -2205,7 +2205,7 @@
       },
       "format": "source_excerpt",
       "id": "news-a470a96e27935fb5cba6ec3f55878942b290e52d52d96956da82758b885dbaf8",
-      "intro": "arXiv:2610.29829v1 Announce Type: new Abstract: General-purpose robots must handle tasks, objects and environments they were never trained on, yet zero-shot generalization remains one of the least solved problems in physical AI. In digital AI, zero-shot capability grew with the volume and, above all, the diversity of training data, much of it sourced from the crowd. Robotics instead relies on paid collection by a few well-funded teams, which yields volume without diversity. We formulate zero-shot generalization in physical AI",
+      "intro": "arXiv:2610.29829v2 Announce Type: new Abstract: General-purpose robots must handle tasks, objects and environments they were never trained on, yet zero-shot generalization remains one of the least solved problems in physical AI. In digital AI, zero-shot capability grew with the volume and, above all, the diversity of training data, much of it sourced from the crowd. Robotics instead relies on paid collection by a few well-funded teams, which yields volume without diversity. We formulate zero-shot generalization in physical AI",
       "placement": "main",
       "published_at": "2026-10-22T04:00:00+00:00",
       "reading": {
@@ -2218,8 +2218,8 @@
           }
         ],
         "summary": {
-          "en": "The paper frames zero-shot generalization in physical AI as coverage of the deployment distribution. It argues that collecting more samples from the same contributors shrinks the unseen region slowly, whereas new contributors can extend coverage. The authors propose a shared latent space for robot actions combining multimodal alignment, generative augmentation, and noisy-label learning. They also suggest a developer community building applications on the standard, approachable Origami robot as a source of diverse data. The paper concludes with a testable hypothesis and evaluation protocol relating real-robot zero-shot success to contributed-data diversity.",
-          "zh": "论文讨论实体机器人零样本泛化，提出应以部署分布覆盖来理解这一问题，并指出同一批采集者增加样本只能缓慢缩小未见区域，而新增贡献者可能扩展覆盖。作者提出一种机器人动作共享潜在空间方案，结合多模态对齐、生成式增强和噪声标签学习；同时建议由开发者围绕标准化、易上手的 Origami 机器人构建应用社区，以获得多样数据。文章最后提出可检验假设和评估流程，用于研究真实机器人零样本成功率与贡献数据多样性的关系。"
+          "en": "The paper frames zero-shot generalization in physical AI as coverage of the deployment distribution. It argues that collecting more samples from the same contributors slowly reduces the unseen region, while new contributors can extend coverage. The authors propose a shared latent space for robot actions combining multimodal alignment, generative augmentation, and noisy-label learning. They suggest a developer community building applications on the standard Origami robot as a scalable source of diverse data. The paper closes with a testable hypothesis and evaluation protocol relating real-robot zero-shot success to data diversity.",
+          "zh": "论文将实体AI中的零样本泛化表述为对部署分布的覆盖，并指出同一批数据采集者增加样本只能缓慢缩小未覆盖区域，而新增贡献者可能扩展覆盖。作者据此提出机器人动作共享潜在空间，结合多模态对齐、生成式增强和噪声标签学习，并建议通过开发者社区为统一且易于使用的Origami机器人贡献多样数据。论文最后提出一项可检验假设及评估方案，用于研究真实机器人零样本成功率与贡献数据多样性之间的关系。"
         }
       },
       "source": {
@@ -2624,7 +2624,11 @@
             "heading": "",
             "text": "This paper considers the path planning problem for autonomous exploration of an unknown environment using multiple heterogeneous robots such as drones, wheeled, and legged robots, with different capabilities to traverse complex terrains.\n\nA key challenge there is to intelligently allocate the robots to the unknown areas to be explored and determine the visiting order of those areas subject to traversability constraints, which leads to a large-scale constrained multiple hamiltonian path problem (mHPP) that needs to be quickly and iteratively solved every time when new space is explored.\n\nTo address the hallenge, we propose HEHA (Hierarchical Exploration with Heterogeneous Agents) using a recent hierarchical method that decomposes the exploration into global planning and local planning.\n\nThe major contribution in HEHA is its global planning, where we propose a new routing algorithm RCH (Routing with Constraints and Heterogeneity) that can quickly find bounded sub-optimal solutions for mHPP to minimize the maximum path length (i.e., makespan) among the agents subject to traversability constraints.\n\nAdditionally, the local planner in HEHA also considers heterogeneity to avoid repeated and duplicated exploration among the robots.\n\nThe experimental results show, in the presence of heterogeneous traversability, our RCH can solve mHPP with up to 47% smaller makespan than several baselines, and HEHA can reduce the exploration time by up to 30% compared with existing approaches."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies path planning and area allocation for heterogeneous robots exploring unknown environments, accounting for their different terrain traversability. It proposes HEHA, a hierarchical exploration method, and RCH, a global routing algorithm that quickly finds bounded-suboptimal solutions to constrained multiple Hamiltonian path problems while minimizing the agents’ maximum path length. HEHA’s local planner also accounts for heterogeneity to reduce duplicated exploration. Experiments with heterogeneous traversability report up to 47% smaller makespan for RCH than several baselines and up to 30% less exploration time for HEHA than existing approaches.",
+          "zh": "论文研究多种异构机器人协作探索未知环境时的路径规划与区域分配问题，需考虑不同机器人的地形通行能力。作者提出HEHA分层探索方法，并设计全局路由算法RCH，为带通行约束的多重哈密顿路径问题快速求解有界次优方案，以降低机器人间最大路径长度；局部规划也考虑异构性以减少重复探索。实验结果显示，在存在异构通行能力时，RCH相较若干基线的最大路径长度最多降低47%，HEHA相较已有方法最多缩短30%的探索时间。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3903,5 +3907,5 @@
       "title": "Learning to Be Different: Component Specialization for Compositional Diffusion Policies"
     }
   ],
-  "updated_at": "2026-10-22T04:07:04.332256+00:00"
+  "updated_at": "2026-10-23T03:17:07.707209+00:00"
 }
