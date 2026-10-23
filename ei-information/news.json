@@ -2181,7 +2181,11 @@
             "heading": "",
             "text": "Long-horizon robotic operation requires memory that scales with essential information rather than execution time. We present a parameter-space memory framework where each episode is stored as a separable object.\n\nA neural implicit representation is fitted to episode video from a shared, meta-learned initialization; the resulting weight delta constitutes the memory. Crucially, this delta remains a fixed size regardless of whether the episode spans a hundred or a hundred thousand frames.\n\nA learned projector maps the weight delta into token embeddings, conditioning a language model for question answering and a decoder for joint command regression, without frame retrieval at query time. On RoboMME, the language model exceeds chance across all question types, and the decoder achieves a mean $R^2$ of 0.51.\n\nReplacing the delta with matched noise drops performance by 11.4 points, while random-origin weights are non-decodable, proving the meta-learned initialization is essential for embedding episode content.\n\nBy representing individual experiences as fixed-size weight deltas in a common parameter space, this approach decouples memory cost from time horizon and provides a basis for scalable streaming memory."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents inr2action, a parameter-space memory framework that fits a neural implicit representation to each robot episode video from a shared meta-learned initialization. The resulting weight delta has fixed size regardless of episode length. A learned projector uses the delta to condition a language model for question answering and a decoder for joint-command regression, without retrieving frames at query time. On RoboMME, question answering exceeds chance across question types and the decoder reaches a mean R² of 0.51. Matched noise lowers performance by 11.4 points, while weights from a random initialization are non-decodable.",
+          "zh": "论文提出 inr2action 参数空间记忆框架：从共享的元学习初始化出发，为每段机器人视频拟合神经隐式表示，并将权重变化量作为固定大小的记忆，不随片段帧数增长。学习到的投影器把变化量映射为语言模型问答和关节命令解码器的条件输入，查询时不检索视频帧。在 RoboMME 上，语言模型在各类问题上表现高于随机水平，解码器平均 R² 为 0.51；匹配噪声替换使性能下降 11.4 个百分点，随机初始化权重不可解码。作者据此指出，元学习初始化对嵌入片段内容至关重要。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2212,7 +2216,11 @@
             "heading": "",
             "text": "General-purpose robots must handle tasks, objects and environments they were never trained on, yet zero-shot generalization remains one of the least solved problems in physical AI. In digital AI, zero-shot capability grew with the volume and, above all, the diversity of training data, much of it sourced from the crowd.\n\nRobotics instead relies on paid collection by a few well-funded teams, which yields volume without diversity. We formulate zero-shot generalization in physical AI as coverage of the deployment distribution, and show that more samples from the same collectors shrink the unseen region only slowly, while each new contributor can extend it.\n\nBuilding on this and on zero-shot learning, we propose a shared latent space for robot actions that combines multi-modal alignment, generative augmentation, and noisy-label learning. As a scalable source of diverse data, we propose a community of developers building applications on one standard, approachable robot, Origami.\n\nWe close with a testable hypothesis and an evaluation protocol relating real-robot zero-shot success to the diversity of contributed data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper frames zero-shot generalization in physical AI as coverage of the deployment distribution. It argues that collecting more samples from the same contributors shrinks the unseen region slowly, whereas new contributors can extend coverage. The authors propose a shared latent space for robot actions combining multimodal alignment, generative augmentation, and noisy-label learning. They also suggest a developer community building applications on the standard, approachable Origami robot as a source of diverse data. The paper concludes with a testable hypothesis and evaluation protocol relating real-robot zero-shot success to contributed-data diversity.",
+          "zh": "论文讨论实体机器人零样本泛化，提出应以部署分布覆盖来理解这一问题，并指出同一批采集者增加样本只能缓慢缩小未见区域，而新增贡献者可能扩展覆盖。作者提出一种机器人动作共享潜在空间方案，结合多模态对齐、生成式增强和噪声标签学习；同时建议由开发者围绕标准化、易上手的 Origami 机器人构建应用社区，以获得多样数据。文章最后提出可检验假设和评估流程，用于研究真实机器人零样本成功率与贡献数据多样性的关系。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2243,7 +2251,11 @@
             "heading": "",
             "text": "Safe robotic task planning requires planners that can reliably achieve task goals while satisfying safety constraints. Classical planners search over explicit symbolic task representations and can provide formal guarantees with respect to encoded safety constraints, but require rigid input formats.\n\nTheir computational cost also increases rapidly with the search space. In contrast, large language models (LLMs) offer flexible task interfaces and strong generalization capabilities, but they are large, power-hungry, and pre-trained with little robot-specific safety data and knowledge.\n\nThus, they can be difficult to deploy locally on robotic systems with limited resources. To address these limitations, we present SLoSa, a neuro-symbolic compression and fine-tuning framework for training foundation-model-based robotic task planners with Small size, Low power demand, and Safety awareness.\n\nThe framework first constructs a safety-aware dataset using classical planners, an advanced teacher LLM, and formal verifiers, followed by two training stages: supervised fine-tuning and reinforcement learning (RL) fine-tuning guided by a verification-based reward machine to enforce safety alignment.\n\nWe evaluate SLoSa across four Planning Domain Definition Language (PDDL) domains, two household simulation environments, local edge platforms, and a desktop robotic arm.\n\nAcross the PDDL tasks, verifier-guided post-training raises the success rate of compact 4B-14B planners to 70.5-76.0%, while INT4 deployment on a Jetson Orin requires 17.85-26.41 W of average power. Results in household simulators and on the physical robot further demonstrate the applicability of SLoSa across diverse robotic task settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SLoSa is a neuro-symbolic compression and fine-tuning framework for robotic task planners, targeting small models, low power demand, and safety awareness. It builds safety-aware data using classical planners, a teacher LLM, and formal verifiers, then applies supervised fine-tuning and reinforcement learning guided by a verification-based reward machine. Evaluation covers four PDDL domains, two household simulators, local edge platforms, and a desktop robotic arm. On PDDL tasks, verifier-guided post-training yields success rates of 70.5–76.0% for compact 4B–14B planners. INT4 deployment on Jetson Orin averages 17.85–26.41 W.",
+          "zh": "论文提出 SLoSa，一种面向机器人任务规划的神经符号压缩与微调框架，旨在兼顾模型小型化、低功耗和安全意识。框架先结合经典规划器、教师大语言模型和形式化验证器构建安全数据，再进行监督微调及由验证奖励机制引导的强化学习微调。评估覆盖四个 PDDL 领域、两个家居仿真环境、本地边缘平台和桌面机械臂。PDDL 任务中，验证器引导后训练使紧凑型 4B–14B 规划器成功率达到 70.5%–76.0%；Jetson Orin 上 INT4 部署平均功耗为 17.85–26.41 W。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
