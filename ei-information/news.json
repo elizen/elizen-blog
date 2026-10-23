@@ -2577,7 +2577,11 @@
             "heading": "",
             "text": "This report describes a laboratory instantiation of a dynamic microsegmentation function for an Internet-of-Things network, specifically a multi-robot network, using a commercial software-defined microsegmentation tool. Fine-grained dynamic segmentation policies are defined, where segments are adapted based on asset functional and health tags.\n\nAutomated implementation of the dynamic policies in software is also undertaken. The microsegmentation solution is shown to automatically isolate an indicated threat in real time, while maintaining unaffected operations.\n\nThe demonstration indicates that microsegmentation can be implemented in IoT networks, in a way that allows for robust operation in the face of threats and disruptions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The report describes a laboratory implementation of dynamic microsegmentation for an Internet-of-Things network, specifically a multi-robot network, using a commercial software-defined microsegmentation tool. Its fine-grained policies adapt segments according to assets’ functional and health tags, and the policies are implemented automatically in software. In the demonstration, the system automatically isolates an indicated threat in real time while unaffected operations continue. The report presents this laboratory demonstration as evidence that microsegmentation can be implemented in IoT networks to support robust operation amid threats and disruptions.",
+          "zh": "报告描述了一种在多机器人网络中实现动态微分段的实验室方案，该网络属于物联网环境，并使用商业软件定义微分段工具。方案制定细粒度动态分段策略，根据资产的功能标签和健康状态标签调整网络分段，并自动将策略落实到软件中。演示显示，该方案能够实时自动隔离被指示的威胁，同时维持未受影响的运行。报告据此指出，微分段可用于物联网网络，使其在威胁和中断面前保持稳健运行；这一结论基于实验室演示。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
