@@ -3,6 +3,34 @@
     {
       "body": "",
       "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "NVIDIA Robotics"
+      },
+      "format": "source_excerpt",
+      "id": "news-95d918831377dcaf16ad658700cf0a6112fb00d0febd223693f995de3c006f2e",
+      "intro": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions...",
+      "placement": "main",
+      "published_at": "2026-10-23T14:58:32+00:00",
+      "reading": {
+        "mode": "excerpt",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Teaching a robot to navigate an obstacle course requires more than a walking policy. It must perceive its surroundings, maintain balance, and adjust its actions..."
+          }
+        ]
+      },
+      "source": {
+        "id": "nvidia-robotics-blog",
+        "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/"
+      },
+      "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation"
+    },
+    {
+      "body": "",
+      "catalog": {
         "kind": "paper",
         "paper": {
           "url": "https://arxiv.org/abs/2610.30817"
@@ -3661,42 +3689,7 @@
         "url": "https://arxiv.org/abs/2610.28712"
       },
       "title": "Warping the Workspace: Expanding Visual Access with Adjustable Reach Mapping for Humanoid Teleoperation"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.28925"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-5377316fdbe8d44145694c6060d450cd1b9fc6bd5eecc50401a09c0a6b86e4fd",
-      "intro": "arXiv:2610.28925v1 Announce Type: new Abstract: Modern robotic agents are increasingly expected to support steerable control, where a single policy can adjust its behavioral style at runtime under changing user preferences. Preference-conditioned reinforcement learning provides this interface, but conditioning alone does not ensure that a requested behavior change is strong, does not leak into unrelated behaviors, and does not compromise task performance. Our evaluation combines Preference Reward Responsiveness (PRR) with coverage and utility metrics. We use these measures to",
-      "placement": "main",
-      "published_at": "2026-10-22T04:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Modern robotic agents are increasingly expected to support steerable control, where a single policy can adjust its behavioral style at runtime under changing user preferences.\n\nPreference-conditioned reinforcement learning provides this interface, but conditioning alone does not ensure that a requested behavior change is strong, does not leak into unrelated behaviors, and does not compromise task performance. Our evaluation combines Preference Reward Responsiveness (PRR) with coverage and utility metrics.\n\nWe use these measures to compare reward-level, advantage-level, loss-level, and PCGrad-based aggregation across two humanoid-control frameworks. No aggregation level performs best across all environments and criteria.\n\nExperiments show that aggregating objectives early produces a wider range of behavioral responses but greater unintended changes in other objectives, while aggregating them later improves control precision at some cost to responsiveness."
-          }
-        ],
-        "summary": {
-          "en": "The paper compares where to aggregate objectives in preference-conditioned reinforcement learning for steerable humanoid control. It evaluates whether policies can respond strongly to requested behavior changes, avoid spillover into unrelated behaviors, and maintain task performance. The authors combine Preference Reward Responsiveness with coverage and utility metrics to compare reward-level, advantage-level, loss-level, and PCGrad aggregation across two humanoid-control frameworks. Experiments indicate that no aggregation level performs best across all environments and criteria. Earlier aggregation yields a wider range of behavioral responses but more unintended changes in other objectives; later aggregation improves control precision at some cost to responsiveness.",
-          "zh": "论文评估偏好条件强化学习中不同的目标聚合位置，关注人形机器人策略能否按用户偏好调整行为，同时保持任务表现并避免对无关行为造成变化。作者结合偏好奖励响应度、覆盖度和效用指标，在两种人形控制框架中比较奖励级、优势级、损失级及 PCGrad 聚合。实验显示，没有一种聚合层级在所有环境和指标上都占优。较早聚合目标能产生更广泛的行为响应，但会带来更多对其他目标的非预期影响；较晚聚合提升控制精度，但响应性有所降低。"
-        }
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.28925"
-      },
-      "title": "One Policy, Many Styles: Where to Aggregate Preferences for Steerable Humanoid Control?"
     }
   ],
-  "updated_at": "2026-10-23T04:38:35.204487+00:00"
+  "updated_at": "2026-10-23T15:17:17.994138+00:00"
 }
