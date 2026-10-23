@@ -1041,7 +1041,11 @@
             "heading": "",
             "text": "In recent human-robot collaboration environments, there is a growing focus on integrating diverse sensor data beyond visual information to enable safer and more intelligent task execution. Although thermal data can be crucial for enhancing robot safety and operational efficiency, its integration has been relatively overlooked in prior research.\n\nThis paper proposes a novel Vision-Language-Action (VLA) framework that incorporates thermal information for robot task execution. The proposed system leverages a Vision-Language Model (VLM) as a high-level planner to interpret complex natural language commands and decompose them into simpler sub-tasks.\n\nThis approach facilitates efficient data collection and robust reasoning for complex operations. Unlike conventional methods that rely solely on visual data, our approach integrates thermal information, enabling the robot to perceive physical properties and proactively ensure environmental safety.\n\nExperimental results from real-world task scenarios validate the feasibility of our proposed framework, suggesting its potential to enhance task success rates and safety compared to existing vision-based systems.Project page: https://youngchae912.github.io/ThermoAct/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ThermoAct, a vision-language-action framework that incorporates thermal information into robot task execution. A vision-language model acts as a high-level planner, interpreting natural-language commands and decomposing them into subtasks. Thermal input is used to perceive physical properties and proactively support environmental safety. The authors report that experiments in real-world task scenarios validate feasibility and suggest potential improvements in task success and safety compared with existing vision-based systems.",
+          "zh": "论文提出 ThermoAct，一种将热成像信息纳入机器人任务执行的视觉－语言－动作框架。系统以视觉－语言模型作为高层规划器，解析自然语言指令并拆分为子任务；热信息用于感知物理属性并主动保障环境安全。作者报告，真实场景任务实验验证了框架的可行性，并显示其相较现有纯视觉系统有望提升任务成功率与安全性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1072,7 +1076,11 @@
             "heading": "",
             "text": "Tasks such as quadrotor dynamic-gate racing require agents to anticipate external motion while maintaining precise high-frequency control.\n\nWorld-model-based reinforcement learning provides a natural solution by learning latent dynamics for future imagination, yet it often entangles environmental evolution and the robot's own dynamics in a single learned rollout, where model bias can affect policy optimization efficiency.\n\nWe propose DiffDreamer, a differentiable reinforcement learning framework that tightly couples a learned world model with differentiable simulation for actor optimization.\n\nIn one optimization step, the learned world model propagates latent states that capture external dynamics and history-dependent features, while the differentiable simulator propagates the robot's explicit physical state.\n\nWe further decompose the actor objective into a critic-driven pathway for non-differentiable task rewards and a simulator-driven pathway for differentiable motion rewards.\n\nExperiments on aggressive tracking and dynamic-gate racing show that DiffDreamer improves training convergence over the model-free, model-based, and differentiable-RL baselines, and final performance over these baselines and classical planning and control methods.\n\nAdditional experiments assess reward decomposition and the odometry-conditioned relative-state representation through ablations. We also provide proof-of-concept real-world flight experiments for validation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DiffDreamer couples a learned world model with differentiable simulation to optimize an actor for quadrotor control. The world model propagates latent states for external dynamics and history-dependent features, while the simulator propagates the robot’s explicit physical state. The actor objective separates a critic-driven pathway for non-differentiable task rewards from a simulator-driven pathway for differentiable motion rewards. Experiments in aggressive tracking and dynamic-gate racing report improved convergence and final performance over several baselines; the paper also describes ablations and proof-of-concept real-world flight experiments.",
+          "zh": "论文提出 DiffDreamer，将学习到的世界模型与可微分仿真结合，用于四旋翼强化学习中的演员优化。世界模型传播外部动态和历史特征，可微仿真传播机器人的显式物理状态；演员目标则分为处理不可微任务奖励的评价器路径和处理可微运动奖励的仿真路径。激进跟踪与动态门竞速实验显示，该方法相较多类基线训练收敛更快、最终性能更好；论文还报告了消融实验和概念验证级真实飞行实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1103,7 +1111,11 @@
             "heading": "",
             "text": "Motion Diffusion Models (MDMs) can generate diverse and visually appealing human motion; yet, the resulting trajectories frequently violate physical constraints, limiting their downstream use in simulation and control.\n\nWe present PhysibleMDM, a framework that promotes physical feasibility of MDM output by optimizing at inference time the diffusion noise without retraining the generative model. We introduce a set of surrogate feasibility constraints that can be evaluated without full trajectory simulation.\n\nThese constraints combine kinematic checks (e.g., ground penetration, slip, and self-collision) with dynamic feasibility tests computed via an inverse-dynamics inner loop formulated as a cone program.\n\nWe solve the resulting black-box noise optimization problem using the Separable Covariance Matrix Adaptation Evolution Strategy (Sep-CMA-ES), thereby avoiding reliance on computationally expensive and discontinuous gradients. An autoregressive scheme then chains optimized segments to synthesize long motion sequences.\n\nAcross 100 motion styles on an SMPL humanoid, PhysibleMDM reduces mean ground penetration, self-collision penetration, and ground slip by 75%, 92%, and 74%, respectively, relative to unoptimized diffusion output.\n\nAcross 11 sequences for a custom bipedal robot, it achieves median reductions of 89.5% in per-sequence mean acceleration-reconstruction error and 79.5% in the mean inverse-dynamics residual."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PhysibleMDM improves the physical feasibility of motion diffusion outputs by optimizing diffusion noise at inference time, without retraining the generative model. It combines kinematic checks for ground penetration, slip, and self-collision with dynamic feasibility tests based on an inverse-dynamics cone-program inner loop. Sep-CMA-ES solves the black-box optimization, and an autoregressive scheme chains optimized segments. The authors report reductions in several penetration, slip, acceleration-reconstruction, and inverse-dynamics error measures across 100 motion styles on an SMPL humanoid and 11 sequences for a custom bipedal robot.",
+          "zh": "论文提出 PhysibleMDM，在不重新训练运动扩散模型的情况下，于推理阶段优化扩散噪声以改善生成轨迹的物理可行性。方法结合地面穿透、滑动和自碰撞等运动学约束，以及通过锥规划逆动力学内循环计算的动力学检验，并用 Sep-CMA-ES 求解黑箱优化，再以自回归方式连接片段。作者报告，在 SMPL 人形的 100 种运动风格及定制双足机器人的 11 个序列上，多项穿透、滑动和动力学误差指标相对未优化输出有所降低。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1134,7 +1146,11 @@
             "heading": "",
             "text": "Robot demonstrations record what the robot saw and what it did. They do not specify how the 3D world changed in between. Scene-level 3D flow describes it by tracking 3D scene points, providing the world representation with 4D geometry. Prior work has used flow to improve robot policies.\n\nFlow served as an intermediate prediction that a separate model converts into actions, as a prior injected at inference time, or as an extra output learned together with the action. In all of these designs, flow stays outside the policy, as a separate module or as an extra prediction head.\n\nWe introduce UniFlowWAM, a Unified World-Action Model that makes 3D scene flow a third modality on par with vision and action. Its world representation therefore covers both visual semantics, through future visual features, and 4D geometry, through 3D flow, and flow receives its own supervision.\n\nUniFlowWAM is a diffusion transformer with one expert per modality, and the three experts exchange information through joint attention. We train UniFlowWAM under a ten-objective role grid, where each objective assigns every modality exactly one of three roles, namely target, condition, or absent.\n\nThe same model thus serves as a policy, as forward and inverse dynamics, and as a predictor of future visual features or 3D flow. We evaluate UniFlowWAM on RoboCasa-GR1, LIBERO, and LIBERO-Plus in simulation, and on four real-world bimanual manipulation tasks.\n\nOn RoboCasa-GR1, UniFlowWAM raises the success rate of its base model without flow from 52.1% to 56.4%.It preserves in-distribution success on LIBERO at 98.1% and reaches 87.7% zero-shot on LIBERO-Plus. On the real robot, it achieves 87.0% average success, compared with 68.5% for the strongest baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniFlowWAM treats 3D scene flow as a third modality alongside vision and action, with modality-specific experts exchanging information through joint attention. Its world representation combines visual semantics from future visual features with 4D geometry from 3D flow. The same model supports policy learning, forward and inverse dynamics, and prediction of future visual features or flow. Evaluation includes simulation benchmarks RoboCasa-GR1, LIBERO, and LIBERO-Plus, plus four real-world bimanual manipulation tasks; the authors report success-rate results across these settings.",
+          "zh": "论文提出 UniFlowWAM，将三维场景流作为与视觉、动作并列的第三种模态，并通过联合注意力连接各模态专家。其世界表征同时涵盖未来视觉特征所表达的语义和三维流所表达的四维几何；同一模型可用于策略、正向与逆向动力学，以及未来特征或场景流预测。仿真评估覆盖 RoboCasa-GR1、LIBERO 和 LIBERO-Plus，另有四项真实世界双臂操作任务。作者报告了各基准和真实机器人上的成功率结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
