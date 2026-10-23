@@ -2114,6 +2114,36 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-23"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "NVIDIA Robotics 官方博客"
+      },
+      "format": "archive_record",
+      "id": "archive-article-20fc12d6f451436fb29d3610be7e9b41",
+      "intro": "Oct 23, 2026 By Gabriele Leone , Seun Doherty , Asier Arranz , Johnny Núñez and Asawaree Bhide Discuss （0） L T F R E AI-Generated Summary NVIDIA RTX Spark serves as a local development hub where AI agents such as Hermes and Nemotron 3.5 Bolt translate a prompt into a step-by-step project plan for a simulated Microduck obstacle course. Astra creates 3D simulation assets from the plan, enhancing references…",
+      "published_at": null,
+      "reading": {
+        "mode": "excerpt",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Oct 23, 2026 By Gabriele Leone , Seun Doherty , Asier Arranz , Johnny Núñez and Asawaree Bhide Discuss （0） L T F R E AI-Generated Summary NVIDIA RTX Spark serves as a local development hub where AI agents such as Hermes and Nemotron 3.5 Bolt translate a prompt into a step-by-step project plan for a simulated Microduck obstacle course.\n\nAstra creates 3D simulation assets from the plan, enhancing references with cloud image editing, modeling geometry in FreeCAD, applying materials in Blender, and exporting editable models and USD assets for the environment.\n\nThe obstacle course is assembled in NVIDIA Isaac Sim using Omniverse libraries for rendering and sensor simulation and Newton for physics modeling of Microduck's movement and balance.\n\nNVIDIA Isaac Lab trains a perception and locomotion policy at scale with 4,096 parallel environments on an NVIDIA RTX PRO 6000 Blackwell Workstation Edition GPU, using head-camera depth and robot-state observations."
+          }
+        ]
+      },
+      "source": {
+        "id": "nvidia-robotics-blog",
+        "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/"
+      },
+      "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-28"
       },
       "body": "",
