@@ -1348,7 +1348,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models adapted through supervised fine-tuning (SFT) inherit a structural asymmetry: expert demonstrations teach the policy where success behavior lies, but provide no signal about where it ceases to be reliable.\n\nWe argue that robust VLA adaptation should therefore be viewed not as further demonstration fitting, but as Failure-Boundary Learning -- the problem of Discovering, Localizing, and Shaping the boundary between recoverable deviations and task failure.\n\nTo instantiate this view, we propose DLS: built on a real-grounded behavioral prior from few real demonstrations and simulated co-training, DLS discovers failure boundaries at scale through on-policy digital twin rollouts.\n\nRather than reducing each rollout to a binary label, semantic progress localization uses privileged simulator states to assign progress-aware signals that capture where the failure boundary is crossed, not merely whether.\n\nThese signals drive directional boundary shaping in the flow dynamics -- reinforcing success-producing denoising directions and suppressing failure-producing ones, without action likelihoods or auxiliary critics.\n\nAcross real-robot manipulation tasks, DLS improves robustness over SFT and online RL baselines, especially under randomized initial states and unseen visual conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper frames robust adaptation of vision-language-action models as failure-boundary learning: identifying and shaping the boundary between recoverable deviations and task failure. DLS combines a behavioral prior from a few real demonstrations with simulated co-training, then discovers boundaries through on-policy digital-twin rollouts. Privileged simulator states provide semantic progress signals that guide directional shaping of flow dynamics. The authors report improved robustness over supervised fine-tuning and online reinforcement-learning baselines on real-robot manipulation tasks, particularly with randomized initial states and unseen visual conditions.",
+          "zh": "论文提出将视觉语言动作模型的鲁棒适配视为“失败边界学习”：识别并塑造可恢复偏差与任务失败之间的界限。方法 DLS 基于少量真实示范形成行为先验，并结合仿真协同训练，通过数字孪生中的策略 rollout 发现失败边界。它利用特权仿真状态定位语义进度，并据此调整流动动力学中的方向，强化产生成功的去噪方向、抑制导致失败的方向。作者报告，在真实机器人操作任务中，DLS 比监督微调和在线强化学习基线更鲁棒，尤其面对随机初始状态和未见视觉条件时。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1379,7 +1383,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models have become an important paradigm for robotic manipulation by unifying visual perception, language understanding, and action generation.\n\nSince reliable manipulation requires sufficient observation of objects, end-effectors, and their spatial relationships, multi-view inputs are widely used to provide complementary spatial information. However, our experiments show that existing VLA models do not fully exploit such multi-view complementarity.\n\nThe policy tends to persistently rely on the wrist view, lacking the ability to dynamically adjust global-local view dependency across manipulation stages, which limits stage adaptability and robustness. To address this issue, we propose FocusVLA, a stage-aware multi-view routing framework.\n\nFocusVLA predicts future interaction intent from historical actions and uses it to guide dynamic view routing during action generation. By adaptively coordinating global and local observations across different task stages, FocusVLA improves multi-view utilization.\n\nOn RoboTwin 2.0, FocusVLA improves the average success rate over the strongest baseline $\\pi_{0.5}$ by 10.10 pp. In real-world evaluation, FocusVLA improves the success rate from 71.7\\% to 85.0\\%, achieving a 13.3\\% gain over $\\pi_{0.5}$.\n\nMoreover, the intent prediction and dynamic routing modules of FocusVLA can be integrated into existing VLA frameworks without modifying their core architectures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that existing vision-language-action models tend to rely persistently on wrist views and fail to adjust global-local view dependencies across manipulation stages. FocusVLA predicts future interaction intent from historical actions and uses it to route views dynamically during action generation. On RoboTwin 2.0, it raises average success rate by 10.10 percentage points over the strongest baseline, π0.5. In real-world evaluation, reported success rises from 71.7% to 85.0%. The authors state that its modules can be integrated into existing VLA frameworks without changing their core architectures.",
+          "zh": "论文指出，现有视觉语言动作模型在多视角操作中容易持续依赖腕部视角，难以随任务阶段调整全局与局部视角的关系。FocusVLA 是一种阶段感知的多视角路由框架：它根据历史动作预测未来交互意图，并在动作生成时据此动态协调全局和局部观察。在 RoboTwin 2.0 上，其平均成功率较最强基线 π0.5 高 10.10 个百分点；真实环境评估中，成功率从 71.7% 提高到 85.0%。作者还称，这些模块可集成到现有框架而不改动其核心架构。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
