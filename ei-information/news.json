@@ -128,7 +128,11 @@
             "heading": "",
             "text": "This paper presents TRACE, a traversability-aware reactive navigation framework designed for the autonomous operation of ground robots in unstructured forest environments.\n\nUnlike traditional approaches, TRACE leverages VLM-based confidence maps from positive and negative natural-language prompt sets and combines them through evidential fusion to produce a dense traversability map that prioritizes the terrain based on signs of previously traversed paths.\n\nTraversability-annotated points are then extracted and used to derive the left and right boundaries of the traversable path via percentile binning followed by spline or regularized polynomial fitting.\n\nThese boundaries are then incorporated as soft barrier constraints within an NMPC formulation, enabling safe and adaptive path following in complex natural environments. Rigorous experimental trials carried out in real-life forest environments demonstrate TRACE ability for smooth navigation in cluttered, deformable, and visually ambiguous terrains."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRACE, a reactive navigation framework for ground robots in unstructured forest environments. It fuses visual-language-model confidence maps generated from positive and negative natural-language prompts into a dense traversability map that emphasizes signs of prior passage. Extracted points are used to fit path boundaries, which become soft barrier constraints in a nonlinear model predictive controller. The authors report real-world forest trials showing smooth navigation on cluttered, deformable, and visually ambiguous terrain.",
+          "zh": "论文提出面向非结构化森林环境地面机器人的 TRACE 反应式导航框架。方法融合视觉语言模型依据正、负自然语言提示生成的置信图，形成强调既有通行迹象的稠密可通行性地图；再提取标注点并拟合路径左右边界，将其作为软障碍约束纳入非线性模型预测控制。作者称，真实森林环境中的实验表明，该方法能在杂乱、易变形且视觉模糊的地形中平稳导航。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -159,7 +163,11 @@
             "heading": "",
             "text": "End-to-end control policies trained via Reinforcement Learning (RL) have emerged as an alternative to conventional surgical robotic control approaches, with recent studies exploring state-based policies trained on privileged state observations.\n\nHowever, such approaches rely on precise physical states that are difficult to obtain reliably in surgical environments.\n\nVision-based RL provides an alternative by learning manipulation policies directly from RGB observations, avoiding explicit state estimation and manually engineered perception pipelines while enabling policies to acquire task-relevant visual representations.\n\nNevertheless, obtaining vision-based policies via pure RL methods for surgical manipulation remains challenging. Thus, imitation learning (IL) becomes another solution, yet it requires a large number of expert demonstrations, which are difficult to obtain in minimally invasive surgery.\n\nIn this work, we propose a framework for state-to-vision policy distillation in laparoscopic robotic manipulation.\n\nSpecifically, a state-based policy with privileged observations is employed as the teacher, and a vision-based policy learns from RGB observations and robot proprioceptive information, which requires less expert demonstrations than IL and introduces superior performance than RL methods.\n\nWe conduct extensive experiments on various surgical manipulation tasks in the simulated environment.\n\nExperimental results show that, in the context of laparoscopic robotic manipulation, training vision-based policies with general-purpose RL methods is challenging, whereas our proposed state-to-vision policy distillation leads to more consistent and stable performance across tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes state-to-vision policy distillation for laparoscopic robotic manipulation. A teacher policy uses privileged state observations, while a vision policy learns from RGB images and robot proprioception. The authors describe pure reinforcement learning for vision-based surgical manipulation as challenging and imitation learning as dependent on many difficult-to-obtain expert demonstrations. In simulated surgical manipulation tasks, their experiments find that the proposed distillation approach produces more consistent and stable performance across tasks than general-purpose reinforcement learning methods.",
+          "zh": "论文研究腹腔镜机器人操作中的状态到视觉策略蒸馏：以使用特权状态观测的状态策略为教师，让视觉策略依据 RGB 图像和机器人本体感觉信息学习。作者指出，纯强化学习训练视觉策略较困难，而模仿学习需要难以获取的大量专家示范。该框架旨在减少对专家示范的需求。多种手术操作任务的仿真实验显示，与通用强化学习方法相比，所提蒸馏方法在不同任务上的表现更一致、更稳定。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -190,7 +198,11 @@
             "heading": "",
             "text": "Language-conditioned humanoid motion generation enables users to create and refine robot movements through natural language. The central challenge is to connect an underspecified request to concrete motion structure that can subsequently be revised relative to an accepted reference.\n\nWe present TRACE, a generation and editing framework for the Unitree G1 humanoid robot built around typed, measurable kinematic quantities. Our insight is to ground generation conditions in paired training motions and editing goals in the current motion.\n\nA language model learns to predict support, root, and hand events from motion-derived supervision; their time-aligned encodings complement the original text in a diffusion generator. Gravity-referenced states and trajectory--contact objectives improve kinematic consistency. For editing, typed requests define body--time scopes and source-relative goals.\n\nA separate reference-conditioned diffusion editor uses these goals and revised events to realize changes, while sampling-time projection preserves protected state coordinates. Quantitative evaluation and human assessment show improved semantic alignment and motion quality over the compared methods.\n\nMulti-turn editing evaluations demonstrate more reliable execution of successive relative requests under shared preservation constraints. Code is available at https://github.com/Multimodal-Perception-Action/TRACE."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents TRACE, a motion generation and editing framework for the Unitree G1 humanoid. It uses measurable kinematic quantities, predicting support, root, and hand events from motion-derived supervision and adding time-aligned encodings to a diffusion generator. For editing, typed language requests specify body-time scopes and goals relative to the current motion; a reference-conditioned editor applies changes while projection preserves protected coordinates. Quantitative and human evaluations report better semantic alignment and motion quality than compared methods, and more reliable execution of successive relative requests.",
+          "zh": "论文提出面向 Unitree G1 人形机器人的 TRACE 动作生成与编辑框架，以可测量的运动学量连接语言指令和动作结构。模型从动作监督中预测支撑、根部及手部事件，并将其时间对齐编码用于扩散生成；编辑时，类型化请求指定身体部位、时间范围和相对当前动作的目标，参考条件编辑器据此实现修改，并通过采样时投影保护指定状态坐标。定量评估和人工评价显示，相较对比方法，其语义对齐和动作质量有所提升；多轮评估显示连续相对请求执行更可靠。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -221,7 +233,11 @@
             "heading": "",
             "text": "Autonomous robots are moving rapidly from research labs into everyday life - on roads, in the air, in warehouses, and in space. Robot autonomy is no longer solely an academic pursuit, but a collection of mature, field-tested methods and tools that practitioners rely on in real-world deployments.\n\nThis book offers a clear, unified introduction to the methods that make this possible. Built on decades of teaching at Stanford, the text develops the core elements of modern autonomy stacks within a single conceptual framework, bridging classical robotics and modern physical AI.\n\nEvery major topic is paired with hands-on Jupyter notebooks and implementation-driven exercises, so readers build practical intuition alongside theoretical understanding. The result is a principled, accessible, and deployment-aware foundation for anyone seeking to design, analyze, or contribute to the next generation of autonomous systems.\n\nThis is a comprehensive resource for students, engineers, and researchers entering one of today's fastest-growing fields."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This book offers a unified introduction to methods used in modern robot autonomy, connecting classical robotics with physical AI in a single conceptual framework. Drawing on decades of teaching, it is intended for students, engineers, and researchers entering the field. Major topics are accompanied by hands-on Jupyter notebooks and implementation-oriented exercises, pairing theoretical material with practical work. The abstract describes the book as an accessible, deployment-aware foundation for readers seeking to design, analyze, or contribute to autonomous systems.",
+          "zh": "这本书介绍机器人自主系统的核心方法，并将经典机器人学与现代物理人工智能纳入统一的概念框架。内容基于作者数十年的教学，面向希望设计、分析或参与自主系统工作的学生、工程师和研究人员。书中主要主题配有 Jupyter 笔记本和以实现为导向的练习，旨在帮助读者在学习理论的同时建立实践理解。摘要将其定位为面向现实部署的入门基础资源。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
