@@ -669,7 +669,11 @@
             "heading": "",
             "text": "Capturing a loose object inside a spacecraft requires a robot to approach a target that can translate and rotate, and whose motion changes when contact is made. These conditions motivate evaluation beyond manipulation of supported objects.\n\nWe introduce AstroBench, an open benchmark for free-floating capture and space robotic manipulation with a fixed-base arm. The task suite combines four initial-motion tracks with sample-storage operations based on MELFI hardware and cap and captive-screw servicing based on the Robotic Refueling Mission.\n\nThe two workcells provide nine task definitions and 29 task-target combinations. A metadata-filtered Objaverse inventory supplies 8,414 object instances for asset expansion, alongside five cabin visual contexts and versioned task instructions. We report two acquisition-focused experiments using existing checkpoints.\n\nA frozen $\\pi_{0.5}$ DROID joint-position policy captures 2 of 200 static targets and 4 of 200 moving targets across twenty object identities. A cube-specific ACT policy captures 8 of 10 static targets and 6 of 10 moving targets in a separate experiment. Each experiment retains its recorded observation, action and capture configuration.\n\nThe results document difficult direct transfer for the tested generalist checkpoint and successful task-specific capture behavior, while identifying concrete settings for studying motion-aware perception and contact-sensitive control. Code, task definitions and editable workcell assets are available at https://github.com/AstroUpLab/AstroBench."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AstroBench, an open benchmark for free-floating object capture and space manipulation with a fixed-base arm. Its suite includes four initial-motion tracks, sample storage, and cap and captive-screw servicing, organized into two workcells and nine task definitions. The authors report two acquisition experiments with existing checkpoints: a generalist policy captured few targets, while a cube-specific policy showed task-specific capture behavior in a separate experiment.",
+          "zh": "论文介绍 AstroBench，这是一个面向固定基座机械臂自由漂浮物体捕获与空间操作的开放基准，包含四种初始运动轨迹、样品存储与盖帽及系留螺钉操作。基准设有两个工作单元、九项任务定义和29种任务—目标组合，并提供物体资产扩展资源、五种舱内视觉环境及版本化任务说明。作者报告两项基于现有检查点的捕获实验：通用策略在静止和运动目标上的捕获较少，针对立方体的专用策略则在独立实验中完成多次捕获。结果体现了所测通用检查点直接迁移的困难，也展示了专用策略的捕获行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -700,7 +704,11 @@
             "heading": "",
             "text": "Generated robot videos can look convincing while depicting the wrong interac- tion: a different object is moved, a grasp disappears, or a placement ends out- side its destination. We introduce RGraph-Eval, a reference-based framework that makes these discrepancies explicit through task-grounded temporal scene graphs.\n\nUnlike approaches that construct separate evidence representations for different evaluation dimensions, we organize task entities, interactions, and motion within a unified, interpretable scene graph representation.\n\nA foundation-model pipeline identifies manipulation roles, grounds persistent object masks, infers and verifies state transitions and action intervals, and reconstructs manipulated- object motion in three dimensions.\n\nApplying this representation to a generated video and a reference demonstration supports an interpretable RGraph-Eval score with visible-object, relation-change, and 3D path-shape components. We also introduce ShareRobot-SG, a collection of 1,000 manipulation scenes from ten ShareRobot sources annotated with the multimodal representation.\n\nOur eval- uation separates graph-generation quality from agreement with human video judgments, and includes comparisons with adapted SVG2 and SG-Ego, a bench- mark of three video generators.\n\nThe framework connects robot-video assessment to the observable entities and interactions underlying a task, while making the graph annotations reusable beyond evaluation. Code will be publicly available at https://github.com/SashaDance/rgraph-eval."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RGraph-Eval, a reference-based framework that uses task-grounded temporal scene graphs to assess generated robot videos against demonstrations. Its unified representation organizes task entities, interactions, and motion. A foundation-model pipeline identifies manipulation roles, tracks object masks, verifies state transitions and action intervals, and reconstructs 3D motion. The resulting score has visible-object, relation-change, and 3D path-shape components. The authors also introduce ShareRobot-SG and report evaluations separating graph-generation quality from agreement with human judgments.",
+          "zh": "论文提出 RGraph-Eval，利用任务关联的时序场景图评估机器人操作视频生成结果与参考演示之间的差异。该表示统一组织任务实体、交互和运动；基础模型流程识别操作角色、跟踪物体掩码、推断并核验状态变化与动作区间，并重建三维运动。评分包含可见物体、关系变化和三维路径形状等部分。作者还介绍了包含1,000个操作场景的 ShareRobot-SG，并称其评估区分场景图生成质量与对人类视频判断的一致性，且比较了适配方法和三个视频生成器。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
