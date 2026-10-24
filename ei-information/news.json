@@ -2162,7 +2162,11 @@
             "heading": "",
             "text": "Humanoid loco-manipulation in dynamic scenes is non-Markovian: cues vanish as objects change or are hidden, or leave the view as the robot turns and walks, yet whole-body vision-language-action (VLA) policies see only the present.\n\nWe present WholeBodyMem, an object-guided perceptual memory that keeps the pre-history of object events seen before the robot acts on its goal. SAM3 tracks the task objects, and their events causally select key frames within an adaptive budget, which the action expert reads by cross-attention together with object tokens encoding appearance, geometry and time.\n\nWe also contribute HuMeGo, a humanoid memory benchmark with six simulated and six real-world Unitree G1 tasks.\n\nKeeping the right frames rather than more frames, WholeBodyMem surpasses memoryless and uniform-memory baselines, raising its base policy's success from 29.1% to 72.6% in simulation and from 36.7% to 88.3% on the real robot, while also improving the standard SIMPLE tasks (70.2% to 86.9%)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WholeBodyMem, an object-guided perceptual memory for humanoid loco-manipulation. SAM3 tracks task objects, whose events select key frames within an adaptive budget; an action expert reads them through cross-attention alongside object tokens. The authors also introduce HuMeGo, a benchmark with six simulated and six real-world Unitree G1 tasks. They report improvements over memoryless and uniform-memory baselines in simulation, on a real robot, and on standard SIMPLE tasks.",
+          "zh": "本文提出WholeBodyMem，一种面向人形机器人全身操作的物体引导感知记忆机制：它保留机器人执行目标动作前观察到的物体事件，由SAM3跟踪任务物体，并根据事件在自适应预算内选择关键帧，供动作专家通过交叉注意力读取。作者还提出HuMeGo基准，包含六项仿真和六项真实世界Unitree G1任务。实验中，该方法相较无记忆和均匀记忆基线提升了成功率；文中分别报告仿真、真实机器人及SIMPLE任务的结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2193,7 +2197,11 @@
             "heading": "",
             "text": "While current Behavior Foundation Models (BFMs) provide robust control priors for humanoids, they only execute pre-defined reference motions. As a result, they are vulnerable to environmental shifts and incapable of reactive whole-body coordination.\n\nNaively cascading them with generative motion planners fails to achieve true reactivity, as inevitable tracking discrepancies induce fatal cumulative exposure bias. To bridge this gap, we propose ReactiveBFM, a real-time closed-loop planning-control framework.\n\nAt its core, we effectively mitigate exposure bias via a scheduled prefix sampling curriculum, forcing the generative planner to actively learn error-recovery behaviors from imperfect physical states rather than ground-truth trajectories.\n\nSystematically, to reconcile the severe latency mismatch between auto-regressive planning and high-frequency tracking, we introduce an asynchronous replanning mechanism. Combined with trajectory chunking to temporally ensemble spatial references, our system guarantees spatio-temporally fluid execution without physical jitter.\n\nDeployed on the Unitree G1 humanoid, ReactiveBFM demonstrates unprecedented physical agility across a vast repertoire of text-conditioned closed-loop motions. Notably, ReactiveBFM achieves zero-shot moving target reaching, showcasing intricate whole-body coordination and on-the-fly replanning.\n\nIn sim-to-sim benchmarking under severe perturbations, ReactiveBFM achieves a 93.1% success rate, significantly outperforming cascaded open-loop baselines by 28.6%."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReactiveBFM is a real-time closed-loop planning and control framework intended to make humanoid whole-body behavior responsive to environmental changes. A scheduled prefix-sampling curriculum trains its generative planner to recover from imperfect physical states; asynchronous replanning and trajectory chunking address latency differences between planning and tracking. The authors report deployment on a Unitree G1 and demonstrate text-conditioned closed-loop motions, including zero-shot moving-target reaching. In sim-to-sim benchmarking under severe perturbations, it achieves a 93.1% success rate, outperforming cascaded open-loop baselines.",
+          "zh": "本文提出ReactiveBFM，一个实时闭环规划与控制框架，旨在使人形机器人能够根据环境变化进行全身协调。该方法通过前缀采样课程训练生成式规划器从不完美物理状态恢复，并采用异步重规划和轨迹分块处理规划与跟踪的延迟差异。作者报告该系统部署于Unitree G1，并展示零样本移动目标触及等文本条件闭环动作。仿真到仿真、强扰动基准中，其成功率为93.1%，高于级联开环基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
