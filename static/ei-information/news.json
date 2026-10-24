@@ -296,7 +296,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models are expected to follow instructions like their language backbones, yet prior work has focused on What-level instructions that specify the task rather than How-level instructions that specify how to carry it out. Through our diagnoses, we find that How-level instructions do not help current VLAs and lower task success.\n\nWe hypothesize that pairing each training episode with a single instruction limits How-level instruction following, and show that training with segment-level enriched instructions makes actions respond to such instructions without consistently raising task success.\n\nTo measure How-level instruction following beyond standard benchmarks, we introduce SIMPLER-IN, where success requires conditions given only in the instruction. It shows that the gained responsiveness does not extend to demanding or out-of-distribution How-level instructions. How-level instruction following thus remains an open challenge."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study diagnoses how vision-language-action models follow instructions about how to perform a task. The authors find that such instructions do not help current models and lower task success. Enriching training instructions at the segment level makes actions responsive to them, but does not consistently improve success. The authors introduce SIMPLER-IN, where success conditions are specified only in the instruction. Its evaluation shows that responsiveness does not extend to demanding or out-of-distribution instructions, leaving this capability an open challenge.",
+          "zh": "本文诊断视觉语言动作模型对“如何执行”类指令的遵循能力。作者发现，这类指令未能帮助当前模型，反而降低任务成功率；按动作片段丰富训练指令可使动作对指令作出响应，但不一定提升成功率。作者提出 SIMPLER-IN，要求成功条件仅由指令给出。评估显示，响应能力未能扩展到要求较高或分布外的指令，因此此类指令遵循仍是开放挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -327,7 +331,11 @@
             "heading": "",
             "text": "While Vision-Language-Action (VLA) models have leveraged internet-scale pretraining and task-specific finetuning to achieve strong performance on long-horizon tasks, they often struggle with non-Markovian tasks that require memory.\n\nExisting approaches to memory typically involve additional Vision-Language-Models (VLMs) for long-term memory management, introducing a memory bottleneck and a fractured training pipeline.\n\nConditioning on multiple historical frames can provide the VLA with access to more descriptive features of past scenes, but can degrade performance if frames are chosen at arbitrary, fixed intervals. To address these limitations, we present UniMem, a framework that unifies high-level visual and textual memory and low-level control under one backbone.\n\nUniMem employs an event classifier to initiate textual and visual memory updates, a keyframe encoder for dense visual memory, and a keyframe caching technique to minimize overhead during policy rollouts.\n\nWe evaluate UniMem across five simulation and four hardware tasks targeting sequential and spatial memory, demonstrating that our unified, single-model system outperforms fixed-interval image sampling baselines (93.4% vs. 68.2%) in simulation and hierarchical VLM-VLA baselines (80.0% vs. 43.5%) in hardware, while offering faster inference and a simple training pipeline for easy adoption.\n\nProject website: https://losterberg3.github.io/unimem-vla/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "UniMem is a framework that combines high-level visual and textual memory with low-level control in one vision-language-action model for non-Markovian tasks. It uses an event classifier to trigger memory updates, a keyframe encoder for visual memory, and keyframe caching to reduce rollout overhead. The authors evaluate it on five simulation and four hardware tasks involving sequential and spatial memory. They report better performance than fixed-interval image-sampling and hierarchical VLM-VLA baselines, along with faster inference.",
+          "zh": "本文提出 UniMem，将高层视觉与文本记忆、低层控制统一在一个视觉语言动作模型中，以应对需要记忆的非马尔可夫任务。框架使用事件分类器触发记忆更新、关键帧编码器构建视觉记忆，并通过关键帧缓存降低策略执行开销。作者在五项仿真和四项硬件任务中评估该系统，报告其相较固定间隔图像采样基线及分层视觉语言模型与动作模型基线取得更高表现，并具有更快推理速度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -358,7 +366,11 @@
             "heading": "",
             "text": "This paper presents a demonstration-based robotic feeding framework that integrates human demonstration, Dynamic Movement Primitive-based motion planning, vision-based scene perception, and robot control.\n\nA human operator first demonstrates the scooping and feeding motions while the position and Euler-angle orientation of the spoon are recorded using a motion-capture system. The recorded trajectory is segmented into scooping and feeding motions, which are encoded using separate Dynamic Movement Primitives.\n\nBefore task execution, an RGB-D camera estimates the participant's mouth position, while two AprilTags are used for robot-frame registration and tray localization. The detected tray pose is used to position the scooping motion, whereas the detected mouth position defines the positional goal of the feeding motion.\n\nThe approach, scooping, and feeding trajectories are then executed sequentially by a Kinova Gen3 manipulator through a ROS~2-based framework. A real-world experiment demonstrates the feasibility of the integrated pipeline and shows that the learned spoon motions can be reproduced within the detected experimental scene."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a demonstration-based robotic feeding framework combining human demonstrations, Dynamic Movement Primitive planning, visual perception, and robot control. A motion-capture system records spoon position and orientation during scooping and feeding demonstrations; the trajectories are segmented and encoded separately. Before execution, an RGB-D camera estimates the participant’s mouth position, while AprilTags support robot-frame registration and tray localization. A Kinova Gen3 arm then executes approach, scooping, and feeding motions. A real-world experiment demonstrates pipeline feasibility and reproduction of the learned spoon motions.",
+          "zh": "本文介绍一种基于示范的机器人喂食框架，整合人类演示、动态运动基元规划、视觉场景感知和机器人控制。操作者演示舀取与喂食动作，系统记录勺子位姿并将轨迹分段，分别编码为动态运动基元。执行前，RGB-D相机估计受试者嘴部位置，AprilTag用于机器人坐标注册和托盘定位；随后机械臂依次执行接近、舀取和喂食轨迹。真实场景实验展示了流程可行性及勺子动作的复现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
