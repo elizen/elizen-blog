@@ -1474,7 +1474,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models can perform diverse manipulation tasks directly from visual observations and natural language instructions, but they remain prone to mistakes and unpredictable failures. Deploying these policies without continuous human supervision will require robust runtime monitors that detect when the policy has gone off-course.\n\nExisting monitors use external foundation models, such as vision-language models (VLMs) to supervise the policy, introducing significant complexity and computational cost for monitoring at runtime.\n\nIn this work, we investigate an alternate approach: \\textit{can a VLA's own internal activations provide the information needed to monitor its execution?} Our method trains linear probes on policy activations from demonstrations to estimate progress, then flags executions that deviate from expected progress.\n\nIn experiments with the open-source VLA $\\pi_{0.5}$ and across simulated and real-world manipulation tasks, this approach is competitive with or outperforms VLM-based monitors in task failure detection, as well as methods which require failure data for training.\n\nThese findings suggest that simple probes of VLA internals can be used to develop reliable runtime monitors, opening a path toward building policies that can act reliably and monitor their execution without external foundation models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies runtime monitoring of vision-language-action policies without external foundation models. It trains linear probes on policy activations from demonstrations to estimate task progress and flags executions that diverge from expected progress. In experiments using the open-source π0.5 model across simulated and real-world manipulation tasks, the authors report that the probes are competitive with or outperform vision-language-model-based monitors for failure detection, as well as methods that require failure data for training.",
+          "zh": "论文研究如何在不依赖外部基础模型的情况下监测视觉—语言—动作模型的执行。方法利用示范数据训练线性探针，从策略内部激活估计任务进度，并在执行偏离预期时发出警示。作者在开源π0.5模型的仿真和真实操作任务中报告，该方法在任务失败检测方面与基于视觉—语言模型的监测器相当或更优，也优于需要失败数据训练的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1505,7 +1509,11 @@
             "heading": "",
             "text": "Piezoelectric ceramics enable fast, precise, and powerful actuation with integrated sensing in insect-scale robots. However, they are brittle, failing at low strains limiting its applications involving high impacts, unexpected loading, or soft robotics.\n\nTo address this limitation, we investigate polyvinylidene fluoride (PVDF) as a compliant alternative: it tolerates substantially larger strains, but its low piezoelectric coefficient limits the output of conventional single-layer actuators.\n\nWe demonstrate a novel manufacturing process for multilayer PVDF actuators that utilizes off the shelf materials and provides parallel bussing of signal voltage to reduce integration complexity.\n\nUsing first principles models validated with experiments, we show a tradeoff between force (linear or superlinear increase with layer count) and displacement (cubic decrease with layer count) for the actuator geometry chosen.\n\nOur work positions PVDF actuation an optimization problem for future robotic applications with clear design knobs available to meet performance demands. Further, we show that using thinner PVDF layers within a stack increases the specific power density of the actuators making them ideal for size, weight, and power (SWAP) limitations in small scale robotics.\n\nAmong the actuators fabricated, >9 mm of free deflection, >20 mN of blocked force, and >500 Hz bandwidth were achieved. To illustrate their potential in future robust robotic platforms, we integrate our actuators into a low-profile insect-scale robot that leverages resonance to achieve planar locomotion while being robust to large external impacts."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates multilayer polyvinylidene fluoride (PVDF) piezoelectric actuators as compliant alternatives to brittle ceramic actuators. It presents a manufacturing process using off-the-shelf materials and, with first-principles models validated by experiments, describes a tradeoff for the chosen geometry: force increases linearly or superlinearly with layer count, while displacement decreases cubically. Fabricated actuators achieved more than 9 mm free deflection, 20 mN blocked force, and 500 Hz bandwidth. The authors also integrated them into an insect-scale robot that uses resonance for planar locomotion and withstood large external impacts.",
+          "zh": "论文研究以聚偏二氟乙烯（PVDF）制作多层压电聚合物致动器，作为易碎压电陶瓷的柔性替代方案。作者展示了一种使用现成材料的制造工艺，并通过经实验验证的第一性原理模型分析所选结构中层数与输出力、位移之间的权衡：层数增加时，力呈线性或超线性增长，位移则按立方关系下降。实验致动器实现了超过9毫米的自由偏转、20毫牛的堵转力和500赫兹带宽；作者还将其集成到利用共振平面移动的昆虫尺度机器人中，并展示其承受较大外部冲击的能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1536,7 +1544,11 @@
             "heading": "",
             "text": "Bimanual dexterous grasping of large objects is a critical challenge in robotic manipulation. However, most existing studies focus on sequential manipulation rather than cooperative grasping, and methods addressing such bimanual tasks have largely been limited to simulation.\n\nThese limitations stem from the difficulty of acquiring full 3D object models and generating physically plausible grasping actions.\n\nTo fill this gap, we propose a real-world bimanual grasping framework that includes: a multimodal dataset capturing joint angles, visual observations and force signals; a Denoising Diffusion Probabilistic Model (DDPM)-based module that generates joint-level grasp configurations from segmented point clouds; and an execution strategy that integrates motion planning with online grasp refinement to ensure physical stability and feasibility.\n\nOur approach enables the synthesis of executable bimanual grasps from single-view inputs, reducing dependence on complete 3D object models and ensuring stable real-world performance.\n\nExperiments on a dual-arm robot demonstrate high success rates across unseen objects with varying geometries and poses, and ablation studies confirm the contributions of key components of our system."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a real-world framework for cooperative bimanual dexterous grasping of large objects. It combines a multimodal dataset of joint angles, visual observations, and force signals with a denoising diffusion probabilistic model that generates joint-level grasp configurations from segmented point clouds. Execution combines motion planning and online grasp refinement to support physical stability and feasibility. The authors say the method synthesizes executable grasps from single-view input, reducing reliance on complete 3D models. Dual-arm robot experiments report high success rates on unseen objects with varied geometries and poses; ablations examine key components.",
+          "zh": "论文提出面向大型物体的真实机器人双臂灵巧协同抓取框架。系统包含记录关节角、视觉观测和力信号的多模态数据集；基于去噪扩散概率模型的模块，可从分割后的点云生成关节级抓取配置；执行时结合运动规划与在线抓取调整，以满足物理稳定性和可行性。作者称该方法可由单视角输入合成可执行抓取，减少对完整三维物体模型的依赖。双臂机器人实验显示，系统对几何形状和姿态各异的未见物体取得较高成功率，消融研究也支持关键组件的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2232,7 +2244,11 @@
             "heading": "",
             "text": "Agentic robotics systems combine planners with robot harnesses to perform complex manipulation tasks. Recent work improves these systems through better harnesses and external memory, but relies on powerful closed-source models as planners and does not improve the planners' own capabilities.\n\nIn contrast, coding agents have improved substantially by post-training the model itself. We therefore investigate whether post-training can also improve robot planners. However, applying it across robot harnesses requires accommodating different execution mechanisms, including VLA skill invocation and control-code generation.\n\nTo this end, we introduce AgenticRoboRL, a framework for post-training robot planners across different harnesses. The training recipe combines supervised fine-tuning with multi-turn reinforcement learning.\n\nTo accommodate different execution mechanisms, harness-specific adapters connect recorded planner interactions with task outcomes, enabling a common RL training pipeline while keeping execution components fixed.\n\nOn LIBERO-PRO, AgenticRoboRL raises the success rate of a 9B-parameter planner from 18.1% to 71.0% without external memory, approaching the 72.1% achieved by Codex (GPT-5.5) with external memory. These results demonstrate post-training as an effective approach for improving robot planners. We will release the framework and trained planner checkpoints."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AgenticRoboRL to post-train robot planners across different execution harnesses. Its recipe combines supervised fine-tuning and multi-turn reinforcement learning; harness-specific adapters connect planner interaction records to task outcomes while keeping execution components fixed. On LIBERO-PRO, the authors report that a 9B planner without external memory improves from an 18.1% to a 71.0% success rate, approaching the 72.1% reported for Codex (GPT-5.5) with external memory.",
+          "zh": "论文提出AgenticRoboRL，用于在不同机器人执行框架下后训练规划器。方法结合监督微调与多轮强化学习，并通过特定适配器将规划器交互记录与任务结果连接到统一训练流程，同时保持执行组件固定。在LIBERO-PRO上，作者报告：无外部记忆的9B规划器成功率从18.1%升至71.0%，接近使用外部记忆的Codex（GPT-5.5）的72.1%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
