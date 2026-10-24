@@ -2473,7 +2473,11 @@
             "heading": "",
             "text": "Reliable traversability estimation is essential for autonomous navigation on unstructured terrain. State-of-the-art approaches typically evaluate traversability from deterministic terrain elevation, thereby overlooking spatial correlations in the terrain and failing to account for how elevation uncertainty propagates through nonlinear traversability mappings.\n\nWe propose ProTrav, a probabilistic terrain representation that uses function-space sampling to generate spatially correlated terrain realizations and propagate elevation uncertainty to traversability cost. First, a Sparse Variational Gaussian Process (SVGP) reconstructs a probabilistic elevation field from observations.\n\nThen, posterior function-space sampling generates spatially correlated terrain realizations, preserving spatial dependencies between neighboring locations while propagating elevation uncertainty through geometric features into traversability cost.\n\nConsequently, a distribution of traversability cost at arbitrary location is established, where the mean and standard deviation quantify the expected traversability cost and associated uncertainty, respectively.\n\nA risk term is defined by moment-based Upper Confidence Bound (UCB) and incorporated into a Model Predictive Path Integral (MPPI) controller for risk-aware navigation. Simulation experiments demonstrate navigation success rates exceeding 90\\% on different terrains, compared with below 40\\% for a baseline, while reducing attitude variations.\n\nFurthermore, the proposed approach is validated on a robot traversing real-world off-road terrain."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ProTrav reconstructs a probabilistic elevation field with a Sparse Variational Gaussian Process, then uses function-space sampling to propagate spatially correlated elevation uncertainty into a distribution of traversability costs. Its mean and standard deviation represent expected cost and uncertainty. A moment-based upper confidence bound risk term is added to an MPPI controller. In simulation, reported navigation success rates exceed 90% across different terrains, versus below 40% for a baseline, with reduced attitude variations. The authors also report validation on a robot traversing real-world off-road terrain.",
+          "zh": "论文提出 ProTrav，用稀疏变分高斯过程重建概率高程场，再通过函数空间采样生成具有空间相关性的地形样本，将高程不确定性传播至可通行代价分布。其均值表示预期代价，标准差表示相关不确定性；基于矩的上置信界风险项被纳入 MPPI 控制器。仿真实验中，不同地形的导航成功率超过90%，基线低于40%，且姿态变化减少；论文还报告了机器人在真实越野地形上的验证。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2504,7 +2508,11 @@
             "heading": "",
             "text": "Flow matching is now the dominant approach for vision-language action (VLA) robot policies, thanks to its expressiveness and simple training objective. However, inference for standard flow matching requires iteratively solving an ODE, limiting the control frequency at deployment.\n\nWhile several works have proposed novel methods to allow for single-shot action generation, we ask whether such additional objectives are actually necessary. We find that across six flow matching VLAs, one-step action generation largely matches multi-step sampling at scale: multi-step integration confers little to no consistent advantage at inference.\n\nWe empirically find that this holds as long as models are sufficiently trained and have enough capacity. Practically, the implication is that for large VLAs, the single-step policy comes essentially for free from the multi-step model, enabling low-latency deployment without retraining, distillation, or auxiliary objectives."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether flow-matching vision-language action policies need additional objectives for single-step action generation, given that standard inference iteratively solves an ODE. Across six policies, the authors empirically find that one-step generation largely matches multi-step sampling when models are sufficiently trained and have enough capacity; multi-step integration offers little or no consistent inference advantage. They argue that large policies can use low-latency single-step deployment from the multi-step model without retraining, distillation, or auxiliary objectives.",
+          "zh": "论文针对流匹配视觉语言动作机器人策略推理时需迭代求解常微分方程、限制部署控制频率的问题，研究单步动作生成是否需要额外目标函数。作者在六种流匹配策略上的经验研究发现，模型训练充分且容量足够时，单步生成整体上接近多步采样，多步积分没有稳定优势。论文认为，大型策略可直接从多步模型获得低延迟单步推理，无需重新训练、蒸馏或辅助目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2535,7 +2543,11 @@
             "heading": "",
             "text": "A conventional embodied agent in an indoor environment builds a map by accumulating noisy real-world measurements and results from heavy inference to guide navigation.\n\nWhile the detailed measurements may differ due to scene changes or sensor settings, the unique topological structure of navigable passages or the connectivity between rooms may provide training-free guidance that complements local observations.\n\nWe propose a sparse topometric graph as an efficient structural representation for robust indoor navigation, alleviating the need for fine-grained matching, which is computationally expensive, memory-intensive, and prone to real-world variations.\n\nThe map consists of nodes that encode local 3D geometry and distance-weighted edges that capture traversable connectivity. A learned graph-matching network finds consistent subgraph structures across sessions by considering both node-level geometric descriptors and neighborhood connectivity.\n\nThe holistic contextual matching is robust to local ambiguities caused by weak distinctiveness or repetitive structure, and establishes stable correspondences despite local scene changes, different sensor modalities, or limited spatial overlap.\n\nWe analyze the practicality of the graph through cross-session point-goal navigation, where a goal specified in a prior reference map must be reached from an unknown initial pose in a later session.\n\nExperiments show that our method achieves the highest success rates (77.1% on Gibson and 40.0% under 3D-FRONT scene changes), while reducing memory by more than two orders of magnitude compared to point-level representations.\n\nThe proposed approach further supports cross-session alignment and goal-directed navigation with strong scalability and robust real-world transfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a sparse topometric graph for cross-session indoor navigation. Nodes encode local 3D geometry, while distance-weighted edges represent traversable connectivity; a learned graph-matching network uses node descriptors and neighborhood structure to find corresponding subgraphs across sessions. In cross-session point-goal navigation experiments, the authors report success rates of 77.1% on Gibson and 40.0% under 3D-FRONT scene changes. They also report more than two orders of magnitude lower memory use than point-level representations.",
+          "zh": "论文提出用于跨会话室内导航的稀疏拓扑度量图：节点编码局部三维几何，距离加权边表示可通行连通性；学习式图匹配网络结合节点描述与邻域结构，在不同会话间寻找对应子图。作者通过跨会话点到目标导航评估该方法，报告其在 Gibson 和 3D-FRONT 场景变化下成功率分别为77.1%和40.0%，并称相较点级表示，内存占用减少超过两个数量级。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
