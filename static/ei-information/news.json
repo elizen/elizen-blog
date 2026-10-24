@@ -2092,7 +2092,11 @@
             "heading": "",
             "text": "State-of-the-art robotics simulators operate in discrete time. This requires users to choose a time step, which is both critical and challenging: large steps can produce non-physical artifacts, while small steps force the simulation to run slowly.\n\nContinuous-time error-controlled integration avoids such issues by automatically adjusting the time step to achieve a desired accuracy. But existing error-controlled integrators struggle with the stiff dynamics of contact, and cannot meet the speed and scalability requirements of modern robotics workflows.\n\nWe introduce CENIC, a new variable-step integrator that brings together recent advances in convex time-stepping and error-controlled integration, inheriting benefits from both continuous integration and discrete time-stepping.\n\nCENIC runs at fast real-time rates comparable to discrete-time robotics simulators like MuJoCo, Drake and Isaac Sim, while also providing guarantees on accuracy and convergence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CENIC, a variable-step integrator for contact that combines convex time-stepping with error-controlled integration. The authors say existing error-controlled integrators struggle with stiff contact dynamics and do not meet the speed and scalability needs of modern robotics workflows. They claim CENIC runs at fast real-time rates comparable to discrete-time simulators such as MuJoCo, Drake, and Isaac Sim, while providing accuracy and convergence guarantees. The abstract does not describe the evaluation setup behind these claims.",
+          "zh": "论文提出 CENIC，一种面向接触动力学的变步长积分器，结合凸时间步进与误差控制积分，旨在兼顾两者的优点。摘要指出，现有误差控制积分器难以处理接触的刚性动力学，也难满足现代机器人工作流对速度和可扩展性的要求。作者声称，CENIC 可达到与 MuJoCo、Drake 和 Isaac Sim 等离散时间机器人模拟器相当的实时速度，同时提供精度与收敛保证；摘要未说明这些结论所依据的具体评测设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2123,7 +2127,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models, world-action models (WAMs), and offline reinforcement learning methods are rapidly expanding the design space of embodied policies, yet turning these algorithms into reliable robot systems remains constrained by fragmented data formats, training stacks, evaluation protocols, inference runtimes, and embodiment-specific interfaces.\n\nWe present $\\mathrm{FluxVLA}$ Engine, an open, configuration-driven platform that turns heterogeneous embodied-policy components into a reproducible data-to-deployment workflow.\n\nRather than introducing another policy model, $\\mathrm{FluxVLA}$ standardizes interfaces for datasets, visual-language and world models, action heads, reward- or advantage-weighted learning, distributed training, simulation evaluation, optimized inference, and robot operators.\n\nThe engine further integrates compositional dual-arm simulation, scalable automatic data generation, and model-decoupled human-in-the-loop rollout, takeover, correction collection, and reward annotation.\n\nFor responsive physical execution, it combines Real-Time Chunking (RTC) with accelerated inference backends, lightweight remote GPU serving, and configurable trajectory post-processing.\n\nTogether, these capabilities connect offline learning, simulation validation, online correction, and real-robot execution through shared and auditable contracts. $\\mathrm{FluxVLA}$ therefore targets the engineering bottlenecks separating promising embodied-learning algorithms from reproducible evaluation and dependable deployment.\n\nCode is available at https://github.com/FluxVLA/FluxVLA"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FluxVLA Engine, an open, configuration-driven platform for connecting heterogeneous embodied-policy components in a reproducible data-to-deployment workflow; it does not propose a new policy model. It standardizes interfaces for datasets, models, action heads, training, simulation evaluation, inference, and robot operators, and includes dual-arm simulation, automatic data generation, and human-in-the-loop correction and annotation. The authors say shared, auditable contracts connect offline learning, simulation validation, online correction, and real-robot execution. The abstract reports no quantitative experimental results.",
+          "zh": "论文介绍 FluxVLA Engine，一个开放、由配置驱动的具身策略工程平台，目标是将异构组件连接为可复现的数据到部署工作流，而非提出新的策略模型。平台统一数据集、视觉语言与世界模型、动作头、加权学习、分布式训练、仿真评估、推理和机器人操作接口，并集成双臂仿真、自动数据生成及人在环中的执行接管、纠正与奖励标注。作者称，共享且可审计的接口可衔接离线学习、仿真验证、在线纠正和真实机器人执行；摘要未报告量化实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
