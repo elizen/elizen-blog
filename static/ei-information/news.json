@@ -3383,7 +3383,11 @@
             "heading": "",
             "text": "This paper studies heterogeneous multi-team collaboration through dynamic robot allocation, where the robots themselves are treated as transferable resources.\n\nLeveraging Hamilton's rule from ecology as an altruistic decision-making mechanism, we propose a multi-team collaborative resource allocation framework with heterogeneous capabilities, transfer costs, and capability-dependent contributions. The resulting general heterogeneous resource assignment problem is combinatorial and is shown to be NP-hard.\n\nTo address scalability, we develop a graph neural network policy under centralized training and decentralized execution that approximates the altruistic allocations based on Hamilton's rule. The model operates over the team interaction graph and predicts robot-level transfer decisions and subsequent robot-to-team assignments.\n\nThe proposed approach is evaluated in a fire-fighting scenario against exact optimization and multi-step simulations, quantifying allocation quality, decision computation, and fire suppression.\n\nFive paired physical testbed trials with 15 robots compare learned reallocation with fixed team membership; the GNN reaches the modeled fire stopping threshold in all five trials, compared with two for static allocation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies heterogeneous multi-team collaboration by treating robots as transferable resources and formulates allocation using Hamilton’s rule, accounting for capability differences, transfer costs, and capability-dependent contributions. The resulting problem is shown to be NP-hard. The authors develop a graph neural network policy with centralized training and decentralized execution, then evaluate it in firefighting simulations against exact optimization and multi-step simulations. In five paired physical testbed trials involving 15 robots, learned reallocation reached the modeled fire-stopping threshold in all five trials, versus two trials with fixed team membership.",
+          "zh": "论文研究异构多团队中的协作问题，将机器人视为可转移资源，并以汉密尔顿法则构建考虑能力差异、转移成本和能力相关贡献的分配框架；该资源分配问题被证明为 NP-hard。作者提出集中训练、分散执行的图神经网络策略，在团队交互图上预测机器人转移与分配决策，并在消防仿真中与精确优化及多步模拟比较。实体测试平台上的五组配对试验共使用15台机器人；学习式重分配在五次试验中均达到模型设定的灭火阈值，固定团队分配则达到两次。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3414,7 +3418,11 @@
             "heading": "",
             "text": "Language models are being explored as the interface through which space robots interpret operator commands and select among verified skills.\n\nRunning them onboard calls for low-bit compression, and flight use adds requirements that generic post-training quantization leaves implicit: a fixed memory budget and storage format, a static artifact under configuration control, and behavior close to the full-precision model validated on the ground.\n\nWe treat compression as a ground-segment step and study QSelect, which composes one static low-bit model from compatible AWQ, GPTQ, and AutoRound checkpoints by assigning each linear module to one quantizer family and scoring every substitution at the final next-token distribution.\n\nThe default fidelity mode needs no labels or tuned thresholds and accepts a substitution only when the forward KL divergence from the BF16 reference decreases; an optional target-adapted mode adds answer likelihood on a small labeled set.\n\nOn DeepSeek-R1-Distill-Qwen-7B, Llama-3.1-8B, and Llama-3.2-3B at 3 and 4 bits, composed models reach lower mean held-out perplexity than every single-family model in all six settings, and the fidelity mode lowers perplexity and KL further.\n\nIn a matched scaffold, final-output scoring gives lower held-out KL than representation-similarity scoring in all 12 paired runs. With labels from training or development splits of the evaluated task families, the target-adapted mode raises 3-bit pooled accuracy on the two Llama models by 4.3 and 4.5 points over the best single-family model.\n\nAt 3 bits, unquantized embedding and output layers make up 43-46% of the packed artifact. All evaluations use general-domain benchmarks on a ground GPU; space-domain tasks and flight hardware are left to future work."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents QSelect, a ground-segment method for composing a static low-bit language model under memory and behavioral-fidelity constraints. It selects a quantizer for each linear module from compatible AWQ, GPTQ, and AutoRound checkpoints, scoring substitutions against a BF16 model’s next-token distribution. Across three models and six bit-width settings, composed models achieve lower held-out mean perplexity than single-family models; the fidelity mode reduces perplexity and KL further. Evaluations use general-domain benchmarks on a ground GPU, leaving space-domain tasks and flight hardware for future work.",
+          "zh": "论文研究满足固定存储预算与行为保真要求的机载语言模型压缩，并提出 QSelect：从兼容的 AWQ、GPTQ 和 AutoRound 检查点中，为各线性模块选择量化方法，组合成静态低比特模型。默认模式以 BF16 模型的下一词分布为参照，用前向 KL 散度评估替换；可选模式利用少量标注数据适配目标任务。对三种模型的六种位宽设置，组合模型的留出集平均困惑度低于各单一方法；保真模式进一步降低困惑度和 KL。评估仅涉及通用领域基准与地面 GPU，太空任务和飞行硬件尚待研究。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3445,7 +3453,11 @@
             "heading": "",
             "text": "We present SpatialDex, a framework that learns 3D-grounded bimanual dexterity from RGB-only human videos through reconstruction-augmented visuomotor pre-training. The central idea is to learn human behavior together with its spatial context.\n\nFrom each video, we reconstruct the scene geometry and estimate the hand motion, align them at a shared video-level scale using the hand-size prior of 3D hand estimates. We retain the reconstructed geometry as both a policy input and a prediction target.\n\nThe policy grounds the token grid of a pre-trained vision-language model in this geometry through gated residual fusion, is trained to predict future scene geometry alongside wrist and finger actions, and generates finger motion conditioned on the predicted trajectories of both wrists.\n\nPre-trained on 1M human-video clips and fine-tuned with a small number of robot demonstrations, SpatialDex outperforms the state-of-the-art methods by 16.5 points on nine simulated dexterous tasks across two embodiments and by 38.3 points on six real-world bimanual dexterous tasks.\n\nUnder a matched comparison, pre-training with reconstructed geometry improves success by 14.2 points over pre-training on hand motion alone."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce SpatialDex, which learns 3D-grounded bimanual dexterity from RGB-only human videos. It reconstructs scene geometry, estimates hand motion, aligns their scale using a hand-size prior, and uses reconstructed geometry as both policy input and prediction target. The policy predicts future geometry and wrist and finger actions, with finger motion conditioned on predicted wrist trajectories. After pre-training on one million video clips and fine-tuning with a small number of robot demonstrations, it reports gains over compared methods on simulated and real-world tasks. A matched comparison also favors geometry-augmented pre-training over hand-motion-only pre-training.",
+          "zh": "作者提出 SpatialDex，从仅含 RGB 的人类视频中学习具备三维空间 grounding 的双手灵巧操作。框架重建场景几何并估计手部运动，以手部尺寸先验对齐尺度，并将重建几何同时用作策略输入和预测目标。策略联合预测未来场景几何、手腕与手指动作，且依据双腕预测轨迹生成手指运动。模型先用100万段人类视频片段预训练，再以少量机器人演示微调。作者报告，在两个机器人形态的九项仿真任务及六项真实双手操作任务中，性能分别超过所比较的先进方法16.5和38.3个百分点；匹配比较中，加入重建几何的预训练比仅用手部运动高14.2个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
