@@ -1334,7 +1334,11 @@
             "heading": "",
             "text": "Designing and tuning reward functions remains one of the main challenges in building effective reinforcement learning (RL) pipelines for humanoid locomotion. While shaping rewards can accelerate learning, naively formulated terms often conflict with the desired behavior, overfit to a specific robot, or become unstable under small weight changes.\n\nPotential-Based Reward Shaping (PBRS) offers an alternative solution: shaping the reward via differences of a potential function to guide exploration without changing the optimal policy. In this paper, we study Multi-PBRS for humanoid locomotion and propose a unified reward configuration.\n\nWe then evaluate the same reward structure and weights across nine humanoid robots, requiring only robot-specific metadata (joint/link mappings and default poses) rather than per-robot reward redesign.\n\nOur experiments show that, compared to standard shaping, MPBRS provides more consistent scaling behavior and reduced tuning sensitivity across robots, making it easier to tune without altering the optimal policy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies multi-potential-based reward shaping (MPBRS) for humanoid locomotion and proposes a unified reward configuration. The authors note that conventional shaping terms can conflict with desired behavior, overfit to a robot, or be sensitive to weight changes. They evaluate the same reward structure and weights across nine humanoid robots, requiring only robot-specific joint and link mappings and default poses. Experiments show more consistent scaling and reduced tuning sensitivity across robots compared with standard shaping. The authors state that the approach does not alter the optimal policy.",
+          "zh": "论文研究用于人形机器人运动控制的多势函数奖励塑形方法（MPBRS），并提出统一奖励配置。作者指出，常规塑形项可能与目标行为冲突、对特定机器人过拟合，或对权重变化敏感。该方法在九种人形机器人上使用相同的奖励结构和权重，仅需提供机器人特定的关节与连杆映射及默认姿态。实验显示，相比标准奖励塑形，MPBRS在不同机器人上的缩放表现更一致、调参敏感性更低；作者称该方法不改变最优策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1365,7 +1369,11 @@
             "heading": "",
             "text": "General purpose multimodal language models (LMs) are increasingly capable of directly controlling robotic arms (e.g., by commanding end effector poses) to manipulate their environment.\n\nTracking the development of these capabilities is important for understanding their potential benefits, such as improving industrial automation, and risks, such as enabling malicious users to produce dangerous chemical or biological agents. To this end, we investigate the ability of frontier multimodal LMs to directly control physical robotic arms.\n\nWe evaluate nine models at multiple reasoning-effort and service-tier settings on six manipulation tasks taken from the RoboDojo benchmark. To our knowledge, this is the first systematic comparison of a broad range of frontier LMs across a common suite of manipulation tasks on physical hardware.\n\nWe find that current frontier models can directly control real robotic arms to perform a variety of manipulation tasks but are not yet precise or efficient enough to complete them within a practical action budget.\n\nHowever, these capabilities are improving rapidly: performance increases on our benchmark between July and October 2026 (inclusive) correspond to a performance doubling time of 53.9 days, while the best recorded execution rate increased by a factor of 4.4 and the lowest recorded execution cost fell by a factor of 6.2.\n\nThese trends raise the possibility that the Bitter Lesson is coming to robotics; the capabilities of embodied general purpose LMs may one day be comparable to those of more specialized models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper evaluates frontier multimodal language models controlling physical robotic arms on six RoboDojo manipulation tasks, testing nine models across reasoning-effort and service-tier settings. The authors report that current models can perform a variety of manipulations but lack the precision and efficiency to complete tasks within a practical action budget. Benchmark performance changes from July through October 2026 correspond to a 53.9-day doubling time; the best recorded execution rate rose by a factor of 4.4, while the lowest recorded execution cost fell by a factor of 6.2. The authors discuss the possibility of further capability gains.",
+          "zh": "论文评估前沿多模态语言模型直接控制实体机械臂的能力，涵盖九个模型在不同推理力度和服务档位下完成 RoboDojo 基准的六项操作任务。作者报告，当前模型能控制机械臂执行多种操作，但精度和效率尚不足以在实用动作预算内完成任务。基准表现从2026年7月至10月的变化对应53.9天的性能翻倍时间；最佳执行率提高至原来的4.4倍，最低执行成本降至原来的六分之一左右。作者据此讨论通用模型能力可能持续提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
