@@ -1917,7 +1917,11 @@
             "heading": "",
             "text": "Visual Language Action (VLA) models are designed to be generalist robot models that can be implemented across embodiments, tasks and environments. However, their ability to collaborate with other robots and humans remains underexplored.\n\nIn this work, we propose a framework to automate the generation of multi-robot collaborative data for decentralized VLA training without requiring human teleoperation. Our framework first utilizes a decentralized collaborative planning approach to generate multi-robot collaborative robot plans in the form of an executable function.\n\nWe then utilize the collaborative plan to produce collaborative demonstration data to finetune VLA models in a decentralized manner. We show that our approach produces demonstration data that when used to finetune VLA models on decentralized collaboration tasks matches the task performance of VLA models finetuned on human-teleoperated collaborative data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Co^2Gen, a framework for automatically generating collaborative data for decentralized vision-language-action model training without human teleoperation. It first uses decentralized collaborative planning to create executable multi-robot plans, then derives demonstration data from those plans for model fine-tuning. The authors report that, on decentralized collaboration tasks, models fine-tuned with the generated demonstrations match the task performance of models fine-tuned with human-teleoperated collaborative data.",
+          "zh": "论文提出 Co^2Gen 框架，用于在无需人工遥操作的情况下，自动生成去中心化视觉语言动作模型训练所需的多机器人协作数据。框架先以协作规划生成可执行函数形式的机器人计划，再据此生成协作示范数据并用于微调。作者报告，在去中心化协作任务中，使用该数据微调的模型取得了与使用人工遥操作协作数据微调的模型相匹配的任务表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1948,7 +1952,11 @@
             "heading": "",
             "text": "Should an embodied agent's experience be baked into its policy weights, or kept external and retrieved at inference?\n\nA memory-augmented teacher (a VLM that retrieves lessons, with their episode images, from its own past attempts) produces trajectories on a vision-conditioned reach task; from the same trajectories we distil LoRA student policies and evaluate them under matched protocols, including one that re-attaches the teacher's frozen retrieval buffer to a fixed set of student weights.\n\nWe pre-registered the hypotheses, arms, tests, and analysis rules before training and before any p-value. Distilling the memory-augmented behaviour into weights beat an action-only control by +1 pp (n.s.); the registered test proves underpowered for its own minimum effect, so we withdraw - rather than refute - the memory-in-weights claim.\n\nAttaching retrieval to a fixed set of student weights added +34 pp (z=5.15), reaching the pooled memory-augmented teacher reference (49.3%); the pre-registered protocol contrast agrees (+23 pp, z=3.36); under a pre-registered auto-reset sensitivity count the two are +36 and +29 pp.\n\nAn exploratory behavioural probe with pre-registered per-arm predictions is consistent with behavioural distillation transferring the marginal correction but not the conditional, situation-specific correction that retrieval supplies.\n\nThe recipe that follows is to externalise the memory: in follow-up controls registered before they ran, the same frozen buffer lifts the base model with no adapter to 48% (sensitivity 48%) and the other three adapters from 19-26% to 53-55% (sensitivity 17-21% to 50-55%), and the adapter adds nothing detectable once the buffer is attached.\n\nOn a second, harder task, the retrieval advantage points the same direction but falls short of significance (+6 pp, 95% CI [-4.5, +16.4]); exploratory diagnostics tie the attenuation to memory coverage."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This pre-registered study compares distilling an embodied agent’s experience into policy weights with retrieving external memory at inference. Distillation improved performance by 1 percentage point over an action-only control, but the result was not significant and the registered test was underpowered; the authors therefore withdraw, rather than refute, the memory-in-weights claim. Attaching a frozen retrieval buffer to fixed student weights improved performance by 34 points and reached the teacher reference. On a harder second task, the advantage had the same direction but was not significant; exploratory diagnostics linked its attenuation to memory coverage.",
+          "zh": "这项预注册研究比较将具身智能体经验蒸馏进策略权重与在推理时外接检索记忆。研究报告，蒸馏记忆行为相较仅含动作的对照仅提升1个百分点且不显著；该检验效能不足，因此作者撤回而非否定“记忆写入权重”的主张。将冻结检索缓冲区接到固定学生权重后，表现提升34个百分点并达到教师参考水平。第二项更难任务上的检索优势方向一致，但未达显著；诊断将其减弱与记忆覆盖联系起来。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1979,7 +1987,11 @@
             "heading": "",
             "text": "Joint-embedding predictive architectures (JEPAs) learn world models in latent space, enabling efficient planning but leaving their states opaque.\n\nWe introduce Inside-JEPA, which places relational channels for ordered entity pairs inside the JEPA latent state and shows that an inverse-dynamics loss can ground these channels without relation labels when its head reads them, either alone or as part of the full state.\n\nOn Something-Something V2, latent prediction alone performs no better than a random relation head, while inverse-dynamics supervision that recovers actions from channel changes improves relational AUROC by .065-.103 across ten settings with annotated boxes, by .081 on RH20T robot episodes with held-out tasks, and by .050-.061 across five relations using off-the-shelf detection and tracking.\n\nAn inverse head on entity latents decodes actions more accurately but barely improves relational grounding; shuffled labels, two label-free objectives, and action labels on only 5% of the pairs also fail to ground the channels. Given an action, predicted relational changes approach the quality of observed future relations (AUROC .599 vs .621).\n\nFor one-step relational goals, a supervised readout of the 16 channels ranks the correct action among the top five of 65 in 43% of cases, compared with 24% for prediction-only latents and 17% for a frequency prior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "Inside-JEPA adds relational channels for ordered entity pairs to the latent state of a joint-embedding predictive architecture. An inverse-dynamics loss can ground these channels without relation labels. Across several settings, latent prediction alone did no better than a random relation head, while supervision that recovers actions from channel changes improved relational grounding. An inverse-dynamics head reading entity latents decoded actions more accurately but barely improved grounding. For one-step relational goals, a supervised readout of the channels ranked the correct action better than prediction-only latents and a frequency prior.",
+          "zh": "Inside-JEPA 在联合嵌入预测架构的潜在状态中加入有序实体对的关系通道，并以逆动力学损失在无需关系标签时为通道提供依据。多个数据设置显示，仅做潜在预测不能优于随机关系头；利用通道变化恢复动作的监督能提升关系识别表现。实体潜在变量上的逆动力学头虽更准确地解码动作，却几乎不改善关系 grounding。对于单步关系目标，16个通道的监督读出在动作排序上优于仅预测潜在状态和频率先验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
