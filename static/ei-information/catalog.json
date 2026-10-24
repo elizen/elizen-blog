@@ -27,8 +27,8 @@
           }
         ],
         "summary": {
-          "en": "The paper studies an offline route for creating reusable embodied manipulation skills: a general model writes, diagnoses, and repairs a skill in simulation, which is frozen after passing an exam on new layouts. The frozen skill then runs alone or under a low-cost caller that reads its description. The authors call this skill-level recursive self-improvement and specify isolation, hidden-layout validation, and control procedures. Across seven RoboTwin 2.0 tasks, Claude Code compiled skills for four; three did not pass after repeated campaigns. In eight controlled campaigns, repairing from an inherited version beat rewriting from scratch. The abstract also reports frozen-skill results on new layouts and notes that no direct-control baseline was run.",
-          "zh": "论文研究一种离线编写、冻结后复用的具身操作技能路线：强通用模型在仿真中编写、诊断和修复技能，通过冻结后新布局上的考试后，技能可单独运行，或由只读取技能说明的低成本调用模型执行。作者将此称为技能级递归自我改进，并规定隔离审计、隐藏布局验证及对照流程。在 RoboTwin 2.0 的七项任务中，Claude Code 为四项编译出七个冻结技能，另三项经多轮尝试仍未通过门槛；困难任务的尝试虽得分较高，但有安全中止。受控实验中，继承前版进行修复的八次活动均胜过从头改写。冻结技能在新布局上的表现，以及未运行直接控制基线等限制，均按摘要所述。"
+          "en": "The paper studies reusable manipulation skills authored offline by a strong model, tested in simulation, then frozen to run as code or with a low-cost caller. It calls this approach skill-level recursive self-improvement and specifies protocols for isolated authorship, hidden validation layouts, and cross-model reuse. On seven RoboTwin 2.0 tasks, Claude Code compiled skills for four; three did not pass after multiple campaigns, with safety aborts blocking the hardest task. In eight controlled campaigns, repair that inherited a previous version outperformed rewriting from scratch. The frozen skills achieved the reported success counts on new layouts; no direct-control baseline was run.",
+          "zh": "论文研究一种离线编写、冻结后复用的具身操作技能方案，并称之为技能级递归自我改进。强模型在仿真中编写、诊断和修复技能，通过冻结后布局的考核；作者还提出隔离审计、隐藏验证布局及跨模型执行等协议。在 RoboTwin 2.0 的七项任务中，Claude Code 为四项编译出技能，三项在多轮尝试后未通过；最难任务因安全中止未达门槛。继承旧版本的修复在八组受控比较中胜过从头改写。冻结技能在新布局上取得所报告的成功数；未运行直接控制基线。"
         }
       },
       "source": {
@@ -444,8 +444,8 @@
           }
         ],
         "summary": {
-          "en": "This monograph aims to define physical AI, map its technical landscape, and examine its central challenges. It describes physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints, distinguishing it from digital AI, embodied AI, cyber-physical systems, and digital twins. It reviews foundations, methods, and applications, including multimodal perception, simulation, world models, embodied foundation models, control, coordination, and hardware-software co-design. It highlights challenges such as sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment.",
-          "zh": "这篇专著旨在界定物理人工智能、梳理其技术版图并讨论核心挑战。作者将其描述为在现实约束下，通过连续反馈感知、建模并作用于物理世界的人工系统，并与数字人工智能、具身人工智能、信息物理系统和数字孪生作区分。专著从物理学、控制、认知、学习与推理等方面阐述基础，回顾多模态感知、物理数据与仿真、世界模型、具身基础模型、运动控制、多智能体协同及软硬件协同设计等方法，也讨论多个应用领域。重点挑战包括仿真到现实迁移、可靠性、实时执行、评估、安全、治理和长期部署。"
+          "en": "This monograph aims to define physical AI, map its technical landscape, and examine its central challenges. It describes physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints, distinguishing it from digital AI, embodied AI, cyber-physical systems, and digital twins. It reviews foundations, methods, and applications spanning perception, simulation, world models, control, coordination, and hardware-software co-design. It also discusses sim-to-real transfer, reliability, safety, governance, and long-term deployment, and identifies research directions toward more generalizable systems.",
+          "zh": "这篇专著旨在界定物理人工智能，梳理其技术版图并讨论核心挑战。它将物理 AI 描述为在现实约束下，通过连续反馈感知、建模并作用于物理世界的人工系统，并与数字 AI、具身 AI、信息物理系统和数字孪生作区分。内容涵盖物理、控制、认知、学习与推理基础，以及感知、仿真、世界模型、具身基础模型、运动控制、协同和软硬件协同设计等方法与应用。作者特别关注仿真到现实迁移、可靠性、安全、治理和长期部署，并提出相关研究方向。"
         }
       },
       "source": {
@@ -564,11 +564,7 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes a preliminary conceptual framework for designing embodied agents in immersive analytics. It organizes context around spatial, social, and semantic dimensions, further categorized by embeddedness and awareness. The authors present Cobot as a design probe, with features such as gaze cues, spatial sound, and task-aware behavior intended to support context-sensitive interaction. They reflect on the design and identify implications for future context-aware embodied agents. The abstract describes a conceptual framework and design probe, without reporting a user study or outcome evaluation.",
-          "zh": "论文提出一个面向沉浸式分析中具身智能体设计的初步概念框架，围绕空间、社会和语义三个维度，并以嵌入程度和情境感知能力加以分类。作者还介绍了作为设计探针的 Cobot，它通过注视提示、空间声音和任务感知行为支持情境敏感交互。论文基于该设计进行反思，并提出对未来情境感知型具身智能体设计的启示；摘要未报告用户实验或效果评估。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8428,11 +8424,7 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Plan-Bench to evaluate vision-language models’ high-level reasoning and multi-step planning for embodied tasks while isolating action execution. The benchmark covers three dimensions, 16 subclasses, and 699 curated samples. In evaluations of 28 models, the strongest achieves 75.0% accuracy. The authors also report that scaling generally improves these capabilities, while ablation studies indicate growing potential for larger models to serve as high-level planners. The benchmark is presented as a lightweight probe of capabilities relevant to embodied environments.",
-          "zh": "论文介绍 Plan-Bench，用于评估视觉语言模型在具身环境相关任务中的高层推理和多步规划能力，并将动作执行的影响隔离。基准涵盖三个维度、16个子类和699个样本。对28个模型的评估显示，表现最强的模型准确率为75.0%；作者还发现，模型规模扩大通常会提升相关能力，消融研究显示大模型作为高层规划器的潜力有所增加。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -11101,8 +11093,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents World2HOSI, a framework that coordinates multiple expert models around a persistent scene state to generate long-horizon human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It plans action stages, invokes experts, and writes their effects back into the evolving state. Bounded residual optimization and contact-driven physics simulation are used to improve physical plausibility while preserving interaction intent. In experiments and a perceptual user study on evaluated tasks, the authors report the best task completion and interaction quality, along with more diverse data.",
-          "zh": "论文提出 World2HOSI：一种围绕持久场景状态组织多个专家模型的框架，从 3D 高斯泼溅场景和自然语言指令生成长时程人—物—场景交互数据。框架分阶段规划动作，调用专家并将动作效果写回不断变化的场景状态；有界残差优化和接触驱动的物理仿真用于改善人体运动和物体操作的物理合理性，同时保留交互意图。作者报告，在所评估任务的实验和感知用户研究中，该方法取得最佳任务完成度与交互质量，并生成更多样的数据。"
+          "en": "The paper presents World2HOSI, a multi-expert orchestration framework for generating long-horizon human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It maintains an evolving scene state, plans action stages, invokes existing experts, and writes their effects back into that state. Bounded residual optimization and contact-driven physics simulation are used to improve motion and manipulation plausibility while preserving intent. Experiments and a perceptual user study report the best task completion and interaction quality among evaluated methods, alongside more diverse data.",
+          "zh": "论文提出 World2HOSI：一种基于 3D 高斯泼溅场景和自然语言指令生成长时程人—物—场景交互数据的多专家编排框架。它维护持续更新的场景状态，由框架规划动作阶段、调用不同专家并回写动作效果；还结合有界残差优化与接触驱动的物理仿真，以改善动作和物体操作的物理合理性并保留交互意图。作者称，在所评估的任务和感知用户研究中，该方法取得最佳任务完成度与交互质量，并生成更多样的数据。"
         }
       },
       "source": {
@@ -12397,8 +12389,8 @@
           }
         ],
         "summary": {
-          "en": "ForagerSim is a research platform and simulation environment for embodied tasks requiring map-based reasoning, including robot search and rescue and animal foraging. Its modular scenarios vary perception, scale, topology, dynamics, and tasks. The paper compares reinforcement-learning baselines, an engineered robotics stack, and a human player across eight example worlds. The authors report that with simplified 2D sensing, learned policies handle multi-object search and well-alternation surprisingly well in simple topologies. In larger or more complex-topology environments, they fall short of human performance, while map-based baselines perform well; the authors identify map-based reasoning as the bottleneck in those scenarios.",
-          "zh": "ForagerSim 是一个面向具身地图推理任务的研究平台与仿真环境，场景涵盖移动机器人搜救和动物觅食，可调整感知方式、环境尺度、拓扑、动态因素与任务类型。论文比较强化学习基线、工程化机器人系统和人类玩家在八个示例世界中的表现，以观察不同难度因素的影响。作者报告，在简化为二维感知且拓扑简单时，学习策略能较好完成多目标搜索和交替利用水井等任务；但在更大或拓扑更复杂的环境中，表现不及人类，而基于地图的基线表现较好。作者据此认为，这些情境的瓶颈在于地图推理。"
+          "en": "The paper introduces ForagerSim, a research platform and simulation environment for studying embodied map-based reasoning. Its scenarios range from search and rescue to animal foraging, with configurable perception, scale, topology, dynamics, and tasks. The authors compare reinforcement-learning baselines, an engineered robotics stack, and a human player across eight example worlds. With simplified 2D sensing and simple topologies, learned policies perform well on multi-object search and well-alternation tasks. In larger or more complex-topology environments, they fall short of human performance, while map-based baselines perform well; the authors identify map-based reasoning as a bottleneck there.",
+          "zh": "论文介绍 ForagerSim，一个用于研究具身地图推理的研究平台和仿真环境，场景从搜救到动物觅食，覆盖不同感知方式、空间尺度、拓扑结构、动态因素和任务。作者在八个示例世界中比较强化学习基线、工程化机器人系统和人类玩家。结果显示，在简化为二维感知且拓扑简单时，学习策略能较好完成多目标搜索和交替觅食任务；但在更大或拓扑更复杂的环境中，其表现不及人类，而地图推理基线表现较好。作者据此认为这些场景的瓶颈在地图推理。"
         }
       },
       "source": {
@@ -16221,11 +16213,7 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Thinker-WM, a world model with shared multimodal representations that jointly models and generates RGB, metric depth, and robot actions through a Unified Dynamics Transformer. Its supported functions include video-action generation, world prediction, policy inference, and inverse dynamics. A lightweight motion probe indicates that recoverable action-related information is present in the frozen visual representation. The authors report training on heterogeneous egocentric video, real-robot, and simulation data. In their evaluations, Thinker-WM ranks first on EWMBench, WorldOlympiad, and WorldArena; controlled studies also show benefits from action conditioning, geometric interaction, and multi-function training.",
-          "zh": "论文提出 Thinker-WM，一个共享多模态表示的世界模型，以统一动态 Transformer 联合建模和生成 RGB、度量深度及机器人动作，并支持视频与动作生成、世界预测、策略推断等功能。模型在冻结视觉表示上使用轻量运动探针，显示其中可恢复动作相关信息。作者称模型使用包含第一人称视频、真实机器人和仿真数据的异质语料训练；实验中，Thinker-WM 在 EWMBench、WorldOlympiad 和 WorldArena 排名第一，受控研究也显示动作条件、几何交互和多功能训练带来益处。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17212,11 +17200,7 @@
             "heading": "",
             "text": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior.\n\nExisting inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes.\n\nSuch compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part.\n\nTo address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages.\n\nFive cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones.\n\nPlanning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision.\n\nWe evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR).RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces RuleGraph, a framework for enabling embodied robots to refuse harmful parts of compound instructions while completing legitimate parts. Five cooperating agents ground general safety principles in specific rules, assess subtasks in context, derive a safe goal, and verify candidate plans through a graph of rule-specific nodes. The authors evaluate pure attacks and compound instructions across two benchmarks and two environments. They report 0% attack success on both benchmarks, with task success rates of 98.57% on RoboGuard and 84.54% on long-horizon compound instructions.",
-          "zh": "论文提出 RuleGraph，用于让具身机器人拒绝复合指令中的有害部分，同时完成合法部分。框架由五个协作代理将一般安全原则转化为具体规则，结合上下文评估子任务并确定安全目标，再通过规则节点构成的规划图逐步验证和汇总候选方案。作者在两个基准和两个环境中评估纯攻击及复合指令，报告两项基准上的攻击成功率均为0%，并在 RoboGuard 和长时程复合指令上分别取得98.57%和84.54%的任务成功率。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
