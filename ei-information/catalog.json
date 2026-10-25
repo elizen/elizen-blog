@@ -3069,7 +3069,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models commonly generate robot actions token by token through Large Language Model (LLM) decoders, causing inference latency to grow with action sequence length and limiting closed-loop control frequency.\n\nWe present Goal-Conditioned Vision-Predictor-Action (VPA), which replaces autoregressive decoders with a lightweight latent control loop.\n\nA shared vision encoder and a frozen text encoder embed observations, goal images, and instructions; a neuro-symbolic selector chooses a discrete skill; a Joint-Embedding Predictive Architecture (JEPA) predictor forecasts the next latent state; and a flow-matching solver generates an entire action chunk in a few integration steps, so that sequential network evaluations per decision step do not depend on the action horizon.\n\nWe analyze inference complexity, regularization against representation collapse, and conditions under which latent sub-goal thresholding limits error accumulation across task phases. As an initial proof of concept, we evaluated VPA on the LIBERO-10 suite.\n\nThe trainable model has under 20M parameters (checkpoint under 75 MB, excluding a frozen 63.4M-parameter CLIP text encoder); a decision step of a single-camera reference configuration takes 10-14 ms on an Apple M4; and trained only on LIBERO-10 demonstrations in under three hours on a single GPU, a two-camera policy succeeded in 40.0% of 200 evaluation episodes.\n\nThese preliminary results from a single training run suggest the approach is workable. Code and weights are available at https://github.com/ylee-sling/Vision-Predictor-Action and https://huggingface.co/ylee-sling/vpa-libero10, and archived at https://doi.org/10.5281/zenodo.22960920."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Goal-Conditioned Vision-Predictor-Action (VPA), replacing autoregressive action decoding with a lightweight latent control loop. A shared vision encoder and frozen text encoder represent observations, goal images, and instructions; a neuro-symbolic selector chooses a skill, a JEPA predictor forecasts the next latent state, and a flow-matching solver generates an action chunk. The authors analyze inference complexity, collapse regularization, and latent sub-goal thresholding. In an initial LIBERO-10 proof of concept, a two-camera policy succeeded in 40.0% of 200 evaluation episodes; the authors characterize these as preliminary results from a single training run.",
+          "zh": "本文提出目标条件化 Vision-Predictor-Action（VPA），以轻量潜在控制循环替代逐 token 生成动作的自回归解码器。系统编码观测、目标图像和指令，由神经符号选择器选取技能，JEPA 预测下一潜在状态，流匹配求解器生成动作块；每个决策步骤的顺序网络评估次数不随动作时域变化。作者分析了推理复杂度、表示坍塌正则化及潜在子目标阈值限制误差累积的条件。作为初步概念验证，VPA 在 LIBERO-10 上经单次训练运行评估；双摄像头策略在 200 个评估回合中成功率为 40.0%。作者称结果初步且仅来自一次训练运行。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6556,7 +6560,11 @@
             "heading": "",
             "text": "Object Navigation in unseen environments remains a fundamental challenge in embodied AI, as it requires agents to generalize visual and spatial reasoning to novel layouts.\n\nWhile recent advances in large language model (LLM) and vision-language model (VLM) have enhanced semantic mapping, spatial memory, and waypoint selecting for navigation, successful navigation requires more than selecting the next promising waypoint.\n\nA robot must also recognize stalled progress, escape unproductive behaviors, and revisit overlooked target cues. Addressing these challenges requires both specialized navigation strategies and a high-level policy that coordinates their execution.\n\nMotivated by the analysis of failed navigation episodes, we propose LERR-Nav, an object navigation framework that coordinates exploration, recovery, and reminiscing through a learned high-level policy.\n\nThe framework comprises four complementary navigation strategies: value-function-guided exploration, LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided reminiscing.\n\nTo support history-aware coordination, we maintain the execution memory that preserves textual summaries of all strategy executions alongside a sliding window of map sequences. To learn the coordination policy, we initialize a high-level vision-language agent from Qwen2.5-VL-7B-Instruct and train it through a two-stage curriculum.\n\nThe first stage uses map-centric supervised fine-tuning (SFT) to establish spatial grounding. The second stage performs SFT on variable-length navigation segments to learn which navigation strategy to invoke next based on current maps and the hybrid execution memory.\n\nExperiments on HM3D and MP3D demonstrate state-of-the-art navigation performance, while ablation studies validate the contributions of individual components."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes LERR-Nav, an object navigation framework that uses a learned high-level policy to coordinate exploration, recovery, and reminiscing. Its four strategies include value-function-guided and LLM-guided exploration, recovery from stalled or repetitive behavior, and memory-guided revisiting. Textual summaries of strategy executions and a sliding window of map sequences provide execution history. Initialized from Qwen2.5-VL-7B-Instruct, the high-level vision-language agent is trained in two stages: map-centric supervised fine-tuning for spatial grounding, followed by training on variable-length navigation segments. The authors report state-of-the-art results on HM3D and MP3D and ablation support for component contributions.",
+          "zh": "本文提出 LERR-Nav，用学习得到的高层策略协调物体导航中的探索、恢复和回忆。框架包含价值函数引导探索、大语言模型引导探索、从停滞或重复行为中恢复，以及记忆引导回访四种策略，并保存策略执行的文本摘要和地图序列滑动窗口。高层视觉语言智能体以 Qwen2.5-VL-7B-Instruct 初始化，通过两阶段课程训练：先进行以地图为中心的监督微调以建立空间定位，再基于可变长度导航片段学习选择后续策略。作者报告在 HM3D 和 MP3D 实验中达到最先进导航表现，并称消融研究验证了各组件的贡献。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9065,7 +9073,11 @@
             "heading": "",
             "text": "We introduce HelpMeOut, an embodied AI benchmark for error-aware monitoring of household task execution. Existing embodied household benchmarks typically assume that humans execute tasks correctly, but this assumption does not hold for cognitively impaired persons or older adults whose everyday activities produce structured execution errors.\n\nTo address this gap, HelpMeOut operationalizes research on everyday action errors into 20000 paired activity episodes, covering nine neuropsychologically motivated error categories.\n\nIn each episode, agents observe a streaming human activity trajectory and must monitor whether the execution is unfolding correctly, diagnosing any structured errors as early as possible. We evaluate learned-monitor, symbolic, change-point, and frontier LLM prompting baselines.\n\nResults show that these methods perform poorly as error monitors, often missing when execution goes wrong. These results suggest a gap left by standard goal-inference and task-completion benchmarks, making HelpMeOut a testbed for error-aware assistive agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HelpMeOut, an embodied AI benchmark for monitoring errors during household task execution. It operationalizes everyday action errors as 20,000 paired activity episodes spanning nine neuropsychologically motivated categories. Agents observe streaming human activity and must detect and diagnose errors early. Evaluations of learned-monitor, symbolic, change-point, and frontier LLM prompting baselines show that these methods often miss execution failures. The authors present the benchmark as a testbed for error-aware assistive agents, addressing a gap in goal-inference and task-completion benchmarks.",
+          "zh": "本文介绍 HelpMeOut，这是一个面向家务任务执行错误监测的具身智能基准。它将日常行动错误研究转化为 20000 组成对活动片段，涵盖九类受神经心理学启发的错误。智能体需观察持续的人类活动轨迹，尽早判断执行是否正确并诊断结构化错误。对学习式监测器、符号方法、变点检测和前沿大语言模型提示基线的评估显示，这些方法常漏判执行错误。作者认为，该基准揭示了目标推断和任务完成基准未覆盖的错误感知辅助需求。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -13945,7 +13957,11 @@
             "heading": "",
             "text": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm.\n\nThis survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack.\n\nIt traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks.\n\nUltimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey examines cross-layer safety in embodied AI, where digital faults and attacks can cause physical harm. It organizes the topic around a four-layer reference architecture covering physical interaction, system and middleware, algorithm and decision, and cloud-edge and data. The authors connect vulnerabilities, propagation paths, and safeguards across the stack, trace the evolution of safety paradigms, and review how faults and attacks can cross architectural boundaries to create physical consequences. The survey systematizes composite attack chains, discusses multi-layer defenses and representative benchmarks, and advocates combining software alignment with rigorous hardware constraints.",
+          "zh": "本文综述具身人工智能的跨层安全问题，指出数字故障和攻击可能造成物理伤害。文章以四层参考架构组织安全分析，涵盖物理交互、系统与中间件、算法与决策、云边与数据层，并据此联系各层漏洞、传播路径和防护措施。综述追溯安全范式演变，考察故障和攻击跨越架构边界产生物理后果的方式，归纳复合攻击链、多层防御策略及代表性安全基准。作者主张结合软件对齐与严格硬件约束，以构建能在人本环境中安全运行的可信系统。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
