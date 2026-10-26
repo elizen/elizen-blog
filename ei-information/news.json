@@ -2239,7 +2239,11 @@
             "heading": "",
             "text": "As humanoid robots move from research laboratories toward deployment in human-centered environments such as homes, hospitals, and warehouses, safe operation around nearby people and objects becomes a fundamental requirement.\n\nSafety filters have emerged as a promising technique to address this challenge by providing mathematical guarantees that generated control actions do not result in collisions. This paper shows that these guarantees hold only when the safety parameters are configured correctly.\n\nHowever, correct parameter configurations are task- and environment-specific, and no general method exists to determine them across diverse deployments. As a result, safety filters shipped with humanoid robots can fail after deployment in specific scenarios.\n\nWe show that attackers can exploit these failures through only normal user interactions without any additional privileges or capabilities. To demonstrate this risk, we present goal insertion attacks and develop SIREN, an automated tool that identifies vulnerable inserting goals for a given task and environment.\n\nExperimental results show that SIREN identifies attacks in all vulnerable scenarios in the SPARK dataset. Compared with a baseline approach, SIREN discovers three times as many attacks. We also show that SIREN is able to generate attacks against a real humanoid and cause it to collide while executing tasks.\n\nThese results demonstrate that current safety filters introduce exploitable vulnerabilities that can cause safety violations, which reveals that existing safety mechanisms can themselves become a source of safety risk for humanoid robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that humanoid safety filters’ collision guarantees depend on correctly configured parameters, which are specific to tasks and environments, with no general method for selecting them across deployments. It presents goal-insertion attacks and SIREN, an automated tool that the authors say can exploit failures through normal user interactions. In experiments, SIREN found attacks in all vulnerable SPARK scenarios and discovered three times as many as a baseline. The authors also report causing a real humanoid to collide during task execution.",
+          "zh": "论文指出，人形机器人安全过滤器的碰撞保证取决于安全参数是否正确配置，而参数具有任务和环境特异性，缺少适用于多种部署的通用确定方法。作者提出目标插入攻击和自动化工具 SIREN，称攻击者仅通过正常用户交互即可利用过滤器失效。实验显示，SIREN 找到 SPARK 数据集中所有易受攻击场景的攻击，发现数量为基线的三倍；作者还报告其在真实人形机器人上生成攻击并导致任务执行期间碰撞。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2270,7 +2274,11 @@
             "heading": "",
             "text": "Robot foundation models are typically evaluated through costly closed-loop rollouts, motivating low-cost offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, modalities such as vision and language converge toward a shared statistical model of reality.\n\nWe ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion?\n\nTo test this, we propose Sensorimotor Alignment ($S^2$), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion.\n\nWe find that $S^2$ correlates positively with downstream robot task success across model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. $S^2$ can also identify promising vision-language model (VLM) backbones before costly fine-tuning into vision-language-action models (VLAs).\n\nBeyond this correlation, $S^2$ offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs).With $S^2$, we extend PRH to robotics and make sensorimotor alignment measurable, offering a low-cost, representation-level view of robot foundation models that closed-loop success rates alone cannot reveal."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Sensorimotor Alignment (S²), a training-free offline metric measuring how a model’s sensory representation aligns with the geometry of physical motion. The authors report a positive correlation between S² and downstream robot task success across model families. They present it as a low-cost way to prioritize models before closed-loop evaluation and identify promising vision-language model backbones before fine-tuning them into vision-language-action models. They also say S² provides representation-level explanations for phenomena in vision-language-action and world action models.",
+          "zh": "论文提出无需训练的离线指标 Sensorimotor Alignment（S²），衡量模型的感知表征与物理运动几何结构的对齐程度，以低成本评估机器人基础模型。作者报告，S² 与不同模型系列的下游机器人任务成功率正相关，并可用于在昂贵的闭环评估前排序模型，以及在微调为视觉语言动作模型前筛选有潜力的视觉语言模型骨干。论文还称，该指标可为视觉语言动作模型和世界动作模型中的现象提供表征层面的解释。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2301,7 +2309,11 @@
             "heading": "",
             "text": "Zero-shot object navigation requires an embodied agent to choose where to search while retaining evidence from previous observations. HGWM couples an LLM-generated room-anchor prior with persistent spatial-semantic memory.\n\nA coarse stage assigns visual-semantic scores to candidate headings on a 0-10 scale; a fine stage measures symbolic compatibility between observed objects, room context, and the goal prior. Phase-dependent fusion combines these scores with an LLM direction recommendation before local action selection.\n\nOn HM3D v0.1, the reported HGWM configuration achieves 62.6% success rate (SR) and 31.5% success weighted by path length (SPL), compared with 58.1% and 31.2% for WMNav. On MP3D, the corresponding values are 46.8% and 17.9%, compared with 45.4% and 17.2%.The results indicate higher success point estimates and modest path-efficiency gains.\n\nOn HM3D v0.2, the full model obtains 74.4% SR and 31.9% SPL. Additional component ablations reduce SR by 0.9-2.3 percentage points and SPL by 0.6-1.5 points. These are author-reported aggregate measurements. The accompanying implementation repairs pass offline tests; episode-level rerun records are not available. Evaluation is confined to simulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HGWM combines an LLM-generated room-anchor prior with persistent spatial-semantic memory for zero-shot object navigation. It scores candidate headings, assesses symbolic compatibility among observed objects, room context, and the goal prior, then fuses scores with an LLM direction recommendation. The authors report higher success-rate and path-length-weighted success-rate point estimates than WMNav on HM3D v0.1 and MP3D. On HM3D v0.2, the full model’s reported rates are 74.4% and 31.9%; component ablations reduce them. Evaluation is confined to simulation, and episode-level rerun records are unavailable.",
+          "zh": "HGWM 将由大语言模型生成的房间锚点先验与持久空间语义记忆结合，用于零样本物体导航：先为候选方向评分，再评估观测物体、房间语境与目标先验的符号兼容性，并按阶段融合分数和方向建议。作者报告，在 HM3D v0.1 和 MP3D 上，其成功率及路径长度加权成功率点估计高于 WMNav；HM3D v0.2 完整模型成功率为 74.4%、加权成功率为 31.9%。组件消融会降低指标。评估仅限仿真，且没有逐回合重跑记录。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2332,7 +2344,11 @@
             "heading": "",
             "text": "Steering robot foundation models (RFMs) toward new task variants or user-preferred behaviors remains challenging, often requiring additional robot demonstrations, task-specific fine-tuning, or long-context conditioning. We present WAM-TTT, a test-time training framework for steering world action models from raw human videos.\n\nRather than treating human videos as trajectories to imitate, WAM-TTT absorbs them into a lightweight adaptive memory inside a frozen WAM through self-supervised video prediction.\n\nTo make this memory useful for control, we introduce a meta-training stage that aligns human demonstrations with robot behaviors using paired human-robot data and a key--value memory reconstruction objective. At test time, only unlabeled human videos are required to adapt the memory, while the pretrained WAM remains frozen.\n\nThis enables efficient and reusable steering without robot actions, human-side annotations, or task-specific fine-tuning, while preserving the generalization ability of the foundation model.\n\nExtensive experiments show that WAM-TTT consistently outperforms in-context human-video conditioning baselines across diverse manipulation tasks and generalization settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WAM-TTT, a framework for steering world action models at test time using raw human videos. Instead of imitating video trajectories, it stores them in a lightweight adaptive memory within a frozen model through self-supervised video prediction. A meta-training stage uses paired human-robot data and a key-value memory reconstruction objective to make the memory useful for control. At test time, only unlabeled human videos are needed while the pretrained model remains frozen. The authors report consistent gains over in-context human-video conditioning baselines across manipulation tasks and generalization settings.",
+          "zh": "论文提出 WAM-TTT，一种利用原始人类视频在测试时引导世界动作模型的框架。它不把视频当作模仿轨迹，而是通过自监督视频预测，将其写入冻结模型中的轻量自适应记忆。元训练阶段利用配对的人类与机器人数据及键值记忆重建目标，使记忆可用于控制；测试时只需未标注的人类视频，预训练模型保持冻结。作者称，该方法无需机器人动作、人类侧标注或任务专属微调，并在多种操作任务和泛化设置中持续优于上下文人类视频条件基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
