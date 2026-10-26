@@ -1994,7 +1994,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models are typically pretrained on broad, diverse datasets and subsequently fine-tuned on a comparatively small dataset tailored to a specific target robot. Such adaptation recipe is now widely established, achieving its most mature results on fixed-base arms due to their static base dynamics and consistent reference frame.\n\nMounting the same arm on a quadruped extends the workspace to the entire floor, but fundamentally changes the embodiment: rather than controlling the arm in isolation, the policy must jointly coordinate base navigation, body posture, and end-effector motion.\n\nIn this work, we study the practical demands of this embodiment change across data collection, model adaptation, and inference design to achieve closed-loop loco-manipulation on a Unitree Go2 with an AgileX Piper arm.\n\nWe report the choices that made this real-robot deployment feasible, namely model variant, action horizon, and demonstration conventions, together with a study tailored to a pick-and-place task, separating data coverage from model capacity.\n\nWe show that expanding demonstration coverage reduces held-out end-effector error by 30%, and incorporating secondary skills (such as pushing rather than grasping) introduces new behavioral modes without degrading baseline performance.\n\nFinally, closed-loop real-world experiments show how dataset composition shapes success and failure, validating the pipeline for more complex loco-manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work studies closed-loop loco-manipulation with a VLA model on a Unitree Go2 quadruped carrying an AgileX Piper arm. It examines data collection, model adaptation, and inference design, reporting choices such as model variant, action horizon, and demonstration conventions. In a real-robot pick-and-place study, the authors report that broader demonstration coverage reduces held-out end-effector error by 30%. Adding secondary skills, including pushing, introduces new behaviors without degrading baseline performance.",
+          "zh": "本文研究将视觉-语言-动作模型部署到搭载 AgileX Piper 机械臂的 Unitree Go2 四足机器人上，重点考察数据采集、模型适配与推理设计如何支持闭环移动操作。作者报告了模型版本、动作时域和示范规范等部署选择，并以抓取放置任务分析数据覆盖与模型容量。真实机器人实验显示，扩大示范覆盖可使留出末端执行器误差降低30%；加入推而非抓等辅助技能可引入新行为模式，且未损害基线表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2025,7 +2029,11 @@
             "heading": "",
             "text": "What visual representation should a navigation policy act on? Navigation policies built on vision foundation models largely leave representation design to the encoders' pretraining objectives.\n\nWe present RepresentNav, a navigation foundation model built on a self-constructed representation space: a visual representation constructed by the policy's own objectives from vision foundation models.\n\nRepresentNav builds this space with Representation Residuals, a compact three-layer transformer that attends over features spanning the full depth of multiple complementary vision foundation models, so that the policy learns to see what it needs for navigation.\n\nIn the same space it dreams what it wants: before every action a latent chain-of-thought predicts the representation of the scene a moment ahead. The dream is trained end-to-end with the policy as a joint-embedding predictive architecture (JEPA), with a next-representation prediction loss and a regularizer on its targets.\n\nRepresentNav sets a new state of the art on VLNVerse, VLN-CE R2R, EVT-Bench, and two point-goal benchmarks, and its gains carry over to a physical robot amid clutter and moving people.\n\nOn VLNVerse fine-grained, RepresentNav achieves 83.80% success, outperforming the previous state of the art by 20.05 percentage points, and on EVT-Bench distracted tracking it reaches 85.5% with a single camera (+10.1).\n\nWith the same encoders, the self-constructed space clearly outperforms concatenating their outputs and learns to weight their layers unevenly, and a dream in it cuts collisions by a quarter.\n\nA single dreamed latent decodes into the depth, semantics, and 3D occupancy of the scene a moment ahead, more accurately than pretrained encoders applied to the real future frame, although occupancy is never supervised, and the rollout tracks the robot's own motion over the next second: the dream emerges as a compact latent world model."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RepresentNav, a navigation foundation model that constructs a representation space from features across multiple vision foundation models. Its policy predicts a near-future scene representation before each action, trained jointly with the policy. The authors report state-of-the-art results on several navigation benchmarks and gains on a physical robot among clutter and moving people. They also report fewer collisions and that a dreamed latent can decode future depth, semantics, and 3D occupancy, although occupancy is not directly supervised.",
+          "zh": "本文提出导航基础模型 RepresentNav，通过策略自身目标从多个视觉基础模型的不同深度特征构建表征空间，并在其中预测短时未来场景表征，以辅助动作决策。作者报告，该方法在多项导航基准上达到新的最佳结果，且收益延伸至有杂物和行人的实体机器人。文中还称，预测表征可减少碰撞，并能解码出未来场景的深度、语义和三维占用信息；占用信息未接受直接监督。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2056,7 +2064,11 @@
             "heading": "",
             "text": "Achieving effective locomotion on diverse terrestrial substrates can require subtle changes of limb kinematics. Biologically inspired legged robots (physical models of organisms) have shown impressive mobility on hard ground but suffer performance loss on unconsolidated granular materials like sand.\n\nBecause comprehensive limb-ground interaction models are lacking, optimal gaits on complex yielding terrain have been determined empirically.\n\nTo develop predictive models for legged devices and to provide hypotheses for biological locomotors, we systematically study the performance of SandBot, a small legged robot, on granular media as a function of gait parameters. High performance occurs only in a small region of parameter space.\n\nA previously introduced kinematic model of the robot combined with a new anisotropic granular penetration force law predicts the speed. Performance on granular media is maximized when gait parameters minimize body acceleration and limb interference, and utilize solidification features of granular media."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study examines how gait parameters affect the speed of SandBot, a small legged robot, on granular media. The authors report that high performance occurs only within a small region of parameter space. They combine a previously introduced kinematic model with a new anisotropic granular penetration force law to predict speed. Their results indicate that performance is maximized when gait parameters reduce body acceleration and limb interference while taking advantage of granular solidification. The paper notes that optimal gaits on complex yielding terrain have generally been found empirically.",
+          "zh": "本文通过系统改变 SandBot 小型足式机器人的步态参数，研究其在松散颗粒介质上的运动表现。作者指出，高性能只出现在较小的参数区域。研究将机器人运动学模型与新的各向异性颗粒穿透力定律结合，用于预测速度。实验表现表明，当步态参数能够减少机体加速度和肢体干扰，并利用颗粒介质的固化特性时，机器人在颗粒地面上的速度最高；文中也指出，复杂可变形地形的最优步态通常依赖经验确定。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
