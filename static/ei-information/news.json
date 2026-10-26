@@ -1901,7 +1901,11 @@
             "heading": "",
             "text": "HoloBoxing presents a simple recipe for learning humanoid boxing by building on a pretrained whole-body controller. The recipe separates reusable motor skills from task decisions: a compact planner requests future body-point targets, while the frozen controller handles joint-level execution.\n\nA learned decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning. Task learning then refines interaction behavior while reusing the decoder and controller, avoiding the need to relearn whole-body control.\n\nThis combination keeps task optimization focused on a compact upper policy and supplies an initial behavior before reward-driven exploration. Starting from that available controller, the recipe accounts for about seven minutes of additional training, including reused representation fitting and a single-GPU task run.\n\nThis excludes controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate the resulting behavior and the roles of imitation initialization and the target representation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "HoloBoxing presents a simulated humanoid boxing recipe built on a pretrained whole-body controller. A compact planner requests future body-point targets, while a frozen controller executes joint-level actions. A decoder maps 32-dimensional actions to structured target windows, and measured-state imitation initializes the planner before reinforcement learning refines interaction behavior. The authors report about seven minutes of additional training from an available controller, excluding controller pretraining, data preparation, evaluation, and search. Simulated boxing experiments and component controls evaluate behavior and method components.",
+          "zh": "HoloBoxing提出一种基于预训练全身控制器的仿真人形机器人拳击训练方案：紧凑规划器提出未来身体点目标，冻结的控制器负责关节级执行。解码器将32维动作映射为结构化目标窗口，并以测量状态模仿初始化规划器，再通过强化学习改进交互行为。作者称，从已有控制器出发，额外训练约需7分钟；这一时间不包括控制器预训练、数据准备、评估和搜索。仿真拳击实验及组件对照用于评估行为和方法组成部分的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1932,7 +1936,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models inherit rich semantic representations from pretrained Vision-Language Models, yet fine-tuning on limited robot demonstrations degrades this structure and undermines generalization. A fundamental question therefore arises: what constitutes a good action representation?\n\nInspired by the mirror neuron theory's insight that observation and execution share an intention-level encoding, we examine whether a robot's action representations preserve the semantic structure captured by pretrained encoders.\n\nSystematic probing confirms that this structure erodes during finetuning, and that its quality synchronizes with both task success and out-of-distribution generalization.\n\nWe further introduce a plug-and-play method that anchors action representations to a semantic manifold while decomposing representations into a shared semantic channel and a private channel, all discarded at inference, leaving the deployed model unchanged.\n\nValidated on different VLA backbones across simulation and real-world benchmarks, our method yields up to +18.7% on real-world in-distribution tasks and +21.5% on out-of-distribution generalization."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work studies whether fine-tuned vision-language-action models preserve semantic structure in their action representations. The authors report that fine-tuning on limited robot demonstrations erodes structure inherited from pretrained encoders, and that structural quality tracks task success and out-of-distribution generalization. They introduce a plug-and-play method that anchors representations to a semantic manifold and separates shared semantic and private channels. Both are discarded at inference, leaving the deployed model unchanged. Across different VLA backbones and simulation and real-world benchmarks, the authors report gains of up to 18.7% on real-world in-distribution tasks and 21.5% on out-of-distribution generalization.",
+          "zh": "本文研究视觉语言动作模型微调后动作表征中的语义结构是否保留。作者报告，有限机器人示范上的微调会削弱预训练编码器捕获的结构；系统探测还显示，结构质量与任务成功和分布外泛化同步变化。为此，作者提出一种即插即用方法，将动作表征锚定到语义流形，并拆分为共享语义通道与私有通道；两者在推理时均被丢弃，因此部署模型保持不变。该方法在不同模型骨干的仿真和真实世界基准上验证，作者报告真实世界同分布任务最高提升18.7%，分布外泛化最高提升21.5%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1963,7 +1971,11 @@
             "heading": "",
             "text": "Trajectory optimization is a cornerstone of modern robot autonomy, enabling systems to compute trajectories and controls in real-time while respecting safety and physical constraints. However, it has seen limited usage in spaceflight applications due to its heavy computational demands that exceed the capability of most flight computers.\n\nIn this work, we provide results on the first in-space demonstration of using machine learning-based warm starts for accelerating trajectory optimization for the Astrobee free-flying robot onboard the International Space Station (ISS).\n\nWe formulate a data-driven optimal control approach that trains a neural network to learn the structure of the trajectory generation problem being solved using sequential convex programming (SCP).\n\nOnboard, this trained neural network predicts solutions for the trajectory generation problem and relies on using the SCP solver to enforce safety constraints for the system.\n\nOur trained network reduces the number of solver iterations required for convergence in cases including rotational dynamics by 60% and in cases with obstacles drawn from the training distribution of the warm start model by 50%.\n\nThis work represents a significant milestone in the use of learning-based control for spaceflight applications and a stepping stone for future advances in the use of machine learning for autonomous guidance, navigation, & control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work reports an in-space demonstration aboard the International Space Station of machine learning-based warm starts for trajectory optimization on the Astrobee free-flying robot. A neural network learns structure in the trajectory-generation problem solved by sequential convex programming (SCP). Onboard, it predicts solutions, while the SCP solver enforces safety constraints. The authors report reductions in solver iterations to convergence of 60% for cases involving rotational dynamics and 50% for obstacle cases drawn from the warm-start model's training distribution. They describe the demonstration as a step toward future autonomous guidance, navigation, and control.",
+          "zh": "本文报告在国际空间站上为Astrobee自由飞行机器人首次进行基于机器学习的轨迹优化热启动演示。研究训练神经网络学习序列凸规划所解轨迹生成问题的结构；在轨运行时，网络预测解，再由序列凸规划求解器执行安全约束。作者报告，在涉及旋转动力学的案例中，网络使收敛所需求解器迭代次数减少60%；对于来自热启动模型训练分布的含障碍物案例，迭代次数减少50%。研究将此工作视为空间飞行中学习控制的进展，并称其为未来自主制导、导航与控制研究的起点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
