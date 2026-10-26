@@ -1656,7 +1656,11 @@
             "heading": "",
             "text": "Autonomous mobile robots support material transport in warehouses and industrial facilities, where navigation must adapt to changing operating conditions. Sensor observations reveal physical obstacles, but do not by themselves specify temporary access rules, route preferences, or exceptions known to operators.\n\nThis paper presents a natural-language policy interface that brings this knowledge into ROS 2 Nav2.A local large language model converts instructions into JSON policies specifying destinations, spatial constraints, and temporal or event conditions.\n\nDeterministic checks govern mission acceptance, and three costmap adapters project accepted policies into the existing navigation stack without changing its planner or controller.\n\nOn 150 researcher-authored English commands, four local models produce 107-142 correct accepted policies, compared with 44 for a rule-based parser, with 3-20 incorrect acceptances per model. Fault injection records rejection of eight endpoint/JSON faults and 29 validator-stage faults.\n\nNavigation experiments use correct task policies to evaluate keepouts, zone costs, person-dependent regions, and event-conditioned passage in simulation and on a TurtleBot3.For Tasks 1-3, mean travel times are 18.4-24.5% lower in simulation and 23.1-35.0% lower on the physical testbed than with the baseline lacking those policies.\n\nA native KeepoutFilter comparison and two-robot demonstrations examine basic keepout behavior and shared policy projection. The interface connects operator instructions to explicit navigation policies while retaining Nav2's planning and control components."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an interface that converts natural-language instructions into JSON navigation policies for ROS 2 Nav2. A local language model specifies destinations, spatial constraints, and temporal or event conditions; deterministic checks govern acceptance, and three costmap adapters apply accepted policies without changing the planner or controller. On 150 researcher-authored English commands, four models correctly accepted 107–142 policies, versus 44 for a rule-based parser, with 3–20 incorrect acceptances per model. Simulation and TurtleBot3 experiments compared task travel times with a baseline.",
+          "zh": "本文提出将自然语言指令转换为 ROS 2 Nav2 导航策略的接口：本地大语言模型生成包含目的地、空间约束及时间或事件条件的 JSON 策略，经确定性检查后由三个代价地图适配器接入现有导航栈，不改变规划器或控制器。150 条研究者编写的英文指令测试显示，四种模型正确接受 107 至 142 条策略，规则解析器为 44 条；各模型有 3 至 20 条错误接受。仿真和 TurtleBot3 实验还比较了采用策略与基线的任务耗时。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1687,7 +1691,11 @@
             "heading": "",
             "text": "Safe human--robot collaboration requires more than visual description: a monitor must determine whether the robot body is safely separated, already colliding with the scene or a person, or about to collide.\n\nWe call this capability collision grounding: binding visual observations to robot body geometry, camera viewpoint, scene layout, human proximity, and temporal motion in order to infer present and imminent contact. We introduce TouchSafeBench, a physics-grounded benchmark for evaluating collision grounding in vision-language models (VLMs).\n\nBuilt in Habitat~3.0, TouchSafeBench contains 2,940 simulated indoor co-presence episodes across social navigation and social rearrangement, with synchronized multi-view RGB-D observations, top-down trajectory maps, calibrated camera metadata, and simulator-derived contact labels.\n\nWe study two deployment-facing tasks: classifying the current safety state and warning about imminent collision before contact.\n\nAcross three frontier or robotics-oriented VLMs and nine visual representations, current models remain far from reliable: the best average Macro-F1 stays below 50\\%, explicit depth is not automatically transformed into robot-body collision evidence, and robot--scene contact is consistently harder than human-contact risk.\n\nTouchSafeBench reveals a central limitation of embodied VLMs: visual fluency does not imply physical accountability. Reliable robot safety monitors will need representations that explicitly bind viewpoint, robot morphology, metric geometry, and future collision. The benchmark is available at https://jun25336-bit.github.io/TouchSafeBench/ ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TouchSafeBench for evaluating whether vision-language models can relate visual observations to robot geometry, viewpoint, scene layout, human proximity, and motion to identify current or imminent collisions. Built in Habitat 3.0, the benchmark has 2,940 simulated indoor co-presence episodes across social navigation and rearrangement, with multi-view RGB-D observations and simulator-derived contact labels. Evaluation of three models and nine visual representations found that the best average Macro-F1 remained below 50%; explicit depth did not automatically provide evidence of robot-body collision, and robot–scene contact was harder to assess than human-contact risk.",
+          "zh": "本文提出 TouchSafeBench，用于评估视觉语言模型将视觉观察与机器人几何、视角、场景布局、人类距离及运动信息关联，以判断当前或即将发生的碰撞。该基准在 Habitat 3.0 中包含 2,940 个模拟室内共处片段，覆盖社交导航与物品整理，并提供多视角 RGB-D 观察及模拟器接触标签。对三种模型和九种视觉表示的评估显示，最佳平均 Macro-F1 低于 50%；显式深度信息未必转化为机器人身体碰撞证据，机器人与场景接触也比人类接触风险更难判断。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1718,7 +1726,11 @@
             "heading": "",
             "text": "Swarm morphogenesis requires robots to assemble desired shapes through local interactions. We present a modular framework integrating neural cellular automata (NCA) with existing site selection and collision-aware control. Within this framework, we introduce a decentralized attachment-site discovery mechanism.\n\nRobots already in the formation update and share local NCA states to identify new attachment sites, enabling progressive growth without a predefined list of sites during deployment.\n\nTo bridge the mismatch between conventional NCA growth and gradual physical assembly, we additionally propose offline sparse-retention fine-tuning that simulates partial attachment, together with a false-positive loss that penalizes invalid site activations.\n\nSimulations demonstrate formation of diverse lattice morphologies, scaling to several hundred robots, and substantial improvements in morphology accuracy from the proposed fine-tuning. Experiments with Crazyflie quadrotors validate the integrated execution pipeline using robot-relative observations reconstructed from external tracking."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a swarm morphogenesis framework combining neural cellular automata with existing site selection and collision-aware control, and adds decentralized attachment-site discovery. Robots in a formation share local states to identify new sites for progressive growth without a predefined deployment list. The authors also propose offline sparse-retention fine-tuning to simulate partial attachment and a loss that penalizes invalid site activations. Simulations show diverse lattice morphologies, scaling to several hundred robots, and improved morphology accuracy with fine-tuning. Crazyflie quadrotor experiments validate the integrated execution pipeline.",
+          "zh": "本文提出将神经元胞自动机与既有站点选择和避碰控制结合的群体形态生成框架，并设计去中心化附着点发现机制。已在编队中的机器人更新并共享局部状态，以逐步识别新附着点，无需部署时预先列出站点。作者还提出离线稀疏保留微调，以模拟部分附着，并加入惩罚无效站点激活的损失。仿真展示了多种晶格形态及扩展至数百台机器人的能力，并显示微调可提升形态精度；Crazyflie 四旋翼实验验证了集成执行流程。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
