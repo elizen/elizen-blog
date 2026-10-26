@@ -1250,7 +1250,11 @@
             "heading": "",
             "text": "A robot generalist must interpret a scene, act on it, and satisfy every condition of a task. How far do frontier vision-language models (VLMs) meet these demands? We introduce Embodied Agent Arena, evaluating ten VLM agents across Geometry, Spatial Reasoning, Affordance, Task Planning, and Manipulation.\n\nIts 1,000 cases combine 32 established sources with GeoProbe, our 168-case benchmark for camera, motion, depth, and scale estimation. A minimal harness leaves task decisions to the model through source-native interfaces.\n\nClosed-weight models lead all five domains, whereas open-weight VLMs show useful spatial reasoning but substantially lower planning and manipulation success. Beneath these averages, similar geometric errors conceal different scale and shape distortions, and valid region estimates need not identify usable action points.\n\nDuring execution, agents can achieve early subgoals yet lose object control, bind an action to the wrong receiving region, or stop before the required physical state holds. Additional computation does not uniformly resolve these failures: code repair can restore execution without completing the task, while self-review can reverse correct judgments.\n\nFailure costs also differ: the strongest planners concentrate failed-token expenditure in prolonged body-control tasks, whereas other models fail broadly across procedures. Matched traces show how successful recovery uses feedback to restore a missing prerequisite and advance the remaining task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Embodied Agent Arena, which evaluates ten vision-language model agents in geometry, spatial reasoning, affordance, task planning, and manipulation. Its 1,000 cases include GeoProbe, a benchmark for estimating camera, motion, depth, and scale. Closed-weight models lead in all five domains, while open-weight models show useful spatial reasoning but lower planning and manipulation success. Agents may lose object control, select the wrong receiving region, or stop before a required physical state is reached. More computation does not consistently fix these failures.",
+          "zh": "论文介绍具身智能体竞技场，用于评测十种视觉语言模型智能体在几何、空间推理、可供性、任务规划和操作五个领域的表现。评测包含1,000个案例，其中包括用于估计相机、运动、深度和尺度的GeoProbe基准。闭源模型在五个领域均领先；开源模型具备一定空间推理能力，但规划和操作成功率明显较低。执行中，智能体可能失去物体控制、选错接收区域或未达到任务要求的物理状态。额外计算不能一致地解决这些问题；匹配轨迹显示，成功恢复会利用反馈补足前置条件并推进剩余任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1281,7 +1285,11 @@
             "heading": "",
             "text": "Regularised reinforcement learning (RL) has provable robustness guarantees that should ease the transfer of policies from simulation to robots, known as sim-to-real.\n\nYet, weakly regularised algorithms like Proximal Policy Optimisation (PPO) remain the de facto choice in sim-to-real pipelines, while the practical benefits of regularisation for transfer remain poorly characterised.\n\nIn this work, we study the sim-to-real performance of commonly used RL algorithms, with the aim of characterising the effects of regularisation on robotic performance. To that end, we derive Soft MellowMax Actor-Critic (SMM-AC), a novel regularised RL algorithm based on the soft mellowmax value function, which carries strong robustness guarantees.\n\nOn MuJoCo continuous control benchmarks, SMM-AC is competitive with baselines like Soft Actor-Critic (SAC).On real robots, SMM-AC achieves higher return, while exhibiting greater robustness to perturbations in observations, the environment, and dynamics than baselines.\n\nTogether, these results demonstrate that regularised RL improves real-world policy deployment through better robustness to the sim-to-real gap, and changing real-world conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how regularization affects reinforcement learning transfer from simulation to real robots and derives SMM-AC, a regularized algorithm based on the soft mellowmax value function. The authors state that it has strong robustness guarantees. On MuJoCo continuous-control benchmarks, SMM-AC is competitive with baselines such as Soft Actor-Critic. On real robots, it achieves higher return and exhibits greater robustness to perturbations in observations, the environment, and dynamics. The authors conclude that regularized RL improves real-world policy deployment through robustness to the sim-to-real gap and changing conditions.",
+          "zh": "论文研究正则化强化学习对仿真到真实机器人迁移的影响，并提出基于soft mellowmax价值函数的正则化算法SMM-AC。作者称该算法具有较强的鲁棒性保证。在MuJoCo连续控制基准上，SMM-AC与软演员评论家等基线算法表现相当；在真实机器人上，它取得更高回报，并且对观测、环境和动力学扰动表现出更强鲁棒性。作者据此认为，正则化强化学习可通过增强对迁移差距及真实条件变化的鲁棒性，改善策略在现实世界中的部署表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1312,7 +1320,11 @@
             "heading": "",
             "text": "Humanoid robots must coordinate locomotion and manipulation in everyday environments, yet progress is difficult to assess across differing policies, controllers, and task settings. LocoManiLab provides an integrated testbed spanning data collection and generation, policy training, evaluation, and physical deployment.\n\nIts task suite covers 234 atomic and compositional tasks across five household scene categories, supported by 51.5 hours of simulated teleoperation.\n\nThe evaluation covers twelve policies with a shared controller across task and scene splits and perturbation levels, two policies across five controllers, and studies of demonstration scale and data-source mixtures.\n\nSuccess rates fall on unseen tasks and scenes and generally decline as visual perturbations increase, with differences in generalization and robustness across policies.\n\nFor data generation, a humanoid motion generation model is fine-tuned for loco-manipulation to study the alignment of its outputs with task execution requirements and its integration into the data generation pipeline. Three simulated loco-manipulation tasks closely match real-world setups, enabling evaluation of three policies in both domains.\n\nSimilar policy rankings support the reliability of simulation-based evaluation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LocoManiLab, an integrated testbed for humanoid loco-manipulation covering data generation, policy training, evaluation, and physical deployment. Its task suite includes 234 atomic and compositional tasks in five household scene categories, supported by 51.5 hours of simulated teleoperation. Evaluations compare policies, controllers, demonstration scale, and data mixtures. Success rates decline on unseen tasks and scenes and generally fall with stronger visual perturbations, with varying generalization and robustness across policies. Three simulated tasks closely match real-world setups; similar policy rankings across both domains support the reliability of simulation-based evaluation.",
+          "zh": "论文介绍LocoManiLab，一个用于人形机器人移动操作研究的综合测试平台，涵盖数据生成、策略训练、评估和实体部署。任务集包含五类家庭场景中的234项原子及组合任务，并由51.5小时仿真遥操作数据支持。评估考察多种策略、控制器、示范规模和数据来源组合。结果显示，未见任务和场景中的成功率下降，视觉扰动增强时成功率通常也降低，不同策略的泛化与鲁棒性各异。三项仿真任务与真实场景设置相近；两域中的策略排名相似，支持仿真评估的可靠性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
