@@ -944,7 +944,11 @@
             "heading": "",
             "text": "Navigating complex, high-dimensional biological search spaces necessitates scalable physical and computational intelligence to explore beyond local optima through iterative self-play across ideation, experimentation, and automation.\n\nTranslating experimental designs into reliable physical execution remains bottlenecked by static laboratory automation and unmodeled physical variability.\n\nTo address this, we introduce VERified Infrastructure for Discovery Laboratories, or VERID, a foundational infrastructure designed to bridge the gap between the high-level reasoning of artificial intelligence (AI) agents and complex, error-prone physical realities of wet labs.\n\nVERID is a persistent, high-fidelity semantic digital twin of the laboratory workcell that provides four core services: queryable introspection for agentic reasoning, time-compressed simulation for protocol validation, comprehensive trace persistence for a complete scientific record, and a framework for safe execution.\n\nWe present three case studies using aqueous dye and deionized water mixtures to validate the optical and fluidic foundations of VERID. These studies demonstrate how VERID enables pre-emptive detection of critical errors in experimental protocols, stateful mid-run error recovery and post-hoc identification of subtle physical failures.\n\nThe simulation functions as a discrete accounting engine, allowing agents to safely and inexpensively explore experimental designs in silico and refine experimental strategies through iterative self-play. VERID also captures structured multimodal experimental data for downstream analysis, knowledge mining and agent training.\n\nWe argue that this semantic layer is an essential prerequisite for deploying autonomous agents in the biochemical and biomedical sciences, ensuring data integrity, operational safety, and paving the way for tackling previously intractable grand challenges in biology."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces VERID, infrastructure intended to bridge AI agents’ high-level reasoning and physical execution in wet laboratories. Its high-fidelity semantic digital twin provides queryable workcell state, time-compressed simulation, trace persistence, and a framework for safe execution. Three case studies using aqueous dye and deionized water mixtures validate its optical and fluidic foundations. The authors report pre-emptive protocol error detection, mid-run recovery, and post-hoc identification of subtle physical failures. They argue this semantic layer is a prerequisite for autonomous agents in biochemical and biomedical sciences.",
+          "zh": "本文介绍 VERID，一种连接人工智能代理高层推理与湿实验室物理执行的基础设施。它以高保真实验室工作单元语义数字孪生提供可查询状态、时间压缩仿真、实验轨迹记录和安全执行框架。作者通过三项使用水性染料与去离子水混合物的案例，验证其光学和流体基础，并展示协议错误的预先检测、运行中错误恢复及细微物理故障的事后识别。仿真用于实验设计的计算机内探索；作者认为该语义层是生化和生物医学自主代理部署的重要前提。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -975,7 +979,11 @@
             "heading": "",
             "text": "These lecture notes provide an introduction to optimization, optimal control, and reinforcement learning for robotics, emphasizing their mathematical connections and practical relevance. They present established material compiled and edited by Yonghyeon Lee, rather than new research results.\n\nThe notes were developed through a human and AI collaborative writing process, with AI assistance in drafting, organizing, and refining the exposition. This first version is a preliminary collection of notes, not yet a fully developed textbook, and currently contains no figures or graphs. The notes may be revised, corrected, and expanded in future versions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "These lecture notes introduce optimization, optimal control, and reinforcement learning for robotics, emphasizing mathematical connections and practical relevance. They compile and edit established material rather than present new research results. The notes were produced through human and AI collaboration, with AI assistance in drafting, organizing, and refining the exposition. The authors describe this first version as a preliminary collection rather than a fully developed textbook; it contains no figures or graphs and may be revised, corrected, and expanded in future versions.",
+          "zh": "这份讲义介绍机器人领域的优化、最优控制与强化学习，重点说明它们在数学上的联系和实际意义。内容是对既有材料的编纂和编辑，作者明确表示并非新的研究成果。讲义由人类与人工智能协作编写，人工智能参与起草、组织和完善说明。当前版本属于初步笔记集，尚未发展为完整教材，也不含图或图表；作者表示未来版本可能修订、纠正和扩充。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1006,7 +1014,11 @@
             "heading": "",
             "text": "Coding agents can translate language instructions into robot programs. For contact-rich manipulation, a key challenge is to generate and refine control logic that responds to physical interaction.\n\nWe present FORCA, a coding agent that takes visual observations and wrist force/torque (F/T) measurements as input to write Python programs for contact probing and force-responsive motion. Between executions, the agent inspects force records alongside visual outcomes to diagnose failures and revise both motion and force-feedback control logic.\n\nFORCA requires no demonstrations, task-specific training, or simulation. Across five real-robot tasks, we demonstrate its effectiveness in three forms of contact-rich manipulation: improving manipulation accuracy, adapting to changes in object or surface properties, and regulating contact under surface variation and object motion.\n\nCompared with a vision-only variant of the same agent, FORCA improves grasp accuracy and task success and reduces contact loss in wiping and peeling."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FORCA, a coding agent for contact-rich robot manipulation that uses visual observations and wrist force/torque measurements to write Python programs for probing and force-responsive motion. After each execution, it reviews force records and visual outcomes to diagnose failures and revise control logic. The authors report that FORCA needs no demonstrations, task-specific training, or simulation. In five real-robot tasks, they show manipulation accuracy improvement, adaptation to object or surface changes, and contact regulation. Compared with its vision-only variant, it improves grasp accuracy and task success and reduces contact loss in wiping and peeling.",
+          "zh": "本文提出 FORCA，一种利用视觉观察和腕部力/力矩测量生成机器人程序的编码代理，面向接触丰富的操作任务。代理编写接触探测与力响应运动的 Python 程序，并在每次执行后检查力记录和视觉结果，以诊断失败并修改控制逻辑。作者称该方法无需示范、任务专用训练或仿真，并在五项真实机器人任务中展示了操作精度提升、对物体或表面属性变化的适应，以及接触调节能力。与同一代理的纯视觉版本相比，FORCA提高抓取准确率和任务成功率，并减少擦拭与剥离中的接触丢失。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
