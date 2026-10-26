@@ -1761,7 +1761,11 @@
             "heading": "",
             "text": "Recent robot manipulation policies commonly predict continuous action chunks directly from observations, without explicitly modeling reusable structure in the action space. However, manipulation demonstrations often contain recurring short-horizon motion patterns that are shared across tasks.\n\nWe introduce \\textsc{RoboCode}, which learns these patterns through a shared soft-gated primitive action interface. Rather than assigning each action chunk to a single discrete code, \\textsc{RoboCode} represents it as a soft composition of multiple learned primitives, providing a flexible intermediate representation of short-horizon actions.\n\nThe primitive interface is learned from action chunks pooled across multiple tasks and then frozen while task-specific state encoders are trained to map current state inputs into the shared latent space. Experiments on five ManiSkill manipulation tasks address three questions.\n\nFirst, the learned primitive interface reconstructs action chunks with an average reconstruction MSE of 0.0187.Second, analysis of code activations reveals structured code reuse across tasks.\n\nThird, \\textsc{RoboCode} achieves the highest or tied closed-loop success rate on all evaluated tasks, with an average success rate of 75.6%, compared with 68.8% for ACT and 41.6% for the larger Diffusion Policy baseline.\n\nThese results suggest that soft-gated primitive codebooks provide an effective and interpretable intermediate action representation for robot manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboCode learns a shared, soft-gated interface of reusable action primitives from action chunks pooled across tasks. Each short-horizon action is represented as a composition of primitives, and task-specific state encoders are trained after the interface is frozen. In experiments on five ManiSkill manipulation tasks, the authors report an average reconstruction MSE of 0.0187 and structured code reuse across tasks. RoboCode has the highest or tied closed-loop success rate on each evaluated task, averaging 75.6%.",
+          "zh": "RoboCode从多项任务的动作片段中学习共享的软门控动作原语，将短时动作表示为多个原语的组合，而非单一离散代码。学习出的接口随后被冻结，任务专属状态编码器再将当前状态映射到共享潜在空间。在五项ManiSkill操作任务的实验中，作者报告平均重建MSE为0.0187，代码激活显示跨任务复用结构；闭环成功率在所有评测任务上最高或并列最高，平均为75.6%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1792,7 +1796,11 @@
             "heading": "",
             "text": "Robotic minimally invasive surgery offers well-documented clinical benefits, but the cost and infrastructure requirements of purpose-built platforms limit access in rural and lower-resourced facilities.\n\nRecent work has teleoperated general-purpose robots for laparoscopic tasks and in vivo procedures, but relied on handheld instruments coupled through passive linkages rather than native robotic actuation. Instead, we adapt da Vinci Classic and Xi instruments onto general-purpose robots that can integrate in clinical workflows.\n\nWe present DASH, a da Vinci Adapter for Serial-link and Humanoid platforms, consisting of two types of adapters that require no modification to the instruments themselves.\n\nEach adapter is compatible with many robotic platform load capacities, engages the instrument's native latch, and wirelessly identifies inserted tools to load instrument-specific kinematics and coupling matrices. Teleoperated experiments demonstrate the efficacy of DASH and its benefits for enabling research access to surgical robotic platforms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DASH adapts da Vinci Classic and Xi instruments for use with general-purpose serial-link and humanoid robots. It consists of two adapter types and requires no changes to the instruments. The adapters support various robot load capacities, engage each instrument’s native latch, and wirelessly identify inserted tools so that instrument-specific kinematics and coupling matrices can be loaded. Teleoperated experiments demonstrate the adapters’ efficacy and their potential to broaden research access to surgical robotic platforms.",
+          "zh": "DASH将da Vinci Classic和Xi手术器械适配到通用串联机器人及人形机器人平台，旨在降低手术机器人研究的平台可及性门槛。该方案包含两类适配器，无需改动器械本身；适配器可匹配多种机器人负载能力，连接器械原生锁扣，并通过无线方式识别插入工具，以载入对应的运动学和耦合矩阵。遥操作实验展示了DASH的有效性及其对手术机器人研究的支持作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1823,7 +1831,11 @@
             "heading": "",
             "text": "Preference-based reinforcement learning (PbRL) has emerged as a promising paradigm for learning robot behaviors aligned with human intent. However, its scalability is fundamentally limited by the need to collect expensive human preference labels for every new task.\n\nIn this work, we present PrefO2O, an offline-to-online latent preference transfer framework that enables zero-shot PbRL on unseen target tasks without requiring any human feedback.\n\nThe core idea is to learn a task-invariant latent preference space from a small amount of offline preference data on source tasks, where transferable preference structures are disentangled from task-specific variations.\n\nThis learned manifold allows PrefO2O to transfer preference structures and reward priors to new tasks under distribution shift, while confidence-weighted optimal transport alignment generates reliable pseudo-preference supervision for online reward adaptation.\n\nExtensive experiments on robotic manipulation and locomotion benchmarks demonstrate that PrefO2O substantially outperforms existing preference-transfer baselines and matches or exceeds PbRL methods trained with real human feedback, while generalizing across multi-to-one and one-to-one transfer settings as well as across different robot embodiments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PrefO2O is an offline-to-online latent preference transfer framework intended to enable zero-shot preference-based reinforcement learning on unseen tasks without new human feedback. It learns a task-invariant preference space from limited offline preference data on source tasks, then uses confidence-weighted optimal transport alignment to produce pseudo-preference supervision for online reward adaptation. Experiments on robotic manipulation and locomotion benchmarks report that PrefO2O outperforms existing preference-transfer baselines and matches or exceeds methods trained with real human feedback across the evaluated transfer settings and robot embodiments.",
+          "zh": "PrefO2O面向新任务中昂贵的人类偏好标注需求，提出离线到在线的潜在偏好迁移框架，目标是在未见目标任务上实现无需人类反馈的零样本偏好强化学习。它从少量源任务离线偏好数据中学习任务不变的潜在偏好空间，并通过置信度加权的最优传输对齐生成伪偏好监督，用于在线奖励适配。作者报告，在机器人操作和运动基准及多种迁移设置中，该方法优于现有偏好迁移基线，并匹配或超过使用真实人类反馈训练的方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1854,7 +1866,11 @@
             "heading": "",
             "text": "Robots deployed in human-centric environments routinely receive natural-language descriptions of spatial information (\"I left my backpack on the table\") that reference parts of the world beyond their perceptual field of view.\n\nTraditional metric-semantic mapping ignores this signal, while off-the-shelf multimodal models remain limited in 3D spatial reasoning and are not directly amenable to fusion with other sensor modalities.\n\nTo convert language observations into a calibrated spatial distribution, we train a Language Sensor Model (LSM) that maps each utterance and its scene-graph context to a multimodal distribution, with mixture weights encoding referential ambiguity (e.g., which table) and component covariances encoding spatial uncertainty (e.g., where on the table the target lies).\n\nWe then introduce VL-Map (Vision-Language Metric-Semantic Mapping), a probabilistic framework that treats these language predictions as stochastic observations and fuses them with onboard perception within a unified belief map.\n\nOn the VLA-3D benchmark as well as on a real-world mobile robot, LSM is the only language predictor whose covariance estimates remain within the calibrated regime; fused into VL-Map, it leads to more accurate predictions of the target object location (about 70% more probability mass on the true target compared to the strongest foundation-model baseline).\n\nProject website: https://aryan-naveen.github.io/language-as-a-sensor/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents the Language Sensor Model (LSM), which maps an utterance and scene-graph context to a calibrated multimodal spatial distribution. Mixture weights represent ambiguity about the referent, while component covariances represent location uncertainty. VL-Map treats language predictions as stochastic observations and fuses them with onboard perception in a unified belief map. On the VLA-3D benchmark and a real-world mobile robot, the authors report calibrated covariance estimates for LSM and about 70% more probability mass on the true target location than the strongest foundation-model baseline after fusion.",
+          "zh": "本文将自然语言描述作为空间观测，提出语言传感器模型LSM，将话语及场景图上下文映射为经过校准的多模态空间分布，其中混合权重表示指称歧义，协方差表示位置不确定性。VL-Map将语言预测视为随机观测，并与机器人自身感知融合到统一信念地图中。在VLA-3D基准和真实移动机器人实验中，作者报告LSM的协方差估计保持在校准范围内；融合后的目标位置预测相较最强基础模型基线，在真实目标上的概率质量约高70%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
