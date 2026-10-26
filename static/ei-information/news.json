@@ -233,7 +233,11 @@
             "heading": "",
             "text": "A central challenge in deploying robot policies is inference-time policy steering: redirecting a policy to satisfy natural-language preferences unseen in training, without retraining.\n\nExisting methods fail in two modes: end-to-end policies such as vision-language-action models (VLAs) require fine-tuning or expert-level guidance, while neuro-symbolic methods rely on predefined symbols whose edits can yield logically valid but physically infeasible plans.\n\nWe propose ReStruct, a zero-shot method built on a neural automaton policy that decomposes a visuomotor policy into a high-level state-machine skeleton and a low-level residual controller.\n\nA vision-language model (VLM) grounds the preference in the skeleton's learned symbols, refining them if needed, and compiles it into a temporal-logic automaton, whose synchronous product with the skeleton reconfigures the task structure. With the controller frozen, the skeleton's action priors are updated for physically-aware control.\n\nIn simulation and real-world experiments, ReStruct steers preferences from object-centric specifications to temporal-logic constraints, including novel combinations of demonstrated behaviors that require compositional generalization.\n\nAverage preference-following success is 70.9% in simulation and 92.5% on a real robot, surpassing baselines like the prompt-steered vision-language-action model {\\pi}0.5."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ReStruct, a zero-shot method for steering robot policies without retraining. It separates a visuomotor policy into a high-level state-machine skeleton and a low-level residual controller. A vision-language model maps preferences to learned symbols and compiles them into a temporal-logic automaton to reconfigure task structure; the controller stays frozen while action priors are updated for physical awareness. The authors report simulation and real-robot results, including 70.9% and 92.5% average preference-following success, respectively.",
+          "zh": "论文提出 ReStruct，一种无需重新训练的零样本机器人策略引导方法。它将视觉运动策略拆为高层状态机骨架和低层残差控制器，由视觉语言模型把偏好映射到学习符号并编译为时序逻辑自动机，再重构任务结构；控制器保持冻结，同时更新动作先验以考虑物理可行性。作者报告，该方法在仿真和真实机器人实验中支持从物体偏好到时序约束的引导，也能组合已演示行为；偏好遵循成功率分别为70.9%和92.5%，高于所比较基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -264,7 +268,11 @@
             "heading": "",
             "text": "Flow-matching Vision-Language-Action (VLA) models generate expressive continuous trajectories for robotic manipulation, yet balancing real-time responsiveness with execution stability remains a persistent challenge. Standard deployment workflows typically treat numerical solver depth and execution horizon as decoupled choices.\n\nThe horizon amortizes inference latency, while solver depth is kept high to preserve integration fidelity. In this paper, we reveal a fundamental compute-execution coupling in flow-matching VLAs governed by a systematic sign reversal.\n\nWhile coarse numerical integration degrades precision under rapid replanning, it markedly improves task performance under extended open-loop commitment. Geometrically, numerical truncation contracts lateral action dispersion around an invariant trajectory centroid, serving as an implicit regularizer that suppresses compounding open-loop drift.\n\nAcross LIBERO, RoboTwin 2.0, and real-world Franka manipulation on representative VLA backbones including $\\pi_0$, $\\pi_{0.5}$, and GR00T, exploiting this joint coupling consistently achieves superior task success while drastically lowering inference latency, entirely training-free and without architectural modifications.\n\nThese findings establish numerical sampling depth as an operational variance regulator, shifting its role from a static precision budget to an active deployment knob in robot learning. Project page: https://jiabingyang01.github.io/Horizon-Depth-VLA/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines how numerical sampling depth interacts with execution horizon in flow-matching vision-language-action policies. The authors report that coarse integration reduces precision during rapid replanning but improves performance with extended open-loop execution. They explain this as truncation contracting lateral action dispersion around an invariant trajectory centroid and suppressing accumulated drift. Across LIBERO, RoboTwin 2.0, and real-world Franka manipulation, they report improved task success and lower inference latency without training or architectural changes.",
+          "zh": "论文研究流匹配视觉语言动作策略中数值采样深度与执行时域的耦合。作者报告，快速重规划时粗积分会降低精度，但延长开环执行时可提升任务表现；其解释是数值截断收缩动作在不变轨迹中心周围的横向离散，从而抑制漂移累积。在 LIBERO、RoboTwin 2.0 及真实 Franka 操作实验中，作者称该联合设置在无需训练或改动架构的情况下提升任务成功率并降低推理延迟。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -295,7 +303,11 @@
             "heading": "",
             "text": "The life-cycle of robotics foundation models crucially depends on data labels. Outcome reward labels are needed for monitoring real-world deployments. Process reward labels are needed during RL post-training. Timestamped captions are needed for filtering and balancing pretraining data.\n\nWe present Flora, an industrial-quality data engine used for training GR00T models, that simultaneously covers these capabilities. Flora achieves SOTA scores on the captioning benchmark WGO-Bench and reward benchmarks RoboReward and Robometer. On internal benchmarks it is competitive with GPT-6 Astra while beating other frontier models.\n\nThe model is substantially cheaper than API-based alternatives, roughly 125 times cheaper than GPT-6 Astra. Florais battle tested at scale, labeling 200,000 hours of data per day across 512 GB300s.\n\nBy open-sourcing our data engine, we enable researchers to scale custom robotics datasets and explore emerging applications such as physical auto-research and human-to-robot transfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Flora, an open model suite for robotics data labeling. It covers outcome-reward labels for monitoring deployments, process-reward labels for reinforcement-learning post-training, and timestamped captions for filtering and balancing pretraining data. The authors say Flora is used to train GR00T models and achieves leading scores on WGO-Bench, RoboReward, and Robometer. They report competitive internal benchmark performance against GPT-6 Astra, roughly 125-fold lower cost, and labeling 200,000 hours of data per day.",
+          "zh": "论文介绍 Flora，一个面向机器人数据标注的开放模型套件，覆盖真实部署监测所需的结果奖励标签、强化学习后训练所需的过程奖励标签，以及用于筛选和平衡预训练数据的时间戳字幕。作者称该数据引擎用于训练 GR00T 模型，在 WGO-Bench、RoboReward 和 Robometer 基准取得领先成绩；内部基准表现可与 GPT-6 Astra 相比，并称成本约为其 API 服务的125分之一。作者还报告其每日为20万小时数据生成标签，并开放该引擎供研究者扩展数据集和探索新应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
