@@ -2795,7 +2795,11 @@
             "heading": "",
             "text": "To evaluate the frontier, we must measure models not by what they say, but by what they can engineer and build in grounded physical environments. We introduce ArtifactArena, an open-ended platform where models face a physically grounded hardware-software co-design challenge: engineering fully functional robots to compete in a simulated arena.\n\nWe evaluate a frontier model's zero-shot, verifier guided refinement, and open-ended physical design capabilities through three harnesses that refine their bot artifacts based on text descriptions, physics simulator feedback, and gameplay data.\n\nWe benchmark these capabilities with an Elo ranking of frontier models derived from head-to-head tournaments between their artifacts.\n\nBy releasing this framework and tournament infrastructure for ongoing community submissions, we establish a living, non-saturating testbed to continuously measure the expanding limits of open-ended intelligence in the physical world. Please visit https://artifactarena.ai for more information."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ArtifactArena is an open-ended platform for evaluating models on hardware-software co-design by having them engineer functional robots for a simulated arena. Three harnesses assess zero-shot performance, verifier-guided refinement, and open-ended physical design, refining bot artifacts using text descriptions, physics-simulator feedback, and gameplay data. The benchmark ranks frontier models with Elo scores derived from head-to-head tournaments between their artifacts. The authors release the framework and tournament infrastructure for ongoing community submissions, presenting it as a continuing testbed for measuring open-ended intelligence in physically grounded tasks.",
+          "zh": "论文介绍 ArtifactArena，这是一个开放式平台，用模拟竞技场中的机器人设计任务评估模型的软硬件协同设计能力。三个评测框架分别考察模型的零样本能力、由验证器引导的迭代改进能力，以及开放式物理设计能力，并依据文本描述、物理模拟器反馈和游戏数据改进机器人作品。研究通过作品之间的直接比赛生成前沿模型的 Elo 排名。作者将该框架及竞赛基础设施作为持续开放的社区测试平台发布，目标是长期衡量模型在物理世界开放式智能任务中的能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2826,7 +2830,11 @@
             "heading": "",
             "text": "Existing approaches for robot learning in simulation often require substantial manual effort to construct scenes and specify tasks, limiting training scalability and data diversity. Meanwhile, in-the-wild robot demonstrations naturally provide diverse and realistic observations of real-world interactions.\n\nLeveraging these demonstrations for simulation requires both high-fidelity visual reconstruction and physically consistent interactions.\n\nGeneral-purpose agents offer flexible adaptation to diverse scenarios and strong reasoning about 3D spatial relationships, while specialized generative models provide high-fidelity reconstruction of scene appearance and geometry.\n\nWe introduce WorldMirror, an agentic real-to-sim framework that constructs interactive digital twins from in-the-wild robot demonstrations. Our central idea is to formulate real-to-sim construction as the iterative refinement of an executable world program.\n\nA coding agent decomposes the observed scene, plans reconstruction steps, and orchestrates specialized image and 3D generation tools, refining the program through verification feedback.\n\nA camera-pose-anchored scene representation organizes the world into static visual context, support geometry, and editable interactive assets while preserving spatial relationships among the scene, objects, and robot.\n\nThe agent uses this representation to diagnose and correct reconstruction errors, enabling physically consistent interaction and trajectory replay. Experiments on DROID demonstrate that WorldMirror can reconstruct visually faithful and geometrically consistent interactive worlds while preserving the physical validity of recorded robot trajectories."
           }
-        ]
+        ],
+        "summary": {
+          "en": "WorldMirror is a framework for turning in-the-wild robot demonstrations into interactive digital twins, addressing the manual effort involved in building simulation scenes and tasks. It treats real-to-sim construction as iterative refinement of an executable world program: a coding agent decomposes scenes, plans reconstruction, coordinates image and 3D generation tools, and uses verification feedback to revise the program. Its camera-pose-anchored representation organizes visual context, support geometry, and editable assets while preserving spatial relationships. Experiments on DROID show visually faithful, geometrically consistent interactive reconstructions that preserve the physical validity of recorded robot trajectories.",
+          "zh": "论文提出 WorldMirror，将真实环境中的机器人演示转化为可交互的数字孪生世界，以减少仿真场景构建和任务指定中的人工工作。该框架把真实到仿真的构建视为可执行世界程序的迭代改进：编码智能体分解场景、规划重建步骤，并调用图像与三维生成工具，依据验证反馈修正程序。相机位姿锚定的场景表示组织视觉背景、支撑几何和可编辑资产，并保留空间关系。DROID 实验显示，WorldMirror 可重建视觉逼真、几何一致的交互世界，并保持记录轨迹的物理有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2857,7 +2865,11 @@
             "heading": "",
             "text": "Training generalizable embodied agents requires realistic, varied, and simulation-ready indoor environments. Language-guided methods support semantic planning and object-level reasoning, but precise spatial grounding remains difficult.\n\nVisual generative models offer rich priors over plausible arrangements, yet their outputs require geometric reasoning to become physically valid 3D scenes. We introduce SceneBloom, an agentic framework that combines visual layout sampling with contract-guided 3D compilation.\n\nA hierarchical sampler uses diffusion priors to generate furniture arrangements within functional zones. A compiler then uses relations extracted from each proposal to guide geometric fitting and local pose correction.\n\nAcross five room types, SceneBloom attains the highest visual quality and physical stability among the compared methods and is the only method with no detected mesh collisions and out-of-bounds objects. Its layouts are also closer to the distribution of real rooms than those of all compared baselines.\n\nObject navigation policies trained in these realistic scenes achieve a higher success rate in held-out real scans than those trained on an equal number of real training scans. Code is available at https://github.com/Tinaliu0123/scenebloom."
           }
-        ]
+        ],
+        "summary": {
+          "en": "SceneBloom combines visual layout sampling with contract-guided 3D compilation to generate indoor environments for embodied learning. A hierarchical sampler uses diffusion priors to arrange furniture within functional zones; a compiler uses relations from each proposal to fit geometry and make local pose corrections. Across five room types, the authors report the highest visual quality and physical stability among compared methods, with no detected mesh collisions or out-of-bounds objects. Its layouts are also closer to real-room distributions than those of the baselines. Object-navigation policies trained in these scenes achieve higher success on held-out real scans than policies trained on an equal number of real training scans.",
+          "zh": "论文提出 SceneBloom，通过视觉布局采样与契约引导的三维编译生成适用于具身学习的室内环境。分层采样器利用扩散先验，在功能区域内生成家具布局；编译器再根据提案中的关系信息进行几何拟合和局部位姿修正。在五类房间的比较中，作者报告 SceneBloom 的视觉质量和物理稳定性最高，且是唯一未检测到网格碰撞或越界物体的方法，其布局也最接近真实房间分布。此外，在这些场景中训练的物体导航策略，在留出的真实扫描场景上比使用同等数量真实训练扫描数据训练的策略成功率更高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
