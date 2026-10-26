@@ -93,7 +93,11 @@
             "heading": "",
             "text": "Humanoid motion-tracking policies can reproduce diverse behaviors, yet connecting independently acquired motions into a continuous sequence remains challenging. Interpolation connects boundary poses without considering whether their relative position, heading, and timing provide suitable conditions for a transition.\n\nA generative motion prior can produce richer motion, but poorly arranged boundaries may cause it to generate excessive locomotion, turning, or another unintended action. We present Spatio-Temporal Alignment with a Motion Prior (STAMP), a framework for connecting independently acquired humanoid motions through a Robot-to-Human-to-Robot process.\n\nSTAMP uses human motion space to draw on rich motion priors and reuse transition knowledge across robot embodiments. Its key component is a learned alignment model that determines the boundary conditions for motion inbetweening.\n\nGiven the two motions retargeted to a human rig, the alignment model ranks candidate positions, headings, and transition durations for the following motion. A human motion prior generates the transition under the selected alignment. The completed sequence is retargeted to the robot and used as a reference to train a motion-tracking policy.\n\nWe evaluate the tracking success of the generated transitions on Unitree~G1 and~ROBOTIS K1.Physical robot demonstrations further show that STAMP connects independently acquired motions into long-horizon sequences. Project page: https://childtoy.github.io/STAMP-project"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents STAMP, which connects independently acquired humanoid motions through a Robot-to-Human-to-Robot process. After retargeting motions to a human rig, a learned alignment model ranks positions, headings, and transition durations for the following motion. A human motion prior generates the transition, and the completed sequence is retargeted to a robot as a reference for training a motion-tracking policy. The authors evaluate transition tracking on Unitree G1 and ROBOTIS K1, and show physical robot demonstrations forming long-horizon sequences.",
+          "zh": "论文提出 STAMP，通过“机器人到人体再到机器人”的流程连接独立获取的人形机器人动作。方法先将两段动作重定向到人体骨架，再由学习到的对齐模型为后续动作选择位置、朝向和过渡时长，随后使用人体动作先验生成衔接动作，并将完整序列重定向到机器人，用作训练动作跟踪策略的参考。作者在 Unitree G1 和 ROBOTIS K1 上评估生成过渡的跟踪成功情况，并展示实体机器人连接动作形成长时序列。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -124,7 +128,11 @@
             "heading": "",
             "text": "The pace of a robot demonstration is often determined by the teleoperator rather than by the task itself. As a result, the same motion can appear at widely different speeds across demonstrations, and policies trained on such data may inherit operator-specific timing along with task behavior.\n\nWe propose to learn a speed prior directly from large-scale demonstration data. Given a task instruction, a motion path and the images along it, it predicts a distribution over execution speed along the path, from which a chosen quantile defines a consistent clock for retiming each demonstration.\n\nExisting methods derive the acceleration signal from the very data they accelerate, so each new task costs another fit, annotation, or pair of predefined rates. A single trained speed prior instead covers every task in a corpus.\n\nWe fit a speed prior on both robot teleoperation data and handheld demonstrations in which a human arm, rather than a robot arm, moves the gripper, and use it to retime robot demonstrations to the handheld pace before fine-tuning a vision-language-action policy.\n\nFor execution, we pair the policy with a real-time optimal-control layer that tracks predicted action chunks under robot constraints using the predicted pace.\n\nOn 120 RoboLab tasks, policies fine-tuned on our learned clocks succeed more often and move with up to half the jerk compared with policies fine-tuned on the original demonstration timing and uniformly accelerated to the same speed.\n\nOn a real robot, our policy stacks cups in 3.50s, 1.72$\\times$ faster than the default policy's 6.02s while succeeding as often, in 29 of 30 trials. Videos and further material are available at https://mllab.snu.ac.kr/projects/learned_speed_prior."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper learns a speed prior from large-scale demonstrations. Given a task instruction, motion path, and images along it, the prior predicts an execution-speed distribution; a chosen quantile supplies a consistent clock for retiming demonstrations. The authors train on robot teleoperation and handheld demonstrations, retime robot data to the handheld pace, and fine-tune a vision-language-action policy with a real-time optimal-control layer. On 120 RoboLab tasks, they report more successes and up to half the jerk. In real-robot cup stacking, the policy takes 3.50 seconds and succeeds in 29 of 30 trials, matching the default policy's success rate.",
+          "zh": "论文提出从大规模演示数据中学习速度先验：给定任务指令、运动路径及沿途图像，预测路径上的执行速度分布，再以选定分位数为各演示统一定时。作者用机器人遥操作和人手持设备操纵夹爪的演示训练先验，将机器人演示调整到手持演示的节奏，再微调视觉语言动作策略；执行时结合实时最优控制层跟踪动作块。在120项 RoboLab 任务中，作者报告学习时钟训练的策略成功更多、抖动最多减半。实体机器人叠杯实验中，该策略用时3.50秒，30次试验成功29次，成功率与默认策略相同。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -155,7 +163,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) policies can adapt to local human intervention, while federated learning can combine distributed robot experience without pooling raw records. We examine their prospective intersection: sharing adaptations derived from diverse human corrections across tasks, environments, people, and robot embodiments.\n\nCorrections differ in modality, safety semantics(urgency, behavioral scope, etc.), and privacy sensitivity. A shared update that improves mean task success may suppress a rare safety intervention or produce an unsafe response on another robot.\n\nWe argue for three requirements: preserve the context and uncertainty of multimodal corrections when deciding what to share; assess candidate updates in each receiving robot's closed loop before deployment; and evaluate leakage alongside retention of safety-critical evidence. Immediate, legible defensive behavior remains necessary during human interaction.\n\nWe offer counterexamples and a falsifiable evaluation agenda, not experimental results."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper discusses prospective safety issues at the intersection of vision-language-action policies that adapt to human intervention and federated learning that combines robot experience without pooling raw records. Human corrections vary in modality, safety meaning, and privacy sensitivity. The authors warn that an update improving average task success could suppress a rare safety intervention or cause an unsafe response on another robot. They propose preserving correction context and uncertainty, testing candidate updates in each receiving robot's closed loop before deployment, and assessing leakage alongside retention of safety-critical evidence. The paper offers counterexamples and a falsifiable evaluation agenda, not experimental results.",
+          "zh": "论文讨论视觉语言动作策略适应人类干预与联邦学习结合的潜在安全问题，即跨任务、环境、人群和机器人本体共享由人类纠正形成的适应结果。作者指出，纠正在模态、安全含义和隐私敏感度上各不相同；提升平均任务成功率的共享更新，可能压制罕见安全干预，或使另一台机器人产生不安全响应。论文提出三项要求：共享决策保留纠正的上下文与不确定性；部署前在接收机器人的闭环中评估候选更新；同时评估信息泄漏与安全关键证据的保留。作者提供反例和可证伪的评估议程，未报告实验结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -186,7 +198,11 @@
             "heading": "",
             "text": "Humanoids increasingly demand lightweight leg mechanisms for agile, dynamic, and energy-efficient locomotion. Reducing distal inertia through proximal actuation has thus become a common design goal. Yet, compact transmissions that preserve torque capability and efficient force transmission remain hard to achieve.\n\nThis paper presents a novel series-parallel leg design combining a knee parallel mechanism, an ankle parallel mechanism, and a nonlinear knee-ankle coupling where all actuators placed closer to the hip.\n\nAs the knee flexes, the coupling passively assists ankle dorsiflexion for foot clearance and, as it extends it assists plantarflexion for push-off, redistributing ankle load through the knee transmission. We derive the coupling's nonlinear transmission models and validate them in simulation and on hardware.\n\nThe design shows that the shared transmission lets both joints draw on each other's actuator capacity by easing the knee's peak torque demand under load and the ankle's peak speed demand during fast motion.\n\nWith the leg's proximal actuator placement, the leg achieves an effective reflected mass of 0.37 kg at the foot for a 6 kg leg, demonstrating very low distal leg inertia for dynamic humanoid robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a series-parallel leg design combining knee and ankle parallel mechanisms with a nonlinear knee-ankle coupling, with actuators placed near the hip. As the knee flexes, the coupling passively assists ankle dorsiflexion for foot clearance; as it extends, it assists plantarflexion for push-off, redistributing ankle load through the knee transmission. The authors derive transmission models and validate them in simulation and on hardware. They report reduced peak knee torque demand under load and reduced peak ankle speed demand during fast motion. For a 6 kg leg, effective reflected mass at the foot is 0.37 kg.",
+          "zh": "论文提出一种串并联腿部设计，结合膝部与踝部并联机构，以及非线性膝踝耦合，并将执行器布置在靠近髋部的位置。膝关节屈曲时，耦合被动辅助踝背屈以抬脚；膝关节伸展时则辅助跖屈以蹬地，并通过膝部传动分担踝部负载。作者推导非线性传动模型，并在仿真和硬件上验证。论文称共享传动可降低负载下膝关节峰值扭矩需求及快速运动时踝关节峰值速度需求；对于6千克的腿，足部有效反射质量为0.37千克。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
