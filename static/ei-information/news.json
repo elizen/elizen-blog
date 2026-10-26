@@ -711,7 +711,11 @@
             "heading": "",
             "text": "Learning humanoid control from monocular human videos offers a scalable way to acquire diverse whole-body behaviors. Yet, existing reconstruction-retargeting-tracking pipelines are limited in system-level scalability by separately optimized intermediate stages and cannot directly optimize reference motion executability using downstream tracking feedback.\n\nWe present ViT-H, a video-to-humanoid control framework following a generation-and-tracking paradigm. ViT-H directly generates humanoid reference motions from videos with a diffusion model, bypassing human motion reconstruction and retargeting, and uses motion-tracking outcomes to post-train the generator with direct preference optimization.\n\nWe further introduce an autoregressive variant that enables real-time humanoid video teleoperation with sub-400 ms latency. Extensive experiments on the Unitree G1 demonstrate that ViT-H outperforms state-of-the-art reconstruction-retargeting-tracking pipelines in both motion quality and executability.\n\nWe further show that ViT-H scales favorably with model size and with both pre-training and post-training data scale, while motion-tracking feedback consistently improves executability across different motion trackers."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ViT-H, a framework that directly generates humanoid reference motions from monocular human videos and improves the generator using motion-tracking outcomes. It uses a diffusion model and direct preference optimization, bypassing human-motion reconstruction and retargeting. An autoregressive variant supports real-time video teleoperation with latency below 400 ms. Experiments on the Unitree G1 are reported to outperform the compared pipelines in motion quality and executability. The authors also report favorable scaling with model and data size, and improved executability from tracking feedback across motion trackers.",
+          "zh": "论文提出 ViT-H，一种从单目人类视频直接生成人形机器人参考动作、再依据动作跟踪结果优化生成器的框架。它采用扩散模型生成动作，并以直接偏好优化进行后训练，绕过人体动作重建与重定向。作者还介绍自回归版本，用于低于400毫秒延迟的实时视频遥操作。Unitree G1实验显示，该方法在动作质量和可执行性上优于所比较的流水线；作者也报告模型规模、训练数据规模扩展带来良好表现，跟踪反馈在不同跟踪器下均提升可执行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -742,7 +746,11 @@
             "heading": "",
             "text": "Intent recognition in human-robot interaction requires agents to resolve ambiguous natural language instructions by inferring the speaker's underlying goals. Research has increasingly focused on two notable paradigms for addressing this task: structured symbolic reasoning and multimodal input enrichment.\n\nHowever, it remains unclear whether enrichment-based methods provide benefit in settings where the ambiguity concerns unstated human intent rather than missing observable scene information.\n\nIn this paper, we present a comparative and diagnostic study benchmarking FISER - a framework utilizing structured social and embodied reasoning - against CEMIR (Context-Enriched Multimodal Intent Recognition), a method that performs multimodal enrichment by synthesizing narratives and photorealistic images from textual prompts.\n\nBy evaluating both approaches across four Large Language Models (LLMs), ranging from Qwen2.5-Omni-3B to GPT-5, on the HandMeThat v2 benchmark, we analyze their capability to resolve pragmatic ambiguities.\n\nOur statistical analysis, employing multiple-comparison correction, reveals no statistically significant difference in performance between FISER and CEMIR across any model or difficulty level. This pattern holds across all sixteen model-by-difficulty comparisons, as well as in a targeted ablation isolating CEMIR's narrative and visual components.\n\nInstead, performance is primarily associated with backbone capability and the inherent difficulty of the ambiguity.\n\nThese findings suggest a boundary condition for text-derived multimodal enrichment: when the relevant task constraints are already available in the textual instruction, synthetic multimodal augmentation may not provide measurable benefit over structured reasoning on the same text."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper compares FISER, which uses structured social and embodied reasoning, with CEMIR, which enriches text prompts by synthesizing narratives and photorealistic images for pragmatic intent recognition. The methods are evaluated on HandMeThat v2 using four language models. After correction for multiple comparisons, the authors find no statistically significant performance difference across model and difficulty combinations or in a targeted ablation. They report that performance is primarily associated with backbone capability and ambiguity difficulty, and suggest that synthetic multimodal augmentation may offer no measurable benefit when relevant constraints are already stated in text.",
+          "zh": "论文比较两种用于人机交互中务实意图识别的方法：采用结构化社会与具身推理的 FISER，以及通过文本提示合成叙事和写实图像进行多模态增强的 CEMIR。研究在 HandMeThat v2 基准上，使用四种大语言模型评估两者处理语用歧义的能力。经多重比较校正的统计分析显示，在全部模型与难度组合及针对性消融中，两种方法的表现均无统计显著差异。作者认为，表现主要与基础模型能力和歧义难度相关；当任务约束已在文本指令中时，合成多模态增强未显示可测量优势。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -773,7 +781,11 @@
             "heading": "",
             "text": "Generated robot videos can look convincing while depicting the wrong interaction: a different object is moved, a grasp disappears, or a placement ends outside its destination. We introduce RGraph-Eval, a reference-based framework that makes these discrepancies explicit through task-grounded temporal scene graphs.\n\nUnlike approaches that construct separate evidence representations for different evaluation dimensions, we organize task entities, interactions, and motion within a unified, interpretable scene graph representation.\n\nA foundation-model pipeline identifies manipulation roles, grounds persistent object masks, infers and verifies state transitions and action intervals, and reconstructs manipulated-object motion in three dimensions.\n\nApplying this representation to a generated video and a reference demonstration supports an interpretable RGraph-Eval score with visible-object, relation-change, and 3D path-shape components. We also introduce ShareRobot-SG, a collection of 1,000 manipulation scenes from ten ShareRobot sources annotated with the multimodal representation.\n\nOur evaluation separates graph-generation quality from agreement with human video judgments and includes comparisons with adapted SVG2 and SG-Ego, as well as a benchmark of three video generators.\n\nThe framework connects robot-video assessment to the observable entities and interactions underlying a task while making the graph annotations reusable beyond evaluation. Code will be publicly available at https://github.com/SashaDance/rgraph-eval."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RGraph-Eval, a reference-based framework for assessing differences between generated robot videos and demonstrations using task-grounded temporal scene graphs. Its unified representation captures task entities, interactions, and motion. A foundation-model pipeline identifies manipulation roles, tracks persistent object masks, infers and verifies state changes and action intervals, and reconstructs manipulated-object motion in 3D. The resulting score has visible-object, relation-change, and 3D path-shape components. The paper also presents ShareRobot-SG and separates graph-generation quality from agreement with human judgments; the abstract does not state specific evaluation results.",
+          "zh": "论文提出 RGraph-Eval，用任务关联的时序场景图评估机器人生成视频与参考演示之间的差异。该框架以统一图表示任务实体、交互和运动，并通过基础模型流程识别操作角色、追踪物体掩码、推断和核验状态变化与动作区间，以及重建被操作物体的三维运动。评分包含可见物体、关系变化和三维路径形状。论文还介绍由 ShareRobot 来源场景构成的 ShareRobot-SG，并将图生成质量与对人类视频判断的一致性分开评估；摘要未报告具体评测结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -804,7 +816,11 @@
             "heading": "",
             "text": "Robot motion planning faces challenges in high-dimensional spaces and uncertain environments, often constrained by the need for collision-free motions. We advocate an alternative approach, Environmental Constraint Exploitation (ECE), where deliberate contact with the environment simplifies planning by reducing dimensionality and computational complexity.\n\nBy integrating ECE into motion planning algorithms, we bias exploration to task-relevant regions and leverage contact for uncertainty reduction to improve robustness during execution. We evaluate ECE benefits with RRT-based planners and demonstrate their practical benefits in a real-world application.\n\nThis work consolidates and extends prior research, showcasing how ECE simplifies motion planning while enhancing adaptability and performance in complex environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper advocates Environmental Constraint Exploitation (ECE) for robot motion planning in high-dimensional spaces and uncertain environments. ECE deliberately uses contact with the environment to reduce planning dimensionality and computational complexity, while biasing exploration toward task-relevant regions. The authors argue that contact can also reduce uncertainty and improve robustness during execution. They evaluate ECE with RRT-based planners and report practical benefits in a real-world application. The abstract describes the work as consolidating and extending prior research, but gives no specific experimental figures or comparison details.",
+          "zh": "论文主张采用环境约束利用（ECE）应对机器人在高维空间和不确定环境中的运动规划挑战。ECE 有意利用与环境接触来降低规划维度和计算复杂度，并将搜索偏向与任务相关的区域；作者还提出接触可帮助减少不确定性，从而提升执行稳健性。研究将 ECE 集成到基于 RRT 的规划器中进行评估，并称真实世界应用展示了其实用收益。摘要说明该工作整合并扩展了既有研究，但未给出具体实验数值或比较细节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
