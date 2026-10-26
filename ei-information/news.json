@@ -2484,7 +2484,11 @@
             "heading": "",
             "text": "Data-driven robots must learn to avoid collisions with as few demonstrations as possible to avoid collecting large datasets of destructive collision examples.\n\nWe explore whole-body proximity sensors as inductive biases for learning reflexive collision-dodging behavior and find that lossy sensors with low resolution were stronger biases than high-resolution coverage. We also found that, perhaps unintuitively, anticipating when and where contact happens on the body of a robot reduced its learning sample efficiency.\n\nWe investigated eight candidate representations in a reinforcement learning environment, which included latent compression, future contact anticipation, lossy corruption, and privileged state estimation.\n\nThe candidate representations were tested by training over 200 humanoid robots to play a simplified version of dodgeball end-to-end under an intentionally constrained sample and compute budget."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors study whole-body proximity sensors as inductive biases for learning reflexive collision avoidance with few demonstrations. They compare eight candidate representations in a reinforcement-learning environment and train more than 200 humanoid robots on a simplified dodgeball task under constrained sample and compute budgets. They report that low-resolution lossy sensors were stronger biases than high-resolution coverage, while anticipating when and where contact would occur reduced learning sample efficiency. These findings are from the described environment and task.",
+          "zh": "研究全身近距离传感器如何帮助机器人以较少示范学习反射式避碰。作者在强化学习环境中比较八种表示，并在受限样本和计算预算下训练200多台人形机器人进行简化躲避球任务。作者称，低分辨率、有损传感器比高分辨率覆盖更有效；预测身体何时何处接触反而降低了学习样本效率。结论来自该仿真环境与任务设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2515,7 +2519,11 @@
             "heading": "",
             "text": "Real-world reinforcement learning has enabled contact-rich manipulation tasks to be trained directly on physical robots, but unsafe interactions during online learning remain a key barrier to practical deployment.\n\nWe propose Safe Evidential Real-World Reinforcement Learning (SEVI), a framework for reliability-aware safety intervention during real-world policy learning. SEVI introduces an Evidential Safety Critic that estimates both future constraint-violation risk and epistemic uncertainty in a single forward pass.\n\nDuring online learning, SEVI evaluates each task-policy action before execution; if the action is predicted to be unsafe or the prediction is insufficiently supported by evidence, SEVI overrides it with an offline-trained recovery policy that guides the robot toward a lower-risk region.\n\nWe evaluate SEVI on two simulated manipulation tasks and a real-world USB insertion task under in-distribution and distribution-shifted conditions. Across task-learning and safety-critic baselines, SEVI achieves the strongest trajectory-level safety prediction, the highest final task success, and the lowest unsafe-event counts.\n\nSEVI also reduces unsafe events by 13.4 to 57.1 percent relative to recovery-based safe RL while preserving low-latency execution-time filtering. The project page is available at: https://sevi-safe.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors propose SEVI for safety intervention during online policy learning on physical robots. Its Evidential Safety Critic estimates future constraint-violation risk and epistemic uncertainty in one forward pass. Before execution, actions predicted unsafe or insufficiently supported are replaced by an offline-trained recovery policy intended to guide the robot toward a lower-risk region. Evaluation covers two simulated manipulation tasks and a real-world USB insertion task under in-distribution and shifted conditions. The authors report the strongest trajectory-level safety prediction, highest final task success, and fewest unsafe events among compared baselines, with low-latency filtering.",
+          "zh": "作者提出SEVI，用于真实机器人策略在线学习中的安全干预。其证据安全评论家在一次前向计算中估计未来约束违反风险和认知不确定性；执行动作前若预测不安全或证据不足，就由离线训练的恢复策略替代，引导机器人进入较低风险区域。评估涵盖两个模拟操作任务和一项真实USB插入任务，并包括分布内及分布偏移条件。作者报告SEVI在轨迹级安全预测、最终任务成功率和不安全事件数量上优于所比较基线，且相较基于恢复的安全强化学习减少不安全事件，同时保持低延迟过滤。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2546,7 +2554,11 @@
             "heading": "",
             "text": "Estimating a camera pose from 3D-2D correspondences - Perspective-n-Point - is one of the most fundamental problems in computer vision. Existing methods either solve a minimal problem or replace the objective with an easier one. Surprisingly, no scalable certifiable solver for the actual Maximum Likelihood Estimation (MLE) exists.\n\nWe propose PnP*, the first practical solver that guarantees efficient computation and returns a certifiable globally optimal solution. We prove that the underlying convex relaxation is exact under moderate noise, which to our knowledge is the first stability guarantee for any relaxation for the MLE of PnP.\n\nFurthermore, we reduce the relaxation by exploiting chordal sparsity pattern and quotient ring reduction such that the relaxation is tractable and scalable. The stability and scalability results are verified numerically, as PnP* returns a provably correct camera pose at over 10 Hz."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents PnP*, a solver for estimating camera pose from 3D-to-2D correspondences that targets the maximum-likelihood objective. The authors say it computes efficiently and returns a certifiably globally optimal solution. They prove the underlying convex relaxation is exact under moderate noise, which they describe as a stability guarantee for a relaxation of PnP maximum likelihood estimation. Chordal sparsity and quotient-ring reduction make the relaxation tractable and scalable. Numerical results verify the reported stability and scalability, with PnP* returning a provably correct camera pose at over 10 Hz.",
+          "zh": "本文提出PnP*，用于从三维至二维对应关系估计相机位姿，并针对最大似然估计目标构造可认证求解器。作者称其可高效计算并返回可证明全局最优的解；在中等噪声下，底层凸松弛是精确的，并据此给出该类PnP最大似然估计松弛的稳定性保证。方法利用弦图稀疏结构和商环约化缩减松弛规模。作者通过数值验证稳定性与可扩展性，并报告PnP*以超过每秒10次的速度返回可证明正确的相机位姿。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
