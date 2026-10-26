@@ -1166,7 +1166,11 @@
             "heading": "",
             "text": "Free-hand dental procedures are typically repetitive, time-consuming and require high precision and manual dexterity. Robots can play a key role in improving procedural accuracy and safety, enhancing patient comfort, and reducing operator workload. However, robotic solutions for free-hand procedures remain limited or completely lacking.\n\nTo address this gap, we develop a haptic bilateral teleoperation system (HBTS) for free-hand dental procedures (FH-HBTS).The system includes a mechanical end-effector, compatible with standard clinical tools, and equipped with an endoscopic camera for improved visibility of the intervention site.\n\nBy ensuring motion and force correspondence between the operator's and the robot's actions, monitored through visual feedback, we enhance the operator's sensory awareness and motor accuracy.\n\nFurthermore, to ensure procedural safety, we limit interaction forces by scaling the motion references provided to the admittance controller based solely on measured contact forces. This ensures effective force limitation in all contact states without requiring prior knowledge of the environment.\n\nThe proposed FH-HBTS is validated through a technical evaluation and an in-vitro pre-clinical study conducted on a dental model under clinically representative, yet simplified, conditions. The results show that the system improves the naturalness, safety, and accuracy of teleoperation, highlighting its potential to enhance free-hand dental procedures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a haptic bilateral teleoperation system for free-hand dental procedures, with a mechanical end-effector compatible with standard clinical tools and an endoscopic camera. Motion and force correspondence, monitored through visual feedback, is intended to support operator awareness and accuracy. The system limits interaction forces by scaling motion references based only on measured contact forces, without prior knowledge of the environment. Technical evaluation and an in-vitro pre-clinical study on a dental model under simplified, clinically representative conditions showed improved naturalness, safety, and accuracy.",
+          "zh": "论文介绍一种用于徒手牙科操作的双边触觉遥操作系统，包含兼容标准临床工具的机械末端执行器和内窥镜摄像头，通过运动与力对应及视觉反馈辅助操作者。系统仅依据测得的接触力缩放运动参考，以限制交互力，无需预先了解环境。作者在技术评估和牙科模型体外临床前研究中验证了系统，研究条件具有临床代表性但经过简化；结果显示遥操作的自然度、安全性和准确性有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1197,7 +1201,11 @@
             "heading": "",
             "text": "Traversability analysis in off-road settings remains a fundamental challenge for mobile robots. Key difficulties include constructing an accurate and expressive local map from multimodal sensor data, and using the map to design traversability rules that yield desirable navigation behavior.\n\nImportantly, this system must be resilient to the limited sensing regime brought about by complex environments and high speeds. In this paper, we present TravSUITE, a traversability system suitable for high-speed navigation in off-road environments.\n\nTravSUITE consists of two major components: 1) an efficient voxel mapper that leverages visual foundation models (VFMs) to build a rich geometric-semantic local map from streams of on-board sensor data, and 2) a unified neural network that jointly predicts traversability-relevant quantities in bird's eye view (BEV), including geometry, semantics, speed and cost.\n\nOur training strategy is entirely annotation-free and self-supervised, leveraging tasks such as map inpainting and inverse reinforcement learning (IRL) to learn both map representations and traversability.\n\nWe perform a thorough ablation study and comparison to state-of-the-art approaches, and the results indicate that cost learning and auxiliary inpainting each contribute significantly to planning quality, and their combination is critical for achieving state-of-the-art performance in off-road path planning.\n\nWe also design a simple risk adaptation mechanism to leverage our method's uncertainty estimates at deploy-time, and demonstrate that a combination of inpainting and risk estimation can result in 80% fewer navigation errors and 5% faster autonomous traversal speeds in real-world hardware experiments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TravSUITE, a traversability system for high-speed off-road navigation. It uses visual foundation models to build a geometric-semantic voxel map and a unified neural network to predict geometry, semantics, speed, and cost in bird’s-eye view. Training is annotation-free and self-supervised, using map inpainting and inverse reinforcement learning. Ablations and comparisons indicate that cost learning and inpainting improve planning quality, and their combination achieves state-of-the-art off-road path planning. In real-world hardware experiments, combining inpainting with risk estimation yielded 80% fewer navigation errors and 5% faster autonomous traversal.",
+          "zh": "论文提出TravSUITE，用于越野高速导航的可通行性分析系统。它以视觉基础模型构建融合几何与语义信息的局部体素地图，并通过统一神经网络在鸟瞰视角预测几何、语义、速度和代价。训练无需人工标注，采用自监督地图修补和逆强化学习。消融及对比结果显示，代价学习与辅助修补有助于规划质量，二者结合达到越野路径规划的当前最佳表现。真实硬件实验中，结合修补和风险估计的方案减少了80%的导航错误，自动行驶速度提高5%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1228,7 +1236,11 @@
             "heading": "",
             "text": "Resource-constrained robots and autonomous vehicles need scene memories that localize a camera and render nearby views without a desktop GPU.\n\nScene-coordinate regression (SCR) and 3D Gaussian splatting (3DGS) fit because they avoid an SfM stage, but ACEsplat-style pipelines are GPU-centered, and moving them to an edge FPGA is hard because SCR is pose-sensitive and 3DGS rendering is irregular and capacity-sensitive.\n\nWe present LENS, an edge scene-memory acceleration system on the AMD KR260 that brings an ACEsplat-style workload to a low-power FPGA/ARM platform.\n\nRather than proposing a new scene model, LENS co-designs the two dominant kernels with the board data path: an INT16 SCR accelerator that preserves pose accuracy, and a bit-exact fixed-point ordered 3DGS renderer that rewrites alpha transmittance as a log-sum-exp recurrence and removes provably useless streamed Gaussians.\n\nAll LENS latency, power, and quality results are board-measured. The SCR engine preserves DSAC* localization accuracy at 25.42 ms, the on-board renderer reaches 34.11 dB on Cambridge against ACEsplat's 33.20, novel-view synthesis on RealEstate10K reaches 27.84 dB against 26.11, and all ten Wayspots scenes reach the ACEsplat rendering target.\n\nLENS wins performance per watt over a Jetson Orin NX on every deployment task, by 1.9x to 5.7x at about a quarter of the power, and is faster in absolute latency on localization and Wayspots rendering. On-device training reaches ACEsplat-level quality but not the GPU's time or energy, marking the remaining boundary for a future training accelerator."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LENS, which brings scene-coordinate regression and 3D Gaussian splatting scene memory to a low-power FPGA/ARM platform. On the AMD KR260, it co-designs fixed-point localization and rendering kernels. The abstract states that latency, power, and quality results are board-measured. The authors report localization and rendering quality across several datasets, and say LENS exceeds a Jetson Orin NX in performance per watt; it also has lower absolute latency for localization and Wayspots rendering. On-device training reaches ACEsplat-level quality, but not GPU time or energy performance.",
+          "zh": "论文提出LENS，将基于场景坐标回归和三维高斯泼溅的场景记忆工作负载部署到低功耗FPGA/ARM平台。系统在AMD KR260上协同设计定点定位与渲染内核；摘要称所有延迟、功耗和质量结果均由板载测量。作者报告了多个数据集上的定位和渲染质量，并称其每瓦性能优于Jetson Orin NX；在定位和Wayspots渲染上绝对延迟也更低。设备端训练达到与ACEsplat相当的质量，但时间和能耗仍不及GPU。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1259,7 +1271,11 @@
             "heading": "",
             "text": "Robust reinforcement learning (RL) is critical for reliable real-world deployment, where policies may fail under diverse shifts and disruptions. Existing robust RL algorithms offer a rich set of mechanisms and principles, yet two major barriers limit their broader potential: limited algorithm reusability and an unclear empirical capability boundary.\n\nWe introduce RobustRLlib, an algorithm-centric library and benchmark that addresses both challenges.\n\nIt integrates 17 representative robust online, offline, and safe RL algorithms under a unified interface for substantially improved reusability, together with an enhanced evaluation platform spanning diverse real-world shifts and advanced humanoid and vision-language-action tasks.\n\nSystematic evaluation over 273 perturbation configurations provides an up-to-date capability map of current robust RL algorithms, revealing where they remain effective and where substantial robustness gaps persist.\n\nAs an open-source, user-friendly platform, RobustRLlib offers a reproducible and extensible codebase for applying existing methods to new problems and developing new robust RL algorithms."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces RobustRLlib, a library and benchmark for robust reinforcement learning intended to improve algorithm reusability and clarify empirical capability boundaries. It integrates 17 representative online, offline, and safe RL algorithms through a unified interface, with evaluation spanning diverse real-world shifts and humanoid and vision-language-action tasks. A systematic assessment across 273 perturbation configurations maps current algorithm capabilities and reveals substantial remaining robustness gaps. The authors describe the open-source platform as a reproducible and extensible codebase for applying existing methods and developing new robust RL algorithms.",
+          "zh": "论文介绍RobustRLlib，这是一个面向鲁棒强化学习的算法库与基准平台，旨在提升算法复用性并厘清实证能力边界。平台以统一接口整合了17种代表性的在线、离线和安全强化学习算法，并扩展评测范围，覆盖多种现实世界分布变化以及人形机器人和视觉语言动作任务。作者对273种扰动配置进行了系统评估，绘制当前算法能力图谱，并指出仍存在显著鲁棒性缺口。该平台定位为可复现、可扩展的开源代码库。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
