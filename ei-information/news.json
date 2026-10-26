@@ -326,7 +326,11 @@
             "heading": "",
             "text": "Collective robotics is split by a long-standing but increasingly artificial boundary between centralised multi-robot systems that prioritise optimality and decentralised swarms that prioritise robustness and adaptivity.\n\nWe propose a unified control framework, shifting from `obligate' swarms---systems constrained to pure self-organisation---to facultatively swarming systems: hybrid architectures that operate as centrally planned systems under permissive conditions yet degrade gracefully into decentralised swarming under environmental stress.\n\nBy reframing swarming as a dynamic capability, rather than a rigid system category, we outline a pathway towards collective robotic systems that benefit from centralised optimality when conditions permit and from the flexibility of self-organisation when they do not."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors describe a longstanding distinction between centralized multi-robot systems, which prioritize optimality, and decentralized swarms, which emphasize robustness and adaptability. They propose a unified control framework for facultatively swarming systems: these use central planning when conditions permit and degrade gracefully into decentralized self-organization under environmental stress. The paper frames swarming as a dynamic capability rather than a fixed system category, outlining a path toward systems that can draw on both approaches.",
+          "zh": "作者指出，集体机器人研究长期区分以最优性为重心的集中式多机器人系统和强调鲁棒性、适应性的去中心化群体机器人，认为这一界限日益显得人为。文章提出统一控制框架，将“义务型”群体转向“可选择群集”系统：条件允许时集中规划，环境压力增大时平稳退化为去中心化自组织。作者据此主张，把群集视为动态能力而非固定系统类别。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -357,7 +361,11 @@
             "heading": "",
             "text": "When a vision-language-action (VLA) model is fine-tuned with its trainable weights in bfloat16 (bf16) and no fp32 master copy, AdamW writes each update straight into bf16, silently rounding away any update smaller than 1/512 of a weight.\n\nIn 9 of 12 open VLA codebases a default or documented recipe trains this way, 4 on full weight matrices, including LeRobot's SmolVLA default and its $\\pi_0$/$\\pi_{0.5}$ guides. In our LIBERO runs without the copy, a probe every 100 steps finds at least 79% of updates to bf16 weights erased.\n\nOn the Hugging Face Hub, 99% of sampled full-weight SmolVLA fine-tunes store the action expert in bf16, and 84% of recent $\\pi_{0.5}$ fine-tunes with a training configuration set the bf16 flag.\n\nOn LIBERO-Object, with rules fixed in advance, an fp32 copy raises success over LeRobot's storage from 4.3% to 49.3% for SmolVLA and from 5.1% to 80.9% for $\\pi_{0.5}$ at a ten-times lower learning rate, where both models are undertrained, and from 89.0% to 97.7% for $\\pi_{0.5}$ at its default rate.\n\nFor SmolVLA at its default rate it adds 10.2 points with open-loop 50-action chunks but only 4.2 when re-planning every 10 actions. In these five comparisons and two more against SmolVLA with every trainable weight in bf16, every run with the copy beats every run without it (p < 0.05); all gaps but the 8.7- and 4.2-point ones clear our 10-point threshold.\n\nThe fix is to keep the trainable weights in fp32 during training, a one-line change for SmolVLA in LeRobot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors argue that fine-tuning vision-language-action models with trainable bf16 weights and no fp32 master copy can round away small AdamW updates. They report this setup in default or documented recipes in 9 of 12 open codebases. In LIBERO runs, probes found at least 79% of updates erased. On LIBERO-Object, retaining an fp32 copy improved success in the reported comparisons, with gains varying by model, learning rate, and planning setup. The claims are bounded by these codebase observations and experiments.",
+          "zh": "作者指出，若视觉—语言—动作模型以 bf16 权重微调且没有 fp32 主副本，小幅 AdamW 更新会被舍入抹去；其对 12 个开源代码库的检查发现，9 个默认或文档方案如此。LIBERO 仿真中，探针显示至少 79% 的更新被抹去；作者还报告，在 LIBERO-Object 上保留 fp32 副本可提高若干模型成功率，幅度因模型、学习率和规划方式而异。结论限于所述代码库检查与实验设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -388,7 +396,11 @@
             "heading": "",
             "text": "Human-guided collaborative transport becomes interaction-critical when the operator can continue along a route segment that is not executable by the robot--payload system. In this regime, operator motion is not an exogenous reference: it simultaneously communicates a persistent route tendency and adapts to the robot's realized progress.\n\nA common modular formulation predicts one operator future from observation history, scores multiple robot proposals against that shared forecast, and then modifies the selected command for local feasibility. This can compare candidates under responses they would not induce and can condition prediction on an action that is never executed.\n\nWe formulate local control over executable-action-indexed joint human--robot transitions and instantiate it in Consistent Action--Response Execution (CARE).\n\nEach nominal proposal or bounded alternative is first mapped to an executable action; that same action conditions the route-aligned operator-response prediction, the matched robot--operator rollout, and a fixed interaction utility for candidate selection.\n\nBounded reciprocal refinement handles transient route--feasibility mismatch, whereas persistent progress loss replaces the nominal proposal with a progress-oriented recovery proposal while retaining the same downstream executable-action-conditioned evaluation.\n\nAcross training and held-out maps, CARE preserves near-saturated performance when the indicated route remains locally usable and achieves the highest observed success and service availability when the operator can continue but the robot must detour.\n\nIt also yields lower jerk-proxy values and measured controller latency than dynamic-window and Timed Elastic Band baselines. Factorial ablations distinguish reciprocal refinement from progress recovery, delayed-response tests probe temporal mismatch, and an indoor deployment demonstrates physical executability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper addresses human-guided robot transport when an operator continues along a route segment the robot and payload cannot execute. CARE maps each proposal to an executable action, then uses that same action to predict the operator’s response, evaluate a joint rollout, and select a candidate. It also introduces reciprocal refinement and progress-oriented recovery. Across training and held-out maps, the authors report near-saturated performance when the route is locally usable and the highest observed success and service availability when detours are needed. An indoor deployment demonstrates physical executability.",
+          "zh": "文章研究人类引导机器人搬运时，操作员可能沿机器人与载荷无法执行的路线继续移动，人的动作同时表达路线倾向并适应机器人进展。CARE 将候选动作先映射为可执行动作，再用同一动作预测人的响应、评估人机联合轨迹并选择方案；进度持续受损时切换为恢复方案。作者报告，在训练及留出地图中，该方法在路线可行时保持近饱和表现，在需绕行时取得最高观测成功率和服务可用性，并在相关基线比较中 jerk 代理值和控制器延迟较低。室内部署展示了物理可执行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -419,7 +431,11 @@
             "heading": "",
             "text": "Humans manipulate objects within their hands through touch alone with remarkable ease, but for robots, achieving sustained real-world manipulation without vision remains an open challenge.\n\nAlthough reinforcement learning (RL) can generate sophisticated blind manipulation policies in simulation, transferring them to a real dexterous hand remains hindered by continuously changing contacts, motion-induced tactile information drift, and the gap between simulated and physical dynamics.\n\nWe study this problem through Baoding ball rotation on the Shadow Dexterous Hand Lite, using only proprioception and binary tactile feedback as observations.\n\nWe achieve successful zero-shot transfer through a combination of a sensor-aligned, coupling-aware embodiment in simulation, tactile calibration, and two novel episodic domain randomisations: slew-rate action limits and STuck-AT Taxels.\n\nOn the physical hand, the policy achieves sustained blind Baoding rotation, completing $\\textbf{225 consecutive $\\mathbf{180^\\circ}$ rotations (112.5 full rotations) at $\\sim0.36 \\;\\text{rot/s}$}$ in a single continuous trial without any vision or object-state information.\n\nFurthermore, we evaluate the contribution of tactile sensing relative to proprioception alone and identify the hand regions where tactile information is most important. This is the strongest reported hardware result for Baoding ball manipulation in both rotation count and speed, irrespective of the sensing modality used.\n\nBy effectively bridging the sim-to-real gap, our framework sets a new benchmark for sustained tactile-driven dexterous manipulation on physical hardware."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors study blind Baoding ball rotation with a Shadow Dexterous Hand Lite, using proprioception and binary tactile feedback without vision. Their approach combines a sensor-aligned, coupling-aware simulation embodiment, tactile calibration, and two episodic domain randomizations, and they report successful zero-shot transfer. In one continuous physical-hand trial, the policy completed 225 consecutive 180-degree rotations at about 0.36 rotations per second, without vision or object-state information. The paper also evaluates tactile sensing against proprioception alone and identifies hand regions where touch matters most.",
+          "zh": "作者研究机器人仅凭本体感觉和二值触觉反馈，在 Shadow Dexterous Hand Lite 上盲操作旋转保定球。方法结合传感器对齐且考虑耦合的仿真具身、触觉校准，以及两种情景式域随机化；作者报告实现零样本迁移。实体手的一次连续试验完成 225 次连续 180°旋转，即 112.5 圈，速度约 0.36 圈/秒，全程不使用视觉或物体状态信息。文章还比较触觉与单独本体感觉的作用，并分析触觉重要的手部区域；其基准领先的说法是作者的报告。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
