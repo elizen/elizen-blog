@@ -2379,7 +2379,11 @@
             "heading": "",
             "text": "Deep Reinforcement Learning policies can produce nonsmooth action oscillations that hinder deployment on physical robots. Existing architectural and penalty-based approaches seek spatial smoothness by directly reducing sensitivity to changes in state inputs, but their broad constraints can degrade task performance as stronger smoothing is pursued.\n\nTemporal regularization instead constrains action differences along observed transitions, but has been considered unable to provide the spatial smoothness needed under observation noise.\n\nWe revisit this assumption by proving that the temporal penalty bounds the expected action differences between current states sharing a next state, revealing a spatial effect that empirically extends to spatial smoothness.\n\nBuilding on this finding, we propose Conditioning for Action using only Temporal Smoothness (CATS), which combines a temporal penalty with linear ramp-up. We highlight temporal regularization's ability to provide spatial smoothness while better preserving task performance than explicit spatial regularization.\n\nThrough linear ramp-up, CATS allows the policy to learn rewarding behavior before progressively smoothing its actions, improving return preservation and both temporal and spatial smoothness.\n\nExperiments in both simulation and the real world show that CATS substantially reduces action oscillation without degrading task performance, with little computational overhead."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper revisits temporal regularization in deep reinforcement learning, arguing that it can bound expected action differences between current states that share a next state, with an empirical effect on spatial smoothness. The authors propose CATS, combining a temporal penalty with a linear ramp-up so policies can first learn rewarding behavior and then become progressively smoother. Simulation and real-world experiments show reduced action oscillation without degraded task performance, with little computational overhead.",
+          "zh": "论文重新考察深度强化学习中的时间正则化，指出它不仅约束观测转移上的动作差异，也能限制共享下一状态的当前状态之间的期望动作差异，并在经验上带来空间平滑效果。作者提出 CATS，将时间惩罚与线性渐增结合，使策略先学习有奖励的行为，再逐步平滑动作。仿真和真实世界实验显示，该方法减少动作振荡，且未降低任务表现；作者还报告其计算开销较小。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2410,7 +2414,11 @@
             "heading": "",
             "text": "Unrecognized anomalies in critical infrastructure can rapidly cascade into catastrophic physical or operational failures. Current anomaly detection approaches often rely on direct access to the monitored system by utilizing onboard sensors, such as motor encoders, to detect anomalous states.\n\nHowever, legacy hardware often lacks these sensors, or strict security protocols may prohibit access altogether. We therefore present AWARE, a world model framework that is capable of anomaly detection using only external camera monitoring via system dynamics estimation and state prediction.\n\nEvaluated across 240 real-world robotic crane trajectories, including payload collisions and motor degradations, AWARE demonstrates a 26% improvement in anomaly classification over our strongest baseline under noisy, camera-only state estimation.\n\nFurthermore, the inferred dynamics parameter can be decoded to identify the source of faults, localizing the degrading motor with 88% accuracy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents AWARE, a world-model framework for anomaly detection that estimates system dynamics and predicts states using external camera monitoring, without access to onboard sensors. It is evaluated on 240 real-world robotic crane trajectories, including payload collisions and motor degradation. Under noisy, camera-only state estimation, the authors report a 26% improvement in anomaly classification over their strongest baseline. Decoding inferred dynamics parameters identifies fault sources and localizes the degrading motor with 88% accuracy.",
+          "zh": "论文提出 AWARE，一种通过外部摄像头监测机器人、估计系统动力学并预测状态的世界模型框架，面向无法访问机载传感器的异常检测场景。作者在 240 条真实机器人起重机轨迹上评估，其中包括载荷碰撞和电机性能退化。在仅使用带噪摄像头状态估计时，AWARE 的异常分类表现比作者所称的最强基线高 26%；解码推断出的动力学参数可用于识别故障来源，并以 88% 的准确率定位退化电机。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2441,7 +2449,11 @@
             "heading": "",
             "text": "Embodied AI and robotic systems increasingly depend on scalable, diverse, and physically grounded 3D content for simulation-based training and real-world deployment.\n\nWhile 3D generative modeling has advanced rapidly, embodied applications impose requirements far beyond visual realism: generated objects must carry kinematic structure and material properties, scenes must support interaction and task execution, and the resulting content must bridge the gap between simulation and reality.\n\nThis survey reviews 3D generation for embodied AI and organizes the literature around three roles that 3D generation plays in embodied systems.\n\nIn Data Generator, 3D generation produces simulation-ready objects and assets, including articulated, physically grounded, and deformable content for downstream interaction; in Simulation Environments, it constructs interactive and task-oriented worlds, spanning structure-aware, controllable, and agentic scene generation; and in Sim2Real Bridge, it supports digital twin reconstruction, data augmentation, and synthetic demonstrations for downstream robot learning and real-world transfer.\n\nWe also show that the field is shifting from visual realism toward interaction readiness, and we identify the main bottlenecks, including limited physical annotations, the gap between geometric quality and physical validity, fragmented evaluation, and the persistent sim-to-real divide, that must be addressed for 3D generation to become a dependable foundation for embodied intelligence.\n\nOur project page is at https://3dgen4robot.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This survey organizes 3D generation for embodied AI into three roles: generating simulation-ready assets, constructing interactive and task-oriented environments, and bridging simulation and reality through digital-twin reconstruction, data augmentation, and synthetic demonstrations. It describes a shift from visual realism toward interaction readiness. The authors identify bottlenecks including scarce physical annotations, a gap between geometric quality and physical validity, fragmented evaluation, and the continuing sim-to-real divide.",
+          "zh": "这篇综述梳理 3D 生成在具身人工智能中的作用，分为数据生成、仿真环境和仿真到现实桥接三类：生成可交互且具物理基础的资产，构建面向任务的场景，以及支持数字孪生重建、数据增强和合成示范。作者指出，该领域正从追求视觉真实转向重视交互就绪，并归纳了物理标注不足、几何质量与物理有效性脱节、评估碎片化及仿真到现实差距等瓶颈。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
