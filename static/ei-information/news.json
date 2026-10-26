@@ -1500,7 +1500,11 @@
             "heading": "",
             "text": "Predictive representations for robot manipulation should connect scene geometry with the state changes induced by actions. Our intuition is that understanding what an action will change starts with understanding where things are: complementary RGB and depth observations ground a common scene representation from which to infer those changes.\n\nGuided by this intuition, we introduce DepState-JEPA, a dual-stream RGB--Depth joint-embedding predictive architecture that connects spatial understanding with action-conditioned prediction through a shared latent state, DepState.\n\nBuilt on V-JEPA~2.1, the framework uses depth both as a complementary observation stream and to ground both modalities in metric 3D space, aggregating shared information into DepState while retaining modality-private features for decoding.\n\nRay-conditioned readouts predict local features without target depth; after an action-conditioned transition, the same decoders predict future RGB and depth features using the predicted state and fixed initial private features.\n\nRobot-state readouts provide recursive proprioceptive inputs; object-trajectory supervision and calibrated forward kinematics shape state learning through motion targets and joint--TCP consistency. Comparisons show stronger RGB-encoder transfer after RGB-D adaptation, feature completion, conditioned visual forecasting, and manipulation success.\n\nWithin-model ablations identify contributions from depth content, metric coordinates, and future-state matching, with additional control gains from FK regularization. The project page is available at https://shawnleung-sii.github.io/depstate-jepa/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DepState-JEPA, a dual-stream RGB-D predictive architecture that links spatial understanding and action-conditioned prediction through a shared latent state. Depth and metric 3D coordinates ground the modalities, while modality-specific features remain available for decoding. The model predicts local features and future RGB and depth features after actions. The authors report stronger transfer, feature completion, visual forecasting, and manipulation success, and ablations identify contributions from depth, metric coordinates, future-state matching, and forward-kinematics regularization.",
+          "zh": "论文提出 DepState-JEPA，一种双流 RGB-D 联合嵌入预测架构，通过共享潜在状态 DepState 将空间理解与动作条件预测联系起来。框架以深度信息和度量三维坐标为两种模态提供几何约束，同时保留模态私有特征用于解码，并预测局部特征及动作后的 RGB、深度特征。作者报告，该方法在 RGB 编码器迁移、特征补全、条件视觉预测和操作成功方面表现更强；消融分析指出深度内容、度量坐标、未来状态匹配及正运动学正则化的作用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1531,7 +1535,11 @@
             "heading": "",
             "text": "Generalist robot manipulation requires a single vision-language-action (VLA) policy to execute diverse skills across scenes and instructions. However, current multi-skill VLA policies often leave two aspects of an instruction insufficiently modeled: which primitive skill to execute and where/how to contact and move objects.\n\nWe propose MAST-VLA (Multi-skill Adaptation with Skill-conditioned experts and Trajectory-affordance priors), a dual-conditioning framework for robot manipulation.\n\nMAST-VLA introduces skill-conditioned LoRA Mixture-of-Experts (LoRA-MoE) adapters in the LLM backbone, where skill-query tokens and routing biases guide low-rank expert specialization, and converts a predicted affordance heatmap into a patch-level trajectory-affordance spatial prior for the action head.\n\nOn the CALVIN ABC$\\rightarrow$D long-horizon multi-skill cross-scene generalization setting, MAST-VLA achieves state-of-the-art performance, reaching an Avg. Len of 4.65 over five-subtask evaluation sequences. Real-robot multi-skill sequence experiments further validate its deployability under real perception and control noise."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes MAST-VLA for multi-skill robot manipulation across scenes and instructions. It combines skill-conditioned LoRA mixture-of-experts adapters in the language-model backbone with a patch-level trajectory-affordance prior derived from a predicted heatmap. In the CALVIN ABC-to-D long-horizon cross-scene setting, the authors report an average length of 4.65 across five-subtask evaluation sequences and describe this as state of the art. Real-robot multi-skill sequence experiments are also reported as validation under perception and control noise.",
+          "zh": "论文提出 MAST-VLA，用于跨场景、多技能机器人操作。该框架在视觉语言动作模型的语言模型骨干中加入技能条件 LoRA 混合专家适配器，并将预测的可供性热图转换为供动作头使用的块级轨迹空间先验。在 CALVIN ABC→D 长时序多技能跨场景泛化设置中，作者报告其五子任务序列平均长度为 4.65，达到所述最先进表现。真实机器人多技能序列实验也被用于验证其在感知和控制噪声下的可部署性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1562,7 +1570,11 @@
             "heading": "",
             "text": "Scaling robot learning to long-horizon tasks remains a formidable challenge. While end-to-end policies often lack the structural priors needed for effective long-term reasoning, traditional neuro-symbolic methods rely heavily on hand-crafted symbolic priors.\n\nWe introduce ENAP (Emergent Neural Automaton Policy), a neuro-symbolic imitation learning framework in which a bi-level policy adaptively emerges from visuomotor demonstrations.\n\nSpecifically, we employ adaptive clustering and an extension of the L* algorithm to learn the task structure from demonstrations as a Mealy state machine, which serves as an interpretable high-level planner capturing latent task modes.\n\nThis discrete structure then guides a low-level reactive residual network to learn precise continuous control via behavior cloning (BC).By explicitly modeling discrete transitions and continuous residuals, ENAP achieves sample efficiency and interpretability without task-specific labels.\n\nExperiments on complex manipulation and long-horizon tasks show that ENAP outperforms state-of-the-art end-to-end vision-language-action (VLA) policies by up to 27% in low-data regimes. ENAP can also distill task structure from the latent space of a pre-trained VLA, surpassing it on CALVIN benchmark with 39% fewer parameters (Fig. 1)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ENAP, a neuro-symbolic imitation-learning framework that derives task structure from visuomotor demonstrations. Adaptive clustering and an extension of the L* algorithm produce an interpretable Mealy state machine for high-level planning, while a reactive residual network learns continuous control through behavior cloning. The authors report that ENAP needs no task-specific labels and outperforms end-to-end VLA policies by up to 27% in low-data experiments. It also reportedly distills structure from a pretrained VLA and surpasses it on CALVIN with 39% fewer parameters.",
+          "zh": "论文提出 ENAP，一种从视觉运动示范中学习任务结构的神经符号模仿学习框架。它通过自适应聚类和扩展的 L* 算法，将示范转化为可解释的 Mealy 状态机，用作高层规划器；低层反应式残差网络则通过行为克隆学习连续控制。作者称，该方法无需任务专属标签，并在复杂操作和长时序任务实验的低数据情形下较端到端视觉语言动作策略最高提升 27%。论文还报告，ENAP 可从预训练策略潜在空间提取任务结构，并以少 39% 参数量在 CALVIN 基准上超过该策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1593,7 +1605,11 @@
             "heading": "",
             "text": "Dual-arm robotic grasping is essential for manipulating large, heavy, and geometrically complex objects that cannot be reliably handled using a single manipulator. These large objects often contain only sparse graspable regions determined by local geometric properties such as thickness, edge structure, and gripper clearance.\n\nPrior bimanual grasping methods assume access to a full point cloud of the object which inherently contains this geometric information, but may not be accessible in real scenarios. This work proposes PartialBiGrasp, a dual-arm grasp generation framework that operates directly on partial point cloud observations.\n\nOur model learns geometric features implicitly through convolutional occupancy networks, enabling local reasoning about graspability, collision-free contact regions, and object thickness.\n\nWe leverage this understanding to generate force-closure compliant grasp pairs, which are further refined using a sampling-based optimization to correct for ambiguity caused by incomplete geometry.\n\nWe evaluate our approach using analytical force-closure metrics, large-scale simulation experiments, and real-world robot evaluations on noisy partial point clouds of novel objects, demonstrating robust and physically stable dual-arm grasp generation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes PartialBiGrasp, a dual-arm grasp-generation framework that uses partial point clouds, addressing settings where full object scans may be unavailable. Convolutional occupancy networks learn implicit geometric features to reason about graspability, collision-free contact regions, and object thickness. The system generates force-closure-compliant grasp pairs and refines them with sampling-based optimization to address ambiguity from incomplete geometry. Evaluation includes analytical force-closure metrics, large-scale simulations, and real-robot tests on noisy partial views of novel objects; the authors report robust, physically stable grasp generation.",
+          "zh": "论文提出 PartialBiGrasp，一种直接利用部分点云观测生成双臂抓取的框架，针对大型物体完整点云在实际场景中可能无法获得的问题。模型以卷积占据网络隐式学习几何特征，推断局部可抓取性、无碰撞接触区域和物体厚度，据此生成满足力闭合条件的抓取对，再通过基于采样的优化缓解几何不完整带来的歧义。评估包括解析力闭合指标、大规模仿真实验及新物体噪声部分点云上的真实机器人测试；作者称结果显示抓取生成稳健且物理稳定。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
