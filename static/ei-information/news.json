@@ -1395,7 +1395,11 @@
             "heading": "",
             "text": "Long-horizon robot tasks require retaining and using past information. We integrate Test-Time Training (TTT), which stores context in fast weights, into InternVLA-A1 and Pi0.5 to study action generation conditioned on human demonstrations through training on paired demonstrations and robot trajectories.\n\nWe implement memory transfer between the two phases and truncated backpropagation, and examine training objectives, gradient coverage, and contrastive regularization across video, short-video, and single-frame cue tasks.\n\nIn our experiments, adding TTT and training on paired data at the current scale did not lead to consistent target selection based on demonstrations. Under the tested settings, shorter sequences, full trajectory gradient connectivity, and contrastive regularization did not clearly improve responsiveness to demonstrations.\n\nWhen demonstrations were reduced to single-frame cues, real-robot execution still showed a preference for cups at fixed positions. We document the implementation, training configurations, and observations to support further inspection and replication."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper integrates test-time training (TTT) into InternVLA-A1 and Pi0.5 to study action generation conditioned on human demonstrations, using paired demonstrations and robot trajectories. It describes memory transfer between training phases and truncated backpropagation, and examines objectives, gradient coverage, and contrastive regularization. In the tested settings and at the current scale, TTT did not consistently enable demonstration-based target selection, and the examined changes did not clearly improve responsiveness. Real-robot trials with single-frame cues still favored cups at fixed positions.",
+          "zh": "研究将测试时训练（TTT）整合进 InternVLA-A1 和 Pi0.5，通过成对的人类演示与机器人轨迹训练，考察模型能否依据演示生成动作。作者实现了两阶段间的记忆迁移和截断反向传播，并比较不同训练目标、梯度覆盖范围及对比正则化。在所测设置和当前规模下，加入 TTT 未能稳定实现基于演示的目标选择；缩短序列、扩展轨迹梯度连接或使用对比正则化也未明显提升响应。单帧演示的真实机器人实验仍偏好固定位置的杯子。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1426,7 +1430,11 @@
             "heading": "",
             "text": "Hierarchical multi-robot exploration decouples frontier allocation from local navigation, making systems brittle in dynamic environments. Without awareness of execution difficulty, allocators may send robots toward frontiers whose routes are congested or unsafe, causing bottlenecks, oscillatory replanning, and redundant coverage.\n\nWe propose VORL-EXPLORE, a hybrid learning and planning framework that makes exploration execution-aware through execution fidelity, an estimate of local navigability and execution reliability.\n\nThis fidelity score is used to penalize risky or crowded frontiers in a fidelity-coupled Voronoi allocation objective with inter-robot repulsion, and to arbitrate between global $A^*$ guidance and a reactive reinforcement learning policy during navigation.\n\nAs a result, robots follow efficient global plans in reliable regions and rely more on safer local reactions in crowded or changing areas. The fidelity model is recalibrated using self-supervised pseudo-labels derived from recent progress and safety outcomes.\n\nQuantitative experiments on randomized dynamic grids and an ablation under severe traffic show higher success rates, shorter exploration lengths, and lower inter-robot coverage overlap. A Gazebo factory scenario is included as a deployment illustration. The source code is available at https://github.com/21ning/VORL-EXPLORE."
           }
-        ]
+        ],
+        "summary": {
+          "en": "VORL-EXPLORE is a hybrid learning and planning framework for multi-robot exploration in dynamic environments. It uses execution fidelity, an estimate of local navigability and reliability, to penalize risky or crowded frontiers and to arbitrate between global A* guidance and a reactive reinforcement learning policy. The fidelity model is recalibrated from self-supervised pseudo-labels based on recent progress and safety outcomes. Experiments on randomized dynamic grids and an ablation under severe traffic report higher success, shorter exploration lengths, and less coverage overlap. A Gazebo factory scenario illustrates deployment.",
+          "zh": "VORL-EXPLORE提出一种面向动态环境的多机器人探索框架，以执行保真度估计局部可通行性和执行可靠性。该分数用于前沿分配，惩罚拥挤或有风险的目标，并在导航时协调全局 A* 指引与强化学习反应策略；模型还根据近期进展和安全结果生成的自监督伪标签重新校准。随机动态网格实验及严重交通条件下的消融实验显示，该方法取得更高成功率、更短探索路径和更低机器人间覆盖重叠。Gazebo 工厂场景作为部署示例呈现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1457,7 +1465,11 @@
             "heading": "",
             "text": "For robots to work reliably in commercial and industrial applications, recent advances in agentic coding systems have potential to combine interpretable robot programming with the open-world adaptability of model-free policies.\n\nWe focus on \"Variational Automation\" (VA), a class of tasks that have larger variations in object geometry and pose than fixed automation. Model-free policies often struggle to close the reliability gap for VA tasks, which must be executed persistently and reliably in commercial and industrial applications.\n\nMotivated by prior work on Task and Motion Planning (TAMP) and the Robot Operating System (ROS), we introduce Graph-as-Policy (GaP), a multi-agent coding harness that generates directed computation graphs with perception, planning, and control nodes from a Modular Open Robot Skill Library (MORSL).\n\nGaP generates an internal simulation environment to rehearse task instances with different graphs in parallel to iteratively refine the graph structure and parameters to improve success rates and throughput.\n\nEvaluation with 8 new open VA task benchmarks, 4 in simulation and 4 in real-world, suggests that GaP can achieve success rates that significantly outperform baselines. Details, code, and data: https://graph-robots.github.io/gap"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Graph-as-Policy (GaP), a multi-agent coding harness for variational automation tasks. It generates directed computation graphs containing perception, planning, and control nodes from a modular robot skill library. GaP also creates an internal simulation environment to rehearse task instances with different graphs in parallel and iteratively refine graph structures and parameters. Evaluation on eight new open benchmarks, comprising four simulation and four real-world tasks, suggests that GaP achieves success rates significantly above the baselines.",
+          "zh": "论文提出 Graph-as-Policy（GaP），一种用于变异自动化任务的多智能体编码框架。GaP 从模块化开放机器人技能库生成包含感知、规划和控制节点的有向计算图，并构建内部仿真环境，使不同图并行演练任务实例，迭代调整图结构和参数，以提高成功率与吞吐量。作者在八项新的开放变异自动化基准上进行评估，其中四项为仿真、四项为真实世界任务；结果显示，GaP 的成功率显著高于基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
