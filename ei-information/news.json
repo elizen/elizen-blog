@@ -450,7 +450,11 @@
             "heading": "",
             "text": "Reconstructing the shape of continuum manipulators from sparse, noisy sensor data is a challenging task, owing to the infinite-dimensional nature of such systems.\n\nExisting approaches broadly trade off between parametric methods that yield compact state representations but lack probabilistic structure, and Cosserat rod inference on factor graphs, which provides principled uncertainty quantification at the cost of a state dimension that grows with the spatial discretization.\n\nThis letter combines the strengths of both these approaches by estimating the coefficients of a compact Geometric Variable Strain (GVS) parameterization within a factor graph framework.\n\nA novel kinematic factor, derived from the Magnus expansion of the strain field, encodes the closed-form rod geometry as a prior constraint linking the GVS strain coefficients to the backbone pose variables.\n\nThe resulting formulation yields a compact state vector, is directly amenable to model-based control, and it retains the modularity, probabilistic treatment, and computational efficiency of factor graph inference.\n\nThe proposed method is evaluated on both simulated and experimental data and compared against a Gaussian Process (GP) regression baseline, demonstrating increased accuracy in partial and sparse measurement scenarios while preserving computational efficiency."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This letter estimates continuum robot states by fitting strain coefficients in a compact Geometric Variable Strain parameterization within a factor graph. A kinematic factor derived from the Magnus expansion links those coefficients to backbone pose variables as a prior encoding closed-form rod geometry. The authors say the formulation retains probabilistic inference, modularity, and computational efficiency while supporting model-based control. Evaluation on simulated and experimental data against a Gaussian Process regression baseline reports higher accuracy for partial and sparse measurements while preserving computational efficiency.",
+          "zh": "本文提出一种基于因子图的连续体机器人状态估计方法，在紧凑的几何可变应变参数化中估计应变系数。方法利用应变场的 Magnus 展开构造运动学因子，将系数与主干位姿变量联系起来，作为闭式杆件几何的先验约束。作者称该方法兼具紧凑状态表示、概率推断、模块化和计算效率，并适用于基于模型的控制。在仿真和实验数据上与高斯过程回归基线比较，结果显示其在部分和稀疏测量场景中精度更高，同时保持计算效率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -481,7 +485,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have emerged as powerful general-purpose robot policies, but their successes and failures remain difficult to diagnose and understand.\n\nIn this work, we show that sparse autoencoder (SAE) representations of OpenVLA activations contain outcome-predictive information and can be used to predict task failure before the robot reaches an unrecoverable state.\n\nMoreover, to provide insights into what common behaviors may contribute to these outcomes, we identify individual SAE features whose strong activations are associated with specific stages of success or failure, and uncover recurring behavioral patterns by localizing temporal intervals where these features exhibit significant activation changes.\n\nWe further develop a VLM-based interpretation pipeline to generate behavioral descriptions of these patterns and validate their correspondence to feature activations on held-out intervals."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This work investigates how to diagnose and interpret successes and failures in Vision-Language-Action models. The authors report that sparse autoencoder representations of OpenVLA activations contain outcome-predictive information and can predict task failure before the robot reaches an unrecoverable state. They identify individual features associated with stages of success or failure and recurring behavioral patterns by locating intervals with significant activation changes. A VLM-based pipeline generates behavioral descriptions, whose correspondence to feature activations is validated on held-out intervals.",
+          "zh": "本文研究视觉—语言—动作模型的成功与失败如何诊断和解释。作者表明，OpenVLA 激活中的稀疏自编码器表示包含可预测任务结果的信息，可在机器人进入不可恢复状态前预测失败。研究还识别出与成功或失败特定阶段相关的单个特征，并通过定位这些特征激活显著变化的时间区间，归纳反复出现的行为模式。作者进一步提出基于视觉语言模型的解释流程，为这些模式生成行为描述，并在留出区间验证描述与特征激活的对应关系。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -512,7 +520,11 @@
             "heading": "",
             "text": "Action-conditioned world models increasingly serve as learned simulators for robotic policy improvement, yet their reliability rests on an unverified assumption: generated futures faithfully reflect the consequences of arbitrary valid actions. Systematic evaluation against action-specific ground truth remains limited beyond expert demonstrations.\n\nTo address this gap, we introduce WorldEcho, which evaluates action following over a broader action distribution through visual integrity and SE（3） end-effector trajectory alignment.\n\nOur diagnosis shows that expert-trained models perform better on demonstrated actions but struggle with off-expert trajectories, producing motion inconsistent with the commanded actions or visually invalid rollouts.\n\nTo mitigate these failures, we propose WorldSync, which broadens action coverage, grounds intermediate video representations in action-induced robot dynamics through an Action-Forcing Expert, and aligns predicted and ground-truth changes under action interventions.\n\nExperiments show that WorldSync reduces integrity-gated error on RoboTwin and, when used for iterative policy improvement, yields higher success rates in simulation and on real robots."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors introduce WorldEcho to evaluate action following in robotic world models across a broader action distribution, using visual integrity and SE(3) end-effector trajectory alignment. Their diagnosis finds that models trained on expert data perform better on demonstrated actions but may generate motion inconsistent with commands or visually invalid rollouts for off-expert trajectories. WorldSync addresses these failures by broadening action coverage, grounding intermediate video representations in action-induced dynamics, and aligning changes under interventions. Experiments report reduced integrity-gated error on RoboTwin and higher policy success rates in simulation and on real robots.",
+          "zh": "本文提出 WorldEcho，用于在比专家演示更广的动作分布上评估机器人世界模型是否遵循动作，通过视觉完整性和末端执行器 SE(3) 轨迹对齐进行诊断。作者发现，基于专家数据训练的模型在演示动作上表现较好，但面对偏离专家轨迹的动作时，可能生成与指令不符的运动或视觉上无效的结果。为缓解这些问题，WorldSync 扩展动作覆盖范围，并通过动作强制专家及动作干预下的变化对齐，使中间视频表征贴合动作引发的机器人动力学。实验显示，WorldSync 在 RoboTwin 上降低完整性门控误差；用于迭代策略改进时，在仿真和真实机器人上均提高成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -543,7 +555,11 @@
             "heading": "",
             "text": "Designing effective reward functions is a critical challenge in Reinforcement Learning (RL), which traditionally requires costly manual trial-and-error.\n\nWhile Large Language Model (LLM)-based methods have shown promise in reward design, undifferentiated sampling and limited use of historical feedback often lead to insufficient exploration of the reward space and optimization instability.\n\nTo address these challenges, we propose $R^2E$, a Role-driven Reward Evolutionary framework for automated reward function design that structures the process through explicit role specialization. $R^2E$ employs multiple LLM roles with complementary objectives: an Explorer that promotes novelty to expand the search space, a Guardian that performs conservative refinements to improve training stability, and an Evolver that recombines high-performing rewards via crossover and mutation to integrate effective structures.\n\nA dynamic scheduling strategy coordinates these roles, progressively shifting the search from broad exploration to focused exploitation.\n\nTo mitigate optimization instability and provide a medium for cross-role collaboration, $R^2E$ incorporates a Global Elite Pool that retains the best-performing rewards to guide subsequent generations, thereby enabling coordinated interaction among roles and ensuring a reliable and consistent refinement process.\n\nExtensive experiments on multiple robotic tasks demonstrate the effectiveness of our method."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper proposes R²E, a role-driven evolutionary framework for automated reinforcement learning reward design. Multiple LLM roles have complementary objectives: an Explorer promotes novelty, a Guardian makes conservative refinements intended to improve training stability, and an Evolver recombines high-performing rewards through crossover and mutation. Dynamic scheduling shifts the search from broad exploration toward focused exploitation. A Global Elite Pool retains top-performing rewards to guide later generations and support collaboration across roles. Experiments on multiple robotic tasks are reported as demonstrating the method’s effectiveness.",
+          "zh": "本文提出 R²E，一种以角色分工驱动的进化框架，用于自动设计强化学习奖励函数。多个大语言模型角色分别承担探索新颖方案、保守调整以改善训练稳定性，以及通过交叉和变异重组高表现奖励结构。动态调度策略逐步将搜索重点从广泛探索转向集中利用。框架还设置全局精英池，保留表现最佳的奖励，以指导后续迭代并促进角色间协作。作者称，该方法通过协调搜索过程缓解优化不稳定；在多个机器人任务上的实验显示了其有效性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
