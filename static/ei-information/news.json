@@ -590,7 +590,11 @@
             "heading": "",
             "text": "Scaling policy learning requires broad experience and reliable supervision. Robot demonstrations provide high-quality trajectory supervision but are costly to collect. Egocentric videos broaden task and environment coverage, yet motion reconstruction and retargeting introduce noisy action labels.\n\nTo address this challenge, we introduce EgoForesight, a vision-language-action framework that learns jointly from both sources by reducing the influence of unreliable action labels and exploiting demonstrated outcomes as complementary supervision.\n\nA joint vision-action flow couples future visual representation prediction with action generation, unifying reliability-aware action learning with outcome-informed representation transfer.\n\nSpecifically, reliability-conditioned corruption allocates action supervision across noise levels according to source reliability, while reliability-weighted regression regulates each source's contribution. Complementing this treatment of noisy labels, privileged-future representation distillation draws supervision from demonstrated outcomes.\n\nAn exponential-moving-average teacher observes the current scene and clean future to encode action-relevant structure from the resulting scene change. Its deeper representations supervise an earlier student layer receiving a corrupted future, providing outcome-informed structure beyond noisy action annotations.\n\nTogether, these mechanisms support effective scaling with noisy egocentric actions. Over the tested range, EgoForesight exhibits steeper scaling slopes than the baseline, reducing real-world open-loop action MSE by 20.5% and improving RoboCasa few-shot success by 8.1 percentage points at 30,000 hours of pretraining data.\n\nAfter post-training, it also achieves strong absolute performance in both simulated and real-world dexterous manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "EgoForesight is a vision-language-action framework that jointly learns from robot demonstrations and egocentric videos, aiming to reduce the influence of unreliable action labels while using demonstrated outcomes as additional supervision. It allocates action supervision according to source reliability, weights regression contributions, and distills representations from future scenes. Over the tested range, the authors report steeper scaling slopes than the baseline, with improvements in real-world open-loop action error and RoboCasa few-shot success. After post-training, they report strong absolute performance in simulated and real-world dexterous manipulation.",
+          "zh": "EgoForesight 是一种从机器人演示和第一人称视频共同学习的视觉—语言—动作框架，旨在降低不可靠动作标签的影响，并利用演示结果提供补充监督。它通过按来源可靠性分配不同噪声水平的动作监督、加权回归，以及基于未来场景的表示蒸馏来学习。在论文测试范围内，其规模扩展斜率高于基线；在真实世界开环动作均方误差和 RoboCasa 少样本成功率上报告了改进。后训练后，作者还报告了其在仿真和真实世界灵巧操作中的绝对表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -621,7 +625,11 @@
             "heading": "",
             "text": "Many manipulation tasks require a robot to remember what it has done and what it has seen. Frontier vision-language models can plan such tasks without task-specific training, but how such a planner should remember an episode is an open question.\n\nWe argue that its memory must keep track of what the planner has done and learned, and must let the planner choose what to look at, since every frame costs tokens; a note rewritten at every step meets both poorly.\n\nWe propose LogLook, whose execution-grounded memory lets the system keep the record, an execution log and the model's earlier notes, while the model decides where to look: frames are returned only where it expects a change, and demonstrations are skimmed before it inspects the parts it chooses.\n\nMeasured with the benchmark's motion planner, LogLook matches the success of a note-only memory with 43% fewer tokens and less than half the images, and fails far fewer episodes through what it remembered or saw. With direct control, LogLook solves 93.5% of the RoboMME test set."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LogLook proposes execution-grounded memory for frontier vision-language model planners handling manipulation tasks that require remembering actions and observations. It retains an execution log and earlier model notes, while the model chooses where to look: frames are returned where change is expected, and demonstrations are skimmed before selected portions are inspected. With the benchmark’s motion planner, the authors report success matching note-only memory while using fewer tokens and images, and fewer failures attributed to memory or observation. Under direct control, LogLook solves most of the RoboMME test set.",
+          "zh": "LogLook 针对需要机器人记住已执行操作和观察内容的操作任务，提出一种执行过程扎根的记忆机制，供无需任务专属训练的前沿视觉—语言模型规划器使用。系统保留执行日志和模型先前笔记，并由模型选择观察位置：只在预期发生变化处返回画面，先浏览演示，再检查所选部分。使用基准的运动规划器测量时，LogLook 以更少令牌和图像达到与仅用笔记记忆相当的成功率，并减少因记忆或观察导致的失败；直接控制时，它解决了 RoboMME 测试集中的大部分任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -652,7 +660,11 @@
             "heading": "",
             "text": "Contact-rich manipulation underlies many everyday human activities, yet evaluating robots on such tasks remains difficult: the tasks involve diverse contact behaviors and are hard to reproduce across laboratories.\n\nDrawing on observations of everyday human manipulation, we identify eight essential skills that provide a practical framework for studying contact-rich manipulation. We introduce ContactBench 1.0, an extensible benchmark that instantiates these skills through 36 reference tasks and more than 40 object assets.\n\nThe assets capture task-relevant geometry and contact behavior, can be fabricated reproducibly on consumer-grade 3D printers, and are each paired with a matching simulation model. Controlled task variations in both the real world and simulation enable evaluation of how well robot systems generalize.\n\nWe evaluate recent representative vision-only and visual-tactile policy learning methods on six benchmark tasks.\n\nThe results reveal that while vision-only policies struggle to perceive or react to contact events, visual-tactile policies do not meaningfully improve their performance, highlighting that contact-rich manipulation remains a significant challenge for current policy learning methods.\n\nBy providing common task definitions alongside physical and simulated assets, ContactBench 1.0 offers a shared testbed for developing, evaluating, and comparing contact-rich manipulation systems. The benchmark will be open-sourced at https://jingyi-xiang.github.io/contactbench."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ContactBench 1.0 is an extensible benchmark for everyday contact-rich robotic manipulation. Based on observations of human manipulation, it defines eight essential skills, represented by 36 reference tasks and more than 40 object assets. The assets capture task-relevant geometry and contact behavior, are reproducible with consumer-grade 3D printers, and have matching simulation models. Controlled variations support evaluation in both real and simulated settings. In six tasks, evaluated vision-only policies struggled with contact events, while visual-tactile policies did not meaningfully improve performance, indicating a continuing challenge for current methods.",
+          "zh": "ContactBench 1.0 是用于日常接触丰富型机器人操作的可扩展基准，依据日常人类操作观察提出八项基本技能，并以36项参考任务和40多种物体资产加以实现。资产针对任务相关几何形状与接触行为设计，可用消费级3D打印机复现，并配有对应仿真模型；真实世界和仿真中的受控任务变化可用于评估泛化能力。作者在六项任务上评估了代表性的纯视觉与视觉触觉策略学习方法，结果显示纯视觉策略难以感知或响应接触事件，而视觉触觉策略也未显著改善表现，表明该类操作仍具挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
