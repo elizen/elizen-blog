@@ -198,7 +198,11 @@
             "heading": "",
             "text": "World-action models (WAM) predict future states to guide robot actions, enabling learning from both action-free video and action-labeled interaction. Most inherit pretrained video generators, leaving WAM pretraining and scaling underexplored.\n\nWe introduce Genie Envisioner Act 2.0 (GE-Act 2.0), a world-action model whose trainable generative and action components are all initialized from scratch on manipulation data. It combines a control-oriented autoencoder (CoAE), a single-step visual planner (SVP), and an inverse dynamics model (IDM).\n\nCoAE retains action- and instruction-relevant information under aggressive compression, while SVP produces a complete future state in one differentiable pass, so visual planning and inverse dynamics can be pretrained separately on complementary data.\n\nThe components are then jointly trained with knowledge-aligned selective optimization (KASO), which reduces mismatched supervision by selecting only predicted futures judged behaviorally compatible with the recorded action.\n\nWe evaluate pretrained checkpoints directly, without per-task fine-tuning, on 100 tasks across 20 manipulation skill groups with held-out scenes, backgrounds, lighting, and object instances.\n\nScaling co-training data from 300 to 30,000 hours raises success from 17.1% to 44.1% on G1-OP and from 13.4% to 31.1% on G2-90D; despite comprising less than 2% of the co-training data, G2-90D improves by 17.7 points, suggesting cross-embodiment transfer.\n\nGains span 19/20 and 18/20 skill groups, and skill-specific coverage strongly correlates with zero-shot out-of-distribution (OOD) success (Pearson r=0.80; Spearman rho=0.85).\n\nUnder the same protocol, the model grounds object, color, shape, and position references in at least 90% of trials and follows explicit instructions even when they conflict with an already-committed behavior or a conventional scene association."
           }
-        ]
+        ],
+        "summary": {
+          "en": "GE-Act 2.0 is a world-action model whose generative and action components are trained from scratch on manipulation data. It combines a control-oriented autoencoder, a single-step visual planner, and an inverse dynamics model. Selective optimization keeps predicted futures judged behaviorally compatible with recorded actions. The authors evaluate pretrained checkpoints without task-specific fine-tuning across 100 tasks and 20 skill groups, including held-out scenes and objects. They report improved success as co-training data scales, gains across most skill groups, correlation between skill coverage and zero-shot OOD success, and instruction grounding for object attributes and conflicting commands.",
+          "zh": "GE-Act 2.0是一种从零开始、以操作数据训练生成与动作组件的世界-动作模型，包含控制导向自编码器、单步视觉规划器和逆动力学模型。模型通过选择与记录动作在行为上相容的预测未来状态，减少不匹配监督。作者在20类技能、100项任务及未见场景等条件下直接评估预训练检查点，不做逐任务微调；报告称，共同训练数据从300小时扩至30,000小时后，两种机器人平台成功率均提升，且多数技能组有增益。技能覆盖与零样本分布外成功率相关，模型也能依据指令定位物体属性并处理与既有行为冲突的明确指令。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -229,7 +233,11 @@
             "heading": "",
             "text": "Robotics manipulation usually assumes that the shape and pose of the object are known to the robot prior to motion planning. However, precise geometric information is not always available in practice, and pose inference suffers from sensor uncertainties and view occlusion.\n\nIn this work, we propose a unified model-based geometric framework integrating robotic haptic perception, modeling, and manipulation planning.\n\nOur novelties involve: \\textit{i)} Introducing Bayesian Optimization (BO) to guide the haptic exploration for object shape inference, where superellipses are used to approximate geometric boundary; \\textit{ii)} Adaptive formulation of manipulation potential encoding object geometry for quasi-static robot-object interaction; \\textit{iii)} Proposing an online Ordinary Differential Equation (ODE) for real-time pose inference based on model prediction and tactile feedback.\n\nWe deploy our system on a 2D robotic sorting task, and vary object geometries to validate the robustness and generalizability of our framework in both simulation and a real-world multi-arm setup."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a unified model-based geometric framework for robotic haptic perception, modeling, and manipulation planning, addressing unknown object geometry and uncertain, occluded pose observations. Bayesian optimization guides haptic exploration, with superellipses approximating object boundaries. An adaptive manipulation potential encodes geometry for quasi-static robot-object interaction, and an online ordinary differential equation combines model prediction with tactile feedback for real-time pose inference. The authors evaluate a 2D robotic sorting task with varied object geometries in simulation and a real-world multi-arm setup to assess robustness and generalizability.",
+          "zh": "本文提出一个结合触觉感知、几何建模与操作规划的统一模型框架，用于物体形状估计和实时姿态推断。框架以贝叶斯优化引导触觉探索，并用超椭圆近似物体边界；自适应操作势能编码物体几何，以描述准静态机器人与物体的交互；在线常微分方程则结合模型预测和触觉反馈推断姿态。作者在二维机器人分拣任务中改变物体几何，在仿真和真实多臂设置中验证框架的鲁棒性与泛化性。摘要未给出具体性能数值。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -260,7 +268,11 @@
             "heading": "",
             "text": "Pure pursuit and its variants are widely used for mobile robot path tracking owing to their simplicity and computational efficiency.\n\nHowever, many conventional approaches do not explicitly account for velocity and acceleration constraints, resulting in discrepancies between commanded and actual velocities that result in overshoot and degraded tracking performance.\n\nTo address this problem, this paper proposes dynamic window pure pursuit (DWPP), which fundamentally reformulates the command velocity computation process to explicitly incorporate velocity and acceleration constraints.\n\nSpecifically, DWPP formulates command velocity computation in the velocity space (the $v$-$\\omega$ plane) and selects the command velocity as the point within the dynamic window that is closest to the line $\\omega = \\kappa v$.\n\nExperimental results demonstrate that DWPP avoids constraint-violating commands and achieves superior path-tracking accuracy compared with conventional pure pursuit methods. The proposed method has been integrated into the official Nav2 repository and is publicly available (https://github.com/ros-navigation/navigation2)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes dynamic window pure pursuit (DWPP) for mobile-robot path tracking, addressing conventional methods that omit explicit velocity and acceleration constraints and may therefore overshoot. DWPP computes commands in velocity space, the v-ω plane, and selects the point within the dynamic window closest to the line ω = κv. Experimental results show that it avoids constraint-violating commands and tracks paths more accurately than conventional pure pursuit methods. The paper also states that DWPP has been integrated into the official Nav2 repository and is publicly available.",
+          "zh": "论文提出动态窗口纯跟踪方法DWPP，针对传统纯跟踪未显式考虑速度和加速度约束、可能造成指令速度与实际速度不一致并引发超调的问题。DWPP在速度空间（v-ω平面）内计算指令速度，并从动态窗口中选择最接近ω=κv直线的点。实验结果显示，该方法避免发出违反约束的指令，路径跟踪精度优于传统纯跟踪方法。论文还称，DWPP已集成至Nav2官方代码库并公开提供。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
