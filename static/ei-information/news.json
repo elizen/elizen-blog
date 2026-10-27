@@ -443,7 +443,11 @@
             "heading": "",
             "text": "Running vision-language navigation fully onboard an aerial robot is hard, since grounding, planning, and control must share limited compute and a single-stage error is difficult to isolate in flight. End-to-end aerial policies fuse these stages into one network, giving up the observability and safety checks a modular stack keeps available.\n\nWe propose VLN on the Fly, an onboard stack that keeps grounding, planning, and control as separate, inspectable stages. A quantized VLM grounds an instruction to a coarse image cell, depth lifts it to a 3D goal, a fast B-spline planner returns a feasible trajectory, and a pretrained reinforcement learning policy tracks it to motor commands across quadrotors.\n\nAcross 15 onboard flights over three everyday referents in a controlled indoor volume, the stack reaches the target in 13 of 15 trials with 5.72 cm mean goal error and 39.3% average GPU utilization. In 6 additional cluttered-environment trials, the stack tracks collision-free trajectories under onboard perception gating."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents VLN on the Fly, an onboard vision-language navigation stack that keeps grounding, planning, and control as inspectable stages. A quantized vision-language model maps instructions to coarse image regions; depth estimates a 3D goal, a B-spline planner produces a feasible trajectory, and a pretrained reinforcement learning policy tracks it to motor commands. In 15 onboard flights in a controlled indoor volume, the stack reached its target in 13 trials, with 5.72 cm mean goal error and 39.3% average GPU utilization. In six additional cluttered-environment trials, it tracked collision-free trajectories under onboard perception gating.",
+          "zh": "本文提出“VLN on the Fly”机载视觉语言导航系统，将指令落地、规划和控制保留为可检查的独立阶段：量化视觉语言模型将指令映射到图像区域，深度信息将其转换为三维目标，快速B样条规划器生成可行轨迹，预训练强化学习策略负责跟踪并输出电机指令。在受控室内空间的15次机载飞行中，系统有13次到达目标，平均目标误差为5.72厘米，平均GPU利用率为39.3%。另有6次杂乱环境试验中，系统在机载感知门控下跟踪无碰撞轨迹。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -474,7 +478,11 @@
             "heading": "",
             "text": "World action models (WAMs) have emerged as an important class of generalist robot policies, aiming to transfer video prediction priors to action learning. However, we find that existing WAMs frequently produce incorrect motion predictions in open-ended environment, leading to erroneous actions.\n\nWe attribute this limitation to two factors: （1） base video models are not optimized for manipulation, and （2） naively incorporating action components into video models can substantially degrade their generalization capabilities.\n\nWe introduce Video Prediction Policy 2 (VPP2), a WAM that enables strong zero-shot generalization in both video prediction and action generation. First, we curate a large-scale, diverse dataset of manipulation videos to continue pretraining the base video foundation model.\n\nWe annotate video clips with detailed captions and perform \\textit{event-level} video pretraining to promote generalization across open-ended manipulation tasks. Second, we post-train and distill the video model into a single-step visual planner with fixed prediction horizon.\n\nFinally, we introduce action module via a mixture-of-transformers (MoT) architecture to learn implicit inverse dynamics model.\n\nExperiments demonstrate three key results: （1） VPP2-14B outperforms Cosmos3-64B by 11.0\\% points in video prediction instruction-following success rate on open-ended tasks; （2） VPP2 surpasses the strongest baseline by 18.5\\% points in success rate on real-world zero-shot ALOHA manipulation tasks; and （3） following benchmark-specific post-training, VPP2 achieves the highest success rates among evaluated methods on the challenging LIBERO-Pro, LIBERO-OOD, and RoboDojo benchmarks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Video Prediction Policy 2 (VPP2), addressing incorrect motion predictions by world action models in open-ended environments. The authors attribute the issue to base video models not being optimized for manipulation and to action components that may harm generalization. VPP2 continues pretraining on diverse manipulation videos with detailed captions and event-level training, then post-trains and distills the model into a single-step visual planner with a fixed horizon. A mixture-of-transformers action module learns implicit inverse dynamics. Experiments report gains in open-task video prediction instruction following, real-world zero-shot ALOHA manipulation, and several benchmarks after benchmark-specific post-training.",
+          "zh": "本文提出视频预测策略VPP2，针对世界动作模型在开放环境中运动预测错误的问题，指出基础视频模型未针对操作任务优化，直接加入动作成分也可能损害泛化。作者使用多样化操作视频继续预训练基础模型，以细致描述和事件级训练促进开放任务泛化，再将模型后训练并蒸馏为固定预测时域的单步视觉规划器，并通过混合变换器架构学习隐式逆动力学。实验报告称，VPP2在开放任务视频预测指令遵循、真实世界零样本ALOHA操作，以及经特定基准后训练的多个基准上优于所比较方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
