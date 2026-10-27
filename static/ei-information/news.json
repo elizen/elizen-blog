@@ -1123,7 +1123,11 @@
             "heading": "",
             "text": "Load transportation with quadruped robots is strongly affected by the dynamics of the physical interface between the robot and the load.\n\nPassive spring-based arms provide a lightweight and mechanically compliant alternative to active manipulators, but their dynamics can store and release energy during locomotion, producing oscillatory interaction forces that reduce robot stability. This paper develops a passive-arm-aware ZMP model for a quadruped carrying a payload through a passive arm.\n\nThe reduced analytical model relates passive-interface stiffness, damping, and payload mass to the ZMP response under both external payload forcing and locomotion-induced base excitation, showing that lightly damped passive modes can overlap with gait harmonics.\n\nWe then propose an arm-aware MPC (ARMPC), a passive-arm Model Predictive Control approach based on extended Single Rigid Body Dynamics that combines reduced floating-base dynamics with passive-arm joint states, internal torsional springs and dampers, and base-arm inertial coupling.\n\nSimulation ablations show that ARMPC consistently reduces ZMP-margin violations and prevents failures across all tested conditions, while Nominal MPC, which neither models nor compensates the passive arm, and Baseline MPC, which compensates it through an estimated wrench, exhibit higher violation percentages and failures under disturbances.\n\nHardware pull-release experiments with a 2 kg payload show that the proposed ARMPC completes all longitudinal and diagonal disturbance trials without failure, whereas Baseline MPC fails in 7/15 and 8/15 trials, respectively. The same model also enables passive-arm end-effector tracking while maintaining a positive ZMP margin."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a passive-arm-aware ZMP model for quadrupeds carrying payloads through spring-based arms, then develops ARMPC, a predictive controller that incorporates floating-base dynamics, arm states, and inertial coupling. Simulation ablations report fewer ZMP-margin violations and no failures across tested conditions. In hardware pull-release trials with a 2 kg payload, ARMPC completed all longitudinal and diagonal disturbance trials; the baseline controller failed in some trials. The model also supports end-effector tracking with a positive ZMP margin.",
+          "zh": "论文提出面向四足机器人被动弹簧臂载荷搬运的阻抗感知ZMP模型，并据此设计融合浮动基座动力学、机械臂关节状态及惯性耦合的预测控制方法ARMPC。仿真消融中，该方法在所有测试条件下减少ZMP裕度违规并避免失败。硬件拉放实验使用2千克载荷，ARMPC完成全部纵向和斜向扰动试验；基线控制器分别在部分试验中失败。模型还支持末端跟踪并保持正ZMP裕度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1154,7 +1158,11 @@
             "heading": "",
             "text": "Scaling robot data and model capacity has improved Vision-Language-Action (VLA) policies, but further progress is constrained by the high cost of robotic data. Verifier-guided test-time scaling offers an efficient alternative by sampling multiple action candidates and selecting the one most likely to lead to task success at inference time.\n\nExisting classification-based verifiers learn from trajectory-level outcomes but treat all visited states equally, even though their value for candidate discrimination can vary across a trajectory.\n\nAt many states, plausible actions are similar and provide limited discrimination signal, while only a sparse set of decision-critical states admits meaningfully different actions that can substantially affect downstream outcomes. To address this, we propose DiVeR, which estimates decision criticality from the dispersion of sampled action representations.\n\nDiVeR then uses this signal to reweight verifier learning toward states where action selection is most consequential, without requiring step-level annotations or additional environment interaction.\n\nAcross LIBERO, RoboCasa, and real-world experiments on a Franka Research 3 robot, DiVeR consistently improves task success through more effective verifier-guided action selection, while adding negligible verifier inference overhead."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DiVeR is a verifier-learning method for selecting among sampled actions at inference time in vision-language-action policies. It estimates how decision-critical a state is from the dispersion of sampled action representations, then weights verifier training toward states where action choice may matter more. The method does not require step-level annotations or additional environment interaction. The authors report improved task success across LIBERO, RoboCasa, and real-world experiments on a Franka Research 3 robot, with negligible verifier inference overhead.",
+          "zh": "论文提出DiVeR，用于在机器人视觉语言动作策略推理时，从多个候选动作中选择更可能成功的动作。该方法根据采样动作表示的离散程度估计状态的决策关键性，并据此提高验证器对关键状态的学习权重，无需逐步标注或额外环境交互。作者报告称，在LIBERO、RoboCasa及Franka Research 3机器人真实世界实验中，DiVeR持续提升任务成功率，且验证器推理开销可忽略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1185,7 +1193,11 @@
             "heading": "",
             "text": "Scaling humanoid whole-body control toward general-purpose deployment requires large human motion corpora and training experience shared across robot bodies. Existing methods usually train one policy per robot, leaving motion experience isolated across embodiments.\n\nWe introduce X-WBC, a cross-embodiment foundation framework that separates relatively shared human motion semantics from embodiment-specific physical execution. Human-centered command tokens align full human motion, robot reference motion, and sparse VR observations.\n\nA causal Transformer learns reusable temporal structure from mixed multi-robot rollouts, while lightweight robot-specific modules map the shared representation to each robot's proprioception and action space.\n\nAcross nine simulated embodiments, external motions, and four real robots, experiments show that joint training improves tracking, the aligned representation supports consistent control across command sources, and the learned policy remains competitive beyond the training corpus.\n\nThese results support heterogeneous humanoids as joint data sources and establish cross-embodiment joint training as a practical route toward whole-body control foundation models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "X-WBC is a cross-embodiment framework for humanoid whole-body control. It separates shared human-motion semantics from robot-specific execution, using human-centered command tokens to align human motions, robot reference motions, and sparse VR observations. A causal Transformer learns temporal structure from mixed multi-robot rollouts, while lightweight modules map representations to each robot’s proprioception and action space. Experiments span nine simulated embodiments and four real robots. The authors report improved tracking with joint training, consistent control across command sources, and competitive performance beyond the training corpus.",
+          "zh": "论文提出X-WBC跨具身人形机器人全身控制框架，将较共享的人类运动语义与各机器人特定的物理执行分开。人本命令标记对齐人类动作、机器人参考动作和稀疏VR观测；因果Transformer从多机器人混合轨迹中学习时序结构，轻量模块映射到各机器人的本体感知和动作空间。实验覆盖九种模拟具身、外部动作及四台真实机器人。作者报告联合训练改善跟踪，跨命令来源控制一致，且训练语料之外表现仍具竞争力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
