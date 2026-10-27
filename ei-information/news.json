@@ -680,7 +680,11 @@
             "heading": "",
             "text": "Generalist robot policies and language-model agents provide complementary capabilities, but completing a task also requires adapting their use to the consequences of physical interaction. We study execution as a locus of adaptation: feedback guides the current action and supplies evidence for revising subsequent decisions under fixed model weights.\n\nWe introduce RoboDoctor, a training-free framework that connects diagnosis, grounded action, and persistent experience across three revision targets. The harness allocates control between policy and agent; intervention determines when to assist while preserving useful policy behavior; and operation refines physical methods through observed effects.\n\nLinked experience records retain the reason for a decision, the attempted method, its outcome, and conditions for reuse. On a curated archive of 54 RoboDojo-Sim task entries, RoboDoctor achieves a five-dimension mean score of 57.10, with a native success rate of 49.44%.\n\nRecorded interactions illustrate strategy changes, selective correction, and grasp revision. These findings characterize execution-time adaptation in the evaluated system; controlled trials remain necessary to isolate the contribution of cross-episode experience."
           }
-        ]
+        ],
+        "summary": {
+          "en": "RoboDoctor is a training-free framework for adapting robot execution through feedback while model weights remain fixed. It links diagnosis, grounded actions, and persistent experience, revising control allocation, intervention timing, and physical methods. Linked records preserve decision reasons, attempted methods, outcomes, and reuse conditions. On a curated archive of 54 RoboDojo-Sim task entries, the authors report a five-dimension mean score of 57.10 and a native success rate of 49.44%. They state that controlled trials are still needed to isolate cross-episode experience contributions.",
+          "zh": "论文提出RoboDoctor，一种在模型权重固定时利用执行反馈调整机器人策略的免训练框架，连接诊断、落地动作与持久经验，并分别修订控制分配、干预时机和物理操作方法。其关联经验记录决策原因、尝试方法、结果及复用条件。在精选的54条RoboDojo-Sim任务档案上，作者报告五维平均分57.10、原生成功率49.44%。记录的交互展示了策略变化、选择性纠正和抓取调整。作者指出，这些结果描述了所评估系统的执行时适应，跨回合经验的贡献仍需对照试验厘清。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -711,7 +715,11 @@
             "heading": "",
             "text": "Dynamic target tracking requires a mobile robot to maintain target visibility while navigating obstacles with smooth, feasible controls. Online trajectory optimization explicitly encodes these objectives but requires repeated numerical solving, whereas waypoint-based neural policies separate geometric prediction from control execution.\n\nWe introduce LECO, a framework that transfers tracking optimization into offline learning of a direct-control policy. LECO predicts control sequences and maps them to trajectories through a differentiable kinematic model, allowing trajectory-level objectives to directly guide control learning.\n\nA decaying expert-guidance curriculum initializes effective tracking behavior and progressively shifts learning toward these task objectives. At deployment, a predictive safety lock checks short-horizon obstacle clearance and invokes a classical planning and control fallback when the predicted motion is unsafe or the target prediction is invalid.\n\nAcross three simulated obstacle densities, LECO reduces root-mean-square linear jerk by 14.1--31.2\\% relative to the best competing method for this metric and achieves the highest tracking success rate, with per-cycle computation times of 4.25--5.63\\,ms.\n\nExperiments on two robot platforms further demonstrate tracking through indoor narrow passages and outdoor forest environments. These results demonstrate that learning direct control from optimization enables smooth and robust dynamic target tracking."
           }
-        ]
+        ],
+        "summary": {
+          "en": "LECO transfers dynamic target-tracking optimization into offline learning of a direct-control policy. It predicts control sequences, maps them to trajectories through a differentiable kinematic model, and uses trajectory objectives to guide learning. A decaying expert-guidance curriculum initializes tracking; at deployment, a predictive safety lock checks obstacle clearance and invokes a classical fallback when motion is unsafe or target prediction is invalid. In simulations, LECO reduces linear jerk relative to the best competing method for that metric and has the highest tracking success. Experiments on two robot platforms show indoor and outdoor tracking.",
+          "zh": "论文提出LECO，将动态目标跟踪优化迁移为离线直接控制策略学习：策略预测控制序列，并通过可微运动学模型映射为轨迹，由轨迹层目标直接指导学习。逐渐衰减的专家引导课程用于初始化跟踪行为；部署时，预测安全锁检查短时域障碍间距，在运动不安全或目标预测无效时调用传统规划与控制回退。在三种仿真障碍密度下，作者报告其线性加加速度均方根较该指标最佳竞争方法降低14.1%至31.2%，跟踪成功率最高，单周期计算时间为4.25至5.63毫秒。两种机器人平台的实验展示了室内狭窄通道及室外森林跟踪。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -742,7 +750,11 @@
             "heading": "",
             "text": "Humans manipulate objects within their hands through touch alone with remarkable ease, but for robots, achieving sustained real-world manipulation without vision remains an open challenge.\n\nAlthough reinforcement learning (RL) can generate sophisticated blind manipulation policies in simulation, transferring them to a real dexterous hand remains hindered by continuously changing contacts, motion-induced tactile information drift, and the gap between simulated and physical dynamics.\n\nWe study this problem through Baoding ball rotation on the Shadow Dexterous Hand Lite, using only proprioception and binary tactile feedback as observations.\n\nWe achieve successful zero-shot transfer through a combination of a sensor-aligned, coupling-aware embodiment in simulation, tactile calibration, and two novel episodic domain randomisations: slew-rate action limits and STuck-AT Taxels.\n\nOn the physical hand, the policy achieves sustained blind Baoding rotation, completing $\\textbf{225 consecutive $\\mathbf{180^\\circ}$ rotations (112.5 full rotations) at $\\sim0.36 \\;\\text{rot/s}$}$ in a single continuous trial without any vision or object-state information.\n\nFurthermore, we evaluate the contribution of tactile sensing relative to proprioception alone and identify the hand regions where tactile information is most important. This is the strongest reported hardware result for Baoding ball manipulation in both rotation count and speed, irrespective of the sensing modality used.\n\nBy effectively bridging the sim-to-real gap, our framework sets a new benchmark for sustained tactile-driven dexterous manipulation on physical hardware."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies Baoding ball rotation on a Shadow Dexterous Hand Lite using only proprioception and binary tactile feedback, without vision. The authors report zero-shot transfer to the physical hand using sensor-aligned, coupling-aware simulation, tactile calibration, and two episodic domain randomizations. In one continuous hardware trial, the policy completed 225 consecutive 180-degree rotations, or 112.5 full rotations, at about 0.36 rotations per second without vision or object-state information. The study also evaluates tactile sensing against proprioception alone and identifies hand regions where touch matters most.",
+          "zh": "论文研究Shadow Dexterous Hand Lite仅依靠本体感觉和二元触觉反馈、无视觉操控保定球旋转。作者结合传感器对齐且考虑耦合的仿真具身、触觉校准，以及两种情景式域随机化，实现策略零样本迁移至实体手。在一次连续实机试验中，策略完成225次连续180度旋转，即112.5圈，速度约每秒0.36圈，全程未使用视觉或物体状态信息。论文还比较触觉相对单一本体感觉的作用，并识别触觉较重要的手部区域。作者声称这是该任务在硬件上的最强报告结果；该结论及基准范围属于作者报告。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
