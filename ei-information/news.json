@@ -863,7 +863,11 @@
             "heading": "",
             "text": "Recent advances in large-scale human motion data, motion retargeting, and motion imitation have enabled increasingly capable whole-body control for individual humanoids.\n\nCooperative carrying is more challenging because successful coordination requires not only plausible individual motions, but also consistent cross-agent and agent-object relations, including shared grasp, relative configuration, and whole-body support.\n\nWe introduce CoCarry, a cooperative-carrying dataset containing 220 synchronized two-person sequences across 21 task schemes, five shared-object geometries, four terrain types, and approximately 61 minutes of motion.\n\nWe further propose Contact-Support-Structured Retargeting, which starts from nominal individual motions and jointly refines both humanoids around the same prescribed object trajectory.\n\nCooperation-aware object-local hand anchors preserve compatible four-hand grasp relations, while complementary upper object-interaction and lower support structures retain object-relative geometry and coordinated support.\n\nAcross all 220 CoCarry sequences retargeted to two A3 humanoids, our method achieves 0.9995 contact preservation, reduces penetration duration by 67.0% and 71.0% relative to GMR and OmniRetarget, respectively, and maintains a 100% retargeting success rate. On CORE4D with Unitree G1 humanoids, it achieves 0.9906 contact preservation with zero measured sliding.\n\nWe further validate the generated references through physics simulation and multiple real-world cooperative carrying experiments on two physical A3 humanoids, demonstrating their usability for downstream dual-humanoid control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CoCarry, a dataset of synchronized two-person carrying sequences, and a contact-support-structured retargeting method that jointly refines two humanoids around a prescribed object trajectory. The method is designed to preserve compatible four-hand grasps, object-relative geometry, and coordinated support. The authors report contact-preservation results on retargeted CoCarry and CORE4D sequences, and say that generated references were validated in physics simulation and cooperative-carrying experiments with two physical A3 humanoids for downstream control.",
+          "zh": "论文提出 CoCarry 双人协作搬运数据集，包含 220 段同步序列，并提出接触与支撑结构化重定向方法，在预设物体轨迹周围联合调整两个 humanoid 的动作，以保持四手抓握关系、物体相对几何和协调支撑。论文报告该方法在 CoCarry 的 A3 仿真重定向及 CORE4D 的 Unitree G1 评估中的接触保持等指标，并称生成参考动作经物理仿真和两台实体 A3 机器人上的协作搬运实验验证，可用于下游控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -894,7 +898,11 @@
             "heading": "",
             "text": "Swarms of small robots are an attractive way to survey lunar caves and lava tubes. Missions such as NASA's CADRE will fly cooperating rovers for distributed mapping, but only in daylight. The 354 h lunar night drops the surface towards 95 K, and the radioisotope heaters that let single rovers survive it cannot be supplied at swarm scale.\n\nIn this study we investigate whether a swarm can instead use its own members as thermal shielding. We train one policy, shared by all twenty robots, by reinforcement learning with an evolution-strategies estimator. The policy receives a single reward, once, at the end of the night: the mean temperature of the five coldest robots.\n\nNothing in that reward refers to position, spacing, exposure or motion. Two behaviors nonetheless emerge. The swarm aggregates, and robots circulate between the sheltered core and the exposed rim, the same pair of behaviors with which emperor penguins survive the Antarctic winter.\n\nWe measure the survival threshold, the smallest stored energy per robot at which every robot is still alive at sunrise. Across ten runs it is 155.6 +/- 1.3 pcm-h, where one pcm-h is 7.2 kJ of stored heat.\n\nThat is 37% below a motionless huddle and within 13% of a physics-based lower bound, and at a budget where the motionless huddle loses six robots, every robot survives. The behavior needs no shared spatial reference and no robot-robot contact, and transfers from twenty robots to forty without retraining."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study investigates whether a swarm of small robots can use its members as thermal shielding during lunar night. The authors train a shared reinforcement-learning policy for twenty robots, with a single reward given at night’s end based on the mean temperature of the five coldest robots. They report that aggregation and circulation between a sheltered core and exposed rim emerge without those behaviors being specified in the reward. Across ten runs, they measure a survival energy threshold and report transfer from twenty to forty robots without retraining.",
+          "zh": "研究探讨小型机器人群能否在月夜中以群体成员相互遮蔽来减少热量需求。研究者用强化学习训练一个由二十台机器人共享的策略，其单一奖励只在夜末依据最冷五台机器人的平均温度给出。作者报告，尽管奖励未规定位置、间距、暴露程度或运动，群体仍出现聚集及内外循环行为。十次运行中，研究测得全员存活至日出的储能阈值，并称该行为无需共享空间参考或机器人间接触，可从二十台迁移至四十台而不重新训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -925,7 +933,11 @@
             "heading": "",
             "text": "Generative policies can synthesize robot behaviors, yet controlling and editing them through diverse spatiotemporal references remains challenging. In the real world, human intent requires robot behaviors that satisfy constraints on where, when, and how actions are executed.\n\nOur key insight is that spatiotemporal control references, such as keypoints, flows, orientations, and keyposes, can be viewed as partial specifications of the same temporal Cartesian action space. We introduce the MAP (Masked Action Space) interface to unify these action references and formulate controllable manipulation as an action inpainting problem.\n\nOur Inpainting Policy (IP) reconstructs missing action dimensions of the end-effector, combining progress-guided alignment with multi-mask training supporting unseen action-constraint combinations. We further adopt a training-free RePaint variant that iteratively inpaints the action during denoising to reduce control error.\n\nOn ManiSkill and LIBERO-10, our policy achieves average task success rates of 92.67% and 64.67%, respectively.Real-world experiments demonstrate spatiotemporal control with average positional and rotational errors of 44.3 mm and 7{\\deg}, respectively, showing that our policy can use diverse references to guide executable robot behaviors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces the Masked Action Space (MAP) interface, treating references such as keypoints, flows, orientations, and keyposes as partial specifications of a temporal Cartesian action space. It frames controllable manipulation as action inpainting. The Inpainting Policy reconstructs missing end-effector action dimensions using progress-guided alignment and multi-mask training, while a training-free RePaint variant iteratively inpaints actions during denoising. The authors report task success rates on ManiSkill and LIBERO-10, plus positional and rotational errors in real-world experiments.",
+          "zh": "论文提出 MAP（Masked Action Space）接口，将关键点、流场、方向和关键姿态等时空控制参考统一视为时间笛卡尔动作空间的部分规格，并把可控操作表述为动作补全问题。其 Inpainting Policy 通过进度引导对齐和多掩码训练重建末端执行器缺失的动作维度，并采用无需训练的 RePaint 变体在去噪过程中迭代补全动作。作者报告了 ManiSkill、LIBERO-10 上的任务成功率，以及真实机器人实验中的位置和旋转误差。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
