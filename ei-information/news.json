@@ -513,7 +513,11 @@
             "heading": "",
             "text": "World Action Models (WAMs) combine future-video prediction with robot action learning, yet improvements in task success alone do not reveal how predictive supervision manifests in execution behavior or whether its benefits persist under task and environmental shifts.\n\nWe conduct controlled future-video prediction loss ablations within FastWAM and OpenWAM, keeping model architecture, initialization, robot training data, and training steps fixed within each model family. Under clean conditions on seen tasks, predictive supervision increases success rates by 24.38 and 72.91 percentage points, respectively.\n\nTrajectory clustering further reveals higher success rates within several coarse trajectory clusters, including cases where cluster frequencies change little, indicating that the gains are not solely reflected in changes in the prevalence of trajectory patterns.\n\nHowever, these benefits do not consistently persist under distribution shifts: improvements on unseen tasks vary across models and tasks, while both models exhibit low success rates under the evaluated environmental randomizations, without a consistent advantage from predictive supervision.\n\nWe further introduce future-video prediction as an auxiliary training objective for $\\pi_{0.5}$, where a lightweight Transformer predictor used only during training increases success from 82.94% to 89.19%.\n\nThese findings support future-video prediction as effective auxiliary supervision for action learning, while distinguishing improved execution on familiar tasks from reliable transfer and showing that such gains need not rely on a large pretrained video diffusion transformer (DiT) in the evaluated setting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies future-video prediction as supervision for robot action learning through controlled loss ablations in FastWAM and OpenWAM. On seen tasks under clean conditions, predictive supervision raises success rates, with trajectory analyses showing gains within several clusters. The benefits transfer inconsistently to unseen tasks and do not provide a consistent advantage under the evaluated environmental randomizations. The authors also report improved success for π0.5 when a lightweight Transformer predictor is used as an auxiliary training objective.",
+          "zh": "论文通过在 FastWAM 和 OpenWAM 中控制未来视频预测损失消融，考察预测监督如何影响机器人动作执行及其在任务和环境变化下的表现。在已见任务的干净条件下，两种模型的成功率均有提升，轨迹聚类也显示若干类别内成功率提高；但未见任务上的收益因模型和任务而异，在所评估的环境随机化下，两者成功率较低，且预测监督没有稳定优势。作者还报告，将轻量 Transformer 预测器作为训练期辅助目标用于 π0.5，成功率有所提升。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -544,7 +548,11 @@
             "heading": "",
             "text": "Long-horizon embodied navigation may be interrupted by a higher-priority instruction before the current task sequence is complete. The agent must finish its current atomic task, execute the inserted task, and resume the remaining sequence from the updated environment state, where its viewpoint and available navigation candidates may have changed.\n\nTo evaluate this capability, we introduce PIFR benchmark, a novel task for runtime task preemption and resumption in embodied navigation. PIFR includes single, repeated, and nested interruption settings,with stage-specific metrics for inserted-task completion, resumption of the original task, and completion of the full sequence.\n\nEvaluations show that recovery performance varies across interruption conditions, while aggregate success can obscure differences in interruption handling and resumption. We further propose a lightweight candidate-ranking baseline to improve target re-grounding after interruption.\n\nTogether, PIFR and the baseline provide a systematic framework for studying interruption handling and task recovery in long-horizon embodied navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PIFR, a benchmark for evaluating whether embodied navigation agents can handle a higher-priority task inserted into a long task sequence and then resume the original sequence. It covers single, repeated, and nested interruptions, with separate metrics for inserted-task completion, resumption, and full-sequence completion. Evaluations show that recovery varies across interruption conditions and that aggregate success can conceal these differences. The authors also propose a lightweight candidate-ranking baseline for re-grounding targets after interruption.",
+          "zh": "论文提出 PIFR 基准，用于评估具身导航中执行长序列任务时遭遇高优先级指令打断后，完成插入任务并恢复原序列的能力。基准涵盖单次、重复和嵌套打断，并分别衡量插入任务完成、原任务恢复和完整序列完成。评估显示，不同打断条件下的恢复表现有所差异，整体成功率可能掩盖处理打断及恢复任务的差别。作者还提出轻量级候选目标排序基线，以改善打断后的目标重新定位。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -575,7 +583,11 @@
             "heading": "",
             "text": "Robots that follow natural-language instructions unlock a wide range of autonomous applications in households, warehouses, and labs. Real-world environments are diverse and often heavily cluttered, requiring robots to plan over multiple steps, act, and replan as they work toward a goal.\n\nWe present CLARO (CLutter-Aware Robot Orchestrator), a VLM agent that orchestrates a set of perception and manipulation skills: open-vocabulary object detection, segmentation, 6-DoF grasping, and non-prehensile pushing to locate and retrieve a language-specified target in clutter.\n\nCLARO maintains a memory of its past actions to support long-horizon execution, and emits manipulation targets (grasp poses/3D waypoints) allowing transfer across robot arms without task-specific training.\n\nWe evaluate CLARO against a range of methods on a dynamic simulation environment and standard image-based benchmarks, demonstrating strong generalization across object classes, lighting, and clutter levels. CLARO attains an average success rate of 89.1%, a relative improvement of over 16% on the strongest competing method in high cluttered scenes.\n\nWe further analyze performance along grounding and grasping axes to characterize where each method succeeds and fails. Finally, we deploy CLARO on a robot arm across diverse cluttered scenes, achieving a success rate of 88.8%, and demonstrating strong sim2real generalizability."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CLARO, a vision-language-model agent that coordinates perception and manipulation skills to find and retrieve language-specified objects in clutter. It combines open-vocabulary detection, segmentation, six-degree-of-freedom grasping, and pushing, while using action history to support long-horizon execution. Its grasp poses and 3D waypoints are intended to transfer across robot arms without task-specific training. The authors report evaluations in dynamic simulation, image-based benchmarks, and deployments on a robot arm across cluttered scenes.",
+          "zh": "论文介绍 CLARO，一种使用视觉语言模型代理协调感知与操作技能的机器人系统，可在杂乱环境中根据语言指令定位并取回目标物体。系统组合开放词汇检测、分割、六自由度抓取和推挤，并利用过去动作记忆支持长时执行；输出抓取姿态或三维路点，以支持跨机械臂迁移。作者报告，CLARO 在动态仿真和图像基准上对物体类别、光照及杂乱程度具有较强泛化表现，并在真实机械臂的多种杂乱场景中进行了部署评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
