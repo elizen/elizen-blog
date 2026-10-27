@@ -785,7 +785,11 @@
             "heading": "",
             "text": "World models have emerged as a central paradigm for embodied intelligence, enabling agents to predict action-conditioned future and reason about environmental dynamics.\n\nHowever, existing embodied world model benchmarks are still largely confined to vision-only prediction, offline embodied applications, and simulator-based evaluation, making them insufficient for assessing increasingly comprehensive world models.\n\nIn this work, we introduce WorldArena 2.0, an expanded benchmark that systematically broadens embodied world model evaluation along three dimensions: modality, functionality, and platform. Along the modality dimension, WorldArena 2.0 extends evaluation from vision-only to visuotactile modalities, enabling assessment of multimodal perception and prediction.\n\nAlong the functionality dimension, it extends beyond policy evaluation and planning to assess world models as interactive RL environments for policy optimization. Along the platform dimension, it moves beyond simulator-only evaluation to a diverse suite of simulated and real-world robotic settings across multiple embodiments.\n\nUnder a standardized protocol, WorldArena 2.0 comprehensively evaluates perceptual quality, interactive utility, and cross-platform performance, providing a comprehensive testbed for tracking progress toward embodied world models. The project page including codes and demos is available at: https://world-arena.ai/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WorldArena 2.0, a benchmark that expands embodied world model evaluation along three dimensions. It extends modality coverage from vision to visuotactile input, functionality from policy evaluation and planning to policy optimization in interactive RL environments, and platform coverage from simulators to varied simulated and real-world robotic settings. Under a standardized protocol, the benchmark assesses perceptual quality, interactive utility, and cross-platform performance.",
+          "zh": "论文提出 WorldArena 2.0，用于扩展具身世界模型基准评测。该基准从三个维度拓展：模态方面由纯视觉扩展到视觉触觉；功能方面除策略评估和规划外，还评估世界模型作为交互式强化学习环境进行策略优化的能力；平台方面纳入多种具身形式的仿真与真实机器人设置。作者称，统一协议覆盖感知质量、交互效用和跨平台表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -816,7 +820,11 @@
             "heading": "",
             "text": "As collaborative robots have entered domains such as manufacturing, agriculture, and healthcare, programming or adapting robot behavior typically requires robotic expertise that most end users lack. Natural language lowers this barrier.\n\nRecent advancements in large language models (LLMs) have made it feasible to translate natural language into robot task plans.\n\nHowever, language-based task specification suffers from semantic ambiguity, and generative models lack transparency for how language instructions become robot actions, making it difficult for users to validate the plan before execution.\n\nTo address these issues, we introduce SHRIMP, a system that allows users to automatically generate a hierarchical robot primitive plan using natural language and iteratively revise their plan through re-prompting and explicit correction.\n\nAt each revision, SHRIMP allows users to validate their plan in simulation, and once satisfied, execute it on the physical robot. Through a user study involving participants planning tabletop kitchen tasks (n=35), we validate that SHRIMP improves perceived control and enhances robot transparency.\n\nSystem videos and source code are available at https://wisc-hci.github.io/SHRIMP."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SHRIMP, a system for generating hierarchical robot primitive plans from natural language and revising them through re-prompting or explicit corrections. Users can validate each revision in simulation and, when satisfied, execute the plan on a physical robot. In a user study with 35 participants planning tabletop kitchen tasks, the authors report that SHRIMP improved perceived control and enhanced robot transparency.",
+          "zh": "论文介绍 SHRIMP，一个通过自然语言生成分层机器人原语计划并支持迭代修订的系统，用户可重新提示或明确纠正计划。每次修订后，用户可先在仿真中验证，满意后再让实体机器人执行。作者通过35名参与者规划桌面厨房任务的用户研究，报告 SHRIMP 提升了用户感知到的控制感，并增强了机器人透明度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -847,7 +855,11 @@
             "heading": "",
             "text": "Object goal navigation requires an embodied agent to locate and reach target objects in complex environments. Humans often rely on low-cost yet informative schematic maps, such as rough sketches or directional annotations.\n\nWe develop a workflow for schematic-guided embodied navigation with two components: a training-data generation pipeline and ScheNav, a closed-loop navigation framework.\n\nOur lightweight data-generation pipeline turns 2D floorplans into navigation training environments, yielding Furnished-RPLAN, a dataset of over 33k furnished layouts with paired navigation episodes and noise-controllable schematic maps.\n\nScheNav turns rough schematic guidance into exploration and stopping decisions by using SchemaField, a learned spatial module that fuses the guidance with accumulated observations and predicts spatial value fields.\n\nThe framework updates these fields as exploration proceeds, with trajectory-based training and a cross-frame consistency objective supporting coherent guidance across changing viewpoints. ScheNav learns to use schematic guidance entirely from simulated floorplans and transfers this ability to unseen embodied environments.\n\nExperiments show improved navigation success and path efficiency across schematic maps, goal ellipses, and pointed directions, together with tolerance to the tested schematic perturbations and omissions. Together, these results demonstrate that rough schematic guidance offers a practical way to improve embodied navigation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a schematic-guided object navigation workflow with a training-data pipeline and ScheNav, a closed-loop framework. The pipeline converts 2D floorplans into training environments and produces Furnished-RPLAN, containing over 33,000 furnished layouts with paired navigation episodes and noise-controllable schematic maps. ScheNav combines schematic guidance with accumulated observations to update spatial value fields during exploration. The authors report transfer from simulated floorplans to unseen embodied environments and improved success and path efficiency across tested guidance types, with tolerance to tested perturbations and omissions.",
+          "zh": "论文提出示意图引导的物体目标导航流程，包括训练数据生成管线和闭环框架 ScheNav。数据管线将二维平面图转为导航训练环境，生成包含超过3.3万种家具布局及配套导航轨迹、可控噪声示意图的数据集 Furnished-RPLAN。ScheNav 将示意指引与累积观测融合为随探索更新的空间价值场。作者称，该方法仅用仿真平面图学习，并在未见过的具身环境中迁移；实验显示其在多类指引下提升导航成功率和路径效率，并能容忍测试过的扰动与信息缺失。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -878,7 +890,11 @@
             "heading": "",
             "text": "Latent world models learn representations that enable them to predict how actions change the environment - a capability we call physical intuition. We find that these same representations also support action intuition: a lightweight head can learn a goal-conditioned action prior directly from the frozen encoder's features.\n\nWe introduce PRISM to investigate how action intuition can be extracted from frozen world-model representations and used to guide goal-conditioned planning. The prior's mean and predicted uncertainty guide the search for useful actions, while the world model evaluates their consequences against the goal.\n\nExperiments on four simulated control tasks and two real-robot platforms show that a lightweight action head improves planning performance, and that the same fusion interface accepts a diffusion prior over the same frozen features without modification.\n\nThese results demonstrate the potential of reusing world-model representations to both predict action consequences and guide action selection."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PRISM to study extracting goal-conditioned action priors from frozen world-model representations for planning. A lightweight head learns an action prior from encoder features; its mean and predicted uncertainty guide the search for useful actions, while the world model evaluates their consequences against the goal. Experiments across four simulated control tasks and two real-robot platforms show improved planning performance with the lightweight head. The same fusion interface also accepts a diffusion prior over the frozen features without modification.",
+          "zh": "论文提出 PRISM，研究如何从冻结的世界模型表征中提取目标条件动作先验，并用于规划。作者称，轻量动作头可直接从编码器特征学习动作直觉；先验的均值和预测不确定性引导有用动作搜索，世界模型则评估动作后果与目标的匹配。四项仿真控制任务和两个真实机器人平台上的实验显示，加入轻量动作头可改善规划表现；同一融合接口也能直接接入基于相同冻结特征的扩散先验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
