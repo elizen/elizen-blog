@@ -440,8 +440,8 @@
           }
         ],
         "summary": {
-          "en": "This monograph aims to define Physical AI, map its technical landscape, and examine key challenges. It describes Physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints, and distinguishes it from digital AI, embodied AI, cyber-physical systems, and digital twins. The work reviews foundations and methods spanning perception, simulation, world models, embodied foundation models, control, coordination, and hardware-software co-design, along with applications in several sectors. It highlights sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and deployment, and identifies research directions toward more general Physical AI and Physical AGI.",
-          "zh": "这篇专著旨在界定物理人工智能（Physical AI），梳理其技术领域并分析关键挑战。作者将其描述为在真实世界约束下，通过持续反馈感知、建模并作用于物理世界的人工系统，并将其与数字 AI、具身 AI、信息物理系统和数字孪生区分。专著讨论物理学、控制、认知、学习和推理基础，综述多模态感知、物理数据与仿真、世界模型、具身基础模型、运动控制、多智能体协作及软硬件协同设计，并涉及多个应用领域。它重点讨论 sim-to-real、可靠性、实时执行、评估、安全、治理和长期部署，提出迈向更通用物理 AI 与 Physical AGI 的挑战和研究方向。"
+          "en": "This monograph seeks to define physical AI, describe its technical landscape, and examine its challenges. It characterizes physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints. The work distinguishes it from digital AI, embodied AI, cyber-physical systems, and digital twins, and reviews foundations, methods, and applications. It discusses topics including sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment, then identifies challenges and research directions toward more generalizable physical AI and physical artificial general intelligence.",
+          "zh": "这篇专著试图界定物理人工智能，梳理其技术领域和核心挑战，并将其描述为在现实约束下通过持续反馈感知、建模和作用于物理世界的人工系统。作者区分物理 AI 与传统数字 AI、具身 AI、信息物理系统和数字孪生，并从物理学、控制、认知、学习和推理阐述其基础。专著回顾多模态感知、物理数据与仿真、世界模型、具身基础模型、运动控制、多智能体协作及软硬件协同设计等方法，也讨论多个应用领域。它重点分析 sim-to-real 迁移、可靠性、实时执行、评估、安全、治理和长期部署，并提出迈向更可泛化物理 AI 及物理通用人工智能所需的挑战与研究方向。"
         }
       },
       "source": {
@@ -11149,8 +11149,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents World2HOSI, a multi-expert orchestration harness for generating long-horizon human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It maintains a structured scene state, plans action stages, invokes existing experts through their native interfaces, and writes action effects back so later steps use the evolving world. Bounded residual optimization and contact-driven physics simulation are used to improve the plausibility of human motion and object manipulation while preserving interaction intent. Experiments and a perceptual user study report the best task completion and interaction quality on the evaluated tasks, as well as more diverse generated data.",
-          "zh": "论文提出 World2HOSI，一个多专家编排框架，可依据自然语言指令和3D Gaussian Splatting场景生成长时程的人—物—场景交互数据。框架围绕持续更新的场景状态运行：规划动作阶段、调用现有专家，并将动作效果写回状态，使后续调用基于演化中的世界。为减少物理伪影，方法还结合有界残差优化与接触驱动的物理仿真，分别处理人体运动和物体操作。作者报告，实验和感知用户研究显示，该方法在所评估任务中的完成度和交互质量最佳，并生成更多样的数据。"
+          "en": "World2HOSI is a multi-expert orchestration framework for generating continuous human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It maintains a persistent scene state, plans action stages, invokes experts through their native interfaces, and writes action effects back so later calls use the evolving world. Bounded residual optimization and contact-driven physics simulation address human motion and object manipulation while preserving interaction intent. Experiments and a perceptual user study report the best task completion and interaction quality among evaluated HOSI approaches, along with more diverse generated data.",
+          "zh": "World2HOSI 是一个多专家编排框架，利用 3D 高斯泼溅场景和自然语言指令生成连续的人—物体—场景交互数据。它围绕持久化场景状态构建闭环，将背景与物体资产分离；编排器据此规划动作阶段，调用不同专家，并把动作效果写回不断变化的场景状态，使后续调用基于更新后的世界。为减少不自然的物理表现，框架采用有界残差优化和接触驱动的物理模拟，分别处理人体运动和物体操作，同时保留交互意图。作者称，在所评估的交互任务中，实验和感知用户研究显示该方法任务完成度与交互质量最佳，并生成更多样的数据。"
         }
       },
       "source": {
@@ -12443,11 +12443,7 @@
             "heading": "",
             "text": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces.\n\nIn contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.\n\nDeveloping architectures that could learn to build and use map-like representations as flexibly as animals is, however, difficult because few embodied AI benchmarks actually require map-based reasoning.\n\nTo address this, we present ForagerSim --- an interdisciplinary research platform and simulation environment focused on embodied tasks that require map-based reasoning, with scenarios ranging from mobile-robot search and rescue to animal foraging in both complex mazes and vast, potentially infinite open areas.\n\nForagerSim is highly modular and allows modifying independent axes of difficulty related to perception (abstract 2D sensing to full RGB or LiDAR), scale (room-scale to multi-km scale), topology (open-fields to complex mazes), dynamics (smoke, debris, sensorimotor failures and others) and tasks (from simple 2D coverage to foraging-inspired well-alternation tasks).\n\nWe compare reinforcement learning baselines with a simple engineered robotics stack and a human player on 8 example worlds which show how different difficulty axes affect existing methods.\n\nOur results show that, when sensing is simplified to 2D, learned policies can perform multi-object search and well-alternation tasks surprisingly well in simple topologies, but they fall short of human performance in larger or more complex-topology environments where map-based baselines perform well, suggesting that map-based reasoning is the bottleneck in these scenarios."
           }
-        ],
-        "summary": {
-          "en": "The paper presents ForagerSim, a research platform and simulation environment for embodied tasks requiring map-based reasoning, including robot search and rescue and animal foraging. Its modular design varies perception, world scale, topology, dynamics, and task type. The authors compare reinforcement-learning baselines, an engineered robotics stack, and a human player across eight example worlds. With simplified 2D sensing and simple topologies, learned policies perform multi-object search and well-alternation tasks surprisingly well. They fall short of human performance in larger or more complex environments, where map-based baselines perform well; the authors identify map-based reasoning as the bottleneck in those scenarios.",
-          "zh": "论文介绍 ForagerSim，这是一个面向具身地图推理的研究平台和仿真环境，涵盖机器人搜救与动物觅食等任务。平台可分别调整感知形式、环境规模、拓扑结构、动态因素和任务类型。作者在8个示例世界中比较强化学习基线、工程化机器人系统和人类玩家。结果显示，在简化为二维感知且拓扑简单时，学习策略能较好完成多目标搜索和井点交替任务；在规模更大或拓扑更复杂的环境中，它们仍落后于人类，而地图推理基线表现良好。作者据此认为，这些场景中的瓶颈是地图推理能力。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -15271,6 +15267,43 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-27"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.34358v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-db4c61ced3d7469989804438554ab6e3",
+      "intro": "Task success is not a sufficient measure of safety for embodied artificial intelligence (AI), because robots may complete objectives while violating safety requirements. Existing evaluations often emphasize performance and robustness, but lack a systematic route from documented safety hazards to executable, verifiable tests. We present EAST (Embodied AI Safety Testing), a digital-twin framework that converts literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. EAST combines…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Task success is not a sufficient measure of safety for embodied artificial intelligence (AI), because robots may complete objectives while violating safety requirements. Existing evaluations often emphasize performance and robustness, but lack a systematic route from documented safety hazards to executable, verifiable tests.\n\nWe present EAST (Embodied AI Safety Testing), a digital-twin framework that converts literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. EAST combines an expert-reviewed safety-fault taxonomy and eight executable operators with applicability and validity constraints.\n\nIts three-stage workflow generates test specifications, verifies fault realization during simulated execution, and independently assesses safety challenges, violations, task outcomes, and behavioral signatures using simulator-state evidence.\n\nThe framework preserves execution traces and replayable records, supporting attribution and reproducibility across experiments. We evaluate EAST on six RoboTwin manipulation tasks and two policy architectures, ACT and RDT, against alternative testing strategies under matched budgets.\n\nAcross five comparative campaigns, EAST targets all 74 admissible task-policy-operator combinations and obtains valid evidence for 63, while achieving safety-challenge exposure rates close to Random-Legal and Rule-Based. Moreover, 82 valid EAST executions complete their tasks despite safety violations, revealing risks concealed by success-oriented evaluation.\n\nThese findings support systematic, validity-aware, reproducible safety testing beyond task-completion metrics."
+          }
+        ],
+        "summary": {
+          "en": "EAST is a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. It uses an expert-reviewed fault taxonomy, eight executable operators, and applicability and validity constraints. Its workflow specifies tests, checks fault realization in simulation, and assesses safety challenges, violations, outcomes, and behavioral signatures from simulator state. Evaluated on six RoboTwin manipulation tasks and two policy architectures, EAST obtained valid evidence for 63 of 74 admissible combinations. The authors report 82 valid executions that completed tasks despite safety violations.",
+          "zh": "EAST 是一种在数字孪生中开展具身 AI 安全测试的框架，将文献中的安全证据转化为覆盖感知、指令、环境、动作和时序的故障注入测试。它通过专家审查的故障分类、八种可执行算子及适用性和有效性约束，生成测试规范、核验模拟执行中的故障实现，并依据模拟器状态独立评估安全挑战、违规、任务结果和行为特征。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上进行了比较。在五轮比较中，EAST 覆盖 74 个可行组合，并为其中 63 个取得有效证据；82 次有效执行虽完成任务，仍发生安全违规。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.34358v1"
+      },
+      "title": "EAST: Embodied AI Safety Testing via Systematic Fault Injection in Digital Twins"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-10-16"
       },
       "body": "",
@@ -16659,8 +16692,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces POD-RoPE, which represents each token’s observation footprint as a distribution over camera centers, viewing directions, and sampling times, and uses these statistics for geometry-aware attention and content aggregation. The authors evaluate it across four robot policy architectures, simulation and real-world manipulation, and reconstruction, depth estimation, and novel-view synthesis. They report improved Fast-WAM success rates on RoboTwin 2.0 and two Sharpa North robot tasks. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations; H20 benchmarks report speedups over P-RoPE and RayRoPE, with latency overhead over Standard RoPE.",
-          "zh": "论文提出 POD-RoPE，将每个 token 的观测足迹表示为相机中心、视线方向和采样时间上的分布，并据此进行几何感知的注意力匹配与内容聚合。作者在四种机器人策略架构、仿真和真实操作，以及重建、深度估计和新视角合成任务上评估该方法。摘要报告，Fast-WAM 在 RoboTwin 2.0 的全部50项任务上平均成功率由91.83%升至92.88%，在 Sharpa North 的两项真实机器人任务上由32.5%升至52.5%；消融实验支持分布编码和 V/O 变换的贡献。H20 模型块基准显示其相对 P-RoPE 和 RayRoPE 有更高的前后向速度，较标准 RoPE 的中位延迟开销为17.4%。"
+          "en": "POD-RoPE represents each token’s observation footprint as a distribution over camera centers, viewing directions, and sampling times, encoding physical geometry and the spatial and temporal extent of observations. When a distribution collapses to one address, it recovers pointwise RoPE. Its rotation statistics support Q/K matching and coherence-dependent V/O transformations, with per-token pre-aggregation. The authors evaluate it across four robot policy architectures, simulation and real-world manipulation, and reconstruction, depth-estimation, and novel-view-synthesis tasks. They report improved Fast-WAM success rates on RoboTwin 2.0 and two Sharpa North tasks; controlled reconstruction ablations support the proposed components.",
+          "zh": "POD-RoPE 将每个视觉 token 的观测范围表示为由相机中心、观察方向和采样时间构成的分布，以编码物理几何及观测的时空范围；当分布退化为单一位置时，该方法恢复点式 RoPE。其旋转统计用于 Q/K 匹配及依赖相干性的 V/O 变换，逐 token 预聚合无需增加序列长度或处理观测节点对。作者在四种机器人策略架构、仿真与真实操作，以及重建、深度估计和新视角合成任务中评估该方法，并报告其集成到 Fast-WAM 后在 RoboTwin 2.0 和 Sharpa North 任务上的成功率提升；受控重建消融支持分布编码与 V/O 变换的作用。"
         }
       },
       "source": {
