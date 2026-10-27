@@ -25,11 +25,7 @@
             "heading": "",
             "text": "Embodied AI lacks the data-rich pretraining that gave language models their agents and skills, so new manipulation capability costs demonstrations per task or a frontier model in every episode.\n\nWe study a third route: a strong general model acts only as an offline author that writes, runs, diagnoses and repairs a manipulation skill in simulation until it passes an exam on layouts drawn after freezing; the frozen skill then runs as code alone or under a cheap caller that reads only its description.\n\nWe call this skill-level recursive self-improvement Skill-RSI and specify a compile protocol (isolated, audited author; hidden validation layouts; no-feedback and inherit-only controls; tamper-evident ledger) and a reuse protocol that runs the identical files with executors from another model family.\n\nOn 7 RoboTwin 2.0 tasks with cluttered tables, Claude Code compiled 4 tasks into 7 frozen skills, 5 from a first draft needing only qualification, at USD 4.29-8.22 of author cost each (USD 55 per skill counting the 13 failed campaigns).\n\nThe other three tasks did not compile in 18 campaigns, including five with GPT-6 and a pre-registered 150-layout run: on the hardest task every campaign scored 78-95 of 100 but had 3-16 safety aborts, failing the gate of 95% success with zero aborts; a 100-episode exam bounds an abort rate only to 3.6%.\n\nOn hidden layouts, repair that inherits the previous version beat from-scratch rewriting in 8 of 8 controlled campaigns (sign test p = 0.004); an inherit-only lineage attributes most of the gap to inheritance, with development feedback adding a little (3 of 3, p = 0.125).\n\nWrite-once campaigns found no detectable first-draft effect of practice (minimum detectable effect 14 points).The frozen skills kept 148/150 successes on new layouts with no model and 147/150 with a DeepSeek-flash caller at USD 0.00028-0.00054 per episode; no direct-control baseline was run."
           }
-        ],
-        "summary": {
-          "en": "The paper studies an offline compilation and reuse process for embodied manipulation skills. A strong general model authors, runs, diagnoses, and repairs a skill in simulation; after passing an exam on hidden layouts, the frozen skill runs as code alone or with a low-cost caller. On seven RoboTwin 2.0 tasks, the authors report successful compilation for four and failure across campaigns for three; safety aborts prevented the hardest task from meeting its threshold. In eight controlled comparisons, repair inheriting the prior version beat rewriting from scratch. On new layouts, frozen skills achieved 148 of 150 successes without a model and 147 of 150 with a low-cost caller.",
-          "zh": "论文研究一种具身操作技能的离线编译与复用流程：强通用模型在仿真中编写、运行、诊断并修复技能，技能通过冻结后的隐藏布局考试后，可由代码独立运行或由低成本模型调用。作者在 RoboTwin 2.0 的七项任务上报告，四项编译成功，三项在多轮尝试中未通过；最难任务的尝试因安全中止未达门槛。受控实验中，继承先前版本的修复在八次比较中均胜过从头改写。冻结技能在新布局考试中取得 150 次中的 148 次成功（无模型）或 147 次成功（低成本调用模型）。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -442,11 +438,7 @@
             "heading": "",
             "text": "In recent years, physical artificial intelligence (physical AI) has experienced rapid development, capturing significant attention in academia and industry. However, the field has yet to reach consensus on its definition, technical landscape, and core challenges.\n\nTo address this gap, this monograph seeks to define physical AI, present its technical landscape, and examine each key technical subfield in depth. In doing so, it establishes a unified framework for Physical AI: artificial systems that perceive, model, and act upon the physical world through continuous feedback under real-world constraints.\n\nFurther, this monograph distinguishes physical AI from conventional digital AI, embodied AI, cyber-physical systems, and digital twins. It develops the foundations of physical AI across physics, control, cognition, learning, and reasoning.\n\nIt reviews key methodologies, including multimodal perception, physical data and simulation, world models, embodied foundation models, motor-control systems, multi-agent coordination, and hardware-software co-design. Furthermore, it examines applications spanning robotics, manufacturing, infrastructure, scientific experimentation, and autonomous services.\n\nParticular attention is given to sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment.\n\nBy connecting perception, prediction, decision-making, action, and adaptation in a closed loop, this monograph identifies the technical challenges and research directions required to advance from narrow automation toward more generalizable physical AI and, ultimately, physical artificial general intelligence (Physical AGI)."
           }
-        ],
-        "summary": {
-          "en": "This monograph aims to define physical AI, map its technical landscape, and examine its central challenges. It describes physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints, distinguishing it from digital AI, embodied AI, cyber-physical systems, and digital twins. The work covers foundations in physics, control, cognition, learning, and reasoning; reviews methods including multimodal perception, simulation, world models, motor control, and hardware-software co-design; and discusses applications, sim-to-real transfer, reliability, safety, governance, and deployment.",
-          "zh": "这篇专著旨在界定物理人工智能，梳理其技术版图与核心挑战。它将物理 AI 描述为在现实约束下，通过持续反馈感知、建模并作用于物理世界的人工系统，并将其与数字 AI、具身 AI、信息物理系统和数字孪生区分。内容涵盖物理学、控制、认知、学习与推理基础，以及多模态感知、仿真、世界模型、具身基础模型、运动控制、多智能体协作和软硬件协同设计等方法，并讨论应用、仿真到现实迁移、可靠性、安全与长期部署等问题。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -11151,11 +11143,7 @@
             "heading": "",
             "text": "Long-horizon human-object-scene interaction (HOSI) is central to embodied AI, animation, and game development. Existing human-object interaction (HOI) and human-scene interaction (HSI) models excel in their respective domains, but none alone covers tasks requiring multiple interaction skills. Training unified HOSI models is hindered by scarce and costly data.\n\nWe introduce World2HOSI, a multi-expert orchestration harness that generates continuous HOSI data from 3D Gaussian Splatting (3DGS) scenes and natural language instructions. Our key insight is that long-horizon HOSI hinges not on a stronger single model but on orchestration.\n\nGiven a shared, structured scene state and an orchestration harness grounded in it, existing experts can jointly accomplish tasks beyond the reach of any of them alone. World2HOSI realizes this insight as a closed loop around a persistent scene state built from decoupled background and object assets.\n\nA harness plans action stages over this state, invokes experts via their native conditioning interfaces, and writes each action's effects back, so that every invocation is grounded in the evolving world.\n\nTo reduce physical artifacts, bounded residual optimization and contact-driven physics simulation further ensure the physical plausibility of human motion and object manipulation, respectively, while preserving interaction intent.\n\nExperiments and a perceptual user study show that World2HOSI achieves the best task completion and interaction quality on the evaluated HOSI tasks, while generating more diverse data."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces World2HOSI, a multi-expert orchestration framework for generating long-horizon human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It maintains an evolving scene state, plans action stages, invokes experts through their native interfaces, and records each action’s effects. Bounded residual optimization and contact-driven physics simulation are used to reduce physical artifacts while preserving interaction intent. In experiments and a perceptual user study, the authors report the best task completion and interaction quality among evaluated methods, along with more diverse generated data.",
-          "zh": "论文介绍 World2HOSI，这是一个基于多专家编排的长时程人—物—场景交互数据生成框架。它从 3D 高斯泼溅场景和自然语言指令出发，以持续更新的场景状态为基础，规划动作阶段、调用不同专家，并将动作效果写回状态。作者还采用有界残差优化和接触驱动的物理仿真，以减少物理伪影并保持交互意图。实验和感知用户研究显示，在所评估任务中，该方法取得了最佳任务完成度和交互质量，并生成更多样的数据。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12447,11 +12435,7 @@
             "heading": "",
             "text": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces.\n\nIn contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.\n\nDeveloping architectures that could learn to build and use map-like representations as flexibly as animals is, however, difficult because few embodied AI benchmarks actually require map-based reasoning.\n\nTo address this, we present ForagerSim --- an interdisciplinary research platform and simulation environment focused on embodied tasks that require map-based reasoning, with scenarios ranging from mobile-robot search and rescue to animal foraging in both complex mazes and vast, potentially infinite open areas.\n\nForagerSim is highly modular and allows modifying independent axes of difficulty related to perception (abstract 2D sensing to full RGB or LiDAR), scale (room-scale to multi-km scale), topology (open-fields to complex mazes), dynamics (smoke, debris, sensorimotor failures and others) and tasks (from simple 2D coverage to foraging-inspired well-alternation tasks).\n\nWe compare reinforcement learning baselines with a simple engineered robotics stack and a human player on 8 example worlds which show how different difficulty axes affect existing methods.\n\nOur results show that, when sensing is simplified to 2D, learned policies can perform multi-object search and well-alternation tasks surprisingly well in simple topologies, but they fall short of human performance in larger or more complex-topology environments where map-based baselines perform well, suggesting that map-based reasoning is the bottleneck in these scenarios."
           }
-        ],
-        "summary": {
-          "en": "ForagerSim is a research platform and simulation environment for embodied tasks requiring map-based reasoning, including robot search and rescue and animal foraging. Its modular design varies perception, scale, topology, dynamics, and task type. The paper compares reinforcement-learning baselines, an engineered robotics stack, and a human player across eight example worlds. With simplified 2D sensing and simple topologies, learned policies perform multi-object search and well-alternation tasks surprisingly well. In larger or more complex-topology environments, they fall short of human performance, while map-based baselines perform well; the authors suggest map-based reasoning is a bottleneck.",
-          "zh": "ForagerSim 是一个面向具身地图推理任务的研究平台和仿真环境，涵盖机器人搜救与动物觅食等场景。平台可分别调整感知方式、环境尺度、拓扑结构、动态因素和任务类型。论文在八个示例世界中比较强化学习基线、工程化机器人方案和人类玩家。结果显示，在简化为二维感知且拓扑简单时，学习策略能较好完成多目标搜索和交替觅食任务；在规模更大或拓扑更复杂的环境中，它们落后于人类，而地图推理基线表现较好。作者据此指出，这些场景的瓶颈可能在于地图推理。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -16635,6 +16619,39 @@
         "url": "https://www.miit.gov.cn/zwgk/wjgs/art/2026/art_34d83176aedd4c29a096b5ff7e181962.html"
       },
       "title": "关于农业领域机器人典型应用场景名单的公示"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-27"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.33745v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-f01fe7e206964f6d9e1cdc4f6103b583",
+      "intro": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times. Under independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE. The same rotation statistics support Q/K matching…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times.\n\nUnder independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE.\n\nThe same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes.\n\nWe evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks.\n\nIntegrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.\n\nIn H20 model-block benchmarks, POD-RoPE achieves median forward-plus-backward speedups of $1.91\\times$ over P-RoPE and $5.34\\times$ over RayRoPE, with a median latency overhead of 17.4% over Standard RoPE. These results support physical observation distributions as an effective and computationally efficient basis for geometry-aware attention."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.33745v1"
+      },
+      "title": "POD-RoPE: Rotary Position Encoding over Physical Observation Distributions for Embodied AI"
     },
     {
       "archive": {
