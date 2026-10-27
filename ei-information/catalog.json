@@ -25,11 +25,7 @@
             "heading": "",
             "text": "Embodied AI lacks the data-rich pretraining that gave language models their agents and skills, so new manipulation capability costs demonstrations per task or a frontier model in every episode.\n\nWe study a third route: a strong general model acts only as an offline author that writes, runs, diagnoses and repairs a manipulation skill in simulation until it passes an exam on layouts drawn after freezing; the frozen skill then runs as code alone or under a cheap caller that reads only its description.\n\nWe call this skill-level recursive self-improvement Skill-RSI and specify a compile protocol (isolated, audited author; hidden validation layouts; no-feedback and inherit-only controls; tamper-evident ledger) and a reuse protocol that runs the identical files with executors from another model family.\n\nOn 7 RoboTwin 2.0 tasks with cluttered tables, Claude Code compiled 4 tasks into 7 frozen skills, 5 from a first draft needing only qualification, at USD 4.29-8.22 of author cost each (USD 55 per skill counting the 13 failed campaigns).\n\nThe other three tasks did not compile in 18 campaigns, including five with GPT-6 and a pre-registered 150-layout run: on the hardest task every campaign scored 78-95 of 100 but had 3-16 safety aborts, failing the gate of 95% success with zero aborts; a 100-episode exam bounds an abort rate only to 3.6%.\n\nOn hidden layouts, repair that inherits the previous version beat from-scratch rewriting in 8 of 8 controlled campaigns (sign test p = 0.004); an inherit-only lineage attributes most of the gap to inheritance, with development feedback adding a little (3 of 3, p = 0.125).\n\nWrite-once campaigns found no detectable first-draft effect of practice (minimum detectable effect 14 points).The frozen skills kept 148/150 successes on new layouts with no model and 147/150 with a DeepSeek-flash caller at USD 0.00028-0.00054 per episode; no direct-control baseline was run."
           }
-        ],
-        "summary": {
-          "en": "The paper studies offline authoring and reuse of frozen manipulation skills: a strong model writes, diagnoses, and repairs skills in simulation, then the skills are examined on new layouts and run alone or with a cheaper caller. Across seven RoboTwin 2.0 tasks, four compiled successfully, while three failed the safety gate after 18 campaigns. In controlled campaigns, repair that inherited a prior version beat rewriting from scratch in all eight comparisons. On new layouts, frozen skills achieved 148/150 successes without a model and 147/150 with a DeepSeek-flash caller; no direct-control baseline was run.",
-          "zh": "论文研究一种离线编写、冻结后复用的具身操作技能生成方式：强模型在仿真中编写、诊断和修复技能，通过新布局考核后，技能可独立运行或由低成本模型调用。作者在 RoboTwin 2.0 的七项任务中报告，四项编译成功，三项经过十八轮尝试仍未通过安全门槛。受控实验中，继承先前版本的修复在八轮中均优于从头改写。冻结技能在新布局上取得无模型148/150次成功，由 DeepSeek-flash 调用时为147/150；未进行直接控制基线比较。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -442,11 +438,7 @@
             "heading": "",
             "text": "In recent years, physical artificial intelligence (physical AI) has experienced rapid development, capturing significant attention in academia and industry. However, the field has yet to reach consensus on its definition, technical landscape, and core challenges.\n\nTo address this gap, this monograph seeks to define physical AI, present its technical landscape, and examine each key technical subfield in depth. In doing so, it establishes a unified framework for Physical AI: artificial systems that perceive, model, and act upon the physical world through continuous feedback under real-world constraints.\n\nFurther, this monograph distinguishes physical AI from conventional digital AI, embodied AI, cyber-physical systems, and digital twins. It develops the foundations of physical AI across physics, control, cognition, learning, and reasoning.\n\nIt reviews key methodologies, including multimodal perception, physical data and simulation, world models, embodied foundation models, motor-control systems, multi-agent coordination, and hardware-software co-design. Furthermore, it examines applications spanning robotics, manufacturing, infrastructure, scientific experimentation, and autonomous services.\n\nParticular attention is given to sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment.\n\nBy connecting perception, prediction, decision-making, action, and adaptation in a closed loop, this monograph identifies the technical challenges and research directions required to advance from narrow automation toward more generalizable physical AI and, ultimately, physical artificial general intelligence (Physical AGI)."
           }
-        ],
-        "summary": {
-          "en": "This monograph seeks to define physical AI, describe its technical landscape, and examine its challenges. It characterizes physical AI as artificial systems that perceive, model, and act on the physical world through continuous feedback under real-world constraints. The work distinguishes it from digital AI, embodied AI, cyber-physical systems, and digital twins, and reviews foundations, methods, and applications. It discusses topics including sim-to-real transfer, reliability, real-time execution, evaluation, safety, governance, and long-term deployment, then identifies challenges and research directions toward more generalizable physical AI and physical artificial general intelligence.",
-          "zh": "这篇专著试图界定物理人工智能，梳理其技术领域和核心挑战，并将其描述为在现实约束下通过持续反馈感知、建模和作用于物理世界的人工系统。作者区分物理 AI 与传统数字 AI、具身 AI、信息物理系统和数字孪生，并从物理学、控制、认知、学习和推理阐述其基础。专著回顾多模态感知、物理数据与仿真、世界模型、具身基础模型、运动控制、多智能体协作及软硬件协同设计等方法，也讨论多个应用领域。它重点分析 sim-to-real 迁移、可靠性、实时执行、评估、安全、治理和长期部署，并提出迈向更可泛化物理 AI 及物理通用人工智能所需的挑战与研究方向。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -564,11 +556,7 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ],
-        "summary": {
-          "en": "The paper considers embodied agents for collaboration in augmented-reality immersive analytics and proposes a preliminary conceptual framework for context-aware design. It has spatial, social, and semantic dimensions, further described through embeddedness and awareness. The authors present Cobot as a design probe, using gaze cues, spatial sound, and task-aware behavior to support context-sensitive interaction. They reflect on its design and identify implications for future context-aware embodied agents. The abstract does not report a user study or quantitative evaluation.",
-          "zh": "论文探讨增强现实沉浸式分析中的具身智能体设计，提出一个初步的情境感知概念框架，包含空间、社会和语义三个维度，并以嵌入程度及情境感知能力加以分类。作者介绍了作为设计探针的 Cobot，它通过注视提示、空间声音和任务感知行为支持情境敏感交互。论文反思了 Cobot 的设计，并提出未来情境感知具身智能体的设计启示；摘要未报告用户实验或量化评估结果。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -3185,6 +3173,39 @@
         "url": "https://wap.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_1a0b2b0b0deb47099202871e0b70551b.html"
       },
       "title": "工业和信息化部办公厅关于实施人工智能科技伦理审查与服务先导计划的通知"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-27"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.35252v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-3156a401c5dd4db79ce5a59d1cb09ecb",
+      "intro": "Realizing Embodied AI for Science requires robots to translate experimental goals into reliable physical procedures, reducing hazardous and repetitive human work while generating evidence for scientific discovery. Although language-based planning and learned manipulation provide complementary capabilities, their integration requires robots to adapt subsequent operations to actual execution outcomes. For example, an unsuccessful placement changes what must be done next, even when the experimental goal remains unchanged. Existing benchmarks assess planning,…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Realizing Embodied AI for Science requires robots to translate experimental goals into reliable physical procedures, reducing hazardous and repetitive human work while generating evidence for scientific discovery.\n\nAlthough language-based planning and learned manipulation provide complementary capabilities, their integration requires robots to adapt subsequent operations to actual execution outcomes. For example, an unsuccessful placement changes what must be done next, even when the experimental goal remains unchanged.\n\nExisting benchmarks assess planning, manipulation, and laboratory workflows through task completion and reasoning or execution metrics; however, aggregate performance leaves the connection between outcome-dependent choices and physical execution unresolved.\n\nTo address this evaluation gap, we introduce Labference, a benchmark for evaluating how observed physical outcomes guide subsequent choices and how those choices translate into robotic laboratory actions.\n\nIts evaluation protocol is designed to test outcome-dependent behavioral adaptation through controlled evidence variations, while independently measuring operation selection, physical execution, and task completion. Matched Oracle-assisted continuations from shared checkpoints then assess which forms of support improve subsequent choices and task completion.\n\nInitial weighing evaluations reveal target-selection errors in the tested VLA policies despite successful object transfers, whereas GPT-driven control achieves correct selection but encounters execution failures and substantial computation costs. Together, these findings highlight the need to connect task-appropriate reasoning with reliable, timely action.\n\nBy making this connection measurable and diagnosable, Labference supports targeted improvements toward autonomous experimentation for Embodied AI for Science."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.35252v1"
+      },
+      "title": "Labference: Benchmarking the Reasoning-Action Connection in Robotic Laboratories"
     },
     {
       "archive": {
@@ -11155,11 +11176,7 @@
             "heading": "",
             "text": "Long-horizon human-object-scene interaction (HOSI) is central to embodied AI, animation, and game development. Existing human-object interaction (HOI) and human-scene interaction (HSI) models excel in their respective domains, but none alone covers tasks requiring multiple interaction skills. Training unified HOSI models is hindered by scarce and costly data.\n\nWe introduce World2HOSI, a multi-expert orchestration harness that generates continuous HOSI data from 3D Gaussian Splatting (3DGS) scenes and natural language instructions. Our key insight is that long-horizon HOSI hinges not on a stronger single model but on orchestration.\n\nGiven a shared, structured scene state and an orchestration harness grounded in it, existing experts can jointly accomplish tasks beyond the reach of any of them alone. World2HOSI realizes this insight as a closed loop around a persistent scene state built from decoupled background and object assets.\n\nA harness plans action stages over this state, invokes experts via their native conditioning interfaces, and writes each action's effects back, so that every invocation is grounded in the evolving world.\n\nTo reduce physical artifacts, bounded residual optimization and contact-driven physics simulation further ensure the physical plausibility of human motion and object manipulation, respectively, while preserving interaction intent.\n\nExperiments and a perceptual user study show that World2HOSI achieves the best task completion and interaction quality on the evaluated HOSI tasks, while generating more diverse data."
           }
-        ],
-        "summary": {
-          "en": "World2HOSI is a multi-expert orchestration framework for generating continuous human-object-scene interaction data from 3D Gaussian Splatting scenes and natural-language instructions. It maintains a persistent scene state, plans action stages, invokes experts through their native interfaces, and writes action effects back so later calls use the evolving world. Bounded residual optimization and contact-driven physics simulation address human motion and object manipulation while preserving interaction intent. Experiments and a perceptual user study report the best task completion and interaction quality among evaluated HOSI approaches, along with more diverse generated data.",
-          "zh": "World2HOSI 是一个多专家编排框架，利用 3D 高斯泼溅场景和自然语言指令生成连续的人—物体—场景交互数据。它围绕持久化场景状态构建闭环，将背景与物体资产分离；编排器据此规划动作阶段，调用不同专家，并把动作效果写回不断变化的场景状态，使后续调用基于更新后的世界。为减少不自然的物理表现，框架采用有界残差优化和接触驱动的物理模拟，分别处理人体运动和物体操作，同时保留交互意图。作者称，在所评估的交互任务中，实验和感知用户研究显示该方法任务完成度与交互质量最佳，并生成更多样的数据。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12451,11 +12468,7 @@
             "heading": "",
             "text": "Animals build cognitive maps of vast environments, use them to perform map-based navigation, and might even be reusing the same circuitry used in spatial reasoning for creating and using maps of arbitrary task-spaces.\n\nIn contrast, current embodied AI systems either rely on hand-engineered mapping pipelines, which break in the presence of unmodeled dynamics and are restricted to metric space, or on learned policies that rarely form map-like representations at all.\n\nDeveloping architectures that could learn to build and use map-like representations as flexibly as animals is, however, difficult because few embodied AI benchmarks actually require map-based reasoning.\n\nTo address this, we present ForagerSim --- an interdisciplinary research platform and simulation environment focused on embodied tasks that require map-based reasoning, with scenarios ranging from mobile-robot search and rescue to animal foraging in both complex mazes and vast, potentially infinite open areas.\n\nForagerSim is highly modular and allows modifying independent axes of difficulty related to perception (abstract 2D sensing to full RGB or LiDAR), scale (room-scale to multi-km scale), topology (open-fields to complex mazes), dynamics (smoke, debris, sensorimotor failures and others) and tasks (from simple 2D coverage to foraging-inspired well-alternation tasks).\n\nWe compare reinforcement learning baselines with a simple engineered robotics stack and a human player on 8 example worlds which show how different difficulty axes affect existing methods.\n\nOur results show that, when sensing is simplified to 2D, learned policies can perform multi-object search and well-alternation tasks surprisingly well in simple topologies, but they fall short of human performance in larger or more complex-topology environments where map-based baselines perform well, suggesting that map-based reasoning is the bottleneck in these scenarios."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces ForagerSim, a research platform and simulation environment for embodied tasks requiring map-based reasoning, including robot search and rescue and animal foraging. It varies perception, scale, topology, dynamics, and task type. The authors compare reinforcement-learning baselines, an engineered robotics stack, and a human player across eight example worlds. In simulation, learned policies handle multi-object search and well alternation in simple topologies with simplified 2D sensing, but fall short of human performance in larger or more complex environments, where map-based baselines perform well.",
-          "zh": "论文介绍 ForagerSim，这是一个面向具身地图推理任务的研究平台与仿真环境，涵盖机器人搜救和动物觅食等场景，可调整感知、规模、拓扑、动态因素及任务类型。作者比较了强化学习基线、工程机器人系统和人类玩家在八个示例世界中的表现。仿真结果显示，简化为二维感知且拓扑简单时，学习策略能完成多目标搜索和交替觅食任务；在更大或拓扑更复杂的环境中，其表现低于人类，而地图推理基线表现良好。作者据此认为，地图推理是这些场景的瓶颈。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -15302,11 +15315,7 @@
             "heading": "",
             "text": "Task success is not a sufficient measure of safety for embodied artificial intelligence (AI), because robots may complete objectives while violating safety requirements. Existing evaluations often emphasize performance and robustness, but lack a systematic route from documented safety hazards to executable, verifiable tests.\n\nWe present EAST (Embodied AI Safety Testing), a digital-twin framework that converts literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. EAST combines an expert-reviewed safety-fault taxonomy and eight executable operators with applicability and validity constraints.\n\nIts three-stage workflow generates test specifications, verifies fault realization during simulated execution, and independently assesses safety challenges, violations, task outcomes, and behavioral signatures using simulator-state evidence.\n\nThe framework preserves execution traces and replayable records, supporting attribution and reproducibility across experiments. We evaluate EAST on six RoboTwin manipulation tasks and two policy architectures, ACT and RDT, against alternative testing strategies under matched budgets.\n\nAcross five comparative campaigns, EAST targets all 74 admissible task-policy-operator combinations and obtains valid evidence for 63, while achieving safety-challenge exposure rates close to Random-Legal and Rule-Based. Moreover, 82 valid EAST executions complete their tasks despite safety violations, revealing risks concealed by success-oriented evaluation.\n\nThese findings support systematic, validity-aware, reproducible safety testing beyond task-completion metrics."
           }
-        ],
-        "summary": {
-          "en": "EAST is a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. It uses an expert-reviewed fault taxonomy, eight executable operators, and applicability and validity constraints. Its workflow specifies tests, checks fault realization in simulation, and assesses safety challenges, violations, outcomes, and behavioral signatures from simulator state. Evaluated on six RoboTwin manipulation tasks and two policy architectures, EAST obtained valid evidence for 63 of 74 admissible combinations. The authors report 82 valid executions that completed tasks despite safety violations.",
-          "zh": "EAST 是一种在数字孪生中开展具身 AI 安全测试的框架，将文献中的安全证据转化为覆盖感知、指令、环境、动作和时序的故障注入测试。它通过专家审查的故障分类、八种可执行算子及适用性和有效性约束，生成测试规范、核验模拟执行中的故障实现，并依据模拟器状态独立评估安全挑战、违规、任务结果和行为特征。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上进行了比较。在五轮比较中，EAST 覆盖 74 个可行组合，并为其中 63 个取得有效证据；82 次有效执行虽完成任务，仍发生安全违规。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -16702,11 +16711,7 @@
             "heading": "",
             "text": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times.\n\nUnder independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE.\n\nThe same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes.\n\nWe evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks.\n\nIntegrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.\n\nIn H20 model-block benchmarks, POD-RoPE achieves median forward-plus-backward speedups of $1.91\\times$ over P-RoPE and $5.34\\times$ over RayRoPE, with a median latency overhead of 17.4% over Standard RoPE. These results support physical observation distributions as an effective and computationally efficient basis for geometry-aware attention."
           }
-        ],
-        "summary": {
-          "en": "POD-RoPE represents each token’s observation footprint as a distribution over camera centers, viewing directions, and sampling times, encoding physical geometry and the spatial and temporal extent of observations. When a distribution collapses to one address, it recovers pointwise RoPE. Its rotation statistics support Q/K matching and coherence-dependent V/O transformations, with per-token pre-aggregation. The authors evaluate it across four robot policy architectures, simulation and real-world manipulation, and reconstruction, depth-estimation, and novel-view-synthesis tasks. They report improved Fast-WAM success rates on RoboTwin 2.0 and two Sharpa North tasks; controlled reconstruction ablations support the proposed components.",
-          "zh": "POD-RoPE 将每个视觉 token 的观测范围表示为由相机中心、观察方向和采样时间构成的分布，以编码物理几何及观测的时空范围；当分布退化为单一位置时，该方法恢复点式 RoPE。其旋转统计用于 Q/K 匹配及依赖相干性的 V/O 变换，逐 token 预聚合无需增加序列长度或处理观测节点对。作者在四种机器人策略架构、仿真与真实操作，以及重建、深度估计和新视角合成任务中评估该方法，并报告其集成到 Fast-WAM 后在 RoboTwin 2.0 和 Sharpa North 任务上的成功率提升；受控重建消融支持分布编码与 V/O 变换的作用。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17338,11 +17343,7 @@
             "heading": "",
             "text": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior.\n\nExisting inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes.\n\nSuch compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part.\n\nTo address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages.\n\nFive cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones.\n\nPlanning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision.\n\nWe evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR).RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes RuleGraph, a framework for embodied robots to refuse harmful parts of compound instructions while completing legitimate parts. Five cooperating agents ground safety principles in specific rules, assess subtasks, derive a safe goal, and organize planning through a graph of rule-specific nodes with progressive plan verification. The authors evaluate pure-attack and compound instructions across two benchmarks and two environments, measuring attack and task success rates. RuleGraph reduces attack success rate to 0% on both benchmarks and achieves the highest task success rates among evaluated methods: 98.57% on RoboGuard and 84.54% on long-horizon compound instructions.",
-          "zh": "论文提出 RuleGraph，用于让具身机器人拒绝复合指令中的有害部分，同时完成合法部分。该框架由五个协作智能体把安全原则转化为具体规则、评估子任务并形成安全目标，再通过规则图组织规划，逐步验证候选方案。作者在两个基准和两个环境中评估纯攻击及复合指令，使用攻击成功率和任务成功率衡量表现。实验中，RuleGraph 在两个基准上的攻击成功率均降至0%，并在所有方法中取得最高任务成功率：RoboGuard 上为98.57%，长时程复合指令上为84.54%。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
