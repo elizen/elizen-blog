@@ -1275,7 +1275,11 @@
             "heading": "",
             "text": "Human-robot collaboration requires partners to coordinate interdependent contributions toward a shared goal. Joint Action theory provides concepts for understanding this coordination, but how these concepts are instantiated and combined across empirical research remains fragmented.\n\nWe conducted a systematic review following PRISMA 2020, identifying 83 empirical papers published between 2021 and 2026.Through theory-driven framework analysis, we organized the literature into nine constructs across three capacities: Representation, Prediction, and Integration.\n\nWe analyze how these constructs are distributed and co-occur across studies, revealing where empirical evidence concentrates and where it is absent. By mapping empirical HRC research onto a unified Joint Action framework, this review offers a coherent overview of HRC studies, identifies gaps in current evidence, and provides guidelines for future research."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This systematic review examines Joint Action in human-robot collaboration. Following PRISMA 2020, the authors identified 83 empirical papers published from 2021 to 2026 and used theory-driven framework analysis to organize the literature into nine constructs spanning Representation, Prediction, and Integration. They analyzed how constructs are distributed and co-occur across studies, identifying areas where empirical evidence is concentrated and where it is absent. The review maps HRC research onto a unified framework, describes evidence gaps, and offers guidelines for future research.",
+          "zh": "本文系统回顾了人机协作中的联合行动研究，依据PRISMA 2020筛选出2021至2026年发表的83篇实证论文。研究通过理论驱动的框架分析，将文献归纳为表征、预测和整合三种能力下的九个构念，并分析这些构念在研究中的分布与共同出现情况。作者据此指出实证证据集中的领域及缺失之处，提出统一的人机协作联合行动框架综述、当前证据空白以及未来研究指南。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1306,7 +1310,11 @@
             "heading": "",
             "text": "Pretrained video generation models encode rich priors about physical interactions, but leveraging them for robot control typically requires either resource-intensive video generation at test time or action heads trained from scratch that do not fully utilize the pretrained backbone.\n\nWe introduce Tokenizing Actions as Video Patches in a Shared Transformer Policy (TAPESTRY), a world action model that repurposes a pretrained video diffusion transformer into a robotic policy without requiring video generation at inference. Our key idea is to treat robot actions as single-patch tokens in the video model's latent space.\n\nA lightweight linear projection maps each action timestep to the patch dimensions of the pretrained VAE, and the resulting tokens are processed by the same patchifying layers and transformer backbone used for video.\n\nThe shared backbone is optimized through three diffusion objectives sampled per minibatch element: Video diffusion uses VAE latents from robot and human videos to establish dynamics priors. Joint video+action diffusion trains on robot demonstrations using a coupled diffusion timestep and an asymmetric attention mask.\n\nAction-only diffusion denoises actions conditioned on clean image latents. At test time, the model generates a compact action token sequence in a single DDIM step from pure noise, producing smooth action chunks at 84 ms per action chunk on consumer hardware and avoiding the cost of full video generation.\n\nAcross simulation benchmarks and real-robot experiments, TAPESTRY achieves strong performance with substantially lower inference cost than comparable joint video--action policies. More information can be found at https://tapestry-wam.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "TAPESTRY repurposes a pretrained video diffusion transformer as a robot policy by representing actions as single-patch tokens in the model's latent space. A lightweight projection maps action timesteps to the pretrained VAE patch dimensions, and the shared backbone is trained with video, joint video-action, and action-only diffusion objectives. At inference, it produces compact action sequences in one DDIM step without generating video. The authors report strong performance across simulation benchmarks and real-robot experiments, with substantially lower inference cost than comparable joint video-action policies.",
+          "zh": "TAPESTRY将预训练视频扩散Transformer改造为机器人策略，把动作表示为视频模型潜空间中的单块令牌，并由轻量线性投影映射动作时间步。共享骨干通过视频扩散、视频与动作联合扩散、以及基于干净图像潜变量的动作扩散目标进行优化。推理时，模型以单个DDIM步骤生成紧凑动作序列，无需生成视频。论文报告其在仿真基准和真实机器人实验中表现强劲，且推理成本低于可比的联合视频动作策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
