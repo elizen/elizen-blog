@@ -1345,7 +1345,11 @@
             "heading": "",
             "text": "Animals exhibit diverse shape-changing behaviors, from the undulatory swimming of eels to the arching movements of inchworms. Reproducing these biological shapes with modular soft robots offers a promising approach to developing versatile bioinspired robotic systems.\n\nHowever, translating a desired shape into a feasible robotic configuration remains challenging. Existing cable-driven modular soft robots rely on computationally expensive physics-based modeling and combinatorial search for inverse design, making it difficult to efficiently reproduce diverse target shapes.\n\nTo address this challenge, we present a learning-based real-to-sim-to-real framework that translates biological curves into robotic configurations through surrogate-assisted inverse design and uncertainty-guided refinement.\n\nThe proposed method combines learned inverse prediction with targeted candidate exploration, using a fast forward surrogate to evaluate and select suitable designs. The learned forward surrogate reduces deformation prediction time from $1.53 \\times 10^5$ ms to 0.0008 ms, achieving approximately a $1.9 \\times 10^8$-fold speedup.\n\nAt the same time, the proposed inverse design method reduces design time from $1.99 \\times 10^6$ ms to 4.18 ms. On 5,000 test samples generated from previously unseen threading patterns, the method achieves a 93% shape reconstruction success rate under surrogate-based evaluation.\n\nPhysical demonstrations with four bioinspired robots further illustrate the translation of biological curves into realizable robotic shapes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a learning-based real-to-sim-to-real framework for translating biological curves into modular soft robot configurations. It combines surrogate-assisted inverse design, uncertainty-guided candidate exploration, and a fast forward surrogate for evaluating designs. The authors report substantial reductions in forward prediction and inverse design time. On 5,000 test samples generated from unseen threading patterns, shape reconstruction success was 93% under surrogate-based evaluation. Physical demonstrations with four bioinspired robots illustrate the translation into realizable shapes.",
+          "zh": "论文提出将生物曲线转换为模块化软体机器人构型的学习式 real-to-sim-to-real 框架，结合代理模型辅助逆向设计、不确定性引导的候选探索，以及快速前向代理模型评估设计。作者报告，前向预测和逆向设计耗时均大幅降低；在由未见过的穿线模式生成的 5,000 个测试样本中，代理模型评估下的形状重建成功率为 93%。四种仿生机器人的实体演示展示了曲线到可实现形状的转换。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1376,7 +1380,11 @@
             "heading": "",
             "text": "Bimanual robot manipulation plays an important role in real-world robotic applications, but the high cost of collecting bimanual demonstrations limits the scalable development of bimanual policy learning.\n\nMeanwhile, existing single-arm manipulation data are difficult to directly transfer to bimanual systems due to the Single-to-Dual gap in action spaces, coordination requirements, and arm-side spatial preference. To address this issue, we propose RoboSTD, a zero-shot Single-to-Dual data construction method for bimanual robot learning.\n\nRoboSTD first applies sagittal-plane mirroring to observations, proprioception, and actions to construct executable contralateral pseudo-demonstrations. It then uses an LLM to generate structured spatio-temporal coordination constraints that guide the reconstruction of pseudo-bimanual supervision across workspace regions and task stages.\n\nWe evaluate RoboSTD on the AgileX ALOHA platform in both RoboTwin simulation and real-world settings. Experiments demonstrate the effectiveness of RoboSTD for bimanual policy learning.\n\nWithout requiring additional bimanual demonstrations, RoboSTD increases the average number of collected cups to 2.11x that of the single-arm baseline in the cup collection task. Project page: https://huahungy.github.io/RoboSTD/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes RoboSTD, a zero-shot method for constructing bimanual training data from single-arm data. It mirrors observations, proprioception, and actions across the sagittal plane to create executable contralateral pseudo-demonstrations, then uses an LLM to generate spatiotemporal coordination constraints for reconstructing supervision across workspace regions and task stages. Evaluations use the AgileX ALOHA platform in RoboTwin simulation and real-world settings. The authors report 2.11 times the single-arm baseline's average cups collected, without additional bimanual demonstrations, in the cup collection task.",
+          "zh": "论文提出 RoboSTD，通过矢状面镜像单臂观察、本体感觉和动作，构造可执行的对侧伪示范；再由大语言模型生成时空协调约束，以重建不同工作空间区域和任务阶段的双臂监督。方法在 AgileX ALOHA 平台的 RoboTwin 仿真和真实环境中评估。作者报告，在无需额外双臂示范的杯子收集任务中，平均收集杯数达到单臂基线的 2.11 倍；结论限于摘要所述任务与实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1407,7 +1415,11 @@
             "heading": "",
             "text": "Large-scale dexterous grasp datasets encode rich priors over hand-object interaction, but their use has largely been confined to grasp generation and pick-and-place manipulation.\n\nWe study whether such data can instead support functional dexterity in articulated tool use, where a robot must acquire a tool, maintain contact, and operate its functional moving parts. We adapt a hierarchical imitation learning framework that combines high-level hand sub-goal prediction with a low-level goal-conditioned controller.\n\nWe construct a 355k-trajectory grasp-pretraining dataset from large-scale dexterous grasp annotations and use it to pretrain the low-level controller. The controller is then fine-tuned on downstream task demonstrations.\n\nTo evaluate this setting, we introduce DexCraft, a simulation benchmark with six articulated tool-use tasks requiring coordinated finger motion. Across simulation and real-world experiments, our approach outperforms end-to-end diffusion policy baselines and hierarchical policies trained from scratch.\n\nIn the real world, it improves full-task success by 33.3 percentage points over DP3.These results show that grasp datasets can serve not only as resources for grasp synthesis, but also as scalable pretraining data for contact-rich dexterous manipulation. Videos are shown on https://yingyuan0414.github.io/grasp2dexterity/ ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether large-scale dexterous grasp data can support articulated tool use, where robots must acquire tools, maintain contact, and operate moving parts. Its hierarchical imitation learning framework predicts hand sub-goals at a high level and uses a goal-conditioned controller at a low level. That controller is pretrained on a 355,000-trajectory dataset and fine-tuned on downstream demonstrations. The authors report better performance than the compared baselines in the six-task DexCraft simulation benchmark and real-world experiments, including a 33.3 percentage-point improvement in full-task success over DP3 in the real world.",
+          "zh": "论文研究大规模灵巧抓取数据能否用于关节工具操作：机器人需取得工具、保持接触并操作其活动部件。方法采用分层模仿学习，以高层预测手部子目标、低层运行目标条件控制器；低层控制器先用由抓取标注构建的 35.5 万条轨迹预训练，再用下游任务示范微调。作者在包含六项任务的 DexCraft 仿真基准及真实实验中报告，该方法优于所比较的基线；真实环境完整任务成功率较 DP3 高 33.3 个百分点。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
