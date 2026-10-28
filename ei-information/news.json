@@ -898,7 +898,11 @@
             "heading": "",
             "text": "Legged robots for lunar exploration must be designed for low gravity, where reduced contact forces and long flight phases make leg morphology and controller choice interdependent.\n\nWe study this for a planar monoped in lunar gravity ($1.625$ m/s$^2$) using a bi-level co-design framework: a differential evolution outer loop searches over link lengths, and each candidate is evaluated on a vertical jump by either a quadratic program based task-space controller (QP-TSC) or a direct-collocation based trajectory optimization.\n\nThe two controllers yield different optimal link lengths, and trajectory optimization outperforms the QP-TSC across most of the design space, with 17% lower Cost of Transport (COT) at their respective optima.\n\nWe then extend to a 2D jump, where trajectory optimization with centroidal angular momentum regulation produces stable in-place and forward jumps, and an LQR controller absorbs impact and stabilizes the robot after touchdown. This is demonstrated on a baseline morphology with both links 0.3 m long."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies morphology and controller co-design for a planar monoped in lunar gravity. Its bi-level framework searches link lengths and evaluates candidates using either a task-space quadratic-program controller or direct-collocation trajectory optimization. The authors report different optimal link lengths for the two controllers and better trajectory-optimization performance across most of the design space, with a 17% COT difference at their respective optima. For 2D jumps, centroidal angular-momentum regulation supports stable in-place and forward jumps, while an LQR controller stabilizes the robot after touchdown. The demonstration uses a baseline morphology with both links 0.3 m long.",
+          "zh": "论文研究月球重力条件下平面单足机器人的形态与控制器协同设计，使用双层框架搜索连杆长度，并比较任务空间二次规划控制器与直接配点轨迹优化。作者报告两种控制器得到不同的最优连杆长度，且在大多数设计空间内轨迹优化表现更好，两者各自最优点的运输成本相差17%。在二维跳跃中，质心角动量调节支持原地和向前稳定跳跃，LQR控制器用于触地后的冲击吸收与稳定；该演示采用两根长度均为0.3米的基准连杆。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -929,7 +933,11 @@
             "heading": "",
             "text": "Multi-arm manipulation has the potential to dramatically improve the throughput, efficiency, and dexterity of many manipulation tasks. Recent work coordinates multiple robot arms in a shared workcell by allocating and scheduling tasks for greater parallelism, jointly planning multi-arm motions, or directly learning multi-arm policies.\n\nSo far, these approaches are either too slow, rely on domain-specific assumptions, or scale poorly with the number of robots and task horizon.\n\nThus, we introduce cuArms, a conflict-based planner co-designed with GPU parallelism that efficiently decomposes the search space using reusable multi-modal roadmaps for individual robots and resolves conflicts and deadlocks through a lazy search.\n\nTo jointly optimize task assignment, schedules, motions, and manipulation skills, we integrate a high-level scheduler that proposes candidate skeletons for cuArms to ground into coordinated manipulation plans.\n\nExperimental results show that our method establishes a new state of the art, with real-time initial solutions and anytime improvements in both motion quality and scheduling, without days of domain-specific training required by learning approaches. Videos of both simulated and real-world industrial tasks are available on https://cuarms.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents cuArms, a GPU-parallel conflict-based planner for multi-arm manipulation. It decomposes search using reusable multimodal roadmaps for individual robots and uses lazy search to resolve conflicts and deadlocks. A high-level scheduler proposes candidate task skeletons for the planner to ground into coordinated plans, jointly addressing assignment, scheduling, motions, and manipulation skills. The authors report real-time initial solutions and anytime improvements in motion quality and scheduling, without the lengthy domain-specific training they associate with learning approaches. The reported experiments cover simulated and real-world industrial tasks.",
+          "zh": "论文提出 cuArms，一种面向多机械臂操作、与GPU并行设计的冲突搜索规划器。它利用各机器人可复用的多模态路线图分解搜索空间，并通过惰性搜索处理冲突与死锁；高层调度器提出候选任务骨架，再由规划器生成协同操作计划，以联合处理任务分配、排程、运动和操作技能。作者报告该方法可实时给出初始解，并持续改进运动质量与排程，且不需要学习方法所需的长时间领域专门训练。文中所述实验包括模拟和真实工业任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
