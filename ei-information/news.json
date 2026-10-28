@@ -567,7 +567,11 @@
             "heading": "",
             "text": "Humanoids and other legged robots operating in complex environments must remember information that leaves their field of view and only becomes relevant much later. Reinforcement learning policies address this using memory networks such as LSTMs that are trained end-to-end with the policy to memorize such task-relevant aspects.\n\nYet, such architectures often fail to preserve sufficient information over long horizons. In this work, we propose a network architecture based on Hadamard memory that specifically targets robot navigation.\n\nOur Local Spatial Matrix Memory (LSMM) enables RL agents to store generic task-relevant information at specific, position-based memory cells, enabling flexible and spatially grounded memorization.\n\nWe evaluate LSMM on the task of autonomous maze exploration, where it matches the maze coverage of strong recurrent and finite-history baselines while being the only architecture that remembers the maze layout, reducing the reconstruction error threefold."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes Local Spatial Matrix Memory (LSMM), a Hadamard-memory architecture for legged-robot navigation. It lets reinforcement-learning agents store task-relevant information in memory cells associated with specific positions. In autonomous maze exploration, the authors report coverage comparable to strong recurrent and finite-history baselines. Among the evaluated architectures, LSMM is the only one reported to remember the maze layout, and it reduces reconstruction error threefold.",
+          "zh": "本文提出用于腿式机器人导航的局部空间矩阵记忆（LSMM），让强化学习智能体能在与位置关联的记忆单元中保存任务相关信息。作者在自主迷宫探索任务中评估该方法：其迷宫覆盖率与强循环网络及有限历史基线相当；在所比较的架构中，LSMM是唯一能记住迷宫布局的，并将布局重建误差降低至三分之一。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -598,7 +602,11 @@
             "heading": "",
             "text": "Accurate camera-LiDAR calibration is an essential prerequisite for robust multi-modal perception in robotics. Recent target-less methods based on learned pixel-point correspondences achieve high extrinsic calibration accuracy and generalize across environments.\n\nHowever, they operate on rectified images with known camera intrinsics, restricting their applicability to systems whose cameras have already been individually calibrated. We present a fully automatic, target-less framework that jointly estimates camera intrinsics, radial-tangential distortion, and camera-LiDAR extrinsics from raw images and LiDAR scans.\n\nOur method generalizes deep correspondence-based calibration from rectified images to raw cameras through intrinsic- and distortion-aware correspondence learning via synthetic augmentations. During calibration, we iteratively couple correspondence prediction and nonlinear optimization to jointly refine the camera parameters and relative sensor transformation.\n\nWe evaluate our approach on an unseen camera-LiDAR configuration from the KITTI dataset and on three real robotic platforms in a zero-shot manner.\n\nThe results demonstrate that joint calibration with our generalized pixel-point correspondence network improves extrinsic accuracy over correspondence-based methods using pre-calibrated cameras, while additionally recovering accurate intrinsics."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a target-less framework that jointly estimates camera intrinsics, radial-tangential distortion, and camera-LiDAR extrinsics from raw images and LiDAR scans. Synthetic augmentations support learning correspondences that account for intrinsics and distortion, while iterative prediction and nonlinear optimization refine the parameters and sensor transformation. The authors evaluate the method zero-shot on an unseen KITTI camera-LiDAR configuration and three real robotic platforms. They report improved extrinsic accuracy over correspondence-based methods using pre-calibrated cameras, along with accurate intrinsic recovery.",
+          "zh": "本文提出无需标定靶的相机—激光雷达联合标定框架，从原始图像和激光雷达扫描中估计相机内参、径向—切向畸变及传感器外参。方法通过合成增强学习感知内参与畸变的像素—点对应关系，并迭代结合对应预测与非线性优化。作者在KITTI数据集中的未见配置及三种真实机器人平台上进行零样本评估，报告其外参精度优于使用预标定相机的对应方法，并能恢复准确内参。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
