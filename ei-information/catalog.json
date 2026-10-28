@@ -2,7 +2,7 @@
   "items": [
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -352,7 +352,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -415,7 +415,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -533,7 +533,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -1020,7 +1020,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -3046,7 +3046,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -3176,7 +3176,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -6596,7 +6596,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -6800,7 +6800,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -8349,7 +8349,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -8486,7 +8486,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -9135,7 +9135,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -11153,7 +11153,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -12445,7 +12445,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -13684,6 +13684,39 @@
         "url": "https://www.miit.gov.cn/xwfb/gxdt/dfdt/art/2026/art_e83e61b8609d44c3b75d6c46dfb6d085.html"
       },
       "title": "四川信息通信业圆满完成2026年APEC数字和人工智能部长会议等系列活动通信服务保障工作"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-28"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.37037v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-c433e468f4b241659aa58053ca522605",
+      "intro": "Multimodal perception forms the foundation of multimodal intelligence. In particular, spatial perception and multimodal long-context understanding are two pivotal tasks that underpin embodied AI and multimodal agents. However, synthesizing targeted, high-quality training data for these tasks remains difficult and costly. Our key insight is that these tasks share an underlying capability, which we call connecting evidence: identifying relevant visual facts, binding them to the correct entities, recovering their relations, and…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Multimodal perception forms the foundation of multimodal intelligence. In particular, spatial perception and multimodal long-context understanding are two pivotal tasks that underpin embodied AI and multimodal agents. However, synthesizing targeted, high-quality training data for these tasks remains difficult and costly.\n\nOur key insight is that these tasks share an underlying capability, which we call connecting evidence: identifying relevant visual facts, binding them to the correct entities, recovering their relations, and composing them into an answer. Crucially, targeted training data are far easier to synthesize for this capability than for these tasks themselves.\n\nTo strengthen this capability, we propose EvidenceConnect, an easy-to-implement data synthesis framework that uses zoomed views of related regions within a single image to generate questions requiring comparison, aggregation, or chaining of visual evidence.\n\nTo ensure quality, a reference answer is retained only when independent VLMs agree on it, and region-ablation tests discard questions whose answer survives the removal of selected regions. We then train base VLMs on the resulting data with RLVR, obtaining Zooming without Zooming v2 (ZwZ2).\n\nAlthough the synthesized data are not tailored to any downstream benchmark, ZwZ2 improves fine-grained and spatial perception, with further gains on embodied spatial reasoning, multimodal long-context understanding, multimodal agent tasks, and general visual reasoning.\n\nThese results establish EvidenceConnect as an effective framework for supervising evidence connection and suggest that strengthening this shared capability leads to more generalizable multimodal perception."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.37037v1"
+      },
+      "title": "Zooming without Zooming v2: From Seeing Details to Connecting Evidence for Generalizable Multimodal Perception"
     },
     {
       "archive": {
@@ -15292,7 +15325,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -16300,7 +16333,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -16688,7 +16721,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
@@ -17320,7 +17353,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-10-27"
+        "recorded_at": "2026-10-28"
       },
       "body": "",
       "catalog": {
