@@ -1683,7 +1683,11 @@
             "heading": "",
             "text": "Enabling a humanoid to interact naturally with human partners requires preserving not only individual motions but also the spatial, semantic, and contact relationships underlying the interaction (i.e., hugging, dancing, hand-shaking, etc.).\n\nFurthermore, a practical solution should generalize across various humanoid embodiments with distinct morphologies and kinematic constraints. To tackle this challenge, we propose HumiTransfer, a mimetic embodiment transfer framework that converts in-the-wild human-human interaction videos into physically plausible human-humanoid interactions.\n\nHumiTransfer first reconstructs 3D human motion with consistent foot-ground contact, then transfers one participant to a target humanoid embodiment via interaction modeling, using weighted joint-relative directions and anatomical offsets to prioritize interaction-critical inter-body relationships, while post-retargeting optimization enforces balance, contact, and collision avoidance.\n\nSubsequently, we apply HumiTransfer to 1,200 in-the-wild videos, producing approximately 500,000 frames of diverse interactions for the 26-DoF Unitree R1 Edu and the 23-DoF HighTorque Mini-hi humanoid robot, resulting in our HumiMimic dataset.\n\nAcross both robots, HumiTransfer achieves superior motion fidelity, preserves inter-body relationships, and maintains contact accuracy compared with existing baselines. Moreover, we demonstrate that HumiMimic supports motion generation methods for synthesizing interactive humanoid motions following a human partner.\n\nFinally, our real robot deployments confirm the physical executability of the transferred motions in real-world settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HumiTransfer, a framework that converts in-the-wild human interaction videos into interactions for humanoid robots with different morphologies. It reconstructs 3D human motion with foot-ground contact, transfers interaction relationships using joint-relative directions and anatomical offsets, and optimizes balance, contact, and collision avoidance. Applied to 1,200 videos, it produces the HumiMimic dataset for two robots. The authors report improvements over baselines and demonstrate physical execution in real-world robot deployments.",
+          "zh": "论文提出 HumiTransfer，将野外人际互动视频转化为适配不同人形机器人形态的互动动作。方法先重建带足地接触的人体三维运动，再依据关节相对方向和解剖偏移迁移互动关系，并优化平衡、接触与避碰。作者用该框架处理1200段视频，构建面向两种机器人的 HumiMimic 数据集。作者报告其在动作保真、身体间关系和接触准确性方面优于基线，并通过真实机器人部署展示动作可执行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1714,7 +1718,11 @@
             "heading": "",
             "text": "As egocentric video becomes increasingly available for embodied learning, an important research question is how to turn this low-cost, scalable source of data into robot manipulation capabilities.\n\nEgocentric videos naturally provide rich context for high-level task understanding, while real-robot demonstrations with wrist observations and action annotations provide supervision for fine-grained action alignment.\n\nWe present Ego-CEVR, a data-native framework for hierarchical visual representation learning that assigns distinct learning objectives to global and interaction representations. The global module learns object relations, task state, and temporal progress through future prediction on egocentric video.\n\nThe Interaction module interprets wrist observations in global context and learns local alignment and contact cues through robot action supervision. Separate residual paths expose both representations to the action policy, preserving direct access to task context alongside fine-grained execution information.\n\nEgo-CEVR supports independent pretraining of its global video module on large-scale human egocentric videos and videos from diverse robot embodiments, without requiring robot action labels or paired wrist observations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Ego-CEVR, a framework for hierarchical visual representation learning from egocentric human videos and robot data. A global module learns object relations, task state, and temporal progress through future prediction. An interaction module uses wrist observations in global context and robot action supervision to learn local alignment and contact cues. Separate residual paths provide both representations to the action policy. The authors state that the global video module can be pretrained independently on human and diverse robot videos without robot action labels or paired wrist observations.",
+          "zh": "论文提出 Ego-CEVR，一种从人类第一人称视频和机器人数据学习分层视觉表征的框架。全局模块通过未来预测学习物体关系、任务状态和时间进展；交互模块结合全局语境与腕部观测，并通过机器人动作监督学习局部对齐和接触线索。两种表征经独立残差路径提供给动作策略。作者还指出，全局视频模块可在大规模人类第一人称视频及多种机器人形态的视频上独立预训练，无需机器人动作标签或配对腕部观测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1745,7 +1753,11 @@
             "heading": "",
             "text": "Learning from Demonstration (LfD) enables intuitive robot skill acquisition by allowing robots to learn directly from human task demonstrations. However, current methods often fail to address the fact that due to suboptimal and inconsistent human behavior, the quality of the demonstration can vary within each demonstration.\n\nTherefore, we introduce LOPAL (LOcal Performance-aware Active Learning), an active learning approach that leverages this local demonstration quality information. Our approach consists of two synergistic components.\n\nFirst, a local performance-driven LfD method uses a Gaussian Mixture Model (GMM) to encode both the demonstrated trajectories and their associated local quality assessments. This enables the generation of trajectories that outperform the imperfect demonstrations by utilizing complementary local data of high performance.\n\nSecond, active data acquisition allows to improve beyond the imperfect demonstrations by collecting additional informative samples. In areas missing good data, the user is actively requested to provide corrections through a shared autonomy (SA) mechanism, while the robot autonomously executes the learned behavior.\n\nThe efficacy of LOPAL was validated in both a simulation and a real-world experiment. The results from a real-world pipe inspection task showed that the proposed approach can achieve up to 27.31 % improvement in task performance while also reducing the effort required to collect the demonstrations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LOPAL, an active learning approach that accounts for quality differences within demonstrations. Its local performance-driven learning component uses a Gaussian Mixture Model to encode trajectories and local quality assessments, generating trajectories from complementary high-quality data. An active acquisition component requests user corrections through shared autonomy where good data are missing. The authors evaluated the approach in simulation and a real-world experiment, reporting up to 27.31% higher task performance and reduced demonstration collection effort on a pipe inspection task.",
+          "zh": "论文提出 LOPAL，一种利用示范中局部质量差异的主动学习方法。其局部性能驱动的示范学习部分用高斯混合模型编码轨迹及局部质量评估，以高质量局部数据生成优于不完美示范的轨迹；主动采集部分则在优质数据缺失处通过共享自主机制请求用户修正。作者在仿真和真实实验中验证该方法，并报告其在真实管道检查任务中使任务表现最高提升27.31%，同时减少示范采集所需的工作量。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1776,7 +1788,11 @@
             "heading": "",
             "text": "Multi-robot informative path planning (IPP) for persistent target monitoring requires robots to reason about spatial uncertainty, temporal evolution, and practical sensing and communication constraints.\n\nRecent learning-based multi-robot IPP methods use Gaussian Processes (GPs) for target uncertainty, but often rely on simplified sensing models and centralized belief updates. We propose a grid-based spatio-temporal GP-Kalman filtering framework for learning-based multi-robot IPP.\n\nInstead of maintaining one GP per target, we represent anonymous target presence as a single latent field over a discrete workspace grid. The proposed recursive update assimilates footprint-level camera measurements and supports arbitrary fields of view and range-dependent noise.\n\nA GP-derived temporal process update inflates uncertainty over time to account for moving targets. For decentralized deployment, each robot maintains its own mapper and exchanges fixed-size belief summaries rather than raw measurements.\n\nReceived beliefs are fused using diagonal covariance intersection to remain conservative under unknown inter-robot correlations. We integrate the mapper with a reinforcement-learning policy for graph-based neighbor selection.\n\nIn simulation, the centralized deployment improves target visitation and attains about 20% lower posterior target uncertainty than learning-based and classical auction/coverage baselines, a large share of which stems from the belief representation itself.\n\nA real-world two-UAV experiment demonstrates transfer to outdoor multi-robot search over a large field (>7000 m^2).Code is available at https://github.com/caomuqing/multirobot-ipp."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a grid-based spatio-temporal GP-Kalman filtering framework for multi-robot informative path planning. It represents anonymous target presence as one latent workspace field, assimilates camera footprint measurements, and increases uncertainty over time to account for moving targets. In decentralized operation, robots exchange fixed-size belief summaries and fuse them conservatively using diagonal covariance intersection. In simulation, centralized deployment improves target visitation and achieves about 20% lower posterior target uncertainty than the stated baselines. A real-world two-UAV experiment demonstrates transfer to outdoor search.",
+          "zh": "论文提出一种用于多机器人信息路径规划的网格化时空高斯过程卡尔曼滤波框架，以单一潜在场表示匿名目标在工作区中的存在。递归更新融合相机覆盖范围内的测量，并支持不同视场和距离相关噪声；时间过程更新则随时间增加移动目标的不确定性。分布式运行时，机器人交换固定大小的信念摘要，并用对角协方差交集进行保守融合。在仿真中，集中式部署提高目标访问率，并使后验目标不确定性比所比较基线低约20%；双无人机实地实验展示了向户外搜索的迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
