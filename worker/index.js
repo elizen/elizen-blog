@@ -110,6 +110,12 @@ export default {
       return jsonResponse({ error: "Method not allowed" }, 405, env);
     }
 
+    const authHeader = request.headers.get("Authorization") || "";
+    const token = authHeader.replace(/^Bearer\s+/i, "");
+    if (!env.AUTH_TOKEN || token !== env.AUTH_TOKEN) {
+      return jsonResponse({ error: "Unauthorized" }, 401, env);
+    }
+
     const url = new URL(request.url);
     try {
       if (url.pathname === "/tts") {
