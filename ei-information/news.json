@@ -1205,7 +1205,11 @@
             "heading": "",
             "text": "Robot foundation models may generalize across tasks and embodiments, but their actions still depend on sensors that can fail. When the policy is frozen or inaccessible, can an external monitor diagnose and repair corrupted inputs without access to its internals?\n\nWe test a structured surrogate that separates periodic gait from sensor-dependent corrections to guide input repair around a frozen locomotion policy. On simulated Go2, offline diagnosis raises walking success from 259/640 to 429/640 episodes; online repair reaches 382/640, with no triggers in 64 held-out fault-free episodes.\n\nA matched boosted-tree surrogate predicts clean actions similarly well but yields no detected repair improvement over no repair. Separate fits improve walking on Go1 and ANYmal C, although phase-aware gradients perform better.\n\nEvidence remains limited to one policy and a partly screened simulated fault suite; robot foundation model and hardware validation remain open."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This study examines whether a structured, transparent surrogate can diagnose sensor faults and repair inputs when a robot policy is frozen or inaccessible. The surrogate separates periodic gait from sensor-dependent corrections. In simulated Go2 trials, offline diagnosis and online repair each improved walking success, while no repairs were triggered in held-out fault-free episodes. A matched boosted-tree surrogate predicted clean actions similarly but showed no detected repair benefit. Separate fits also improved walking on Go1 and ANYmal C, though phase-aware gradients performed better. Evidence is limited to one policy and a partly screened simulated fault suite; foundation-model and hardware validation remain open.",
+          "zh": "本文研究在机器人策略冻结或无法访问内部结构时，能否用结构化透明代理诊断传感器故障并修复输入。该代理将周期步态与传感器相关修正分开，在模拟 Go2 上，离线诊断和在线修复均提高了行走成功数，且无故障留出回合未触发修复。匹配的提升树代理虽能类似地预测干净动作，却未显示修复收益。Go1 和 ANYmal C 的独立拟合也改善行走，但相位感知梯度表现更好。证据限于单一策略及部分筛选的模拟故障集，尚未验证机器人基础模型或硬件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1236,7 +1240,11 @@
             "heading": "",
             "text": "Humanoid behavior foundation models (BFMs) provide reusable whole-body motion priors: given a kinematic reference, they generate coordinated joint commands for motion replay, teleoperation, and VLA control.\n\nHowever, trained primarily on flat-ground motion, BFMs lack an explicit mechanism to adapt foot placement, swing clearance, and contact timing to local terrain.\n\nMany terrain-aware BFM approaches address this limitation by retraining or fine-tuning the tracker together with perception, incurring substantial data and computation costs while coupling ordinary tracking to the perception pathway. To bridge this gap, we propose GRAFT, a geometry-aware residual adaptation framework for frozen behavior trackers.\n\nGRAFT preserves the BFM parameters and motion-reference interface, while a lightweight adapter adds terrain-conditioned corrections only to lower-body execution targets.\n\nThe adapter is trained with task and foot-geometry rewards, regularized to suppress unnecessary corrections on flat ground, and distilled from privileged terrain observations to onboard depth. Because the frozen BFM already provides whole-body reference tracking and nominal locomotion, GRAFT reduces terrain learning to a focused execution-adaptation problem.\n\nWe instantiate the framework on four frozen trackers and evaluate stairs, gaps, and platforms in simulation. We further validate it through real-world deployment on a Unitree G1, where the adapted SONIC tracker traverses terrain with onboard depth and unmodified references."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GRAFT, a geometry-aware residual adaptation framework for frozen humanoid behavior trackers, addressing their limited adaptation to local terrain. It preserves the foundation model parameters and motion-reference interface while a lightweight adapter adds terrain-conditioned corrections to lower-body execution targets. Training uses task and foot-geometry rewards, suppresses unnecessary flat-ground corrections, and distills privileged terrain observations to onboard depth. The framework is evaluated in simulation on stairs, gaps, and platforms with four frozen trackers. The authors also report real-world deployment on a Unitree G1, where adapted SONIC traverses terrain using onboard depth and unchanged references.",
+          "zh": "本文提出 GRAFT，一种面向冻结人形行为追踪器的几何感知残差适配框架，旨在补足其对局部地形适应的不足。框架保留基础模型参数和运动参考接口，由轻量适配器仅对下肢执行目标加入地形条件修正；训练结合任务与足部几何奖励，并抑制平地上的不必要修正。适配器通过特权地形观测训练并蒸馏至机载深度感知。研究在四种冻结追踪器上进行楼梯、间隙和平台的仿真评估，并报告 Unitree G1 实际部署验证：适配后的 SONIC 追踪器使用机载深度和未修改的参考轨迹通过地形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
