@@ -1450,7 +1450,11 @@
             "heading": "",
             "text": "Coding agents can adapt robotic software by revising executable programs, but successful responses to an evolving opponent may not remain effective. We present a framework for program-level adversarial co-adaptive self-play in which coding agents generate attacks and defenses from tested opponent code and mission feedback, without model fine-tuning.\n\nEnvironment-specific interfaces support external programs for autonomous driving and SDK-level defenses for humanoid locomotion. Two eight-generation case studies reveal concrete software responses: a driving defender introduces direct-actuation recovery, while a humanoid defender revises incoming-state validation.\n\nThese responses provide local task recovery but do not establish sustained robustness. The framework makes such adaptation and limitations observable through executable artifacts and task-level evidence."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a framework for program-level adversarial co-adaptive self-play in robotic security. Coding agents generate attacks and defenses from tested opponent code and mission feedback, without model fine-tuning. Environment-specific interfaces support autonomous driving, while SDK-level defenses address humanoid locomotion. Two eight-generation case studies show a driving defender adding direct-actuation recovery and a humanoid defender revising incoming-state validation. The authors describe these as local task-recovery responses, not evidence of sustained robustness. The framework makes adaptations and their limitations observable through executable artifacts and task-level evidence.",
+          "zh": "论文提出一种面向机器人安全的软件级对抗协同自博弈框架：编码智能体根据经过测试的对手代码和任务反馈生成攻击与防御，无需微调模型。框架为自动驾驶提供特定环境接口，为人形机器人运动提供 SDK 级防御。两项各进行八代的案例研究显示，驾驶防御方加入直接执行器恢复，人形机器人防御方修改了对输入状态的验证。作者称这些调整可实现局部任务恢复，但并未证明持续稳健性；框架通过可执行产物和任务级证据呈现适应及其局限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1481,7 +1485,11 @@
             "heading": "",
             "text": "This paper introduces Quaternion Approximate Networks (QUAN), a novel deep learning framework that leverages quaternion algebra for rotation equivariant image classification and object detection.\n\nUnlike conventional quaternion neural networks attempting to operate entirely in the quaternion domain, QUAN approximates quaternion convolution through Hamilton product decomposition using real-valued operations. This approach preserves geometric properties while enabling efficient implementation with custom CUDA kernels.\n\nWe introduce Independent Quaternion Batch Normalization (IQBN) for training stability and extend quaternion operations to spatial attention mechanisms. QUAN is evaluated on image classification (CIFAR-10/100, ImageNet), object detection (COCO, DOTA), and robotic perception tasks.\n\nIn classification tasks, QUAN achieves higher accuracy with fewer parameters and faster convergence compared to existing convolution and quaternion-based models.\n\nFor objection detection, QUAN demonstrates improved parameter efficiency and rotation handling over standard Convolutional Neural Networks (CNNs) while establishing the SOTA for quaternion CNNs in this downstream task.\n\nThese results highlight its potential for deployment in resource-constrained robotic systems requiring rotation-aware perception and application in other domains. Code: https://cwru-aism.github.io/ QUANpaper/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Quaternion Approximate Networks (QUAN) for rotation-equivariant image classification and object detection. QUAN approximates quaternion convolution through Hamilton product decomposition using real-valued operations, and adds Independent Quaternion Batch Normalization and quaternion operations in spatial attention. The authors evaluate it on image classification, object detection, and robotic perception tasks. They claim higher accuracy with fewer parameters and faster convergence than existing convolution and quaternion models in classification. For object detection, they report better parameter efficiency and rotation handling than standard CNNs, and state that QUAN establishes the state of the art among quaternion CNNs for this downstream task.",
+          "zh": "论文提出四元数近似网络（QUAN），用于旋转等变图像分类与目标检测。它通过 Hamilton 积分解以实数运算近似四元数卷积，并引入独立四元数批归一化及空间注意力中的四元数运算。论文在图像分类、目标检测和机器人感知任务上进行评估。作者声称，分类任务中 QUAN 相较现有卷积和四元数模型准确率更高、参数更少、收敛更快；目标检测中参数效率和旋转处理优于标准 CNN，并在该下游任务的四元数 CNN 中达到最先进水平。摘要称其可能适用于资源受限的机器人系统。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
