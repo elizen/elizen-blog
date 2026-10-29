@@ -1963,7 +1963,11 @@
             "heading": "",
             "text": "When a robot faces unfamiliar physical conditions, a common approach is to collect evidence about what changed and adapt.\n\nFor such diagnosis to improve behavior, six ordered empirical conditions must hold: a meaningful reference, identifiability of the physical condition, use of the acquired evidence, decision value, selection value over a fixed alternative, and safe realization. We test this chain in controlled and public environments.\n\nIn our controlled environments the frozen policy chooses correctly on every decision, but which evidence it buys is fixed by how the panels assign decisions to evidence strata. On three mechanisms absent from training, the frozen decoder fails its registered transfer gate.\n\nOn all 96 decisions of the transfer panel, its full-trace input lies far outside its training range, and on such inputs it returns one answer whatever the trace contains. All 15 of its errors fall in the 30 decisions from which cheaper evidence was removed by design, a split hidden by aggregate accuracy.\n\nNone of three primary public tasks passes its registered qualification gates. Before attributing a failure to how a frozen model uses evidence, evaluation should therefore check whether its deployment inputs lie inside its training range."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes six ordered empirical conditions for physical diagnosis to improve robot behavior, including meaningful reference, identifiability, evidence use and decision value, selection value over a fixed alternative, and safe realization. In controlled settings, a frozen policy always chose correctly, but evidence selection was fixed by panel design. Its decoder failed the registered transfer gate on three unseen mechanisms; all 96 transfer-panel inputs were outside its training range, where it returned the same answer regardless of trace content. None of three primary public tasks passed qualification gates.",
+          "zh": "论文提出，物理诊断要改善机器人行为，需依次满足六项经验条件，包括参考基准有意义、物理状态可辨识、证据被使用并具有决策价值，以及优于固定替代方案且能安全实现。受控环境中，冻结策略虽每次都选对，但证据选择由面板设计固定；在三个训练中未见机制上，冻结解码器未通过预注册迁移门槛。迁移面板的全部96项输入都超出训练范围，解码器对这些输入不论轨迹内容均给出同一答案。三项主要公开任务均未通过资格门槛。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1994,7 +1998,11 @@
             "heading": "",
             "text": "Robot demonstration learning requires accurate and temporally complete end-effector localization during close-range manipulation and camera occlusion. Existing SLAM benchmarks emphasize navigation motions, whereas manipulation datasets prioritize policy learning over localization evaluation.\n\nWe introduce MILD, a Manipulation-Interface Localization Dataset with real-world and simulation sequences. The real-world subset provides 86 sensor sequences from Insta360 X5 and Insight9 across 15 repeated tabletop tasks, calibration assets, and a per-execution robot end-effector reference trajectory.\n\nThe simulation subset, MILD-Sim, extends task coverage in Isaac Sim for controlled manipulation-replay studies. Benchmarking visual-inertial and fiducial-aided systems on instrumented real-world recordings reveals large differences in both TCP-relative trajectory error and temporal coverage, even under the same nominal task.\n\nTo support marker-augmented teaching workspaces without a pre-surveyed fiducial map, we present AprilVINS, which combines fisheye visual-inertial estimation with sequence-local AprilTag geometry and separates prior admission from guarded export of the jointly optimized state.\n\nOn Insta360 AprilTag4 recordings, AprilVINS(full) under a unified protocol with sequence-specific profiles reaches millimeter-level SE（3）-aligned TCP-relative APE RMSE with high time completion and lower reported error than the tested routes under their respective protocols, whereas fisheye VIO without tag factors remains at centimeter scale.\n\nAblations separate accuracy from exportability, and a MILD-Sim replay study provides task-specific tolerance references for interpreting those error magnitudes. Together, MILD and AprilVINS provide a diagnostic benchmarking framework for UMI-style demonstration collection. Code, datasets, and evaluation manifests will be released upon acceptance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MILD, a dataset for evaluating robot end-effector localization during close-range manipulation and camera occlusion, with real and simulated sequences and execution-level reference trajectories. It also presents AprilVINS, combining fisheye visual-inertial estimation with sequence-local AprilTag geometry and separating prior admission from guarded state export. Under the stated unified protocol and sequence-specific profiles, AprilVINS on Insta360 AprilTag4 recordings achieves millimeter-level aligned trajectory error and high time completion, with lower reported error than routes tested under their respective protocols. Fisheye VIO without tag factors remains at centimeter scale.",
+          "zh": "论文介绍MILD数据集，用于评估近距离操作和相机遮挡情况下的机器人末端定位，包含真实序列、仿真序列及每次执行的末端参考轨迹。作者还提出AprilVINS，将鱼眼视觉惯性估计与序列内AprilTag几何结合，并区分先验接纳与优化状态的受控导出。在所述统一协议和特定配置下，AprilVINS在Insta360 AprilTag4录制数据上达到毫米级对齐轨迹误差、高时间覆盖率，报告误差低于按各自协议测试的路线；不含标签因子的鱼眼VIO仍为厘米级。仿真回放用于提供任务特定容差参考。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2025,7 +2033,11 @@
             "heading": "",
             "text": "We present CPG-ENN, a trainable quadruped locomotion framework that combines explicit neural coordination with learned motion realization.\n\nA symmetry-based eight-neuron central pattern generator (CPG) supplies gait rhythms, while a pretrained, leg-shared execution neural network (ENN) maps rhythmic signals and trajectory parameters to joint-angle references without online inverse kinematics. A single feedback policy modulates six physically interpretable trajectory variables.\n\nThe controller tracks planar velocity and yaw-rate commands across walk, trot, pace, bound, and pronk without gait-specific learned controllers or transitionspecific rewards. Simulation yields 99.39% transition success across all 20 directed gait pairs and all source-target speed combinations from {0.5, 1.0, 1.5, 2.0} m/s.\n\nAblations show high cross-gait transition feasibility without transition exposure; exposure mainly refines gait acquisition and velocity transients. Comparisons with AllGaits and Walk These Ways demonstrate accurate gait-speed regulation, and Unitree Go2 experiments validate five gaits and their transitions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CPG-ENN, a quadruped locomotion framework in which a symmetry-based eight-neuron central pattern generator supplies gait rhythms and a pretrained, leg-shared execution network maps rhythms and trajectory parameters to joint-angle references without online inverse kinematics. One feedback policy controls six trajectory variables across five gaits. In simulation, transition success was 99.39% across 20 directed gait pairs and the specified speed combinations. Ablations indicate high transition feasibility without transition exposure, while Unitree Go2 experiments validate the five gaits and their transitions.",
+          "zh": "论文提出CPG-ENN四足机器人运动框架：对称八神经元中央模式发生器提供步态节律，预训练的共享执行网络将节律信号和轨迹参数映射为关节角参考，无需在线逆运动学；单一反馈策略调节六个轨迹变量。该控制器在行走、小跑、侧步、跳跃和腾跃中跟踪平面速度与偏航角速度指令，不使用按步态区分的学习控制器或转换奖励。仿真中，20种有向步态转换及各速度组合的成功率为99.39%；消融显示，未接触转换训练时也有较高可行性。Unitree Go2实验验证了五种步态及其转换。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2056,7 +2068,11 @@
             "heading": "",
             "text": "Mobile robot manipulators extend contact-task capability beyond the workspace of fixed robot installations, but their bases must also sustain the forces generated by the task. On lightweight platforms, base motion and support compliance can change the force and motion realised at the workpiece.\n\nHow these non-rigid base effects manifest during sustained contact remains insufficiently characterised. This paper investigates non-rigid base effects in mobile robot manipulators through a sanding case study combining exploratory simulation with experiments on two lightweight, unactuated wheeled testbeds.\n\nJoint measurements of contact force, tool motion, and base vibration show that sustained contact coexisted with substantial task error: under low base-ground resistance, only 54-70% of a 100 N command was realised, with tool-centre-point errors reaching 100 mm.\n\nIncreasing base-ground resistance during contact improved force realisation and arrested further tool displacement, while base vibration did not vary consistently with force-tracking error in the tested conditions.\n\nThese observations illustrate how non-rigid base behaviour can affect contact-task execution and highlight the value of examining force, motion, and vibration together when characterising lightweight mobile manipulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies non-rigid base effects in mobile manipulation through a sanding case study, combining exploratory simulation with experiments on two lightweight, unactuated wheeled testbeds. Joint measurements of contact force, tool motion, and base vibration found substantial task error despite sustained contact: under low base-ground resistance, only 54–70% of a 100 N command was realized, and tool-centre-point error reached 100 mm. Increasing resistance during contact improved force realization and stopped further tool displacement. In the tested conditions, base vibration did not vary consistently with force-tracking error.",
+          "zh": "论文通过打磨案例研究轻型移动操作机器人的非刚性底座效应，结合探索性仿真与两种无动力轮式测试平台实验。接触力、工具运动和底座振动的联合测量显示，持续接触仍可能伴随明显任务误差：底座与地面阻力较低时，实际实现的力仅为100 N指令的54%至70%，工具中心点误差最高达100 mm。接触期间提高底座与地面的阻力，可改善力实现并阻止工具继续位移；在测试条件下，底座振动与力跟踪误差未呈现一致变化。作者据此强调应联合考察力、运动和振动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
