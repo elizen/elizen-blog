@@ -1590,7 +1590,11 @@
             "heading": "",
             "text": "Navigation vision-language-action (VLA) policies repeatedly invoke costly semantic reasoning even when the next command remains unchanged. Command reuse can reduce computation but risks missing instruction-dependent turns or stops.\n\nWe introduce ASPEN, an event-triggered scheduler based on command persistence prediction: estimating whether the frozen base policy would reissue its previous command. A lightweight multimodal predictor combines temporal observations, language instructions, execution history, and cached VLA confidence.\n\nAt eligible command boundaries, sufficient predicted persistence permits command reuse. Otherwise, ASPEN triggers fresh semantic reasoning from the VLA. Evaluated with frozen NaVILA on cross-dataset RxR-CE val-unseen, ASPEN reduces VLA calls by 9.5% and estimated inference time by 8.1%, including scheduling overhead.\n\nIt maintains comparable navigation performance and preserves identical baseline action sequences on 92.1% of episodes."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ASPEN, a scheduler that predicts whether a frozen navigation policy would repeat its previous command. Its lightweight multimodal predictor uses temporal observations, language instructions, execution history, and cached confidence to decide when to reuse a command or trigger fresh reasoning. In a cross-dataset RxR-CE val-unseen evaluation with frozen NaVILA, the authors report 9.5% fewer VLA calls and an 8.1% reduction in estimated inference time, including scheduling overhead. Navigation performance remained comparable, with baseline action sequences preserved in 92.1% of episodes.",
+          "zh": "论文提出 ASPEN，一种通过预测冻结的基础策略是否会重复上一条指令来调度导航语义推理的方法。轻量多模态预测器利用时间观测、语言指令、执行历史和缓存置信度；在预测指令足够持久时复用命令，否则触发新的推理。在冻结 NaVILA 的跨数据集 RxR-CE val-unseen 评估中，作者报告 VLA 调用减少 9.5%、含调度开销的估计推理时间减少 8.1%，导航表现相近，92.1% 的回合动作序列与基线一致。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1621,7 +1625,11 @@
             "heading": "",
             "text": "Zero-shot object navigation requires an embodied agent to choose where to search while retaining evidence from previous observations. HGWM couples an LLM-generated room-anchor prior with persistent spatial-semantic memory.\n\nA coarse stage assigns visual-semantic scores to candidate headings on a 0-10 scale; a fine stage measures symbolic compatibility between observed objects, room context, and the goal prior. Phase-dependent fusion combines these scores with an LLM direction recommendation before local action selection.\n\nOn HM3D v0.1, the reported HGWM configuration achieves 62.6% success rate (SR) and 31.5% success weighted by path length (SPL), compared with 58.1% and 31.2% for WMNav. On MP3D, the corresponding values are 46.8% and 17.9%, compared with 45.4% and 17.2%.The results indicate higher success point estimates and modest path-efficiency gains.\n\nOn HM3D v0.2, the full model obtains 74.4% SR and 31.9% SPL. Additional component ablations reduce SR by 0.9-2.3 percentage points and SPL by 0.6-1.5 points. These are author-reported aggregate measurements. The accompanying implementation repairs pass offline tests; episode-level rerun records are not available. Evaluation is confined to simulation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HGWM for zero-shot object navigation, combining an LLM-generated room-anchor prior with persistent spatial-semantic memory. Its coarse stage scores candidate headings, while a fine stage measures symbolic compatibility among observed objects, room context, and the goal prior, with phase-dependent fusion of an LLM direction recommendation. In simulation, the authors report higher success-rate and path-length-weighted success-rate point estimates than WMNav on HM3D v0.1 and MP3D. On HM3D v0.2, the full model reaches 74.4% success and 31.9% SPL. Results are aggregate author-reported measurements; episode-level rerun records are unavailable, and evaluation is confined to simulation.",
+          "zh": "论文提出 HGWM，将大语言模型生成的房间锚点先验与持久空间语义记忆结合，用于零样本目标导航；系统分粗阶段评分候选方向、细阶段衡量观测物体与房间情境及目标先验的符号匹配，并融合方向建议。在 HM3D v0.1 和 MP3D 仿真中，作者报告其成功率及路径加权成功率点估计高于 WMNav；HM3D v0.2 全模型成功率为 74.4%、路径加权成功率为 31.9%。组件消融会降低这两项指标。结果为作者报告的汇总测量，未提供逐回合重跑记录，评估范围限于仿真。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1652,7 +1660,11 @@
             "heading": "",
             "text": "Flow-based policies for language-conditioned multi-task manipulation commonly share a single $\\textit{Gaussian}$ source prior and a common linear transport path across tasks. However, reliably executing multiple tasks with distinct motion requirements remains challenging for a shared policy.\n\nWe introduce $\\textbf{TOPS}$ ($\\textbf{T}$ask-$\\textbf{O}$riented $\\textbf{P}$riors and $\\textbf{S}$chedules), which adapts the flow source prior and interpolation schedule to each task without modifying the network architecture.\n\nTOPS first constructs multimodal task sources from reverse-mapped expert action sequences, allowing language instructions to select where generation begins. Guided by source-target covariance mismatch, it then slows the transition toward expert actions early in denoising and accelerates it later along directions requiring expansion.\n\nUnder a $\\textit{Gaussian}$ endpoint model, our analysis shows that this schedule adjustment can lower an upper bound on velocity-prediction risk. Experiments on LIBERO, LIBERO-Plus, and CALVIN demonstrate improved performance across in-distribution, perturbation and cross-environment settings, alongside better data efficiency.\n\nUsing one integration step, TOPS raises LIBERO-10 success from $53.44\\%$ to $69.67\\%$ compared with ten-step Standard Flow Matching (FM), while reducing inference time to approximately one-sixth of the baseline. TOPS also yields consistent gains when transferred to the large-scale flow-based $\\pi_{0.5}$ policy across all four evaluated settings.\n\nReal-world experiments further demonstrate improved task success, including an increase from $20\\%$ with standard FM to $80\\%$ with TOPS on the upper-drawer opening task."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces TOPS, which adapts flow-policy source priors and interpolation schedules to individual manipulation tasks without changing the network architecture. It constructs multimodal task sources from reverse-mapped expert actions and adjusts denoising based on source-target covariance mismatch. The authors’ analysis under a Gaussian endpoint model says this schedule can lower an upper bound on velocity-prediction risk. Evaluations on LIBERO, LIBERO-Plus, CALVIN, and π₀.₅ report gains across settings. With one integration step, TOPS achieves 69.67% success on LIBERO-10 versus 53.44% for ten-step standard flow matching, at about one-sixth the inference time. A real-world drawer-opening task improves from 20% to 80% success.",
+          "zh": "论文提出 TOPS，为不同操作任务调整流策略的源先验和插值时序，无需改变网络结构。它根据专家动作序列构造多模态任务源，并依据源与目标协方差差异调整去噪过程：早期放慢向专家动作的过渡，后期沿需扩展方向加速。作者的分析表明，在高斯端点模型下，此调整可降低速度预测风险上界。LIBERO、LIBERO-Plus、CALVIN 及 π₀.₅ 评估显示多种设置下性能提升；单步 TOPS 在 LIBERO-10 的成功率为 69.67%，标准十步流匹配为 53.44%，推理时间约降至六分之一。真实机器人实验中，上层抽屉开启成功率从 20% 升至 80%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
