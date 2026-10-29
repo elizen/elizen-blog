@@ -1823,7 +1823,11 @@
             "heading": "",
             "text": "Imitation policies that reliably execute most of a manipulation trajectory can still fail in localized regions requiring last-mile precision. Updating the full policy or exploring residual actions everywhere treats this local failure as a global learning problem.\n\nWe introduce Adaptive Residual Correction (ARC), a lightweight post-training module that uses reinforcement learning (RL) to learn a residual correction on top of a frozen policy while using sparse human corrections to structure autonomous exploration.\n\nRather than treating human corrections as imitation targets, ARC uses pre-intervention states to determine 'when' residual control should become active and correction geometry to determine 'where' in residual action space autonomous refinement should explore; task reward determines 'what' residual is ultimately executed.\n\nAcross three precision-manipulation tasks on a real robot, ARC improves average task success from 33.3% to 75.0%.The human corrections define task-dependent 2-3 dimensional subspaces of the seven-joint residual space that retain 96.0-97.7% of squared correction magnitude.\n\nTogether, these results show that sparse human corrections can localize and constrain autonomous post-training without requiring the observed correction itself to serve as the final action target."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Adaptive Residual Correction (ARC), which learns residual control on top of a frozen robot policy and uses sparse human corrections to guide exploration. Pre-intervention states determine when residual control activates, correction geometry constrains where exploration occurs, and task reward determines the executed residual. Across three precision-manipulation tasks on a real robot, the authors report average success increasing from 33.3% to 75.0%. Task-dependent subspaces retain 96.0%–97.7% of squared correction magnitude.",
+          "zh": "论文提出自适应残差校正（ARC），在冻结的机器人策略上训练残差控制，并用稀疏人工纠正引导自主探索：干预前状态决定何时启用，纠正几何结构限定探索区域，任务奖励决定执行的残差。在真实机器人上的三项精密操作任务中，作者报告平均成功率从33.3%提升至75.0%；纠正对应的低维子空间保留了纠正幅度平方的96.0%–97.7%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1854,7 +1858,11 @@
             "heading": "",
             "text": "Hardness is one of the most important object properties that humans and robots perceive through touch. This paper investigates active sampling strategies for sample-efficient hardness classification with vision-based tactile sensors (VBTS), using information-theoretic measures of model uncertainty.\n\nWe evaluated three probabilistic classifier models and two active sampling strategies and a random sampling baseline on a hardness classification task, with our own dataset of VBTS samples collected by a robot and a previously published dataset. In addition, we conducted a human study on the hardness classification task with the same objects as our dataset.\n\nOur findings indicate that the active sampling approaches, driven by variance and entropy as measures of model uncertainty, perform best with accuracy reaching 90%, compared to human accuracy of 48%, demonstrating the effectiveness of using VBTS for hardness classification. More information can be found at: https://fheller1.github.io/ActiveHardness"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies hardness classification using vision-based tactile sensors. It evaluates three probabilistic classifiers, two active sampling strategies, and a random-sampling baseline on a robot-collected dataset and a previously published dataset. The authors also report a human study using the same objects as in their dataset. Active sampling driven by variance and entropy as measures of model uncertainty performed best, reaching 90% accuracy compared with 48% human accuracy.",
+          "zh": "论文研究基于视觉触觉传感器的物体硬度分类，比较三种概率分类器、两种主动采样策略和随机采样基线，使用机器人采集的数据集及一个已发表数据集，并开展同一批物体的人类分类研究。作者报告，以方差和熵衡量模型不确定性的主动采样准确率最高，可达90%，高于人类的48%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1885,7 +1893,11 @@
             "heading": "",
             "text": "Despite the success of vision-based generalist robotic policies, existing tactile-based policies remain tied to fixed embodiments and sensor setups. This is because tactile signals are highly heterogeneous across hardware, making cross-sensor generalization difficult.\n\nWe present FTP-1,the first generalist foundation tactile policy pretrained to acquire transferable tactile manipulation abilities across diverse sensors and embodiments.\n\nFTP-1 supports varied tactile inputs, including image-, array-, and state-based signals, by using heterogeneous encoders to project them into unified morphology-aware latent tokens that are jointly modeled by a shared tactile Transformer expert.\n\nPretrained on around 3,000 hours of tactile manipulation data aggregated from 26 data sources, spanning human and robot demonstrations across 21 sensors, FTP-1 learns tactile skills that transfer beyond the sensors seen during pretraining.\n\nAcross downstream finetuning experiments spanning 5 hardware configurations, FTP-1 improves contact-rich manipulation on seen sensor setups by +17.2% and, surprisingly, transfers to two previously unseen tactile-sensor setups, achieving a +31% gain in success rate.\n\nFTP-1 establishes the first unified foundation baseline for tactile manipulation, providing future tactile policies with a shared model-level starting point. Pretrained models, datasets, training code and more visualization at https://ftp1-policy.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FTP-1, a generalist tactile policy designed to transfer manipulation abilities across sensors and robot embodiments. Heterogeneous encoders map image, array, and state inputs into morphology-aware latent tokens modeled by a shared tactile Transformer. Pretraining uses around 3,000 hours of data from 26 sources spanning 21 sensors. In downstream fine-tuning across five hardware configurations, the authors report a 17.2% improvement on seen sensor setups and a 31% success-rate gain on two previously unseen sensor setups.",
+          "zh": "论文提出FTP-1，一种面向多种触觉传感器与机器人形态的通用触觉策略。它通过异构编码器将图像、阵列和状态信号映射为形态感知的潜在标记，再由共享触觉Transformer建模。预训练数据约3000小时，来自26个数据源、覆盖21种传感器。作者报告，在5种硬件配置的下游微调中，已见传感器上的接触操作提升17.2%，并在两种预训练中未见的传感器配置上提升31%成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1916,7 +1928,11 @@
             "heading": "",
             "text": "High-level robot actions such as goto(region) can hide intermediate traversal, allowing a monitor of the listed actions to accept a plan whose graph-level execution violates a safety rule.\n\nWe present Graph-Aware Refinement and Verification (GARV), which composes graph-grounded action contracts with a safety monitor to produce a model-relative certificate or counterexample and, when route choice is enforceable, a minimum-cost safe refinement.\n\nIn a 28-case controlled audit, refinement exposed all 12 targeted hidden hazards and produced the expected verdicts on 16 controls; a separate 14-case SPINE-RoboGuard instantiation yielded two false-safe cases and five action-interface errors.\n\nIn standalone finite-graph simulation, all 16 designed cases met their expected outcomes, and product verification agreed with exhaustive enumeration on classification, minimum safe hop count, and witness safety in 160 comparisons across 40 graphs.\n\nAcross 90 graph-contract evaluations on 30 graphs with a hazard deliberately placed on the selected shortest route, GARV found a safe refinement in 72 evaluations and no safe route within the permitted hop bound in 18.\n\nFor the static forbidden-region rule, synthesis matched a simple hazard-deletion baseline in all 90 evaluations; GARV's guarantees remain conditional on the semantic graph, action contract, safety specification, and enforceability of any selected route."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GARV, which combines graph-grounded action contracts with a safety monitor to produce model-relative certificates or counterexamples for high-level robot plans. When route choice is enforceable, it can synthesize a minimum-cost safe refinement. In a 28-case controlled audit, refinement exposed all 12 targeted hidden hazards and gave expected verdicts on 16 controls. A separate 14-case instantiation had two false-safe cases and five action-interface errors. Finite-graph simulations and exhaustive comparisons met the reported expected outcomes; guarantees depend on the graph, contracts, safety specification, and route enforceability.",
+          "zh": "论文提出GARV，将基于图的动作契约与安全监控结合，为高层机器人计划生成相对于模型的安全证书或反例；在路线可执行约束时，还生成最低成本的安全细化。在28个受控审计案例中，它揭示全部12项目标隐藏风险，并对16项对照给出预期判定；另一个14例实例中出现2个错误安全判定和5个动作接口错误。有限图模拟及与穷举的比较显示预期结果一致，但保证依赖语义图、动作契约、安全规格及路线可执行性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
