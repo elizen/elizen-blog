@@ -2955,7 +2955,11 @@
             "heading": "",
             "text": "Multi-robot control requires integrating distributed camera views while predicting separate action sequences. Most vision-language-action and world-action models target one robot. Combining multiple views alone does not establish spatial correspondence between them.\n\nWorld Dreamer v5-lite is a multi-robot world-action model built around a shared world state for robot-specific action prediction. Calibrated features from a pretrained video encoder populate this state in workspace coordinates; its spatial size remains fixed as views are added. A vision-language model provides scene context and one query per robot.\n\nThe queries read the shared state and exchange pose-aware information, while their action streams remain separate. Masked-view cooperative training withholds selected camera views from both visual branches while retaining all action targets. This encourages the use of observations shared by other robots.\n\nPretraining uses more than 10,000 hours of trajectories from 20 simulated robot types, RoboFactory, and real robots. On RoboFactory, World Dreamer v5-lite achieves 74.0% mean success, 23.7 percentage points above the strongest evaluated baseline. Across four real-robot tasks, it reaches 78.8% mean success, a margin of 13.8 points.\n\nIt also reaches 58.08% overall on RoboCasa365."
           }
-        ]
+        ],
+        "summary": {
+          "en": "World Dreamer v5-lite is a multi-robot world-action model that uses a fixed-size shared state in workspace coordinates to predict robot-specific actions. Pose-aware robot queries exchange information while action streams remain separate. Training includes masked-view cooperative learning, and pretraining draws on trajectories from simulated robot types, RoboFactory, and real robots. The authors report results on RoboFactory, four real-robot tasks, and RoboCasa365, within the evaluation settings described.",
+          "zh": "World Dreamer v5-lite 是一种多机器人世界动作模型，利用固定大小、以工作空间坐标表示的共享世界状态，为各机器人分别预测动作，并通过带位姿信息的查询交换信息，同时保持动作流独立。训练采用遮蔽视角协作方式，预训练数据来自模拟机器人、RoboFactory 和真实机器人轨迹。作者报告，该模型在 RoboFactory、四项真实机器人任务及 RoboCasa365 上取得相应成功率；这些结果属于文中报告的仿真与实验评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
