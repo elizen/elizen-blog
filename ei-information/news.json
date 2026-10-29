@@ -2278,7 +2278,11 @@
             "heading": "",
             "text": "Real-to-Sim-to-Real (Real2Sim2Real) enables structured world representations for planning, interpretability, and safe execution. Most existing approaches rely on passive perception, which creates real2sim gaps due to imperfect observation.\n\nInspired by how humans perceive actively through actions, we propose ActiveAlign, a framework that leverages active perception to align the Real2Sim2Real gap from interactions.\n\nActiveAlign introduces two complementary modules: (i) ActiveAlign-Waving, which performs hand-eye calibration by exploiting active hand motions and differentiable rendering, and (ii) ActiveAlign-Touching, which refines object alignment through tactile feedback to achieve millimeter-level precision.\n\nTogether, these capabilities enable strong real2sim alignment.\n\nWe demonstrate that ActiveAlign-Waving can be used to curate simulation environments for open-sourced uncalibrated robot manipulation datasets, and demonstrate on a real Unitree G1 robot that ActiveAlign enables fine manipulation of millimeter-scale objects such as pressing buttons and moving sliders."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents ActiveAlign, which uses active perception to reduce the gap between real and simulated environments. Its two modules perform hand-eye calibration from active hand motions and differentiable rendering, and refine object alignment using tactile feedback, respectively. The authors report millimeter-level alignment precision. They show that ActiveAlign-Waving can curate simulation environments for uncalibrated robot manipulation datasets, and demonstrate fine manipulation of millimeter-scale objects, including pressing buttons and moving sliders, on a real Unitree G1 robot.",
+          "zh": "论文提出 ActiveAlign，通过主动感知缩小真实环境与仿真之间的差距。框架包含两个模块：ActiveAlign-Waving 利用手部主动运动和可微渲染进行手眼标定；ActiveAlign-Touching 利用触觉反馈细化物体对齐，达到毫米级精度。作者展示了前一模块可用于整理未标定机器人操作数据集的仿真环境，并在真实 Unitree G1 机器人上演示了按按钮、移动滑块等毫米尺度精细操作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2309,7 +2313,11 @@
             "heading": "",
             "text": "Agile robots require spatiotemporal intelligence to interpret scenes, reason about interactions, and anticipate future events. Yet it remains unclear how well foundation vision models support these capabilities, particularly from a moving egocentric camera, which is a natural view for robots.\n\nTo investigate this, we collect an annotated tennis dataset and train a suite of vision models on spatiotemporal tasks. Our dataset contains egocentric video synchronized with five allocentric videos, estimated global positions, labeled contact times, and annotated stroke types.\n\nWe then evaluate seven prediction tasks from egocentric images: 2D ego player and 3D ball localization, future player and ball trajectories, forehand or backhand stroke anticipation, time to the next ego player ball contact, and 3D ball position at that contact.\n\nWe compare image encoders, video encoders, and vision-language models with jointly trained prediction heads.\n\nThe best performing models achieve mean current-frame localization errors of 0.14 m for the ego player and 0.54 m for the ball, future forecasting errors of 0.34 m for the ego player and 0.91 m for the ball over 1.1 s, and a mean contact-time prediction error of 0.14 s.\n\nAuxiliary depth information substantially improves 3D ball localization, suggesting that inferring metric depth remains a challenge. Longer image histories do not improve ball forecasting, indicating that representations exploit scene context rather than rely solely on inter-frame motion.\n\nFinally, we propose a conditional diffusion model to generate whole-body kinematic tennis motion from vision encoder predictions on egocentric video at real-time rates, adapting movements as predictions are refined. These results move towards a deeper understanding of how foundation vision models can support real-time dynamic robots using egocentric video."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies vision models for perceiving and predicting tennis dynamics from egocentric video. The authors collect an annotated dataset and compare image encoders, video encoders, and vision-language models across seven spatiotemporal tasks, including player and ball localization, trajectory forecasting, stroke anticipation, and contact prediction. They report errors for the best models and find that auxiliary depth substantially improves 3D ball localization. They also propose a conditional diffusion model that generates whole-body tennis motion from encoder predictions at real-time rates.",
+          "zh": "论文研究视觉模型从第一人称网球视频中定位、预测和理解动态运动的能力。作者采集带标注的网球数据集，比较图像编码器、视频编码器及视觉语言模型在七项时空任务上的表现，包括球员与球定位、轨迹预测、击球类型预判和触球时间预测。最佳模型报告了当前定位、未来轨迹及触球时间误差；辅助深度信息显著改善球的三维定位。作者还提出条件扩散模型，可依据视觉预测实时生成全身网球运动。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2340,7 +2348,11 @@
             "heading": "",
             "text": "Maintaining contact in non-prehensile manipulation requires more than nominal friction cone feasibility: a force barely inside the cone and one well inside it are both feasible, but they provide different margins against slip and contact loss.\n\nThis paper uses signed friction distance to measure friction margin in force space and derives a task-adaptive margin from the force correction needed to balance pivot moment deviations in bimanual tilting.\n\nThe resulting contact margins are embedded in a sequence of second-order cone programs (SOCPs), each giving a globally optimal contact force solution at a tilt angle. The optimizer balances the object about an environmental pivot while keeping robot and pivot contact forces away from the nominal friction boundary.\n\nOptimizer-level results show interpretable force redistribution and adaptation to object property changes. Real-world experiments demonstrate successful execution under object property variations and model mismatch, while fixed margin and no-margin comparisons illustrate the importance of adapting the margin to task demand.\n\nThese results support signed friction distance margins as a force planning mechanism for maintaining contact in bimanual non-prehensile manipulation. Project page: https://keeping-contact.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper uses signed friction distance to measure contact-force margin from the friction boundary and derives a task-adaptive margin for bimanual tilting based on the force correction needed to balance pivot-moment deviations. It incorporates the margin into a sequence of second-order cone programs that solve for contact forces at each tilt angle. Optimizer results show force redistribution as object properties change. Real-world experiments report successful execution under property variations and model mismatch; comparisons with fixed-margin and no-margin approaches illustrate the role of task-adaptive margins.",
+          "zh": "论文以有符号摩擦距离衡量接触力距离摩擦边界的余量，并根据双臂倾斜操作中平衡枢轴力矩偏差所需的力修正，推导任务自适应余量。该余量被纳入一系列二阶锥规划，在各倾斜角度求解全局最优接触力，使物体绕环境枢轴平衡，并让机器人及枢轴接触力远离摩擦边界。优化器结果显示力会随物体属性变化而重新分配；真实实验报告了在属性变化和模型不匹配下的成功执行，并以固定余量及无余量方案作比较。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2371,7 +2383,11 @@
             "heading": "",
             "text": "World-action models (WAMs) incorporate the prediction of future observations into robot policy learning. However, most WAMs build on billion-parameter vision-language or video-generation backbones, which incur high training cost and inference latency.\n\nIn this letter, we present GAWM (Geometry-Aware World Model), a compact multi-task WAM that predicts future observations in the latent space of a frozen DINOv3 encoder. GAWM compresses the features of each camera view into a small set of tokens.\n\nA lightweight predictor, conditioned on the task rather than on actions, forecasts these tokens at two future horizons. The forecast is supervised with the dense patch features of future frames, which requires it to encode the spatial layout of the future scene.\n\nAn action decoder directly regresses a chunk of future actions from the current and predicted tokens. With fewer than 100M parameters and no robot or video pretraining, GAWM outperforms billion-parameter WAMs on RoboTwin 2.0 and performs comparably to billion-parameter VLAs on LIBERO.\n\nOn a dual-arm robot, it achieves lower action-prediction error on held-out demonstrations than a fine-tuned billion-parameter VLA, with substantially lower inference latency. Ablation studies show that the latent world model substantially improves performance when training data or training time is limited.\n\nCode is available at https://github.com/gaoxiang12/ga-wm."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces GAWM, a compact multi-task world-action model that predicts future observations in the latent space of a frozen DINOv3 encoder. It compresses camera features into tokens, predicts them at two future horizons conditioned on the task, and decodes future action chunks from current and predicted tokens. The authors report fewer than 100 million parameters and no robot or video pretraining. GAWM outperforms billion-parameter WAMs on RoboTwin 2.0 and performs comparably to billion-parameter VLAs on LIBERO; dual-arm experiments and ablations also support its reported benefits.",
+          "zh": "论文提出紧凑型多任务世界动作模型 GAWM，在冻结的 DINOv3 编码器潜在空间预测未来观测，并将各相机视图特征压缩为少量 token。轻量预测器根据任务而非动作预测两个未来时域的 token，并以未来帧的稠密特征监督；动作解码器据当前和预测 token 回归未来动作片段。作者报告模型参数少于一亿、无需机器人或视频预训练，在 RoboTwin 2.0 上优于大型 WAM，在 LIBERO 上与大型视觉语言动作模型表现相当；双臂机器人实验及消融也支持其效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
