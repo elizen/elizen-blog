@@ -2103,7 +2103,11 @@
             "heading": "",
             "text": "In smart factory environments, passive entities such as humans and movable obstacles may interfere with autonomous robot operations, posing significant safety risks. Detecting potential conflicts between robots and entities outside their field-of-view (FoV) is therefore of paramount importance.\n\nHowever, conventional passive object detection systems rely on sensors such as LiDAR, radar, or cameras, which operate under direct line-of-sight (LoS) and are limited by obstacles and occlusions.\n\nTo overcome these limitations, integrated sensing and communication (ISAC) enables environmental perception via the communication infrastructure thanks to cooperation among distributed wireless devices.\n\nIn this paper, we propose a framework for passive entity sensing beyond the robot's FoV that relies solely on distributed channel measurements from the communication infrastructure to perform risk-aware classification.\n\nThese measurements are embedded into high-dimensional representations using hyperdimensional computing (HDC), enabling robust and scalable learning without explicit channel reconstruction.\n\nNumerical simulations based on a commercial ray tracer and ROS-based validation in realistic smart factory scenarios demonstrate improved safety and enhanced path planning with up to 89% accuracy under severe occlusions, while maintaining low computational complexity."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a framework for risk-aware classification of passive entities outside a robot’s field of view in smart factories. It uses distributed channel measurements from communication infrastructure, embeds them into high-dimensional representations, and applies hyperdimensional computing without explicitly reconstructing channels. The authors report that numerical simulations using a commercial ray tracer and ROS-based validation in realistic factory scenarios showed improved safety and path planning, with accuracy up to 89% under severe occlusion and low computational complexity.",
+          "zh": "论文提出一种面向智能工厂的被动实体感知框架，利用通信基础设施中的分布式信道测量，对机器人视野外的实体进行风险感知分类。方法将测量嵌入高维表示，并以超维计算进行学习，无需显式重建信道。作者称，基于商用射线追踪器的数值仿真及真实场景下的 ROS 验证显示，该方法在严重遮挡下准确率最高达 89%，并改善安全性和路径规划，同时保持较低计算复杂度。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2134,7 +2138,11 @@
             "heading": "",
             "text": "Joint-embedding predictive architectures (JEPAs) enable world models to plan from images by predicting future embeddings. However, their visual prediction objectives do not explicitly incorporate task-relevant state information, so the physical state that determines task progress may not be reliably captured in the latent space.\n\nSupervising world models with simulator state can make planning more informative, but it requires deciding which state features matter.\n\nFeatures are typically selected by hand or weighted uniformly, and a uniform weighting gives every standardized state feature equal influence, so redundant coordinates can overcount the same variation, while irrelevant ones can obscure task-relevant differences.\n\nTo address this limitation, we propose SWIM (State Weighting with Inverse-Dynamics Model), which learns state weights from offline trajectories by predicting recorded actions from current states and observed future displacements.\n\nThe learned weights quantify each feature's contribution to action prediction and define a weighted state metric for state-supervised training, which we demonstrate by aligning latent and state distances. The inverse-dynamics model is used only during training, so the resulting world model plans from images with no additional planning-time computation.\n\nAcross five simulated robotic manipulation tasks, SWIM consistently improves planning success over uniform state weighting."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SWIM, a method that learns state-feature weights from offline trajectories to improve state supervision for JEPA world models. It predicts recorded actions from current states and observed future displacements, using each feature’s contribution to action prediction to define a weighted state metric. The inverse-dynamics model is used only during training; the resulting world model plans from images without added planning-time computation. Across five simulated robotic manipulation tasks, the authors report that SWIM consistently improves planning success over uniform state weighting.",
+          "zh": "论文提出 SWIM，一种从离线轨迹学习状态特征权重的方法，用于改进联合嵌入预测架构世界模型的状态监督。它通过当前状态和观测到的未来位移预测记录动作，以估计各特征对动作预测的贡献，并据此构造加权状态度量。逆动力学模型只在训练时使用；训练后的世界模型从图像进行规划，无需增加规划时计算。作者称，在五项模拟机器人操作任务中，SWIM 的规划成功率均优于均匀状态加权。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
