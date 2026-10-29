@@ -2173,7 +2173,11 @@
             "heading": "",
             "text": "Multi-objective reinforcement learning (MORL) is a powerful tool to learn Pareto-optimal policy families across conflicting objectives. However, unlike traditional RL algorithms, existing MORL algorithms do not effectively leverage large-scale parallelization to concurrently simulate thousands of environments, thus facing vastly increased computation time.\n\nUltimately, this has limited the application of MORL towards complex multi-objective robotics problems. To address these challenges, we present 1) MORLAX, a new GPU-native, fast MORL algorithm, and 2) MO-Playground, a pip-installable playground of GPU-accelerated multi-objective environments.\n\nTogether, MORLAX and MO-Playground approximate Pareto sets within minutes, offering 26-271x speed-ups compared to legacy CPU-based approaches and up to 19x speed-ups over prior GPU-based approaches whilst learning superior Pareto front hypervolumes.\n\nWe demonstrate MO-Playground's versatility by implementing a custom BRUCE humanoid robot environment and learning Pareto-optimal locomotion policies across 6 practical objectives in simulation, such as smoothness, efficiency and arm swinging. Our toolbox is available at https://dynamicmobility.github.io/moplayground/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MORLAX, a GPU-native multi-objective reinforcement learning algorithm, and MO-Playground, a collection of GPU-accelerated multi-objective environments. The authors report that the pair approximates Pareto sets within minutes, with speedups over legacy CPU-based and prior GPU-based approaches and improved Pareto-front hypervolumes. In simulation, they implement a BRUCE humanoid environment and learn locomotion policies across six practical objectives.",
+          "zh": "论文提出 GPU 原生的多目标强化学习算法 MORLAX，以及 GPU 加速的多目标环境工具集 MO-Playground。作者称，两者可在数分钟内近似帕累托集，并相较既有 CPU 和 GPU 方法取得更快速度及更优的帕累托前沿超体积。论文还在仿真中构建 BRUCE 人形机器人环境，展示了针对六项实用目标学习运动策略。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2204,7 +2208,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models combine multimodal perception with robotic control, demonstrating remarkable potential for generalizable manipulation. Yet, enhancing their execution typically relies on auxiliary sensory inputs (e.g., depth, 3D point clouds) or costly fine-tuning.\n\nInspired by the insight that Feed-Forward Networks (FFNs) act as key-value memory, we propose Action-Entropy-Weighted and Attention-Guided Retrieval of Observation Evidence (AWARE), an effective, training-free, and plug-and-play module for VLAs.\n\nSpecifically, AWARE tracks layer-wise uncertainty via an element-wise Action Entropy metric, and retrieves observation evidence into the element's FFN through associative memory lookup.\n\nCrucially, the retrieved features are weighted by instruction-guided cross-modal attention to isolate task-relevant observation cues, while injection strength is adaptively scaled by the element's entropy and relative network depth.\n\nThis selectively channels observation evidence to high-entropy action dimensions and deep layers where grounding decays, while leaving converged representations intact.\n\nAcross LIBERO, SIMPLER, CALVIN, and real-world robot manipulation, AWARE consistently improves diverse VLA architectures with minimal computational overhead, achieving the largest gains on long-horizon tasks without architectural changes or additional training. Project page: https://jiabingyang01.github.io/AWARE/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes AWARE, a training-free, plug-and-play module for vision-language-action models. It tracks layer-wise uncertainty using action entropy, retrieves observation evidence from feed-forward network associative memory, and filters features with instruction-guided cross-modal attention. Injection strength depends on entropy and network depth. The authors report improvements across diverse architectures on LIBERO, SIMPLER, CALVIN, and real-world manipulation, with the largest gains on long-horizon tasks and minimal computational overhead.",
+          "zh": "论文提出 AWARE，这是面向视觉—语言—动作模型的免训练、可插拔模块。它依据动作熵追踪各层不确定性，从前馈网络的关联记忆中检索观测证据，并用指令引导的跨模态注意力筛选任务相关特征，再按熵和网络深度调整注入强度。作者报告，该方法在多个仿真基准及真实机器人操作中提升了不同模型的表现，长时程任务收益最大，且无需改动架构或额外训练。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2235,7 +2243,11 @@
             "heading": "",
             "text": "Sampling-based system identification estimates physically meaningful parameters by tuning a simulator to reproduce the target system dynamics, providing an interpretable approach to improving sim-to-real transfer.\n\nYet when the collected trajectories do not distinguish the effects of different parameters, multiple parameter combinations can reproduce those trajectories, leading to unreliable parameter estimates.\n\nTo address this challenge, we introduce an Informationally Decoupled Trajectory Design framework (IDTD), which formulates the objective for the exploration policy built on the Schur complement score derived from the Fisher information matrix.\n\nTo faithfully reflect parameter separability in the exploration objective, IDTD normalizes the score against the per-parameter information, selects the most favorable trajectory segment for each parameter, and aggregates the resulting scores logarithmically.\n\nThe optimized trajectory is therefore composed of complementary intervals, each exposing a distinct subset of parameters whose contribution to the motion over that interval can be attributed unambiguously.\n\nAcross diverse simulation environments, ranging from a linear-dynamics system to the Go2 quadruped, G1 humanoid, and Crazyflie quadrotor, IDTD reduces the parameter identification error by 39.6% on average relative to the strongest prior active-exploration baseline and attains improved downstream policy transfer.\n\nFurthermore, we validate the proposed trajectory design on a real K1 humanoid, demonstrating that the resulting identified parameters accurately capture the real-system dynamics. Code is available at https://github.com/jsw7460/IDTD."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents IDTD, a trajectory-design framework for system identification that builds an exploration objective from a Schur-complement score derived from the Fisher information matrix. It normalizes the score, selects favorable trajectory segments for individual parameters, and aggregates them to create complementary intervals that help separate parameter effects. Across varied simulation environments, the authors report a 39.6% average reduction in identification error against the strongest prior active-exploration baseline and improved downstream policy transfer. They also validate the design on a real K1 humanoid.",
+          "zh": "论文提出 IDTD 轨迹设计框架，以 Fisher 信息矩阵推导的 Schur 补得分构造探索目标，通过归一化、为各参数选择有利轨迹片段并聚合得分，形成能区分不同参数作用的互补区间。作者报告，在多种仿真环境中，该方法相较最强的既有主动探索基线，平均降低参数辨识误差 39.6%，并改善下游策略迁移；在真实 K1 人形机器人上也验证了辨识参数对系统动力学的刻画效果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
