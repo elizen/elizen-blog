@@ -2780,7 +2780,11 @@
             "heading": "",
             "text": "Quadruped robots are increasingly deployed in hazardous environments such as disaster response and facility inspection, where external-camera monitoring is essential for safe operation.\n\nThis setting is challenging because quadrupeds are articulated systems with time-varying leg joints, leg symmetry, and frequent self-occlusions, which make keypoint correspondence ambiguous. Moreover, no public benchmark exists, making quantitative comparison difficult.\n\nTo address these challenges, we propose QuadPose, which estimates the full-body 18-DoF pose (6-DoF base pose + 12-DoF joint angles) from monocular video sequences, and introduce QuadSyn, the first camera-to-quadruped robot pose benchmark.\n\nOn QuadSyn, QuadPose achieves 92.18% PCK@2.5px, 95.54% PCK-AUC, 85.94% ADD@20cm, 66.98% ADD-AUC, and 3.65 degree mean joint-angle error at approximately 33 FPS."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes QuadPose to estimate a quadruped robot’s full-body 18-DoF pose, comprising its base pose and joint angles, from monocular video sequences. It also introduces QuadSyn as a camera-to-quadruped pose benchmark. The authors identify articulated motion, leg symmetry, and frequent self-occlusion as sources of ambiguous keypoint correspondence, and note the lack of a public benchmark. On QuadSyn, they report keypoint and pose metrics, a mean joint-angle error of 3.65 degrees, and a speed of approximately 33 FPS.",
+          "zh": "论文提出 QuadPose，用于从单目视频序列估计四足机器人的全身 18 自由度姿态，包括底座位姿和关节角；同时介绍 QuadSyn，作为相机到四足机器人姿态估计基准。作者指出，关节运动、腿部对称性和频繁自遮挡会造成关键点对应困难，且此前缺少公开基准。在 QuadSyn 上，论文报告了多项关键点、姿态和关节角误差指标，并称运行速度约为每秒 33 帧。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2811,7 +2815,11 @@
             "heading": "",
             "text": "Large Language Models (LLMs) are widely adopted for reflective error correction in task planning; however, existing approaches primarily rely on autonomous exploration, rendering them prone to accumulating erroneous experiences during early interactions with new environments.\n\nTo address this limitation, we propose the Flexible Instructional Scaffolding Reflection Framework (FISRF), an agent--mentor architecture that estimates the robot's Zone of Proximal Development (ZPD) in task planning and adaptively selects reflection strategies and mentor guidance, thereby facilitating the accumulation of effective error-correction experience.\n\nExperiments in ALFWorld and on real-world robotic platforms demonstrate that FISRF reduces the average number of error-correction rounds by 37% and redundant reasoning by 25.1%, while improving the overall task success rate by 8%.Project webpage : https://fisrfplanning.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes FISRF, a reflection framework for robotic task planning based on an agent-mentor architecture. It estimates the robot’s Zone of Proximal Development and adapts reflection strategies and mentor guidance, aiming to reduce the accumulation of erroneous experience during early autonomous exploration in new environments. Experiments in ALFWorld and on real-world robotic platforms are reported to reduce average error-correction rounds by 37% and redundant reasoning by 25.1%, while increasing overall task success by 8%. These claims concern the stated experiments.",
+          "zh": "论文提出 FISRF，一种用于机器人任务规划的反思框架，采用智能体—导师架构估计任务规划中的最近发展区，并自适应选择反思策略和导师指导。作者旨在缓解新环境早期自主探索可能积累错误经验的问题。ALFWorld 实验和真实机器人平台实验中，作者报告错误纠正平均轮数减少 37%、冗余推理减少 25.1%，总体任务成功率提高 8%。这些结果限于摘要所述的实验环境与平台。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
