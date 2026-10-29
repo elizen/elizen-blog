@@ -3201,8 +3201,8 @@
           }
         ],
         "summary": {
-          "en": "Labference is a benchmark for assessing how robots use observed physical outcomes to guide later choices and translate those choices into laboratory actions. Its protocol tests outcome-dependent adaptation under controlled evidence variations and measures operation selection, physical execution, and task completion separately. In initial weighing evaluations, tested VLA policies made target-selection errors despite successful object transfers. GPT-driven control selected correctly but encountered execution failures and substantial computation costs. The authors present these findings as evidence of a reasoning-action evaluation gap.",
-          "zh": "Labference 是评估机器人如何依据实际物理结果调整后续选择并将选择转化为实验室动作的基准。其协议通过受控证据变化测试结果依赖的行为适应，并分别衡量操作选择、物理执行和任务完成；共享检查点上的匹配 Oracle 辅助续接用于评估支持效果。初始称重评估中，受测 VLA 策略出现目标选择错误但成功转移物体；GPT 驱动控制选择正确，却发生执行失败且计算成本较高。作者据此指出推理与可靠及时动作衔接的重要性。"
+          "en": "The paper presents Labference, a benchmark for evaluating how robots adapt choices to observed physical outcomes and translate those choices into laboratory actions. Its protocol uses controlled evidence variations to test adaptation while separately measuring operation selection, physical execution, and task completion. Matched Oracle-assisted continuations from shared checkpoints assess how support affects later choices and completion. In initial weighing evaluations, tested VLA policies transferred objects successfully but made target-selection errors. GPT-driven control selected correctly but encountered execution failures and substantial computation costs. The authors argue that reasoning must connect to reliable, timely action.",
+          "zh": "论文介绍 Labference，用于评估机器人如何依据实际物理执行结果调整后续选择，并将选择转化为实验室操作。其协议通过受控证据变化测试行为适应，同时分别衡量操作选择、物理执行和任务完成；共享检查点上的匹配 Oracle 辅助续接用于考察支持方式的影响。初步称量评估中，受测 VLA 策略虽成功转移物体，却出现目标选择错误；GPT 驱动控制选择正确，但遇到执行失败和较高计算成本。作者据此强调推理与可靠及时行动之间的衔接。"
         }
       },
       "source": {
@@ -13746,8 +13746,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces EvidenceConnect, which synthesizes questions requiring comparison, aggregation, or chaining of visual evidence from zoomed views of related regions in one image. It filters data using agreement among independent vision-language models and region-ablation tests, then trains base VLMs with RLVR to produce ZwZ2. The authors report improvements in fine-grained and spatial perception, embodied spatial reasoning, multimodal long-context understanding, agent tasks, and general visual reasoning, although the synthesized data were not tailored to downstream benchmarks.",
-          "zh": "论文提出 EvidenceConnect，通过同一图像中相关区域的放大视图合成需要比较、汇总或串联视觉证据的问题，并用多个独立视觉语言模型的一致答案和区域消融测试筛选数据。作者以所得数据通过 RLVR 训练基础视觉语言模型，得到 ZwZ2。摘要称，尽管合成数据未针对下游基准定制，模型在细粒度与空间感知、具身空间推理、多模态长上下文理解、智能体任务及一般视觉推理方面有所提升；这是作者报告的评测结论。"
+          "en": "The paper introduces EvidenceConnect, which synthesizes questions requiring comparison, aggregation, or chaining of visual evidence from zoomed views of related regions in one image. It filters reference answers through agreement among independent vision-language models and uses region-ablation tests to reject questions whose answers persist after selected regions are removed. The authors train base models on the resulting data with RLVR to produce ZwZ2. They report gains in fine-grained and spatial perception, as well as further improvements across several downstream task categories, despite not tailoring the data to those benchmarks.",
+          "zh": "论文提出 EvidenceConnect，通过同一图像中相关区域的放大视图合成需要比较、汇总或串联视觉证据的问题，并以独立视觉语言模型的一致性和区域消融测试筛选答案与问题。作者用筛选数据通过 RLVR 训练基础视觉语言模型，得到 ZwZ2。摘要称，尽管数据未针对下游基准定制，该模型在细粒度与空间感知等任务上有所提升，并报告了具身空间推理、多模态长上下文理解、智能体任务及通用视觉推理方面的进一步收益。"
         }
       },
       "source": {
@@ -15388,8 +15388,8 @@
           }
         ],
         "summary": {
-          "en": "EAST is a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests spanning perception, instructions, environments, actions, and timing. Its workflow generates specifications, checks fault realization during simulation, and independently assesses safety challenges, violations, task outcomes, and behavioral signatures using simulator-state evidence. In evaluations on six RoboTwin manipulation tasks and the ACT and RDT policies, the authors report valid evidence for 63 of 74 admissible combinations. They also report 82 valid executions that completed tasks despite safety violations.",
-          "zh": "EAST 是一套数字孪生框架，将基于文献的安全证据转化为覆盖感知、指令、环境、动作和时序的故障注入测试。流程包括生成测试规格、核验模拟执行中的故障实现，并依据模拟器状态独立评估安全挑战、违规、任务结果及行为特征，同时保存可回放记录。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上进行比较评估：EAST 覆盖全部 74 个可用组合，对 63 个取得有效证据；82 次有效执行虽完成任务却发生安全违规。结论限于所述仿真评估。"
+          "en": "The paper introduces EAST, a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests covering perception, instructions, environments, actions, and timing. It combines an expert-reviewed fault taxonomy with eight executable operators and a three-stage workflow for generating tests, verifying fault realization in simulation, and independently assessing safety challenges, violations, task outcomes, and behavioral signatures. Evaluated on six RoboTwin manipulation tasks and two policy architectures, EAST produced valid evidence, including executions that completed tasks despite safety violations. The authors argue that task-completion metrics alone can conceal risks.",
+          "zh": "论文提出 EAST，一个将文献中的安全证据转化为数字孪生故障注入测试的具身 AI 安全评估框架，覆盖感知、指令、环境、动作和时序。它结合经专家审查的故障分类与八种可执行算子，并通过三阶段流程生成测试、验证模拟中的故障实现，再独立评估安全挑战、违规、任务结果及行为特征。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略上评估，并报告有效证据及任务成功但违反安全要求的执行，指出仅看任务完成会掩盖风险。"
         }
       },
       "source": {
@@ -16786,7 +16786,11 @@
             "heading": "",
             "text": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times.\n\nUnder independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE.\n\nThe same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes.\n\nWe evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks.\n\nIntegrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.\n\nIn H20 model-block benchmarks, POD-RoPE achieves median forward-plus-backward speedups of $1.91\\times$ over P-RoPE and $5.34\\times$ over RayRoPE, with a median latency overhead of 17.4% over Standard RoPE. These results support physical observation distributions as an effective and computationally efficient basis for geometry-aware attention."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces POD-RoPE, representing each token’s observation footprint as a distribution over camera centers, viewing directions, and sampling times to encode physical geometry and spatial-temporal extent. When a distribution collapses to one address, the construction recovers pointwise RoPE. Its rotation statistics support Q/K matching and coherence-dependent V/O transformations, while pre-aggregation avoids increasing sequence length. Evaluations span robot policies, simulated and real-world manipulation, and vision tasks. The authors report improved Fast-WAM success rates on RoboTwin 2.0 and Sharpa North tasks, along with speed results in H20 model-block benchmarks.",
+          "zh": "论文提出 POD-RoPE，将每个 token 的观测范围表示为相机中心、视向和采样时间上的分布，以编码物理几何及观测的时空范围；分布退化为单一地址时可恢复点式 RoPE。该方法用旋转统计支持 Q/K 匹配及依赖相干性的 V/O 变换，并在预聚合中避免增加序列长度。作者评估了机器人策略、仿真与真实操作及多种视觉任务，并报告 Fast-WAM 在 RoboTwin 2.0 和 Sharpa North 任务上的成功率提升，以及特定模型块基准中的速度表现。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
