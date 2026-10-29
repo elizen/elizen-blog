@@ -2418,7 +2418,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations.\n\nHuman videos provide much broader behavioral and environmental experience, while learning from them faces a fundamental trade-off between scalable data and explicit action grounding. We introduce ThinkWorld, a VLA learning framework that grounds action reasoning in world dynamics and strengthens it through reinforcement learning with world imagination.\n\nThinkWorld represents each action thought as a Chain-of-Dynamics (CoD), a sequence of discrete motion tokens that captures the intermediate dynamics connecting the current world to a future state and serves as a common action representation across embodiments.\n\nWe first initialize CoD with action-labeled demonstrations, then predict the future induced by each CoD and reinforce those whose predictions better match the observed outcome. This enables videos without action annotations to provide direct supervision from observed state transitions, allowing human and robot experience to refine the same reasoning space.\n\nExperiments in simulation and on real robots demonstrate effective human-to-robot transfer and strong generalization to unseen tasks and environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces ThinkWorld, a vision-language-action learning framework that grounds action reasoning in world dynamics and reinforces it through world imagination. Actions are represented as Chains of Dynamics: sequences of discrete motion tokens. The method initializes these representations from action-labeled demonstrations, then reinforces predictions that better match observed outcomes. The authors say this lets videos without action annotations supervise learning through state transitions. Simulation and real-robot experiments demonstrate human-to-robot transfer and generalization to unseen tasks and environments.",
+          "zh": "论文提出 ThinkWorld，一种以世界动力学为基础、通过世界想象强化推理的视觉—语言—动作学习框架。它把动作表示为由离散运动词元组成的动力学链，并先用带动作标注的示范初始化，再依据预测未来与实际观察结果的吻合程度进行强化。作者称，无动作标注的人类视频也可通过状态变化提供监督，使人类与机器人经验共同改进动作推理。仿真和真实机器人实验显示，该方法可实现人机迁移，并能泛化至未见任务和环境。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2449,7 +2453,11 @@
             "heading": "",
             "text": "Vision-Language-Action (VLA) models have shown remarkable generalization by mapping web-scale knowledge to robotic control, yet they remain blind to physical contact. Consequently, they struggle with contact-rich manipulation tasks that require reasoning about force, texture, and slip.\n\nWhile some approaches incorporate low-dimensional tactile signals, they fail to capture the high-resolution dynamics essential for such interactions. To address this limitation, we introduce DreamTacVLA, a framework that grounds VLA models in contact physics by learning to feel the future.\n\nOur model adopts a hierarchical perception scheme in which high-resolution tactile images serve as micro-vision inputs coupled with wrist-camera local vision and third-person macro vision.\n\nTo reconcile these multi-scale sensory streams, we first train a unified policy with a Hierarchical Spatial Alignment (HSA) loss that aligns tactile tokens with their spatial counterparts in the wrist and third-person views.\n\nTo further deepen the model's understanding of fine-grained contact dynamics, we finetune the system with a tactile world model that predicts future tactile signals. To mitigate tactile data scarcity and the wear-prone nature of tactile sensors, we construct a hybrid large-scale dataset sourced from both high-fidelity digital twin and real-world experiments.\n\nBy anticipating upcoming tactile states, DreamTacVLA acquires a rich model of contact physics and conditions its actions on both real observations and imagined consequences.\n\nAcross contact-rich manipulation tasks, it outperforms state-of-the-art VLA baselines, achieving up to 95% success, highlighting the importance of understanding physical contact for robust, touch-aware robotic agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DreamTacVLA, a framework for grounding vision-language-action models in contact physics. It combines high-resolution tactile images with wrist-camera and third-person vision, aligns their spatial representations using a hierarchical loss, and fine-tunes the system with a tactile world model that predicts future tactile signals. Its dataset combines digital-twin and real-world experimental sources. The authors report that DreamTacVLA outperforms the VLA baselines evaluated on contact-rich manipulation tasks, achieving success rates of up to 95%.",
+          "zh": "论文提出 DreamTacVLA，旨在让视觉—语言—动作模型利用触觉信息处理依赖接触的操作任务。模型结合高分辨率触觉图像、腕部局部视觉和第三人称视觉，并以分层空间对齐损失协调不同视角的表征；随后通过预测未来触觉信号的触觉世界模型进行微调。数据集结合数字孪生与真实世界实验数据。作者报告，该方法在接触丰富的操作任务中优于所比较的视觉—语言—动作基线，成功率最高达到95%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
