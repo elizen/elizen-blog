@@ -2605,7 +2605,11 @@
             "heading": "",
             "text": "In robotic manipulation, the tight coupling between grasping and motion planning often obscures the true source of failure, leading to inefficient trial-and-error.\n\nTo enable efficient long-horizon manipulation, we propose GTP-FA (Grasp-Then-Plan with Failure Attribution), a task-oriented two-stage 'grasp-then-plan' framework that generates grasp candidates and performs downstream motion planning conditioned on the selected grasp.\n\nGiven a failed manipulation trajectory, we learn a failure attribution model that generalizes to unseen grasps and produces a stable distribution over failure modes for diagnosis-guided optimization.\n\nBased on these attribution results, we then optimize both modules in a diagnosis-driven manner: on the grasping side, we inject task-level priors and risk penalties into grasp candidate scoring and optimization to suppress unstable or task-incompatible grasps; on the planning side, we target high-risk initial states through data collection and fine-tuning to address genuine planning bottlenecks.\n\nWe evaluate the proposed framework in both simulation and real-robot experiments, and show that GTP-FA improves the corresponding base learners across RL, IL, diffusion-policy, and VLA-based settings, achieving substantially higher overall task success rates."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GTP-FA, a task-oriented, two-stage framework that generates grasp candidates before planning motion. A failure-attribution model diagnoses modes associated with failed manipulation trajectories, and the diagnosis guides optimization: task priors and risk penalties inform grasp scoring, while data collection and fine-tuning target high-risk planning states. The authors evaluate the framework in simulation and real-robot experiments, reporting improvements over corresponding base learners across reinforcement learning, imitation learning, diffusion-policy, and VLA settings, with higher overall task success rates.",
+          "zh": "论文提出 GTP-FA，一种面向任务的“先抓取、再规划”两阶段机器人操作框架，并用失败归因模型诊断失败轨迹中的故障模式。框架依据诊断结果分别优化抓取和规划：抓取侧将任务先验与风险惩罚纳入候选评分，规划侧针对高风险初始状态采集数据并微调。作者在仿真和真实机器人实验中评估该方法，报告其在强化学习、模仿学习、扩散策略及视觉语言动作模型等设置下提升了相应基础学习器，并提高总体任务成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2636,7 +2640,11 @@
             "heading": "",
             "text": "Reliable robot-to-human handover requires the robot to infer when the person is ready to receive the object and release it safely, comfortably, and at the right time. This is challenging because visual observations alone may not disambiguate clear taking intent from accidental contact, weak grasping, wrong-direction forces, or transient interactions.\n\nIn this work we treat human-robot handover as an intrinsically multimodal problem. Our approach couples a VLA model with a compliance controller that reduces interaction forces during object transfer. We finetune the VLA model with human demonstrations using RGB observation, temporally encoded tactile feedback and proprioception.\n\nWe evaluate the complete system in a human-subject study against two baselines: one without tactile feedback and one using tactile feedback without compliance control.\n\nWe hypothesize that combining compliance and temporal tactile encoding yields the most reliable and comfortable handovers, as compliance facilitates physical interaction while tactile history captures sustained taking intent. Performance is measured through objective metrics and an ad-hoc questionnaire.\n\nThe results show that the two components provide complementary benefits and substantially outperform the baselines. Project page: https://hsp-iit.github.io/temporal-tactile-bimanual-handover/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The work studies how a robot can infer a person's readiness during bimanual object handover and release safely and comfortably. The approach combines a vision-language-action model with a compliance controller that reduces interaction forces. The model is fine-tuned from human demonstrations using RGB observations, temporally encoded tactile feedback, and proprioception. In a human-subject study, the full system is compared with baselines lacking tactile feedback or compliance control. The authors report complementary benefits from the two components and better performance than both baselines, measured with objective metrics and a questionnaire.",
+          "zh": "论文研究机器人双臂向人交接物体时，如何判断对方是否准备接取并安全、舒适地释放。该方法将视觉语言动作模型与降低交互力的柔顺控制器结合，并使用包含 RGB 观察、时序编码触觉反馈和本体感觉的人类示范对模型进行微调。研究通过人体受试者实验，将完整系统与无触觉反馈、以及有触觉但无柔顺控制的两种基线比较。作者报告，触觉时序信息与柔顺控制具有互补作用，系统表现优于两种基线；评估包括客观指标和专门设计的问卷。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
