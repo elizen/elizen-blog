@@ -1053,6 +1053,43 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-30"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.40565v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-0fb8f6e6d69d4b14a12838a1a9d3ff81",
+      "intro": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena. The core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena.\n\nThe core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations.\n\nOur core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations. We select simulations based on U.S.\n\nGDP data to cover economically valuable physical work, define what makes a good simulation and a good task, and develop an adversarial creation-audit loop that checks each simulation and task against these definitions. Using this pipeline, we build RoboWorld, a set of 25 simulations with 25 test and 175 training RL environments of varying difficulty.\n\nEven the best frontier models fail on every RoboWorld test task, achieving an average reward of only 0.06.\n\nBuilding on RoboWorld, we introduce several new ways for frontier models to improve, including in-context learning across repeated attempts, a privileged teacher that reads the simulator state and teaches a student in context, self-assisted learning from the model's own privileged experience, and code policies that generate demonstrations across varied scenes to train vision-language-action models (VLAs) such as $π_{0.5}$.\n\nEach of these substantially improves performance. We release our pipeline, RL environments, and benchmark to facilitate future research. Code and data are available at https://gym-anything.github.io/robotics"
+          }
+        ],
+        "summary": {
+          "en": "The paper introduces Gym-Anything for Robotics, a framework in which coding agents create robotics simulations that are checked through an adversarial creation-and-audit process. Tasks are selected using U.S. GDP data, and the authors build RoboWorld, comprising 25 simulations, 25 test environments, and 175 training environments. They report that the frontier models tested fail on all RoboWorld test tasks, with an average reward of 0.06. Several learning approaches based on repeated attempts, privileged teaching, self-assisted privileged experience, and code-generated demonstrations improve performance.",
+          "zh": "论文提出 Gym-Anything for Robotics，让编码代理创建机器人仿真，并通过对抗式创建与审查流程检查仿真和任务。作者依据美国 GDP 数据选择任务，构建 RoboWorld，包含 25 个仿真、25 个测试环境和 175 个训练环境。作者报告，所测前沿模型在 RoboWorld 测试任务上均未成功，平均奖励为 0.06；若干基于反复尝试、特权教师、自身特权经验及代码策略的方法提升了性能。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.40565v1"
+      },
+      "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-17"
       },
       "body": "",
@@ -2144,6 +2181,43 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-10-30"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2610.39745v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-2130a0554e8c43baaa1ea31375692b0a",
+      "intro": "Deriving plausible and dynamic Human Object Interaction (HOI) has gained tremendous progress in Embodied AI and Immersive AR/VR. While existing HOI methods have effectively explored human interaction with individual or fixed objects, they still show limitations in complex multi-object interaction scenes. Meanwhile, previous approaches focus more on the contact information held by human-object relation, overlooking the significance of the contact situation of various entities (i.e., object-object). To address these limitations,…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Deriving plausible and dynamic Human Object Interaction (HOI) has gained tremendous progress in Embodied AI and Immersive AR/VR. While existing HOI methods have effectively explored human interaction with individual or fixed objects, they still show limitations in complex multi-object interaction scenes.\n\nMeanwhile, previous approaches focus more on the contact information held by human-object relation, overlooking the significance of the contact situation of various entities (i.e., object-object).\n\nTo address these limitations, we propose UniffordInteractor, a Reasoning-then-Interacting framework that leverages unified affordance for realistic and long-horizon human and multi-object interaction modeling.\n\nAt the reasoning stage, we devise a Unified Affordance Reasoner (UAR) that employs a fine-tuned 3D Multimodal Large Language Model for unified object-centric affordance prediction.\n\nAt the interacting stage, we propose Hierarchical Interaction Generator (HIG), which formulates the interaction generation as a hierarchical (e.g., root to body to hand to objects) autoregressive prediction, conditioned on the obtained unified affordance.\n\nExtensive experiments demonstrate that UniffordInteractor surpasses SOTA counterparts in human and multi-object interaction generation."
+          }
+        ],
+        "summary": {
+          "en": "The paper presents UniffordInteractor for modeling long-horizon interactions between people and multiple objects. Its reasoning stage uses a Unified Affordance Reasoner, based on a fine-tuned 3D multimodal language model, to predict object-centric affordances. Its interaction stage uses a Hierarchical Interaction Generator to produce interactions autoregressively across levels from root to body, hand, and objects, conditioned on those predictions. The authors report that extensive experiments show better human and multi-object interaction generation than state-of-the-art counterparts; the abstract gives no specific settings or scores.",
+          "zh": "论文提出 UniffordInteractor，用于生成长期的人与多物体交互。框架先由统一可供性推理器预测以物体为中心的可供性，再由分层交互生成器按照从根部、身体、手到物体的层级，自回归地生成交互，并以预测结果为条件。作者称，大量实验显示该方法在人与多物体交互生成方面优于现有先进方法。摘要未说明具体实验环境或数值结果。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.39745v1"
+      },
+      "title": "UniffordInteractor: Reasoning the Unified Affordance for Human and Multi-Object Interaction"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-28"
       },
       "body": "",
@@ -3201,8 +3275,8 @@
           }
         ],
         "summary": {
-          "en": "Labference is a benchmark for assessing how robots use observed physical outcomes to guide subsequent choices and laboratory actions. Its protocol tests adaptation under controlled evidence variations and separately measures operation selection, physical execution, and task completion. It also compares Oracle-assisted continuations from shared checkpoints. In initial weighing evaluations, tested vision-language-action policies made target-selection errors despite successful object transfers. GPT-driven control selected correctly but faced execution failures and substantial computation costs. The authors present the benchmark as a way to make the reasoning-action connection measurable and diagnosable.",
-          "zh": "论文提出 Labference，用于评估机器人如何依据观察到的物理结果调整后续选择，并将选择转化为实验室操作。其协议通过受控证据变化测试行为适应，同时分别测量操作选择、物理执行和任务完成，并比较共享检查点上的预言机辅助续行。初步称重评估中，受测视觉语言动作策略虽成功转移物体，却出现目标选择错误；GPT 驱动控制选择正确，但遇到执行失败和较高计算成本。作者认为，该基准使推理与行动的衔接更可测量和诊断。"
+          "en": "The paper introduces Labference, a benchmark for evaluating how observed physical outcomes guide robots’ subsequent choices and how those choices translate into laboratory actions. Its protocol tests adaptation under controlled evidence changes and separately measures operation selection, physical execution, and task completion. Matched Oracle-assisted continuations from shared checkpoints assess support effects. In initial weighing evaluations, the tested vision-language-action policies transfer objects successfully but make target-selection errors. GPT-driven control selects correctly but encounters execution failures and substantial computation costs. These findings motivate connecting task-appropriate reasoning with reliable, timely action.",
+          "zh": "论文提出 Labference，用于评估机器人如何依据观察到的实体操作结果调整后续选择，以及如何将选择转化为实验室动作。其协议通过受控证据变化检验行为适应，并分别衡量操作选择、物理执行和任务完成；共享检查点上的匹配式 Oracle 辅助续做用于评估支持效果。初始称重评估中，测试的视觉语言动作策略能成功转移物体，但出现目标选择错误；GPT 驱动控制选择正确，却遭遇执行失败和较高计算成本。"
         }
       },
       "source": {
@@ -13779,8 +13853,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces EvidenceConnect, which synthesizes questions requiring comparison, aggregation, or chaining of visual evidence from zoomed views of related regions in one image. It filters answers by agreement among independent vision-language models and removes questions that remain answerable after selected regions are ablated. The authors train ZwZ2 with RLVR on the resulting data. They report improvements in fine-grained and spatial perception, with further gains in embodied spatial reasoning, multimodal long-context understanding, multimodal agent tasks, and general visual reasoning, despite not tailoring the data to downstream benchmarks.",
-          "zh": "论文提出 EvidenceConnect，通过同一图像中相关区域的放大视图合成需要比较、汇总或串联视觉证据的问题，并用独立视觉语言模型的一致性筛选答案、以区域消融测试过滤问题。作者据此用 RLVR 训练出 ZwZ2。作者称，尽管合成数据未针对下游基准定制，ZwZ2 仍提升了细粒度与空间感知，并在具身空间推理、多模态长上下文理解、多模态智能体任务及一般视觉推理上取得进一步提升。"
+          "en": "The paper identifies “connecting evidence” as a shared capability for spatial perception and multimodal long-context understanding: finding relevant visual facts, linking them to entities, recovering relations, and combining them into an answer. EvidenceConnect synthesizes questions requiring comparison, aggregation, or chaining of evidence from zoomed views of related regions in one image. Data are filtered by agreement among independent vision-language models and region-ablation tests, then used for RLVR training to produce ZwZ2. The authors report improvements in fine-grained and spatial perception, with further gains across several reasoning and agent tasks.",
+          "zh": "论文将空间感知和多模态长上下文理解所需的共同能力称为“连接证据”：识别相关视觉事实、对应实体、恢复关系并组合成答案。作者提出 EvidenceConnect，用同一图像中相关区域的放大视图合成需要比较、汇总或串联视觉证据的问题，并通过多个视觉语言模型的一致性及区域消融测试筛选数据。将所得数据用于 RLVR 训练后，作者报告 ZwZ2 改善了细粒度和空间感知，并在具身空间推理、多模态长上下文理解、代理任务及一般视觉推理上进一步提升。"
         }
       },
       "source": {
@@ -15419,11 +15493,7 @@
             "heading": "",
             "text": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times.\n\nUnder independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE.\n\nThe same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes.\n\nWe evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks.\n\nIntegrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.\n\nIn H20 model-block benchmarks, POD-RoPE achieves median forward-plus-backward speedups of $1.91\\times$ over P-RoPE and $5.34\\times$ over RayRoPE, with a median latency overhead of 17.4% over Standard RoPE. These results support physical observation distributions as an effective and computationally efficient basis for geometry-aware attention."
           }
-        ],
-        "summary": {
-          "en": "POD-RoPE represents token observation footprints as distributions over camera centers, viewing directions, and sampling times, using these physical observation distributions for geometry-aware attention. Its rotation statistics support Q/K matching and coherence-dependent V/O transformations, while per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes. The authors evaluate it across four robot policy architectures, simulated and real-world manipulation, and reconstruction, depth-estimation, and novel-view-synthesis tasks. Integrated into Fast-WAM, it raises reported success rates on RoboTwin 2.0 and two Sharpa North real-robot tasks; reconstruction ablations support the proposed components.",
-          "zh": "论文提出 POD-RoPE，将 token 的观测范围表示为相机中心、视线方向和采样时间上的分布，以物理观测分布支持几何感知注意力。该方法用旋转统计进行 Q/K 匹配及依赖一致性的 V/O 变换，并通过逐 token 预聚合避免增加序列长度或处理观测节点对。作者在四种机器人策略架构、仿真与真实操作，以及重建、深度估计和新视角合成任务上评估。集成至 Fast-WAM 后，作者报告其在 RoboTwin 2.0 的 50 项任务及 Sharpa North 的两项真实机器人任务上成功率提高；重建消融实验支持其组成设计。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -15456,11 +15526,7 @@
             "heading": "",
             "text": "Task success is not a sufficient measure of safety for embodied artificial intelligence (AI), because robots may complete objectives while violating safety requirements. Existing evaluations often emphasize performance and robustness, but lack a systematic route from documented safety hazards to executable, verifiable tests.\n\nWe present EAST (Embodied AI Safety Testing), a digital-twin framework that converts literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. EAST combines an expert-reviewed safety-fault taxonomy and eight executable operators with applicability and validity constraints.\n\nIts three-stage workflow generates test specifications, verifies fault realization during simulated execution, and independently assesses safety challenges, violations, task outcomes, and behavioral signatures using simulator-state evidence.\n\nThe framework preserves execution traces and replayable records, supporting attribution and reproducibility across experiments. We evaluate EAST on six RoboTwin manipulation tasks and two policy architectures, ACT and RDT, against alternative testing strategies under matched budgets.\n\nAcross five comparative campaigns, EAST targets all 74 admissible task-policy-operator combinations and obtains valid evidence for 63, while achieving safety-challenge exposure rates close to Random-Legal and Rule-Based. Moreover, 82 valid EAST executions complete their tasks despite safety violations, revealing risks concealed by success-oriented evaluation.\n\nThese findings support systematic, validity-aware, reproducible safety testing beyond task-completion metrics."
           }
-        ],
-        "summary": {
-          "en": "EAST is a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests spanning perception, instructions, environments, actions, and timing. It uses an expert-reviewed fault taxonomy, eight executable operators, and constraints on applicability and validity, then verifies faults during simulated execution. The authors evaluate it on six RoboTwin manipulation tasks and two policy architectures, ACT and RDT. Across five comparative campaigns, EAST targets all 74 admissible task-policy-operator combinations and obtains valid evidence for 63. In 82 valid executions, tasks finish despite safety violations.",
-          "zh": "论文提出 EAST，一个数字孪生框架，将基于文献的安全证据转化为覆盖感知、指令、环境、动作和时序的故障注入测试。框架包含经专家审查的安全故障分类、八种可执行操作符及适用性和有效性约束，并在模拟执行中核验故障实现。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上评估。五轮比较中，EAST 覆盖全部 74 种可用任务—策略—操作符组合，并为 63 种取得有效证据；82 次有效执行在违反安全要求的同时完成任务。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
