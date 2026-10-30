@@ -1143,7 +1143,11 @@
             "heading": "",
             "text": "A robot policy needs to understand what a task is asking for in a scene, and how to move the robot to accomplish that task. To achieve these two skills, we introduce Zero-real Agent Policy (ZAP), a recipe that teaches a small off-the-shelf vision-language model to control a robot via a simple tool harness.\n\nWe use a pretrained 27B parameter model to bootstrap world understanding and reasoning, followed by supervised fine-tuning and GRPO on simple simulated tasks to teach it how to move the robot.\n\nWithout observing real-world robot data during training, ZAP reaches 96.7% success on real-world tasks, matching GPT-6 Astra in our harness and outperforming the MolmoAct2 VLA (33.3%), while running 3x faster and 17x cheaper than GPT-6 Astra.\n\nFurthermore, ZAP also generalizes to an unseen embodiment as well as new objects, goals and strategies never seen during training. On a single-arm Franka, ZAP reaches 55.9% on RoboLab-120, 4.9 percentage points ahead of the leading VLA/WAM baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Zero-real Agent Policy (ZAP), which teaches a pretrained vision-language model to control a robot through a tool harness. Pretraining supplies scene understanding and reasoning, while supervised fine-tuning and GRPO on simple simulated tasks teach motor behavior. The authors report that ZAP uses no real-world robot data during training and achieves 96.7% success on real-world tasks, matching GPT-6 Astra in their harness and outperforming MolmoAct2 VLA. They also report generalization to an unseen embodiment and novel objects, goals, and strategies, with results on a single-arm Franka.",
+          "zh": "论文提出 Zero-real Agent Policy（ZAP），通过工具接口让预训练视觉语言模型控制机器人：先利用预训练模型建立场景理解与推理能力，再在简单模拟任务上进行监督微调和 GRPO，以学习动作控制。作者称训练未使用真实机器人数据，ZAP 在真实任务上达到 96.7% 成功率，在其测试框架中匹配 GPT-6 Astra，并优于 MolmoAct2 VLA；运行速度更快、成本更低。作者还报告其能迁移至未见过的机器人形态及新物体、目标和策略，并在单臂 Franka 的 RoboLab-120 上取得相关结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1174,7 +1178,11 @@
             "heading": "",
             "text": "Self-driving laboratories (SDLs) are laboratory systems that couple experimental planning, automated execution, and measurement feedback in a closed loop. Integrating flexible robot control with the typed application programming interfaces (APIs) and continuous measurements exposed by laboratory instruments remains an execution-interface challenge.\n\nTo address this challenge, we propose a traceable framework comprising four components: LAM (Lab Action Model), OpenSDL, Safe-SDL, and L3-Bench. LAM is a proposed measurement-conditioned policy architecture that extends vision-language-action paradigms to generate both continuous robot trajectories and typed instrument API calls.\n\nOpenSDL is an execution substrate with an initial control implementation, designed to map role-level operations to heterogeneous devices, coordinate execution, and record timestamped causal events.\n\nThe proposed Safe-SDL runtime gate combines pre-dispatch schema and resource checks with signal temporal logic monitoring during execution, including extended waiting periods. L3-Bench (Level-3 Laboratory Benchmark) specifies an episode-level evaluation protocol covering physical outcomes, timing, reproducibility, safety violations, and fault recovery.\n\nTogether, these components provide an end-to-end design for linking hybrid action generation, monitored device execution, measurement feedback, and experimental evaluation, addressing coordination and traceability challenges in SDL workflows."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper proposes an auditable framework for self-driving laboratories with four components: LAM, OpenSDL, Safe-SDL, and L3-Bench. LAM is a measurement-conditioned policy architecture intended to generate both continuous robot trajectories and typed instrument API calls. OpenSDL provides an execution substrate for coordinating heterogeneous devices and recording timestamped causal events. Safe-SDL checks schemas and resources before dispatch and monitors execution using signal temporal logic, including extended waits. L3-Bench defines episode-level evaluation of outcomes, timing, reproducibility, safety violations, and fault recovery. The authors present the framework as an end-to-end design linking action generation, device execution, measurement feedback, and evaluation.",
+          "zh": "本文提出面向自驱动实验室的可追溯框架，由 LAM、OpenSDL、Safe-SDL 和 L3-Bench 四部分组成。LAM 是一种测量条件策略架构，旨在同时生成连续机器人轨迹和类型化仪器 API 调用；OpenSDL 提供执行基础设施，用于协调异构设备并记录带时间戳的因果事件。Safe-SDL 在执行前检查模式与资源，并在运行期间进行信号时序逻辑监控，包括较长等待过程。L3-Bench 规定按实验回合评估结果、时序、可重复性、安全违规和故障恢复。作者将其定位为连接混合动作生成、设备执行、测量反馈与实验评估的端到端设计。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
