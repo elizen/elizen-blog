@@ -556,11 +556,7 @@
             "heading": "",
             "text": "Embodied AI agents in Augmented Reality (AR) could enable more natural collaboration in immersive analytics by engaging users through spatial, conversational, and visual interaction. However, designing such agents requires careful attention to context.\n\nWe propose a preliminary conceptual framework for context-aware design of embodied agents structured around three dimensions of spatial, social, and semantic. This framework is further categorised into embeddedness (how agents are situated in the contexts) and awareness (how agents perceive and respond to the contexts).\n\nTo explore this, we present Cobot, an embodied AI agent designed as a design probe. Cobot supports context-sensitive interaction through features such as gaze cues, spatial sound, and task-aware behaviour. We reflect on its design and identify implications for future contextaware embodied agents."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes a preliminary framework for designing context-aware embodied agents in immersive analytics. It covers spatial, social, and semantic dimensions, organized around embeddedness—how an agent is situated in context—and awareness—how it perceives and responds to context. The authors present Cobot as a design probe, with gaze cues, spatial sound, and task-aware behavior intended to support context-sensitive interaction. They reflect on the design and identify implications for future agents. The abstract does not describe a user study or report measured effectiveness.",
-          "zh": "论文提出一个面向沉浸式分析中具身智能体的初步情境感知设计框架，包含空间、社会和语义三个维度，并以嵌入性（智能体如何处于情境中）和感知性（如何感知并回应情境）加以分类。作者介绍了作为设计探针的 Cobot，它通过注视提示、空间音效和任务感知行为支持情境相关交互。论文反思了该设计，并提出对未来情境感知具身智能体设计的启示；摘要未报告用户实验或效果评估。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -3205,8 +3201,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents Labference, a benchmark for assessing how observed physical outcomes guide subsequent choices and how those choices become laboratory robot actions. Its protocol tests behavioral adaptation under controlled evidence variations and separately measures operation selection, physical execution, and task completion. Matched Oracle-assisted continuations from shared checkpoints assess the effects of support. Initial weighing evaluations found target-selection errors in tested VLA policies despite successful transfers; GPT-driven control selected correctly but faced execution failures and substantial computation costs. The authors position the benchmark as a way to diagnose the reasoning-action connection.",
-          "zh": "论文提出 Labference，用于评估机器人实验室任务中观察到的物理结果如何影响后续选择，以及选择如何转化为实际操作。其协议通过受控证据变化测试行为适应，并分别衡量操作选择、物理执行和任务完成；共享检查点上的匹配 Oracle 辅助续执行用于评估支持方式的作用。初步称量评估显示，受测 VLA 策略虽成功转移物体，却会选错目标；GPT 驱动控制能正确选择，但出现执行失败且计算成本较高。作者认为，该基准有助于诊断推理与可靠及时行动之间的连接。"
+          "en": "The paper introduces Labference to evaluate how observed physical outcomes guide subsequent choices and how those choices translate into robotic laboratory actions. Its protocol tests adaptation under controlled evidence variations and measures operation selection, execution, and task completion separately; matched Oracle-assisted continuations assess forms of support. Initial weighing evaluations found target-selection errors in the tested VLA policies despite successful object transfers. GPT-driven control selected correctly but encountered execution failures and substantial computation costs.",
+          "zh": "论文提出 Labference，用于评估机器人实验室任务中观察到的实际结果如何影响后续选择，以及这些选择如何转化为机器人动作。其协议通过受控证据变化测试行为适应，并分别测量操作选择、物理执行和任务完成；共享检查点上的 Oracle 辅助续行用于评估支持方式。初步称量评估显示，受测 VLA 策略出现目标选择错误但成功转移物体；GPT 驱动控制选择正确，却遇到执行失败和较高计算成本。"
         }
       },
       "source": {
@@ -8517,11 +8513,7 @@
             "heading": "",
             "text": "Vision-Language Models (VLMs) have achieved strong performance in visual perception and spatial reasoning, leading to growing interest in using them as high-level planners for embodied AI.\n\nHowever, physical tasks require models to integrate spatial information, reason over temporal states, and generate multi-step plans under various constraints, raising the question of whether current VLMs can reliably support such reasoning and planning independently of execution.\n\nWe introduce Plan-Bench, a benchmark for evaluating the high-level reasoning and multi-step planning capabilities of VLMs relevant to embodied worlds, while isolating the influence of action execution. It covers three complementary dimensions, spanning 16 subclasses and 699 curated samples.\n\nExtensive evaluation of 28 VLMs reveals room for improvement, with even the strongest model achieving only 75.0% accuracy. We further find that model scaling generally improves these capabilities. Ablation studies also indicate larger models show increasing potential as high-level planners.\n\nOverall, Plan-Bench provides a lightweight probe for evaluating VLMs' reasoning and planning capabilities relevant to embodied environments and assessing their potential as decision makers for physical tasks. Our benchmark and code are available at https://github.com/MinneFeng/Plan-Bench."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Plan-Bench, a benchmark for assessing VLMs’ high-level reasoning and multi-step planning relevant to embodied environments, while isolating action execution. It spans three dimensions, 16 subclasses, and 699 curated samples. In evaluations of 28 VLMs, the authors report that the strongest model reaches 75.0% accuracy and that scaling generally improves these capabilities. Ablations also suggest that larger models have increasing potential as high-level planners. The benchmark is presented as a lightweight probe; the reported findings concern performance on its evaluation tasks.",
-          "zh": "论文介绍 Plan-Bench，这是一个评估视觉语言模型在具身环境相关高层推理和多步规划能力的基准，并将动作执行的影响与评测隔离。基准覆盖三个维度、16 个子类和 699 个样本。作者评估了 28 个模型，报告称最强模型准确率为 75.0%，模型规模扩大通常有助于提升表现；消融研究也显示较大模型作为高层规划器的潜力有所增加。作者将其定位为轻量评测工具，结果反映基准任务上的表现。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -13754,8 +13746,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces EvidenceConnect, a framework that synthesizes training data from zoomed views of related regions in one image to train models to connect visual evidence. It filters reference answers through agreement among independent vision-language models and removes questions whose answers survive selected-region ablation. Base VLMs are then trained with RLVR to produce ZwZ2. The authors report gains in fine-grained and spatial perception, with further improvements in embodied spatial reasoning, multimodal long-context understanding, agent tasks, and general visual reasoning.",
-          "zh": "论文提出 EvidenceConnect，一种利用同一图像中相关区域的放大视图合成训练数据的框架，训练模型连接视觉证据：识别相关事实、绑定实体、恢复关系并组织答案。框架通过独立视觉语言模型的一致性筛选答案，并用区域消融测试剔除答案不依赖指定区域的问题；随后以 RLVR 训练基础视觉语言模型，得到 ZwZ2。作者报告，该模型在细粒度与空间感知方面有所提升，并在具身空间推理、多模态长上下文理解、智能体任务和一般视觉推理上取得进一步收益。"
+          "en": "The paper introduces EvidenceConnect, a data-synthesis framework that uses zoomed views of related regions in one image to create questions requiring comparison, aggregation, or chaining of visual evidence. It filters reference answers by independent VLM agreement and removes questions that pass region-ablation tests. The authors train ZwZ2 with RLVR on the resulting data. They report improvements in fine-grained and spatial perception, with further gains in several downstream areas, although the data were not tailored to those benchmarks.",
+          "zh": "论文提出 EvidenceConnect 数据合成框架，通过同一图像中相关区域的放大视图生成需要比较、聚合或串联视觉证据的问题，并用模型一致性筛选答案、通过区域消融测试过滤问题。作者据此以 RLVR 训练得到 ZwZ2。论文称，尽管合成数据未针对下游基准设计，模型仍提升了细粒度和空间感知，并在具身空间推理、多模态长上下文理解、智能体任务及一般视觉推理方面取得进一步收益。"
         }
       },
       "source": {
@@ -15377,6 +15369,43 @@
       "catalog": {
         "kind": "paper",
         "paper": {
+          "url": "http://arxiv.org/abs/2610.33745v2"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-d9fea1a4288a4000b949d7b177c4f791",
+      "intro": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times. Under independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE. The same rotation statistics support Q/K matching…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times.\n\nUnder independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE.\n\nThe same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes.\n\nWe evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks.\n\nIntegrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.\n\nIn H20 model-block benchmarks, POD-RoPE achieves median forward-plus-backward speedups of $1.91\\times$ over P-RoPE and $5.34\\times$ over RayRoPE, with a median latency overhead of 17.4% over Standard RoPE. These results support physical observation distributions as an effective and computationally efficient basis for geometry-aware attention."
+          }
+        ],
+        "summary": {
+          "en": "The paper introduces POD-RoPE, representing token observation footprints as distributions over camera centers, viewing directions, and sampling times. It uses observation geometry for attention matching and content aggregation. Evaluations span four robot policy architectures, simulated and real-world manipulation, and reconstruction, depth estimation, and novel-view synthesis. Integrated into Fast-WAM, POD-RoPE improved reported mean success on 50 RoboTwin 2.0 tasks and two real-robot tasks on Sharpa North. Controlled reconstruction ablations support the contributions of distribution encoding and V/O transformations.",
+          "zh": "论文提出 POD-RoPE，以相机中心、视线方向和采样时间的分布表示每个 token 的观测范围，并将观测几何用于注意力匹配与内容聚合。作者在四种机器人策略架构、仿真与真实操作，以及重建、深度估计和新视角合成任务上进行评估。集成到 Fast-WAM 后，论文报告其在 RoboTwin 2.0 的 50 项任务及 Sharpa North 的两项真实机器人任务上成功率提高；受控重建消融支持分布编码和 V/O 变换的作用。"
+        }
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2610.33745v2"
+      },
+      "title": "POD-RoPE: Rotary Position Encoding over Physical Observation Distributions for Embodied AI"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-10-30"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
           "url": "http://arxiv.org/abs/2610.34358v1"
         },
         "source_channel": "website",
@@ -15396,8 +15425,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces EAST, a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests across perception, instructions, environments, actions, and timing. Its three-stage workflow specifies tests, verifies fault realization in simulation, and independently assesses safety challenges, violations, task outcomes, and behavioral signatures using simulator-state evidence. Evaluations cover six RoboTwin manipulation tasks and the ACT and RDT policy architectures. Across five comparative campaigns, EAST targeted all 74 admissible combinations and obtained valid evidence for 63. The authors report 82 valid executions that completed tasks despite safety violations.",
-          "zh": "论文提出 EAST，一个将文献中的安全证据转化为数字孪生故障注入测试的具身 AI 安全测试框架，覆盖感知、指令、环境、动作和时序。三阶段流程生成测试规格、在模拟执行中验证故障实现，并依据模拟器状态独立评估安全挑战、违规、任务结果和行为特征，同时保留可回放记录。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上进行评估。五轮比较中，EAST覆盖74种可行组合并为63种取得有效证据；82次有效执行虽完成任务却违反安全要求，显示成功指标可能掩盖风险。"
+          "en": "The paper presents EAST, a digital-twin framework that turns literature-grounded safety evidence into fault-injection tests covering perception, instructions, environments, actions, and timing. It includes an expert-reviewed fault taxonomy, eight executable operators, validity constraints, and replayable execution records. Evaluations used six RoboTwin manipulation tasks and the ACT and RDT policy architectures. Across five comparative campaigns, EAST targeted all 74 admissible combinations and obtained valid evidence for 63. The authors also report 82 valid executions that completed tasks despite safety violations.",
+          "zh": "论文提出 EAST，一个将基于文献的安全证据转化为数字孪生故障注入测试的具身 AI 安全测试框架，覆盖感知、指令、环境、动作和时序。框架包含经专家审查的故障分类、八种可执行操作及有效性约束，并记录可重放的执行轨迹。作者在六项 RoboTwin 操作任务和 ACT、RDT 两种策略架构上评估；五轮比较中，EAST 覆盖全部 74 种适用组合并为 63 种取得有效证据，且 82 次有效执行在发生安全违规时仍完成任务。"
         }
       },
       "source": {
@@ -16406,11 +16435,7 @@
             "heading": "",
             "text": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support.\n\nIn particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model.\n\nIn this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders.\n\nThe model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved.\n\nThe same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics.\n\nTo examine whether the shared representation captures action-related information, we introduce a lightweight motion probe that shows the frozen visual representation contains recoverable motion information.\n\nThinker-WM is trained on a heterogeneous corpus comprising approximately 20K hours of egocentric video, 10K hours of real-robot data, and 1K hours of simulation data, including approximately 4K hours of real-robot data with aligned depth supervision. Extensive experiments demonstrate strong performance across embodied world-model evaluations.\n\nThinker-WM ranks first on EWMBench, WorldOlympiad and WorldArena, while controlled studies further demonstrate the benefits of action conditioning, geometric interaction, and multi-function training within the shared representation."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Thinker-WM, a multimodal world model that jointly represents RGB images, metric depth, and robot actions through a shared intermediate dynamics model, with modality-specific encoders and decoders. Its shared parameterization supports functions including video-action generation, world prediction, policy inference, and inverse dynamics. A motion probe is used to examine whether the frozen visual representation retains recoverable motion information. The authors report training on a heterogeneous corpus of egocentric video, real-robot, and simulation data, and state that the model ranks first on three named embodied world-model benchmarks. These claims reflect the reported experiments.",
-          "zh": "论文提出 Thinker-WM，一个共享中间表示的多模态世界模型，联合建模 RGB 图像、度量深度和机器人动作，并通过同一组参数支持视频与动作生成、世界预测、策略推断等功能。模型使用模态专属编码器和解码器，同时让外观、几何与动作在共享动态表示中共同演化。作者以运动探针检查冻结视觉表示中的动作相关信息，并报告其训练数据包括自我中心视频、真实机器人和仿真数据。论文称其在具身世界模型评测中表现强劲，并在三个具名基准上排名第一；这些结论基于作者所述实验。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17434,11 +17459,7 @@
             "heading": "",
             "text": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior.\n\nExisting inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes.\n\nSuch compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part.\n\nTo address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages.\n\nFive cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones.\n\nPlanning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision.\n\nWe evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR).RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces RuleGraph, a planning framework intended to let an embodied robot refuse harmful parts of a compound instruction while completing legitimate subtasks. Five cooperating agents ground safety principles in world-specific rules, assess subtasks in context, and derive a safe goal. Planning is organized as a graph of rule-specific nodes, with candidate plans progressively verified and aggregated. In evaluations of pure-attack and compound instructions across two benchmarks and two environments, the authors report 0% attack success on both benchmarks and the highest task success rates among the compared methods.",
-          "zh": "论文提出 RuleGraph，用于让具身机器人拒绝复合指令中的有害部分，同时完成其中正当的子任务。框架由五个协作智能体将安全原则转化为具体规则、结合上下文评估子任务，并据此形成安全目标；规划过程再以规则图组织，通过逐步验证和汇总筛选满足相关规则的方案。作者在两个基准和两种环境中评估了纯攻击与复合指令，报告称 RuleGraph 在两个基准上的攻击成功率均为 0%，并取得最高任务成功率；这些结果来自所述评测设置。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
