@@ -253,7 +253,11 @@
             "heading": "",
             "text": "Web services provide walking directions for nearly every city, but following them reliably over long routes remains challenging for autonomous robots. Point-goal navigation policies rely heavily on accurate GNSS, while most vision-language navigation models struggle to execute even short instructions outdoors.\n\nWe present WayTrace, a hierarchical system that connects web-map directions to robot motion through language. An off-the-shelf orchestrator vision-language model reads the turn-by-turn directions, a satellite map and recent camera images, and issues one atomic language command at a time, such as \"cross the road to the left\".\n\nAn onboard trace predictor, trained on over one million automatically labelled samples from street-level images, draws the path for this command in the image, and a reinforcement learning policy tracks it.\n\nIn long-range simulated missions, WayTrace remains robust to GNSS noise and rarely leaves crosswalks or sidewalks, while point-goal baselines degrade sharply with about ten times more violations.\n\nDeployed on a wheeled-legged robot, WayTrace completes real-world missions of up to 1.37 km at about 1.1 m/s through a busy city centre, rural trails and a university campus, handling crosswalks, staircases and construction sites. Project page: https://way-trace.github.io"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WayTrace, which converts web-map directions into robot motion. A vision-language model uses the directions, a satellite map, and recent camera images to issue one language command at a time; an onboard predictor traces the requested path in the image for a reinforcement-learning policy to follow. The authors report robustness to GNSS noise and fewer sidewalk or crosswalk departures in long simulated missions. They also report real-world deployments on a wheeled-legged robot across urban, rural, and campus settings.",
+          "zh": "论文提出 WayTrace，将网页地图中的逐步路线指引转化为机器人运动：视觉语言模型结合路线、卫星地图和近期相机图像，每次发出一条语言命令；车载轨迹预测器在图像中绘制对应路径，强化学习策略负责跟踪。作者称，在长距离仿真任务中，该系统能应对 GNSS 噪声，较少偏离人行横道和人行道；在轮足机器人实地部署中，系统完成了城市中心、乡间步道和校园等环境的长距离任务，并处理了斑马线、楼梯和施工现场。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -284,7 +288,11 @@
             "heading": "",
             "text": "Physical intelligence refers to intelligence systems that understand, reason about and act in accordance with the physical world and its underlying laws, dynamics, and constraints.\n\nUnlike conventional AI systems, physical intelligence interacts continuously with uncertain physical environments, and its actions produce consequences that are physically irreversible.\n\nAs existing trustworthy AI frameworks have been developed primarily for digital AI systems, they do not fully capture the distinctive challenges of Physical Intelligence, such as physical safety, cyber-physical security, and physical manufacturing process.\n\nTo address this gap, our paper develop a foundation for understanding, operationalizing, and governing trustworthy physical intelligence. First, we characterize the fundamental capabilities of physical intelligence. Second, we investigate the role of physical laws and principles in AI and analyze the associated challenges of physical intelligence.\n\nThird, we provide a unified structure of the end-to-end physical intelligence life cycle across five core stages and introduce the Trustworthy Physical Intelligence Operationalization (T-PAIO) framework.\n\nFourth, we formulate the Trustworthy Physical Intelligence (T-PAI) Principles as a theoretical framework that synthesizes key trustworthiness dimensions and establishes a conceptual foundation for the governance of physical intelligence systems."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines trustworthy physical intelligence: systems that understand, reason about, and act according to the physical world, its laws, dynamics, and constraints. The authors argue that such systems continuously interact with uncertain environments and can cause irreversible physical consequences, while existing trustworthy AI frameworks do not fully address physical safety, cyber-physical security, or manufacturing processes. They characterize core capabilities and related challenges, propose a life-cycle structure with five stages and the T-PAIO operationalization framework, and formulate T-PAI principles as a conceptual basis for governance.",
+          "zh": "论文讨论可信物理智能，指能够理解、推理并依据物理世界及其规律、动力学和约束采取行动的智能系统。作者指出，这类系统持续与不确定环境交互，行动可能造成不可逆的物理后果，现有可信人工智能框架未充分涵盖物理安全、网络物理安全和制造过程等问题。论文梳理其基本能力与物理规律相关挑战，提出覆盖五个核心阶段的全生命周期结构、T-PAIO 操作化框架，以及作为治理概念基础的 T-PAI 原则。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -315,7 +323,11 @@
             "heading": "",
             "text": "We investigate the automated generation of executable robot reinforcement learning (RL) policies from natural-language task descriptions.\n\nRather than using large language models (LLMs) as execution-time decision makers, we use them as designers that construct RL pipelines before deployment, including Markov decision process (MDP) formulation and simulator implementation.\n\nWe identify a phase-wise structure in this problem: MDP formulation is dependency-structured and sequential, whereas simulator implementation becomes modular once the formulation is fixed.\n\nBased on this structure, we propose ARPG, a dependency-aware agentic framework that performs sequential MDP modeling, localized verification and correction, and simulator-structured implementation while externalizing intermediate artifacts.\n\nARPG targets a key failure mode of automated policy generation: executable code may still yield non-learnable policies when state, action, reward, and termination artifacts are not semantically aligned.\n\nExperiments in Isaac Sim show that ARPG improves modeling correctness, environment executability, and policy-generation success compared with monolithic LLM baselines and off-the-shelf agentic systems.\n\nAdditional demonstrations on custom robotics, standard RL, and engineering-domain MDPs further suggest that the same modeling pipeline can be reused beyond the main benchmark suite."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies automated generation of executable robot reinforcement-learning policies from natural-language task descriptions. It uses LLMs as pre-deployment designers of MDPs and simulators rather than as execution-time decision makers. The proposed ARPG framework models the MDP sequentially, performs localized verification and correction, then implements the simulator modularly while retaining intermediate artifacts. It targets semantic misalignment among state, action, reward, and termination definitions. In Isaac Sim experiments, the authors report improvements over monolithic LLM baselines and off-the-shelf agentic systems; additional demonstrations suggest the pipeline may be reusable in other domains.",
+          "zh": "论文研究如何从自然语言任务描述自动生成可执行的机器人强化学习策略，并将大语言模型用作部署前的设计者，用于构建 MDP 和模拟器，而非执行时决策。作者提出 ARPG：先按依赖顺序建模 MDP，再进行局部验证与修正，随后以模块化方式实现模拟器并保留中间产物。该框架针对状态、动作、奖励和终止定义语义不一致、导致策略不可学习的问题。作者报告，在 Isaac Sim 实验中，ARPG 相比整体式大语言模型基线及现成智能体系统提升了建模正确性、环境可执行性和策略生成成功率；其他领域演示显示流程可能复用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
