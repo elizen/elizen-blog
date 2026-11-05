@@ -513,7 +513,11 @@
             "heading": "",
             "text": "Moving robot swarms from simulation into the physical world can be difficult because small discrepancies in hardware, timing and communication can cascade across interacting robots and alter group behaviour. This challenge is known as the reality gap.\n\nWhen swarms operate in human environments, a second challenge emerges: a perceptual gap between what the swarm physically does and what human onlookers actually perceive. This study examines the same decentralised coordination code deployed across three robotic swarms-tabletop, aerial and human-scale mobile manipulators-during live artistic performances.\n\nWe find that while the underlying algorithms executed reliably on all three platforms, physical embodiment drastically altered visible motion-distorting execution timescales by more than a factor of three and reshaping trajectory geometry.\n\nMore importantly, audience surveys revealed that human interpretation does not mirror technical success: how observers attribute meaning (perceived purpose) and how they react emotionally (comfort versus threat) depend heavily on physical form. Meaning attribution and emotional responses did not vary together.\n\nOur results demonstrate that successfully transferring swarm software to physical hardware is insufficient for real-world deployment. Addressing the reality gap does not guarantee that the resulting collective motion will be readily interpreted by human observers.\n\nSwarms destined for human environments must be engineered not only for decentralised stability but also for the expressive physical dynamics through which humans interpret collective motion."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study examines reality and perceptual gaps by deploying the same decentralized coordination code on tabletop, aerial, and human-scale mobile-manipulator swarms in live artistic performances. The authors report reliable algorithm execution on all three platforms, while physical embodiment changed visible motion timescales by more than a factor of three and reshaped trajectories. Audience surveys found that perceived purpose and emotional responses such as comfort or threat depended on physical form and did not vary together. The authors argue that successful software transfer alone does not ensure interpretable motion.",
+          "zh": "论文研究群体机器人从仿真走向现实及其在人类环境中的感知差距，将同一套去中心化协调代码部署到桌面、空中和人形尺度移动操作机器人群，并用于现场艺术表演。作者称算法在三种平台上均可靠运行，但实体形态使可见运动的时间尺度变化超过三倍，并改变轨迹几何。观众调查显示，意义归因与舒适或威胁等情绪反应取决于实体形态，且二者并不同步。作者据此指出，软件成功迁移并不保证群体运动易于人类理解。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -544,7 +548,11 @@
             "heading": "",
             "text": "Scaling real-world dexterous-grasp data collection is limited by the sustained human effort required to operate the robot, verify grasp outcomes, and reset objects between trials. Simulation can generate grasp candidates at scale, but their success on hardware remains uncertain.\n\nWe present AutoDex, a system that collects real-world dexterous-grasp data without continuous human operation. Given generated grasp candidates, AutoDex plans and executes grasps, labels their outcomes, and resets the object to continue collection across stable poses.\n\nMulti-view object tracking supports labeling under hand-object occlusion, while residual-torque collision monitoring and pose-directed reset enable the loop to operate without continuous human supervision.\n\nUsing AutoDex, we collect over 3,500 grasp trials across 100 objects with Allegro and Inspire hands, recording both successes and failures together with synchronized visual observations and robot states.\n\nAutoDex reduces human effort by more than an order of magnitude, requiring an estimated 0.2 human-hours to collect 500 trajectories compared with 9.3 for teleoperation. As AutoDex collects trials, it builds a library of physically validated grasps for subsequent execution.\n\nIn new object placements and obstacle configurations, retrieval from this library achieves 76% success, compared with 34% for candidates screened only in simulation. Code and data are available at https://snuvclab.github.io/AutoDex/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AutoDex automates real-world dexterous-grasp data collection by planning and executing generated grasp candidates, labeling outcomes, and resetting objects for further trials. Multi-view tracking, residual-torque collision monitoring, and pose-directed resets support operation without continuous human supervision. The system collected over 3,500 trials across 100 objects using Allegro and Inspire hands, recording successes, failures, observations, and robot states. The authors estimate 0.2 human-hours for 500 trajectories versus 9.3 hours for teleoperation. In new placements and obstacle configurations, library retrieval achieved 76% success, compared with 34% for simulation-screened candidates.",
+          "zh": "AutoDex 是一个用于采集真实灵巧抓取数据的自动化系统。给定生成的抓取候选，它能规划并执行抓取、标注结果，并将物体复位以继续采集；多视角跟踪、残余扭矩碰撞监测和定向复位支持其在无需持续人工操作的情况下运行。系统使用 Allegro 和 Inspire 手在100个物体上采集了超过3500次试验，记录成功与失败及同步观测。作者报告其采集500条轨迹所需人工时间估计为0.2小时，而遥操作需9.3小时；在新摆放和障碍配置中，抓取库检索成功率为76%，仿真筛选候选为34%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -575,7 +583,11 @@
             "heading": "",
             "text": "Robot imitation learning is limited by the scarcity of action-labeled data, while action-free demonstrations such as videos are abundant.\n\nRecent latent-action methods learn action-relevant representations from observation transitions, but they do not optimize latent actions for downstream control, leading to latent representations that are difficult for policies to model and difficult to accurately decode into continuous robot actions.\n\nThis paper introduces ELA, an end-to-end framework for learning from video demonstrations via latent actions jointly optimized for policy learning and action decoding. ELA jointly trains a latent action model, latent action policy, and action decoder, enabling policies to leverage abundant video data with only a handful of action-labeled robot demonstrations.\n\nExperiments on simulated and real-world manipulation tasks show that ELA consistently outperforms prior latent action baselines. Moreover, it integrates seamlessly with existing imitation learning methods through lightweight 4M-parameter action decoders, requiring no changes to policy architectures or training objectives.\n\nAdditional materials can be found on: https://end2end-latent-action.github.io/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "ELA is an end-to-end framework for learning robot policies from video demonstrations, addressing the scarcity of action-labeled data. It jointly trains a latent action model, policy, and decoder so latent actions support both policy learning and decoding into continuous robot actions, alongside a handful of labeled robot demonstrations. Experiments on simulated and real-world manipulation tasks show consistent improvement over prior latent-action baselines. The authors also report that ELA can integrate with existing imitation-learning methods through lightweight, 4-million-parameter action decoders, without changing policy architectures or training objectives.",
+          "zh": "ELA 是一种从视频演示学习机器人策略的端到端框架，针对视频缺少动作标签而动作标注数据稀缺的问题。它联合训练潜在动作模型、潜在动作策略和动作解码器，使潜在动作同时服务于策略学习与连续机器人动作解码，并结合少量带动作标签的机器人演示。论文报告，在仿真和真实操作任务中，ELA 持续优于先前潜在动作基线。作者还称，该方法可通过轻量的400万参数动作解码器接入现有模仿学习方法，无需更改策略架构或训练目标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -606,7 +618,11 @@
             "heading": "",
             "text": "Despite growing interest in foundation models for robotic manipulation, systematic evaluation of their capabilities remains elusive.\n\nExisting benchmarks are either narrow and saturated, offering little signal on SOTA methods, broadly scoped, providing diversity at the cost of controlled experimentation, or require training on large, messy open-source datasets.\n\nWe introduce MESA, an evaluation framework designed for precise, reproducible measurement of language-conditioned policy generalization.\n\nMESA provides five evaluation suites that isolate in-distribution performance and four distinct axes of generalization: spatial configuration, object instance, object category, and subtask composition, enabling researchers to diagnose where and why policies fail, not just whether they fail.\n\nTo populate these suites at scale, we develop MESA-Gen, a pipeline for task and demonstration generation built by improving MimicGen. We instantiate the framework on two platforms and release both: the single-arm MESA suite, and BiMESA, the first large-scale benchmark for bimanual generalization.\n\nWe evaluate seven baseline methods spanning diffusion policies, VLM-based approaches, and pretrained VLAs, finding that the strongest model achieves only 52% on MESA and 49% on BiMESA, providing meaningful signal while leaving ample room for progress.\n\nMESA rankings are broadly consistent with RoboArena scores, suggesting that MESA captures method-level differences relevant beyond simulation. Project website: https://pairlab.github.io/MESA."
           }
-        ]
+        ],
+        "summary": {
+          "en": "MESA is a framework for evaluating generalization in language-conditioned robotic policies. Its five suites measure in-distribution performance and four generalization axes: spatial configuration, object instance, object category, and subtask composition. The authors introduce MESA-Gen, a task and demonstration generation pipeline built by improving MimicGen, and instantiate single-arm MESA and bimanual BiMESA on two platforms. Evaluations of seven baseline methods found that the strongest model scored 52% on MESA and 49% on BiMESA. The authors report broad consistency with RoboArena rankings; these findings reflect the benchmark evaluations described.",
+          "zh": "MESA 是用于评估语言条件机器人策略泛化能力的框架，提供五个评测套件，分别覆盖分布内表现以及空间配置、物体实例、物体类别和子任务组合四种泛化维度，以定位策略失败的方面。作者开发了改进 MimicGen 的任务与演示生成流程 MESA-Gen，并在两个平台上构建单臂 MESA 和双臂 BiMESA。对七种基线方法的评估显示，最强模型在 MESA 和 BiMESA 上分别达到52%和49%。论文称其排名与 RoboArena 分数总体一致；这些结果来自所述基准评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
