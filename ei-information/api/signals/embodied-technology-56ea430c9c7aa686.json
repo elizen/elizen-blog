@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-56ea430c9c7aa686",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "From bits to atoms: A survey of cross-layer safety in Embodied AI",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-10-02",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-14T04:50:49.134541+00:00",
+    "updated_at": "2026-10-27T00:49:27.525659+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.14038v1",
+        "title": "From bits to atoms: A survey of cross-layer safety in Embodied AI",
+        "published_at": "2026-10-02",
+        "checked_at": "2026-10-27T00:49:20.250710+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Embodied Artificial Intelligence (AI) introduces cyber-physical risks because digital failures and attacks can cause physical harm. This survey organizes embodied AI safety through a four-layer reference architecture -- comprising the physical interaction, system and middleware, algorithm and decision, and cloud-edge and data layers -- and uses it to connect vulnerabilities, propagation paths, and safeguards across the system stack. It traces the evolution of safety paradigms and examines how faults and attacks cross architectural boundaries to produce physical consequences. Furthermore, the survey systematizes composite attack chains, outlines multi-layered defense strategies, and reviews representative embodied safety benchmarks. Ultimately, we advocate for unifying software alignment with rigorous hardware constraints to build trustworthy systems capable of operating safely within human-centric environments."
+      }
+    ]
+  }
+}
