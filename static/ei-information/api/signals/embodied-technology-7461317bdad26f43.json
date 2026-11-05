@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-7461317bdad26f43",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-08-31",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-08-31",
+    "updated_at": "2026-08-31",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2608.30821v1",
+        "title": "Lucida: Parse, Generate, and Place for Composable Real-to-Sim Scene Modeling",
+        "published_at": "2026-08-31",
+        "checked_at": "2026-09-18T00:47:11.348922+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Composable scene modeling aims to recover a real indoor scene as complete, editable object assets arranged as observed, giving robot simulation and embodied AI a simulation-ready replica of the real environment whose objects can be manipulated individually. Existing pipelines decompose the task into three steps---parse the observations into instances, generate an asset for each, and place each asset back---but every step presumes an input that a cluttered capture rarely provides: accurate instance geometry, unoccluded views, and assets that accurately match the observations. We propose Lucida, which keeps this order but redistributes the requirements, so each step consumes only what a real capture reliably provides and precision is reached at the end of the pipeline rather than demanded at its start. Lucida parses the video into a scene graph whose nodes carry per-instance multi-view evidence, generates a complete asset for each instance from its evidence, and places assets with GizmoAct, a VLM policy that casts placement as multi-turn GUI interaction, manipulating the object's gizmo in a closed loop and deciding itself when alignment is reached. Across scene-level 3D object detect"
+      }
+    ]
+  }
+}

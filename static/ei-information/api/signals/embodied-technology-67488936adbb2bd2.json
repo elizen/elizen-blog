@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-67488936adbb2bd2",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-10-06",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-07T03:05:51.054083+00:00",
+    "updated_at": "2026-10-27T11:37:01.239259+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.08720v1",
+        "title": "WorldSolver: Can LLM Agents Simulate the Physical Dynamics via Solver Generation?",
+        "published_at": "2026-10-06",
+        "checked_at": "2026-10-27T11:36:51.936396+00:00",
+        "evidence_role": "primary",
+        "excerpt": "LLM-based agents are increasingly advancing scientific and engineering problem solving, with physics simulation emerging as a challenging yet practical testbed for reproducing complex physical phenomena with application in embodied AI, games and films. As the workhorse of such simulation, a solver computes how the state of a dynamic system evolves over time. Building such solvers requires physical understanding to identify appropriate models, mathematical reasoning to formulate the underlying dynamics, and software engineering to implement them as executable code, yet this capability of LLM agents remains underexplored. To this end, we introduce WorldSolver, a benchmark of 168 simulation tasks derived from physical phenomena in 61 classic computer graphics papers, spanning 7 physical domains. Each task contains a code scaffold that provides a fixed simulation environment for the scene, with the solver implementation left for the agent to complete. Specifically, we evaluate them along three dimensions: Execution Checks for successful execution, Visual Fidelity for reproducing the intended dynamic behavior in the rendered simulation, and Physical Plausibility for physics-grounded ver"
+      }
+    ]
+  }
+}
