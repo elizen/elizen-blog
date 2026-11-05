@@ -1862,7 +1862,11 @@
             "heading": "",
             "text": "Humanoid soccer requires a robot to seamlessly combine agile locomotion, ball manipulation, and impact-rich contact dynamics across a continuous, dynamic behavioral spectrum.\n\nYet existing approaches either cover only a limited set of skills, or forego motion priors entirely and produce unnatural behaviors, leaving the combination of a unified skill set and human-like motion quality unaddressed.\n\nWe present soccerbot, a hierarchical reinforcement learning framework that resolves both limitations through a structured latent motion prior distilled from large-scale human soccer motion capture data.\n\nBy constraining policy learning within this dynamically plausible motion manifold, a single skill-conditioned policy naturally learns to perform moving, dribbling, trapping, and kicking in a unified formulation, while inherently producing human-like motion and fluid transitions during commanded skill switching.\n\nAugmented by robustness-oriented simulation design, soccerbot transfers zero-shot to the Unitree G1 humanoid robot, demonstrating agile, natural, and robust execution of the full soccer skill repertoire under real-world conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents soccerbot, a hierarchical reinforcement learning framework that distills a structured latent motion prior from large-scale human soccer motion capture data. A skill-conditioned policy learns moving, dribbling, trapping, and kicking within this motion manifold, with fluid commanded skill switching. The authors report zero-shot transfer to a Unitree G1 humanoid, supported by robustness-oriented simulation design, and demonstrate execution of the soccer skill repertoire under real-world conditions.",
+          "zh": "论文提出 soccerbot，一种分层强化学习框架，利用大规模人类足球动作捕捉数据提炼结构化潜在运动先验，并在该运动空间中学习技能条件策略。作者称，该策略统一实现移动、带球、接球和踢球，并支持技能切换时的流畅动作。通过面向鲁棒性的仿真设计，方法零样本迁移至 Unitree G1，并在真实环境中展示足球技能执行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1893,7 +1897,11 @@
             "heading": "",
             "text": "High-quality teleoperation datasets are costly to collect, particularly for hard tasks. We observe that many tasks exhibit directional asymmetry: completing the forward hard task is difficult, whereas reversing it by relaxing or disrupting the environment is comparatively easy.\n\nThis suggests that reversed easy-task trajectories can serve as a scalable supervision signal for the hard task, reducing the cost of manual demonstration collection. However, reversed data can be noisy, and directly training on it may yield suboptimal policies.\n\nTo enable largely automated acquisition and effective use of reversed data, we propose a teleoperation-cost effective framework for hard policy learning via temporal reversal of easy tasks, consisting of three key components: a closed-loop data collection pipeline that alternates between hard-task and easy-task policies to autonomously reset the environment and generate diverse trajectories; a hierarchical data refinement pipeline that temporally inverts easy-task rollouts and filters low-quality motion using kinematic priors and a critic-guided advantage filter; and an iterative policy learning method that trains the hard-task policy using both initial reversed easy-task demonstrations and the filtered reversed data in a continuous online learning loop.\n\nBy combining automated collection, hierarchical refinement, and iterative learning, our method enables scalable, reliable training of complex, high-precision manipulation tasks.\n\nAcross two simulated benchmarks and real-robot experiments, we demonstrate that our method improves hard-task success rates with higher data efficiency and more stable training compared to reversal-based and reinforcement-learning baselines, without requiring extensive hard-task teleoperation."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a framework for learning hard-task policies from trajectories of easier reversed tasks, aiming to reduce costly teleoperation. Its pipeline alternates hard- and easy-task policies for data collection, temporally reverses easy-task rollouts, filters them using kinematic priors and a critic-guided advantage filter, and iteratively trains the hard-task policy online. Across two simulated benchmarks and real-robot experiments, the authors report higher hard-task success, better data efficiency, and more stable training than reversal-based and reinforcement-learning baselines, without extensive hard-task teleoperation.",
+          "zh": "论文针对困难操作任务中遥操作示范成本高的问题，提出从较易反向任务轨迹学习困难策略的框架。方法交替使用困难与简单任务策略收集轨迹，将简单任务轨迹时间反转，并通过运动学先验和评论器引导的优势筛选进行提炼，再以在线迭代方式训练。作者报告，在两个仿真基准和真实机器人实验中，该方法相较反转学习及强化学习基线提高困难任务成功率、数据效率和训练稳定性，且无需大量困难任务遥操作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1924,7 +1932,11 @@
             "heading": "",
             "text": "Robot policies that remain broadly competent after deployment can degrade when dynamics, contact, geometry, actuation, or sensing differ from source conditions. We study post-hoc adaptation through structured output-space adapters: compact transformations of samples from a frozen base policy.\n\nWe introduce Warp, a context-conditioned monotone bijective spline that enables nonlinear sample-dependent reshaping while preserving per-dimension ordering; Translation and Affine provide location-only and location--scale references.\n\nAcross four ManiSkill tasks with controlled deployment shifts, Warp achieves the strongest recovery in a matched evolution-strategy (ES) adapter study, outperforming controls for spline parameterization, location--scale adaptation, and generic nonlinear capacity.\n\nUnder PPO, the ordering becomes task dependent, showing that richer adapter structure does not automatically translate into better adaptation under a different optimizer. Finally, we test the practical benefit of this approach on physical SO101 peg insertion.\n\nWithin an interaction-limited RLPD/SAC pipeline, Warp achieves comparable success to a strong stochastic residual while reducing median successful cycle time by approximately 30%.These results identify structured output-space adaptation as a useful design space for adapting frozen robot policies."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies post-hoc adaptation of frozen robot policies under deployment shifts and introduces Warp, a context-conditioned monotone bijective spline for nonlinear reshaping of policy samples while preserving per-dimension ordering. Across four ManiSkill tasks with controlled shifts, Warp achieves the strongest recovery in a matched evolution-strategy adapter study; results under PPO vary by task. In physical SO101 peg insertion using an interaction-limited RLPD/SAC pipeline, it achieves success comparable to a strong stochastic residual while reducing median successful cycle time by approximately 30%.",
+          "zh": "论文研究冻结机器人策略在部署条件变化后如何进行事后适配，并提出 Warp：一种受上下文条件控制的单调双射样条，用于非线性重塑基础策略输出样本，同时保持各维顺序。在四项 ManiSkill 任务的受控部署偏移下，Warp 在匹配的进化策略适配比较中恢复效果最强；PPO 下结果则因任务而异。实体 SO101 插销插入实验中，在交互受限的 RLPD/SAC 流程里，Warp 成功率与强随机残差方法相当，成功周期中位时间约减少30%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1955,7 +1967,11 @@
             "heading": "",
             "text": "Ground robots operating in temperate forests suffer from systematic LiDAR occlusions caused by tree trunks, creating persistent blind regions that degrade traversability estimation.\n\nIn this paper, we propose FOSCo-Net, a self-supervised voxel completion framework that learns to reconstruct occluded geometry from a single scan using temporally accumulated observations as automatic supervision, and we evaluate cylindrical and Cartesian ego-centric grids with multiple decoder designs.\n\nFOSCo-Net consistently improves reconstruction quality and traversal safety, with a gated skip decoder achieving the most reliable performance and significantly reducing false obstacle predictions compared to baselines."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents FOSCo-Net, a self-supervised voxel completion framework addressing LiDAR occlusions caused by tree trunks in temperate forests and their impact on traversability estimation for ground robots. It reconstructs occluded geometry from a single scan, using temporally accumulated observations as automatic supervision. The authors evaluate cylindrical and Cartesian ego-centric grids with several decoder designs. They report consistent gains in reconstruction quality and traversal safety, with a gated skip decoder providing the most reliable performance and significantly reducing false obstacle predictions compared with baselines.",
+          "zh": "论文提出 FOSCo-Net，用于缓解温带森林中树干造成的激光雷达遮挡及其对地面机器人可通行性估计的影响。该自监督体素补全框架从单次扫描重建被遮挡几何，并以时间累积观测作为自动监督。作者评估了柱坐标和笛卡尔自我中心网格及多种解码器设计；报告称，FOSCo-Net持续提升重建质量和通行安全性，其中门控跳跃解码器表现最可靠，并较基线显著减少了错误障碍物预测。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
