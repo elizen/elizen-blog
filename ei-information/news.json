@@ -93,7 +93,11 @@
             "heading": "",
             "text": "A robot action can satisfy shape and range constraints yet carry the wrong semantics: axes may be permuted, signs inverted, rotations rescaled, or gripper polarity reversed. We study learned state-action-effect relations as offline contracts for detecting these mismatches and ranking their likely fields.\n\nClean held-out transitions calibrate alarms; a fixed inverse vocabulary supports closed-set localization.\n\nOn ten LIBERO Spatial tasks comprising 432 source episodes, a capacity-controlled comparison at 2.5% empirical clean false-positive rate gives 46.1% recall for a ridge forward residual, 61.0% for a four-component joint Gaussian mixture, and 65.7% for the exact conditional of that same mixture.\n\nThe joint score retains a 14.9 percentage-point advantage over ridge, while conditioning improves recall by a further 4.7 points. Joint scoring instead has higher localization: 95.8% versus 94.6%.These matched-rate comparisons are retrospective diagnostics, not deployment calibration guarantees.\n\nEarlier Object/Goal results broaden tasks within the LIBERO convention; DROID, all three HYDRA tasks, short temporal faults, small offsets, exact repair, and simulated mitigation fail their respective gates, while xArm contributes one task only.\n\nThe evidence supports a bounded offline diagnostic and a detection-localization tradeoff, rather than joint-density superiority or cross-robot safety."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies learned state-action-effect relations as offline contracts for detecting semantic mismatches in robot action interfaces and ranking likely faulty fields. In a retrospective comparison on ten LIBERO Spatial tasks and 432 source episodes, the exact conditional of a joint mixture achieves higher recall than the joint mixture and a ridge residual at a fixed empirical clean false-positive rate. Joint scoring has slightly higher localization. The authors stress these results are not deployment calibration guarantees; evidence is bounded to offline diagnostics and a detection-localization tradeoff.",
+          "zh": "本文研究利用学习到的状态—动作—效果关系作为离线契约，检测机器人动作接口中形状和范围正确、语义却不匹配的问题，并对可能出错的字段排序。在 LIBERO Spatial 十项任务、432 个源 episode 的回顾性比较中，固定经验干净误报率下，精确条件混合模型的召回率高于联合混合模型和岭回归残差；联合评分的定位率略高于条件评分。作者强调这些是回顾性诊断而非部署校准保证。其他基准、故障类型及修复或缓解测试多未通过相应门槛，因此证据仅支持有限的离线诊断能力及检测与定位间的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -124,7 +128,11 @@
             "heading": "",
             "text": "Rotation representations are foundational in fields such as computer graphics, robotics, and machine learning, where precise and efficient modeling of 3D orientations is critical.\n\nThis paper comprehensively investigates diverse representations of the special orthogonal group $SO（3）$, such as Euler angles, axis-angle vectors, quaternions, rotation matrices, exponential maps, and emerging continuous and probabilistic methods, evaluating their mathematical formulations, continuity, susceptibility to gimbal lock, computational efficiency, storage requirements, interpolation properties, and composition operations, while integrating detailed algebraic insights with practical applications in fields like animation, pose estimation, inertial navigation, 3D shape registration, and neural networks.\n\nEmpirical evidence highlights quaternions' dominance due to their compactness and computational efficiency, while alternatives like 6D continuous representations and matrix Fisher distributions provide enhanced continuity and uncertainty modeling.\n\nFuture research could explore hybrid methods and thorough large-scale evaluations to help build a solid foundation for improving rotation representation techniques."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper compares representations of the 3D rotation group SO(3), including Euler angles, axis-angle vectors, quaternions, matrices, exponential maps, and continuous and probabilistic approaches. It discusses their mathematical formulations, continuity, gimbal-lock susceptibility, computational and storage costs, interpolation, composition, and applications. The authors report empirical evidence favoring quaternions for compactness and computational efficiency, while 6D continuous representations and matrix Fisher distributions offer advantages in continuity and uncertainty modeling. They suggest future work on hybrid methods and large-scale evaluations.",
+          "zh": "本文比较三维旋转群 SO(3) 的多种表示，包括欧拉角、轴角、四元数、旋转矩阵、指数映射以及连续和概率方法，讨论其数学形式、连续性、万向节锁风险、计算与存储效率、插值和复合性质，并联系动画、姿态估计、惯性导航、三维形状配准和神经网络等应用。文中称实证证据显示四元数因紧凑和计算效率而占优，同时 6D 连续表示和矩阵 Fisher 分布在连续性与不确定性建模方面各有优势。作者提出未来可研究混合方法并开展大规模评估。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -155,7 +163,11 @@
             "heading": "",
             "text": "Low-cost four-degree-of-freedom (DoF) arms are among the most accessible robotic platforms.\n\nBut they are one joint short for picking up in situations where objects are at arbitrary orientations, a task that appears to require five degrees of freedom: the planar position (x and y), the height (z), a wrist rotation to align the gripper with the object, and gripper actuation, of which a four-DoF arm lacks the wrist rotation.\n\nThis work uses perception and motion planning so that such an arm, a roughly $200 Waveshare RoArm-M2-S under a fixed overhead camera, can detect and color-sort writing utensils without that joint.\n\nA YOLO11n-OBB (You Only Look Once, oriented bounding box) detector locates each writing utensil; camera intrinsics and an ArUco reference pose convert its pixel coordinates to robot coordinates; and a color classifier labels it.\n\nThe detected orientation angle determines the motion strategy: utensils close to the arm's fixed approach direction are picked up directly, and those at steeper angles are reoriented via corrective sweeps until they are graspable, after which they are picked up and sorted into the assigned color bin.\n\nIn 196 single-utensil trials, the 98 that started beyond 45 degrees from that direction all became graspable within four sweeps (130 total).Overall, 176 (89.8%) ended in the correct bin; 19 of 20 failures were slipped or missed grasps, one a mislabeled color.\n\nFor the seven utensils tested in this setup, corrective sweeps brought every steeply misaligned utensil into a graspable orientation on an arm with no wrist joint."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a vision-guided method for detecting, reorienting, and color-sorting writing utensils with a low-cost four-degree-of-freedom arm and a fixed overhead camera. The system estimates utensil orientation and uses direct pickup or corrective sweeps before grasping. In 196 single-utensil trials, all 98 items initially more than 45 degrees from the fixed approach direction became graspable within four sweeps; 176 trials ended with placement in the correct color bin. The reported conclusion is limited to seven utensils tested in this setup.",
+          "zh": "本文展示一种在固定俯视相机下，用低成本四自由度机械臂视觉识别并按颜色分拣书写工具的方法。系统检测工具方向，将像素位置转换为机器人坐标，并依据方向选择直接抓取或通过校正扫动重新定向。在 196 次单件试验中，98 件初始偏离固定接近方向超过 45 度的工具均在四次扫动内达到可抓取姿态；总体有 176 件进入正确颜色箱。作者报告的结论限于该设置中测试的七种工具。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -186,7 +198,11 @@
             "heading": "",
             "text": "Multi-agent reinforcement learning is a key method for training multi-robot systems. Through rewarding or punishing robots over a series of episodes according to their performance, they can be trained and then deployed in the real world. However, poorly trained policies can lead to unsafe behaviour during early training stages.\n\nWe introduce Multi-Agent Reinforcement Learning guided by language-based Inter-robot Negotiation (MARLIN), a hybrid framework in which large language models provide high-level planning before the reinforcement learning policy has learned effective behaviours. Robots use language models to negotiate actions and generate plans that guide policy learning.\n\nThe system dynamically switches between reinforcement learning and language-model-based negotiation during training, enabling more effective exploration. MARLIN is evaluated using both simulated and physical robots with local and remote language models.\n\nResults show that, compared to standard multi-agent reinforcement learning, the hybrid approach achieves higher performance in early training with limited impact on the final performance. The code is available at https://github.com/SooratiLab/MARLIN."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces MARLIN, a hybrid framework that uses language-model-based inter-robot negotiation to guide multi-agent reinforcement learning. Robots negotiate actions and produce plans to support policy learning before effective behaviors have been learned, with the system switching dynamically between negotiation and reinforcement learning during training. Evaluations use simulated and physical robots with local and remote language models. The authors report better performance than standard multi-agent reinforcement learning early in training, with limited impact on final performance.",
+          "zh": "本文提出 MARLIN，一种以语言模型驱动机器人间协商来引导多智能体强化学习的混合框架。机器人通过语言模型协商动作并生成计划，在训练早期为策略学习提供指导；训练过程中，系统会在强化学习与语言协商之间动态切换。作者在仿真和实体机器人上使用本地及远程语言模型进行评估，并报告相较标准多智能体强化学习，该方法在早期训练中表现更好，对最终性能影响有限。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
