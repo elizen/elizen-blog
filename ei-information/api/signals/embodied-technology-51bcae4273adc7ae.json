@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-10-14T04:50:49.134541+00:00",
-    "updated_at": "2026-11-05T13:33:14.970259+00:00",
+    "updated_at": "2026-11-05T14:36:55.766876+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2610.18447v3",
         "title": "Thinker-WM: A Unified World Model with Shared Multimodal Representations for Embodied Intelligence",
         "published_at": "2026-10-13",
-        "checked_at": "2026-11-05T13:33:02.671778+00:00",
+        "checked_at": "2026-11-05T14:36:42.040133+00:00",
         "evidence_role": "primary",
         "excerpt": "World models have emerged as a promising paradigm for embodied AI, yet existing systems often remain fragmented in the modalities they model and the functions they support. In particular, visual dynamics, geometric structure, and executable action are commonly coupled through separate interfaces or downstream modules rather than being jointly represented and evolved within a shared dynamics model. In this work, we present Thinker-WM, a unified multimodal world model that jointly models and generates RGB, metric depth, and robot action through a shared intermediate Unified Dynamics Transformer with modality-specific encoders and decoders. The model performs multimodal unification at the representation level: appearance, geometry, and action are transformed into a common dynamic representation and jointly evolved by shared parameters, while their distinct output structures are preserved. The same parameterization supports multiple functions, including joint video-action generation, world prediction, policy inference, action-conditioned generation, video-to-action generation, and inverse dynamics. To examine whether the shared representation captures action-related information, we int"
       }
