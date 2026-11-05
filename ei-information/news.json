@@ -233,7 +233,11 @@
             "heading": "",
             "text": "Diffusion-based Vision-Language-Action (VLA) policies have demonstrated strong generalization in robot manipulation, but their deployment can remain unreliable due to spurious visual reliance and stochastic action generation, leading to grounding failures and kinematically unstable behaviors.\n\nWe introduce Selected Diffusion Noise (SDN), a training-free method that treats diffusion noise as a controllable degree of freedom for improving test-time reliability.\n\nSDN samples multiple candidate action chunks and applies two-stage selection: it first filters candidates based on task-relevant visual grounding using a counterfactual negative set, then selects the kinematically most stable chunk based on JerkRMS.\n\nExperiments on three VLA policies across both simulation and real-world environments show improvements of 8-10% and 18.33%, respectively, demonstrating SDN's effectiveness for test-time improvement."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Selected Diffusion Noise (SDN), a training-free test-time method that treats diffusion noise as a controllable factor for improving VLA policy reliability. It samples candidate action chunks, filters them using task-relevant visual grounding and a counterfactual negative set, then selects the most kinematically stable chunk using JerkRMS. The authors report improvements across three policies in simulation and real-world environments, with gains stated as 8–10% and 18.33%, respectively.",
+          "zh": "论文提出免训练的测试时方法 Selected Diffusion Noise（SDN），将扩散噪声作为可调因素，以提高视觉—语言—动作策略的可靠性。方法先用反事实负样本集按任务相关视觉定位筛选候选动作片段，再依据 JerkRMS 选择运动学上更稳定的片段。作者报告，三种策略在仿真和真实环境中的实验均显示改进；摘要称改进幅度分别为 8–10% 和 18.33%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -264,7 +268,11 @@
             "heading": "",
             "text": "Conventional robot arms can be extremely heavy compared with the everyday objects they manipulate, creating a significant inertia mismatch at contact. Even a small accidental bump from a heavy arm can knock a light object out of place.\n\nModern learning methods have nevertheless demonstrated a wide range of successful manipulation behaviors on these platforms, suggesting that even extreme inertia mismatch can be overcome with sufficient data.\n\nHowever, it remains unclear whether high inertia imposes a hidden cost on learning, potentially worsening scaling with data or lowering the performance ceiling of modern robot learning methods. We investigate this question through controlled simulation experiments that vary robot and object masses.\n\nWe find that reinforcement learning succeeds across a broad range of mass combinations, while behavior cloning learns more reliable policies when a lighter robot manipulates a heavier object. Heavier robots require more demonstrations to attain the same performance as lighter robots.\n\nFinally, because new hardware is rarely an option, we explore ways to lower an existing arm's inertia at contact with existing hardware, either by choosing a lower-inertia workspace before collecting data or by steering the demonstrator toward lower-inertia configurations during the task.\n\nIn both cases, the lower-inertia demonstrations are imitated more reliably. Project website: https://younghyopark.me/inertia-mismatch/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper uses controlled simulation experiments to study how robot-object mass differences affect policy learning. The authors report that reinforcement learning succeeds across a broad range of mass combinations, while behavior cloning produces more reliable policies when a lighter robot handles a heavier object. Heavier robots require more demonstrations to match lighter robots' performance. The study also explores reducing contact inertia with existing hardware by selecting a lower-inertia workspace or guiding demonstrators toward lower-inertia configurations; demonstrations from both approaches are imitated more reliably.",
+          "zh": "论文通过受控仿真实验研究机器人与物体质量差异对策略学习的影响。作者报告，强化学习在较广泛的质量组合下均能成功；行为克隆在轻型机器人操作较重物体时学到的策略更可靠。较重机器人需要更多示范，才能达到轻型机器人的同等表现。研究还探索利用现有硬件降低接触时惯性：采集数据前选择低惯性工作空间，或引导示范者采用低惯性构型；两种情况下，低惯性示范都更容易被模仿。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -295,7 +303,11 @@
             "heading": "",
             "text": "Action-conditioned robot world models must respond precisely to robot trajectories while preserving realistic visual dynamics, yet learning both from heterogeneous robot videos remains challenging.\n\nSimulation offers structured motion supervision, but appearance differences hinder direct transfer, and inaccurate simulation predictions can misguide real-video generation. We present SimForcing, a simulation-guided framework that uses simulation both as a source of transferable motion knowledge and as a controllable reference for prediction.\n\nFirst, we transfer motion knowledge from a simulation teacher through latent-motion distillation, aligning temporal changes in latent space to internalize motion priors while mitigating the influence of appearance differences.\n\nSecond, we introduce multi-block simulation conditioning with condition dropout to exploit predicted simulation trajectories without relying excessively on their accuracy.\n\nOur simulation-conditioning classifier-free guidance scheme unifies these two ideas by balancing predictions based on internalized motion knowledge with those additionally guided by simulation latents. The jointly trained student generates both simulation conditions and real-domain videos, requiring no additional world model at inference.\n\nOn Bridge, SimForcing achieves the best PSNR, SSIM, LPIPS, and FVD among the compared methods without external embodied pretraining. Evaluation on InternData-A1 further supports its applicability across robot datasets.\n\nMoreover, using our trained world model to initialize a vision-language-action model improves LIBERO success, suggesting its utility for downstream policy learning. https://github.com/Wang-Xiaodong1899/SimForcing"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SimForcing, a framework for learning real-domain robot world models using simulation motion supervision. It transfers motion knowledge through latent-motion distillation and uses multi-block simulation conditioning with condition dropout, reducing dependence on prediction accuracy. The jointly trained student generates simulation conditions and real-domain videos without an additional world model at inference. The authors report the best PSNR, SSIM, LPIPS, and FVD among compared methods on Bridge, without external embodied pretraining; evaluation on InternData-A1 supports cross-dataset applicability. Initializing a VLA model with the world model also improved LIBERO success.",
+          "zh": "论文提出 SimForcing，一种利用仿真运动监督学习真实域机器人世界模型的框架。方法通过潜在运动蒸馏迁移运动知识，并以带条件丢弃的多块仿真条件输入利用预测轨迹，同时降低对仿真准确性的依赖。联合训练的学生模型可生成仿真条件和真实域视频，推理时无需额外世界模型。作者称，在 Bridge 上，该方法在所比较方法中取得最佳 PSNR、SSIM、LPIPS 和 FVD，且未使用外部具身预训练；InternData-A1 评估支持其跨数据集适用性。用其初始化视觉—语言—动作模型也提高了 LIBERO 成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
