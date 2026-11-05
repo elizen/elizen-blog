@@ -338,7 +338,11 @@
             "heading": "",
             "text": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop.\n\nWe introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model.\n\nTraining relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv.\n\nAblations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PDRVLA, a model that extracts physical-dynamics tokens from vision-language features to condition robot action generation without generating future videos online. Its lightweight module learns by predicting future RGB, depth, and optical-flow features, with auxiliary supervision from a frozen pretrained video world model. Training uses publicly available data expanded through human-to-robot synthesis and annotations. Across four simulation benchmarks, the reported success rates are 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin 2.0, and 81.5% on SimplerEnv. Ablations assess several supervision and conditioning choices.",
+          "zh": "论文介绍 PDRVLA，一种在视觉—语言特征中提取物理动态 token、用于条件化机器人动作生成的模型，无需在线生成未来视频。其轻量物理动态模块通过直接预测未来 RGB、深度和光流特征学习，并由冻结的预训练视频世界模型提供辅助监督。训练仅使用公开数据，并通过人到机器人合成、子任务标注和具身思维链标注扩充。在四个仿真基准上，论文报告了 LIBERO、LIBERO-Plus、RoboTwin 2.0 和 SimplerEnv 的成功率分别为 99.3%、89.9%、93.6% 和 81.5%。消融实验考察了世界模型监督及若干训练条件对预测和动作成功率的影响。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -369,7 +373,11 @@
             "heading": "",
             "text": "Vision-Language-Action Models (VLAs) enable robots to perform manipulation tasks by leveraging Vision-Language Models (VLMs) to process visual observations and language instructions.\n\nHowever, the action prediction objective itself lacks fine-grained task-specific perceptual supervision, making it prone to relying on task-irrelevant visual shortcuts, leading attention away from target objects and key interaction areas, thereby limiting its operational performance and generalization ability.\n\nTo address this, we propose Automatic Perception-Guided Attention Alignment for Robot Manipulation ($A^3$-VLA), a framework that derives task-specific visual guidance from the manipulation process itself.\n\nSpecifically, $A^3$-VLA first generates heuristic candidate regions for target objects and the robot from interaction-induced visual changes, and refines them with a visual segmentation model offline.\n\nThese regions serve as explicit perceptual guidance through two complementary objectives: an attention allocation loss that encourages sufficient focus on task-critical regions when language or robot state tokens query the visual input, and a contrastive learning loss that aligns the representations of candidate target regions with language instructions while separating them from task-irrelevant regions.\n\nExtensive experiments on simulated and real-world manipulation tasks demonstrate that $A^3$-VLA consistently improves multiple VLA backbones, with an average success rate gain of 6.5% - 25.2% across benchmarks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes A³-VLA, which derives task-specific visual guidance from changes observed during manipulation. It generates candidate regions for target objects and the robot, then refines them offline with a visual segmentation model. An attention-allocation loss encourages language or robot-state tokens to focus on task-critical regions, while a contrastive loss aligns target-region representations with instructions and separates them from irrelevant regions. The authors report improvements across multiple VLA backbones on simulated and real-world manipulation tasks, with average success-rate gains of 6.5% to 25.2% across benchmarks.",
+          "zh": "论文提出 A³-VLA，通过从操作过程产生的视觉变化中生成目标物体和机器人区域候选，再用视觉分割模型离线细化，为视觉—语言—动作模型提供任务相关的视觉引导。方法使用两种目标：注意力分配损失鼓励语言或机器人状态 token 关注任务关键区域；对比学习损失使候选目标区域表示与语言指令对齐，并与无关区域区分。作者称，在仿真和真实操作任务中，该框架提升了多个 VLA 主干模型的表现，基准上的平均成功率增幅为 6.5% 至 25.2%。摘要未给出各任务或各模型的单独结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
