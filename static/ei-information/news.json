@@ -1096,7 +1096,11 @@
             "heading": "",
             "text": "Pedestrians increasingly encounter robots in urban public spaces without interacting with them, but how robots change the perceived safety of a street remains unclear. We examine how robot presence and type affect perceived safety across urban contexts.\n\nWe generate 18 images of Seoul streets that vary in time of day, road class, and robot condition (no robot, a delivery robot, or a humanoid).Two multimodal large language models (MLLMs), Qwen3.8-27B and Gemma4-26B, each conditioned on 500 synthetic personas, choose the safer image in each pair, and 25 human respondents complete the same task.\n\nBoth models prefer streets without robots and favor the delivery robot over the humanoid. Robots are chosen more often at night and less often by older personas, whereas road class has smaller effects. In the model rationales, the delivery robot appears as a physical obstacle, whereas the humanoid appears as either a threat or a source of protection.\n\nLike humans, both models chose robots more often at night, but chose the humanoid over the delivery robot far less often, and Gemma showed a night effect for the humanoid about three times that of humans.\n\nThese results show that the effect of a robot on perceived safety depends on when it appears, and that persona-conditioned MLLMs capture only part of human judgments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study examines how robot presence and type affect perceived street safety. Researchers created images of Seoul streets varying by time, road class, and robot condition, then had two multimodal language models conditioned on synthetic personas and 25 human respondents choose between image pairs. Both models generally preferred streets without robots and favored delivery robots over humanoids. Robots were chosen more often at night and less often by older personas. The authors conclude that persona-conditioned models capture only part of human judgments.",
+          "zh": "研究考察机器人出现与类型如何影响城市街道的安全感知。研究者制作了首尔街景图像，改变时段、道路类别及机器人条件，并让两种多模态大语言模型在合成角色设定下与 25 名人类受访者进行成对选择。模型总体更偏好没有机器人的街道，并更常选择配送机器人而非人形机器人；夜间更常选择有机器人的街道，年长角色较少如此。理由中，配送机器人被视为障碍，人形机器人则被视为威胁或保护。作者指出，角色设定模型只捕捉了部分人类判断。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1127,7 +1131,11 @@
             "heading": "",
             "text": "Myoelectric Control Systems (MCSs) enable voluntary control of wearable robots through muscle activity. However, intention decoding, assistance shaping, and low-level actuator control are often not explicitly distinguished, making their contributions difficult to evaluate and compare.\n\nThis review introduces a functional decoder-shaper-controller framework for continuous myoelectric control of upper-limb exoskeletons.\n\nThe decoder estimates an intention-related variable from surface electromyography (sEMG), the shaper maps it to a control reference according to an assistance policy, and the controller realizes that reference through actuator control.\n\nThis decomposition separates intention estimation from assistance-policy design and enables comparison of heterogeneous architectures. Representative approaches are critically examined in terms of module design, calibration, and evaluation.\n\nThe analysis highlights that the shaper, despite determining the magnitude and shape of assistance, lacks established design and tuning methodologies and is often embedded within the decoder or controller.\n\nKey open issues include inconsistent reporting of assistance levels, limited use of interaction-aware stability and passivity tools, and insufficient validation across degrees of freedom, users, and tasks.\n\nBuilding on these findings, this review provides design guidelines for systematic module-wise tuning and identifies future research priorities to bridge the gap between accurate intention decoding and safe, effective, and generalizable assistance under real-world operating conditions."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This review proposes a decoder-shaper-controller framework for continuous myoelectric control of upper-limb exoskeletons. The decoder estimates an intention-related variable from surface electromyography, the shaper maps it to a reference under an assistance policy, and the controller drives the actuator. The decomposition is intended to distinguish intention estimation from assistance design and support comparison across architectures. The review identifies limited methods for designing and tuning shapers, inconsistent assistance reporting, limited interaction-aware stability analysis, and insufficient validation across users, tasks, and degrees of freedom.",
+          "zh": "这篇综述提出用于上肢外骨骼连续肌电控制的“解码器—整形器—控制器”框架：解码器从表面肌电估计意图变量，整形器按辅助策略映射为控制参考，控制器再驱动执行器。该划分旨在区分意图估计与辅助策略设计，便于比较不同架构。综述指出，决定辅助幅度与形态的整形器缺乏成熟设计和调参方法，且常与其他模块混合；报告标准不一、交互稳定性工具应用有限，以及跨自由度、用户和任务验证不足，仍是开放问题。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1158,7 +1166,11 @@
             "heading": "",
             "text": "Integrating six-axis tactile feedback into robotic interfaces requires compact sensors with accurate load measurement and rapid online reconstruction. This paper presents LumiTac, a low-profile, camera-free optoelectronic tactile sensor combining spatially distributed illumination with spectral encoding.\n\nFive photoemitters and five RGBW photoreceivers are mounted on opposing circuit boards coupled through translucent silicone. Load-induced interlayer motion modulates the internal light field under compression, shear, bending, and torsion.\n\nThe sensing head measures 12 mm in diameter and 4.75 mm in thickness, weighs less than 2 g, and has a component cost of approximately USD 7.A compact multilayer perceptron reconstructs three force and three moment components from 20 optical channels.\n\nIndependent testing yielded coefficients of determination (R-squared) of 0.9657-0.9941, with mean absolute errors of 0.054-0.190 N for forces and 0.304-1.419 mN m for moments. Online prediction achieved an average update rate of 303.57 Hz and a median software processing latency of 0.722 ms.\n\nExperiments involving combined loading, light weights, and rapid tapping evaluated load tracking, sensitivity to small forces, and transient response, respectively. Robotic demonstrations further validated its applicability to tactile-guided manipulation and physical human-robot interaction.\n\nThis study paves the way for compact, high-rate optical tactile sensing in robotic manipulation and human-robot interaction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents LumiTac, a low-profile, camera-free optoelectronic tactile sensor that uses distributed illumination and spectral encoding to detect internal light-field changes caused by compression, shear, bending, and torsion. A compact multilayer perceptron reconstructs three force and three moment components from 20 optical channels. Independent tests report reconstruction accuracy, online update rate, and software latency. Experiments assess combined loading, light weights, and rapid tapping, while robotic demonstrations show applications in tactile-guided manipulation and physical human-robot interaction.",
+          "zh": "论文介绍 LumiTac，一种无相机、低剖面的光电触觉传感器，以分布式照明和光谱编码感知压缩、剪切、弯曲及扭转引起的内部光场变化。传感器通过 20 个光学通道和多层感知机重建三向力与三向力矩。独立测试报告了决定系数、力与力矩平均绝对误差，以及在线更新率和软件处理延迟。实验评估了复合载荷、轻物体和快速敲击下的表现；机器人演示用于展示其在触觉引导操作及人机物理交互中的应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
