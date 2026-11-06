@@ -6890,6 +6890,43 @@
     },
     {
       "archive": {
+        "recorded_at": "2026-11-06"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "standard",
+        "source_channel": "website",
+        "source_name": "工信部标准公告",
+        "standard": {
+          "organization": "工信部标准公告"
+        }
+      },
+      "format": "archive_record",
+      "id": "archive-article-5fd793d780204e188ea82fec205193bc",
+      "intro": "为建立统一的机器人产品“身份证”，规范机器人产品生产制造，支撑机器人行业安全治理，我们研究编制了《机器人产品标识码管理暂行办法（征求意见稿）》。",
+      "published_at": "2026-11-06",
+      "reading": {
+        "mode": "official",
+        "points": [
+          "为建立统一的机器人产品“身份证”，规范机器人产品生产制造，支撑机器人行业安全治理，我们研究编制了《机器人产品标识码管理暂行办法（征求意见稿）》。",
+          "现公开征求社会各界意见，若有意见建议，请在公示期内将书面意见反馈至工业和信息化部装备工业一司（智能制造处）。",
+          "公示时间：2026年11月6日至2026年12月5日 传 真： 附件：《机器人产品标识码管理暂行办法（征求意见稿）》 工业和信息化部装备工业一司 2026年11月5日"
+        ],
+        "sections": [
+          {
+            "heading": "",
+            "text": "为建立统一的机器人产品“身份证”，规范机器人产品生产制造，支撑机器人行业安全治理，我们研究编制了《机器人产品标识码管理暂行办法（征求意见稿）》。现公开征求社会各界意见，若有意见建议，请在公示期内将书面意见反馈至工业和信息化部装备工业一司（智能制造处）。公示时间：2026年11月6日至2026年12月5日 传 真： 附件：《机器人产品标识码管理暂行办法（征求意见稿）》 工业和信息化部装备工业一司 2026年11月5日"
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-2617e2218e618c88f850",
+        "url": "https://www.miit.gov.cn/gzcy/yjzj/art/2026/art_ef16149bd27e4d7f95e5537e7dc68fdc.html"
+      },
+      "title": "关于公开征求《机器人产品标识码管理暂行办法（征求意见稿）》意见的公示"
+    },
+    {
+      "archive": {
         "recorded_at": "2026-09-28"
       },
       "body": "",
@@ -10037,6 +10074,39 @@
         "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_d109e2b6dc4844cc902a1f6f49712f67.html"
       },
       "title": "2026年亚太经合组织（APEC）数字和人工智能部长会议新闻发布会在成都召开"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-11-06"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "paper",
+        "paper": {
+          "url": "http://arxiv.org/abs/2611.07306v1"
+        },
+        "source_channel": "website",
+        "source_name": "arXiv具身智能论文"
+      },
+      "format": "archive_record",
+      "id": "archive-article-8a19a71ebc424cbba0982152bfdcab7f",
+      "intro": "Millimeter-wave (mmWave) communications are essential for supporting massive multimodal sensory data exchange in Embodied Artificial Intelligence (EAI) systems. However, fast and reliable beam selection for mmWave communication remains a critical bottleneck due to the prohibitive overhead associated with conventional beam training. Although location-aided beam prediction offers a promising alternative, its performance is often limited by localization errors and the need for extensive training data. To address these challenges, we propose…",
+      "published_at": null,
+      "reading": {
+        "mode": "abstract",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Millimeter-wave (mmWave) communications are essential for supporting massive multimodal sensory data exchange in Embodied Artificial Intelligence (EAI) systems. However, fast and reliable beam selection for mmWave communication remains a critical bottleneck due to the prohibitive overhead associated with conventional beam training.\n\nAlthough location-aided beam prediction offers a promising alternative, its performance is often limited by localization errors and the need for extensive training data. To address these challenges, we propose a novel framework termed In-Context Learning driven Cross-Validation Conformal Prediction (ICL+CVCP) for beam prediction.\n\nThe proposed framework utilizes the training-free adaptation capability of ICL, enabling effective operation with only a small number of demonstration samples and eliminating the need for large-scale data collection and model fine-tuning.\n\nIn addition, the CVCP module constructs compact, distribution-free candidate beam sets that provably contain the optimal beam with a user-defined probability.\n\nExperimental results confirm that ICL+CVCP consistently satisfies the desired empirical coverage while significantly reducing pilot overhead and computational latency, thereby meeting the stringent reliability and efficiency requirements of EAI applications."
+          }
+        ]
+      },
+      "source": {
+        "id": "legacy-3225d1718dfa151d8ca2",
+        "url": "http://arxiv.org/abs/2611.07306v1"
+      },
+      "title": "Few-Shot Beam Selection for Embodied AI via In-Context Learning and Conformal Prediction"
     },
     {
       "archive": {
