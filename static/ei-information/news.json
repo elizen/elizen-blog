@@ -225,7 +225,11 @@
             "heading": "",
             "text": "Reinforcement learning (RL) promises to unlock capabilities beyond imitation learning for Vision--Language--Action (VLA) models, but its requirement for massive real-world interaction prevents direct deployment on physical robots.\n\nRecent work attempts to use learned world models as simulators for policy optimization, yet closed-loop imagined rollouts inevitably suffer from hallucination and long-horizon error accumulation. Such errors not only degrade visual fidelity, but also mislead policy optimization by providing unreliable learning signals.\n\nWe propose WoVR, a reliable world-model-based RL framework for post-training VLA policies. Instead of assuming a faithful world model, WoVR explicitly regulates how RL interacts with imperfect imagined dynamics.\n\nIt improves rollout stability through a controllable action-conditioned video world model, reshapes imagined interaction to reduce effective error depth via Keyframe-Initialized Rollouts, and maintains policy--simulator alignment through World Model-Policy co-evolution.\n\nExtensive experiments demonstrate that WoVR enables stable long-horizon imagined rollouts and effective policy optimization, achieving superior LIBERO performance and consistent real-world gains across multiple robotic platforms. These results show that world models can serve as practical simulators for RL when hallucination is explicitly controlled.\n\nAdditional visualization results are available at https://wovr-rlinf.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces WoVR, a world-model-based framework for reinforcement-learning post-training of vision-language-action policies. It addresses hallucinations and accumulated errors in imagined rollouts with a controllable action-conditioned video model, keyframe-initialized rollouts, and co-evolution of the policy and world model. The authors report stable long-horizon imagined rollouts, improved policy optimization and LIBERO performance, and consistent gains on real-world tasks across multiple robotic platforms.",
+          "zh": "论文提出 WoVR，用世界模型支持视觉—语言—动作（VLA）策略的强化学习后训练，旨在减少真实机器人交互需求，并应对想象轨迹中的幻觉和误差累积。该框架通过可控的动作条件视频世界模型、关键帧初始化轨迹和世界模型—策略协同演化，调节策略与不完美模拟器的交互。作者报告，实验中该方法实现了稳定的长时程想象轨迹、较好的 LIBERO 表现，并在多个机器人平台上取得一致的真实场景增益。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -256,7 +260,11 @@
             "heading": "",
             "text": "This paper presents a robotic harvesting method that combines RGB-D fruit localization, GA-based harvest ordering, and waypoint-based robot motion in dense and unstructured crop environments. The global RGB-D camera provides 3D fruit positions for ordering, while the end-effector-mounted camera provides close-range observation during execution.\n\nThe GA determines the harvesting sequence, and static or dynamic waypoints define the intermediate robot motion. The method was evaluated in a controlled laboratory testbed and in four-, five-, and six-fruit field conditions. GA solutions were compared with exhaustive enumeration, and both waypoint offsets were examined by parameter sensitivity analysis.\n\nContinuous execution reduced unnecessary Home-return motion, while the dynamic waypoint changed with the remaining fruit distribution without changing the GA sequence.\n\nIn the field evaluation, the dynamic-waypoint continuous strategy produced 40 collision events and a 70.7% target-approach success rate, compared with 55 collision events and 65.3% for the static-waypoint continuous strategy."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a robotic harvesting method for dense, unstructured crop environments, combining RGB-D fruit localization, genetic-algorithm harvest ordering, and waypoint-based motion. A global camera supplies fruit positions, while an end-effector camera provides close-range observation during execution. Evaluation covered a controlled laboratory testbed and field conditions with four to six fruits. In the field evaluation, the dynamic-waypoint continuous strategy had 40 collision events and a 70.7% target-approach success rate, compared with 55 events and 65.3% for the static-waypoint strategy.",
+          "zh": "论文提出一种面向高密度、非结构化种植环境的机器人采收方法，结合 RGB-D 果实定位、遗传算法采收排序和基于航点的机器人运动。全局相机提供果实三维位置，末端相机用于执行时近距离观察；静态或动态航点定义中间运动。方法在受控实验室平台及四至六个果实的田间条件下评估，并将遗传算法与穷举排序比较。田间测试中，动态航点连续采收策略记录 40 次碰撞，目标接近成功率为 70.7%；静态航点连续策略分别为 55 次和 65.3%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -287,7 +295,11 @@
             "heading": "",
             "text": "For perceptive humanoid locomotion, the relevance of terrain geometry depends on the robot's body state and how both evolve under its actions. Existing work has advanced terrain-aware sensory fusion and cross-modal prediction, improving how visual and proprioceptive information is combined and related.\n\nHowever, feature aggregation alone does not specify which cross-modal relationships should be learned, while prediction between simultaneous observations does not explicitly constrain their action-dependent evolution.\n\nWe present Spatiotemporal Training with Explicit Prediction (STEP), a one-stage framework that jointly supervises cross-modal relationships and action-dependent state evolution within a shared control representation. Multiple learned queries aggregate depth and proprioceptive tokens into a compact policy state.\n\nBidirectional masked prediction uses each visible modality to predict latent features of the omitted modality, explicitly supervising terrain-body relationships.\n\nAn action-conditioned predictor maps the current policy state and executed action to the next fused state, with an exponential-moving-average target defined directly in the policy representation space.\n\nSimulation comparisons show overall improvements in terrain traversal over evaluated fusion alternatives and ablations, while depth-dropout and delay experiments demonstrate the benefits of both predictive objectives under degraded visual input.\n\nDeployed on a 23-DoF Noetix E1 humanoid with onboard sensing, STEP succeeds in 98 of 100 hardware trials across stairs, a 40\\,cm platform, a 70\\,cm gap, stepping stones, and backward stair traversal without rearward terrain visibility."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents STEP, a one-stage training framework for perceptive humanoid locomotion that jointly supervises cross-modal relationships and action-dependent state evolution. Learned queries combine depth and proprioceptive tokens into a policy state; bidirectional masked prediction and an action-conditioned next-state predictor provide explicit training objectives. Simulation comparisons show improved terrain traversal over evaluated fusion alternatives and ablations, while depth-dropout and delay experiments indicate benefits under degraded visual input. The authors report 98 successful trials out of 100 on a 23-DoF Noetix E1 humanoid across several terrains.",
+          "zh": "论文提出 STEP，用单阶段框架共同训练人形机器人感知式运动控制中的跨模态关系和动作依赖状态演化。多个学习查询将深度与本体感觉信息汇总为策略状态；双向掩码预测用可见模态预测被遮蔽模态的潜在特征，动作条件预测器则根据当前状态和已执行动作预测下一状态。仿真比较显示其地形通过表现优于所评估的融合方案和消融版本，深度丢失及延迟实验显示两种预测目标在视觉输入受损时的作用。作者还报告，23 自由度 Noetix E1 实机在 100 次试验中成功 98 次，涵盖多种地形。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
