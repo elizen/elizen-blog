@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-10-07T18:40:40.478543+00:00",
-    "updated_at": "2026-11-06T03:19:16.615674+00:00",
+    "updated_at": "2026-11-06T04:23:03.277810+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/the-machines-that-make-the-machines/",
         "title": "The Machines that Make the Machines",
         "published_at": "2026-10-07",
-        "checked_at": "2026-11-06T03:17:22.630029+00:00",
+        "checked_at": "2026-11-06T04:21:13.797049+00:00",
         "evidence_role": "primary",
         "excerpt": "Robotics English 한국어 中文 The Machines that Make the Machines Oct 07, 2026 By Iretiayo Akinola , Alperen Degirmenci , Yijie Guo , Hugo Hadfield , Lars Johannsmeier , Alexander Lefort , Yashraj Narang , Yichao Pan and Yixuan Wang Discuss (0) L T F R E AI-Generated Summary The NVIDIA Seattle Robotics Lab and the NVIDIA Isaac engineering team developed robotic systems to assemble GB300 tester trays, targeting busbar assembly and multi-connector insertion tasks. A classical modular pipeline using FoundationPose for perception, waypoint planning with Lissajous-curve manipulation primitives, and a high-performance impedance controller achieved over 95% success on busbar assembly with a 160-second cycle time. For multi-connector insertion, cable grasping succeeded with SAM3 segmentation, while connector grasping required a new specialist pose-estimation framework called Deep Object Pose Estimation Revisited (DOPER) trained on synthetic and real-world data. Custom 3D-printed multi-purpose gripper fingers mechanically constrained part motion during contact, making grasp poses far more repeatable without tactile sensors or in-hand manipulation. Connector insertion policies were pretrained in N"
       }
