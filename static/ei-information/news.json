@@ -2589,7 +2589,11 @@
             "heading": "",
             "text": "Motion retargeting is a critical preprocessing step for transferring human motion data to humanoid robots. While existing methods are effective for single-character motions, interactions involving multiple characters and objects introduce additional contacts and spatial relationships that must be preserved.\n\nRetargeting is commonly formulated as a weighted multi-objective optimization problem, where conflicting objectives can require careful tuning of relative weights and can still compromise important motion characteristics.\n\nWe introduce PriMoRetarget, a prioritized motion-retargeting framework that replaces relative objective weighting with an explicit priority hierarchy.\n\nLower-priority updates are constrained to preserve higher-priority objectives, allowing critical characteristics such as foot placement and interaction contacts to take precedence over lower-priority pose objectives. The method is evaluated on four datasets spanning single-character motion, character-object manipulation, and character-character interactions.\n\nThe resulting motions better preserve task-relevant interactions and provide reference trajectories that can be tracked more reliably than those produced by widely used retargeting methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "PriMoRetarget is a humanoid motion-retargeting framework that replaces relative objective weights with an explicit priority hierarchy. Updates to lower-priority objectives are constrained to preserve higher-priority ones, so features such as foot placement and interaction contacts can take precedence over pose objectives. The method is evaluated on four datasets covering single-character motion, character-object manipulation, and character-character interactions. The authors report that the resulting motions better preserve task-relevant interactions and provide more reliably trackable reference trajectories than those from widely used retargeting methods; the abstract gives no quantitative results.",
+          "zh": "PriMoRetarget是一个人形机器人动作重定向框架，以显式优先级层级取代多目标优化中的相对权重。低优先级更新受到约束，以保留高优先级目标，使足部位置和交互接触等关键特征优先于较低优先级的姿态目标。该方法在四个数据集上评估，涵盖单角色动作、角色与物体操作以及角色间交互。作者报告称，生成的动作能更好保留任务相关交互，并比常用重定向方法产生的动作提供更可靠的跟踪参考轨迹；摘要未给出具体量化结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2788,7 +2792,11 @@
             "heading": "",
             "text": "Disturbances can invalidate the conditions required by a robot's next action even when much of its task program remains useful. A recovery system must therefore choose a response suited to the current state.\n\nWe present DiMuRe (diagnosis-guided multilevel recovery), a framework for robot-use agents that uses phase-specific evidence and method preconditions to select program reuse or predefined recovery skills, including bounded vision-language-action (VLA) grasping.\n\nAfter the original program exits, a multimodal large language model (MLLM) can generate corrective code from images and execution feedback. Local verification checks the outcome of each recovery attempt. We also introduce LIBERO-Disturb, a benchmark for robustness and recovery under mid-execution disturbances, supporting program-based agents and VLA policies.\n\nOn 801 scheduled disturbed Encore development cases, Local DiMuRe (program reuse and recovery skills) achieves 77.65% complete-task success, compared with 58.68% for the original program under the same physical-step allowance. Full DiMuRe achieves 81.90% with terminal replanning, an additional step allowance, and early handoff.\n\nLocal DiMuRe also uses fewer physical steps per scheduled episode than the original program."
           }
-        ]
+        ],
+        "summary": {
+          "en": "DiMuRe is a diagnosis-guided, multilevel recovery framework for robot-use agents. It uses phase-specific evidence and method preconditions to choose between program reuse and predefined recovery skills, including bounded vision-language-action grasping. After the original program exits, a multimodal language model can generate corrective code from images and execution feedback, with local verification after each attempt. The authors introduce the LIBERO-Disturb benchmark. On 801 scheduled disturbed Encore development cases, Local DiMuRe achieved 77.65% complete-task success, Full DiMuRe 81.90%, and the original program 58.68%, under the stated settings.",
+          "zh": "DiMuRe是一种面向机器人使用代理的诊断引导式多层恢复框架，根据阶段证据和方法前置条件，选择复用原程序或调用预定义恢复技能，包括有界视觉—语言—动作抓取。原程序退出后，多模态大语言模型还可依据图像和执行反馈生成纠正代码，每次恢复尝试均进行本地结果验证。作者提出LIBERO-Disturb基准。在801个预先安排的Encore开发扰动案例中，本地DiMuRe的完整任务成功率为77.65%，完整DiMuRe为81.90%，原程序为58.68%；这些数字对应摘要所述案例与步骤预算设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2819,7 +2827,11 @@
             "heading": "",
             "text": "Safe task-level manipulation requires a planner to recognize hazards, select appropriate mitigation actions, and satisfy their execution prerequisites without abandoning the original goal. We introduce ResponsibleRobotBench, a benchmark of 23 manipulation task configurations with separately specified goals and safety conditions.\n\nIt connects hazard-category predictions, planned actions, execution feedback, and terminal outcomes at the episode level. Across evaluations of five large multimodal models, terminal safety and safe task completion can diverge: defense prompts increase terminal safety for three tested models but affect safe success in different directions.\n\nCorrect hazard-category predictions also fail to ensure executable mitigation. In a cutting task under the default configuration, GPT-4o mini identifies the human hazard in all 100 episodes but never requests assistance, and every episode ends unsafe.\n\nOffering a help action and actually requesting it lead to different comparisons: outcomes differ between action menus even for a model that never requests help, and repeated requests can leave execution failures unresolved. Imitation-learning evaluations and physical robot sequences illustrate the need to coordinate mitigation with goal actions.\n\nTogether, these results motivate evaluating mitigation selection, action prerequisites, and recovery alongside hazard recognition and terminal outcomes. The appendix provides task definitions, checker conditions, and prompts. Project website: https://responsible-robot-benchmark.github.io/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ResponsibleRobotBench contains 23 manipulation task configurations with separately specified goals and safety conditions. It links hazard predictions, planned actions, execution feedback, and episode outcomes to assess risk-aware task-level decisions by large multimodal models. In evaluations of five models, defense prompts raised terminal safety for three, while effects on safe task completion varied. Correctly identifying a hazard did not guarantee executable mitigation. The authors also report effects from action menus and help requests, and use imitation-learning evaluations and physical robot sequences to illustrate the need to coordinate mitigation with goal actions.",
+          "zh": "ResponsibleRobotBench包含23种操作任务配置，用于评估大型多模态模型在机器人操作中的风险感知任务决策，并分别规定目标与安全条件。基准将危险类别预测、计划动作、执行反馈和回合终局相连接。对五种模型的评估显示，防御提示会提高其中三种模型的终局安全性，但对安全成功率的影响方向不一；正确识别危险也不保证采取可执行的缓解措施。作者还报告了动作菜单、求助请求和重复请求对结果的影响，并以模仿学习评估及实体机器人序列说明缓解措施需与目标动作协调。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
