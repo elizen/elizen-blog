@@ -2278,7 +2278,11 @@
             "heading": "",
             "text": "Humanoid loco-manipulation in dynamic scenes is non-Markovian: cues vanish as objects change or are hidden, or leave the view as the robot turns and walks, yet whole-body vision-language-action (VLA) policies see only the present.\n\nWe present WholeBodyMem, an object-guided perceptual memory that keeps the pre-history of object events seen before the robot acts on its goal. SAM3 tracks the task objects, and their events causally select key frames within an adaptive budget, which the action expert reads by cross-attention together with object tokens encoding appearance, geometry and time.\n\nWe also contribute HuMeGo, a humanoid memory benchmark with six simulated and six real-world Unitree G1 tasks.\n\nKeeping the right frames rather than more frames, WholeBodyMem surpasses memoryless and uniform-memory baselines, raising its base policy's success from 29.1% to 72.6% in simulation and from 36.7% to 88.3% on the real robot, while also improving the standard SIMPLE tasks (70.2% to 86.9%)."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents WholeBodyMem, an object-guided perceptual memory for humanoid loco-manipulation. It tracks task objects and uses their events to select key frames within an adaptive budget; an action expert reads these alongside object tokens encoding appearance, geometry, and time. The authors also introduce HuMeGo, comprising six simulated and six real-world Unitree G1 tasks. They report improvements over memoryless and uniform-memory baselines in simulation, on a real robot, and on standard SIMPLE tasks.",
+          "zh": "论文提出 WholeBodyMem，一种面向人形机器人全身移动操作的物体引导感知记忆：跟踪任务物体，并依据物体事件在自适应预算内选择关键帧，供动作专家结合物体外观、几何和时间信息读取。作者还提出 HuMeGo 基准，包含六项仿真任务和六项 Unitree G1 真实世界任务。摘要报告，WholeBodyMem 在仿真、真实机器人及 SIMPLE 标准任务上优于无记忆或均匀记忆基线；这些结果分别来自仿真、真实机器人和基准任务。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2309,7 +2313,11 @@
             "heading": "",
             "text": "Most vision-language-action (VLA) policies decouple manipulation from cognition by bolting an external action mechanism onto a vision-language model (VLM)--either quantizing actions into discrete tokens whose errors bear no stable correspondence to physical displacements, or delegating continuous trajectory generation to a separate action expert whose gradients compete with or are blocked from updating the VLM backbone.\n\nWe argue that manipulation and cognition should instead be embodied in the same model, shifting from a decoupled VLA to an Embodied Vision-Language Model (eVLM).\n\nWe introduce Concertina, an eVLM that places continuous trajectory representation, blockwise generation, and physical-coordinate supervision directly on the computation and parameter path of a shared diffusion VLM backbone.\n\nEach control timestep is encoded as one continuous latent action token in the backbone hidden space, and the shared Transformer reconstructs temporally ordered action blocks via the same corrupt-and-reconstruct operator used for multimodal pretraining.\n\nActive action projections account for only 0.21% of parameters in the 4.46B model with zero separate action-generator layers, compared with 16.5%-35.1% dedicated action-expert capacity in representative continuous VLAs.\n\nUsing our proposed Action Interface Audit, we confirm that cross-time trajectory coupling emerges in the middle and late layers of the shared backbone rather than at the action interfaces.\n\nOn standard benchmarks, Concertina achieves 98.15% average success on regular LIBERO, 85.9% on the 10,030-task LIBERO-Plus benchmark, and 4.142 average completed chain length on CALVIN ABC-D. Code: https://github.com/lose4578/Concertina Hugging Face: https://huggingface.co/collections/Traly/concertina"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Concertina, an embodied vision-language model that places continuous trajectory representation, blockwise generation, and physical-coordinate supervision on a shared diffusion VLM backbone. Each control timestep is encoded as a continuous latent action token, and the shared Transformer reconstructs ordered action blocks using the same corrupt-and-reconstruct operator as multimodal pretraining. The authors report a small parameter share for active action projections and results on LIBERO, LIBERO-Plus, and CALVIN ABC-D benchmarks.",
+          "zh": "论文提出 Concertina，将连续轨迹表示、分块生成和物理坐标监督置于共享扩散视觉语言模型的计算与参数路径中，主张由同一模型承载操作与认知。每个控制时刻编码为连续潜在动作 token，共享 Transformer 使用多模态预训练中的同一扰动与重建算子生成有时间顺序的动作块。作者称其动作投影仅占模型参数的一小部分，并报告在 LIBERO、LIBERO-Plus 和 CALVIN ABC-D 基准上的表现；这些是基准结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2340,7 +2348,11 @@
             "heading": "",
             "text": "Despite the numerous applications of convex constraints in Robotics, enforcing them within learning-based frameworks remains an open challenge. Existing techniques either fail to guarantee satisfaction at all times, or incur prohibitive computational costs.\n\nThis paper presents RAYEN, a framework for imposing hard convex constraints on the output or latent variables of a neural network. RAYEN guarantees constraint satisfaction during both training and testing, for any input and any network weights.\n\nUnlike prior approaches, RAYEN avoids computationally expensive orthogonal projections, soft constraints, conservative approximations of the feasible set, and slow iterative corrections.\n\nRAYEN supports any combination of linear, convex quadratic, second-order cone (SOC), and linear matrix inequality (LMI) constraints, with negligible overhead compared to unconstrained networks.\n\nFor instance, it imposes 1K quadratic constraints on a 1K-dimensional variable with only 8 ms of overhead compared to a network that does not enforce these constraints. An LMI constraint with 300x300 dense matrices on a 10K-dimensional variable can be guaranteed with only 12 ms additional overhead.\n\nWhen used in neural networks that approximate the solution of constrained trajectory optimization problems, RAYEN runs 20 to 7468 times faster than state-of-the-art algorithms, while guaranteeing constraint satisfaction at all times and achieving a near-optimal cost.\n\nFinally, we demonstrate RAYEN's ability to enforce actuator constraints on a learned locomotion policy by validating constraint satisfaction in both simulation and real-world experiments on a quadruped robot. The code is available at https://github.com/leggedrobotics/rayen"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents RAYEN, a framework for imposing hard convex constraints on neural-network outputs or latent variables. The authors state that it guarantees satisfaction during training and testing for any input and network weights, and supports linear, convex quadratic, second-order cone, and linear matrix inequality constraints with low overhead. They report faster solutions and near-optimal cost when approximating constrained trajectory optimization, and validate actuator-constraint satisfaction for a learned quadruped locomotion policy in simulation and real-world experiments.",
+          "zh": "论文提出 RAYEN，用于在神经网络输出或潜变量上施加硬凸约束。作者称该方法对任意输入和网络权重，在训练与测试期间均保证约束满足，并支持线性、凸二次、二阶锥及线性矩阵不等式约束，且计算开销较低。摘要还报告其用于约束轨迹优化问题近似器时，相较现有算法更快并达到近优成本；在四足机器人学习运动策略上，作者于仿真和真实世界实验中验证了执行器约束满足。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2371,7 +2383,11 @@
             "heading": "",
             "text": "Contact-rich manipulation requires precise control under complex contact dynamics while remaining robust to diverse visual conditions. However, real-world reinforcement learning often overfits to the visual appearance of training scenes. We propose Semantics-to-Contact (S2C), a stagewise framework for visually robust contact-rich manipulation.\n\nThe insight is to decompose the problem into two stages: semantic focusing and contact refinement. In the first stage, a vision-language model localizes task-relevant regions across visually diverse scenes, providing coarse spatial guidance and reducing the burden of exploration.\n\nIn the second stage, a real-world human-in-the-loop residual reinforcement learning policy learns fine-grained contact behaviors within the localized region using force feedback.\n\nTo further improve visual robustness, we introduce an object-centric visual augmentation strategy that randomizes background appearance while preserving the robot and task-relevant objects.\n\nExperiments on six contact-rich real-world manipulation tasks exhibit that S2C consistently improves success rates over strong baselines and maintains reliable performance under significant visual and positional variations.\n\nThese results demonstrate that stagewise semantic focusing and contact refinement provide a practical path toward visually robust real-world contact-rich manipulation. Our demos can be seen in https://edem-ai.github.io/S2C/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes S2C, a stagewise framework for visually robust contact-rich manipulation. In semantic focusing, a vision-language model localizes task-relevant regions across varied scenes and provides coarse spatial guidance. Contact refinement then uses a real-world human-in-the-loop residual reinforcement learning policy with force feedback. An object-centric augmentation strategy randomizes backgrounds while preserving the robot and relevant objects. Experiments on six real-world tasks show improved success over strong baselines and reliable performance under substantial visual and positional variation.",
+          "zh": "论文提出 S2C，一种用于视觉鲁棒、接触丰富操作的分阶段框架，分为语义聚焦和接触细化。第一阶段由视觉语言模型在多样场景中定位任务相关区域，提供粗略空间引导；第二阶段使用真实世界的人机协同残差强化学习策略，并结合力反馈学习精细接触行为。作者还通过物体中心视觉增强随机化背景，同时保留机器人和任务物体。六项真实世界操作任务实验显示，S2C 相较强基线成功率更高，并能应对显著视觉和位置变化。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
