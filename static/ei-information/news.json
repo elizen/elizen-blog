@@ -1913,7 +1913,11 @@
             "heading": "",
             "text": "Constant- and piecewise-constant-curvature models are widely used to simplify the kinematics of continuum robots, although the assumed curvature profiles are not necessarily inherent mechanical properties of the robot and may therefore be violated during operation.\n\nRather than assuming a prescribed curvature profile in the kinematic model and estimating deviations from it, this paper presents a multi-segment scissor-based support structure that mechanically constrains a continuum robot to exhibit prescribed constant or spatially varying curvature profiles.\n\nThe design uses Taylor approximations to enable an overconstrained multi-joint linkage to predictably distribute global bending among the small-angle movements of multiple flexures. The geometric coupling is realized using compliant flexure joints, enabling the support structure to be manufactured as a single piece.\n\nThe structure is integrated with a tendon-actuated continuum robot with a flexible backbone. Experiments show that the structure makes the robot resistant to deformations other than the prescribed curvature, significantly enhancing shape precision compared to classical flexible-backbone designs.\n\nThis constrains the robot from making S-shapes when external loads are applied in the opposite direction of the bending. By mechanically constraining the admissible deformation, the proposed structure reduces the number of independent shape variables that must be estimated."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a multi-segment, scissor-based support that mechanically constrains a continuum robot to prescribed constant or spatially varying curvature. Taylor approximations coordinate small movements across compliant flexure joints, enabling a single-piece structure. Integrated with a tendon-actuated robot with a flexible backbone, the support resisted off-profile deformation in experiments and improved shape precision over classical flexible-backbone designs. It also prevented S-shapes under oppositely directed external loads and reduces the number of shape variables that must be estimated.",
+          "zh": "论文提出一种多段剪刀式支撑结构，通过机械方式约束连续体机器人的恒定或空间变化曲率。设计利用泰勒近似协调多个柔性关节的小角度运动，并可制成单件结构。该结构与腱驱动、柔性骨架机器人集成。实验显示，它能抵抗偏离预定曲率的变形，相较经典柔性骨架设计提高形状精度，并抑制反向外载导致的 S 形变形。作者指出，约束可行变形还可减少需要估计的形状变量。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1944,7 +1948,11 @@
             "heading": "",
             "text": "Robot Operating System (ROS) is becoming a standard in robotics courses at higher education, but its installation, configuration and distributed programming model can introduce a significant entry barrier in the new landscape of AI-based master and degree studies, where many students do not have a strong informatics background.\n\nThis paper presents an educational experience that enables students to program a TurtleBot3 Burger directly in Python, while preserving a direct transfer path from simulation to the physical robot.\n\nThe approach is based on a custom library that mirrors the Webots API, allowing the same controller code to be executed in the simulator and on the real TurtleBot3 with minimal modification.\n\nThe library provides access to the robot motors, wheel encoders, inertial sensors and LiDAR, and is complemented by scripts that automate deployment and execution on the physical platform.\n\nIt was used in a master-level course on introductory autonomous vehicles, and initial student feedback suggests that the approach reduces the perceived complexity of ROS-related infrastructure and helps learners focus on algorithmic logic and real-world behaviour."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper describes a custom Python library for teaching with the TurtleBot3 Burger, designed to let students transfer controller code between Webots simulation and the physical robot with minimal changes. Mirroring the Webots API, it exposes motors, wheel encoders, inertial sensors, and LiDAR, with scripts for deployment and execution on the robot. The library was used in a master-level introductory autonomous vehicles course. Initial student feedback suggests it reduces the perceived complexity of ROS infrastructure and helps students focus on algorithms and real-world behavior.",
+          "zh": "论文介绍一套面向教学的自定义 Python 库，使学生可直接编程 TurtleBot3 Burger，并在 Webots 模拟器与实体机器人间迁移控制器代码，仅需少量修改。该库仿照 Webots API，提供电机、轮编码器、惯性传感器和激光雷达接口，并配有自动部署与运行脚本。它已用于一门自主车辆入门硕士课程；初步学生反馈认为，该方法降低了 ROS 基础设施的主观复杂度，使学习者更专注于算法逻辑和真实环境行为。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1975,7 +1983,11 @@
             "heading": "",
             "text": "Robot reinforcement learning increasingly runs environments outside the trainer: in another process, on another machine, in another language. Many faults at this boundary raise no error. We make the boundary a wire protocol and ask what notices a fault in it.\n\nOn Pendulum, HalfCheetah, Hopper and a 7-joint arm (Pusher), we injected up to 23 faults into what crosses the wire and 2 into the trainer's log, from one value to every value. Unless every value was wrong, a learning-curve threshold caught at most one run in ten, and a comparison with ten fault-free seeds at most 21%.\n\nA clean evaluation of all 1,060 final policies agreed with the curves: of the 728 boundary-fault runs both curve checks passed, 723 scored no more than three standard deviations below fault-free seeds, though nearly all ended on other weights and, for reward faults, logged other returns. Checks of the run itself, not of its outcome, saw every fault.\n\nA step ledger kept on both sides and compared step by step caught and located every fault that crossed, on Pendulum, Hopper and Pusher on one machine and on Pendulum across two, with no fault-free run and, on Pendulum, a median 3% more training time. An episode record kept at the environment caught the faults in the trainer's log.\n\nWe list such faults found in practice, in Gymnasium 1.3 and our own code and, reported by others, in five multi-agent libraries, and recommend a step ledger and episode counts kept at the environment."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies silent faults in data exchanged across the wire boundary between reinforcement-learning environments and trainers. Injected faults in Pendulum, HalfCheetah, Hopper, and a seven-joint arm were often missed by learning-curve thresholds and comparisons with fault-free seeds; many affected final policies also scored near fault-free results. The authors report that comparing step ledgers maintained on both sides detected and located every crossing fault in the tested single-machine setups and a two-machine Pendulum setup. Environment-side episode records caught faults in the trainer's log.",
+          "zh": "论文研究强化学习环境与训练器之间通过线协议交换数据时不报错的静默故障。在 Pendulum、HalfCheetah、Hopper 和七关节机械臂任务中注入故障后，学习曲线阈值与无故障种子比较难以发现多数故障；对最终策略的评估也显示，许多故障运行的得分接近无故障结果。作者报告，逐步核对双方维护的步数账本能在所测单机及 Pendulum 双机配置中发现并定位所有跨边界故障；环境端记录回合数则发现训练器日志故障。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2006,7 +2018,11 @@
             "heading": "",
             "text": "Mobile manipulators deployed in everyday human environments, such as homes for assistive care or flexible automation, often need to locate specific objects on demand from accumulated observations. Equally important, they must reliably determine when a target is absent before committing to navigation or interaction.\n\nExisting approaches demand either slow exhaustive re-processing or expensive 3D representations, and are evaluated on recall and accuracy rather than specificity, leaving their ability to abstain on missing targets unmeasured.\n\nWe find existing systems that search using text or visual embedding almost never abstain on absent objects achieving at most 9\\% specificity.\n\nTo support accurate search at speed, we present a two-stage architecture that decouples fast candidate retrieval from verified selection, enabling both high recall and reliable absence detection from sequential RGB observations with pose.\n\nWe evaluate eight retrieval-selection configurations plus an exhaustive search baseline across ScanNet apartment scenes, including significant numbers of absent objects. Adding a visual verification step to caption-based retrieval matches or exceeds exhaustive search reliability while requiring an order of magnitude fewer detector calls.\n\nWe reproduce ScanNet scores on a physical robot operating entirely on-board with a single consumer GPU running in real time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a two-stage open-vocabulary object search architecture that separates fast candidate retrieval from verified selection, using sequential RGB observations with pose to search for targets and detect absence. The authors report that existing text- or visual-embedding search systems achieve at most 9% specificity for absent objects. In ScanNet apartment scenes with many absent targets, adding visual verification to caption-based retrieval matched or exceeded exhaustive-search reliability while using an order of magnitude fewer detector calls. The reported physical-robot evaluation reproduced ScanNet scores using an entirely on-board system running in real time on one consumer GPU.",
+          "zh": "论文提出一种两阶段开放词汇物体搜索架构，将快速候选检索与验证后选择分开，利用带位姿的连续 RGB 观测支持目标搜索和缺失检测。作者指出，现有文本或视觉嵌入搜索系统对不存在目标的特异度最高仅为 9%。在包含大量缺失目标的 ScanNet 公寓场景评估中，为基于描述的检索加入视觉验证，其可靠性达到或超过穷举搜索，同时所需检测器调用减少一个数量级。论文还报告，在实体机器人上复现 ScanNet 分数，系统完全机载并以单块消费级 GPU 实时运行。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
