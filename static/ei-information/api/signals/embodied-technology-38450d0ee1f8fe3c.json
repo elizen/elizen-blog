@@ -1,0 +1,46 @@
+{
+  "signal": {
+    "id": "embodied-technology-38450d0ee1f8fe3c",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Unlocking a new era of discovery with AI",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2025-07-30",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-28T03:47:51.120834+00:00",
+    "updated_at": "2026-11-07T18:34:10.482021+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "deepmind-robotics-blog",
+        "source_name": "Google DeepMind 官方博客",
+        "source_url": "https://deepmind.google/blog/",
+        "url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+        "title": "Unlocking a new era of discovery with AI",
+        "published_at": "2025-05-14",
+        "checked_at": "2026-11-07T18:32:18.840727+00:00",
+        "evidence_role": "primary",
+        "excerpt": "May 14, 2025 Science AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms AlphaEvolve team Share New AI agent evolves algorithms for math and practical applications in computing by combining the creativity of large language models with automated evaluators Large language models (LLMs) are remarkably versatile. They can summarize documents, generate code or even brainstorm new ideas. And now we’ve expanded these capabilities to target fundamental and highly complex problems in mathematics and modern computing. Today, we’re announcing AlphaEvolve , an evolutionary coding agent powered by large language models for general-purpose algorithm discovery and optimization. AlphaEvolve pairs the creative problem-solving capabilities of our Gemini models with automated evaluators that verify answers, and uses an evolutionary framework to improve upon the most promising ideas. AlphaEvolve enhanced the efficiency of Google's data centers, chip design and AI training processes — including training the large language models underlying AlphaEvolve itself. It has also helped design faster matrix multiplication algorithms and find new solutions to open mathematical problems, "
+      },
+      {
+        "source_id": "deepmind-robotics-blog",
+        "source_name": "Google DeepMind 官方博客",
+        "source_url": "https://deepmind.google/blog/",
+        "url": "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
+        "title": "Unlocking a new era of discovery with AI",
+        "published_at": "2025-07-30",
+        "checked_at": "2026-11-07T18:32:18.840727+00:00",
+        "evidence_role": "primary",
+        "excerpt": "July 30, 2025 Science AlphaEarth Foundations helps map our planet in unprecedented detail The AlphaEarth Foundations team Share New AI model integrates petabytes of Earth observation data to generate a unified data representation that revolutionizes global mapping and monitoring Every day, satellites capture information-rich images and measurements, providing scientists and experts with a nearly real-time view of our planet. While this data has been incredibly impactful, its complexity, multimodality and refresh rate creates a new challenge: connecting disparate datasets and making use of them all effectively. Today, we’re introducing AlphaEarth Foundations, an artificial intelligence (AI) model that functions like a virtual satellite. It accurately and efficiently characterizes the planet’s entire terrestrial land and coastal waters by integrating huge amounts of Earth observation data into a unified digital representation, or \" embedding, \" that computer systems can easily process. This allows the model to provide scientists with a more complete and consistent picture of our planet's evolution, helping them make more informed decisions on critical issues like food security, defor"
+      }
+    ]
+  }
+}
