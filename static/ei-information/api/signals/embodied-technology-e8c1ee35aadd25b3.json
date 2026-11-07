@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-e8c1ee35aadd25b3",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Inspect Robots: Evaluating the Capabilities and Safety of Embodied AI",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-10-05",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-06T03:47:36.733593+00:00",
+    "updated_at": "2026-10-27T11:37:01.239259+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.06306v1",
+        "title": "Inspect Robots: Evaluating the Capabilities and Safety of Embodied AI",
+        "published_at": "2026-10-05",
+        "checked_at": "2026-10-27T11:36:51.936396+00:00",
+        "evidence_role": "primary",
+        "excerpt": "General purpose language models are increasingly able to control robotic hardware. Understanding the capabilities and safety of these models when embodied is therefore increasingly important for understanding their societal impact and risks. To this end, we introduce Inspect Robots, a modular, open-source framework for developing and running evaluations of embodied agents. Inspect Robots pairs customizable, reusable abstractions for specifying physical evaluations and analyzing their results with infrastructure that automates evaluation setup, execution and termination. We demonstrate Inspect Robots by using it to evaluate the capabilities and safety of six policies based on frontier language models. Inspect Robots has seen significant early uptake, receiving nearly 100,000 downloads in the three months since its release."
+      }
+    ]
+  }
+}
