@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>标准雷达 · 官方标准动态追踪</title>
+    <meta name="description" content="追踪人形机器人、具身智能、人工智能与数据相关标准事件。" />
+    <link rel="stylesheet" href="styles.css" />
+      <style id="static-publish-overrides">
+      .ei-radar-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 12px 5.5vw;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--night);
+      }
+      .ei-radar-brand {
+        color: var(--night);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .08em;
+        white-space: nowrap;
+      }
+      .ei-radar-modules {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+      .ei-radar-module {
+        position: relative;
+        display: inline-flex;
+        padding: 6px 9px;
+        border: 1px solid var(--line);
+        color: var(--ink-soft);
+        font-size: 10px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .ei-radar-module.active {
+        border-color: var(--night);
+        background: var(--night);
+        color: var(--white);
+      }
+      .ei-radar-module.planned {
+        cursor: not-allowed;
+        color: var(--ink-soft);
+      }
+      .ei-radar-module.planned::after {
+        position: absolute;
+        right: 0;
+        bottom: -27px;
+        z-index: 2;
+        padding: 5px 7px;
+        background: var(--night);
+        color: var(--white);
+        content: attr(data-tooltip);
+        font-size: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .15s ease;
+        white-space: nowrap;
+      }
+      .ei-radar-module.planned:hover::after,
+      .ei-radar-module.planned:focus-visible::after {
+        opacity: 1;
+      }
+      .static-publish-note {
+        color: var(--orange-deep);
+        font-size: 11px;
+      }
+      .ei-radar-positioning {
+        flex-basis: 100%;
+        margin-top: 4px;
+        line-height: 1.6;
+      }
+      .app-shell footer {
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+      @media (max-width: 860px) {
+        .ei-radar-nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .ei-radar-modules {
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="ei-radar-nav" aria-label="EI Radar 模块导航">
+      <div class="ei-radar-brand">EI RADAR · 具身智能产业雷达</div>
+      <div class="ei-radar-modules">
+        <a class="ei-radar-module active" href="./" aria-current="page">标准雷达</a>
+        <span class="ei-radar-module planned" aria-disabled="true" data-tooltip="规划中">政策雷达</span>
+        <span class="ei-radar-module planned" aria-disabled="true" data-tooltip="规划中">资本雷达</span>
+        <span class="ei-radar-module planned" aria-disabled="true" data-tooltip="规划中">企业雷达</span>
+        <span class="ei-radar-module planned" aria-disabled="true" data-tooltip="规划中">技术雷达</span>
+        <span class="ei-radar-module planned" aria-disabled="true" data-tooltip="规划中">关键人物</span>
+      </div>
+    </nav>
+    <div class="app-shell">
+      <header class="masthead">
+        <div class="brand-lockup">
+          <div class="signal-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div>
+            <p class="eyebrow">STANDARD SIGNAL / 01</p>
+            <h1>标准雷达</h1>
+          </div>
+        </div>
+        <div class="masthead-note">国家标准 · 行业标准<br /><span>只追踪正式标准事件</span><br /><a class="briefing-link" href="reports.html">动态简报</a></div>
+      </header>
+
+      <main>
+        <section class="hero-grid">
+          <div>
+            <p class="eyebrow accent">实时监测台</p>
+            <h2>先看到标准<br /><em>正在发生什么。</em></h2>
+            <p class="hero-copy">把公告、附件里的项目和后续状态，收束成一条可追踪的标准时间线。</p>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="概览">
+          <article class="stat-card stat-primary"><span>关注中的标准</span><strong id="stat-projects">—</strong><small>按标准项目归并</small></article>
+          <article class="stat-card"><span>最近新增事件</span><strong id="stat-new">—</strong><small>本次检索捕获</small></article>
+          <article class="stat-card"><span>即将截止</span><strong id="stat-due">—</strong><small>7 天内 · 需要留意</small></article>
+          <article class="stat-card"><span>待确认</span><strong id="stat-candidates">—</strong><small>高召回候选池</small></article>
+        </section>
+
+        <section class="workspace">
+          <div class="list-column">
+            <div class="section-heading">
+              <div id="list-heading">
+                <p class="eyebrow">PROJECT INDEX</p>
+                <h3 id="list-title">标准项目</h3>
+              </div>
+            </div>
+
+            <div class="controls">
+              <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="搜索标准名称、编号或关键词" /></label>
+              <div class="filter-row" role="group" aria-label="标准层级">
+                <button class="filter-button active" data-level="全部">全部</button>
+                <button class="filter-button" data-level="国标">国标</button>
+                <button class="filter-button" data-level="行标">行标</button>
+              </div>
+              <div class="filter-row" role="group" aria-label="事件状态">
+                <button class="filter-button active" data-status="全部">全部事件</button>
+                <button class="filter-button" data-status="拟立项">拟立项</button>
+                <button class="filter-button" data-status="征求意见">征求意见</button>
+                <button class="filter-button" data-status="报批">报批</button>
+                <button class="filter-button" data-status="已发布">已发布</button>
+              </div>
+              <div class="filter-row" role="group" aria-label="领域">
+                <button class="filter-button active" data-topic="全部">全部领域</button>
+                <button class="filter-button" data-topic="人形机器人">人形机器人</button>
+                <button class="filter-button" data-topic="具身智能">具身智能</button>
+                <button class="filter-button" data-topic="人工智能">人工智能</button>
+                <button class="filter-button" data-topic="数据">数据</button>
+                <button class="filter-button" data-topic="安全">安全</button>
+              </div>
+            </div>
+
+            <div id="project-list" class="project-list" aria-live="polite"></div>
+          </div>
+          <aside id="detail-panel" class="detail-panel" aria-live="polite"></aside>
+        </section>
+      </main>
+
+      <footer><span>本地运行 · 原文链接均指向官方来源</span><span>高召回模式 / 人工确认候选</span><span class="ei-radar-positioning">EI Radar · Phase 1 标准雷达 —— 追踪人形机器人与具身智能领域的官方标准动态，数据均来自官方公开来源</span></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
