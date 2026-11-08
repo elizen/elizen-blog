@@ -2,7 +2,7 @@
   "items": [
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -35,7 +35,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -205,7 +205,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -325,7 +325,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -355,7 +355,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -385,7 +385,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -448,7 +448,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -478,7 +478,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -596,7 +596,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -696,7 +696,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -799,7 +799,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -1508,7 +1508,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -1813,7 +1813,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2090,7 +2090,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2213,7 +2213,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2379,7 +2379,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2409,7 +2409,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2476,7 +2476,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2506,7 +2506,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2544,7 +2544,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2614,7 +2614,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2637,11 +2637,7 @@
             "heading": "",
             "text": "Simulation benchmarks are the standard way to compare robot policies, but each benchmark brings its own evaluator, observation layout, and action convention, and evaluation is slow: 500 RoboTwin Easy episodes with one simulator and one model on one GPU take 359.7 minutes.\n\nProfiling the official StarVLA evaluator shows that simulation occupies CPU cores while the GPU averages 14.3% utilization. RoboScope Kit wraps each model once in a Python class called a Policy, and each benchmark once in an adapter around the benchmark's own evaluator, so the benchmark's rules and scoring stay unchanged.\n\nScheduling runs simulator workers and Policy replicas as separate pools, sizes both from measured probes, and shards work deterministically across GPU instances; runtime optimization renders only the observations an action-chunk Policy reads. Adapters cover six benchmark families.\n\nOn LIBERO-Long with a StarVLA checkpoint on one 48 GiB RTX 4090, the concurrency search selects twelve simulator workers sharing three Policy replicas, which evaluate 500 episodes 4.45$\\times$ faster than the official StarVLA evaluation with equivalent success rates, 2.78$\\times$ faster than RLinf, and 1.52$\\times$ faster than vla-eval at its tuned configuration.\n\nWith CUDA MPS, which lets the replicas run their kernels concurrently, the search selects sixteen workers sharing four replicas, 6.16$\\times$ faster than StarVLA, 3.85$\\times$ faster than RLinf, and 2.10$\\times$ faster than vla-eval.\n\nOn RoboTwin Easy, four GPUs with chunk-boundary observation complete the 500 episodes in 14.4 minutes, 25.04$\\times$ faster than the single-GPU baseline, with identical success outcomes and terminal steps."
           }
-        ],
-        "summary": {
-          "en": "The paper presents RoboScope Kit, which evaluates embodied models through a shared Policy interface and benchmark adapters while preserving each benchmark’s rules and scoring. It schedules simulator workers and policy replicas in separate pools, sizes concurrency using probes, and can render only observations needed at action-chunk boundaries. The authors report faster evaluation than the compared tools on LIBERO-Long under the stated configurations, with equivalent success rates. On RoboTwin Easy, a four-GPU setup completed 500 episodes in 14.4 minutes with outcomes and terminal steps matching the baseline.",
-          "zh": "论文介绍 RoboScope Kit，用统一的 Policy 接口和基准适配器评估具身模型，并保留各基准原有规则与评分。系统将模拟器工作进程与策略副本分池调度，依据探测结果确定并发度，还可按动作块需求渲染观测。作者报告，在指定 LIBERO-Long 配置下，评估速度快于所比较的工具且成功率相当；在 RoboTwin Easy 的四 GPU 设置下，500 个回合用时 14.4 分钟，成功结果和终止步数与基线一致。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -2718,7 +2714,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -2814,7 +2810,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3145,7 +3141,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3251,7 +3247,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3514,7 +3510,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3611,7 +3607,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3701,7 +3697,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3791,7 +3787,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -3911,7 +3907,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4008,7 +4004,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4038,7 +4034,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4068,7 +4064,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4131,7 +4127,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4198,7 +4194,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4350,7 +4346,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4380,7 +4376,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4470,7 +4466,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4664,7 +4660,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4821,7 +4817,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -4955,7 +4951,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5142,7 +5138,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5209,7 +5205,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5276,7 +5272,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5725,7 +5721,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5755,7 +5751,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -5900,7 +5896,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6042,7 +6038,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6268,7 +6264,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6372,7 +6368,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6439,7 +6435,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6499,7 +6495,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -6894,7 +6890,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7321,7 +7317,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7351,7 +7347,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7381,7 +7377,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7448,7 +7444,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7478,7 +7474,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7508,7 +7504,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7736,7 +7732,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -7933,7 +7929,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8114,7 +8110,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8243,7 +8239,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8266,11 +8262,7 @@
             "heading": "",
             "text": "Radio maps provide spatial knowledge of wireless environments to assess coverage, manage spectrum use, and support connectivity-aware mobility.\n\nRecent advances in embodied intelligence (EI) offer a promising approach to radio map reconstruction by enabling agents to perceive the environment and autonomously adjust their survey paths toward safe, reachable locations.\n\nHowever, a single agent remains constrained by limited endurance and onboard computing capacity, limiting measurement collection and reconstruction performance. Swarm cooperation can support more efficient radio mapping over larger areas by sharing observations and coordinating members' sampling.\n\nThis article first explores the capabilities and applications of cooperative embodied agents. A cooperative radio map reconstruction framework is then presented, together with its key enabling techniques.\n\nCase study results illustrate how scene perception supports access to informative sampling locations and how air--ground cooperation improves reconstruction through complementary measurements and mobile support.\n\nThe article concludes with open challenges and future research directions for reliable and efficient embodied cooperative radio mapping in complex environments."
           }
-        ],
-        "summary": {
-          "en": "This article discusses embodied intelligence for radio map reconstruction and describes how a single agent’s endurance and onboard computing limits can constrain measurement collection and reconstruction. The authors present a cooperative reconstruction framework and its enabling techniques. Case studies illustrate how scene perception can help agents reach informative sampling locations, and how air–ground cooperation can improve reconstruction through complementary measurements and mobile support. The article closes by identifying open challenges and future directions for reliable and efficient cooperative radio mapping in complex environments.",
-          "zh": "本文讨论具身智能用于无线电地图重建，指出单个智能体受续航和机载计算能力限制，可能影响测量采集与重建。作者提出协作式无线电地图重建框架及关键支撑技术，并以案例研究展示场景感知如何帮助智能体到达信息量较高的采样位置，以及空地协作如何通过互补测量和移动支持改善重建。文章最后总结复杂环境下可靠、高效协作建图的开放挑战与研究方向。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8280,7 +8272,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8436,7 +8428,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8640,7 +8632,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8784,7 +8776,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8851,7 +8843,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8884,7 +8876,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -8921,7 +8913,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9090,7 +9082,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9120,7 +9112,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9307,7 +9299,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9429,7 +9421,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9533,7 +9525,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9669,7 +9661,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9926,7 +9918,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9956,7 +9948,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -9981,8 +9973,8 @@
           }
         ],
         "summary": {
-          "en": "This review frames the interface between robot learning and AI for science as a problem of embodied experimentation, where experiment states are partially observed, actions can be costly and irreversible, and missing data may depend on execution and outcome. It organizes research around operational, epistemic, and evidential closure and describes a record-linked cycle of recording, diagnosis, calibration, and confirmation. The review compares methods and workflows across fields, maps evidence requirements, and proposes evaluation that distinguishes actions, valid experiments, campaigns, and confirmed claims.",
-          "zh": "这篇综述将机器人学习与 AI for Science 的交界概括为具身科学实验问题：实验状态部分不可观测，行动可能昂贵且不可逆，缺失数据也可能依赖执行过程和结果。作者以操作、认知和证据闭合三个层次组织相关研究，并提出“记录、诊断、校准、确认”的证据循环框架。文章比较多类实验选择、感知、流程编译与机器人策略方法，分析多个学科的工作流及其记录能支持的主张，并给出工作流证据图谱和评估建议。"
+          "en": "This review frames learned systems that execute and interpret experiments through physical interfaces as embodied AI for science. It describes experiments as partially observed, with costly and potentially irreversible actions, and organizes the literature around operational, epistemic, and evidential closure. The authors propose a record-linked cycle of recording, diagnosing, calibrating, and confirming; distinguish commanded, realized, and observed conditions; and compare methods by their evidence requirements. An appendix maps 28 workflows. The review argues that evaluation should distinguish actions, valid experiments, campaigns, and confirmed claims.",
+          "zh": "这篇综述将通过物理接口执行和解释科学实验的学习系统概括为“科学发现的具身人工智能”。它指出实验状态和测量过程可能不可见，行动成本高且可能不可逆，并以操作、认知和证据闭合三层组织相关研究。文章提出“记录、诊断、校准、确认”的证据循环，区分指令、实际执行与观测条件，并比较实验选择、感知、协议编译、控制、恢复和迁移等方法。附录整理了28个工作流的证据路径；作者主张评估应区分行动、有效实验、实验活动和已确认的主张。"
         }
       },
       "source": {
@@ -10122,7 +10114,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10147,8 +10139,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes ICL+CVCP for beam prediction in millimeter-wave communications for embodied AI. It combines in-context learning from a small number of demonstrations with cross-validation conformal prediction to form candidate beam sets with a user-defined coverage probability, without large-scale data collection or model fine-tuning. The authors report that experiments consistently met the desired empirical coverage while reducing pilot overhead and computational latency; the abstract does not establish results beyond those experiments.",
-          "zh": "论文提出用于具身人工智能毫米波通信波束预测的 ICL+CVCP 框架，结合少量示例驱动的上下文学习与交叉验证保形预测，旨在减少对大规模训练数据和模型微调的依赖，并生成具有用户指定覆盖概率的候选波束集合。作者报告，实验中该方法持续满足预期的经验覆盖率，同时降低导频开销和计算延迟。摘要未说明这些结果超出其实验范围。"
+          "en": "The paper proposes ICL+CVCP, a beam-prediction framework for millimeter-wave communication in embodied AI. It uses in-context learning to adapt from a small number of examples without model fine-tuning, while cross-validation conformal prediction builds compact, distribution-free candidate beam sets. The authors state that these sets contain the optimal beam with a user-defined probability. Experiments report the desired empirical coverage, reduced pilot overhead, and lower computational latency.",
+          "zh": "论文提出面向具身人工智能毫米波通信的波束预测框架 ICL+CVCP。该方法利用上下文学习，以少量示例进行免训练适配，并通过交叉验证保形预测构造紧凑、无分布假设的候选波束集合；作者称该集合可按用户设定概率包含最优波束。实验结果显示，该框架达到预期的经验覆盖率，并降低导频开销与计算延迟。"
         }
       },
       "source": {
@@ -10450,7 +10442,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10513,7 +10505,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10543,7 +10535,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10573,7 +10565,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10603,7 +10595,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10633,7 +10625,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10698,7 +10690,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -10953,7 +10945,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11286,7 +11278,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11316,7 +11308,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11476,7 +11468,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11596,7 +11588,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11626,7 +11618,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11692,7 +11684,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11755,7 +11747,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11855,7 +11847,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11885,7 +11877,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -11915,7 +11907,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12261,7 +12253,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12291,7 +12283,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12444,7 +12436,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12850,7 +12842,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12910,7 +12902,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -12940,7 +12932,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13044,7 +13036,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13077,7 +13069,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13140,7 +13132,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13313,7 +13305,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13753,7 +13745,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -13940,7 +13932,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -14033,7 +14025,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -14349,7 +14341,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -14379,7 +14371,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -14402,11 +14394,7 @@
             "heading": "",
             "text": "Recent advances in generative foundation models have expanded the capabilities of embodied AI, enabling increasingly general navigation, manipulation, and long-horizon task execution.\n\nHowever, effective interaction with dynamic environments requires more than only strong perception and reasoning: agents must act with partial knowledge and retain, retrieve, and update information from past observations, actions, and experiences.\n\nThis survey examines embodied memory as a mechanism for preserving decision-relevant information beyond the current observation.\n\nWe organize existing approaches along two complementary dimensions: six fundamental memory requirements, spanning world-state persistence, task progress, belief maintenance, and experiential learning; and eight architectural categories, including recurrent states, fast weights, visual and symbolic representations, spatial memory, and experience-based systems.\n\nWe analyze their capabilities and limitations, and examine how existing benchmarks evaluate memory-dependent behavior, distinguishing genuine use of historical information from general task performance.\n\nFinally, we identify open challenges in selecting relevant experiences, maintaining consistent beliefs in changing environments, and consolidating knowledge across episodes. Our analysis provides a framework for understanding memory as an essential component of reliable, adaptive, and lifelong-horizon embodied intelligence."
           }
-        ],
-        "summary": {
-          "en": "This survey treats embodied memory as a way to preserve decision-relevant information beyond the current observation. It organizes prior work by six memory requirements and eight architectural categories, covering topics such as world-state persistence, task progress, belief maintenance, experiential learning, recurrent states, visual and symbolic representations, spatial memory, and experience-based systems. The authors analyze capabilities, limitations, and benchmark evaluation, distinguishing genuine use of historical information from general task performance. They also identify challenges in experience selection, belief consistency in changing environments, and knowledge consolidation across episodes.",
-          "zh": "这篇综述将具身记忆视为保存当前观测之外、与决策相关信息的机制。作者从六项记忆需求和八类架构梳理现有方法，涵盖世界状态、任务进展、信念维护、经验学习，以及循环状态、视觉与符号表征、空间记忆和经验系统等；并分析其能力、局限与基准评估方式，区分历史信息的真实运用和一般任务表现。文章还指出相关经验筛选、动态环境中的信念一致性及跨回合知识整合等挑战。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14557,7 +14545,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -14747,7 +14735,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15097,7 +15085,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15572,7 +15560,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15665,7 +15653,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15734,7 +15722,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15801,7 +15789,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15861,7 +15849,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15891,7 +15879,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -15921,7 +15909,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16051,7 +16039,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16084,7 +16072,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16175,7 +16163,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16368,7 +16356,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16398,7 +16386,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -16644,7 +16632,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17026,7 +17014,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17282,7 +17270,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17412,7 +17400,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17510,7 +17498,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17653,7 +17641,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17678,8 +17666,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. It adds three-dimensional odor transport and dispersion, simulated with Fire Dynamics Simulator, to Habitat-Sim, allowing agents to navigate indoor environments using visual and olfactory observations. The benchmark includes locating invisible gas leaks and early-stage fires. The authors also develop an initial multimodal reinforcement-learning policy that integrates visual observations and olfactory measurements over time, and report that it outperforms a range of baselines in experiments.",
-          "zh": "论文提出 OdorSpaces，这是用于视觉与嗅觉联合具身导航的物理仿真平台和基准。它在 Habitat-Sim 中加入由 Fire Dynamics Simulator 模拟的三维气味输运与扩散，使智能体可在室内环境中结合视觉和嗅觉观测导航；任务包括定位不可见气体泄漏源和早期火源。作者还开发了融合视觉观测与嗅觉测量的初步多模态强化学习策略，并报告其在实验中优于多种基线。"
+          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for embodied navigation using vision and smell. It adds three-dimensional odor transport and dispersion, simulated with Fire Dynamics Simulator, to Habitat-Sim, allowing agents to navigate indoor environments from visual and olfactory observations. The benchmark covers source seeking for invisible gas leaks and early-stage fires. The authors also develop an initial multimodal reinforcement-learning policy that integrates visual observations with olfactory measurements over time, and report that it outperforms a range of baselines in experiments.",
+          "zh": "论文提出 OdorSpaces，这是用于视觉与嗅觉联合具身导航的物理仿真平台和基准。平台在 Habitat-Sim 环境中加入由 Fire Dynamics Simulator 模拟的三维气味输运与扩散，使智能体可结合视觉和嗅觉观测在室内环境中导航。基准包含隐形气体泄漏定位和早期火灾定位两类寻源任务。作者还开发了融合视觉观测与连续嗅觉测量的初步多模态强化学习策略，并报告其在实验中优于多种基线方法。"
         }
       },
       "source": {
@@ -17786,7 +17774,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17825,7 +17813,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17885,7 +17873,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -17982,7 +17970,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18049,7 +18037,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18119,7 +18107,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18179,7 +18167,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18209,7 +18197,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18232,11 +18220,7 @@
             "heading": "",
             "text": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena.\n\nThe core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations.\n\nOur core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations. We select simulations based on U.S.\n\nGDP data to cover economically valuable physical work, define what makes a good simulation and a good task, and develop an adversarial creation-audit loop that checks each simulation and task against these definitions. Using this pipeline, we build RoboWorld, a set of 25 simulations with 25 test and 175 training RL environments of varying difficulty.\n\nEven the best frontier models fail on every RoboWorld test task, achieving an average reward of only 0.06.\n\nBuilding on RoboWorld, we introduce several new ways for frontier models to improve, including in-context learning across repeated attempts, a privileged teacher that reads the simulator state and teaches a student in context, self-assisted learning from the model's own privileged experience, and code policies that generate demonstrations across varied scenes to train vision-language-action models (VLAs) such as $π_{0.5}$.\n\nEach of these substantially improves performance. We release our pipeline, RL environments, and benchmark to facilitate future research. Code and data are available at https://gym-anything.github.io/robotics"
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Gym-Anything for Robotics, a framework in which coding agents create robotics simulations, with an adversarial creation-and-audit loop checking simulations and tasks. The authors select simulation areas using U.S. GDP data and build RoboWorld, comprising 25 simulations, 25 test environments, and 175 training environments. They report that the best frontier models achieve an average reward of 0.06 on RoboWorld test tasks. The paper also describes improvement methods, including in-context learning across repeated attempts, privileged teacher guidance, self-assisted learning, and generating demonstrations to train vision-language-action models.",
-          "zh": "论文提出 Gym-Anything for Robotics，让编码智能体创建机器人仿真，并通过对抗式创建与审计流程检查仿真和任务。作者依据美国 GDP 数据选择仿真方向，构建包含 25 个仿真、25 个测试环境和 175 个训练环境的 RoboWorld。摘要称，最佳前沿模型在测试任务上的平均奖励为 0.06；文中还介绍多种提升方式，包括重复尝试中的上下文学习、特权教师指导、自助学习及生成演示来训练视觉语言动作模型。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -18246,7 +18230,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18271,8 +18255,8 @@
           }
         ],
         "summary": {
-          "en": "The paper presents Open-HumanWAM, an open recipe and curated, annotated egocentric video corpus for scaling human-video pretraining, and studies human-only pretraining with closed-loop simulation evaluations. The authors report an empirical log-linear relationship between pretraining hours and downstream robot success. After robot post-training, HumanWAM-Vanilla achieves the stated results on RoboTwin 2.0 and RoboDojo evaluations. HumanWAM-Goal is reported to generalize across simulation and physical benchmarks and adapt to unseen visual goals on physical robots. The authors say they release the corpus, pipelines, checkpoints, inference code, and evaluation suites.",
-          "zh": "论文介绍 Open-HumanWAM，一套扩展人类第一视角视频预训练的开放方案及经整理、标注的视频语料，并通过闭环仿真研究纯人类数据预训练。作者报告，人类预训练数据时长与下游机器人成功率呈经验性对数线性关系；结合机器人后训练的模型在 RoboTwin 2.0、RoboDojo 仿真评测中取得摘要列出的成绩。另一模型在仿真与实体机器人任务中展示泛化及根据未见视觉目标调整行为的能力。作者称已开放语料、流程、模型检查点、推理代码和评测套件。"
+          "en": "The paper presents Open-HumanWAM, an open recipe for pretraining embodied foundation models on large-scale egocentric human video, together with an annotated corpus and training pipelines. Closed-loop simulation evaluations of human-only pretraining reveal, according to the authors, an empirical log-linear relationship between video hours and downstream robot success. After robot post-training, the models achieve the reported results on RoboTwin and RoboDojo benchmarks. The authors also report that joint human-robot pretraining supports zero-shot generalization across simulation and physical benchmarks, and adaptation to unseen visual goals on physical robots.",
+          "zh": "论文介绍 Open-HumanWAM，一套以大规模第一人称人类视频训练具身基础模型的开放方案，并发布带手部运动和自然语言标注的视频语料及训练流程。作者通过闭环仿真研究纯人类数据预训练，报告数据时长与机器人任务成功率之间存在经验对数线性关系。模型经机器人后训练后，在 RoboTwin、RoboDojo 仿真基准及实体机器人任务中取得摘要所列表现；作者还报告混合人类与机器人数据带来仿真和实体基准上的零样本泛化及视觉目标适应能力。"
         }
       },
       "source": {
@@ -18283,7 +18267,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18316,7 +18300,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18376,7 +18360,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -18570,7 +18554,7 @@
     },
     {
       "archive": {
-        "recorded_at": "2026-11-07"
+        "recorded_at": "2026-11-08"
       },
       "body": "",
       "catalog": {
@@ -19662,6 +19646,13 @@
             "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
             "type": "已发布",
             "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
+          },
+          {
+            "date": "2026-11-08",
+            "source_name": "工信部标准公告",
+            "title": "工业和信息化部举行《“人工智能+软件”专项行动实施方案》新闻发布会",
+            "type": "已发布",
+            "url": "https://www.miit.gov.cn/xwfb/xwfbh/bxwfbh/art/2026/art_95c0b992336a4cb1b87ec3ccc576a669.html"
           }
         ],
         "executing_organization": null,
@@ -19672,7 +19663,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-11-07",
+        "recorded_at": "2026-11-08",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -30498,6 +30489,13 @@
             "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
+          },
+          {
+            "date": "2026-11-08",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "全国信标委“标准周”具身智能标准工作组会议在京召开",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202606/848a8761c4c84eb29015c648188beb68.shtml"
           }
         ],
         "executing_organization": null,
@@ -30508,7 +30506,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-11-07",
+        "recorded_at": "2026-11-08",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -34812,6 +34810,13 @@
             "title": "关于批准发布《学术出版中人工智能 生成合成内容（AIGC）使用边界指南》等 37项国家标准化指导性技术文件的公告",
             "type": "已发布",
             "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_4095208446874019868a4267dc284d01.html"
+          },
+          {
+            "date": "2026-11-08",
+            "source_name": "市场监管总局标准公告",
+            "title": "关于批准发布《学术出版中人工智能 生成合成内容（AIGC）使用边界指南》等 37项国家标准化指导性技术文件的公告",
+            "type": "已发布",
+            "url": "https://www.samr.gov.cn/bzjss/tzgg/art/2026/art_4095208446874019868a4267dc284d01.html"
           }
         ],
         "executing_organization": null,
@@ -34822,7 +34827,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-11-07",
+        "recorded_at": "2026-11-08",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -47678,6 +47683,13 @@
             "title": "两项人工智能操作系统国家标准正式发布",
             "type": "已发布",
             "url": "https://nits.org.cn/tc28/hydt/202610/773eba95a58b456ebb528e7835bdb63b.shtml"
+          },
+          {
+            "date": "2026-11-08",
+            "source_name": "全国信息技术标准化技术委员会",
+            "title": "两项人工智能操作系统国家标准正式发布",
+            "type": "已发布",
+            "url": "https://nits.org.cn/tc28/hydt/202610/773eba95a58b456ebb528e7835bdb63b.shtml"
           }
         ],
         "executing_organization": null,
@@ -47688,7 +47700,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-11-07",
+        "recorded_at": "2026-11-08",
         "related_units": [],
         "standard_number": null,
         "status": "已发布"
@@ -54436,6 +54448,13 @@
             "title": "CCSA/TC602人工智能技术与标准推委会",
             "type": "拟立项",
             "url": "http://tc602.ccsa.org.cn/"
+          },
+          {
+            "date": "2026-11-08",
+            "source_name": "工业和信息化部人工智能标准化技术委员会",
+            "title": "CCSA/TC602人工智能技术与标准推委会",
+            "type": "拟立项",
+            "url": "http://tc602.ccsa.org.cn/"
           }
         ],
         "executing_organization": null,
@@ -54446,7 +54465,7 @@
         "organization": null,
         "participating_units": [],
         "plan_number": null,
-        "recorded_at": "2026-11-07",
+        "recorded_at": "2026-11-08",
         "related_units": [],
         "standard_number": null,
         "status": "拟立项"
