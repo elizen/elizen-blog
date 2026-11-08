@@ -9971,11 +9971,7 @@
             "heading": "",
             "text": "Scientific experiments are increasingly selected, executed and interpreted by learned systems that act through physical interfaces. Robot learning builds physical competence, whereas AI for science chooses which experiment to run, each reporting different endpoints.\n\nThis review treats their interface as one problem, embodied AI for science, where the experiment itself is partially observed: specimen state, apparatus state and measurement processes are latent, actions are costly and irreversible, and missingness depends on execution and outcome.\n\nWe organize the literature by three closures operating at distinct levels: operational closure (the experiment realized is the one intended), epistemic closure (the result updates beliefs or selects subsequent experiments) and evidential closure (the record supports a claim).\n\nWe analyze workflows through a record-linked evidence cycle - Record, Diagnose, Calibrate, Confirm - as analytic functions with feedback. A taxonomy crosses these closures with six delegated decisions and five embodiment classes.\n\nOur formulation separates commanded, realized and observed conditions and models diagnosis with explicit resource, risk and sample-change costs.\n\nWe compare experiment-selection methods by terminal decision, review perception, protocol compilation, visuomotor policies, world models, recovery and transfer by evidence emission requirements, and compare chemistry, materials, biology, microscopy and field workflows by what their records establish.\n\nAn appendix provides an evidence map of 28 workflows (26 physical, two software-boundary), characterizing validation pathways and claim confirmation requirements. We propose evaluation that separates actions, valid experiments, campaigns and confirmed claims, framing open challenges as controlled comparisons with measurable failure conditions."
           }
-        ],
-        "summary": {
-          "en": "This review frames robot learning through physical interfaces and AI-driven experiment selection as embodied AI for science. It organizes prior work around operational, epistemic, and evidential closure, and analyzes workflows through a record-linked cycle of recording, diagnosis, calibration, and confirmation. The authors distinguish commanded, realized, and observed conditions, compare methods across experimental decisions and embodiment settings, and provide an evidence map of 28 workflows. They propose evaluation that separates actions, valid experiments, campaigns, and confirmed claims.",
-          "zh": "这篇综述将通过物理接口执行科学实验的机器人学习与人工智能实验选择研究，统一讨论为科学发现中的具身人工智能。作者以操作闭合、认识闭合和证据闭合组织文献，并用“记录、诊断、校准、确认”的证据循环分析工作流，区分指令条件、实际实现条件和观测条件。文章比较多类实验决策、感知、策略与迁移方法，并整理 28 个工作流的证据地图；提出评估应区分动作、有效实验、实验活动与已确认主张。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10137,11 +10133,7 @@
             "heading": "",
             "text": "Millimeter-wave (mmWave) communications are essential for supporting massive multimodal sensory data exchange in Embodied Artificial Intelligence (EAI) systems. However, fast and reliable beam selection for mmWave communication remains a critical bottleneck due to the prohibitive overhead associated with conventional beam training.\n\nAlthough location-aided beam prediction offers a promising alternative, its performance is often limited by localization errors and the need for extensive training data. To address these challenges, we propose a novel framework termed In-Context Learning driven Cross-Validation Conformal Prediction (ICL+CVCP) for beam prediction.\n\nThe proposed framework utilizes the training-free adaptation capability of ICL, enabling effective operation with only a small number of demonstration samples and eliminating the need for large-scale data collection and model fine-tuning.\n\nIn addition, the CVCP module constructs compact, distribution-free candidate beam sets that provably contain the optimal beam with a user-defined probability.\n\nExperimental results confirm that ICL+CVCP consistently satisfies the desired empirical coverage while significantly reducing pilot overhead and computational latency, thereby meeting the stringent reliability and efficiency requirements of EAI applications."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes ICL+CVCP for millimeter-wave beam prediction in embodied AI. In-context learning adapts without training using a small number of demonstrations, while cross-validation conformal prediction forms compact, distribution-free candidate beam sets that are claimed to contain the optimal beam at a user-defined probability. Experiments report that the framework meets the desired empirical coverage and reduces pilot overhead and computational latency.",
-          "zh": "论文提出面向具身人工智能毫米波通信波束预测的 ICL+CVCP 框架，以少量示例进行无需训练的上下文适配，并通过保形预测构造紧凑、与分布无关的候选波束集合；作者称该集合可按用户设定概率包含最优波束。实验结果显示，该方法达到目标经验覆盖率，并降低导频开销与计算延迟。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17664,11 +17656,7 @@
             "heading": "",
             "text": "Olfaction provides critical information about airborne chemical cues, yet it remains largely underexplored in embodied AI, with limited prior machine olfaction work focusing primarily on semantic odor perception. We introduce OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation.\n\nOdorSpaces augments Habitat-Sim with 3D odor transport and dispersion simulated by Fire Dynamics Simulator (FDS), enabling agents to navigate photorealistic indoor environments using both visual and olfactory observations. The benchmark includes two representative source-seeking scenarios: invisible gas-leak localization and early-stage fire localization.\n\nWe develop an initial multimodal reinforcement learning policy that integrates visual observations and olfactory measurements over time. Experiments show that the policy outperforms a diverse set of baselines, establishing a strong reference for future research on visual-olfactory embodied navigation."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. It adds three-dimensional odor transport and dispersion to Habitat-Sim, allowing agents to use visual and olfactory observations in photorealistic indoor environments. The benchmark covers localization of invisible gas leaks and early-stage fires. The authors also develop a multimodal reinforcement learning policy combining visual observations with olfactory measurements over time; experiments report that it outperforms a diverse set of baselines.",
-          "zh": "论文提出 OdorSpaces，一个用于视觉—嗅觉具身导航的物理仿真平台与基准。它将三维气味输运和扩散仿真加入 Habitat-Sim，使智能体能在写实室内环境中结合视觉与嗅觉观测导航，任务包括定位不可见气体泄漏源和早期火源。作者还设计了融合视觉观测与连续嗅觉测量的多模态强化学习策略；实验显示，该策略优于多种基线，为后续研究提供参考。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -18253,11 +18241,7 @@
             "heading": "",
             "text": "Egocentric human video offers a scalable source of manipulation priors for robot learning, yet translating raw data scale into generalizable robot policies demands rigorous data curation and training recipes.\n\nWe introduce Open-HumanWAM, the first fully open recipe for scaling egocentric pretraining to 50,000 hours, anchored by Open-HumanWAM-50K---a curated egocentric video corpus densely annotated with hand motion and natural language.\n\nLeveraging this corpus, we systematically investigate pure human pretraining via closed-loop simulation evaluations and uncover an empirical log-linear scaling law linking pretraining data hours to downstream robot success rates.\n\nGrounded in these findings, we develop HumanWAM-Vanilla, a world--action model pretrained exclusively on 50k hours of egocentric human video. Upon robot post-training, HumanWAM-Vanilla reaches 92.08% success on RoboTwin 2.0 Clean2Clean and 68.88% on Clean2Random, alongside a 14.17% mean success rate and a 19.00 mean progress score on RoboDojo.\n\nTo push the capability frontier further, we explore joint human--robot pretraining with HumanWAM-Goal, a visual-goal-conditioned world--action model.\n\nHybrid data scaling unlocks broad zero-shot generalization across both simulation and physical benchmarks, propelling post-trained RoboTwin 2.0 performance to new state-of-the-art levels: 92.70% on Clean2Clean and a substantial leap to 84.60% on Clean2Random.\n\nOn physical robots, HumanWAM-Goal further exhibits emergent embodied in-context learning, dynamically adapting its manipulation behavior to unseen visual goals without parameter updates.\n\nTo support reproducible scaling research in embodied AI, we open-source the Open-HumanWAM-50K corpus, data curation and pretraining pipelines, alongside the pretrained and post-trained HumanWAM checkpoints, inference code, and simulation evaluation suites."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Open-HumanWAM, an open recipe for scaling embodied foundation models with egocentric human video, along with a densely annotated corpus and training pipelines. Closed-loop simulation evaluations show an empirical log-linear relationship between human pretraining hours and robot task success. The authors report benchmark results for models post-trained on robot data, and describe broader generalization from joint human–robot pretraining across simulation and physical benchmarks. On physical robots, the goal-conditioned model is reported to adapt to unseen visual goals without parameter updates.",
-          "zh": "论文介绍 Open-HumanWAM，这是一套以大规模第一人称人类视频扩展具身基础模型的开放方案，并发布密集标注手部运动和自然语言的视频语料及训练流程。闭环仿真评估显示，人类预训练数据时长与机器人任务成功率呈经验上的对数线性关系。作者报告，纯人类预训练模型经机器人后训练后在 RoboTwin 2.0 和 RoboDojo 上取得相应表现；联合人类与机器人预训练的模型在仿真和实体基准上展现泛化，并在实体机器人上表现出无需参数更新、适应未见视觉目标的能力。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
