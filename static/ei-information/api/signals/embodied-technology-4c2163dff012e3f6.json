@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-4c2163dff012e3f6",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "POD-RoPE: Rotary Position Encoding over Physical Observation Distributions for Embodied AI",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-10-24",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-27T01:54:00.760598+00:00",
+    "updated_at": "2026-11-08T10:27:59.191362+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.33745v2",
+        "title": "POD-RoPE: Rotary Position Encoding over Physical Observation Distributions for Embodied AI",
+        "published_at": "2026-10-24",
+        "checked_at": "2026-11-08T10:27:48.796020+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Embodied perception requires positional representations that capture both physical geometry and the spatial and temporal extent of observations. We introduce POD-RoPE (Physical Observation Distribution RoPE), which represents token observation footprints as distributions over camera centers, viewing directions, and sampling times. Under independent sampling, expected rotations encode relative relationships between distributions; when each distribution collapses to a single address, the construction recovers pointwise RoPE. The same rotation statistics support Q/K matching and coherence-dependent V/O transformations, allowing observation geometry to guide both information selection and content aggregation. Per-token pre-aggregation avoids increasing sequence length or processing pairs of observation nodes. We evaluate POD-RoPE across four robot policy architectures, simulation and real-world manipulation, and complementary reconstruction, depth-estimation, and novel-view-synthesis tasks. Integrating POD-RoPE into Fast-WAM improves mean success from 91.83% to 92.88% across all 50 RoboTwin 2.0 tasks, and from 32.5% to 52.5% on two real-robot tasks on Sharpa North. Controlled reconstru"
+      }
+    ]
+  }
+}
