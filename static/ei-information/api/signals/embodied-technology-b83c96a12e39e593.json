@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-b83c96a12e39e593",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Build World Models for Interactive Simulation with NVIDIA Cosmos",
+    "summary": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+    "event_date": "2026-11-02",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-05T02:54:05.545852+00:00",
+    "updated_at": "2026-11-08T13:40:23.078846+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+        "why_it_matters": "世界模型是机器人从即时反应走向长时规划的关键中间层，但预测是否可信仍决定它能否落地。",
+        "watch_next": "继续核对预测误差、真实环境验证和是否能支撑长时任务。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/build-world-models-for-interactive-simulation-with-nvidia-cosmos/",
+        "title": "Build World Models for Interactive Simulation with NVIDIA Cosmos",
+        "published_at": "2026-11-02",
+        "checked_at": "2026-11-08T13:38:37.110440+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Simulation / Modeling / Design English 中文 Build World Models for Interactive Simulation with NVIDIA Cosmos Nov 02, 2026 By Pranjali Joshi , Aditya Mahajan , Wonsik Han , Saeed Babamohamadi , Mateusz Sieniawski and Mostafa Toloui Discuss (0) L T F R E AI-Generated Summary NVIDIA Cosmos provides world foundation models and development tools for physical AI, addressing sensor adaptation and reliable deployment challenges. Cosmos Framework offers modular, open tools for training, reinforcement learning, optimization, and inference across models including Cosmos 3, NVIDIA Alpamayo, GR00T, Qwen, and pi0.5. Cosmos 3 Nano simulation recipes generate synchronized camera video and LiDAR observations for autonomous vehicle, robotics, and surgical scenarios using released checkpoints. Cosmos NIM microservices deliver accelerated inference with quantization, speculative decoding, and KV-cache-aware routing, achieving roughly 2–3x speedups on H200 GPUs. GPU memory requirements vary by model and task, with Cosmos3-Nano generation needing 58 GiB in BF16 and 44 GiB in FP8 with offloading. Next Steps Explore the Cosmos Framework to train, customize, and optimize models for your application. Read the"
+      }
+    ]
+  }
+}
