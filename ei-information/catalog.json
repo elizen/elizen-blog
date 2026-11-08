@@ -2637,11 +2637,7 @@
             "heading": "",
             "text": "Simulation benchmarks are the standard way to compare robot policies, but each benchmark brings its own evaluator, observation layout, and action convention, and evaluation is slow: 500 RoboTwin Easy episodes with one simulator and one model on one GPU take 359.7 minutes.\n\nProfiling the official StarVLA evaluator shows that simulation occupies CPU cores while the GPU averages 14.3% utilization. RoboScope Kit wraps each model once in a Python class called a Policy, and each benchmark once in an adapter around the benchmark's own evaluator, so the benchmark's rules and scoring stay unchanged.\n\nScheduling runs simulator workers and Policy replicas as separate pools, sizes both from measured probes, and shards work deterministically across GPU instances; runtime optimization renders only the observations an action-chunk Policy reads. Adapters cover six benchmark families.\n\nOn LIBERO-Long with a StarVLA checkpoint on one 48 GiB RTX 4090, the concurrency search selects twelve simulator workers sharing three Policy replicas, which evaluate 500 episodes 4.45$\\times$ faster than the official StarVLA evaluation with equivalent success rates, 2.78$\\times$ faster than RLinf, and 1.52$\\times$ faster than vla-eval at its tuned configuration.\n\nWith CUDA MPS, which lets the replicas run their kernels concurrently, the search selects sixteen workers sharing four replicas, 6.16$\\times$ faster than StarVLA, 3.85$\\times$ faster than RLinf, and 2.10$\\times$ faster than vla-eval.\n\nOn RoboTwin Easy, four GPUs with chunk-boundary observation complete the 500 episodes in 14.4 minutes, 25.04$\\times$ faster than the single-GPU baseline, with identical success outcomes and terminal steps."
           }
-        ],
-        "summary": {
-          "en": "The paper presents RoboScope Kit, a unified interface for robot policies and adapters for six benchmark families, designed to preserve each benchmark’s rules and scoring. It separates simulator workers from policy replicas, tunes their concurrency using probes, and renders observations according to policy needs. In the reported single-GPU LIBERO-Long evaluation, it is faster than StarVLA, RLinf, and tuned vla-eval while maintaining equivalent success rates. A four-GPU RoboTwin Easy evaluation also reports faster completion with identical success outcomes and terminal steps.",
-          "zh": "论文介绍 RoboScope Kit，用统一接口连接机器人策略与六类仿真基准，并通过适配器保留各基准原有规则和评分。系统将仿真工作进程与策略副本分开调度，并按策略读取需求优化观测渲染。在所述单卡 LIBERO-Long 测试中，作者报告其相较 StarVLA、RLinf 和调优后的 vla-eval 更快且成功率相当；RoboTwin Easy 的四卡测试也报告了提速，成功结果和终止步数与基线一致。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8266,11 +8262,7 @@
             "heading": "",
             "text": "Radio maps provide spatial knowledge of wireless environments to assess coverage, manage spectrum use, and support connectivity-aware mobility.\n\nRecent advances in embodied intelligence (EI) offer a promising approach to radio map reconstruction by enabling agents to perceive the environment and autonomously adjust their survey paths toward safe, reachable locations.\n\nHowever, a single agent remains constrained by limited endurance and onboard computing capacity, limiting measurement collection and reconstruction performance. Swarm cooperation can support more efficient radio mapping over larger areas by sharing observations and coordinating members' sampling.\n\nThis article first explores the capabilities and applications of cooperative embodied agents. A cooperative radio map reconstruction framework is then presented, together with its key enabling techniques.\n\nCase study results illustrate how scene perception supports access to informative sampling locations and how air--ground cooperation improves reconstruction through complementary measurements and mobile support.\n\nThe article concludes with open challenges and future research directions for reliable and efficient embodied cooperative radio mapping in complex environments."
           }
-        ],
-        "summary": {
-          "en": "The article explores embodied intelligence for radio map reconstruction. It describes how a single agent’s endurance and onboard computing capacity can constrain data collection and reconstruction, and presents a cooperative framework with enabling techniques. Case studies illustrate how scene perception can guide agents to informative sampling locations, and how air–ground cooperation can improve reconstruction through complementary measurements and mobile support. The article closes by outlining open challenges and future research directions for reliable, efficient cooperative mapping in complex environments.",
-          "zh": "文章讨论具身智能在无线电地图重建中的应用，指出单个智能体受续航和机载计算能力限制，可能影响测量采集与重建。作者提出协作无线电地图重建框架及相关关键技术，并以案例说明场景感知如何帮助智能体到达有价值的采样位置，以及空地协作如何借助互补测量和移动支持改善重建。文章最后列出复杂环境下实现可靠、高效协作的开放挑战与未来研究方向。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9979,11 +9971,7 @@
             "heading": "",
             "text": "Scientific experiments are increasingly selected, executed and interpreted by learned systems that act through physical interfaces. Robot learning builds physical competence, whereas AI for science chooses which experiment to run, each reporting different endpoints.\n\nThis review treats their interface as one problem, embodied AI for science, where the experiment itself is partially observed: specimen state, apparatus state and measurement processes are latent, actions are costly and irreversible, and missingness depends on execution and outcome.\n\nWe organize the literature by three closures operating at distinct levels: operational closure (the experiment realized is the one intended), epistemic closure (the result updates beliefs or selects subsequent experiments) and evidential closure (the record supports a claim).\n\nWe analyze workflows through a record-linked evidence cycle - Record, Diagnose, Calibrate, Confirm - as analytic functions with feedback. A taxonomy crosses these closures with six delegated decisions and five embodiment classes.\n\nOur formulation separates commanded, realized and observed conditions and models diagnosis with explicit resource, risk and sample-change costs.\n\nWe compare experiment-selection methods by terminal decision, review perception, protocol compilation, visuomotor policies, world models, recovery and transfer by evidence emission requirements, and compare chemistry, materials, biology, microscopy and field workflows by what their records establish.\n\nAn appendix provides an evidence map of 28 workflows (26 physical, two software-boundary), characterizing validation pathways and claim confirmation requirements. We propose evaluation that separates actions, valid experiments, campaigns and confirmed claims, framing open challenges as controlled comparisons with measurable failure conditions."
           }
-        ],
-        "summary": {
-          "en": "This review frames robot learning and AI for Science as a shared problem of embodied scientific discovery, where experiment states are partly observed, actions can be costly or irreversible, and records affect what claims evidence can support. It organizes the literature around operational, epistemic, and evidential closure and analyzes a feedback cycle of recording, diagnosis, calibration, and confirmation. The review compares methods and workflows across fields, maps 28 workflows in an appendix, and proposes evaluations that distinguish actions, valid experiments, campaigns, and confirmed claims.",
-          "zh": "这篇综述将机器人学习与 AI for Science 的实验选择、执行和解释视为具身科学发现的共同问题，强调实验状态部分可观测、行动有成本且可能不可逆，结果记录也会影响证据判断。文章以操作、认知和证据闭合作为分析框架，并提出“记录、诊断、校准、确认”的证据循环；比较不同工作流、方法和学科如何支撑主张。附录梳理了 28 个工作流，并建议区分行动、有效实验、实验活动和已确认主张进行评估。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -10145,11 +10133,7 @@
             "heading": "",
             "text": "Millimeter-wave (mmWave) communications are essential for supporting massive multimodal sensory data exchange in Embodied Artificial Intelligence (EAI) systems. However, fast and reliable beam selection for mmWave communication remains a critical bottleneck due to the prohibitive overhead associated with conventional beam training.\n\nAlthough location-aided beam prediction offers a promising alternative, its performance is often limited by localization errors and the need for extensive training data. To address these challenges, we propose a novel framework termed In-Context Learning driven Cross-Validation Conformal Prediction (ICL+CVCP) for beam prediction.\n\nThe proposed framework utilizes the training-free adaptation capability of ICL, enabling effective operation with only a small number of demonstration samples and eliminating the need for large-scale data collection and model fine-tuning.\n\nIn addition, the CVCP module constructs compact, distribution-free candidate beam sets that provably contain the optimal beam with a user-defined probability.\n\nExperimental results confirm that ICL+CVCP consistently satisfies the desired empirical coverage while significantly reducing pilot overhead and computational latency, thereby meeting the stringent reliability and efficiency requirements of EAI applications."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes ICL+CVCP for millimeter-wave beam prediction, combining in-context learning with cross-validation conformal prediction. The authors say it adapts without training using only a small number of demonstrations, avoiding large-scale data collection and fine-tuning, while producing compact, distribution-free candidate beam sets with a stated probability guarantee. Experiments report that the framework meets its desired empirical coverage and reduces pilot overhead and computational latency.",
-          "zh": "论文提出用于毫米波通信波束预测的 ICL+CVCP 框架，结合上下文学习与交叉验证保形预测。作者称，该方法可用少量示例进行免训练适配，无需大规模数据收集和模型微调，并构造具有分布无关保证的候选波束集合。实验结果显示，该框架满足目标经验覆盖率，并降低导频开销和计算延迟。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -14402,11 +14386,7 @@
             "heading": "",
             "text": "Recent advances in generative foundation models have expanded the capabilities of embodied AI, enabling increasingly general navigation, manipulation, and long-horizon task execution.\n\nHowever, effective interaction with dynamic environments requires more than only strong perception and reasoning: agents must act with partial knowledge and retain, retrieve, and update information from past observations, actions, and experiences.\n\nThis survey examines embodied memory as a mechanism for preserving decision-relevant information beyond the current observation.\n\nWe organize existing approaches along two complementary dimensions: six fundamental memory requirements, spanning world-state persistence, task progress, belief maintenance, and experiential learning; and eight architectural categories, including recurrent states, fast weights, visual and symbolic representations, spatial memory, and experience-based systems.\n\nWe analyze their capabilities and limitations, and examine how existing benchmarks evaluate memory-dependent behavior, distinguishing genuine use of historical information from general task performance.\n\nFinally, we identify open challenges in selecting relevant experiences, maintaining consistent beliefs in changing environments, and consolidating knowledge across episodes. Our analysis provides a framework for understanding memory as an essential component of reliable, adaptive, and lifelong-horizon embodied intelligence."
           }
-        ],
-        "summary": {
-          "en": "This survey treats embodied memory as a way to preserve decision-relevant information beyond the current observation. It organizes prior work by six fundamental memory requirements and eight architectural categories, and analyzes their capabilities and limitations. It also examines how benchmarks assess memory-dependent behavior, distinguishing use of historical information from general task performance. The authors identify challenges in selecting relevant experiences, maintaining consistent beliefs in changing environments, and consolidating knowledge across episodes, framing memory as important to reliable and adaptive embodied intelligence.",
-          "zh": "这篇综述将具身记忆视为保存当前观测之外决策相关信息的机制，梳理现有方法的六项基本记忆需求和八类架构，并分析其能力与局限。文章还考察基准如何评估依赖记忆的行为，区分真正利用历史信息与一般任务表现。作者提出的开放问题包括筛选相关经验、在环境变化时维持一致信念，以及跨回合整合知识，并将记忆视为实现可靠、适应性具身智能的重要组成。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17676,11 +17656,7 @@
             "heading": "",
             "text": "Olfaction provides critical information about airborne chemical cues, yet it remains largely underexplored in embodied AI, with limited prior machine olfaction work focusing primarily on semantic odor perception. We introduce OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation.\n\nOdorSpaces augments Habitat-Sim with 3D odor transport and dispersion simulated by Fire Dynamics Simulator (FDS), enabling agents to navigate photorealistic indoor environments using both visual and olfactory observations. The benchmark includes two representative source-seeking scenarios: invisible gas-leak localization and early-stage fire localization.\n\nWe develop an initial multimodal reinforcement learning policy that integrates visual observations and olfactory measurements over time. Experiments show that the policy outperforms a diverse set of baselines, establishing a strong reference for future research on visual-olfactory embodied navigation."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. It adds three-dimensional odor transport and dispersion, simulated with Fire Dynamics Simulator, to Habitat-Sim, enabling agents to use visual and olfactory observations in indoor environments. The benchmark covers locating invisible gas leaks and early-stage fires. The authors also develop a multimodal reinforcement-learning policy that integrates both observation types over time; experiments report that it outperforms a diverse set of baselines.",
-          "zh": "论文介绍 OdorSpaces，这是一个用于视觉与嗅觉具身导航的物理仿真平台和基准。它在 Habitat-Sim 环境中加入由 Fire Dynamics Simulator 模拟的三维气味传输与扩散，支持智能体结合视觉和嗅觉观测，在室内寻找不可见气体泄漏源或早期火源。作者开发了融合两类观测的多模态强化学习策略；实验显示，该策略优于多种基线方法。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -18232,11 +18208,7 @@
             "heading": "",
             "text": "Realistic, fast robotics simulations could enable large-scale training of embodied AI models that transfer to the real world. However, despite decades of progress, available simulations cover only a narrow range of real-world tasks and physical phenomena.\n\nThe core bottleneck is that creating better simulations requires significant expert effort and therefore does not scale. To address this, we introduce Gym-Anything for Robotics, a framework in which coding agents create realistic robotics simulations.\n\nOur core insight is that simulation creation is a coding agent task, so improvements in coding agents translate directly into richer and more faithful simulations. We select simulations based on U.S.\n\nGDP data to cover economically valuable physical work, define what makes a good simulation and a good task, and develop an adversarial creation-audit loop that checks each simulation and task against these definitions. Using this pipeline, we build RoboWorld, a set of 25 simulations with 25 test and 175 training RL environments of varying difficulty.\n\nEven the best frontier models fail on every RoboWorld test task, achieving an average reward of only 0.06.\n\nBuilding on RoboWorld, we introduce several new ways for frontier models to improve, including in-context learning across repeated attempts, a privileged teacher that reads the simulator state and teaches a student in context, self-assisted learning from the model's own privileged experience, and code policies that generate demonstrations across varied scenes to train vision-language-action models (VLAs) such as $π_{0.5}$.\n\nEach of these substantially improves performance. We release our pipeline, RL environments, and benchmark to facilitate future research. Code and data are available at https://gym-anything.github.io/robotics"
           }
-        ],
-        "summary": {
-          "en": "The paper introduces Gym-Anything for Robotics, a framework in which coding agents create robotics simulations, checked through an adversarial creation and audit process. Its RoboWorld suite contains 25 simulations, 25 test environments, and 175 training environments. The authors report that the best frontier models achieve an average reward of 0.06 across the test tasks. They describe approaches including in-context learning over repeated attempts, a privileged teacher, self-assisted learning, and code policies that generate demonstrations; the paper says each substantially improves performance.",
-          "zh": "论文提出 Gym-Anything for Robotics，让编码智能体创建机器人仿真，并以对抗式创建与审查流程检查仿真和任务；据此构建包含25个仿真、25个测试环境和175个训练环境的 RoboWorld。作者报告，最佳前沿模型在测试任务上的平均奖励为0.06，并介绍利用重复尝试中的上下文学习、特权教师、自助学习和代码策略生成示范等方法提升表现。论文称这些方法均显著改善性能，并发布相关流程、环境和基准。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -18269,11 +18241,7 @@
             "heading": "",
             "text": "Egocentric human video offers a scalable source of manipulation priors for robot learning, yet translating raw data scale into generalizable robot policies demands rigorous data curation and training recipes.\n\nWe introduce Open-HumanWAM, the first fully open recipe for scaling egocentric pretraining to 50,000 hours, anchored by Open-HumanWAM-50K---a curated egocentric video corpus densely annotated with hand motion and natural language.\n\nLeveraging this corpus, we systematically investigate pure human pretraining via closed-loop simulation evaluations and uncover an empirical log-linear scaling law linking pretraining data hours to downstream robot success rates.\n\nGrounded in these findings, we develop HumanWAM-Vanilla, a world--action model pretrained exclusively on 50k hours of egocentric human video. Upon robot post-training, HumanWAM-Vanilla reaches 92.08% success on RoboTwin 2.0 Clean2Clean and 68.88% on Clean2Random, alongside a 14.17% mean success rate and a 19.00 mean progress score on RoboDojo.\n\nTo push the capability frontier further, we explore joint human--robot pretraining with HumanWAM-Goal, a visual-goal-conditioned world--action model.\n\nHybrid data scaling unlocks broad zero-shot generalization across both simulation and physical benchmarks, propelling post-trained RoboTwin 2.0 performance to new state-of-the-art levels: 92.70% on Clean2Clean and a substantial leap to 84.60% on Clean2Random.\n\nOn physical robots, HumanWAM-Goal further exhibits emergent embodied in-context learning, dynamically adapting its manipulation behavior to unseen visual goals without parameter updates.\n\nTo support reproducible scaling research in embodied AI, we open-source the Open-HumanWAM-50K corpus, data curation and pretraining pipelines, alongside the pretrained and post-trained HumanWAM checkpoints, inference code, and simulation evaluation suites."
           }
-        ],
-        "summary": {
-          "en": "The paper presents Open-HumanWAM, an open recipe and a curated 50,000-hour egocentric human-video corpus, and studies human-only and joint human-robot pretraining. The authors report post-training results for the human-only model on RoboTwin 2.0 and RoboDojo evaluations. They also report that the joint-pretrained model generalizes across simulation and physical benchmarks, and adapts manipulation to unseen visual goals on physical robots without parameter updates. They say the corpus, pipelines, checkpoints, code, and evaluation suites will be open-sourced.",
-          "zh": "论文介绍 Open-HumanWAM 的开放训练方案及 5 万小时的人类第一视角视频语料，并研究纯人类预训练与人机联合预训练。作者报告，纯人类预训练模型经机器人后训练后，在 RoboTwin 2.0 和 RoboDojo 仿真评测中取得相应成绩；联合预训练模型在仿真及实体机器人基准上表现出泛化能力，并可在实体机器人上针对未见视觉目标调整操作行为而无需更新参数。作者称将开放语料、流程、模型与评测套件。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
