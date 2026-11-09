@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-6f50ea66dbb0c06c",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Embodied AI for Scientific Discovery: From Physical Action to Scientific Evidence",
+    "summary": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+    "event_date": "2026-11-03",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-05T02:54:05.545852+00:00",
+    "updated_at": "2026-11-09T14:07:06.886303+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+        "why_it_matters": "世界模型是机器人从即时反应走向长时规划的关键中间层，但预测是否可信仍决定它能否落地。",
+        "watch_next": "继续核对预测误差、真实环境验证和是否能支撑长时任务。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.04371v1",
+        "title": "Embodied AI for Scientific Discovery: From Physical Action to Scientific Evidence",
+        "published_at": "2026-11-03",
+        "checked_at": "2026-11-09T14:06:52.509384+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Scientific experiments are increasingly selected, executed and interpreted by learned systems that act through physical interfaces. Robot learning builds physical competence, whereas AI for science chooses which experiment to run, each reporting different endpoints. This review treats their interface as one problem, embodied AI for science, where the experiment itself is partially observed: specimen state, apparatus state and measurement processes are latent, actions are costly and irreversible, and missingness depends on execution and outcome. We organize the literature by three closures operating at distinct levels: operational closure (the experiment realized is the one intended), epistemic closure (the result updates beliefs or selects subsequent experiments) and evidential closure (the record supports a claim). We analyze workflows through a record-linked evidence cycle - Record, Diagnose, Calibrate, Confirm - as analytic functions with feedback. A taxonomy crosses these closures with six delegated decisions and five embodiment classes. Our formulation separates commanded, realized and observed conditions and models diagnosis with explicit resource, risk and sample-change cost"
+      }
+    ]
+  }
+}
