@@ -17391,6 +17391,36 @@
       "catalog": {
         "kind": "article",
         "source_channel": "website",
+        "source_name": "NVIDIA Robotics 官方博客"
+      },
+      "format": "archive_record",
+      "id": "archive-article-ebca450e09db4c9db3938a556f566512",
+      "intro": "Build a responsive gravity-compensation loop with Pinocchio, a Seeed Studio reBot arm, using a simple Holoscan graph in Python or C++ Nov 09, 2026 By Jay Carlson and Ansley Dunn Discuss （0） L T F R E AI-Generated Summary NVIDIA Holoscan 5 enables low-latency robotic control and high-throughput perception in a single programming model with execution paths for CPU and GPU workloads. A gravity-compensation loop built from three custom Holoscan…",
+      "published_at": null,
+      "reading": {
+        "mode": "excerpt",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Build a responsive gravity-compensation loop with Pinocchio, a Seeed Studio reBot arm, using a simple Holoscan graph in Python or C++ Nov 09, 2026 By Jay Carlson and Ansley Dunn Discuss （0） L T F R E AI-Generated Summary NVIDIA Holoscan 5 enables low-latency robotic control and high-throughput perception in a single programming model with execution paths for CPU and GPU workloads.\n\nA gravity-compensation loop built from three custom Holoscan operators reads joint state at 400 Hz, computes inverse dynamics with Pinocchio , and sends torque commands to the Seeed Studio reBot Arm B601-DM using the motorbridge library.\n\nHoloscan partitions group the operators on one thread to avoid cross-thread handoffs, and drop-oldest queues prevent outdated samples from accumulating. Nsight Systems profiling with built-in NVTX annotations shows pinning the control partition to a CPU core reduces p99.99 latency by roughly 5x for C++ and 9.6x for Python implementations.\n\nNext Steps Download the Holoscan 5 SDK to begin developing robotic control applications. Follow the gravity compensation tutorial to build and run the complete example on supported hardware. Powered by NVIDIA Nemotron."
+          }
+        ]
+      },
+      "source": {
+        "id": "nvidia-robotics-blog",
+        "url": "https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5/"
+      },
+      "title": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5"
+    },
+    {
+      "archive": {
+        "recorded_at": "2026-11-09"
+      },
+      "body": "",
+      "catalog": {
+        "kind": "article",
+        "source_channel": "website",
         "source_name": "逐际动力官方融资公告"
       },
       "format": "archive_record",
