@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-10-20T01:17:37.012256+00:00",
-    "updated_at": "2026-11-09T17:18:36.523803+00:00",
+    "updated_at": "2026-11-09T18:22:07.599823+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究聚焦机器人操作任务，尝试把感知、语言理解和动作控制连接起来，完成更稳定的抓取或操作。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2610.24603v1",
         "title": "Refuse the Harm, Complete the Task via Graph-of-Rules Planning for LLM-Enabled Robots",
         "published_at": "2026-10-17",
-        "checked_at": "2026-11-09T17:18:26.966467+00:00",
+        "checked_at": "2026-11-09T18:21:58.047884+00:00",
         "evidence_role": "primary",
         "excerpt": "Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior. Existing inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes. Such compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part. To address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages. Five cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the le"
       }
