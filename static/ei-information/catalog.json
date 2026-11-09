@@ -9973,8 +9973,8 @@
           }
         ],
         "summary": {
-          "en": "This review frames the connection between robot learning and AI-driven experiment selection, execution, and interpretation as embodied AI for science. It organizes the field around operational, epistemic, and evidential closure, and describes a feedback cycle of Record, Diagnose, Calibrate, and Confirm. The review distinguishes commanded, realized, and observed conditions, compares methods across experiment selection and execution, and maps 28 workflows to their validation pathways and claim-confirmation requirements. It proposes evaluations that distinguish actions, valid experiments, campaigns, and confirmed claims.",
-          "zh": "这篇综述将机器人学习与科学实验选择、执行和解释的衔接概括为“科学发现中的具身人工智能”。它以操作闭合、认识闭合和证据闭合组织相关研究，并提出“记录、诊断、校准、确认”的证据循环，区分指令条件、实际实现条件与观测条件。文章比较实验选择、感知、协议编译、控制策略、世界模型、恢复和迁移等方法，并以 28 个工作流的证据图讨论验证路径及主张确认要求，提出区分动作、有效实验、实验活动和已确认主张的评估框架。"
+          "en": "This review frames scientific experimentation through physical interfaces as an embodied AI problem. Specimen, apparatus, and measurement states may be latent; actions can be costly and irreversible, and missing data may depend on execution or outcomes. The authors organize prior work around operational, epistemic, and evidential closure, and analyze workflows through a record-linked cycle of recording, diagnosis, calibration, and confirmation. They distinguish commanded, realized, and observed conditions, compare methods and workflows across fields, and propose evaluation that separates actions, valid experiments, campaigns, and confirmed claims.",
+          "zh": "这篇综述将通过物理接口执行实验的学习系统视为具身科学发现问题，指出实验中的样品、设备状态和测量过程可能不可见，行动成本高且难以撤销，缺失数据也可能取决于执行和结果。文章以操作、认识和证据闭合组织研究，并提出“记录、诊断、校准、确认”的证据循环，区分指令条件、实际实现条件和观测条件。综述比较不同学科的工作流与方法，并依据证据要求提出评估框架和可测量的研究挑战。"
         }
       },
       "source": {
@@ -10139,8 +10139,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes ICL+CVCP for millimeter-wave beam prediction in embodied AI systems. It combines training-free in-context adaptation from a small number of demonstrations with cross-validation conformal prediction to form compact, distribution-free candidate beam sets. The authors state that these sets contain the optimal beam with a user-defined probability. Experiments report the desired empirical coverage, along with reduced pilot overhead and computational latency.",
-          "zh": "论文提出用于具身人工智能毫米波通信波束预测的 ICL+CVCP 框架。该方法利用少量示例进行免训练的上下文适配，并通过交叉验证保形预测生成紧凑、无分布假设的候选波束集合；作者称其可按用户设定的概率覆盖最优波束。实验结果显示，该框架达到所需的经验覆盖率，并降低导频开销和计算延迟。"
+          "en": "The paper proposes ICL+CVCP for millimeter-wave beam prediction in embodied AI. In-context learning adapts from a small number of demonstrations without large-scale data collection or model fine-tuning, while cross-validation conformal prediction forms compact, distribution-free candidate beam sets intended to contain the optimal beam at a user-defined probability. Experiments report that the framework meets the desired empirical coverage and reduces pilot overhead and computational latency.",
+          "zh": "论文提出用于具身人工智能毫米波通信波束预测的 ICL+CVCP 框架，以少量示例通过上下文学习适配，无需大规模数据收集和模型微调；交叉验证保形预测构造紧凑、分布无关的候选波束集合，并声称以用户指定概率覆盖最优波束。实验结果显示，该方法满足期望的经验覆盖率，并降低导频开销与计算时延。"
         }
       },
       "source": {
@@ -17666,8 +17666,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. It combines photorealistic indoor scenes with simulated three-dimensional odor transport and dispersion, and includes invisible gas-leak and early-stage fire localization tasks. The authors develop an initial multimodal reinforcement learning policy that integrates visual observations and olfactory measurements over time. In experiments, this policy outperforms a diverse set of baselines, which the paper presents as a reference for future work.",
-          "zh": "论文介绍 OdorSpaces，这是一个用于视觉与嗅觉具身导航的物理仿真平台和基准。它将三维气味输运与扩散模拟整合到逼真的室内环境中，设置隐形气体泄漏定位和早期火灾定位两类寻源场景。作者还开发了一种随时间整合视觉观察与嗅觉测量的多模态强化学习策略。实验显示，该策略优于多种基线方法，为后续研究提供参考。"
+          "en": "The paper introduces OdorSpaces, a physics-based simulation platform and benchmark for visual-olfactory embodied navigation. It adds simulated three-dimensional odor transport and dispersion to Habitat-Sim, allowing agents to navigate photorealistic indoor scenes with visual and olfactory observations. The benchmark covers invisible gas-leak localization and early-stage fire localization. The authors also develop an initial multimodal reinforcement learning policy that combines visual observations with olfactory measurements over time. Experiments report that this policy outperforms a diverse set of baselines.",
+          "zh": "论文介绍 OdorSpaces，这是用于视觉与嗅觉具身导航的物理仿真平台和基准。它将三维气味传输与扩散模拟加入 Habitat-Sim，使智能体能在逼真的室内环境中结合视觉和嗅觉观测导航，并包含隐形气体泄漏定位和早期火灾定位两类寻源任务。作者还提出融合视觉观测与连续嗅觉测量的初步多模态强化学习策略；实验显示该策略优于多种基线，为后续研究提供参考。"
         }
       },
       "source": {
@@ -18255,8 +18255,8 @@
           }
         ],
         "summary": {
-          "en": "Open-HumanWAM presents a curated, densely annotated 50,000-hour egocentric human-video corpus and a recipe for embodied foundation model pretraining. Closed-loop simulation evaluations reveal an empirical log-linear relationship between pretraining hours and downstream robot success. The authors report results for HumanWAM-Vanilla after robot post-training and broader benchmark generalization for the jointly human-robot pretrained HumanWAM-Goal. On physical robots, they report adaptation to unseen visual goals without parameter updates. The work also describes releasing its corpus, pipelines, checkpoints, code, and evaluation suites.",
-          "zh": "论文介绍 Open-HumanWAM，包括经筛选并标注手部运动和自然语言的 5 万小时第一人称人类视频语料及其预训练流程。闭环仿真评估显示，预训练数据时长与下游机器人成功率呈经验上的对数线性关系。作者报告，结合机器人后训练后，HumanWAM-Vanilla 在 RoboTwin 2.0 和 RoboDojo 上取得相应成绩；人机联合预训练模型 HumanWAM-Goal 在仿真与实体机器人基准上展示泛化表现，并能在实体机器人上适应未见视觉目标而无需更新参数。"
+          "en": "The paper presents Open-HumanWAM, an open recipe and curated egocentric video corpus, and studies pure human-video pretraining through closed-loop simulation. It reports an empirical log-linear relationship between pretraining hours and downstream robot success. After robot post-training, HumanWAM-Vanilla is evaluated on RoboTwin 2.0 and RoboDojo, with results stated in the abstract. HumanWAM-Goal combines human and robot data and is assessed in simulation and on physical robots, where the authors report generalization and adaptation to unseen visual goals without parameter updates. The authors say they release the corpus, pipelines, checkpoints, inference code, and evaluation suites.",
+          "zh": "论文提出 Open-HumanWAM，包含大规模第一人称视频语料及数据整理和预训练方案，并以闭环仿真研究纯人类视频预训练，报告预训练时长与机器人任务成功率之间的经验对数线性关系。HumanWAM-Vanilla 仅用人类视频预训练，再经机器人后训练，在 RoboTwin 2.0 和 RoboDojo 仿真基准取得摘要所列成绩。结合人类与机器人数据的 HumanWAM-Goal 在仿真及实体机器人评测中展示泛化和视觉目标适应能力；作者称其开放语料、流程、模型检查点、推理代码和评测套件。"
         }
       },
       "source": {
