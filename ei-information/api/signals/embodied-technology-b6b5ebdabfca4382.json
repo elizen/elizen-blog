@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-b6b5ebdabfca4382",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-09-29",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-30T02:04:35.920874+00:00",
+    "updated_at": "2026-10-16T00:15:15.945656+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2609.37655v1",
+        "title": "Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding",
+        "published_at": "2026-09-29",
+        "checked_at": "2026-10-16T00:15:06.266129+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Advancing spatial intelligence in Multimodal Large Language Models (MLLMs) is bottlenecked by the scarcity of complex, scalable 3D question-answer (QA) data. While manual annotation is labor-intensive, directly utilizing LLMs to synthesize these QA pairs often fails due to their inherent deficiencies in spatial and geometric computation. We introduce Exemplar2VQA, a scalable exemplar-driven visual question answering generation framework that rapidly synthesizes large-scale spatial QA pairs in simulated environments via multi-agent coding. By equipping collaborative agents with a meticulously designed library of geometric utilities, Exemplar2VQA bypasses LLMs' spatial reasoning flaws through deterministic code execution. Crucially, the framework exhibits remarkable versatility: taking diverse static object-centric spatial query templates as exemplars, it seamlessly and autonomously scales them into massive, high-fidelity synthetic datasets. Fine-tuning Qwen2.5-VL (3B/7B) exclusively on Exemplar2VQA-generated synthetic indoor data yields significant performance improvements across various diverse benchmarks. Furthermore, its effectiveness is not limited to in-domain indoor datasets b"
+      }
+    ]
+  }
+}
