@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-6b63a9f581df69b9",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-08-25",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-08-25",
+    "updated_at": "2026-08-25",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2608.24212v1",
+        "title": "NeoWorld-Pro: Programming Interactive Scenes from Monocular Images for Embodied Simulation",
+        "published_at": "2026-08-25",
+        "checked_at": "2026-09-16T00:20:25.461480+00:00",
+        "evidence_role": "primary",
+        "excerpt": "The advancement of Embodied AI necessitates high-quality simulation assets that faithfully mirror the real world. However, transforming raw visual observations into simulation-ready scenes remains challenging due to the lack of physical grounding and scene-level interactivity in current image-to-URDF methods. We propose NeoWorld-Pro, a framework that reformulates monocular scene reconstruction as procedural programming for interactive 3D environments. Leveraging the zero-shot reasoning and code synthesis capabilities of MLLMs, NeoWorld-Pro converts a single RGB image into executable programs specifying object geometry, articulation, and physical properties. A physics-in-the-loop mechanism then iteratively refines the generated programs by validating their execution in a physics engine, enforcing physically plausible articulations, valid object compositions and interactions, and accurate spatial relationships. Experiments show that NeoWorld-Pro outperforms open-loop and prior monocular reconstruction methods, while enabling complex downstream tasks such as stable stacking and fine-grained manipulation."
+      }
+    ]
+  }
+}
