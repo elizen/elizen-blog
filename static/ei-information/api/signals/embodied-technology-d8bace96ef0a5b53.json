@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-d8bace96ef0a5b53",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "LIVIN: Benchmarking Spatial and Embodied Intelligence in Digital Twins of Lived-In Homes",
+    "summary": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+    "event_date": "2026-10-08",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-09T02:32:06.035025+00:00",
+    "updated_at": "2026-10-27T11:37:01.239259+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+        "why_it_matters": "运动规划连接感知、世界模型和执行控制，是具身智能从算法演示走向可靠运行的关键环节。",
+        "watch_next": "继续核对复杂场景、碰撞率和真实机器人上的执行效果。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.12069v2",
+        "title": "LIVIN: Benchmarking Spatial and Embodied Intelligence in Digital Twins of Lived-In Homes",
+        "published_at": "2026-10-08",
+        "checked_at": "2026-10-27T11:36:51.936396+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Realistic household simulation must capture not only diverse environments but also the lived-in object arrangements and spatial constraints that shape robot motion and interaction. Existing resources often trade off scale, real-world correspondence, and interaction readiness, leaving a gap in faithful, interactive replicas of how real homes are actually arranged. To this end, we introduce LIVIN, a benchmark for spatial and embodied intelligence built on digital twins of 30 diverse lived-in homes. These replicas preserve observed room layouts, furniture configurations, and everyday belongings. To construct them, we design a human-in-the-loop workflow comprising instance recognition, architectural reconstruction, and object generation and placement, with intermediate results reviewed and corrected by humans against the source observations at each stage. We evaluate four tasks in LIVIN: 3D detection, 3D reconstruction, navigation, and loco-manipulation. Our evaluations show that current methods remain challenged by the dense object arrangements, occlusions, limited free space, and constrained interaction regions found in realistic lived-in homes. We hope LIVIN will help advance embodi"
+      }
+    ]
+  }
+}
