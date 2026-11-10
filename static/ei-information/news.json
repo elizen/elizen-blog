@@ -226,7 +226,11 @@
             "heading": "",
             "text": "In recent years, massively parallelized rigid-body simulation has played a central role in robotics research, enabling rapid progress in areas such as reinforcement learning, stochastic optimal control, and randomized smoothing-based trajectory optimization.\n\nParticularly in contact-rich settings, the scalability of such simulations in large part depends on well-optimized representations of collision geometry, often requiring a coarse approximation of the underlying surfaces using primitives such as spheres, capsules, cylinders, and boxes.\n\nWhenever the complexity of the surfaces or the precision demands of the application render such approximations insufficient, it is instead necessary to employ mesh-mesh collisions, which impose a significant reduction in throughput.\n\nThis paper proposes a simulation framework designed from scratch to address this bottleneck, with novel routines for broadphase and narrowphase collision detection as well as the subsequent contact dynamics computation.\n\nAs experimentally validated, the framework matches existing well-established simulators in terms of physical faithfulness, and can achieve approximately an order of magnitude higher throughput in the detailed mesh-mesh collision setting that it specializes in. The source code is available at https://github.com/martius-lab/lodos."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Lodos, a lightweight rigid-body simulation framework for contact-rich interactions involving detailed meshes. It introduces new routines for broadphase and narrowphase collision detection and contact dynamics computation to address the throughput cost of mesh-mesh collisions. The authors report that experiments found its physical faithfulness comparable to established simulators, while throughput in the detailed mesh-mesh setting it targets was approximately an order of magnitude higher.",
+          "zh": "论文提出 Lodos，一种面向精细网格接触交互的轻量级刚体仿真框架，旨在缓解网格间碰撞检测造成的吞吐量下降。框架设计了新的宽相位、窄相位碰撞检测及接触动力学计算方法。作者报告，实验验证其物理保真度与成熟仿真器相当；在其专长的精细网格碰撞场景中，吞吐量约提高一个数量级。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -257,7 +261,11 @@
             "heading": "",
             "text": "Recently, world-action models (WAMs) have emerged as a powerful framework for robot manipulation. By jointly modeling action generation and future observation prediction, WAMs can act and anticipate the outcomes of the actions.\n\nHowever, existing WAMs typically rely on frozen pretrained encoders trained with reconstruction, which may not produce representations well suited for robot control. In this paper, we tackle the problem of learning physicallygrounded, control-relevant representations for WAMs.\n\nWe propose MDF++, a visuo-tactile world-action model that learns latent representations of multisensory observations end-to-end with a diffusion backbone. While naive joint training can lead to feature collapse, MDF++ introduces a multi-task learning strategy that leverages cross-modal correlations to learn task-relevant representations.\n\nWe evaluate MDF++ on a suite of contact-rich manipulation tasks, including realworld bolt screwing and nut mating, and show that it outperforms WAMs built on frozen pretrained representations by up to 50%.Additional videos are available on our website: jointmdf.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes MDF++, a visuo-tactile world-action model that learns latent representations of multisensory observations end to end using a diffusion backbone. To address feature collapse during joint training, it uses a multitask strategy that exploits cross-modal correlations. The authors evaluate it on contact-rich manipulation tasks, including real-world bolt screwing and nut mating, and report performance up to 50% better than world-action models using frozen pretrained representations.",
+          "zh": "论文提出 MDF++，一种结合视觉与触觉的世界动作模型，使用扩散骨干网络端到端学习多感官观测的潜在表示。针对联合训练可能导致特征坍塌的问题，方法采用多任务学习策略，利用跨模态关联学习与任务相关的表示。作者在一组接触丰富的操作任务上进行评估，包括真实世界的螺栓拧紧和螺母配合，并报告其表现比采用冻结预训练表示的世界动作模型最高提升 50%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -288,7 +296,11 @@
             "heading": "",
             "text": "Operators can state safety constraints for robots as prohibitions such as \"do not put the bowl on the stove\".We study whether OpenVLA follows such prohibitions and where it represents the goal it executes. The 10 tasks of LIBEROGoal share one scene, so we can label the goal that each rollout executes.\n\nWe combine closed-loop rollouts with activation patching, linear probes, activation steering and runtime monitors. On LIBERO-Goal, negation had no detectable effect on which task OpenVLA executed. The model executed the forbidden task in 79% of negated rollouts and completed 78% of plain tasks. A goal probe gives similar read-outs under \"not X\" and \"X\".\n\nActivation patching shows that the first action depends mostly on the instruction tokens before layer 12 and on the last prompt token from layer 16 onward. A fixed steering vector at the instruction tokens at layer 8 redirected 12 of 18 rollouts. Fixed vectors and prefill patches at layers 12 to 20 redirected none of 158.\n\nFrom layer 16, only patches at every decoded action token redirected the robot (15 of 18 rollouts at layer 24).When the instruction changes during a rollout, the layer-32 goal read-out detects non-compliance better than failure detectors, and an external probe on image and instruction features performs comparably.\n\nThese results support enforcing prohibitions outside the instruction and monitoring goal read-outs against the specification. Goal edits in OpenVLA should act before layer 12 or patch every action token."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies whether OpenVLA follows prohibitions and where it represents its executed goal. In closed-loop LIBERO-Goal rollouts, negation had no detectable effect on task choice, and the model performed the forbidden task in 79% of negated rollouts. Activation interventions redirected 12 of 18 rollouts with a fixed steering vector at instruction tokens in layer 8, while fixed vectors and prefill patches at layers 12–20 redirected none of 158. The authors support enforcing prohibitions externally and monitoring goal representations against specifications.",
+          "zh": "论文研究 OpenVLA 是否遵循“不要把碗放在炉子上”等禁令，以及模型内部如何表示执行目标。作者在 LIBERO-Goal 闭环测试中发现，否定指令对执行任务没有可检测影响；模型在 79% 的否定指令轨迹中仍执行禁做任务。激活干预显示，指令层 8 的固定引导向量可改变 18 次试验中的 12 次，而层 12 至 20 的固定向量或预填充干预均未改变 158 次试验中的结果。作者据此支持在指令之外落实禁令，并监测目标表示是否符合规范。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
