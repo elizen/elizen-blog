@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-be3643eb9f029add",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+    "summary": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+    "event_date": "2026-10-23",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-23T15:55:55.005096+00:00",
+    "updated_at": "2026-11-10T03:54:55.453732+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+        "why_it_matters": "运动规划连接感知、世界模型和执行控制，是具身智能从算法演示走向可靠运行的关键环节。",
+        "watch_next": "继续核对复杂场景、碰撞率和真实机器人上的执行效果。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/",
+        "title": "Using AI Agents to Teach Robots Like Microduck to Walk in Simulation",
+        "published_at": "2026-10-23",
+        "checked_at": "2026-11-10T03:53:05.700343+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Robotics English 한국어 中文 Using AI Agents to Teach Robots Like Microduck to Walk in Simulation Oct 23, 2026 By Gabriele Leone , Seun Doherty , Asier Arranz , Johnny Núñez and Asawaree Bhide Discuss (0) L T F R E AI-Generated Summary NVIDIA RTX Spark serves as a local development hub where AI agents such as Hermes and Nemotron 3.5 Bolt translate a prompt into a step-by-step project plan for a simulated Microduck obstacle course. Astra creates 3D simulation assets from the plan, enhancing references with cloud image editing, modeling geometry in FreeCAD, applying materials in Blender, and exporting editable models and USD assets for the environment. The obstacle course is assembled in NVIDIA Isaac Sim using Omniverse libraries for rendering and sensor simulation and Newton for physics modeling of Microduck's movement and balance. NVIDIA Isaac Lab trains a perception and locomotion policy at scale with 4,096 parallel environments on an NVIDIA RTX PRO 6000 Blackwell Workstation Edition GPU, using head-camera depth and robot-state observations. The trained policy is validated locally on RTX Spark in Isaac Sim to check obstacle detection, movement adjustment, and course completion before p"
+      }
+    ]
+  }
+}
