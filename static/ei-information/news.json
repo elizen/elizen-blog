@@ -1730,7 +1730,11 @@
             "heading": "",
             "text": "Contact-rich manipulation, requiring robots to regulate not only motion but also how they yield to external forces, has emerged as the next frontier for Vision-Language-Action (VLA) models. However, existing VLAs output purely kinematic commands, degrading performance on real-world contact-rich tasks.\n\nIn this paper, we introduce CompVLA, a unified VLA framework that jointly predicts motion and a stiffness matrix from RGB and language inputs. Our approach augments the conventional architecture with a dedicated Compliance Expert, which outputs time-varying stiffness and virtual displacement profiles executed via geometric impedance control.\n\nWe demonstrate that CompVLA achieves the highest average success rate across diverse contact-rich tasks, outperforming both vanilla and compliance-aware VLA baselines, with ablations confirming each component is essential."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CompVLA, a vision-language-action framework that jointly predicts motion and a stiffness matrix from RGB images and language. Its Compliance Expert produces time-varying stiffness and virtual displacement profiles for execution through geometric impedance control. The authors report the highest average success rate across diverse contact-rich tasks, outperforming vanilla and compliance-aware VLA baselines. Ablations indicate that each component is essential. The abstract does not specify whether these results come from simulation or physical experiments.",
+          "zh": "论文提出 CompVLA，一种从 RGB 图像和语言输入联合预测运动与刚度矩阵的视觉—语言—动作框架。其合规专家输出随时间变化的刚度和虚拟位移，并通过几何阻抗控制执行。作者称，在多种接触丰富任务中，CompVLA 的平均成功率最高，优于普通及具备合规感知能力的 VLA 基线；消融结果显示各组件均有作用。摘要未说明这些结果来自仿真还是实体实验。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1761,7 +1765,11 @@
             "heading": "",
             "text": "Wearable haptic interfaces deliver physical stimuli to the skin, yet perceived locations vary widely across users and diverge from actuator locations, particularly for emergent tactile-feedback techniques.\n\nWe developed a wearable haptic input/output (I/O) device integrating a 36-channel electrotactile array with capacitive touch sensing, enabling stimulation and user-reported percept locations to be registered within the same body-referenced coordinate frame.\n\nIn 24 participants, the device revealed electrotactile and referred-thermal perceptual maps with notable interparticipant variability. Despite this variability, both modalities retained electrode-pair-specific spatial structure across participants. Tactile and thermal percepts also showed spatial correspondence, whose strength varied across participants.\n\nThese findings motivated our human-in-the-loop calibration framework, which adapts a forward-prediction strategy to individual users and generates personalized perceptual models. These models enabled inverse rendering by selecting stimulation patterns predicted to generate a target percept for a specific user.\n\nUsing these models, we demonstrate personalized haptic rendering in haptic-guided robot teleoperation, visual-to-haptic sensory substitution, interpersonal haptic communication, and virtual reality (VR).Together, this platform provides a route toward adaptive haptic interfaces that measure, model, and render according to each user's perception."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study presents a wearable haptic input/output device combining a 36-channel electrotactile array with capacitive touch sensing, registering stimuli and reported percept locations in a shared body-referenced frame. Data from 24 participants showed substantial individual variation, while both electrotactile and referred-thermal maps retained electrode-pair-specific spatial structure across participants. Tactile and thermal percepts also corresponded spatially, with strength varying by participant. The authors developed human-in-the-loop personalized calibration and inverse rendering, demonstrating applications in robot teleoperation, visual-to-haptic substitution, interpersonal communication, and virtual reality.",
+          "zh": "研究开发了一种可穿戴触觉输入输出设备，集成 36 通道电触觉阵列与电容触摸感测，使刺激位置和用户报告的感知位置能在同一身体坐标系中记录。24 名参与者的数据呈现明显个体差异，但两种模态均保留跨参与者的电极对空间结构；触觉与热感位置也有对应关系，其强度因人而异。研究据此建立人机协同个性化校准和逆向渲染，并展示其在机器人遥操作、视觉转触觉替代、人际触觉交流及虚拟现实中的应用。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1792,7 +1800,11 @@
             "heading": "",
             "text": "Robot policies trained on visually narrow demonstrations can become sensitive to environmental features that are unrelated to the task.\n\nExisting generative augmentation methods can introduce visual diversity, but processing every frame and camera view independently is computationally expensive and may produce inconsistent observations across cameras and timestamps.\n\nWe introduce Augmentron, a geometry-aware pipeline that generates reusable scene representations and renders them through recorded camera poses. This produces temporally and multi-view consistent environ- ment and workspace variations while preserving the robot, task objects, actions, and annotations.\n\nAcross three physical manipulation tasks, replacing half of the real world training dataset with Augmentron data improves model success across three tasks for both in out-of-distribution distractor objects, and out-of-distribution workspace variation evaluations.\n\nIn a separate comparison against alternate augmentation techniques, Augmentron achieves the highest pooled success in all three conditions. The results show that introducing augmented data to a data training recipe can help policies generalize to dynamic real-world settings."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Augmentron, a geometry-aware visual augmentation pipeline for robot learning. It creates reusable scene representations and renders variations in the environment and workspace using recorded camera poses, maintaining temporal and multi-view consistency while preserving the robot, task objects, actions, and annotations. Across three physical manipulation tasks, replacing half of the real training data with Augmentron data improved success in evaluations involving out-of-distribution distractor objects and workspace variation. In a separate comparison, Augmentron had the highest pooled success across all three conditions.",
+          "zh": "论文提出 Augmentron，一种面向机器人学习的几何感知视觉增强流程。它生成可复用场景表示，并依据记录的相机姿态渲染环境和工作空间变化，以保持跨时间及多视角一致，同时保留机器人、任务物体、动作和标注。在三项实体操作任务中，作者报告，用 Augmentron 数据替换一半真实训练数据后，模型在三项任务的分布外干扰物体及工作空间变化评估中均有所提升。与其他增强方法比较时，它在三种条件下的汇总成功率最高。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
