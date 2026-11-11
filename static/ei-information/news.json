@@ -1244,7 +1244,11 @@
             "heading": "",
             "text": "Pretrained vision language action (VLA) models show strong zero-shot performance but they are rarely deployed directly and are often first post-trained on demonstrations from the target setting. Yet VLAs are typically compared by zero-shot or full-data fine-tuned success which reveals little about the data and compute required for downstream adaptation.\n\nWe study adaptation efficiency for six VLAs ($\\pi_0$, $\\pi_{0.5}$, and GR00T N1-N1.7) on four LIBERO suites, varying both demonstrations and training steps.\n\nThis reveals differences hidden by full-data fine-tuning: models which are within two points on the full LIBERO-Spatial dataset differ by up to 3$\\times$ in success with 50 demonstrations. $\\pi_{0.5}$ needs 2-5$\\times$ fewer demonstrations than $\\pi_0$ and is the most sample-efficient model at every budget, with the largest gap on the long-horizon suite.\n\nWithin GR00T, N1.5 adapts more efficiently than N1.6 and N1.7 on three of four suites, despite their stronger zero-shot performance.\n\nWe also study one pretraining factor behind these differences by freezing the VLM during finetuning: this severely degrades the $\\pi$ models whose VLM is jointly trained with the action expert during pretraining, but barely affects GR00T models."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies demonstration and training-step requirements for fine-tuning six vision-language-action models across four LIBERO suites. The authors report that similar full-data performance can conceal substantial differences in low-data adaptation. π₀.₅ is the most sample-efficient at every budget and requires two to five times fewer demonstrations than π₀, with the largest gap on the long-horizon suite. GR00T N1.5 adapts more efficiently than N1.6 and N1.7 on three suites despite their stronger zero-shot performance. Freezing the VLM severely degrades the π models but barely affects GR00T.",
+          "zh": "论文研究六种视觉语言动作模型在四个 LIBERO 套件上的微调样本效率，同时改变示范数量和训练步数。作者报告，完整数据集上的相近表现可能掩盖小样本适应差异：π₀.₅在各示范预算下均最具样本效率，所需示范比π₀少2至5倍，长时程任务上的差距最大。GR00T N1.5在四个套件中的三个适应效率高于N1.6和N1.7，尽管后两者零样本表现更强。冻结视觉语言模型会严重降低π系列模型表现，对GR00T影响很小。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1275,7 +1279,11 @@
             "heading": "",
             "text": "Egocentric human video offers a scalable source of manipulation priors for robot learning, yet translating raw data scale into generalizable robot policies demands rigorous data curation and training recipes.\n\nWe introduce Open-HumanWAM, the first fully open recipe for scaling egocentric pretraining to 50,000 hours, anchored by Open-HumanWAM-50K---a curated egocentric video corpus densely annotated with hand motion and natural language.\n\nLeveraging this corpus, we systematically investigate pure human pretraining via closed-loop simulation evaluations and uncover an empirical log-linear scaling law linking pretraining data hours to downstream robot success rates.\n\nGrounded in these findings, we develop HumanWAM-Vanilla, a world--action model pretrained exclusively on 50k hours of egocentric human video. Upon robot post-training, HumanWAM-Vanilla reaches 92.08% success on RoboTwin 2.0 Clean2Clean and 68.88% on Clean2Random, alongside a 14.17% mean success rate and a 19.00 mean progress score on RoboDojo.\n\nTo push the capability frontier further, we explore joint human--robot pretraining with HumanWAM-Goal, a visual-goal-conditioned world--action model.\n\nHybrid data scaling unlocks broad zero-shot generalization across both simulation and physical benchmarks, propelling post-trained RoboTwin 2.0 performance to new state-of-the-art levels: 92.70% on Clean2Clean and a substantial leap to 84.60% on Clean2Random.\n\nOn physical robots, HumanWAM-Goal further exhibits emergent embodied in-context learning, dynamically adapting its manipulation behavior to unseen visual goals without parameter updates.\n\nTo support reproducible scaling research in embodied AI, we open-source the Open-HumanWAM-50K corpus, data curation and pretraining pipelines, alongside the pretrained and post-trained HumanWAM checkpoints, inference code, and simulation evaluation suites."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Open-HumanWAM, an open recipe and a 50,000-hour egocentric video corpus annotated with hand motion and natural language. Closed-loop simulation evaluations of human-only pretraining reveal an empirical log-linear relationship between pretraining hours and downstream robot success. The authors introduce HumanWAM-Vanilla, pretrained only on human video, and HumanWAM-Goal, which uses joint human-robot pretraining and visual goals. They report results on simulated and physical benchmarks, and describe embodied in-context adaptation to unseen visual goals without parameter updates. The authors say they will release the corpus, pipelines, checkpoints, inference code, and evaluation suites.",
+          "zh": "论文提出Open-HumanWAM开放训练方案及包含5万小时第一人称视频、手部动作和自然语言标注的数据集。作者通过闭环仿真研究纯人类视频预训练，发现数据时长与下游机器人成功率呈经验性的对数线性关系，并介绍仅用该视频预训练的HumanWAM-Vanilla及人机联合预训练的视觉目标条件模型HumanWAM-Goal。摘要报告了两者在RoboTwin 2.0、RoboDojo及实体机器人评测中的结果，并称后者可在无需更新参数的情况下适应未见视觉目标。团队表示将开放数据、训练流程、模型、推理代码和仿真评测套件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1306,7 +1314,11 @@
             "heading": "",
             "text": "A person running a bench experiment works from a printed instruction sheet, tells identical containers apart by the labels written on them, and looks at the bench again before each step. Lab automation usually works the other way around: the procedure is written as a script, and containers stand at fixed positions or carry fiducial markers.\n\nWe present Curie's Jarvis, a system that lets a robot arm carry out a chemistry experiment on a bench set up for people.\n\nIt reads the steps from a photo of the printed sheet, finds containers on an ordinary bench with no fixed positions or markers, tells identical-looking containers apart by reading their labels in four camera views, locates its target again before every step, and sets how each step is carried out, including its speed, from what is being handled.\n\nOn a Franka Panda arm, Curie's Jarvis completed 5 of 5 runs of one protocol from a children's chemistry kit and 4 of 5 runs of another, with no human intervention, and in 160 locates on printed and handwritten labels it identified every container correctly. This brings robots a step closer to doing bench chemistry the way people do."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents Curie’s Jarvis, a system that enables a robot arm to follow printed chemistry protocols on an ordinary bench. It reads steps from a photograph, finds containers without fixed positions or markers, distinguishes similar containers by reading labels from four camera views, relocates targets before each step, and adjusts execution, including speed, to the objects handled. On a Franka Panda arm, it completed all five runs of one children’s chemistry-kit protocol and four of five runs of another without human intervention. In 160 locates involving printed and handwritten labels, it identified every container correctly.",
+          "zh": "论文介绍Curie’s Jarvis，一种让机械臂依据打印实验步骤在普通实验台上操作的系统。它从实验单照片读取步骤，在容器位置不固定且无标记的台面上寻找容器，通过四个摄像机视角读取标签区分外观相同的容器，并在每一步前重新定位目标，再按处理对象设置操作方式和速度。在Franka Panda机械臂上，该系统无需人工干预完成一种儿童化学套件流程的5次运行中的5次，以及另一种流程的5次中的4次；对打印和手写标签进行160次定位时，容器识别均正确。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
