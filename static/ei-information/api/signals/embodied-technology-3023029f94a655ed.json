@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-3023029f94a655ed",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "When the Past Shapes Action: Understanding Embodied Memory",
+    "summary": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+    "event_date": "2026-10-30",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-05T02:54:05.545852+00:00",
+    "updated_at": "2026-11-11T03:25:02.690725+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+        "why_it_matters": "运动规划连接感知、世界模型和执行控制，是具身智能从算法演示走向可靠运行的关键环节。",
+        "watch_next": "继续核对复杂场景、碰撞率和真实机器人上的执行效果。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.41688v1",
+        "title": "When the Past Shapes Action: Understanding Embodied Memory",
+        "published_at": "2026-10-30",
+        "checked_at": "2026-11-11T03:24:48.984483+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Recent advances in generative foundation models have expanded the capabilities of embodied AI, enabling increasingly general navigation, manipulation, and long-horizon task execution. However, effective interaction with dynamic environments requires more than only strong perception and reasoning: agents must act with partial knowledge and retain, retrieve, and update information from past observations, actions, and experiences. This survey examines embodied memory as a mechanism for preserving decision-relevant information beyond the current observation. We organize existing approaches along two complementary dimensions: six fundamental memory requirements, spanning world-state persistence, task progress, belief maintenance, and experiential learning; and eight architectural categories, including recurrent states, fast weights, visual and symbolic representations, spatial memory, and experience-based systems. We analyze their capabilities and limitations, and examine how existing benchmarks evaluate memory-dependent behavior, distinguishing genuine use of historical information from general task performance. Finally, we identify open challenges in selecting relevant experiences, ma"
+      }
+    ]
+  }
+}
