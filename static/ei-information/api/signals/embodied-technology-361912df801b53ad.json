@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-361912df801b53ad",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "CPNav: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments",
+    "summary": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+    "event_date": "2026-11-07",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-10T02:50:53.816279+00:00",
+    "updated_at": "2026-11-11T11:58:00.810586+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究聚焦机器人在动态或开放环境中的运动规划，尝试让路径不仅能到达目标，也能满足安全和物理约束。",
+        "why_it_matters": "运动规划连接感知、世界模型和执行控制，是具身智能从算法演示走向可靠运行的关键环节。",
+        "watch_next": "继续核对复杂场景、碰撞率和真实机器人上的执行效果。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.10366v1",
+        "title": "CPNav: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments",
+        "published_at": "2026-11-07",
+        "checked_at": "2026-11-11T11:57:45.433518+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Directing a robot to locate a target object in unseen environments remains a central challenge in embodied AI. Vision-Language Model (VLM)-based methods provide rich semantic reasoning but often produce uncalibrated and overconfident action decisions. We introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. From RGB-D input, CPNav constructs a navigability map, generates collision-free motion primitives, and queries two VLMs for goal detection and action scoring. The resulting scores are calibrated offline via conformal prediction (CP) using oracle actions obtained through a tree-structured exploration procedure with backtracking, providing finite-sample guarantees at a user-specified risk level. The CP layer is model-agnostic and can wrap any VLM policy. Online, calibrated VLM scores guide action selection, while a tree-structured exploration history records alternative actions and allows backtracking. We evaluate CPNav in both simulation and real-world hardware settings. In AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR "
+      }
+    ]
+  }
+}
