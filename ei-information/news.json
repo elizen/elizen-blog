@@ -1516,7 +1516,11 @@
             "heading": "",
             "text": "While imitation learning has made substantial progress toward generalizable robot manipulation through scaling, viewpoint robustness remains a major bottleneck.\n\nVisuomotor policies rely heavily on visual inputs, yet images provide an inherently ambiguous signal under viewpoint change: similar scenes may appear markedly different across viewpoints, while distinct states may share certain visual overlaps.\n\nA policy must therefore infer not only the task-relevant state, but also how it is visually projected under a particular camera configuration. This entanglement of viewpoint-dependent appearance and task-relevant state can make learning inefficient and limit generalization to unseen viewpoints.\n\nRecent work has begun to address this challenge through camera-ray conditioning and representation learning using geometric cues to induce invariance.\n\nHowever, providing camera information as additional context does not by itself ground visual representations in how the task scene is visually projected, while geometric alignment without camera context can introduce spurious correspondences by ignoring viewpoint-dependent projection.\n\nWe propose PAIR, a contrastive learning framework that aligns joint image-ray representations using robot proprioception. PAIR encourages observations with similar robot states to remain close in representation space across viewpoints, providing a structured grounding signal for learning viewpoint-robust features.\n\nPAIR is a highly adaptable framework: it can be used to train Diffusion Policy (DP) or post-train vision-language-action (VLA) models.\n\nIn simulated and real-world manipulation benchmarks with camera variation, PAIR consistently outperforms the behavior cloning baseline without ray conditioning by 12.7% and 26.7% points, respectively, demonstrating stronger generalization to unseen viewpoints. Project website: PAIRrobot.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces PAIR, a contrastive learning framework that aligns image-ray representations using robot proprioception to support viewpoint-robust manipulation. It encourages observations associated with similar robot states to stay close in representation space across viewpoints. The framework can train Diffusion Policy models or post-train vision-language-action models. In simulated and real-world manipulation benchmarks with camera variation, the authors report that PAIR outperforms a behavior-cloning baseline without ray conditioning and shows stronger generalization to unseen viewpoints.",
+          "zh": "论文提出 PAIR，一种利用机器人本体感觉进行对比学习的图像射线表征对齐框架，旨在提升操作策略对视角变化的鲁棒性。它鼓励机器人状态相似、但视角不同的观测在表征空间中保持接近，为学习视角鲁棒特征提供结构化依据。该框架可用于训练 Diffusion Policy 或对视觉语言动作模型进行后训练。作者报告，在含相机变化的仿真和真实操作基准中，PAIR 相较于未使用射线条件的行为克隆基线表现更好，并称其对未见视角的泛化更强。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1547,7 +1551,11 @@
             "heading": "",
             "text": "We study how trajectory-shape diversity in demonstrations affects imitation learning (IL) performance across models, tasks, and data scales.\n\nWe introduce Geometric Entropy (H_G), a task-agnostic metric that quantifies the intrinsic diversity of transit trajectories after normalizing away extrinsic variation, such as goal pose and workspace scale, via target-frame alignment.\n\nAcross multiple IL architectures and both simulated and real-robot contact-rich manipulation tasks, we observe a consistent inverted-U relationship between success and H_G: increasing geometric diversity improves robustness in low-diversity regimes but degrades performance once diversity induces strategy ambiguity.\n\nMoreover, the optimal entropy shifts toward lower values as task mastery increases through more data, easier tasks, or stronger priors, and for a pretrained vision-language-action model the trend becomes effectively monotonic decreasing.\n\nPractically, H_G enables fast pre-training auditing of demonstration datasets and offers a simple guideline for calibrating demonstrations toward the learnable regime."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies how trajectory-shape diversity in demonstrations relates to imitation-learning performance and introduces Geometric Entropy (H_G), a task-agnostic measure of intrinsic transit-trajectory diversity after target-frame alignment removes extrinsic variation. Across multiple architectures and simulated and real-robot contact-rich tasks, the authors report an inverted-U relationship between success and H_G: added diversity helps in low-diversity settings, while excessive diversity can create strategy ambiguity and hurt performance. They also describe how the optimal entropy shifts with task mastery and model priors.",
+          "zh": "论文研究示范轨迹形状多样性如何影响不同模型、任务和数据规模下的模仿学习表现，并提出任务无关指标几何熵 H_G。该指标通过目标坐标系对齐，消除目标位姿和工作空间尺度等外在变化后，量化过渡轨迹的内在多样性。作者在多种模仿学习架构及仿真和真实机器人接触密集操作任务中观察到成功率与 H_G 呈倒 U 形关系：适度增加多样性有助于低多样性情形的鲁棒性，过高则可能造成策略歧义并降低表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
