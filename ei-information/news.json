@@ -1648,7 +1648,11 @@
             "heading": "",
             "text": "Underground mines present extreme conditions for autonomous robot navigation: GPS is denied, lighting is degraded, and tunnel topology is loop-rich and non-convex. Simulation benchmarks grounded in real production-mine geometry and compatible with GPU-accelerated learning pipelines do not yet exist in the open-source ecosystem.\n\nWe present MineXplore, an open-source MuJoCo-based navigation benchmark derived from the Leung et al. 2017 Chilean underground copper mine dataset.\n\nThe environment reconstructs a 104,423 sq.m tunnel network through an six-stage contour-to-MJCF pipeline incorporating octagonal wall cross-sections, LiDAR-sourced jagged wall geometry, three terrain friction zones, a global 5 degree incline, and periodic spot lighting.\n\nGeometric fidelity is validated at an Intersection over Union (IoU) of 0.9538 against the source survey map, and surface texture similarity scores 79.4% across six structural dimensions.\n\nA single-agent PPO baseline trained via RLlib across five independent random seeds achieves a best rolling coverage of 88.89% (3 of 5 seeds reaching the 90% coverage target), confirming that MineXplore supports stable and reproducible policy learning under realistic underground sensing and topology."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MineXplore, an open-source MuJoCo navigation benchmark based on a dataset of an underground copper mine in Chile. Its reconstructed tunnel environment includes jagged walls, terrain friction zones, a global incline, and periodic spot lighting. The authors report geometric and texture validation results. In simulation, a single-agent PPO baseline trained across five random seeds achieves a best rolling coverage of 88.89%, with three seeds reaching the 90% coverage target.",
+          "zh": "本文介绍 MineXplore，一个基于 MuJoCo 的开源地下矿山导航基准，依据智利地下铜矿数据集构建。环境通过六阶段流程重建隧道网络，包含崎岖墙面、不同地面摩擦区、整体坡度和周期性点光源。作者报告其几何与纹理验证结果。单智能体 PPO 基线在五个随机种子上的最佳滚动覆盖率为 88.89%，其中三个种子达到 90% 覆盖目标；这些结果来自仿真基准。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1679,7 +1683,11 @@
             "heading": "",
             "text": "Multi-sensor state estimation requires accurate spatial and temporal calibration between heterogeneous sensors.\n\nExisting spatiotemporal calibration methods typically represent sensor extrinsic parameters as a rigid-body transformation together with a scalar temporal offset, causing the spatial and temporal parameters to enter the estimation problem through separate mechanisms.\n\nWhile the spatial transformation composes directly with the robot pose, accounting for the temporal offset requires evaluating the trajectory at a shifted time, typically through motion compensation, interpolation, or a continuous-time trajectory representation.\n\nIn this work, we formulate joint trajectory estimation and spatiotemporal calibration using the special Galilean group for the robot trajectory and the Aristotelian subgroup for sensor extrinsics.\n\nThis representation incorporates the coupling between motion and temporal offset directly through the group structure, avoiding the need for a separately parameterized continuous-time trajectory.\n\nWe develop twist- and IMU-driven motion priors, accommodate both ideal and non-ideal clocks, and evaluate the framework with camera, position, and range measurements. Simulated and real experiments demonstrate calibration and trajectory-estimation performance comparable to established methods across heterogeneous sensor configurations.\n\nOur simplified framework therefore offers a quality-of-life improvement over existing methods without compromising performance."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a method for jointly estimating trajectories and spatiotemporal calibration. It represents robot trajectories with the special Galilean group and sensor extrinsics with the Aristotelian subgroup, encoding the coupling between motion and temporal offset in the group structure without a separately parameterized continuous-time trajectory. The framework includes twist- and IMU-driven motion priors, supports ideal and non-ideal clocks, and evaluates camera, position, and range measurements. Simulated and real experiments show performance comparable to established methods across heterogeneous sensor configurations.",
+          "zh": "本文提出一种联合轨迹估计与时空标定方法：用特殊伽利略群表示机器人轨迹，用亚里士多德子群表示传感器外参，使运动与时间偏移的耦合由群结构直接表达，避免单独参数化连续时间轨迹。框架包含由旋量和 IMU 驱动的运动先验，支持理想及非理想时钟，并评估相机、位置和测距观测。仿真与真实实验表明，该方法在不同传感器配置下的性能与既有方法相当。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1710,7 +1718,11 @@
             "heading": "",
             "text": "A navigation agent must understand high-level semantic instructions and reason about precise spatial structure. Multimodal Large Language Models (MLLMs), with their strong generalization, are a promising foundation for such agents. We propose GTA, a decoupled design that separates low-level spatial state estimation from high-level semantic planning.\n\nWe introduce an explicit metric world representation that combines accumulated geometry with navigation history and exposes this information to the MLLM through a multimodal interface for decision-making.\n\nWe further introduce counterfactual branch reasoning that checks anticipated outcomes against subsequent observations and revises navigation decisions when they disagree. The world representation grounds waypoint selection in reconstructed metric geometry.\n\nGTA achieves 48.8% Success Rate (SR) on the full R2R-CE val-unseen split and 46.2% on a 260-episode English RxR-CE val-unseen subset. Additional comparisons on shared R2R-CE episodes and mechanism ablations support the framework's effectiveness. We also demonstrate transfer to wheeled, quadrupedal, and aerial robots.\n\nProject page: https://zeruili22.github.io/GTA/"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GTA, a vision-and-language navigation design that separates low-level spatial state estimation from high-level semantic planning. It provides a multimodal language model with an explicit metric world representation combining accumulated geometry and navigation history. Counterfactual branch reasoning checks anticipated outcomes against later observations and revises decisions when they disagree. The authors report success rates on R2R-CE and an RxR-CE subset, and demonstrate transfer to wheeled, quadrupedal, and aerial robots.",
+          "zh": "本文提出 GTA，一种将低层空间状态估计与高层语义规划分开的视觉语言导航设计。它构建显式度量世界表示，结合累积几何与导航历史，并通过多模态接口提供给多模态大语言模型决策；反事实分支推理则依据后续观测核对预期结果，并在不符时修正决策。作者报告 GTA 在 R2R-CE 未见验证集和 RxR-CE 子集上的成功率，并展示其向轮式、四足及空中机器人迁移。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
