@@ -2018,7 +2018,11 @@
             "heading": "",
             "text": "Egocentric human video (EHV) records close-range hand-object interaction (HOI) and the temporal structure of everyday activities, offering a potentially scalable source of experience for robot manipulation.\n\nUsing this experience for robot control requires recovering useful supervision without recorded robot actions and accounting for differences in morphology, viewpoint, and action space.\n\nWe define Ego2Robot learning as the process of learning or adapting robot manipulation policies from EHV, organized into four learning paradigms: explicit embodiment transfer, explicit action and task supervision, egocentric video representation pretraining, and latent action and dynamics modeling.\n\nThe four paradigms differ in what they derive from human video: robot-format demonstrations, interpretable supervision, visual representations, or predictive models of actions and dynamics. For each paradigm, we trace what EHV information is extracted, how robot policies use it, and when the additional data is required.\n\nBesides, we review the benchmark datasets that cover EHV, robot demonstrations, and synthetic and simulated resources. This paper links EHV data's contribution to the task information preserved and the robot-specific grounding used during training or deployment.\n\nFinally, we identify challenges in physical feasibility, agent coordination, in-context adaptation, controlled evaluation, and predictive control."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper reviews Ego2Robot learning: learning or adapting robot manipulation policies from egocentric human video, which captures hand-object interactions and everyday activity structure. It organizes approaches into four paradigms: explicit embodiment transfer, explicit action and task supervision, video representation pretraining, and latent action and dynamics modeling. These derive different forms of supervision or models from human video. The review also covers relevant benchmark datasets and identifies challenges involving physical feasibility, agent coordination, in-context adaptation, controlled evaluation, and predictive control.",
+          "zh": "本文综述如何利用第一人称人类视频学习或适配机器人操作策略，称为Ego2Robot学习。作者将方法归纳为四类：显式具身迁移、显式动作与任务监督、第一人称视频表征预训练，以及潜在动作与动力学建模，分别提取机器人格式示范、可解释监督、视觉表征或动作和动力学预测模型。论文梳理相关基准数据集，并讨论物理可行性、智能体协调、上下文适配、受控评估和预测控制等挑战。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2049,7 +2053,11 @@
             "heading": "",
             "text": "We present cuRoboV2-Fast, a GPU-accelerated planner that reduces both planning latency and execution time for collision-free, payload-aware, torque-limited motions. B-spline trajectory optimization reduces the required iterations, while accelerated robot computations and differentiable inverse dynamics reduce refinement cost and accommodate changing payloads.\n\nTimeOpt optimizes traversal speed along the fixed path under sampled velocity, acceleration, jerk, and torque constraints, exploiting local spline support to solve banded Newton systems efficiently on the GPU. With a 3,kg payload, cuRoboV2-Fast achieves 4.4 ms mean planning time on RTX 5090, 14.7x faster than cuRoboV2.\n\nOur method on Jetson AGX Orin plans faster than cuRoboV1 + TOPPRA on RTX 5090.A stereo-camera-based deployment on YAM achieves 5.93 s mean completed pick-and-drop cycles, 34.6% shorter than cuRoboV2.Code (Apache 2.0): https://github.com/NVlabs/curobo , Project Page: https://research.nvidia.com/labs/lpr/curobov2-fast ."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents cuRoboV2-Fast, a GPU-accelerated planner for collision-free, payload-aware motions subject to torque limits. B-spline trajectory optimization reduces iterations, while accelerated robot computations and differentiable inverse dynamics lower refinement cost and support changing payloads. Its TimeOpt component optimizes traversal speed along a fixed path under sampled motion and torque constraints, using local spline support to solve banded Newton systems on a GPU. The abstract reports planning-time comparisons and a stereo-camera-based YAM deployment with completed pick-and-drop cycles.",
+          "zh": "论文介绍cuRoboV2-Fast，一种GPU加速规划器，用于缩短无碰撞、考虑负载且受扭矩限制的运动规划与执行时间。方法采用B样条轨迹优化，并以加速的机器人计算和可微逆动力学降低细化成本、适应负载变化；TimeOpt则在固定路径上优化运动速度，并利用局部样条支持高效求解约束问题。摘要报告了RTX 5090上的规划时间、与其他规划器的速度比较，以及YAM立体相机部署的抓取放置周期表现。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
