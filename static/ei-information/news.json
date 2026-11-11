@@ -128,7 +128,11 @@
             "heading": "",
             "text": "Many rehabilitation robots execute prescribed motions using reactive tracking controllers that do not explicitly incorporate the user's instantaneous human-ground interaction. This paper presents Ground Reaction Force-Aware Model Predictive Control (GRF-MPC), a framework for upright physical assistance.\n\nBy integrating live GRF and center of pressure (CoP) measurements directly into a human centroidal dynamics model, GRF-MPC formulates a real-time quadratic program (QP) that optimizes assistive forces and moments over a receding horizon.\n\nWe deployed GRF-MPC on the Robotic Upright Stand Trainer (RobUST) in an underactuated 4-cable configuration and evaluated it against a fully actuated 8-cable Cartesian impedance baseline in nearly 300 trials across six healthy participants.\n\nAcross tasks spanning impulsive perturbations, lunge trajectories, and voluntary limits of stability, GRF-MPC reduced peak planar center-of-mass (CoM) error by 19.6% during perturbations, lowered trajectory tracking error by 24.1%, required 28.7% less net mechanical work, and permitted a 45.9% greater normalized voluntary excursion area.\n\nThe underlying QP solves in under 1 ms, comfortably enabling 100 Hz replanning and demonstrating that incorporating live human-ground interaction into predictive control yields stronger, more transparent physical assistance with half the actuators."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents GRF-MPC for upright physical assistance, incorporating live ground reaction force and center-of-pressure measurements into a human centroidal dynamics model. A receding-horizon quadratic program optimizes assistive forces and moments. The method was evaluated on RobUST in an underactuated four-cable setup across nearly 300 trials with six healthy participants, against an eight-cable impedance baseline. The authors report reduced errors and mechanical work, greater voluntary excursion, and sub-millisecond QP solution time across the tested tasks.",
+          "zh": "论文提出面向直立式身体辅助的地面反作用力感知模型预测控制（GRF-MPC），将实时地面反作用力和压力中心测量纳入人体质心动力学模型，并通过滚动时域二次规划优化辅助力与力矩。研究在RobUST机器人欠驱动四缆配置上开展近300次试验，涉及6名健康参与者，并与八缆阻抗基线比较。作者报告，在扰动、弓步轨迹和自主稳定性边界任务中，GRF-MPC降低了峰值质心误差和轨迹跟踪误差、减少机械功，并扩大自主运动范围；优化问题求解时间低于1毫秒。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -159,7 +163,11 @@
             "heading": "",
             "text": "Predicting long action chunks, often spanning dozens of timesteps, has become a key ingredient in increasingly capable robot policies.\n\nIn this paper, we find that adapting these long-chunk policies with existing reinforcement learning (RL) methods can require many online samples due to the high dimensionality of the action chunks being optimized, making such adaptation impractical in real-world scenarios where interaction data are costly to collect.\n\nOur key insight is to shift adaptation from optimizing actions to optimizing how long to execute each predicted action chunk. This keeps the adaptation space low-dimensional while its expressivity grows with the chunk size.\n\nWe thus introduce Execution at the Right Length (ExRL), a simple approach which augments the base policy with a lightweight adapter that predicts the execution length of each chunk and is trained using off-policy RL algorithms.\n\nAcross simulation benchmarks and real-world robotic tasks, ExRL enables sample-efficient adaptation of a diverse range of long-chunk policies with minimal task-specific hyperparameter tuning."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper argues that online reinforcement-learning adaptation of long-chunk robot policies can be sample-intensive because the action chunks have high dimensionality. ExRL instead adapts the execution duration of each predicted chunk, keeping the adaptation space low-dimensional while retaining expressivity that grows with chunk size. It adds a lightweight adapter to the base policy and trains it with off-policy RL. In simulation benchmarks and real-world robotic tasks, the authors report sample-efficient adaptation across diverse long-chunk policies with minimal task-specific hyperparameter tuning.",
+          "zh": "论文指出，使用现有强化学习方法在线适配长动作块策略时，需要优化的动作维度较高，因此可能需要大量样本。ExRL将适配目标从动作本身转为每个预测动作块的执行时长，以保持适配空间较低维，同时使其表达能力随动作块长度增加。该方法为基础策略加入轻量适配器，预测动作块执行长度，并用离策略强化学习训练。作者在仿真基准和真实机器人任务中报告，ExRL可对多种长动作块策略进行样本高效适配，且只需少量任务特定超参数调节。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -190,7 +198,11 @@
             "heading": "",
             "text": "Large-scale demonstration datasets have been central to recent progress in general-purpose robot policies. However, existing datasets are collected in human-absent settings, and policies trained on such data may perform tasks competently in isolation but fail to exhibit human-aware behaviors.\n\nTo address this gap, we introduce HABIT, a large-scale robot demonstration dataset for human-present environments.\n\nWe organize tasks into three roles capturing distinct modes of human-robot interaction: Collaborator, where human and robot jointly accomplish a task; Coworker, where they pursue separate tasks in a shared space; and Supervisor, where the human directs the robot. The dataset comprises over 10K episodes and over 160 hours across 60 tasks.\n\nOur experiments show that training on human-present data elicits human-aware behaviors that robot-only data fails to produce: spatiotemporal synchronization in Collaborator tasks, yielding in Coworker tasks, and gesture grounding in Supervisor tasks. Moreover, training on HABIT enables rapid adaptation to new human-robot interaction tasks.\n\nBy introducing human presence as a new axis of dataset diversity, HABIT extends robot policies to environments shared with humans."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces HABIT, a large-scale demonstration dataset for robot manipulation in human-present environments. It groups interactions into Collaborator, Coworker, and Supervisor roles and contains over 10,000 episodes, more than 160 hours, and 60 tasks. The authors report that training on this data elicits behaviors not produced by robot-only data: spatiotemporal synchronization, yielding in shared spaces, and grounding human gestures. They also report rapid adaptation to new human-robot interaction tasks.",
+          "zh": "论文介绍HABIT，一个面向有人环境的大规模机器人操作演示数据集，涵盖协作、共享空间中各自工作的同事式互动，以及由人类监督指挥三种角色。数据集包含超过1万段情节、160小时和60项任务。作者报告，在该数据上训练能产生仅用机器人数据未能呈现的行为，包括协作任务中的时空同步、同事式任务中的礼让，以及监督任务中的手势理解；训练还支持对新的人机交互任务快速适配。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
