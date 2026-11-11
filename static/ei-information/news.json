@@ -1753,7 +1753,11 @@
             "heading": "",
             "text": "Generative policies can synthesize robot behaviors, yet controlling and editing them through diverse spatiotemporal references remains challenging. In the real world, human intent requires robot behaviors that satisfy constraints on where, when, and how actions are executed.\n\nOur key insight is that spatiotemporal control references, such as keypoints, flows, orientations, and keyposes, can be viewed as partial specifications of the same temporal Cartesian action space. We introduce the MAP (Masked Action Space) interface to unify these action references and formulate controllable manipulation as an action inpainting problem.\n\nOur Inpainting Policy (IP) reconstructs missing action dimensions of the end-effector, combining progress-guided alignment with multi-mask training supporting unseen action-constraint combinations. We further adopt a training-free RePaint variant that iteratively inpaints the action during denoising to reduce control error.\n\nOn ManiSkill and LIBERO-10, our policy achieves average task success rates of 92.67% and 64.67%, respectively.Real-world experiments demonstrate spatiotemporal control with average positional and rotational errors of 44.3 mm and 7{\\deg}, respectively, showing that our policy can use diverse references to guide executable robot behaviors."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces the Masked Action Space (MAP) interface, treating references such as keypoints, flows, orientations, and keyposes as partial specifications in a temporal Cartesian action space. It frames controllable manipulation as action inpainting. The Inpainting Policy reconstructs missing end-effector action dimensions using progress-guided alignment and multi-mask training, while a training-free RePaint variant iteratively inpaints actions during denoising. Simulated benchmarks and real-world experiments report task success and positional and rotational errors.",
+          "zh": "论文提出 MAP（Masked Action Space）接口，将关键点、流场、方向和关键姿态等时空控制参考统一为时间笛卡尔动作空间中的部分规格，并把可控操作表述为动作补全问题。其 Inpainting Policy 通过进度引导对齐和多掩码训练重建末端执行器动作，另采用免训练的 RePaint 变体迭代补全动作以降低控制误差。仿真基准及真实机器人实验报告了任务成功率和位置、旋转误差结果。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1784,7 +1788,11 @@
             "heading": "",
             "text": "Accurate and safe robotic manipulation under dynamic and visually occluded conditions remains a core challenge in real-world deployment. We introduce SyncTwin, a novel digital twin framework that unifies fast 3D scene reconstruction and real-to-sim synchronization for robust and safety-aware robotic manipulation in such environments.\n\nIn the offline stage, we employ VGGT to rapidly reconstruct object-level 3D assets from RGB images, forming a reusable geometry library. During execution, SyncTwin continuously synchronizes the digital twin by tracking real-world object states and uses stored assets to complete partially observed geometry.\n\nThe synchronized twin enables motion planners to compute collision-aware robot trajectories in simulation, with execution on the real robot closing the real-to-sim-to-real loop.\n\nExperiments in dynamic and occluded scenes show that SyncTwin improves manipulation performance and motion safety, demonstrating the effectiveness of digital twin synchronization for real-world robotic execution."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents SyncTwin, a digital twin framework for robotic manipulation in dynamic and visually occluded settings. Offline, it reconstructs object-level 3D assets from RGB images for a reusable geometry library. During execution, it tracks real-world object states and uses stored assets to complete partially observed geometry. The synchronized twin supports collision-aware trajectory planning in simulation, followed by execution on a real robot. The authors report improved manipulation performance and motion safety in experiments.",
+          "zh": "论文提出 SyncTwin 数字孪生框架，用于动态且视觉遮挡环境中的机器人操作。离线阶段，该框架从 RGB 图像快速重建物体级三维资产，形成可复用几何库；执行时持续跟踪真实物体状态，并用存储资产补全部分可见的几何信息。同步后的孪生体支持规划器在仿真中计算考虑碰撞的轨迹，再由真实机器人执行以形成实到仿真再到实的闭环。作者称实验显示操作表现和运动安全性有所改善。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1815,7 +1823,11 @@
             "heading": "",
             "text": "Memory lets an embodied agent reuse past experience, yet retaining useful information does not ensure that the agent can apply it when conditions change. We present MemTransfer, a benchmark comparing six memory representations, a working-memory baseline and five representations of past experience, under a shared frozen vision-language-model policy.\n\nIt comprises 100 navigation cases across ten task types in a simulated warehouse, with expert demonstrations supplying the history. Three comparisons vary the starting pose, route availability, and amount and task relevance of history.\n\nWith one demonstration per task, Full-context and Episodic memory reach 95.3% and 100.0% success at the original demonstration start, but lose 48-49 percentage points at a new test start.\n\nSummary changes little between these two test starts, yet with four demonstrations per task it retains a smaller fraction of its unchanged-route success after blocking (39.3%) than Working memory (44.8%) or the two trajectory memories (56-58%).\n\nAt the new test start, increasing from one to four relevant demonstrations raises Episodic success by 14.3 percentage points, while the other evaluated representations gain no more than 1.3 percentage points. Replacing half of the relevant histories with other-task experience lowers success for both trajectory memories.\n\nThese results show that robustness to one kind of mismatch does not imply robustness to another, motivating evaluation of both stored information and its use at decision time."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents MemTransfer, a benchmark comparing six memory representations under a shared frozen vision-language-model policy. It evaluates navigation in a simulated warehouse by varying starting pose, route availability, and the quantity and relevance of demonstration history. Results show that memory representations respond differently to these mismatches: high success at a demonstration start may fall substantially at a new test start, while changing route availability or history relevance produces other effects. The authors argue that evaluation should consider both stored information and how agents use it at decision time.",
+          "zh": "论文介绍 MemTransfer 基准，比较共享冻结视觉语言模型策略下的六种记忆表示，评估具身智能体在经验与条件不匹配时如何使用记忆。基准包含模拟仓库中的导航案例，并通过改变起点、路线可用性以及历史数量和相关性进行比较。结果显示，不同记忆表示对起点变化、路线受阻和历史相关性变化的鲁棒性不同；例如，示例起点上的高成功率可能在新起点明显下降。作者据此主张同时评估存储的信息及其决策时的使用方式。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
