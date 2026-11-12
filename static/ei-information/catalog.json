@@ -5132,8 +5132,8 @@
           }
         ],
         "summary": {
-          "en": "The authors argue that embodied tasks can be framed as interaction with digital software. Their software renders a physical environment on screen and supplies controls, allowing a computer-use agent to act through screenshots, keyboard, and mouse. With one agent design and changes only to the software, their entries won first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without competition-specific tuning. They interpret this as evidence that skills such as visual grounding, precise clicking, and exploration transfer to embodied tasks, and advocate computer-use agents as embodied generalists.",
-          "zh": "作者主张，具身任务可表述为与数字软件交互：软件将物理环境呈现在屏幕上并提供操作控件，计算机使用代理便可通过截图、键盘和鼠标执行具身任务。研究使用同一种代理设计，仅改变软件，在四项ECCV研讨会竞赛中获得第一、第二、第三和第六名，且未针对单项竞赛调优。作者据此认为，代理在软件任务中习得的视觉定位、精确点击和探索能力可迁移到具身任务，并倡议计算机使用代理可成为具身通用体，也提出具身AI可能趋向单一通用模型。"
+          "en": "The authors argue that embodied tasks can be framed as interaction with digital software and that computer-use agents may serve as embodied generalists. They build software that displays an agent’s view of a physical environment and provides controls, allowing the agent to act through screenshots and keyboard and mouse input. Using one agent design and changing only the software, their entries earn first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without competition-specific tuning. They interpret this as evidence that software-use skills can transfer to embodied tasks and advocate a general embodied model.",
+          "zh": "本文主张具身任务可被表述为与数字软件交互，并提出计算机使用智能体可能成为具身通用智能体。作者构建软件，将物理环境视图呈现在屏幕上，并提供相应操作控制，使智能体能通过截图、键盘和鼠标完成具身任务。采用同一种智能体设计、仅改变软件后，团队在四项 ECCV 工作坊竞赛中获得第一、第二、第三和第六名，且未针对单项竞赛调优。作者据此认为，智能体在软件操作中习得的视觉定位、精准点击和探索能力可迁移到具身任务，并倡议发展通用模型。"
         }
       },
       "source": {
@@ -6452,8 +6452,8 @@
           }
         ],
         "summary": {
-          "en": "ReSkill is a selective self-improvement framework for compositional manipulation. A coding agent builds an object-centric task graph from instructions and a skill library, uses execution records to locate failures, and revises task stages or repeatedly failing skills. Candidate changes are evaluated on full tasks and compared in pairs before adoption. At deployment, the policy uses retained skills without running the agent. On the same development set of ten RoboDojo tasks, average success rose from 30.0% to 86.2%. Across eight real-world tasks, it succeeded in 72 of 80 rebuilt-simulation trials and 62 of 80 real-robot trials.",
-          "zh": "ReSkill是一种面向组合式操作任务的选择性自我改进框架。编码代理根据指令和技能库构建以物体为中心的任务图，并利用节点执行记录定位失败，再修订任务阶段、交接与恢复路径，或增强反复失败的技能。候选修改经过完整任务评估和配对比较后才会采用；部署时策略调用保留技能而不运行代理。在十项RoboDojo任务的同一开发集上，平均成功率从初始版本的30.0%升至最终程序的86.2%；八项真实任务中，模拟重建试验成功72/80，实体机器人试验成功62/80。"
+          "en": "ReSkill is a selective self-improvement framework for compositional robot manipulation. During development, a coding agent uses a task graph, skill library, and node-level execution records to locate failures, then revises task organization, handoffs, recovery routes, or specific skills. Candidate changes undergo full-task evaluation and paired comparison before adoption. At deployment, the policy calls retained skills without the agent. Across ten RoboDojo tasks, average success rises from 30.0% for initial versions to 86.2% for final programs; real-world evaluations include rebuilt simulation and robot trials.",
+          "zh": "ReSkill 是面向组合式机器人操作任务的选择性自我改进框架。开发阶段的编码智能体从任务图和技能库出发，依据节点执行记录定位失败，并在任务组织、交接与恢复路径或具体技能上修订程序；候选修改经完整任务评估和配对比较后才采纳。部署时，策略调用保留的技能，不再调用智能体。在 RoboDojo 十项任务上，平均成功率从初始版本的 30.0% 升至最终程序的 86.2%；真实任务评估包括重建仿真和实体机器人试验。"
         }
       },
       "source": {
@@ -7115,8 +7115,8 @@
           }
         ],
         "summary": {
-          "en": "This study evaluates search over action chunks for a frozen ACT policy on PushT, scoring perturbed candidates through rollouts from cloned simulator states. Across 50 evaluation episodes, beam search raises success from 0% to 18% and average cumulative reward from 39.44 to 103.2. The authors introduce OSA, which invokes full search only when predicted coverage drops beyond a threshold. Reported ablations show it preserves or improves success while reducing runtime to about one-third of full beam search. Language-conditioned VLAs and physical robots remain future work.",
-          "zh": "本文研究在PushT任务中，如何让冻结的ACT策略通过搜索评估候选动作片段。束搜索在克隆模拟器状态上进行滚动评估；在50个评估回合中，任务成功率由0%升至18%，平均累计奖励由39.44升至103.2。作者提出OSA门控，仅在预测覆盖率下降超过阈值时启动完整搜索；消融结果显示其保持或提升成功率，并将运行时间降至完整束搜索的约三分之一。语言条件VLA和实体机器人评估仍属未来工作。"
+          "en": "The study tests selective search over action chunks with a frozen ACT policy in PushT. Beam search scores perturbed alternatives using rollouts from cloned simulator states; across 50 evaluation episodes, success rises from 0% to 18%, and average cumulative reward from 39.44 to 103.2. The authors introduce OSA, which invokes full search when a nominal chunk predicts a coverage drop beyond a threshold. Ablations report maintained or improved success with roughly three times lower runtime than full beam search. Language-conditioned VLAs and physical robots remain unevaluated.",
+          "zh": "研究在 PushT 中对冻结的 ACT 策略进行动作块选择性搜索。波束搜索在克隆的模拟器状态上评估扰动候选方案；在 50 个评估回合中，任务成功率由 0% 升至 18%，平均累积奖励由 39.44 升至 103.2。作者提出 OSA 门控，仅在名义动作块预测覆盖率下降超过阈值时启动完整搜索。消融结果显示，OSA 在保持或提升成功率的同时，运行时间约为完整波束搜索的三分之一。更大的搜索预算并不总能提升表现；语言条件 VLA 和实体机器人评估仍待开展。"
         }
       },
       "source": {
@@ -9713,8 +9713,8 @@
           }
         ],
         "summary": {
-          "en": "CPNav combines collision-aware planning with statistically calibrated VLM action scores for map-free object-goal navigation in unseen environments. It builds a navigability map from RGB-D input, generates collision-free motion primitives, and calibrates scores offline using conformal prediction and oracle actions from tree-structured exploration with backtracking. Online, scores guide action choice while recorded alternatives support backtracking. The authors report improvements over an uncalibrated baseline in SR and SPL in AI Habitat simulation, and corresponding improvements in real-world deployment on a modified Hiwonder MentorPi robot.",
-          "zh": "CPNav面向未知环境中的无地图物体目标导航，将避碰规划与经过统计校准的视觉语言模型动作评分结合。系统从RGB-D输入构建可通行地图并生成无碰撞运动原语；离线使用树状探索与回溯得到的专家动作，通过保形预测校准评分，在线据此选择动作并记录备选路径以便回溯。作者报告，在AI Habitat模拟中，相较未校准基线，HM3D和MP3D上的SR与SPL均有提升；改装Hiwonder MentorPi实体机器人部署也报告了相应指标改善。"
+          "en": "CPNav combines collision-aware planning with statistically calibrated vision-language model action scores for map-free object-goal navigation in unseen environments. It builds a navigability map from RGB-D input, generates collision-free actions, and calibrates scores offline using oracle actions from tree-structured exploration with backtracking. Online, calibrated scores guide action selection while exploration history enables backtracking. The authors report improvements over an uncalibrated baseline in success and path-efficiency metrics in AI Habitat simulation and deployment on modified robot hardware.",
+          "zh": "CPNav 面向未知环境中的无地图目标物导航，将碰撞感知规划与经统计校准的视觉语言模型动作评分结合。系统根据 RGB-D 输入构建可通行地图并生成无碰撞动作，再以树状探索和回溯得到的 oracle 动作离线进行保形预测校准；在线导航时，校准分数指导动作选择，探索历史支持回溯。作者报告其在 AI Habitat 的 HM3D v0.2 和 MP3D 仿真，以及改装机器人实地部署中，相较未校准基线提升成功率和路径效率指标。"
         }
       },
       "source": {
