@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-377777c079f0ae26",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-11-09",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-09T19:25:24.282124+00:00",
+    "updated_at": "2026-11-12T07:08:58.798499+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/make-a-robot-arm-feel-weightless-with-nvidia-holoscan-5/",
+        "title": "Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5",
+        "published_at": "2026-11-09",
+        "checked_at": "2026-11-12T07:07:14.578037+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Edge Computing English 中文 Make a Robot Arm Feel Weightless with NVIDIA Holoscan 5 Build a responsive gravity-compensation loop with Pinocchio, a Seeed Studio reBot arm, using a simple Holoscan graph in Python or C++ Nov 09, 2026 By Jay Carlson and Ansley Dunn Discuss (0) L T F R E AI-Generated Summary NVIDIA Holoscan 5 enables low-latency robotic control and high-throughput perception in a single programming model with execution paths for CPU and GPU workloads. A gravity-compensation loop built from three custom Holoscan operators reads joint state at 400 Hz, computes inverse dynamics with Pinocchio , and sends torque commands to the Seeed Studio reBot Arm B601-DM using the motorbridge library. Holoscan partitions group the operators on one thread to avoid cross-thread handoffs, and drop-oldest queues prevent outdated samples from accumulating. Nsight Systems profiling with built-in NVTX annotations shows pinning the control partition to a CPU core reduces p99.99 latency by roughly 5x for C++ and 9.6x for Python implementations. Next Steps Download the Holoscan 5 SDK to begin developing robotic control applications. Follow the gravity compensation tutorial to build and run the comp"
+      }
+    ]
+  }
+}
