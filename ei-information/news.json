@@ -2671,7 +2671,11 @@
             "heading": "",
             "text": "Efficient robotic 3D reconstruction requires selecting views that contribute new surface measurements with few physical captures. Pretrained world models can guide this choice, but a predicted surface may not produce valid depth measurements under the operating conditions of the deployed sensor.\n\nWe present a deployment adaptation methodology for next-best-view selection that learns a sensor-return adapter from limited local calibration data while keeping the pretrained predictor fixed. The adapter estimates measurement dropout over each predicted surface, allowing the selection method to favor views likely to fill gaps in the measured reconstruction.\n\nIn a real-robot experiment with a structured-light sensor, the adapted method achieves higher measured surface coverage with 60% fewer captures than nominal selection. The adapted method recovers a surface region that the nominal method repeatedly targets but fails to measure.\n\nThese results suggest that robots can reuse pretrained predictive models while adapting their decisions to local operating conditions in data-scarce environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a deployment adaptation method for next-best-view selection. It keeps a pretrained surface predictor fixed and learns a sensor-return adapter from limited local calibration data to estimate measurement dropout across predicted surfaces. In a real-robot experiment using a structured-light sensor, the adapted method achieved higher measured surface coverage with 60% fewer captures than nominal selection, and recovered a region the nominal method repeatedly targeted but failed to measure. The authors suggest this supports adapting decisions to local conditions while reusing pretrained models in data-scarce settings.",
+          "zh": "论文提出一种用于主动感知下一最佳视角选择的部署适配方法：保持预训练表面预测器不变，利用少量本地校准数据学习传感器返回适配器，估计预测表面上的测量丢失情况，使系统优先选择可能补全重建缺口的视角。在使用结构光传感器的真实机器人实验中，该方法相比名义选择以少60%的采集次数获得更高的实测表面覆盖率，并找回名义方法反复瞄准却未能测量的区域。作者认为，这表明机器人可在数据稀缺环境中复用预训练模型，同时适应本地运行条件。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2702,7 +2706,11 @@
             "heading": "",
             "text": "Controlling the shape profile of soft trunk robots extends their reach into complex regions of the workspace and enhances their use in practical applications. Recent advances in soft robot design have enabled soft trunk robots to achieve greater flexibility in conforming to complex shapes.\n\nSpecifically, trunk robots whose geometries are designed as helicoids have been shown to enable extreme shape-changing capabilities. Their compliance makes them highly nonlinear, which in turn makes shape control difficult.\n\nOn similar tendon-driven trunk robots, model-based controllers based on the theory of adiabatic spectral submanifolds (aSSMs) have achieved high accuracy in closed-loop end-effector tracking.\n\nWe extend this approach by learning an aSSM model of the full body of a trimmed-helicoid soft trunk robot from data and use this in a model predictive control (MPC) scheme to demonstrate a range of shape control tasks on hardware. On closed-loop dynamic shape regulation, our method outperforms the available linear baselines by a factor of 10.\n\nIn human-in-the-loop interactive demos, our method completes section-by-section shaping and balances a tennis ball for over 25 seconds, while the linear baselines fall short. A model-free reinforcement learning policy trained for 12 hours on hardware fails on the same balancing task.\n\nThese results establish aSSM-based MPC as a practical route to full-body shape control on real soft hardware."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper extends adiabatic spectral submanifold (aSSM) modeling to the full body of a trimmed-helicoid soft trunk robot and uses the learned model in model predictive control (MPC). Hardware demonstrations cover several shape-control tasks. The authors report that their method outperforms available linear baselines by a factor of 10 in closed-loop dynamic shape regulation. In interactive demonstrations, it performs section-by-section shaping and balances a tennis ball for over 25 seconds; the linear baselines and a model-free reinforcement learning policy trained on hardware for 12 hours fail at that balancing task.",
+          "zh": "论文将绝热谱子流形（aSSM）建模扩展到修整螺旋面软躯干机器人的全身，并将学习到的模型用于模型预测控制（MPC），在硬件上演示多种形状控制任务。作者报告，在闭环动态形状调节中，该方法比现有线性基线准确十倍；在人机交互演示中，它完成了逐段塑形，并使网球平衡超过25秒，而线性基线未能完成。同一平衡任务中，在硬件上训练12小时的无模型强化学习策略也失败。结果支持作者关于 aSSM-MPC 可用于真实软体硬件全身形状控制的主张。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2733,7 +2741,11 @@
             "heading": "",
             "text": "Co-speech gestures can increase engagement and improve speech understanding. Yet, most data-driven robot systems generate either rhythmic beat-like motion or semantically meaningful iconic gestures, but not both.\n\nWe present an emotion-aware rhythmic-semantic co-speech gesture system that generates iconic and beat behaviors in real time from text and the robot's internal emotional state.\n\nWe formalize the task of beat-iconic gesture generation using emotion and propose lightweight models that predict iconic timing and intensity, then fill the remaining spans with emotion-conditioned beats at an appropriate intensity level. We train on the BEAT2 dataset and deploy the system on the social robot Haru.\n\nIn an online user study with 60 participants, our method shows stronger speech-gesture alignment and is preferred over baseline methods."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents an emotion-aware system that generates rhythmic and semantic co-speech gestures for robots in real time from text and the robot’s internal emotional state. It formalizes beat-iconic gesture generation and uses lightweight models to predict iconic gesture timing and intensity, filling the remaining spans with emotion-conditioned beats. The system was trained on the BEAT2 dataset and deployed on the social robot Haru. In an online user study with 60 participants, the method showed stronger speech-gesture alignment and was preferred over baseline methods.",
+          "zh": "论文提出一种面向情绪对话的机器人语音伴随手势系统，可根据文本和机器人的内部情绪状态实时生成具有语义的象征性手势与节拍动作。作者将节拍与象征性手势的联合生成形式化，并设计轻量模型预测象征性手势的时机和强度，再以情绪条件化的节拍填充其余时间段。系统使用 BEAT2 数据集训练，并部署于社交机器人 Haru。在一项有60名参与者的在线用户研究中，该方法表现出更强的语音与手势对齐，且比基线方法更受偏好。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2764,7 +2776,11 @@
             "heading": "",
             "text": "Biological systems can form complex three-dimensional structures through the collective behavior of agents that share a common update rule and operate without central control.\n\nHow such distributed control gives rise to precise global patterns remains a central question not only in developmental biology but also in distributed robotics, programmable matter, and multi-agent learning.\n\nHere, we introduce DiffeoMorph, an end-to-end differentiable framework for learning a morphogenesis protocol that guides a population of agents to morph into a target 3D shape. Each agent updates its position and internal state using an SE（3）-equivariant graph neural network, based on its own internal state and signals received from other agents.\n\nTo train this system, we introduce a new shape-matching loss based on 3D Zernike polynomials, which compares the predicted and target shapes as continuous spatial distributions, not as discrete point clouds, and is invariant to agent ordering, number of agents, and global orientation.\n\nTo achieve rotation invariance while preserving reflection sensitivity, we include an alignment step that optimally rotates the predicted Zernike spectrum to match the target before computing the loss. We perform benchmarking to establish the advantages of our shape-matching loss over other standard distance metrics for shape comparison tasks.\n\nWe then demonstrate that DiffeoMorph can form a range of complex shapes from minimally patterned initial conditions. DiffeoMorph provides a general framework for learning distributed control strategies for morphogenesis, swarm robotics, and programmable self-assembly."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces DiffeoMorph, an end-to-end differentiable framework that learns a distributed protocol for agents to transform into a target 3D shape. Each agent updates its position and internal state using an SE(3)-equivariant graph neural network and information from other agents. A shape-matching loss based on 3D Zernike polynomials compares continuous spatial distributions and is invariant to agent ordering, population size, and global orientation. The authors benchmark the loss and demonstrate formation of varied complex shapes from minimally patterned initial conditions, proposing applications in morphogenesis, swarm robotics, and programmable self-assembly.",
+          "zh": "论文介绍 DiffeoMorph，这是一个端到端可微框架，学习由多个智能体分布式协作、从初始状态变形成目标三维形状的协议。每个智能体通过 SE(3) 等变图神经网络，依据自身状态及接收信号更新位置和内部状态。框架采用基于三维 Zernike 多项式的形状匹配损失，将形状视为空间连续分布，并对智能体顺序、数量和整体朝向不变；另以最优旋转对齐实现旋转不变，同时保留对反射的敏感性。作者通过基准比较该损失，并展示系统从模式极少的初始条件形成多种复杂形状，提出其可用于形态发生、群体机器人及可编程自组装的分布式控制研究。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
