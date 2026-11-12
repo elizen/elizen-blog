@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-03d2a891d993b03f",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-11-11",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-11T15:11:17.640953+00:00",
+    "updated_at": "2026-11-12T05:01:50.343463+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "deepmind-robotics-blog",
+        "source_name": "Google DeepMind 官方博客",
+        "source_url": "https://deepmind.google/blog/",
+        "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+        "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+        "published_at": "2026-11-11",
+        "checked_at": "2026-11-12T04:59:56.187768+00:00",
+        "evidence_role": "primary",
+        "excerpt": "November 11, 2026 Science AlphaGenome 2: Deciphering how cells read DNA to better understand disease Adam Gayoso, Natasha Latysheva, Pushmeet Kohli and Žiga Avsec Read the paper Share Our next-generation DNA sequence model bridges single-cell biology and human genetics, predicting how genetic variants affect hundreds of human cell types. Today, we are announcing AlphaGenome 2, our next-generation model that predicts how DNA sequences and their variations impact specific human cell types, giving scientists a powerful new tool to uncover the cellular drivers of disease. Cells are the building blocks of life. Every cell in our body carries the same DNA blueprint, yet each cell type and state—like a heart muscle cell or an immune cell fighting an infection—switches different genes on or off to do its job. Global efforts like the Human Cell Atlas are mapping this gene expression for millions of cells, but it is still an unsolved challenge to predict how subtle DNA variations affect this expression in cells, which is a key driver of human traits and disease. Last year, we launched AlphaGenome to predict how DNA variants affect molecular activity across broad tissues. We expanded its reac"
+      }
+    ]
+  }
+}
