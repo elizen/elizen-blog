@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-d134785a2e3a5009",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Look Ahead: Search-Driven Reasoning in Embodied AI",
+    "summary": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+    "event_date": "2026-11-07",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-10T03:54:55.453732+00:00",
+    "updated_at": "2026-11-13T15:20:18.180109+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+        "why_it_matters": "VLA 的记忆、推理和实时执行能力，直接决定具身智能能否从演示动作走向长时任务和真实部署。",
+        "watch_next": "继续核对实验是否覆盖真实机器人、长时任务和跨场景泛化。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.10769v1",
+        "title": "Look Ahead: Search-Driven Reasoning in Embodied AI",
+        "published_at": "2026-11-07",
+        "checked_at": "2026-11-13T15:20:10.073735+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Search allows a robotic policy to evaluate candidate futures before committing to an action. Motivated by test-time planning for vision-language action (VLA) models, we study selective search over action chunks in PushT using a frozen Action Chunking with Transformers (ACT) policy. Beam search generates perturbed alternatives around the policy prediction and scores them through rollouts from cloned simulator states. Across 50 evaluation episodes, beam search raises task success from 0% to 18% and increases average cumulative reward from 39.44 to 103.2. We introduce One Step Ahead (OSA), a gate that simulates the nominal policy chunk and invokes full search only when its predicted coverage drop exceeds a threshold. In the reported ablations, OSA preserves or improves success while reducing runtime by approximately 3x relative to full beam search. Ablations over tree depth, branching factor, beam width, and replanning frequency show that larger search budgets do not consistently improve performance. The results support selective test-time search for action-chunking policies; evaluation on language-conditioned VLAs and physical robots remains future work."
+      }
+    ]
+  }
+}
