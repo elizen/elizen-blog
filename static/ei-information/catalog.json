@@ -5130,7 +5130,11 @@
             "heading": "",
             "text": "In many areas of AI, general-purpose models have increasingly replaced handcrafted methods and specialized architectures. We argue that embodied AI is poised for a similar shift. Our key claim is that embodied tasks can be formulated as interaction with digital software.\n\nSpecifically, we build software that renders an agent's view of a physical environment on a screen and provides controls for acting in it. A computer-use agent (CUA) can then perform embodied tasks through the same screenshots and keyboard and mouse actions that it uses to operate ordinary software.\n\nUsing a single CUA design and changing only the software, our entries win first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without any competition-specific agent tuning.\n\nThese results suggest that the skills CUAs learn on software, such as visual grounding, precise clicking, and exploration, already carry over to embodied tasks, giving CUAs a far broader scope in embodied AI than previously realized. We therefore advocate that computer-use agents can be embodied generalists.\n\nFurther, we advocate that, by following the training strategy that made computer-use agents general, embodied AI can converge on a single general model as well, ushering in a new era of general embodied AI. Website: https://pranjal2041.github.io/cua-embodied"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The authors argue that embodied tasks can be framed as interaction with digital software. They build software that displays an agent’s view of a physical environment and exposes controls, allowing a computer-use agent to act through screenshots, keyboard, and mouse input. With one CUA design and software changes alone, their entries placed first, second, third, and sixth across four ECCV workshop competitions, without competition-specific tuning. They interpret this as evidence that software skills can transfer to embodied tasks and advocate for general embodied models.",
+          "zh": "作者主张，具身任务可以表述为与数字软件交互，从而由计算机使用智能体通过屏幕截图、键盘和鼠标操作完成。为此，他们开发软件，将物理环境中的智能体视角呈现在屏幕上，并提供相应控制方式。使用同一种计算机使用智能体设计、仅更换软件，参赛系统在四项 ECCV 研讨会竞赛中获得第一、第二、第三和第六名，且未针对单项竞赛调优。作者据此认为，软件操作中学到的视觉定位、精确点击和探索技能可迁移到具身任务，并倡议具身 AI 发展通用模型。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6446,7 +6450,11 @@
             "heading": "",
             "text": "Self-improvement on compositional manipulation tasks requires deciding what to reuse, where to improve, and which changes to retain. We present ReSkill, a selective self-improvement framework that concentrates revision on capability gaps.\n\nA coding agent constructs an object-centric task graph from an instruction and a skill library, then uses node-level execution records to locate failures.\n\nAt the task level, it revises stage organization, hand-off conditions, and recovery routes; at the skill level, it strengthens perception, motion, manipulation, and verification capabilities that repeatedly fail.\n\nCandidate revisions undergo full-task evaluation and paired comparisons before adoption, allowing local changes to accumulate into validated skills and an independently executable policy. The agent participates only during development; the deployed policy calls the retained skills without invoking the agent at run time.\n\nOn the same development set, average success across ten RoboDojo tasks rises from 30.0% for the initial versions to 86.2% for the final adopted programs; retained programs achieve 83.6% in recorded robustness and model-selection evaluations.\n\nAcross eight real-world tasks, ReSkill succeeds in 72 of 80 rebuilt-simulation trials and 62 of 80 real-robot trials (77.5%).The median revision changes only three functions, approximately 0.5% of a program, while 39% of task-specific functions in later-added tasks directly reuse existing implementations.\n\nThese results show how locating local deficiencies, validating candidate changes, and accumulating reusable skills can improve execution of compositional manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReSkill is a selective self-improvement framework for compositional robot manipulation. During development, a coding agent builds a task graph from instructions and a skill library, uses execution records to locate failures, and proposes task-level or skill-level revisions. Candidate changes undergo full-task evaluation and paired comparisons before adoption; deployed policies use retained skills without invoking the agent at runtime. On the same development set of ten RoboDojo tasks, average success rises from 30.0% to 86.2%. In real-robot trials, it succeeds in 62 of 80 attempts.",
+          "zh": "ReSkill 是一种面向组合式机器人操作任务的选择性自我改进框架。开发阶段的编码智能体根据指令和技能库构建任务图，并利用节点执行记录定位失败，再针对任务阶段组织、交接与恢复路线，或反复失败的感知、运动、操作和验证技能提出修改。候选修改经完整任务评估和配对比较后才采纳；部署策略调用保留的技能，不在运行时调用智能体。在十项 RoboDojo 任务的同一开发集上，平均成功率从初始版本的 30.0%升至最终程序的 86.2%；真实机器人试验报告 80 次中成功 62 次。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7105,7 +7113,11 @@
             "heading": "",
             "text": "Search allows a robotic policy to evaluate candidate futures before committing to an action. Motivated by test-time planning for vision-language action (VLA) models, we study selective search over action chunks in PushT using a frozen Action Chunking with Transformers (ACT) policy.\n\nBeam search generates perturbed alternatives around the policy prediction and scores them through rollouts from cloned simulator states. Across 50 evaluation episodes, beam search raises task success from 0% to 18% and increases average cumulative reward from 39.44 to 103.2.\n\nWe introduce One Step Ahead (OSA), a gate that simulates the nominal policy chunk and invokes full search only when its predicted coverage drop exceeds a threshold. In the reported ablations, OSA preserves or improves success while reducing runtime by approximately 3x relative to full beam search.\n\nAblations over tree depth, branching factor, beam width, and replanning frequency show that larger search budgets do not consistently improve performance. The results support selective test-time search for action-chunking policies; evaluation on language-conditioned VLAs and physical robots remains future work."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies selective search over action chunks for a frozen ACT policy in PushT. Beam search scores perturbed action alternatives through rollouts from cloned simulator states; across 50 evaluation episodes, reported success rises from 0% to 18%, and average cumulative reward from 39.44 to 103.2. The proposed One Step Ahead gate invokes full search when predicted coverage drops beyond a threshold. Ablations report preserved or improved success with about threefold lower runtime than full beam search. Language-conditioned VLAs and physical robots remain unevaluated.",
+          "zh": "论文研究在 PushT 任务中，如何让冻结的 ACT 策略通过搜索评估候选动作片段。光束搜索在克隆模拟器状态上进行 rollout；在 50 个评估回合中，任务成功率由 0% 升至 18%，平均累计奖励由 39.44 升至 103.2。作者提出 OSA 门控，仅在预测覆盖度下降超过阈值时调用完整搜索；消融结果显示，它在保持或提高成功率的同时，将运行时间相对完整光束搜索降低约三倍。评估尚未覆盖语言条件 VLA 和实体机器人。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9699,7 +9711,11 @@
             "heading": "",
             "text": "Directing a robot to locate a target object in unseen environments remains a central challenge in embodied AI. Vision-Language Model (VLM)-based methods provide rich semantic reasoning but often produce uncalibrated and overconfident action decisions.\n\nWe introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. From RGB-D input, CPNav constructs a navigability map, generates collision-free motion primitives, and queries two VLMs for goal detection and action scoring.\n\nThe resulting scores are calibrated offline via conformal prediction (CP) using oracle actions obtained through a tree-structured exploration procedure with backtracking, providing finite-sample guarantees at a user-specified risk level. The CP layer is model-agnostic and can wrap any VLM policy.\n\nOnline, calibrated VLM scores guide action selection, while a tree-structured exploration history records alternative actions and allows backtracking. We evaluate CPNav in both simulation and real-world hardware settings.\n\nIn AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively. In real-world deployment on a modified Hiwonder MentorPi robot, the corresponding improvements in SR and SPL are 24.9% and 15.2%, respectively.\n\nCode is available at https://github.com/practice-lab-ucla/CPnav."
           }
-        ]
+        ],
+        "summary": {
+          "en": "CPNav combines collision-aware planning with statistically calibrated vision-language model action scores for map-free object-goal navigation in unseen environments. It builds a navigability map and motion primitives from RGB-D input, uses two VLMs for goal detection and action scoring, and calibrates scores offline through conformal prediction. Online, scores guide action selection, while an exploration history supports backtracking. The paper evaluates the method in AI Habitat simulation and on modified real-world hardware, reporting relative SR and SPL improvements over an uncalibrated baseline in both settings.",
+          "zh": "CPNav 面向未知环境中的无地图目标物体导航，将考虑碰撞的规划与经统计校准的视觉语言模型动作评分结合。系统从 RGB-D 输入构建可通行地图并生成无碰撞运动基元，使用两个视觉语言模型检测目标和评分动作；离线通过共形预测校准分数，在线结合探索历史选择动作并支持回退。论文报告了 AI Habitat 仿真和改装机器人上的评估：相较未校准基线，仿真中 HM3D v0.2 与 MP3D 的 SR、SPL 均有相对提升；实体机器人部署也报告了相应提升。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
