@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-47e509e7b4548ca9",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Computer-Use Agents Are Embodied Generalists",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-11-06",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-09T05:33:24.536655+00:00",
+    "updated_at": "2026-11-12T23:18:09.786665+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.09847v1",
+        "title": "Computer-Use Agents Are Embodied Generalists",
+        "published_at": "2026-11-06",
+        "checked_at": "2026-11-12T23:17:59.599603+00:00",
+        "evidence_role": "primary",
+        "excerpt": "In many areas of AI, general-purpose models have increasingly replaced handcrafted methods and specialized architectures. We argue that embodied AI is poised for a similar shift. Our key claim is that embodied tasks can be formulated as interaction with digital software. Specifically, we build software that renders an agent's view of a physical environment on a screen and provides controls for acting in it. A computer-use agent (CUA) can then perform embodied tasks through the same screenshots and keyboard and mouse actions that it uses to operate ordinary software. Using a single CUA design and changing only the software, our entries win first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without any competition-specific agent tuning. These results suggest that the skills CUAs learn on software, such as visual grounding, precise clicking, and exploration, already carry over to embodied tasks, giving CUAs a far broader scope in embodied AI than previously realized. We therefore advocate that computer-use agents can be embodied generalists. Further, we advocate that, by following the training strategy that made computer-use agents general, embodie"
+      }
+    ]
+  }
+}
