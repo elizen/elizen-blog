@@ -3696,11 +3696,7 @@
             "heading": "",
             "text": "The RoboCup Standard Platform for Autonomous Rescue Competition (SPARC) is a new competition under development of the RoboCup Rescue Robot League that uses the Unitree A2-W as a common robot platform.\n\nSPARC aims to make research on artificial intelligence for autonomous rescue robots accessible to a broader research community, including groups without expertise in developing and maintaining custom robot hardware.\n\nBy providing a capable standard platform and established benchmark environments, researchers can focus on autonomous navigation, perception, manipulation, and embodied AI for challenging disaster-response scenarios. This paper introduces the SPARC competition, its benchmark environment, and the Unitree A2-W standard platform.\n\nFurthermore, we present the first open SPARC datasets collected during the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, release an open-source software stack for autonomous navigation, and provide initial simulation assets representing RoboCup Rescue test environments.\n\nTogether, these resources aim to lower the barrier to entry for autonomous rescue robotics and facilitate reproducible research and collaborative development on a common hardware platform."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces SPARC, a RoboCup Rescue Robot League competition under development that uses the Unitree A2-W as its common robot platform. The initiative aims to broaden access to autonomous rescue robotics research, including for groups without experience developing and maintaining custom hardware. The authors describe the competition, benchmark environment, and platform, and present initial open datasets collected at the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, an open-source autonomous navigation software stack, and simulation assets representing RoboCup Rescue test environments. They say these resources are intended to support reproducible research and collaboration.",
-          "zh": "论文介绍正在RoboCup救援机器人联盟中开发的SPARC竞赛，该竞赛采用Unitree A2-W作为通用机器人平台，目标是让缺少自研和维护机器人硬件经验的团队也能参与自主救援机器人研究。作者介绍了竞赛、基准环境和标准平台，并报告发布了在IEEE ICRA 2026腿式机器人挑战赛及RoboCup Rescue 2026期间采集的首批开放数据集、用于自主导航的开源软件栈，以及模拟RoboCup Rescue测试环境的初始仿真资产。作者认为这些资源旨在降低参与门槛，并支持基于共同硬件平台的可复现研究与协作开发。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6447,11 +6443,7 @@
             "heading": "",
             "text": "In robotics and embodied AI, a core challenge for world models is adapting to sudden, persistent, yet initially unknown changes in robot dynamics during interaction. For instance, when a robotic arm grasps an object with an unknown payload, the robot dynamics change suddenly.\n\nIf the world model fails to adapt, its prediction errors accumulate over the open-loop rollout and ultimately mislead the robot's actions.\n\nExisting world models, however, struggle to simultaneously satisfy three critical requirements for dynamics adaptation: responsiveness, reacting promptly to sudden changes to curb prediction error accumulation; stability, distinguishing persistent changes from transient disturbances to prevent incorrect updates; and persistence, retaining the adapted dynamics without new observations so that later predictions do not revert to the old dynamics.\n\nInspired by predictive coding in the human brain with multi-timescale adaptation, we propose AFTER-WM, a world model with Adaptive Fast-slow Timescales for Error-driven Retention, whose prediction errors drive a fast correction that fades and a slow correction that persists, while dynamically adjusting the combination weights of pre-trained experts without altering them, to overcome the trade-offs among responsiveness, stability and persistence.\n\nOn five simulated robot datasets and real UAV data, AFTER-WM has a lower multi-step mean error than all ten compared models and the highest mean return in a joint-failure control task.\n\nIn simulation, its multistep mean error is 16%-34% below the strongest compared model's and is also the lowest 1-4 steps after a change and under transient disturbances alone, and its step-40 error is the lowest as well, reflecting responsiveness, stability and persistence. All code (method, baselines, experiments) and datasets will be released online."
           }
-        ],
-        "summary": {
-          "en": "The paper studies how world models can adapt to sudden, persistent changes in robot dynamics while distinguishing lasting changes from transient disturbances and retaining adaptations without new observations. The authors propose AFTER-WM, which uses prediction errors to drive a fast correction that fades and a slow correction that persists, while adjusting the weights of pretrained experts without modifying them. They report lower multi-step mean error than ten compared models across five simulated robot datasets and real UAV data, and the highest mean return in a joint-failure control task. In simulation, its multi-step error is reported as 16%–34% below the strongest comparison model.",
-          "zh": "论文研究机器人动力学突然且持续变化时，世界模型如何及时适应、避免被短暂扰动误导，并在缺少新观测时保留适应结果。作者提出AFTER-WM，以预测误差驱动快速衰减的修正和缓慢持续的修正，并动态调整预训练专家的组合权重而不改变专家本身。作者报告称，在五组仿真机器人数据和真实无人机数据上，该方法的多步平均误差低于十种对比模型，在联合故障控制任务中的平均回报最高；仿真中相对最强对比模型的多步误差低16%至34%，且变化后若干步、仅有瞬态扰动时及第40步的误差最低。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8084,11 +8076,7 @@
             "heading": "",
             "text": "Reconstructing dynamic scenes and objects from monocular egocentric video is crucial for embodied AI, yet existing 4D Gaussian Splatting (4DGS) approaches struggle with everyday interactions involving topological changes, such as cutting, assembly, opening, or closing.\n\nSince 4DGS methods rely on deforming a fixed representation, events that split, merge, or reveal surfaces cause severe visual artifacts.\n\nTo address this challenge, we introduce TopoEgo, the first benchmark dedicated to topological changes in egocentric video (covering fission, fusion, open, and close), alongside Topo-4DGS, a topology-aware reconstruction method.\n\nTopo4DGS jointly models part-level motion and time-varying surface support by assigning independent rigid transformations to interacting parts and dynamically activating or deactivating Gaussians as surfaces appear, disappear, or separate.\n\nExtensive experiments demonstrate that Topo-4DGS significantly outperforms state-of-the-art 4DGS approaches across topological changes, especially on post-event frames. Code and data will be made publicly available."
           }
-        ],
-        "summary": {
-          "en": "The paper addresses dynamic scene reconstruction from monocular egocentric video, where fixed-representation 4D Gaussian Splatting methods can produce artifacts during topological changes such as cutting, assembly, opening, and closing. The authors introduce TopoEgo, a benchmark covering fission, fusion, opening, and closing, and Topo-4DGS, which models interacting parts with independent rigid transformations and dynamically activates or deactivates Gaussians as surface support changes. They report that experiments show improvements over existing 4DGS approaches, especially on post-event frames.",
-          "zh": "论文关注单目第一人称视频中的动态场景重建，指出固定表示的4D高斯泼溅方法难以处理切割、组装、开合等拓扑变化，可能在表面分裂、合并或显露时产生明显伪影。作者提出TopoEgo基准，覆盖分裂、融合、打开和关闭，并提出Topo-4DGS：为交互部件分配独立刚体变换，同时随表面变化动态启用或停用高斯。作者称，大量实验中该方法优于现有4DGS方法，尤其在事件发生后的帧上。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17587,11 +17575,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models predict chunks of future actions, and when objects move, those chunks go stale before they are executed. We study what makes a pretrained VLA reactive, using \\pihalf{} on two dynamic simulation benchmarks and three real-robot tasks.\n\nWe vary the prediction and execution horizons, compare synchronous and asynchronous inference, test methods that deliver actions sooner or keep successive chunks continuous, and adapt the policy with motion cues and latent-space reinforcement learning. The best prediction horizon is about one second, and the best execution horizon depends on the checkpoint.\n\nShort horizons help more with asynchronous execution, and methods that keep the trajectory continuous outperform those that only reduce latency. Adapting the policy repairs targeted failures, but on the conveyor task changing the execution horizon gained as much.\n\nReactivity depends on the execution pipeline as much as on the policy, so both should be evaluated together."
           }
-        ],
-        "summary": {
-          "en": "This study examines how vision-language-action models respond during dynamic manipulation, where predicted action chunks can become stale as objects move. Using a pretrained VLA, the authors compare prediction and execution horizons, synchronous and asynchronous inference, methods for delivering actions sooner or maintaining continuity between chunks, and policy adaptation with motion cues and latent-space reinforcement learning. They report that the best prediction horizon is about one second, while the best execution horizon depends on the checkpoint. Shorter horizons help more with asynchronous execution, and trajectory-continuity methods outperform latency reduction alone.",
-          "zh": "论文研究视觉-语言-动作模型在动态操作中的反应能力，指出物体移动时，预先预测的动作片段可能在执行前就已过时。作者使用一个预训练VLA，在两个动态仿真基准和三项真实机器人任务中比较预测与执行时域、同步与异步推理，以及提前交付动作或维持动作片段连续性的方法，并测试加入运动线索和潜在空间强化学习的策略适配。研究报告称，最佳预测时域约为一秒，执行时域依赖检查点；短时域对异步执行更有帮助，保持轨迹连续的方法优于单纯降低延迟。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
