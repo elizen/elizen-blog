@@ -3,6 +3,34 @@
     {
       "body": "",
       "catalog": {
+        "kind": "article",
+        "source_channel": "website",
+        "source_name": "NVIDIA Robotics"
+      },
+      "format": "source_excerpt",
+      "id": "news-d2f424670579460dc185667c50432daa614ebfd094699edcd0e60611e032553a",
+      "intro": "Human motion offers roboticists a great starting point for teaching humanoid robots how to move. A human demonstration captures the coordination and timing...",
+      "placement": "main",
+      "published_at": "2026-11-13T17:00:00+00:00",
+      "reading": {
+        "mode": "excerpt",
+        "points": [],
+        "sections": [
+          {
+            "heading": "",
+            "text": "Human motion offers roboticists a great starting point for teaching humanoid robots how to move. A human demonstration captures the coordination and timing..."
+          }
+        ]
+      },
+      "source": {
+        "id": "nvidia-robotics-blog",
+        "url": "https://developer.nvidia.com/blog/adapt-human-motion-for-robots-with-nvidia-soma-retargeter/"
+      },
+      "title": "Adapt Human Motion for Robots with NVIDIA SOMA Retargeter"
+    },
+    {
+      "body": "",
+      "catalog": {
         "kind": "paper",
         "paper": {
           "url": "https://arxiv.org/abs/2611.16789"
@@ -711,7 +739,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models pair a vision-language backbone with an action head, but in closed-loop control the backbone sits on the control-critical path: while it computes, the robot keeps moving, so each executed action is conditioned on an increasingly stale observation.\n\nA larger backbone therefore directly blocks reactivity, especially in humanoid dexterous manipulation. We present DASH, a Decoupled Asynchronous System for Humanoids that removes this coupling.\n\nDASH splits the policy into a slow vision-language model (System 2) and a fast flow-matching action head (System 1) that run as concurrent processes over the LCM communication protocol, so the control rate is set by the action head alone, independent of backbone size.\n\nThe action head fuses stale semantics from a frozen backbone with fresh vision from its own ResNet encoder, desynchronized training exposes it to the staleness it meets at deployment, and an adaptive temporal aggregator aligns overlapping action chunks under variable inference latency.\n\nOn an asynchronous RoboTwin benchmark that charges inference latency in simulated time, DASH holds 20 Hz control rate from 0.8B to 8B backbones while the synchronous rate falls from 9.7 to 4.1 Hz, with higher success at every size. On a real humanoid with dexterous hands, DASH achieves clearly higher pick-and-place success than the synchronous pipeline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents DASH, which separates a vision-language model from a fast action head running concurrently, so the action head determines the control rate. Fresh visual input, training for observation staleness, and adaptive temporal aggregation address latency. On an asynchronous RoboTwin benchmark that charges inference latency in simulated time, DASH maintains a 20 Hz control rate across backbone sizes, while the synchronous rate declines, and DASH has higher success at each size. The authors also report clearly higher pick-and-place success than the synchronous pipeline on a real humanoid with dexterous hands.",
+          "zh": "本文提出 DASH，将视觉语言模型与快速动作头拆分为并发进程，使控制频率由动作头决定，并通过新鲜视觉、针对观测陈旧性的训练及自适应时间聚合处理延迟。在计入推理延迟的异步 RoboTwin 仿真基准中，DASH 使用不同规模骨干网络时维持 20 Hz 控制，同步方案频率下降，且各规模下成功率更高。作者还报告，真实人形机器人灵巧手任务中，DASH 的抓取放置成功率明显高于同步方案。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -742,7 +774,11 @@
             "heading": "",
             "text": "Model-based planners that roll out imagined futures assume the transition model faithfully propagates task-relevant signals---a property rarely measured directly.\n\nIn a single-seed case study of a Recurrent State Space Model world model with active-inference planning in the CARLA driving simulator, we identify a \\textbf{posterior-prior gap}---posterior (observation-filtered) states retain obstacle information that imagined rollout states progressively lose: a supervised obstacle probe achieves AUC 0.85 on posterior states, but the same probe applied to imagined prior states shows monotonic decay (AUC 0.85$\\rightarrow$0.71 over 15 steps; logit separation drops 57\\%).\n\nBecause the probe is identical, the decay isolates the transition model---not the representation---as the information bottleneck.\n\nObstacle avoidance drops to 0\\% without privileged runtime coordinates, and the planner's own ensemble-based epistemic term does not flag the loss---ensemble disagreement yields AUC 0.52 as an obstacle classifier (chance level), making the failure an unflagged imagination failure---an unknown unknown at planning time.\n\nAs a secondary contribution, we show that \\textbf{task-conditioned weighting of Effective Free Energy components} over the same world model yields lane keeping ($81.2 \\pm 1.8$\\% route completion) and obstacle avoidance (28/28 avoided, \\emph{using privileged coordinates}) in the CARLA simulator, with runtime weight modulation enabling post-evasion centering."
           }
-        ]
+        ],
+        "summary": {
+          "en": "In a single-seed CARLA driving-simulator case study, the paper finds that observation-filtered posterior states retain obstacle information while imagined rollout prior states progressively lose it. Results from the same probe are presented as evidence that the transition model is the information bottleneck. Without privileged runtime coordinates, obstacle avoidance falls to zero, and the ensemble-based epistemic term does not flag the information loss. As a secondary result, task-conditioned Effective Free Energy weights support lane keeping and obstacle avoidance, though the reported obstacle-avoidance result uses privileged coordinates.",
+          "zh": "本文在 CARLA 驾驶仿真的单随机种子案例中，发现世界模型的观测过滤后验状态保留障碍物信息，而想象 rollout 的先验状态逐步丢失该信息；相同探针的结果被用来指出转移模型是信息瓶颈。无特权运行时坐标时，避障率降至零，集成不确定性项也未能提示信息损失。作为次要结果，作者报告任务条件化的有效自由能权重可实现车道保持与避障，但所述避障结果使用了特权坐标。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -773,7 +809,11 @@
             "heading": "",
             "text": "Long-term spacecraft autonomy requires embodied agents to use operational history under communication delays, time-critical operations, environmental uncertainty, complex physical interactions, power and computational constraints, and safety and reliability requirements.\n\nWe introduce AstroMemBench and a Scenario-Challenge-Capability design method that maps these requirements to executable memory tests. The benchmark covers 16 memory subchallenges through 140 templates and 2240 instances across nine tasks in planetary surface operations, on-orbit servicing, and deep-space exploration.\n\nA deterministic environment scores actions for task completion, state changes, safety, and resource use. Ablations under nine conditions show that the benchmark is sensitive to how accurately agents recover and use historical information and to differences in memory-system design. Main experiments compare six configurations.\n\nMem0, Chain-of-Memory, LightMem, and retrieval-augmented generation (RAG) improve same-session mean scores over native Pi Agent, with no clear advantage of the three memory systems over RAG. After a session restart, Mem0 outperforms RAG by 12.25 points. Benefits favor instruction retention and result reuse over ongoing state tracking and energy reservation.\n\nAstroMemBench supports the design, development, and selection of memory systems for embodied spacecraft agents. AstroMemBench 1.0 and its evaluation code are publicly available: https://github.com/flyingView/AstroMemBench-v1."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces AstroMemBench, an executable benchmark for testing how embodied spacecraft agents recover and use operational history across planetary surface, on-orbit servicing, and deep-space tasks. A deterministic environment scores task completion, state changes, safety, and resource use. Ablations indicate sensitivity to historical-information use and memory-system design. In the main experiments, several memory systems and retrieval-augmented generation improve same-session mean scores. After a session restart, Mem0 scores higher than RAG. Benefits favor instruction retention and result reuse over ongoing state tracking and energy reservation.",
+          "zh": "本文介绍 AstroMemBench，用可执行记忆测试评估具身航天器代理对历史信息的恢复与使用，覆盖地表作业、在轨服务和深空探索任务。确定性环境按任务完成、状态变化、安全和资源使用评分。消融实验显示基准对历史信息使用准确度及记忆系统设计差异敏感。主要实验中，多种记忆系统和检索增强生成提升同一会话平均分；会话重启后，Mem0 得分高于 RAG。收益更偏向指令保留和结果复用，而非持续状态跟踪与能源预留。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3477,38 +3517,7 @@
         "url": "https://arxiv.org/abs/2610.41216"
       },
       "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents"
-    },
-    {
-      "body": "",
-      "catalog": {
-        "kind": "paper",
-        "paper": {
-          "url": "https://arxiv.org/abs/2610.41354"
-        },
-        "source_channel": "website",
-        "source_name": "arXiv · 机器人研究"
-      },
-      "format": "source_excerpt",
-      "id": "news-dc08ca695cddcd69452c1b45e946125f8a5d09b49e80c2fe423bcf845dab7a36",
-      "intro": "arXiv:2610.41354v3 Announce Type: replace Abstract: Deployment objectives often specify desired outcomes without providing revised trajectories, while parts of the original reference must still be followed. We present OneSteer, a one-step diffusion whole-body controller that combines general motion tracking with selective test-time steering. To accommodate new objectives, differentiable task costs guide optimization of the generator's input noise with frozen weights, while body-group reference masks relax selected tracking requirements. Predicted state-action plans provide a shared interface for task optimization and",
-      "placement": "main",
-      "published_at": "2026-11-13T05:00:00+00:00",
-      "reading": {
-        "mode": "abstract",
-        "points": [],
-        "sections": [
-          {
-            "heading": "",
-            "text": "Deployment objectives often specify desired outcomes without providing revised trajectories, while parts of the original reference must still be followed. We present OneSteer, a one-step diffusion whole-body controller that combines general motion tracking with selective test-time steering.\n\nTo accommodate new objectives, differentiable task costs guide optimization of the generator's input noise with frozen weights, while body-group reference masks relax selected tracking requirements. Predicted state-action plans provide a shared interface for task optimization and feedback-conditioned execution.\n\nFor nominal tracking, the model trained from scratch achieves the lowest local tracking error among the evaluated baselines on successful held-out AMASS and BONES clips. For steering, one frozen distilled controller adapts across diverse deployment objectives in simulation, raising the clean passage rate under a 1.25 m bar from 2% to 90%.\n\nOn a physical Unitree G1, OneSteer completes all 27 nominal tracking trials across nine diverse whole-body motion sequences without falling. With a steering cost derived from a signed distance field built using only onboard LiDAR, it also passes under a 1.1 m low bar in four of five attempts and steps over a 12 cm hurdle without falling in all three attempts.\n\nBeyond control, prediction variation in the model trained from scratch ranks likely tracking failures without physics rollouts. This scoring method is more than 10x faster than simulation-based scoring with five rollouts per clip and guides targeted fine-tuning. Project page: https://onesteer.github.io"
-          }
-        ]
-      },
-      "source": {
-        "id": "arxiv-embodied-ai",
-        "url": "https://arxiv.org/abs/2610.41354"
-      },
-      "title": "OneSteer: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control"
     }
   ],
-  "updated_at": "2026-11-13T08:35:22.791288+00:00"
+  "updated_at": "2026-11-13T17:14:34.235636+00:00"
 }
