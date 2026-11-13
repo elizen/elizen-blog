@@ -844,7 +844,11 @@
             "heading": "",
             "text": "Long-horizon manipulation under uncertainty remains a challenging problem in robotics.\n\nWe present \\ourmethod{}, an algorithm for Visibility-Aware Task and Motion Planning. \\ourmethod{} extends existing deterministic task and motion planning solvers to partially observable object rearrangement tasks, while still being able to take advantage of the efficiency and compositional generalization over long horizons of the base solver.\n\nThis extension interleaves sensing actions into a plan skeleton that assumed full observability, and uses a novel persistent object-based memory to fuse observations into object mesh hypotheses and an observed occupancy map.\n\nWe evaluate \\ourmethod{} on real-world tabletop rearrangement tasks which feature heavy occlusion and partial visibility and demonstrate that it outperforms baselines that do not perform active perception or have persistent memory."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a visibility-aware task and motion planning algorithm that extends deterministic planners to partially observable object rearrangement. It interleaves sensing actions with a plan skeleton originally designed for full observability, and uses persistent object-based memory to combine observations into object mesh hypotheses and an observed occupancy map. In real-world tabletop rearrangement tasks with heavy occlusion and partial visibility, the authors report better performance than baselines without active perception or persistent memory.",
+          "zh": "本文提出一种面向可见性的任务与运动规划算法，将确定性规划求解器扩展到部分可观测的物体重排任务。方法在原本假设完全可观测的计划骨架中交错加入感知动作，并通过持久化的物体级记忆融合观测，形成物体网格假设与已观测占据图。作者在存在严重遮挡和局部可见性的真实桌面重排任务上评估该方法，报告其优于未采用主动感知或持久记忆的基线。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -875,7 +879,11 @@
             "heading": "",
             "text": "Industrial manipulation requires precise alignment and controlled handling of rigid, deformable, and flexible components. Yet, the benefits of pretrained visuomotor policies remain underexplored in settings where limited access to specialized hardware, components, and fixtures constrains demonstration collection and evaluation.\n\nUnderstanding task-specific data requirements is important for assessing their scalability across diverse processes on the factory floor. We investigate whether video pretraining can support reliable industrial manipulation with limited action data.\n\nWe propose FLUX-mimic, a video-action model, motivated by the potential of video pretraining to capture motion and interaction patterns that enable sample-efficient training. FLUX-mimic is built on a backbone pretrained on large-scale web and industrial task data, and an action expert to generate robot trajectories.\n\nWe train our policy by joint video-action training. Across four automotive manufacturing benchmark tasks and two bimanual robot platforms, FLUX-mimic outperforms all considered baselines on the dexterous robot platform and matches pi_{0.5}'s average success rate on the gripper-based robot platform.\n\nOn a deformable part kitting task, FLUX-mimic reaches 77.5% success with as little as two hours of task-specific action-labeled demonstrations."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper investigates whether video pretraining can support reliable industrial manipulation with limited action data and proposes FLUX-mimic, a video-action model. It combines a backbone pretrained on large-scale web and industrial task data with an action expert that generates robot trajectories, and trains the policy jointly on video and action. Across four automotive manufacturing benchmark tasks and two bimanual robot platforms, the authors report that it outperforms considered baselines on the dexterous platform and matches pi_{0.5}'s average success rate on the gripper-based platform. On deformable part kitting, it reaches 77.5% success using two hours of task-specific action-labeled demonstrations.",
+          "zh": "本文研究视频预训练能否在动作数据有限时支持可靠的工业操作，并提出视频动作模型 FLUX-mimic。该模型以大规模网络及工业任务数据预训练的骨干网络为基础，并加入生成机器人轨迹的动作专家，通过视频与动作联合训练策略。在四项汽车制造基准任务和两个双臂机器人平台上，作者报告其在灵巧机器人平台上优于所有纳入比较的基线，在夹爪机器人平台上的平均成功率与 pi_{0.5} 相当。变形零件装箱任务中，使用两小时带动作标注的任务示范达到 77.5% 成功率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -906,7 +914,11 @@
             "heading": "",
             "text": "Probabilistic Virtual Fixtures (VFs) enable the adaptive selection of the most suitable haptic feedback for each phase of a task, based on learned or perceived uncertainty. While keeping the human in the loop remains essential, for instance, to ensure high precision, partial automation of certain task phases is critical for productivity.\n\nWe present a unified framework for probabilistic VFs that seamlessly switches between manual fixtures, semi-automated fixtures (with the human handling precise tasks), and full autonomy.\n\nWe introduce a novel probabilistic Dynamical System-based VF for coarse guidance, enabling the robot to autonomously complete certain task phases while keeping the human operator in the loop.\n\nFor tasks requiring precise guidance, we extend probabilistic position-based trajectory fixtures with automation, allowing for seamless human interaction, geometry-awareness and optimal impedance gains. For manual tasks requiring very precise guidance, we also extend visual servoing fixtures with the same geometry-awareness and impedance behavior.\n\nWe validate our approach on different robots, including an evaluation with expert users, showcasing operation modes, the ease of programming fixtures and lower interaction forces and favorable usability compared to a baseline."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a unified framework for probabilistic virtual fixtures that switches among manual, semi-automated, and autonomous operation based on learned or perceived uncertainty, while retaining a human operator in the loop. A probabilistic dynamical-system fixture provides coarse guidance and allows autonomous completion of some task phases. For precise guidance, the framework extends position-based trajectory fixtures and visual servoing fixtures with automation, geometry awareness, and impedance behavior. Evaluation on different robots, including expert users, reports multiple operating modes, ease of programming, lower interaction forces, and favorable usability compared with a baseline.",
+          "zh": "本文提出统一的概率虚拟夹具框架，可依据学习或感知到的不确定性，在手动、半自动和全自主模式间切换，并保留人在环中的角色。框架引入基于动力系统的概率虚拟夹具用于粗略引导，使机器人可自主完成部分任务阶段；对于精确引导，则扩展基于位置的轨迹夹具和视觉伺服夹具，加入自动化、几何感知及阻抗行为。作者在不同机器人上验证方法，并包含专家用户评估，报告展示了多种操作模式、夹具易于编程、交互力较低，且相较基线具有较好的可用性。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
