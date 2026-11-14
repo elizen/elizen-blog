@@ -3698,8 +3698,8 @@
           }
         ],
         "summary": {
-          "en": "The paper introduces SPARC, a competition under development within the RoboCup Rescue Robot League that uses the Unitree A2-W as its common robot platform. The initiative aims to make autonomous rescue robotics research more accessible to groups without expertise in custom robot hardware. The paper presents the competition, benchmark environment, and platform, and describes initial open datasets collected during two robotics events, an open-source software stack for autonomous navigation, and simulation assets representing RoboCup Rescue test environments. The authors say these resources aim to lower entry barriers and support reproducible research and collaboration.",
-          "zh": "论文介绍RoboCup救援机器人联赛正在开发的新赛事SPARC，采用Unitree A2-W作为标准平台，旨在降低自主救援机器人研究的硬件门槛。文章介绍赛事、基准环境和平台，并报告发布了在相关挑战赛中采集的首批开放数据集、用于自主导航的开源软件栈，以及模拟RoboCup Rescue测试环境的初始仿真资源。作者认为，这些资源有助于降低研究入门门槛，并促进基于共同硬件平台的可复现研究与协作开发。"
+          "en": "The paper introduces SPARC, a RoboCup Rescue Robot League competition under development that uses the Unitree A2-W as its common platform. It aims to make autonomous rescue robotics research more accessible to groups without expertise in custom robot hardware. The paper presents the competition, benchmark environments, and standard platform, along with initial open datasets collected during the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, an open-source autonomous navigation software stack, and simulation assets for RoboCup Rescue test environments. The authors say these resources aim to support reproducible research and collaboration.",
+          "zh": "论文介绍正在开发的RoboCup救援机器人联赛竞赛SPARC，采用Unitree A2-W作为共同机器人平台，旨在降低自主救援机器人研究的硬件门槛。文中介绍竞赛、基准环境和标准平台，并展示在IEEE ICRA 2026腿式机器人挑战赛及RoboCup Rescue 2026期间采集的首批开放数据集、用于自主导航的开源软件栈，以及模拟救援测试环境的初始仿真资源。作者认为，这些资源有望促进可复现研究和基于共同硬件平台的协作开发。"
         }
       },
       "source": {
@@ -6449,8 +6449,8 @@
           }
         ],
         "summary": {
-          "en": "The paper proposes AFTER-WM to help world models adapt when robot dynamics change suddenly and persistently. Prediction errors drive a fast correction that fades and a slow correction that persists; the method also adjusts the weights of pretrained experts without changing them. On five simulated robot datasets and real UAV data, the authors report lower multi-step mean error than ten compared models and the highest mean return in a joint-failure control task. In simulation, they report lower error than the strongest comparison across multi-step predictions, shortly after changes, under transient disturbances, and at step 40.",
-          "zh": "论文提出AFTER-WM，以应对机器人动力学突变后世界模型预测误差累积的问题。该方法让预测误差驱动会逐渐消退的快速修正和持续保留的慢速修正，并动态调整预训练专家的组合权重而不修改专家。作者在五个仿真机器人数据集和真实无人机数据上报告，其多步平均误差低于十个对比模型，并在联合故障控制任务中取得最高平均回报。仿真结果还显示，其误差在变化后短期、瞬时扰动和第40步等条件下较低。"
+          "en": "The paper proposes AFTER-WM for world-model adaptation to sudden changes in robot dynamics, targeting responsiveness, stability, and retention. Prediction errors drive a fast correction that fades and a slow correction that persists, while the model adjusts weights over pretrained experts without changing them. On five simulated robot datasets and real UAV data, the authors report lower multi-step mean error than ten compared models and the highest mean return in a joint-failure control task. In simulation, error is 16%–34% below the strongest comparison, with the lowest reported errors shortly after changes, under transient disturbances, and at step 40.",
+          "zh": "论文针对机器人动力学突变后世界模型难以兼顾快速响应、区分持续变化与瞬态扰动、并保留适应结果的问题，提出AFTER-WM。该模型以预测误差驱动会衰减的快速校正和可持续的慢速校正，并动态调整预训练专家的组合权重而不修改专家。在五个仿真机器人数据集和真实无人机数据上，作者报告其多步平均误差低于十种对比模型，并在联合故障控制任务中取得最高平均回报。仿真中，多步误差比最强对比模型低16%至34%，且变化后1至4步、仅有瞬态扰动时及第40步的误差最低。"
         }
       },
       "source": {
@@ -8086,8 +8086,8 @@
           }
         ],
         "summary": {
-          "en": "The paper addresses visual artifacts in 4D Gaussian Splatting methods that deform a fixed representation when monocular egocentric videos contain topological changes such as cutting, assembly, opening, or closing. It introduces TopoEgo, a benchmark for these changes, and Topo-4DGS, which assigns independent rigid transformations to interacting parts and dynamically activates or deactivates Gaussians as surfaces change. The authors report that experiments show improvements over existing 4DGS methods, especially on post-event frames.",
-          "zh": "论文针对单目第一人称视频中切割、组装、开合等拓扑变化导致固定表示的4D高斯泼溅方法出现视觉伪影的问题，提出TopoEgo基准和Topo-4DGS重建方法。该方法为交互部件分配独立刚体变换，并随表面显现、消失或分离动态启用或停用高斯。作者称，实验中该方法在各类拓扑变化下优于现有4DGS方法，尤其是在事件发生后的帧。"
+          "en": "The paper addresses visual artifacts in monocular egocentric video reconstruction when scenes undergo topological changes such as cutting, assembly, opening, or closing. It introduces TopoEgo, a benchmark for these changes, and Topo-4DGS, which models interacting parts with independent rigid transformations and dynamically activates or deactivates Gaussians as surfaces appear, disappear, or separate. The authors report that extensive experiments outperform existing 4DGS approaches, especially on post-event frames. They state that code and data will be released.",
+          "zh": "论文针对单目第一人称视频中切割、组装、开启和关闭等拓扑变化导致现有4D高斯泼溅方法出现视觉伪影的问题，提出基准TopoEgo和重建方法Topo-4DGS。该方法为交互部件分别建模刚体变换，并随时间动态启用或停用高斯，以表示显现、消失或分离的表面。作者称，大量实验显示该方法在各类拓扑变化上优于现有4DGS方法，尤其是在事件发生后的帧；代码和数据计划公开。"
         }
       },
       "source": {
@@ -17619,8 +17619,8 @@
           }
         ],
         "summary": {
-          "en": "The paper studies how execution strategies affect the reactivity of pretrained vision-language-action models during dynamic manipulation. It varies prediction and execution horizons, synchronous and asynchronous inference, ways to deliver actions sooner or preserve continuity between action chunks, and policy adaptation using motion cues and latent-space reinforcement learning. The study uses two dynamic simulation benchmarks and three real-robot tasks. The authors report that the best prediction horizon is about one second, while the best execution horizon depends on the checkpoint. Short horizons help more with asynchronous execution, and continuous trajectories outperform latency reduction alone.",
-          "zh": "论文研究视觉—语言—动作模型在动态操作中的反应能力，考察预测与执行时域、同步与异步推理、动作提前交付、连续动作块，以及运动线索和潜在空间强化学习适配。研究覆盖两个动态仿真基准和三项真实机器人任务。作者报告，最佳预测时域约为一秒，执行时域则因检查点而异；异步执行下短时域更有帮助，保持轨迹连续的方法优于单纯降低延迟的方法。适配可修复针对性失败，但在传送带任务中，调整执行时域也取得相当收益。"
+          "en": "This study examines how vision-language-action models can respond to dynamic manipulation, where predicted action chunks may become outdated as objects move. Across two dynamic simulation benchmarks and three real-robot tasks, the authors vary prediction and execution horizons, inference timing, action delivery, chunk continuity, and policy adaptation. They report that the best prediction horizon is about one second, while the best execution horizon depends on the checkpoint. Short horizons help more with asynchronous execution, and continuous trajectories outperform latency-only methods. The findings indicate that reactivity depends on both policy and execution pipeline.",
+          "zh": "论文研究视觉—语言—动作模型在动态操作中的反应性，指出物体移动时，预先预测的动作片段可能在执行前就已过时。作者在两个动态仿真基准和三个真实机器人任务上考察预测与执行时域、同步与异步推理、动作提前交付、片段连续性及策略适配。结果显示，最佳预测时域约为一秒，执行时域取决于检查点；短时域更有利于异步执行，保持轨迹连续的方法优于单纯降低延迟。策略适配可修复特定失败，而传送带任务中调整执行时域也带来同等收益。"
         }
       },
       "source": {
