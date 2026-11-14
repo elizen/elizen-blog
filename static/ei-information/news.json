@@ -1611,7 +1611,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models are commonly adapted to downstream manipulation tasks via supervised fine-tuning (SFT) or online reinforcement learning(RL) post-training.\n\nSFT is prone to distribution mismatch, and existing RL approaches typically optimize all trainable components within a single RL loop at a uniform update rate, although these components play distinct functional roles. We propose TEMPO, a semantic-action decoupled, two-timescale RL post-training framework for VLA models.\n\nTEMPO freezes the pretrained vision-language backbone and adapts two components with dedicated RL loops: the semantic projection layer, which produces the latent action conditioning the action expert, and the low-level action expert itself.\n\nThe semantic projection layer is updated infrequently and the action expert frequently, which aims to limit latent-action drift while allowing the action expert to learn from online feedback. Our analyses show that, compared with equal update frequencies, less frequent semantic updates reduce latent-action drift and improve policy performance.\n\nExperiments on the CALVIN benchmark and real-world manipulation tasks demonstrate that TEMPO outperforms both pretrained state-of-the-art VLA models and the RL post-training baseline, while reaching and maintaining higher evaluation rewards on three real-world tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes TEMPO, a two-timescale reinforcement learning post-training framework that separates semantic projection from action-expert adaptation in vision-language-action models. It freezes the pretrained vision-language backbone, updates the semantic projection layer infrequently, and updates the low-level action expert more frequently. The authors report that less frequent semantic updates reduce latent-action drift and improve policy performance. Experiments on the CALVIN benchmark and real-world manipulation tasks are reported to outperform pretrained models and an RL post-training baseline, with higher evaluation rewards on three real-world tasks.",
+          "zh": "论文提出 TEMPO，一种面向视觉语言动作模型的语义与动作解耦双时间尺度强化学习后训练框架。它冻结预训练视觉语言骨干网络，分别以低频和高频强化学习回路更新语义投影层与低层动作专家。作者称，较低频率的语义更新可减少潜在动作漂移并改善策略表现。在 CALVIN 基准和真实操作任务实验中，作者报告 TEMPO 优于预训练模型及强化学习后训练基线，并在三个真实任务上取得和维持更高评估奖励。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1642,7 +1646,11 @@
             "heading": "",
             "text": "Decision making in multi-robot systems often involves discrete decision variables, leading to NP-hard combinatorial optimization problems that must be solved within seconds for near real-time implementation.\n\nDenoising diffusion has emerged as a powerful tool for such problems, but existing approaches face a trade-off: Model-Based Diffusion (MBD) incorporates diffusion in sampling-based optimization (SBO) without training but only over continuous spaces, while existing diffusion-based combinatorial solvers operate over discrete spaces but require offline training.\n\nTo this end, we propose Discrete Model-Based Diffusion (Discrete MBD), a training-free SBO method that directly optimizes discrete variables by approximating categorical reverse transition distributions through Monte Carlo sampling.\n\nWe establish a finite-step lower bound on the probability of finding a global minimizer and show that this bound converges to one as the number of denoising steps increases.\n\nExtensive experiments on generic integer programs and heterogeneous multi-robot coalition formation and scheduling demonstrate that Discrete MBD outperforms SBO baselines in nearly all settings while achieving solution quality competitive with that of mixed-integer programming and reinforcement learning methods at a fraction of their computational cost."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Discrete Model-Based Diffusion (Discrete MBD), a training-free sampling-based optimization method that directly handles discrete variables by approximating categorical reverse transitions with Monte Carlo sampling. The authors establish a finite-step lower bound on the probability of finding a global minimizer and show that the bound approaches one as denoising steps increase. Experiments on generic integer programs and heterogeneous multi-robot coalition formation and scheduling are reported to outperform sampling-based optimization baselines in nearly all settings, with solution quality competitive with mixed-integer programming and reinforcement learning at a fraction of their computational cost.",
+          "zh": "论文提出 Discrete MBD，一种无需训练、在采样优化中直接处理离散变量的方法，通过蒙特卡洛采样近似类别反向转移分布。作者建立了有限步数下找到全局最优解概率的下界，并称该下界随去噪步数增加而趋近于 1。在一般整数规划、异构多机器人联盟形成与调度实验中，该方法在几乎所有设置下优于采样优化基线；作者报告其解质量可与混合整数规划和强化学习方法竞争，同时计算成本仅为其一部分。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1673,7 +1681,11 @@
             "heading": "",
             "text": "Embodied world models (WMs) are implicit learning systems that predict the next future latent state directly from observations and actions. Unique from other end-to-end learning systems, the dynamics predictor of WMs can simulate the environment's response to alternative actions without physical deployment nor pre-specifying states of the dynamical system.\n\nCurrent metrics focus on the quality of model outputs, e.g., clarity of reconstructions or task success, but fail to assess the fidelity of modeling consequences of counterfactual actions. Inspecting the forced response to action perturbations through sensitivity analysis is one way to audit how well WMs can predict the consequences of counterfactual actions.\n\nDeploying WMs on hardware will require new evaluation frameworks to analyze the tradeoffs between state error and accurate sensitivity prediction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper examines whether embodied world models accurately predict the consequences of actions. These models predict future latent states from observations and actions, and their dynamics predictors can simulate responses to alternative actions without physical deployment or pre-specifying the dynamical system's states. The authors argue that existing metrics, such as reconstruction clarity or task success, do not assess fidelity in modeling counterfactual action consequences. They describe sensitivity analysis of responses to action perturbations as one audit approach and say hardware deployment will require evaluation frameworks that examine tradeoffs between state error and sensitivity-prediction accuracy.",
+          "zh": "论文讨论具身世界模型能否准确预测动作带来的后果。此类模型根据观测和动作预测未来潜在状态，其动力学预测器可模拟不同备选动作的环境响应，无需实际部署，也无需预先指定动力系统状态。作者指出，现有评估指标多关注重建清晰度或任务成功等输出质量，未能衡量对反事实动作后果的建模保真度。论文提出通过敏感性分析检查动作扰动引发的预测响应，并指出硬件部署需要新的评估框架，以分析状态误差与敏感性预测准确度之间的权衡。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -1704,7 +1716,11 @@
             "heading": "",
             "text": "The RoboCup Standard Platform for Autonomous Rescue Competition (SPARC) is a new competition under development of the RoboCup Rescue Robot League that uses the Unitree A2-W as a common robot platform.\n\nSPARC aims to make research on artificial intelligence for autonomous rescue robots accessible to a broader research community, including groups without expertise in developing and maintaining custom robot hardware.\n\nBy providing a capable standard platform and established benchmark environments, researchers can focus on autonomous navigation, perception, manipulation, and embodied AI for challenging disaster-response scenarios. This paper introduces the SPARC competition, its benchmark environment, and the Unitree A2-W standard platform.\n\nFurthermore, we present the first open SPARC datasets collected during the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, release an open-source software stack for autonomous navigation, and provide initial simulation assets representing RoboCup Rescue test environments.\n\nTogether, these resources aim to lower the barrier to entry for autonomous rescue robotics and facilitate reproducible research and collaborative development on a common hardware platform."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces SPARC, a RoboCup Rescue Robot League competition under development that uses the Unitree A2-W as a common robot platform. It aims to make autonomous rescue robotics research more accessible, including to groups without experience maintaining custom hardware. The paper presents the competition, benchmark environment, and platform, along with initial open datasets collected during the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, an open-source autonomous navigation software stack, and simulation assets representing rescue test environments. The authors say these resources aim to support reproducible research and collaboration on common hardware.",
+          "zh": "论文介绍 RoboCup 救援机器人联赛正在开发的新赛事 SPARC，采用 Unitree A2-W 作为共同机器人平台，旨在降低自主救援机器人研究的参与门槛。论文介绍该赛事、基准环境和标准平台，并展示在 IEEE ICRA 2026 腿式机器人挑战赛及 RoboCup Rescue 2026 收集的首批开放数据集、用于自主导航的开源软件栈，以及代表救援测试环境的初始仿真资源。作者称，这些资源旨在促进可复现研究及基于共同硬件平台的协作开发。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
