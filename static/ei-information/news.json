@@ -2004,7 +2004,11 @@
             "heading": "",
             "text": "Embedded perception-to-control systems must combine visual targeting with reliable contact handling under tight computational constraints. We present a shared architecture on an NVIDIA Jetson AGX Orin controlling a Franka Research 3 through Cartesian impedance control.\n\nRealSense D435i observations, YOLO11-seg segmentation, depth back-projection, and hand--eye calibration provide metric robot-frame targets.\n\nWe compare two strategies: compact proximal policy optimization (PPO) policies transferred from simulation for object- and hole-region reaching, and force-guided Cartesian placement using approximately 2 N normal contact and spiral search. The PPO policies achieved 87.2% and 83.1% success over 1000 simulation episodes each.\n\nAcross 50 real-robot trials per strategy, the learned hybrid and force-guided analytical pipelines achieved 70.0% and 74.0% completion, respectively. Mean perception latency with TensorRT was 34.55 ms. These results support an embedded architecture combining learned free-space reaching with explicit contact correction."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents a shared embedded perception and control architecture that runs on a Jetson AGX Orin and controls a Franka Research 3. It combines depth observations, object segmentation, coordinate back-projection, and hand-eye calibration. The authors compare simulation-trained PPO reaching policies with force-guided Cartesian placement. In simulation, the two PPO policies achieve success rates of 87.2% and 83.1% over 1,000 episodes each. In 50 real-robot trials per strategy, completion rates are 70.0% and 74.0%. Mean TensorRT perception latency is 34.55 ms.",
+          "zh": "本文提出一种面向嵌入式视觉伺服的共享感知与控制架构，在 Jetson AGX Orin 上控制 Franka Research 3。系统结合 RealSense 深度观测、目标分割、坐标反投影和手眼标定。作者比较从仿真迁移的 PPO 到达策略与力引导笛卡尔放置：前者在仿真中各进行1000回合，成功率为87.2%和83.1%；每种策略各进行50次真实机器人试验，完成率分别为70.0%和74.0%。TensorRT 感知延迟均值为34.55毫秒。作者认为结果支持将学习式自由空间到达与显式接触修正结合。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2035,7 +2039,11 @@
             "heading": "",
             "text": "This paper presents an overview of the integrated technologies developed for the Open Platform League at RoboCup@Home 2026 in Incheon. A vision system integrated with learning-based, training-free models enables robust object recognition for both known and unknown objects.\n\nWe introduce a RoomPlan-based method that semi-automatically registers furniture geometry and labels to generate semantic maps. Additionally, a large language model-based planner interprets the instructions recognized by Whisper and generates primitive skill sequences for execution.\n\nA reservoir-computing framework serves as a lightweight temporal-processing model for action recognition. Its field-programmable gate array-based implementation enables low-power, real-time operation. This is key to removing operational time constraints for service robots.\n\nOpen-source releases, including task environments, dataset tools, and navigation frameworks, enhance reproducibility, reuse, and continuous progress within the RoboCup@Home community."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This paper overviews integrated technologies developed for the Open Platform League at RoboCup@Home 2026. Its vision system combines learning-based, training-free models for recognizing known and unknown objects. A RoomPlan-based method semi-automatically registers furniture geometry and labels to create semantic maps. A large language model planner interprets instructions recognized by Whisper and generates primitive skill sequences. The team also describes a reservoir-computing action recognition framework with an FPGA implementation for low-power, real-time operation. Open-source task environments, dataset tools, and navigation frameworks are presented as support for reproducibility and reuse.",
+          "zh": "本文概述为2026年 RoboCup@Home 开放平台组开发的集成技术。视觉系统结合学习式且无需训练的模型，以识别已知和未知物体；基于 RoomPlan 的方法半自动登记家具几何信息与标签，生成语义地图。规划器利用大型语言模型解释 Whisper 识别的指令，并生成供执行的原语技能序列。团队还介绍用于动作识别的储层计算框架及其 FPGA 实现，称其可低功耗实时运行。论文提及开放发布任务环境、数据集工具和导航框架，以支持社区复现、复用和持续发展。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2066,7 +2074,11 @@
             "heading": "",
             "text": "Vision-language-action policies may predict a transferable manipulation strategy yet fail to realize it reliably on the encountered object: objects compatible with the same grasp differ in geometry and compliance, and visual feedback degrades under closure occlusion.\n\nAgenticTactileVLA is presented as an execution-time supervisor that shifts part of object-specific adaptation from prediction to physical interaction.\n\nA fixed VLA provides the approach and hand targets; the supervisor decides whether to remain transparent, refine finger flexion, retain or release the corrected configuration, return control to the VLA for retry, or select a compliant hand-control regime.\n\nIt uses finger-position and motor-effort feedback as proprioceptive contact evidence and requires neither tactile sensors nor VLA retraining.\n\nOn a Unitree G1 with a BrainCo Revo2 hand, a randomized matched-block evaluation on five objects held out from VLA training yields 61.3% completion for the base VLA, 72.0% for unconditional close-to-stall control, and 84.0% for the supervisor under a shared budget; the gain is positive on every object and persists under moderate pose perturbations.\n\nAblations show the gain is not explained by extended closure alone, and that selective triggering reduces correction episodes by 65.7% with no detected change in completion. A retention audit shows acceptance predicts retention in 88.9% of held-out cases, while compliant objects expose conservative false rejection.\n\nA thin-walled-cup study demonstrates contextual routing to compliant control, matching an always-compliant reference. These results suggest that contact-guided execution-time adaptation can improve the object-level generalization of a fixed VLA to held-out objects by adapting physical realization without object-specific retraining."
           }
-        ]
+        ],
+        "summary": {
+          "en": "AgenticTactileVLA is an execution-time supervisor for a fixed vision-language-action policy. Using finger-position and motor-effort feedback as contact evidence, it can refine finger flexion, retain a corrected configuration, request a retry, or select compliant control, without tactile sensors or VLA retraining. On a Unitree G1 with a BrainCo Revo2 hand, a randomized matched-block evaluation on five objects held out from training reports completion rates of 61.3% for the base VLA, 72.0% for unconditional close-to-stall control, and 84.0% for the supervisor. The authors report positive gains on every object and persistence under moderate pose perturbations.",
+          "zh": "本文提出 AgenticTactileVLA，在执行时监督固定视觉语言动作策略，利用手指位置和电机用力反馈判断接触，并决定修正手指屈曲、保留配置、重试或切换柔顺控制；无需触觉传感器或重新训练 VLA。在 Unitree G1 与 BrainCo Revo2 手部上，对五种未参与训练的物体进行随机配对区组评估，基线、无条件闭合至停滞和监督器的完成率分别为61.3%、72.0%和84.0%。作者报告增益在各物体上均为正，并在中等姿态扰动下保持。消融结果不支持增益仅由延长闭合解释；薄壁杯研究展示了情境式柔顺控制路由。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
