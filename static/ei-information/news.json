@@ -2303,7 +2303,11 @@
             "heading": "",
             "text": "Multimodal large language models are regarded as the cognitive foundation of embodied intelligence, but planning from instructions alone cannot make them reliable. During execution, actions deviate from intended effects, constrained by the embodiment and environment.\n\nAn embodied brain must understand why execution deviates, identify what can be reliably realized, and revise decisions using interaction experience. These correspond to causal failure localization, capability-constrained adaptation, and experience-driven revision. Current embodied foundation models largely lack these capabilities.\n\nTo address this, we introduce Embodied-Corrector. We construct failure-recovery data by injecting perturbations at subtask boundaries of successful trajectories, replaying affected subtasks, and keeping failures that are observable from public evidence and recoverable from the current state.\n\nWe align actions, consequences, failure causes, and recoveries into Judge-Cause-Sub-Fine supervision. Training uses evaluation-first SFT: the model learns Judge and Cause first, then Sub and Fine conditioned on accurate prefixes.\n\nSince deployment uses self-generated prefixes, evaluation errors propagate into recovery planning, and response-level rewards are too coarse to locate affected planning tokens.\n\nWe therefore use OPD to internalize the planning distribution under accurate prefixes into that under self-generated ones: the model generates plans from self-generated prefixes, while a contrastive forward pass with accurate prefixes compares token probabilities to reinforce or suppress planning tokens. At deployment, this branch is removed.\n\nExperiments show stronger failure analysis and corrective planning: with a frozen VLA, composite task success improves by 6.1 percentage points; with fixed GPT-5.5 execution, manipulation and navigation tasks improve by 13.9 percentage points."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces Embodied-Corrector for analyzing failures in embodied task execution and planning corrections. The authors build recovery data by perturbing subtask boundaries in successful trajectories, replaying affected subtasks, and retaining failures observable from public evidence and recoverable from the current state. Training uses staged supervision, while OPD compares planning-token probabilities under accurate and self-generated prefixes; its contrastive branch is removed at deployment. Experiments report higher task success with a frozen VLA and with fixed GPT-5.5 execution, within the stated settings.",
+          "zh": "论文提出 Embodied-Corrector，用于分析具身任务执行失败并规划修正。作者通过扰动成功轨迹的子任务边界、重放受影响子任务，构造可从公开证据观察且能从当前状态恢复的失败数据，并以分阶段监督训练模型。其 OPD 方法用准确前缀与模型自生成前缀下的规划分布对比，部署时移除对比支路。实验中，冻结 VLA 和固定 GPT-5.5 执行设置下的任务成功率分别有所提升；这些结果限于文中所述设置。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2334,7 +2338,11 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models have emerged as a promising paradigm for general-purpose robotic manipulation. In our production setting, hundreds of VLA-powered robots are already operating in real-world environments, creating an immediate need for efficient fleet serving.\n\nWe present XInfer, a production-deployed VLA serving system designed to reduce the inference infrastructure cost of large-scale robotic deployments. XInfer jointly coordinates heterogeneous VLA computation with the evolving response requirements of robotic execution.\n\nBy exploiting computational parallelism while managing interference, XInfer improves GPU efficiency while protecting time-critical robotic feedback. We evaluate XInfer across three VLA models using production-derived workloads, achieving 1.26-3.75 times the effective robot capacity (ERC) of state-of-the-art systems under physical-execution constraints.\n\nOur implementation is publicly available at https://github.com/X-Square-Robot/xinfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents XInfer, a VLA serving system intended to reduce inference infrastructure costs for large-scale robotic deployments. It jointly coordinates heterogeneous VLA computation with changing response requirements during robot execution, seeking to improve GPU efficiency through parallelism while managing interference and protecting time-critical feedback. The authors evaluate the system with three VLA models and production-derived workloads. Under physical-execution constraints, they report effective robot capacity 1.26 to 3.75 times that of state-of-the-art systems.",
+          "zh": "论文介绍 XInfer，一种面向大规模机器人部署的 VLA 服务系统，旨在降低推理基础设施成本。该系统协同调度异构 VLA 计算与机器人执行过程中变化的响应需求，通过利用并行性并管理干扰来提高 GPU 效率，同时保障时间敏感的机器人反馈。作者在三种 VLA 模型和源自生产环境的工作负载上进行评估，并报告称，在物理执行约束下，其有效机器人承载能力达到当时先进系统的 1.26 至 3.75 倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2365,7 +2373,11 @@
             "heading": "",
             "text": "When humans hand each other objects, they incorporate both geometric and semantic information into this process. For example, passing a knife with the handle towards the recipient, rather than the blade, is both more ergonomic and safer.\n\nRecent state-of-the-art methods for task-oriented robot-human handovers have progressed from modeling object geometry to incorporating object affordances. However, they often forgo predicting the explicit, task-specific hand poses a human selects to utilize an object.\n\nSince many objects support multiple interaction modalities, e.g., a claw hammer used to strike or pull nails, this variability must be modeled to achieve robust task-oriented handovers.\n\nTo tackle this, we propose a novel approach, GENESIS-Handover (GENErative HypotheSIS), which leverages VLM image generation to produce a variety of task-specific hand-object interaction hypotheses. These hypotheses are matched in real time to the observed human hand pose, enabling inference of the most suitable handover configuration.\n\nBy leveraging VLMs as priors of plausible hand-object interactions, the method produces task-conditioned handover strategies for previously unseen object-task pairs. We evaluate the standalone interaction proposal module before deploying the full system on a mobile manipulator.\n\nIn a user study with 12 participants across five task-object pairs, 83.3% perceived our method to have better task understanding than the previous state of the art."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes GENESIS-Handover, which uses vision-language-model image generation to propose task-specific hand-object interaction hypotheses. It matches these hypotheses in real time to an observed human hand pose to infer a suitable robot handover configuration. The approach aims to account for different ways an object may be used and to produce task-conditioned strategies for unseen object-task pairs. The authors evaluate the proposal module before deploying the full system on a mobile manipulator. In a user study, 83.3% of 12 participants judged its task understanding better than the previous state of the art across five task-object pairs.",
+          "zh": "论文提出 GENESIS-Handover，通过视觉语言模型图像生成提出多种任务特定的人手与物体交互假设，并实时匹配观察到的人手姿势，以推断合适的机器人递交配置。该方法旨在处理同一物体因用途不同而产生的交互差异，并为未见过的物体—任务组合生成任务条件化策略。作者先评估交互提议模块，再将完整系统部署到移动操作机器人；一项包含12名参与者和五组任务—物体组合的用户研究中，83.3%认为其任务理解优于此前方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
