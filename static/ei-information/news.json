@@ -3380,7 +3380,11 @@
             "heading": "",
             "text": "This paper considers the path planning problem for autonomous exploration of an unknown environment using multiple heterogeneous robots such as drones, wheeled, and legged robots, with different capabilities to traverse complex terrains.\n\nA key challenge there is to intelligently allocate the robots to the unknown areas to be explored and determine the visiting order of those areas subject to traversability constraints, which leads to a large-scale constrained multiple hamiltonian path problem (mHPP) that needs to be quickly and iteratively solved every time when new space is explored.\n\nTo address the hallenge, we propose HEHA (Hierarchical Exploration with Heterogeneous Agents) using a recent hierarchical method that decomposes the exploration into global planning and local planning.\n\nThe major contribution in HEHA is its global planning, where we propose a new routing algorithm RCH (Routing with Constraints and Heterogeneity) that can quickly find bounded sub-optimal solutions for mHPP to minimize the maximum path length (i.e., makespan) among the agents subject to traversability constraints.\n\nAdditionally, the local planner in HEHA also considers heterogeneity to avoid repeated and duplicated exploration among the robots.\n\nThe experimental results show, in the presence of heterogeneous traversability, our RCH can solve mHPP with up to 47% smaller makespan than several baselines, and HEHA can reduce the exploration time by up to 30% compared with existing approaches."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents HEHA, a hierarchical planner for heterogeneous robots exploring unknown environments. Its global component, RCH, addresses a constrained multiple Hamiltonian path problem and seeks bounded-suboptimal routes that minimize the maximum path length across agents. The local planner accounts for differing robot capabilities to avoid duplicated exploration. In experiments with heterogeneous traversability, the authors report that RCH achieves up to 47% smaller makespan than several baselines, while HEHA reduces exploration time by up to 30% compared with existing approaches.",
+          "zh": "论文提出 HEHA，用于异构多机器人在未知环境中的探索规划，将任务分为全局和局部规划。全局算法 RCH 面向带可通行性约束的多旅行路径问题，快速求解有界次优路线，并以缩短各机器人路径中的最大长度为目标；局部规划考虑机器人能力差异，以避免重复探索。作者报告，在异构可通行性条件下，RCH 的 makespan 较若干基线最多降低47%，HEHA 的探索时间较现有方法最多减少30%。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3411,7 +3415,11 @@
             "heading": "",
             "text": "World action models integrate future visual dynamics with robot action prediction, but their scalability remains limited by the need for action-annotated robot trajectories.\n\nObservation-only videos contain rich evidence about interaction dynamics, but existing approaches typically use them either to pretrain visual representations that must later be adapted for control, or to infer latent actions that are subsequently grounded to robot commands.\n\nWe present NAVA-WAM, which introduces native action-prior learning by directly pretraining the action policy from observation-only videos, avoiding indirect representation-to-control transfer or a separate latent-action model. Our training consists of two stages.\n\nFirst, we pretrain on observation-only videos, where future-video flow-matching supervision over visual transitions is propagated through transition-structured joint attention to optimize the Action-DiT and learn action-relevant priors.\n\nSecond, we use action-labeled demonstrations to post-train the Action-DiT for robot control through joint video--action flow matching, while asymmetric attention decouples the visual branch from iterative action denoising and enables efficient action-only inference.\n\nExtensive experiments show that NAVA-WAM consistently outperforms prior approaches under both in-distribution and out-of-distribution settings, while demonstrating strong action-label efficiency and effective real-robot generalization.\n\nThese results establish native action-prior learning as an effective approach to directly pretrain action policies from observation-only videos, providing a scalable path beyond action-labeled robot data."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces NAVA-WAM, which pretrains an action policy directly from videos without action labels. In its first stage, future-video transition supervision is used to train Action-DiT and learn action-relevant priors. In the second, demonstrations with action labels support joint video-action flow-matching for robot control; asymmetric attention enables action-only inference. The authors report consistent improvements over prior approaches in both in-distribution and out-of-distribution experiments, along with action-label efficiency and real-robot generalization.",
+          "zh": "论文提出 NAVA-WAM，直接利用无动作标注的视频预训练机器人动作策略，以学习与动作相关的先验。训练分为两阶段：先通过未来视频的视觉转移监督优化 Action-DiT，再以带动作标签的示范进行视频与动作联合流匹配训练，使其用于机器人控制；非对称注意力支持仅动作推理。作者称，实验中该方法在分布内和分布外设置下持续优于既有方法，并表现出较高的动作标签效率及有效的真实机器人泛化能力。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3442,7 +3450,11 @@
             "heading": "",
             "text": "Embodied interaction requires an agent to integrate multimodal perception with verbal and nonverbal behaviors to effectively communicate its intentions, including speech, body motion, and facial expressions.\n\nWe present XBot-Omni, a Thinker--Talker--Actor architecture that extends the Omni paradigm to robotic modalities, including body motion and facial expressions, with ``X'' representing the extensibility to robotic-specific modalities.\n\nThe Thinker processes text, images, audio, and video to formulate contextually appropriate responses, which are then realized by the Talker and Actor through speech and coordinated bodily expressions, respectively.\n\nIn this report, we innovatively introduce the concept of ``Actor'' as a dedicated component for embodied agents: a coordinated, streaming module that leverages the native representations of the Thinker and Talker within an end-to-end pipeline, introducing only modest latency overhead.\n\nThis unified architecture enables multimodal generation conditioned on omni-modal inputs directly to prevent information loss in staged designs.\n\nWe comprehensively evaluate XBot-Omni across seven benchmarks, demonstrating strong multimodal understanding capabilities on both general-domain and robot-centric videos, as well as high-quality, natural, and well-coordinated motion generation.\n\nFurthermore, our results validate its capability to generate embodied multimodal responses directly from omni inputs, meeting the diverse requirements of embodied interaction.\n\nXBot-Omni enables robots not only to perceive the omni world but also to express themselves through speech and bodily behaviors, extending Omni models from conversational interaction to embodied communication in physical environments."
           }
-        ]
+        ],
+        "summary": {
+          "en": "XBot-Omni is a Thinker–Talker–Actor architecture for embodied understanding and interaction. It processes text, images, audio, and video, then produces speech and coordinated bodily expressions, including facial expressions. The Actor is a streaming component for embodied output that uses representations from the Thinker and Talker; the authors describe its latency overhead as modest. Evaluation across seven benchmarks is reported to show strong multimodal understanding and high-quality, natural, coordinated motion generation.",
+          "zh": "论文介绍 XBot-Omni，一种面向具身理解与交互的 Thinker–Talker–Actor 架构，可处理文本、图像、音频和视频输入，并生成语音、身体动作及面部表情。Actor 是专门负责具身表达的协调流式模块，利用 Thinker 与 Talker 的原生表征，作者称其只增加有限延迟。该统一架构直接依据全模态输入生成多模态回应。报告称，七项基准评估显示其具备较强的多模态理解能力，并能生成高质量、自然且协调的动作。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -3473,7 +3485,11 @@
             "heading": "",
             "text": "Multi-robot systems face the challenge of efficiently allocating teams of heterogeneous robots to tasks. The task allocation problem is complicated by collaborative interactions between robots where teams of robots develop emergent capabilities that enable them to complete tasks that would be inefficient or impossible for individual robots.\n\nTo address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems.\n\nThis approach partitions the computationally intractable global optimization problem into smaller, tractable subproblems by iteratively forming clusters of robots and tasks, then optimizing assignments within each cluster.\n\nBy ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration. We analyze the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm.\n\nIn simulation, iterative clustering consistently outperforms simulated annealing, and a group-based auction in both computation time and solution quality, and outperforms a hedonic game approach in solution quality."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes iterative clustering for task allocation in heterogeneous multi-robot systems. It divides a difficult global optimization into smaller subproblems by repeatedly clustering robots and tasks and optimizing assignments within each cluster. Keeping robots clustered with their currently assigned tasks guarantees monotonic improvement in overall utility per iteration. The authors analyze convergence and how cluster-size constraints shape assignments that can trap the algorithm. In simulation, it outperforms simulated annealing and a group-based auction in computation time and solution quality, and a hedonic game approach in solution quality.",
+          "zh": "论文提出一种用于异构多机器人协作任务分配的迭代聚类算法。算法反复将机器人和任务组成簇，把难以处理的全局优化拆分为较小子问题，并在各簇内优化分配；通过让机器人继续与当前分配的任务保持聚类，作者证明每轮迭代都能使总体效用单调提升。论文分析算法收敛性，并说明簇大小限制如何影响可能使算法停留于次优分配的情形。仿真中，该方法在计算时间和解质量上均优于模拟退火和群组拍卖，在解质量上优于享乐博弈方法。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
