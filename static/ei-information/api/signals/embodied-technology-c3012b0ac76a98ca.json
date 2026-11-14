@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-c3012b0ac76a98ca",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-11-13",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-13T19:34:03.633802+00:00",
+    "updated_at": "2026-11-14T06:10:02.339396+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "nvidia-robotics-blog",
+        "source_name": "NVIDIA Robotics 官方博客",
+        "source_url": "https://developer.nvidia.com/blog/blog/category/robotics/",
+        "url": "https://developer.nvidia.com/blog/run-native-dla-inference-in-python-on-nvidia-jetson-agx-orin-using-cudla/",
+        "title": "Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA",
+        "published_at": "2026-11-13",
+        "checked_at": "2026-11-14T06:08:19.400501+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Robotics Run Native DLA Inference in Python on NVIDIA Jetson AGX Orin Using cuDLA Nov 13, 2026 By Nikshay Shrivastava Discuss (0) L T F R E AI-Generated Summary NVIDIA Deep Learning Accelerator (DLA) on Jetson AGX Orin executes supported neural network operations to improve power efficiency and free GPU capacity for other tasks. The cuda.bindings.cudla module exposes the cuDLA C++ API to Python, enabling hybrid-mode workflows where CUDA streams coordinate DLA inference with GPU preprocessing and postprocessing. A complete inference lifecycle runs through nine steps: initialize CUDA, create a DLA device in hybrid mode, load a compiled loadable from memory, introspect tensor descriptors, allocate GPU buffers, register them with cuDLA, copy preprocessed input data, submit the task on a CUDA stream, and synchronize to read back results. All cuDLA calls raise Python exceptions on failure, allowing standard try/finally cleanup and granular error handling via the cudla.Status enum. The same cuDLA Python API applies to NVIDIA RTX Spark , extending DLA inference beyond embedded platforms to Windows AI developer laptops. Next Steps Explore the Deep Learning Accelerator samples for a complete"
+      }
+    ]
+  }
+}
