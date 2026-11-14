@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-11-10T16:45:03.342392+00:00",
-    "updated_at": "2026-11-14T02:58:58.695069+00:00",
+    "updated_at": "2026-11-14T04:02:40.767949+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/running-av-reasoning-models-within-onboard-compute-and-latency-limits/",
         "title": "Running AV Reasoning Models Within Onboard Compute and Latency Limits",
         "published_at": "2026-11-10",
-        "checked_at": "2026-11-14T02:57:19.102531+00:00",
+        "checked_at": "2026-11-14T04:00:48.702403+00:00",
         "evidence_role": "primary",
         "excerpt": "Robotics Running AV Reasoning Models Within Onboard Compute and Latency Limits Nov 10, 2026 By Marco Pavone and Boris Ivanovic Discuss (0) L T F R E AI-Generated Summary NVIDIA Alpamayo 2 Edge is a 2B-parameter adaptive reasoning vision-language-action model designed for real-time operation on NVIDIA DRIVE AGX Thor. The model generates Chain-of-Causation reasoning only when needed and uses a diffusion action expert to produce driving trajectories from surround-camera observations and navigation inputs. Closed-loop reinforcement learning in AlpaGym improves driving performance by 48.9% over the best checkpoint without closed-loop RL. AlpaJudge provides human-calibrated evaluation of reasoning quality through reference-based and reference-free variants for different evidence types. Three workflows connect the edge model with repeatable improvement: running AlpaJudge on PhysicalAI-AV samples, selecting higher-value training examples, and using reasoning scores as rewards for post-training. Deployment recipes in the Alpamayo Developer Hub enable inference optimization with TensorRT and DFlash2, achieving 160-190 ms pixel-to-trajectory latency on DRIVE AGX Thor. Next Steps Explore the A"
       }
