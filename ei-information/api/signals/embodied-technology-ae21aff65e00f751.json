@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-10-27T06:11:06.572042+00:00",
-    "updated_at": "2026-11-13T22:44:46.284933+00:00",
+    "updated_at": "2026-11-13T23:48:17.108124+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2610.35252v2",
         "title": "Labference: Benchmarking the Reasoning-Action Connection in Robotic Laboratories",
         "published_at": "2026-10-26",
-        "checked_at": "2026-11-13T22:44:35.766591+00:00",
+        "checked_at": "2026-11-13T23:48:07.950307+00:00",
         "evidence_role": "primary",
         "excerpt": "Realizing Embodied AI for Science requires robots to translate experimental goals into reliable physical procedures, reducing hazardous and repetitive human work while generating evidence for scientific discovery. Although language-based planning and learned manipulation provide complementary capabilities, their integration requires robots to adapt subsequent operations to actual execution outcomes. For example, an unsuccessful placement changes what must be done next, even when the experimental goal remains unchanged. Existing benchmarks assess planning, manipulation, and laboratory workflows through task completion and reasoning or execution metrics; however, aggregate performance leaves the connection between outcome-dependent choices and physical execution unresolved. To address this evaluation gap, we introduce Labference, a benchmark for evaluating how observed physical outcomes guide subsequent choices and how those choices translate into robotic laboratory actions. Its evaluation protocol is designed to test outcome-dependent behavioral adaptation through controlled evidence variations, while independently measuring operation selection, physical execution, and task completi"
       }
