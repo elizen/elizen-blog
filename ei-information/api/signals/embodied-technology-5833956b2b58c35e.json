@@ -10,7 +10,7 @@
     "date_basis": "文章发布",
     "confidence": "confirmed",
     "created_at": "2026-11-13T17:27:17.374812+00:00",
-    "updated_at": "2026-11-14T06:10:02.339396+00:00",
+    "updated_at": "2026-11-14T07:13:37.696042+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
@@ -26,7 +26,7 @@
         "url": "https://developer.nvidia.com/blog/adapt-human-motion-for-robots-with-nvidia-soma-retargeter/",
         "title": "Adapt Human Motion for Robots with NVIDIA SOMA Retargeter",
         "published_at": "2026-11-13",
-        "checked_at": "2026-11-14T06:08:19.400501+00:00",
+        "checked_at": "2026-11-14T07:11:58.442657+00:00",
         "evidence_role": "primary",
         "excerpt": "Robotics Adapt Human Motion for Robots with NVIDIA SOMA Retargeter Nov 13, 2026 By John Malaska Discuss (0) L T F R E AI-Generated Summary NVIDIA SOMA Retargeter adapts human motion data to the proportions and joint structure of specific humanoid robots using the shared SOMA skeleton representation. The retargeting pipeline scales motion targets to the robot, solves inverse kinematics with Newton built on NVIDIA Warp , and applies post-processing corrections such as foot-plant adjustment. Developers can source human motion from motion-capture datasets like BONES-SEED , video reconstruction with GEM-X, or generative models such as Kimodo and ARDY that output on the SOMA skeleton. The v0.2 release provides reference configurations and retargeted motion examples for five humanoid robots including Unitree G1, Unitree H2, Booster T1, AgiBot X2 Ultra, and AgiBot A3T3. Tools such as the Robot Configurator and IK weight optimizer help align reference poses, map skeletons, and tune inverse-kinematics priorities for smoother robot motion. Retargeted trajectories export as CSV files and convert into motion-library formats for policy training workflows like SONIC and ProtoMotions, enabling sim"
       }
