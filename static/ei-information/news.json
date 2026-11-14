@@ -2093,7 +2093,11 @@
             "heading": "",
             "text": "Navigating off-road trails on a mountain bike requires diverse locomotion skills, including aerial maneuvers, cornering, and slip recovery, paired with sophisticated perception for scene understanding. Translating these capabilities to autonomous, two-wheeled robots remains a formidable challenge.\n\nWe show that autonomous, high-speed trail navigation can be achieved through a single idea: encoding the trail as a semantic layer of the terrain. In simulation, this layer embeds the navigation task into the training environment; during deployment, it is reconstructed onboard from camera and LiDAR data.\n\nFirst, we introduce a unified learning framework that treats local navigation and locomotion as a joint optimization problem, bypassing the twist or pose command interface of classical control hierarchies. With fixed reward weights, the same framework produces both trail racing and agile parkour, shaped only through terrain semantics and episode length.\n\nSecond, our perception pipeline combines a frozen vision foundation model with a lightweight dual-head decoder that predicts per-pixel terrain semantics and confidence scores, which are fused with LiDAR range measurements into an egocentric semantic elevation map at 30 Hz onboard an NVIDIA AGX Orin.\n\nWe validate our framework on the Ultra Mobility Vehicle (UMV), a bicycle robot that autonomously raced across all sections of a kilometer-long, unstructured mountain bike trail at speeds exceeding 5 m/s and averaging 3.26 m/s. In simulation, our policy fails up to an order of magnitude less often than hierarchical baselines while driving faster."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents autonomous trail navigation using a semantic terrain layer, represented in simulation during training and reconstructed from camera and LiDAR data during deployment. Its unified learning framework jointly optimizes local navigation and locomotion without the pose-command interface used by classical control hierarchies. With fixed reward weights, terrain semantics and episode length shape both trail-racing and parkour behaviors. The perception pipeline fuses visual semantic and confidence predictions with LiDAR measurements. The authors report real-world UMV trail-racing results and fewer failures with higher speeds than hierarchical baselines in simulation.",
+          "zh": "论文提出一种以地形语义层表示越野路线的自主导航方法：训练时将任务嵌入仿真环境，部署时由相机和激光雷达重建。统一学习框架联合优化局部导航与运动，不使用传统控制层级的位姿指令接口；固定奖励权重下，可通过地形语义和回合长度形成越野竞速与跑酷策略。感知模块融合视觉模型预测的语义、置信度与激光雷达数据。作者报告，UMV自行车机器人在真实山地车道各路段自主行驶；仿真中策略比层级基线失败更少、速度更快。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2124,7 +2128,11 @@
             "heading": "",
             "text": "Until recently, the biggest obstacles to natural spoken interaction with social robots were speech recognition errors and turn-taking failures. Advances in speech recognition have enabled much better spoken interaction, but turn-taking failures and other misunderstandings continue to be far too prevalent.\n\nThis short paper looks back at earlier methods for improving speech recognition and turn-taking in interaction with social robots, and then looks at what can be done today, arguing that multimodal bidirectional streaming is needed to reduce the frequency of turn-taking failures."
           }
-        ]
+        ],
+        "summary": {
+          "en": "This short paper reviews earlier approaches to improving speech recognition and turn-taking in spoken interaction with social robots. It observes that advances in speech recognition have improved interaction, while turn-taking failures and other misunderstandings remain common. The paper considers what can be done today and argues that multimodal, bidirectional streaming is needed to reduce the frequency of turn-taking failures.",
+          "zh": "这篇短文回顾社交机器人语音交互中的早期改进方法，关注语音识别与轮流对话。作者指出，语音识别进步已改善口语交互，但轮流发言失败和其他误解仍然频繁。文章讨论当前可能的改进方向，并主张采用多模态、双向流式交互，以降低轮流对话失败的发生频率。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2155,7 +2163,11 @@
             "heading": "",
             "text": "Manufacturing complex soft pneumatic actuators remains challenging because geometric fidelity, compliance, structural integrity, and airtightness must be achieved simultaneously.\n\nThis study presents a manufacturing-focused evaluation of several fabrication routes for complex pneumatic structures, including heat-shrink forming, silicone casting, powder- and liquid-based additive manufacturing, and fused deposition modeling (FDM).\n\nThe processes were assessed through process screening, baseline fabrication, failure analysis, and process improvement to distinguish inherent process limitations from correctable manufacturing defects.\n\nHeat-shrink forming was limited by geometric conformity, casting by mold accessibility and bonded interfaces, powder-based methods by residual material trapped within enclosed passages, and digital light processing by the material properties and post-processing requirements of the investigated system.\n\nFDM provided the most adaptable route because its dominant defects could be progressively reduced through process optimization. The results further showed that airtightness depends not only on nominal wall thickness but also on extrusion-path architecture, while support-free geometry is important when access for internal post-processing is limited.\n\nThese findings establish a practical design-for-manufacturing approach in which process selection is guided by the compatibility between actuator architecture and manufacturing constraints. The proposed approach provides practical guidance for developing complex, flexible, and airtight soft pneumatic actuators for soft robotic applications"
           }
-        ]
+        ],
+        "summary": {
+          "en": "The study evaluates fabrication routes for complex soft pneumatic structures through process screening, baseline fabrication, failure analysis, and process improvement. It identifies limitations involving geometric conformity, mold access and bonded interfaces, trapped material in enclosed passages, and the materials and post-processing of the investigated digital light processing system. FDM was the most adaptable route in this evaluation, with dominant defects reduced through optimization. The findings link airtightness to extrusion-path architecture as well as wall thickness, and emphasize support-free geometry when internal post-processing access is limited.",
+          "zh": "研究评估了复杂软体气动结构的多种制造路线，并通过工艺筛选、基准制造、失效分析和改进，区分工艺固有限制与可修正缺陷。作者指出，热缩成形、浇注、粉末制造及数字光处理分别受到几何贴合、模具与界面、封闭通道残留材料以及材料和后处理条件的限制。FDM适应性较强，其主要缺陷可通过优化逐步减少。结果还表明，气密性与挤出路径设计有关，内部后处理受限时，无支撑几何尤为重要。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -2186,7 +2198,11 @@
             "heading": "",
             "text": "The geometric understanding of a scene is a crucial component for safe and efficient robotic operations in novel and unstructured environments.\n\nThe recent emergence of foundation models for Monocular Depth Estimation (MDE) has provided an opportunity to enrich robotic perception capabilities with dense long-range depth predictions, replacing expensive onboard hardware (e.g., LiDARs and stereo cameras).\n\nHowever, these offline models are primarily trained on affine-invariant depth representations, and their generalization to novel scenes remains unclear.\n\nIn this work we present EM-ViT, a monocular depth estimation model that learns to adapt online relative depth inputs from a foundation model prior to the metric scale with observations collected during robotic operations.\n\nMotivated by the stereo camera parameterization, our method decomposes depth prediction via dense disparity refinement to recover the scene's relative structure and an effective baseline scalar prediction to determine the missing metric scale.\n\nThe learning process leverages sparse LiDAR points and, optionally, the robot's Ego-Motion (EM) to rapidly train a lightweight Vision Transformer (ViT), while an internal gradient matching loss preserves the fine-grained semantic structure of the input disparity in real-time.\n\nWe demonstrate the efficacy of our method on publicly available sequences, such as KITTI, and show that our online learning pipeline can adapt to novel scenes faster and with higher accuracy than existing MDE foundation models. The code and supplementary materials will be publicly available at https://emvit-mde.github.io."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces EM-ViT, which adapts relative depth from a foundation model to metric scale online using observations gathered during robot operation. It refines dense disparity to recover relative scene structure and predicts an effective baseline scalar to determine metric scale. Training uses sparse LiDAR points and can optionally use robot ego-motion; an internal gradient-matching loss preserves fine-grained semantic structure in the input disparity. On publicly available sequences such as KITTI, the authors report faster adaptation to novel scenes and higher accuracy than existing monocular-depth foundation models.",
+          "zh": "论文提出EM-ViT，用机器人作业期间采集的观测，将视觉基础模型提供的相对深度在线适配到度量尺度。方法将预测拆分为稠密视差细化以恢复相对结构，以及基线标量预测以确定度量尺度；训练利用稀疏激光雷达点，并可选用机器人自运动信息，同时通过梯度匹配损失保留输入视差的细粒度语义结构。作者在KITTI等公开序列上展示该在线学习流程，并报告其适应新场景的速度和准确度优于现有深度基础模型。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
