@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-b65fe310a5c19cee",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "PASTEL: Panoramic Alignment for Monocular 4D Scene Reconstruction",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-09-05",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-05",
+    "updated_at": "2026-09-05",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2609.06099v1",
+        "title": "PASTEL: Panoramic Alignment for Monocular 4D Scene Reconstruction",
+        "published_at": "2026-09-05",
+        "checked_at": "2026-09-21T23:57:06.785829+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Reconstructing 4D scenes from casually captured monocular video is vital for applications in virtual reality (VR) and embodied AI. Recent advances in 4D reconstruction and novel view synthesis have substantially propelled this capability. However, existing reconstruction methods generally cannot recover regions beyond visible camera limits. Consequently, we introduce a new paradigm that achieves 4D scene synthesis by combining visible-region reconstruction from monocular input with invisible-region generation beyond observable camera boundaries. We present Panoramic Alignment for Strategic Exploitation of Generative Priors (PASTEL). Specifically, PASTEL proposes panoramic scene alignment, a novel representation that reformulates the intractable 3D \"invisible region\" exploration into a tractable 2D directional trajectory planning. This is achieved by reducing the viewpoint planning from 6-DoF search to a 2D directional search with explicit visibility boundaries. By operating within this panoramic space, our method strategically identifies camera trajectories that maximize exploration beyond observable boundaries while minimizing viewpoint deviation. Experimental results show that PA"
+      }
+    ]
+  }
+}
