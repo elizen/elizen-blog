@@ -6520,7 +6520,11 @@
             "heading": "",
             "text": "Self-improvement on compositional manipulation tasks requires deciding what to reuse, where to improve, and which changes to retain. We present ReSkill, a selective self-improvement framework that concentrates revision on capability gaps.\n\nA coding agent constructs an object-centric task graph from an instruction and a skill library, then uses node-level execution records to locate failures.\n\nAt the task level, it revises stage organization, hand-off conditions, and recovery routes; at the skill level, it strengthens perception, motion, manipulation, and verification capabilities that repeatedly fail.\n\nCandidate revisions undergo full-task evaluation and paired comparisons before adoption, allowing local changes to accumulate into validated skills and an independently executable policy. The agent participates only during development; the deployed policy calls the retained skills without invoking the agent at run time.\n\nOn the same development set, average success across ten RoboDojo tasks rises from 30.0% for the initial versions to 86.2% for the final adopted programs; retained programs achieve 83.6% in recorded robustness and model-selection evaluations.\n\nAcross eight real-world tasks, ReSkill succeeds in 72 of 80 rebuilt-simulation trials and 62 of 80 real-robot trials (77.5%).The median revision changes only three functions, approximately 0.5% of a program, while 39% of task-specific functions in later-added tasks directly reuse existing implementations.\n\nThese results show how locating local deficiencies, validating candidate changes, and accumulating reusable skills can improve execution of compositional manipulation tasks."
           }
-        ]
+        ],
+        "summary": {
+          "en": "ReSkill is a framework for locating capability gaps and selectively improving programs for compositional robot manipulation. A coding agent builds an object-centric task graph from the instruction and skill library, uses execution records to find failures, and proposes task-level or skill-level revisions. Candidates are adopted only after full-task evaluation and paired comparisons. The agent participates during development, while the deployed policy calls retained skills without the agent at runtime. The authors report higher average success on ten RoboDojo tasks and successes in both rebuilt-simulation and real-robot trials across eight real-world tasks.",
+          "zh": "论文提出 ReSkill，用于在组合式机器人操作任务中定位能力缺口并选择性改进。编码代理根据指令和技能库构建以物体为中心的任务图，再利用节点执行记录定位失败，并在任务组织或具体技能层面提出修订；候选修改须经完整任务评估和成对比较后才采用。代理只参与开发，部署策略运行时调用保留的技能。作者报告，十项 RoboDojo 任务的平均成功率从初始版本的 30.0% 升至最终程序的 86.2%；八项真实任务中，重建模拟试验成功 72/80，实体机器人试验成功 62/80。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7179,7 +7183,11 @@
             "heading": "",
             "text": "Search allows a robotic policy to evaluate candidate futures before committing to an action. Motivated by test-time planning for vision-language action (VLA) models, we study selective search over action chunks in PushT using a frozen Action Chunking with Transformers (ACT) policy.\n\nBeam search generates perturbed alternatives around the policy prediction and scores them through rollouts from cloned simulator states. Across 50 evaluation episodes, beam search raises task success from 0% to 18% and increases average cumulative reward from 39.44 to 103.2.\n\nWe introduce One Step Ahead (OSA), a gate that simulates the nominal policy chunk and invokes full search only when its predicted coverage drop exceeds a threshold. In the reported ablations, OSA preserves or improves success while reducing runtime by approximately 3x relative to full beam search.\n\nAblations over tree depth, branching factor, beam width, and replanning frequency show that larger search budgets do not consistently improve performance. The results support selective test-time search for action-chunking policies; evaluation on language-conditioned VLAs and physical robots remains future work."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper studies selective search over action chunks for a frozen ACT policy on PushT. Beam search perturbs the policy’s predicted chunks and scores them with rollouts from cloned simulator states; over 50 evaluation episodes, reported success rises from 0% to 18%, and average cumulative reward from 39.44 to 103.2. The proposed One Step Ahead gate runs full search only when nominal-chunk coverage is predicted to drop beyond a threshold. Ablations report preserved or improved success with roughly threefold lower runtime than full beam search. Language-conditioned VLA and physical-robot evaluation remain future work.",
+          "zh": "论文研究在 PushT 任务中，为冻结的 ACT 策略对动作块进行选择性搜索。束搜索围绕策略预测生成替代动作，并从克隆的模拟器状态进行 rollout 评分；在 50 个评估回合中，成功率由 0% 升至 18%，平均累计奖励由 39.44 升至 103.2。作者提出 OSA 门控，仅在名义动作块预测的覆盖度下降超过阈值时启动完整搜索；消融实验报告其保持或提升成功率，运行时间约为完整束搜索的三分之一。语言条件 VLA 和实体机器人评估仍属未来工作。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9810,7 +9818,11 @@
             "heading": "",
             "text": "Directing a robot to locate a target object in unseen environments remains a central challenge in embodied AI. Vision-Language Model (VLM)-based methods provide rich semantic reasoning but often produce uncalibrated and overconfident action decisions.\n\nWe introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. From RGB-D input, CPNav constructs a navigability map, generates collision-free motion primitives, and queries two VLMs for goal detection and action scoring.\n\nThe resulting scores are calibrated offline via conformal prediction (CP) using oracle actions obtained through a tree-structured exploration procedure with backtracking, providing finite-sample guarantees at a user-specified risk level. The CP layer is model-agnostic and can wrap any VLM policy.\n\nOnline, calibrated VLM scores guide action selection, while a tree-structured exploration history records alternative actions and allows backtracking. We evaluate CPNav in both simulation and real-world hardware settings.\n\nIn AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively. In real-world deployment on a modified Hiwonder MentorPi robot, the corresponding improvements in SR and SPL are 24.9% and 15.2%, respectively.\n\nCode is available at https://github.com/practice-lab-ucla/CPnav."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces CPNav for map-free object-goal navigation in unseen environments. It combines collision-aware planning with statistically calibrated vision-language model action scores, using RGB-D input to build a navigability map and generate collision-free motion primitives. Offline conformal prediction calibration uses oracle actions obtained through tree-structured exploration with backtracking; online, calibrated scores guide action selection and exploration history supports backtracking. The authors evaluate the system in AI Habitat simulation and on modified Hiwonder MentorPi hardware, reporting improvements over an uncalibrated baseline in success and path-efficiency metrics.",
+          "zh": "论文提出 CPNav，用于未知环境中的无地图目标物导航，将碰撞感知规划与经统计校准的视觉语言模型动作评分结合。从 RGB-D 输入构建可通行地图并生成无碰撞动作，两个视觉语言模型分别用于目标检测和动作评分；离线 conformal prediction 校准使用通过树状探索与回溯获得的 oracle 动作。作者在 AI Habitat 仿真和改造的 Hiwonder MentorPi 实机上评估，并报告相较未校准基线，多个数据集及实机部署中的成功率和路径效率指标有所提升。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12321,7 +12333,11 @@
             "heading": "",
             "text": "Generating whole-body gestures that are simultaneously rhythmically synchronized with speech audio and semantically aligned with text descriptions is a fundamental challenge in embodied AI and social robotics.\n\nWe tackle this Audio-Text-to-Motion (AT2M) problem by composing two independently-trained diffusion models at inference time and refine bias in joint inference by modeling the copula score $s_I$.\n\nA rigorous theoretical analysis reveals that naive epsilon blending corresponds to a Product-of-Experts formulation that omits the copula score $s_I$: the cross-modal interaction between audio and text that neither marginal model can capture.\n\nWe propose CFGComposer: a jointly-trained AT2M diffusion model that estimates $s_I$ via a CFG analogy and injects it as an $ε$-space correction. Experiments on BEAT demonstrate best-in-class semantic fidelity (SRGR $0.9916$, FID $27.18$) with GT-level beat alignment (BA $0.1826$ vs.\n\nGT $0.1743$), and 76-83% win rate in blind pairwise human evaluation against all prior methods. Physical deployment on a Unitree G1 humanoid confirms direct sim-to-real transfer."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents CFGComposer for generating whole-body motion that follows speech rhythm and aligns with text semantics. It composes independently trained diffusion models at inference and uses a copula score to correct for audio-text interaction, which the authors say naive epsilon blending omits. On BEAT, the method reports strong semantic fidelity and beat alignment, along with wins in blind pairwise human comparisons against prior methods. Deployment on a Unitree G1 humanoid is reported to confirm direct sim-to-real transfer.",
+          "zh": "论文提出 CFGComposer，用于生成同时与语音节奏同步、与文本语义对齐的全身动作。方法在推理时组合两个独立训练的扩散模型，并以 copula score 补偿音频与文本的跨模态交互；作者指出，朴素的噪声预测混合会遗漏这一项。BEAT 实验中，该方法取得摘要所述的语义保真度和节拍对齐结果，并在盲测成对比较中胜过既有方法。Unitree G1 实机部署被报告为实现了直接的仿真到现实迁移。"
+        }
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
