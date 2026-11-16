@@ -116,7 +116,11 @@
             "heading": "",
             "text": "The rapid evolution of Embodied AI has enabled Vision-Language-Action (VLA) models to excel in multimodal perception and task execution.\n\nHowever, applying Reinforcement Learning (RL) to these massive models in large-scale distributed environments faces severe systemic bottlenecks, primarily due to the resource conflict between high-fidelity physical simulation and the intensive VRAM/bandwidth demands of deep learning.\n\nThis conflict often leaves overall throughput constrained by execution-phase inefficiencies. To address these challenges, we propose D-VLA, a high-concurrency, low-latency distributed RL framework for large-scale embodied foundation models.\n\nD-VLA introduces \"Plane Decoupling,\" physically isolating high-frequency training data from low-frequency weight control to eliminate interference between simulation and optimization. We further design a four-thread asynchronous \"Swimlane\" pipeline, enabling full parallel overlap of sampling, inference, gradient computation, and parameter distribution.\n\nAdditionally, a dual-pool VRAM management model and topology-aware replication resolve memory fragmentation and optimize communication efficiency. Experiments on benchmarks like LIBERO show that D-VLA significantly outperforms mainstream RL frameworks in throughput and sampling efficiency for billion-parameter VLA models.\n\nIn trillion-parameter scalability tests, our framework maintains exceptional stability and linear speedup, providing a robust system for high-performance general-purpose embodied agents."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper presents D-VLA, a distributed asynchronous reinforcement learning framework for large embodied foundation models. It separates high-frequency training data from low-frequency weight control and uses a four-thread pipeline to overlap sampling, inference, gradient computation, and parameter distribution. Dual-pool VRAM management and topology-aware replication address memory and communication issues. The authors report higher throughput and sampling efficiency than mainstream RL frameworks on benchmarks including LIBERO, and stable linear speedup in trillion-parameter scalability tests.",
+          "zh": "论文提出面向大规模具身基础模型的分布式异步强化学习框架 D-VLA，旨在缓解物理仿真与模型训练之间的资源冲突。框架通过训练数据与权重控制解耦、四线程异步流水线、双池显存管理及拓扑感知复制来提升并行度和通信效率。作者称，在 LIBERO 等基准上，D-VLA 对十亿参数 VLA 模型的吞吐量和采样效率优于主流强化学习框架；万亿参数扩展测试中保持稳定并呈线性加速。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -147,7 +151,11 @@
             "heading": "",
             "text": "Accurate friction modeling in continuum robots is essential for precise motion control and path planning. However, current approaches make predictions only for the mechanism's internal friction that is limited by the boundary forces of the Coulomb friction cone, which fail to characterize the static friction and motion hysteresis.\n\nIn this paper, we propose a novel friction model based on complementarity constraints under the Coulomb friction assumption.\n\nThis model predicts various friction effects caused by environmental interactions, including both static and sliding frictions and hysteresis behavior, as well as the corresponding robot deformation induced by these interactions, which are crucial for the practical motion planning and control of continuum robots.\n\nAdditionally, real-time implementation of this model can be achieved, meeting the demand for computational efficiency in robotic applications.\n\nExperimental validations demonstrated that this model is able to reduce the maximum tip position error from 45.4 mm in the frictionless model to 5.85 mm in our friction-included model with a 287.9 mm-long tendon-driven continuum robot."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a friction model for continuum robots interacting with their environment, based on complementarity constraints and the Coulomb friction assumption. The model represents static and sliding friction, motion hysteresis, and interaction-induced robot deformation; the authors state that it can run in real time. Experiments with a 287.9 mm tendon-driven continuum robot showed that including friction reduced maximum tip position error from 45.4 mm with a frictionless model to 5.85 mm.",
+          "zh": "论文针对连续体机器人的环境接触摩擦，提出基于库仑摩擦假设和互补约束的模型，可描述静摩擦、滑动摩擦、运动迟滞及相应的机器人变形，并称其可实时实现。实验使用一台长287.9毫米的腱驱动连续体机器人进行验证；与无摩擦模型相比，加入摩擦的模型将末端位置最大误差从45.4毫米降至5.85毫米。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -178,7 +186,11 @@
             "heading": "",
             "text": "Reinforcement learning has enabled robust humanoid locomotion, yet training recipes (rewards, architectures, hyperparameters) remain hard to reuse across robots with different native joint coordinates, since policies output native joint angles while action scales, bounds, gains, and penalties are defined in those robot-specific coordinates.\n\nExisting transmission models convert native targets into actuator commands but do not standardize the coordinate interface exposed to the policy.\n\nWe introduce a body-aligned virtual joint space upstream of this mapping: policy actions and observations follow a common anatomical convention, and a deterministic kinematic layer maps virtual targets to native ones, leaving the existing transmission and low-level control stack unchanged.\n\nUnder a single unmodified recipe on three humanoids with different leg-axis layouts, it is the only interface that tracks accurately, keeps the feet aligned with the travel direction, and trains stably on all three, and on Unitree G1 hardware it reduces heading drift by nearly a factor of six."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper introduces a body-aligned virtual joint space before the existing transmission mapping. Policy actions and observations use a shared anatomical convention, while a deterministic kinematic layer maps virtual targets to each robot’s native coordinates without changing the transmission or low-level control stack. The authors report that, under one unchanged training recipe, this interface tracks accurately, aligns the feet with travel direction, and trains stably on three humanoids with different leg-axis layouts. On Unitree G1 hardware, heading drift is reduced by nearly a factor of six.",
+          "zh": "论文提出在机器人传动映射之前加入身体对齐的虚拟关节空间，使策略的动作和观测遵循共同的解剖约定，再由确定性运动学层映射到各机器人的原生关节坐标，同时保留现有传动与底层控制。作者报告，在三个腿部轴布局不同的人形机器人上使用同一未修改训练方案时，该接口能够准确跟踪、保持足部与行进方向对齐并稳定训练；在 Unitree G1 硬件上，航向漂移接近降低六倍。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
@@ -209,7 +221,11 @@
             "heading": "",
             "text": "When learning probabilistic policies from human demonstrations, data-efficient learning and fast adaptations to new scenarios are key requirements. One popular way to achieve intuitive and reliable adaptations is through non-parametric, typically kernel-based, methods.\n\nHowever, existing solutions either fail to account for the geometry of manifolds common in robotics, limiting data efficiency, or, when geometry-aware, provide unreliable uncertainty estimates or require retraining to adapt.\n\nWe propose a non-parametric approach leveraging geometric priors in scenarios of data scarcity and heteroscedastic uncertainties for probabilistic modeling.\n\nWe utilize the method to formulate policies based on time or robot state, where non-separable diagonal kernels allow capturing uncertainty relations between degrees of freedom for same-sized in- and outputs. Fast updates, requiring less than 3 ms for a trajectory involving both position and orientation are possible through an optimized formulation.\n\nOur approach supports both manifold-valued input and manifold-valued output with large orientation changes. Using task parameterization, adaptation to different object poses is easily possible. We evaluate the approach on a set of toy examples and on real robot manipulation tasks both in autonomous execution and in shared control scenarios."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a non-parametric imitation learning approach that combines geometric priors with heteroscedastic uncertainty for probabilistic policies learned from demonstrations. Non-separable diagonal kernels model uncertainty relationships between input and output degrees of freedom of equal size. The approach supports manifold-valued inputs and outputs, including large orientation changes, and task parameterization enables adaptation to different object poses. The authors report trajectory updates in under 3 ms for position and orientation. Evaluation covers toy examples and real robot manipulation in autonomous execution and shared control.",
+          "zh": "论文提出一种结合几何先验与异方差不确定性的非参数模仿学习方法，面向示范数据有限且需要适应新场景的概率策略。该方法使用非可分离对角核建模同维输入与输出自由度之间的不确定性关系，支持流形值输入和输出，包括较大的方向变化；作者称，涉及位置和方向的轨迹更新耗时少于3毫秒。通过任务参数化，策略可适应不同物体位姿。评估包括玩具示例及真实机器人操作任务，涵盖自主执行和共享控制。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
