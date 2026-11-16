@@ -3696,11 +3696,7 @@
             "heading": "",
             "text": "The RoboCup Standard Platform for Autonomous Rescue Competition (SPARC) is a new competition under development of the RoboCup Rescue Robot League that uses the Unitree A2-W as a common robot platform.\n\nSPARC aims to make research on artificial intelligence for autonomous rescue robots accessible to a broader research community, including groups without expertise in developing and maintaining custom robot hardware.\n\nBy providing a capable standard platform and established benchmark environments, researchers can focus on autonomous navigation, perception, manipulation, and embodied AI for challenging disaster-response scenarios. This paper introduces the SPARC competition, its benchmark environment, and the Unitree A2-W standard platform.\n\nFurthermore, we present the first open SPARC datasets collected during the IEEE ICRA 2026 Legged Robot Challenges and RoboCup Rescue 2026, release an open-source software stack for autonomous navigation, and provide initial simulation assets representing RoboCup Rescue test environments.\n\nTogether, these resources aim to lower the barrier to entry for autonomous rescue robotics and facilitate reproducible research and collaborative development on a common hardware platform."
           }
-        ],
-        "summary": {
-          "en": "The paper presents SPARC, a RoboCup Rescue Robot League competition under development that uses the Unitree A2-W as a common platform. It aims to make autonomous rescue robotics research more accessible, including to groups without experience maintaining custom hardware. The paper describes the competition, benchmark environment, and robot platform, and reports initial open datasets collected during two events, an open-source autonomous navigation software stack, and simulation assets representing RoboCup Rescue test environments. The authors say these resources aim to support reproducible research and collaboration on a shared platform.",
-          "zh": "论文介绍 RoboCup 救援机器人联赛正在开发的 SPARC 竞赛，以 Unitree A2-W 作为通用机器人平台，旨在降低开展自主救援机器人研究的门槛。文章介绍其基准环境和平台，并报告发布了在两项赛事期间采集的首批开放数据集、用于自主导航的开源软件栈，以及代表 RoboCup Rescue 测试环境的初步仿真资源。作者认为，这些资源旨在支持基于共同硬件平台的可复现研究与协作开发。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6447,11 +6443,7 @@
             "heading": "",
             "text": "In robotics and embodied AI, a core challenge for world models is adapting to sudden, persistent, yet initially unknown changes in robot dynamics during interaction. For instance, when a robotic arm grasps an object with an unknown payload, the robot dynamics change suddenly.\n\nIf the world model fails to adapt, its prediction errors accumulate over the open-loop rollout and ultimately mislead the robot's actions.\n\nExisting world models, however, struggle to simultaneously satisfy three critical requirements for dynamics adaptation: responsiveness, reacting promptly to sudden changes to curb prediction error accumulation; stability, distinguishing persistent changes from transient disturbances to prevent incorrect updates; and persistence, retaining the adapted dynamics without new observations so that later predictions do not revert to the old dynamics.\n\nInspired by predictive coding in the human brain with multi-timescale adaptation, we propose AFTER-WM, a world model with Adaptive Fast-slow Timescales for Error-driven Retention, whose prediction errors drive a fast correction that fades and a slow correction that persists, while dynamically adjusting the combination weights of pre-trained experts without altering them, to overcome the trade-offs among responsiveness, stability and persistence.\n\nOn five simulated robot datasets and real UAV data, AFTER-WM has a lower multi-step mean error than all ten compared models and the highest mean return in a joint-failure control task.\n\nIn simulation, its multistep mean error is 16%-34% below the strongest compared model's and is also the lowest 1-4 steps after a change and under transient disturbances alone, and its step-40 error is the lowest as well, reflecting responsiveness, stability and persistence. All code (method, baselines, experiments) and datasets will be released online."
           }
-        ],
-        "summary": {
-          "en": "The paper proposes AFTER-WM to help world models adapt when robot dynamics change suddenly and persistently. Prediction errors drive a fast correction that fades and a slower correction that persists; the method also adjusts the weights of pretrained experts without changing them. The authors report lower multi-step mean error than ten compared models on five simulated robot datasets and real UAV data, and the highest mean return in a joint-failure control task. In simulation, they also report favorable errors after changes, under transient disturbances, and at step 40.",
-          "zh": "论文提出 AFTER-WM，以处理机器人动力学突然且持续变化时世界模型的适应问题。该方法让预测误差驱动快速但会衰减的修正与缓慢持久的修正，并动态调整预训练专家的组合权重而不改变专家本身。作者报告，在五个仿真机器人数据集和真实无人机数据上，其多步平均误差低于十种对比模型，在联合故障控制任务中平均回报最高；仿真结果还显示其在变化后、瞬态扰动期间及第 40 步的误差表现较优。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -6520,11 +6512,7 @@
             "heading": "",
             "text": "Self-improvement on compositional manipulation tasks requires deciding what to reuse, where to improve, and which changes to retain. We present ReSkill, a selective self-improvement framework that concentrates revision on capability gaps.\n\nA coding agent constructs an object-centric task graph from an instruction and a skill library, then uses node-level execution records to locate failures.\n\nAt the task level, it revises stage organization, hand-off conditions, and recovery routes; at the skill level, it strengthens perception, motion, manipulation, and verification capabilities that repeatedly fail.\n\nCandidate revisions undergo full-task evaluation and paired comparisons before adoption, allowing local changes to accumulate into validated skills and an independently executable policy. The agent participates only during development; the deployed policy calls the retained skills without invoking the agent at run time.\n\nOn the same development set, average success across ten RoboDojo tasks rises from 30.0% for the initial versions to 86.2% for the final adopted programs; retained programs achieve 83.6% in recorded robustness and model-selection evaluations.\n\nAcross eight real-world tasks, ReSkill succeeds in 72 of 80 rebuilt-simulation trials and 62 of 80 real-robot trials (77.5%).The median revision changes only three functions, approximately 0.5% of a program, while 39% of task-specific functions in later-added tasks directly reuse existing implementations.\n\nThese results show how locating local deficiencies, validating candidate changes, and accumulating reusable skills can improve execution of compositional manipulation tasks."
           }
-        ],
-        "summary": {
-          "en": "ReSkill is a selective self-improvement framework for compositional robot manipulation. A coding agent builds an object-centric task graph from instructions and a skill library, uses execution records to locate failures, and revises task organization or repeatedly failing capabilities. Candidate changes are evaluated on full tasks and through paired comparisons before adoption. At deployment, the policy calls retained skills without invoking the agent. On the same development set of ten RoboDojo tasks, reported average success rises from 30.0% to 86.2%. Across eight real-world tasks, the system succeeds in 72 of 80 rebuilt-simulation trials and 62 of 80 real-robot trials.",
-          "zh": "ReSkill 是面向组合式机器人操作任务的选择性自我改进框架。编码代理根据指令和技能库构建以物体为中心的任务图，并利用节点执行记录定位失败，再修订任务阶段、交接与恢复路线，或强化反复失败的技能。候选修改经完整任务评估和配对比较后才采纳；部署时策略调用保留的技能，不在运行时调用代理。在 RoboDojo 十项任务的同一开发集上，平均成功率从初始版本的30.0%升至最终程序的86.2%；八项现实任务中，重建仿真试验成功72/80，实体机器人试验成功62/80。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -7183,11 +7171,7 @@
             "heading": "",
             "text": "Search allows a robotic policy to evaluate candidate futures before committing to an action. Motivated by test-time planning for vision-language action (VLA) models, we study selective search over action chunks in PushT using a frozen Action Chunking with Transformers (ACT) policy.\n\nBeam search generates perturbed alternatives around the policy prediction and scores them through rollouts from cloned simulator states. Across 50 evaluation episodes, beam search raises task success from 0% to 18% and increases average cumulative reward from 39.44 to 103.2.\n\nWe introduce One Step Ahead (OSA), a gate that simulates the nominal policy chunk and invokes full search only when its predicted coverage drop exceeds a threshold. In the reported ablations, OSA preserves or improves success while reducing runtime by approximately 3x relative to full beam search.\n\nAblations over tree depth, branching factor, beam width, and replanning frequency show that larger search budgets do not consistently improve performance. The results support selective test-time search for action-chunking policies; evaluation on language-conditioned VLAs and physical robots remains future work."
           }
-        ],
-        "summary": {
-          "en": "The paper studies selective search over action chunks for a frozen ACT policy in PushT. Beam search creates alternatives around the policy prediction and scores them with rollouts from cloned simulator states. Across 50 evaluation episodes, the authors report success increasing from 0% to 18% and average cumulative reward from 39.44 to 103.2. Their One Step Ahead gate invokes full search when predicted coverage drops beyond a threshold. Reported ablations show preserved or improved success with roughly threefold lower runtime than full beam search. Language-conditioned VLAs and physical robots remain future work.",
-          "zh": "论文在 PushT 环境中研究冻结 ACT 策略的动作块选择性搜索。束搜索围绕策略预测生成候选动作，并通过克隆模拟器状态后的 rollout 评分；在 50 个评估回合中，作者报告任务成功率由 0%升至18%，平均累计奖励由39.44升至103.2。论文提出 OSA 门控，仅在名义动作块预测覆盖率下降超过阈值时启动完整搜索。报告的消融实验显示，OSA 保持或提升成功表现，运行时间约为完整束搜索的三分之一。语言条件 VLA 和实体机器人评估仍属未来工作。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -8092,11 +8076,7 @@
             "heading": "",
             "text": "Reconstructing dynamic scenes and objects from monocular egocentric video is crucial for embodied AI, yet existing 4D Gaussian Splatting (4DGS) approaches struggle with everyday interactions involving topological changes, such as cutting, assembly, opening, or closing.\n\nSince 4DGS methods rely on deforming a fixed representation, events that split, merge, or reveal surfaces cause severe visual artifacts.\n\nTo address this challenge, we introduce TopoEgo, the first benchmark dedicated to topological changes in egocentric video (covering fission, fusion, open, and close), alongside Topo-4DGS, a topology-aware reconstruction method.\n\nTopo4DGS jointly models part-level motion and time-varying surface support by assigning independent rigid transformations to interacting parts and dynamically activating or deactivating Gaussians as surfaces appear, disappear, or separate.\n\nExtensive experiments demonstrate that Topo-4DGS significantly outperforms state-of-the-art 4DGS approaches across topological changes, especially on post-event frames. Code and data will be made publicly available."
           }
-        ],
-        "summary": {
-          "en": "The paper introduces TopoEgo, a benchmark for topological changes in egocentric video, and Topo-4DGS, a reconstruction method addressing fission, fusion, opening, and closing. The method assigns independent rigid transformations to interacting parts and dynamically activates or deactivates Gaussians as surfaces appear, disappear, or separate. The authors report that extensive experiments show improvements over existing 4D Gaussian Splatting methods across topological changes, especially in post-event frames.",
-          "zh": "论文介绍了面向第一人称视频拓扑变化的基准 TopoEgo，以及重建方法 Topo-4DGS，覆盖分裂、融合、打开和关闭等情形。该方法为交互部件设置独立刚体变换，并随表面显现、消失或分离动态启用或停用高斯表示。作者称，广泛实验中该方法在各类拓扑变化上优于现有 4D 高斯泼溅方法，尤其是在事件发生后的帧上。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -9818,11 +9798,7 @@
             "heading": "",
             "text": "Directing a robot to locate a target object in unseen environments remains a central challenge in embodied AI. Vision-Language Model (VLM)-based methods provide rich semantic reasoning but often produce uncalibrated and overconfident action decisions.\n\nWe introduce CPNav, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. From RGB-D input, CPNav constructs a navigability map, generates collision-free motion primitives, and queries two VLMs for goal detection and action scoring.\n\nThe resulting scores are calibrated offline via conformal prediction (CP) using oracle actions obtained through a tree-structured exploration procedure with backtracking, providing finite-sample guarantees at a user-specified risk level. The CP layer is model-agnostic and can wrap any VLM policy.\n\nOnline, calibrated VLM scores guide action selection, while a tree-structured exploration history records alternative actions and allows backtracking. We evaluate CPNav in both simulation and real-world hardware settings.\n\nIn AI Habitat simulation, compared with the uncalibrated baseline method, CPNav achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively. In real-world deployment on a modified Hiwonder MentorPi robot, the corresponding improvements in SR and SPL are 24.9% and 15.2%, respectively.\n\nCode is available at https://github.com/practice-lab-ucla/CPnav."
           }
-        ],
-        "summary": {
-          "en": "CPNav targets map-free object-goal navigation in unseen environments by combining collision-aware planning with statistically calibrated vision-language model action scores. It builds a navigability map from RGB-D input, generates collision-free motion primitives, and uses two VLMs for goal detection and action scoring. Offline conformal prediction calibration uses oracle actions from tree-structured exploration with backtracking and provides finite-sample guarantees at a specified risk level. Evaluations in AI Habitat simulation and on a modified Hiwonder MentorPi robot report improvements in success rate and SPL over an uncalibrated baseline.",
-          "zh": "CPNav 面向未见环境中的无地图目标物导航，结合避碰规划与经统计校准的视觉语言模型动作评分。系统从 RGB-D 输入构建可通行地图并生成无碰撞动作，同时由两个 VLM 执行目标检测和动作评分；离线使用树状探索与回溯获得的 oracle 动作，通过保形预测校准分数，并提供用户指定风险水平下的有限样本保证。作者在 AI Habitat 仿真及改装 Hiwonder MentorPi 机器人上评估，报告相较未校准基线，仿真中的 SR、SPL 均有提升，实体部署的两项指标也分别提升24.9%和15.2%。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -12333,11 +12309,7 @@
             "heading": "",
             "text": "Generating whole-body gestures that are simultaneously rhythmically synchronized with speech audio and semantically aligned with text descriptions is a fundamental challenge in embodied AI and social robotics.\n\nWe tackle this Audio-Text-to-Motion (AT2M) problem by composing two independently-trained diffusion models at inference time and refine bias in joint inference by modeling the copula score $s_I$.\n\nA rigorous theoretical analysis reveals that naive epsilon blending corresponds to a Product-of-Experts formulation that omits the copula score $s_I$: the cross-modal interaction between audio and text that neither marginal model can capture.\n\nWe propose CFGComposer: a jointly-trained AT2M diffusion model that estimates $s_I$ via a CFG analogy and injects it as an $ε$-space correction. Experiments on BEAT demonstrate best-in-class semantic fidelity (SRGR $0.9916$, FID $27.18$) with GT-level beat alignment (BA $0.1826$ vs.\n\nGT $0.1743$), and 76-83% win rate in blind pairwise human evaluation against all prior methods. Physical deployment on a Unitree G1 humanoid confirms direct sim-to-real transfer."
           }
-        ],
-        "summary": {
-          "en": "This paper addresses whole-body motion generation that is synchronized with speech audio and semantically aligned with text. CFGComposer combines diffusion models at inference and estimates a cross-modal copula score through a CFG analogy, applying it as an epsilon-space correction. The authors argue that naive epsilon blending omits audio-text interaction. On BEAT, they report leading semantic fidelity, beat alignment close to ground truth, and favorable blind pairwise human evaluations against prior methods. Deployment on a Unitree G1 humanoid is reported as direct sim-to-real transfer.",
-          "zh": "论文研究语音音频与文本描述共同驱动的全身动作生成，提出 CFGComposer，在推理时组合扩散模型，并用类 CFG 方法估计跨模态 copula score，将其作为 ε 空间修正。作者指出，朴素的 ε 混合会遗漏音频与文本的交互项。在 BEAT 实验中，作者报告其语义保真度指标领先、节拍对齐接近真实数据，并在盲测成对人评中胜过此前方法。Unitree G1 人形机器人上的实体部署显示了直接仿真到现实的迁移。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -17633,11 +17605,7 @@
             "heading": "",
             "text": "Vision-language-action (VLA) models predict chunks of future actions, and when objects move, those chunks go stale before they are executed. We study what makes a pretrained VLA reactive, using \\pihalf{} on two dynamic simulation benchmarks and three real-robot tasks.\n\nWe vary the prediction and execution horizons, compare synchronous and asynchronous inference, test methods that deliver actions sooner or keep successive chunks continuous, and adapt the policy with motion cues and latent-space reinforcement learning. The best prediction horizon is about one second, and the best execution horizon depends on the checkpoint.\n\nShort horizons help more with asynchronous execution, and methods that keep the trajectory continuous outperform those that only reduce latency. Adapting the policy repairs targeted failures, but on the conveyor task changing the execution horizon gained as much.\n\nReactivity depends on the execution pipeline as much as on the policy, so both should be evaluated together."
           }
-        ],
-        "summary": {
-          "en": "The study examines the reactivity of pretrained vision-language-action models in dynamic manipulation, using two simulation benchmarks and three real-robot tasks. It compares prediction and execution horizons, synchronous and asynchronous inference, ways to deliver actions sooner or maintain continuity between chunks, and policy adaptation with motion cues and latent-space reinforcement learning. The authors report an approximately one-second best prediction horizon, while the best execution horizon depends on the checkpoint. Short horizons help more with asynchronous execution, and continuous trajectories outperform latency reduction alone.",
-          "zh": "论文研究预训练视觉—语言—动作模型在动态操作中的反应能力，使用两个动态仿真基准和三个真实机器人任务，比较预测与执行时域、同步与异步推理，以及缩短延迟或保持动作片段连续的方法，并测试加入运动线索和潜空间强化学习的策略适配。作者报告，最佳预测时域约为一秒，执行时域取决于模型检查点；异步执行更受益于短时域，保持轨迹连续的方法优于单纯降低延迟。策略适配可修复特定失败，而传送带任务中调整执行时域也带来同等收益。"
-        }
+        ]
       },
       "source": {
         "id": "legacy-3225d1718dfa151d8ca2",
@@ -42983,20 +42951,20 @@
         "organization": "全国机器人标准化技术委员会",
         "participating_units": [],
         "plan_number": "20261783-T-604",
-        "recorded_at": "2026-11-16",
+        "recorded_at": "2026-03-31",
         "related_units": [],
         "standard_number": null,
-        "status": "拟立项"
+        "status": "征求意见"
       },
       "body": "",
       "catalog": {
         "kind": "standard",
         "source_channel": "website",
-        "source_name": "国家标准业务平台",
+        "source_name": "国家标准基础库",
         "standard": {
           "identifier": "20261783-T-604",
           "organization": "全国机器人标准化技术委员会",
-          "stage": "proposal"
+          "stage": "consultation"
         }
       },
       "format": "archive_record",
@@ -43004,8 +42972,8 @@
       "intro": "",
       "published_at": null,
       "source": {
-        "id": "legacy-7dc861a567024fad9f43",
-        "url": "https://std.samr.gov.cn/gb/gb/search/gbDetailed?id=4E646C4DFD7176CBE06397BE0A0AD8CD"
+        "id": "legacy-008fd94cc6c7b16c7218",
+        "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=4E646C4DFD7176CBE06397BE0A0AD8CD"
       },
       "title": "人形机器人智能化能力评价方法"
     },
