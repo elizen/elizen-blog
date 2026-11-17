@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-b1590a885d5f2a5e",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Joint Movement and Compression Ratio Design for Mobile Embodied AI Networks (MEAN)",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-10-01",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-10-05T01:10:51.057665+00:00",
+    "updated_at": "2026-10-21T00:39:40.055487+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2610.02334v1",
+        "title": "Joint Movement and Compression Ratio Design for Mobile Embodied AI Networks (MEAN)",
+        "published_at": "2026-10-01",
+        "checked_at": "2026-10-21T00:39:30.333598+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Mobile embodied AI networks (MEAN) enable embodied agents to perceive, reason, communicate, and act in wireless environments. In such networks, agent mobility can improve channel conditions, while semantic compression can reduce transmission payloads. However, movement consumes energy, and stronger compression incurs additional computational cost. This paper studies joint movement, semantic compression, and transmit power design for an uplink MEAN system. We formulate a max-min energy efficiency (EE) problem by jointly optimizing transmit power, movement distance, and semantic compression ratio under controllable power constraints. The problem is non-convex due to the coupled signal-to-interference-plus-noise ratio (SINR), mobility-dependent channel gains, and fractional EE objective. To solve it, we propose an alternating optimization (AO)-Dinkelbach algorithm, where the fractional objective is handled by the Dinkelbach transformation, transmit power is updated via successive convex approximation (SCA), and movement distance is updated by coordinate-wise grid search. Simulation results show that the proposed scheme outperforms no-mobility and no-compression baselines, demonstratin"
+      }
+    ]
+  }
+}
