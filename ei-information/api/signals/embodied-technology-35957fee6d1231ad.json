@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-35957fee6d1231ad",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "技术动态",
+    "title": "Piloting the world's first double-blind AI evaluations",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-08-27",
+    "date_basis": "文章发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-28T03:47:51.120834+00:00",
+    "updated_at": "2026-10-27T11:37:01.239259+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "deepmind-robotics-blog",
+        "source_name": "Google DeepMind 官方博客",
+        "source_url": "https://deepmind.google/blog/",
+        "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+        "title": "Piloting the world's first double-blind AI evaluations",
+        "published_at": "2026-08-27",
+        "checked_at": "2026-10-27T11:34:54.996534+00:00",
+        "evidence_role": "primary",
+        "excerpt": "August 27, 2026 Responsibility & Safety Piloting the world's first double-blind AI evaluations William Isaac, Sol Messing and Kristian Lum Share Building trust in proprietary model benchmarks using cryptographically secure environments Imagine a student is set to take a high-stakes exam. If they accidentally peek at the test questions in advance, achieving a perfect score is influenced by this knowledge, making it a meaningless accomplishment. To truly measure what they know, they must have no visibility of the test questions until it's time to take the exam. That is the exact challenge the industry faces when evaluating advanced AI models. If a model has already seen the test questions - a problem known as benchmark contamination - the results can only be trusted to an extent. Today, we’re introducing the world’s first double-blind evaluation of a proprietary, frontier class AI model, which keeps external evaluations confined to a cryptographic “box” where they can’t be used by models later to optimize performance ahead of testing. We're partnering with the Singapore AI Safety Institute, OpenMined, AVERI, and MLCommons , to test a Gemini Flash Lite model against confidential bench"
+      }
+    ]
+  }
+}
