@@ -847,7 +847,11 @@
             "heading": "",
             "text": "We propose a whole-body teleoperation method for topology-mismatched humanoids, with a focus on motion retargeting and whole-body control for wheeled humanoids. First, we design a Topology-Adaptive Motion Retargeting (TAMR) method with a robust switching logic that selects mapping joints according to human posture.\n\nSecond, we train a Teacher-Student DAgger method that supports real-time teleoperation with inertial motion capture and virtual-reality devices.\n\nWe further develop a Temporal Feasibility-Aware Command Governor (T-FeaCG) for the wheeled base to reduce the mismatch between teleoperation policy intent and the feasible execution margin of a three-steer-wheel base. We will release the complete teleoperation code and dataset, and demonstrate whole-body humanoid skills learned from teleoperation.\n\nMore videos are available at: https://xiachenbuo.github.io/Morphology-Aware-Human-Motion-Retargeting-for-Wheeled-Humanoid-Loco-Manipulation/."
           }
-        ]
+        ],
+        "summary": {
+          "en": "The paper proposes a whole-body teleoperation method for humanoids with mismatched topologies, focusing on motion retargeting and control for wheeled humanoids. Its TAMR method switches mapping joints according to human posture, while a Teacher-Student DAgger approach supports real-time teleoperation using inertial motion capture and virtual-reality devices. The authors also introduce T-FeaCG to reduce the mismatch between policy intent and the feasible execution margin of a three-steer-wheel base. The abstract says code and a dataset will be released and describes skills learned through teleoperation.",
+          "zh": "论文提出一种面向拓扑不匹配人形机器人的全身遥操作方法，重点处理轮式人形机器人的动作重定向与全身控制。TAMR 根据人体姿态切换映射关节；Teacher-Student DAgger 方法结合惯性动作捕捉和虚拟现实设备支持实时遥操作。作者还提出 T-FeaCG，旨在降低遥操作策略意图与三转向轮底盘可行执行范围之间的不匹配。摘要称将发布代码和数据集，并展示通过遥操作学习的全身技能。"
+        }
       },
       "source": {
         "id": "arxiv-embodied-ai",
