@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-6e603a4247747a19",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Agentic Scaling of Embodied Tasks in Simulation for Synthetic Data Collection and Policy Evaluation",
+    "summary": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+    "event_date": "2026-11-19",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-20T03:21:45.397892+00:00",
+    "updated_at": "2026-11-20T12:09:40.397432+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究利用仿真或三维场景生成，为具身智能提供训练、测试和安全验证所需的可控环境。",
+        "why_it_matters": "高质量仿真能够降低真实机器人试错成本，但关键在于生成环境是否保留了任务和物理约束。",
+        "watch_next": "继续核对仿真与真实环境之间的差距，以及是否能复现到真实机器人。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.26046v1",
+        "title": "Agentic Scaling of Embodied Tasks in Simulation for Synthetic Data Collection and Policy Evaluation",
+        "published_at": "2026-11-19",
+        "checked_at": "2026-11-20T12:09:20.109296+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Scaling embodied interaction data requires a broad collection of usable tasks, yet specifying and validating each task instance remains costly. We present AgenticTask, an agent-based framework that expands existing task collections under human intent. Its central representation links interaction requirements to object and part bindings, scene and robot configurations, initial conditions, and completion criteria. A task-generation agent reuses interaction structure to construct supported variations and revises incompatible configurations using validation feedback. A task-execution agent uses the same bindings and geometric records to select robot-supported skills and check completion against the original task criteria. On RoboCasa, the framework builds the AgenticTask collection, saving 16,450 task instances from 20,323 construction attempts at a throughput of 166.97 saved instances per elapsed hour, with 62.26% of construction attempts passing the configured physical checks. The execution agent completes approximately 38% of evaluated tasks, with successful cases spanning object placement, articulated manipulation, and sequential arrangement. Diagnostic analysis identifies improvem"
+      }
+    ]
+  }
+}
