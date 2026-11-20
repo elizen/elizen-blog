@@ -10,7 +10,7 @@
     "date_basis": "论文发布",
     "confidence": "confirmed",
     "created_at": "2026-11-20T04:27:09.241306+00:00",
-    "updated_at": "2026-11-20T19:47:41.972098+00:00",
+    "updated_at": "2026-11-20T20:53:09.138947+00:00",
     "metadata": {
       "editorial": {
         "intro": "这项研究聚焦机器人操作任务，尝试把感知、语言理解和动作控制连接起来，完成更稳定的抓取或操作。",
@@ -26,7 +26,7 @@
         "url": "http://arxiv.org/abs/2611.26503v1",
         "title": "JARVIS: An Agent That Designs, Builds, and Tests Circuit Boards on Its Own",
         "published_at": "2026-11-19",
-        "checked_at": "2026-11-20T19:47:32.651534+00:00",
+        "checked_at": "2026-11-20T20:52:58.006038+00:00",
         "evidence_role": "primary",
         "excerpt": "Power electronics is central to the energy transition, but developing new hardware still relies on human-led design, fabrication, testing, and iteration. We present JARVIS, an embodied AI agent that autonomously closes this loop for circuit boards. JARVIS maintains machine-specific capabilities and constraints, scans its workspace using a robot-mounted 3D scanner, and constructs an executable digital twin in which it rehearses robot motions, fabrication steps, and circuit behavior before consuming materials. A single text instruction initiates the physical experiment. Using unmodified desktop equipment, the agent coordinates a robot arm, a PCB printer that deposits conductive silver ink and solder paste, and a pick-and-place machine. It verifies progress using cameras and sensors, then tests the fabricated circuit with an OPAL-RT real-time simulator and an oscilloscope. Based on the measurements, JARVIS diagnoses deviations from the design and generates a revised design in KiCad for subsequent rehearsal. In a demonstration involving a 60 Hz notch filter for grid-connected converter sensing, JARVIS completed a first-run experiment in 2 h 39 min without human intervention, achieving "
       }
