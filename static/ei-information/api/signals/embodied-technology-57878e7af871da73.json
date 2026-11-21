@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-57878e7af871da73",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "PAIR: Bringing Household Robots into the Smart Home",
+    "summary": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+    "event_date": "2026-11-17",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-18T04:12:07.879868+00:00",
+    "updated_at": "2026-11-21T14:22:36.328108+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究围绕视觉—语言—动作模型展开，关注机器人如何把视觉观察和语言指令，持续转换成跨时间的动作，而不是只对当前画面做一次反应。",
+        "why_it_matters": "VLA 的记忆、推理和实时执行能力，直接决定具身智能能否从演示动作走向长时任务和真实部署。",
+        "watch_next": "继续核对实验是否覆盖真实机器人、长时任务和跨场景泛化。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.23070v1",
+        "title": "PAIR: Bringing Household Robots into the Smart Home",
+        "published_at": "2026-11-17",
+        "checked_at": "2026-11-21T14:22:21.237259+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Household robots often need to operate appliances, and smart appliances offer both control panels and device APIs. Existing embodied AI simulation environments, however, model appliances solely as physical objects. We introduce PAIR, a smart-home simulation environment grounded in the Matter protocol~\\footnote{https://csa-iot.org/all-solutions/matter/}, the industry standard for smart-home devices. PAIR provides 84 smart-device assets whose functional control panels and APIs act on a shared device state, with ambient conditions that evolve in response to both. From a survey of 1,443 requests, we construct a benchmark of 40 tasks that all require object manipulation yet remain solvable without API access, with 340 human demonstrations for policy training. Whether run alone, with a high-level planner, or with an API-enabled planner, two fine-tuned VLA policies complete none of the 120 evaluation episodes. Robots rarely get far enough to use the API: even with oracle plans and API access, over 90\\% of failed rollouts stall at navigating, grasping, or operating a door. With a perfect oracle in place of the robot's body, the best planner still gets through only 57.3\\% of its plan. When "
+      }
+    ]
+  }
+}
