@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-03124927e87ff637",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Rethinking Safety for Generalist Robots",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-09-06",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-06",
+    "updated_at": "2026-09-06",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2609.06326v1",
+        "title": "Rethinking Safety for Generalist Robots",
+        "published_at": "2026-09-06",
+        "checked_at": "2026-09-21T23:57:06.785829+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Generalist robots promise to transform our society: the same system that prepares a meal or folds laundry might also repair a car, inspect infrastructure, or care for a loved one. Yet this versatility introduces risks far beyond the collision- and force-based safety notions that have long dominated robotics. Notions of safety must now consider context (e.g., turning off a building's electricity is only safe during scheduled maintenance), user intent (e.g., asking the robot to ``clean the kitchen'' includes unspoken expectations that the robot should not mix dangerous but powerful cleaning agents like bleach and ammonia), hard-to-model physical consequences (e.g., burning food during meal preparation), and more. We argue the need for a new era of robot safety---embodied AI safety---that broadens the hazards considered across the robot's lifecycle while recognizing that the safety of bits cannot be separated from the safety of atoms. We present a taxonomy of emerging risks and a full-stack research agenda to guide the safe deployment of generalist robots."
+      }
+    ]
+  }
+}
