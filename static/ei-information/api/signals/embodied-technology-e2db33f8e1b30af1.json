@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-e2db33f8e1b30af1",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "SphMind: Towards Robust, Training-Free VLM-based Spatial Reasoning with a 360 Camera",
+    "summary": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+    "event_date": "2026-09-27",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-09-29T03:22:24.698839+00:00",
+    "updated_at": "2026-10-14T00:28:45.131735+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这是一项面向具身智能的技术研究，具体方法和实验边界需要回到原文摘要核对。",
+        "why_it_matters": "它提供了一个值得跟踪的技术方向，但当前信号本身不足以证明已经形成可部署能力。",
+        "watch_next": "打开原文，继续核对方法、实验设置和真实场景验证。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2609.33462v2",
+        "title": "SphMind: Towards Robust, Training-Free VLM-based Spatial Reasoning with a 360 Camera",
+        "published_at": "2026-09-27",
+        "checked_at": "2026-10-14T00:28:37.908082+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Omnidirectional or 360 cameras provide embodied AI agents with a holistic, wide field-of-view (FoV) view of their surroundings, motivating the use of Multi-modal Large Language Models (MLLMs) for omnidirectional spatial reasoning. However, most MLLMs are trained on conventional 2D perspective images and struggle with the severe distortions and wrap-around discontinuities induced by spherical geometry. Enabling them to generalize to non-Euclidean 3D spaces without retraining therefore remains challenging. We propose SphMind, a training-free, plug-and-play framework that decouples semantic perception from geometric reasoning. Rather than requiring MLLMs to learn spherical geometry internally, SphMind preserves their semantic capabilities while handling geometry externally. We introduce a Spherical Harmonics-based Spatial Graph (SHSG) that models spatial relationships through equivariant transformations on the sphere, together with Inference-Time Geometric Grounding (IGG), a model-agnostic closed-loop optimization process that aligns MLLM representations with spherical geometric constraints during inference. Experiments on three benchmarks show that SphMind achieves over 21.4% average"
+      }
+    ]
+  }
+}
