@@ -1,0 +1,35 @@
+{
+  "signal": {
+    "id": "embodied-technology-623321c3b06a5b54",
+    "topic_id": "embodied-ai",
+    "module": "technology",
+    "signal_type": "研究发布",
+    "title": "Mind World Models: Joint Learning of Motor EEG Representations and Action-Conditioned World Dynamics",
+    "summary": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+    "event_date": "2026-11-20",
+    "date_basis": "论文发布",
+    "confidence": "confirmed",
+    "created_at": "2026-11-23T03:04:14.445302+00:00",
+    "updated_at": "2026-11-23T03:04:14.445302+00:00",
+    "metadata": {
+      "editorial": {
+        "intro": "这项研究把世界模型用于具身智能，让机器人先预测动作可能带来的环境变化，再据此规划下一步行为。",
+        "why_it_matters": "世界模型是机器人从即时反应走向长时规划的关键中间层，但预测是否可信仍决定它能否落地。",
+        "watch_next": "继续核对预测误差、真实环境验证和是否能支撑长时任务。"
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "arxiv-embodied-ai",
+        "source_name": "arXiv具身智能论文",
+        "source_url": "https://export.arxiv.org/api/query?search_query=all:%22embodied%20AI%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+        "url": "http://arxiv.org/abs/2611.27029v1",
+        "title": "Mind World Models: Joint Learning of Motor EEG Representations and Action-Conditioned World Dynamics",
+        "published_at": "2026-11-20",
+        "checked_at": "2026-11-23T03:03:40.757689+00:00",
+        "evidence_role": "primary",
+        "excerpt": "Motor decoding from electroencephalography (EEG) supports non-invasive brain-computer interfaces, yet existing methods either rely on costly cue-based trials and coarse categorical labels or use pretraining objectives that do not directly capture how movement unfolds, limiting their ability to learn transferable motor representations. To this end, we propose the Mind World Model (MWM), a framework that learns motor EEG representations from scalable naturalistic EEG and egocentric video without action annotations. MWM treats EEG observed up to the current frame as the latent action of a world model: a mind model encodes the EEG, and a world model uses it to predict the representation of a future frame, yielding a movement-grounded pretraining objective. We further introduce the Lateralization-Aware Transformer (LAT), which uses frame averaging to separate shared bilateral from side-specific lateral features, encoding hemispheric correspondence to reduce the burden of learning left-right relationships from data. MWM pretraining produces two models: a mind model for downstream motor decoding and a world model that can be adapted to prediction conditioned on real actions, opening a sca"
+      }
+    ]
+  }
+}
